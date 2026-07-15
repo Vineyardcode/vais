@@ -138,8 +138,7 @@ def compare_to_golden(name, stdout, had_overrides):
     }
 
 
-def run_test(name, overrides=None, param_specs=None, timeout=DEFAULT_TIMEOUT,
-             progress_cb=None):
+def run_test(name, overrides=None, param_specs=None, timeout=DEFAULT_TIMEOUT):
     script = SCRIPTS / f"{name}.py"
     if not script.exists():
         return {"status": "error", "error": f"unknown test {name}"}

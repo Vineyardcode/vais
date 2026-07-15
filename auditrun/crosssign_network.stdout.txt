@@ -1,0 +1,393 @@
+Voynich Manuscript — Phase 5: Cross-Sign Label Network Analysis
+======================================================================
+======================================================================
+PHASE 1: Sign-to-Sign Label Sharing Matrix
+======================================================================
+
+  Label Jaccard similarity (shared labels / union):
+          Ari   Tau   Gem   Can   Leo   Vir   Lib   Sco   Sag   Pis
+        ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+    Ari   --- 0.017 0.000 0.000 0.017 0.000 0.000 0.017 0.000 0.034
+    Tau 0.017   --- 0.036 0.000 0.000 0.000 0.000 0.000 0.000 0.000
+    Gem 0.000 0.036   --- 0.018 0.057 0.000 0.018 0.018 0.019 0.018
+    Can 0.000 0.000 0.018   --- 0.000 0.017 0.000 0.000 0.000 0.000
+    Leo 0.017 0.000 0.057 0.000   --- 0.018 0.000 0.055 0.018 0.035
+    Vir 0.000 0.000 0.000 0.017 0.018   --- 0.000 0.018 0.018 0.000
+    Lib 0.000 0.000 0.018 0.000 0.000 0.000   --- 0.035 0.018 0.034
+    Sco 0.017 0.000 0.018 0.000 0.055 0.018 0.035   --- 0.075 0.017
+    Sag 0.000 0.000 0.019 0.000 0.018 0.018 0.018 0.075   --- 0.000
+    Pis 0.034 0.000 0.018 0.000 0.035 0.000 0.034 0.017 0.000   ---
+
+  Top 10 most similar sign pairs:
+  Pair                           Shared  Jaccard Aspect         Element Shared labels
+  ------------------------------ ------ -------- -------------- ------ ------------------------------
+  Scorpio↔Sagittarius                 4   0.0755 semi-sextile          okeody, okeos, oky, otedy
+  Gemini↔Leo                          3   0.0566 sextile               okaldy, okaly, okam
+  Leo↔Scorpio                         3   0.0545 square                okary, oky, otaly
+  Taurus↔Gemini                       2   0.0364 semi-sextile          okeey.ary, otaraldy
+  Leo↔Pisces                          2   0.0351 quincunx              chy, otaly
+  Libra↔Scorpio                       2   0.0351 semi-sextile          okeey, ykeedy
+  Aries↔Pisces                        2   0.0345 semi-sextile          otaldar, otaly
+  Libra↔Pisces                        2   0.0345 quincunx              okeoly, okydy
+  Gemini↔Sagittarius                  1   0.0185 opposition            okal
+  Gemini↔Scorpio                      1   0.0182 quincunx              otal
+
+  Bottom 5 least similar sign pairs:
+  Cancer↔Pisces                       0   0.0000 trine         
+  Leo↔Libra                           0   0.0000 sextile       
+  Virgo↔Libra                         0   0.0000 semi-sextile  
+  Virgo↔Pisces                        0   0.0000 opposition    
+  Sagittarius↔Pisces                  0   0.0000 square        
+
+======================================================================
+PHASE 2: Does label sharing follow astrological geometry?
+======================================================================
+
+  Mean Jaccard by classical aspect:
+  Aspect             Mean J  N pairs Sharing prediction
+  ---------------- -------- -------- -------------------------
+  semi-sextile       0.0260        9  ◄
+  sextile            0.0136        8 harmonious → more?
+  square             0.0113        8 dissonant → less?
+  trine              0.0088        8 harmonious → more? ◄
+  quincunx           0.0131        8 
+  opposition         0.0046        4 dissonant → less? ◄
+  OVERALL            0.0139       45
+
+  Mean Jaccard by element pairing:
+    Air+Earth       : J=0.0091 (n=4)
+    Air+Fire        : J=0.0154 (n=6)
+    Air+Water       : J=0.0206 (n=6)
+    Earth+Fire      : J=0.0087 (n=6)
+    Earth+Water     : J=0.0058 (n=6)
+    Fire+Water      : J=0.0241 (n=9)
+    SAME            : J=0.0088 (n=8) ◄
+
+  Mean Jaccard by modality pairing:
+    Cardinal+Fixed          : J=0.0096 (n=9)
+    Cardinal+Mutable        : J=0.0116 (n=12)
+    Fixed+Mutable           : J=0.0243 (n=12)
+    SAME                    : J=0.0091 (n=12)
+
+  Jaccard vs angular distance (signs apart):
+    1 signs apart: J=0.0260 (n= 9) █████
+    2 signs apart: J=0.0136 (n= 8) ██
+    3 signs apart: J=0.0113 (n= 8) ██
+    4 signs apart: J=0.0088 (n= 8) █
+    5 signs apart: J=0.0131 (n= 8) ██
+    6 signs apart: J=0.0046 (n= 4) 
+
+======================================================================
+PHASE 3: Do same degree-positions share roots across signs?
+======================================================================
+
+  Root diversity at each degree position:
+  Degree Signs Unique roots Most common root   Root freq Concentration
+  ------ ----- ------------ ------------------ --------- -------------
+       1°    10           10 otalchy                    1          10%
+       2°    10           10 opchey                     1          10%
+       3°    10           10 otakaizan                  1          10%
+       4°    10           10 kalal                      1          10%
+       5°    10            9 tal                        2          20%
+       6°    10           10 oalcheg                    1          10%
+       7°    10           10 otchodals                  1          10%
+       8°    10            9 kal                        2          20%
+       9°    10           10 otshshdy                   1          10%
+      10°    10           10 tal                        1          10%
+      11°    10           10 kol                        1          10%
+      12°    10            9 teod                       2          20%
+      13°    10            9 teod                       2          20%
+      14°    10           10 teoee                      1          10%
+      15°    10           10 tear                       1          10%
+      16°    10           10 teos                       1          10%
+      17°    10           10 kldam                      1          10%
+      18°    10           10 teoald                     1          10%
+      19°    10           10 teolar                     1          10%
+      20°    10           10 keoal                      1          10%
+      21°    10           10 otaleky                    1          10%
+      22°    10           10 talsar                     1          10%
+      23°    10           10 chear                      1          10%
+      24°    10           10 oteotey                    1          10%
+      25°    10           10 talal                      1          10%
+      26°    10           10 otolchdy                   1          10%
+      27°    10           10 toloaram                   1          10%
+      28°    10           10 teeol                      1          10%
+      29°    10           10 otolchd                    1          10%
+      30°     9            9 taldar                     1          11%
+
+  Degrees where one root dominates (>25% concentration):
+
+  Root sharing by decan-degree position (1-10):
+    Position  1: 30 nymphs, 27 unique roots, top='kol'(2), 0 shared labels
+    Position  2: 30 nymphs, 27 unique roots, top='teod'(3), 1 shared labels
+    Position  3: 30 nymphs, 27 unique roots, top='ta'(2), 1 shared labels
+    Position  4: 30 nymphs, 30 unique roots, top='kalal'(1), 0 shared labels
+    Position  5: 30 nymphs, 27 unique roots, top='tal'(3), 2 shared labels
+    Position  6: 30 nymphs, 29 unique roots, top='tal'(2), 0 shared labels
+    Position  7: 30 nymphs, 30 unique roots, top='otchodals'(1), 0 shared labels
+    Position  8: 30 nymphs, 27 unique roots, top='kal'(2), 1 shared labels
+    Position  9: 30 nymphs, 29 unique roots, top='kee'(2), 0 shared labels
+    Position 10: 29 nymphs, 25 unique roots, top='tal'(2), 1 shared labels
+
+======================================================================
+PHASE 4: Label Families — root clusters spanning the zodiac
+======================================================================
+
+  Roots appearing in 3+ signs (13 found):
+  Root             N Signs Degrees                                  Suffixes
+  -------------- --- ----- ---------------------------------------- --------------------
+  tal             11     6 Ari°5, Ari°10, Gem°21, Leo°29, Leo°30, Lib°16 (+5) y(7), (4)
+  kal              8     4 Gem°8, Gem°9, Gem°10, Gem°17, Leo°8, Leo°16 (+2) (4), y(4)
+  tar              5     3 Tau°8, Tau°14, Gem°16, Pis°20, Pis°21    (5)
+  kar              5     4 Leo°25, Vir°24, Sco°21, Sco°29, Pis°2    y(3), (2)
+  teod             5     3 Vir°13, Lib°12, Lib°13, Sag°2, Sag°12    y(3), (2)
+  keod             5     3 Vir°14, Sco°6, Sag°5, Sag°11, Sag°28     y(4), (1)
+  a                4     4 Tau°18, Can°22, Leo°12, Vir°4            iin(3), ir(1)
+  kee              4     4 Tau°29, Gem°11, Lib°23, Sco°9            y(4)
+  k                4     4 Leo°20, Sco°24, Sag°23, Pis°5            y(4)
+  keol             4     3 Lib°4, Lib°30, Sag°20, Pis°17            y(3), (1)
+  kala             3     3 Can°1, Lib°28, Pis°7                     iin(1), ir(1), (1)
+  pa               3     3 Can°7, Sco°18, Sag°13                    iin(3)
+  pal              3     3 Leo°28, Vir°22, Sag°30                   (2), g(1)
+
+  Root families (same onset, different body):
+    ke- family: 23 roots, 39 labels, 9/10 signs
+      keod                   5 labels in 3 signs
+      kee                    4 labels in 4 signs
+      keol                   4 labels in 3 signs
+      keed                   3 labels in 2 signs
+      keeol                  2 labels in 2 signs
+      keeor                  2 labels in 2 signs
+      keos                   2 labels in 2 signs
+      keeod                  2 labels in 2 signs
+      keoal                  1 labels in 1 signs
+      kealar                 1 labels in 1 signs
+      keal                   1 labels in 1 signs
+      keoram                 1 labels in 1 signs
+      kear                   1 labels in 1 signs
+      keold                  1 labels in 1 signs
+      keeom                  1 labels in 1 signs
+      keorar                 1 labels in 1 signs
+      ked                    1 labels in 1 signs
+      kedal                  1 labels in 1 signs
+      keeos                  1 labels in 1 signs
+      keor                   1 labels in 1 signs
+      keear                  1 labels in 1 signs
+      keee                   1 labels in 1 signs
+      kees                   1 labels in 1 signs
+    te- family: 18 roots, 25 labels, 9/10 signs
+      teod                   5 labels in 3 signs
+      tee                    2 labels in 2 signs
+      teed                   2 labels in 2 signs
+      ted                    2 labels in 2 signs
+      teo                    1 labels in 1 signs
+      teoee                  1 labels in 1 signs
+      tear                   1 labels in 1 signs
+      teos                   1 labels in 1 signs
+      teoald                 1 labels in 1 signs
+      teolar                 1 labels in 1 signs
+      teeol                  1 labels in 1 signs
+      teear                  1 labels in 1 signs
+      teesed                 1 labels in 1 signs
+      teodar                 1 labels in 1 signs
+      teol                   1 labels in 1 signs
+      teeod                  1 labels in 1 signs
+      teeos                  1 labels in 1 signs
+      teosal                 1 labels in 1 signs
+    ch- family: 18 roots, 21 labels, 8/10 signs
+      char                   2 labels in 1 signs
+      che                    2 labels in 2 signs
+      cheold                 2 labels in 1 signs
+      chear                  1 labels in 1 signs
+      chfaly                 1 labels in 1 signs
+      chdaiirdainy           1 labels in 1 signs
+      chol                   1 labels in 1 signs
+      chosar                 1 labels in 1 signs
+      cham                   1 labels in 1 signs
+      chealpy                1 labels in 1 signs
+      cholee                 1 labels in 1 signs
+      cheoetey               1 labels in 1 signs
+      cheos                  1 labels in 1 signs
+      cheoepy                1 labels in 1 signs
+      chockhy                1 labels in 1 signs
+      chd                    1 labels in 1 signs
+      chefy                  1 labels in 1 signs
+      chek                   1 labels in 1 signs
+    tal- family: 8 roots, 12 labels, 3/10 signs
+      tala                   2 labels in 2 signs
+      talal                  2 labels in 2 signs
+      taldar                 2 labels in 2 signs
+      tald                   2 labels in 1 signs
+      talsar                 1 labels in 1 signs
+      talod                  1 labels in 1 signs
+      talar                  1 labels in 1 signs
+      talam                  1 labels in 1 signs
+    kal- family: 6 roots, 10 labels, 7/10 signs
+      kala                   3 labels in 3 signs
+      kalar                  2 labels in 2 signs
+      kald                   2 labels in 2 signs
+      kalal                  1 labels in 1 signs
+      kalam                  1 labels in 1 signs
+      kaldal                 1 labels in 1 signs
+    pa- family: 4 roots, 6 labels, 5/10 signs
+      pal                    3 labels in 3 signs
+      palar                  1 labels in 1 signs
+      palor                  1 labels in 1 signs
+      palal                  1 labels in 1 signs
+
+  Suffix variation within multi-sign roots:
+  (Do roots take different suffixes in different signs?)
+    tal: {'Ari': ['', 'y'], 'Gem': [''], 'Leo': ['y'], 'Lib': ['y'], 'Sco': ['', 'y'], 'Pis': ['', 'y']}
+    kal: {'Gem': ['', 'y'], 'Leo': ['y'], 'Lib': [''], 'Sag': ['']}
+    kar: {'Leo': ['y'], 'Vir': [''], 'Sco': ['', 'y'], 'Pis': ['y']}
+    teod: {'Vir': ['y'], 'Lib': [''], 'Sag': ['y']}
+    keod: {'Vir': ['y'], 'Sco': ['y'], 'Sag': ['', 'y']}
+    a: {'Tau': ['iin'], 'Can': ['iin'], 'Leo': ['iin'], 'Vir': ['ir']}
+    keol: {'Lib': ['', 'y'], 'Sag': ['y'], 'Pis': ['y']}
+
+======================================================================
+PHASE 5: Sign Vocabulary Fingerprints
+======================================================================
+
+  Total unique roots across all zodiac labels: 214
+
+  Aries (Fire/Cardinal):
+    Roots: 29 total, 24 UNIQUE to this sign
+    o-rate: 60%  -y: 23%  -iin: 3%
+    Top suffixes: y(7), iin(1)
+    Signature roots: chear, kalal, keoal, kldam, oalcheg, okolshy, opchey, otakaizan (+16 more)
+
+  Taurus (Earth/Fixed):
+    Roots: 27 total, 20 UNIQUE to this sign
+    o-rate: 60%  -y: 13%  -iin: 17%
+    Top suffixes: iin(5), y(4)
+    Signature roots: alcphy, char, chdaiirdainy, chfaly, chol, faom, faralar, kalam (+12 more)
+
+  Gemini (Air/Mutable):
+    Roots: 26 total, 15 UNIQUE to this sign
+    o-rate: 66%  -y: 24%  -iin: 0%
+    Top suffixes: y(7), ir(1)
+    Signature roots: ainaly, chosar, keal, kealar, ofchdamy, okaircham, okairy, okarcham (+7 more)
+
+  Cancer (Water/Cardinal):
+    Roots: 30 total, 22 UNIQUE to this sign
+    o-rate: 43%  -y: 20%  -iin: 23%
+    Top suffixes: iin(7), y(6)
+    Signature roots: als, ara, aral, ctho, eeesa, far, of???, ofsholdy (+14 more)
+
+  Leo (Fire/Fixed):
+    Roots: 28 total, 13 UNIQUE to this sign
+    o-rate: 67%  -y: 47%  -iin: 10%
+    Top suffixes: y(14), iin(3)
+    Signature roots: cham, chealpy, cholee, eesa, falals, laly, odairan, okeolyd (+5 more)
+
+  Virgo (Earth/Mutable):
+    Roots: 29 total, 20 UNIQUE to this sign
+    o-rate: 50%  -y: 40%  -iin: 7%
+    Top suffixes: y(12), iin(2)
+    Signature roots: cheoetey, cheold, cheos, ckhol, eedal, eede, kear, keeom (+12 more)
+
+  Libra (Air/Cardinal):
+    Roots: 28 total, 19 UNIQUE to this sign
+    o-rate: 57%  -y: 40%  -iin: 0%
+    Top suffixes: y(12), ir(1)
+    Signature roots: aiinod, cheoepy, cth, dal, ee, eeeos, eees, eeod (+11 more)
+
+  Scorpio (Water/Fixed):
+    Roots: 26 total, 14 UNIQUE to this sign
+    o-rate: 53%  -y: 50%  -iin: 3%
+    Top suffixes: y(15), iin(1)
+    Signature roots: chd, chefy, chek, chockhy, dalshey, kedal, keeos, oteedyl (+6 more)
+
+  Sagittarius (Fire/Mutable):
+    Roots: 26 total, 12 UNIQUE to this sign
+    o-rate: 43%  -y: 43%  -iin: 7%
+    Top suffixes: y(13), iin(2)
+    Signature roots: eeed, eeeod, eer, fals, keear, keee, keor, odees (+4 more)
+
+  Pisces (Water/Mutable):
+    Roots: 26 total, 15 UNIQUE to this sign
+    o-rate: 73%  -y: 33%  -iin: 3%
+    Top suffixes: y(10), g(1)
+    Signature roots: alols, kaldal, kees, kod, kola, olaram, opysam, otar? (+7 more)
+
+  Sign clustering by root overlap:
+  Top root-sharing pairs:
+    Scorpio↔Sagittarius: J=0.130 (6 roots) [semi-sextile]
+    Leo↔Sagittarius: J=0.102 (5 roots) [trine]
+    Taurus↔Gemini: J=0.082 (4 roots) [semi-sextile]
+    Gemini↔Leo: J=0.080 (4 roots) [sextile]
+    Leo↔Pisces: J=0.080 (4 roots) [quincunx]
+  Bottom root-sharing pairs:
+    Aries↔Virgo: J=0.000 [quincunx]
+    Taurus↔Sagittarius: J=0.000 [quincunx]
+    Gemini↔Virgo: J=0.000 [square]
+
+======================================================================
+PHASE 6: Label Network Topology — hubs, bridges, isolates
+======================================================================
+
+  Label topology:
+    Hub labels (3+ signs):        4
+    Bridge labels (2 signs):     20
+    Isolate labels (1 sign):    239
+    Total unique labels:        263
+
+  HUB LABELS (appear in 3+ signs):
+  Label                    Signs Root           Suffix   Degree positions
+  ------------------------ ----- -------------- -------- ------------------------------
+  otaly                        4 tal            y        Ari°5, Leo°29, Sco°1, Sco°5, Pis°14
+  okal                         3 kal                     Gem°8, Gem°10, Lib°15, Sag°25
+  oky                          3 k              y        Leo°20, Sco°24, Sag°23
+  okeody                       3 keod           y        Vir°14, Sco°6, Sag°5
+
+  Bridge connectivity (which sign-pairs are linked by shared labels?):
+    Gemini↔Leo: 3 shared labels (sextile)
+    Gemini↔Taurus: 2 shared labels (semi-sextile)
+    Libra↔Pisces: 2 shared labels (quincunx)
+    Libra↔Scorpio: 2 shared labels (semi-sextile)
+    Sagittarius↔Scorpio: 2 shared labels (semi-sextile)
+    Aries↔Taurus: 1 shared labels (semi-sextile)
+    Aries↔Pisces: 1 shared labels (semi-sextile)
+    Gemini↔Pisces: 1 shared labels (square)
+    Cancer↔Gemini: 1 shared labels (semi-sextile)
+    Gemini↔Scorpio: 1 shared labels (quincunx)
+
+  Bridge labels by aspect type:
+  Aspect            Bridges  % bridges  Pairs Expected %    Ratio
+  ---------------- -------- ---------- ------ ---------- --------
+  semi-sextile           10      50.0%      9      20.0%    2.50× ◄
+  sextile                 4      20.0%      8      17.8%    1.12×
+  square                  2      10.0%      8      17.8%    0.56× ◄
+  trine                   0       0.0%      8      17.8%    0.00× ◄
+  quincunx                4      20.0%      8      17.8%    1.12×
+  opposition              0       0.0%      4       8.9%    0.00× ◄
+
+======================================================================
+PHASE 7: CROSS-SIGN NETWORK SYNTHESIS
+======================================================================
+
+  ┌──────────────────────────────────────────────────────────────────────┐
+  │  CROSS-SIGN LABEL NETWORK: RESULTS                                  │
+  │                                                                      │
+  │  NETWORK STRUCTURE:                                                  │
+  │    Hub labels (3+ signs):      4                                      │
+  │    Bridge labels (2 signs):   20                                      │
+  │    Isolate labels (1 sign):  239                                      │
+  │    → 91% of labels are UNIQUE to a single sign               │
+  │                                                                      │
+  │  ASTROLOGICAL GEOMETRY:                                              │
+  │    Overall mean Jaccard:    0.0139                                  │
+  │    Same element:            0.0088                                  │
+  │    Different element:       0.0150                                  │
+  │    Best aspect:  semi-sextile   J=0.0260                         │
+  │    Worst aspect: opposition     J=0.0046                         │
+  │                                                                      │
+  │  INTERPRETATION:                                                     │
+  │  If same-element >> different-element → TRIPLICITY matters           │
+  │  If aspect distance correlates → ANGULAR geometry matters            │
+  │  If both are flat → labels are assigned by DEGREE POSITION alone     │
+  │  (i.e., "degree 15 in any sign" encodes the same concept)           │
+  └──────────────────────────────────────────────────────────────────────┘
+
+  Analysis complete.

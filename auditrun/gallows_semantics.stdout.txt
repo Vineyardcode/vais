@@ -1,0 +1,675 @@
+Extracting corpus for gallows semantic clustering...
+
+Total tokens: 39531
+
+========================================================================
+ANALYSIS 1: ROOT → GALLOWS TYPE PROFILES
+========================================================================
+
+  Roots with ≥ 20 occurrences: 269
+
+  Root             Total   Bare  Bare%      t      k    f     p  Dominant   Ratio
+  --------------------------------------------------------------------------------
+  daiin              916    901    98%      4      2    0     9         p    60%
+  ol                 875    597    68%    134     90   10    44         t    48%
+  aiin               744    565    76%     66     96    3    15         k    53%
+  or                 630    440    70%     97     60    7    26         t    51%
+  chey               622    373    60%     65    159    7    18         k    64%
+  ar                 598    436    73%     72     69    5    16         t    44%
+  chedy              568    530    93%     12     19    1     6         k    50%
+  qoedy              516      8     2%    124    338    9    37         k    67%
+  shedy              473    455    96%      3     10    4     1         k    56%
+  chy                469    176    38%    107    166    3    17         k    57%
+  qoy                463      9     2%    172    254    3    26         k    56%
+  oaiin              458     26     6%    177    230    5    22         k    53%
+  oedy               455      3     1%    230    160    7    57         t    51%
+  chol               437    415    95%      7     10    2     3         k    45%
+  qoeedy             423     21     5%     81    318    0     3         k    79%
+  shey               422    291    69%     38     86    1     7         k    65%
+  oy                 419      8     2%    207    182    9    33         t    48%
+  qoaiin             413     24     6%     92    286    2     9         k    74%
+  qoeey              399     18     5%     48    327    1     8         k    85%
+  oar                378     14     4%    181    159   13    17         t    49%
+  dar                377    362    96%      1      4    1     9         p    60%
+  oeey               373      9     2%    158    200    0     9         k    54%
+  dy                 373    286    77%     33     36    4    16         k    40%
+  qoain              359      7     2%     63    288    1     0         k    82%
+  al                 352    271    77%     40     34    0     7         t    49%
+  oal                341      2     1%    159    162    3    15         k    48%
+  y                  317      0     0%    165    124   15    19         t    51%
+  oey                282      0     0%    122    122    4    39         t    43%
+  qoar               282      9     3%     76    186    0    11         k    68%
+  cheey              281    197    70%     17     59    2     7         k    69%
+  qoal               281      6     2%     64    208    1     2         k    76%
+  oain               271     11     4%    109    149    0     5         k    57%
+  dal                269    260    97%      3      2    0     4         p    44%
+  edy                252      0     0%    107     84   12    51         t    42%
+  ool                245      0     0%    129    108    2    13         t    51%
+  qoey               241      0     0%     52    173    3    14         k    71%
+  chor               237    225    95%      4      5    1     2         k    42%
+  ody                230     53    23%     85     46   11    38         t    47%
+  dain               230    225    98%      3      2    0     0         t    60%
+  oeedy              229      9     4%    107    110    0     3         k    50%
+  ey                 228      2     1%    116     83    7    25         t    50%
+  shy                227    103    45%     42     79    1     2         k    64%
+  qool               221      4     2%     63    132    6    16         k    61%
+  sheey              213    162    76%     13     36    2     0         k    71%
+  shol               197    192    97%      2      3    0     0         k    60%
+  cheol              191    181    95%      0      7    2     1         k    70%
+  chdy               191    162    85%      9     15    1     4         k    52%
+  choy               189     10     5%     78     85    5    11         k    47%
+  ain                183    120    66%     14     49    0     0         k    78%
+  qol                162    145    90%      2     12    1     2         k    71%
+  eey                149      5     3%     51     80    9     9         k    54%
+  qody               146     19    13%     33     69    4    21         k    54%
+  oor                140      2     1%     65     57    5    13         t    46%
+  saiin              139    135    97%      0      3    0     1         k    75%
+  sho                138    127    92%      3      7    1     0         k    64%
+  dair               134    126    94%      0      1    0     7         p    88%
+  yaiin              127      6     5%     55     62    1     3         k    51%
+  am                 126    102    81%      9     12    2     1         k    50%
+  sheol              125    118    94%      0      6    0     1         k    86%
+  dol                119    112    94%      3      1    0     3         t    43%
+  oly                117     60    51%     10     38    2    14         k    59%
+  chody              117    103    88%      7      3    3     1         t    50%
+  lchedy             117    116    99%      0      0    0     1         p   100%
+  oeol               116      1     1%     39     67    2     7         k    58%
+  air                115     86    75%     13     12    0     4         t    45%
+  odaiin             110     72    65%     14      3    3    18         p    47%
+  shor               109    104    95%      2      3    0     0         k    60%
+  char               108     87    81%      5     10    0     6         k    48%
+  cheody             108     98    91%      4      6    0     0         k    60%
+  olaiin             108     59    55%      3     37    2    10         k    71%
+  yeey               108      0     0%     44     65    0     1         k    59%
+  qoor               106     13    12%     41     44    1     7         k    47%
+  cho                104     85    82%      7      8    2     2         k    42%
+  oam                103      2     2%     61     37    0     3         t    60%
+  cheor              102     98    96%      1      1    0     2         p    50%
+  dam                101     97    96%      2      0    0     2         t    50%
+  o                  100      0     0%     57     32    3    10         t    56%
+  yy                  98      2     2%     50     43    1     4         t    51%
+  oeody               98      0     0%     53     41    2     4         t    53%
+  sheedy              96     87    91%      1      7    0     1         k    78%
+
+  Roots exclusive to ONE gallows type (≥ 5 gallows occurrences): 2
+    sheal            only 'k'  (7 gallows / 25 total)
+    lor              only 'k'  (6 gallows / 45 total)
+
+========================================================================
+ANALYSIS 2: SECTION-DEPENDENT GALLOWS SHIFTS
+========================================================================
+
+  Roots with DIFFERENT dominant gallows across sections: 74
+
+  Top 30 shifting roots:
+
+    'ol' (total=875):
+      bio           dominant=p  (t=10 k=4 f=0 p=11)  total_gal=25
+      cosmo         dominant=t  (t=6 k=2 f=0 p=4)  total_gal=12
+      herbal-A      dominant=t  (t=79 k=64 f=6 p=12)  total_gal=161
+      herbal-B      dominant=t  (t=7 k=5 f=1 p=0)  total_gal=13
+      pharma        dominant=t  (t=14 k=9 f=2 p=6)  total_gal=31
+      text          dominant=p  (t=9 k=4 f=1 p=10)  total_gal=24
+      zodiac        dominant=t  (t=9 k=2 f=0 p=1)  total_gal=12
+
+    'aiin' (total=744):
+      bio           dominant=k  (t=3 k=7 f=0 p=1)  total_gal=11
+      cosmo         dominant=k  (t=10 k=16 f=0 p=2)  total_gal=28
+      herbal-A      dominant=t  (t=33 k=33 f=3 p=9)  total_gal=78
+      text          dominant=k  (t=17 k=36 f=0 p=3)  total_gal=56
+
+    'or' (total=630):
+      bio           dominant=t  (t=7 k=1 f=1 p=4)  total_gal=13
+      herbal-A      dominant=t  (t=67 k=41 f=2 p=11)  total_gal=121
+      herbal-B      dominant=t  (t=10 k=5 f=0 p=0)  total_gal=15
+      pharma        dominant=k  (t=7 k=9 f=2 p=2)  total_gal=20
+      text          dominant=p  (t=3 k=4 f=2 p=7)  total_gal=16
+
+    'chey' (total=622):
+      bio           dominant=k  (t=24 k=40 f=0 p=3)  total_gal=67
+      cosmo         dominant=k  (t=0 k=8 f=2 p=4)  total_gal=14
+      herbal-A      dominant=k  (t=22 k=50 f=3 p=3)  total_gal=78
+      herbal-B      dominant=t  (t=2 k=2 f=0 p=1)  total_gal=5
+      pharma        dominant=k  (t=1 k=8 f=0 p=1)  total_gal=10
+      text          dominant=k  (t=14 k=40 f=1 p=3)  total_gal=58
+      zodiac        dominant=k  (t=2 k=11 f=1 p=3)  total_gal=17
+
+    'ar' (total=598):
+      bio           dominant=t  (t=8 k=8 f=0 p=4)  total_gal=20
+      cosmo         dominant=t  (t=12 k=10 f=0 p=2)  total_gal=24
+      herbal-A      dominant=t  (t=27 k=26 f=4 p=6)  total_gal=63
+      herbal-B      dominant=t  (t=6 k=2 f=0 p=1)  total_gal=9
+      text          dominant=k  (t=18 k=21 f=1 p=3)  total_gal=43
+
+    'chy' (total=469):
+      bio           dominant=k  (t=27 k=44 f=0 p=1)  total_gal=72
+      cosmo         dominant=t  (t=6 k=6 f=2 p=2)  total_gal=16
+      herbal-A      dominant=k  (t=36 k=59 f=0 p=6)  total_gal=101
+      herbal-B      dominant=k  (t=4 k=8 f=0 p=0)  total_gal=12
+      pharma        dominant=t  (t=6 k=3 f=0 p=0)  total_gal=9
+      text          dominant=k  (t=26 k=42 f=1 p=7)  total_gal=76
+      zodiac        dominant=k  (t=2 k=4 f=0 p=1)  total_gal=7
+
+    'qoy' (total=463):
+      bio           dominant=k  (t=34 k=68 f=1 p=1)  total_gal=104
+      cosmo         dominant=t  (t=14 k=12 f=0 p=8)  total_gal=34
+      herbal-A      dominant=k  (t=86 k=91 f=1 p=12)  total_gal=190
+      herbal-B      dominant=k  (t=5 k=12 f=0 p=0)  total_gal=17
+      pharma        dominant=k  (t=5 k=18 f=0 p=0)  total_gal=23
+      text          dominant=k  (t=27 k=50 f=1 p=4)  total_gal=82
+      zodiac        dominant=k  (t=1 k=3 f=0 p=1)  total_gal=5
+
+    'oaiin' (total=458):
+      bio           dominant=k  (t=12 k=33 f=0 p=0)  total_gal=45
+      cosmo         dominant=t  (t=26 k=14 f=0 p=6)  total_gal=46
+      herbal-A      dominant=k  (t=39 k=59 f=2 p=5)  total_gal=105
+      herbal-B      dominant=k  (t=3 k=9 f=1 p=0)  total_gal=13
+      pharma        dominant=k  (t=4 k=9 f=2 p=2)  total_gal=17
+      text          dominant=k  (t=79 k=98 f=0 p=5)  total_gal=182
+      zodiac        dominant=t  (t=14 k=8 f=0 p=4)  total_gal=26
+
+    'oedy' (total=455):
+      bio           dominant=t  (t=61 k=49 f=3 p=16)  total_gal=129
+      cosmo         dominant=t  (t=48 k=14 f=2 p=8)  total_gal=72
+      herbal-A      dominant=k  (t=26 k=31 f=0 p=5)  total_gal=62
+      herbal-B      dominant=k  (t=3 k=5 f=0 p=0)  total_gal=8
+      text          dominant=t  (t=85 k=54 f=2 p=28)  total_gal=169
+      zodiac        dominant=t  (t=7 k=7 f=0 p=0)  total_gal=14
+
+    'oy' (total=419):
+      bio           dominant=t  (t=23 k=17 f=0 p=1)  total_gal=41
+      cosmo         dominant=t  (t=18 k=14 f=2 p=4)  total_gal=38
+      herbal-A      dominant=t  (t=95 k=85 f=6 p=16)  total_gal=202
+      herbal-B      dominant=t  (t=17 k=16 f=0 p=1)  total_gal=34
+      pharma        dominant=k  (t=1 k=11 f=0 p=1)  total_gal=13
+      text          dominant=t  (t=36 k=20 f=1 p=8)  total_gal=65
+      zodiac        dominant=k  (t=17 k=19 f=0 p=2)  total_gal=38
+
+    'oar' (total=378):
+      bio           dominant=k  (t=22 k=23 f=0 p=2)  total_gal=47
+      cosmo         dominant=t  (t=32 k=22 f=2 p=0)  total_gal=56
+      herbal-A      dominant=k  (t=32 k=42 f=6 p=2)  total_gal=82
+      herbal-B      dominant=k  (t=7 k=10 f=1 p=1)  total_gal=19
+      pharma        dominant=k  (t=7 k=8 f=0 p=2)  total_gal=17
+      text          dominant=t  (t=62 k=43 f=2 p=7)  total_gal=114
+      zodiac        dominant=t  (t=19 k=11 f=2 p=3)  total_gal=35
+
+    'oeey' (total=373):
+      bio           dominant=k  (t=18 k=19 f=0 p=3)  total_gal=40
+      cosmo         dominant=t  (t=14 k=0 f=0 p=2)  total_gal=16
+      herbal-A      dominant=k  (t=9 k=20 f=0 p=1)  total_gal=30
+      herbal-B      dominant=t  (t=7 k=1 f=0 p=1)  total_gal=9
+      pharma        dominant=k  (t=8 k=29 f=0 p=0)  total_gal=37
+      text          dominant=k  (t=66 k=103 f=0 p=1)  total_gal=170
+      zodiac        dominant=t  (t=36 k=28 f=0 p=1)  total_gal=65
+
+    'dy' (total=373):
+      bio           dominant=t  (t=5 k=5 f=0 p=3)  total_gal=13
+      cosmo         dominant=t  (t=10 k=6 f=0 p=0)  total_gal=16
+      herbal-A      dominant=k  (t=10 k=18 f=2 p=7)  total_gal=37
+      text          dominant=t  (t=7 k=4 f=2 p=5)  total_gal=18
+
+    'al' (total=352):
+      bio           dominant=t  (t=14 k=5 f=0 p=1)  total_gal=20
+      cosmo         dominant=t  (t=8 k=2 f=0 p=0)  total_gal=10
+      herbal-A      dominant=k  (t=12 k=13 f=0 p=2)  total_gal=27
+      text          dominant=k  (t=1 k=12 f=0 p=4)  total_gal=17
+      zodiac        dominant=t  (t=5 k=2 f=0 p=0)  total_gal=7
+
+    'oal' (total=341):
+      bio           dominant=k  (t=23 k=26 f=0 p=1)  total_gal=50
+      cosmo         dominant=t  (t=28 k=8 f=0 p=0)  total_gal=36
+      herbal-A      dominant=k  (t=33 k=56 f=1 p=6)  total_gal=96
+      herbal-B      dominant=k  (t=6 k=7 f=0 p=0)  total_gal=13
+      pharma        dominant=k  (t=6 k=9 f=1 p=0)  total_gal=16
+      text          dominant=t  (t=52 k=43 f=1 p=6)  total_gal=102
+      zodiac        dominant=k  (t=11 k=13 f=0 p=2)  total_gal=26
+
+    'y' (total=317):
+      bio           dominant=t  (t=7 k=4 f=0 p=0)  total_gal=11
+      cosmo         dominant=f  (t=4 k=0 f=6 p=0)  total_gal=10
+      herbal-A      dominant=t  (t=141 k=95 f=9 p=16)  total_gal=261
+      herbal-B      dominant=k  (t=2 k=3 f=0 p=0)  total_gal=5
+      pharma        dominant=k  (t=4 k=8 f=0 p=0)  total_gal=12
+      text          dominant=k  (t=2 k=10 f=0 p=2)  total_gal=14
+      zodiac        dominant=t  (t=5 k=4 f=0 p=1)  total_gal=10
+
+    'oey' (total=282):
+      bio           dominant=t  (t=24 k=19 f=0 p=5)  total_gal=48
+      cosmo         dominant=t  (t=20 k=2 f=0 p=8)  total_gal=30
+      herbal-A      dominant=t  (t=29 k=29 f=3 p=8)  total_gal=69
+      herbal-B      dominant=k  (t=0 k=7 f=0 p=0)  total_gal=7
+      pharma        dominant=k  (t=2 k=19 f=0 p=1)  total_gal=22
+      text          dominant=k  (t=27 k=33 f=1 p=14)  total_gal=75
+      zodiac        dominant=t  (t=20 k=13 f=0 p=3)  total_gal=36
+
+    'cheey' (total=281):
+      bio           dominant=k  (t=5 k=13 f=0 p=0)  total_gal=18
+      herbal-A      dominant=k  (t=4 k=23 f=1 p=2)  total_gal=30
+      text          dominant=k  (t=4 k=13 f=1 p=2)  total_gal=20
+      zodiac        dominant=t  (t=4 k=4 f=0 p=1)  total_gal=9
+
+    'oain' (total=271):
+      bio           dominant=k  (t=25 k=47 f=0 p=1)  total_gal=73
+      cosmo         dominant=t  (t=12 k=2 f=0 p=0)  total_gal=14
+      herbal-A      dominant=k  (t=7 k=19 f=0 p=1)  total_gal=27
+      herbal-B      dominant=t  (t=10 k=8 f=0 p=0)  total_gal=18
+      text          dominant=k  (t=54 k=70 f=0 p=2)  total_gal=126
+
+    'edy' (total=252):
+      bio           dominant=t  (t=39 k=22 f=3 p=19)  total_gal=83
+      cosmo         dominant=t  (t=16 k=8 f=0 p=8)  total_gal=32
+      herbal-A      dominant=k  (t=18 k=20 f=4 p=5)  total_gal=47
+      herbal-B      dominant=t  (t=4 k=4 f=0 p=1)  total_gal=9
+      text          dominant=k  (t=28 k=30 f=5 p=18)  total_gal=81
+
+    'ool' (total=245):
+      bio           dominant=t  (t=13 k=9 f=0 p=1)  total_gal=23
+      cosmo         dominant=t  (t=12 k=4 f=0 p=0)  total_gal=16
+      herbal-A      dominant=t  (t=60 k=36 f=2 p=7)  total_gal=105
+      herbal-B      dominant=t  (t=6 k=3 f=0 p=1)  total_gal=10
+      pharma        dominant=k  (t=12 k=32 f=0 p=2)  total_gal=46
+      text          dominant=t  (t=12 k=8 f=0 p=2)  total_gal=22
+      zodiac        dominant=k  (t=14 k=16 f=0 p=0)  total_gal=30
+
+    'ody' (total=230):
+      bio           dominant=t  (t=8 k=7 f=2 p=3)  total_gal=20
+      cosmo         dominant=t  (t=12 k=6 f=2 p=10)  total_gal=30
+      herbal-A      dominant=t  (t=30 k=15 f=4 p=10)  total_gal=59
+      herbal-B      dominant=t  (t=12 k=3 f=2 p=1)  total_gal=18
+      pharma        dominant=t  (t=5 k=0 f=0 p=0)  total_gal=5
+      text          dominant=p  (t=12 k=10 f=1 p=13)  total_gal=36
+      zodiac        dominant=t  (t=6 k=5 f=0 p=1)  total_gal=12
+
+    'oeedy' (total=229):
+      bio           dominant=k  (t=24 k=40 f=0 p=0)  total_gal=64
+      cosmo         dominant=t  (t=8 k=0 f=0 p=0)  total_gal=8
+      herbal-A      dominant=k  (t=7 k=14 f=0 p=0)  total_gal=21
+      herbal-B      dominant=k  (t=2 k=3 f=0 p=0)  total_gal=5
+      text          dominant=t  (t=58 k=47 f=0 p=3)  total_gal=108
+      zodiac        dominant=t  (t=8 k=5 f=0 p=0)  total_gal=13
+
+    'ey' (total=228):
+      bio           dominant=t  (t=8 k=8 f=0 p=6)  total_gal=22
+      cosmo         dominant=t  (t=12 k=2 f=0 p=2)  total_gal=16
+      herbal-A      dominant=k  (t=41 k=42 f=3 p=8)  total_gal=94
+      herbal-B      dominant=t  (t=15 k=5 f=0 p=2)  total_gal=22
+      pharma        dominant=t  (t=16 k=15 f=3 p=4)  total_gal=38
+      text          dominant=t  (t=16 k=7 f=1 p=1)  total_gal=25
+      zodiac        dominant=t  (t=8 k=4 f=0 p=2)  total_gal=14
+
+    'qool' (total=221):
+      bio           dominant=k  (t=7 k=23 f=0 p=2)  total_gal=32
+      cosmo         dominant=t  (t=6 k=6 f=2 p=6)  total_gal=20
+      herbal-A      dominant=k  (t=36 k=44 f=1 p=2)  total_gal=83
+      herbal-B      dominant=k  (t=2 k=6 f=1 p=0)  total_gal=9
+      pharma        dominant=k  (t=3 k=36 f=1 p=2)  total_gal=42
+      text          dominant=k  (t=9 k=14 f=1 p=4)  total_gal=28
+
+    'chdy' (total=191):
+      bio           dominant=k  (t=1 k=5 f=1 p=1)  total_gal=8
+      cosmo         dominant=t  (t=4 k=4 f=0 p=2)  total_gal=10
+      herbal-A      dominant=k  (t=2 k=4 f=0 p=1)  total_gal=7
+
+    'choy' (total=189):
+      cosmo         dominant=t  (t=8 k=2 f=0 p=0)  total_gal=10
+      herbal-A      dominant=t  (t=52 k=45 f=1 p=6)  total_gal=104
+      herbal-B      dominant=k  (t=0 k=4 f=1 p=0)  total_gal=5
+      pharma        dominant=k  (t=3 k=14 f=1 p=1)  total_gal=19
+      text          dominant=k  (t=10 k=11 f=0 p=2)  total_gal=23
+      zodiac        dominant=k  (t=4 k=9 f=2 p=2)  total_gal=17
+
+    'ain' (total=183):
+      bio           dominant=k  (t=3 k=16 f=0 p=0)  total_gal=19
+      cosmo         dominant=k  (t=0 k=6 f=0 p=0)  total_gal=6
+      herbal-A      dominant=t  (t=5 k=4 f=0 p=0)  total_gal=9
+      text          dominant=k  (t=6 k=20 f=0 p=0)  total_gal=26
+
+    'eey' (total=149):
+      bio           dominant=t  (t=6 k=4 f=1 p=0)  total_gal=11
+      cosmo         dominant=f  (t=2 k=2 f=4 p=2)  total_gal=10
+      herbal-A      dominant=k  (t=15 k=24 f=0 p=4)  total_gal=43
+      herbal-B      dominant=t  (t=3 k=3 f=2 p=0)  total_gal=8
+      pharma        dominant=k  (t=9 k=15 f=0 p=1)  total_gal=25
+      text          dominant=k  (t=11 k=25 f=2 p=1)  total_gal=39
+      zodiac        dominant=k  (t=5 k=7 f=0 p=1)  total_gal=13
+
+    'qody' (total=146):
+      bio           dominant=k  (t=2 k=13 f=0 p=3)  total_gal=18
+      cosmo         dominant=k  (t=12 k=16 f=2 p=2)  total_gal=32
+      herbal-A      dominant=k  (t=4 k=17 f=0 p=2)  total_gal=23
+      herbal-B      dominant=t  (t=2 k=2 f=0 p=1)  total_gal=5
+      text          dominant=k  (t=13 k=18 f=2 p=13)  total_gal=46
+
+  Roots with STABLE gallows (same dominant in ≥ 3 sections): 24
+    'chedy'  always 'k'  (3 sections)
+    'qoedy'  always 'k'  (4 sections)
+    'qoeedy'  always 'k'  (4 sections)
+    'shey'  always 'k'  (4 sections)
+    'qoaiin'  always 'k'  (5 sections)
+    'qoeey'  always 'k'  (7 sections)
+    'qoain'  always 'k'  (5 sections)
+    'qoar'  always 'k'  (6 sections)
+    'qoal'  always 'k'  (6 sections)
+    'qoey'  always 'k'  (6 sections)
+    'shy'  always 'k'  (4 sections)
+    'sheey'  always 'k'  (4 sections)
+    'olaiin'  always 'k'  (3 sections)
+    'eedy'  always 'k'  (3 sections)
+    'oldy'  always 'k'  (4 sections)
+    'laiin'  always 'k'  (3 sections)
+    'oleedy'  always 'k'  (3 sections)
+    'oleey'  always 'k'  (3 sections)
+    'olar'  always 'k'  (3 sections)
+    'oeeey'  always 'k'  (3 sections)
+
+========================================================================
+ANALYSIS 3: GALLOWS TYPE SEMANTIC PROFILES
+========================================================================
+
+  ── GALLOWS 't' (total: 7420) ──
+  Section distribution:
+    herbal-A       2256  (30.4%)  ███████████████
+    herbal-B        347  ( 4.7%)  ██
+    pharma          349  ( 4.7%)  ██
+    bio             988  (13.3%)  ██████
+    cosmo           872  (11.8%)  █████
+    text           1833  (24.7%)  ████████████
+    zodiac          775  (10.4%)  █████
+  Tier distribution:
+    simple         5202  (70.1%)
+    bench           974  (13.1%)
+    compound       1244  (16.8%)
+  Locus distribution:
+    paragraph      6776  (91.3%)
+    ring            532  ( 7.2%)
+    label            10  ( 0.1%)
+    nymph           102  ( 1.4%)
+  Top 10 host roots (stripped):
+    oedy               230  ( 3.1%)
+    oy                 207  ( 2.8%)
+    oar                181  ( 2.4%)
+    oaiin              177  ( 2.4%)
+    qoy                172  ( 2.3%)
+    oal                159  ( 2.1%)
+    oeey               158  ( 2.1%)
+    ol                 134  ( 1.8%)
+    ool                129  ( 1.7%)
+    qoedy              124  ( 1.7%)
+
+  ── GALLOWS 'k' (total: 11543) ──
+  Section distribution:
+    herbal-A       2824  (24.5%)  ████████████
+    herbal-B        439  ( 3.8%)  █
+    pharma          973  ( 8.4%)  ████
+    bio            2259  (19.6%)  █████████
+    cosmo           784  ( 6.8%)  ███
+    text           3446  (29.9%)  ██████████████
+    zodiac          818  ( 7.1%)  ███
+  Tier distribution:
+    simple         9270  (80.3%)
+    bench           935  ( 8.1%)
+    compound       1338  (11.6%)
+  Locus distribution:
+    paragraph     11035  (95.6%)
+    ring            393  ( 3.4%)
+    label            11  ( 0.1%)
+    nymph           104  ( 0.9%)
+  Top 10 host roots (stripped):
+    qoedy              338  ( 2.9%)
+    qoeey              327  ( 2.8%)
+    qoeedy             318  ( 2.8%)
+    qoain              288  ( 2.5%)
+    qoaiin             286  ( 2.5%)
+    qoy                254  ( 2.2%)
+    oaiin              230  ( 2.0%)
+    qoal               208  ( 1.8%)
+    oeey               200  ( 1.7%)
+    qoar               186  ( 1.6%)
+
+  ── GALLOWS 'f' (total: 523) ──
+  Section distribution:
+    herbal-A        198  (37.9%)  ██████████████████
+    herbal-B         34  ( 6.5%)  ███
+    pharma           46  ( 8.8%)  ████
+    bio              39  ( 7.5%)  ███
+    cosmo            64  (12.2%)  ██████
+    text            102  (19.5%)  █████████
+    zodiac           40  ( 7.6%)  ███
+  Tier distribution:
+    simple          218  (41.7%)
+    bench            82  (15.7%)
+    compound        223  (42.6%)
+  Locus distribution:
+    paragraph       485  (92.7%)
+    ring             15  ( 2.9%)
+    label             1  ( 0.2%)
+    nymph            22  ( 4.2%)
+  Top 10 host roots (stripped):
+    oar                 13  ( 2.5%)
+    edy                 12  ( 2.3%)
+    ody                 11  ( 2.1%)
+    ol                  10  ( 1.9%)
+    oy                   9  ( 1.7%)
+    qoedy                9  ( 1.7%)
+    eey                  9  ( 1.7%)
+    ey                   7  ( 1.3%)
+    or                   7  ( 1.3%)
+    oedy                 7  ( 1.3%)
+
+  ── GALLOWS 'p' (total: 1770) ──
+  Section distribution:
+    herbal-A        461  (26.0%)  █████████████
+    herbal-B         59  ( 3.3%)  █
+    pharma          106  ( 6.0%)  ██
+    bio             208  (11.8%)  █████
+    cosmo           248  (14.0%)  ███████
+    text            582  (32.9%)  ████████████████
+    zodiac          106  ( 6.0%)  ██
+  Tier distribution:
+    simple          652  (36.8%)
+    bench           223  (12.6%)
+    compound        895  (50.6%)
+  Locus distribution:
+    paragraph      1669  (94.3%)
+    ring             80  ( 4.5%)
+    label             1  ( 0.1%)
+    nymph            20  ( 1.1%)
+  Top 10 host roots (stripped):
+    oedy                57  ( 3.2%)
+    edy                 51  ( 2.9%)
+    ol                  44  ( 2.5%)
+    oey                 39  ( 2.2%)
+    ody                 38  ( 2.1%)
+    qoedy               37  ( 2.1%)
+    oy                  33  ( 1.9%)
+    or                  26  ( 1.5%)
+    qoy                 26  ( 1.5%)
+    ey                  25  ( 1.4%)
+
+  ── CROSS-GALLOWS ROOT SHARING ──
+  k ∩ t: 243 shared, 220 only-k, 65 only-t
+  k ∩ p: 96 shared, 367 only-k, 22 only-p
+  f ∩ t: 36 shared, 6 only-f, 272 only-t
+  f ∩ k: 41 shared, 1 only-f, 422 only-k
+  f ∩ p: 34 shared, 8 only-f, 84 only-p
+  p ∩ t: 99 shared, 19 only-p, 209 only-t
+
+  Jaccard similarity between gallows root sets:
+    k ~ t: 0.460
+    k ~ p: 0.198
+    f ~ t: 0.115
+    f ~ k: 0.088
+    f ~ p: 0.270
+    p ~ t: 0.303
+
+========================================================================
+ANALYSIS 4: BENCH vs SIMPLE GALLOWS — ROOT DIFFERENCES
+========================================================================
+
+  Roots preferring BENCH gallows (bench > 40% of all gallows):
+  Root             Bench  Simple  Total  Bench%
+  hy                  12       0     12  100.0%
+  shedy               10       0     10  100.0%
+  chdy                28       1     29   96.6%
+  chhy                19       2     21   90.5%
+  chy                241      33    274   88.0%
+  dy                  15       3     18   83.3%
+  shy                 96      20    116   82.8%
+  ey                 108      41    149   72.5%
+  chedy               23      10     33   69.7%
+  qody                 8       5     13   61.5%
+  shey                73      48    121   60.3%
+  om                   6       4     10   60.0%
+  shoy                20      16     36   55.6%
+  os                   7       6     13   53.8%
+  eo                  16      14     30   53.3%
+  chey               122     107    229   53.3%
+  ody                 28      27     55   50.9%
+  cheoey               7       7     14   50.0%
+  od                   5       5     10   50.0%
+  cheoy               17      18     35   48.6%
+
+  Roots preferring SIMPLE gallows (bench < 10% of all gallows):
+  qol                  0      16     16    0.0%
+  oees                 0      37     37    0.0%
+  oaram                0      11     11    0.0%
+  oodaiin              0      12     12    0.0%
+  oeeey                0      39     39    0.0%
+  choain               0      16     16    0.0%
+  oalal                0      12     12    0.0%
+  oeed                 0      12     12    0.0%
+  oeodar               0      11     11    0.0%
+  oair                 0      54     54    0.0%
+  leey                 0      41     41    0.0%
+  oleeey               0      15     15    0.0%
+  oaly                 0      53     53    0.0%
+  eedy                 0      80     80    0.0%
+  yam                  0      21     21    0.0%
+  eeedy                0      10     10    0.0%
+  oeeol                0      24     24    0.0%
+  oeedy                0     216    216    0.0%
+  cheain               0      14     14    0.0%
+  lain                 0      36     36    0.0%
+
+  Section distribution of bench-preferring roots vs simple-preferring:
+
+  Section       Bench-pref  Simple-pref
+  herbal-A           31.3%        20.3%
+  herbal-B            4.0%         3.0%
+  pharma              6.7%         6.7%
+  bio                23.2%        20.3%
+  cosmo               9.6%        10.5%
+  text               20.9%        32.3%
+  zodiac              4.3%         6.9%
+
+========================================================================
+ANALYSIS 5: DETERMINATIVE PARADIGM TABLES
+========================================================================
+
+  Roots with richest paradigms (most distinct gallowed forms):
+
+  Root          Forms  Total  Attested forms
+  ----------------------------------------------------------------------
+  oy               34    419  oty(123), oky(107), otchy(46), okchy(31), opchy(14), okshy(13), ockhy(12), octhy(12)
+  ody              30    230  ody(53), otchdy(35), okchdy(24), opchdy(22), cthody(18), tody(12), tchody(11), kody(7)
+  ey               23    228  cthey(56), ckhey(30), tchey(25), kchey(23), tey(17), key(16), cphey(12), tshey(10)
+  eey              21    149  keey(56), teey(21), ctheey(17), ckheey(11), tcheey(7), fcheey(6), eey(5), kcheey(4)
+  oar              21    378  otar(165), okar(151), oar(14), opar(9), ofar(7), otchar(7), okchar(4), toar(3)
+  oey              21    282  okey(65), otey(62), otchey(36), opchey(33), okchey(33), otshey(12), okshey(10), ockhey(9)
+  oly              21    117  oly(60), olky(24), ctholy(4), pcholy(3), olkchy(3), poly(2), pcholky(2), koly(2)
+  chey             20    622  chey(373), cheky(64), checkhy(48), chckhey(32), checthy(30), chety(22), chepy(10), chkey(9)
+  ool              20    245  otol(87), okol(85), otchol(32), okchol(15), opchol(6), opol(4), otshol(2), ockhol(2)
+  oldy             20     66  oldy(30), koldy(8), olkchdy(7), fcholdy(2), cpholdy(2), toldy(2), olpchdy(2), pcholkchdy(1)
+  cheey            19    281  cheey(197), cheeky(25), chkeey(13), checkhey(11), chekey(7), chetey(6), checthey(3), cheety(3)
+  ol               19    875  ol(597), cthol(59), tol(48), kol(39), kchol(27), pol(21), ckhol(21), tchol(19)
+  dy               19    373  dy(286), kchdy(23), tchdy(17), pchdy(10), cthdy(8), tshdy(6), kshdy(5), ckhdy(4)
+  or               18    630  or(440), cthor(44), kor(27), tor(25), tchor(22), kchor(20), pchor(13), ckhor(10)
+  oor              17    140  otor(42), okor(34), okchor(19), otchor(16), opor(7), opchor(6), octhor(3), oor(2)
+  oaiin            17    458  okaiin(225), otaiin(169), oaiin(26), opaiin(18), ofaiin(4), toaiin(3), okchaiin(2), otchaiin(2)
+  qoey             17    241  qokey(110), qokchey(28), qotey(24), qotchey(20), qockhey(19), qokshey(13), qopchey(11), qocthey(5)
+  od               16     36  od(7), okchd(6), kchod(3), cthod(3), tshod(2), kod(2), tod(2), tchod(2)
+  choy             16    189  choky(43), choty(42), chockhy(24), chocthy(21), chokchy(16), chotchy(13), choy(10), chopchy(5)
+  qoy              16    463  qoky(151), qoty(94), qokchy(70), qotchy(63), qockhy(22), qopchy(16), qokshy(10), qocthy(10)
+  oedy             16    455  otedy(172), okedy(120), opchedy(54), otchedy(43), okchedy(26), otshedy(10), ockhedy(7), ofchedy(7)
+  shey             15    422  shey(291), sheky(34), sheckhy(33), shecthy(20), shckhey(11), shety(10), shcthey(5), shekchy(5)
+  ar               15    598  ar(436), kar(63), tar(50), cthar(17), par(7), tchar(4), pchar(4), cphar(4)
+  eody             15     85  keody(23), teody(13), tcheody(7), ctheody(6), ksheody(5), psheody(5), kcheody(5), pcheody(5)
+  aiin             15    744  aiin(565), kaiin(87), taiin(51), cthaiin(12), paiin(8), cphaiin(6), kchaiin(4), ckhaiin(3)
+
+  Average paradigm size (roots with ≥ 15 tokens): 6.5 forms
+
+  Number of distinct gallows bases per root (incl. bare):
+    1 bases: 29 roots
+    2 bases: 50 roots
+    3 bases: 78 roots
+    4 bases: 86 roots
+    5 bases: 80 roots
+
+========================================================================
+ANALYSIS 6: SEMANTIC FIELD HYPOTHESIS TEST
+========================================================================
+
+  Enrichment/depletion of each gallows per section (observed/expected ratio):
+
+  Section              t         k         f         p
+  herbal-A         1.09×     0.88×     1.36× ↑     0.93×
+  herbal-B         1.23×     1.00×     1.71× ↑     0.88×
+  pharma           0.60× ↓     1.08×     1.13×     0.77×
+  bio              0.78×     1.14×     0.44× ↓     0.69× ↓
+  cosmo            1.28×     0.74×     1.33× ↑     1.52× ↑
+  text             0.92×     1.12×     0.73×     1.23×
+  zodiac           1.40× ↑     0.95×     1.03×     0.80×
+
+  Strongest enrichment signals (ratio > 1.3):
+    'f' in herbal-B    : 1.71× enriched (34 observed vs 20 expected)
+    'p' in cosmo       : 1.52× enriched (248 observed vs 163 expected)
+    't' in zodiac      : 1.40× enriched (775 observed vs 553 expected)
+    'f' in herbal-A    : 1.36× enriched (198 observed vs 146 expected)
+    'f' in cosmo       : 1.33× enriched (64 observed vs 48 expected)
+    't' in cosmo       : 1.28× enriched (872 observed vs 683 expected)
+    't' in herbal-B    : 1.23× enriched (347 observed vs 281 expected)
+    'p' in text        : 1.23× enriched (582 observed vs 473 expected)
+    'k' in bio         : 1.14× enriched (2259 observed vs 1977 expected)
+    'f' in pharma      : 1.13× enriched (46 observed vs 41 expected)
+
+  Strongest depletion signals (ratio < 0.7):
+    'f' in bio         : 0.44× (39 observed vs 90 expected)
+    't' in pharma      : 0.60× (349 observed vs 579 expected)
+    'p' in bio         : 0.69× (208 observed vs 303 expected)
+    'f' in text        : 0.73× (102 observed vs 140 expected)
+    'k' in cosmo       : 0.74× (784 observed vs 1063 expected)
+    'p' in pharma      : 0.77× (106 observed vs 138 expected)
+    't' in bio         : 0.78× (988 observed vs 1271 expected)
+    'p' in zodiac      : 0.80× (106 observed vs 132 expected)
+    'k' in herbal-A    : 0.88× (2824 observed vs 3222 expected)
+    'p' in herbal-B    : 0.88× (59 observed vs 67 expected)
+
+  t/k ratio per section (signature metric):
+    herbal-A      t= 2256  k= 2824  t/k=0.80
+    herbal-B      t=  347  k=  439  t/k=0.79
+    pharma        t=  349  k=  973  t/k=0.36
+    bio           t=  988  k= 2259  t/k=0.44
+    cosmo         t=  872  k=  784  t/k=1.11
+    text          t= 1833  k= 3446  t/k=0.53
+    zodiac        t=  775  k=  818  t/k=0.95
+
+========================================================================
+SYNTHESIS: GALLOWS AS SEMANTIC DETERMINATIVES
+========================================================================
+
+  Corpus: 39531 tokens
+  Words with gallows: 20768 (52.5%)
+  Roots with shifting gallows across sections: 74
+  Roots with stable gallows across sections: 24
+  Shift rate: 76% of multi-section roots change dominant gallows
+
+  ── Interpretation ──
+  If shift rate is HIGH: gallows mark section/domain context
+    → Same concept gets different determinative in different context
+    → Like Egyptian: same word can get different determinatives
+  If shift rate is LOW: gallows mark inherent word property
+    → The determinative is part of the word's identity
+    → Like Chinese radicals: fixed semantic component
+
+Results saved to results/gallows_semantics_results.json

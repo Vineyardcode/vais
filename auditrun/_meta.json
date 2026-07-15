@@ -5,5 +5,219 @@
   "duration_s": 4.4,
   "stdout_bytes": 5484,
   "results_files_touched": []
+ },
+ "astro_crossref": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.66,
+  "stdout_bytes": 15605,
+  "results_files_touched": [
+   "astro_crossref_results.json"
+  ]
+ },
+ "astro_label_pipeline": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.4,
+  "stdout_bytes": 14088,
+  "results_files_touched": [
+   "astro_label_results.json"
+  ]
+ },
+ "attack_plan": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 1.14,
+  "stdout_bytes": 43870,
+  "results_files_touched": [
+   "attack_plan_results.json"
+  ]
+ },
+ "coptic_probe_expanded": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 77.97,
+  "stdout_bytes": 43763,
+  "results_files_touched": [
+   "coptic_probe_results.json"
+  ]
+ },
+ "crosssign_network": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.41,
+  "stdout_bytes": 20813,
+  "results_files_touched": []
+ },
+ "currier_ab": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.96,
+  "stdout_bytes": 12376,
+  "results_files_touched": [
+   "currier_ab_results.json"
+  ]
+ },
+ "deep_dive": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 1.09,
+  "stdout_bytes": 15906,
+  "results_files_touched": [
+   "deep_dive_results.json"
+  ]
+ },
+ "deep_dive_phase1": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 1.1,
+  "stdout_bytes": 17320,
+  "results_files_touched": []
+ },
+ "diacritic_audit": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.45,
+  "stdout_bytes": 10341,
+  "results_files_touched": []
+ },
+ "download_folios": {
+  "status": "skipped",
+  "reason": "pure downloader (network, ~1GB)"
+ },
+ "download_latin": {
+  "status": "skipped",
+  "reason": "pure downloader (network)"
+ },
+ "egyptian_connection": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.91,
+  "stdout_bytes": 26398,
+  "results_files_touched": [
+   "egyptian_connection_results.json"
+  ]
+ },
+ "f66r_analysis": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 2.01,
+  "stdout_bytes": 14279,
+  "results_files_touched": [
+   "f66r_results.json"
+  ]
+ },
+ "four_tasks_audit": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 18.41,
+  "stdout_bytes": 30588,
+  "results_files_touched": [
+   "four_tasks_audit.json"
+  ]
+ },
+ "freq_rank_mapping": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 1.64,
+  "stdout_bytes": 22722,
+  "results_files_touched": [
+   "freq_rank_results.json"
+  ]
+ },
+ "gallows_semantics": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 1.15,
+  "stdout_bytes": 35496,
+  "results_files_touched": [
+   "gallows_semantics_results.json"
+  ]
+ },
+ "gallows_test": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 21.03,
+  "stdout_bytes": 12399,
+  "results_files_touched": [
+   "gallows_test_results.json"
+  ]
+ },
+ "grammar_extraction": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.38,
+  "stdout_bytes": 19969,
+  "results_files_touched": [
+   "grammar_results.json"
+  ]
+ },
+ "hebrew_comparison": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.37,
+  "stdout_bytes": 13907,
+  "results_files_touched": [
+   "hebrew_comparison_results.json"
+  ]
+ },
+ "hebrew_deep_analysis": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 41.57,
+  "stdout_bytes": 19550,
+  "results_files_touched": [
+   "hebrew_deep_results.json"
+  ]
+ },
+ "herbal_crossref": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 1.15,
+  "stdout_bytes": 17772,
+  "results_files_touched": [
+   "herbal_crossref_results.json"
+  ]
+ },
+ "herbal_labels": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.65,
+  "stdout_bytes": 19714,
+  "results_files_touched": [
+   "herbal_label_results.json"
+  ]
+ },
+ "innermost_ring_dive": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.32,
+  "stdout_bytes": 26217,
+  "results_files_touched": []
+ },
+ "leo_deepdive": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.87,
+  "stdout_bytes": 32727,
+  "results_files_touched": [
+   "leo_deepdive_results.json"
+  ]
+ },
+ "medieval_degrees": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.38,
+  "stdout_bytes": 15615,
+  "results_files_touched": []
+ },
+ "pharma_comparison": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 1.01,
+  "stdout_bytes": 10461,
+  "results_files_touched": [
+   "pharma_results.json"
+  ]
  }
 }

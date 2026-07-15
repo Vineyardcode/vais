@@ -30,7 +30,10 @@ NETWORK = {
     "phase75_latin_mapping", "phase76_vernacular_mapping",
 }
 
-# Dependency edges: consumer -> [producer scripts] (from Phase 1 inventory).
+# Dependency edges: consumer -> [producer scripts]. Audit-verified against
+# actual result-file reads in the code (AUDIT.md A2): hebrew_deep_analysis
+# does NOT read attack_plan output (comment only); f66r_analysis and
+# phase86R_revalidation were missing.
 DEPENDS = {
     "astro_crossref": ["astro_label_pipeline"],
     "crosssign_network": ["ring_decan_mapping"],
@@ -39,9 +42,10 @@ DEPENDS = {
     "innermost_ring_dive": ["grammar_extraction", "ring_text_analysis"],
     "herbal_crossref": ["grammar_extraction"],
     "hebrew_comparison": ["attack_plan"],
-    "hebrew_deep_analysis": ["attack_plan"],
+    "f66r_analysis": ["attack_plan", "freq_rank_mapping"],
     "phase59_forward_model": ["phase58_cross_script"],
     "phase60_positional_verbose": ["phase58_cross_script"],
+    "phase86R_revalidation": ["phase86_chunk_equivalence"],
     "phase100_decipherment": ["phase86_chunk_equivalence"],
     "phase101_currier_ab_dichotomy": ["phase86_chunk_equivalence"],
     "phase102_historical_validation": ["phase86_chunk_equivalence"],
