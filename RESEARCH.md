@@ -382,3 +382,172 @@ risk):
 S2 (raw scans) is the most assumption-free attack but needs scan
 acquisition + GPU; specced as future work. S9 needs external
 transliteration files; queued behind data acquisition.
+
+---
+
+## Phase 4 — Prototype results
+
+All three prototypes are permanent VAIS modules (auto-discovered by the
+web UI with their parameters exposed; golden references captured at
+PYTHONHASHSEED=0). Controls ran first in every case, per charter.
+
+### phase109 — Forgery tournament (S3): nobody can forge it
+
+Zero fitted parameters (generators frozen in phase108 before the
+tournament existed). Yardsticks: interleaved-halves internal distance
+0.049 (tight), contiguous-halves 0.175 (loose = forgeability bar).
+
+Ranking vs VMS_full (mean per-feature |z| over 15 features):
+
+| entrant | z-dist | note |
+|---|---|---|
+| vms_word_shuffle | 0.341 | *diagnostic, not generator — shares the actual tokens* |
+| italian_plain | 0.887 | closest true generator is... plain language |
+| latin_plain / subst | 0.953 | |
+| latin_verbose | 0.996 | |
+| latin_abjad | 1.004 | |
+| self_citation | 1.080 | |
+| grille_table | 1.399 | |
+| vms_char_shuffle | 1.580 | |
+
+Adjudicated against the pre-registered criteria: **no entrant closes
+under the forgeability bar; all mechanisms as calibrated are partially
+adequate at best** (best true generator ~5× the bar). Three sharp facts:
+
+1. **The line effects are the moat.** Even the word-shuffle — which starts
+   from the manuscript's own vocabulary — fails, entirely on
+   line_init_jsd (2.29z) and line_final_jsd (1.95z). No proposed
+   mechanism, hoax or cipher, reproduces what happens at line boundaries.
+2. **Hoax generators lose to plain language** on the full feature vector.
+   The grille undershoots vocabulary catastrophically; self-citation pays
+   for its lexicon with 8× the manuscript's adjacent-word similarity
+   (the "Timm bind": in our parameter sweep the theory cannot buy hapax
+   richness and adjacency texture at the same time).
+3. Currier B is uniformly harder to match than A (every entrant's
+   distance is higher vs B) — consistent with B being the more
+   "worn-in" (more systematized) register.
+
+Scope: kills apply to the calibrated generators, not theory families
+(docstring caveat); the per-feature breakdown is the actionable output.
+
+### phase111 — Segmentation-agnostic BPE (S4): A2 survives, spectacularly
+
+Strip every space; learn 200 BPE merges from character statistics alone;
+ask whether learned unit boundaries rediscover the original spaces.
+Excess F1 = boundary F1 minus density-matched random baseline:
+
+| corpus | F1 | random-F1 | excess |
+|---|---|---|---|
+| P1 latin | 0.390 | 0.222 | 0.168 |
+| P2 italian | 0.464 | 0.312 | 0.152 |
+| P4 verbose cipher | 0.373 | 0.094 | 0.279 |
+| N2 char-shuffle | 0.278 | 0.276 | **0.002** |
+| N3 grille | 0.132 | 0.243 | −0.111 |
+| **VMS** | **0.685** | 0.231 | **0.454** |
+
+Instrument validated (P1 strongly positive, N2 ≈ 0 as designed). Verdict:
+**Voynich spaces are recoverable from character statistics at 2.7× the
+strength of genuine Latin.** A2 survives — word-level statistics rest on
+real segmental signal — but over-survives into a new anomaly: word
+boundaries this predictable from context mean word forms are far more
+constrained than natural orthography (consistent with the rigid
+slot-grammar findings, and notably with P4-style verbose units, whose
+excess (0.279) also exceeds plain language). N3's *negative* excess is a
+new discriminator against table generation.
+
+### phase110 — Alphabet-space search (S1): EVA is not hiding a normal text
+
+Beam search (breadth 6, depth 10; ~1,000-1,350 configurations explored
+per target; runtime ~25 min) over merge/unify/drop re-codings, objective
+= distance of char-structural features from the P1+P2 language band.
+Controls first, per protocol:
+
+| target | band-dist start → final | gap closed | final alphabet |
+|---|---|---|---|
+| P4 verbose (positive) | 1.804 → 0.754 | **58%** | 21 |
+| N3 grille (negative) | 1.102 → 0.539 | 51% | 21 |
+| VMS full | 0.937 → 0.460 | 51% | 23 |
+| VMS Currier A | 0.890 → 0.432 | 51% | 30 |
+| VMS Currier B | 1.102 → 0.505 | 54% | 24 |
+
+Formal adjudication: the pre-registered kill (N3 normalized as easily as
+P4) did NOT fire — 51% < 58% — and the positive control passed (the
+search's chosen ops on P4 visibly re-merge planted verbose groups: qo,
+ol, dy, ai...). But the margin is 7 points, so the instrument's
+discriminative power is **weak as configured**, and the honest headline
+is the comparison: **VMS gains (51%) track the cosmetic-normalization
+baseline (N3: 51%), not the genuine-recovery profile (P4: 58%).**
+
+Reading (SUGGESTIVE tier): within this op space — bigram merges,
+paleographic unifications, rare-glyph drops, alphabet size 15-60 — there
+is no re-coding of EVA under which the manuscript becomes statistically
+ordinary, beyond what the same machinery does to table gibberish. The
+character-level anomalies are deep properties of the token stream, not
+artifacts of EVA's unit choices. (Ops chosen for the VMS are nonetheless
+sensible and stable across A/B: merge dy/ai/ar/ey, unify f=p, drop the
+rare non-core glyphs — a useful canonical-recoding candidate for future
+instruments.) Caveats: one objective, 4 features, one beam config; a
+richer op space (context-dependent splits, many-to-one glyph maps) is
+future work and the parameters are UI-exposed for exactly that.
+
+---
+
+## Phase 5 — Report: what is established, suggestive, speculative
+
+### ESTABLISHED (survived controls + pre-registered criteria)
+
+1. **T1 — the analyzed corpus contained 5.4% markup artifacts** (phantom
+   tokens from IVTFF metadata, fused alternate readings), and the type
+   inventory was inflated 13.6%. Fixed (`load_folio_lines_ivtff`); the
+   suite's qualitative anomalies survive the correction, so prior
+   results are dented, not overturned. Every corpus-level claim made
+   from this repo before 2026-07-15 should cite the clean numbers.
+2. **No proposed generative mechanism, as calibrated, forges the
+   manuscript** (phase109, zero fitted parameters, bar pre-registered):
+   best true generator is 5× above the forgeability yardstick. The
+   line-boundary effects are the universally unreproduced feature — the
+   moat. Any future hoax theory must clear them or is dead on arrival.
+3. **Spaces carry real segmental signal** (phase111): boundary
+   recovery from character statistics alone, validated against positive
+   and negative controls, is 2.7× stronger for the VMS than for Latin.
+   Word-level statistics are not artifacts of a layout convention (A2
+   survives).
+4. **The self-citation bind** (phase108/109): within our parameter
+   sweep, copy-modify generation cannot simultaneously match the
+   manuscript's vocabulary richness and its adjacency texture (mutation
+   rates rich enough for TTR overshoot adjacent-similarity ~8×).
+   Scope: our implementation family; a published-parameter replication
+   is the obvious next test.
+
+### SUGGESTIVE (real signal, one instrument, or thin margins)
+
+5. **The verbose-cipher profile keeps matching.** P4 is the only
+   positive control reproducing the manuscript's h2_ratio (0.533 vs
+   0.546 clean), its BPE boundary-excess also exceeds plain language,
+   and phase106's abbreviation results point the same way. Nothing here
+   *decodes* anything — but as a hypothesis family, "verbose/multi-glyph
+   units over a natural-language plaintext" is the only one that keeps
+   scoring on features it was not designed for.
+6. **EVA granularity is not the explanation** (phase110): no re-coding
+   in a declared op space normalizes the corpus beyond cosmetic
+   baseline. Weak instrument margin (7pp); needs a stronger objective
+   before promotion.
+7. **Currier B is harder to forge than A** (every phase109 entrant is
+   further from B), consistent with B as the more systematized register.
+
+### SPECULATIVE (hypotheses worth compute, no claims)
+
+8. Line-as-record structures (S7): the moat feature suggests the LINE,
+   not the word, may be the encoding unit.
+9. Numeral/positional readings (S6) remain untested against the moat.
+10. Raw-scan glyph clustering (S2) is the only strategy that fully
+    escapes A1; queued on data acquisition.
+
+### The scoreboard the field inherits
+
+A century of theories now has a quantitative bar: **reproduce
+line_init_jsd ≈ 0.16 / line_final_jsd ≈ 0.08 without copying whole
+lines, while holding TTR ≈ 0.36, adjacency ≈ 0.027, and h2_ratio ≈
+0.546.** Every mechanism we calibrated fails at least one. The
+instruments (phase108-111), controls, and kill criteria are permanent
+VAIS modules with UI-exposed parameters; the tournament is open.

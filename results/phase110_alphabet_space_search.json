@@ -1,0 +1,141 @@
+{
+ "band_mu": {
+  "h1_char": 4.015860229484254,
+  "h2_ratio": 0.8042430333488869,
+  "pos_predict": 0.9020345171719358,
+  "mean_wlen": 5.014593484256026
+ },
+ "scales": {
+  "h1_char": 0.13676093083237398,
+  "h2_ratio": 0.14759264513213755,
+  "pos_predict": 0.056051035410197105,
+  "mean_wlen": 2.9331400408277073
+ },
+ "runs": {
+  "P4_latin_verbose": {
+   "start": 1.8037264681182026,
+   "final": 0.7542383461103599,
+   "gain": 1.0494881220078427,
+   "ops": [
+    "merge:ai",
+    "merge:ol",
+    "merge:qo",
+    "merge:he",
+    "merge:c\ue0d2",
+    "merge:\ue004i",
+    "merge:s\ue0d2",
+    "merge:\ue1c4n",
+    "merge:\ue0a8t",
+    "merge:dy"
+   ],
+   "alphabet": 21,
+   "explored": 971,
+   "features_final": {
+    "h1_char": 4.014446309803211,
+    "h2_ratio": 0.6928093366337923,
+    "pos_predict": 0.960371378213472,
+    "mean_wlen": 8.566113201589348
+   }
+  },
+  "N3_grille": {
+   "start": 1.1021803915768447,
+   "final": 0.5389046333165802,
+   "gain": 0.5632757582602644,
+   "ops": [
+    "merge:ol",
+    "merge:ey",
+    "merge:or",
+    "merge:od",
+    "unify:tk",
+    "merge:ka",
+    "merge:in",
+    "merge:e\ue348",
+    "merge:ee",
+    "unify:ei"
+   ],
+   "alphabet": 21,
+   "explored": 967,
+   "features_final": {
+    "h1_char": 3.996964989193853,
+    "h2_ratio": 0.7111250867477302,
+    "pos_predict": 0.8402326748830253,
+    "mean_wlen": 4.181744026944532
+   }
+  },
+  "VMS_full": {
+   "start": 0.9374964909327541,
+   "final": 0.4604348458073269,
+   "gain": 0.4770616451254272,
+   "ops": [
+    "merge:dy",
+    "merge:ai",
+    "merge:e\ue674",
+    "merge:ar",
+    "unify:fp",
+    "drop:v",
+    "drop:z",
+    "drop:j",
+    "drop:u",
+    "drop:x"
+   ],
+   "alphabet": 23,
+   "explored": 1347,
+   "features_final": {
+    "h1_char": 4.013118858042397,
+    "h2_ratio": 0.5667563014987864,
+    "pos_predict": 0.9017862142441283,
+    "mean_wlen": 4.403926714783223
+   }
+  },
+  "VMS_currier_A": {
+   "start": 0.8904425340337377,
+   "final": 0.43195271042419336,
+   "gain": 0.4584898236095444,
+   "ops": [
+    "merge:ey",
+    "merge:ai",
+    "merge:ch",
+    "merge:d\ue9db",
+    "merge:al",
+    "merge:\ueab3i",
+    "merge:\ueb78n",
+    "merge:ar",
+    "drop:v",
+    "drop:z"
+   ],
+   "alphabet": 30,
+   "explored": 1289,
+   "features_final": {
+    "h1_char": 4.014807811984337,
+    "h2_ratio": 0.6138076463034204,
+    "pos_predict": 0.9002141236148874,
+    "mean_wlen": 3.8490775538093613
+   }
+  },
+  "VMS_currier_B": {
+   "start": 1.1023861802680905,
+   "final": 0.5052070009173757,
+   "gain": 0.5971791793507149,
+   "ops": [
+    "merge:dy",
+    "merge:ii",
+    "merge:ey",
+    "merge:a\uecfc",
+    "merge:ai",
+    "drop:u",
+    "drop:x",
+    "drop:b",
+    "drop:z",
+    "drop:j"
+   ],
+   "alphabet": 24,
+   "explored": 1302,
+   "features_final": {
+    "h1_char": 4.013592129647542,
+    "h2_ratio": 0.5428937486328165,
+    "pos_predict": 0.9034558798949608,
+    "mean_wlen": 4.404095943899913
+   }
+  }
+ }
+}
