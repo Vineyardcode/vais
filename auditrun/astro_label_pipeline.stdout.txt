@@ -293,5 +293,5 @@ SYNTHESIS: Key findings for semantic assignment
     Taurus      : char, arom, chfaly, okolar, otchody
     Virgo       : oeedey, okeoram, air, aim, oshesy
 
-  Results saved to C:\projects\voynich_slop\results\astro_label_results.json
+  Results saved to C:\projects\vais\results\astro_label_results.json
 ======================================================================

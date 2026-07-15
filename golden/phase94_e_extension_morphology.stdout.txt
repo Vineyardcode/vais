@@ -188,5 +188,5 @@ STEP 11 — Verify Petrasti's specific examples from thread-5216
     of morphological relationship.
   - Petrasti's examples are cherry-picked; the systematic rate matters.
 
-  Results saved to C:\projects\voynich_slop\results\phase94_e_extension.json
-  Full output saved to C:\projects\voynich_slop\results\phase94_e_extension.txt
+  Results saved to C:\projects\vais\results\phase94_e_extension.json
+  Full output saved to C:\projects\vais\results\phase94_e_extension.txt

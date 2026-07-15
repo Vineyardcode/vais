@@ -305,4 +305,4 @@ VERDICT
     Char-shuffle z:          -104.91
     Parse ambiguity:         1.4%
 
-  Results saved to C:\projects\voynich_slop\results\phase85_chunk_fingerprint.txt
+  Results saved to C:\projects\vais\results\phase85_chunk_fingerprint.txt

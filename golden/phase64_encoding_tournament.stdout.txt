@@ -181,5 +181,5 @@ ADJUDICATION
     → SIMILAR vocabulary dynamics between A and B
       Compatible with same language in different hands
 
-Saved to C:\projects\voynich_slop\results\phase64_output.txt
-Saved to C:\projects\voynich_slop\results\phase64_output.json
+Saved to C:\projects\vais\results\phase64_output.txt
+Saved to C:\projects\vais\results\phase64_output.json

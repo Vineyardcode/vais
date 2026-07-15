@@ -267,4 +267,4 @@ STEP 9: SYNTHESIS AND CRITICAL ASSESSMENT
   Refuted: No predictions confirmed. The statistical evidence does
   not support a German recipe origin for VMS.
 
-  Results saved: C:\projects\voynich_slop\results\phase81_german_genre_fingerprint.txt
+  Results saved: C:\projects\vais\results\phase81_german_genre_fingerprint.txt

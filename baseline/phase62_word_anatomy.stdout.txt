@@ -245,5 +245,5 @@ SKEPTICAL CAVEATS
      often have characters serving multiple roles simultaneously.
 
 
-Results saved to C:\projects\voynich_slop\results\phase62_output.json
-Full output saved to C:\projects\voynich_slop\results\phase62_output.txt
+Results saved to C:\projects\vais\results\phase62_output.json
+Full output saved to C:\projects\vais\results\phase62_output.txt

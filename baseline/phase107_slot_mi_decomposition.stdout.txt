@@ -217,4 +217,4 @@ PHASE 107 — VERDICT
      or with an encoding that is fundamentally different from NL.
 
 
-Saved to C:\projects\voynich_slop\results\phase107_slot_mi_decomposition.txt
+Saved to C:\projects\vais\results\phase107_slot_mi_decomposition.txt

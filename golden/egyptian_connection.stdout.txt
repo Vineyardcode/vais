@@ -508,4 +508,4 @@ SYNTHESIS: EGYPTIAN WRITING SYSTEM STRUCTURAL COMPARISON
   designing a 'philosophical language' inspired by Horapollo's
   description of Egyptian hieroglyphics.
 
-Results saved to C:\projects\voynich_slop\results\egyptian_connection_results.json
+Results saved to C:\projects\vais\results\egyptian_connection_results.json

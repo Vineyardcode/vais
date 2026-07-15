@@ -174,5 +174,5 @@ STEP 10: Summary and Verdict
     trigram chunk h_ratio: 0.8002 vs VMS 0.8176 (captures 97.9% of VMS value)
     Bigram glyph h_char: 0.6695 vs VMS 0.6530
 
-  Results saved to C:\projects\voynich_slop\results\phase98_generative_chunk_model.json
-  Log saved to C:\projects\voynich_slop\results\phase98_generative_chunk_model.txt
+  Results saved to C:\projects\vais\results\phase98_generative_chunk_model.json
+  Log saved to C:\projects\vais\results\phase98_generative_chunk_model.txt

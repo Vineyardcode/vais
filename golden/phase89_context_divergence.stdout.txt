@@ -410,5 +410,5 @@ STEP 8: SYNTHESIS & VERDICT
     of shared chunks is within NL sub-word range, not anomalous)
   - Hoax/random: <1% (unchanged)
 
-  Results saved to C:\projects\voynich_slop\results\phase89_context_divergence.txt
-  JSON saved to C:\projects\voynich_slop\results\phase89_context_divergence.json
+  Results saved to C:\projects\vais\results\phase89_context_divergence.txt
+  JSON saved to C:\projects\vais\results\phase89_context_divergence.json

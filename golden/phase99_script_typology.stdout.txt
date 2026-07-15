@@ -202,5 +202,5 @@ STEP 10: Summary and Verdict
     featural_alphabetic_syllabary      : mean=5.376, min=5.376
     NL_syllable                        : mean=5.627, min=5.299
 
-  Results saved to C:\projects\voynich_slop\results\phase99_script_typology.json
-  Log saved to C:\projects\voynich_slop\results\phase99_script_typology.txt
+  Results saved to C:\projects\vais\results\phase99_script_typology.json
+  Log saved to C:\projects\vais\results\phase99_script_typology.txt

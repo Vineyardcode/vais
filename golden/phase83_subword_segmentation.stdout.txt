@@ -462,4 +462,4 @@ STEP 11: SYNTHESIS AND CRITICAL ASSESSMENT
        its mechanistic interpretation is ambiguous — it
        constrains the type of system but does not identify it.
 
-  Results saved: C:\projects\voynich_slop\results\phase83_subword_segmentation.txt
+  Results saved: C:\projects\vais\results\phase83_subword_segmentation.txt

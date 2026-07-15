@@ -375,4 +375,4 @@ constitute a decipherment key. A successful decoding would need:
   - Identification of any additional cipher layer
   - Knowledge of the source language
 
-Saved to C:\projects\voynich_slop\results\phase106b_bench_variants.txt
+Saved to C:\projects\vais\results\phase106b_bench_variants.txt

@@ -305,5 +305,5 @@ ADJUDICATION
       repetition and positional constraints
     - Hoax/random: <3% (unchanged)
 
-Saved to C:\projects\voynich_slop\results\phase67_output.txt
-Saved to C:\projects\voynich_slop\results\phase67_output.json
+Saved to C:\projects\vais\results\phase67_output.txt
+Saved to C:\projects\vais\results\phase67_output.json

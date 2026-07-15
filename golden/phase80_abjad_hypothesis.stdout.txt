@@ -225,4 +225,4 @@ SYNTHESIS: ABJAD HYPOTHESIS ASSESSMENT
   Vowel stripping does NOT consistently move languages toward VMS.
   The abjad hypothesis is WEAKENED by this evidence.
 
-Results saved to C:\projects\voynich_slop\results\phase80_abjad_hypothesis.txt
+Results saved to C:\projects\vais\results\phase80_abjad_hypothesis.txt

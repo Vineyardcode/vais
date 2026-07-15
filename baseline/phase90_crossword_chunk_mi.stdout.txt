@@ -255,5 +255,5 @@ STEP 9: SYNTHESIS & VERDICT
   - Positional verbose cipher: 50% → 45% (DOWN)
   - All others unchanged
 
-  Results saved to C:\projects\voynich_slop\results\phase90_crossword_chunk_mi.txt
-  JSON saved to C:\projects\voynich_slop\results\phase90_crossword_chunk_mi.json
+  Results saved to C:\projects\vais\results\phase90_crossword_chunk_mi.txt
+  JSON saved to C:\projects\vais\results\phase90_crossword_chunk_mi.json

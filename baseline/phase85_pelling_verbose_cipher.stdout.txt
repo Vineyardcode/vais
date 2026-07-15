@@ -239,4 +239,4 @@ STEP 10: SELF-CRITIQUE — METHODOLOGICAL CONCERNS
      with different statistics. A single cipher model may not
      explain both.
 
-  Results saved to C:\projects\voynich_slop\results\phase85_pelling_verbose.txt
+  Results saved to C:\projects\vais\results\phase85_pelling_verbose.txt

@@ -534,5 +534,5 @@ Frame type distribution (initial → final):
          These might be heading/title words.
 
 
-Results saved to C:\projects\voynich_slop\results\phase74_paragraph_framing.txt
-JSON data saved to C:\projects\voynich_slop\results\phase74_paragraph_framing.json
+Results saved to C:\projects\vais\results\phase74_paragraph_framing.txt
+JSON data saved to C:\projects\vais\results\phase74_paragraph_framing.json

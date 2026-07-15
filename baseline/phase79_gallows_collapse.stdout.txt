@@ -149,4 +149,4 @@ Gallows entropy budget:
   RESIDUAL (independent): 1.1328 bits (79.8%)
 
 
-Results saved to C:\projects\voynich_slop\results\phase79_gallows_collapse.txt
+Results saved to C:\projects\vais\results\phase79_gallows_collapse.txt

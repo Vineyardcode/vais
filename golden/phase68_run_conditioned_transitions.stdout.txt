@@ -355,5 +355,5 @@ ADJUDICATION
     - Simple substitution cipher: <5% (unchanged)
     - Hoax/random: <3% (unchanged)
 
-Saved to C:\projects\voynich_slop\results\phase68_output.txt
-Saved to C:\projects\voynich_slop\results\phase68_output.json
+Saved to C:\projects\vais\results\phase68_output.txt
+Saved to C:\projects\vais\results\phase68_output.json

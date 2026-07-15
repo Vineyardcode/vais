@@ -215,5 +215,5 @@ STEP 10 — Feature cross-correlation (top 6): Is SLOT2 redundant
   - SLOT2 was DESIGNED to accommodate both 'a' and 'e'. High variation
     in SLOT2 content across sections is EXPECTED by the grammar's design.
 
-  Results saved to C:\projects\voynich_slop\results\phase93_currier_slot2.json
-  Full output saved to C:\projects\voynich_slop\results\phase93_currier_slot2.txt
+  Results saved to C:\projects\vais\results\phase93_currier_slot2.json
+  Full output saved to C:\projects\vais\results\phase93_currier_slot2.txt

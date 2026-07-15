@@ -275,4 +275,4 @@ Can abbreviation systems reproduce the VMS statistical signature?
 
 Total runtime: 161.7s
 
-Results saved to C:\projects\voynich_slop\results\phase73_abbreviation_model.txt and C:\projects\voynich_slop\results\phase73_abbreviation_raw.json
+Results saved to C:\projects\vais\results\phase73_abbreviation_model.txt and C:\projects\vais\results\phase73_abbreviation_raw.json

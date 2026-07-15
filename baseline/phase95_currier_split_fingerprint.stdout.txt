@@ -195,4 +195,4 @@
      Phase 83 best match (distance 0.1277) was against whole-corpus target.
      → Should recompute against section-specific targets.
 
-  Results saved to C:\projects\voynich_slop\results\phase95_currier_split_fingerprint.txt
+  Results saved to C:\projects\vais\results\phase95_currier_split_fingerprint.txt

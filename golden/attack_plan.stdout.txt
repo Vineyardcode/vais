@@ -743,7 +743,7 @@ PHASE 6: CURRIER LANGUAGE A vs B — FULL MORPHOLOGICAL FINGERPRINT
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 SAVING RESULTS
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  Saved to C:\projects\voynich_slop\results\attack_plan_results.json
+  Saved to C:\projects\vais\results\attack_plan_results.json
 
 ==========================================================================================
 ATTACK PLAN COMPLETE

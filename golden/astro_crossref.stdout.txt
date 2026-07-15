@@ -308,4 +308,4 @@ PHASE 8: COMPREHENSIVE SYNTHESIS
      positions for epoch ~1400 to find specific anchors
 
 
-  Results saved to C:\projects\voynich_slop\results\astro_crossref_results.json
+  Results saved to C:\projects\vais\results\astro_crossref_results.json

@@ -515,4 +515,4 @@ almost certainly an oversimplification because:
 The purpose is to see if ANY recognizable patterns emerge,
 not to produce a translation.
 
-Results saved to C:\projects\voynich_slop\results\phase106_abbreviation_decode.txt
+Results saved to C:\projects\vais\results\phase106_abbreviation_decode.txt

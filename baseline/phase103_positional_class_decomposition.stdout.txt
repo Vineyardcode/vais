@@ -251,5 +251,5 @@ Q5: Which language best matches VMS positional profile?
     Best: French-Viandier (L1 = 0.6194)
     → WEAK match — no language profile closely matches VMS
 
-Results saved to C:\projects\voynich_slop\results\phase103_positional_class_decomposition.json
-Log saved to C:\projects\voynich_slop\results\phase103_positional_class_decomposition.txt
+Results saved to C:\projects\vais\results\phase103_positional_class_decomposition.json
+Log saved to C:\projects\vais\results\phase103_positional_class_decomposition.txt

@@ -367,5 +367,5 @@ Skeptical calibration: can Naibbe encoding reproduce VMS fingerprint?
 
 Total runtime: 386.1s
 
-Results saved to C:\projects\voynich_slop\results\phase72_naibbe_calibration.txt
-Raw data saved to C:\projects\voynich_slop\results\phase72_naibbe_raw.json
+Results saved to C:\projects\vais\results\phase72_naibbe_calibration.txt
+Raw data saved to C:\projects\vais\results\phase72_naibbe_raw.json

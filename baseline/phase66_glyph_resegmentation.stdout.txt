@@ -289,5 +289,5 @@ ADJUDICATION
       underlying characters
     - Hoax/random: <3% (unchanged)
 
-Saved to C:\projects\voynich_slop\results\phase66_output.txt
-Saved to C:\projects\voynich_slop\results\phase66_output.json
+Saved to C:\projects\vais\results\phase66_output.txt
+Saved to C:\projects\vais\results\phase66_output.json

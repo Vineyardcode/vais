@@ -215,4 +215,4 @@ CORRECTED VERDICT — PHASE 85
     h_char anomaly resolved: NO — shifted but not resolved
     LOOP grammar validity: CONFIRMED (genuine structural decomposition)
 
-  Results saved to C:\projects\voynich_slop\results\phase85R_revalidation.txt
+  Results saved to C:\projects\vais\results\phase85R_revalidation.txt

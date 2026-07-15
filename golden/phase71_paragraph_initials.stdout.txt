@@ -559,4 +559,4 @@ POTENTIAL CONFOUNDS TO CHECK:
      dark/light/dotted distinction should be verified against images.
     
 
-Results saved to C:\projects\voynich_slop\results\phase71_paragraph_initials.txt
+Results saved to C:\projects\vais\results\phase71_paragraph_initials.txt

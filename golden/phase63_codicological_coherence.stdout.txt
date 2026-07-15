@@ -233,5 +233,5 @@ REVISED CONFIDENCES:
     Reason: two consistent language types + bifolium organization
     makes hoax extremely unlikely
 
-Results saved to C:\projects\voynich_slop\results\phase63_output.txt
-JSON saved to C:\projects\voynich_slop\results\phase63_output.json
+Results saved to C:\projects\vais\results\phase63_output.txt
+JSON saved to C:\projects\vais\results\phase63_output.json

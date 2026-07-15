@@ -253,5 +253,5 @@ STEP 9: SYNTHESIS & VERDICT
   - Galenic medical encoding: 10% → 5% (DOWN — no parametric substitution)
   - Positional verbose cipher: 45% → 40% (DOWN)
 
-  Results saved to C:\projects\voynich_slop\results\phase92_ae_minimal_pairs.txt
-  JSON saved to C:\projects\voynich_slop\results\phase92_ae_minimal_pairs.json
+  Results saved to C:\projects\vais\results\phase92_ae_minimal_pairs.txt
+  JSON saved to C:\projects\vais\results\phase92_ae_minimal_pairs.json

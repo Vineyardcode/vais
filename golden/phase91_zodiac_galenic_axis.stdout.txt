@@ -286,5 +286,5 @@ STEP 11: SYNTHESIS & VERDICT
   - Galenic medical encoding: NEW — 10% (unconfirmed interpretation)
   - Section-specific vocabulary: plausible alternative
 
-  Results saved to C:\projects\voynich_slop\results\phase91_zodiac_galenic.txt
-  JSON saved to C:\projects\voynich_slop\results\phase91_zodiac_galenic.json
+  Results saved to C:\projects\vais\results\phase91_zodiac_galenic.txt
+  JSON saved to C:\projects\vais\results\phase91_zodiac_galenic.json

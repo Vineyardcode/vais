@@ -460,5 +460,5 @@ KEY FINDINGS:
    or from several words sharing an initial letter.
 
 
-JSON results → C:\projects\voynich_slop\results\phase76_vernacular_mapping.json
-Full output → C:\projects\voynich_slop\results\phase76_vernacular_mapping.txt
+JSON results → C:\projects\vais\results\phase76_vernacular_mapping.json
+Full output → C:\projects\vais\results\phase76_vernacular_mapping.txt

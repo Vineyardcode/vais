@@ -318,4 +318,4 @@ STEP 10: SYNTHESIS AND CRITICAL ASSESSMENT
   5. Body text alone retains the positional slot grammar (I-M-F)
      established in Phase 66-67 — that structure is intrinsic.
 
-  Results saved: C:\projects\voynich_slop\results\phase82_line1_body_separation.txt
+  Results saved: C:\projects\vais\results\phase82_line1_body_separation.txt

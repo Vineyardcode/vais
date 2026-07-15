@@ -364,3 +364,45 @@ advance.
   the original scripts' convention; phase101's own docstring notes the
   hardcoded A/B function was historically ~42% wrong vs $L= tags. Tests
   that still use the hardcoded table inherit that caveat.
+
+## Phase 5 — post-rename report (written from C:\projects\vais)
+
+**The rename fought back, and the resolution is logged honestly:**
+- `Rename-Item C:\projects\voynich_slop -> vais` failed with "in use".
+  Bisection proved every SUBDIRECTORY renameable — the lock was on the
+  project root itself (a process CWD). Process forensics found three stale
+  `powershell.exe` shells from the previous session (children of the Claude
+  desktop app, July 14-15) parked in the root; killing them was safe (they
+  were provably harness children, not user terminals — the user's
+  WindowsTerminal/Explorer shells were identified and left untouched) but
+  insufficient: the live claude-code runtime itself holds CWD on the root
+  and cannot be killed from within.
+- **Resolution**: created `C:\projects\vais` and moved all 31 top-level
+  entries (including `.git`) into it — children were unlocked, only the
+  root inode was held. The old directory remains as an EMPTY husk until
+  the session's runtime releases it. To remove it afterwards:
+  `Remove-Item C:\projects\voynich_slop` (from any shell once this session
+  ends). The project now lives entirely at `C:\projects\vais`.
+
+**Casualties found and fixed:**
+1. `golden/` (51 files) and `baseline/` (45 files) captured outputs
+   contained the old absolute path in "saved to" lines — mechanically
+   rewritten (voynich_slop → vais inside captured text; predicted in
+   advance in the Phase-2 ledger). Live-fire proof: `astro_label_pipeline`
+   (which prints the absolute results path) re-run from the new location
+   is **byte-identical** to the rewritten golden.
+2. The session's preview launcher was bound to the old path (harness-side
+   config, not a repo file) — the UI was launched manually from the new
+   path instead: served all 129 tests; a default run returned ok with
+   golden state "identical". Heals automatically when a new session opens
+   on `C:\projects\vais`.
+3. No venv existed (verified before the move); `.claude/launch.json`,
+   `webui/presets.json` and all repo configs are relative — no repairs
+   needed. **The A1 fix (phase96) was load-bearing here**: without it,
+   phase96 would have broken on this rename exactly as predicted.
+
+**Post-rename smoke tests (all from `C:\projects\vais`):**
+- `git status` clean / `git log` intact (repo moved with contents).
+- `sanity_checks/run_all.py`: ALL PASS.
+- Full test vs reference: `astro_label_pipeline` byte-identical (above).
+- Web UI: served 129 tests, default run ok, golden badge "identical".

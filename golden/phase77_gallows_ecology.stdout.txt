@@ -327,4 +327,4 @@ PHASE 77 SYNTHESIS
   VERDICT:
   ─────────
 
-Full output → C:\projects\voynich_slop\results\phase77_gallows_ecology.txt
+Full output → C:\projects\vais\results\phase77_gallows_ecology.txt

@@ -391,7 +391,7 @@ Testing: Prefix–Root–Suffix Agglutinative Structure (Zattera Slots)
   oty                   116  o        t            y          —     
   lchedy                116  l        ched         y          —     
 
-  Full decomposition data saved to C:\projects\voynich_slop\results\slot_analysis_results.json
+  Full decomposition data saved to C:\projects\vais\results\slot_analysis_results.json
 
 ================================================================================
 ANALYSIS COMPLETE

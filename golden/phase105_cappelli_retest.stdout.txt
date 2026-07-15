@@ -254,4 +254,4 @@ CONTROLS:
   - Density sweep shows whether the effect saturates or scales.
 
 
-Results saved to C:\projects\voynich_slop\results\phase105_cappelli_retest.txt
+Results saved to C:\projects\vais\results\phase105_cappelli_retest.txt

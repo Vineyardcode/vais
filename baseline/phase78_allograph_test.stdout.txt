@@ -310,4 +310,4 @@ Hypothesis scoreboard:
     Test C (position within word): reported above
 
 
-Results saved to C:\projects\voynich_slop\results\phase78_allograph_test.txt
+Results saved to C:\projects\vais\results\phase78_allograph_test.txt

@@ -286,8 +286,8 @@ Step 10: SYNTHESIS
 ────────────────────────────────────────────────────────────────────────────
 Saving results...
 ────────────────────────────────────────────────────────────────────────────
-  Text results: C:\projects\voynich_slop\results\phase84_mi_meaning_area.txt
-  JSON results: C:\projects\voynich_slop\results\phase84_mi_meaning_area.json
+  Text results: C:\projects\vais\results\phase84_mi_meaning_area.txt
+  JSON results: C:\projects\vais\results\phase84_mi_meaning_area.json
 
 ============================================================================
 PHASE 84 COMPLETE

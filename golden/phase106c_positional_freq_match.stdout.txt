@@ -59,4 +59,4 @@ compressed (multiple glyphs → 1 char), this method cannot work.
 It also treats EVA digraphs (ch, sh) as single units, which
 may or may not be correct.
 
-Saved to C:\projects\voynich_slop\results\phase106c_positional_frequency_match.txt
+Saved to C:\projects\vais\results\phase106c_positional_frequency_match.txt

@@ -312,4 +312,4 @@ Test E — Line-Position Sensitivity:
   × ending skew?  VMS null-suffix clustering at line ends is the
   strongest known positional effect.
 
-Results saved to C:\projects\voynich_slop\results\phase104_latin_ending_test.json
+Results saved to C:\projects\vais\results\phase104_latin_ending_test.json

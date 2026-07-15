@@ -258,5 +258,5 @@ ADJUDICATION
        preserves the ratio at 0.839)
     - Hoax/random: <3% (unchanged)
 
-Saved to C:\projects\voynich_slop\results\phase65_output.txt
-Saved to C:\projects\voynich_slop\results\phase65_output.json
+Saved to C:\projects\vais\results\phase65_output.txt
+Saved to C:\projects\vais\results\phase65_output.json

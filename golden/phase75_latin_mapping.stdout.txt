@@ -585,5 +585,5 @@ KEY FINDINGS:
    different genres of Latin text.
 
 
-JSON results → C:\projects\voynich_slop\results\phase75_latin_mapping.json
-Full output → C:\projects\voynich_slop\results\phase75_latin_mapping.txt
+JSON results → C:\projects\vais\results\phase75_latin_mapping.json
+Full output → C:\projects\vais\results\phase75_latin_mapping.txt

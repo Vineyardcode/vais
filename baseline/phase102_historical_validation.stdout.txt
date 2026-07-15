@@ -332,5 +332,5 @@ STEP 8: Cumulative evidence summary — what do 102 phases tell us?
        should be trusted.
 
 
-  Results saved to C:\projects\voynich_slop\results\phase102_historical_validation.json
-  Log saved to C:\projects\voynich_slop\results\phase102_historical_validation.txt
+  Results saved to C:\projects\vais\results\phase102_historical_validation.json
+  Log saved to C:\projects\vais\results\phase102_historical_validation.txt

@@ -18,8 +18,8 @@
  "astro_label_pipeline": {
   "status": "ok",
   "returncode": 0,
-  "duration_s": 0.4,
-  "stdout_bytes": 14088,
+  "duration_s": 0.75,
+  "stdout_bytes": 14080,
   "results_files_touched": [
    "astro_label_results.json"
   ]

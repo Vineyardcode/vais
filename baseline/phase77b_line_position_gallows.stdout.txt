@@ -238,4 +238,4 @@ PHASE 77b SYNTHESIS: THE {p,f} vs {t,k} SPLIT
      underlying character. If not, it may be about the plain visual form.
 
 
-Full output → C:\projects\voynich_slop\results\phase77b_line_position_gallows.txt
+Full output → C:\projects\vais\results\phase77b_line_position_gallows.txt

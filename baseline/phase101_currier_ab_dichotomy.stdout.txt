@@ -333,5 +333,5 @@ STEP 12: Synthesis and conclusions
     topics or content sections using the same notational rules,
     analogous to legal vs medical Latin.
 
-  Results saved to C:\projects\voynich_slop\results\phase101_currier_ab_dichotomy.json
-  Log saved to C:\projects\voynich_slop\results\phase101_currier_ab_dichotomy.txt
+  Results saved to C:\projects\vais\results\phase101_currier_ab_dichotomy.json
+  Log saved to C:\projects\vais\results\phase101_currier_ab_dichotomy.txt

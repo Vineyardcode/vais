@@ -475,4 +475,4 @@ SYNTHESIS: TOWARD DECIPHERMENT
     2. A Coptic/Hebrew/Arabic vocabulary correlation
     3. External evidence (a bilingual text or key)
 
-Results saved to C:\projects\voynich_slop\results\root_lexicon_results.json
+Results saved to C:\projects\vais\results\root_lexicon_results.json

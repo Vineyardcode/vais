@@ -274,4 +274,4 @@
   that serve a formatting role, (c) weak ciphertext symbols that are 
   partially redundant, or (d) something else entirely.
 
-  Results saved to C:\projects\voynich_slop\results\phase87_gallows_null_test.txt
+  Results saved to C:\projects\vais\results\phase87_gallows_null_test.txt
