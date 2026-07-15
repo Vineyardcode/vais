@@ -15,12 +15,12 @@ ISSUE 1: PURITY METRIC WAS RECALL-ONLY
 
             Language   Recall   Precision     F1   V-group size
   ──────────────────  ───────  ──────────  ─────  ─────────────
-        Latin-Caesar     0.83        0.42   0.56   12/26 = 46%
+        Latin-Caesar     1.00        0.67   0.80    9/22 = 41%
       Italian-Cucina     1.00        0.45   0.62   11/28 = 39%
         English-Cury     0.67        0.22   0.33   18/29 = 62%
      French-Viandier     0.57        0.31   0.40   13/24 = 54%
 
-  Mean F1 across NL baselines: 0.48
+  Mean F1 across NL baselines: 0.54
   FINDING: The sign(0) spectral method has poor F1 for V/C separation
   even in KNOWN natural languages. It is a WEAK test.
 
@@ -46,7 +46,7 @@ ISSUE 2: DATA STRUCTURE PREVENTS V/C DETECTION AT CHUNK LEVEL
   100% positionally confounded. Only 5% are position-free M→M bigrams.
   The bigram matrix is DOMINATED by positional structure.
 
-  Latin-Caesar: 2-char words contribute 4.7% of within-word bigrams
+  Latin-Caesar: 2-char words contribute 2.5% of within-word bigrams
   Italian-Cucina: 2-char words contribute 4.5% of within-word bigrams
   English-Cury: 2-char words contribute 6.6% of within-word bigrams
   French-Viandier: 2-char words contribute 5.4% of within-word bigrams
@@ -80,18 +80,18 @@ ISSUE 4: EIGENVALUE SPECTRA COMPARISON ACROSS LEVELS
 
                 System    N       λ1       λ2       λ3       λ4     gap
   ────────────────────  ───  ───────  ───────  ───────  ───────  ──────
-          Latin-Caesar   26   +1.000   -0.408   -0.187   -0.187   0.592
+          Latin-Caesar   22   +1.000   -0.539   -0.078   -0.078   0.461
         Italian-Cucina   28   +1.000   -0.562   +0.242   +0.177   0.438
           English-Cury   29   +1.000   +0.453   -0.376   -0.227   0.547
        French-Viandier   24   +1.000   -0.363   +0.094   +0.094   0.637
             VMS glyphs   23   +1.000   +0.025   +0.025   -0.341   0.975
             VMS chunks   50   +1.000   -0.530   -0.181   -0.181   0.470
 
-  NL char gap: 0.553 ± 0.074
-  VMS chunk gap z-score vs NL: -1.13 (within NL range)
-  VMS glyph gap z-score vs NL: +5.73 (FAR outside NL range)
+  NL char gap: 0.521 ± 0.078
+  VMS chunk gap z-score vs NL: -0.65 (within NL range)
+  VMS glyph gap z-score vs NL: +5.82 (FAR outside NL range)
 
-  Latin-Caesar λ2 sign: - (-0.408)
+  Latin-Caesar λ2 sign: - (-0.539)
   Italian-Cucina λ2 sign: - (-0.562)
   English-Cury λ2 sign: + (+0.453)
   French-Viandier λ2 sign: - (-0.363)
@@ -204,7 +204,7 @@ PHASE 87R — REVALIDATION SYNTHESIS
   3. Stability check had sign-flip bug (fixed: actual stability 96-100%)
 
   METHODOLOGICAL PROBLEMS:
-  1. Sign(0) spectral V/C gives mean F1 = 0.48 across NL baselines
+  1. Sign(0) spectral V/C gives mean F1 = 0.54 across NL baselines
      (Latin 0.56, Italian 0.62, English 0.24, French 0.33)
      This is too weak to draw conclusions from VMS data
   2. 59% of VMS chunk bigrams are I→F from 2-chunk words (vs 1-8% in NL)

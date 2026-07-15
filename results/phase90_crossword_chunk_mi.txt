@@ -105,8 +105,8 @@ STEP 4: NL CHARACTER + SYLLABLE BASELINES
     German-Faust-char           0.0695     0.0201     1.0014  0.0694      1.67%
     Italian-Cucina-char         0.1133     0.0396     0.8127  0.1394      2.79%
     Latin-Apicius-char          0.0952     0.0270     0.7858  0.1212      2.39%
-    Latin-Caesar-char           0.0703     0.0194     0.8690  0.0809      1.78%
-    Latin-Vulgate-char          0.0569     0.0160     0.8611  0.0661      1.42%
+    Latin-Caesar-char           0.0406     0.0124     0.7343  0.0553      0.99%
+    Latin-Vulgate-char          0.0580     0.0171     0.7524  0.0771      1.41%
 
   NL SYLLABLE baselines:
     System                    Cross MI  Cross NMI  Within MI   Ratio  H(Y) red%
@@ -118,8 +118,8 @@ STEP 4: NL CHARACTER + SYLLABLE BASELINES
     German-Faust-syl            4.1899     0.5367     5.5796  0.7509     53.67%
     Italian-Cucina-syl          2.0341     0.3003     3.8669  0.5260     30.03%
     Latin-Apicius-syl           2.9538     0.4143     4.9903  0.5919     41.43%
-    Latin-Caesar-syl            2.0496     0.2902     4.9595  0.4133     29.02%
-    Latin-Vulgate-syl           2.4607     0.3416     4.8802  0.5042     34.16%
+    Latin-Caesar-syl            2.2625     0.3017     4.2804  0.5286     30.17%
+    Latin-Vulgate-syl           3.3890     0.4496     4.7189  0.7182     44.96%
 
 ────────────────────────────────────────────────────────────────────────────
 STEP 5: Z-SCORE COMPARISON — VMS vs NL BASELINES
@@ -127,11 +127,11 @@ STEP 5: Z-SCORE COMPARISON — VMS vs NL BASELINES
 
   METRIC              VMS     NL-char μ±σ     z(char)    NL-syl μ±σ      z(syl)
   ─────────────────  ──────  ──────────────  ────────  ──────────────  ────────
-  Cross MI            0.7820  0.1097±0.0418     +16.09  3.0438±0.7936      -2.85
-  Cross NMI           0.1473  0.0326±0.0130      +8.84  0.4270±0.1038      -2.69
-  Within MI           1.1659  0.8870±0.0715      +3.90  5.0379±0.4985      -7.77
-  Ratio (c/w)         0.6707  0.1236±0.0437     +12.51  0.5977±0.1142      +0.64
-  H(Y) red. %         12.8617  2.6943±1.0029     +10.14  42.6956±10.3789     -2.87
+  Cross MI            0.7820  0.1062±0.0461     +14.67  3.1864±0.7312      -3.29
+  Cross NMI           0.1473  0.0319±0.0139      +8.31  0.4419±0.0966      -3.05
+  Within MI           1.1659  0.8566±0.0961      +3.22  4.9329±0.5639      -6.68
+  Ratio (c/w)         0.6707  0.1217±0.0461     +11.91  0.6388±0.0917      +0.35
+  H(Y) red. %         12.8617  2.5948±1.1205      +9.16  44.1899±9.6572     -3.24
 
 ────────────────────────────────────────────────────────────────────────────
 STEP 6: PERMUTATION NULL MODEL (100 trials)
@@ -148,7 +148,7 @@ STEP 6: PERMUTATION NULL MODEL (100 trials)
     Genuine inter-word chunk dependency confirmed.
 
   NL syllable null model (Latin-Caesar only, for reference):
-    Cross MI:  observed = 2.0496,  null = 1.4594 ± 0.0057,  z = +104.33
+    Cross MI:  observed = 2.2625,  null = 2.0473 ± 0.0080,  z = +27.04
 
 ────────────────────────────────────────────────────────────────────────────
 STEP 7: ROBUSTNESS CHECKS
@@ -161,10 +161,10 @@ STEP 7: ROBUSTNESS CHECKS
 
   7b. PSEUDO-LINE LENGTH SENSITIVITY (NL)
       Testing whether NL results depend on pseudo-line length choice.
-      Line len= 5: Cross MI=2.0839, NMI=0.2949, N=69297
-      Line len= 8: Cross MI=2.0516, NMI=0.2905, N=75542
-      Line len=15: Cross MI=2.0311, NMI=0.2874, N=80708
-      Line len=50: Cross MI=2.0141, NMI=0.2849, N=84662
+      Line len= 5: Cross MI=2.3037, NMI=0.3070, N=24017
+      Line len= 8: Cross MI=2.2577, NMI=0.3010, N=26276
+      Line len=15: Cross MI=2.2089, NMI=0.2944, N=28034
+      Line len=50: Cross MI=2.1772, NMI=0.2901, N=29424
 
   7c. VMS CROSS-WORD MI BY SECTION
     Section         N pairs       MI      NMI  H(Y)red%
@@ -225,15 +225,15 @@ STEP 9: SYNTHESIS & VERDICT
 
     Metric                   VMS   NL-char μ   z(char)    NL-syl μ    z(syl)
     ──────────────────  ────────  ──────────  ────────  ──────────  ────────
-    Cross MI              0.7820      0.1097    +16.09      3.0438     -2.85
-    Cross NMI             0.1473      0.0326     +8.84      0.4270     -2.69
-    Within MI             1.1659      0.8870     +3.90      5.0379     -7.77
-    Ratio (c/w)           0.6707      0.1236    +12.51      0.5977     +0.64
-    H(Y) red. %          12.8617      2.6943    +10.14     42.6956     -2.87
+    Cross MI              0.7820      0.1062    +14.67      3.1864     -3.29
+    Cross NMI             0.1473      0.0319     +8.31      0.4419     -3.05
+    Within MI             1.1659      0.8566     +3.22      4.9329     -6.68
+    Ratio (c/w)           0.6707      0.1217    +11.91      0.6388     +0.35
+    H(Y) red. %          12.8617      2.5948     +9.16     44.1899     -3.24
 
   DIRECTIONAL EVIDENCE (Bonferroni |z| > 2.81):
     vs NL chars:  5 ANOMALOUS-HIGH, 0 LOW, 0 ambiguous
-    vs NL syls:   0 ANOMALOUS-HIGH, 3 LOW, 2 ambiguous
+    vs NL syls:   0 ANOMALOUS-HIGH, 4 LOW, 1 ambiguous
 
   NULL MODEL SUMMARY:
     VMS word-order shuffle: z(MI) = +44.66
@@ -243,8 +243,8 @@ STEP 9: SYNTHESIS & VERDICT
   VERDICT
   ══════════════════════════════════════════════════════════
 
-  Mean z-score vs NL characters: +10.29
-  Mean z-score vs NL syllables:  -3.11
+  Mean z-score vs NL characters: +9.45
+  Mean z-score vs NL syllables:  -3.18
 
   ★ Cross-word chunk MI is genuine but BELOW NL syllable baselines.
     → VMS word boundaries attenuate dependencies MORE than NL.

@@ -68,8 +68,6 @@ def parse_word(word):
                         pos += len(rb)
                         matched = True
                         break
-                    if not matched:
-                        break
                 if not matched:
                     break
             root_str = ro + "".join(body_parts)
@@ -376,10 +374,6 @@ def phase1_terms(data):
             deg = n["degree"]
             # Is this the first or last degree of a terms section?
             is_boundary = False
-            for end_deg, _ in EGYPTIAN_TERMS.get(sign, []):
-                if deg == end_deg or deg == end_deg - (end_deg - 1) + 1:
-                    # Actually check start and end
-                    pass
             # Check if this degree is start or end of any terms section
             prev_end = 0
             for end_deg, _ in EGYPTIAN_TERMS.get(sign, []):

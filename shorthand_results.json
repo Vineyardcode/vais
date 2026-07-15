@@ -1,0 +1,350 @@
+{
+  "f66r": {
+    "words": [
+      {
+        "word": "rary",
+        "prefix": "r",
+        "onset": "∅",
+        "body": "a",
+        "suffix": "ry",
+        "remainder": "",
+        "root": "a"
+      },
+      {
+        "word": "sals",
+        "prefix": "∅",
+        "onset": "∅",
+        "body": "sa",
+        "suffix": "∅",
+        "remainder": "ls",
+        "root": "sa"
+      },
+      {
+        "word": "qorn",
+        "prefix": "qor",
+        "onset": "∅",
+        "body": "∅",
+        "suffix": "n",
+        "remainder": "",
+        "root": ""
+      },
+      {
+        "word": "dary",
+        "prefix": "∅",
+        "onset": "∅",
+        "body": "da",
+        "suffix": "ry",
+        "remainder": "",
+        "root": "da"
+      },
+      {
+        "word": "ykeol",
+        "prefix": "y",
+        "onset": "k",
+        "body": "eo",
+        "suffix": "l",
+        "remainder": "",
+        "root": "keo"
+      },
+      {
+        "word": "saly",
+        "prefix": "∅",
+        "onset": "∅",
+        "body": "sa",
+        "suffix": "ly",
+        "remainder": "",
+        "root": "sa"
+      },
+      {
+        "word": "salf",
+        "prefix": "∅",
+        "onset": "∅",
+        "body": "sa",
+        "suffix": "∅",
+        "remainder": "lf",
+        "root": "sa"
+      },
+      {
+        "word": "fary",
+        "prefix": "∅",
+        "onset": "f",
+        "body": "a",
+        "suffix": "ry",
+        "remainder": "",
+        "root": "fa"
+      },
+      {
+        "word": "qotesy",
+        "prefix": "qo",
+        "onset": "t",
+        "body": "es",
+        "suffix": "y",
+        "remainder": "",
+        "root": "tes"
+      },
+      {
+        "word": "ykaly",
+        "prefix": "y",
+        "onset": "k",
+        "body": "a",
+        "suffix": "ly",
+        "remainder": "",
+        "root": "ka"
+      },
+      {
+        "word": "doly",
+        "prefix": "∅",
+        "onset": "∅",
+        "body": "do",
+        "suffix": "ly",
+        "remainder": "",
+        "root": "do"
+      },
+      {
+        "word": "saiin",
+        "prefix": "∅",
+        "onset": "∅",
+        "body": "sa",
+        "suffix": "iin",
+        "remainder": "",
+        "root": "sa"
+      },
+      {
+        "word": "qokal",
+        "prefix": "qo",
+        "onset": "k",
+        "body": "a",
+        "suffix": "l",
+        "remainder": "",
+        "root": "ka"
+      },
+      {
+        "word": "qolsa",
+        "prefix": "qol",
+        "onset": "∅",
+        "body": "sa",
+        "suffix": "∅",
+        "remainder": "",
+        "root": "sa"
+      },
+      {
+        "word": "raral",
+        "prefix": "r",
+        "onset": "∅",
+        "body": "a",
+        "suffix": "l",
+        "remainder": "ra",
+        "root": "a"
+      }
+    ],
+    "chars": [
+      "y",
+      "o",
+      "s",
+      "sh",
+      "y",
+      "d",
+      "o",
+      "f",
+      null,
+      "x",
+      "air",
+      "d",
+      "sh",
+      "y",
+      "f",
+      "f",
+      "y",
+      "o",
+      "d",
+      "s",
+      "f",
+      "c",
+      null,
+      "x",
+      "t",
+      "o",
+      null,
+      "l",
+      "r",
+      "t",
+      "o",
+      "x",
+      "p",
+      "d"
+    ],
+    "char_freq": {
+      "y": 4,
+      "o": 5,
+      "s": 2,
+      "sh": 2,
+      "d": 4,
+      "f": 4,
+      "x": 3,
+      "air": 1,
+      "c": 1,
+      "t": 2,
+      "l": 1,
+      "r": 1,
+      "p": 1
+    },
+    "first_letters": [
+      "r",
+      "s",
+      "q",
+      "d",
+      "y",
+      "s",
+      "s",
+      "f",
+      "q",
+      "y",
+      "d",
+      "s",
+      "q",
+      "q",
+      "r"
+    ],
+    "list_prefixes": {
+      "r": 2,
+      "∅": 7,
+      "qor": 1,
+      "y": 2,
+      "qo": 2,
+      "qol": 1
+    },
+    "list_suffixes": {
+      "ry": 3,
+      "∅": 3,
+      "n": 1,
+      "l": 3,
+      "ly": 3,
+      "y": 1,
+      "iin": 1
+    },
+    "list_onsets": {
+      "∅": 10,
+      "k": 3,
+      "f": 1,
+      "t": 1
+    },
+    "list_bodies": {
+      "a": 5,
+      "sa": 5,
+      "∅": 1,
+      "da": 1,
+      "eo": 1,
+      "es": 1,
+      "do": 1
+    },
+    "templates": {
+      "r+_+ry": 1,
+      "∅+_+∅": 2,
+      "qor+_+n": 1,
+      "∅+_+ry": 2,
+      "y+_+l": 1,
+      "∅+_+ly": 2,
+      "qo+_+y": 1,
+      "y+_+ly": 1,
+      "∅+_+iin": 1,
+      "qo+_+l": 1,
+      "qol+_+∅": 1,
+      "r+_+l": 1
+    },
+    "char_to_words": {
+      "r": [
+        "rary",
+        "raral"
+      ],
+      "d": [
+        "dary",
+        "doly"
+      ],
+      "f": [
+        "fary"
+      ],
+      "s": [
+        "sals",
+        "saly",
+        "salf",
+        "saiin"
+      ],
+      "y": [
+        "ykeol",
+        "ykaly"
+      ]
+    }
+  },
+  "recipes": {
+    "total_runs": 1277,
+    "runs_by_length": {
+      "2": 1154,
+      "3": 114,
+      "4": 8,
+      "6": 1
+    },
+    "top_frames": {
+      "∅+_+l": 271,
+      "∅+_+y": 261,
+      "∅+_+r": 205,
+      "qo+_+y": 204,
+      "o+_+y": 89,
+      "∅+_+iin": 35,
+      "∅+_+dy": 29,
+      "∅+_+∅": 28,
+      "l+_+y": 22,
+      "o+_+r": 21,
+      "o+_+l": 12,
+      "y+_+y": 12,
+      "o+_+iin": 12,
+      "∅+_+in": 7,
+      "qo+_+l": 6,
+      "qo+_+iin": 5,
+      "o+_+∅": 5,
+      "∅+_+ir": 5,
+      "qo+_+in": 4,
+      "qo+_+dy": 4
+    }
+  },
+  "section_divergence": 0.19754604176653118,
+  "composition": {
+    "total_parsed_tokens": 30437,
+    "slot_entropies": {
+      "prefix": 2.302449728659712,
+      "root": 5.809328603668764,
+      "suffix": 2.9623034174954843
+    },
+    "mutual_information": {
+      "I(prefix;suffix)": 0.06184248773456846,
+      "I(prefix;root)": 0.6611520137610094,
+      "I(root;suffix)": 1.233559322588613
+    },
+    "normalized_MI": {
+      "NMI(prefix;suffix)": 0.026859430182029572,
+      "NMI(prefix;root)": 0.28715155233633494,
+      "NMI(root;suffix)": 0.4164189648174328
+    },
+    "info_density": {
+      "prefix_bits_per_char": 3.2201287686079882,
+      "root_bits_per_char": 2.212001284901248,
+      "suffix_bits_per_char": 2.2014217134631457
+    },
+    "compositionality": {
+      "word_entropy": 10.407141129900333,
+      "sum_of_parts_entropy": 11.074081749823959,
+      "ratio": 0.939774634593588
+    },
+    "combinatorial": {
+      "n_distinct_prefixes": 23,
+      "n_distinct_roots": 265,
+      "n_distinct_suffixes": 30,
+      "n_possible_combinations": 182850,
+      "n_attested": 2818,
+      "coverage": 0.015411539513262237
+    }
+  },
+  "formulas": {
+    "n_templates": 2371,
+    "n_long": 25
+  }
+}

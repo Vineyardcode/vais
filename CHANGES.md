@@ -98,3 +98,37 @@ INVENTORY.md.
   alpha-hash matches the extracted canonical variant *and* every dependency
   the canonical body references resolves identically in that script. Scripts
   keep minority variants locally (documented, zero behavior risk).
+
+### Phase 2 — applied fixes (commit-by-commit detail in git log)
+
+**Behavior-changing fixes** (baseline diffs expected and explained):
+- `grammar_extraction.py` — removed the misplaced `if not matched: break`
+  inside the ROOT_BODIES loop (Bug 1). Root bodies beyond `eee` now match, so
+  parse quality improves; stdout and `grammar_results.json` shift, and the
+  downstream `innermost_ring_dive` / `herbal_crossref` outputs shift with it.
+- `medieval_degrees.py` — same fix (Bug 2); per-degree root/suffix columns
+  shift.
+- `phase86_chunk_equivalence.py` — Step 10 reference filenames corrected to
+  `caesar.txt` / `italian_cucina.txt` (Bug 3). Step 10 now actually runs; its
+  output section appears (was "file not found, skipping" in baseline).
+- `currier_ab.py`, `deep_dive.py` — `analyze()` now populates the previously
+  always-empty results dict, so `currier_ab_results.json` /
+  `deep_dive_results.json` contain the summary metrics the scripts already
+  computed and printed. `[REVIEW]` — the selection of which metrics to persist
+  is my judgment; stdout unchanged.
+- `phase96_cluster_hchar.py`, `phase97_slot_grammar_hchar.py` — hardcoded
+  `c:\projects\voynich_slop\...` paths replaced with `__file__`-relative
+  equivalents. Same resolved paths on this machine; portable elsewhere.
+  stdout unchanged.
+
+**Behavior-neutral cleanups** (stdout must remain byte-identical; verified in
+the rerun diff):
+- Dead `elif ...: pass` suffix branches removed from the `parse_word` copies
+  in `attack_plan.py`, `freq_rank_mapping.py`, `deep_dive.py`,
+  `deep_dive_phase1.py`.
+- `currier_ab.py`: unused `entry` tuple removed.
+- `ring_text_analysis.py`: dead per-ring loop (computed, never printed)
+  removed from `phase3_register`.
+- `medieval_degrees.py`: dead first-attempt boundary loop removed.
+- `pharma_comparison.py`: unused `a_total`, dead `import random`/`seed(42)`
+  removed (the "sampling" is a deterministic window; comment now says so).

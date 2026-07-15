@@ -16,7 +16,7 @@ import os, re, glob, math, json
 from collections import Counter, defaultdict
 import random
 
-FOLIO_DIR = r"c:\projects\voynich_slop\folios"
+FOLIO_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "folios")
 
 # ============================================================
 # 1. EVA PARSING (from Phase 85/86)

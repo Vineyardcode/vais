@@ -1,0 +1,1842 @@
+{
+  "root_lexicon": {
+    "e": {
+      "freq": 5447,
+      "top_section": "text"
+    },
+    "a": {
+      "freq": 4022,
+      "top_section": "text"
+    },
+    "ch": {
+      "freq": 3792,
+      "top_section": "herbal-A"
+    },
+    "ar": {
+      "freq": 2101,
+      "top_section": "text"
+    },
+    "h": {
+      "freq": 2031,
+      "top_section": "bio"
+    },
+    "ol": {
+      "freq": 1849,
+      "top_section": "herbal-A"
+    },
+    "al": {
+      "freq": 1792,
+      "top_section": "text"
+    },
+    "l": {
+      "freq": 1375,
+      "top_section": "text"
+    },
+    "d": {
+      "freq": 1241,
+      "top_section": "herbal-A"
+    },
+    "o": {
+      "freq": 1225,
+      "top_section": "herbal-A"
+    },
+    "or": {
+      "freq": 1108,
+      "top_section": "herbal-A"
+    },
+    "che": {
+      "freq": 732,
+      "top_section": "text"
+    },
+    "cho": {
+      "freq": 600,
+      "top_section": "herbal-A"
+    },
+    "y": {
+      "freq": 501,
+      "top_section": "herbal-A"
+    },
+    "air": {
+      "freq": 449,
+      "top_section": "text"
+    },
+    "lch": {
+      "freq": 433,
+      "top_section": "bio"
+    },
+    "he": {
+      "freq": 417,
+      "top_section": "herbal-A"
+    },
+    "am": {
+      "freq": 413,
+      "top_section": "herbal-A"
+    },
+    "r": {
+      "freq": 370,
+      "top_section": "text"
+    },
+    "ed": {
+      "freq": 355,
+      "top_section": "text"
+    },
+    "eo": {
+      "freq": 301,
+      "top_section": "text"
+    },
+    "ho": {
+      "freq": 273,
+      "top_section": "herbal-A"
+    },
+    "cheo": {
+      "freq": 267,
+      "top_section": "text"
+    },
+    "sh": {
+      "freq": 222,
+      "top_section": "herbal-A"
+    },
+    "ched": {
+      "freq": 195,
+      "top_section": "text"
+    },
+    "lsh": {
+      "freq": 180,
+      "top_section": "bio"
+    },
+    "eod": {
+      "freq": 174,
+      "top_section": "zodiac"
+    },
+    "es": {
+      "freq": 171,
+      "top_section": "herbal-A"
+    },
+    "od": {
+      "freq": 152,
+      "top_section": "herbal-A"
+    },
+    "i": {
+      "freq": 132,
+      "top_section": "herbal-A"
+    },
+    "eos": {
+      "freq": 131,
+      "top_section": "zodiac"
+    },
+    "ai": {
+      "freq": 120,
+      "top_section": "text"
+    },
+    "heo": {
+      "freq": 117,
+      "top_section": "text"
+    },
+    "chd": {
+      "freq": 113,
+      "top_section": "text"
+    },
+    "chod": {
+      "freq": 110,
+      "top_section": "herbal-A"
+    },
+    "ech": {
+      "freq": 110,
+      "top_section": "text"
+    },
+    "qo": {
+      "freq": 105,
+      "top_section": "herbal-A"
+    },
+    "os": {
+      "freq": 103,
+      "top_section": "herbal-A"
+    },
+    "ches": {
+      "freq": 97,
+      "top_section": "text"
+    },
+    "chol": {
+      "freq": 96,
+      "top_section": "herbal-A"
+    },
+    "aiir": {
+      "freq": 96,
+      "top_section": "herbal-A"
+    },
+    "hed": {
+      "freq": 90,
+      "top_section": "text"
+    },
+    "s": {
+      "freq": 85,
+      "top_section": "herbal-A"
+    },
+    "oo": {
+      "freq": 82,
+      "top_section": "herbal-A"
+    },
+    "lo": {
+      "freq": 76,
+      "top_section": "text"
+    },
+    "alch": {
+      "freq": 71,
+      "top_section": "bio"
+    },
+    "ld": {
+      "freq": 69,
+      "top_section": "herbal-A"
+    },
+    "le": {
+      "freq": 68,
+      "top_section": "text"
+    },
+    "cheos": {
+      "freq": 63,
+      "top_section": "text"
+    },
+    "rch": {
+      "freq": 62,
+      "top_section": "bio"
+    },
+    "an": {
+      "freq": 62,
+      "top_section": "herbal-A"
+    },
+    "chos": {
+      "freq": 59,
+      "top_section": "herbal-A"
+    },
+    "ls": {
+      "freq": 58,
+      "top_section": "herbal-A"
+    },
+    "om": {
+      "freq": 58,
+      "top_section": "herbal-A"
+    },
+    "cheod": {
+      "freq": 57,
+      "top_section": "text"
+    },
+    "eol": {
+      "freq": 54,
+      "top_section": "zodiac"
+    },
+    "hod": {
+      "freq": 53,
+      "top_section": "herbal-A"
+    },
+    "as": {
+      "freq": 47,
+      "top_section": "herbal-A"
+    },
+    "ald": {
+      "freq": 46,
+      "top_section": "herbal-A"
+    },
+    "lche": {
+      "freq": 42,
+      "top_section": "text"
+    },
+    "chl": {
+      "freq": 41,
+      "top_section": "text"
+    },
+    "chor": {
+      "freq": 40,
+      "top_section": "herbal-A"
+    },
+    "c": {
+      "freq": 39,
+      "top_section": "herbal-A"
+    },
+    "hd": {
+      "freq": 39,
+      "top_section": "cosmo"
+    },
+    "aram": {
+      "freq": 38,
+      "top_section": "text"
+    },
+    "lam": {
+      "freq": 38,
+      "top_section": "cosmo"
+    },
+    "aim": {
+      "freq": 36,
+      "top_section": "herbal-A"
+    },
+    "she": {
+      "freq": 35,
+      "top_section": "text"
+    },
+    "alsh": {
+      "freq": 35,
+      "top_section": "bio"
+    },
+    "esh": {
+      "freq": 34,
+      "top_section": "text"
+    },
+    "alam": {
+      "freq": 33,
+      "top_section": "text"
+    },
+    "dl": {
+      "freq": 32,
+      "top_section": "text"
+    },
+    "cheol": {
+      "freq": 30,
+      "top_section": "text"
+    },
+    "hol": {
+      "freq": 30,
+      "top_section": "herbal-A"
+    },
+    "hes": {
+      "freq": 30,
+      "top_section": "zodiac"
+    },
+    "ro": {
+      "freq": 30,
+      "top_section": "text"
+    },
+    "heod": {
+      "freq": 29,
+      "top_section": "text"
+    },
+    "chs": {
+      "freq": 29,
+      "top_section": "text"
+    },
+    "led": {
+      "freq": 29,
+      "top_section": "text"
+    },
+    "chy": {
+      "freq": 29,
+      "top_section": "herbal-A"
+    },
+    "yd": {
+      "freq": 28,
+      "top_section": "herbal-A"
+    },
+    "chh": {
+      "freq": 27,
+      "top_section": "herbal-A"
+    },
+    "cham": {
+      "freq": 27,
+      "top_section": "herbal-A"
+    },
+    "chal": {
+      "freq": 26,
+      "top_section": "herbal-A"
+    },
+    "rsh": {
+      "freq": 25,
+      "top_section": "bio"
+    },
+    "als": {
+      "freq": 25,
+      "top_section": "herbal-A"
+    },
+    "choe": {
+      "freq": 24,
+      "top_section": "herbal-A"
+    },
+    "ram": {
+      "freq": 24,
+      "top_section": "text"
+    },
+    "ail": {
+      "freq": 24,
+      "top_section": "text"
+    },
+    "yo": {
+      "freq": 23,
+      "top_section": "herbal-A"
+    },
+    "aii": {
+      "freq": 22,
+      "top_section": "herbal-A"
+    },
+    "dam": {
+      "freq": 21,
+      "top_section": "herbal-A"
+    },
+    "lshe": {
+      "freq": 21,
+      "top_section": "bio"
+    },
+    "dair": {
+      "freq": 21,
+      "top_section": "cosmo"
+    },
+    "aiin": {
+      "freq": 20,
+      "top_section": "text"
+    },
+    "iir": {
+      "freq": 20,
+      "top_section": "text"
+    },
+    "ll": {
+      "freq": 20,
+      "top_section": "text"
+    },
+    "lol": {
+      "freq": 20,
+      "top_section": "bio"
+    },
+    "heos": {
+      "freq": 20,
+      "top_section": "text"
+    },
+    "sho": {
+      "freq": 19,
+      "top_section": "herbal-A"
+    },
+    "aih": {
+      "freq": 19,
+      "top_section": "text"
+    },
+    "alo": {
+      "freq": 19,
+      "top_section": "text"
+    },
+    "ih": {
+      "freq": 19,
+      "top_section": "bio"
+    },
+    "lchd": {
+      "freq": 18,
+      "top_section": "text"
+    },
+    "lr": {
+      "freq": 18,
+      "top_section": "text"
+    },
+    "ey": {
+      "freq": 18,
+      "top_section": "zodiac"
+    },
+    "sheo": {
+      "freq": 18,
+      "top_section": "text"
+    },
+    "lal": {
+      "freq": 18,
+      "top_section": "herbal-A"
+    },
+    "oe": {
+      "freq": 18,
+      "top_section": "herbal-A"
+    },
+    "edam": {
+      "freq": 18,
+      "top_section": "text"
+    },
+    "chom": {
+      "freq": 18,
+      "top_section": "herbal-A"
+    },
+    "eam": {
+      "freq": 17,
+      "top_section": "text"
+    },
+    "lched": {
+      "freq": 17,
+      "top_section": "text"
+    },
+    "arch": {
+      "freq": 17,
+      "top_section": "herbal-A"
+    },
+    "lair": {
+      "freq": 17,
+      "top_section": "text"
+    },
+    "in": {
+      "freq": 17,
+      "top_section": "text"
+    },
+    "heol": {
+      "freq": 17,
+      "top_section": "herbal-A"
+    },
+    "olch": {
+      "freq": 16,
+      "top_section": "zodiac"
+    },
+    "choo": {
+      "freq": 16,
+      "top_section": "herbal-A"
+    },
+    "hos": {
+      "freq": 16,
+      "top_section": "herbal-A"
+    },
+    "rar": {
+      "freq": 16,
+      "top_section": "text"
+    },
+    "do": {
+      "freq": 16,
+      "top_section": "herbal-A"
+    },
+    "lech": {
+      "freq": 15,
+      "top_section": "text"
+    },
+    "eom": {
+      "freq": 15,
+      "top_section": "herbal-A"
+    },
+    "ral": {
+      "freq": 14,
+      "top_section": "pharma"
+    },
+    "lcho": {
+      "freq": 14,
+      "top_section": "text"
+    },
+    "aro": {
+      "freq": 14,
+      "top_section": "pharma"
+    },
+    "les": {
+      "freq": 14,
+      "top_section": "text"
+    },
+    "leo": {
+      "freq": 14,
+      "top_section": "text"
+    },
+    "co": {
+      "freq": 14,
+      "top_section": "herbal-A"
+    },
+    "edair": {
+      "freq": 13,
+      "top_section": "text"
+    },
+    "ych": {
+      "freq": 13,
+      "top_section": "herbal-A"
+    },
+    "chey": {
+      "freq": 13,
+      "top_section": "text"
+    },
+    "cheam": {
+      "freq": 13,
+      "top_section": "text"
+    },
+    "chan": {
+      "freq": 13,
+      "top_section": "herbal-A"
+    },
+    "ldam": {
+      "freq": 12,
+      "top_section": "pharma"
+    },
+    "hh": {
+      "freq": 12,
+      "top_section": "herbal-A"
+    },
+    "char": {
+      "freq": 12,
+      "top_section": "text"
+    },
+    "eal": {
+      "freq": 12,
+      "top_section": "zodiac"
+    },
+    "aral": {
+      "freq": 12,
+      "top_section": "zodiac"
+    },
+    "och": {
+      "freq": 11,
+      "top_section": "herbal-A"
+    },
+    "dai": {
+      "freq": 11,
+      "top_section": "cosmo"
+    },
+    "chch": {
+      "freq": 11,
+      "top_section": "text"
+    },
+    "dch": {
+      "freq": 11,
+      "top_section": "herbal-A"
+    },
+    "eoch": {
+      "freq": 11,
+      "top_section": "text"
+    },
+    "ais": {
+      "freq": 11,
+      "top_section": "text"
+    },
+    "rol": {
+      "freq": 11,
+      "top_section": "bio"
+    },
+    "rair": {
+      "freq": 11,
+      "top_section": "text"
+    },
+    "chdam": {
+      "freq": 11,
+      "top_section": "herbal-A"
+    },
+    "ys": {
+      "freq": 11,
+      "top_section": "zodiac"
+    },
+    "los": {
+      "freq": 11,
+      "top_section": "text"
+    },
+    "cha": {
+      "freq": 11,
+      "top_section": "herbal-A"
+    },
+    "alom": {
+      "freq": 11,
+      "top_section": "text"
+    },
+    "airam": {
+      "freq": 10,
+      "top_section": "text"
+    },
+    "da": {
+      "freq": 10,
+      "top_section": "herbal-A"
+    },
+    "oa": {
+      "freq": 10,
+      "top_section": "text"
+    },
+    "lesh": {
+      "freq": 10,
+      "top_section": "text"
+    },
+    "q": {
+      "freq": 10,
+      "top_section": "text"
+    },
+    "hey": {
+      "freq": 10,
+      "top_section": "bio"
+    },
+    "ror": {
+      "freq": 10,
+      "top_section": "text"
+    },
+    "cheor": {
+      "freq": 10,
+      "top_section": "text"
+    },
+    "er": {
+      "freq": 10,
+      "top_section": "cosmo"
+    },
+    "hor": {
+      "freq": 10,
+      "top_section": "herbal-A"
+    },
+    "lshed": {
+      "freq": 10,
+      "top_section": "bio"
+    },
+    "cheom": {
+      "freq": 10,
+      "top_section": "pharma"
+    },
+    "eg": {
+      "freq": 10,
+      "top_section": "zodiac"
+    },
+    "choeo": {
+      "freq": 10,
+      "top_section": "herbal-A"
+    },
+    "hoo": {
+      "freq": 10,
+      "top_section": "herbal-A"
+    },
+    "chr": {
+      "freq": 9,
+      "top_section": "text"
+    },
+    "edy": {
+      "freq": 9,
+      "top_section": "text"
+    },
+    "cheal": {
+      "freq": 9,
+      "top_section": "zodiac"
+    },
+    "og": {
+      "freq": 9,
+      "top_section": "herbal-A"
+    },
+    "choch": {
+      "freq": 9,
+      "top_section": "herbal-A"
+    },
+    "chold": {
+      "freq": 8,
+      "top_section": "herbal-A"
+    },
+    "cheoe": {
+      "freq": 8,
+      "top_section": "text"
+    },
+    "arom": {
+      "freq": 8,
+      "top_section": "pharma"
+    },
+    "lar": {
+      "freq": 8,
+      "top_section": "bio"
+    },
+    "ea": {
+      "freq": 8,
+      "top_section": "pharma"
+    },
+    "eor": {
+      "freq": 8,
+      "top_section": "pharma"
+    },
+    "chedal": {
+      "freq": 8,
+      "top_section": "text"
+    },
+    "lor": {
+      "freq": 8,
+      "top_section": "bio"
+    },
+    "lod": {
+      "freq": 8,
+      "top_section": "herbal-A"
+    },
+    "lcheo": {
+      "freq": 8,
+      "top_section": "text"
+    },
+    "edch": {
+      "freq": 8,
+      "top_section": "text"
+    },
+    "aiil": {
+      "freq": 8,
+      "top_section": "text"
+    },
+    "ag": {
+      "freq": 8,
+      "top_section": "herbal-A"
+    },
+    "ale": {
+      "freq": 8,
+      "top_section": "herbal-A"
+    },
+    "choam": {
+      "freq": 8,
+      "top_section": "pharma"
+    },
+    "ad": {
+      "freq": 8,
+      "top_section": "herbal-A"
+    },
+    "lom": {
+      "freq": 8,
+      "top_section": "bio"
+    },
+    "aiis": {
+      "freq": 8,
+      "top_section": "herbal-A"
+    },
+    "edal": {
+      "freq": 8,
+      "top_section": "zodiac"
+    },
+    "ols": {
+      "freq": 7,
+      "top_section": "pharma"
+    },
+    "aiim": {
+      "freq": 7,
+      "top_section": "text"
+    },
+    "chdal": {
+      "freq": 7,
+      "top_section": "text"
+    },
+    "hch": {
+      "freq": 7,
+      "top_section": "text"
+    },
+    "chedy": {
+      "freq": 7,
+      "top_section": "text"
+    },
+    "cholch": {
+      "freq": 7,
+      "top_section": "text"
+    },
+    "arsh": {
+      "freq": 7,
+      "top_section": "text"
+    },
+    "chair": {
+      "freq": 7,
+      "top_section": "herbal-A"
+    }
+  },
+  "zodiac_rosetta": {
+    "Aries": {
+      "n_labels": 30,
+      "top_roots": {
+        "al": 7,
+        "ar": 3,
+        "e": 3,
+        "eo": 3,
+        "eoal": 2,
+        "alch": 1,
+        "am": 1,
+        "d": 1,
+        "aaizan": 1,
+        "alcheg": 1
+      },
+      "top_det": {
+        "t": 24,
+        "∅": 10,
+        "k": 6,
+        "p": 2
+      },
+      "all_roots": [
+        "alch",
+        "ar",
+        "am",
+        "d",
+        "e",
+        "al",
+        "aaizan",
+        "al",
+        "al",
+        "alcheg",
+        "odals",
+        "olsh",
+        "sh",
+        "al",
+        "ar",
+        "ol",
+        "al",
+        "eo",
+        "alals",
+        "aral",
+        "eo",
+        "al",
+        "eal",
+        "e",
+        "aray",
+        "eos",
+        "ar",
+        "ldam",
+        "eoal",
+        "eol",
+        "eoal",
+        "al",
+        "als",
+        "chear",
+        "eo",
+        "rar",
+        "alal",
+        "olch",
+        "oloaram",
+        "e",
+        "olchd",
+        "ald"
+      ]
+    },
+    "Taurus": {
+      "n_labels": 30,
+      "top_roots": {
+        "al": 5,
+        "ar": 5,
+        "a": 3,
+        "ch": 2,
+        "aral": 2,
+        "arom": 1,
+        "chal": 1,
+        "ol": 1,
+        "o": 1,
+        "am": 1
+      },
+      "top_det": {
+        "t": 13,
+        "∅": 12,
+        "f": 4,
+        "k": 4
+      },
+      "all_roots": [
+        "ch",
+        "arom",
+        "chal",
+        "ol",
+        "o",
+        "al",
+        "a",
+        "ar",
+        "ar",
+        "al",
+        "am",
+        "an",
+        "al",
+        "ar",
+        "aiom",
+        "al",
+        "al",
+        "ar",
+        "h",
+        "holsh",
+        "shoda",
+        "chdaiirdain",
+        "alam",
+        "alsh",
+        "ch",
+        "ali",
+        "aral",
+        "a",
+        "a",
+        "ainam",
+        "aral",
+        "osh",
+        "d",
+        "e",
+        "ar",
+        "ain"
+      ]
+    },
+    "Gemini": {
+      "n_labels": 29,
+      "top_roots": {
+        "al": 7,
+        "e": 2,
+        "am": 2,
+        "dam": 1,
+        "lair": 1,
+        "aram": 1,
+        "air": 1,
+        "eal": 1,
+        "aral": 1,
+        "ar": 1
+      },
+      "top_det": {
+        "k": 16,
+        "t": 7,
+        "∅": 5,
+        "f": 1
+      },
+      "all_roots": [
+        "dam",
+        "lair",
+        "aram",
+        "air",
+        "eal",
+        "aral",
+        "al",
+        "al",
+        "al",
+        "al",
+        "e",
+        "ar",
+        "ear",
+        "aircham",
+        "e",
+        "arcr",
+        "al",
+        "rar",
+        "yd",
+        "olam",
+        "al",
+        "ral",
+        "am",
+        "alsh",
+        "al",
+        "chos",
+        "am",
+        "ainal",
+        "archam"
+      ]
+    },
+    "Cancer": {
+      "n_labels": 29,
+      "top_roots": {
+        "o": 3,
+        "ar": 3,
+        "lal": 2,
+        "a": 2,
+        "air": 2,
+        "al": 2,
+        "raiinam": 1,
+        "sarsheo": 1,
+        "oiiino": 1,
+        "alal": 1
+      },
+      "top_det": {
+        "∅": 13,
+        "k": 7,
+        "t": 5,
+        "p": 4
+      },
+      "all_roots": [
+        "lal",
+        "lal",
+        "raiinam",
+        "sarsheo",
+        "o",
+        "oiiino",
+        "a",
+        "alal",
+        "eod",
+        "ol",
+        "o",
+        "a",
+        "olair",
+        "ralam",
+        "air",
+        "es",
+        "r",
+        "ar",
+        "air",
+        "al",
+        "rara",
+        "l",
+        "laih",
+        "leor",
+        "al",
+        "ar",
+        "raiir",
+        "o",
+        "h",
+        "oo",
+        "ar",
+        "le"
+      ]
+    },
+    "Leo": {
+      "n_labels": 30,
+      "top_roots": {
+        "e": 6,
+        "al": 5,
+        "cham": 1,
+        "rch": 1,
+        "am": 1,
+        "yesh": 1,
+        "ol": 1,
+        "alals": 1,
+        "heos": 1,
+        "h": 1
+      },
+      "top_det": {
+        "k": 10,
+        "∅": 9,
+        "t": 6,
+        "f": 2
+      },
+      "all_roots": [
+        "cham",
+        "rch",
+        "am",
+        "e",
+        "e",
+        "yesh",
+        "al",
+        "ol",
+        "alals",
+        "heos",
+        "h",
+        "e",
+        "e",
+        "cheal",
+        "e",
+        "al",
+        "al",
+        "eolyd",
+        "chol",
+        "o",
+        "chh",
+        "lal",
+        "e",
+        "dairan",
+        "ar",
+        "es",
+        "esed",
+        "al",
+        "al"
+      ]
+    },
+    "Virgo": {
+      "n_labels": 30,
+      "top_roots": {
+        "e": 5,
+        "eod": 2,
+        "cheo": 2,
+        "cheol": 2,
+        "ed": 1,
+        "eoram": 1,
+        "she": 1,
+        "ear": 1,
+        "heo": 1,
+        "dysd": 1
+      },
+      "top_det": {
+        "k": 10,
+        "∅": 9,
+        "t": 5,
+        "f": 2
+      },
+      "all_roots": [
+        "ed",
+        "eod",
+        "eoram",
+        "she",
+        "ear",
+        "cheo",
+        "cheol",
+        "heo",
+        "eod",
+        "dysd",
+        "eoyd",
+        "e",
+        "e",
+        "eol",
+        "e",
+        "aiinam",
+        "cheol",
+        "ol",
+        "e",
+        "alg",
+        "eom",
+        "l",
+        "edal",
+        "cheo",
+        "ea",
+        "e",
+        "n",
+        "eor"
+      ]
+    },
+    "Libra": {
+      "n_labels": 28,
+      "top_roots": {
+        "e": 6,
+        "eol": 4,
+        "eo": 2,
+        "es": 2,
+        "eod": 2,
+        "al": 2,
+        "o": 1,
+        "d": 1,
+        "aiinod": 1,
+        "eos": 1
+      },
+      "top_det": {
+        "k": 9,
+        "∅": 9,
+        "t": 7,
+        "p": 2
+      },
+      "all_roots": [
+        "eo",
+        "o",
+        "eol",
+        "eol",
+        "es",
+        "es",
+        "eol",
+        "d",
+        "aiinod",
+        "eod",
+        "eod",
+        "al",
+        "al",
+        "eos",
+        "eo",
+        "cheo",
+        "e",
+        "eol",
+        "y",
+        "e",
+        "iin",
+        "e",
+        "e",
+        "aim",
+        "alair",
+        "e",
+        "e"
+      ]
+    },
+    "Scorpio": {
+      "n_labels": 30,
+      "top_roots": {
+        "e": 8,
+        "al": 3,
+        "ar": 3,
+        "ch": 2,
+        "eos": 2,
+        "cho": 1,
+        "edyl": 1,
+        "eor": 1,
+        "eo": 1,
+        "he": 1
+      },
+      "top_det": {
+        "k": 15,
+        "t": 10,
+        "∅": 3,
+        "p": 1
+      },
+      "all_roots": [
+        "al",
+        "cho",
+        "e",
+        "e",
+        "al",
+        "e",
+        "edyl",
+        "e",
+        "e",
+        "e",
+        "eor",
+        "eo",
+        "he",
+        "edy",
+        "ed",
+        "ch",
+        "alsh",
+        "a",
+        "eos",
+        "e",
+        "ar",
+        "e",
+        "y",
+        "o",
+        "ch",
+        "al",
+        "che",
+        "ar",
+        "ar",
+        "eos"
+      ]
+    },
+    "Sagittarius": {
+      "n_labels": 29,
+      "top_roots": {
+        "e": 13,
+        "al": 2,
+        "ol": 1,
+        "he": 1,
+        "des": 1,
+        "er": 1,
+        "als": 1,
+        "a": 1,
+        "raiin": 1,
+        "eos": 1
+      },
+      "top_det": {
+        "k": 14,
+        "∅": 6,
+        "t": 4,
+        "f": 2
+      },
+      "all_roots": [
+        "ol",
+        "e",
+        "e",
+        "e",
+        "e",
+        "he",
+        "des",
+        "er",
+        "e",
+        "als",
+        "e",
+        "e",
+        "a",
+        "e",
+        "raiin",
+        "e",
+        "eos",
+        "e",
+        "eol",
+        "e",
+        "ed",
+        "o",
+        "al",
+        "e",
+        "ye",
+        "eod",
+        "e",
+        "al"
+      ]
+    },
+    "Pisces": {
+      "n_labels": 29,
+      "top_roots": {
+        "o": 5,
+        "ar": 4,
+        "al": 4,
+        "ald": 3,
+        "ol": 2,
+        "alalg": 1,
+        "d": 1,
+        "ala": 1,
+        "ysam": 1,
+        "chh": 1
+      },
+      "top_det": {
+        "t": 14,
+        "k": 11,
+        "∅": 6,
+        "p": 1
+      },
+      "all_roots": [
+        "alalg",
+        "ar",
+        "o",
+        "o",
+        "d",
+        "o",
+        "ar",
+        "ala",
+        "o",
+        "ald",
+        "ald",
+        "o",
+        "ysam",
+        "chh",
+        "al",
+        "al",
+        "ar",
+        "al",
+        "eol",
+        "y",
+        "es",
+        "ar",
+        "am",
+        "al",
+        "alam",
+        "laram",
+        "aram",
+        "eos",
+        "alols",
+        "ald",
+        "ol",
+        "ol"
+      ]
+    }
+  },
+  "zodiac_matches": {
+    "Aries": [
+      [
+        "astro",
+        "ram",
+        "oloaram",
+        "CONTAINS",
+        0.8
+      ],
+      [
+        "coptic",
+        "klom",
+        "ldam",
+        "CONSONANT",
+        0.6666666666666666
+      ],
+      [
+        "coptic",
+        "klom",
+        "oloaram",
+        "CONSONANT",
+        0.6666666666666666
+      ],
+      [
+        "coptic",
+        "klm",
+        "ldam",
+        "CONSONANT",
+        0.6666666666666666
+      ],
+      [
+        "coptic",
+        "klm",
+        "oloaram",
+        "CONSONANT",
+        0.6666666666666666
+      ],
+      [
+        "hebrew",
+        "tlh",
+        "olch",
+        "CONSONANT",
+        0.6666666666666666
+      ],
+      [
+        "hebrew",
+        "tlh",
+        "alch",
+        "CONSONANT",
+        0.6666666666666666
+      ],
+      [
+        "hebrew",
+        "tlh",
+        "olsh",
+        "CONSONANT",
+        0.6666666666666666
+      ]
+    ],
+    "Taurus": [
+      [
+        "hebrew",
+        "shor",
+        "alsh",
+        "CONSONANT",
+        0.6666666666666666
+      ],
+      [
+        "hebrew",
+        "shor",
+        "osh",
+        "CONSONANT",
+        0.6666666666666666
+      ],
+      [
+        "hebrew",
+        "shor",
+        "shoda",
+        "CONSONANT",
+        0.6666666666666666
+      ],
+      [
+        "hebrew",
+        "shr",
+        "alsh",
+        "CONSONANT",
+        0.6666666666666666
+      ],
+      [
+        "hebrew",
+        "shr",
+        "osh",
+        "CONSONANT",
+        0.6666666666666666
+      ],
+      [
+        "hebrew",
+        "shr",
+        "shoda",
+        "CONSONANT",
+        0.6666666666666666
+      ]
+    ],
+    "Gemini": [
+      [
+        "greek",
+        "didimoi",
+        "dam",
+        "CONSONANT",
+        0.6666666666666666
+      ],
+      [
+        "greek",
+        "ddm",
+        "dam",
+        "CONSONANT",
+        0.6666666666666666
+      ],
+      [
+        "medieval_lat",
+        "mercurius",
+        "arcr",
+        "CONSONANT",
+        0.6
+      ]
+    ],
+    "Cancer": [],
+    "Leo": [
+      [
+        "arabic",
+        "asad",
+        "esed",
+        "CONSONANT",
+        1.0
+      ],
+      [
+        "arabic",
+        "sd",
+        "esed",
+        "CONSONANT",
+        1.0
+      ],
+      [
+        "hebrew",
+        "arh",
+        "rch",
+        "CONSONANT",
+        0.6666666666666666
+      ]
+    ],
+    "Virgo": [],
+    "Libra": [
+      [
+        "latin",
+        "libra",
+        "alair",
+        "CONSONANT",
+        0.6666666666666666
+      ],
+      [
+        "latin",
+        "lbr",
+        "alair",
+        "CONSONANT",
+        0.6666666666666666
+      ]
+    ],
+    "Scorpio": [
+      [
+        "coptic",
+        "djale",
+        "edyl",
+        "CONSONANT",
+        0.6666666666666666
+      ],
+      [
+        "coptic",
+        "djl",
+        "edyl",
+        "CONSONANT",
+        0.6666666666666666
+      ]
+    ],
+    "Sagittarius": [],
+    "Pisces": [
+      [
+        "greek",
+        "ichthues",
+        "chh",
+        "CONSONANT",
+        0.6
+      ],
+      [
+        "greek",
+        "chthr",
+        "chh",
+        "CONSONANT",
+        0.6
+      ]
+    ]
+  },
+  "suffix_semantics": {
+    "∅": {
+      "herbal-A": 1.17,
+      "herbal-B": 1.08,
+      "pharma": 1.05,
+      "bio": 0.78,
+      "cosmo": 1.08,
+      "text": 0.86,
+      "zodiac": 1.17
+    },
+    "y": {
+      "herbal-A": 1.19,
+      "herbal-B": 1.03,
+      "pharma": 1.01,
+      "bio": 0.88,
+      "cosmo": 0.89,
+      "text": 0.84,
+      "zodiac": 1.24
+    },
+    "dy": {
+      "herbal-A": 0.65,
+      "herbal-B": 0.76,
+      "pharma": 0.35,
+      "bio": 1.81,
+      "cosmo": 1.04,
+      "text": 1.18,
+      "zodiac": 0.57
+    },
+    "iin": {
+      "herbal-A": 1.16,
+      "herbal-B": 0.79,
+      "pharma": 0.98,
+      "bio": 0.67,
+      "cosmo": 1.43,
+      "text": 1.06,
+      "zodiac": 0.53
+    },
+    "ey": {
+      "herbal-A": 0.69,
+      "herbal-B": 0.6,
+      "pharma": 0.98,
+      "bio": 1.43,
+      "cosmo": 0.8,
+      "text": 1.12,
+      "zodiac": 1.2
+    },
+    "edy": {
+      "herbal-A": 0.33,
+      "herbal-B": 0.39,
+      "pharma": 0.05,
+      "bio": 2.56,
+      "cosmo": 0.86,
+      "text": 1.32,
+      "zodiac": 0.25
+    },
+    "ol": {
+      "herbal-A": 1.18,
+      "herbal-B": 1.27,
+      "pharma": 2.36,
+      "bio": 0.78,
+      "cosmo": 0.44,
+      "text": 0.74,
+      "zodiac": 0.87
+    },
+    "aiin": {
+      "herbal-A": 1.02,
+      "herbal-B": 1.51,
+      "pharma": 0.98,
+      "bio": 0.33,
+      "cosmo": 1.41,
+      "text": 1.21,
+      "zodiac": 0.93
+    },
+    "or": {
+      "herbal-A": 1.43,
+      "herbal-B": 1.27,
+      "pharma": 2.03,
+      "bio": 0.54,
+      "cosmo": 0.83,
+      "text": 0.68,
+      "zodiac": 0.63
+    },
+    "in": {
+      "herbal-A": 0.59,
+      "herbal-B": 0.84,
+      "pharma": 0.57,
+      "bio": 1.86,
+      "cosmo": 0.67,
+      "text": 1.36,
+      "zodiac": 0.2
+    },
+    "ar": {
+      "herbal-A": 0.76,
+      "herbal-B": 1.11,
+      "pharma": 0.65,
+      "bio": 0.49,
+      "cosmo": 1.57,
+      "text": 1.31,
+      "zodiac": 1.54
+    },
+    "ody": {
+      "herbal-A": 0.94,
+      "herbal-B": 1.89,
+      "pharma": 1.94,
+      "bio": 0.02,
+      "cosmo": 1.36,
+      "text": 0.94,
+      "zodiac": 1.81
+    },
+    "al": {
+      "herbal-A": 0.7,
+      "herbal-B": 1.08,
+      "pharma": 0.72,
+      "bio": 0.8,
+      "cosmo": 0.48,
+      "text": 1.39,
+      "zodiac": 2.1
+    },
+    "ain": {
+      "herbal-A": 0.6,
+      "herbal-B": 1.38,
+      "pharma": 0.65,
+      "bio": 0.97,
+      "cosmo": 0.44,
+      "text": 1.87,
+      "zodiac": 0.34
+    },
+    "sy": {
+      "herbal-A": 0.92,
+      "herbal-B": null,
+      "pharma": 2.5,
+      "bio": 0.57,
+      "cosmo": 1.32,
+      "text": 0.55,
+      "zodiac": 2.46
+    }
+  },
+  "coptic_probe": {
+    "total_matches": 36,
+    "top_matches": [
+      [
+        "she",
+        "she",
+        "wood/tree",
+        "EXACT",
+        1.0
+      ],
+      [
+        "ro",
+        "ro",
+        "mouth",
+        "EXACT",
+        1.0
+      ],
+      [
+        "hoo",
+        "houo",
+        "more than",
+        "NEAR-EXACT",
+        0.95
+      ],
+      [
+        "hoo",
+        "hoou",
+        "day",
+        "NEAR-EXACT",
+        0.95
+      ],
+      [
+        "lshe",
+        "she",
+        "wood/tree",
+        "CONTAINS",
+        0.8
+      ],
+      [
+        "sheo",
+        "she",
+        "wood/tree",
+        "CONTAINS",
+        0.8
+      ],
+      [
+        "lshed",
+        "she",
+        "wood/tree",
+        "CONTAINS",
+        0.8
+      ],
+      [
+        "cho",
+        "choeis",
+        "lord",
+        "WITHIN",
+        0.7
+      ],
+      [
+        "choe",
+        "choeis",
+        "lord",
+        "WITHIN",
+        0.7
+      ],
+      [
+        "sho",
+        "shope",
+        "be/become",
+        "WITHIN",
+        0.7
+      ],
+      [
+        "sho",
+        "shoue",
+        "dry",
+        "WITHIN",
+        0.7
+      ],
+      [
+        "chr",
+        "chrisma",
+        "anointing",
+        "WITHIN",
+        0.7
+      ],
+      [
+        "lor",
+        "olor",
+        "cluster (grapes)",
+        "WITHIN",
+        0.7
+      ],
+      [
+        "sh",
+        "she",
+        "wood/tree",
+        "SKELETON",
+        0.6
+      ],
+      [
+        "sh",
+        "shoue",
+        "dry",
+        "SKELETON",
+        0.6
+      ],
+      [
+        "ches",
+        "choeis",
+        "lord",
+        "SKELETON",
+        0.6
+      ],
+      [
+        "cheos",
+        "choeis",
+        "lord",
+        "SKELETON",
+        0.6
+      ],
+      [
+        "chos",
+        "choeis",
+        "lord",
+        "SKELETON",
+        0.6
+      ],
+      [
+        "she",
+        "shoue",
+        "dry",
+        "SKELETON",
+        0.6
+      ],
+      [
+        "esh",
+        "she",
+        "wood/tree",
+        "SKELETON",
+        0.6
+      ]
+    ],
+    "domain_counts": {
+      "botanical": 17,
+      "medical": 3,
+      "astronomical": 2,
+      "element": 14
+    }
+  },
+  "herbal_labels": {
+    "n_labels": 0,
+    "top_roots": {}
+  }
+}

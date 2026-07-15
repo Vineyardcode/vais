@@ -87,12 +87,12 @@ STEP 3: NL CHARACTER BASELINES — DO REAL ALPHABETS SHOW V/C SPLIT?
 ────────────────────────────────────────────────────────────────────────────
 
   Latin-Caesar:
-    Symbols: 26, Bigrams: 572889
-    Spectral gap: 0.5920, |λ2|: 0.4080
-    V/C split: 12 / 14 (46% / 54%)
-    V/C purity: 83%
-    Alternation rate: 66.8%
-    Small (V-candidate): ['a', 'c', 'd', 'e', 'g', 'i', 'j', 'k', 'o', 'p', 't', 'y']
+    Symbols: 22, Bigrams: 230381
+    Spectral gap: 0.4611, |λ2|: 0.5389
+    V/C split: 9 / 13 (41% / 59%)
+    V/C purity: 100%
+    Alternation rate: 75.2%
+    Small (V-candidate): ['a', 'e', 'f', 'i', 'o', 'p', 'q', 'u', 'y']
 
   Italian-Cucina:
     Symbols: 28, Bigrams: 86778
@@ -121,7 +121,7 @@ STEP 3: NL CHARACTER BASELINES — DO REAL ALPHABETS SHOW V/C SPLIT?
   Summary:
                 Text     Gap    |λ2|   V-ratio   Purity   Alt%
   ──────────────────  ──────  ──────  ────────  ───────  ─────
-        Latin-Caesar  0.5920  0.4080      0.46      83%   66.8
+        Latin-Caesar  0.4611  0.5389      0.41     100%   75.2
       Italian-Cucina  0.4385  0.5615      0.39     100%   73.2
         English-Cury  0.5465  0.4535      0.38      67%   36.4
      French-Viandier  0.6366  0.3634      0.46      67%   58.2
@@ -135,10 +135,10 @@ STEP 4: NL SYLLABLE CONTROL — SYLLABLES SHOULD NOT SPLIT CLEANLY
   a clean V/C split — syllables already contain both V and C.
 
   Latin-Caesar syllables:
-    Symbols: 50, Bigrams: 41803
-    Spectral gap: 0.6016, |λ2|: 0.3388
-    Split: 25 / 25 (50% / 50%)
-    Alternation: 24.7%
+    Symbols: 50, Bigrams: 12754
+    Spectral gap: 0.3596, |λ2|: 0.4218
+    Split: 15 / 35 (30% / 70%)
+    Alternation: 36.7%
 
   Italian-Cucina syllables:
     Symbols: 50, Bigrams: 7703
@@ -289,27 +289,27 @@ SYNTHESIS & VERDICT
 
   1. SPECTRAL GAP
      VMS:         0.4700
-     NL chars:    0.5534 ± 0.0736
-     z-score:     -1.13
+     NL chars:    0.5207 ± 0.0781
+     z-score:     -0.65
      vs null-1:   z = -1.81
      vs null-2:   z = 68.05
 
   2. V/C RATIO (expected ~0.15-0.25)
      VMS:         0.42
-     NL chars:    0.42 ± 0.04
-     z-score:     -0.08
+     NL chars:    0.41 ± 0.03
+     z-score:     +0.34
 
   3. ALTERNATION RATE (expected ~60-80%)
      VMS:         74.8%
-     NL chars:    58.7% ± 13.9%
-     z-score:     +1.16
+     NL chars:    60.8% ± 15.5%
+     z-score:     +0.91
 
   4. POSITIONAL CONFOUND: YES
   5. SLOT CONSISTENCY: NO
 
-  6. NL SYLLABLE GAPS (control): ['0.6016', '0.7554', '0.6373', '0.0000']
+  6. NL SYLLABLE GAPS (control): ['0.3596', '0.7554', '0.6373', '0.0000']
      NL syllables should have WEAKER gaps than NL characters.
-     NL syl gap mean: 0.4986 vs NL char gap mean: 0.5534
+     NL syl gap mean: 0.4381 vs NL char gap mean: 0.5207
 
   VERDICT:
   ✗ NOT SUPPORTED: No significant spectral gap detected.

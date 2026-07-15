@@ -122,9 +122,6 @@ def parse_word(word):
                 for suf in SUFFIXES:
                     if rest3 == suf:  # suffix must consume the rest
                         suf_options.append(suf)
-                    elif rest3.endswith(suf) and len(rest3) > len(suf):
-                        # partial suffix match — remainder in middle
-                        pass
 
                 # Also try suffix that consumes end, leaving middle remainder
                 for suf in SUFFIXES:

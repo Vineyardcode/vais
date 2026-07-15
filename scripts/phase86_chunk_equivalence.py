@@ -1135,8 +1135,8 @@ def main():
     pr()
 
     ref_files = {
-        'Latin-Caesar': DATA_DIR / 'latin_texts' / 'caesar_gallic_wars.txt',
-        'Italian-Cucina': DATA_DIR / 'vernacular_texts' / 'libro_della_cucina.txt',
+        'Latin-Caesar': DATA_DIR / 'latin_texts' / 'caesar.txt',
+        'Italian-Cucina': DATA_DIR / 'vernacular_texts' / 'italian_cucina.txt',
     }
 
     for name, fpath in ref_files.items():

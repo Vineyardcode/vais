@@ -85,7 +85,7 @@ STEP 5: Null models (shuffled chunks, uniform bigram)
 
   Uniform random (mean ± std over 10 seeds):
     h_ratio                  : 0.7715 ± 0.0003  (VMS: 0.8176)
-    glyph_h_char             : 0.7865 ± 0.0003  (VMS: 0.6530)
+    glyph_h_char             : 0.7866 ± 0.0007  (VMS: 0.6530)
     zipf_slope               : -0.0338 ± 0.0068  (VMS: -0.8755)
     heaps_beta               : 0.2217 ± 0.0044  (VMS: 0.3547)
     ttr                      : 0.0067 ± 0.0000  (VMS: 0.0067)
@@ -100,13 +100,13 @@ STEP 6: Statistical comparison (z-scores: synthetic vs VMS)
   Metric                          VMS  Bi_mean     Bi_z Tri_mean    Tri_z   Shuf_z    Uni_z
   ────────────────────────── ──────── ──────── ──────── ──────── ──────── ──────── ────────
   h_ratio                      0.8176   0.8401   -41.98   0.8002    26.94   0.9410  -387.48   0.7715   165.50
-  glyph_h_char                 0.6530   0.6695   -17.56   0.6524     0.66   0.7138  -475.04   0.7865  -402.25
+  glyph_h_char                 0.6530   0.6695   -17.56   0.6524     0.66   0.7138  -475.04   0.7866  -185.91
   zipf_slope                  -0.8755  -0.8774     0.45  -0.8742    -0.35      N/A      N/A  -0.0338  -123.87
   heaps_beta                   0.3547   0.3165     4.86   0.3158     2.84   0.3366     1.82   0.2217    29.96
   ttr                          0.0067   0.0060    12.62   0.0060    11.06      N/A      N/A      N/A      N/A
   cross_word_mi                0.7163   0.4051    68.69   0.8483   -14.63   0.5373    65.76   2.8876  -629.30
   positional_gini              0.4423   0.4415     0.21   0.4462    -1.29   0.2660    46.06   0.2518   317.80
-  word_ttr                     0.2014   0.2051    -4.70   0.1610    47.25   0.3562  -190.06   0.7189 -1155.27
+  word_ttr                     0.2014   0.2051    -4.70   0.1610    47.25   0.3562  -190.06   0.7189  -913.04
   mean_chunks_per_word         1.9481   1.9474     0.20   1.9460     0.73      N/A      N/A      N/A      N/A
 
 ────────────────────────────────────────────────────────────────────────
@@ -117,17 +117,17 @@ STEP 7: Collapse to 25 equivalence classes (Phase 86)
   After extension: 523 / 523 chunk types mapped
   Number of equivalence classes used: 25
 
-  VMS collapsed: h_ratio=0.8495, types=25, TTR=0.000318
+  VMS collapsed: h_ratio=0.8503, types=25, TTR=0.000318
   Collapsed bigram: 26 contexts
   Collapsed trigram: 394 contexts
 
   Collapsed comparison:
   Metric                    VMS  Bi_mean     Bi_z Tri_mean    Tri_z
   ──────────────────── ──────── ──────── ──────── ──────── ────────
-  h_ratio                0.8495   0.8630   -21.10   0.8483     1.50
-  zipf_slope            -2.2688  -2.2608    -0.71  -2.2662    -0.12
-  heaps_beta             0.0734   0.0931    -1.25   0.0827    -0.63
-  ttr                    0.0003   0.0003     0.60   0.0003     0.29
+  h_ratio                0.8503   0.8638   -19.70   0.8492     2.00
+  zipf_slope            -2.2900  -2.2859    -0.32  -2.2892    -0.03
+  heaps_beta             0.0734   0.0944    -1.21   0.0868    -0.83
+  ttr                    0.0003   0.0003     0.68   0.0003     0.30
   hapax_ratio            0.0000      N/A      N/A      N/A      N/A
 
 ────────────────────────────────────────────────────────────────────────

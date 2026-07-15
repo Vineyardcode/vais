@@ -1,7 +1,0 @@
-Traceback (most recent call last):
-  File "C:\projects\voynich_slop\scripts\medieval_degrees.py", line 781, in <module>
-    data = load_results()
-  File "C:\projects\voynich_slop\scripts\medieval_degrees.py", line 32, in load_results
-    with open(RESULTS_FILE, encoding="utf-8") as f:
-         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-FileNotFoundError: [Errno 2] No such file or directory: 'ring_decan_results.json'

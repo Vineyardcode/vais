@@ -1,7 +1,0 @@
-Traceback (most recent call last):
-  File "C:\projects\voynich_slop\scripts\crosssign_network.py", line 642, in <module>
-    data = load_ring_data()
-  File "C:\projects\voynich_slop\scripts\crosssign_network.py", line 26, in load_ring_data
-    with open("ring_decan_results.json", encoding="utf-8") as f:
-         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-FileNotFoundError: [Errno 2] No such file or directory: 'ring_decan_results.json'

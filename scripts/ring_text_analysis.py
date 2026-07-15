@@ -401,14 +401,6 @@ def phase3_register(ring_parsed, ring_texts):
     print(f"  {'Ring':<12} {'A-roots':>8} {'B-roots':>8} {'Total':>6} {'A%':>6} {'B%':>6}")
     print(f"  {'-'*12} {'-'*8} {'-'*8} {'-'*6} {'-'*6} {'-'*6}")
 
-    for rt in ring_texts:
-        words_parsed = [parse_word(w) for w in rt["words"]]
-        a_n = sum(1 for _, root, _, _ in words_parsed if root in type_a_markers)
-        b_n = sum(1 for _, root, _, _ in words_parsed if root in type_b_markers)
-        t_n = len(words_parsed)
-        if t_n == 0:
-            continue
-
     # Aggregate by ring position
     for ring_name in ["outer", "middle", "inner", "innermost"]:
         rts = [rt for rt in ring_texts if rt["ring_name"] == ring_name]

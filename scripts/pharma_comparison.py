@@ -245,8 +245,7 @@ def analyze():
     print()
 
     # Expected under independence
-    a_total = sum(transitions.get((t1, t2), 0) for t1 in ["A", "B"] for t2 in ["A", "B"] if t1 == "A")
-    # ... actually let's compute marginals properly
+    # compute marginals
     row_a = transitions.get(("A","A"),0) + transitions.get(("A","B"),0)
     row_b = transitions.get(("B","A"),0) + transitions.get(("B","B"),0)
     col_a = transitions.get(("A","A"),0) + transitions.get(("B","A"),0)
@@ -609,10 +608,7 @@ def analyze():
     jaccard_sums = defaultdict(lambda: [0, 0])  # (sec1, sec2) -> [sum_jaccard, count]
     all_jaccards = []
 
-    # Sample pairs to keep it tractable
-    import random
-    random.seed(42)
-
+    # Deterministic pair window (next 49 folios in sorted order)
     for i in range(len(folio_list)):
         for j in range(i + 1, min(i + 50, len(folio_list))):
             f1, f2 = folio_list[i], folio_list[j]

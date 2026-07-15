@@ -6,15 +6,15 @@
   "vms_n_3plus_words": 6972,
   "vms_suc_IM": {
     "n_shared_types": 64,
-    "mean_jsd": 0.6525460215810817,
-    "median_jsd": 0.6233455092583788,
+    "mean_jsd": 0.6525460215810815,
+    "median_jsd": 0.6233455092583786,
     "weighted_jsd": 0.513433983986459
   },
   "vms_pre_MF": {
     "n_shared_types": 69,
     "mean_jsd": 0.6116581986232587,
     "median_jsd": 0.5824159208845171,
-    "weighted_jsd": 0.49610581984513413
+    "weighted_jsd": 0.496105819845134
   },
   "vms_suc_cmi": {
     "weighted": 0.34661995639604676,
@@ -24,20 +24,20 @@
   "vms_top1_concordance": 0.046875,
   "vms_top3_concordance": 0.546875,
   "zscores_vs_char": {
-    "suc_jsd_mean": 6.161455317485034,
-    "suc_jsd_weighted": 3.5114870017298516,
-    "pre_jsd_mean": 3.794421172150122,
-    "pre_jsd_weighted": 5.909453197371667,
-    "cmi": 4.7409402982232205,
-    "top1_concordance": -2.312633139206707
+    "suc_jsd_mean": 5.800183202463747,
+    "suc_jsd_weighted": 3.6352959640051417,
+    "pre_jsd_mean": 3.5298919978674186,
+    "pre_jsd_weighted": 5.935857230649392,
+    "cmi": 4.958287216542741,
+    "top1_concordance": -2.3110668991835404
   },
   "zscores_vs_syl": {
-    "suc_jsd_mean": -10.646363572126731,
-    "suc_jsd_weighted": -12.808231871796352,
-    "pre_jsd_mean": -7.387530794404339,
-    "pre_jsd_weighted": -9.213450207986098,
-    "cmi": -12.923729565115185,
-    "top1_concordance": 1.1760703774339751
+    "suc_jsd_mean": -7.7288923694659335,
+    "suc_jsd_weighted": -10.069020488925851,
+    "pre_jsd_mean": -4.02669929092043,
+    "pre_jsd_weighted": -6.30609997581399,
+    "cmi": -15.202255846595357,
+    "top1_concordance": 1.0328900689960487
   },
   "nl_char_baselines": {
     "English-Cury": {
@@ -49,15 +49,15 @@
       "top1_concordance": 0.21428571428571427
     },
     "French-Viandier": {
-      "suc_jsd_mean": 0.3388372856173235,
-      "suc_jsd_weighted": 0.34658666297385815,
+      "suc_jsd_mean": 0.33883728561732346,
+      "suc_jsd_weighted": 0.3465866629738581,
       "pre_jsd_mean": 0.4837155877760211,
       "suc_cmi": 0.15755066162885628,
       "n_shared_suc": 20,
       "top1_concordance": 0.25
     },
     "German-BvgS": {
-      "suc_jsd_mean": 0.43766745996427486,
+      "suc_jsd_mean": 0.4376674599642749,
       "suc_jsd_weighted": 0.4259506410542889,
       "pre_jsd_mean": 0.30721302861683764,
       "suc_cmi": 0.23972084648973568,
@@ -65,9 +65,9 @@
       "top1_concordance": 0.25
     },
     "German-Faust": {
-      "suc_jsd_mean": 0.34914647392055265,
+      "suc_jsd_mean": 0.3491464739205527,
       "suc_jsd_weighted": 0.3498775550484373,
-      "pre_jsd_mean": 0.2608344608005637,
+      "pre_jsd_mean": 0.26083446080056377,
       "suc_cmi": 0.1993950158970106,
       "n_shared_suc": 27,
       "top1_concordance": 0.4074074074074074
@@ -75,7 +75,7 @@
     "Italian-Cucina": {
       "suc_jsd_mean": 0.24800983234127347,
       "suc_jsd_weighted": 0.24130197227472397,
-      "pre_jsd_mean": 0.43525385123409915,
+      "pre_jsd_mean": 0.4352538512340992,
       "suc_cmi": 0.11873780809677109,
       "n_shared_suc": 22,
       "top1_concordance": 0.13636363636363635
@@ -89,34 +89,34 @@
       "top1_concordance": 0.13043478260869565
     },
     "Latin-Caesar": {
-      "suc_jsd_mean": 0.3130691714842142,
-      "suc_jsd_weighted": 0.3433508205309078,
-      "pre_jsd_mean": 0.3091303585560036,
-      "suc_cmi": 0.19248959178039002,
-      "n_shared_suc": 26,
-      "top1_concordance": 0.3076923076923077
+      "suc_jsd_mean": 0.3000537964726894,
+      "suc_jsd_weighted": 0.3263871731958665,
+      "pre_jsd_mean": 0.3912788919999477,
+      "suc_cmi": 0.14560344575252998,
+      "n_shared_suc": 21,
+      "top1_concordance": 0.23809523809523808
     },
     "Latin-Vulgate": {
-      "suc_jsd_mean": 0.33992826197628756,
-      "suc_jsd_weighted": 0.34022782915026323,
-      "pre_jsd_mean": 0.3249016550131241,
-      "suc_cmi": 0.19233553313119536,
-      "n_shared_suc": 26,
-      "top1_concordance": 0.23076923076923078
+      "suc_jsd_mean": 0.24695739469021685,
+      "suc_jsd_weighted": 0.28443052460993673,
+      "pre_jsd_mean": 0.27997888682893307,
+      "suc_cmi": 0.13855048829231018,
+      "n_shared_suc": 22,
+      "top1_concordance": 0.3181818181818182
     }
   },
   "nl_syl_baselines": {
     "English-Cury": {
       "suc_jsd_mean": 0.9397041578186136,
       "suc_jsd_weighted": 0.933797908903209,
-      "pre_jsd_mean": 0.9246138480731422,
+      "pre_jsd_mean": 0.924613848073142,
       "suc_cmi": 0.6409552406203834,
       "n_shared_suc": 68,
       "top1_concordance": 0.0
     },
     "French-Viandier": {
       "suc_jsd_mean": 0.9948734630597492,
-      "suc_jsd_weighted": 0.9965946278821196,
+      "suc_jsd_weighted": 0.9965946278821197,
       "pre_jsd_mean": 0.9845800844566162,
       "suc_cmi": 0.6382159008766849,
       "n_shared_suc": 15,
@@ -124,14 +124,14 @@
     },
     "German-BvgS": {
       "suc_jsd_mean": 0.9109666504939161,
-      "suc_jsd_weighted": 0.9217998462628153,
+      "suc_jsd_weighted": 0.9217998462628155,
       "pre_jsd_mean": 0.9425792009928082,
       "suc_cmi": 0.6403343594993536,
       "n_shared_suc": 12,
       "top1_concordance": 0.08333333333333333
     },
     "German-Faust": {
-      "suc_jsd_mean": 0.973487930700821,
+      "suc_jsd_mean": 0.9734879307008211,
       "suc_jsd_weighted": 0.9652420324610796,
       "pre_jsd_mean": 0.9242296271314187,
       "suc_cmi": 0.6489046340088326,
@@ -139,8 +139,8 @@
       "top1_concordance": 0.0
     },
     "Italian-Cucina": {
-      "suc_jsd_mean": 0.9063772523764774,
-      "suc_jsd_weighted": 0.8744217329095182,
+      "suc_jsd_mean": 0.9063772523764775,
+      "suc_jsd_weighted": 0.8744217329095184,
       "pre_jsd_mean": 0.8321542365380412,
       "suc_cmi": 0.703214459859169,
       "n_shared_suc": 63,
@@ -155,29 +155,29 @@
       "top1_concordance": 0.015151515151515152
     },
     "Latin-Caesar": {
-      "suc_jsd_mean": 0.953122683030805,
-      "suc_jsd_weighted": 0.9348936208030418,
-      "pre_jsd_mean": 0.931833575357272,
-      "suc_cmi": 0.61636860409568,
-      "n_shared_suc": 81,
-      "top1_concordance": 0.012345679012345678
+      "suc_jsd_mean": 0.8835559892312081,
+      "suc_jsd_weighted": 0.8883704418642208,
+      "pre_jsd_mean": 0.7992496997923123,
+      "suc_cmi": 0.6476130582577182,
+      "n_shared_suc": 67,
+      "top1_concordance": 0.029850746268656716
     },
     "Latin-Vulgate": {
-      "suc_jsd_mean": 0.9537337408224396,
-      "suc_jsd_weighted": 0.9323053651138574,
-      "pre_jsd_mean": 0.898742080393426,
-      "suc_cmi": 0.6428751970704194,
-      "n_shared_suc": 75,
-      "top1_concordance": 0.0
+      "suc_jsd_mean": 0.8984013727157286,
+      "suc_jsd_weighted": 0.8748286241335248,
+      "pre_jsd_mean": 0.7828367005750279,
+      "suc_cmi": 0.6558038547646209,
+      "n_shared_suc": 59,
+      "top1_concordance": 0.01694915254237288
     }
   },
   "null_model_suc": {
-    "observed": 0.6525460215810817,
-    "null_mean": 0.42135497766434254,
-    "null_std": 0.009643756847812053,
-    "z": 23.97313075859965
+    "observed": 0.6525460215810815,
+    "null_mean": 0.4213549776643426,
+    "null_std": 0.009643756847812058,
+    "z": 23.973130758599616
   },
-  "mean_z_vs_char": 3.634187307958865,
-  "mean_z_vs_syl": -8.633872605665788,
+  "mean_z_vs_char": 3.5914081187241496,
+  "mean_z_vs_syl": -7.050012983787585,
   "verdict": "CONTEXT_DIVERGENCE_BETWEEN_CHAR_AND_SYL"
 }

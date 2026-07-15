@@ -64,8 +64,8 @@ STEP 5 — Frequency asymmetry: Is base more frequent than extension?
   sho                  118  sheo                  50     2.4  ◄ base
   cho                   80  cheo                  82     1.0  ► ext
   qokol                106  qokeol                52     2.0  ◄ base
-  shor                  99  sheor                 48     2.1  ◄ base
   okol                  82  okeol                 65     1.3  ◄ base
+  shor                  99  sheor                 48     2.1  ◄ base
   otol                  83  oteol                 36     2.3  ◄ base
   shody                 56  sheody                55     1.0  ◄ base
   dol                  106  deol                   1     >>1  ◄ base
@@ -131,7 +131,7 @@ STEP 9 — Folio co-occurrence: Do base and extended forms
 
 STEP 10 — NL baseline: 'vowel-extension' pairing in Latin
 ------------------------------------------------------------
-  caesar         :   9794 types,   24 vowel-insertion pairs (0.2%)
+  caesar         :   9987 types,    9 vowel-insertion pairs (0.1%)
   galen          :   9851 types,   24 vowel-insertion pairs (0.2%)
   apicius        :   5948 types,   25 vowel-insertion pairs (0.4%)
 

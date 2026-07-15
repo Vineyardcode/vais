@@ -94,8 +94,6 @@ def parse_word(word):
                 for suf in SUFFIXES:
                     if rest3 == suf:
                         suf_options.append(suf)
-                    elif rest3.endswith(suf) and len(rest3) > len(suf):
-                        pass
                 for suf in suf_options:
                     if suf:
                         if rest3 == suf:

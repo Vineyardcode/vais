@@ -80,11 +80,11 @@ R2: MATHEMATICAL PREDICTION — ENTROPY UNDER ALPHABET COLLAPSE
 R3: NL SYLLABLE CROSS-CHECK — DO NL SYLLABLES ALSO COLLAPSE TO ~30?
 ────────────────────────────────────────────────────────────────────────────
 
-  Latin-Caesar: 161696 words, 280160 syllables, 5078 types, base h_ratio=0.5426
-    Random merge to k=25: h_ratio=0.9483±0.0047
-    Freq-rank merge to k=25: h_ratio=0.9445, types=25
-    Random merge to k=30: h_ratio=0.9434±0.0064
-    Freq-rank merge to k=30: h_ratio=0.9379, types=30
+  Latin-Caesar: 44864 words, 101887 syllables, 2369 types, base h_ratio=0.5694
+    Random merge to k=25: h_ratio=0.9812±0.0012
+    Freq-rank merge to k=25: h_ratio=0.9791, types=25
+    Random merge to k=30: h_ratio=0.9755±0.0015
+    Freq-rank merge to k=30: h_ratio=0.9721, types=30
 
   Italian-Cucina: 24367 words, 47348 syllables, 1532 types, base h_ratio=0.5959
     Random merge to k=25: h_ratio=0.9716±0.0016

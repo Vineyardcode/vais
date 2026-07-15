@@ -7,10 +7,10 @@
   "results_files_touched": []
  },
  "astro_crossref": {
-  "status": "error",
-  "returncode": 1,
-  "duration_s": 0.12,
-  "stdout_bytes": 0,
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.14,
+  "stdout_bytes": 15572,
   "results_files_touched": []
  },
  "astro_label_pipeline": {
@@ -35,10 +35,10 @@
   "results_files_touched": []
  },
  "crosssign_network": {
-  "status": "error",
-  "returncode": 1,
-  "duration_s": 0.12,
-  "stdout_bytes": 137,
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.18,
+  "stdout_bytes": 20813,
   "results_files_touched": []
  },
  "currier_ab": {
@@ -157,10 +157,10 @@
   "results_files_touched": []
  },
  "innermost_ring_dive": {
-  "status": "error",
-  "returncode": 1,
-  "duration_s": 0.09,
-  "stdout_bytes": 0,
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.18,
+  "stdout_bytes": 23734,
   "results_files_touched": []
  },
  "leo_deepdive": {
@@ -171,10 +171,10 @@
   "results_files_touched": []
  },
  "medieval_degrees": {
-  "status": "error",
-  "returncode": 1,
-  "duration_s": 0.1,
-  "stdout_bytes": 134,
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.11,
+  "stdout_bytes": 15560,
   "results_files_touched": []
  },
  "pharma_comparison": {
@@ -883,5 +883,220 @@
    "phase85R_revalidation.json",
    "phase85R_revalidation.txt"
   ]
+ },
+ "phase86_chunk_equivalence": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 84.54,
+  "stdout_bytes": 13025,
+  "results_files_touched": [
+   "phase86_chunk_equivalence.json",
+   "phase86_chunk_equivalence.txt"
+  ]
+ },
+ "phase86R_revalidation": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 66.14,
+  "stdout_bytes": 9574,
+  "results_files_touched": [
+   "phase86R_revalidation.json",
+   "phase86R_revalidation.txt"
+  ]
+ },
+ "phase87_gallows_null_test": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 2.77,
+  "stdout_bytes": 12498,
+  "results_files_touched": [
+   "phase87_gallows_null_test.txt"
+  ]
+ },
+ "phase87_spectral_vc": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 4.03,
+  "stdout_bytes": 13399,
+  "results_files_touched": [
+   "phase87_spectral_vc.json",
+   "phase87_spectral_vc.txt"
+  ]
+ },
+ "phase87R_revalidation": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 1.59,
+  "stdout_bytes": 10963,
+  "results_files_touched": [
+   "phase87R_revalidation.json",
+   "phase87R_revalidation.txt"
+  ]
+ },
+ "phase88_position_identity": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 8.44,
+  "stdout_bytes": 20301,
+  "results_files_touched": [
+   "phase88_position_identity.json",
+   "phase88_position_identity.txt"
+  ]
+ },
+ "phase89_context_divergence": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 3.91,
+  "stdout_bytes": 25991,
+  "results_files_touched": [
+   "phase89_context_divergence.json",
+   "phase89_context_divergence.txt"
+  ]
+ },
+ "phase90_crossword_chunk_mi": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 20.89,
+  "stdout_bytes": 12914,
+  "results_files_touched": [
+   "phase90_crossword_chunk_mi.json",
+   "phase90_crossword_chunk_mi.txt"
+  ]
+ },
+ "phase91_zodiac_galenic_axis": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 1.77,
+  "stdout_bytes": 13621,
+  "results_files_touched": [
+   "phase91_zodiac_galenic.json",
+   "phase91_zodiac_galenic.txt"
+  ]
+ },
+ "phase92_ae_minimal_pairs": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 1.21,
+  "stdout_bytes": 12737,
+  "results_files_touched": [
+   "phase92_ae_minimal_pairs.json",
+   "phase92_ae_minimal_pairs.txt"
+  ]
+ },
+ "phase93_currier_slot2_regime": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 3.03,
+  "stdout_bytes": 11351,
+  "results_files_touched": [
+   "phase93_currier_slot2.json",
+   "phase93_currier_slot2.txt"
+  ]
+ },
+ "phase94_e_extension_morphology": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.87,
+  "stdout_bytes": 8984,
+  "results_files_touched": [
+   "phase94_e_extension.json",
+   "phase94_e_extension.txt"
+  ]
+ },
+ "phase95_currier_split_fingerprint": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 27.08,
+  "stdout_bytes": 9287,
+  "results_files_touched": [
+   "phase95_currier_split_fingerprint.txt"
+  ]
+ },
+ "phase96_cluster_hchar": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 5.14,
+  "stdout_bytes": 5484,
+  "results_files_touched": []
+ },
+ "phase97_slot_grammar_hchar": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 91.06,
+  "stdout_bytes": 8192,
+  "results_files_touched": [
+   "phase97_slot_grammar_hchar.json"
+  ]
+ },
+ "phase98_generative_chunk_model": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 52.58,
+  "stdout_bytes": 9090,
+  "results_files_touched": [
+   "phase98_generative_chunk_model.json",
+   "phase98_generative_chunk_model.txt"
+  ]
+ },
+ "phase99_script_typology": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 9.14,
+  "stdout_bytes": 13231,
+  "results_files_touched": [
+   "phase99_script_typology.json",
+   "phase99_script_typology.txt"
+  ]
+ },
+ "ring_decan_mapping": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.1,
+  "stdout_bytes": 24749,
+  "results_files_touched": []
+ },
+ "ring_text_analysis": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.13,
+  "stdout_bytes": 19944,
+  "results_files_touched": []
+ },
+ "root_lexicon_rosetta": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.56,
+  "stdout_bytes": 26179,
+  "results_files_touched": []
+ },
+ "rtl_direction_test": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.7,
+  "stdout_bytes": 10285,
+  "results_files_touched": []
+ },
+ "sentence_translation": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.15,
+  "stdout_bytes": 123065,
+  "results_files_touched": [
+   "phase17_sentence_translation.json"
+  ]
+ },
+ "shorthand_analysis": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.71,
+  "stdout_bytes": 18430,
+  "results_files_touched": []
+ },
+ "slot_analysis": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.73,
+  "stdout_bytes": 17040,
+  "results_files_touched": []
  }
 }

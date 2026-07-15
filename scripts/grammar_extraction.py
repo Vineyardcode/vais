@@ -80,8 +80,6 @@ def parse_word(word):
                         pos += len(rb)
                         matched = True
                         break
-                    if not matched:
-                        break
                 if not matched:
                     break
             root_str = ro + "".join(body_parts)

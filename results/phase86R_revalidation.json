@@ -128,8 +128,8 @@
   "within_between_ratio": 0.2877921455493234,
   "nl_cross_check": {
     "Latin-Caesar": {
-      "n_types": 5078,
-      "base_h_ratio": 0.5425954333738494
+      "n_types": 2369,
+      "base_h_ratio": 0.5694394389805658
     },
     "Italian-Cucina": {
       "n_types": 1532,

@@ -145,7 +145,6 @@ def extract_by_language(txt_files):
                     pfx, onset, body, suf, rem = parse_word(tok)
                     if not rem:
                         root = get_root(onset, body)
-                        entry = (tok, pfx or "∅", root, suf or "∅", folio_name, section)
                         parsed_line.append((tok, pfx or "∅", root, suf or "∅"))
 
                         if section is None:
@@ -569,6 +568,20 @@ def analyze():
 
     print(f"  3. B-RUNS: A={rate_a:.1f}/1000tok, B={rate_b:.1f}/1000tok")
     print()
+
+    # Populate results (was previously left empty -> JSON output was always {})
+    results["tokens"] = {"A": total_a, "B": total_b, "?": len(lang_data["?"])}
+    results["root_jsd"] = root_jsd
+    results["prefix_jsd"] = pfx_jsd
+    results["suffix_jsd"] = suf_jsd
+    results["type_counts_A"] = dict(type_counts_a)
+    results["type_counts_B"] = dict(type_counts_b)
+    results["b_runs_per_1000"] = {"A": rate_a, "B": rate_b}
+    if ha_total > 100 and hb_total > 100:
+        results["herbal_within_jsd"] = {
+            "root": herbal_root_jsd, "suffix": herbal_suf_jsd,
+            "prefix": herbal_pfx_jsd,
+        }
 
     print("  Results saved to currier_ab_results.json")
     print()

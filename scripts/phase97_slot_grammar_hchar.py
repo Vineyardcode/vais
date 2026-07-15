@@ -54,9 +54,10 @@ import os, re, glob, math, json
 from collections import Counter, defaultdict
 import random
 
-FOLIO_DIR = r"c:\projects\voynich_slop\folios"
-LATIN_DIR = r"c:\projects\voynich_slop\data\latin_texts"
-RESULTS_DIR = r"c:\projects\voynich_slop\results"
+_PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+FOLIO_DIR = os.path.join(_PROJECT_DIR, "folios")
+LATIN_DIR = os.path.join(_PROJECT_DIR, "data", "latin_texts")
+RESULTS_DIR = os.path.join(_PROJECT_DIR, "results")
 
 # ============================================================
 # 1. EVA PARSING (from Phase 85)

@@ -17,8 +17,8 @@ STEP 1: PARSE CORPORA
   VMS ≥3-chunk words: 6972 (17.3%)
   VMS tokens in ≥3-chunk words: 22690
 
-  Latin-Caesar: 161696 words, 129520 with ≥3 chars (80.1%), 25198 with ≥3 syls (15.6%)
-  Latin-Vulgate: 71071 words, 54670 with ≥3 chars (76.9%), 11908 with ≥3 syls (16.8%)
+  Latin-Caesar: 44864 words, 38893 with ≥3 chars (86.7%), 17939 with ≥3 syls (40.0%)
+  Latin-Vulgate: 25908 words, 21217 with ≥3 chars (81.9%), 6612 with ≥3 syls (25.5%)
   Latin-Apicius: 29267 words, 21912 with ≥3 chars (74.9%), 8157 with ≥3 syls (27.9%)
   Italian-Cucina: 24367 words, 17574 with ≥3 chars (72.1%), 6680 with ≥3 syls (27.4%)
   French-Viandier: 13873 words, 10764 with ≥3 chars (77.6%), 1973 with ≥3 syls (14.2%)
@@ -39,14 +39,14 @@ STEP 2: VMS CONTEXT DIVERGENCE (≥3-chunk words)
       Per-type detail (sorted by JSD, desc):
         Type                   JSD    n@I    n@M  Top1@I            Top1@M            Same?
         ──────────────────  ──────  ─────  ─────  ────────────────  ────────────────  ─────
-        ch.e.o.k            1.0000      5     10  e                 y                    no
         ch                  1.0000      8     16  ch.o.t            sh.y                 no
         y.p                 1.0000     16      5  ch.d              ch.e.d.y             no
         ch.ckh              1.0000      8     12  y.o.cth           y                    no
-        ch.cth              1.0000      5     12  y.k               y                    no
+        ch.e.o.k            1.0000      5     10  e                 y                    no
         o.ckh               1.0000      5      8  d                 y                    no
-        ch.s                1.0000      5     37  k                 y                    no
         sh.o.r              1.0000      5      5  y.d               o                    no
+        ch.s                1.0000      5     37  k                 y                    no
+        ch.cth              1.0000      5     12  y.k               y                    no
         ch.o.t              0.9122      7     17  a.l               ch.y                 no
         ch.a.l              0.8820     15     13  k                 y                    no
         ckh                 0.8791     20      6  o                 y                    no
@@ -113,9 +113,9 @@ STEP 2: VMS CONTEXT DIVERGENCE (≥3-chunk words)
       Per-type detail (sorted by JSD, desc):
         Type                   JSD    n@M    n@F  Top1@M            Top1@F            Same?
         ──────────────────  ──────  ─────  ─────  ────────────────  ────────────────  ─────
+        e.e.o.d.y           1.0000      7     15  y.k               k                    no
         ch.a.r              1.0000      7      9  o                 a.l                  no
         sh.e.o              1.0000      6      5  y                 o                    no
-        e.e.o.d.y           1.0000      7     15  y.k               k                    no
         ch.e.d              0.9181    110      6  p                 a.l                  no
         a.s                 0.8727     24     14  d                 e.e                  no
         sh.o.r              0.8697      5     11  sh.e.f            y                    no
@@ -215,8 +215,8 @@ STEP 3: NL CHARACTER + SYLLABLE BASELINES
     German-Faust-char               27    0.3491    0.3178    0.3499   40.7%
     Italian-Cucina-char             22    0.2480    0.2096    0.2413   13.6%
     Latin-Apicius-char              23    0.2833    0.2232    0.2760   13.0%
-    Latin-Caesar-char               26    0.3131    0.3126    0.3434   30.8%
-    Latin-Vulgate-char              26    0.3399    0.3231    0.3402   23.1%
+    Latin-Caesar-char               21    0.3001    0.3304    0.3264   23.8%
+    Latin-Vulgate-char              22    0.2470    0.2422    0.2844   31.8%
 
   NL SYLLABLE baselines (successor JSD, I vs M, ≥3-syl words):
     System                    n_shared      Mean    Median  Weighted   Top1%
@@ -228,8 +228,8 @@ STEP 3: NL CHARACTER + SYLLABLE BASELINES
     German-Faust-syl                44    0.9735    1.0000    0.9652    0.0%
     Italian-Cucina-syl              63    0.9064    0.9281    0.8744    1.6%
     Latin-Apicius-syl               66    0.9415    0.9820    0.9240    1.5%
-    Latin-Caesar-syl                81    0.9531    0.9872    0.9349    1.2%
-    Latin-Vulgate-syl               75    0.9537    1.0000    0.9323    0.0%
+    Latin-Caesar-syl                67    0.8836    0.9116    0.8884    3.0%
+    Latin-Vulgate-syl               59    0.8984    0.9208    0.8748    1.7%
 
 ────────────────────────────────────────────────────────────────────────────
 STEP 4: Z-SCORE COMPARISON — VMS vs NL BASELINES
@@ -237,31 +237,31 @@ STEP 4: Z-SCORE COMPARISON — VMS vs NL BASELINES
 
   SUCCESSOR JSD (I vs M):
     VMS mean JSD:       0.6525
-    NL char mean±std:   0.3253 ± 0.0531  z = +6.16
-    NL syl mean±std:    0.9467 ± 0.0276  z = -10.65
+    NL char mean±std:   0.3120 ± 0.0587  z = +5.80
+    NL syl mean±std:    0.9311 ± 0.0360  z = -7.73
 
     VMS weighted JSD:   0.5134
-    NL char mean±std:   0.3262 ± 0.0533  z = +3.51
-    NL syl mean±std:    0.9354 ± 0.0329  z = -12.81
+    NL char mean±std:   0.3171 ± 0.0540  z = +3.64
+    NL syl mean±std:    0.9224 ± 0.0406  z = -10.07
 
   PREDECESSOR JSD (M vs F):
     VMS mean JSD:       0.6117
-    NL char mean±std:   0.3433 ± 0.0707  z = +3.79
-    NL syl mean±std:    0.9166 ± 0.0413  z = -7.39
+    NL char mean±std:   0.3479 ± 0.0747  z = +3.53
+    NL syl mean±std:    0.8855 ± 0.0680  z = -4.03
 
     VMS weighted JSD:   0.4961
-    NL char mean±std:   0.2707 ± 0.0381  z = +5.91
-    NL syl mean±std:    0.9023 ± 0.0441  z = -9.21
+    NL char mean±std:   0.2704 ± 0.0380  z = +5.94
+    NL syl mean±std:    0.8854 ± 0.0617  z = -6.31
 
   CONDITIONAL MI (successor):
     VMS weighted CMI:     0.3466 bits
-    NL char mean±std:     0.1762 ± 0.0359  z = +4.74
-    NL syl mean±std:      0.6465 ± 0.0232  z = -12.92
+    NL char mean±std:     0.1636 ± 0.0369  z = +4.96
+    NL syl mean±std:      0.6520 ± 0.0201  z = -15.20
 
   TOP-1 SUCCESSOR CONCORDANCE:
     VMS top-1 match:      4.7%
-    NL char mean±std:     24.1% ± 8.4%  z = -2.31
-    NL syl mean±std:      1.6% ± 2.6%  z = +1.18
+    NL char mean±std:     24.3% ± 8.5%  z = -2.31
+    NL syl mean±std:      2.0% ± 2.6%  z = +1.03
 
 ────────────────────────────────────────────────────────────────────────────
 STEP 5: PERMUTATION NULL MODEL
@@ -359,12 +359,12 @@ STEP 8: SYNTHESIS & VERDICT
 
     Metric                             VMS   NL-char μ   z(char)    NL-syl μ    z(syl)
     ────────────────────────────  ────────  ──────────  ────────  ──────────  ────────
-    Suc JSD mean (I vs M)           0.6525      0.3253     +6.16      0.9467    -10.65
-    Suc JSD weighted                0.5134      0.3262     +3.51      0.9354    -12.81
-    Pre JSD mean (M vs F)           0.6117      0.3433     +3.79      0.9166     -7.39
-    Pre JSD weighted                0.4961      0.2707     +5.91      0.9023     -9.21
-    CMI (successor)                 0.3466      0.1762     +4.74      0.6465    -12.92
-    Top-1 suc concordance           0.0469      0.2409     -2.31      0.0158     +1.18
+    Suc JSD mean (I vs M)           0.6525      0.3120     +5.80      0.9311     -7.73
+    Suc JSD weighted                0.5134      0.3171     +3.64      0.9224    -10.07
+    Pre JSD mean (M vs F)           0.6117      0.3479     +3.53      0.8855     -4.03
+    Pre JSD weighted                0.4961      0.2704     +5.94      0.8854     -6.31
+    CMI (successor)                 0.3466      0.1636     +4.96      0.6520    -15.20
+    Top-1 suc concordance           0.0469      0.2431     -2.31      0.0201     +1.03
 
   DIRECTIONAL EVIDENCE (Bonferroni-corrected |z| > 2.73):
     vs NL characters:  5 CIPHER, 0 NL, 1 ambiguous  (total 6 tests)
@@ -373,23 +373,23 @@ STEP 8: SYNTHESIS & VERDICT
   INTERPRETATION:
 
     Summary of z-score directions:
-      Suc JSD mean              vs char:    +6.16 (CIPHER   )  vs syl:   -10.65 (NL)
-      Suc JSD weighted          vs char:    +3.51 (CIPHER   )  vs syl:   -12.81 (NL)
-      Pre JSD mean              vs char:    +3.79 (CIPHER   )  vs syl:    -7.39 (NL)
-      Pre JSD weighted          vs char:    +5.91 (CIPHER   )  vs syl:    -9.21 (NL)
-      CMI (successor)           vs char:    +4.74 (CIPHER   )  vs syl:   -12.92 (NL)
-      Top-1 concordance         vs char:    -2.31 (ambiguous)  vs syl:    +1.18 (ambiguous)
+      Suc JSD mean              vs char:    +5.80 (CIPHER   )  vs syl:    -7.73 (NL)
+      Suc JSD weighted          vs char:    +3.64 (CIPHER   )  vs syl:   -10.07 (NL)
+      Pre JSD mean              vs char:    +3.53 (CIPHER   )  vs syl:    -4.03 (NL)
+      Pre JSD weighted          vs char:    +5.94 (CIPHER   )  vs syl:    -6.31 (NL)
+      CMI (successor)           vs char:    +4.96 (CIPHER   )  vs syl:   -15.20 (NL)
+      Top-1 concordance         vs char:    -2.31 (ambiguous)  vs syl:    +1.03 (ambiguous)
 
   ══════════════════════════════════════════════════════════
   VERDICT
   ══════════════════════════════════════════════════════════
 
-  Mean z-score vs NL characters: +3.63
-  Mean z-score vs NL syllables:  -8.63
+  Mean z-score vs NL characters: +3.59
+  Mean z-score vs NL syllables:  -7.05
 
   ★ VMS shared chunks show MORE context divergence than NL characters
     but LESS divergence than NL syllables.
-    → VMS falls BETWEEN chars and syllables (53% from char toward syl)
+    → VMS falls BETWEEN chars and syllables (55% from char toward syl)
     → Consistent with NL sub-word units having moderate positional
       constraints (phonotactics / morpho-phonology)
     → The excess over NL characters is EXPECTED from VMS's lower

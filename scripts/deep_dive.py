@@ -89,8 +89,6 @@ def parse_word(word):
                 for suf in SUFFIXES:
                     if rest3 == suf:
                         suf_options.append(suf)
-                    elif rest3.endswith(suf) and len(rest3) > len(suf):
-                        pass
                 for suf in suf_options:
                     if suf:
                         if rest3 == suf:
@@ -739,6 +737,28 @@ def analyze(all_lines):
         top_after = b_run_after.most_common(3)
         print(f"     → Most common A-root AFTER B-runs: {', '.join(f'{r}' for r, _ in top_after)}")
     print()
+
+    # Populate results (was previously left empty -> JSON output was always {})
+    results["root_classes"] = {
+        "A": len(type_a), "M": len(type_m), "B": len(type_b),
+        "tokens_A": freq_a, "tokens_M": freq_m, "tokens_B": freq_b,
+    }
+    results["ydominance_zones"] = {
+        "A_0_30": low_zone, "M_30_80": mid_zone, "B_80_100": high_zone,
+        "bimodal": mid_zone < (low_zone + high_zone) * 0.3,
+    }
+    results["bigram_ratios"] = {
+        "AA": aa_obs / aa_exp if aa_exp else None,
+        "AB": ab_obs / ab_exp if ab_exp else None,
+        "BA": ba_obs / ba_exp if ba_exp else None,
+        "BB": bb_obs / bb_exp if bb_exp else None,
+    }
+    results["q_prefix"] = {
+        "n_q": len(q_words), "n_qo": len(qo_words),
+        "q_l_rate": q_suf.get("l", 0) / len(q_words) if q_words else None,
+    }
+    results["y_position"] = {"first_pct": y_first_rate, "last_pct": y_last_rate}
+    results["b_runs_ge2"] = sum(b_run_lengths.values())
 
     print("  Results saved to deep_dive_results.json")
     print()

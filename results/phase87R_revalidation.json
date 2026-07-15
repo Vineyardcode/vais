@@ -5,17 +5,17 @@
     "Stability check had sign-flip bug (fixed: 96-100%)"
   ],
   "nl_f1_scores": {
-    "Latin-Caesar": 0.5555555555555556,
+    "Latin-Caesar": 0.8,
     "Italian-Cucina": 0.625,
     "English-Cury": 0.3333333333333333,
     "French-Viandier": 0.4
   },
-  "mean_nl_f1": 0.4784722222222222,
+  "mean_nl_f1": 0.5395833333333333,
   "vms_2chunk_bigram_fraction": 0.5887170630871078,
   "glyph_gap": 0.9753608765307143,
-  "glyph_gap_z": 5.7319106035586245,
+  "glyph_gap_z": 5.818987983682782,
   "chunk_gap": 0.4699803045794676,
-  "chunk_gap_z": -1.1335054394430384,
+  "chunk_gap_z": -0.6491679880660093,
   "original_verdict": "INCONCLUSIVE",
   "revalidation_verdict": "INCONCLUSIVE_CONFIRMED",
   "eigenvalue_comparison": "SUPPORTS_CHUNKS_AS_CHARACTERS",

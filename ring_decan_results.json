@@ -1,0 +1,3101 @@
+{
+  "Pisces": {
+    "total": 30,
+    "ring_count": 3,
+    "ring_sizes": [
+      19,
+      10,
+      1
+    ],
+    "nymphs": [
+      {
+        "degree": 1,
+        "decan": 1,
+        "decan_degree": 1,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "otalalg",
+        "clock_pos": "09:00",
+        "folio_id": "f70v2"
+      },
+      {
+        "degree": 2,
+        "decan": 1,
+        "decan_degree": 2,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "ykary",
+        "clock_pos": "10:00",
+        "folio_id": "f70v2"
+      },
+      {
+        "degree": 3,
+        "decan": 1,
+        "decan_degree": 3,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "otar?",
+        "clock_pos": "10:30",
+        "folio_id": "f70v2"
+      },
+      {
+        "degree": 4,
+        "decan": 1,
+        "decan_degree": 4,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "oty",
+        "clock_pos": "11:00",
+        "folio_id": "f70v2"
+      },
+      {
+        "degree": 5,
+        "decan": 1,
+        "decan_degree": 5,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "oky.ody",
+        "clock_pos": "11:30",
+        "folio_id": "f70v2"
+      },
+      {
+        "degree": 6,
+        "decan": 1,
+        "decan_degree": 6,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "oty.ar",
+        "clock_pos": "00:00",
+        "folio_id": "f70v2"
+      },
+      {
+        "degree": 7,
+        "decan": 1,
+        "decan_degree": 7,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "okala",
+        "clock_pos": "00:30",
+        "folio_id": "f70v2"
+      },
+      {
+        "degree": 8,
+        "decan": 1,
+        "decan_degree": 8,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "otody",
+        "clock_pos": "01:00",
+        "folio_id": "f70v2"
+      },
+      {
+        "degree": 9,
+        "decan": 1,
+        "decan_degree": 9,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "otald",
+        "clock_pos": "01:30",
+        "folio_id": "f70v2"
+      },
+      {
+        "degree": 10,
+        "decan": 1,
+        "decan_degree": 10,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "otaldar",
+        "clock_pos": "02:00",
+        "folio_id": "f70v2"
+      },
+      {
+        "degree": 11,
+        "decan": 2,
+        "decan_degree": 1,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "okody",
+        "clock_pos": "02:45",
+        "folio_id": "f70v2"
+      },
+      {
+        "degree": 12,
+        "decan": 2,
+        "decan_degree": 2,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "opysam",
+        "clock_pos": "03:15",
+        "folio_id": "f70v2"
+      },
+      {
+        "degree": 13,
+        "decan": 2,
+        "decan_degree": 3,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "chy",
+        "clock_pos": "04:00",
+        "folio_id": "f70v2"
+      },
+      {
+        "degree": 14,
+        "decan": 2,
+        "decan_degree": 4,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "otaly",
+        "clock_pos": "04:30",
+        "folio_id": "f70v2"
+      },
+      {
+        "degree": 15,
+        "decan": 2,
+        "decan_degree": 5,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "otal.arar",
+        "clock_pos": "05:30",
+        "folio_id": "f70v2"
+      },
+      {
+        "degree": 16,
+        "decan": 2,
+        "decan_degree": 6,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "otaldy",
+        "clock_pos": "06:30",
+        "folio_id": "f70v2"
+      },
+      {
+        "degree": 17,
+        "decan": 2,
+        "decan_degree": 7,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "okeoly",
+        "clock_pos": "07:00",
+        "folio_id": "f70v2"
+      },
+      {
+        "degree": 18,
+        "decan": 2,
+        "decan_degree": 8,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "okydy",
+        "clock_pos": "08:00",
+        "folio_id": "f70v2"
+      },
+      {
+        "degree": 19,
+        "decan": 2,
+        "decan_degree": 9,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "okees",
+        "clock_pos": "08:30",
+        "folio_id": "f70v2"
+      },
+      {
+        "degree": 20,
+        "decan": 2,
+        "decan_degree": 10,
+        "ring_idx": 1,
+        "ring_name": "inner",
+        "label": "otar.am",
+        "clock_pos": "10:00",
+        "folio_id": "f70v2"
+      },
+      {
+        "degree": 21,
+        "decan": 3,
+        "decan_degree": 1,
+        "ring_idx": 1,
+        "ring_name": "inner",
+        "label": "otar.al",
+        "clock_pos": "11:00",
+        "folio_id": "f70v2"
+      },
+      {
+        "degree": 22,
+        "decan": 3,
+        "decan_degree": 2,
+        "ring_idx": 1,
+        "ring_name": "inner",
+        "label": "otalar",
+        "clock_pos": "00:00",
+        "folio_id": "f70v2"
+      },
+      {
+        "degree": 23,
+        "decan": 3,
+        "decan_degree": 3,
+        "ring_idx": 1,
+        "ring_name": "inner",
+        "label": "otalam",
+        "clock_pos": "01:30",
+        "folio_id": "f70v2"
+      },
+      {
+        "degree": 24,
+        "decan": 3,
+        "decan_degree": 4,
+        "ring_idx": 1,
+        "ring_name": "inner",
+        "label": "dolaram",
+        "clock_pos": "03:00",
+        "folio_id": "f70v2"
+      },
+      {
+        "degree": 25,
+        "decan": 3,
+        "decan_degree": 5,
+        "ring_idx": 1,
+        "ring_name": "inner",
+        "label": "okaram",
+        "clock_pos": "04:00",
+        "folio_id": "f70v2"
+      },
+      {
+        "degree": 26,
+        "decan": 3,
+        "decan_degree": 6,
+        "ring_idx": 1,
+        "ring_name": "inner",
+        "label": "oteosal",
+        "clock_pos": "05:00",
+        "folio_id": "f70v2"
+      },
+      {
+        "degree": 27,
+        "decan": 3,
+        "decan_degree": 7,
+        "ring_idx": 1,
+        "ring_name": "inner",
+        "label": "salols",
+        "clock_pos": "06:30",
+        "folio_id": "f70v2"
+      },
+      {
+        "degree": 28,
+        "decan": 3,
+        "decan_degree": 8,
+        "ring_idx": 1,
+        "ring_name": "inner",
+        "label": "okaldal",
+        "clock_pos": "08:00",
+        "folio_id": "f70v2"
+      },
+      {
+        "degree": 29,
+        "decan": 3,
+        "decan_degree": 9,
+        "ring_idx": 1,
+        "ring_name": "inner",
+        "label": "ykolaiin",
+        "clock_pos": "09:00",
+        "folio_id": "f70v2"
+      },
+      {
+        "degree": 30,
+        "decan": 3,
+        "decan_degree": 10,
+        "ring_idx": 2,
+        "ring_name": "central",
+        "label": "otolal",
+        "clock_pos": null,
+        "folio_id": "f70v2"
+      }
+    ]
+  },
+  "Aries": {
+    "total": 30,
+    "ring_count": 4,
+    "ring_sizes": [
+      10,
+      5,
+      10,
+      5
+    ],
+    "nymphs": [
+      {
+        "degree": 1,
+        "decan": 1,
+        "decan_degree": 1,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "otalchy.tar.am.dy",
+        "clock_pos": "10:30",
+        "folio_id": "f70v1"
+      },
+      {
+        "degree": 2,
+        "decan": 1,
+        "decan_degree": 2,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "opchey.sal",
+        "clock_pos": "00:00",
+        "folio_id": "f70v1"
+      },
+      {
+        "degree": 3,
+        "decan": 1,
+        "decan_degree": 3,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "otakaizan",
+        "clock_pos": "01:00",
+        "folio_id": "f70v1"
+      },
+      {
+        "degree": 4,
+        "decan": 1,
+        "decan_degree": 4,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "okalal",
+        "clock_pos": "02:30",
+        "folio_id": "f70v1"
+      },
+      {
+        "degree": 5,
+        "decan": 1,
+        "decan_degree": 5,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "otaly",
+        "clock_pos": "03:30",
+        "folio_id": "f70v1"
+      },
+      {
+        "degree": 6,
+        "decan": 1,
+        "decan_degree": 6,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "oalcheg",
+        "clock_pos": "04:30",
+        "folio_id": "f70v1"
+      },
+      {
+        "degree": 7,
+        "decan": 1,
+        "decan_degree": 7,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "otchodals",
+        "clock_pos": "06:00",
+        "folio_id": "f70v1"
+      },
+      {
+        "degree": 8,
+        "decan": 1,
+        "decan_degree": 8,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "okolshy",
+        "clock_pos": "07:00",
+        "folio_id": "f70v1"
+      },
+      {
+        "degree": 9,
+        "decan": 1,
+        "decan_degree": 9,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "otshshdy",
+        "clock_pos": "08:00",
+        "folio_id": "f70v1"
+      },
+      {
+        "degree": 10,
+        "decan": 1,
+        "decan_degree": 10,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "otal.ypsharal",
+        "clock_pos": "09:00",
+        "folio_id": "f70v1"
+      },
+      {
+        "degree": 11,
+        "decan": 2,
+        "decan_degree": 1,
+        "ring_idx": 1,
+        "ring_name": "inner",
+        "label": "okoly",
+        "clock_pos": "10:30",
+        "folio_id": "f70v1"
+      },
+      {
+        "degree": 12,
+        "decan": 2,
+        "decan_degree": 2,
+        "ring_idx": 1,
+        "ring_name": "inner",
+        "label": "otalaiin",
+        "clock_pos": "00:00",
+        "folio_id": "f70v1"
+      },
+      {
+        "degree": 13,
+        "decan": 2,
+        "decan_degree": 3,
+        "ring_idx": 1,
+        "ring_name": "inner",
+        "label": "oteo.alals.araly",
+        "clock_pos": "02:00",
+        "folio_id": "f70v1"
+      },
+      {
+        "degree": 14,
+        "decan": 2,
+        "decan_degree": 4,
+        "ring_idx": 1,
+        "ring_name": "inner",
+        "label": "oteoeey.otal.okealar",
+        "clock_pos": "05:00",
+        "folio_id": "f70v1"
+      },
+      {
+        "degree": 15,
+        "decan": 2,
+        "decan_degree": 5,
+        "ring_idx": 1,
+        "ring_name": "inner",
+        "label": "otear.araydy",
+        "clock_pos": "08:00",
+        "folio_id": "f70v1"
+      },
+      {
+        "degree": 16,
+        "decan": 2,
+        "decan_degree": 6,
+        "ring_idx": 2,
+        "ring_name": "outer",
+        "label": "oteos.arar",
+        "clock_pos": "10:00",
+        "folio_id": "f71r"
+      },
+      {
+        "degree": 17,
+        "decan": 2,
+        "decan_degree": 7,
+        "ring_idx": 2,
+        "ring_name": "outer",
+        "label": "okldam",
+        "clock_pos": "11:00",
+        "folio_id": "f71r"
+      },
+      {
+        "degree": 18,
+        "decan": 2,
+        "decan_degree": 8,
+        "ring_idx": 2,
+        "ring_name": "outer",
+        "label": "oteoaldy",
+        "clock_pos": "00:00",
+        "folio_id": "f71r"
+      },
+      {
+        "degree": 19,
+        "decan": 2,
+        "decan_degree": 9,
+        "ring_idx": 2,
+        "ring_name": "outer",
+        "label": "oteolar",
+        "clock_pos": "01:00",
+        "folio_id": "f71r"
+      },
+      {
+        "degree": 20,
+        "decan": 2,
+        "decan_degree": 10,
+        "ring_idx": 2,
+        "ring_name": "outer",
+        "label": "okeoaly",
+        "clock_pos": "02:00",
+        "folio_id": "f71r"
+      },
+      {
+        "degree": 21,
+        "decan": 3,
+        "decan_degree": 1,
+        "ring_idx": 2,
+        "ring_name": "outer",
+        "label": "otaleky",
+        "clock_pos": "03:00",
+        "folio_id": "f71r"
+      },
+      {
+        "degree": 22,
+        "decan": 3,
+        "decan_degree": 2,
+        "ring_idx": 2,
+        "ring_name": "outer",
+        "label": "otalsar",
+        "clock_pos": "04:30",
+        "folio_id": "f71r"
+      },
+      {
+        "degree": 23,
+        "decan": 3,
+        "decan_degree": 3,
+        "ring_idx": 2,
+        "ring_name": "outer",
+        "label": "cheary",
+        "clock_pos": "05:30",
+        "folio_id": "f71r"
+      },
+      {
+        "degree": 24,
+        "decan": 3,
+        "decan_degree": 4,
+        "ring_idx": 2,
+        "ring_name": "outer",
+        "label": "oteotey.rary",
+        "clock_pos": "07:00",
+        "folio_id": "f71r"
+      },
+      {
+        "degree": 25,
+        "decan": 3,
+        "decan_degree": 5,
+        "ring_idx": 2,
+        "ring_name": "outer",
+        "label": "otalaly",
+        "clock_pos": "08:30",
+        "folio_id": "f71r"
+      },
+      {
+        "degree": 26,
+        "decan": 3,
+        "decan_degree": 6,
+        "ring_idx": 3,
+        "ring_name": "inner",
+        "label": "otolchdy",
+        "clock_pos": "11:00",
+        "folio_id": "f71r"
+      },
+      {
+        "degree": 27,
+        "decan": 3,
+        "decan_degree": 7,
+        "ring_idx": 3,
+        "ring_name": "inner",
+        "label": "otoloaram",
+        "clock_pos": "00:30",
+        "folio_id": "f71r"
+      },
+      {
+        "degree": 28,
+        "decan": 3,
+        "decan_degree": 8,
+        "ring_idx": 3,
+        "ring_name": "inner",
+        "label": "oteeol",
+        "clock_pos": "03:30",
+        "folio_id": "f71r"
+      },
+      {
+        "degree": 29,
+        "decan": 3,
+        "decan_degree": 9,
+        "ring_idx": 3,
+        "ring_name": "inner",
+        "label": "otolchd",
+        "clock_pos": "05:30",
+        "folio_id": "f71r"
+      },
+      {
+        "degree": 30,
+        "decan": 3,
+        "decan_degree": 10,
+        "ring_idx": 3,
+        "ring_name": "inner",
+        "label": "otaldar",
+        "clock_pos": "08:00",
+        "folio_id": "f71r"
+      }
+    ]
+  },
+  "Taurus": {
+    "total": 30,
+    "ring_count": 4,
+    "ring_sizes": [
+      10,
+      5,
+      10,
+      5
+    ],
+    "nymphs": [
+      {
+        "degree": 1,
+        "decan": 1,
+        "decan_degree": 1,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "char.arom",
+        "clock_pos": "10:00",
+        "folio_id": "f71v"
+      },
+      {
+        "degree": 2,
+        "decan": 1,
+        "decan_degree": 2,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "chfaly",
+        "clock_pos": "11:00",
+        "folio_id": "f71v"
+      },
+      {
+        "degree": 3,
+        "decan": 1,
+        "decan_degree": 3,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "okolar",
+        "clock_pos": "00:00",
+        "folio_id": "f71v"
+      },
+      {
+        "degree": 4,
+        "decan": 1,
+        "decan_degree": 4,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "otchody",
+        "clock_pos": "01:00",
+        "folio_id": "f71v"
+      },
+      {
+        "degree": 5,
+        "decan": 1,
+        "decan_degree": 5,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "alcphy",
+        "clock_pos": "02:00",
+        "folio_id": "f71v"
+      },
+      {
+        "degree": 6,
+        "decan": 1,
+        "decan_degree": 6,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "otaiin",
+        "clock_pos": "03:00",
+        "folio_id": "f71v"
+      },
+      {
+        "degree": 7,
+        "decan": 1,
+        "decan_degree": 7,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "okaraiin",
+        "clock_pos": "04:30",
+        "folio_id": "f71v"
+      },
+      {
+        "degree": 8,
+        "decan": 1,
+        "decan_degree": 8,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "otar.ar.aly",
+        "clock_pos": "05:30",
+        "folio_id": "f71v"
+      },
+      {
+        "degree": 9,
+        "decan": 1,
+        "decan_degree": 9,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "opalar.am.dan",
+        "clock_pos": "07:00",
+        "folio_id": "f71v"
+      },
+      {
+        "degree": 10,
+        "decan": 1,
+        "decan_degree": 10,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "opalor.ar",
+        "clock_pos": "09:00",
+        "folio_id": "f71v"
+      },
+      {
+        "degree": 11,
+        "decan": 2,
+        "decan_degree": 1,
+        "ring_idx": 1,
+        "ring_name": "inner",
+        "label": "ofaom",
+        "clock_pos": "10:00",
+        "folio_id": "f71v"
+      },
+      {
+        "degree": 12,
+        "decan": 2,
+        "decan_degree": 2,
+        "ring_idx": 1,
+        "ring_name": "inner",
+        "label": "otalody",
+        "clock_pos": "00:00",
+        "folio_id": "f71v"
+      },
+      {
+        "degree": 13,
+        "decan": 2,
+        "decan_degree": 3,
+        "ring_idx": 1,
+        "ring_name": "inner",
+        "label": "otalaiin",
+        "clock_pos": "03:00",
+        "folio_id": "f71v"
+      },
+      {
+        "degree": 14,
+        "decan": 2,
+        "decan_degree": 4,
+        "ring_idx": 1,
+        "ring_name": "inner",
+        "label": "otar.shar",
+        "clock_pos": "05:30",
+        "folio_id": "f71v"
+      },
+      {
+        "degree": 15,
+        "decan": 2,
+        "decan_degree": 5,
+        "ring_idx": 1,
+        "ring_name": "inner",
+        "label": "sholshdy",
+        "clock_pos": "08:30",
+        "folio_id": "f71v"
+      },
+      {
+        "degree": 16,
+        "decan": 2,
+        "decan_degree": 6,
+        "ring_idx": 2,
+        "ring_name": "outer",
+        "label": "oshodady",
+        "clock_pos": "09:30",
+        "folio_id": "f72r1"
+      },
+      {
+        "degree": 17,
+        "decan": 2,
+        "decan_degree": 7,
+        "ring_idx": 2,
+        "ring_name": "outer",
+        "label": "chdaiirdainy",
+        "clock_pos": "10:30",
+        "folio_id": "f72r1"
+      },
+      {
+        "degree": 18,
+        "decan": 2,
+        "decan_degree": 8,
+        "ring_idx": 2,
+        "ring_name": "outer",
+        "label": "oaiin.ar.ary",
+        "clock_pos": "00:00",
+        "folio_id": "f72r1"
+      },
+      {
+        "degree": 19,
+        "decan": 2,
+        "decan_degree": 9,
+        "ring_idx": 2,
+        "ring_name": "outer",
+        "label": "okalam",
+        "clock_pos": "01:00",
+        "folio_id": "f72r1"
+      },
+      {
+        "degree": 20,
+        "decan": 2,
+        "decan_degree": 10,
+        "ring_idx": 2,
+        "ring_name": "outer",
+        "label": "ytalshdy",
+        "clock_pos": "02:00",
+        "folio_id": "f72r1"
+      },
+      {
+        "degree": 21,
+        "decan": 3,
+        "decan_degree": 1,
+        "ring_idx": 2,
+        "ring_name": "outer",
+        "label": "char.alif",
+        "clock_pos": "03:00",
+        "folio_id": "f72r1"
+      },
+      {
+        "degree": 22,
+        "decan": 3,
+        "decan_degree": 2,
+        "ring_idx": 2,
+        "ring_name": "outer",
+        "label": "otaraldy",
+        "clock_pos": "03:30",
+        "folio_id": "f72r1"
+      },
+      {
+        "degree": 23,
+        "decan": 3,
+        "decan_degree": 3,
+        "ring_idx": 2,
+        "ring_name": "outer",
+        "label": "otaiin.otain",
+        "clock_pos": "05:00",
+        "folio_id": "f72r1"
+      },
+      {
+        "degree": 24,
+        "decan": 3,
+        "decan_degree": 4,
+        "ring_idx": 2,
+        "ring_name": "outer",
+        "label": "otalef.ys.ainam",
+        "clock_pos": "07:00",
+        "folio_id": "f72r1"
+      },
+      {
+        "degree": 25,
+        "decan": 3,
+        "decan_degree": 5,
+        "ring_idx": 2,
+        "ring_name": "outer",
+        "label": "ochol.sharam",
+        "clock_pos": "08:30",
+        "folio_id": "f72r1"
+      },
+      {
+        "degree": 26,
+        "decan": 3,
+        "decan_degree": 6,
+        "ring_idx": 3,
+        "ring_name": "inner",
+        "label": "ofaralar",
+        "clock_pos": "09:00",
+        "folio_id": "f72r1"
+      },
+      {
+        "degree": 27,
+        "decan": 3,
+        "decan_degree": 7,
+        "ring_idx": 3,
+        "ring_name": "inner",
+        "label": "otchoshy",
+        "clock_pos": "00:00",
+        "folio_id": "f72r1"
+      },
+      {
+        "degree": 28,
+        "decan": 3,
+        "decan_degree": 8,
+        "ring_idx": 3,
+        "ring_name": "inner",
+        "label": "otchdal",
+        "clock_pos": "02:00",
+        "folio_id": "f72r1"
+      },
+      {
+        "degree": 29,
+        "decan": 3,
+        "decan_degree": 9,
+        "ring_idx": 3,
+        "ring_name": "inner",
+        "label": "okeey.ary",
+        "clock_pos": "04:00",
+        "folio_id": "f72r1"
+      },
+      {
+        "degree": 30,
+        "decan": 3,
+        "decan_degree": 10,
+        "ring_idx": 3,
+        "ring_name": "inner",
+        "label": "otainy",
+        "clock_pos": "07:00",
+        "folio_id": "f72r1"
+      }
+    ]
+  },
+  "Gemini": {
+    "total": 29,
+    "ring_count": 3,
+    "ring_sizes": [
+      5,
+      15,
+      9
+    ],
+    "nymphs": [
+      {
+        "degree": 1,
+        "decan": 1,
+        "decan_degree": 1,
+        "ring_idx": 0,
+        "ring_name": "top",
+        "label": "ofchdamy",
+        "clock_pos": "10:30",
+        "folio_id": "f72r2"
+      },
+      {
+        "degree": 2,
+        "decan": 1,
+        "decan_degree": 2,
+        "ring_idx": 0,
+        "ring_name": "top",
+        "label": "oklairdy",
+        "clock_pos": "11:00",
+        "folio_id": "f72r2"
+      },
+      {
+        "degree": 3,
+        "decan": 1,
+        "decan_degree": 3,
+        "ring_idx": 0,
+        "ring_name": "top",
+        "label": "okaram",
+        "clock_pos": "00:00",
+        "folio_id": "f72r2"
+      },
+      {
+        "degree": 4,
+        "decan": 1,
+        "decan_degree": 4,
+        "ring_idx": 0,
+        "ring_name": "top",
+        "label": "okairy",
+        "clock_pos": "00:30",
+        "folio_id": "f72r2"
+      },
+      {
+        "degree": 5,
+        "decan": 1,
+        "decan_degree": 5,
+        "ring_idx": 0,
+        "ring_name": "top",
+        "label": "okealar",
+        "clock_pos": "01:00",
+        "folio_id": "f72r2"
+      },
+      {
+        "degree": 6,
+        "decan": 1,
+        "decan_degree": 6,
+        "ring_idx": 1,
+        "ring_name": "middle",
+        "label": "otaraldy",
+        "clock_pos": "10:00",
+        "folio_id": "f72r2"
+      },
+      {
+        "degree": 7,
+        "decan": 1,
+        "decan_degree": 7,
+        "ring_idx": 1,
+        "ring_name": "middle",
+        "label": "okalar",
+        "clock_pos": "11:00",
+        "folio_id": "f72r2"
+      },
+      {
+        "degree": 8,
+        "decan": 1,
+        "decan_degree": 8,
+        "ring_idx": 1,
+        "ring_name": "middle",
+        "label": "okal",
+        "clock_pos": "11:45",
+        "folio_id": "f72r2"
+      },
+      {
+        "degree": 9,
+        "decan": 1,
+        "decan_degree": 9,
+        "ring_idx": 1,
+        "ring_name": "middle",
+        "label": "okaly",
+        "clock_pos": "00:15",
+        "folio_id": "f72r2"
+      },
+      {
+        "degree": 10,
+        "decan": 1,
+        "decan_degree": 10,
+        "ring_idx": 1,
+        "ring_name": "middle",
+        "label": "okal",
+        "clock_pos": "01:00",
+        "folio_id": "f72r2"
+      },
+      {
+        "degree": 11,
+        "decan": 2,
+        "decan_degree": 1,
+        "ring_idx": 1,
+        "ring_name": "middle",
+        "label": "okeey.ary",
+        "clock_pos": "02:00",
+        "folio_id": "f72r2"
+      },
+      {
+        "degree": 12,
+        "decan": 2,
+        "decan_degree": 2,
+        "ring_idx": 1,
+        "ring_name": "middle",
+        "label": "oteeary",
+        "clock_pos": "03:00",
+        "folio_id": "f72r2"
+      },
+      {
+        "degree": 13,
+        "decan": 2,
+        "decan_degree": 3,
+        "ring_idx": 1,
+        "ring_name": "middle",
+        "label": "otair.dy",
+        "clock_pos": "04:00",
+        "folio_id": "f72r2"
+      },
+      {
+        "degree": 14,
+        "decan": 2,
+        "decan_degree": 4,
+        "ring_idx": 1,
+        "ring_name": "middle",
+        "label": "okaircham",
+        "clock_pos": "05:00",
+        "folio_id": "f72r2"
+      },
+      {
+        "degree": 15,
+        "decan": 2,
+        "decan_degree": 5,
+        "ring_idx": 1,
+        "ring_name": "middle",
+        "label": "okeal",
+        "clock_pos": "06:00",
+        "folio_id": "f72r2"
+      },
+      {
+        "degree": 16,
+        "decan": 2,
+        "decan_degree": 6,
+        "ring_idx": 1,
+        "ring_name": "middle",
+        "label": "otar",
+        "clock_pos": "06:30",
+        "folio_id": "f72r2"
+      },
+      {
+        "degree": 17,
+        "decan": 2,
+        "decan_degree": 7,
+        "ring_idx": 1,
+        "ring_name": "middle",
+        "label": "okaly",
+        "clock_pos": "07:30",
+        "folio_id": "f72r2"
+      },
+      {
+        "degree": 18,
+        "decan": 2,
+        "decan_degree": 8,
+        "ring_idx": 1,
+        "ring_name": "middle",
+        "label": "orary",
+        "clock_pos": "08:00",
+        "folio_id": "f72r2"
+      },
+      {
+        "degree": 19,
+        "decan": 2,
+        "decan_degree": 9,
+        "ring_idx": 1,
+        "ring_name": "middle",
+        "label": "okyd",
+        "clock_pos": "09:00",
+        "folio_id": "f72r2"
+      },
+      {
+        "degree": 20,
+        "decan": 2,
+        "decan_degree": 10,
+        "ring_idx": 1,
+        "ring_name": "middle",
+        "label": "otolam",
+        "clock_pos": "09:30",
+        "folio_id": "f72r2"
+      },
+      {
+        "degree": 21,
+        "decan": 3,
+        "decan_degree": 1,
+        "ring_idx": 2,
+        "ring_name": "inner",
+        "label": "otal",
+        "clock_pos": "10:30",
+        "folio_id": "f72r2"
+      },
+      {
+        "degree": 22,
+        "decan": 3,
+        "decan_degree": 2,
+        "ring_idx": 2,
+        "ring_name": "inner",
+        "label": "ralal",
+        "clock_pos": "11:30",
+        "folio_id": "f72r2"
+      },
+      {
+        "degree": 23,
+        "decan": 3,
+        "decan_degree": 3,
+        "ring_idx": 2,
+        "ring_name": "inner",
+        "label": "okam",
+        "clock_pos": "00:30",
+        "folio_id": "f72r2"
+      },
+      {
+        "degree": 24,
+        "decan": 3,
+        "decan_degree": 4,
+        "ring_idx": 2,
+        "ring_name": "inner",
+        "label": "otalshy",
+        "clock_pos": "02:00",
+        "folio_id": "f72r2"
+      },
+      {
+        "degree": 25,
+        "decan": 3,
+        "decan_degree": 5,
+        "ring_idx": 2,
+        "ring_name": "inner",
+        "label": "okaldy",
+        "clock_pos": "03:30",
+        "folio_id": "f72r2"
+      },
+      {
+        "degree": 26,
+        "decan": 3,
+        "decan_degree": 6,
+        "ring_idx": 2,
+        "ring_name": "inner",
+        "label": "chosar",
+        "clock_pos": "05:00",
+        "folio_id": "f72r2"
+      },
+      {
+        "degree": 27,
+        "decan": 3,
+        "decan_degree": 7,
+        "ring_idx": 2,
+        "ring_name": "inner",
+        "label": "otam",
+        "clock_pos": "06:30",
+        "folio_id": "f72r2"
+      },
+      {
+        "degree": 28,
+        "decan": 3,
+        "decan_degree": 8,
+        "ring_idx": 2,
+        "ring_name": "inner",
+        "label": "ainaly",
+        "clock_pos": "08:00",
+        "folio_id": "f72r2"
+      },
+      {
+        "degree": 29,
+        "decan": 3,
+        "decan_degree": 9,
+        "ring_idx": 2,
+        "ring_name": "inner",
+        "label": "okarcham",
+        "clock_pos": "09:00",
+        "folio_id": "f72r2"
+      }
+    ]
+  },
+  "Cancer": {
+    "total": 30,
+    "ring_count": 3,
+    "ring_sizes": [
+      12,
+      11,
+      7
+    ],
+    "nymphs": [
+      {
+        "degree": 1,
+        "decan": 1,
+        "decan_degree": 1,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "olkalaiin",
+        "clock_pos": "10:30",
+        "folio_id": "f72r3"
+      },
+      {
+        "degree": 2,
+        "decan": 1,
+        "decan_degree": 2,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "olalsy",
+        "clock_pos": "11:00",
+        "folio_id": "f72r3"
+      },
+      {
+        "degree": 3,
+        "decan": 1,
+        "decan_degree": 3,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "oraiinam",
+        "clock_pos": "00:00",
+        "folio_id": "f72r3"
+      },
+      {
+        "degree": 4,
+        "decan": 1,
+        "decan_degree": 4,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "osarsheeeo",
+        "clock_pos": "01:00",
+        "folio_id": "f72r3"
+      },
+      {
+        "degree": 5,
+        "decan": 1,
+        "decan_degree": 5,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "otoaiin",
+        "clock_pos": "02:00",
+        "folio_id": "f72r3"
+      },
+      {
+        "degree": 6,
+        "decan": 1,
+        "decan_degree": 6,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "opoiiinoin.al.ches",
+        "clock_pos": "02:30",
+        "folio_id": "f72r3"
+      },
+      {
+        "degree": 7,
+        "decan": 1,
+        "decan_degree": 7,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "ypaiin.alaly",
+        "clock_pos": "04:00",
+        "folio_id": "f72r3"
+      },
+      {
+        "degree": 8,
+        "decan": 1,
+        "decan_degree": 8,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "oteey.daiin",
+        "clock_pos": "05:00",
+        "folio_id": "f72r3"
+      },
+      {
+        "degree": 9,
+        "decan": 1,
+        "decan_degree": 9,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "oeeodaiin",
+        "clock_pos": "06:30",
+        "folio_id": "f72r3"
+      },
+      {
+        "degree": 10,
+        "decan": 1,
+        "decan_degree": 10,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "ofsholdy",
+        "clock_pos": "07:00",
+        "folio_id": "f72r3"
+      },
+      {
+        "degree": 11,
+        "decan": 2,
+        "decan_degree": 1,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "opoeey.okaiin",
+        "clock_pos": "07:00",
+        "folio_id": "f72r3"
+      },
+      {
+        "degree": 12,
+        "decan": 2,
+        "decan_degree": 2,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "ykolairol",
+        "clock_pos": "10:00",
+        "folio_id": "f72r3"
+      },
+      {
+        "degree": 13,
+        "decan": 2,
+        "decan_degree": 3,
+        "ring_idx": 1,
+        "ring_name": "middle",
+        "label": "oralkam",
+        "clock_pos": "11:00",
+        "folio_id": "f72r3"
+      },
+      {
+        "degree": 14,
+        "decan": 2,
+        "decan_degree": 4,
+        "ring_idx": 1,
+        "ring_name": "middle",
+        "label": "ytairal",
+        "clock_pos": "00:00",
+        "folio_id": "f72r3"
+      },
+      {
+        "degree": 15,
+        "decan": 2,
+        "decan_degree": 5,
+        "ring_idx": 1,
+        "ring_name": "middle",
+        "label": "oeeesaiin",
+        "clock_pos": "01:00",
+        "folio_id": "f72r3"
+      },
+      {
+        "degree": 16,
+        "decan": 2,
+        "decan_degree": 6,
+        "ring_idx": 1,
+        "ring_name": "middle",
+        "label": "ory",
+        "clock_pos": "01:30",
+        "folio_id": "f72r3"
+      },
+      {
+        "degree": 17,
+        "decan": 2,
+        "decan_degree": 7,
+        "ring_idx": 1,
+        "ring_name": "middle",
+        "label": "ochey.fydy",
+        "clock_pos": "02:30",
+        "folio_id": "f72r3"
+      },
+      {
+        "degree": 18,
+        "decan": 2,
+        "decan_degree": 8,
+        "ring_idx": 1,
+        "ring_name": "middle",
+        "label": "of???.o.eeesaly",
+        "clock_pos": "03:30",
+        "folio_id": "f72r3"
+      },
+      {
+        "degree": 19,
+        "decan": 2,
+        "decan_degree": 9,
+        "ring_idx": 1,
+        "ring_name": "middle",
+        "label": "ykaraiin.airal",
+        "clock_pos": "05:00",
+        "folio_id": "f72r3"
+      },
+      {
+        "degree": 20,
+        "decan": 2,
+        "decan_degree": 10,
+        "ring_idx": 1,
+        "ring_name": "middle",
+        "label": "okalar",
+        "clock_pos": "06:30",
+        "folio_id": "f72r3"
+      },
+      {
+        "degree": 21,
+        "decan": 3,
+        "decan_degree": 1,
+        "ring_idx": 1,
+        "ring_name": "middle",
+        "label": "orara",
+        "clock_pos": "08:00",
+        "folio_id": "f72r3"
+      },
+      {
+        "degree": 22,
+        "decan": 3,
+        "decan_degree": 2,
+        "ring_idx": 1,
+        "ring_name": "middle",
+        "label": "olaiin.olay",
+        "clock_pos": "09:00",
+        "folio_id": "f72r3"
+      },
+      {
+        "degree": 23,
+        "decan": 3,
+        "decan_degree": 3,
+        "ring_idx": 1,
+        "ring_name": "middle",
+        "label": "olfsheoral",
+        "clock_pos": "10:00",
+        "folio_id": "f72r3"
+      },
+      {
+        "degree": 24,
+        "decan": 3,
+        "decan_degree": 4,
+        "ring_idx": 2,
+        "ring_name": "inner",
+        "label": "opalal",
+        "clock_pos": "10:30",
+        "folio_id": "f72r3"
+      },
+      {
+        "degree": 25,
+        "decan": 3,
+        "decan_degree": 5,
+        "ring_idx": 2,
+        "ring_name": "inner",
+        "label": "yfary",
+        "clock_pos": "00:00",
+        "folio_id": "f72r3"
+      },
+      {
+        "degree": 26,
+        "decan": 3,
+        "decan_degree": 6,
+        "ring_idx": 2,
+        "ring_name": "inner",
+        "label": "oraiiral",
+        "clock_pos": "01:30",
+        "folio_id": "f72r3"
+      },
+      {
+        "degree": 27,
+        "decan": 3,
+        "decan_degree": 7,
+        "ring_idx": 2,
+        "ring_name": "inner",
+        "label": "ytoar.shar",
+        "clock_pos": "03:00",
+        "folio_id": "f72r3"
+      },
+      {
+        "degree": 28,
+        "decan": 3,
+        "decan_degree": 8,
+        "ring_idx": 2,
+        "ring_name": "inner",
+        "label": "octho",
+        "clock_pos": "06:00",
+        "folio_id": "f72r3"
+      },
+      {
+        "degree": 29,
+        "decan": 3,
+        "decan_degree": 9,
+        "ring_idx": 2,
+        "ring_name": "inner",
+        "label": "aral",
+        "clock_pos": "07:30",
+        "folio_id": "f72r3"
+      },
+      {
+        "degree": 30,
+        "decan": 3,
+        "decan_degree": 10,
+        "ring_idx": 2,
+        "ring_name": "inner",
+        "label": "oletal",
+        "clock_pos": "09:00",
+        "folio_id": "f72r3"
+      }
+    ]
+  },
+  "Leo": {
+    "total": 30,
+    "ring_count": 2,
+    "ring_sizes": [
+      18,
+      12
+    ],
+    "nymphs": [
+      {
+        "degree": 1,
+        "decan": 1,
+        "decan_degree": 1,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "ocham",
+        "clock_pos": "10:00",
+        "folio_id": "f72v3"
+      },
+      {
+        "degree": 2,
+        "decan": 1,
+        "decan_degree": 2,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "orchey",
+        "clock_pos": "11:00",
+        "folio_id": "f72v3"
+      },
+      {
+        "degree": 3,
+        "decan": 1,
+        "decan_degree": 3,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "okam",
+        "clock_pos": "11:30",
+        "folio_id": "f72v3"
+      },
+      {
+        "degree": 4,
+        "decan": 1,
+        "decan_degree": 4,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "okey",
+        "clock_pos": "00:00",
+        "folio_id": "f72v3"
+      },
+      {
+        "degree": 5,
+        "decan": 1,
+        "decan_degree": 5,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "otcheody",
+        "clock_pos": "00:30",
+        "folio_id": "f72v3"
+      },
+      {
+        "degree": 6,
+        "decan": 1,
+        "decan_degree": 6,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "okyeeshy",
+        "clock_pos": "01:00",
+        "folio_id": "f72v3"
+      },
+      {
+        "degree": 7,
+        "decan": 1,
+        "decan_degree": 7,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "ofaiin",
+        "clock_pos": "01:30",
+        "folio_id": "f72v3"
+      },
+      {
+        "degree": 8,
+        "decan": 1,
+        "decan_degree": 8,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "okaly",
+        "clock_pos": "02:00",
+        "folio_id": "f72v3"
+      },
+      {
+        "degree": 9,
+        "decan": 1,
+        "decan_degree": 9,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "otoly",
+        "clock_pos": "02:45",
+        "folio_id": "f72v3"
+      },
+      {
+        "degree": 10,
+        "decan": 1,
+        "decan_degree": 10,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "ofalals",
+        "clock_pos": "03:30",
+        "folio_id": "f72v3"
+      },
+      {
+        "degree": 11,
+        "decan": 2,
+        "decan_degree": 1,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "sheeos.oy",
+        "clock_pos": "04:00",
+        "folio_id": "f72v3"
+      },
+      {
+        "degree": 12,
+        "decan": 2,
+        "decan_degree": 2,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "daiin.chepy",
+        "clock_pos": "05:00",
+        "folio_id": "f72v3"
+      },
+      {
+        "degree": 13,
+        "decan": 2,
+        "decan_degree": 3,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "oteey.deeal",
+        "clock_pos": "06:00",
+        "folio_id": "f72v3"
+      },
+      {
+        "degree": 14,
+        "decan": 2,
+        "decan_degree": 4,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "chealpy",
+        "clock_pos": "07:00",
+        "folio_id": "f72v3"
+      },
+      {
+        "degree": 15,
+        "decan": 2,
+        "decan_degree": 5,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "okeeol",
+        "clock_pos": "07:30",
+        "folio_id": "f72v3"
+      },
+      {
+        "degree": 16,
+        "decan": 2,
+        "decan_degree": 6,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "okaly",
+        "clock_pos": "08:30",
+        "folio_id": "f72v3"
+      },
+      {
+        "degree": 17,
+        "decan": 2,
+        "decan_degree": 7,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "okaldy",
+        "clock_pos": "09:00",
+        "folio_id": "f72v3"
+      },
+      {
+        "degree": 18,
+        "decan": 2,
+        "decan_degree": 8,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "okeolyd",
+        "clock_pos": "09:30",
+        "folio_id": "f72v3"
+      },
+      {
+        "degree": 19,
+        "decan": 2,
+        "decan_degree": 9,
+        "ring_idx": 1,
+        "ring_name": "inner",
+        "label": "choleey",
+        "clock_pos": "10:30",
+        "folio_id": "f72v3"
+      },
+      {
+        "degree": 20,
+        "decan": 2,
+        "decan_degree": 10,
+        "ring_idx": 1,
+        "ring_name": "inner",
+        "label": "oky",
+        "clock_pos": "11:30",
+        "folio_id": "f72v3"
+      },
+      {
+        "degree": 21,
+        "decan": 3,
+        "decan_degree": 1,
+        "ring_idx": 1,
+        "ring_name": "inner",
+        "label": "chy",
+        "clock_pos": "00:30",
+        "folio_id": "f72v3"
+      },
+      {
+        "degree": 22,
+        "decan": 3,
+        "decan_degree": 2,
+        "ring_idx": 1,
+        "ring_name": "inner",
+        "label": "laly",
+        "clock_pos": "01:00",
+        "folio_id": "f72v3"
+      },
+      {
+        "degree": 23,
+        "decan": 3,
+        "decan_degree": 3,
+        "ring_idx": 1,
+        "ring_name": "inner",
+        "label": "oeedy",
+        "clock_pos": "02:00",
+        "folio_id": "f72v3"
+      },
+      {
+        "degree": 24,
+        "decan": 3,
+        "decan_degree": 4,
+        "ring_idx": 1,
+        "ring_name": "inner",
+        "label": "odairan",
+        "clock_pos": "03:00",
+        "folio_id": "f72v3"
+      },
+      {
+        "degree": 25,
+        "decan": 3,
+        "decan_degree": 5,
+        "ring_idx": 1,
+        "ring_name": "inner",
+        "label": "okary",
+        "clock_pos": "04:00",
+        "folio_id": "f72v3"
+      },
+      {
+        "degree": 26,
+        "decan": 3,
+        "decan_degree": 6,
+        "ring_idx": 1,
+        "ring_name": "inner",
+        "label": "oeesaiin",
+        "clock_pos": "05:00",
+        "folio_id": "f72v3"
+      },
+      {
+        "degree": 27,
+        "decan": 3,
+        "decan_degree": 7,
+        "ring_idx": 1,
+        "ring_name": "inner",
+        "label": "oteesed",
+        "clock_pos": "06:30",
+        "folio_id": "f72v3"
+      },
+      {
+        "degree": 28,
+        "decan": 3,
+        "decan_degree": 8,
+        "ring_idx": 1,
+        "ring_name": "inner",
+        "label": "opal",
+        "clock_pos": "07:30",
+        "folio_id": "f72v3"
+      },
+      {
+        "degree": 29,
+        "decan": 3,
+        "decan_degree": 9,
+        "ring_idx": 1,
+        "ring_name": "inner",
+        "label": "otaly",
+        "clock_pos": "08:30",
+        "folio_id": "f72v3"
+      },
+      {
+        "degree": 30,
+        "decan": 3,
+        "decan_degree": 10,
+        "ring_idx": 1,
+        "ring_name": "inner",
+        "label": "otaly.yty",
+        "clock_pos": "09:30",
+        "folio_id": "f72v3"
+      }
+    ]
+  },
+  "Virgo": {
+    "total": 30,
+    "ring_count": 2,
+    "ring_sizes": [
+      18,
+      12
+    ],
+    "nymphs": [
+      {
+        "degree": 1,
+        "decan": 1,
+        "decan_degree": 1,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "oeedey",
+        "clock_pos": "10:00",
+        "folio_id": "f72v2"
+      },
+      {
+        "degree": 2,
+        "decan": 1,
+        "decan_degree": 2,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "oeeodaiin",
+        "clock_pos": "11:00",
+        "folio_id": "f72v2"
+      },
+      {
+        "degree": 3,
+        "decan": 1,
+        "decan_degree": 3,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "okeoram",
+        "clock_pos": "11:45",
+        "folio_id": "f72v2"
+      },
+      {
+        "degree": 4,
+        "decan": 1,
+        "decan_degree": 4,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "air.aim",
+        "clock_pos": "00:30",
+        "folio_id": "f72v2"
+      },
+      {
+        "degree": 5,
+        "decan": 1,
+        "decan_degree": 5,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "oshesy",
+        "clock_pos": "01:00",
+        "folio_id": "f72v2"
+      },
+      {
+        "degree": 6,
+        "decan": 1,
+        "decan_degree": 6,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "okeary",
+        "clock_pos": "02:00",
+        "folio_id": "f72v2"
+      },
+      {
+        "degree": 7,
+        "decan": 1,
+        "decan_degree": 7,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "cheoetey",
+        "clock_pos": "02:30",
+        "folio_id": "f72v2"
+      },
+      {
+        "degree": 8,
+        "decan": 1,
+        "decan_degree": 8,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "cheoldy",
+        "clock_pos": "03:00",
+        "folio_id": "f72v2"
+      },
+      {
+        "degree": 9,
+        "decan": 1,
+        "decan_degree": 9,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "sheoeky",
+        "clock_pos": "04:00",
+        "folio_id": "f72v2"
+      },
+      {
+        "degree": 10,
+        "decan": 1,
+        "decan_degree": 10,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "oteodar",
+        "clock_pos": "04:30",
+        "folio_id": "f72v2"
+      },
+      {
+        "degree": 11,
+        "decan": 2,
+        "decan_degree": 1,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "ofchdysd",
+        "clock_pos": "05:30",
+        "folio_id": "f72v2"
+      },
+      {
+        "degree": 12,
+        "decan": 2,
+        "decan_degree": 2,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "oteoyd",
+        "clock_pos": "06:00",
+        "folio_id": "f72v2"
+      },
+      {
+        "degree": 13,
+        "decan": 2,
+        "decan_degree": 3,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "yteody",
+        "clock_pos": "06:30",
+        "folio_id": "f72v2"
+      },
+      {
+        "degree": 14,
+        "decan": 2,
+        "decan_degree": 4,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "okeody",
+        "clock_pos": "07:00",
+        "folio_id": "f72v2"
+      },
+      {
+        "degree": 15,
+        "decan": 2,
+        "decan_degree": 5,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "okeoldy",
+        "clock_pos": "08:00",
+        "folio_id": "f72v2"
+      },
+      {
+        "degree": 16,
+        "decan": 2,
+        "decan_degree": 6,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "ykeeor",
+        "clock_pos": "08:30",
+        "folio_id": "f72v2"
+      },
+      {
+        "degree": 17,
+        "decan": 2,
+        "decan_degree": 7,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "opaiinam",
+        "clock_pos": "09:00",
+        "folio_id": "f72v2"
+      },
+      {
+        "degree": 18,
+        "decan": 2,
+        "decan_degree": 8,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "cheoldy",
+        "clock_pos": "09:30",
+        "folio_id": "f72v2"
+      },
+      {
+        "degree": 19,
+        "decan": 2,
+        "decan_degree": 9,
+        "ring_idx": 1,
+        "ring_name": "inner",
+        "label": "okaiin[:y]",
+        "clock_pos": "10:30",
+        "folio_id": "f72v2"
+      },
+      {
+        "degree": 20,
+        "decan": 2,
+        "decan_degree": 10,
+        "ring_idx": 1,
+        "ring_name": "inner",
+        "label": "ockhol",
+        "clock_pos": "11:30",
+        "folio_id": "f72v2"
+      },
+      {
+        "degree": 21,
+        "decan": 3,
+        "decan_degree": 1,
+        "ring_idx": 1,
+        "ring_name": "inner",
+        "label": "oeedy",
+        "clock_pos": "00:30",
+        "folio_id": "f72v2"
+      },
+      {
+        "degree": 22,
+        "decan": 3,
+        "decan_degree": 2,
+        "ring_idx": 1,
+        "ring_name": "inner",
+        "label": "opalg",
+        "clock_pos": "01:00",
+        "folio_id": "f72v2"
+      },
+      {
+        "degree": 23,
+        "decan": 3,
+        "decan_degree": 3,
+        "ring_idx": 1,
+        "ring_name": "inner",
+        "label": "okeeom",
+        "clock_pos": "02:00",
+        "folio_id": "f72v2"
+      },
+      {
+        "degree": 24,
+        "decan": 3,
+        "decan_degree": 4,
+        "ring_idx": 1,
+        "ring_name": "inner",
+        "label": "olkar",
+        "clock_pos": "03:00",
+        "folio_id": "f72v2"
+      },
+      {
+        "degree": 25,
+        "decan": 3,
+        "decan_degree": 5,
+        "ring_idx": 1,
+        "ring_name": "inner",
+        "label": "oeedaly",
+        "clock_pos": "04:00",
+        "folio_id": "f72v2"
+      },
+      {
+        "degree": 26,
+        "decan": 3,
+        "decan_degree": 6,
+        "ring_idx": 1,
+        "ring_name": "inner",
+        "label": "cheosy",
+        "clock_pos": "05:00",
+        "folio_id": "f72v2"
+      },
+      {
+        "degree": 27,
+        "decan": 3,
+        "decan_degree": 7,
+        "ring_idx": 1,
+        "ring_name": "inner",
+        "label": "ofcheay",
+        "clock_pos": "06:30",
+        "folio_id": "f72v2"
+      },
+      {
+        "degree": 28,
+        "decan": 3,
+        "decan_degree": 8,
+        "ring_idx": 1,
+        "ring_name": "inner",
+        "label": "yteedy",
+        "clock_pos": "07:30",
+        "folio_id": "f72v2"
+      },
+      {
+        "degree": 29,
+        "decan": 3,
+        "decan_degree": 9,
+        "ring_idx": 1,
+        "ring_name": "inner",
+        "label": "onaiin",
+        "clock_pos": "08:30",
+        "folio_id": "f72v2"
+      },
+      {
+        "degree": 30,
+        "decan": 3,
+        "decan_degree": 10,
+        "ring_idx": 1,
+        "ring_name": "inner",
+        "label": "okeorar",
+        "clock_pos": "09:30",
+        "folio_id": "f72v2"
+      }
+    ]
+  },
+  "Libra": {
+    "total": 30,
+    "ring_count": 2,
+    "ring_sizes": [
+      20,
+      10
+    ],
+    "nymphs": [
+      {
+        "degree": 1,
+        "decan": 1,
+        "decan_degree": 1,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "oeeoty",
+        "clock_pos": "08:45",
+        "folio_id": "f72v1"
+      },
+      {
+        "degree": 2,
+        "decan": 1,
+        "decan_degree": 2,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "octhy",
+        "clock_pos": "09:30",
+        "folio_id": "f72v1"
+      },
+      {
+        "degree": 3,
+        "decan": 1,
+        "decan_degree": 3,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "oteoly",
+        "clock_pos": "10:00",
+        "folio_id": "f72v1"
+      },
+      {
+        "degree": 4,
+        "decan": 1,
+        "decan_degree": 4,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "okeoly",
+        "clock_pos": "10:30",
+        "folio_id": "f72v1"
+      },
+      {
+        "degree": 5,
+        "decan": 1,
+        "decan_degree": 5,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "oeees",
+        "clock_pos": "11:00",
+        "folio_id": "f72v1"
+      },
+      {
+        "degree": 6,
+        "decan": 1,
+        "decan_degree": 6,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "oy",
+        "clock_pos": "11:30",
+        "folio_id": "f72v1"
+      },
+      {
+        "degree": 7,
+        "decan": 1,
+        "decan_degree": 7,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "oees",
+        "clock_pos": "01:45",
+        "folio_id": "f72v1"
+      },
+      {
+        "degree": 8,
+        "decan": 1,
+        "decan_degree": 8,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "okeeoly",
+        "clock_pos": "01:00",
+        "folio_id": "f72v1"
+      },
+      {
+        "degree": 9,
+        "decan": 1,
+        "decan_degree": 9,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "odal",
+        "clock_pos": "01:30",
+        "folio_id": "f72v1"
+      },
+      {
+        "degree": 10,
+        "decan": 1,
+        "decan_degree": 10,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "aiinod",
+        "clock_pos": "02:00",
+        "folio_id": "f72v1"
+      },
+      {
+        "degree": 11,
+        "decan": 2,
+        "decan_degree": 1,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "od?dy",
+        "clock_pos": "02:45",
+        "folio_id": "f72v1"
+      },
+      {
+        "degree": 12,
+        "decan": 2,
+        "decan_degree": 2,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "oteod",
+        "clock_pos": "03:15",
+        "folio_id": "f72v1"
+      },
+      {
+        "degree": 13,
+        "decan": 2,
+        "decan_degree": 3,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "yteod",
+        "clock_pos": "03:45",
+        "folio_id": "f72v1"
+      },
+      {
+        "degree": 14,
+        "decan": 2,
+        "decan_degree": 4,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "ok?ody",
+        "clock_pos": "04:30",
+        "folio_id": "f72v1"
+      },
+      {
+        "degree": 15,
+        "decan": 2,
+        "decan_degree": 5,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "okal",
+        "clock_pos": "05:00",
+        "folio_id": "f72v1"
+      },
+      {
+        "degree": 16,
+        "decan": 2,
+        "decan_degree": 6,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "ytaly",
+        "clock_pos": "05:30",
+        "folio_id": "f72v1"
+      },
+      {
+        "degree": 17,
+        "decan": 2,
+        "decan_degree": 7,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "oeeeos",
+        "clock_pos": "06:00",
+        "folio_id": "f72v1"
+      },
+      {
+        "degree": 18,
+        "decan": 2,
+        "decan_degree": 8,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "oteofy",
+        "clock_pos": "06:30",
+        "folio_id": "f72v1"
+      },
+      {
+        "degree": 19,
+        "decan": 2,
+        "decan_degree": 9,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "cheoepy",
+        "clock_pos": "07:30",
+        "folio_id": "f72v1"
+      },
+      {
+        "degree": 20,
+        "decan": 2,
+        "decan_degree": 10,
+        "ring_idx": 0,
+        "ring_name": "outer",
+        "label": "ykeedy",
+        "clock_pos": "08:00",
+        "folio_id": "f72v1"
+      },
+      {
+        "degree": 21,
+        "decan": 3,
+        "decan_degree": 1,
+        "ring_idx": 1,
+        "ring_name": "inner",
+        "label": "oeeoly",
+        "clock_pos": "08:45",
+        "folio_id": "f72v1"
+      },
+      {
+        "degree": 22,
+        "decan": 3,
+        "decan_degree": 2,
+        "ring_idx": 1,
+        "ring_name": "inner",
+        "label": "okydy",
+        "clock_pos": "10:00",
+        "folio_id": "f72v1"
+      },
+      {
+        "degree": 23,
+        "decan": 3,
+        "decan_degree": 3,
+        "ring_idx": 1,
+        "ring_name": "inner",
+        "label": "okeey",
+        "clock_pos": "11:30",
+        "folio_id": "f72v1"
+      },
+      {
+        "degree": 24,
+        "decan": 3,
+        "decan_degree": 4,
+        "ring_idx": 1,
+        "ring_name": "inner",
+        "label": "oiiny",
+        "clock_pos": "00:00",
+        "folio_id": "f72v1"
+      },
+      {
+        "degree": 25,
+        "decan": 3,
+        "decan_degree": 5,
+        "ring_idx": 1,
+        "ring_name": "inner",
+        "label": "oeey",
+        "clock_pos": "01:00",
+        "folio_id": "f72v1"
+      },
+      {
+        "degree": 26,
+        "decan": 3,
+        "decan_degree": 6,
+        "ring_idx": 1,
+        "ring_name": "inner",
+        "label": "okedy",
+        "clock_pos": "03:00",
+        "folio_id": "f72v1"
+      },
+      {
+        "degree": 27,
+        "decan": 3,
+        "decan_degree": 7,
+        "ring_idx": 1,
+        "ring_name": "inner",
+        "label": "ypaim",
+        "clock_pos": "04:30",
+        "folio_id": "f72v1"
+      },
+      {
+        "degree": 28,
+        "decan": 3,
+        "decan_degree": 8,
+        "ring_idx": 1,
+        "ring_name": "inner",
+        "label": "okalair",
+        "clock_pos": "05:30",
+        "folio_id": "f72v1"
+      },
+      {
+        "degree": 29,
+        "decan": 3,
+        "decan_degree": 9,
+        "ring_idx": 1,
+        "ring_name": "inner",
+        "label": "oeeody",
+        "clock_pos": "06:30",
+        "folio_id": "f72v1"
+      },
+      {
+        "degree": 30,
+        "decan": 3,
+        "decan_degree": 10,
+        "ring_idx": 1,
+        "ring_name": "inner",
+        "label": "okeol",
+        "clock_pos": "07:30",
+        "folio_id": "f72v1"
+      }
+    ]
+  },
+  "Scorpio": {
+    "total": 30,
+    "ring_count": 3,
+    "ring_sizes": [
+      4,
+      16,
+      10
+    ],
+    "nymphs": [
+      {
+        "degree": 1,
+        "decan": 1,
+        "decan_degree": 1,
+        "ring_idx": 0,
+        "ring_name": "top",
+        "label": "otaly",
+        "clock_pos": "11:15",
+        "folio_id": "f73r"
+      },
+      {
+        "degree": 2,
+        "decan": 1,
+        "decan_degree": 2,
+        "ring_idx": 0,
+        "ring_name": "top",
+        "label": "chockhy",
+        "clock_pos": "11:45",
+        "folio_id": "f73r"
+      },
+      {
+        "degree": 3,
+        "decan": 1,
+        "decan_degree": 3,
+        "ring_idx": 0,
+        "ring_name": "top",
+        "label": "otedy",
+        "clock_pos": "00:30",
+        "folio_id": "f73r"
+      },
+      {
+        "degree": 4,
+        "decan": 1,
+        "decan_degree": 4,
+        "ring_idx": 0,
+        "ring_name": "top",
+        "label": "yteeody",
+        "clock_pos": "01:00",
+        "folio_id": "f73r"
+      },
+      {
+        "degree": 5,
+        "decan": 1,
+        "decan_degree": 5,
+        "ring_idx": 1,
+        "ring_name": "outer",
+        "label": "otaly",
+        "clock_pos": "11:00",
+        "folio_id": "f73r"
+      },
+      {
+        "degree": 6,
+        "decan": 1,
+        "decan_degree": 6,
+        "ring_idx": 1,
+        "ring_name": "outer",
+        "label": "okeody",
+        "clock_pos": "11:30",
+        "folio_id": "f73r"
+      },
+      {
+        "degree": 7,
+        "decan": 1,
+        "decan_degree": 7,
+        "ring_idx": 1,
+        "ring_name": "outer",
+        "label": "oteedyl",
+        "clock_pos": "00:00",
+        "folio_id": "f73r"
+      },
+      {
+        "degree": 8,
+        "decan": 1,
+        "decan_degree": 8,
+        "ring_idx": 1,
+        "ring_name": "outer",
+        "label": "ykeedy",
+        "clock_pos": "00:30",
+        "folio_id": "f73r"
+      },
+      {
+        "degree": 9,
+        "decan": 1,
+        "decan_degree": 9,
+        "ring_idx": 1,
+        "ring_name": "outer",
+        "label": "okeey",
+        "clock_pos": "01:00",
+        "folio_id": "f73r"
+      },
+      {
+        "degree": 10,
+        "decan": 1,
+        "decan_degree": 10,
+        "ring_idx": 1,
+        "ring_name": "outer",
+        "label": "okeedy",
+        "clock_pos": "02:00",
+        "folio_id": "f73r"
+      },
+      {
+        "degree": 11,
+        "decan": 2,
+        "decan_degree": 1,
+        "ring_idx": 1,
+        "ring_name": "outer",
+        "label": "ykeeory",
+        "clock_pos": "02:30",
+        "folio_id": "f73r"
+      },
+      {
+        "degree": 12,
+        "decan": 2,
+        "decan_degree": 2,
+        "ring_idx": 1,
+        "ring_name": "outer",
+        "label": "oteeosy",
+        "clock_pos": "03:30",
+        "folio_id": "f73r"
+      },
+      {
+        "degree": 13,
+        "decan": 2,
+        "decan_degree": 3,
+        "ring_idx": 1,
+        "ring_name": "outer",
+        "label": "shekal",
+        "clock_pos": "04:30",
+        "folio_id": "f73r"
+      },
+      {
+        "degree": 14,
+        "decan": 2,
+        "decan_degree": 4,
+        "ring_idx": 1,
+        "ring_name": "outer",
+        "label": "oteedyy",
+        "clock_pos": "05:30",
+        "folio_id": "f73r"
+      },
+      {
+        "degree": 15,
+        "decan": 2,
+        "decan_degree": 5,
+        "ring_idx": 1,
+        "ring_name": "outer",
+        "label": "okedal",
+        "clock_pos": "06:30",
+        "folio_id": "f73r"
+      },
+      {
+        "degree": 16,
+        "decan": 2,
+        "decan_degree": 6,
+        "ring_idx": 1,
+        "ring_name": "outer",
+        "label": "chdy",
+        "clock_pos": "07:00",
+        "folio_id": "f73r"
+      },
+      {
+        "degree": 17,
+        "decan": 2,
+        "decan_degree": 7,
+        "ring_idx": 1,
+        "ring_name": "outer",
+        "label": "dalshey",
+        "clock_pos": "08:00",
+        "folio_id": "f73r"
+      },
+      {
+        "degree": 18,
+        "decan": 2,
+        "decan_degree": 8,
+        "ring_idx": 1,
+        "ring_name": "outer",
+        "label": "opaiin",
+        "clock_pos": "08:45",
+        "folio_id": "f73r"
+      },
+      {
+        "degree": 19,
+        "decan": 2,
+        "decan_degree": 9,
+        "ring_idx": 1,
+        "ring_name": "outer",
+        "label": "okeos",
+        "clock_pos": "09:30",
+        "folio_id": "f73r"
+      },
+      {
+        "degree": 20,
+        "decan": 2,
+        "decan_degree": 10,
+        "ring_idx": 1,
+        "ring_name": "outer",
+        "label": "otey",
+        "clock_pos": "10:00",
+        "folio_id": "f73r"
+      },
+      {
+        "degree": 21,
+        "decan": 3,
+        "decan_degree": 1,
+        "ring_idx": 2,
+        "ring_name": "inner",
+        "label": "okary",
+        "clock_pos": "11:30",
+        "folio_id": "f73r"
+      },
+      {
+        "degree": 22,
+        "decan": 3,
+        "decan_degree": 2,
+        "ring_idx": 2,
+        "ring_name": "inner",
+        "label": "okeeody",
+        "clock_pos": "01:00",
+        "folio_id": "f73r"
+      },
+      {
+        "degree": 23,
+        "decan": 3,
+        "decan_degree": 3,
+        "ring_idx": 2,
+        "ring_name": "inner",
+        "label": "oyteedy",
+        "clock_pos": "02:00",
+        "folio_id": "f73r"
+      },
+      {
+        "degree": 24,
+        "decan": 3,
+        "decan_degree": 4,
+        "ring_idx": 2,
+        "ring_name": "inner",
+        "label": "oky",
+        "clock_pos": "03:00",
+        "folio_id": "f73r"
+      },
+      {
+        "degree": 25,
+        "decan": 3,
+        "decan_degree": 5,
+        "ring_idx": 2,
+        "ring_name": "inner",
+        "label": "chefy",
+        "clock_pos": "04:30",
+        "folio_id": "f73r"
+      },
+      {
+        "degree": 26,
+        "decan": 3,
+        "decan_degree": 6,
+        "ring_idx": 2,
+        "ring_name": "inner",
+        "label": "otal",
+        "clock_pos": "06:00",
+        "folio_id": "f73r"
+      },
+      {
+        "degree": 27,
+        "decan": 3,
+        "decan_degree": 7,
+        "ring_idx": 2,
+        "ring_name": "inner",
+        "label": "chek",
+        "clock_pos": "07:00",
+        "folio_id": "f73r"
+      },
+      {
+        "degree": 28,
+        "decan": 3,
+        "decan_degree": 8,
+        "ring_idx": 2,
+        "ring_name": "inner",
+        "label": "ar",
+        "clock_pos": "08:30",
+        "folio_id": "f73r"
+      },
+      {
+        "degree": 29,
+        "decan": 3,
+        "decan_degree": 9,
+        "ring_idx": 2,
+        "ring_name": "inner",
+        "label": "kar",
+        "clock_pos": "09:30",
+        "folio_id": "f73r"
+      },
+      {
+        "degree": 30,
+        "decan": 3,
+        "decan_degree": 10,
+        "ring_idx": 2,
+        "ring_name": "inner",
+        "label": "okeeos",
+        "clock_pos": "10:30",
+        "folio_id": "f73r"
+      }
+    ]
+  },
+  "Sagittarius": {
+    "total": 30,
+    "ring_count": 3,
+    "ring_sizes": [
+      4,
+      16,
+      10
+    ],
+    "nymphs": [
+      {
+        "degree": 1,
+        "decan": 1,
+        "decan_degree": 1,
+        "ring_idx": 0,
+        "ring_name": "top",
+        "label": "okol",
+        "clock_pos": "11:00",
+        "folio_id": "f73v"
+      },
+      {
+        "degree": 2,
+        "decan": 1,
+        "decan_degree": 2,
+        "ring_idx": 0,
+        "ring_name": "top",
+        "label": "oteody",
+        "clock_pos": "11:45",
+        "folio_id": "f73v"
+      },
+      {
+        "degree": 3,
+        "decan": 1,
+        "decan_degree": 3,
+        "ring_idx": 0,
+        "ring_name": "top",
+        "label": "oteedy",
+        "clock_pos": "00:30",
+        "folio_id": "f73v"
+      },
+      {
+        "degree": 4,
+        "decan": 1,
+        "decan_degree": 4,
+        "ring_idx": 0,
+        "ring_name": "top",
+        "label": "eeeody",
+        "clock_pos": "01:00",
+        "folio_id": "f73v"
+      },
+      {
+        "degree": 5,
+        "decan": 1,
+        "decan_degree": 5,
+        "ring_idx": 1,
+        "ring_name": "outer",
+        "label": "okeody",
+        "clock_pos": "10:00",
+        "folio_id": "f73v"
+      },
+      {
+        "degree": 6,
+        "decan": 1,
+        "decan_degree": 6,
+        "ring_idx": 1,
+        "ring_name": "outer",
+        "label": "sheol",
+        "clock_pos": "10:30",
+        "folio_id": "f73v"
+      },
+      {
+        "degree": 7,
+        "decan": 1,
+        "decan_degree": 7,
+        "ring_idx": 1,
+        "ring_name": "outer",
+        "label": "odees",
+        "clock_pos": "11:30",
+        "folio_id": "f73v"
+      },
+      {
+        "degree": 8,
+        "decan": 1,
+        "decan_degree": 8,
+        "ring_idx": 1,
+        "ring_name": "outer",
+        "label": "eery",
+        "clock_pos": "00:00",
+        "folio_id": "f73v"
+      },
+      {
+        "degree": 9,
+        "decan": 1,
+        "decan_degree": 9,
+        "ring_idx": 1,
+        "ring_name": "outer",
+        "label": "okeor",
+        "clock_pos": "01:00",
+        "folio_id": "f73v"
+      },
+      {
+        "degree": 10,
+        "decan": 1,
+        "decan_degree": 10,
+        "ring_idx": 1,
+        "ring_name": "outer",
+        "label": "ofals",
+        "clock_pos": "01:30",
+        "folio_id": "f73v"
+      },
+      {
+        "degree": 11,
+        "decan": 2,
+        "decan_degree": 1,
+        "ring_idx": 1,
+        "ring_name": "outer",
+        "label": "ykeody",
+        "clock_pos": "02:00",
+        "folio_id": "f73v"
+      },
+      {
+        "degree": 12,
+        "decan": 2,
+        "decan_degree": 2,
+        "ring_idx": 1,
+        "ring_name": "outer",
+        "label": "oteody",
+        "clock_pos": "03:00",
+        "folio_id": "f73v"
+      },
+      {
+        "degree": 13,
+        "decan": 2,
+        "decan_degree": 3,
+        "ring_idx": 1,
+        "ring_name": "outer",
+        "label": "ypaiin",
+        "clock_pos": "03:30",
+        "folio_id": "f73v"
+      },
+      {
+        "degree": 14,
+        "decan": 2,
+        "decan_degree": 4,
+        "ring_idx": 1,
+        "ring_name": "outer",
+        "label": "yfaiin.y",
+        "clock_pos": "04:00",
+        "folio_id": "f73v"
+      },
+      {
+        "degree": 15,
+        "decan": 2,
+        "decan_degree": 5,
+        "ring_idx": 1,
+        "ring_name": "outer",
+        "label": "ofcheesy",
+        "clock_pos": "05:00",
+        "folio_id": "f73v"
+      },
+      {
+        "degree": 16,
+        "decan": 2,
+        "decan_degree": 6,
+        "ring_idx": 1,
+        "ring_name": "outer",
+        "label": "oraiiny",
+        "clock_pos": "06:00",
+        "folio_id": "f73v"
+      },
+      {
+        "degree": 17,
+        "decan": 2,
+        "decan_degree": 7,
+        "ring_idx": 1,
+        "ring_name": "outer",
+        "label": "ykeeody",
+        "clock_pos": "07:00",
+        "folio_id": "f73v"
+      },
+      {
+        "degree": 18,
+        "decan": 2,
+        "decan_degree": 8,
+        "ring_idx": 1,
+        "ring_name": "outer",
+        "label": "okeos",
+        "clock_pos": "07:30",
+        "folio_id": "f73v"
+      },
+      {
+        "degree": 19,
+        "decan": 2,
+        "decan_degree": 9,
+        "ring_idx": 1,
+        "ring_name": "outer",
+        "label": "ykeear",
+        "clock_pos": "08:30",
+        "folio_id": "f73v"
+      },
+      {
+        "degree": 20,
+        "decan": 2,
+        "decan_degree": 10,
+        "ring_idx": 1,
+        "ring_name": "outer",
+        "label": "qokeoly",
+        "clock_pos": "09:00",
+        "folio_id": "f73v"
+      },
+      {
+        "degree": 21,
+        "decan": 3,
+        "decan_degree": 1,
+        "ring_idx": 2,
+        "ring_name": "inner",
+        "label": "otedy",
+        "clock_pos": "09:30",
+        "folio_id": "f73v"
+      },
+      {
+        "degree": 22,
+        "decan": 3,
+        "decan_degree": 2,
+        "ring_idx": 2,
+        "ring_name": "inner",
+        "label": "eeed",
+        "clock_pos": "11:00",
+        "folio_id": "f73v"
+      },
+      {
+        "degree": 23,
+        "decan": 3,
+        "decan_degree": 3,
+        "ring_idx": 2,
+        "ring_name": "inner",
+        "label": "oky",
+        "clock_pos": "01:00",
+        "folio_id": "f73v"
+      },
+      {
+        "degree": 24,
+        "decan": 3,
+        "decan_degree": 4,
+        "ring_idx": 2,
+        "ring_name": "inner",
+        "label": "oia?",
+        "clock_pos": "02:00",
+        "folio_id": "f73v"
+      },
+      {
+        "degree": 25,
+        "decan": 3,
+        "decan_degree": 5,
+        "ring_idx": 2,
+        "ring_name": "inner",
+        "label": "okal",
+        "clock_pos": "02:30",
+        "folio_id": "f73v"
+      },
+      {
+        "degree": 26,
+        "decan": 3,
+        "decan_degree": 6,
+        "ring_idx": 2,
+        "ring_name": "inner",
+        "label": "ykey",
+        "clock_pos": "03:30",
+        "folio_id": "f73v"
+      },
+      {
+        "degree": 27,
+        "decan": 3,
+        "decan_degree": 7,
+        "ring_idx": 2,
+        "ring_name": "inner",
+        "label": "ykeee",
+        "clock_pos": "05:00",
+        "folio_id": "f73v"
+      },
+      {
+        "degree": 28,
+        "decan": 3,
+        "decan_degree": 8,
+        "ring_idx": 2,
+        "ring_name": "inner",
+        "label": "okeod",
+        "clock_pos": "06:00",
+        "folio_id": "f73v"
+      },
+      {
+        "degree": 29,
+        "decan": 3,
+        "decan_degree": 9,
+        "ring_idx": 2,
+        "ring_name": "inner",
+        "label": "ykey",
+        "clock_pos": "07:30",
+        "folio_id": "f73v"
+      },
+      {
+        "degree": 30,
+        "decan": 3,
+        "decan_degree": 10,
+        "ring_idx": 2,
+        "ring_name": "inner",
+        "label": "ypal",
+        "clock_pos": "08:30",
+        "folio_id": "f73v"
+      }
+    ]
+  }
+}

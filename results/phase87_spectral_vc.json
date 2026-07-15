@@ -62,10 +62,10 @@
   },
   "nl_char": {
     "Latin-Caesar": {
-      "spectral_gap": 0.5920136178003867,
-      "small_ratio": 0.46153846153846156,
-      "alternation_rate": 0.6679461466357357,
-      "purity": 0.8333333333333334
+      "spectral_gap": 0.4611402852356181,
+      "small_ratio": 0.4090909090909091,
+      "alternation_rate": 0.752258215738277,
+      "purity": 1.0
     },
     "Italian-Cucina": {
       "spectral_gap": 0.43847670130772487,
@@ -88,8 +88,8 @@
   },
   "nl_syl": {
     "Latin-Caesar": {
-      "spectral_gap": 0.6015600871298862,
-      "alternation_rate": 0.24739851206851182
+      "spectral_gap": 0.3596423475404552,
+      "alternation_rate": 0.3670221107103654
     },
     "Italian-Cucina": {
       "spectral_gap": 0.7553871498596446,

@@ -167,9 +167,9 @@
             {
               "word": "okechdy",
               "root": "ech",
-              "meaning": "say/speak",
+              "meaning": "moon",
               "confidence": 0.8,
-              "method": "FUZZY-COPTIC(action)"
+              "method": "FUZZY-COPTIC(astro)"
             },
             {
               "word": "olaiin",
@@ -223,16 +223,16 @@
             {
               "word": "okechedy",
               "root": "ech",
-              "meaning": "say/speak",
+              "meaning": "moon",
               "confidence": 0.8,
-              "method": "FUZZY-COPTIC(action)"
+              "method": "FUZZY-COPTIC(astro)"
             },
             {
               "word": "otechol",
               "root": "ech",
-              "meaning": "say/speak",
+              "meaning": "moon",
               "confidence": 0.8,
-              "method": "FUZZY-COPTIC(action)"
+              "method": "FUZZY-COPTIC(astro)"
             },
             {
               "word": "cheor",
@@ -1106,12 +1106,12 @@
           },
           "by_method": {
             "DICT(Coptic)": 25,
-            "FUZZY-COPTIC(astro)": 25,
+            "FUZZY-COPTIC(astro)": 28,
             "STRUCTURAL-ONLY": 60,
             "FUZZY-COPTIC(body)": 1,
-            "FUZZY-COPTIC(action)": 4,
             "FUZZY-COPTIC(element)": 1,
             "unparseable": 1,
+            "FUZZY-COPTIC(action)": 1,
             "DICT(Arabic)": 1
           },
           "by_determinative": {
@@ -1144,13 +1144,13 @@
             "moon",
             "moon",
             "tongue",
-            "say/speak",
+            "moon",
             "stone",
             "moon",
             "moon",
             "lord",
-            "say/speak",
-            "say/speak",
+            "moon",
+            "moon",
             "fall/place",
             "moon",
             "moon",
@@ -1204,12 +1204,12 @@
           },
           "by_method": {
             "DICT(Coptic)": 14,
-            "FUZZY-COPTIC(astro)": 22,
+            "FUZZY-COPTIC(astro)": 25,
             "STRUCTURAL-ONLY": 41,
             "FUZZY-COPTIC(body)": 1,
-            "FUZZY-COPTIC(action)": 4,
             "FUZZY-COPTIC(element)": 1,
-            "unparseable": 1
+            "unparseable": 1,
+            "FUZZY-COPTIC(action)": 1
           },
           "by_determinative": {
             "t": 24,
@@ -1240,13 +1240,13 @@
             "moon",
             "moon",
             "tongue",
-            "say/speak",
+            "moon",
             "stone",
             "moon",
             "moon",
             "lord",
-            "say/speak",
-            "say/speak",
+            "moon",
+            "moon",
             "fall/place",
             "moon",
             "moon",
@@ -1589,9 +1589,9 @@
             {
               "word": "otechety",
               "root": "ech",
-              "meaning": "say/speak",
+              "meaning": "moon",
               "confidence": 0.8,
-              "method": "FUZZY-COPTIC(action)"
+              "method": "FUZZY-COPTIC(astro)"
             }
           ]
         },
@@ -2290,11 +2290,11 @@
           },
           "by_method": {
             "DICT(Coptic)": 31,
-            "FUZZY-COPTIC(astro)": 19,
+            "FUZZY-COPTIC(astro)": 20,
             "STRUCTURAL-ONLY": 38,
             "FUZZY-COPTIC(body)": 4,
             "FUZZY-COPTIC(element)": 3,
-            "FUZZY-COPTIC(action)": 3
+            "FUZZY-COPTIC(action)": 2
           },
           "by_determinative": {
             "t": 37,
@@ -2337,7 +2337,7 @@
             "moon",
             "carry/lift",
             "moon",
-            "say/speak",
+            "moon",
             "stone",
             "stone",
             "star(short)",
@@ -2386,11 +2386,11 @@
           },
           "by_method": {
             "DICT(Coptic)": 26,
-            "FUZZY-COPTIC(astro)": 14,
+            "FUZZY-COPTIC(astro)": 15,
             "STRUCTURAL-ONLY": 20,
             "FUZZY-COPTIC(body)": 4,
             "FUZZY-COPTIC(element)": 2,
-            "FUZZY-COPTIC(action)": 2
+            "FUZZY-COPTIC(action)": 1
           },
           "by_determinative": {
             "t": 30,
@@ -2433,7 +2433,7 @@
             "moon",
             "carry/lift",
             "moon",
-            "say/speak",
+            "moon",
             "king/great",
             "king/great",
             "carry/lift",
