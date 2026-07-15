@@ -2,3 +2,5 @@ __pycache__/
 *.pyc
 scripts/_webui_*.py
 rerun/
+.bp_scripts/
+baseline_prime/
