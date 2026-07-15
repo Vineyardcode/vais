@@ -54,6 +54,7 @@ import re, sys, io, math, json, os
 from pathlib import Path
 from collections import Counter, defaultdict
 import numpy as np
+from common import clean_word, eva_to_glyphs, extract_words, folio_section
 
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
 
@@ -75,51 +76,12 @@ GALLOWS_BI  = ['ch', 'sh', 'th', 'kh', 'ph', 'fh']
 PLAIN_GALLOWS = {'p', 't', 'k', 'f'}
 
 
-def eva_to_glyphs(word):
-    """Tokenize EVA string into glyphs (greedy left-to-right)."""
-    glyphs = []
-    i = 0
-    w = word.lower()
-    while i < len(w):
-        if i + 2 < len(w) and w[i:i+3] in GALLOWS_TRI:
-            glyphs.append(w[i:i+3]); i += 3
-        elif i + 1 < len(w) and w[i:i+2] in GALLOWS_BI:
-            glyphs.append(w[i:i+2]); i += 2
-        else:
-            glyphs.append(w[i]); i += 1
-    return glyphs
 
 
-def clean_word(tok):
-    tok = re.sub(r'\[([^:\]]+):[^\]]*\]', r'\1', tok)
-    tok = re.sub(r'\{[^}]*\}', '', tok)
-    tok = re.sub(r"[^a-z]", '', tok.lower())
-    return tok
 
 
-def extract_words(text):
-    text = text.replace('<%>', '').replace('<$>', '').strip()
-    text = re.sub(r'@\d+;', '', text)
-    text = re.sub(r'<[^>]*>', '', text)
-    words = []
-    for tok in re.split(r'[.\s]+', text):
-        for subtok in re.split(r',', tok):
-            c = clean_word(subtok.strip())
-            if c:
-                words.append(c)
-    return words
 
 
-def folio_section(fname):
-    m = re.match(r'f(\d+)', fname)
-    if not m:
-        return 'unknown'
-    n = int(m.group(1))
-    if 103 <= n <= 116: return 'recipe'
-    elif 75 <= n <= 84: return 'balneo'
-    elif 67 <= n <= 73: return 'astro'
-    elif 85 <= n <= 86: return 'cosmo'
-    else: return 'herbal'
 
 
 # ── Parse all folios into paragraph/line structure ────────────────────

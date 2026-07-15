@@ -47,6 +47,7 @@ from collections import Counter, defaultdict
 
 _print = print
 import numpy as np
+from common import eva_to_glyphs_v2 as eva_to_glyphs, load_vms_words
 
 FOLIO_DIR = Path(__file__).resolve().parent.parent / 'folios'
 RESULTS_DIR = Path(__file__).resolve().parent.parent / 'results'
@@ -62,34 +63,7 @@ def pr(s='', end='\n'):
 # DATA LOADING
 # ═══════════════════════════════════════════════════════════════════════
 
-def load_vms_words():
-    words = []
-    for fp in sorted(FOLIO_DIR.glob('*.txt')):
-        with open(fp, 'r', encoding='utf-8', errors='replace') as f:
-            for line in f:
-                line = line.strip()
-                if not line or line.startswith('#'): continue
-                m = re.match(r'<([^>]+)>', line)
-                rest = line[m.end():].strip() if m else line
-                if not rest: continue
-                for tok in re.split(r'[.\s,;]+', rest):
-                    tok = tok.strip()
-                    if tok and re.match(r'^[a-z]+$', tok):
-                        words.append(tok)
-    return words
 
-def eva_to_glyphs(word):
-    """Standard EVA segmentation."""
-    glyphs = []
-    i = 0
-    while i < len(word):
-        if i+2 < len(word) and word[i:i+3] in ('cth','ckh','cph','cfh'):
-            glyphs.append(word[i:i+3]); i += 3
-        elif i+1 < len(word) and word[i:i+2] in ('ch','sh','th','kh','ph','fh'):
-            glyphs.append(word[i:i+2]); i += 2
-        else:
-            glyphs.append(word[i]); i += 1
-    return glyphs
 
 
 # ═══════════════════════════════════════════════════════════════════════

@@ -42,6 +42,7 @@ import re, sys, io, math, random
 from pathlib import Path
 from collections import Counter, defaultdict
 import numpy as np
+from common import collapse_e, compute_H, get_collapsed, strip_gallows_v2 as strip_gallows
 
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
 
@@ -51,13 +52,6 @@ np.random.seed(54)
 ALL_GALLOWS = ['cth','ckh','cph','cfh','tch','kch','pch','fch',
                'tsh','ksh','psh','fsh','t','k','f','p']
 
-def strip_gallows(w):
-    temp = w
-    for g in ALL_GALLOWS:
-        while g in temp: temp = temp.replace(g, '', 1)
-    return temp
-def collapse_e(w): return re.sub(r'e+', 'e', w)
-def get_collapsed(w): return collapse_e(strip_gallows(w))
 
 FOLIO_DIR = Path("folios")
 
@@ -80,13 +74,6 @@ def load_lines_with_folios():
                 folios.append(folio_name)
     return lines, folios
 
-def compute_H(counts, total):
-    H = 0.0
-    for c in counts.values():
-        if c > 0:
-            p = c / total
-            H -= p * math.log2(p)
-    return H
 
 # Section mapping
 def get_section(folio):

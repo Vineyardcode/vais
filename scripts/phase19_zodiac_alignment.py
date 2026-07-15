@@ -19,6 +19,7 @@ import re, json, sys
 from pathlib import Path
 from collections import Counter, defaultdict
 from itertools import combinations
+from common import collapse_echains, full_decompose, gallows_base, parse_morphology, strip_gallows
 
 # ══════════════════════════════════════════════════════════════════
 # MORPHOLOGICAL PIPELINE
@@ -34,39 +35,10 @@ PREFIXES = ['qo','q','so','do','o','d','s','y']
 SUFFIXES = ['aiin','ain','iin','in','ar','or','al','ol',
             'edy','ody','eedy','dy','sy','ey','y']
 
-def gallows_base(g):
-    for b in 'tkfp':
-        if b in g: return b
-    return g
 
-def strip_gallows(w):
-    found = []; temp = w
-    for g in ALL_GALLOWS:
-        while g in temp:
-            found.append(g); temp = temp.replace(g, "", 1)
-    return temp, found
 
-def collapse_echains(w):
-    return re.sub(r'e+', 'e', w)
 
-def parse_morphology(w):
-    pfx = sfx = ""
-    for pf in PREFIXES:
-        if w.startswith(pf) and len(w) > len(pf)+1:
-            pfx = pf; w = w[len(pf):]; break
-    for sf in SUFFIXES:
-        if w.endswith(sf) and len(w) > len(sf):
-            sfx = sf; w = w[:-len(sf)]; break
-    return pfx, w, sfx
 
-def full_decompose(word):
-    stripped, gals = strip_gallows(word)
-    collapsed = collapse_echains(stripped)
-    pfx, root, sfx = parse_morphology(collapsed)
-    bases = [gallows_base(g) for g in gals]
-    return dict(original=word, stripped=stripped, collapsed=collapsed,
-                prefix=pfx or "", root=root, suffix=sfx or "",
-                gallows=bases, determinative=bases[0] if bases else "")
 
 # NEW: decompose preserving e-chain lengths
 def decompose_preserve_echains(word):

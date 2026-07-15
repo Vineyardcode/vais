@@ -19,6 +19,7 @@ import re, sys, io, math, json
 from pathlib import Path
 from collections import Counter, defaultdict
 import numpy as np
+from common import clean_word, eva_to_glyphs, load_reference_text, parse_one_chunk
 
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
 
@@ -44,16 +45,6 @@ np.random.seed(42)
 GALLOWS_TRI = ['cth', 'ckh', 'cph', 'cfh']
 GALLOWS_BI  = ['ch', 'sh', 'th', 'kh', 'ph', 'fh']
 
-def eva_to_glyphs(word):
-    glyphs = []; i = 0; w = word.lower()
-    while i < len(w):
-        if i + 2 < len(w) and w[i:i+3] in GALLOWS_TRI:
-            glyphs.append(w[i:i+3]); i += 3
-        elif i + 1 < len(w) and w[i:i+2] in GALLOWS_BI:
-            glyphs.append(w[i:i+2]); i += 2
-        else:
-            glyphs.append(w[i]); i += 1
-    return glyphs
 
 SLOT1 = {'ch', 'sh', 'y'}
 SLOT2_RUNS = {'e'}; SLOT2_SINGLE = {'q', 'a'}
@@ -62,30 +53,6 @@ SLOT4_RUNS = {'i'}; SLOT4_SINGLE = {'d'}
 SLOT5 = {'y', 'p', 'f', 'k', 'l', 'r', 's', 't',
          'cth', 'ckh', 'cph', 'cfh', 'n', 'm'}
 
-def parse_one_chunk(glyphs, pos):
-    start = pos; chunk = []
-    if pos < len(glyphs) and glyphs[pos] in SLOT1:
-        chunk.append(glyphs[pos]); pos += 1
-    if pos < len(glyphs):
-        if glyphs[pos] in SLOT2_RUNS:
-            c = 0
-            while pos < len(glyphs) and glyphs[pos] in SLOT2_RUNS and c < 3:
-                chunk.append(glyphs[pos]); pos += 1; c += 1
-        elif glyphs[pos] in SLOT2_SINGLE:
-            chunk.append(glyphs[pos]); pos += 1
-    if pos < len(glyphs) and glyphs[pos] in SLOT3:
-        chunk.append(glyphs[pos]); pos += 1
-    if pos < len(glyphs):
-        if glyphs[pos] in SLOT4_RUNS:
-            c = 0
-            while pos < len(glyphs) and glyphs[pos] in SLOT4_RUNS and c < 3:
-                chunk.append(glyphs[pos]); pos += 1; c += 1
-        elif glyphs[pos] in SLOT4_SINGLE:
-            chunk.append(glyphs[pos]); pos += 1
-    if pos < len(glyphs) and glyphs[pos] in SLOT5:
-        chunk.append(glyphs[pos]); pos += 1
-    if pos == start: return None, pos
-    return chunk, pos
 
 def parse_word_into_chunks(word_str):
     glyphs = eva_to_glyphs(word_str)
@@ -96,25 +63,9 @@ def parse_word_into_chunks(word_str):
         else: chunks.append(chunk); pos = new_pos
     return ['.'.join(c) for c in chunks]
 
-def clean_word(tok):
-    tok = re.sub(r'\[([^:\]]+):[^\]]*\]', r'\1', tok)
-    tok = re.sub(r'\{[^}]*\}', '', tok)
-    tok = re.sub(r'[^a-z]', '', tok.lower())
-    return tok
 
 VOWELS_LATIN = set('aeiouyàáâãäåæèéêëìíîïòóôõöùúûüýœ')
 
-def load_reference_text(filepath):
-    with open(filepath, 'r', encoding='utf-8', errors='replace') as f:
-        raw = f.read()
-    for marker in ['*** START OF THE PROJECT', '*** START OF THIS PROJECT']:
-        idx = raw.find(marker)
-        if idx >= 0: raw = raw[raw.index('\n', idx) + 1:]; break
-    end_idx = raw.find('*** END OF')
-    if end_idx >= 0: raw = raw[:end_idx]
-    text = raw.lower()
-    words = re.findall(r'[a-zàáâãäåæçèéêëìíîïðñòóôõöùúûüýþßœ]+', text)
-    return words
 
 
 # ═══════════════════════════════════════════════════════════════════════

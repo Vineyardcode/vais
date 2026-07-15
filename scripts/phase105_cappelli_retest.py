@@ -61,6 +61,7 @@ import re, sys, io, math, json
 from pathlib import Path
 from collections import Counter, defaultdict
 import numpy as np
+from common import entropy
 
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
 
@@ -317,11 +318,6 @@ def load_czech_bible():
 # STATISTICAL HELPERS (from Phase 104)
 # ═══════════════════════════════════════════════════════════════════════
 
-def entropy(counter):
-    total = sum(counter.values())
-    if total == 0:
-        return 0.0
-    return -sum((c/total) * math.log2(c/total) for c in counter.values() if c > 0)
 
 
 def mi_from_joint(joint_counts, x_counts, y_counts):

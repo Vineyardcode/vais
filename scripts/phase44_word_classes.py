@@ -51,23 +51,8 @@ ALL_GALLOWS = ['cth','ckh','cph','cfh','tch','kch','pch','fch',
                'tsh','ksh','psh','fsh','t','k','f','p']
 SUFFIXES = ['aiin','ain','iin','in','ar','or','al','ol','dy','y']
 
-def strip_gallows(w):
-    temp = w
-    for g in ALL_GALLOWS:
-        while g in temp: temp = temp.replace(g, '', 1)
-    return temp
-def collapse_e(w): return re.sub(r'e+', 'e', w)
-def get_collapsed(w): return collapse_e(strip_gallows(w))
 
-def get_prefix(w):
-    for p in ['qo','lch','lsh','sh','ch','so','do','q','o','d','y','l']:
-        if w.startswith(p): return p
-    return 'X'
 
-def get_suffix(w):
-    for sf in SUFFIXES:
-        if w.endswith(sf) and len(w) > len(sf): return sf
-    return 'X'
 
 # Three-class system from Phase 43c clustering
 def get_sfx_class(sfx):
@@ -77,32 +62,6 @@ def get_sfx_class(sfx):
 
 FOLIO_DIR = Path("folios")
 
-def load_lines():
-    lines = []
-    section_map = {
-        'bio': 'bio', 'cosmo': 'cosmo', 'herbal': 'herbal',
-        'pharma': 'pharma', 'text': 'text', 'zodiac': 'zodiac'
-    }
-    for fpath in sorted(FOLIO_DIR.glob("*.txt")):
-        section = 'unknown'
-        for line in fpath.read_text(encoding='utf-8', errors='replace').splitlines():
-            line = line.strip()
-            if line.startswith('#'):
-                ll = line.lower()
-                for key, val in section_map.items():
-                    if key in ll:
-                        section = val
-                        if val == 'herbal' and '-b' in ll: section = 'herbal-B'
-                        elif val == 'herbal': section = 'herbal-A'
-                continue
-            m = re.match(r'<([^>]+)>', line)
-            rest = line[m.end():].strip() if m else line
-            if not rest: continue
-            words = [w.strip() for w in re.split(r'[.\s,;]+', rest)
-                     if w.strip() and re.match(r'^[a-z]+$', w.strip())]
-            if len(words) >= 2:
-                lines.append({'section': section, 'words': words})
-    return lines
 
 
 def annotate_lines(lines):
@@ -182,6 +141,7 @@ else:
 
 # SVD for dimensionality reduction
 from numpy.linalg import svd
+from common import collapse_e, get_collapsed, get_prefix, get_suffix, load_lines, strip_gallows_v2 as strip_gallows
 print("  Running SVD...")
 U, S, Vt = svd(ppmi, full_matrices=False)
 # Use first 20 components

@@ -36,30 +36,10 @@ import json
 import math
 from pathlib import Path
 from collections import Counter, defaultdict
+from common import classify_folio, gallows_base_v2 as gallows_base, strip_gallows
 
 # ── Section classification ────────────────────────────────────────────────
 
-def classify_folio(filepath):
-    stem = filepath.stem
-    m = re.match(r'f(\d+)', stem)
-    if not m:
-        return "unknown"
-    num = int(m.group(1))
-    if num <= 58 or 65 <= num <= 66:
-        return "herbal-A"
-    elif 67 <= num <= 73:
-        return "zodiac"
-    elif 75 <= num <= 84:
-        return "bio"
-    elif 85 <= num <= 86:
-        return "cosmo"
-    elif 87 <= num <= 102:
-        if num in (88, 89, 99, 100, 101, 102):
-            return "pharma"
-        return "herbal-B"
-    elif 103 <= num <= 116:
-        return "text"
-    return "unknown"
 
 # ── Gallows definitions ──────────────────────────────────────────────────
 
@@ -73,11 +53,6 @@ GALLOWS_REGEX = re.compile(
     r'(cth|ckh|cph|cfh|tch|kch|pch|fch|tsh|ksh|psh|fsh|[tkfp])'
 )
 
-def gallows_base(g):
-    for base in ['t', 'k', 'f', 'p']:
-        if base in g:
-            return base
-    return g
 
 def gallows_tier(g):
     if g in SIMPLE_GALLOWS:
@@ -167,14 +142,6 @@ def extract_all_words():
     return all_data
 
 
-def strip_gallows(word):
-    found = []
-    temp = word
-    for g in ALL_GALLOWS:
-        while g in temp:
-            found.append(g)
-            temp = temp.replace(g, "", 1)
-    return temp, found
 
 
 # ══════════════════════════════════════════════════════════════════════════

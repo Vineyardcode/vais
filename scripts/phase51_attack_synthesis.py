@@ -47,50 +47,12 @@ ALL_GALLOWS = ['cth','ckh','cph','cfh','tch','kch','pch','fch',
 SUFFIXES = ['aiin','ain','iin','in','ar','or','al','ol','dy','y']
 GRAM_PREFIXES = ['qo','so','do','q','o','d','y']
 
-def strip_gallows(w):
-    temp = w
-    for g in ALL_GALLOWS:
-        while g in temp: temp = temp.replace(g, '', 1)
-    return temp
-def collapse_e(w): return re.sub(r'e+', 'e', w)
-def get_collapsed(w): return collapse_e(strip_gallows(w))
 
-def get_suffix(w):
-    for sfx in SUFFIXES:
-        if w.endswith(sfx) and len(w) > len(sfx):
-            return sfx
-    return 'X'
 
-def get_gram_prefix(w):
-    for gp in GRAM_PREFIXES:
-        if w.startswith(gp) and len(w) > len(gp):
-            return gp
-    return 'X'
 
 FOLIO_DIR = Path("folios")
 
-def load_lines():
-    lines = []
-    for fpath in sorted(FOLIO_DIR.glob("*.txt")):
-        for line in fpath.read_text(encoding='utf-8', errors='replace').splitlines():
-            line = line.strip()
-            if line.startswith('#'): continue
-            m = re.match(r'<([^>]+)>', line)
-            rest = line[m.end():].strip() if m else line
-            if not rest: continue
-            words = [w.strip() for w in re.split(r'[.\s,;]+', rest)
-                     if w.strip() and re.match(r'^[a-z]+$', w.strip())]
-            if len(words) >= 2:
-                lines.append(words)
-    return lines
 
-def compute_H(counts, total):
-    H = 0.0
-    for c in counts.values():
-        if c > 0:
-            p = c / total
-            H -= p * math.log2(p)
-    return H
 
 print("Loading lines...")
 raw_lines = load_lines()
@@ -597,6 +559,7 @@ n_tested = 0
 
 # For each pair of stems sharing a suffix...
 from itertools import combinations
+from common import collapse_e, compute_H, get_collapsed, get_gram_prefix, get_suffix, load_lines_v2 as load_lines, strip_gallows_v2 as strip_gallows
 frequent_stems = [s for s, v in stem_sfx_matrix.items() 
                   if len(v) >= 2 and sum(Counter(all_collapsed).get(w, 0) 
                   for w, (_, c, _) in parsed.items() if c == s) >= 10]

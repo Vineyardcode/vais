@@ -18,6 +18,7 @@ import math
 from pathlib import Path
 from collections import Counter, defaultdict
 from itertools import combinations
+from common import classify_folio_v3 as classify_folio, entropy_v2 as entropy, get_root
 
 # ════════════════════════════════════════════════════════════════════════════
 # 1. IMPROVED PARSER
@@ -158,31 +159,12 @@ def parse_word(word):
     return best
 
 
-def get_root(onset, body):
-    """Combine root onset + body into a single root string."""
-    return onset + body
 
 
 # ════════════════════════════════════════════════════════════════════════════
 # WORD EXTRACTION (same as before, improved)
 # ════════════════════════════════════════════════════════════════════════════
 
-def classify_folio(header_lines):
-    text = "\n".join(header_lines).lower()
-    if "herbal" in text:
-        section = "herbal"
-    elif "astro" in text or "cosmo" in text or "star" in text or "zodiac" in text:
-        section = "astro"
-    elif "pharm" in text or "recipe" in text or "balneo" in text:
-        section = "pharma"
-    elif "biolog" in text or "bathy" in text:
-        section = "bio"
-    elif "text only" in text:
-        section = "text"
-    else:
-        section = "other"
-    lang = "B" if "language b" in text else "A" if "language a" in text else "?"
-    return section, lang
 
 
 def extract_words_and_labels(txt_path):
@@ -241,16 +223,6 @@ def extract_words_and_labels(txt_path):
 # ANALYSIS FUNCTIONS
 # ════════════════════════════════════════════════════════════════════════════
 
-def entropy(counter):
-    total = sum(counter.values())
-    if total == 0:
-        return 0.0
-    h = 0.0
-    for count in counter.values():
-        if count > 0:
-            p = count / total
-            h -= p * math.log2(p)
-    return h
 
 
 # ════════════════════════════════════════════════════════════════════════════

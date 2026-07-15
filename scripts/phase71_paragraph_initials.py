@@ -27,6 +27,7 @@ import re, sys, io, math, json
 from pathlib import Path
 from collections import Counter, defaultdict
 import os
+from common import eva_to_glyphs, folio_section_v2 as folio_section
 
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
 
@@ -60,19 +61,6 @@ def eva_first_glyph(word):
             return bi
     return w[0]
 
-def eva_to_glyphs(word):
-    """Split word into EVA glyphs."""
-    glyphs = []
-    i = 0
-    w = word.lower()
-    while i < len(w):
-        if i+2 < len(w) and w[i:i+3] in GALLOWS_TRI:
-            glyphs.append(w[i:i+3]); i += 3
-        elif i+1 < len(w) and w[i:i+2] in GALLOWS_BI:
-            glyphs.append(w[i:i+2]); i += 2
-        else:
-            glyphs.append(w[i]); i += 1
-    return glyphs
 
 def eva_first_char(word):
     """Return just the first EVA character (single letter, not glyph)."""
@@ -101,18 +89,6 @@ def folio_number(fname):
         return int(m.group(1))
     return 0
 
-def folio_section(fnum):
-    """Assign a section label to a folio number."""
-    if 103 <= fnum <= 116:
-        return 'recipe'
-    elif 75 <= fnum <= 84:
-        return 'balneo'
-    elif 67 <= fnum <= 73:
-        return 'astro'
-    elif 85 <= fnum <= 86:
-        return 'cosmo'
-    else:
-        return 'herbal'
 
 def parse_folio(filepath):
     """

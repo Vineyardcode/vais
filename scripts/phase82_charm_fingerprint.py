@@ -97,6 +97,7 @@ import re, sys, io, math
 from pathlib import Path
 from collections import Counter
 import numpy as np
+from common import clean_word_v2 as clean_word, eva_to_glyphs, index_of_coincidence, load_bvgs, load_reference_text_v2 as load_reference_text, mean_word_length, ttr_at_n
 
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
 
@@ -288,22 +289,7 @@ CHARM_TEXTS = {
 GALLOWS_TRI = ['cth', 'ckh', 'cph', 'cfh']
 GALLOWS_BI  = ['ch', 'sh', 'th', 'kh', 'ph', 'fh']
 
-def eva_to_glyphs(word):
-    glyphs = []
-    i = 0
-    w = word.lower()
-    while i < len(w):
-        if i + 2 < len(w) and w[i:i+3] in GALLOWS_TRI:
-            glyphs.append(w[i:i+3]); i += 3
-        elif i + 1 < len(w) and w[i:i+2] in GALLOWS_BI:
-            glyphs.append(w[i:i+2]); i += 2
-        else:
-            glyphs.append(w[i]); i += 1
-    return glyphs
 
-def clean_word(tok):
-    tok = re.sub(r'[^a-z]', '', tok.lower())
-    return tok if len(tok) >= 1 else ''
 
 def parse_vms_words():
     """Parse all VMS words, return (words_list, glyph_chars_list)."""
@@ -340,61 +326,8 @@ def parse_vms_words():
 # TEXT LOADING (from Phase 81)
 # ═══════════════════════════════════════════════════════════════════════
 
-def load_reference_text(filepath):
-    """Load a reference text file, return lowercase words (alpha only)."""
-    with open(filepath, 'r', encoding='utf-8', errors='replace') as f:
-        raw = f.read()
-    start_marker = '*** START OF'
-    end_marker = '*** END OF'
-    start_idx = raw.find(start_marker)
-    end_idx = raw.find(end_marker)
-    if start_idx >= 0:
-        raw = raw[raw.index('\n', start_idx) + 1:]
-    if end_idx >= 0:
-        raw = raw[:end_idx]
-    text = raw.lower()
-    text = re.sub(r'[^a-zàáâãäåæçèéêëìíîïðñòóôõöùúûüýþßœ\s]+', ' ', text)
-    words = [w for w in text.split() if len(w) >= 1]
-    return words
 
 
-def load_bvgs(filepath):
-    """Load Buch von guter Speise with OCR cleaning."""
-    with open(filepath, 'r', encoding='utf-8', errors='replace') as f:
-        lines = f.readlines()
-    start_idx = 0
-    for i, line in enumerate(lines):
-        stripped = line.strip().lower()
-        if stripped.startswith('dis buch sagt von guter spise'):
-            start_idx = i
-            break
-    if start_idx < 200:
-        for i, line in enumerate(lines[start_idx + 1:], start=start_idx + 1):
-            stripped = line.strip().lower()
-            if stripped.startswith('dis buch sagt von guter spise'):
-                start_idx = i
-                break
-    recipe_lines = []
-    for line in lines[start_idx:]:
-        line = line.strip()
-        if not line: continue
-        if 'digitized by' in line.lower(): continue
-        if re.match(r'^\d+\s*$', line): continue
-        if re.match(r'^[\*\)°]', line): continue
-        if re.match(r'^[¹²³⁴⁵⁶⁷⁸⁹⁰]', line): continue
-        if '=' in line and len(line) < 150: continue
-        if re.match(r'^[Vv]gl\.?\s|^[Vv]ergl\.?\s', line): continue
-        if re.search(r'\(Fol\.\s*\d+', line): continue
-        latin_caps = len(re.findall(r'\b[A-Z][a-z]{3,}\b', line))
-        if latin_caps >= 3 and len(line) < 120: continue
-        if re.search(r'Boner|Schindler|Schmeller|Lexer|Grimm|Weinhold', line): continue
-        line = re.sub(r'\s*[\*¹²³⁴⁵⁶⁷⁸⁹⁰]*\)', '', line)
-        line = re.sub(r'[¹²³⁴⁵⁶⁷⁸⁹⁰]', '', line)
-        recipe_lines.append(line)
-    text = ' '.join(recipe_lines).lower()
-    text = re.sub(r'[^a-zàáâãäåæçèéêëìíîïðñòóôõöùúûüýþßœ\s]+', ' ', text)
-    words = [w for w in text.split() if len(w) >= 1]
-    return words
 
 
 def load_charm_corpus():
@@ -493,12 +426,7 @@ def word_bigram_predictability(words):
         return 1.0
     return h_cond / h_uni
 
-def mean_word_length(words):
-    return float(np.mean([len(w) for w in words]))
 
-def ttr_at_n(words, n=5000):
-    subset = words[:min(n, len(words))]
-    return len(set(subset)) / len(subset) if subset else 0
 
 def zipf_alpha(words):
     freq = Counter(words)
@@ -512,12 +440,6 @@ def zipf_alpha(words):
     result = np.linalg.lstsq(A, log_freq, rcond=None)
     return float(-result[0][0])
 
-def index_of_coincidence(char_list):
-    freq = Counter(char_list)
-    n = sum(freq.values())
-    if n < 2:
-        return 0.0
-    return sum(c * (c-1) for c in freq.values()) / (n * (n-1))
 
 def word_length_distribution(words, max_len=15):
     lens = [min(len(w), max_len) for w in words]

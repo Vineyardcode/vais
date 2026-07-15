@@ -73,6 +73,7 @@ from pathlib import Path
 from collections import Counter, defaultdict
 import numpy as np
 import random
+from common import chunk_to_str, clean_word, conditional_entropy, entropy, eva_to_glyphs, extract_words_from_line, folio_section, get_currier_language, load_reference_text, parse_one_chunk, parse_word_into_chunks
 
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
 
@@ -99,19 +100,6 @@ random.seed(42)
 GALLOWS_TRI = ['cth', 'ckh', 'cph', 'cfh']
 GALLOWS_BI  = ['ch', 'sh', 'th', 'kh', 'ph', 'fh']
 
-def eva_to_glyphs(word):
-    """Tokenize EVA string into glyphs (greedy left-to-right)."""
-    glyphs = []
-    i = 0
-    w = word.lower()
-    while i < len(w):
-        if i + 2 < len(w) and w[i:i+3] in GALLOWS_TRI:
-            glyphs.append(w[i:i+3]); i += 3
-        elif i + 1 < len(w) and w[i:i+2] in GALLOWS_BI:
-            glyphs.append(w[i:i+2]); i += 2
-        else:
-            glyphs.append(w[i]); i += 1
-    return glyphs
 
 
 # ═══════════════════════════════════════════════════════════════════════
@@ -131,91 +119,10 @@ SLOT5 = {'y', 'p', 'f', 'k', 'l', 'r', 's', 't',  # coda
 MAX_CHUNKS = 6  # allow up to 6 (Mauro uses 4-5; we go slightly beyond)
 
 
-def parse_one_chunk(glyphs, pos):
-    """Parse one chunk starting at position pos using greedy S1→S5 matching.
-
-    Returns (chunk_glyphs_list, new_pos).
-    If no slot matches at all, returns (None, pos).
-    """
-    start = pos
-    chunk = []
-
-    # SLOT 1: onset
-    if pos < len(glyphs) and glyphs[pos] in SLOT1:
-        chunk.append(glyphs[pos])
-        pos += 1
-
-    # SLOT 2: front vowel (run of e's up to 3, OR single q/a)
-    if pos < len(glyphs):
-        if glyphs[pos] in SLOT2_RUNS:
-            count = 0
-            while pos < len(glyphs) and glyphs[pos] in SLOT2_RUNS and count < 3:
-                chunk.append(glyphs[pos])
-                pos += 1
-                count += 1
-        elif glyphs[pos] in SLOT2_SINGLE:
-            chunk.append(glyphs[pos])
-            pos += 1
-
-    # SLOT 3: core 'o'
-    if pos < len(glyphs) and glyphs[pos] in SLOT3:
-        chunk.append(glyphs[pos])
-        pos += 1
-
-    # SLOT 4: back vowel (run of i's up to 3, OR single d)
-    if pos < len(glyphs):
-        if glyphs[pos] in SLOT4_RUNS:
-            count = 0
-            while pos < len(glyphs) and glyphs[pos] in SLOT4_RUNS and count < 3:
-                chunk.append(glyphs[pos])
-                pos += 1
-                count += 1
-        elif glyphs[pos] in SLOT4_SINGLE:
-            chunk.append(glyphs[pos])
-            pos += 1
-
-    # SLOT 5: coda
-    if pos < len(glyphs) and glyphs[pos] in SLOT5:
-        chunk.append(glyphs[pos])
-        pos += 1
-
-    if pos == start:
-        return None, pos  # no slot matched — unrecognized glyph
-    return chunk, pos
 
 
-def parse_word_into_chunks(word_str):
-    """Parse a VMS word (EVA string) into chunks via LOOP grammar.
-
-    Returns: (chunks_list, unparsed_glyphs, glyph_list)
-    Each chunk is a list of glyph strings.
-    """
-    glyphs = eva_to_glyphs(word_str)
-    chunks = []
-    unparsed = []
-    pos = 0
-
-    while pos < len(glyphs) and len(chunks) < MAX_CHUNKS:
-        chunk, new_pos = parse_one_chunk(glyphs, pos)
-        if chunk is None:
-            # Glyph doesn't fit any slot — record and skip
-            unparsed.append(glyphs[pos])
-            pos += 1
-        else:
-            chunks.append(chunk)
-            pos = new_pos
-
-    # Remaining glyphs beyond MAX_CHUNKS
-    while pos < len(glyphs):
-        unparsed.append(glyphs[pos])
-        pos += 1
-
-    return chunks, unparsed, glyphs
 
 
-def chunk_to_str(chunk):
-    """Convert a chunk (list of glyphs) to a canonical string identifier."""
-    return '.'.join(chunk)
 
 
 def slot_pattern(chunk, glyphs_list=None):
@@ -258,47 +165,12 @@ def slot_pattern(chunk, glyphs_list=None):
 # VMS PARSING
 # ═══════════════════════════════════════════════════════════════════════
 
-def clean_word(tok):
-    tok = re.sub(r'\[([^:\]]+):[^\]]*\]', r'\1', tok)
-    tok = re.sub(r'\{[^}]*\}', '', tok)
-    tok = re.sub(r'[^a-z]', '', tok.lower())
-    return tok
 
 
-def extract_words_from_line(text):
-    text = text.replace('<%>', '').replace('<$>', '').strip()
-    text = re.sub(r'@\d+;', '', text)
-    text = re.sub(r'<[^>]*>', '', text)
-    words = []
-    for tok in re.split(r'[.\s]+', text):
-        for subtok in re.split(r',', tok):
-            c = clean_word(subtok.strip())
-            if c:
-                words.append(c)
-    return words
 
 
-def folio_section(fname):
-    m = re.match(r'f(\d+)', fname)
-    if not m:
-        return 'unknown'
-    n = int(m.group(1))
-    if 103 <= n <= 116: return 'recipe'
-    elif 75 <= n <= 84: return 'balneo'
-    elif 67 <= n <= 73: return 'astro'
-    elif 85 <= n <= 86: return 'cosmo'
-    else: return 'herbal'
 
 
-def get_currier_language(folio_num):
-    lang_b = set()
-    for f in [26,27,28,29,31,34,35,38,39,42,43,46,47,49,50,53,54]:
-        lang_b.add(f)
-    for f in range(75, 85):
-        lang_b.add(f)
-    for f in range(87, 103):
-        lang_b.add(f)
-    return 'B' if folio_num in lang_b else 'A'
 
 
 def parse_vms():
@@ -402,42 +274,14 @@ def syllabify_word(word, vowels=VOWELS_LATIN):
 # NL REFERENCE TEXT LOADING
 # ═══════════════════════════════════════════════════════════════════════
 
-def load_reference_text(filepath):
-    """Load a reference text, strip Gutenberg headers, return word list."""
-    with open(filepath, 'r', encoding='utf-8', errors='replace') as f:
-        raw = f.read()
-    # Strip Gutenberg headers/footers
-    for marker in ['*** START OF THE PROJECT', '*** START OF THIS PROJECT']:
-        idx = raw.find(marker)
-        if idx >= 0:
-            raw = raw[raw.index('\n', idx) + 1:]
-            break
-    end_idx = raw.find('*** END OF')
-    if end_idx >= 0:
-        raw = raw[:end_idx]
-    text = raw.lower()
-    words = re.findall(r'[a-zàáâãäåæçèéêëìíîïðñòóôõöùúûüýþßœ]+', text)
-    return words
 
 
 # ═══════════════════════════════════════════════════════════════════════
 # STATISTICAL METRICS
 # ═══════════════════════════════════════════════════════════════════════
 
-def entropy(counts):
-    """Shannon entropy from a Counter."""
-    total = sum(counts.values())
-    if total == 0:
-        return 0.0
-    return -sum((c/total) * math.log2(c/total) for c in counts.values() if c > 0)
 
 
-def conditional_entropy(bigrams_counter, unigram_counter):
-    """H(Y|X) from joint bigram counts and marginal X counts."""
-    # H(Y|X) = H(X,Y) - H(X)
-    h_joint = entropy(bigrams_counter)
-    h_x = entropy(unigram_counter)
-    return h_joint - h_x
 
 
 def zipf_slope(counts, top_n=50):

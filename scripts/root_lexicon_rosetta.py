@@ -32,30 +32,10 @@ import json
 import math
 from pathlib import Path
 from collections import Counter, defaultdict
+from common import classify_folio, collapse_echains, gallows_base_v2 as gallows_base, parse_morphology, strip_gallows
 
 # ── Section classification ────────────────────────────────────────────────
 
-def classify_folio(filepath):
-    stem = filepath.stem
-    m = re.match(r'f(\d+)', stem)
-    if not m:
-        return "unknown"
-    num = int(m.group(1))
-    if num <= 58 or 65 <= num <= 66:
-        return "herbal-A"
-    elif 67 <= num <= 73:
-        return "zodiac"
-    elif 75 <= num <= 84:
-        return "bio"
-    elif 85 <= num <= 86:
-        return "cosmo"
-    elif 87 <= num <= 102:
-        if num in (88, 89, 99, 100, 101, 102):
-            return "pharma"
-        return "herbal-B"
-    elif 103 <= num <= 116:
-        return "text"
-    return "unknown"
 
 # ── Gallows definitions ──────────────────────────────────────────────────
 
@@ -65,11 +45,6 @@ COMPOUND_GCH = ["tch", "kch", "pch", "fch"]
 COMPOUND_GSH = ["tsh", "ksh", "psh", "fsh"]
 ALL_GALLOWS = BENCH_GALLOWS + COMPOUND_GCH + COMPOUND_GSH + SIMPLE_GALLOWS
 
-def gallows_base(g):
-    for base in ['t', 'k', 'f', 'p']:
-        if base in g:
-            return base
-    return g
 
 # ── Morphological operations ─────────────────────────────────────────────
 
@@ -77,35 +52,8 @@ PREFIXES = ['qo', 'q', 'so', 'do', 'o', 'd', 's', 'y']
 SUFFIXES = ['aiin', 'ain', 'iin', 'in', 'ar', 'or', 'al', 'ol',
             'edy', 'ody', 'eedy', 'dy', 'sy', 'ey', 'y']
 
-def strip_gallows(word):
-    found = []
-    temp = word
-    for g in ALL_GALLOWS:
-        while g in temp:
-            found.append(g)
-            temp = temp.replace(g, "", 1)
-    return temp, found
 
-def collapse_echains(word):
-    """Collapse e-chains to single 'e' — consonantal skeleton."""
-    return re.sub(r'e+', 'e', word)
 
-def parse_morphology(stripped_word):
-    """Parse into prefix + root + suffix."""
-    w = stripped_word
-    prefix = ""
-    suffix = ""
-    for pf in PREFIXES:
-        if w.startswith(pf) and len(w) > len(pf) + 1:
-            prefix = pf
-            w = w[len(pf):]
-            break
-    for sf in SUFFIXES:
-        if w.endswith(sf) and len(w) > len(sf):
-            suffix = sf
-            w = w[:-len(sf)]
-            break
-    return prefix, w, suffix
 
 def full_decompose(word):
     """Full pipeline: strip gallows → collapse e-chains → parse morphology."""

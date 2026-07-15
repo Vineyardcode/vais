@@ -57,6 +57,7 @@ import re, sys, io, math, json, os
 from pathlib import Path
 from collections import Counter, defaultdict
 import numpy as np
+from common import clean_word, eva_to_glyphs, folio_section_v2 as folio_section
 
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
 
@@ -82,19 +83,6 @@ PLAIN_GALLOWS = {'p', 't', 'k', 'f'}
 COMPOUND_GALLOWS = set(GALLOWS_TRI)
 ALL_GALLOWS = PLAIN_GALLOWS | COMPOUND_GALLOWS | {'th', 'kh', 'ph', 'fh'}
 
-def eva_to_glyphs(word):
-    """Split EVA word into glyphs, recognizing multi-char glyphs."""
-    glyphs = []
-    i = 0
-    w = word.lower()
-    while i < len(w):
-        if i + 2 < len(w) and w[i:i+3] in GALLOWS_TRI:
-            glyphs.append(w[i:i+3]); i += 3
-        elif i + 1 < len(w) and w[i:i+2] in GALLOWS_BI:
-            glyphs.append(w[i:i+2]); i += 2
-        else:
-            glyphs.append(w[i]); i += 1
-    return glyphs
 
 
 def first_glyph(word):
@@ -112,19 +100,7 @@ def folio_number(fname):
     m = re.match(r'f(\d+)', fname)
     return int(m.group(1)) if m else 0
 
-def folio_section(fnum):
-    if 103 <= fnum <= 116: return 'recipe'
-    elif 75 <= fnum <= 84: return 'balneo'
-    elif 67 <= fnum <= 73: return 'astro'
-    elif 85 <= fnum <= 86: return 'cosmo'
-    else: return 'herbal'
 
-def clean_word(tok):
-    """Clean a single EVA token."""
-    tok = re.sub(r'\[([^:\]]+):[^\]]*\]', r'\1', tok)
-    tok = re.sub(r'\{[^}]*\}', '', tok)
-    tok = re.sub(r"[^a-z]", '', tok.lower())
-    return tok
 
 def parse_all_folios():
     """Parse ALL folio files, returning structured paragraph and word data.

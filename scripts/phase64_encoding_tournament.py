@@ -56,6 +56,7 @@ from collections import Counter, defaultdict
 
 _print = print
 import numpy as np
+from common import eva_to_glyphs_v2 as eva_to_glyphs, fetch_gutenberg, get_currier_language, hapax_ratio_at_midpoint, zipf_alpha
 
 FOLIO_DIR = Path(__file__).resolve().parent.parent / 'folios'
 RESULTS_DIR = Path(__file__).resolve().parent.parent / 'results'
@@ -100,28 +101,7 @@ def load_vms_chars(words):
         chars.extend(glyphs)
     return chars
 
-def eva_to_glyphs(word):
-    glyphs = []
-    i = 0
-    while i < len(word):
-        if i+2 < len(word) and word[i:i+3] in ('cth','ckh','cph','cfh'):
-            glyphs.append(word[i:i+3]); i += 3
-        elif i+1 < len(word) and word[i:i+2] in ('ch','sh','th','kh','ph','fh'):
-            glyphs.append(word[i:i+2]); i += 2
-        else:
-            glyphs.append(word[i]); i += 1
-    return glyphs
 
-def fetch_gutenberg(ebook_id):
-    url = f'https://www.gutenberg.org/cache/epub/{ebook_id}/pg{ebook_id}.txt'
-    req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0 (VoynichResearch)'})
-    resp = urllib.request.urlopen(req, timeout=30)
-    data = resp.read().decode('utf-8', errors='replace')
-    start = data.find('*** START OF')
-    end = data.find('*** END OF')
-    if start > 0 and end > 0:
-        return data[data.index('\n', start)+1:end]
-    return data
 
 def load_italian_words():
     """Load Italian (Dante) words, lowercase, alpha-only."""
@@ -166,12 +146,6 @@ def heaps_exponent(words):
     beta = result[0][0]
     return float(beta)
 
-def hapax_ratio_at_midpoint(words):
-    """Fraction of vocabulary that are hapax legomena at corpus midpoint."""
-    mid = len(words) // 2
-    freq = Counter(words[:mid])
-    hapax = sum(1 for c in freq.values() if c == 1)
-    return hapax / max(len(freq), 1)
 
 def char_bigram_predictability(char_list):
     """H(c|prev) / H(c) — how much does the previous char help?"""
@@ -234,18 +208,6 @@ def ttr_at_n(words, n=5000):
     subset = words[:min(n, len(words))]
     return len(set(subset)) / len(subset)
 
-def zipf_alpha(words):
-    """Zipf exponent: slope of log(rank) vs log(freq)."""
-    freq = Counter(words)
-    ranked = sorted(freq.values(), reverse=True)
-    n = min(len(ranked), 500)  # Top 500 words
-    if n < 10:
-        return 0.0
-    log_rank = np.log(np.arange(1, n+1))
-    log_freq = np.log(np.array(ranked[:n], dtype=float))
-    A = np.vstack([log_rank, np.ones(n)]).T
-    result = np.linalg.lstsq(A, log_freq, rcond=None)
-    return float(-result[0][0])  # Zipf α is typically positive
 
 def vocab_growth_curve(words, n_points=50):
     """Return (n_tokens, n_types) pairs for vocabulary growth curve."""
@@ -780,26 +742,6 @@ def get_folio_num(fname):
     m = re.search(r'f(\d+)', fname)
     return int(m.group(1)) if m else 0
 
-def get_currier_language(folio_num):
-    """Approximate Currier A/B assignment."""
-    # Based on published literature (Currier 1976, D'Imperio, Davis 2020)
-    # A = Scribe 1 dominant, B = Scribe 2 dominant
-    # Herbal A (Q1-Q3): f1-f24 → A
-    # Herbal mixed (Q4-Q7): interleaved
-    # Beyond herbal: approximate from section characteristics
-    # B-dominant sections: pharma, bio portions
-    # A-dominant sections: herbal early, text
-    lang_b_folios = set()
-    # Q4-Q7 B folios (even-numbered bifolia, approximation)
-    for f in [26, 27, 28, 29, 31, 34, 35, 38, 39, 42, 43, 46, 47, 49, 50, 53, 54]:
-        lang_b_folios.add(f)
-    # Bio section (f75-f84) mostly B
-    for f in range(75, 85):
-        lang_b_folios.add(f)
-    # Pharma section (f87-f102) mostly B
-    for f in range(87, 103):
-        lang_b_folios.add(f)
-    return 'B' if folio_num in lang_b_folios else 'A'
 
 def get_section(folio_num):
     if folio_num <= 56: return 'herbal'

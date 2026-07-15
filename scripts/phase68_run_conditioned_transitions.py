@@ -45,6 +45,7 @@ from itertools import groupby
 
 _print = print
 import numpy as np
+from common import eva_to_glyphs_v2 as eva_to_glyphs
 
 FOLIO_DIR = Path(__file__).resolve().parent.parent / 'folios'
 RESULTS_DIR = Path(__file__).resolve().parent.parent / 'results'
@@ -104,17 +105,6 @@ def load_vms_words_by_currier():
                         elif lang == 'B': words_b.append(tok)
     return words_a, words_b, words_all
 
-def eva_to_glyphs(word):
-    glyphs = []
-    i = 0
-    while i < len(word):
-        if i+2 < len(word) and word[i:i+3] in ('cth','ckh','cph','cfh'):
-            glyphs.append(word[i:i+3]); i += 3
-        elif i+1 < len(word) and word[i:i+2] in ('ch','sh','th','kh','ph','fh'):
-            glyphs.append(word[i:i+2]); i += 2
-        else:
-            glyphs.append(word[i]); i += 1
-    return glyphs
 
 
 # ═══════════════════════════════════════════════════════════════════════

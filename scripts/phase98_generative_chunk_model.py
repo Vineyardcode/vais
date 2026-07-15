@@ -50,6 +50,7 @@ from pathlib import Path
 from collections import Counter, defaultdict
 import numpy as np
 import random
+from common import chunk_to_str, clean_word, conditional_entropy, entropy, eva_to_glyphs, extract_words_from_line, get_currier_language, load_phase86_clusters, parse_one_chunk, parse_word_into_chunks
 
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
 
@@ -75,18 +76,6 @@ random.seed(42)
 GALLOWS_TRI = ['cth', 'ckh', 'cph', 'cfh']
 GALLOWS_BI  = ['ch', 'sh', 'th', 'kh', 'ph', 'fh']
 
-def eva_to_glyphs(word):
-    glyphs = []
-    i = 0
-    w = word.lower()
-    while i < len(w):
-        if i + 2 < len(w) and w[i:i+3] in GALLOWS_TRI:
-            glyphs.append(w[i:i+3]); i += 3
-        elif i + 1 < len(w) and w[i:i+2] in GALLOWS_BI:
-            glyphs.append(w[i:i+2]); i += 2
-        else:
-            glyphs.append(w[i]); i += 1
-    return glyphs
 
 # ═══════════════════════════════════════════════════════════════════════
 # MAURO'S LOOP GRAMMAR — CHUNK PARSER (from Phase 85)
@@ -102,85 +91,18 @@ SLOT5 = {'y', 'p', 'f', 'k', 'l', 'r', 's', 't',
          'cth', 'ckh', 'cph', 'cfh', 'n', 'm'}
 MAX_CHUNKS = 6
 
-def parse_one_chunk(glyphs, pos):
-    start = pos
-    chunk = []
-    if pos < len(glyphs) and glyphs[pos] in SLOT1:
-        chunk.append(glyphs[pos]); pos += 1
-    if pos < len(glyphs):
-        if glyphs[pos] in SLOT2_RUNS:
-            count = 0
-            while pos < len(glyphs) and glyphs[pos] in SLOT2_RUNS and count < 3:
-                chunk.append(glyphs[pos]); pos += 1; count += 1
-        elif glyphs[pos] in SLOT2_SINGLE:
-            chunk.append(glyphs[pos]); pos += 1
-    if pos < len(glyphs) and glyphs[pos] in SLOT3:
-        chunk.append(glyphs[pos]); pos += 1
-    if pos < len(glyphs):
-        if glyphs[pos] in SLOT4_RUNS:
-            count = 0
-            while pos < len(glyphs) and glyphs[pos] in SLOT4_RUNS and count < 3:
-                chunk.append(glyphs[pos]); pos += 1; count += 1
-        elif glyphs[pos] in SLOT4_SINGLE:
-            chunk.append(glyphs[pos]); pos += 1
-    if pos < len(glyphs) and glyphs[pos] in SLOT5:
-        chunk.append(glyphs[pos]); pos += 1
-    if pos == start:
-        return None, pos
-    return chunk, pos
 
 
-def parse_word_into_chunks(word_str):
-    glyphs = eva_to_glyphs(word_str)
-    chunks = []
-    unparsed = []
-    pos = 0
-    while pos < len(glyphs) and len(chunks) < MAX_CHUNKS:
-        chunk, new_pos = parse_one_chunk(glyphs, pos)
-        if chunk is None:
-            unparsed.append(glyphs[pos]); pos += 1
-        else:
-            chunks.append(chunk); pos = new_pos
-    while pos < len(glyphs):
-        unparsed.append(glyphs[pos]); pos += 1
-    return chunks, unparsed, glyphs
 
 
-def chunk_to_str(chunk):
-    return '.'.join(chunk)
 
 
 # ═══════════════════════════════════════════════════════════════════════
 # VMS TEXT EXTRACTION
 # ═══════════════════════════════════════════════════════════════════════
 
-def clean_word(tok):
-    tok = re.sub(r'\[([^:\]]+):[^\]]*\]', r'\1', tok)
-    tok = re.sub(r'\{[^}]*\}', '', tok)
-    tok = re.sub(r'[^a-z]', '', tok.lower())
-    return tok
 
-def extract_words_from_line(text):
-    text = text.replace('<%>', '').replace('<$>', '').strip()
-    text = re.sub(r'@\d+;', '', text)
-    text = re.sub(r'<[^>]*>', '', text)
-    words = []
-    for tok in re.split(r'[.\s]+', text):
-        for subtok in re.split(r',', tok):
-            c = clean_word(subtok.strip())
-            if c:
-                words.append(c)
-    return words
 
-def get_currier_language(folio_num):
-    lang_b = set()
-    for f in [26,27,28,29,31,34,35,38,39,42,43,46,47,49,50,53,54]:
-        lang_b.add(f)
-    for f in range(75, 85):
-        lang_b.add(f)
-    for f in range(87, 103):
-        lang_b.add(f)
-    return 'B' if folio_num in lang_b else 'A'
 
 def parse_all_folios():
     """Parse all VMS folios into word lists with Currier labels.
@@ -238,15 +160,7 @@ def words_to_chunk_sequences(word_list):
 # STATISTICAL METRICS
 # ═══════════════════════════════════════════════════════════════════════
 
-def entropy(counts):
-    total = sum(counts.values())
-    if total == 0: return 0.0
-    return -sum((c/total) * math.log2(c/total) for c in counts.values() if c > 0)
 
-def conditional_entropy(bigrams_counter, unigram_counter):
-    h_joint = entropy(bigrams_counter)
-    h_x = entropy(unigram_counter)
-    return h_joint - h_x
 
 def h_ratio_from_tokens(tokens):
     """Compute H(X|prev) / H(X) for a token sequence."""
@@ -490,17 +404,6 @@ def reconstruct_word_str(chunk_ids):
 # PHASE 86 CLUSTER MAPPING
 # ═══════════════════════════════════════════════════════════════════════
 
-def load_phase86_clusters():
-    """Load Phase 86 cluster assignments. Returns chunk_to_class dict."""
-    json_path = RESULTS_DIR / 'phase86_chunk_equivalence.json'
-    with open(json_path, 'r', encoding='utf-8') as f:
-        data = json.load(f)
-
-    chunk_to_class = {}
-    for class_id, info in data['cluster_composition'].items():
-        for member in info['members']:
-            chunk_to_class[member] = class_id
-    return chunk_to_class
 
 
 def assign_rare_chunks_to_clusters(chunk_to_class, all_chunk_types, word_chunk_pairs):

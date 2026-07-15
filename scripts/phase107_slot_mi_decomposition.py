@@ -45,6 +45,7 @@ from pathlib import Path
 from collections import Counter, defaultdict
 import numpy as np
 import random
+from common import entropy_v2 as entropy, eva_to_glyphs
 
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
 
@@ -70,18 +71,6 @@ random.seed(42)
 GALLOWS_TRI = ['cth', 'ckh', 'cph', 'cfh']
 GALLOWS_BI  = ['ch', 'sh', 'th', 'kh', 'ph', 'fh']
 
-def eva_to_glyphs(word):
-    glyphs = []
-    i = 0
-    w = word.lower()
-    while i < len(w):
-        if i + 2 < len(w) and w[i:i+3] in GALLOWS_TRI:
-            glyphs.append(w[i:i+3]); i += 3
-        elif i + 1 < len(w) and w[i:i+2] in GALLOWS_BI:
-            glyphs.append(w[i:i+2]); i += 2
-        else:
-            glyphs.append(w[i]); i += 1
-    return glyphs
 
 # ═══════════════════════════════════════════════════════════════════════
 # MAURO'S LOOP GRAMMAR — CHUNK PARSER WITH SLOT RECORDING
@@ -199,17 +188,6 @@ def load_vms_words():
 # INFORMATION THEORY
 # ═══════════════════════════════════════════════════════════════════════
 
-def entropy(counter):
-    """Shannon entropy H(X) in bits from a Counter."""
-    total = sum(counter.values())
-    if total == 0:
-        return 0.0
-    h = 0.0
-    for c in counter.values():
-        if c > 0:
-            p = c / total
-            h -= p * math.log2(p)
-    return h
 
 
 def joint_entropy(joint_counter):

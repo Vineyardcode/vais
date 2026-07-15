@@ -42,6 +42,7 @@ import re, sys, io, math, random
 from pathlib import Path
 from collections import Counter, defaultdict
 import numpy as np
+from common import collapse_e, compute_H, get_collapsed, load_lines_v2 as load_lines, strip_gallows_v2 as strip_gallows
 
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
 
@@ -51,38 +52,10 @@ np.random.seed(52)
 ALL_GALLOWS = ['cth','ckh','cph','cfh','tch','kch','pch','fch',
                'tsh','ksh','psh','fsh','t','k','f','p']
 
-def strip_gallows(w):
-    temp = w
-    for g in ALL_GALLOWS:
-        while g in temp: temp = temp.replace(g, '', 1)
-    return temp
-def collapse_e(w): return re.sub(r'e+', 'e', w)
-def get_collapsed(w): return collapse_e(strip_gallows(w))
 
 FOLIO_DIR = Path("folios")
 
-def load_lines():
-    lines = []
-    for fpath in sorted(FOLIO_DIR.glob("*.txt")):
-        for line in fpath.read_text(encoding='utf-8', errors='replace').splitlines():
-            line = line.strip()
-            if line.startswith('#'): continue
-            m = re.match(r'<([^>]+)>', line)
-            rest = line[m.end():].strip() if m else line
-            if not rest: continue
-            words = [w.strip() for w in re.split(r'[.\s,;]+', rest)
-                     if w.strip() and re.match(r'^[a-z]+$', w.strip())]
-            if len(words) >= 2:
-                lines.append(words)
-    return lines
 
-def compute_H(counts, total):
-    H = 0.0
-    for c in counts.values():
-        if c > 0:
-            p = c / total
-            H -= p * math.log2(p)
-    return H
 
 print("Loading corpus...")
 raw_lines = load_lines()

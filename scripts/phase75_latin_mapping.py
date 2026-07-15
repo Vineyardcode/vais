@@ -38,6 +38,7 @@ from pathlib import Path
 from collections import Counter, defaultdict
 from itertools import combinations, permutations
 import numpy as np
+from common import clean_word, folio_section_v2 as folio_section
 
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
 
@@ -494,22 +495,11 @@ def eva_first_glyph(word):
     if len(w) >= 2 and w[:2] in GALLOWS_BI: return w[:2]
     return w[0] if w else ''
 
-def clean_word(tok):
-    tok = re.sub(r'\[([^:\]]+):[^\]]*\]', r'\1', tok)
-    tok = re.sub(r'\{[^}]*\}', '', tok)
-    tok = re.sub(r"[^a-z]", '', tok.lower())
-    return tok
 
 def folio_number(fname):
     m = re.match(r'f(\d+)', fname)
     return int(m.group(1)) if m else 0
 
-def folio_section(fnum):
-    if 103 <= fnum <= 116: return 'recipe'
-    elif 75 <= fnum <= 84: return 'balneo'
-    elif 67 <= fnum <= 73: return 'astro'
-    elif 85 <= fnum <= 86: return 'cosmo'
-    else: return 'herbal'
 
 
 def load_vms_para_initials_by_section():

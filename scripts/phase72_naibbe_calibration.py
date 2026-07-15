@@ -50,6 +50,7 @@ import numpy as np
 from pathlib import Path
 from collections import Counter, defaultdict
 import urllib.request
+from common import load_vms_words
 
 _print = print
 OUTPUT = []
@@ -488,22 +489,6 @@ def naibbe_encode(source_letters, table, break_rule, rng):
 # VMS REFERENCE LOADING
 # ═══════════════════════════════════════════════════════════════════════
 
-def load_vms_words():
-    words = []
-    for fp in sorted(FOLIO_DIR.glob('*.txt')):
-        with open(fp, 'r', encoding='utf-8', errors='replace') as f:
-            for line in f:
-                line = line.strip()
-                if not line or line.startswith('#'):
-                    continue
-                m = re.match(r'<([^>]+)>', line)
-                rest = line[m.end():].strip() if m else line
-                if not rest: continue
-                for tok in re.split(r'[.\s,;]+', rest):
-                    tok = tok.strip()
-                    if tok and re.match(r'^[a-z]+$', tok):
-                        words.append(tok)
-    return words
 
 # ═══════════════════════════════════════════════════════════════════════
 # WORD BOUNDARY INFORMATION TEST (from Phase 53e)

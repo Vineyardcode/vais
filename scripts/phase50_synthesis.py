@@ -38,62 +38,12 @@ ALL_GALLOWS = ['cth','ckh','cph','cfh','tch','kch','pch','fch',
 SUFFIXES = ['aiin','ain','iin','in','ar','or','al','ol','dy','y']
 GRAM_PREFIXES = ['qo','so','do','q','o','d','y']
 
-def strip_gallows(w):
-    temp = w
-    for g in ALL_GALLOWS:
-        while g in temp: temp = temp.replace(g, '', 1)
-    return temp
-def collapse_e(w): return re.sub(r'e+', 'e', w)
-def get_collapsed(w): return collapse_e(strip_gallows(w))
 
-def get_suffix(w):
-    for sfx in SUFFIXES:
-        if w.endswith(sfx) and len(w) > len(sfx):
-            return sfx
-    return 'X'
 
-def get_gram_prefix(w):
-    for gp in GRAM_PREFIXES:
-        if w.startswith(gp) and len(w) > len(gp):
-            return gp
-    return 'X'
 
 FOLIO_DIR = Path("folios")
 
-def load_lines():
-    lines = []
-    section_map = {
-        'bio': 'bio', 'cosmo': 'cosmo', 'herbal': 'herbal',
-        'pharma': 'pharma', 'text': 'text', 'zodiac': 'zodiac'
-    }
-    for fpath in sorted(FOLIO_DIR.glob("*.txt")):
-        section = 'unknown'
-        for line in fpath.read_text(encoding='utf-8', errors='replace').splitlines():
-            line = line.strip()
-            if line.startswith('#'):
-                ll = line.lower()
-                for key, val in section_map.items():
-                    if key in ll:
-                        section = val
-                        if val == 'herbal' and '-b' in ll: section = 'herbal-B'
-                        elif val == 'herbal': section = 'herbal-A'
-                continue
-            m = re.match(r'<([^>]+)>', line)
-            rest = line[m.end():].strip() if m else line
-            if not rest: continue
-            words = [w.strip() for w in re.split(r'[.\s,;]+', rest)
-                     if w.strip() and re.match(r'^[a-z]+$', w.strip())]
-            if len(words) >= 2:
-                lines.append({'section': section, 'words': words})
-    return lines
 
-def compute_H(counts, total):
-    H = 0.0
-    for c in counts.values():
-        if c > 0:
-            p = c / total
-            H -= p * math.log2(p)
-    return H
 
 print("Loading lines...")
 lines = load_lines()
@@ -312,6 +262,7 @@ top_gen = sorted(gen_counts.values(), reverse=True)[:200]
 ranks = np.arange(1, 201)
 
 from numpy.polynomial import polynomial as P
+from common import collapse_e, compute_H, get_collapsed, get_gram_prefix, get_suffix, load_lines, strip_gallows_v2 as strip_gallows
 def fit_zipf(freqs, ranks):
     log_r = np.log10(ranks[:len(freqs)])
     log_f = np.log10(freqs)

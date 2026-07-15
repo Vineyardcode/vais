@@ -1,0 +1,40 @@
+{
+ "gallows_semantics": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 2.09,
+  "stdout_bytes": 35488,
+  "results_files_touched": []
+ },
+ "hebrew_comparison": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.25,
+  "stdout_bytes": 13899,
+  "results_files_touched": []
+ },
+ "phase39_syntax": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 135.36,
+  "stdout_bytes": 6141,
+  "results_files_touched": []
+ },
+ "phase85R_revalidation": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 6.88,
+  "stdout_bytes": 9594,
+  "results_files_touched": [
+   "phase85R_revalidation.json",
+   "phase85R_revalidation.txt"
+  ]
+ },
+ "slot_analysis": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 1.14,
+  "stdout_bytes": 17040,
+  "results_files_touched": []
+ }
+}

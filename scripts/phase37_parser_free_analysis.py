@@ -44,6 +44,7 @@ Core questions:
 import re, sys, io, math, random
 from pathlib import Path
 from collections import Counter, defaultdict
+from common import collapse_echains, gallows_base, strip_gallows
 
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
 
@@ -59,19 +60,8 @@ ALL_GALLOWS    = BENCH_GALLOWS + COMPOUND_GCH + COMPOUND_GSH + SIMPLE_GALLOWS
 
 SUFFIXES = ['aiin','ain','iin','in','ar','or','al','ol','dy','y']
 
-def strip_gallows(w):
-    found = []; temp = w
-    for g in ALL_GALLOWS:
-        while g in temp:
-            found.append(g); temp = temp.replace(g,"",1)
-    return temp, found
 
-def collapse_echains(w): return re.sub(r'e+','e',w)
 
-def gallows_base(g):
-    for b in 'tkfp':
-        if b in g: return b
-    return g
 
 def get_collapsed(word):
     """Gallows-strip, e-collapse → normalized form."""

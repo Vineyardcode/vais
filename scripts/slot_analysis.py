@@ -27,6 +27,7 @@ import json
 import math
 from pathlib import Path
 from collections import Counter, defaultdict
+from common import classify_folio_v3 as classify_folio, entropy_v2 as entropy
 
 # ── Slot Definitions (Zattera system) ──────────────────────────────────────
 # Order matters: longer tokens must be checked before shorter ones in each slot.
@@ -61,24 +62,6 @@ ZONE_NAMES = {
 
 # ── Section Classification (Currier language / page type) ──────────────────
 
-def classify_folio(header_lines):
-    """Classify a folio by its section type from IVTFF header comments."""
-    text = "\n".join(header_lines).lower()
-    if "herbal" in text:
-        section = "herbal"
-    elif "astro" in text or "cosmo" in text or "star" in text or "zodiac" in text:
-        section = "astro"
-    elif "pharm" in text or "recipe" in text or "balneo" in text:
-        section = "pharma"
-    elif "biolog" in text or "bathy" in text:
-        section = "bio"
-    elif "text only" in text:
-        section = "text"
-    else:
-        section = "other"
-
-    lang = "B" if "language b" in text else "A" if "language a" in text else "?"
-    return section, lang
 
 
 # ── Word Extraction ────────────────────────────────────────────────────────
@@ -182,17 +165,6 @@ def get_zone(slots):
 
 # ── Analysis Functions ──────────────────────────────────────────────────────
 
-def entropy(counter):
-    """Shannon entropy in bits for a frequency counter."""
-    total = sum(counter.values())
-    if total == 0:
-        return 0.0
-    h = 0.0
-    for count in counter.values():
-        if count > 0:
-            p = count / total
-            h -= p * math.log2(p)
-    return h
 
 
 def find_paradigms(decomposed_words, min_count=5):

@@ -23,30 +23,10 @@ import re
 import json
 from pathlib import Path
 from collections import Counter, defaultdict
+from common import classify_folio
 
 # ── Section classification ────────────────────────────────────────────────
 
-def classify_folio(filepath):
-    stem = filepath.stem
-    m = re.match(r'f(\d+)', stem)
-    if not m:
-        return "unknown"
-    num = int(m.group(1))
-    if num <= 58 or 65 <= num <= 66:
-        return "herbal-A"
-    elif 67 <= num <= 73:
-        return "zodiac"
-    elif 75 <= num <= 84:
-        return "bio"
-    elif 85 <= num <= 86:
-        return "cosmo"
-    elif 87 <= num <= 102:
-        if num in (88, 89, 99, 100, 101, 102):
-            return "pharma"
-        return "herbal-B"
-    elif 103 <= num <= 116:
-        return "text"
-    return "unknown"
 
 
 # ── Data extraction ──────────────────────────────────────────────────────

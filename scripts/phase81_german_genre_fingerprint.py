@@ -58,6 +58,7 @@ import re, sys, io, math
 from pathlib import Path
 from collections import Counter
 import numpy as np
+from common import char_bigram_predictability, clean_word_v2 as clean_word, eva_to_glyphs, hapax_ratio_at_midpoint, index_of_coincidence, load_bvgs, load_reference_text_v2 as load_reference_text, mean_word_length, ttr_at_n, zipf_alpha
 
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
 
@@ -80,22 +81,7 @@ np.random.seed(42)
 GALLOWS_TRI = ['cth', 'ckh', 'cph', 'cfh']
 GALLOWS_BI  = ['ch', 'sh', 'th', 'kh', 'ph', 'fh']
 
-def eva_to_glyphs(word):
-    glyphs = []
-    i = 0
-    w = word.lower()
-    while i < len(w):
-        if i + 2 < len(w) and w[i:i+3] in GALLOWS_TRI:
-            glyphs.append(w[i:i+3]); i += 3
-        elif i + 1 < len(w) and w[i:i+2] in GALLOWS_BI:
-            glyphs.append(w[i:i+2]); i += 2
-        else:
-            glyphs.append(w[i]); i += 1
-    return glyphs
 
-def clean_word(tok):
-    tok = re.sub(r'[^a-z]', '', tok.lower())
-    return tok if len(tok) >= 1 else ''
 
 def parse_vms_words():
     """Parse all VMS words, return (words_list, glyph_chars_list)."""
@@ -132,127 +118,8 @@ def parse_vms_words():
 # TEXT LOADING
 # ═══════════════════════════════════════════════════════════════════════
 
-def load_reference_text(filepath):
-    """Load a reference text file, return lowercase words (alpha only)."""
-    with open(filepath, 'r', encoding='utf-8', errors='replace') as f:
-        raw = f.read()
-
-    # Strip Gutenberg headers/footers if present
-    start_marker = '*** START OF'
-    end_marker = '*** END OF'
-    start_idx = raw.find(start_marker)
-    end_idx = raw.find(end_marker)
-    if start_idx >= 0:
-        raw = raw[raw.index('\n', start_idx) + 1:]
-    if end_idx >= 0:
-        raw = raw[:end_idx]
-
-    text = raw.lower()
-    text = re.sub(r'[^a-zàáâãäåæçèéêëìíîïðñòóôõöùúûüýþßœ\s]+', ' ', text)
-    words = [w for w in text.split() if len(w) >= 1]
-    return words
 
 
-def load_bvgs(filepath):
-    """Load Buch von guter Speise with aggressive OCR cleaning.
-
-    The text is a Google Books OCR of an 1844 scholarly edition.
-    CRITICAL: The first occurrence of the incipit is in the modern German
-    foreword (line ~108), quoting the title. The ACTUAL recipe text starts
-    at line ~242 with the standalone line "Dis buch sagt von guter spise".
-    We must find the SECOND occurrence, or better, the standalone line.
-
-    We need to:
-    - Skip the entire modern German foreword (Vorwort, lines 1-241)
-    - Start at the actual recipe poem/text
-    - Remove "Digitized by Google" lines
-    - Remove footnote markers (superscript numbers, asterisks)
-    - Remove modern German footnotes by the 1844 editor
-    - Remove page numbers
-    - Remove scholarly apparatus (Vgl., vergl., Anm., bibliographic refs)
-    """
-    with open(filepath, 'r', encoding='utf-8', errors='replace') as f:
-        lines = f.readlines()
-
-    # Find the STANDALONE incipit line (not the foreword's quotation).
-    # The foreword quotes it inline: 'cipit: „dis buch sagt...'
-    # The actual recipe text has it as a standalone line.
-    start_idx = 0
-    for i, line in enumerate(lines):
-        stripped = line.strip().lower()
-        # Match standalone line (not embedded in a longer sentence)
-        if stripped.startswith('dis buch sagt von guter spise'):
-            start_idx = i
-            # Don't break — take the LAST match if there are multiple,
-            # but actually in this text the standalone one comes second
-            break
-    # If first match was in the foreword (has surrounding scholarly text),
-    # search for the next one
-    if start_idx < 200:  # foreword is in first ~240 lines
-        for i, line in enumerate(lines[start_idx + 1:], start=start_idx + 1):
-            stripped = line.strip().lower()
-            if stripped.startswith('dis buch sagt von guter spise'):
-                start_idx = i
-                break
-
-    # Collect recipe text, filtering out noise aggressively
-    recipe_lines = []
-    for line in lines[start_idx:]:
-        line = line.strip()
-
-        # Skip empty lines
-        if not line:
-            continue
-
-        # Skip "Digitized by Google" and similar
-        if 'digitized by' in line.lower():
-            continue
-
-        # Skip page numbers (standalone digits)
-        if re.match(r'^\d+\s*$', line):
-            continue
-
-        # Skip footnote lines (start with special characters or *)
-        if re.match(r'^[\*\)°]', line):
-            continue
-        if re.match(r'^[¹²³⁴⁵⁶⁷⁸⁹⁰]', line):
-            continue
-
-        # Skip scholarly apparatus lines
-        # - Lines with = sign (glosses like "Pflanze = plant")
-        if '=' in line and len(line) < 150:
-            continue
-
-        # - Lines starting with Vgl./vergl./vgl (cross-references)
-        if re.match(r'^[Vv]gl\.?\s|^[Vv]ergl\.?\s', line):
-            continue
-
-        # - Lines with (Fol. references to manuscript folios
-        if re.search(r'\(Fol\.\s*\d+', line):
-            continue
-
-        # - Lines that are mostly Latin/bibliographic (contain multiple
-        #   capitalized Latin words like "Sed nostra omnis")
-        latin_caps = len(re.findall(r'\b[A-Z][a-z]{3,}\b', line))
-        if latin_caps >= 3 and len(line) < 120:
-            continue
-
-        # - Lines referencing other works/scholars
-        if re.search(r'Boner|Schindler|Schmeller|Lexer|Grimm|Weinhold', line):
-            continue
-
-        # Remove inline footnote markers like ') or 1) or *)
-        line = re.sub(r'\s*[\*¹²³⁴⁵⁶⁷⁸⁹⁰]*\)', '', line)
-        # Remove superscript-style markers
-        line = re.sub(r'[¹²³⁴⁵⁶⁷⁸⁹⁰]', '', line)
-
-        recipe_lines.append(line)
-
-    text = ' '.join(recipe_lines).lower()
-    # Keep only German letters (including umlauts and ß) and spaces
-    text = re.sub(r'[^a-zàáâãäåæçèéêëìíîïðñòóôõöùúûüýþßœ\s]+', ' ', text)
-    words = [w for w in text.split() if len(w) >= 1]
-    return words
 
 
 # ═══════════════════════════════════════════════════════════════════════
@@ -279,34 +146,7 @@ def heaps_exponent(words):
     result = np.linalg.lstsq(A, log_v, rcond=None)
     return float(result[0][0])
 
-def hapax_ratio_at_midpoint(words):
-    """Fraction of vocabulary that are hapax legomena at corpus midpoint."""
-    mid = len(words) // 2
-    freq = Counter(words[:mid])
-    hapax = sum(1 for c in freq.values() if c == 1)
-    return hapax / max(len(freq), 1)
 
-def char_bigram_predictability(char_list):
-    """H(c|prev) / H(c) — how much does the previous char reduce entropy?"""
-    unigram = Counter(char_list)
-    total = sum(unigram.values())
-    if total < 2:
-        return 1.0
-    h_uni = -sum((c/total) * math.log2(c/total) for c in unigram.values() if c > 0)
-    bigrams = Counter()
-    for i in range(1, len(char_list)):
-        bigrams[(char_list[i-1], char_list[i])] += 1
-    total_bi = sum(bigrams.values())
-    h_joint = -sum((c/total_bi) * math.log2(c/total_bi) for c in bigrams.values() if c > 0)
-    prev_counts = Counter()
-    for (c1, c2), cnt in bigrams.items():
-        prev_counts[c1] += cnt
-    prev_total = sum(prev_counts.values())
-    h_prev = -sum((c/prev_total) * math.log2(c/prev_total) for c in prev_counts.values() if c > 0)
-    h_cond = h_joint - h_prev
-    if h_uni == 0:
-        return 1.0
-    return h_cond / h_uni
 
 def word_bigram_predictability(words):
     """H(w|prev_w) / H(w) — word-level predictability ratio."""
@@ -331,34 +171,9 @@ def word_bigram_predictability(words):
         return 1.0
     return h_cond / h_uni
 
-def mean_word_length(words):
-    return float(np.mean([len(w) for w in words]))
 
-def ttr_at_n(words, n=5000):
-    """Type-token ratio at first n tokens."""
-    subset = words[:min(n, len(words))]
-    return len(set(subset)) / len(subset) if subset else 0
 
-def zipf_alpha(words):
-    """Zipf exponent: slope of log(rank) vs log(freq)."""
-    freq = Counter(words)
-    ranked = sorted(freq.values(), reverse=True)
-    n = min(len(ranked), 500)
-    if n < 10:
-        return 0.0
-    log_rank = np.log(np.arange(1, n+1))
-    log_freq = np.log(np.array(ranked[:n], dtype=float))
-    A = np.vstack([log_rank, np.ones(n)]).T
-    result = np.linalg.lstsq(A, log_freq, rcond=None)
-    return float(-result[0][0])
 
-def index_of_coincidence(char_list):
-    """Friedman's IC: probability two random chars are the same."""
-    freq = Counter(char_list)
-    n = sum(freq.values())
-    if n < 2:
-        return 0.0
-    return sum(c * (c-1) for c in freq.values()) / (n * (n-1))
 
 def word_length_distribution(words, max_len=15):
     """Return word length distribution as fraction, lengths 1..max_len."""

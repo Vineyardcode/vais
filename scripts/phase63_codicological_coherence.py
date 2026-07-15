@@ -51,6 +51,7 @@ from collections import Counter, defaultdict
 
 _print = print
 import numpy as np
+from common import entropy_v2 as entropy, eva_to_glyphs_v2 as eva_to_glyphs
 
 FOLIO_DIR = Path(__file__).resolve().parent.parent / 'folios'
 RESULTS_DIR = Path(__file__).resolve().parent.parent / 'results'
@@ -66,18 +67,6 @@ def pr(s='', end='\n'):
 # DATA LOADING (reused from Phase 62)
 # ═══════════════════════════════════════════════════════════════════════
 
-def eva_to_glyphs(word):
-    """Segment raw EVA string into glyph units."""
-    glyphs = []
-    i = 0
-    while i < len(word):
-        if i+2 < len(word) and word[i:i+3] in ('cth','ckh','cph','cfh'):
-            glyphs.append(word[i:i+3]); i += 3
-        elif i+1 < len(word) and word[i:i+2] in ('ch','sh','th','kh','ph','fh'):
-            glyphs.append(word[i:i+2]); i += 2
-        else:
-            glyphs.append(word[i]); i += 1
-    return glyphs
 
 def get_section(folio):
     """Approximate section classifier based on folio number."""
@@ -300,16 +289,6 @@ def get_quire(folio_name):
 # STATISTICAL TOOLS
 # ═══════════════════════════════════════════════════════════════════════
 
-def entropy(counts):
-    """Shannon entropy from a Counter/dict of counts."""
-    total = sum(counts.values())
-    if total == 0: return 0.0
-    h = 0.0
-    for c in counts.values():
-        if c > 0:
-            p = c / total
-            h -= p * math.log2(p)
-    return h
 
 def mutual_information(joint_counts):
     """MI from a dict of {(x,y): count}."""

@@ -55,6 +55,7 @@ import re, sys, io, math, random
 from pathlib import Path
 from collections import Counter, defaultdict
 import numpy as np
+from common import collapse_e, compute_mi, get_collapsed, get_suffix, load_lines, strip_gallows_v2 as strip_gallows
 
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
 
@@ -69,38 +70,13 @@ ALL_GALLOWS = ['cth','ckh','cph','cfh','tch','kch','pch','fch',
                'tsh','ksh','psh','fsh','t','k','f','p']
 SUFFIXES = ['aiin','ain','iin','in','ar','or','al','ol','dy','y']
 
-def strip_gallows(w):
-    temp = w
-    for g in ALL_GALLOWS:
-        while g in temp: temp = temp.replace(g, '', 1)
-    return temp
-def collapse_e(w): return re.sub(r'e+', 'e', w)
-def get_collapsed(w): return collapse_e(strip_gallows(w))
 
 def get_prefix(w):
     for p in ['qo','lch','lsh','sh','ch','so','do','q','o','d','y','l']:
         if w.startswith(p): return p
     return 'NONE'
 
-def get_suffix(w):
-    for sf in SUFFIXES:
-        if w.endswith(sf) and len(w) > len(sf): return sf
-    return 'X'
 
-def compute_mi(x_arr, y_arr):
-    N = len(x_arr)
-    if N == 0: return 0.0
-    joint = Counter(zip(x_arr, y_arr))
-    x_counts = Counter(x_arr)
-    y_counts = Counter(y_arr)
-    mi = 0.0
-    for (x, y), n_xy in joint.items():
-        p_xy = n_xy / N
-        p_x = x_counts[x] / N
-        p_y = y_counts[y] / N
-        if p_xy > 0 and p_x > 0 and p_y > 0:
-            mi += p_xy * math.log2(p_xy / (p_x * p_y))
-    return mi
 
 def cond_mi(x_arr, y_arr, z_arr):
     """MI(X;Y|Z) = sum_z P(z) * MI(X;Y | Z=z)."""
@@ -124,32 +100,6 @@ def cond_mi(x_arr, y_arr, z_arr):
 
 FOLIO_DIR = Path("folios")
 
-def load_lines():
-    lines = []
-    section_map = {
-        'bio': 'bio', 'cosmo': 'cosmo', 'herbal': 'herbal',
-        'pharma': 'pharma', 'text': 'text', 'zodiac': 'zodiac'
-    }
-    for fpath in sorted(FOLIO_DIR.glob("*.txt")):
-        section = 'unknown'
-        for line in fpath.read_text(encoding='utf-8', errors='replace').splitlines():
-            line = line.strip()
-            if line.startswith('#'):
-                ll = line.lower()
-                for key, val in section_map.items():
-                    if key in ll:
-                        section = val
-                        if val == 'herbal' and '-b' in ll: section = 'herbal-B'
-                        elif val == 'herbal': section = 'herbal-A'
-                continue
-            m = re.match(r'<([^>]+)>', line)
-            rest = line[m.end():].strip() if m else line
-            if not rest: continue
-            words = [w.strip() for w in re.split(r'[.\s,;]+', rest)
-                     if w.strip() and re.match(r'^[a-z]+$', w.strip())]
-            if len(words) >= 2:
-                lines.append({'section': section, 'words': words})
-    return lines
 
 
 def annotate_lines(lines):

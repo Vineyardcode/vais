@@ -56,6 +56,7 @@ from pathlib import Path
 from collections import Counter, defaultdict
 import numpy as np
 import random
+from common import chunk_to_str, clean_word, eva_to_glyphs, extract_words_from_line, get_currier_language, load_reference_text, parse_one_chunk, parse_word_into_chunks
 
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
 
@@ -82,18 +83,6 @@ random.seed(42)
 GALLOWS_TRI = ['cth', 'ckh', 'cph', 'cfh']
 GALLOWS_BI  = ['ch', 'sh', 'th', 'kh', 'ph', 'fh']
 
-def eva_to_glyphs(word):
-    glyphs = []
-    i = 0
-    w = word.lower()
-    while i < len(w):
-        if i + 2 < len(w) and w[i:i+3] in GALLOWS_TRI:
-            glyphs.append(w[i:i+3]); i += 3
-        elif i + 1 < len(w) and w[i:i+2] in GALLOWS_BI:
-            glyphs.append(w[i:i+2]); i += 2
-        else:
-            glyphs.append(w[i]); i += 1
-    return glyphs
 
 SLOT1 = {'ch', 'sh', 'y'}
 SLOT2_RUNS = {'e'}; SLOT2_SINGLE = {'q', 'a'}
@@ -103,72 +92,16 @@ SLOT5 = {'y', 'p', 'f', 'k', 'l', 'r', 's', 't',
          'cth', 'ckh', 'cph', 'cfh', 'n', 'm'}
 MAX_CHUNKS = 6
 
-def parse_one_chunk(glyphs, pos):
-    start = pos; chunk = []
-    if pos < len(glyphs) and glyphs[pos] in SLOT1:
-        chunk.append(glyphs[pos]); pos += 1
-    if pos < len(glyphs):
-        if glyphs[pos] in SLOT2_RUNS:
-            c = 0
-            while pos < len(glyphs) and glyphs[pos] in SLOT2_RUNS and c < 3:
-                chunk.append(glyphs[pos]); pos += 1; c += 1
-        elif glyphs[pos] in SLOT2_SINGLE:
-            chunk.append(glyphs[pos]); pos += 1
-    if pos < len(glyphs) and glyphs[pos] in SLOT3:
-        chunk.append(glyphs[pos]); pos += 1
-    if pos < len(glyphs):
-        if glyphs[pos] in SLOT4_RUNS:
-            c = 0
-            while pos < len(glyphs) and glyphs[pos] in SLOT4_RUNS and c < 3:
-                chunk.append(glyphs[pos]); pos += 1; c += 1
-        elif glyphs[pos] in SLOT4_SINGLE:
-            chunk.append(glyphs[pos]); pos += 1
-    if pos < len(glyphs) and glyphs[pos] in SLOT5:
-        chunk.append(glyphs[pos]); pos += 1
-    if pos == start: return None, pos
-    return chunk, pos
 
-def parse_word_into_chunks(word_str):
-    glyphs = eva_to_glyphs(word_str)
-    chunks = []; unparsed = []; pos = 0
-    while pos < len(glyphs) and len(chunks) < MAX_CHUNKS:
-        chunk, new_pos = parse_one_chunk(glyphs, pos)
-        if chunk is None: unparsed.append(glyphs[pos]); pos += 1
-        else: chunks.append(chunk); pos = new_pos
-    while pos < len(glyphs): unparsed.append(glyphs[pos]); pos += 1
-    return chunks, unparsed, glyphs
 
-def chunk_to_str(chunk): return '.'.join(chunk)
 
 
 # ═══════════════════════════════════════════════════════════════════════
 # VMS PARSING (from Phase 85/86)
 # ═══════════════════════════════════════════════════════════════════════
 
-def clean_word(tok):
-    tok = re.sub(r'\[([^:\]]+):[^\]]*\]', r'\1', tok)
-    tok = re.sub(r'\{[^}]*\}', '', tok)
-    tok = re.sub(r'[^a-z]', '', tok.lower())
-    return tok
 
-def extract_words_from_line(text):
-    text = text.replace('<%>', '').replace('<$>', '').strip()
-    text = re.sub(r'@\d+;', '', text)
-    text = re.sub(r'<[^>]*>', '', text)
-    words = []
-    for tok in re.split(r'[.\s]+', text):
-        for subtok in re.split(r',', tok):
-            c = clean_word(subtok.strip())
-            if c: words.append(c)
-    return words
 
-def get_currier_language(folio_num):
-    lang_b = set()
-    for f in [26,27,28,29,31,34,35,38,39,42,43,46,47,49,50,53,54]:
-        lang_b.add(f)
-    for f in range(75, 85): lang_b.add(f)
-    for f in range(87, 103): lang_b.add(f)
-    return 'B' if folio_num in lang_b else 'A'
 
 def parse_vms_with_currier():
     """Parse VMS folios. Returns dict with keys: 'all', 'A', 'B'.
@@ -227,17 +160,6 @@ def syllabify_word(word, vowels=VOWELS_LATIN):
         if syl: syllables.append(syl)
     return syllables if syllables else [word]
 
-def load_reference_text(filepath):
-    with open(filepath, 'r', encoding='utf-8', errors='replace') as f:
-        raw = f.read()
-    for marker in ['*** START OF THE PROJECT', '*** START OF THIS PROJECT']:
-        idx = raw.find(marker)
-        if idx >= 0: raw = raw[raw.index('\n', idx) + 1:]; break
-    end_idx = raw.find('*** END OF')
-    if end_idx >= 0: raw = raw[:end_idx]
-    text = raw.lower()
-    words = re.findall(r'[a-zàáâãäåæçèéêëìíîïðñòóôõöùúûüýþßœ]+', text)
-    return words
 
 
 # ═══════════════════════════════════════════════════════════════════════

@@ -21,6 +21,7 @@ This phase:
 import re, json, sys, io, math
 from pathlib import Path
 from collections import Counter, defaultdict
+from common import classify_folio_v2 as classify_folio, collapse_echains, full_decompose, gallows_base, strip_gallows
 
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
 
@@ -38,19 +39,8 @@ PREFIXES = ['qo','q','so','do','o','d','s','y']
 SUFFIXES = ['aiin','ain','iin','in','ar','or','al','ol',
             'eedy','edy','ody','dy','ey','y']
 
-def gallows_base(g):
-    for b in 'tkfp':
-        if b in g: return b
-    return g
 
-def strip_gallows(w):
-    found = []; temp = w
-    for g in ALL_GALLOWS:
-        while g in temp:
-            found.append(g); temp = temp.replace(g,"",1)
-    return temp, found
 
-def collapse_echains(w): return re.sub(r'e+','e',w)
 
 def parse_morphology(w):
     pfx = sfx = ""
@@ -62,14 +52,6 @@ def parse_morphology(w):
             sfx = sf; w = w[:-len(sf)]; break
     return pfx, w, sfx
 
-def full_decompose(word):
-    stripped, gals = strip_gallows(word)
-    collapsed = collapse_echains(stripped)
-    pfx, root, sfx = parse_morphology(collapsed)
-    bases = [gallows_base(g) for g in gals]
-    return dict(original=word, stripped=stripped, collapsed=collapsed,
-                prefix=pfx or "", root=root, suffix=sfx or "",
-                gallows=bases, determinative=bases[0] if bases else "")
 
 # ══════════════════════════════════════════════════════════════════
 # EXPANDED VOCABULARY (Phase 26)
@@ -172,18 +154,6 @@ COPTIC_CANDIDATES = {
 }
 
 
-def classify_folio(stem):
-    m_num = re.match(r'f(\d+)', stem)
-    if not m_num: return "unknown"
-    num = int(m_num.group(1))
-    if num <= 58 or 65 <= num <= 66: return "herbal-A"
-    elif 67 <= num <= 73: return "zodiac"
-    elif 75 <= num <= 84: return "bio"
-    elif 85 <= num <= 86: return "cosmo"
-    elif 87 <= num <= 102:
-        return "pharma" if num in (88,89,99,100,101,102) else "herbal-B"
-    elif 103 <= num <= 116: return "text"
-    return "unknown"
 
 
 def extract_all_words():

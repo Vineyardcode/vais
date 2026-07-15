@@ -42,6 +42,7 @@ from pathlib import Path
 from collections import Counter, defaultdict
 import urllib.request
 import numpy as np
+from common import eva_to_glyphs_v2 as eva_to_glyphs, fetch_gutenberg
 
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
 sys.stdout.reconfigure(line_buffering=True)
@@ -221,17 +222,6 @@ def initial_final_concentration(words):
 
 FOLIO_DIR = Path("folios")
 
-def eva_to_glyphs(word):
-    glyphs = []
-    i = 0
-    while i < len(word):
-        if i+2 < len(word) and word[i:i+3] in ('cth','ckh','cph','cfh'):
-            glyphs.append(word[i:i+3]); i += 3
-        elif i+1 < len(word) and word[i:i+2] in ('ch','sh','th','kh','ph','fh'):
-            glyphs.append(word[i:i+2]); i += 2
-        else:
-            glyphs.append(word[i]); i += 1
-    return glyphs
 
 
 def load_vms():
@@ -270,16 +260,6 @@ def vms_words_as_glyph_strings(words):
 # SOURCE TEXT
 # ═══════════════════════════════════════════════════════════════════════
 
-def fetch_gutenberg(ebook_id):
-    url = f'https://www.gutenberg.org/cache/epub/{ebook_id}/pg{ebook_id}.txt'
-    req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0 (VoynichResearch)'})
-    resp = urllib.request.urlopen(req, timeout=30)
-    data = resp.read().decode('utf-8', errors='replace')
-    start = data.find('*** START OF')
-    end = data.find('*** END OF')
-    if start > 0 and end > 0:
-        return data[data.index('\n', start)+1:end]
-    return data
 
 
 ITALIAN_VOWELS = set('aeiouàáâãäåèéêëìíîïòóôõöùúûüý')

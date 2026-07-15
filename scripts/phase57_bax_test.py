@@ -36,6 +36,7 @@ import re, sys, io, math, random
 from pathlib import Path
 from collections import Counter, defaultdict
 import numpy as np
+from common import collapse_e, get_collapsed, strip_gallows_v2 as strip_gallows
 
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
 sys.stdout.reconfigure(line_buffering=True)
@@ -123,18 +124,8 @@ ALL_GALLOWS = ['cth','ckh','cph','cfh','tch','kch','pch','fch',
 FOLIO_DIR = Path("folios")
 
 
-def strip_gallows(w):
-    temp = w
-    for g in ALL_GALLOWS:
-        while g in temp:
-            temp = temp.replace(g, '', 1)
-    return temp
 
-def collapse_e(w):
-    return re.sub(r'e+', 'e', w)
 
-def get_collapsed(w):
-    return collapse_e(strip_gallows(w))
 
 
 def apply_vogt_mapping(eva_word):

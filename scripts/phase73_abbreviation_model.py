@@ -73,6 +73,7 @@ import numpy as np
 from pathlib import Path
 from collections import Counter, defaultdict
 import urllib.request
+from common import load_vms_words
 
 _print = print
 OUTPUT = []
@@ -298,22 +299,6 @@ def load_czech():
     pr(f"  OK: {len(combined)} words")
     return combined
 
-def load_vms_words():
-    words = []
-    for fpath in sorted(FOLIO_DIR.glob('*.txt')):
-        with open(fpath, 'r', encoding='utf-8', errors='replace') as f:
-            for line in f:
-                line = line.strip()
-                if not line or line.startswith('#'):
-                    continue
-                m = re.match(r'<([^>]+)>', line)
-                rest = line[m.end():].strip() if m else line
-                if not rest: continue
-                for tok in re.split(r'[.\s,;]+', rest):
-                    tok = tok.strip()
-                    if tok and re.match(r'^[a-z]+$', tok):
-                        words.append(tok)
-    return words
 
 # ═══════════════════════════════════════════════════════════════════════
 # MODEL A: MEDIEVAL LATIN ABBREVIATION

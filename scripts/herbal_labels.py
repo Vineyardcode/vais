@@ -30,6 +30,7 @@ import json
 import math
 from pathlib import Path
 from collections import Counter, defaultdict
+from common import collapse_echains, gallows_base_v2 as gallows_base, parse_morphology, strip_gallows
 
 # ══════════════════════════════════════════════════════════════════════════
 # MORPHOLOGICAL PIPELINE (from root_lexicon_rosetta.py)
@@ -45,39 +46,9 @@ PREFIXES = ['qo', 'q', 'so', 'do', 'o', 'd', 's', 'y']
 SUFFIXES = ['aiin', 'ain', 'iin', 'in', 'ar', 'or', 'al', 'ol',
             'edy', 'ody', 'eedy', 'dy', 'sy', 'ey', 'y']
 
-def gallows_base(g):
-    for base in ['t', 'k', 'f', 'p']:
-        if base in g:
-            return base
-    return g
 
-def strip_gallows(word):
-    found = []
-    temp = word
-    for g in ALL_GALLOWS:
-        while g in temp:
-            found.append(g)
-            temp = temp.replace(g, "", 1)
-    return temp, found
 
-def collapse_echains(word):
-    return re.sub(r'e+', 'e', word)
 
-def parse_morphology(stripped_word):
-    w = stripped_word
-    prefix = ""
-    suffix = ""
-    for pf in PREFIXES:
-        if w.startswith(pf) and len(w) > len(pf) + 1:
-            prefix = pf
-            w = w[len(pf):]
-            break
-    for sf in SUFFIXES:
-        if w.endswith(sf) and len(w) > len(sf):
-            suffix = sf
-            w = w[:-len(sf)]
-            break
-    return prefix, w, suffix
 
 def full_decompose(word):
     stripped, gals = strip_gallows(word)

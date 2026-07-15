@@ -28,6 +28,7 @@ This phase:
 import re, json, sys, io, random
 from pathlib import Path
 from collections import Counter, defaultdict
+from common import collapse_echains, full_decompose, gallows_base, load_all_tokens, load_folio_lines, strip_gallows
 
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
 
@@ -45,19 +46,8 @@ PREFIXES = ['qo','q','so','do','o','d','s','y']
 SUFFIXES = ['aiin','ain','iin','in','ar','or','al','ol',
             'eedy','edy','ody','dy','ey','y']
 
-def gallows_base(g):
-    for b in 'tkfp':
-        if b in g: return b
-    return g
 
-def strip_gallows(w):
-    found = []; temp = w
-    for g in ALL_GALLOWS:
-        while g in temp:
-            found.append(g); temp = temp.replace(g,"",1)
-    return temp, found
 
-def collapse_echains(w): return re.sub(r'e+','e',w)
 
 def parse_morphology(w):
     pfx = sfx = ""
@@ -69,14 +59,6 @@ def parse_morphology(w):
             sfx = sf; w = w[:-len(sf)]; break
     return pfx, w, sfx
 
-def full_decompose(word):
-    stripped, gals = strip_gallows(word)
-    collapsed = collapse_echains(stripped)
-    pfx, root, sfx = parse_morphology(collapsed)
-    bases = [gallows_base(g) for g in gals]
-    return dict(original=word, stripped=stripped, collapsed=collapsed,
-                prefix=pfx or "", root=root, suffix=sfx or "",
-                gallows=bases, determinative=bases[0] if bases else "")
 
 # ══════════════════════════════════════════════════════════════════
 # DATA LOADING
@@ -84,72 +66,7 @@ def full_decompose(word):
 
 FOLIO_DIR = Path("folios")
 
-def load_all_tokens():
-    """Load all tokens with section tags and folio IDs."""
-    tokens = []
-    section_map = {
-        'bio': 'bio', 'cosmo': 'cosmo', 'herbal': 'herbal',
-        'pharma': 'pharma', 'text': 'text', 'zodiac': 'zodiac'
-    }
-    for fpath in sorted(FOLIO_DIR.glob("*.txt")):
-        section = 'unknown'
-        folio_id = ''
-        for line in fpath.read_text(encoding='utf-8', errors='replace').splitlines():
-            line = line.strip()
-            if line.startswith('#'):
-                ll = line.lower()
-                for key, val in section_map.items():
-                    if key in ll:
-                        section = val
-                        if val == 'herbal' and '-b' in ll: section = 'herbal-B'
-                        elif val == 'herbal': section = 'herbal-A'
-                continue
-            m = re.match(r'<([^>]+)>', line)
-            if m:
-                folio_id = m.group(1).split(',')[0]
-                rest = line[m.end():].strip()
-            else:
-                rest = line
-            if not rest: continue
-            for word in re.split(r'[.\s,;]+', rest):
-                word = re.sub(r'[^a-z]', '', word.lower().strip())
-                if len(word) >= 2:
-                    tokens.append((word, section, folio_id))
-    return tokens
 
-def load_folio_lines():
-    """Return list of (line_id, section, [raw_words]) preserving line structure."""
-    lines = []
-    section_map = {
-        'bio': 'bio', 'cosmo': 'cosmo', 'herbal': 'herbal',
-        'pharma': 'pharma', 'text': 'text', 'zodiac': 'zodiac'
-    }
-    for fpath in sorted(FOLIO_DIR.glob("*.txt")):
-        section = 'unknown'
-        for line in fpath.read_text(encoding='utf-8', errors='replace').splitlines():
-            line = line.strip()
-            if line.startswith('#'):
-                ll = line.lower()
-                for key, val in section_map.items():
-                    if key in ll:
-                        section = val
-                        if val == 'herbal' and '-b' in ll: section = 'herbal-B'
-                        elif val == 'herbal': section = 'herbal-A'
-                continue
-            m = re.match(r'<([^>]+)>', line)
-            if m:
-                lid = m.group(1)
-                rest = line[m.end():].strip()
-            else:
-                continue
-            if not rest: continue
-            words = []
-            for w in re.split(r'[.\s,;]+', rest):
-                w = re.sub(r'[^a-z]', '', w.lower().strip())
-                if len(w) >= 2: words.append(w)
-            if words:
-                lines.append((lid, section, words))
-    return lines
 
 
 # ══════════════════════════════════════════════════════════════════

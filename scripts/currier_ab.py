@@ -29,6 +29,7 @@ import json
 import math
 from pathlib import Path
 from collections import Counter, defaultdict
+from common import get_root
 
 # ═══════════════════════════════════════════════════════════════════════════
 # PARSER (reused)
@@ -91,8 +92,6 @@ def parse_word(word):
     return best
 
 
-def get_root(onset, body):
-    return onset + body
 
 
 # ═══════════════════════════════════════════════════════════════════════════

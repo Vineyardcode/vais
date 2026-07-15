@@ -45,6 +45,7 @@ import re, sys, io, math
 from pathlib import Path
 from collections import Counter, defaultdict
 import numpy as np
+from common import clean_word, entropy_v2 as entropy, eva_to_glyphs, folio_section
 
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
 
@@ -64,37 +65,11 @@ GALLOWS_BI  = ['ch', 'sh', 'th', 'kh', 'ph', 'fh']
 PLAIN_GALLOWS = ['p', 't', 'k', 'f']
 COMPOUND_GALLOWS = ['cph', 'cfh', 'cth', 'ckh']
 
-def eva_to_glyphs(word):
-    glyphs = []
-    i = 0
-    w = word.lower()
-    while i < len(w):
-        if i + 2 < len(w) and w[i:i+3] in GALLOWS_TRI:
-            glyphs.append(w[i:i+3]); i += 3
-        elif i + 1 < len(w) and w[i:i+2] in GALLOWS_BI:
-            glyphs.append(w[i:i+2]); i += 2
-        else:
-            glyphs.append(w[i]); i += 1
-    return glyphs
 
 def glyphs_to_word(glyphs):
     return ''.join(glyphs)
 
-def clean_word(tok):
-    tok = re.sub(r'\[([^:\]]+):[^\]]*\]', r'\1', tok)
-    tok = re.sub(r'\{[^}]*\}', '', tok)
-    tok = re.sub(r"[^a-z]", '', tok.lower())
-    return tok
 
-def folio_section(fname):
-    m = re.match(r'f(\d+)', fname)
-    if not m: return 'unknown'
-    n = int(m.group(1))
-    if 103 <= n <= 116: return 'recipe'
-    elif 75 <= n <= 84: return 'balneo'
-    elif 67 <= n <= 73: return 'astro'
-    elif 85 <= n <= 86: return 'cosmo'
-    else: return 'herbal'
 
 
 # ═══════════════════════════════════════════════════════════════════════
@@ -210,16 +185,6 @@ def collapse_compound_to_simple(word):
 # INFORMATION THEORY
 # ═══════════════════════════════════════════════════════════════════════
 
-def entropy(counter):
-    """Shannon entropy in bits."""
-    total = sum(counter.values())
-    if total == 0: return 0.0
-    h = 0.0
-    for c in counter.values():
-        if c > 0:
-            p = c / total
-            h -= p * math.log2(p)
-    return h
 
 def conditional_entropy(joint_counter, condition_counter):
     """H(X|Y) from joint and marginal counts."""

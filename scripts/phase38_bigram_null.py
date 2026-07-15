@@ -35,6 +35,7 @@ import re, sys, io, math, random
 from pathlib import Path
 from collections import Counter, defaultdict
 import numpy as np
+from common import collapse_echains, compute_mi, gallows_base, strip_gallows
 
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
 
@@ -53,19 +54,8 @@ ALL_GALLOWS    = BENCH_GALLOWS + COMPOUND_GCH + COMPOUND_GSH + SIMPLE_GALLOWS
 
 SUFFIXES = ['aiin','ain','iin','in','ar','or','al','ol','dy','y']
 
-def strip_gallows(w):
-    found = []; temp = w
-    for g in ALL_GALLOWS:
-        while g in temp:
-            found.append(g); temp = temp.replace(g,"",1)
-    return temp, found
 
-def collapse_echains(w): return re.sub(r'e+','e',w)
 
-def gallows_base(g):
-    for b in 'tkfp':
-        if b in g: return b
-    return g
 
 def get_collapsed(word):
     stripped, gals = strip_gallows(word)
@@ -85,21 +75,6 @@ def get_suffix_group(w):
             return sf
     return '∅'
 
-def compute_mi(x_arr, y_arr):
-    """Mutual information between two categorical arrays."""
-    N = len(x_arr)
-    if N == 0: return 0.0
-    joint = Counter(zip(x_arr, y_arr))
-    x_counts = Counter(x_arr)
-    y_counts = Counter(y_arr)
-    mi = 0.0
-    for (x,y), n_xy in joint.items():
-        p_xy = n_xy / N
-        p_x = x_counts[x] / N
-        p_y = y_counts[y] / N
-        if p_xy > 0 and p_x > 0 and p_y > 0:
-            mi += p_xy * math.log2(p_xy / (p_x * p_y))
-    return mi
 
 def cramers_v(x_arr, y_arr):
     """Cramér's V between two categorical arrays."""

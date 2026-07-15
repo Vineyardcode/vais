@@ -49,6 +49,7 @@ import re, sys, io, math, json
 from pathlib import Path
 from collections import Counter, defaultdict
 import numpy as np
+from common import entropy, load_reference_text
 
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
 
@@ -152,21 +153,6 @@ def vms_parse_suffix(word):
 # NL TEXT LOADING
 # ═══════════════════════════════════════════════════════════════════════
 
-def load_reference_text(filepath):
-    """Load a text file, strip Gutenberg headers, return lowercase word list."""
-    with open(filepath, 'r', encoding='utf-8', errors='replace') as f:
-        raw = f.read()
-    for marker in ['*** START OF THE PROJECT', '*** START OF THIS PROJECT']:
-        idx = raw.find(marker)
-        if idx >= 0:
-            raw = raw[raw.index('\n', idx) + 1:]
-            break
-    end_idx = raw.find('*** END OF')
-    if end_idx >= 0:
-        raw = raw[:end_idx]
-    text = raw.lower()
-    words = re.findall(r'[a-zàáâãäåæçèéêëìíîïðñòóôõöùúûüýþßœ]+', text)
-    return words
 
 
 def load_reference_lines(filepath):
@@ -218,12 +204,6 @@ def load_czech_bible():
 # STATISTICAL HELPERS
 # ═══════════════════════════════════════════════════════════════════════
 
-def entropy(counter):
-    """Shannon entropy in bits from a Counter."""
-    total = sum(counter.values())
-    if total == 0:
-        return 0.0
-    return -sum((c/total) * math.log2(c/total) for c in counter.values() if c > 0)
 
 
 def mi_from_joint(joint_counts, x_counts, y_counts):

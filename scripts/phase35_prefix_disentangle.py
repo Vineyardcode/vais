@@ -35,6 +35,7 @@ Tests:
 import re, json, sys, io, math, random
 from pathlib import Path
 from collections import Counter, defaultdict
+from common import collapse_echains, gallows_base, strip_gallows
 
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
 
@@ -55,19 +56,8 @@ DERIV_PREFIXES_ORDER = ['lch','lsh','ch','sh','l','h']
 
 CORE_STEMS = {'e','o','ed','eo','od','ol','al','am','ar','or','es','eod','eos','os','a','d','l','r','s'}
 
-def gallows_base(g):
-    for b in 'tkfp':
-        if b in g: return b
-    return g
 
-def strip_gallows(w):
-    found = []; temp = w
-    for g in ALL_GALLOWS:
-        while g in temp:
-            found.append(g); temp = temp.replace(g,"",1)
-    return temp, found
 
-def collapse_echains(w): return re.sub(r'e+','e',w)
 
 def decompose(word, prefix_list=None):
     if prefix_list is None:

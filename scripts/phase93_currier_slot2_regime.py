@@ -60,6 +60,7 @@ from pathlib import Path
 from collections import Counter, defaultdict
 import numpy as np
 import random
+from common import clean_word, eva_to_glyphs, extract_words_from_line
 
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
 
@@ -86,18 +87,6 @@ random.seed(42)
 GALLOWS_TRI = ['cth', 'ckh', 'cph', 'cfh']
 GALLOWS_BI  = ['ch', 'sh', 'th', 'kh', 'ph', 'fh']
 
-def eva_to_glyphs(word):
-    glyphs = []
-    i = 0
-    w = word.lower()
-    while i < len(w):
-        if i + 2 < len(w) and w[i:i+3] in GALLOWS_TRI:
-            glyphs.append(w[i:i+3]); i += 3
-        elif i + 1 < len(w) and w[i:i+2] in GALLOWS_BI:
-            glyphs.append(w[i:i+2]); i += 2
-        else:
-            glyphs.append(w[i]); i += 1
-    return glyphs
 
 
 SLOT1 = {'ch', 'sh', 'y'}
@@ -186,24 +175,8 @@ def parse_word_into_chunks(word_str):
 # VMS TEXT EXTRACTION
 # ═══════════════════════════════════════════════════════════════════════
 
-def clean_word(tok):
-    tok = re.sub(r'\[([^:\]]+):[^\]]*\]', r'\1', tok)
-    tok = re.sub(r'\{[^}]*\}', '', tok)
-    tok = re.sub(r'[^a-z]', '', tok.lower())
-    return tok
 
 
-def extract_words_from_line(text):
-    text = text.replace('<%>', '').replace('<$>', '').strip()
-    text = re.sub(r'@\d+;', '', text)
-    text = re.sub(r'<[^>]*>', '', text)
-    words = []
-    for tok in re.split(r'[.\s]+', text):
-        for subtok in re.split(r',', tok):
-            c = clean_word(subtok.strip())
-            if c:
-                words.append(c)
-    return words
 
 
 def parse_currier_from_header(filepath):

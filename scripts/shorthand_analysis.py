@@ -22,6 +22,7 @@ import math
 from pathlib import Path
 from collections import Counter, defaultdict
 from itertools import combinations
+from common import classify_folio_v3 as classify_folio, get_root
 
 # ═══════════════════════════════════════════════════════════════════════════
 # PARSER (reused)
@@ -118,30 +119,12 @@ def parse_word(word):
     return best
 
 
-def get_root(onset, body):
-    return onset + body
 
 
 # ═══════════════════════════════════════════════════════════════════════════
 # DATA EXTRACTION
 # ═══════════════════════════════════════════════════════════════════════════
 
-def classify_folio(header_lines):
-    text = "\n".join(header_lines).lower()
-    if "herbal" in text:
-        section = "herbal"
-    elif "astro" in text or "cosmo" in text or "star" in text or "zodiac" in text:
-        section = "astro"
-    elif "pharm" in text or "recipe" in text or "balneo" in text:
-        section = "pharma"
-    elif "biolog" in text or "bathy" in text:
-        section = "bio"
-    elif "text only" in text:
-        section = "text"
-    else:
-        section = "other"
-    lang = "B" if "language b" in text else "A" if "language a" in text else "?"
-    return section, lang
 
 
 def extract_all_data(txt_files):

@@ -44,6 +44,7 @@ import re, sys, io, math, json, random
 from pathlib import Path
 from collections import Counter, defaultdict
 import numpy as np
+from common import char_bigram_predictability, clean_word, eva_to_glyphs, extract_words_from_line, hapax_ratio_at_midpoint, index_of_coincidence, mean_word_length, ttr_at_n
 
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
 
@@ -70,36 +71,8 @@ random.seed(42)
 GALLOWS_TRI = ['cth', 'ckh', 'cph', 'cfh']
 GALLOWS_BI  = ['ch', 'sh', 'th', 'kh', 'ph', 'fh']
 
-def eva_to_glyphs(word):
-    glyphs = []
-    i = 0
-    w = word.lower()
-    while i < len(w):
-        if i + 2 < len(w) and w[i:i+3] in GALLOWS_TRI:
-            glyphs.append(w[i:i+3]); i += 3
-        elif i + 1 < len(w) and w[i:i+2] in GALLOWS_BI:
-            glyphs.append(w[i:i+2]); i += 2
-        else:
-            glyphs.append(w[i]); i += 1
-    return glyphs
 
-def clean_word(tok):
-    tok = re.sub(r'\[([^:\]]+):[^\]]*\]', r'\1', tok)
-    tok = re.sub(r'\{[^}]*\}', '', tok)
-    tok = re.sub(r'[^a-z]', '', tok.lower())
-    return tok
 
-def extract_words_from_line(text):
-    text = text.replace('<%>', '').replace('<$>', '').strip()
-    text = re.sub(r'@\d+;', '', text)
-    text = re.sub(r'<[^>]*>', '', text)
-    words = []
-    for tok in re.split(r'[.\s]+', text):
-        for subtok in re.split(r',', tok):
-            c = clean_word(subtok.strip())
-            if c:
-                words.append(c)
-    return words
 
 
 # ═══════════════════════════════════════════════════════════════════════
@@ -177,38 +150,9 @@ def heaps_exponent(words):
     result = np.linalg.lstsq(A, log_v, rcond=None)
     return float(result[0][0])
 
-def hapax_ratio_at_midpoint(words):
-    mid = len(words) // 2
-    freq = Counter(words[:mid])
-    hapax = sum(1 for c in freq.values() if c == 1)
-    return hapax / max(len(freq), 1)
 
-def char_bigram_predictability(char_list):
-    """H(c|prev) / H(c) — THE KEY ANOMALY METRIC."""
-    unigram = Counter(char_list)
-    total = sum(unigram.values())
-    if total < 2: return 1.0
-    h_uni = -sum((c/total) * math.log2(c/total) for c in unigram.values() if c > 0)
-    bigrams = Counter()
-    for i in range(1, len(char_list)):
-        bigrams[(char_list[i-1], char_list[i])] += 1
-    total_bi = sum(bigrams.values())
-    h_joint = -sum((c/total_bi) * math.log2(c/total_bi) for c in bigrams.values() if c > 0)
-    prev_counts = Counter()
-    for (c1, c2), cnt in bigrams.items():
-        prev_counts[c1] += cnt
-    prev_total = sum(prev_counts.values())
-    h_prev = -sum((c/prev_total) * math.log2(c/prev_total) for c in prev_counts.values() if c > 0)
-    h_cond = h_joint - h_prev
-    if h_uni == 0: return 1.0
-    return h_cond / h_uni
 
-def mean_word_length(words):
-    return float(np.mean([len(w) for w in words]))
 
-def ttr_at_n(words, n=5000):
-    subset = words[:min(n, len(words))]
-    return len(set(subset)) / len(subset) if subset else 0
 
 def zipf_alpha(words):
     freq = Counter(words)
@@ -221,11 +165,6 @@ def zipf_alpha(words):
     result = np.linalg.lstsq(A, log_freq, rcond=None)
     return float(-result[0][0])
 
-def index_of_coincidence(char_list):
-    freq = Counter(char_list)
-    n = sum(freq.values())
-    if n < 2: return 0.0
-    return sum(c * (c-1) for c in freq.values()) / (n * (n-1))
 
 def compute_fingerprint(words, label):
     """Compute full fingerprint from word list."""

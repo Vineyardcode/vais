@@ -30,6 +30,7 @@ import re, sys, io, math, random
 from pathlib import Path
 from collections import Counter, defaultdict
 import numpy as np
+from common import collapse_e, get_collapsed, load_lines, strip_gallows_v2 as strip_gallows
 
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
 
@@ -40,42 +41,9 @@ ALL_GALLOWS = ['cth','ckh','cph','cfh','tch','kch','pch','fch',
                'tsh','ksh','psh','fsh','t','k','f','p']
 SUFFIXES = ['aiin','ain','iin','in','ar','or','al','ol','dy','y']
 
-def strip_gallows(w):
-    temp = w
-    for g in ALL_GALLOWS:
-        while g in temp: temp = temp.replace(g, '', 1)
-    return temp
-def collapse_e(w): return re.sub(r'e+', 'e', w)
-def get_collapsed(w): return collapse_e(strip_gallows(w))
 
 FOLIO_DIR = Path("folios")
 
-def load_lines():
-    lines = []
-    section_map = {
-        'bio': 'bio', 'cosmo': 'cosmo', 'herbal': 'herbal',
-        'pharma': 'pharma', 'text': 'text', 'zodiac': 'zodiac'
-    }
-    for fpath in sorted(FOLIO_DIR.glob("*.txt")):
-        section = 'unknown'
-        for line in fpath.read_text(encoding='utf-8', errors='replace').splitlines():
-            line = line.strip()
-            if line.startswith('#'):
-                ll = line.lower()
-                for key, val in section_map.items():
-                    if key in ll:
-                        section = val
-                        if val == 'herbal' and '-b' in ll: section = 'herbal-B'
-                        elif val == 'herbal': section = 'herbal-A'
-                continue
-            m = re.match(r'<([^>]+)>', line)
-            rest = line[m.end():].strip() if m else line
-            if not rest: continue
-            words = [w.strip() for w in re.split(r'[.\s,;]+', rest)
-                     if w.strip() and re.match(r'^[a-z]+$', w.strip())]
-            if len(words) >= 2:
-                lines.append({'section': section, 'words': words})
-    return lines
 
 print("Loading lines...")
 lines = load_lines()

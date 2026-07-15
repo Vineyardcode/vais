@@ -38,6 +38,7 @@ Tests:
 import re, json, sys, io, math, random
 from pathlib import Path
 from collections import Counter, defaultdict
+from common import collapse_echains, gallows_base, load_all_tokens, strip_gallows
 
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
 
@@ -61,19 +62,8 @@ SUFFIXES_SHORT = ['aiin','ain','iin','in','ar','or','al','ol','dy','y']
 
 DERIV_PREFIXES_ORDER = ['lch','lsh','ch','sh','l','h']
 
-def gallows_base(g):
-    for b in 'tkfp':
-        if b in g: return b
-    return g
 
-def strip_gallows(w):
-    found = []; temp = w
-    for g in ALL_GALLOWS:
-        while g in temp:
-            found.append(g); temp = temp.replace(g,"",1)
-    return temp, found
 
-def collapse_echains(w): return re.sub(r'e+','e',w)
 
 def parse_morphology(w, suffix_list):
     pfx = sfx = ""
@@ -107,37 +97,6 @@ def decompose_with_suffixes(word, suffix_list):
 
 FOLIO_DIR = Path("folios")
 
-def load_all_tokens():
-    tokens = []
-    section_map = {
-        'bio': 'bio', 'cosmo': 'cosmo', 'herbal': 'herbal',
-        'pharma': 'pharma', 'text': 'text', 'zodiac': 'zodiac'
-    }
-    for fpath in sorted(FOLIO_DIR.glob("*.txt")):
-        section = 'unknown'
-        folio_id = ''
-        for line in fpath.read_text(encoding='utf-8', errors='replace').splitlines():
-            line = line.strip()
-            if line.startswith('#'):
-                ll = line.lower()
-                for key, val in section_map.items():
-                    if key in ll:
-                        section = val
-                        if val == 'herbal' and '-b' in ll: section = 'herbal-B'
-                        elif val == 'herbal': section = 'herbal-A'
-                continue
-            m = re.match(r'<([^>]+)>', line)
-            if m:
-                folio_id = m.group(1).split(',')[0]
-                rest = line[m.end():].strip()
-            else:
-                rest = line
-            if not rest: continue
-            for word in re.split(r'[.\s,;]+', rest):
-                word = re.sub(r'[^a-z]', '', word.lower().strip())
-                if len(word) >= 2:
-                    tokens.append((word, section, folio_id))
-    return tokens
 
 
 CORE_STEMS = {

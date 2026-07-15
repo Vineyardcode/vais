@@ -20,6 +20,7 @@ import re
 import json
 from pathlib import Path
 from collections import Counter, defaultdict
+from common import collapse_echains, gallows_base_v2 as gallows_base, parse_morphology, strip_gallows
 
 # ═══════════════════════════════════════════════════════════════════════
 # MORPHOLOGICAL PIPELINE (from Phases 10-15)
@@ -31,11 +32,6 @@ COMPOUND_GCH = ["tch", "kch", "pch", "fch"]
 COMPOUND_GSH = ["tsh", "ksh", "psh", "fsh"]
 ALL_GALLOWS = BENCH_GALLOWS + COMPOUND_GCH + COMPOUND_GSH + SIMPLE_GALLOWS
 
-def gallows_base(g):
-    for base in ['t', 'k', 'f', 'p']:
-        if base in g:
-            return base
-    return g
 
 PREFIXES = ['qo', 'q', 'so', 'do', 'o', 'd', 's', 'y']
 SUFFIXES = ['aiin', 'ain', 'iin', 'in', 'ar', 'or', 'al', 'ol',
@@ -77,33 +73,8 @@ PREFIX_GLOSS = {
     'y':  'Y+modifier',
 }
 
-def strip_gallows(word):
-    found = []
-    temp = word
-    for g in ALL_GALLOWS:
-        while g in temp:
-            found.append(g)
-            temp = temp.replace(g, "", 1)
-    return temp, found
 
-def collapse_echains(word):
-    return re.sub(r'e+', 'e', word)
 
-def parse_morphology(stripped_word):
-    w = stripped_word
-    prefix = ""
-    suffix = ""
-    for pf in PREFIXES:
-        if w.startswith(pf) and len(w) > len(pf) + 1:
-            prefix = pf
-            w = w[len(pf):]
-            break
-    for sf in SUFFIXES:
-        if w.endswith(sf) and len(w) > len(sf):
-            suffix = sf
-            w = w[:-len(sf)]
-            break
-    return prefix, w, suffix
 
 def full_decompose(word):
     # Clean: strip annotations like [x:y], {xxx}, ?
