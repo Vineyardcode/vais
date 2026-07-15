@@ -201,13 +201,6 @@
   "stdout_bytes": 10461,
   "results_files_touched": []
  },
- "phase100_decipherment": {
-  "status": "timeout",
-  "returncode": null,
-  "duration_s": 900.06,
-  "stdout_bytes": 5505,
-  "results_files_touched": []
- },
  "phase101_currier_ab_dichotomy": {
   "status": "ok",
   "returncode": 0,
@@ -512,10 +505,10 @@
   "results_files_touched": []
  },
  "phase44_word_classes": {
-  "status": "error",
-  "returncode": 1,
-  "duration_s": 0.32,
-  "stdout_bytes": 18,
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 1.48,
+  "stdout_bytes": 8101,
   "results_files_touched": []
  },
  "phase45_word_predictability": {
@@ -533,10 +526,10 @@
   "results_files_touched": []
  },
  "phase47_word_network": {
-  "status": "error",
-  "returncode": 1,
-  "duration_s": 0.41,
-  "stdout_bytes": 18,
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 5.96,
+  "stdout_bytes": 12373,
   "results_files_touched": []
  },
  "phase48_cross_validation": {
@@ -554,17 +547,17 @@
   "results_files_touched": []
  },
  "phase50_synthesis": {
-  "status": "error",
-  "returncode": 1,
-  "duration_s": 0.37,
-  "stdout_bytes": 18,
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 7.83,
+  "stdout_bytes": 9685,
   "results_files_touched": []
  },
  "phase51_attack_synthesis": {
-  "status": "error",
-  "returncode": 1,
-  "duration_s": 0.35,
-  "stdout_bytes": 18,
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 57.8,
+  "stdout_bytes": 5451,
   "results_files_touched": []
  },
  "phase52_discriminators": {

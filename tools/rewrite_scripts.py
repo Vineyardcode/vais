@@ -120,20 +120,27 @@ def process(path, apply=False):
     lines = src.splitlines()
     drop = set()
     imports_needed = []
+    first_removed_start = None
     for node, export, name in removals:
         start = node.lineno - 1
         # absorb immediately preceding comment block
         while start - 1 >= 0 and lines[start - 1].lstrip().startswith("#"):
             start -= 1
+        if first_removed_start is None or start < first_removed_start:
+            first_removed_start = start
         for i in range(start, node.end_lineno):
             drop.add(i)
         imports_needed.append(f"{export} as {name}" if export != name else name)
 
-    # insertion point: after last top-level import
-    last_import = 0
+    # Insertion point: after the last top-level import that precedes the
+    # first removed definition (a def's first use always follows it, so this
+    # is guaranteed to be early enough), falling back to the removal site.
+    last_import = None
     for node in tree.body:
-        if isinstance(node, (ast.Import, ast.ImportFrom)):
-            last_import = max(last_import, node.end_lineno)
+        if isinstance(node, (ast.Import, ast.ImportFrom)) and node.end_lineno - 1 < first_removed_start:
+            last_import = node.end_lineno if last_import is None else max(last_import, node.end_lineno)
+    if last_import is None:
+        last_import = first_removed_start
     imp_line = "from common import " + ", ".join(sorted(set(imports_needed)))
 
     new_lines = []

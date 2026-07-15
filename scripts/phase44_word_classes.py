@@ -41,6 +41,7 @@ import re, sys, io, math, random
 from pathlib import Path
 from collections import Counter, defaultdict
 import numpy as np
+from common import collapse_e, get_collapsed, get_prefix, get_suffix, load_lines, strip_gallows_v2 as strip_gallows
 
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
 
@@ -141,7 +142,6 @@ else:
 
 # SVD for dimensionality reduction
 from numpy.linalg import svd
-from common import collapse_e, get_collapsed, get_prefix, get_suffix, load_lines, strip_gallows_v2 as strip_gallows
 print("  Running SVD...")
 U, S, Vt = svd(ppmi, full_matrices=False)
 # Use first 20 components

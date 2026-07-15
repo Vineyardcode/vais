@@ -27,6 +27,7 @@ import re, sys, io, math, random
 from pathlib import Path
 from collections import Counter, defaultdict
 import numpy as np
+from common import collapse_e, compute_H, get_collapsed, get_gram_prefix, get_suffix, load_lines, strip_gallows_v2 as strip_gallows
 
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
 
@@ -262,7 +263,6 @@ top_gen = sorted(gen_counts.values(), reverse=True)[:200]
 ranks = np.arange(1, 201)
 
 from numpy.polynomial import polynomial as P
-from common import collapse_e, compute_H, get_collapsed, get_gram_prefix, get_suffix, load_lines, strip_gallows_v2 as strip_gallows
 def fit_zipf(freqs, ranks):
     log_r = np.log10(ranks[:len(freqs)])
     log_f = np.log10(freqs)

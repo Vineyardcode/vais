@@ -29,6 +29,7 @@ import re, sys, io, math, random
 from pathlib import Path
 from collections import Counter, defaultdict
 import numpy as np
+from common import collapse_e, compute_H, get_collapsed, get_gram_prefix, get_suffix, load_lines, strip_gallows_v2 as strip_gallows
 
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
 
@@ -214,7 +215,6 @@ H_w2_uncond = compute_H(w2_counts, total_bigrams)
 # H(w2 | w1) from full word bigram
 # This is already H_cond from before
 from collections import OrderedDict
-from common import collapse_e, compute_H, get_collapsed, get_gram_prefix, get_suffix, load_lines, strip_gallows_v2 as strip_gallows
 H_joint = 0.0
 for c in all_bigrams.values():
     if c > 0:

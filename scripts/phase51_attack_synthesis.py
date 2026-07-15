@@ -36,6 +36,7 @@ import re, sys, io, math, random
 from pathlib import Path
 from collections import Counter, defaultdict
 import numpy as np
+from common import collapse_e, compute_H, get_collapsed, get_gram_prefix, get_suffix, load_lines_v2 as load_lines, strip_gallows_v2 as strip_gallows
 
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
 
@@ -559,7 +560,6 @@ n_tested = 0
 
 # For each pair of stems sharing a suffix...
 from itertools import combinations
-from common import collapse_e, compute_H, get_collapsed, get_gram_prefix, get_suffix, load_lines_v2 as load_lines, strip_gallows_v2 as strip_gallows
 frequent_stems = [s for s, v in stem_sfx_matrix.items() 
                   if len(v) >= 2 and sum(Counter(all_collapsed).get(w, 0) 
                   for w, (_, c, _) in parsed.items() if c == s) >= 10]
