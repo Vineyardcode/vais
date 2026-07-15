@@ -36,7 +36,7 @@ Data inputs: `folios/*.txt` (IVTFF EVA transcriptions, 201 folios), `data/latin_
 | medieval_degrees | 786 | 0.11 | ok | 11 | — |
 | pharma_comparison | 762 | 0.75 | ok | 4 | — |
 | phase100_decipherment | 1047 | 2333.98 | ok | 10 | four_tasks_audit.json, phase100_decipherment.json |
-| phase101_currier_ab_dichotomy | 1303 | 423.64 | ok | 10 | phase101_currier_ab_dichotomy.json, phase101_currier_ab_dichotomy.txt |
+| phase101_currier_ab_dichotomy | 1319 | 423.64 | ok | 10 | phase101_currier_ab_dichotomy.json, phase101_currier_ab_dichotomy.txt |
 | phase102_historical_validation | 1147 | 2.88 | ok | 10 | phase102_historical_validation.json, phase102_historical_validation.txt |
 | phase103_positional_class_decomposition | 1457 | 61.85 | ok | 11 | phase103_positional_class_decomposition.json, phase103_positional_class_decomposition.txt |
 | phase104_latin_ending_test | 849 | 8.93 | ok | 4 | phase104_latin_ending_test.json, phase104_latin_ending_test.txt |
@@ -83,7 +83,7 @@ Data inputs: `folios/*.txt` (IVTFF EVA transcriptions, 201 folios), `data/latin_
 | phase53_cipher_tests | 606 | 17.67 | ok | 1 | — |
 | phase54_natlang_vs_cipher | 557 | 30.24 | ok | 1 | — |
 | phase55_vc_separation | 625 | 9.43 | ok | 2 | — |
-| phase56_syllabary_test | 744 | 88.41 | ok | 1 | — |
+| phase56_syllabary_test | 748 | 88.41 | ok | 1 | — |
 | phase57_bax_test | 678 | 15.98 | ok | 11 | — |
 | phase58_cross_script | 848 | 15.79 | ok | 1 | phase58_output.json |
 | phase59_forward_model | 851 | 6.09 | ok | 1 | phase59_output.json |
@@ -99,7 +99,7 @@ Data inputs: `folios/*.txt` (IVTFF EVA transcriptions, 201 folios), `data/latin_
 | phase71_paragraph_initials | 584 | 0.32 | ok | 2 | phase71_paragraph_initials.txt |
 | phase72_naibbe_calibration | 1092 | 325.91 | ok | 6 | phase72_naibbe_calibration.txt, phase72_naibbe_raw.json |
 | phase73_abbreviation_model | 1094 | 162.2 | ok | 7 | phase73_abbreviation_model.txt, phase73_abbreviation_raw.json |
-| phase74_paragraph_framing | 934 | 0.89 | ok | 3 | phase74_paragraph_framing.json, phase74_paragraph_framing.txt |
+| phase74_paragraph_framing | 942 | 0.89 | ok | 3 | phase74_paragraph_framing.json, phase74_paragraph_framing.txt |
 | phase75_latin_mapping | 976 | 102.05 | ok | 7 | phase75_latin_mapping.json, phase75_latin_mapping.txt |
 | phase76_vernacular_mapping | 961 | 0.91 | ok | 5 | phase76_vernacular_mapping.json, phase76_vernacular_mapping.txt |
 | phase77_gallows_ecology | 852 | 0.85 | ok | 4 | phase77_gallows_ecology.txt |
@@ -280,6 +280,7 @@ Data inputs: `folios/*.txt` (IVTFF EVA transcriptions, 201 folios), `data/latin_
 
 - **file**: `scripts/f66r_analysis.py` (684 lines)
 - **runtime**: 1.73s (baseline status: ok)
+- **depends on**: attack_plan, freq_rank_mapping (must run first — produces required result JSON)
 - **parameters** (4): `PREFIXES=<json>`, `ROOT_ONSETS=<json>`, `ROOT_BODIES=<json>`, `SUFFIXES=<json>`
 - **notes**:
   - measures: Phase 2: f66r as Rosetta fragment — word list structure (15 entries), 33-char column key, word-to-text bridging, list ordering, cross-folio matching, substitution constraint table.
@@ -372,7 +373,6 @@ Data inputs: `folios/*.txt` (IVTFF EVA transcriptions, 201 folios), `data/latin_
 
 - **file**: `scripts/hebrew_deep_analysis.py` (1313 lines)
 - **runtime**: 57.66s (baseline status: ok)
-- **depends on**: attack_plan (must run first — produces required result JSON)
 - **parameters** (12): `PREFIXES=<json>`, `ROOT_ONSETS=<json>`, `ROOT_BODIES=<json>`, `SUFFIXES=<json>`, `CONSONANT_CHARS=<json>`, `VOWEL_CHARS=["a", "e", "i", "o"]`, `ONSET_CONSONANTS=<json>`, `BODY_TEMPLATES=<json>`, `HEBREW_PLANT_SUFFIXES=<json>`, `VOYNICH_TO_HEBREW_SUFFIX=<json>`, `HEBREW_GEMATRIA=<json>`, `KABBALISTIC_NUMBERS=<json>`
 - **notes**:
   - measures: Hebrew hypothesis phase 2: 1000-iter shuffle control on paradigm fill (seeded 42), consonantal-skeleton/mishkal template analysis, suffix agreement z-scores vs 500 shuffles, botanical label vs Hebrew noun-pattern comparison, gematria layer (morpheme rank-values + kabbalistic number proximity + line-sum modular analysis).
@@ -472,7 +472,7 @@ Data inputs: `folios/*.txt` (IVTFF EVA transcriptions, 201 folios), `data/latin_
 ### phase101_currier_ab_dichotomy
 *Phase 101 — Resolve the Currier A/B Dichotomy*
 
-- **file**: `scripts/phase101_currier_ab_dichotomy.py` (1303 lines)
+- **file**: `scripts/phase101_currier_ab_dichotomy.py` (1319 lines)
 - **runtime**: 423.64s (baseline status: ok)
 - **depends on**: phase86_chunk_equivalence (must run first — produces required result JSON)
 - **writes**: results/phase101_currier_ab_dichotomy.json, results/phase101_currier_ab_dichotomy.txt
@@ -835,7 +835,7 @@ Data inputs: `folios/*.txt` (IVTFF EVA transcriptions, 201 folios), `data/latin_
 ### phase56_syllabary_test
 *Phase 56 — TESTING THE SYLLABARY INTERPRETATION (SKEPTICALLY)*
 
-- **file**: `scripts/phase56_syllabary_test.py` (744 lines)
+- **file**: `scripts/phase56_syllabary_test.py` (748 lines)
 - **runtime**: 88.41s (baseline status: ok)
 - **parameters** (1): `ALL_GALLOWS=<json>`
 
@@ -964,7 +964,7 @@ Data inputs: `folios/*.txt` (IVTFF EVA transcriptions, 201 folios), `data/latin_
 ### phase74_paragraph_framing
 *Phase 74 — Paragraph Framing Analysis: Do Paragraphs Have Consistent*
 
-- **file**: `scripts/phase74_paragraph_framing.py` (934 lines)
+- **file**: `scripts/phase74_paragraph_framing.py` (942 lines)
 - **runtime**: 0.89s (baseline status: ok)
 - **writes**: results/phase74_paragraph_framing.json, results/phase74_paragraph_framing.txt
 - **parameters** (3): `SEED=42`, `GALLOWS_TRI=["cth", "ckh", "cph", "cfh"]`, `GALLOWS_BI=["ch", "sh", "th", "kh", "ph", "fh"]`
@@ -1104,6 +1104,7 @@ Data inputs: `folios/*.txt` (IVTFF EVA transcriptions, 201 folios), `data/latin_
 
 - **file**: `scripts/phase86R_revalidation.py` (845 lines)
 - **runtime**: 66.14s (baseline status: ok)
+- **depends on**: phase86_chunk_equivalence (must run first — produces required result JSON)
 - **writes**: results/phase86R_revalidation.json, results/phase86R_revalidation.txt
 - **parameters** (10): `GALLOWS_TRI=["cth", "ckh", "cph", "cfh"]`, `GALLOWS_BI=["ch", "sh", "th", "kh", "ph", "fh"]`, `SLOT1=["ch", "sh", "y"]`, `SLOT2_RUNS=["e"]`, `SLOT2_SINGLE=["a", "q"]`, `SLOT3=["o"]`, `SLOT4_RUNS=["i"]`, `SLOT4_SINGLE=["d"]`, `SLOT5=<json>`, `MAX_CHUNKS=6`
 
