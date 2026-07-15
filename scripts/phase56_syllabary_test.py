@@ -373,10 +373,14 @@ combined_ctx = np.hstack([right_ctx, left_ctx])
 # Distance matrix (Jensen-Shannon divergence)
 def jsd(p, q):
     m = 0.5 * (p + q)
-    # Avoid log(0)
-    mask = m > 0
-    kl_pm = np.sum(p[mask] * np.log2(p[mask] / m[mask]))
-    kl_qm = np.sum(q[mask] * np.log2(q[mask] / m[mask]))
+    # AUDIT A5: masking only on m>0 let p==0 cells produce 0*log2(0/m)
+    # = 0 * -inf = NaN in numpy, which poisoned the distance matrix
+    # ("JSD = nan" rows in the old output). The 0*log(0)=0 convention
+    # requires masking each KL term on ITS OWN distribution too.
+    mask_p = (p > 0) & (m > 0)
+    mask_q = (q > 0) & (m > 0)
+    kl_pm = np.sum(p[mask_p] * np.log2(p[mask_p] / m[mask_p]))
+    kl_qm = np.sum(q[mask_q] * np.log2(q[mask_q] / m[mask_q]))
     return 0.5 * (kl_pm + kl_qm)
 
 dist_matrix = np.zeros((n_common, n_common))

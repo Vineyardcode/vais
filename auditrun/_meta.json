@@ -219,5 +219,17 @@
   "results_files_touched": [
    "pharma_results.json"
   ]
+ },
+ "phase100_decipherment": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 1801.56,
+  "stdout_bytes": 13989,
+  "results_files_touched": [
+   "phase100_decipherment.json",
+   "phase100_decipherment.txt",
+   "phase74_paragraph_framing.json",
+   "phase74_paragraph_framing.txt"
+  ]
  }
 }

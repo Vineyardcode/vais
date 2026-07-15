@@ -66,30 +66,38 @@ Loading corpus...
 56c: CHARACTER DISTRIBUTIONAL CLUSTERING
 =================================================================
   Most similar character pairs (by JSD of combined context):
-    a-c: JSD = nan
-    a-d: JSD = nan
-    a-e: JSD = nan
-    a-g: JSD = nan
-    a-h: JSD = nan
-    a-i: JSD = nan
-    a-l: JSD = nan
-    a-m: JSD = nan
-    a-n: JSD = nan
-    a-o: JSD = nan
-    a-q: JSD = nan
-    a-r: JSD = nan
-    a-s: JSD = nan
-    a-y: JSD = nan
-    c-d: JSD = nan
+    m-r: JSD = 0.1969
+    l-r: JSD = 0.2194
+    c-s: JSD = 0.2399
+    l-m: JSD = 0.3426
+    d-g: JSD = 0.5365
+    o-y: JSD = 0.5870
+    g-r: JSD = 0.6005
+    g-y: JSD = 0.6591
+    d-y: JSD = 0.6760
+    g-s: JSD = 0.7302
+    e-l: JSD = 0.7500
+    l-y: JSD = 0.7594
+    d-e: JSD = 0.7955
+    g-l: JSD = 0.8038
+    g-o: JSD = 0.8064
 
   Most DISSIMILAR pairs:
-    q-s: JSD = nan
-    q-y: JSD = nan
-    r-s: JSD = nan
-    r-y: JSD = nan
-    s-y: JSD = nan
+    c-h: JSD = 1.9087
+    c-i: JSD = 1.9165
+    i-q: JSD = 1.9174
+    h-i: JSD = 1.9615
+    c-n: JSD = 1.9639
 
   Agglomerative clustering (merge order):
+    Step 1: merge at JSD=0.1969 → [m+r]
+    Step 2: merge at JSD=0.2399 → [c+s]
+    Step 3: merge at JSD=0.2810 → [l+m+r]
+    Step 4: merge at JSD=0.5365 → [d+g]
+    Step 5: merge at JSD=0.5870 → [o+y]
+    Step 6: merge at JSD=0.7431 → [d+g+o+y]
+    Step 7: merge at JSD=0.8309 → [e+l+m+r]
+    Step 8: merge at JSD=0.8989 → [d+g+o+y+e+l+m+r]
 
   INTERPRETATION:
   In a real syllabary, early clusters would group characters
@@ -97,11 +105,11 @@ Loading corpus...
   Check: do the character pairs above share positional profiles?
 
   Positional profiles of most similar pairs:
-    a: start=20.4%, end=0.4%  |  c: start=77.7%, end=0.1%
-    a: start=20.4%, end=0.4%  |  d: start=28.7%, end=4.5%
-    a: start=20.4%, end=0.4%  |  e: start=9.3%, end=1.1%
-    a: start=20.4%, end=0.4%  |  g: start=12.1%, end=92.9%
-    a: start=20.4%, end=0.4%  |  h: start=0.0%, end=0.4%
+    m: start=1.4%, end=96.8%  |  r: start=7.2%, end=81.3%
+    l: start=14.9%, end=58.5%  |  r: start=7.2%, end=81.3%
+    c: start=77.7%, end=0.1%  |  s: start=70.1%, end=19.9%
+    l: start=14.9%, end=58.5%  |  m: start=1.4%, end=96.8%
+    d: start=28.7%, end=4.5%  |  g: start=12.1%, end=92.9%
 
 =================================================================
 56d: SIMULATED SYLLABARY CALIBRATION

@@ -131,3 +131,29 @@ recorded below when complete. Expected deltas: phase72/73 wall-clock
   `DOTTED (n=129)`, remaining groups populated — DARK n=14 now agrees
   exactly with phase71's independent count (cross-consistency restored).
   `baseline/` + `golden/` refreshed for this test with this justification.
+
+### A5 — CRITICAL(wrong results): phase56 JSD NaN-poisoned distance matrix
+- **File**: `scripts/phase56_syllabary_test.py` (`jsd`, section 56c).
+- **Wrong** (original-author bug): numpy JSD masked only on `m > 0`, so any
+  context cell present in one distribution but absent in the other produced
+  `0 * log2(0/m) = 0 * -inf = NaN`; the NaN propagated through `np.sum`, and
+  every character-pair distance in 56c printed as `JSD = nan` (visible in
+  golden/baseline output) — the "most similar character pairs" ranking was
+  meaningless.
+- **Fix**: mask each KL term on its own distribution as well
+  (`(p>0)&(m>0)` / `(q>0)&(m>0)`), the standard 0·log0=0 convention.
+- **Before/after**: 56c BEFORE = all pairs `nan`; AFTER = real ranking
+  (m-r 0.1969, l-r 0.2194, c-s 0.2399, …). 65 diff lines, all within 56c.
+  `baseline/` + `golden/` refreshed for this test.
+
+### JSD family disposition (10 variants audited)
+- Correct standard JSD: phase43, phase53 (deliberate Laplace smoothing),
+  phase77, phase78, phase82, phase86 (eps-clip approximation), phase100,
+  phase101/102. All verified against the ½KL(P||M)+½KL(Q||M) definition.
+- `currier_ab.jsd` and `shorthand_analysis._jsd_from_counters` return the
+  Jensen-Shannon **distance** (sqrt of divergence) while their docstrings
+  say "divergence" — mathematically legitimate metric, each used only for
+  internal comparisons, so values were NOT changed (that would shift
+  results for a labeling nit). Docstrings noted here as the record.
+  `[REVIEW]`
+- phase56: FIXED (A5 above).

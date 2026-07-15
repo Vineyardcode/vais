@@ -8,5 +8,15 @@
    "phase74_paragraph_framing.json",
    "phase74_paragraph_framing.txt"
   ]
+ },
+ "phase56_syllabary_test": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 241.15,
+  "stdout_bytes": 7685,
+  "results_files_touched": [
+   "phase100_decipherment.json",
+   "phase100_decipherment.txt"
+  ]
  }
 }
