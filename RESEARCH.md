@@ -241,3 +241,144 @@ omission; no script models null glyphs.)
 Reading: 100% of the suite's evidence is conditional on A1; T1 showed A1
 was concretely false at the 5% level and the suite survived — but the
 deeper A1 question (EVA's unit ontology) is untested until phase110.
+
+---
+
+## Phase 2 — Graveyard autopsy
+
+Not a history lesson: each corpse yields a *named failure mode* that
+becomes a hard constraint on Phase 3 strategies. Deaths are grouped by
+mechanism, not chronology.
+
+### The corpses
+
+**Newbold (1921, "Latin micrography + anagrams").** Claimed each glyph
+dissolved into microscopic shorthand strokes, read via anagramming Latin.
+Died when Manly (1931) showed the "micrographic strokes" were ink cracks,
+and the anagramming step could produce essentially any target text.
+*Failure modes: signal-from-noise (reading artifacts as data) + unbounded
+DOF (anagramming).*
+
+**Friedman's teams (1944-1959).** The best cryptanalysts of the century,
+two study groups, years of machine tabulation. Produced no decipherment —
+but importantly produced *negative knowledge*: not a simple substitution,
+not a transposition, not a known polyalphabetic. Friedman's own conclusion
+(early synthetic language) was itself unfalsifiable-as-stated. *Failure
+mode: hypothesis exhaustion inside one paradigm — every tested system was a
+cipher a human clerk would design.*
+
+**Brumbaugh (1978), Levitov (1987), Feely, Strong.** Each produced
+"readings" via flexible many-to-one mappings into a chosen language
+(Latin, polyglot creole, medical shorthand...). Each translation read as
+word salad requiring further "interpretation". *Failure mode: DOF
+laundering — the mapping's freedom hides in the interpretive step, so the
+pipeline as a whole can absorb any input.*
+
+**Rugg (2004, Cardan grille hoax).** Demonstrated a *generation* mechanism
+(tables + sliding grille) that produces Voynich-like words fast enough for
+a 15th-c. forger. Died as an explanation, not as a demonstration: measured
+against the corpus it undershoots vocabulary richness catastrophically (our
+N3: 903 types vs 7,643; hapax structure absent; no line effects; too-rigid
+positional grammar). *Failure mode: resemblance-by-eyeball — matching a few
+salient features and declaring victory without a full fingerprint.*
+
+**Timm & Schinner (2020, self-citation).** The strongest hoax model:
+copy-and-modify explains adjacency similarity, Currier drift, and hapax
+richness qualitatively. But it has never been scored on a *full* feature
+vector against calibrated rivals — and our N4 already exposes a bind:
+mutation rates rich enough for the lexicon overshoot adjacency texture 8×
+(0.209 vs 0.027). *Failure mode: single-statistic advocacy — a generative
+model validated only on the statistics it was designed to explain.*
+
+**Bax (2014, "provisional decoding of 10 words").** Bootstrapped from
+assumed plant identifications to sound values. Plant IDs are themselves
+speculative; ten words with flexible vowels in an unknown language are
+within coincidence range for ANY glyph-to-sound assignment. *Failure mode:
+anchor decay — chaining inferences off an uncertain anchor while treating
+it as fixed.*
+
+**Gibbs (2017, "abbreviated Latin recipes").** Announced in TLS; two
+"translated" lines, which Latinists immediately rejected as not
+grammatical Latin; ignored existing scholarship (the "index" he posited is
+known to be quire numbers). *Failure mode: no-controls publication — zero
+held-out validation, zero skeptical review before claiming.*
+
+**Cheshire (2019, "proto-Romance").** Peer-reviewed (briefly), then
+demolished: the posited language ("proto-Romance survived unwritten for
+centuries") is historically incoherent; every word was translated by
+scanning modern Romance dictionaries until something fit. *Failure modes:
+DOF laundering + nonexistent-prior (the hypothesis class itself has prior
+probability ~0).*
+
+**Hauer & Kondrak (2018, AI: Hebrew + anagrams).** Serious NLP work with a
+fatal design: their classifier was *forced* to pick one of 380 candidate
+languages for ANY input — it picks Hebrew for shuffled gibberish too; then
+anagram decoding + Google-Translate smoothing manufactured fluency. Never
+run on negative controls. *Failure modes: forced-choice classification
+(no "none of the above" arm) + unbounded DOF (anagramming) + no negative
+controls.*
+
+**Every published "AI solves Voynich" since.** Common template: embed VMS
+tokens, find nearest neighbors in some language's embedding space, decode
+cherry-picked lines. None survives an N1 word-shuffle control (embeddings
+of shuffled Voynich "decode" equally well). *Failure mode: control-free
+pipelines.*
+
+### The catalog — binding constraints for Phase 3
+
+| id | failure mode | constraint on every VAIS strategy |
+|---|---|---|
+| F1 | Unbounded DOF (anagrams, flexible lookup) | DOF budget declared numerically; any step that can absorb arbitrary input kills the strategy |
+| F2 | DOF laundering (freedom hidden in "interpretation") | end-to-end scoring only: the pipeline's output is scored mechanically, never "read" by a human for plausibility |
+| F3 | Control-free pipeline | the 9-corpus battery runs first; a method fooled by N1-N4 is dead (charter rule 1) |
+| F4 | Forced-choice classification | every classifier gets an explicit "none of the above" arm |
+| F5 | Single-statistic advocacy | models are scored on the full 17-feature fingerprint, including features they were not designed to explain |
+| F6 | Resemblance-by-eyeball | distances are computed, never asserted; z-scores against reference distributions |
+| F7 | Anchor decay | no inference chains off unverified anchors (plant IDs, month names, marginalia) — anchors enter only as *hypotheses to test*, weighted by their own uncertainty |
+| F8 | Corpus pooling (A6) | every result reported for Currier A and B separately as well as pooled; disagreement is data |
+| F9 | Paradigm tunnel vision | the portfolio must span mutually exclusive hypothesis families (language, cipher, hoax, notation) — no strategy assumes its own family is true |
+| F10 | Signal-from-noise (Newbold) | any feature extracted below the transliteration level (strokes, pixels) needs inter-source agreement (ZL vs other transliterations, or multiple scans) before use |
+
+---
+
+## Phase 3 — The machine-scale attack portfolio
+
+Twelve strategies. Each is feasible only (or overwhelmingly better) at
+machine scale, states which assumption it relaxes, and carries a
+pre-registered kill criterion. Family coverage per F9: cipher (S1, S4, S5,
+S8), language (S4, S6), hoax/generated (S3), notation-not-language (S6),
+and family-agnostic instruments (S9-S12).
+
+| # | strategy | relaxes | compute | kill criterion (pre-registered) |
+|---|---|---|---|---|
+| S1 | Alphabet-space search: beam-search over glyph merge/split/unify re-codings of EVA, scoring each candidate alphabet by how far it moves the corpus toward its best-matching positive control | A1 | hours | if the objective "normalizes" N3/N4 toward language as easily as it recovers P4's planted grouping, the objective is non-discriminative — kill |
+| S2 | Raw-scan glyph clustering: unsupervised stroke/shape clustering from folio scans; rebuild the token stream with NO human alphabet; re-run the fingerprint | A1 (fully) | days, GPU helpful | if cluster count is unstable (±30%) across folios/scan qualities, transliteration-free analysis is unreliable at this scan quality — kill (F10 gate) |
+| S3 | Generative forgery tournament: every proposed mechanism (grille, self-citation, verbose cipher, language+cipher stack) implemented as a calibrated generator, scored on the full 17-feature fingerprint z-distance to VMS | A5 (tests it) | minutes | any generator whose z-distance to VMS beats VMS-half-A-to-half-B's own internal distance = manuscript is *statistically forgeable* by that family; if NO generator family closes within 3× the internal distance, all current mechanisms insufficient — both outcomes informative; kill only applies to single generators |
+| S4 | Segmentation-agnostic modeling: BPE/unigram-LM learned on the space-stripped stream; compare learned units to EVA words; MDL scoring | A2 | hours | if learned segmentation matches spaces no better on VMS than on N2 (where spaces are meaningless by construction), spaces carry no segmental signal — downgrade every word-level result |
+| S5 | Nomenclator/codebook MDL: model tokens as codebook indices (arbitrary word→word table); compare description length vs language/cipher/hoax models | A5 | hours | if codebook MDL beats language MDL on P1 (plain Latin), the MDL comparison is broken — kill the instrument, not the hypothesis |
+| S6 | Numeral/positional-notation test: score the corpus as number system (minim runs = digits, gallows = place markers) against Roman/abacus/cistercian numeral corpora | A5 | minutes | if the same scorer rates P1 (Latin prose) as "numbers" comparably to real numeral corpora — kill |
+| S7 | Line-as-unit encodings: model each LINE as one record (fixed-field, key-value, table row); test field-position predictability across lines | A3 | minutes-hours | if field structure found in VMS is matched by N1 (shuffled words, real line lengths) — artifact of line-length distribution, kill |
+| S8 | Null/filler search: for every candidate null set (greedy over glyph subsets), measure entropy/structure gain after deletion; compare against same search on controls | A4 | hours (combinatorial, bounded beam) | the search WILL find "nulls" everywhere (DOF!); signal = VMS gain exceeding the 95th percentile of gain on P1-P5; below that — kill |
+| S9 | Cross-transliteration invariance audit: recompute the headline fingerprint on Currier, v101, GC transliterations; report which suite results are transliteration-robust | A1 | minutes + data acquisition | results that flip across transliterations are demoted to artifacts; instrument cannot be killed, only starved of data |
+| S10 | Scribe/hand-conditional systems: fit every generative model per-Currier-hand (and per Lisa Fagin Davis scribe if data acquirable); test whether hands differ in PARAMETERS or in SYSTEM | A6 | hours | if pooled model beats per-hand models on held-out folios after MDL penalty — hands are one system, kill the multi-system hypothesis |
+| S11 | Page-order optimization: find the folio permutation maximizing cross-page statistical continuity; compare optimal order to current binding and to codicological reconstructions | A7 | hours (TSP-like, heuristic) | if optimizer improves continuity on N1 (where true order is destroyed) as much as on VMS — continuity signal is noise, kill |
+| S12 | DOF calculator: meta-instrument that takes any decipherment pipeline (as config) and computes its effective degrees of freedom by measuring how well it "decodes" the negative battery | (audits F1/F2) | minutes per pipeline | cannot be killed; it IS the kill apparatus |
+
+### Ranking for Phase 4 prototyping
+
+Scored on (discriminative power × feasibility with in-repo data ÷ DOF
+risk):
+
+1. **S3 forgery tournament** — the fingerprint + controls already exist;
+   directly adjudicates the biggest live question (hoax vs cipher vs
+   language) under F5 full-vector scoring. PROTOTYPE = phase109.
+2. **S1 alphabet-space search** — attacks the load-bearing assumption
+   (A1/EVA ontology) that 100% of results inherit; has a built-in positive
+   control (must recover P4's planted verbose grouping). PROTOTYPE =
+   phase110.
+3. **S4 segmentation-agnostic** — cheap, kills or validates A2 for the
+   whole suite. PROTOTYPE = phase111 if budget allows; else next cycle.
+
+S2 (raw scans) is the most assumption-free attack but needs scan
+acquisition + GPU; specced as future work. S9 needs external
+transliteration files; queued behind data acquisition.
