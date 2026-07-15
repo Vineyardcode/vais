@@ -2,7 +2,7 @@
   "version": "0.0.1",
   "configurations": [
     {
-      "name": "voynich-webui",
+      "name": "vais-webui",
       "runtimeExecutable": "python",
       "runtimeArgs": ["webui/server.py"],
       "port": 5000,

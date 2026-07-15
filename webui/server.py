@@ -1,4 +1,4 @@
-"""Local web UI for the Voynich analysis suite.
+"""VAIS — Voynich Analysis Interactive Suite: local web UI.
 
     python webui/server.py            # http://127.0.0.1:5000
 

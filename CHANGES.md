@@ -1,5 +1,9 @@
 # CHANGES.md — refactor & web UI accountability log
 
+> Project renamed to **VAIS — Voynich Analysis Interactive Suite**
+> (2026-07-15, see AUDIT.md). Historical mentions of the old name/path below
+> are preserved verbatim as part of the record.
+
 Branch: `refactor/test-webui`. Every entry lists what changed, why, and where
 results shift relative to `baseline/` (the golden pre-refactor run captured by
 `tools/run_baseline.py`).

@@ -1,4 +1,4 @@
-# Voynich Analysis Suite — Web UI
+# VAIS — Voynich Analysis Interactive Suite — Web UI
 
 A small local web app for browsing, running, and customizing the 129 analysis
 scripts in `scripts/`.
@@ -14,7 +14,7 @@ python webui/server.py          # serves http://127.0.0.1:5000
 PORT=8080 python webui/server.py  # any other port
 ```
 
-Run from the project root (`c:\projects\voynich_slop`). The server only
+Run from the project root (`c:\projects\vais`). The server only
 binds 127.0.0.1 — it is a local tool, not a deployment.
 
 ## What it does
