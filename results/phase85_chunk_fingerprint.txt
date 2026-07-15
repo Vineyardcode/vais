@@ -128,17 +128,17 @@ STEP 3: NATURAL LANGUAGE SYLLABLE-LEVEL FINGERPRINTS
   German-Faust           47,662   4,112  0.455   9.308   4.618  0.4961  0.7737  -0.477  0.618  1.54
   Italian-Cucina         47,348   1,532  0.351   7.864   4.686  0.5959  0.7938  -0.518  0.453  1.94
   Latin-Apicius          56,743   2,512  0.358   8.598   4.266  0.4962  0.8213  -0.450  0.532  1.94
-  Latin-Caesar          280,160   5,078  0.312   8.391   4.553  0.5426  0.8018  -0.746  0.507  1.73
-  Latin-Vulgate         122,490   4,191  0.292   8.551   4.562  0.5335  0.8070  -0.730  0.561  1.72
+  Latin-Caesar          101,887   2,369  0.265   8.631   4.915  0.5694  0.8227  -0.446  0.479  2.27
+  Latin-Vulgate          49,538   2,242  0.309   8.755   4.483  0.5120  0.8198  -0.481  0.543  1.91
   ────────────────────  ───────  ──────  ──────  ──────  ──────  ──────  ──────  ──────  ─────  ────
   VMS CHUNKS             78,526     523  0.197   6.287   5.141  0.8176  0.5915  -0.876  0.355  1.95
 
   Z-SCORES (VMS chunk metric vs NL syllable distribution):
-    h_ratio        : VMS=0.8176  NL_mean=0.5007  NL_std=0.0562  z=+5.64
-    hapax_ratio    : VMS=0.1969  NL_mean=0.3829  NL_std=0.0813  z=-2.29
-    zipf_slope     : VMS=-0.8755  NL_mean=-0.6001  NL_std=0.1099  z=-2.51
-    heaps_beta     : VMS=0.3547  NL_mean=0.5432  NL_std=0.0576  z=-3.27
-    ttr            : VMS=0.0067  NL_mean=0.0570  NL_std=0.0329  z=-1.53
+    h_ratio        : VMS=0.8176  NL_mean=0.5014  NL_std=0.0587  z=+5.39
+    hapax_ratio    : VMS=0.1969  NL_mean=0.3792  NL_std=0.0863  z=-2.11
+    zipf_slope     : VMS=-0.8755  NL_mean=-0.5315  NL_std=0.0818  z=-4.20
+    heaps_beta     : VMS=0.3547  NL_mean=0.5374  NL_std=0.0603  z=-3.03
+    ttr            : VMS=0.0067  NL_mean=0.0590  NL_std=0.0311  z=-1.68
 
 ────────────────────────────────────────────────────────────────────────────
 STEP 4: NULL MODEL — SHUFFLED SLOT GRAMMAR (100 permutations)
@@ -155,17 +155,17 @@ STEP 4: NULL MODEL — SHUFFLED SLOT GRAMMAR (100 permutations)
     zipf_slope  = -0.8755
 
   Shuffled grammars (N=100):
-    h_ratio  = 0.6777 ± 0.0199  [range: 0.6390 – 0.7556]
-    n_types  = 208 ± 42  [range: 108 – 330]
+    h_ratio  = 0.6819 ± 0.0234  [range: 0.6372 – 0.7682]
+    n_types  = 204 ± 52  [range: 112 – 401]
     coverage = 99.9% ± 0.0%  [range: 99.9% – 99.9%]
-    hapax_ratio = 0.1886 ± 0.0295
-    zipf_slope  = -1.5534 ± 0.1921
+    hapax_ratio = 0.1973 ± 0.0306
+    zipf_slope  = -1.6133 ± 0.2089
 
   Z-scores (Mauro vs shuffled):
-    h_ratio:  z = +7.02
-    n_types:  z = +7.55
+    h_ratio:  z = +5.80
+    n_types:  z = +6.16
     coverage: z = -1651451774679.00
-    hapax:    z = +0.28
+    hapax:    z = -0.01
 
   INTERPRETATION: If |z| < 2, Mauro's grammar is NOT special —
   any random slot grammar gives similar results.
@@ -239,9 +239,9 @@ STEP 8: THREE-LEVEL COMPARISON — THE ASYMMETRY TEST
   Word           10.4296    4.3265    0.4148    8,212   0.657
 
   NL AVERAGES (for comparison):
-    Character h_ratio: 0.7943 ± 0.0215
-    Syllable  h_ratio: 0.5007 ± 0.0526
-    Word      h_ratio: 0.4414 ± 0.0676
+    Character h_ratio: 0.7985 ± 0.0245
+    Syllable  h_ratio: 0.5014 ± 0.0549
+    Word      h_ratio: 0.3924 ± 0.0315
 
 ────────────────────────────────────────────────────────────────────────────
 STEP 9: PARSE AMBIGUITY — HOW MANY WORDS HAVE MULTIPLE VALID PARSES?
@@ -265,12 +265,12 @@ STEP 10: SYNTHESIS — DOES THE CHUNK HYPOTHESIS HOLD?
 
   TEST 1: Does chunk h_ratio land in NL syllable range?
     VMS chunk h_ratio:  0.8176
-    NL syllable mean:   0.5007 ± 0.0562
-    z-score:            +5.64
+    NL syllable mean:   0.5014 ± 0.0587
+    z-score:            +5.39
     → OUTSIDE NL range (|z|>2) — chunks are NOT behaving like NL syllables
 
   TEST 2: Is Mauro's grammar special? (vs shuffled grammars)
-    h_ratio z vs shuffled: +7.02
+    h_ratio z vs shuffled: +5.80
     coverage z vs shuffled: -1651451774679.00
     → Grammar IS special: produces distinct chunk statistics
 
@@ -296,12 +296,12 @@ VERDICT
   KEY NUMBERS FOR SYNTHESIS:
     VMS h_char_ratio:        0.5915
     VMS h_chunk_ratio:       0.8176
-    NL h_syllable_ratio:     0.5007 ± 0.0562
-    NL h_char_ratio:         0.7943 ± 0.0215
+    NL h_syllable_ratio:     0.5014 ± 0.0587
+    NL h_char_ratio:         0.7985 ± 0.0245
     Chunk types:             523
     Chunks/word:             1.946
     Grammar coverage:        99.8%
-    Grammar specificity (z): h_ratio=+7.02, coverage=-1651451774679.00
+    Grammar specificity (z): h_ratio=+5.80, coverage=-1651451774679.00
     Char-shuffle z:          -104.91
     Parse ambiguity:         1.4%
 

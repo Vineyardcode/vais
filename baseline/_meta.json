@@ -704,5 +704,184 @@
   "results_files_touched": [
    "phase71_paragraph_initials.txt"
   ]
+ },
+ "phase72_naibbe_calibration": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 325.91,
+  "stdout_bytes": 20585,
+  "results_files_touched": [
+   "phase72_naibbe_calibration.txt",
+   "phase72_naibbe_raw.json"
+  ]
+ },
+ "phase73_abbreviation_model": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 162.2,
+  "stdout_bytes": 15246,
+  "results_files_touched": [
+   "phase73_abbreviation_model.txt",
+   "phase73_abbreviation_raw.json"
+  ]
+ },
+ "phase74_paragraph_framing": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.89,
+  "stdout_bytes": 24199,
+  "results_files_touched": [
+   "phase74_paragraph_framing.json",
+   "phase74_paragraph_framing.txt"
+  ]
+ },
+ "phase75_latin_mapping": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 102.05,
+  "stdout_bytes": 20005,
+  "results_files_touched": [
+   "phase75_latin_mapping.json",
+   "phase75_latin_mapping.txt"
+  ]
+ },
+ "phase76_vernacular_mapping": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.91,
+  "stdout_bytes": 19146,
+  "results_files_touched": [
+   "phase76_vernacular_mapping.json",
+   "phase76_vernacular_mapping.txt"
+  ]
+ },
+ "phase77_gallows_ecology": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.85,
+  "stdout_bytes": 15760,
+  "results_files_touched": [
+   "phase77_gallows_ecology.txt"
+  ]
+ },
+ "phase77b_line_position_gallows": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.43,
+  "stdout_bytes": 11712,
+  "results_files_touched": [
+   "phase77b_line_position_gallows.txt"
+  ]
+ },
+ "phase78_allograph_test": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 2.13,
+  "stdout_bytes": 13583,
+  "results_files_touched": [
+   "phase78_allograph_test.txt"
+  ]
+ },
+ "phase79_gallows_collapse": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 1.8,
+  "stdout_bytes": 7424,
+  "results_files_touched": [
+   "phase79_gallows_collapse.txt"
+  ]
+ },
+ "phase80_abjad_hypothesis": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 2.29,
+  "stdout_bytes": 11543,
+  "results_files_touched": [
+   "phase80_abjad_hypothesis.txt"
+  ]
+ },
+ "phase81_german_genre_fingerprint": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 112.8,
+  "stdout_bytes": 13394,
+  "results_files_touched": [
+   "phase81_german_genre_fingerprint.txt"
+  ]
+ },
+ "phase82_charm_fingerprint": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 2.9,
+  "stdout_bytes": 13558,
+  "results_files_touched": [
+   "phase82_charm_fingerprint.txt"
+  ]
+ },
+ "phase82_line1_body_separation": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 133.43,
+  "stdout_bytes": 14416,
+  "results_files_touched": [
+   "phase82_line1_body_separation.txt"
+  ]
+ },
+ "phase83_encoding_layer_sweep": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 22.96,
+  "stdout_bytes": 16231,
+  "results_files_touched": [
+   "phase83_encoding_sweep.txt"
+  ]
+ },
+ "phase83_subword_segmentation": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 28.19,
+  "stdout_bytes": 19824,
+  "results_files_touched": [
+   "phase83_subword_segmentation.txt"
+  ]
+ },
+ "phase84_mi_meaning_area": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 50.63,
+  "stdout_bytes": 17587,
+  "results_files_touched": [
+   "phase84_mi_meaning_area.json",
+   "phase84_mi_meaning_area.txt"
+  ]
+ },
+ "phase85_chunk_fingerprint": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 42.57,
+  "stdout_bytes": 13167,
+  "results_files_touched": [
+   "phase85_chunk_fingerprint.json",
+   "phase85_chunk_fingerprint.txt"
+  ]
+ },
+ "phase85_pelling_verbose_cipher": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 32.84,
+  "stdout_bytes": 14511,
+  "results_files_touched": [
+   "phase85_pelling_verbose.txt"
+  ]
+ },
+ "phase85R_revalidation": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 7.49,
+  "stdout_bytes": 9594,
+  "results_files_touched": [
+   "phase85R_revalidation.json",
+   "phase85R_revalidation.txt"
+  ]
  }
 }

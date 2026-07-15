@@ -34,14 +34,14 @@ STEP 2: REFERENCE TEXTS — NORMAL vs VOWEL-STRIPPED
 ────────────────────────────────────────────────────────────────────────
 
   Latin (Caesar):
-    Normal:  40,000 tok, 4,586 types, alpha=26, h_char=0.849, wlen=4.56, Heaps=0.666, hapax=0.586, Zipf=1.061
-    Stripped: 39,366 tok, 3,949 types, alpha=21, h_char=0.914, wlen=2.88, Heaps=0.646, hapax=0.559, Zipf=1.063
-    Distance to VMS: normal=0.3944  stripped=0.6549  → FARTHER
+    Normal:  40,000 tok, 9,251 types, alpha=23, h_char=0.865, wlen=6.10, Heaps=0.761, hapax=0.608, Zipf=0.806
+    Stripped: 39,520 tok, 6,242 types, alpha=18, h_char=0.945, wlen=3.39, Heaps=0.710, hapax=0.547, Zipf=0.865
+    Distance to VMS: normal=0.5067  stripped=0.6035  → FARTHER
 
   Latin (Vulgate):
-    Normal:  40,000 tok, 5,799 types, alpha=28, h_char=0.857, wlen=4.50, Heaps=0.726, hapax=0.566, Zipf=1.054
-    Stripped: 38,573 tok, 4,935 types, alpha=21, h_char=0.926, wlen=2.87, Heaps=0.714, hapax=0.543, Zipf=1.044
-    Distance to VMS: normal=0.4020  stripped=0.6683  → FARTHER
+    Normal:  25,908 tok, 5,728 types, alpha=26, h_char=0.869, wlen=5.18, Heaps=0.797, hapax=0.604, Zipf=0.841
+    Stripped: 25,535 tok, 4,022 types, alpha=19, h_char=0.941, wlen=2.89, Heaps=0.752, hapax=0.568, Zipf=0.983
+    Distance to VMS: normal=0.4164  stripped=0.7287  → FARTHER
 
   Latin (Apicius):
     Normal:  29,458 tok, 5,443 types, alpha=36, h_char=0.869, wlen=5.03, Heaps=0.715, hapax=0.570, Zipf=0.915
@@ -71,8 +71,8 @@ STEP 3: DISTANCE COMPARISON TABLE
 
   Language                  Dist(normal) Dist(stripped)    Delta    Verdict
   ───────────────────────── ──────────── ────────────── ──────── ──────────
-  Latin (Caesar)                  0.3944         0.6549  +0.2605    FARTHER
-  Latin (Vulgate)                 0.4020         0.6683  +0.2663    FARTHER
+  Latin (Caesar)                  0.5067         0.6035  +0.0967    FARTHER
+  Latin (Vulgate)                 0.4164         0.7287  +0.3123    FARTHER
   Latin (Apicius)                 0.3945         0.7043  +0.3098    FARTHER
   Italian (Cucina)                0.4063         0.7008  +0.2945    FARTHER
   French (Viandier)               0.6176         0.9435  +0.3260    FARTHER
@@ -85,10 +85,10 @@ STEP 4: DIMENSION-BY-DIMENSION — WHICH STATS MOVE TOWARD VMS?
   Language                    h_char     Heaps β       Hapax     WordLen      Zipf α         TTR
   ──────────────────────  ──────────  ──────────  ──────────  ──────────  ──────────  ──────────
   VMS TARGET                   0.641       0.753       0.656       4.940       0.942       0.342
-  Latin (Caesar)               0.849       0.666       0.586       4.558       1.061       0.322
-    (no vowels)              0.914 ←     0.646 ←     0.559 ←     2.880 ←     1.063 ←     0.300 ←
-  Latin (Vulgate)              0.857       0.726       0.566       4.500       1.054       0.316
-    (no vowels)              0.926 ←     0.714 ←     0.543 ←     2.870 ←     1.044 →     0.284 ←
+  Latin (Caesar)               0.865       0.761       0.608       6.104       0.806       0.421
+    (no vowels)              0.945 ←     0.710 ←     0.547 ←     3.387 ←     0.865 →     0.322 →
+  Latin (Vulgate)              0.869       0.797       0.604       5.179       0.841       0.290
+    (no vowels)              0.941 ←     0.752 →     0.568 ←     2.891 ←     0.983 →     0.223 ←
   Latin (Apicius)              0.869       0.715       0.570       5.033       0.915       0.373
     (no vowels)              0.939 ←     0.643 ←     0.497 ←     2.933 ←     0.972 ←     0.279 ←
   Italian (Cucina)             0.854       0.693       0.641       4.565       0.949       0.412
@@ -107,8 +107,8 @@ STEP 5: ALPHABET SIZE — DOES STRIPPING HIT ~13?
   VMS (EVA glyphs): 35 distinct glyphs
   VMS (after Phase 67 functional collapse): ~13 functional units
 
-  Latin (Caesar): 26 → 21 (lost 5 vowel chars)
-  Latin (Vulgate): 28 → 21 (lost 7 vowel chars)
+  Latin (Caesar): 23 → 18 (lost 5 vowel chars)
+  Latin (Vulgate): 26 → 19 (lost 7 vowel chars)
   Latin (Apicius): 36 → 22 (lost 14 vowel chars)
   Italian (Cucina): 33 → 21 (lost 12 vowel chars)
   French (Viandier): 31 → 22 (lost 9 vowel chars)
@@ -120,8 +120,8 @@ STEP 6: WORD LENGTH DISTRIBUTION — SHAPE COMPARISON
 
   Language                     WLD dist(normal) WLD dist(stripped)    Verdict
   ──────────────────────────── ──────────────── ────────────────── ──────────
-  Latin (Caesar)                         0.5732             1.0682    FARTHER
-  Latin (Vulgate)                        0.6211             1.0368    FARTHER
+  Latin (Caesar)                         0.5916             0.7568    FARTHER
+  Latin (Vulgate)                        0.4793             0.9735    FARTHER
   Latin (Apicius)                        0.5951             0.9418    FARTHER
   Italian (Cucina)                       0.5582             1.1152    FARTHER
   French (Viandier)                      0.4162             1.0695    FARTHER
@@ -129,25 +129,25 @@ STEP 6: WORD LENGTH DISTRIBUTION — SHAPE COMPARISON
 
   WLD comparison: VMS vs Latin (Caesar) (stripped)
      Len     VMS  Stripped  VMS-bar / Stripped-bar
-       1  0.034  0.178    ██
+       1  0.034  0.175    ██
                               ░░░░░░░░░░░░░░
-       2  0.063  0.295    █████
-                              ░░░░░░░░░░░░░░░░░░░░░░░
-       3  0.087  0.244    ██████
-                              ░░░░░░░░░░░░░░░░░░░
-       4  0.175  0.130    █████████████
+       2  0.063  0.186    █████
+                              ░░░░░░░░░░░░░░
+       3  0.087  0.185    ██████
+                              ░░░░░░░░░░░░░░
+       4  0.175  0.190    █████████████
+                              ░░░░░░░░░░░░░░░
+       5  0.244  0.135    ███████████████████
                               ░░░░░░░░░░
-       5  0.244  0.087    ███████████████████
+       6  0.192  0.075    ███████████████
                               ░░░░░░
-       6  0.192  0.041    ███████████████
-                              ░░░
-       7  0.117  0.019    █████████
+       7  0.117  0.036    █████████
+                              ░░
+       8  0.050  0.013    ███
                               ░
-       8  0.050  0.004    ███
+       9  0.022  0.004    █
                               
-       9  0.022  0.001    █
-                              
-      10  0.008  0.000    
+      10  0.008  0.001    
                               
       11  0.003  0.000    
                               
@@ -161,8 +161,8 @@ STEP 7: CONSONANT CLUSTERING — ANTI-ALTERNATION TEST
 
   VMS alternation score: 0.9325
 
-  Latin (Caesar)             normal=0.9749  stripped=0.9482  VMS=0.9325  → CLOSER
-  Latin (Vulgate)            normal=0.9744  stripped=0.9510  VMS=0.9325  → CLOSER
+  Latin (Caesar)             normal=0.9760  stripped=0.9130  VMS=0.9325  → CLOSER
+  Latin (Vulgate)            normal=0.9772  stripped=0.9257  VMS=0.9325  → CLOSER
   Latin (Apicius)            normal=0.9741  stripped=0.9238  VMS=0.9325  → CLOSER
   Italian (Cucina)           normal=0.9493  stripped=0.8577  VMS=0.9325  ← FARTHER
   French (Viandier)          normal=0.9586  stripped=0.8928  VMS=0.9325  ← FARTHER
@@ -177,8 +177,8 @@ STEP 8: THE CRITICAL h_char TEST — DOES STRIPPING HIT 0.641?
   Natural language is typically 0.55-0.70.
   The question: does vowel stripping push h_char TOWARD 0.641?
 
-  Latin (Caesar)             normal=0.8490  stripped=0.9143  gap: 0.2080 → 0.2733  ← AWAY
-  Latin (Vulgate)            normal=0.8569  stripped=0.9262  gap: 0.2159 → 0.2852  ← AWAY
+  Latin (Caesar)             normal=0.8650  stripped=0.9448  gap: 0.2240 → 0.3038  ← AWAY
+  Latin (Vulgate)            normal=0.8693  stripped=0.9409  gap: 0.2283 → 0.2999  ← AWAY
   Latin (Apicius)            normal=0.8688  stripped=0.9388  gap: 0.2278 → 0.2978  ← AWAY
   Italian (Cucina)           normal=0.8541  stripped=0.9342  gap: 0.2131 → 0.2932  ← AWAY
   French (Viandier)          normal=0.8249  stripped=0.9158  gap: 0.1839 → 0.2748  ← AWAY
@@ -190,8 +190,8 @@ STEP 9: INDEX OF COINCIDENCE
 
   VMS IC: 0.08105
 
-  Latin (Caesar)             normal=0.06826  stripped=0.08757  → CLOSER
-  Latin (Vulgate)            normal=0.06648  stripped=0.08424  → CLOSER
+  Latin (Caesar)             normal=0.07291  stripped=0.09804  ← FARTHER
+  Latin (Vulgate)            normal=0.07084  stripped=0.09398  ← FARTHER
   Latin (Apicius)            normal=0.06921  stripped=0.08743  → CLOSER
   Italian (Cucina)           normal=0.07353  stripped=0.08941  ← FARTHER
   French (Viandier)          normal=0.07679  stripped=0.08902  ← FARTHER
@@ -204,22 +204,22 @@ SYNTHESIS: ABJAD HYPOTHESIS ASSESSMENT
   Fraction of languages where stripping moved TOWARD VMS:
 
     h_char        0/6  (0%)  
-    Heaps β       0/6  (0%)  
+    Heaps β       1/6  (17%)  █████
     Hapax         0/6  (0%)  
     WordLen       0/6  (0%)  
-    Zipf α        1/6  (17%)  █████
-    TTR           1/6  (17%)  █████
+    Zipf α        2/6  (33%)  ██████████
+    TTR           2/6  (33%)  ██████████
 
   Languages closer to VMS after stripping: 0/6
 
   Best overall match (stripped): Latin (Caesar)
-    Distance: 0.6549 (vs normal 0.3944)
+    Distance: 0.6035 (vs normal 0.5067)
 
   CRITICAL ASSESSMENT:
   ─────────────────────
   • h_char (0.641): 0/6 languages move toward VMS
   • Word length (4.94): 0/6 move toward VMS
-  • Heaps β (0.753): 0/6 move toward VMS
+  • Heaps β (0.753): 1/6 move toward VMS
 
   VERDICT:
   Vowel stripping does NOT consistently move languages toward VMS.

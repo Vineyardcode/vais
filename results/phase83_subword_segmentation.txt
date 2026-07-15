@@ -215,48 +215,48 @@ STEP 8: VALIDATION — KNOWN VERBOSE CIPHER (Phase 60 model)
   If our method works, it should detect group boundaries at the
   cipher-unit level, with ~13-30 unique groups.
 
-  Synthetic cipher: 36706 words,262063 chars  Cipher alphabet size: 23
+  Synthetic cipher: 36706 words,235931 chars  Cipher alphabet size: 23
 
   Depth   VMS Wtd H  Cipher Wtd H
   ─────  ──────────  ────────────
-      0      3.4476        2.6400
-      1      1.9729        2.0695
-      2      2.1701        2.4232
-      3      1.8160        2.2729
-      4      1.4633        2.2024
-      5      1.0871        1.8877
-      6      0.5203        1.6351
-      7      0.3662        1.4024
-      8      0.2036        1.1880
-      9      0.1304        0.8300
-     10      0.0000        0.8711
+      0      3.4476        2.9864
+      1      1.9729        2.5763
+      2      2.1701        2.7847
+      3      1.8160        2.6275
+      4      1.4633        2.3311
+      5      1.0871        1.8588
+      6      0.5203        1.4399
+      7      0.3662        1.2016
+      8      0.2036        1.0344
+      9      0.1304        0.7656
+     10      0.0000        0.9091
 
   The cipher SHOULD show: low H at even depths (within vowel
   expansion pairs) and high H at odd depths (boundaries between
   cipher units). If VMS shows a SIMILAR pattern, that supports
   the verbose-cipher model.
 
-  Cipher group types:    9712
-  Cipher group tokens:   83170
+  Cipher group types:    17110
+  Cipher group tokens:   63521
   Expected (source alphabet): ~21 (Italian letters)
-  Cipher groups/word:    2.27
+  Cipher groups/word:    1.73
 
   TOP 15 CIPHER GROUPS:
-      1.        G.g.J  count= 1867
-      2.        G.g.D  count= 1860
-      3.            q  count= 1639
-      4.          M.q  count= 1368
-      5.          A.a  count= 1263
-      6.        G.g.A  count= 1207
-      7.        D.d.D  count= 1008
-      8.        A.a.D  count= 1005
-      9.        D.d.J  count= 1003
-     10.        A.a.J  count=  978
-     11.            n  count=  944
-     12.        G.g.I  count=  885
-     13.          J.l  count=  883
-     14.        D.J.l  count=  866
-     15.            D  count=  861
+      1.        A.a.D  count=  798
+      2.        D.d.D  count=  763
+      3.        G.g.D  count=  633
+      4.        A.a.A  count=  571
+      5.        A.a.J  count=  473
+      6.        D.d.A  count=  472
+      7.        D.A.a  count=  455
+      8.            q  count=  447
+      9.        D.d.J  count=  433
+     10.        A.a.C  count=  421
+     11.        G.g.A  count=  412
+     12.        G.g.J  count=  368
+     13.        C.A.a  count=  350
+     14.        D.D.i  count=  333
+     15.        D.d.l  count=  331
 
 ────────────────────────────────────────────────────────────────────────────
 STEP 8b: DEPTH-2 BUMP TEST — VMS vs NATURAL LANGUAGES vs CIPHER
@@ -268,8 +268,8 @@ STEP 8b: DEPTH-2 BUMP TEST — VMS vs NATURAL LANGUAGES vs CIPHER
 
                   Text       d0       d1       d2    d2/d1   Bump?
   ────────────────────  ───────  ───────  ───────  ───────  ──────
-          Latin Caesar    3.941    2.074    1.728    0.833      no
-         Latin Vulgate    4.050    2.229    1.897    0.851      no
+          Latin Caesar    4.084    2.261    1.900    0.841      no
+         Latin Vulgate    4.083    2.309    1.923    0.832      no
          Latin Apicius    4.080    2.510    1.892    0.754      no
           German Faust    4.256    2.365    1.808    0.765      no
            German BvgS    4.110    2.209    1.413    0.640      no
@@ -277,12 +277,12 @@ STEP 8b: DEPTH-2 BUMP TEST — VMS vs NATURAL LANGUAGES vs CIPHER
        French Viandier    4.083    2.158    1.600    0.741      no
           English Cury    4.260    2.341    1.813    0.774      no
       VMS (EVA glyphs)    3.448    1.973    2.170    1.100     YES  ★
-        Verbose cipher    2.640    2.070    2.423    1.171     YES  ★
+        Verbose cipher    2.986    2.576    2.785    1.081     YES  ★
 
-  NL mean d2/d1: 0.781 (std=0.077)
+  NL mean d2/d1: 0.779 (std=0.076)
   VMS d2/d1:     1.100
   VMS z-score vs NL: 4.2
-  → VMS is 40.9% above NL mean
+  → VMS is 41.2% above NL mean
 
   BOOTSTRAP VMS d2/d1 (500 resamples):
     mean=1.0903  95%CI=[1.0756, 1.1040]
@@ -386,9 +386,9 @@ STEP 11: SYNTHESIS AND CRITICAL ASSESSMENT
 
   Q5: VALIDATION — DOES METHOD WORK ON KNOWN CIPHER?
       Known cipher alphabet: 23 chars
-      Recovered group types: 9712
+      Recovered group types: 17110
       Expected source alphabet: ~21
-      → POOR recovery (462.5× expected)
+      → POOR recovery (814.8× expected)
         The method may not be reliable for this type of cipher.
 
   Q6: DO GROUPS RESPECT I-M-F ZONES?
@@ -402,7 +402,7 @@ STEP 11: SYNTHESIS AND CRITICAL ASSESSMENT
 
     Group types recovered:     4183 (expected 13-30 for cipher)
     Groups/word:               1.49 (expected 2-3)
-    Cipher validation:         9712 types (expected ~21)
+    Cipher validation:         17110 types (expected ~21)
     Cross-zone groups:         74.3%
 
     → GROUP SEGMENTATION FAILED. The local-maximum boundary
@@ -413,8 +413,8 @@ STEP 11: SYNTHESIS AND CRITICAL ASSESSMENT
   PART B — DEPTH-2 BRANCHING ENTROPY BUMP (d2/d1):
 
     VMS d2/d1:        1.100 (BUMP — d2 exceeds d1)
-    NL mean d2/d1:    0.781 (std=0.077)
-    Verbose cipher:   1.171 (BUMP)
+    NL mean d2/d1:    0.779 (std=0.076)
+    Verbose cipher:   1.081 (BUMP)
     z-score (VMS vs NL): 4.2
 
     Natural languages tested: 8 (Latin×3, German×2, Italian,

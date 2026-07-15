@@ -35,8 +35,8 @@ REVALIDATION 1: h_ratio COMPUTED WITHOUT WORD BOUNDARY MARKERS
   German-Faust           0.8237   0.4961   0.4350      30    4112    6221
   Italian-Cucina         0.8528   0.5959   0.3878      32    1532    4719
   Latin-Apicius          0.8681   0.4962   0.3910      36    2512    5372
-  Latin-Caesar           0.8556   0.5426   0.5804      26    5078    9579
-  Latin-Vulgate          0.8578   0.5335   0.5183      33    4191    7578
+  Latin-Caesar           0.8652   0.5694   0.3411      23    2369    9987
+  Latin-Vulgate          0.8693   0.5120   0.3651      26    2242    5728
   ────────────────────  ───────  ───────  ───────  ──────  ──────  ──────
   VMS                    0.6530   0.8176   0.4148      31     523    8212
 
@@ -45,15 +45,15 @@ REVALIDATION 2: WHERE DOES VMS FIT AT EACH LEVEL?
 ────────────────────────────────────────────────────────────────────────────
 
   h_char_ratio:
-    VMS = 0.6530,  NL mean = 0.8486 ± 0.0183,  z = -10.72
+    VMS = 0.6530,  NL mean = 0.8512 ± 0.0202,  z = -9.83
     → OUTSIDE NL range (BELOW)
 
   h_chunk_ratio (vs NL syllable):
-    VMS = 0.8176,  NL mean = 0.5007 ± 0.0562,  z = +5.64
+    VMS = 0.8176,  NL mean = 0.5014 ± 0.0587,  z = +5.39
     → OUTSIDE NL range (ABOVE)
 
   h_word_ratio:
-    VMS = 0.4148,  NL mean = 0.4414 ± 0.0722,  z = -0.37
+    VMS = 0.4148,  NL mean = 0.3924 ± 0.0336,  z = +0.67
     → WITHIN NL range
 
 ────────────────────────────────────────────────────────────────────────────
@@ -64,12 +64,12 @@ REVALIDATION 3: CROSS-LEVEL h_ratio MAPPING
   (alternative hypothesis: chunks = characters)?
 
   VMS h_chunk_ratio = 0.8176
-    vs NL h_char:     z = -1.70  (NL mean = 0.8486 ± 0.0183)
-    vs NL h_syllable: z = +5.64  (NL mean = 0.5007 ± 0.0562)
-    vs NL h_word:     z = +5.21  (NL mean = 0.4414 ± 0.0722)
+    vs NL h_char:     z = -1.67  (NL mean = 0.8512 ± 0.0202)
+    vs NL h_syllable: z = +5.39  (NL mean = 0.5014 ± 0.0587)
+    vs NL h_word:     z = +12.64  (NL mean = 0.3924 ± 0.0336)
 
   ★ BEST MATCH: VMS chunks' h_ratio most closely matches NL char
-    (|z| = 1.70)
+    (|z| = 1.67)
 
 ────────────────────────────────────────────────────────────────────────────
 REVALIDATION 4: WITHIN-CHUNK GLYPH ENTROPY
@@ -95,8 +95,8 @@ REVALIDATION 4: WITHIN-CHUNK GLYPH ENTROPY
     German-Faust          within-syl H = 3.9008
     Italian-Cucina        within-syl H = 3.7162
     Latin-Apicius         within-syl H = 3.8069
-    Latin-Caesar          within-syl H = 3.8156
-    Latin-Vulgate         within-syl H = 3.8612
+    Latin-Caesar          within-syl H = 3.6994
+    Latin-Vulgate         within-syl H = 3.8273
     VMS                   within-chk H = 3.3018
 
 ────────────────────────────────────────────────────────────────────────────
@@ -112,11 +112,11 @@ REVALIDATION 5: CHUNK/SYLLABLE TYPE COUNTS — ALPHABET OR SYLLABARY?
     German-Faust            4112 types
     Italian-Cucina          1532 types
     Latin-Apicius           2512 types
-    Latin-Caesar            5078 types
-    Latin-Vulgate           4191 types
+    Latin-Caesar            2369 types
+    Latin-Vulgate           2242 types
 
-  VMS chunks (523) vs NL syllables (3123 avg): MUCH SMALLER
-  VMS chunks (523) vs NL alphabets (31 avg): MUCH LARGER
+  VMS chunks (523) vs NL syllables (2540 avg): MUCH SMALLER
+  VMS chunks (523) vs NL alphabets (30 avg): MUCH LARGER
 
 ────────────────────────────────────────────────────────────────────────────
 REVALIDATION 6: CHUNK FREQUENCY DISTRIBUTION SHAPE
@@ -140,8 +140,8 @@ REVALIDATION 6: CHUNK FREQUENCY DISTRIBUTION SHAPE
     German-Faust          top10= 15.3%  top30= 29.3%  top100= 52.6%
     Italian-Cucina        top10= 21.4%  top30= 43.1%  top100= 73.9%
     Latin-Apicius         top10= 16.7%  top30= 34.2%  top100= 62.8%
-    Latin-Caesar          top10= 28.0%  top30= 42.4%  top100= 64.0%
-    Latin-Vulgate         top10= 26.1%  top30= 40.9%  top100= 63.6%
+    Latin-Caesar          top10= 15.3%  top30= 32.9%  top100= 59.9%
+    Latin-Vulgate         top10= 16.1%  top30= 31.7%  top100= 57.9%
     VMS chunks            top10= 42.2%  top30= 70.8%  top100= 91.8%
 
 ────────────────────────────────────────────────────────────────────────────
@@ -167,18 +167,18 @@ CORRECTED VERDICT — PHASE 85
 ============================================================================
 
   1. CHUNK h_ratio = 0.8176
-     NL syllable h_ratio = 0.5007 ± 0.0562 → z = +5.64
-     NL character h_ratio = 0.8486 ± 0.0183 → z = -1.70
+     NL syllable h_ratio = 0.5014 ± 0.0587 → z = +5.39
+     NL character h_ratio = 0.8512 ± 0.0202 → z = -1.67
 
   → VMS chunks are CLOSER to NL CHARACTERS than NL syllables.
     The syllabic hypothesis is NOT SUPPORTED.
 
   2. Chunk type count: 523
-     NL syllable types:  3123 avg (range 1378-5078)
-     NL character types: 31 avg (range 26-36)
+     NL syllable types:  2540 avg (range 1378-4339)
+     NL character types: 30 avg (range 23-36)
 
   → Chunk count (523) is FAR BELOW NL syllable range
-    but FAR ABOVE NL alphabet range (31 avg).
+    but FAR ABOVE NL alphabet range (30 avg).
     This is in an INTERMEDIATE zone — not clearly alphabet or syllabary.
 
   3. WHAT DID WE ACTUALLY LEARN?
@@ -191,26 +191,26 @@ CORRECTED VERDICT — PHASE 85
 
      b) The chunk level does NOT resolve the h_char anomaly as hoped:
         - VMS h_chunk ratio (0.8176) does NOT match
-          NL syllable h_ratio (0.5007). z = +5.64.
+          NL syllable h_ratio (0.5014). z = +5.39.
         - Instead, chunks are NL char-like in predictability.
 
      c) BUT chunks create a new THREE-LEVEL hierarchy:
         - Character level (intra-chunk): h_ratio ≈ 0.581
           → SUB-character units, highly constrained by slot grammar
         - Chunk level: h_ratio = 0.8176
-          → Matches NL CHARACTER-level predictability (0.849)
+          → Matches NL CHARACTER-level predictability (0.851)
         - Word level: h_ratio = 0.4148
-          → Matches NL word-level (0.441)
+          → Matches NL word-level (0.392)
 
      d) INTERPRETATION: VMS glyphs are SUB-CHARACTER features,
         chunks are the true CHARACTERS, and words are words.
         The h_char anomaly exists because we've been measuring entropy
         at the sub-character level. But h_chunk ≈ 0.818
-        is NOT in the NL character range (0.849) — it's TOO HIGH.
+        is NOT in the NL character range (0.851) — it's TOO HIGH.
         VMS chunks are LESS predictable from context than NL characters.
 
   REVISED ASSESSMENT:
-    Syllabic hypothesis: NOT SUPPORTED (z=+5.64)
+    Syllabic hypothesis: NOT SUPPORTED (z=+5.39)
     Cipher-character hypothesis: PARTIALLY SUPPORTED (closest match)
     h_char anomaly resolved: NO — shifted but not resolved
     LOOP grammar validity: CONFIRMED (genuine structural decomposition)
