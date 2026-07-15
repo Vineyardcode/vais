@@ -157,3 +157,94 @@ recorded below when complete. Expected deltas: phase72/73 wall-clock
   results for a labeling nit). Docstrings noted here as the record.
   `[REVIEW]`
 - phase56: FIXED (A5 above).
+
+## Phase 1 — data-flow map (raw transcription → tests)
+
+`folios/*.txt` (201 IVTFF EVA transcriptions; `folios/` also holds 201 .png
+scans, unused by code) → one of **six loader families**, each with its own
+tokenization rules (differences are documented intent, verified by
+corpus-size cross-tabulation over golden outputs — scripts within a family
+agree exactly):
+
+| family (representative loader) | corpus size | used by |
+|---|---|---|
+| `load_all_tokens` (strip non-a-z inside tokens, len≥2) | 40,300 | phase27-34, 104, 105 |
+| chunk family (`extract_words_from_line`+`clean_word`) | 40,351 | phase79, 85-94, 98-102 |
+| phase19-26 zodiac-era extractor | 39,564 | phase19-26 |
+| gallows-strip family (`extract_all_words`) | 39,531 | coptic/egyptian/four_tasks/gallows_semantics/leo/root_lexicon |
+| reject-non-a-z + drop-'?' family | 39,433 | gallows_test, rtl_direction_test |
+| slot/attack family (len≥2, drop '?' and "'") | 38,732-38,900 | slot_analysis, attack_plan era, hebrew_* |
+| paragraph extractors (phase71: 42,336 / phase74: 42,252) | — | intentionally different filters; Δ84 words explained by variant-marker & comma handling |
+
+Preprocessing stages per family: tag/annotation removal → tokenization →
+(family-specific) morphology/glyph/chunk parsing → per-test statistics →
+stdout + `results/` JSON via `common.result_path`. Duplicated conceptual
+steps that remain (by design, each variant carried by its era): 6 loader
+families above; 3 parser families (multipath slot parser, gallows-strip
+morphology, Mauro chunk grammar); 2 section taxonomies + 1 labels variant.
+
+## Phase 2 — hunt ledger (what was checked, what was found)
+
+**Math & logic**
+- entropy/MI/conditional-entropy/IC/Zipf/Heaps/Cramér's V/JSD verified
+  against standard definitions; hand-verified in `sanity_checks/` (uniform
+  entropy = log2 n, MI hand-computed 2×2 = 0.311278…, JSD conventions,
+  Cramér's V = 1.0/0.0 for perfect/none association, Heaps slope
+  base-invariance).
+- FOUND: A5 (phase56 JSD NaN); phase101 null-protocol asymmetry (below);
+  A4 (phase74, found via cross-consistency).
+- `heaps_exponent` 8 variants: same regression, era-specific guards —
+  clean. `compute_fingerprint` 10 variants: genuinely different feature
+  sets per phase — intentional. `cramers_v`: single variant, correct.
+
+**Cross-consistency**
+- Corpus sizes cross-tabulated across all 129 golden outputs → loader
+  families internally consistent (table above).
+- phase71 vs phase74 star counts: DISAGREED (14 DARK vs none) → A4 found
+  and fixed; now agree exactly.
+
+**Data handling**
+- No stale tmp files; folios/ complete (201/201); no non-`f*` strays;
+  `.tmp` scratch can't leak into `*.txt` globs; gutenberg cache complete
+  (10/10 texts).
+- attic/root_result_snapshots fully covered by regenerated `results/`
+  equivalents (nothing unique lost; the one divergent file was the
+  documented UI-poison artifact).
+
+**Self-audit of previous pass**
+- grammar_extraction/medieval_degrees loop fix: functionally verified
+  (multi-glyph bodies parse: 'chodaiin' → root 'choda').
+- phase86 Step 10: runs against both reference texts in golden.
+- currier_ab/deep_dive results JSONs: populated, sensible keys.
+- No merges were performed last pass; nothing to re-verify there.
+- FOUND: A1 (phase96 paths — the previous pass's fix was incomplete and
+  CHANGES.md overclaimed it).
+- Import-shadowing scan: no script defines a name it also imports from
+  common. No duplicate top-level defs anywhere.
+
+**Web UI parity**
+- Spot-verified registry defaults == code literals (int/list/declared-
+  variant SUFFIXES/ZONE_PREFIX cases). Coercions, override splicing, and
+  golden-diff normalization covered by `sanity_checks/checks_webui.py`.
+- FOUND: A2 (DEPENDS table wrong in both directions).
+
+**Robustness & rot**
+- Bare `except:` census: 10 sites in 7 scripts, all wrapping file reads /
+  cleanup / regex fallbacks with graceful degradation. `[REVIEW]` noted:
+  f66r_analysis's dependency-read fallbacks would silently use freq=0 if
+  its input JSONs were corrupt (not changed — fallback semantics are
+  plausible intent and changing them shifts results on missing inputs).
+- Dead `progress_cb` removed (A3).
+
+### A6 — MAJOR(methodology): phase101 classifier null used a different protocol than the real metric
+- **File**: `scripts/phase101_currier_ab_dichotomy.py` (Step 6).
+- **Wrong** (original-author): the real accuracy is leave-one-out, but the
+  500-shuffle null used resubstitution (sample included in its own
+  centroid), inflating null accuracy — an apples-to-oranges comparison
+  whose bias was CONSERVATIVE (understated z, overstated p).
+- **Also**: docstring + code comment claimed "logistic regression"; the
+  implementation is (and always printed) nearest-centroid. Labels fixed.
+- **Fix**: null now uses the identical LOO protocol via O(1) class-sum
+  exclusion. Before: z=+11.71, p=0.0000, null 0.574±0.027. After: recorded
+  below when the rerun completes. Conclusion direction unchanged
+  (significant separation); the test is now internally consistent.

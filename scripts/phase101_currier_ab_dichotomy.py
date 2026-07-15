@@ -29,9 +29,9 @@ METHOD:
      between A and B at class-unigram, class-bigram, and glyph levels.
      Permutation test: shuffle folio labels 1000 times, recompute JSD
      each time → p-value for the real A/B split.
-  6. CLASSIFIER — logistic regression on folio-level class-bigram
-     features.  Cross-validated accuracy.  Compare to null (shuffled
-     labels).
+  6. CLASSIFIER — nearest-centroid classifier on folio-level class-bigram
+     features.  Leave-one-out cross-validated accuracy.  Compare to null
+     (shuffled labels, same LOO protocol).
   7. DIFFERENTIAL FEATURES — which specific class bigrams and unigrams
      most distinguish A from B?  Log-odds ratio ranking.
   8. NL FIT BY LANGUAGE — run Phase 100-style distribution comparison
@@ -877,8 +877,9 @@ def run_analysis():
                 X[row, bg_to_idx[bg]] = cnt / total
         y[row] = 1.0 if lang == 'B' else 0.0
 
-    # Manual logistic regression (no sklearn dependency)
-    # Leave-one-out cross-validation with simple nearest-centroid classifier
+    # Nearest-centroid classifier with leave-one-out cross-validation
+    # (AUDIT: comment previously claimed "logistic regression" — the printed
+    # output was always honest; label corrected to match the implementation)
     centroid_A = np.mean(X[y == 0], axis=0)
     centroid_B = np.mean(X[y == 1], axis=0)
 
@@ -931,10 +932,25 @@ def run_analysis():
     for _ in range(N_PERM_CLF):
         y_shuf = y.copy()
         np.random.shuffle(y_shuf)
-        c_A_s = np.mean(X[y_shuf == 0], axis=0) if (y_shuf == 0).sum() > 0 else np.zeros(n_features)
-        c_B_s = np.mean(X[y_shuf == 1], axis=0) if (y_shuf == 1).sum() > 0 else np.zeros(n_features)
+        # AUDIT: the null previously used RESUBSTITUTION (centroids computed
+        # with sample i included) while the real metric used LOO — an
+        # inflated null that made the test conservative. Same LOO protocol
+        # now, via O(1) leave-one-out on class sums.
+        mA = (y_shuf == 0)
+        mB = (y_shuf == 1)
+        nA, nB = int(mA.sum()), int(mB.sum())
+        if nA < 2 or nB < 2:
+            continue
+        sum_A = X[mA].sum(axis=0)
+        sum_B = X[mB].sum(axis=0)
         corr_s = 0
         for i in range(len(y_shuf)):
+            if y_shuf[i] == 0:
+                c_A_s = (sum_A - X[i]) / (nA - 1)
+                c_B_s = sum_B / nB
+            else:
+                c_A_s = sum_A / nA
+                c_B_s = (sum_B - X[i]) / (nB - 1)
             d_A = np.sum((X[i] - c_A_s)**2)
             d_B = np.sum((X[i] - c_B_s)**2)
             pred_s = 1 if d_B < d_A else 0

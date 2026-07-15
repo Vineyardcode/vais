@@ -231,5 +231,82 @@
    "phase74_paragraph_framing.json",
    "phase74_paragraph_framing.txt"
   ]
+ },
+ "phase101_currier_ab_dichotomy": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 454.41,
+  "stdout_bytes": 14909,
+  "results_files_touched": [
+   "phase101_currier_ab_dichotomy.json",
+   "phase101_currier_ab_dichotomy.txt"
+  ]
+ },
+ "phase102_historical_validation": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 2.51,
+  "stdout_bytes": 18242,
+  "results_files_touched": [
+   "phase102_historical_validation.json",
+   "phase102_historical_validation.txt"
+  ]
+ },
+ "phase103_positional_class_decomposition": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 54.58,
+  "stdout_bytes": 12571,
+  "results_files_touched": [
+   "phase103_positional_class_decomposition.json",
+   "phase103_positional_class_decomposition.txt"
+  ]
+ },
+ "phase104_latin_ending_test": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 8.42,
+  "stdout_bytes": 14402,
+  "results_files_touched": [
+   "phase104_latin_ending_test.json",
+   "phase104_latin_ending_test.txt"
+  ]
+ },
+ "phase105_cappelli_retest": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 53.9,
+  "stdout_bytes": 14344,
+  "results_files_touched": [
+   "phase105_cappelli_retest.json",
+   "phase105_cappelli_retest.txt"
+  ]
+ },
+ "phase106_abbreviation_decode": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.1,
+  "stdout_bytes": 16963,
+  "results_files_touched": [
+   "phase106_abbreviation_decode.txt"
+  ]
+ },
+ "phase106b_bench_variants": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.14,
+  "stdout_bytes": 14623,
+  "results_files_touched": [
+   "phase106b_bench_variants.txt"
+  ]
+ },
+ "phase106c_positional_freq_match": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 6.01,
+  "stdout_bytes": 2426,
+  "results_files_touched": [
+   "phase106c_positional_frequency_match.txt"
+  ]
  }
 }

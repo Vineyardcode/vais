@@ -1,0 +1,62 @@
+Loading VMS corpus...
+Processing Latin (Pliny)...
+Processing Latin (Vulgate)...
+Processing Latin (Galen)...
+Processing Italian (Cucina)...
+Processing German (Ortolf)...
+Processing German (Faust)...
+Processing French (Viandier)...
+Processing English (Cury)...
+Processing Czech...
+ cphesaiin ols cphey ytain shoshy cphodal es
+      DEC: [y]ta[n] [cph]lmau[n] bem [cph]l[y] [y]ca[n] [sh]b[sh][y] [cph]btie lm
+
+    f1r.12
+      EVA: oksho kshoy otairin oteol okan shodain sckhey daiin
+      DEC: b[k][sh]b [k][sh]b[y] bcanu[n] bclbe b[k]i[n] [sh]bta[n] m[ckh]l[y] tau[n]
+
+    f1r.13
+      EVA: shoy ckhey kodaiin cphy cphodaiils cthey sho oldain d
+      DEC: [sh]b[y] [ckh]l[y] [k]btau[n] [cph][y] [cph]btauem wl[y] [sh]b beta[n] t
+
+    f1r.14
+      EVA: dain oiin chol odaiin chodain chdy okain dn cthy kod
+      DEC: ta[n] [oi]u[n] fbe btau[n] fbta[n] ft[y] b[k]a[n] t[n] w[y] [k]bt
+
+    f1r.15
+      EVA: daiin shckhey ckeo r char shey kol chol chol kor chal
+      DEC: tau[n] [sh][ckh]l[y] j[k]lb n fin [sh]l[y] [k]be fbe fbe [k]bn fie
+
+  Matched real German (Ortolf) words:
+    cthar                → win
+    cthar                → win
+    sair                 → man
+    ols                  → bem
+    char                 → fin
+    dar                  → tin
+    dar                  → tin
+    cthal                → wie
+    dar                  → tin
+    dar                  → tin
+    cthar                → win
+
+────────────────────────────────────────────────────────────────────────────────
+ASSESSMENT
+────────────────────────────────────────────────────────────────────────────────
+
+This test matches VMS glyphs to language characters purely
+by POSITIONAL FREQUENCY — the most common word-final VMS glyph
+maps to the most common word-final character in each language,
+etc. No assumed sound values. No abbreviation meanings.
+
+If the VMS uses a simple positional substitution of a known
+language, this should produce recognizable text for the correct
+language, even without knowing the specific key.
+
+CRITICAL CAVEAT: This assumes 1-to-1 glyph-to-character mapping.
+If the encoding is verbose (1 glyph → multiple chars) or
+compressed (multiple glyphs → 1 char), this method cannot work.
+It also treats EVA digraphs (ch, sh) as single units, which
+may or may not be correct.
+
+Saved to C:\projects\voynich_slop\results\phase106c_positional_frequency_match.txt

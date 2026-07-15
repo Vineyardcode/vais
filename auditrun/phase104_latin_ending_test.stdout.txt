@@ -1,0 +1,315 @@
+========================================================================
+Phase 104 — Do VMS Word Endings Encode Latin Inflectional Endings?
+========================================================================
+
+Loading VMS corpus...
+  Words: 40300, Lines: 5691
+
+VMS parser-level suffix distribution:
+       ∅:   9057 ( 22.5%)
+       y:   8943 ( 22.2%)
+      dy:   6771 ( 16.8%)
+    aiin:   3598 (  8.9%)
+      ol:   2949 (  7.3%)
+      ar:   2579 (  6.4%)
+      al:   1879 (  4.7%)
+      or:   1817 (  4.5%)
+     ain:   1592 (  4.0%)
+     iin:    957 (  2.4%)
+      in:    158 (  0.4%)
+  H(suffix) = 2.991 bits
+  Types: 11
+
+Loading NL reference corpora...
+
+  English-Cury: 32403 words, 5245 lines
+  French-Viandier: 10764 words, 1429 lines
+  German-BvgS: 8552 words, 1053 lines
+  German-Faust: 28111 words, 5943 lines
+  Italian-Cucina: 17574 words, 2867 lines
+  Latin-Apicius: 21912 words, 4100 lines
+  Latin-Caesar: 38893 words, 372 lines
+  Latin-Erasmus: 4434 words, 603 lines
+  Latin-Galen: 39020 words, 4800 lines
+  Latin-Pliny: 50178 words, 3605 lines
+  Latin-Vulgate: 21217 words, 181 lines
+  Czech-Bible: 465340 words, 32364 lines
+
+========================================================================
+TEST A — ENDING INVENTORY SHAPE
+========================================================================
+
+--- Last 1 character(s) ---
+
+  VMS: 26 types, H=2.660 bits, top-2 conc.=55.4%
+    -y: 15867 (39.4%)
+    -n: 6465 (16.0%)
+    -r: 6135 (15.2%)
+    -l: 5986 (14.9%)
+    -o: 1246 (3.1%)
+    -s: 1163 (2.9%)
+    -m: 1128 (2.8%)
+    -d: 638 (1.6%)
+
+              Language   Types  H(bits)   Top2%   L1→VMS      ΔH
+  ────────────────────  ──────  ───────  ──────  ───────  ──────
+           Czech-Bible      37    4.374   20.6%   0.9890   1.713
+          English-Cury      29    3.554   38.2%   0.5133   0.894
+       French-Viandier      24    3.024   53.2%   0.4536   0.364
+           German-BvgS      26    3.289   43.2%   0.5143   0.629
+          German-Faust      24    3.303   38.9%   0.4645   0.643
+        Italian-Cucina      29    2.671   49.7%   0.3237   0.011
+         Latin-Apicius      29    3.240   49.4%   0.5643   0.580
+          Latin-Caesar      17    3.091   40.8%   0.3827   0.431
+         Latin-Erasmus      25    3.213   42.2%   0.4587   0.553
+           Latin-Galen      30    3.531   33.6%   0.5247   0.870
+           Latin-Pliny      25    3.205   36.7%   0.4416   0.544
+         Latin-Vulgate      20    3.350   39.5%   0.5110   0.689
+
+  NL H mean: 3.320 ± 0.388, VMS z=-1.70
+  Latin-only H mean: 3.271 ± 0.138, VMS z=-4.42
+
+--- Last 2 character(s) ---
+
+  VMS: 216 types, H=4.055 bits, top-2 conc.=35.8%
+    -dy: 6778 (18.5%)
+    -in: 6305 (17.3%)
+    -ey: 4241 (11.6%)
+    -ol: 3044 (8.3%)
+    -ar: 2604 (7.1%)
+    -hy: 2258 (6.2%)
+    -al: 1893 (5.2%)
+    -or: 1871 (5.1%)
+
+              Language   Types  H(bits)   Top2%   L1→VMS      ΔH
+  ────────────────────  ──────  ───────  ──────  ───────  ──────
+           Czech-Bible     544    7.248    7.1%   1.1860   3.193
+          English-Cury     323    6.291   13.7%   0.9124   2.235
+       French-Viandier     128    5.244   26.3%   0.6836   1.189
+           German-BvgS     221    5.587   22.6%   0.6337   1.532
+          German-Faust     218    5.597   21.6%   0.6001   1.542
+        Italian-Cucina     198    5.796   11.1%   0.8992   1.741
+         Latin-Apicius     257    5.552   24.8%   0.5836   1.497
+          Latin-Caesar     133    5.440   18.3%   0.6665   1.385
+         Latin-Erasmus     145    5.679   18.7%   0.7269   1.624
+           Latin-Galen     254    6.186   14.2%   0.9099   2.131
+           Latin-Pliny     214    5.862   15.7%   0.8215   1.807
+         Latin-Vulgate     161    5.786   16.1%   0.7105   1.731
+
+  NL H mean: 5.856 ± 0.505, VMS z=-3.57
+  Latin-only H mean: 5.751 ± 0.240, VMS z=-7.07
+
+========================================================================
+TEST B — PARADIGM STRUCTURE
+========================================================================
+
+--- Last 1 character(s), min stem freq=10 ---
+
+  VMS: 472 stems, mean=3.05 ± 1.93, median=3.0, max=12
+    Distribution: {1: 115, 2: 93, 3: 112, 4: 66, 5: 38, 6: 22, 7: 13, 8: 4, 9: 4, 10: 1, 11: 2, 12: 2}
+
+              Language   Stems    Mean     Std   Median    Max
+  ────────────────────  ──────  ──────  ──────  ───────  ─────
+           Czech-Bible    4966    2.13    1.40      2.0     12
+          English-Cury     511    1.64    1.10      1.0      7
+       French-Viandier     230    1.52    0.79      1.0      4
+           German-BvgS     126    1.76    1.16      1.0      6
+          German-Faust     347    1.80    1.04      1.0      6
+        Italian-Cucina     317    2.18    1.10      2.0      5
+         Latin-Apicius     384    1.83    1.12      1.0      8
+          Latin-Caesar     658    1.58    0.82      1.0      6
+         Latin-Erasmus      53    1.85    1.04      2.0      5
+           Latin-Galen     644    1.70    0.96      1.0      6
+           Latin-Pliny     721    1.79    0.91      2.0      6
+         Latin-Vulgate     336    1.74    1.06      1.0      8
+
+  NL paradigm mean: 1.79 ± 0.19, VMS z=6.69
+  Latin-only paradigm mean: 1.75 ± 0.09, VMS z=14.24
+
+--- Last 2 character(s), min stem freq=10 ---
+
+  VMS: 348 stems, mean=7.26 ± 5.83, median=6.0, max=49
+    Distribution: {1: 19, 2: 32, 3: 35, 4: 33, 5: 44, 6: 27, 7: 24, 8: 33, 9: 17, 10: 22, 11: 16, 12: 8, 13: 7, 14: 2, 15: 3, 16: 7, 17: 3, 18: 3, 19: 2, 20: 1, 21: 1, 25: 2, 26: 1, 27: 1, 28: 1, 29: 1, 34: 1, 43: 1, 49: 1}
+
+              Language   Stems    Mean     Std   Median    Max
+  ────────────────────  ──────  ──────  ──────  ───────  ─────
+           Czech-Bible    4274    3.52    2.68      3.0     29
+          English-Cury     417    3.44    3.29      2.0     20
+       French-Viandier     201    2.16    1.35      2.0      7
+           German-BvgS     103    2.50    2.18      2.0     12
+          German-Faust     305    3.27    2.57      3.0     16
+        Italian-Cucina     283    3.37    2.34      3.0     16
+         Latin-Apicius     353    2.82    1.74      2.0     10
+          Latin-Caesar     645    2.60    1.64      2.0     15
+         Latin-Erasmus      39    3.10    2.04      3.0     11
+           Latin-Galen     590    2.94    2.14      2.0     13
+           Latin-Pliny     740    3.32    2.49      3.0     19
+         Latin-Vulgate     310    2.74    1.89      2.0     11
+
+  NL paradigm mean: 2.98 ± 0.41, VMS z=10.44
+  Latin-only paradigm mean: 2.92 ± 0.24, VMS z=18.17
+
+--- VMS Parser-level suffixes (11 types), min stem freq=10 ---
+  VMS parser: 373 stems, mean=4.41 ± 2.46, median=4.0, max=11
+    Distribution: {1: 62, 2: 39, 3: 48, 4: 41, 5: 53, 6: 52, 7: 34, 8: 20, 9: 19, 10: 4, 11: 1}
+    (11 possible suffix types → fill rate = 40.1%)
+
+========================================================================
+TEST C — STEM-ENDING MUTUAL INFORMATION
+========================================================================
+
+--- Last 1 character(s), min stem freq=5 ---
+
+  VMS: MI=1.6649 bits, NMI=0.6216, stems=842, H(ending)=2.678
+
+              Language       MI      NMI   Stems   H(end)
+  ────────────────────  ───────  ───────  ──────  ───────
+           Czech-Bible   3.7859   0.8653    8583    4.375
+          English-Cury   3.2615   0.9264    1031    3.520
+       French-Viandier   2.7890   0.9128     395    3.055
+           German-BvgS   2.8518   0.8822     259    3.233
+          German-Faust   2.7794   0.8389     782    3.313
+        Italian-Cucina   2.0998   0.7776     625    2.700
+         Latin-Apicius   2.9357   0.8995     770    3.264
+          Latin-Caesar   2.7287   0.8705    1436    3.135
+         Latin-Erasmus   2.8529   0.8700     135    3.279
+           Latin-Galen   3.1387   0.8887    1378    3.532
+           Latin-Pliny   2.8229   0.8544    1661    3.304
+         Latin-Vulgate   2.9002   0.8477     740    3.421
+
+  NL NMI mean: 0.8695 ± 0.0373, VMS z=-6.65
+  Latin-only NMI mean: 0.8718 ± 0.0180, VMS z=-13.90
+
+--- Last 2 character(s), min stem freq=5 ---
+
+  VMS: MI=1.8985 bits, NMI=0.4746, stems=654, H(ending)=4.000
+
+              Language       MI      NMI   Stems   H(end)
+  ────────────────────  ───────  ───────  ──────  ───────
+           Czech-Bible   5.7670   0.7956    7224    7.249
+          English-Cury   5.0104   0.8134     860    6.160
+       French-Viandier   4.5545   0.8689     361    5.241
+           German-BvgS   4.2508   0.7875     241    5.398
+          German-Faust   4.1785   0.7515     687    5.560
+        Italian-Cucina   4.5031   0.7848     560    5.738
+         Latin-Apicius   4.4469   0.8182     713    5.435
+          Latin-Caesar   4.4938   0.8193    1387    5.485
+         Latin-Erasmus   4.2904   0.7752     144    5.534
+           Latin-Galen   5.0737   0.8196    1262    6.190
+           Latin-Pliny   4.7639   0.8043    1694    5.923
+         Latin-Vulgate   4.6093   0.7942     679    5.803
+
+  NL NMI mean: 0.8027 ± 0.0279, VMS z=-11.75
+  Latin-only NMI mean: 0.8051 ± 0.0163, VMS z=-20.28
+
+========================================================================
+TEST D — ENDING SEQUENCE GRAMMAR
+========================================================================
+
+--- Adjacent ending transitions (last 2 chars) ---
+
+  VMS: MI(end_i→end_j)=0.1871 bits, NMI=0.0465
+  VMS: self-agreement=15.22%, expected=10.09%, ratio=1.51×
+
+  Top 10 VMS attractions (highest obs/exp):
+    -ir→-ir:    26  obs/exp=2.60×  pmi=+1.378
+    -am→-am:    34  obs/exp=2.48×  pmi=+1.313
+    -am→-ir:    26  obs/exp=2.19×  pmi=+1.128
+    -ry→-or:    25  obs/exp=2.14×  pmi=+1.101
+    -ho→-hy:    51  obs/exp=2.13×  pmi=+1.091
+    -or→-or:   177  obs/exp=2.05×  pmi=+1.039
+    -ol→-ol:   471  obs/exp=1.94×  pmi=+0.956
+    -dy→-ed:    68  obs/exp=1.83×  pmi=+0.871
+    -hy→-od:    20  obs/exp=1.71×  pmi=+0.772
+    -hy→-hy:   228  obs/exp=1.70×  pmi=+0.762
+
+  Top 10 VMS avoidances (lowest obs/exp, count≥10):
+    -om→-dy:    10  obs/exp=0.38×  pmi=-1.395
+    -os→-dy:    28  obs/exp=0.43×  pmi=-1.232
+    -ry→-in:    17  obs/exp=0.44×  pmi=-1.189
+    -eo→-hy:    12  obs/exp=0.44×  pmi=-1.171
+    -dy→-om:    12  obs/exp=0.45×  pmi=-1.147
+    -ho→-dy:    34  obs/exp=0.47×  pmi=-1.074
+    -es→-ol:    12  obs/exp=0.48×  pmi=-1.072
+    -al→-ho:    10  obs/exp=0.50×  pmi=-0.995
+    -ir→-or:    15  obs/exp=0.52×  pmi=-0.955
+    -dy→-ho:    39  obs/exp=0.52×  pmi=-0.938
+
+              Language       MI      NMI   Agree%    Exp%   Ratio
+  ────────────────────  ───────  ───────  ───────  ──────  ──────
+           Czech-Bible   0.7292   0.1006    2.54%   1.10%   2.30×
+          English-Cury   0.9242   0.1469    2.84%   2.36%   1.20×
+       French-Viandier   0.8546   0.1630    8.73%   5.71%   1.53×
+           German-BvgS   1.1308   0.2024    4.05%   4.23%   0.96×
+          German-Faust   0.5067   0.0905    4.70%   4.26%   1.10×
+        Italian-Cucina   0.7377   0.1273    4.09%   2.59%   1.58×
+         Latin-Apicius   0.8640   0.1556   10.93%   5.11%   2.14×
+          Latin-Caesar   0.3677   0.0676    5.57%   3.87%   1.44×
+         Latin-Erasmus   1.1509   0.2027    5.12%   3.56%   1.44×
+           Latin-Galen   0.7755   0.1254    4.32%   2.46%   1.76×
+           Latin-Pliny   0.4453   0.0760    6.15%   2.93%   2.10×
+         Latin-Vulgate   0.6840   0.1182    4.92%   3.24%   1.52×
+
+  NL agreement ratio mean: 1.59 ± 0.40, VMS z=-0.20
+  NL bigram MI mean: 0.7642 ± 0.2348, VMS z=-2.46
+
+========================================================================
+TEST E — LINE-POSITION ENDING SENSITIVITY
+========================================================================
+
+  VMS: MI(ending; line_pos) = 0.0953 bits, NMI=0.0911
+     initial: -in (20.1%), -dy (13.3%), -ey (10.9%)
+      medial: -dy (20.0%), -in (17.2%), -ey (13.1%)
+       final: -in (16.5%), -dy (15.1%), -am (11.8%)
+
+  VMS line-final parser suffix:
+         ∅:  1916 ( 33.7%)
+         y:  1355 ( 23.8%)
+        dy:   766 ( 13.5%)
+      aiin:   434 (  7.6%)
+        al:   298 (  5.2%)
+
+              Language       MI      NMI                       Top final
+  ────────────────────  ───────  ───────  ──────────────────────────────
+           Czech-Bible   0.0620   0.0879    -ho (7%), -ch (6%), -li (3%)
+          English-Cury   0.0701   0.0586    -ii (6%), -er (6%), -nd (6%)
+       French-Viandier   0.0315   0.0293   -es (18%), -re (7%), -on (4%)
+           German-BvgS   0.0724   0.0693   -en (13%), -nd (7%), -in (6%)
+          German-Faust   0.1293   0.0975   -en (29%), -er (5%), -ht (4%)
+        Italian-Cucina   0.0389   0.0328    -re (6%), -to (6%), -li (5%)
+         Latin-Apicius   0.0367   0.0284  -um (16%), -es (10%), -is (8%)
+          Latin-Caesar   0.0308   0.2007  -nt (32%), -it (19%), -ur (13%)
+         Latin-Erasmus   0.0584   0.0546   -um (12%), -us (9%), -is (6%)
+           Latin-Galen   0.0226   0.0218    -um (8%), -is (5%), -us (5%)
+           Latin-Pliny   0.0634   0.0983   -ii (19%), -um (7%), -is (6%)
+         Latin-Vulgate   0.0140   0.0986  -um (14%), -us (10%), -is (6%)
+
+  NL position NMI mean: 0.0732 ± 0.0475, VMS z=0.38
+
+========================================================================
+CRITICAL ASSESSMENT
+========================================================================
+
+Test A — Ending Inventory Shape:
+  See above for z-scores.  Key question: is VMS ending entropy
+  within the range of NL inflectional languages?
+
+Test B — Paradigm Structure:
+  Key question: is VMS paradigm fill (endings per stem) compatible
+  with Latin's declension-class restriction?
+
+Test C — Stem-Ending MI:
+  Key question: does VMS stem-ending coupling match Latin?
+  Low NMI = low stem-specificity (any stem takes any ending).
+  High NMI = strong stem-class restriction.
+
+Test D — Ending Sequence Grammar:
+  Key question: does VMS ending→ending MI and agreement pattern
+  match Latin case-sequence grammar?
+
+Test E — Line-Position Sensitivity:
+  Key question: does any NL language show comparable line-position
+  × ending skew?  VMS null-suffix clustering at line ends is the
+  strongest known positional effect.
+
+Results saved to C:\projects\voynich_slop\results\phase104_latin_ending_test.json
