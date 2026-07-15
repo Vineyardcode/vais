@@ -1,0 +1,9 @@
+{
+ "phase96_cluster_hchar": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 4.4,
+  "stdout_bytes": 5484,
+  "results_files_touched": []
+ }
+}

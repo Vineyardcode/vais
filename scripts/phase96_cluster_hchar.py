@@ -16,7 +16,8 @@ import os, re, glob, math, json
 from collections import Counter, defaultdict
 import random
 
-FOLIO_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "folios")
+_PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+FOLIO_DIR = os.path.join(_PROJECT_DIR, "folios")
 
 # ============================================================
 # 1. EVA PARSING (from Phase 85/86)
@@ -445,9 +446,9 @@ def compute_nl_fingerprint(filepath, label):
 
 # Gather all source language files
 source_files = []
-latin_dir = r"c:\projects\voynich_slop\data\latin_texts"
-vern_dir = r"c:\projects\voynich_slop\data\vernacular_texts"
-czech_dir = r"c:\projects\voynich_slop\data\czech_bible_kralice"
+latin_dir = os.path.join(_PROJECT_DIR, "data", "latin_texts")
+vern_dir = os.path.join(_PROJECT_DIR, "data", "vernacular_texts")
+czech_dir = os.path.join(_PROJECT_DIR, "data", "czech_bible_kralice")
 
 for f in glob.glob(os.path.join(latin_dir, "*.txt")):
     source_files.append((f, "Latin:" + os.path.basename(f).replace('.txt','')))
@@ -465,7 +466,7 @@ if czech_files:
         except:
             pass
     if len(czech_text) > 1000:
-        czech_tmpfile = r"c:\projects\voynich_slop\data\czech_bible_kralice\czech_sample.tmp"
+        czech_tmpfile = os.path.join(czech_dir, "czech_sample.tmp")
         with open(czech_tmpfile, 'w', encoding='utf-8') as fh:
             fh.write(czech_text)
         source_files.append((czech_tmpfile, "Czech:bible_kralice"))
@@ -528,7 +529,7 @@ for nl_fp in sorted(nl_fps, key=lambda x: x['label']):
 
 # Clean temp file
 try:
-    os.remove(r"c:\projects\voynich_slop\data\czech_bible_kralice\czech_sample.tmp")
+    os.remove(os.path.join(_PROJECT_DIR, "data", "czech_bible_kralice", "czech_sample.tmp"))
 except:
     pass
 
