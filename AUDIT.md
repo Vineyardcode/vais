@@ -108,3 +108,26 @@ recorded below when complete. Expected deltas: phase72/73 wall-clock
 - `common.mean_word_length` would crash if numpy were absent (np=None
   guard exists but function doesn't check). All scripts require numpy;
   noted, not changed.
+
+### A4 — CRITICAL(wrong results): phase74 star annotations silently discarded
+- **File**: `scripts/phase74_paragraph_framing.py` (`parse_folio_extended`).
+- **Wrong** (original-author bug, pre-dating the refactor — survived because
+  the refactor only verified behavior *preservation*): three defects in the
+  paragraph state machine —
+  (1) closing a previous paragraph on a new `@P`/`<%>` start passed
+  `current_star` (the NEW paragraph's annotation) to the OLD paragraph and
+  then nulled it, so both paragraphs lost/mixed their stars;
+  (2) the normal multi-line close path read
+  `getattr(parse_folio_extended, '_last_star', None)` — a function attribute
+  never assigned anywhere — so every multi-line paragraph's star was None;
+  (3) the EOF close hardcoded None.
+- **Symptom**: Test 7a (star type vs frame type) degenerated to a single
+  "NONE stars (n=285)" bucket; section 11's Star column was all "none".
+  Detected by cross-consistency: phase71 independently reports 14 DARK-star
+  paragraphs from the same transcription.
+- **Fix**: all three close sites pass the star captured at the paragraph's
+  start (`para_star`, initialized None, cleared on close).
+- **Before/after**: 7a BEFORE = `NONE (n=285)` only; AFTER = `DARK (n=14)`,
+  `DOTTED (n=129)`, remaining groups populated — DARK n=14 now agrees
+  exactly with phase71's independent count (cross-consistency restored).
+  `baseline/` + `golden/` refreshed for this test with this justification.

@@ -261,10 +261,25 @@ Frame type distribution (initial → final):
   7a. STAR TYPE vs FRAME TYPE CORRELATION
   ─────────────────────────────────────────────────────────────────
 
-    NONE stars (n=285):
-      Init:   p=54%, t=21%, k=7%
-      Final:  y=45%, n=23%, r=9%
-      Frames: p→y=68, p→n=33, t→y=31, p→r=19, t→n=17
+    DARK stars (n=14):
+      Init:   p=36%, t=29%, q=21%
+      Final:  n=50%, y=36%, r=7%
+      Frames: p→y=3, q→n=3, t→y=2, d→n=1, t→r=1
+
+    DOTTED stars (n=129):
+      Init:   p=56%, t=20%, k=8%
+      Final:  y=40%, n=26%, l=9%
+      Frames: p→y=28, p→n=18, t→y=10, t→n=9, p→r=8
+
+    LIGHT stars (n=136):
+      Init:   p=56%, t=20%, k=7%
+      Final:  y=49%, n=19%, r=11%
+      Frames: p→y=35, t→y=17, p→n=14, p→r=11, t→n=7
+
+    NONE stars (n=5):
+      Init:   t=60%, p=20%, o=20%
+      Final:  y=80%, l=20%
+      Frames: t→y=2, t→l=1, p→y=1, o→y=1
 
   7b. SEQUENTIAL FRAME PATTERNS (recipe section)
   ─────────────────────────────────────────────────────────────────
@@ -437,36 +452,36 @@ Frame type distribution (initial → final):
 ===========================================================================
 
     # Folio    Star                       Init Final   Nw First word       Last word       
-    1 f103r    none                          p     y   50 pchedal          chedaraly       
-    2 f103r    none                          p     n   30 podar            shkaiin         
-    3 f103r    none                          d     n   21 dshol            aiin            
-    4 f103r    none                          p     r   28 polchedy         olor            
-    5 f103r    none                          p     l   29 pcheam           shol            
-    6 f103r    none                          t     r   31 tchoky           lotor           
-    7 f103r    none                          q     y   28 qokechy          chedy           
-    8 f103r    none                          p     n   28 pcholkchdy       oraiin          
-    9 f103r    none                          q     n   14 qokeey           cheedalaiin     
-   10 f103r    none                          q     y   18 qoker            qokeey          
-   11 f103r    none                          p     y   24 pchedy           oteey           
-   12 f103r    none                          q     l   27 qokeey           chalal          
-   13 f103r    none                          t     y   16 tar              otshedy         
-   14 f103r    none                          q     n   28 qokeedy          oloraiin        
-   15 f103r    none                          p     n   37 polarar          cheosaiin       
-   16 f103r    none                          p     y   35 pocharal         shedy           
-   17 f103r    none                          p     y   25 pchedal          qoty            
-   18 f103r    none                          d     y   62 daroal           otedy           
-   19 f103v    none                          p     y   43 pol              ykeedy          
-   20 f103v    none                          s     y   24 sal              olshey          
-   21 f103v    none                          t     y   32 teeol            kedy            
-   22 f103v    none                          q     r   28 qokeedy          chealainor      
-   23 f103v    none                          p     n   70 pol              oteaiin         
-   24 f103v    none                          f     y   29 fcheody          qokeey          
-   25 f103v    none                          p     m   29 pchear           olkam           
-   26 f103v    none                          y     y   36 yshey            olshedy         
-   27 f103v    none                          o     y   17 olshey           keechy          
-   28 f103v    none                          p     y   39 polshor          chsaly          
-   29 f103v    none                          o     y   40 orain            chary           
-   30 f103v    none                          p     y   39 pcheor           okeey           
+    1 f103r    Dark star, 7 points           p     y   50 pchedal          chedaraly       
+    2 f103r    Light star, 8 points          p     n   30 podar            shkaiin         
+    3 f103r    Dark star, 8 points           d     n   21 dshol            aiin            
+    4 f103r    Light star, 7 points          p     r   28 polchedy         olor            
+    5 f103r    Light star, 7 points          p     l   29 pcheam           shol            
+    6 f103r    Dark star, 7 points           t     r   31 tchoky           lotor           
+    7 f103r    Light star, 7 points          q     y   28 qokechy          chedy           
+    8 f103r    Light star, 8 points          p     n   28 pcholkchdy       oraiin          
+    9 f103r    Dark star, 7 points           q     n   14 qokeey           cheedalaiin     
+   10 f103r    Light star, 7 points          q     y   18 qoker            qokeey          
+   11 f103r    Darkish star, 7 points        p     y   24 pchedy           oteey           
+   12 f103r    Light star, 8 points          q     l   27 qokeey           chalal          
+   13 f103r    Light star, 7 points          t     y   16 tar              otshedy         
+   14 f103r    Dark star, 7 points           q     n   28 qokeedy          oloraiin        
+   15 f103r    Light star, 8 points          p     n   37 polarar          cheosaiin       
+   16 f103r    Light star, 8 points          p     y   35 pocharal         shedy           
+   17 f103r    Light star, 8 points, ta      p     y   25 pchedal          qoty            
+   18 f103r    Light star, 8 points          d     y   62 daroal           otedy           
+   19 f103v    Light star, dotted, 7 po      p     y   43 pol              ykeedy          
+   20 f103v    Light star, 7 points          s     y   24 sal              olshey          
+   21 f103v    Light star, dotted, 7 po      t     y   32 teeol            kedy            
+   22 f103v    Light star, 7 points          q     r   28 qokeedy          chealainor      
+   23 f103v    Light star, dotted, 7 po      p     n   70 pol              oteaiin         
+   24 f103v    Light star, dotted, 6 po      f     y   29 fcheody          qokeey          
+   25 f103v    Light star, 8 points          p     m   29 pchear           olkam           
+   26 f103v    Light star, dotted, 8 po      y     y   36 yshey            olshedy         
+   27 f103v    Light star, 8 points          o     y   17 olshey           keechy          
+   28 f103v    Light star, dotted, 7 po      p     y   39 polshor          chsaly          
+   29 f103v    Light star, 8 points          o     y   40 orain            chary           
+   30 f103v    Lightish star, 7 points       p     y   39 pcheor           okeey           
 
 ===========================================================================
 12. PARAGRAPH-ENDING WORD PAIRS (last 2 words)

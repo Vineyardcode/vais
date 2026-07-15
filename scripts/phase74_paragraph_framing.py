@@ -96,6 +96,7 @@ def parse_folio_extended(filepath):
     all_words = []
     all_lines = []
     current_star = None
+    para_star = None
     current_para_words = []
     current_para_tags = []
     current_para_is_open = False
@@ -155,14 +156,16 @@ def parse_folio_extended(filepath):
         }
         all_lines.append(line_info)
 
-        # If a new paragraph starts, close the previous one if open
+        # If a new paragraph starts, close the previous one if open.
+        # AUDIT A4: the previous paragraph's star lives in para_star; the
+        # star seen just before THIS line (current_star) annotates the NEW
+        # paragraph and must not be consumed or nulled here.
         if is_para_start and current_para_is_open and current_para_words:
             # Close previous paragraph (no explicit <$> ending)
             _finalize_para(paragraphs, current_para_words, current_para_tags,
-                           current_star, False)
+                           para_star, False)
             current_para_words = []
             current_para_tags = []
-            current_star = None
 
         if is_para_start:
             current_para_is_open = True
@@ -176,17 +179,22 @@ def parse_folio_extended(filepath):
             current_para_tags.append(tag)
 
         if is_para_end and current_para_is_open and current_para_words:
+            # AUDIT A4: was `para_star if is_para_start else
+            # getattr(parse_folio_extended, '_last_star', None)` — the
+            # function attribute was never set anywhere, so every multi-line
+            # paragraph lost its star annotation (test 7a degenerated to
+            # "all NONE"). The captured para_star is correct in both cases.
             _finalize_para(paragraphs, current_para_words, current_para_tags,
-                           para_star if is_para_start else getattr(parse_folio_extended, '_last_star', None),
-                           True)
+                           para_star, True)
             current_para_is_open = False
             current_para_words = []
             current_para_tags = []
+            para_star = None
 
-    # Close any remaining open paragraph
+    # Close any remaining open paragraph (star captured at its start)
     if current_para_is_open and current_para_words:
         _finalize_para(paragraphs, current_para_words, current_para_tags,
-                       None, False)
+                       para_star, False)
 
     return paragraphs, all_words, all_lines
 
