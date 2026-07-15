@@ -1,146 +1,146 @@
-======================================================================
-PHASE 59: FORWARD MODELING — WHAT REPRODUCES THE VMS FINGERPRINT?
-======================================================================
-
-Loading VMS corpus...
-  VMS: 36259 words, 160710 chars
-  H(c)=3.857, H(c|p)=2.471, H-ratio=0.641, IC=0.0817
-
-Loading Phase 58 reference data...
-  Loaded 7 NL references for normalization
-
-Fetching Italian source text (Dante, Inferno)...
-  Italian: 50000 words, 8196 types
-  H(c)=4.121, H(c|p)=3.459, IC=0.0693, MWL=3.93
-
-======================================================================
-59a) ENCODING SCHEME RESULTS
-======================================================================
-
-  Encoding: 1: Syllabic (α=25)
-    α= 25  H(c)=4.600  H(c|p)=4.207  H-rat=0.915  IC=0.0424  MWL=3.41
-    TTR=0.2754  Hapax=0.666  V-fr=0.520  V/C-alt=0.587
-    Distance from VMS: raw=7.420, z-normalized=44.115
-
-  Encoding: 2: Onset-rime (10+12)
-    α= 22  H(c)=4.290  H(c|p)=3.401  H-rat=0.793  IC=0.0579  MWL=3.54
-    TTR=0.2584  Hapax=0.654  V-fr=0.500  V/C-alt=0.784
-    Distance from VMS: raw=10.152, z-normalized=24.812
-
-  Encoding: 3a: Verbose positional
-    α= 13  H(c)=3.557  H(c|p)=2.453  H-rat=0.690  IC=0.0914  MWL=5.74
-    TTR=0.2699  Hapax=0.659  V-fr=0.385  V/C-alt=0.698
-    Distance from VMS: raw=19.020, z-normalized=8.309
-
-  Encoding: 3b: Verbose context-vary
-    α= 13  H(c)=3.641  H(c|p)=3.220  H-rat=0.884  IC=0.0823  MWL=5.74
-    TTR=0.2699  Hapax=0.659  V-fr=0.538  V/C-alt=0.672
-    Distance from VMS: raw=19.036, z-normalized=22.504
-
-  Encoding: 4: Abbreviation (top200)
-    α= 22  H(c)=4.296  H(c|p)=3.955  H-rat=0.921  IC=0.0555  MWL=4.00
-    TTR=0.2745  Hapax=0.664  V-fr=0.455  V/C-alt=0.635
-    Distance from VMS: raw=10.168, z-normalized=37.041
-
-  Encoding: 5: Simple substitution
-    α= 35  H(c)=4.121  H(c|p)=3.459  H-rat=0.839  IC=0.0693  MWL=3.93
-    TTR=0.2754  Hapax=0.666  V-fr=0.371  V/C-alt=0.736
-    Distance from VMS: raw=3.332, z-normalized=24.145
-
-  Encoding: 6a: Syllabic tuned (α=30)
-    α= 30  H(c)=4.840  H(c|p)=4.326  H-rat=0.894  IC=0.0364  MWL=3.37
-    TTR=0.2754  Hapax=0.666  V-fr=0.433  V/C-alt=0.594
-    Distance from VMS: raw=3.312, z-normalized=47.254
-
-  Encoding: 6b: Syllabic tuned (α=26, 50% short)
-    α= 26  H(c)=4.640  H(c|p)=4.234  H-rat=0.912  IC=0.0417  MWL=3.39
-    TTR=0.2754  Hapax=0.666  V-fr=0.423  V/C-alt=0.589
-    Distance from VMS: raw=6.497, z-normalized=44.545
-
-  Encoding: 6c: Syllabic (α=20, longer codes)
-    α= 20  H(c)=4.303  H(c|p)=3.940  H-rat=0.916  IC=0.0513  MWL=5.06
-    TTR=0.2754  Hapax=0.666  V-fr=0.450  V/C-alt=0.567
-    Distance from VMS: raw=12.104, z-normalized=37.600
-
-======================================================================
-59b) DISTANCE RANKING (z-score normalized)
-======================================================================
-
-Rank  Scheme                                 Dist  H(c|p)   H-rat      IC     MWL    α
---------------------------------------------------------------------------------------
-1     3a: Verbose positional                8.309   2.453   0.690  0.0914    5.74   13
-2     3b: Verbose context-vary             22.504   3.220   0.884  0.0823    5.74   13
-3     5: Simple substitution               24.145   3.459   0.839  0.0693    3.93   35
-4     Italian (source)                     24.145   3.459   0.839  0.0693    3.93   35
-5     2: Onset-rime (10+12)                24.812   3.401   0.793  0.0579    3.54   22
-6     4: Abbreviation (top200)             37.041   3.955   0.921  0.0555    4.00   22
-7     6c: Syllabic (α=20, longer codes)    37.600   3.940   0.916  0.0513    5.06   20
-8     1: Syllabic (α=25)                   44.115   4.207   0.915  0.0424    3.41   25
-9     6b: Syllabic tuned (α=26, 50% short)  44.545   4.234   0.912  0.0417    3.39   26
-10    6a: Syllabic tuned (α=30)            47.254   4.326   0.894  0.0364    3.37   30
-
-      VMS (TARGET)                          0.000   2.471   0.641  0.0817    4.94   32
-
-======================================================================
-59c) FEATURE-BY-FEATURE: BEST ENCODING vs VMS
-======================================================================
-
-Best match: 3a: Verbose positional (distance 8.309)
-
-Feature               VMS     Best    Delta  NL mean    VMS z   Best z
---------------------------------------------------------------------
-  alpha_size       32.000   13.000  -19.000   30.714    +0.28    -3.86
-  H_char            3.857    3.557   -0.300    4.133    -3.47    -7.22
-  H_cond            2.471    2.453   -0.018    3.482   -19.87   -20.22
-  H_ratio           0.641    0.690   +0.049    0.843   -12.63    -9.57
-  IC                0.082    0.091   +0.010    0.069    +5.90   +10.57
-  mean_wlen         4.935    5.737   +0.802    4.636    +0.35    +1.28
-  TTR               0.269    0.270   +0.001    0.282    -0.14    -0.13
-  hapax_ratio       0.658    0.659   +0.001    0.641    +0.26    +0.28
-  V_frac            0.281    0.385   +0.103    0.332    -1.06    +1.11
-  VC_alt            0.732    0.698   -0.034    0.708    +0.65    -0.28
-
-======================================================================
-59d) CRITICAL ASSESSMENT
-======================================================================
-
-Closest to VMS:  3a: Verbose positional (d=8.309)
-Farthest:        6a: Syllabic tuned (α=30) (d=47.254)
-
-Features the best encoding MATCHES (Δz < 2):
-  TTR: Δz = 0.02
-  hapax_ratio: Δz = 0.02
-  H_cond: Δz = 0.36
-  mean_wlen: Δz = 0.94
-  VC_alt: Δz = 0.94
-
-Features the best encoding MISSES (Δz ≥ 2):
-  IC: Δz = 4.67 (VMS z=5.9, best z=10.6, too high)
-  alpha_size: Δz = 4.14 (VMS z=0.3, best z=-3.9, too low)
-  H_char: Δz = 3.76 (VMS z=-3.5, best z=-7.2, too low)
-  H_ratio: Δz = 3.06 (VMS z=-12.6, best z=-9.6, too high)
-  V_frac: Δz = 2.17 (VMS z=-1.1, best z=1.1, too high)
-
-======================================================================
-59e) SYNTHESIS
-======================================================================
-
-Schemes closer to VMS than nearest NL (Spanish, d=2.30):
-  NONE — no encoding scheme gets closer to VMS than Spanish does
-
-The critical metric — H(char|prev):
-  VMS target:     2.471
-  3a: Verbose positional              2.453
-  3b: Verbose context-vary            3.220
-  5: Simple substitution              3.459
-  Italian (source)                    3.459
-  2: Onset-rime (10+12)               3.401
-  NL mean:        3.482
-
-INTERPRETATION:
-
-  NO encoding scheme closely matches VMS. Either the
-  encoding process is more exotic than tested, or EVA
-  transcription artifacts dominate the fingerprint.
-
-Results saved to results\phase59_output.json
+======================================================================
+PHASE 59: FORWARD MODELING — WHAT REPRODUCES THE VMS FINGERPRINT?
+======================================================================
+
+Loading VMS corpus...
+  VMS: 36259 words, 160710 chars
+  H(c)=3.857, H(c|p)=2.471, H-ratio=0.641, IC=0.0817
+
+Loading Phase 58 reference data...
+  Loaded 7 NL references for normalization
+
+Fetching Italian source text (Dante, Inferno)...
+  Italian: 50000 words, 8196 types
+  H(c)=4.121, H(c|p)=3.459, IC=0.0693, MWL=3.93
+
+======================================================================
+59a) ENCODING SCHEME RESULTS
+======================================================================
+
+  Encoding: 1: Syllabic (α=25)
+    α= 25  H(c)=4.600  H(c|p)=4.207  H-rat=0.915  IC=0.0424  MWL=3.41
+    TTR=0.2754  Hapax=0.666  V-fr=0.520  V/C-alt=0.587
+    Distance from VMS: raw=7.420, z-normalized=44.115
+
+  Encoding: 2: Onset-rime (10+12)
+    α= 22  H(c)=4.290  H(c|p)=3.401  H-rat=0.793  IC=0.0579  MWL=3.54
+    TTR=0.2584  Hapax=0.654  V-fr=0.500  V/C-alt=0.784
+    Distance from VMS: raw=10.152, z-normalized=24.812
+
+  Encoding: 3a: Verbose positional
+    α= 13  H(c)=3.557  H(c|p)=2.453  H-rat=0.690  IC=0.0914  MWL=5.74
+    TTR=0.2699  Hapax=0.659  V-fr=0.385  V/C-alt=0.698
+    Distance from VMS: raw=19.020, z-normalized=8.309
+
+  Encoding: 3b: Verbose context-vary
+    α= 13  H(c)=3.641  H(c|p)=3.220  H-rat=0.884  IC=0.0823  MWL=5.74
+    TTR=0.2699  Hapax=0.659  V-fr=0.538  V/C-alt=0.672
+    Distance from VMS: raw=19.036, z-normalized=22.504
+
+  Encoding: 4: Abbreviation (top200)
+    α= 22  H(c)=4.296  H(c|p)=3.955  H-rat=0.921  IC=0.0555  MWL=4.00
+    TTR=0.2745  Hapax=0.664  V-fr=0.455  V/C-alt=0.635
+    Distance from VMS: raw=10.168, z-normalized=37.041
+
+  Encoding: 5: Simple substitution
+    α= 35  H(c)=4.121  H(c|p)=3.459  H-rat=0.839  IC=0.0693  MWL=3.93
+    TTR=0.2754  Hapax=0.666  V-fr=0.371  V/C-alt=0.736
+    Distance from VMS: raw=3.332, z-normalized=24.145
+
+  Encoding: 6a: Syllabic tuned (α=30)
+    α= 30  H(c)=4.840  H(c|p)=4.326  H-rat=0.894  IC=0.0364  MWL=3.37
+    TTR=0.2754  Hapax=0.666  V-fr=0.433  V/C-alt=0.594
+    Distance from VMS: raw=3.312, z-normalized=47.254
+
+  Encoding: 6b: Syllabic tuned (α=26, 50% short)
+    α= 26  H(c)=4.640  H(c|p)=4.234  H-rat=0.912  IC=0.0417  MWL=3.39
+    TTR=0.2754  Hapax=0.666  V-fr=0.423  V/C-alt=0.589
+    Distance from VMS: raw=6.497, z-normalized=44.545
+
+  Encoding: 6c: Syllabic (α=20, longer codes)
+    α= 20  H(c)=4.303  H(c|p)=3.940  H-rat=0.916  IC=0.0513  MWL=5.06
+    TTR=0.2754  Hapax=0.666  V-fr=0.450  V/C-alt=0.567
+    Distance from VMS: raw=12.104, z-normalized=37.600
+
+======================================================================
+59b) DISTANCE RANKING (z-score normalized)
+======================================================================
+
+Rank  Scheme                                 Dist  H(c|p)   H-rat      IC     MWL    α
+--------------------------------------------------------------------------------------
+1     3a: Verbose positional                8.309   2.453   0.690  0.0914    5.74   13
+2     3b: Verbose context-vary             22.504   3.220   0.884  0.0823    5.74   13
+3     5: Simple substitution               24.145   3.459   0.839  0.0693    3.93   35
+4     Italian (source)                     24.145   3.459   0.839  0.0693    3.93   35
+5     2: Onset-rime (10+12)                24.812   3.401   0.793  0.0579    3.54   22
+6     4: Abbreviation (top200)             37.041   3.955   0.921  0.0555    4.00   22
+7     6c: Syllabic (α=20, longer codes)    37.600   3.940   0.916  0.0513    5.06   20
+8     1: Syllabic (α=25)                   44.115   4.207   0.915  0.0424    3.41   25
+9     6b: Syllabic tuned (α=26, 50% short)  44.545   4.234   0.912  0.0417    3.39   26
+10    6a: Syllabic tuned (α=30)            47.254   4.326   0.894  0.0364    3.37   30
+
+      VMS (TARGET)                          0.000   2.471   0.641  0.0817    4.94   32
+
+======================================================================
+59c) FEATURE-BY-FEATURE: BEST ENCODING vs VMS
+======================================================================
+
+Best match: 3a: Verbose positional (distance 8.309)
+
+Feature               VMS     Best    Delta  NL mean    VMS z   Best z
+--------------------------------------------------------------------
+  alpha_size       32.000   13.000  -19.000   30.714    +0.28    -3.86
+  H_char            3.857    3.557   -0.300    4.133    -3.47    -7.22
+  H_cond            2.471    2.453   -0.018    3.482   -19.87   -20.22
+  H_ratio           0.641    0.690   +0.049    0.843   -12.63    -9.57
+  IC                0.082    0.091   +0.010    0.069    +5.90   +10.57
+  mean_wlen         4.935    5.737   +0.802    4.636    +0.35    +1.28
+  TTR               0.269    0.270   +0.001    0.282    -0.14    -0.13
+  hapax_ratio       0.658    0.659   +0.001    0.641    +0.26    +0.28
+  V_frac            0.281    0.385   +0.103    0.332    -1.06    +1.11
+  VC_alt            0.732    0.698   -0.034    0.708    +0.65    -0.28
+
+======================================================================
+59d) CRITICAL ASSESSMENT
+======================================================================
+
+Closest to VMS:  3a: Verbose positional (d=8.309)
+Farthest:        6a: Syllabic tuned (α=30) (d=47.254)
+
+Features the best encoding MATCHES (Δz < 2):
+  TTR: Δz = 0.02
+  hapax_ratio: Δz = 0.02
+  H_cond: Δz = 0.36
+  mean_wlen: Δz = 0.94
+  VC_alt: Δz = 0.94
+
+Features the best encoding MISSES (Δz ≥ 2):
+  IC: Δz = 4.67 (VMS z=5.9, best z=10.6, too high)
+  alpha_size: Δz = 4.14 (VMS z=0.3, best z=-3.9, too low)
+  H_char: Δz = 3.76 (VMS z=-3.5, best z=-7.2, too low)
+  H_ratio: Δz = 3.06 (VMS z=-12.6, best z=-9.6, too high)
+  V_frac: Δz = 2.17 (VMS z=-1.1, best z=1.1, too high)
+
+======================================================================
+59e) SYNTHESIS
+======================================================================
+
+Schemes closer to VMS than nearest NL (Spanish, d=2.30):
+  NONE — no encoding scheme gets closer to VMS than Spanish does
+
+The critical metric — H(char|prev):
+  VMS target:     2.471
+  3a: Verbose positional              2.453
+  3b: Verbose context-vary            3.220
+  5: Simple substitution              3.459
+  Italian (source)                    3.459
+  2: Onset-rime (10+12)               3.401
+  NL mean:        3.482
+
+INTERPRETATION:
+
+  NO encoding scheme closely matches VMS. Either the
+  encoding process is more exotic than tested, or EVA
+  transcription artifacts dominate the fingerprint.
+
+Results saved to results\phase59_output.json

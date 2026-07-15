@@ -1,204 +1,204 @@
-Loading tokens...
-  36259 tokens loaded
-
-======================================================================
-36a: RAW PREFIX TEST — DO WORD-STARTS PREDICT WORD-ENDS?
-======================================================================
-
-If 'ch', 'sh', etc. are real prefixes, raw words starting with them
-should have different ENDING distributions than other words.
-This test uses ZERO parsing — just raw string starts/ends.
-
-Baseline raw suffix distribution (N=36259):
-  dy    :  17.0%
-  y     :  21.5%
-  aiin  :   8.6%
-  ain   :   3.9%
-  iin   :   2.9%
-  in    :   0.5%
-  ar    :   6.0%
-  or    :   4.1%
-  al    :   4.5%
-  ol    :   7.1%
-  ∅     :  23.9%
-
-Prefix      N mean_pos  %init |    dy     y  aiin   iin    ol     ∅ | cosine
-  ch       5791    0.510  15.9% | 19.5 31.2  5.1  0.3 11.7 13.6 | 0.926
-  sh       3186    0.424  26.6% | 24.3 32.0  3.9  0.4 10.9 15.6 | 0.927
-  l        1439    0.552  16.2% | 26.4 17.4  5.8  0.9  5.6 27.7 | 0.965
-  qo       5338    0.475  18.6% | 24.0 23.9  9.6  0.4  9.1  9.4 | 0.906
-  o        8898    0.519  18.2% | 15.9 18.9  8.9  1.1  5.2 30.3 | 0.984
-  d        3476    0.525  25.1% |  6.8 16.9 24.3  1.1  4.9 16.6 | 0.844
-  y        2147    0.399  37.0% | 14.4 18.2  7.9  0.5  4.8 38.6 | 0.946
-  q        5435    0.475  18.6% | 23.9 24.1  9.6  0.4  9.0  9.5 | 0.907
-  NONE     5887    0.530  20.8% | 10.4 12.6  5.0 14.1  4.1 39.9 | 0.863
-
-  Chi-squared: does raw prefix predict raw suffix?
-  Chi2 = 11459.2, df = 100, Cramér's V = 0.178
-  (V > 0.1 = moderate association, V > 0.3 = strong)
-
-======================================================================
-36b: RAW SUFFIX TEST — DO WORD-ENDS PREDICT WORD-STARTS?
-======================================================================
-
-Suffix      N mean_pos |    ch    sh    qo     o     d     l  NONE
-  aiin     3127    0.476 |  9.5  3.9 16.4 25.4 26.8  2.7  8.8
-  ain      1415    0.483 |  9.3  3.0 28.3 27.4 15.0  4.0  8.6
-  iin      4173    0.486 |  7.6  3.3 12.9 21.4 20.7  2.3 25.8
-  in       5784    0.485 |  7.7  3.1 16.3 22.3 18.6  2.6 23.7
-  ar       2177    0.517 | 14.7  5.3 16.2 27.1 17.0  3.2  9.5
-  or       1493    0.404 | 26.8 11.4 12.2 19.4  4.7  4.7  5.8
-  al       1649    0.545 | 13.7  5.1 19.2 29.2 17.3  2.2  9.4
-  ol       2570    0.428 | 26.3 13.5 18.9 17.9  2.3  3.2  6.8
-  dy       6152    0.505 | 18.3 12.6 20.8 23.0  3.5  6.2  9.5
-  y       13938    0.502 | 21.1 12.9 18.4 22.2  5.5  4.5  9.2
-  ∅        8648    0.529 |  9.1  5.7  5.8 31.2  6.2  4.6 26.7
-
-======================================================================
-36c: IS 'o' A REAL GRAM PREFIX OR JUST A STEM-INITIAL LETTER?
-======================================================================
-
-Tokens that change when removing 'o' and 'd' from gram prefix: 9671 (26.7%)
-
-Old gram='o' tokens (6737):
-  New deriv prefixes: {'': 6737}
-  Top new stems: [('o', 1933), ('oe', 1530), ('ol', 421), ('ole', 220), ('oeo', 197), ('od', 189), ('or', 113), ('olche', 99), ('oed', 97), ('oam', 90)]
-  Stems starting with 'o': 6737 (100.0%)
-
-Old gram='d' tokens (2936):
-  New deriv prefixes: {'': 2936}
-  Top new stems: [('d', 1775), ('dair', 128), ('dam', 88), ('dch', 87), ('dal', 86), ('dche', 75), ('dshe', 72), ('dar', 35), ('de', 34), ('dy', 29)]
-  Stems starting with 'd': 2936 (100.0%)
-
-  Parser-free suffix comparison:
-  o-start    N= 5698: dy=16.3%, y=22.6%, mean_pos=0.519
-  d-start    N= 3168: dy=6.7%, y=17.6%, mean_pos=0.524
-  e-start    N= 1304: dy=33.6%, y=31.9%, mean_pos=0.477
-
-  Does removing 'o' change deriv prefix counts?
-    ∅: 27077 → 28108 (+1031)
-    ch: 4680 → 4467 (-213)
-    sh: 2741 → 2615 (-126)
-    l: 1122 → 627 (-495)
-    lch: 447 → 317 (-130)
-    lsh: 192 → 125 (-67)
-
-======================================================================
-36d: PARSE ORDER SENSITIVITY — DOES ORDER MATTER?
-======================================================================
-
-  Order: gram → suffix → deriv (standard)
-    Distinct stems: 1026, top: e(9443)
-    H(gpfx)=1.97, H(deriv)=1.25, H(sfx)=2.79
-
-  Order: deriv → suffix → gram
-    Distinct stems: 1116, top: e(4879)
-    H(gpfx)=1.20, H(deriv)=1.28, H(sfx)=2.90
-
-  Order: suffix → gram → deriv
-    Distinct stems: 1040, top: e(5685)
-    H(gpfx)=1.17, H(deriv)=1.25, H(sfx)=2.99
-
-  Order: suffix → deriv → gram
-    Distinct stems: 1116, top: e(4879)
-    H(gpfx)=1.20, H(deriv)=1.07, H(sfx)=2.99
-
-  Order: gram → deriv → suffix
-    Distinct stems: 1026, top: e(9443)
-    H(gpfx)=1.97, H(deriv)=1.51, H(sfx)=2.60
-
-  Order: deriv → gram → suffix
-    Distinct stems: 1104, top: e(8791)
-    H(gpfx)=2.02, H(deriv)=1.28, H(sfx)=2.61
-
-  Stem stability (vs standard order 'gsd'):
-    dsg: 15801 tokens differ (43.6%)
-    sgd: 11566 tokens differ (31.9%)
-    sdg: 13299 tokens differ (36.7%)
-    gds: 3257 tokens differ (9.0%)
-    dgs: 5187 tokens differ (14.3%)
-
-  Paradigm fill (core stems × deriv prefixes) per order:
-    gsd: 102/114 cells filled (89.5%)
-    dsg: 104/114 cells filled (91.2%)
-    sdg: 97/114 cells filled (85.1%)
-
-======================================================================
-36e: MINIMAL PARSER — STRIP ONLY GALLOWS + E-CHAINS + SUFFIXES
-======================================================================
-
-Minimal parser: 2107 distinct roots
-Top 30 roots:
-  Root          Count     % | Suffixes                                 | mean_pos
-  o              2549  7.0% | aiin=17%, y=14%, ar=13%, al=12%          |    0.524
-  qo             2276  6.3% | y=19%, aiin=18%, ain=16%, al=12%         |    0.482
-  d              2150  5.9% | aiin=38%, ar=16%, y=15%, al=12%          |    0.539
-  che            2023  5.6% | y=44%, dy=31%, ol=10%, or=6%             |    0.500
-  qoe            1786  4.9% | dy=52%, y=38%, ol=5%, or=3%              |    0.449
-  oe             1532  4.2% | dy=42%, y=41%, ol=8%, or=4%              |    0.496
-  she            1522  4.2% | y=42%, dy=36%, ol=9%, ∅=4%               |    0.438
-  ch             1512  4.2% | ol=27%, y=27%, or=14%, dy=12%            |    0.494
-  ol             1231  3.4% | ∅=66%, aiin=8%, y=8%, dy=4%              |    0.534
-  y              1051  2.9% | ∅=56%, aiin=11%, y=8%, ar=8%             |    0.484
-  a               915  2.5% | iin=78%, in=19%, ∅=1%, y=1%              |    0.531
-  e               853  2.4% | y=42%, dy=37%, ol=12%, or=4%             |    0.475
-  s               769  2.1% | ∅=42%, aiin=17%, ar=10%, ain=8%          |    0.438
-  or              686  1.9% | ∅=84%, aiin=6%, y=3%, ain=2%             |    0.470
-  ar              668  1.8% | ∅=85%, y=4%, al=4%, ar=2%                |    0.568
-  sh              650  1.8% | y=32%, ol=27%, or=15%, dy=8%             |    0.400
-  cho             515  1.4% | y=32%, dy=21%, ∅=17%, aiin=7%            |    0.505
-  l               514  1.4% | ∅=38%, aiin=12%, ar=9%, or=9%            |    0.572
-  al              452  1.2% | ∅=75%, y=8%, dy=4%, ol=2%                |    0.602
-  ye              344  0.9% | y=45%, dy=39%, ol=9%, or=4%              |    0.381
-  r               325  0.9% | ∅=50%, aiin=20%, ain=6%, ol=6%           |    0.589
-  cheo            290  0.8% | dy=39%, ∅=37%, y=13%, aiin=3%            |    0.480
-  sho             274  0.8% | ∅=46%, dy=20%, y=17%, aiin=4%            |    0.355
-  ole             220  0.6% | dy=47%, y=45%, ol=5%, or=2%              |    0.444
-  od              215  0.6% | aiin=42%, ar=17%, ∅=12%, al=11%          |    0.499
-  lche            204  0.6% | dy=60%, y=33%, ol=4%, or=1%              |    0.481
-  le              200  0.6% | dy=55%, y=36%, ol=4%, or=2%              |    0.510
-  oeo             197  0.5% | dy=57%, ∅=36%, y=4%, al=1%               |    0.463
-  q               190  0.5% | ol=83%, or=11%, y=3%, aiin=2%            |    0.422
-  ched            170  0.5% | aiin=27%, ar=24%, ∅=16%, al=14%          |    0.514
-
-  Minimal root → parsed decomposition mapping:
-  o            → gpfx=∅    deriv=∅    stem=o       (N=2549)
-  qo           → gpfx=∅    deriv=∅    stem=qo      (N=2276)
-  d            → gpfx=∅    deriv=∅    stem=d       (N=2150)
-  che          → gpfx=∅    deriv=ch   stem=e       (N=2023)
-  qoe          → gpfx=q    deriv=∅    stem=oe      (N=1786)
-  oe           → gpfx=∅    deriv=∅    stem=oe      (N=1532)
-  she          → gpfx=∅    deriv=sh   stem=e       (N=1522)
-  ch           → gpfx=∅    deriv=∅    stem=ch      (N=1512)
-  ol           → gpfx=∅    deriv=∅    stem=ol      (N=1231)
-  y            → gpfx=∅    deriv=∅    stem=y       (N=1051)
-  a            → gpfx=∅    deriv=∅    stem=a       (N=915)
-  e            → gpfx=∅    deriv=∅    stem=e       (N=853)
-  s            → gpfx=∅    deriv=∅    stem=s       (N=769)
-  or           → gpfx=∅    deriv=∅    stem=or      (N=686)
-  ar           → gpfx=∅    deriv=∅    stem=ar      (N=668)
-  sh           → gpfx=∅    deriv=∅    stem=sh      (N=650)
-  cho          → gpfx=∅    deriv=ch   stem=o       (N=515)
-  l            → gpfx=∅    deriv=∅    stem=l       (N=514)
-  al           → gpfx=∅    deriv=∅    stem=al      (N=452)
-  ye           → gpfx=∅    deriv=∅    stem=ye      (N=344)
-
-======================================================================
-36f: PARSED vs RAW — HOW MUCH STRUCTURE COMES FROM PARSING?
-======================================================================
-
-  H(suffix) = 2.791 bits
-  H(suffix | parsed_prefix) = 2.604 bits
-  H(suffix | raw_prefix) = 2.796 bits
-  Reduction from parsed prefix: 0.187 bits (6.7%)
-  Reduction from raw prefix:    -0.005 bits (-0.2%)
-  → If both reductions are similar, parsing doesn't add fictional structure
-
-  H(prefix) = 3.051 bits
-  H(prefix | parsed_suffix) = 2.864 bits
-  H(prefix | raw_suffix) = 2.731 bits
-  Reduction from parsed suffix: 0.187 bits
-  Reduction from raw suffix:    0.320 bits
-
-
-[Phase 36 Complete]
+Loading tokens...
+  36259 tokens loaded
+
+======================================================================
+36a: RAW PREFIX TEST — DO WORD-STARTS PREDICT WORD-ENDS?
+======================================================================
+
+If 'ch', 'sh', etc. are real prefixes, raw words starting with them
+should have different ENDING distributions than other words.
+This test uses ZERO parsing — just raw string starts/ends.
+
+Baseline raw suffix distribution (N=36259):
+  dy    :  17.0%
+  y     :  21.5%
+  aiin  :   8.6%
+  ain   :   3.9%
+  iin   :   2.9%
+  in    :   0.5%
+  ar    :   6.0%
+  or    :   4.1%
+  al    :   4.5%
+  ol    :   7.1%
+  ∅     :  23.9%
+
+Prefix      N mean_pos  %init |    dy     y  aiin   iin    ol     ∅ | cosine
+  ch       5791    0.510  15.9% | 19.5 31.2  5.1  0.3 11.7 13.6 | 0.926
+  sh       3186    0.424  26.6% | 24.3 32.0  3.9  0.4 10.9 15.6 | 0.927
+  l        1439    0.552  16.2% | 26.4 17.4  5.8  0.9  5.6 27.7 | 0.965
+  qo       5338    0.475  18.6% | 24.0 23.9  9.6  0.4  9.1  9.4 | 0.906
+  o        8898    0.519  18.2% | 15.9 18.9  8.9  1.1  5.2 30.3 | 0.984
+  d        3476    0.525  25.1% |  6.8 16.9 24.3  1.1  4.9 16.6 | 0.844
+  y        2147    0.399  37.0% | 14.4 18.2  7.9  0.5  4.8 38.6 | 0.946
+  q        5435    0.475  18.6% | 23.9 24.1  9.6  0.4  9.0  9.5 | 0.907
+  NONE     5887    0.530  20.8% | 10.4 12.6  5.0 14.1  4.1 39.9 | 0.863
+
+  Chi-squared: does raw prefix predict raw suffix?
+  Chi2 = 11459.2, df = 100, Cramér's V = 0.178
+  (V > 0.1 = moderate association, V > 0.3 = strong)
+
+======================================================================
+36b: RAW SUFFIX TEST — DO WORD-ENDS PREDICT WORD-STARTS?
+======================================================================
+
+Suffix      N mean_pos |    ch    sh    qo     o     d     l  NONE
+  aiin     3127    0.476 |  9.5  3.9 16.4 25.4 26.8  2.7  8.8
+  ain      1415    0.483 |  9.3  3.0 28.3 27.4 15.0  4.0  8.6
+  iin      4173    0.486 |  7.6  3.3 12.9 21.4 20.7  2.3 25.8
+  in       5784    0.485 |  7.7  3.1 16.3 22.3 18.6  2.6 23.7
+  ar       2177    0.517 | 14.7  5.3 16.2 27.1 17.0  3.2  9.5
+  or       1493    0.404 | 26.8 11.4 12.2 19.4  4.7  4.7  5.8
+  al       1649    0.545 | 13.7  5.1 19.2 29.2 17.3  2.2  9.4
+  ol       2570    0.428 | 26.3 13.5 18.9 17.9  2.3  3.2  6.8
+  dy       6152    0.505 | 18.3 12.6 20.8 23.0  3.5  6.2  9.5
+  y       13938    0.502 | 21.1 12.9 18.4 22.2  5.5  4.5  9.2
+  ∅        8648    0.529 |  9.1  5.7  5.8 31.2  6.2  4.6 26.7
+
+======================================================================
+36c: IS 'o' A REAL GRAM PREFIX OR JUST A STEM-INITIAL LETTER?
+======================================================================
+
+Tokens that change when removing 'o' and 'd' from gram prefix: 9671 (26.7%)
+
+Old gram='o' tokens (6737):
+  New deriv prefixes: {'': 6737}
+  Top new stems: [('o', 1933), ('oe', 1530), ('ol', 421), ('ole', 220), ('oeo', 197), ('od', 189), ('or', 113), ('olche', 99), ('oed', 97), ('oam', 90)]
+  Stems starting with 'o': 6737 (100.0%)
+
+Old gram='d' tokens (2936):
+  New deriv prefixes: {'': 2936}
+  Top new stems: [('d', 1775), ('dair', 128), ('dam', 88), ('dch', 87), ('dal', 86), ('dche', 75), ('dshe', 72), ('dar', 35), ('de', 34), ('dy', 29)]
+  Stems starting with 'd': 2936 (100.0%)
+
+  Parser-free suffix comparison:
+  o-start    N= 5698: dy=16.3%, y=22.6%, mean_pos=0.519
+  d-start    N= 3168: dy=6.7%, y=17.6%, mean_pos=0.524
+  e-start    N= 1304: dy=33.6%, y=31.9%, mean_pos=0.477
+
+  Does removing 'o' change deriv prefix counts?
+    ∅: 27077 → 28108 (+1031)
+    ch: 4680 → 4467 (-213)
+    sh: 2741 → 2615 (-126)
+    l: 1122 → 627 (-495)
+    lch: 447 → 317 (-130)
+    lsh: 192 → 125 (-67)
+
+======================================================================
+36d: PARSE ORDER SENSITIVITY — DOES ORDER MATTER?
+======================================================================
+
+  Order: gram → suffix → deriv (standard)
+    Distinct stems: 1026, top: e(9443)
+    H(gpfx)=1.97, H(deriv)=1.25, H(sfx)=2.79
+
+  Order: deriv → suffix → gram
+    Distinct stems: 1116, top: e(4879)
+    H(gpfx)=1.20, H(deriv)=1.28, H(sfx)=2.90
+
+  Order: suffix → gram → deriv
+    Distinct stems: 1040, top: e(5685)
+    H(gpfx)=1.17, H(deriv)=1.25, H(sfx)=2.99
+
+  Order: suffix → deriv → gram
+    Distinct stems: 1116, top: e(4879)
+    H(gpfx)=1.20, H(deriv)=1.07, H(sfx)=2.99
+
+  Order: gram → deriv → suffix
+    Distinct stems: 1026, top: e(9443)
+    H(gpfx)=1.97, H(deriv)=1.51, H(sfx)=2.60
+
+  Order: deriv → gram → suffix
+    Distinct stems: 1104, top: e(8791)
+    H(gpfx)=2.02, H(deriv)=1.28, H(sfx)=2.61
+
+  Stem stability (vs standard order 'gsd'):
+    dsg: 15801 tokens differ (43.6%)
+    sgd: 11566 tokens differ (31.9%)
+    sdg: 13299 tokens differ (36.7%)
+    gds: 3257 tokens differ (9.0%)
+    dgs: 5187 tokens differ (14.3%)
+
+  Paradigm fill (core stems × deriv prefixes) per order:
+    gsd: 102/114 cells filled (89.5%)
+    dsg: 104/114 cells filled (91.2%)
+    sdg: 97/114 cells filled (85.1%)
+
+======================================================================
+36e: MINIMAL PARSER — STRIP ONLY GALLOWS + E-CHAINS + SUFFIXES
+======================================================================
+
+Minimal parser: 2107 distinct roots
+Top 30 roots:
+  Root          Count     % | Suffixes                                 | mean_pos
+  o              2549  7.0% | aiin=17%, y=14%, ar=13%, al=12%          |    0.524
+  qo             2276  6.3% | y=19%, aiin=18%, ain=16%, al=12%         |    0.482
+  d              2150  5.9% | aiin=38%, ar=16%, y=15%, al=12%          |    0.539
+  che            2023  5.6% | y=44%, dy=31%, ol=10%, or=6%             |    0.500
+  qoe            1786  4.9% | dy=52%, y=38%, ol=5%, or=3%              |    0.449
+  oe             1532  4.2% | dy=42%, y=41%, ol=8%, or=4%              |    0.496
+  she            1522  4.2% | y=42%, dy=36%, ol=9%, ∅=4%               |    0.438
+  ch             1512  4.2% | ol=27%, y=27%, or=14%, dy=12%            |    0.494
+  ol             1231  3.4% | ∅=66%, aiin=8%, y=8%, dy=4%              |    0.534
+  y              1051  2.9% | ∅=56%, aiin=11%, y=8%, ar=8%             |    0.484
+  a               915  2.5% | iin=78%, in=19%, ∅=1%, y=1%              |    0.531
+  e               853  2.4% | y=42%, dy=37%, ol=12%, or=4%             |    0.475
+  s               769  2.1% | ∅=42%, aiin=17%, ar=10%, ain=8%          |    0.438
+  or              686  1.9% | ∅=84%, aiin=6%, y=3%, ain=2%             |    0.470
+  ar              668  1.8% | ∅=85%, y=4%, al=4%, ar=2%                |    0.568
+  sh              650  1.8% | y=32%, ol=27%, or=15%, dy=8%             |    0.400
+  cho             515  1.4% | y=32%, dy=21%, ∅=17%, aiin=7%            |    0.505
+  l               514  1.4% | ∅=38%, aiin=12%, ar=9%, or=9%            |    0.572
+  al              452  1.2% | ∅=75%, y=8%, dy=4%, ol=2%                |    0.602
+  ye              344  0.9% | y=45%, dy=39%, ol=9%, or=4%              |    0.381
+  r               325  0.9% | ∅=50%, aiin=20%, ain=6%, ol=6%           |    0.589
+  cheo            290  0.8% | dy=39%, ∅=37%, y=13%, aiin=3%            |    0.480
+  sho             274  0.8% | ∅=46%, dy=20%, y=17%, aiin=4%            |    0.355
+  ole             220  0.6% | dy=47%, y=45%, ol=5%, or=2%              |    0.444
+  od              215  0.6% | aiin=42%, ar=17%, ∅=12%, al=11%          |    0.499
+  lche            204  0.6% | dy=60%, y=33%, ol=4%, or=1%              |    0.481
+  le              200  0.6% | dy=55%, y=36%, ol=4%, or=2%              |    0.510
+  oeo             197  0.5% | dy=57%, ∅=36%, y=4%, al=1%               |    0.463
+  q               190  0.5% | ol=83%, or=11%, y=3%, aiin=2%            |    0.422
+  ched            170  0.5% | aiin=27%, ar=24%, ∅=16%, al=14%          |    0.514
+
+  Minimal root → parsed decomposition mapping:
+  o            → gpfx=∅    deriv=∅    stem=o       (N=2549)
+  qo           → gpfx=∅    deriv=∅    stem=qo      (N=2276)
+  d            → gpfx=∅    deriv=∅    stem=d       (N=2150)
+  che          → gpfx=∅    deriv=ch   stem=e       (N=2023)
+  qoe          → gpfx=q    deriv=∅    stem=oe      (N=1786)
+  oe           → gpfx=∅    deriv=∅    stem=oe      (N=1532)
+  she          → gpfx=∅    deriv=sh   stem=e       (N=1522)
+  ch           → gpfx=∅    deriv=∅    stem=ch      (N=1512)
+  ol           → gpfx=∅    deriv=∅    stem=ol      (N=1231)
+  y            → gpfx=∅    deriv=∅    stem=y       (N=1051)
+  a            → gpfx=∅    deriv=∅    stem=a       (N=915)
+  e            → gpfx=∅    deriv=∅    stem=e       (N=853)
+  s            → gpfx=∅    deriv=∅    stem=s       (N=769)
+  or           → gpfx=∅    deriv=∅    stem=or      (N=686)
+  ar           → gpfx=∅    deriv=∅    stem=ar      (N=668)
+  sh           → gpfx=∅    deriv=∅    stem=sh      (N=650)
+  cho          → gpfx=∅    deriv=ch   stem=o       (N=515)
+  l            → gpfx=∅    deriv=∅    stem=l       (N=514)
+  al           → gpfx=∅    deriv=∅    stem=al      (N=452)
+  ye           → gpfx=∅    deriv=∅    stem=ye      (N=344)
+
+======================================================================
+36f: PARSED vs RAW — HOW MUCH STRUCTURE COMES FROM PARSING?
+======================================================================
+
+  H(suffix) = 2.791 bits
+  H(suffix | parsed_prefix) = 2.604 bits
+  H(suffix | raw_prefix) = 2.796 bits
+  Reduction from parsed prefix: 0.187 bits (6.7%)
+  Reduction from raw prefix:    -0.005 bits (-0.2%)
+  → If both reductions are similar, parsing doesn't add fictional structure
+
+  H(prefix) = 3.051 bits
+  H(prefix | parsed_suffix) = 2.864 bits
+  H(prefix | raw_suffix) = 2.731 bits
+  Reduction from parsed suffix: 0.187 bits
+  Reduction from raw suffix:    0.320 bits
+
+
+[Phase 36 Complete]

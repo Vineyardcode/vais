@@ -1,257 +1,257 @@
-============================================================================
-PHASE 92 — a↔e MINIMAL PAIR & SUBSTITUTION ANALYSIS
-============================================================================
-
-  QUESTION: Is the zodiac a/e inverse (r = -0.99) caused by
-  PARAMETRIC SUBSTITUTION or VOCABULARY STRATIFICATION?
-
-  If substitution: same word frames appear with a↔e swapped
-  If vocabulary: spring and autumn signs use different word types
-
-────────────────────────────────────────────────────────────────────────────
-STEP 1: LOAD DATA
-────────────────────────────────────────────────────────────────────────────
-
-  Total VMS tokens: 38,934
-  Unique word types: 8,188
-
-  Zodiac label words: 349
-    Aries         :  42 words  [SPRING]
-    Taurus        :  45 words  [SPRING]
-    Gemini        :  31 words  [SPRING]
-    Cancer        :  41 words  [SPRING]
-    Leo           :  34 words  [AUTUMN]
-    Virgo         :  31 words  [AUTUMN]
-    Libra         :  30 words  [AUTUMN]
-    Scorpio       :  30 words  [AUTUMN]
-    Sagittarius   :  30 words  [AUTUMN]
-    Pisces        :  35 words  [SPRING]
-
-────────────────────────────────────────────────────────────────────────────
-STEP 2: CORPUS-WIDE a↔e MINIMAL PAIRS
-────────────────────────────────────────────────────────────────────────────
-
-  a↔e minimal pairs found: 101
-
-  Top 25 most frequent a↔e pairs:
-    a-variant              freq  e-variant              freq  pos
-    ────────────────────  ─────  ────────────────────  ─────  ───
-    chady                     2  chedy                   524    1
-    shay                      3  shey                    285    1
-    qokady                    3  qokedy                  273    3
-    dal                     249  del                       1    1
-    cheay                     1  cheey                   197    2
-    qokar                   181  qoker                     2    3
-    okady                     2  okedy                   117    2
-    qokay                     2  qokey                   109    3
-    okeady                    1  okeedy                  108    3
-    qotady                    1  qotedy                   91    3
-    char                     85  cher                      2    1
-    qotar                    73  qoter                     1    3
-    okay                      2  okey                     65    2
-    otay                      1  otey                     62    2
-    otam                     55  otem                      1    2
-    cthay                     1  cthey                    50    1
-    chas                      2  ches                     45    1
-    cheas                     2  chees                    38    2
-    shar                     37  sher                      1    1
-    ay                       10  ey                       20    0
-    kal                      27  kel                       1    1
-    sha                       2  she                      26    1
-    qotay                     1  qotey                    24    3
-    ytady                     1  ytedy                    23    2
-    chad                      1  ched                     19    1
-
-  Comparison with other glyph substitution pairs:
-    Pair       Count
-    ────────  ──────
-    a/e          101
-    a/o          762
-    e/o          626
-    a/i           40
-    e/i           12
-    o/i           25
-    a/y          124
-    e/y          153
-    d/l          365
-    d/r          259
-    k/l          263
-    k/r          165
-    ch/sh         614
-
-────────────────────────────────────────────────────────────────────────────
-STEP 3: ZODIAC LABEL MINIMAL PAIRS — SPRING vs AUTUMN
-────────────────────────────────────────────────────────────────────────────
-
-  Spring label types: 162
-  Autumn label types: 136
-  Overlap (shared types): 17
-
-  Cross-hemisphere a↔e pairs (a in spring, e in autumn): 0
-  Reversed pairs (e in spring, a in autumn): 0
-
-  Within-spring a↔e pairs: 0
-  Within-autumn a↔e pairs: 0
-
-────────────────────────────────────────────────────────────────────────────
-STEP 4: WORD FRAME ANALYSIS (SLOT2 replaced with _)
-────────────────────────────────────────────────────────────────────────────
-
-  Spring label frames: 162 unique
-  Autumn label frames: 125 unique
-  Shared frames: 19
-
-  SHARED FRAMES (same structure, different SLOT2):
-    Frame                           Spring words                    Autumn words                  
-    ──────────────────────────────  ──────────────────────────────  ──────────────────────────────
-    o.t|_.l|y                       otaly, otaly                    otaly, otaly, otaly, otaly    
-      SLOT2 content — Spring: a=2 e=0  Autumn: a=4 e=0
-    o.t|_.l                         otal, otal, otal, otal          otal                          
-      SLOT2 content — Spring: a=4 e=0  Autumn: a=1 e=0
-    o.k|_.y                         okeey, okeey                    okeey, okey, okeey            
-      SLOT2 content — Spring: a=0 e=2  Autumn: a=0 e=3
-    _.r                             ar, ar, ar, ar                  ar                            
-      SLOT2 content — Spring: a=4 e=0  Autumn: a=1 e=0
-    o.k|y                           oky                             oky, oky, oky                 
-      SLOT2 content — Spring: a=0 e=0  Autumn: a=0 e=0
-    _.r|y                           ary, ary, ary                   eery                          
-      SLOT2 content — Spring: a=3 e=0  Autumn: a=0 e=1
-    o.k|_.l|y                       okaly, okaly                    okaly, okaly                  
-      SLOT2 content — Spring: a=2 e=0  Autumn: a=2 e=0
-    o.k|_.l                         okal, okal                      okal, okal                    
-      SLOT2 content — Spring: a=2 e=0  Autumn: a=2 e=0
-    o.k|_.o.l|y                     okeoly                          okeoly, okeeoly               
-      SLOT2 content — Spring: a=0 e=1  Autumn: a=0 e=2
-    o.t|_.y                         oteey                           oteey, otey                   
-      SLOT2 content — Spring: a=0 e=1  Autumn: a=0 e=2
-    o.k|_.l|d.y                     okaldy                          okaldy                        
-      SLOT2 content — Spring: a=1 e=0  Autumn: a=1 e=0
-    d|_.i.i.n                       daiin                           daiin                         
-      SLOT2 content — Spring: a=1 e=0  Autumn: a=1 e=0
-    y.p|_.i.i.n                     ypaiin                          ypaiin                        
-      SLOT2 content — Spring: a=1 e=0  Autumn: a=1 e=0
-    o.k|y.d.y                       okydy                           okydy                         
-      SLOT2 content — Spring: a=0 e=0  Autumn: a=0 e=0
-    o|_.s|_.i.i.n                   oeeesaiin                       oeesaiin                      
-      SLOT2 content — Spring: a=1 e=1  Autumn: a=1 e=1
-    ch.y                            chy                             chy                           
-      SLOT2 content — Spring: a=0 e=0  Autumn: a=0 e=0
-    o.k|_.m                         okam                            okam                          
-      SLOT2 content — Spring: a=1 e=0  Autumn: a=1 e=0
-    o|_.o.d|_.i.i.n                 oeeodaiin                       oeeodaiin                     
-      SLOT2 content — Spring: a=1 e=1  Autumn: a=1 e=1
-    o.k|o.d.y                       okody                           okody                         
-      SLOT2 content — Spring: a=0 e=0  Autumn: a=0 e=0
-
-  Spring-only frames: 143
-  Autumn-only frames: 106
-
-  STRATIFICATION QUOTIENT: 0.825
-    (1.0 = completely different vocabulary; 0.0 = identical frames)
-
-────────────────────────────────────────────────────────────────────────────
-STEP 5: SLOT2 FILLER DISTRIBUTION BY HEMISPHERE
-────────────────────────────────────────────────────────────────────────────
-
-  Filler       Spring    Spr%   Autumn    Aut%    Ratio
-  ──────────  ───────  ──────  ───────  ──────  ───────
-  a               205   85.4%       59   36.4%     3.47
-  e                23    9.6%       56   34.6%     0.41
-  ee                9    3.8%       41   25.3%     0.22
-  eee               3    1.2%        5    3.1%     0.60
-  q                 0    0.0%        1    0.6%     0.00
-
-────────────────────────────────────────────────────────────────────────────
-STEP 6: PER-SIGN SLOT2 a-FRACTION
-────────────────────────────────────────────────────────────────────────────
-
-  For each sign, what fraction of SLOT2 fillers contain 'a'
-  (vs 'e' or 'q')? If substitution, this should track the
-  a% pattern from Phase 91.
-
-  Sign            S2 total   S2 a   S2 e   S2 q   a-frac   e-frac
-  ──────────────  ────────  ─────  ─────  ─────  ───────  ───────
-  Aries                 60     44     16      0   73.3%   26.7%
-  Taurus                51     49      2      0   96.1%    3.9%
-  Gemini                40     36      4      0   90.0%   10.0%
-  Cancer                52     42     10      0   80.8%   19.2%
-  Leo                   35     19     16      0   54.3%   45.7%
-  Virgo                 41     15     26      0   36.6%   63.4%
-  Libra                 26      7     19      0   26.9%   73.1%
-  Scorpio               30     10     20      0   33.3%   66.7%
-  Sagittarius           30      8     21      1   26.7%   70.0%
-  Pisces                37     34      3      0   91.9%    8.1%
-
-  r(SLOT2-a-frac, SLOT2-e-frac) across signs: -0.9994
-
-  → The a/e shift is ENTIRELY at SLOT2.
-    This means the glyph-level pattern from Phase 91 is
-    a SLOT2-specific phenomenon — 'a' and 'e' are being
-    chosen differently at the front-vowel position across signs.
-
-────────────────────────────────────────────────────────────────────────────
-STEP 7: NL BASELINE — VOWEL MINIMAL PAIRS
-────────────────────────────────────────────────────────────────────────────
-
-  Corpus                      Types    a/e    a/o    e/o    a/i    e/i  a/e per 1K
-  ─────────────────────────  ──────  ─────  ─────  ─────  ─────  ─────  ──────────
-  VMS (EVA glyphs)             8188    101    762    626     40     12        12.3
-  Italian (cucina)             5185    237    233    184    136    216        45.7
-  Latin (Caesar)               9938    100    266     52    283    239        10.1
-  Latin (Apicius)              5811    118    124     53    156    174        20.3
-  Latin (Galen)                9745    175    173     74    211    219        18.0
-
-────────────────────────────────────────────────────────────────────────────
-STEP 8: PERMUTATION TEST — CROSS-HEMISPHERE a↔e ALIGNMENT
-────────────────────────────────────────────────────────────────────────────
-
-  a↔e pairs where BOTH variants appear in zodiac labels: 0
-  No pairs to test.
-
-────────────────────────────────────────────────────────────────────────────
-STEP 9: SYNTHESIS & VERDICT
-────────────────────────────────────────────────────────────────────────────
-
-  KEY EVIDENCE:
-
-  1. Word type overlap (spring ∩ autumn): 17
-     Spring types: 162, Autumn types: 136
-     Jaccard similarity: 0.060
-
-  2. Frame overlap: 19 / 268 frames shared (7.1%)
-     Stratification quotient: 0.825
-
-  3. Zodiac a↔e pairs (both variants in labels): 0
-     Cross-hemisphere aligned: 0
-
-  4. SLOT2 explains pattern: True
-     r(S2 a-frac, S2 e-frac) = -0.9994
-
-  5. Shared frames with a↔e swapping: 3 / 19
-
-  ★ VERDICT: VOCABULARY STRATIFICATION
-
-    Spring and autumn zodiac signs use ALMOST ENTIRELY DIFFERENT
-    word types (Jaccard = 0.06, stratification = 0.83).
-    ZERO a↔e minimal pairs exist across hemispheres.
-
-    The a/e inverse correlation arises because spring signs use
-    word types that have 'a' in SLOT2, while autumn signs use
-    word types that have 'e'/'ee' in SLOT2 — but these are
-    DIFFERENT WORDS, not the same words with a↔e swapped.
-
-    SLOT2 fully accounts for the pattern (r = -0.9994).
-    This could be:
-    — NL vocabulary stratification (different topics → different words)
-    — A constructed vocabulary with SLOT2 as a design axis
-    — Morphological variation (prefixes/suffixes carrying 'a' vs 'e')
-
-  REVISED CONFIDENCES (Phase 92):
-  - Natural language: 89% → 91% (UP — vocabulary stratification
-    is normal in topical NL text)
-  - Systematic a/e axis: 80% → 80% (pattern is real but linguistic)
-  - Galenic medical encoding: 10% → 5% (DOWN — no parametric substitution)
-  - Positional verbose cipher: 45% → 40% (DOWN)
-
-  Results saved to C:\projects\voynich_slop\results\phase92_ae_minimal_pairs.txt
-  JSON saved to C:\projects\voynich_slop\results\phase92_ae_minimal_pairs.json
+============================================================================
+PHASE 92 — a↔e MINIMAL PAIR & SUBSTITUTION ANALYSIS
+============================================================================
+
+  QUESTION: Is the zodiac a/e inverse (r = -0.99) caused by
+  PARAMETRIC SUBSTITUTION or VOCABULARY STRATIFICATION?
+
+  If substitution: same word frames appear with a↔e swapped
+  If vocabulary: spring and autumn signs use different word types
+
+────────────────────────────────────────────────────────────────────────────
+STEP 1: LOAD DATA
+────────────────────────────────────────────────────────────────────────────
+
+  Total VMS tokens: 38,934
+  Unique word types: 8,188
+
+  Zodiac label words: 349
+    Aries         :  42 words  [SPRING]
+    Taurus        :  45 words  [SPRING]
+    Gemini        :  31 words  [SPRING]
+    Cancer        :  41 words  [SPRING]
+    Leo           :  34 words  [AUTUMN]
+    Virgo         :  31 words  [AUTUMN]
+    Libra         :  30 words  [AUTUMN]
+    Scorpio       :  30 words  [AUTUMN]
+    Sagittarius   :  30 words  [AUTUMN]
+    Pisces        :  35 words  [SPRING]
+
+────────────────────────────────────────────────────────────────────────────
+STEP 2: CORPUS-WIDE a↔e MINIMAL PAIRS
+────────────────────────────────────────────────────────────────────────────
+
+  a↔e minimal pairs found: 101
+
+  Top 25 most frequent a↔e pairs:
+    a-variant              freq  e-variant              freq  pos
+    ────────────────────  ─────  ────────────────────  ─────  ───
+    chady                     2  chedy                   524    1
+    shay                      3  shey                    285    1
+    qokady                    3  qokedy                  273    3
+    dal                     249  del                       1    1
+    cheay                     1  cheey                   197    2
+    qokar                   181  qoker                     2    3
+    okady                     2  okedy                   117    2
+    qokay                     2  qokey                   109    3
+    okeady                    1  okeedy                  108    3
+    qotady                    1  qotedy                   91    3
+    char                     85  cher                      2    1
+    qotar                    73  qoter                     1    3
+    okay                      2  okey                     65    2
+    otay                      1  otey                     62    2
+    otam                     55  otem                      1    2
+    cthay                     1  cthey                    50    1
+    chas                      2  ches                     45    1
+    cheas                     2  chees                    38    2
+    shar                     37  sher                      1    1
+    ay                       10  ey                       20    0
+    kal                      27  kel                       1    1
+    sha                       2  she                      26    1
+    qotay                     1  qotey                    24    3
+    ytady                     1  ytedy                    23    2
+    chad                      1  ched                     19    1
+
+  Comparison with other glyph substitution pairs:
+    Pair       Count
+    ────────  ──────
+    a/e          101
+    a/o          762
+    e/o          626
+    a/i           40
+    e/i           12
+    o/i           25
+    a/y          124
+    e/y          153
+    d/l          365
+    d/r          259
+    k/l          263
+    k/r          165
+    ch/sh         614
+
+────────────────────────────────────────────────────────────────────────────
+STEP 3: ZODIAC LABEL MINIMAL PAIRS — SPRING vs AUTUMN
+────────────────────────────────────────────────────────────────────────────
+
+  Spring label types: 162
+  Autumn label types: 136
+  Overlap (shared types): 17
+
+  Cross-hemisphere a↔e pairs (a in spring, e in autumn): 0
+  Reversed pairs (e in spring, a in autumn): 0
+
+  Within-spring a↔e pairs: 0
+  Within-autumn a↔e pairs: 0
+
+────────────────────────────────────────────────────────────────────────────
+STEP 4: WORD FRAME ANALYSIS (SLOT2 replaced with _)
+────────────────────────────────────────────────────────────────────────────
+
+  Spring label frames: 162 unique
+  Autumn label frames: 125 unique
+  Shared frames: 19
+
+  SHARED FRAMES (same structure, different SLOT2):
+    Frame                           Spring words                    Autumn words                  
+    ──────────────────────────────  ──────────────────────────────  ──────────────────────────────
+    o.t|_.l|y                       otaly, otaly                    otaly, otaly, otaly, otaly    
+      SLOT2 content — Spring: a=2 e=0  Autumn: a=4 e=0
+    o.t|_.l                         otal, otal, otal, otal          otal                          
+      SLOT2 content — Spring: a=4 e=0  Autumn: a=1 e=0
+    o.k|_.y                         okeey, okeey                    okeey, okey, okeey            
+      SLOT2 content — Spring: a=0 e=2  Autumn: a=0 e=3
+    _.r                             ar, ar, ar, ar                  ar                            
+      SLOT2 content — Spring: a=4 e=0  Autumn: a=1 e=0
+    o.k|y                           oky                             oky, oky, oky                 
+      SLOT2 content — Spring: a=0 e=0  Autumn: a=0 e=0
+    _.r|y                           ary, ary, ary                   eery                          
+      SLOT2 content — Spring: a=3 e=0  Autumn: a=0 e=1
+    o.k|_.l|y                       okaly, okaly                    okaly, okaly                  
+      SLOT2 content — Spring: a=2 e=0  Autumn: a=2 e=0
+    o.k|_.l                         okal, okal                      okal, okal                    
+      SLOT2 content — Spring: a=2 e=0  Autumn: a=2 e=0
+    o.k|_.o.l|y                     okeoly                          okeoly, okeeoly               
+      SLOT2 content — Spring: a=0 e=1  Autumn: a=0 e=2
+    o.t|_.y                         oteey                           oteey, otey                   
+      SLOT2 content — Spring: a=0 e=1  Autumn: a=0 e=2
+    o.k|_.l|d.y                     okaldy                          okaldy                        
+      SLOT2 content — Spring: a=1 e=0  Autumn: a=1 e=0
+    d|_.i.i.n                       daiin                           daiin                         
+      SLOT2 content — Spring: a=1 e=0  Autumn: a=1 e=0
+    y.p|_.i.i.n                     ypaiin                          ypaiin                        
+      SLOT2 content — Spring: a=1 e=0  Autumn: a=1 e=0
+    o.k|y.d.y                       okydy                           okydy                         
+      SLOT2 content — Spring: a=0 e=0  Autumn: a=0 e=0
+    o|_.s|_.i.i.n                   oeeesaiin                       oeesaiin                      
+      SLOT2 content — Spring: a=1 e=1  Autumn: a=1 e=1
+    ch.y                            chy                             chy                           
+      SLOT2 content — Spring: a=0 e=0  Autumn: a=0 e=0
+    o.k|_.m                         okam                            okam                          
+      SLOT2 content — Spring: a=1 e=0  Autumn: a=1 e=0
+    o|_.o.d|_.i.i.n                 oeeodaiin                       oeeodaiin                     
+      SLOT2 content — Spring: a=1 e=1  Autumn: a=1 e=1
+    o.k|o.d.y                       okody                           okody                         
+      SLOT2 content — Spring: a=0 e=0  Autumn: a=0 e=0
+
+  Spring-only frames: 143
+  Autumn-only frames: 106
+
+  STRATIFICATION QUOTIENT: 0.825
+    (1.0 = completely different vocabulary; 0.0 = identical frames)
+
+────────────────────────────────────────────────────────────────────────────
+STEP 5: SLOT2 FILLER DISTRIBUTION BY HEMISPHERE
+────────────────────────────────────────────────────────────────────────────
+
+  Filler       Spring    Spr%   Autumn    Aut%    Ratio
+  ──────────  ───────  ──────  ───────  ──────  ───────
+  a               205   85.4%       59   36.4%     3.47
+  e                23    9.6%       56   34.6%     0.41
+  ee                9    3.8%       41   25.3%     0.22
+  eee               3    1.2%        5    3.1%     0.60
+  q                 0    0.0%        1    0.6%     0.00
+
+────────────────────────────────────────────────────────────────────────────
+STEP 6: PER-SIGN SLOT2 a-FRACTION
+────────────────────────────────────────────────────────────────────────────
+
+  For each sign, what fraction of SLOT2 fillers contain 'a'
+  (vs 'e' or 'q')? If substitution, this should track the
+  a% pattern from Phase 91.
+
+  Sign            S2 total   S2 a   S2 e   S2 q   a-frac   e-frac
+  ──────────────  ────────  ─────  ─────  ─────  ───────  ───────
+  Aries                 60     44     16      0   73.3%   26.7%
+  Taurus                51     49      2      0   96.1%    3.9%
+  Gemini                40     36      4      0   90.0%   10.0%
+  Cancer                52     42     10      0   80.8%   19.2%
+  Leo                   35     19     16      0   54.3%   45.7%
+  Virgo                 41     15     26      0   36.6%   63.4%
+  Libra                 26      7     19      0   26.9%   73.1%
+  Scorpio               30     10     20      0   33.3%   66.7%
+  Sagittarius           30      8     21      1   26.7%   70.0%
+  Pisces                37     34      3      0   91.9%    8.1%
+
+  r(SLOT2-a-frac, SLOT2-e-frac) across signs: -0.9994
+
+  → The a/e shift is ENTIRELY at SLOT2.
+    This means the glyph-level pattern from Phase 91 is
+    a SLOT2-specific phenomenon — 'a' and 'e' are being
+    chosen differently at the front-vowel position across signs.
+
+────────────────────────────────────────────────────────────────────────────
+STEP 7: NL BASELINE — VOWEL MINIMAL PAIRS
+────────────────────────────────────────────────────────────────────────────
+
+  Corpus                      Types    a/e    a/o    e/o    a/i    e/i  a/e per 1K
+  ─────────────────────────  ──────  ─────  ─────  ─────  ─────  ─────  ──────────
+  VMS (EVA glyphs)             8188    101    762    626     40     12        12.3
+  Italian (cucina)             5185    237    233    184    136    216        45.7
+  Latin (Caesar)               9938    100    266     52    283    239        10.1
+  Latin (Apicius)              5811    118    124     53    156    174        20.3
+  Latin (Galen)                9745    175    173     74    211    219        18.0
+
+────────────────────────────────────────────────────────────────────────────
+STEP 8: PERMUTATION TEST — CROSS-HEMISPHERE a↔e ALIGNMENT
+────────────────────────────────────────────────────────────────────────────
+
+  a↔e pairs where BOTH variants appear in zodiac labels: 0
+  No pairs to test.
+
+────────────────────────────────────────────────────────────────────────────
+STEP 9: SYNTHESIS & VERDICT
+────────────────────────────────────────────────────────────────────────────
+
+  KEY EVIDENCE:
+
+  1. Word type overlap (spring ∩ autumn): 17
+     Spring types: 162, Autumn types: 136
+     Jaccard similarity: 0.060
+
+  2. Frame overlap: 19 / 268 frames shared (7.1%)
+     Stratification quotient: 0.825
+
+  3. Zodiac a↔e pairs (both variants in labels): 0
+     Cross-hemisphere aligned: 0
+
+  4. SLOT2 explains pattern: True
+     r(S2 a-frac, S2 e-frac) = -0.9994
+
+  5. Shared frames with a↔e swapping: 3 / 19
+
+  ★ VERDICT: VOCABULARY STRATIFICATION
+
+    Spring and autumn zodiac signs use ALMOST ENTIRELY DIFFERENT
+    word types (Jaccard = 0.06, stratification = 0.83).
+    ZERO a↔e minimal pairs exist across hemispheres.
+
+    The a/e inverse correlation arises because spring signs use
+    word types that have 'a' in SLOT2, while autumn signs use
+    word types that have 'e'/'ee' in SLOT2 — but these are
+    DIFFERENT WORDS, not the same words with a↔e swapped.
+
+    SLOT2 fully accounts for the pattern (r = -0.9994).
+    This could be:
+    — NL vocabulary stratification (different topics → different words)
+    — A constructed vocabulary with SLOT2 as a design axis
+    — Morphological variation (prefixes/suffixes carrying 'a' vs 'e')
+
+  REVISED CONFIDENCES (Phase 92):
+  - Natural language: 89% → 91% (UP — vocabulary stratification
+    is normal in topical NL text)
+  - Systematic a/e axis: 80% → 80% (pattern is real but linguistic)
+  - Galenic medical encoding: 10% → 5% (DOWN — no parametric substitution)
+  - Positional verbose cipher: 45% → 40% (DOWN)
+
+  Results saved to C:\projects\voynich_slop\results\phase92_ae_minimal_pairs.txt
+  JSON saved to C:\projects\voynich_slop\results\phase92_ae_minimal_pairs.json

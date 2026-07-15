@@ -1,321 +1,321 @@
-============================================================================
-PHASE 82 — LINE-1 / BODY SEPARATION: TWO ENCODING SUBSYSTEMS?
-============================================================================
-
-  Does paragraph line 1 use a different encoding system from
-  lines 2+? If so, mixing them contaminates all statistics.
-  The h_char anomaly (0.641) might be partially an artifact.
-
-────────────────────────────────────────────────────────────────────────────
-STEP 1: PARSE AND SPLIT CORPUS
-────────────────────────────────────────────────────────────────────────────
-
-  Paragraphs:         789
-  Total words:        36706
-  Line-1 words:       2470 (6.7%)
-  Line-1 (no W1):    2170
-  Body words (L2+):  34236 (93.3%)
-  L1→L2 transitions: 783
-
-  ✓ Split verified: 2470 + 34236 = 36706
-
-────────────────────────────────────────────────────────────────────────────
-STEP 2: FULL FINGERPRINT FOR EACH SUBSET
-────────────────────────────────────────────────────────────────────────────
-
-  Subset                 Tokens    Types   Glyphs GlyphTyp   h_char     H(c)    hapax     wlen      TTR     Zipf       IC
-  ──────────────────── ──────── ──────── ──────── ──────── ──────── ──────── ──────── ──────── ──────── ──────── ────────
-  VMS (all)               36706     7293   166386       31   0.6442   3.8677 
-             0.7075     4.53   0.3766   0.9364  0.08087
-  Line-1 (all)             2470     1384    11829       27   0.6834   3.9237 
-             0.8259     4.79   0.5603   0.5524  0.08047
-  Line-1 (no W1)           2170     1169    10175       27   0.6718   3.9230 
-             0.8148     4.69   0.5387   0.5772  0.08104
-  Body (L2+)              34236     6619   154557       31   0.6393   3.8565 
-             0.7020     4.51   0.3576   0.9517  0.08111
-
-  h_char delta (Body − All): -0.0049
-  h_char delta (L1 − All):   +0.0392
-  h_char delta (L1 − Body):  +0.0442
-
-  INTERPRETATION: If L1 is a different system, removing it should CHANGE
-  the body h_char. VMS whole = 0.6442. If body-only is ≈ same,
-  then L1 is NOT contaminating the measurement.
-
-────────────────────────────────────────────────────────────────────────────
-STEP 3: BOOTSTRAP CONFIDENCE INTERVALS FOR h_char
-────────────────────────────────────────────────────────────────────────────
-
-  L1 has only ~10K glyphs — entropy estimates may be noisy.
-  Bootstrap resampling at word level to estimate uncertainty.
-
-  VMS (all)             mean=0.6613  95%CI=[0.6592, 0.6634]
-  Line-1                mean=0.6945  95%CI=[0.6886, 0.7012]
-  Body (L2+)            mean=0.6568  95%CI=[0.6546, 0.6588]
-
-  L1 CI:   [0.6886, 0.7012]
-  Body CI: [0.6546, 0.6588]
-  Overlap: NO — SIGNIFICANTLY DIFFERENT
-
-────────────────────────────────────────────────────────────────────────────
-STEP 4: SIZE-CONTROLLED NULL MODEL
-────────────────────────────────────────────────────────────────────────────
-
-  CRITICAL: Small samples have upward-biased entropy estimates.
-  To test whether L1's h_char differs from body's, we must compare
-  L1 to random subsamples of body at the SAME SIZE.
-
-  Body subsampled to L1 size (2470 words):
-    Null h_char: mean=0.6514  std=0.0039  95%=[0.6438, 0.6578]
-    Observed L1 h_char: 0.6834
-    z-score: 8.21
-
-  → L1 h_char is SIGNIFICANTLY DIFFERENT from body at same size (|z|>2)
-
-  SIZE BIAS CHECK:
-    Full body h_char:      0.6393
-    Subsampled body h_char: 0.6514
-    Size bias: +0.0121
-    → Significant size effect (upward bias at smaller sample)
-
-────────────────────────────────────────────────────────────────────────────
-STEP 5: GLYPH INVENTORY COMPARISON
-────────────────────────────────────────────────────────────────────────────
-
-  L1 glyph types:     27
-  Body glyph types:   31
-  Shared:             27
-  L1-only:            0: []
-  Body-only:          4: ['b', 'c', 'u', 'v']
-
-  GLYPH FREQUENCY COMPARISON (top 15):
-  Glyph       L1 freq  Body freq    L1/Body
-  ──────── ────────── ────────── ──────────
-  o            16.27%     14.27%      1.14x  
-  e             9.96%     11.66%      0.85x  
-  y            10.73%     10.31%      1.04x  
-  a             7.29%      8.53%      0.85x  
-  d             8.18%      7.62%      1.07x  
-  i             6.08%      7.29%      0.83x  
-  ch            6.64%      6.41%      1.03x  
-  l             5.85%      6.07%      0.96x  
-  k             3.37%      6.01%      0.56x  ★ body-enriched
-  r             4.65%      4.29%      1.08x  
-  n             2.90%      3.85%      0.75x  
-  q             2.53%      3.50%      0.72x  
-  t             3.40%      3.32%      1.02x  
-  sh            3.81%      2.65%      1.44x  
-  s             1.79%      1.44%      1.25x  
-  p             3.45%      0.64%      5.40x  ★★ L1-enriched
-  m             0.38%      0.64%      0.60x  ★ body-enriched
-  cth           0.36%      0.56%      0.65x  ★ body-enriched
-  ckh           0.28%      0.55%      0.51x  ★ body-enriched
-  f             1.18%      0.16%      7.57x  ★★ L1-enriched
-
-  Jensen-Shannon divergence (L1 vs Body): 0.0202 bits
-  (0 = identical distributions, 1 = completely different)
-
-  Random-split null: mean JSD=0.0005 std=0.0001
-  Observed JSD z-score: 131.7
-  → L1 and Body have SIGNIFICANTLY different glyph distributions
-
-────────────────────────────────────────────────────────────────────────────
-STEP 6: VOCABULARY OVERLAP TEST
-────────────────────────────────────────────────────────────────────────────
-
-  L1 word types:    1384
-  Body word types:  6619
-  Shared types:     710 (51.3% of L1 vocab)
-  L1-only types:    674 (48.7% of L1 vocab)
-  Body-only types:  5909
-
-  L1 tokens that also appear in body: 1706/2470 (69.1%)
-
-  NULL MODEL (random body subsample, same size):
-    Expected overlap: 71.2% (std=1.1%)
-    Actual L1↔body overlap: 51.3%
-    z-score: -17.7
-    → L1 vocabulary is SIGNIFICANTLY LESS overlapping than expected
-      (supports two-subsystem hypothesis)
-
-  TOP 20 L1-ONLY WORDS (never appear in body text):
-    ofaiin                count=4
-    qofol                 count=3
-    ofy                   count=3
-    qocphdy               count=3
-    olpchey               count=3
-    olfchey               count=3
-    cfhey                 count=3
-    cfheol                count=3
-    kooiin                count=2
-    ykoaiin               count=2
-    sholdaiin             count=2
-    chorchy               count=2
-    pchodol               count=2
-    opydy                 count=2
-    ofchar                count=2
-    fcholdy               count=2
-    ololdy                count=2
-    chocphy               count=2
-    qofair                count=2
-    epaiin                count=2
-
-────────────────────────────────────────────────────────────────────────────
-STEP 7: CROSS-BOUNDARY TRANSITION ANALYSIS
-────────────────────────────────────────────────────────────────────────────
-
-  If L1 is a different system, there should be a discontinuity
-  at the L1→L2 boundary. We test last-glyph-of-L1 → first-glyph-of-L2
-  transitions vs within-L1 and within-body transitions.
-
-  Within-L1 bigram types:     274
-  Within-Body bigram types:   425
-  L1→L2 cross bigrams:        60 (from 295 transitions)
-  Body→Body line bigrams:     144 (from 3290 transitions)
-
-  JSD (L1→L2 vs Body→Body line transitions): 0.1386
-  → HIGH — L1→L2 boundary is DIFFERENT
-
-  TOP 5 FINAL GLYPHS on L1: [('y', 140), ('n', 49), ('r', 29), ('m', 27), ('l', 24)]
-  TOP 5 FIRST GLYPHS on L2: [('d', 202), ('o', 182), ('y', 160), ('s', 85), ('q', 44)]
-  TOP 5 FINAL GLYPHS in body: [('y', 1268), ('m', 539), ('n', 510), ('l', 352), ('r', 289)]
-  TOP 5 FIRST GLYPHS in body: [('q', 496), ('y', 487), ('d', 475), ('o', 389), ('s', 353)]
-
-────────────────────────────────────────────────────────────────────────────
-STEP 8: FUNCTIONAL ALPHABET SIZE IN BODY TEXT ONLY
-────────────────────────────────────────────────────────────────────────────
-
-  The video argues VMS has ~13 functional letters after removing
-  first-line-only and line-end-only glyphs. What's the count
-  after we actually separate L1 from body?
-
-  Body text glyph counts by position:
-    Initial: 34236 glyphs
-    Medial:  87191 glyphs
-    Final:   33130 glyphs
-
-  Functional glyphs (≥1% in position) — BODY ONLY:
-    Initial: 14 — ['a', 'ch', 'cth', 'd', 'k', 'l', 'o', 'p', 'q', 'r', 's', 'sh', 't', 'y']
-    Medial:  11 — ['a', 'ch', 'd', 'e', 'i', 'k', 'l', 'o', 'r', 'sh', 't']
-    Final:   8 — ['d', 'l', 'm', 'n', 'o', 'r', 's', 'y']
-
-  Functional in all 3 positions (I+M+F): 4 — ['d', 'l', 'o', 'r']
-  Functional in ≥2 positions:           11 — ['a', 'ch', 'd', 'k', 'l', 'o', 'r', 's', 'sh', 't', 'y']
-  Functional in ≥1 position:            18 — ['a', 'ch', 'cth', 'd', 'e', 'i', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 'sh', 't', 'y']
-
-  Functional glyphs (≥1% in position) — LINE-1 ONLY:
-    Initial: 14 — ['a', 'ch', 'cph', 'd', 'f', 'k', 'l', 'o', 'p', 'q', 's', 'sh', 't', 'y']
-    Medial:  14 — ['a', 'ch', 'd', 'e', 'f', 'i', 'k', 'l', 'o', 'p', 'r', 'sh', 't', 'y']
-    Final:   8 — ['d', 'l', 'm', 'n', 'o', 'r', 's', 'y']
-
-  Glyphs functional on L1 but NOT in body: 2 — ['cph', 'f']
-  Glyphs functional in body but NOT on L1: 1 — ['cth']
-
-────────────────────────────────────────────────────────────────────────────
-STEP 9: POSITIONAL VARIANT HYPOTHESIS — CAN WE MERGE IN BODY?
-────────────────────────────────────────────────────────────────────────────
-
-  The video argues that complementary-distribution pairs could be
-  positional variants (like Arabic letter forms). In body-only text,
-  do we see cleaner complementary distribution?
-
-  Glyph          I%       M%       F%    Total              Profile
-  ──────── ──────── ──────── ──────── ──────── ────────────────────
-  o           32.1%    63.4%     4.5%    22063                  I+M
-  e            0.7%    98.8%     0.4%    18027                    M
-  y           10.8%     4.9%    84.3%    15934                  I+F
-  a           14.5%    85.1%     0.4%    13178                  I+M
-  d           27.1%    68.8%     4.1%    11772                  I+M
-  i            0.1%    99.8%     0.1%    11263                    M
-  ch          55.8%    44.1%     0.1%     9910                  I+M
-  l           15.2%    30.0%    54.8%     9384                I+M+F
-  k           12.7%    86.6%     0.7%     9296                  I+M
-  r            7.3%    15.7%    77.0%     6630                  M+F
-  n            0.1%     2.7%    97.3%     5955                    F
-  q           99.0%     1.0%     0.0%     5402                    I
-  t           18.7%    80.3%     1.0%     5135                  I+M
-  sh          70.3%    29.3%     0.4%     4101                  I+M
-  s           50.2%    13.9%    35.9%     2222                I+M+F
-  p           43.3%    55.2%     1.5%      988                  I+M
-  m            0.6%     4.7%    94.7%      985                    F
-  cth         53.0%    46.7%     0.3%      866                  I+M
-
-  POSITIONAL PROFILE GROUPS (body text):
-    F           : 2 glyphs — ['m', 'n']
-    I           : 1 glyphs — ['q']
-    I+F         : 1 glyphs — ['y']
-    I+M         : 9 glyphs — ['a', 'ch', 'cth', 'd', 'k', 'o', 'p', 'sh', 't']
-    I+M+F       : 2 glyphs — ['l', 's']
-    M           : 2 glyphs — ['e', 'i']
-    M+F         : 1 glyphs — ['r']
-
-  Position-restricted glyphs (body only):
-    I-only:   1 — ['q']
-    M-only:   2 — ['e', 'i']
-    F-only:   2 — ['m', 'n']
-    I+M+F:    2 — ['l', 's']
-
-  COMPRESSED ALPHABET ESTIMATE (body only):
-    Unrestricted (I+M+F) core: 2 letters
-    Maximum (all restricted are independent): 18 letters
-    Minimum (all restricted are variants): 2 letters
-    Best estimate (restricted fill missing slots): 4 letters
-
-────────────────────────────────────────────────────────────────────────────
-STEP 10: SYNTHESIS AND CRITICAL ASSESSMENT
-────────────────────────────────────────────────────────────────────────────
-
-  Q1: DOES REMOVING LINE-1 CHANGE h_char?
-      h_char (all):  0.6442
-      h_char (body): 0.6393
-      Delta:         -0.0049
-      → NEGLIGIBLE CHANGE. L1 is NOT contaminating the measurement.
-
-  Q2: IS L1 h_char DIFFERENT FROM BODY h_char?
-      h_char (L1):   0.6834
-      h_char (body): 0.6393
-      Delta:         +0.0442
-      Bootstrap CIs overlap: NO
-
-  Q3: DOES BODY-ONLY h_char APPROACH NATURAL LANGUAGE (~0.83)?
-      Natural lang range: 0.82-0.87
-      VMS (all):      0.6442  (gap to 0.83: 0.1858)
-      VMS (body):     0.6393  (gap to 0.83: 0.1907)
-      Gap closed:     -2.7%
-      → VIRTUALLY NO GAP CLOSURE. The h_char anomaly is intrinsic
-        to the encoding system, not an artifact of L1 contamination.
-
-  Q4: DO L1 AND BODY USE DIFFERENT GLYPH DISTRIBUTIONS?
-      JSD: 0.0202 (z=131.7 vs random split)
-      → VERY DIFFERENT distributions (z>132)
-
-  Q5: FUNCTIONAL ALPHABET SIZE IN BODY TEXT
-      Unrestricted (I+M+F) core: 2 glyphs
-      Total functional (any position): 18 glyphs
-      Best compressed estimate: 4 letters
-
-  OVERALL ASSESSMENT:
-
-  Signals for DIFFERENT subsystems: 2
-  Signals for SAME system:          1
-
-  VERDICT: There is evidence that L1 and body text are statistically
-  different subsystems. However, removing L1 does NOT substantially
-  explain the h_char anomaly — the anomaly is intrinsic.
-
-  CRITICAL CAVEATS:
-  1. L1 is only ~7% of the corpus. Removing it changes almost nothing
-     about corpus-level statistics. This is EXPECTED and does NOT prove
-     L1 is the same system — it just means the mixture effect is small.
-  2. Small-sample bias inflates entropy estimates for L1. The bootstrap
-     CI accounts for this, but point estimates should be treated cautiously.
-  3. Even if L1 IS a different system, the body-only h_char would still
-     be far below natural language (~0.83). The anomaly is NOT explained
-     by L1 contamination.
-  4. The glyph distribution difference (if significant) could reflect
-     TOPIC differences (first lines = section headers?) rather than
-     encoding differences.
-  5. Body text alone retains the positional slot grammar (I-M-F)
-     established in Phase 66-67 — that structure is intrinsic.
-
-  Results saved: C:\projects\voynich_slop\results\phase82_line1_body_separation.txt
+============================================================================
+PHASE 82 — LINE-1 / BODY SEPARATION: TWO ENCODING SUBSYSTEMS?
+============================================================================
+
+  Does paragraph line 1 use a different encoding system from
+  lines 2+? If so, mixing them contaminates all statistics.
+  The h_char anomaly (0.641) might be partially an artifact.
+
+────────────────────────────────────────────────────────────────────────────
+STEP 1: PARSE AND SPLIT CORPUS
+────────────────────────────────────────────────────────────────────────────
+
+  Paragraphs:         789
+  Total words:        36706
+  Line-1 words:       2470 (6.7%)
+  Line-1 (no W1):    2170
+  Body words (L2+):  34236 (93.3%)
+  L1→L2 transitions: 783
+
+  ✓ Split verified: 2470 + 34236 = 36706
+
+────────────────────────────────────────────────────────────────────────────
+STEP 2: FULL FINGERPRINT FOR EACH SUBSET
+────────────────────────────────────────────────────────────────────────────
+
+  Subset                 Tokens    Types   Glyphs GlyphTyp   h_char     H(c)    hapax     wlen      TTR     Zipf       IC
+  ──────────────────── ──────── ──────── ──────── ──────── ──────── ──────── ──────── ──────── ──────── ──────── ────────
+  VMS (all)               36706     7293   166386       31   0.6442   3.8677 
+             0.7075     4.53   0.3766   0.9364  0.08087
+  Line-1 (all)             2470     1384    11829       27   0.6834   3.9237 
+             0.8259     4.79   0.5603   0.5524  0.08047
+  Line-1 (no W1)           2170     1169    10175       27   0.6718   3.9230 
+             0.8148     4.69   0.5387   0.5772  0.08104
+  Body (L2+)              34236     6619   154557       31   0.6393   3.8565 
+             0.7020     4.51   0.3576   0.9517  0.08111
+
+  h_char delta (Body − All): -0.0049
+  h_char delta (L1 − All):   +0.0392
+  h_char delta (L1 − Body):  +0.0442
+
+  INTERPRETATION: If L1 is a different system, removing it should CHANGE
+  the body h_char. VMS whole = 0.6442. If body-only is ≈ same,
+  then L1 is NOT contaminating the measurement.
+
+────────────────────────────────────────────────────────────────────────────
+STEP 3: BOOTSTRAP CONFIDENCE INTERVALS FOR h_char
+────────────────────────────────────────────────────────────────────────────
+
+  L1 has only ~10K glyphs — entropy estimates may be noisy.
+  Bootstrap resampling at word level to estimate uncertainty.
+
+  VMS (all)             mean=0.6613  95%CI=[0.6592, 0.6634]
+  Line-1                mean=0.6945  95%CI=[0.6886, 0.7012]
+  Body (L2+)            mean=0.6568  95%CI=[0.6546, 0.6588]
+
+  L1 CI:   [0.6886, 0.7012]
+  Body CI: [0.6546, 0.6588]
+  Overlap: NO — SIGNIFICANTLY DIFFERENT
+
+────────────────────────────────────────────────────────────────────────────
+STEP 4: SIZE-CONTROLLED NULL MODEL
+────────────────────────────────────────────────────────────────────────────
+
+  CRITICAL: Small samples have upward-biased entropy estimates.
+  To test whether L1's h_char differs from body's, we must compare
+  L1 to random subsamples of body at the SAME SIZE.
+
+  Body subsampled to L1 size (2470 words):
+    Null h_char: mean=0.6514  std=0.0039  95%=[0.6438, 0.6578]
+    Observed L1 h_char: 0.6834
+    z-score: 8.21
+
+  → L1 h_char is SIGNIFICANTLY DIFFERENT from body at same size (|z|>2)
+
+  SIZE BIAS CHECK:
+    Full body h_char:      0.6393
+    Subsampled body h_char: 0.6514
+    Size bias: +0.0121
+    → Significant size effect (upward bias at smaller sample)
+
+────────────────────────────────────────────────────────────────────────────
+STEP 5: GLYPH INVENTORY COMPARISON
+────────────────────────────────────────────────────────────────────────────
+
+  L1 glyph types:     27
+  Body glyph types:   31
+  Shared:             27
+  L1-only:            0: []
+  Body-only:          4: ['b', 'c', 'u', 'v']
+
+  GLYPH FREQUENCY COMPARISON (top 15):
+  Glyph       L1 freq  Body freq    L1/Body
+  ──────── ────────── ────────── ──────────
+  o            16.27%     14.27%      1.14x  
+  e             9.96%     11.66%      0.85x  
+  y            10.73%     10.31%      1.04x  
+  a             7.29%      8.53%      0.85x  
+  d             8.18%      7.62%      1.07x  
+  i             6.08%      7.29%      0.83x  
+  ch            6.64%      6.41%      1.03x  
+  l             5.85%      6.07%      0.96x  
+  k             3.37%      6.01%      0.56x  ★ body-enriched
+  r             4.65%      4.29%      1.08x  
+  n             2.90%      3.85%      0.75x  
+  q             2.53%      3.50%      0.72x  
+  t             3.40%      3.32%      1.02x  
+  sh            3.81%      2.65%      1.44x  
+  s             1.79%      1.44%      1.25x  
+  p             3.45%      0.64%      5.40x  ★★ L1-enriched
+  m             0.38%      0.64%      0.60x  ★ body-enriched
+  cth           0.36%      0.56%      0.65x  ★ body-enriched
+  ckh           0.28%      0.55%      0.51x  ★ body-enriched
+  f             1.18%      0.16%      7.57x  ★★ L1-enriched
+
+  Jensen-Shannon divergence (L1 vs Body): 0.0202 bits
+  (0 = identical distributions, 1 = completely different)
+
+  Random-split null: mean JSD=0.0005 std=0.0001
+  Observed JSD z-score: 131.7
+  → L1 and Body have SIGNIFICANTLY different glyph distributions
+
+────────────────────────────────────────────────────────────────────────────
+STEP 6: VOCABULARY OVERLAP TEST
+────────────────────────────────────────────────────────────────────────────
+
+  L1 word types:    1384
+  Body word types:  6619
+  Shared types:     710 (51.3% of L1 vocab)
+  L1-only types:    674 (48.7% of L1 vocab)
+  Body-only types:  5909
+
+  L1 tokens that also appear in body: 1706/2470 (69.1%)
+
+  NULL MODEL (random body subsample, same size):
+    Expected overlap: 71.2% (std=1.1%)
+    Actual L1↔body overlap: 51.3%
+    z-score: -17.7
+    → L1 vocabulary is SIGNIFICANTLY LESS overlapping than expected
+      (supports two-subsystem hypothesis)
+
+  TOP 20 L1-ONLY WORDS (never appear in body text):
+    ofaiin                count=4
+    qofol                 count=3
+    ofy                   count=3
+    qocphdy               count=3
+    olpchey               count=3
+    olfchey               count=3
+    cfhey                 count=3
+    cfheol                count=3
+    kooiin                count=2
+    ykoaiin               count=2
+    sholdaiin             count=2
+    chorchy               count=2
+    pchodol               count=2
+    opydy                 count=2
+    ofchar                count=2
+    fcholdy               count=2
+    ololdy                count=2
+    chocphy               count=2
+    qofair                count=2
+    epaiin                count=2
+
+────────────────────────────────────────────────────────────────────────────
+STEP 7: CROSS-BOUNDARY TRANSITION ANALYSIS
+────────────────────────────────────────────────────────────────────────────
+
+  If L1 is a different system, there should be a discontinuity
+  at the L1→L2 boundary. We test last-glyph-of-L1 → first-glyph-of-L2
+  transitions vs within-L1 and within-body transitions.
+
+  Within-L1 bigram types:     274
+  Within-Body bigram types:   425
+  L1→L2 cross bigrams:        60 (from 295 transitions)
+  Body→Body line bigrams:     144 (from 3290 transitions)
+
+  JSD (L1→L2 vs Body→Body line transitions): 0.1386
+  → HIGH — L1→L2 boundary is DIFFERENT
+
+  TOP 5 FINAL GLYPHS on L1: [('y', 140), ('n', 49), ('r', 29), ('m', 27), ('l', 24)]
+  TOP 5 FIRST GLYPHS on L2: [('d', 202), ('o', 182), ('y', 160), ('s', 85), ('q', 44)]
+  TOP 5 FINAL GLYPHS in body: [('y', 1268), ('m', 539), ('n', 510), ('l', 352), ('r', 289)]
+  TOP 5 FIRST GLYPHS in body: [('q', 496), ('y', 487), ('d', 475), ('o', 389), ('s', 353)]
+
+────────────────────────────────────────────────────────────────────────────
+STEP 8: FUNCTIONAL ALPHABET SIZE IN BODY TEXT ONLY
+────────────────────────────────────────────────────────────────────────────
+
+  The video argues VMS has ~13 functional letters after removing
+  first-line-only and line-end-only glyphs. What's the count
+  after we actually separate L1 from body?
+
+  Body text glyph counts by position:
+    Initial: 34236 glyphs
+    Medial:  87191 glyphs
+    Final:   33130 glyphs
+
+  Functional glyphs (≥1% in position) — BODY ONLY:
+    Initial: 14 — ['a', 'ch', 'cth', 'd', 'k', 'l', 'o', 'p', 'q', 'r', 's', 'sh', 't', 'y']
+    Medial:  11 — ['a', 'ch', 'd', 'e', 'i', 'k', 'l', 'o', 'r', 'sh', 't']
+    Final:   8 — ['d', 'l', 'm', 'n', 'o', 'r', 's', 'y']
+
+  Functional in all 3 positions (I+M+F): 4 — ['d', 'l', 'o', 'r']
+  Functional in ≥2 positions:           11 — ['a', 'ch', 'd', 'k', 'l', 'o', 'r', 's', 'sh', 't', 'y']
+  Functional in ≥1 position:            18 — ['a', 'ch', 'cth', 'd', 'e', 'i', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 'sh', 't', 'y']
+
+  Functional glyphs (≥1% in position) — LINE-1 ONLY:
+    Initial: 14 — ['a', 'ch', 'cph', 'd', 'f', 'k', 'l', 'o', 'p', 'q', 's', 'sh', 't', 'y']
+    Medial:  14 — ['a', 'ch', 'd', 'e', 'f', 'i', 'k', 'l', 'o', 'p', 'r', 'sh', 't', 'y']
+    Final:   8 — ['d', 'l', 'm', 'n', 'o', 'r', 's', 'y']
+
+  Glyphs functional on L1 but NOT in body: 2 — ['cph', 'f']
+  Glyphs functional in body but NOT on L1: 1 — ['cth']
+
+────────────────────────────────────────────────────────────────────────────
+STEP 9: POSITIONAL VARIANT HYPOTHESIS — CAN WE MERGE IN BODY?
+────────────────────────────────────────────────────────────────────────────
+
+  The video argues that complementary-distribution pairs could be
+  positional variants (like Arabic letter forms). In body-only text,
+  do we see cleaner complementary distribution?
+
+  Glyph          I%       M%       F%    Total              Profile
+  ──────── ──────── ──────── ──────── ──────── ────────────────────
+  o           32.1%    63.4%     4.5%    22063                  I+M
+  e            0.7%    98.8%     0.4%    18027                    M
+  y           10.8%     4.9%    84.3%    15934                  I+F
+  a           14.5%    85.1%     0.4%    13178                  I+M
+  d           27.1%    68.8%     4.1%    11772                  I+M
+  i            0.1%    99.8%     0.1%    11263                    M
+  ch          55.8%    44.1%     0.1%     9910                  I+M
+  l           15.2%    30.0%    54.8%     9384                I+M+F
+  k           12.7%    86.6%     0.7%     9296                  I+M
+  r            7.3%    15.7%    77.0%     6630                  M+F
+  n            0.1%     2.7%    97.3%     5955                    F
+  q           99.0%     1.0%     0.0%     5402                    I
+  t           18.7%    80.3%     1.0%     5135                  I+M
+  sh          70.3%    29.3%     0.4%     4101                  I+M
+  s           50.2%    13.9%    35.9%     2222                I+M+F
+  p           43.3%    55.2%     1.5%      988                  I+M
+  m            0.6%     4.7%    94.7%      985                    F
+  cth         53.0%    46.7%     0.3%      866                  I+M
+
+  POSITIONAL PROFILE GROUPS (body text):
+    F           : 2 glyphs — ['m', 'n']
+    I           : 1 glyphs — ['q']
+    I+F         : 1 glyphs — ['y']
+    I+M         : 9 glyphs — ['a', 'ch', 'cth', 'd', 'k', 'o', 'p', 'sh', 't']
+    I+M+F       : 2 glyphs — ['l', 's']
+    M           : 2 glyphs — ['e', 'i']
+    M+F         : 1 glyphs — ['r']
+
+  Position-restricted glyphs (body only):
+    I-only:   1 — ['q']
+    M-only:   2 — ['e', 'i']
+    F-only:   2 — ['m', 'n']
+    I+M+F:    2 — ['l', 's']
+
+  COMPRESSED ALPHABET ESTIMATE (body only):
+    Unrestricted (I+M+F) core: 2 letters
+    Maximum (all restricted are independent): 18 letters
+    Minimum (all restricted are variants): 2 letters
+    Best estimate (restricted fill missing slots): 4 letters
+
+────────────────────────────────────────────────────────────────────────────
+STEP 10: SYNTHESIS AND CRITICAL ASSESSMENT
+────────────────────────────────────────────────────────────────────────────
+
+  Q1: DOES REMOVING LINE-1 CHANGE h_char?
+      h_char (all):  0.6442
+      h_char (body): 0.6393
+      Delta:         -0.0049
+      → NEGLIGIBLE CHANGE. L1 is NOT contaminating the measurement.
+
+  Q2: IS L1 h_char DIFFERENT FROM BODY h_char?
+      h_char (L1):   0.6834
+      h_char (body): 0.6393
+      Delta:         +0.0442
+      Bootstrap CIs overlap: NO
+
+  Q3: DOES BODY-ONLY h_char APPROACH NATURAL LANGUAGE (~0.83)?
+      Natural lang range: 0.82-0.87
+      VMS (all):      0.6442  (gap to 0.83: 0.1858)
+      VMS (body):     0.6393  (gap to 0.83: 0.1907)
+      Gap closed:     -2.7%
+      → VIRTUALLY NO GAP CLOSURE. The h_char anomaly is intrinsic
+        to the encoding system, not an artifact of L1 contamination.
+
+  Q4: DO L1 AND BODY USE DIFFERENT GLYPH DISTRIBUTIONS?
+      JSD: 0.0202 (z=131.7 vs random split)
+      → VERY DIFFERENT distributions (z>132)
+
+  Q5: FUNCTIONAL ALPHABET SIZE IN BODY TEXT
+      Unrestricted (I+M+F) core: 2 glyphs
+      Total functional (any position): 18 glyphs
+      Best compressed estimate: 4 letters
+
+  OVERALL ASSESSMENT:
+
+  Signals for DIFFERENT subsystems: 2
+  Signals for SAME system:          1
+
+  VERDICT: There is evidence that L1 and body text are statistically
+  different subsystems. However, removing L1 does NOT substantially
+  explain the h_char anomaly — the anomaly is intrinsic.
+
+  CRITICAL CAVEATS:
+  1. L1 is only ~7% of the corpus. Removing it changes almost nothing
+     about corpus-level statistics. This is EXPECTED and does NOT prove
+     L1 is the same system — it just means the mixture effect is small.
+  2. Small-sample bias inflates entropy estimates for L1. The bootstrap
+     CI accounts for this, but point estimates should be treated cautiously.
+  3. Even if L1 IS a different system, the body-only h_char would still
+     be far below natural language (~0.83). The anomaly is NOT explained
+     by L1 contamination.
+  4. The glyph distribution difference (if significant) could reflect
+     TOPIC differences (first lines = section headers?) rather than
+     encoding differences.
+  5. Body text alone retains the positional slot grammar (I-M-F)
+     established in Phase 66-67 — that structure is intrinsic.
+
+  Results saved: C:\projects\voynich_slop\results\phase82_line1_body_separation.txt

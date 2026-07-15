@@ -1,286 +1,286 @@
-============================================================================
-PHASE 86 — CHUNK EQUIVALENCE CLASS DISCOVERY
-============================================================================
-
-  Can 523 VMS chunk types be clustered into a smaller set of
-  functional equivalence classes? If yes, what is the 'true
-  alphabet size' of VMS, and does collapsing to it produce
-  NL-character-like statistics?
-
-────────────────────────────────────────────────────────────────────────────
-STEP 1: PARSE VMS INTO CHUNKS
-────────────────────────────────────────────────────────────────────────────
-
-  Total VMS words: 40351
-  Total chunk tokens: 78526
-  Unique chunk types: 523
-
-────────────────────────────────────────────────────────────────────────────
-STEP 2: DISTRIBUTIONAL FEATURE EXTRACTION
-────────────────────────────────────────────────────────────────────────────
-
-  Chunks with >= 20 tokens: 206 / 523
-  Token coverage of frequent chunks: 98.2%
-
-  Feature dimensionality per chunk:
-    Left context:  207 dims
-    Right context: 207 dims
-    Word position: 3 dims
-    Slot skeleton: 5 dims
-
-  Example word-position profiles (top 15 chunks):
-                   Chunk   Count   Init%    Med%    Fin%  Slots
-    ────────────────────  ──────  ──────  ──────  ──────  ──────────
-                 a.i.i.n    4161   12.2%    1.9%   85.9%  01011
-                       d    3792   86.5%    9.6%    3.9%  00010
-                       y    3741   15.8%    1.6%   82.6%  10000
-                     a.r    3508   15.7%   12.7%   71.6%  01001
-                     o.l    3498   42.4%   15.0%   42.6%  00101
-                   q.o.k    3280   98.6%    0.9%    0.5%  01101
-                     a.l    3181   15.5%   25.3%   59.3%  01001
-                     o.k    2664   94.7%    5.0%    0.3%  00101
-                       k    2658   50.1%   48.9%    1.0%  00001
-                     o.t    2650   95.6%    3.8%    0.6%  00101
-                   a.i.n    1730    6.9%    2.4%   90.6%  01011
-                     o.r    1704   31.5%   10.0%   58.5%  00101
-                       s    1635   69.0%    5.6%   25.4%  00001
-                       l    1618   83.1%    3.1%   13.8%  00001
-                ch.e.d.y    1326   29.4%    0.4%   70.3%  11011
-
-────────────────────────────────────────────────────────────────────────────
-STEP 3: PAIRWISE DISTANCE MATRIX (JSD-based)
-────────────────────────────────────────────────────────────────────────────
-
-  Computing 206x206 distance matrix...
-  Distance stats: mean=1.2419, std=0.5337, min=0.0464, max=2.8232
-
-  Top 10 closest chunk pairs:
-    d=0.0464                   o.k [00101]  ~  o.t                  [00101]
-    d=0.0715                 q.o.k [01101]  ~  q.o.t                [01101]
-    d=0.0837               a.i.i.n [01011]  ~  a.i.n                [01011]
-    d=0.0880                 e.d.y [01011]  ~  e.e.d.y              [01011]
-    d=0.0939              sh.e.o.r [11101]  ~  sh.e.o.s             [11101]
-    d=0.0943                sh.e.y [11001]  ~  ch.e.e.y             [11001]
-    d=0.0985                sh.e.y [11001]  ~  sh.e.e.y             [11001]
-    d=0.1014              sh.e.d.y [11011]  ~  sh.e.e.d.y           [11011]
-    d=0.1051                   cth [00001]  ~  ckh                  [00001]
-    d=0.1087                ch.e.y [11001]  ~  ch.e.e.y             [11001]
-
-────────────────────────────────────────────────────────────────────────────
-STEP 4: AGGLOMERATIVE CLUSTERING (average-linkage)
-────────────────────────────────────────────────────────────────────────────
-
-  Clustering 206 frequent chunks...
-  Merge history: 205 merges recorded
-
-────────────────────────────────────────────────────────────────────────────
-STEP 5: SWEEP k = cluster count
-────────────────────────────────────────────────────────────────────────────
-
-      k    Silh   h_rat   hapax    Zipf   Heaps   Types
-  ─────  ──────  ──────  ──────  ──────  ──────  ──────
-     10   0.288  0.8470  0.0000  -3.728   0.081      11
-     15   0.296  0.8559  0.0000  -3.228   0.090      16
-     20   0.254  0.8433  0.0000  -2.918   0.100      21
-     25   0.250  0.8486  0.0000  -2.717   0.103      26
-     30   0.243  0.8475  0.0000  -2.507   0.088      31
-     35   0.260  0.8469  0.0000  -2.346   0.091      36
-     40   0.248  0.8462  0.0000  -2.300   0.101      41
-     50   0.245  0.8473  0.0000  -2.202   0.117      51
-     60   0.217  0.8459  0.0000  -1.905   0.117      61
-     80   0.232  0.8448  0.0000  -1.499   0.134      81
-    100   0.186  0.8434  0.0000  -1.389   0.155     101
-    150   0.148  0.8397  0.0000  -1.144   0.190     151
-    200   0.029  0.8331  0.0000  -0.997   0.208     201
-
-  NL CHARACTER reference values:
-    h_ratio:     0.849 ± 0.018
-    hapax_ratio: ~0 (alphabet is closed)
-    Zipf slope:  varies by language
-    Alphabet:    26-36 types
-
-────────────────────────────────────────────────────────────────────────────
-STEP 6: OPTIMAL k ANALYSIS
-────────────────────────────────────────────────────────────────────────────
-
-  Best silhouette: k=15, silhouette=0.2957
-  Best h_ratio match to NL chars (0.849): k=25, h_ratio=0.8486
-  Best combined (silh>0.05 + h_ratio): k=25
-
-  Cluster composition at k=25:
-   Cls   Size  Members (top 5 by frequency)            
-  ────  ─────  ────────────────────────────────────────────────────────────
-     0     57  y, ch.e.d.y, ch.y, ch.e.y, d.y + 52 more
-     1     44  q.o.k, o.k, o.t, q.o.t, y.k + 39 more
-     2     19  e.e.y, e.d.y, e.e.d.y, e.y, e.o.l + 14 more
-     3     17  a.i.i.n, a.r, a.l, a.i.n, a.m + 12 more
-     4     13  d, o.d, ch.e.d, ch.d, ch.o.d + 8 more
-     5     11  o.l, o.r, o, o.d.y, o.s + 6 more
-     6      8  o.p, q.o.p, o.f, y.p, q.o.f + 3 more
-     7      6  e, e.d, e.e.d, e.e, e.o.d + 1 more
-     8      4  ch.e, sh.e, ch.e.e, sh.e.e
-     9      4  k, t, p, f
-    10      4  s, l, r, d.l
-    11      3  e.k, e.t, e.p
-    12      2  ch, sh
-    13      2  q.o, q
-    14      2  a.i.i, a.i
-    15      1  ch.s
-    16      1  y.s
-    17      1  e.e.e
-    18      1  a.k
-    19      1  a.d
-    20      1  e.e.e.d
-    21      1  d.k
-    22      1  y.y
-    23      1  q.k
-    24      1  y.o.k
-
-────────────────────────────────────────────────────────────────────────────
-STEP 7: NULL MODEL — RANDOM MERGING
-────────────────────────────────────────────────────────────────────────────
-
-  If random merging at the same k produces equally good metrics,
-  then distributional clustering tells us nothing special.
-
-      k      Metric   Clustered    RandMean     RandStd   z-score   Better?
-  ─────  ──────────  ──────────  ──────────  ──────────  ────────  ────────
-     15     h_ratio      0.8559      0.9829      0.0051    -24.94       YES
-     15  hapax_ratio      0.0000      0.0000      0.0000       nan        NO
-     15  zipf_slope     -3.2280     -0.7354      0.1525    -16.34  |z|=16.3
-     15  heaps_beta      0.0903      0.0055      0.0064     13.16  |z|=13.2
-     25     h_ratio      0.8486      0.9708      0.0061    -20.02       YES
-     25  hapax_ratio      0.0000      0.0000      0.0000       nan        NO
-     25  zipf_slope     -2.7171     -0.9291      0.1114    -16.05  |z|=16.1
-     25  heaps_beta      0.1027      0.0219      0.0095      8.52   |z|=8.5
-     30     h_ratio      0.8475      0.9651      0.0058    -20.35       YES
-     30  hapax_ratio      0.0000      0.0000      0.0000       nan        NO
-     30  zipf_slope     -2.5074     -1.0009      0.1006    -14.98  |z|=15.0
-     30  heaps_beta      0.0877      0.0315      0.0093      6.02   |z|=6.0
-     50     h_ratio      0.8473      0.9447      0.0066    -14.87       YES
-     50  hapax_ratio      0.0000      0.0000      0.0000       nan        NO
-     50  zipf_slope     -2.2022     -1.2481      0.0833    -11.45  |z|=11.4
-     50  heaps_beta      0.1169      0.0653      0.0095      5.43   |z|=5.4
-
-────────────────────────────────────────────────────────────────────────────
-STEP 8: FEATURE ABLATION — WHAT DRIVES CLUSTERING?
-────────────────────────────────────────────────────────────────────────────
-
-  Test whether slot skeleton alone dominates the clustering.
-  Recompute distances with each feature set alone.
-
-       Feature Set     k    Silh  h_ratio   Types
-  ────────────────  ────  ──────  ───────  ──────
-      context_only    25   0.241   0.8386      26
-     skeleton_only    25   0.848   0.9474      26
-     position_only    25   0.451   0.8638      26
-      all_features    25   0.250   0.8486      26
-
-────────────────────────────────────────────────────────────────────────────
-STEP 9: MINIMUM FREQUENCY THRESHOLD SENSITIVITY
-────────────────────────────────────────────────────────────────────────────
-
-  Does the optimal k change with different chunk inclusion thresholds?
-
-  Chunks with >= 10 tokens: 251 / 523
-  Token coverage of frequent chunks: 99.0%
-  min_freq= 10:  251 chunks, best k=20, silhouette=0.2428
-  Chunks with >= 20 tokens: 206 / 523
-  Token coverage of frequent chunks: 98.2%
-  min_freq= 20:  206 chunks, best k=35, silhouette=0.2600
-  Chunks with >= 50 tokens: 141 / 523
-  Token coverage of frequent chunks: 95.6%
-  min_freq= 50:  141 chunks, best k=20, silhouette=0.3193
-
-────────────────────────────────────────────────────────────────────────────
-STEP 10: NL SYLLABLE CROSS-CHECK
-────────────────────────────────────────────────────────────────────────────
-
-  If NL syllables also cluster to ~30 groups with good metrics,
-  the method is FLAWED and proves nothing about VMS specifically.
-
-  Latin-Caesar: 44864 words, 101887 syllables, 2369 types
-    Base h_ratio=0.5694, hapax=0.2651
-    Random merge to k=30: h_ratio=0.9755±0.0015, types=30.0
-    Random merge to k=25: h_ratio=0.9812±0.0012, types=25.0
-  Italian-Cucina: 24367 words, 47348 syllables, 1532 types
-    Base h_ratio=0.5959, hapax=0.3505
-    Random merge to k=30: h_ratio=0.9635±0.0020, types=30.0
-    Random merge to k=25: h_ratio=0.9716±0.0016, types=25.0
-
-────────────────────────────────────────────────────────────────────────────
-STEP 11: CLUSTER COHERENCE — DO CLUSTERS SHARE SLOT SKELETONS?
-────────────────────────────────────────────────────────────────────────────
-
-  If clusters are linguistically meaningful, members should share
-  similar slot-filling patterns. Compute intra-cluster skeleton entropy.
-
-   Cls   Size   SkelEntropy    DominantSkel   DomPct
-  ────  ─────  ────────────  ──────────────  ───────
-     0     57         3.449           11001    21.1%
-     1     44         2.611           11001    27.3%
-     2     19         2.155           01001    31.6%
-     3     17         1.497           01011    52.9%
-     4     13         2.661           11010    23.1%
-     5     11         1.349           00111    45.5%
-     6      8         1.906           10001    37.5%
-     7      6         1.585           01110    33.3%
-     8      4        -0.000           11000   100.0%
-     9      4        -0.000           00001   100.0%
-    10      4         0.811           00001    75.0%
-    11      3        -0.000           01001   100.0%
-    12      2        -0.000           10000   100.0%
-    13      2         1.000           01100    50.0%
-    14      2        -0.000           01010   100.0%
-    15      1        -0.000           10001   100.0%
-    16      1        -0.000           10001   100.0%
-    17      1        -0.000           01000   100.0%
-    18      1        -0.000           01001   100.0%
-    19      1        -0.000           01010   100.0%
-    20      1        -0.000           01010   100.0%
-    21      1        -0.000           00011   100.0%
-    22      1        -0.000           10001   100.0%
-    23      1        -0.000           01001   100.0%
-    24      1        -0.000           10101   100.0%
-
-  Weighted average intra-cluster skeleton entropy: 2.2199
-  (0 = perfect skeleton coherence; higher = mixed skeletons)
-
-============================================================================
-SYNTHESIS & VERDICT
-============================================================================
-
-  1. OPTIMAL CLUSTER COUNT
-     Best silhouette k:        15
-     Best NL-char h_ratio k:   25
-     Combined optimal k:       25
-     Silhouette at optimal k:  0.2504
-
-  2. COLLAPSED METRICS AT k=25
-     h_ratio:    0.8486  (NL char: 0.849)
-     hapax:      0.0000
-     Zipf slope: -2.7171
-     Heaps beta: 0.1027
-     Types:      26
-
-  3. VS RANDOM MERGING AT k=25
-     h_ratio: clustered=0.8486, random=0.9708±0.0061, z=-20.02
-     hapax_ratio: clustered=0.0000, random=0.0000±0.0000, z=nan
-
-  4. FEATURE ABLATION
-     context_only    : h_ratio=0.8386, sil=0.241
-     skeleton_only   : h_ratio=0.9474, sil=0.848
-     position_only   : h_ratio=0.8638, sil=0.451
-     all_features    : h_ratio=0.8486, sil=0.250
-
-  5. CLUSTER COHERENCE
-     Average intra-cluster skeleton entropy: 2.2199
-     → POOR: clusters mix different slot skeletons freely
-
-  VERDICT:
-     ★ SUPPORTED: Distributional clustering finds ~25 equivalence
-       classes with better NL-char match than random merging.
-       This suggests a 'true alphabet' of ~25 functional units.
-
-
-  Results saved to results/phase86_chunk_equivalence.txt/.json
+============================================================================
+PHASE 86 — CHUNK EQUIVALENCE CLASS DISCOVERY
+============================================================================
+
+  Can 523 VMS chunk types be clustered into a smaller set of
+  functional equivalence classes? If yes, what is the 'true
+  alphabet size' of VMS, and does collapsing to it produce
+  NL-character-like statistics?
+
+────────────────────────────────────────────────────────────────────────────
+STEP 1: PARSE VMS INTO CHUNKS
+────────────────────────────────────────────────────────────────────────────
+
+  Total VMS words: 40351
+  Total chunk tokens: 78526
+  Unique chunk types: 523
+
+────────────────────────────────────────────────────────────────────────────
+STEP 2: DISTRIBUTIONAL FEATURE EXTRACTION
+────────────────────────────────────────────────────────────────────────────
+
+  Chunks with >= 20 tokens: 206 / 523
+  Token coverage of frequent chunks: 98.2%
+
+  Feature dimensionality per chunk:
+    Left context:  207 dims
+    Right context: 207 dims
+    Word position: 3 dims
+    Slot skeleton: 5 dims
+
+  Example word-position profiles (top 15 chunks):
+                   Chunk   Count   Init%    Med%    Fin%  Slots
+    ────────────────────  ──────  ──────  ──────  ──────  ──────────
+                 a.i.i.n    4161   12.2%    1.9%   85.9%  01011
+                       d    3792   86.5%    9.6%    3.9%  00010
+                       y    3741   15.8%    1.6%   82.6%  10000
+                     a.r    3508   15.7%   12.7%   71.6%  01001
+                     o.l    3498   42.4%   15.0%   42.6%  00101
+                   q.o.k    3280   98.6%    0.9%    0.5%  01101
+                     a.l    3181   15.5%   25.3%   59.3%  01001
+                     o.k    2664   94.7%    5.0%    0.3%  00101
+                       k    2658   50.1%   48.9%    1.0%  00001
+                     o.t    2650   95.6%    3.8%    0.6%  00101
+                   a.i.n    1730    6.9%    2.4%   90.6%  01011
+                     o.r    1704   31.5%   10.0%   58.5%  00101
+                       s    1635   69.0%    5.6%   25.4%  00001
+                       l    1618   83.1%    3.1%   13.8%  00001
+                ch.e.d.y    1326   29.4%    0.4%   70.3%  11011
+
+────────────────────────────────────────────────────────────────────────────
+STEP 3: PAIRWISE DISTANCE MATRIX (JSD-based)
+────────────────────────────────────────────────────────────────────────────
+
+  Computing 206x206 distance matrix...
+  Distance stats: mean=1.2419, std=0.5337, min=0.0464, max=2.8232
+
+  Top 10 closest chunk pairs:
+    d=0.0464                   o.k [00101]  ~  o.t                  [00101]
+    d=0.0715                 q.o.k [01101]  ~  q.o.t                [01101]
+    d=0.0837               a.i.i.n [01011]  ~  a.i.n                [01011]
+    d=0.0880                 e.d.y [01011]  ~  e.e.d.y              [01011]
+    d=0.0939              sh.e.o.r [11101]  ~  sh.e.o.s             [11101]
+    d=0.0943                sh.e.y [11001]  ~  ch.e.e.y             [11001]
+    d=0.0985                sh.e.y [11001]  ~  sh.e.e.y             [11001]
+    d=0.1014              sh.e.d.y [11011]  ~  sh.e.e.d.y           [11011]
+    d=0.1051                   cth [00001]  ~  ckh                  [00001]
+    d=0.1087                ch.e.y [11001]  ~  ch.e.e.y             [11001]
+
+────────────────────────────────────────────────────────────────────────────
+STEP 4: AGGLOMERATIVE CLUSTERING (average-linkage)
+────────────────────────────────────────────────────────────────────────────
+
+  Clustering 206 frequent chunks...
+  Merge history: 205 merges recorded
+
+────────────────────────────────────────────────────────────────────────────
+STEP 5: SWEEP k = cluster count
+────────────────────────────────────────────────────────────────────────────
+
+      k    Silh   h_rat   hapax    Zipf   Heaps   Types
+  ─────  ──────  ──────  ──────  ──────  ──────  ──────
+     10   0.288  0.8470  0.0000  -3.728   0.081      11
+     15   0.296  0.8559  0.0000  -3.228   0.090      16
+     20   0.254  0.8433  0.0000  -2.918   0.100      21
+     25   0.250  0.8486  0.0000  -2.717   0.103      26
+     30   0.243  0.8475  0.0000  -2.507   0.088      31
+     35   0.260  0.8469  0.0000  -2.346   0.091      36
+     40   0.248  0.8462  0.0000  -2.300   0.101      41
+     50   0.245  0.8473  0.0000  -2.202   0.117      51
+     60   0.217  0.8459  0.0000  -1.905   0.117      61
+     80   0.232  0.8448  0.0000  -1.499   0.134      81
+    100   0.186  0.8434  0.0000  -1.389   0.155     101
+    150   0.148  0.8397  0.0000  -1.144   0.190     151
+    200   0.029  0.8331  0.0000  -0.997   0.208     201
+
+  NL CHARACTER reference values:
+    h_ratio:     0.849 ± 0.018
+    hapax_ratio: ~0 (alphabet is closed)
+    Zipf slope:  varies by language
+    Alphabet:    26-36 types
+
+────────────────────────────────────────────────────────────────────────────
+STEP 6: OPTIMAL k ANALYSIS
+────────────────────────────────────────────────────────────────────────────
+
+  Best silhouette: k=15, silhouette=0.2957
+  Best h_ratio match to NL chars (0.849): k=25, h_ratio=0.8486
+  Best combined (silh>0.05 + h_ratio): k=25
+
+  Cluster composition at k=25:
+   Cls   Size  Members (top 5 by frequency)            
+  ────  ─────  ────────────────────────────────────────────────────────────
+     0     57  y, ch.e.d.y, ch.y, ch.e.y, d.y + 52 more
+     1     44  q.o.k, o.k, o.t, q.o.t, y.k + 39 more
+     2     19  e.e.y, e.d.y, e.e.d.y, e.y, e.o.l + 14 more
+     3     17  a.i.i.n, a.r, a.l, a.i.n, a.m + 12 more
+     4     13  d, o.d, ch.e.d, ch.d, ch.o.d + 8 more
+     5     11  o.l, o.r, o, o.d.y, o.s + 6 more
+     6      8  o.p, q.o.p, o.f, y.p, q.o.f + 3 more
+     7      6  e, e.d, e.e.d, e.e, e.o.d + 1 more
+     8      4  ch.e, sh.e, ch.e.e, sh.e.e
+     9      4  k, t, p, f
+    10      4  s, l, r, d.l
+    11      3  e.k, e.t, e.p
+    12      2  ch, sh
+    13      2  q.o, q
+    14      2  a.i.i, a.i
+    15      1  ch.s
+    16      1  y.s
+    17      1  e.e.e
+    18      1  a.k
+    19      1  a.d
+    20      1  e.e.e.d
+    21      1  d.k
+    22      1  y.y
+    23      1  q.k
+    24      1  y.o.k
+
+────────────────────────────────────────────────────────────────────────────
+STEP 7: NULL MODEL — RANDOM MERGING
+────────────────────────────────────────────────────────────────────────────
+
+  If random merging at the same k produces equally good metrics,
+  then distributional clustering tells us nothing special.
+
+      k      Metric   Clustered    RandMean     RandStd   z-score   Better?
+  ─────  ──────────  ──────────  ──────────  ──────────  ────────  ────────
+     15     h_ratio      0.8559      0.9829      0.0051    -24.94       YES
+     15  hapax_ratio      0.0000      0.0000      0.0000       nan        NO
+     15  zipf_slope     -3.2280     -0.7354      0.1525    -16.34  |z|=16.3
+     15  heaps_beta      0.0903      0.0055      0.0064     13.16  |z|=13.2
+     25     h_ratio      0.8486      0.9708      0.0061    -20.02       YES
+     25  hapax_ratio      0.0000      0.0000      0.0000       nan        NO
+     25  zipf_slope     -2.7171     -0.9291      0.1114    -16.05  |z|=16.1
+     25  heaps_beta      0.1027      0.0219      0.0095      8.52   |z|=8.5
+     30     h_ratio      0.8475      0.9651      0.0058    -20.35       YES
+     30  hapax_ratio      0.0000      0.0000      0.0000       nan        NO
+     30  zipf_slope     -2.5074     -1.0009      0.1006    -14.98  |z|=15.0
+     30  heaps_beta      0.0877      0.0315      0.0093      6.02   |z|=6.0
+     50     h_ratio      0.8473      0.9447      0.0066    -14.87       YES
+     50  hapax_ratio      0.0000      0.0000      0.0000       nan        NO
+     50  zipf_slope     -2.2022     -1.2481      0.0833    -11.45  |z|=11.4
+     50  heaps_beta      0.1169      0.0653      0.0095      5.43   |z|=5.4
+
+────────────────────────────────────────────────────────────────────────────
+STEP 8: FEATURE ABLATION — WHAT DRIVES CLUSTERING?
+────────────────────────────────────────────────────────────────────────────
+
+  Test whether slot skeleton alone dominates the clustering.
+  Recompute distances with each feature set alone.
+
+       Feature Set     k    Silh  h_ratio   Types
+  ────────────────  ────  ──────  ───────  ──────
+      context_only    25   0.241   0.8386      26
+     skeleton_only    25   0.848   0.9474      26
+     position_only    25   0.451   0.8638      26
+      all_features    25   0.250   0.8486      26
+
+────────────────────────────────────────────────────────────────────────────
+STEP 9: MINIMUM FREQUENCY THRESHOLD SENSITIVITY
+────────────────────────────────────────────────────────────────────────────
+
+  Does the optimal k change with different chunk inclusion thresholds?
+
+  Chunks with >= 10 tokens: 251 / 523
+  Token coverage of frequent chunks: 99.0%
+  min_freq= 10:  251 chunks, best k=20, silhouette=0.2428
+  Chunks with >= 20 tokens: 206 / 523
+  Token coverage of frequent chunks: 98.2%
+  min_freq= 20:  206 chunks, best k=35, silhouette=0.2600
+  Chunks with >= 50 tokens: 141 / 523
+  Token coverage of frequent chunks: 95.6%
+  min_freq= 50:  141 chunks, best k=20, silhouette=0.3193
+
+────────────────────────────────────────────────────────────────────────────
+STEP 10: NL SYLLABLE CROSS-CHECK
+────────────────────────────────────────────────────────────────────────────
+
+  If NL syllables also cluster to ~30 groups with good metrics,
+  the method is FLAWED and proves nothing about VMS specifically.
+
+  Latin-Caesar: 44864 words, 101887 syllables, 2369 types
+    Base h_ratio=0.5694, hapax=0.2651
+    Random merge to k=30: h_ratio=0.9755±0.0015, types=30.0
+    Random merge to k=25: h_ratio=0.9812±0.0012, types=25.0
+  Italian-Cucina: 24367 words, 47348 syllables, 1532 types
+    Base h_ratio=0.5959, hapax=0.3505
+    Random merge to k=30: h_ratio=0.9635±0.0020, types=30.0
+    Random merge to k=25: h_ratio=0.9716±0.0016, types=25.0
+
+────────────────────────────────────────────────────────────────────────────
+STEP 11: CLUSTER COHERENCE — DO CLUSTERS SHARE SLOT SKELETONS?
+────────────────────────────────────────────────────────────────────────────
+
+  If clusters are linguistically meaningful, members should share
+  similar slot-filling patterns. Compute intra-cluster skeleton entropy.
+
+   Cls   Size   SkelEntropy    DominantSkel   DomPct
+  ────  ─────  ────────────  ──────────────  ───────
+     0     57         3.449           11001    21.1%
+     1     44         2.611           11001    27.3%
+     2     19         2.155           01001    31.6%
+     3     17         1.497           01011    52.9%
+     4     13         2.661           11010    23.1%
+     5     11         1.349           00111    45.5%
+     6      8         1.906           10001    37.5%
+     7      6         1.585           01110    33.3%
+     8      4        -0.000           11000   100.0%
+     9      4        -0.000           00001   100.0%
+    10      4         0.811           00001    75.0%
+    11      3        -0.000           01001   100.0%
+    12      2        -0.000           10000   100.0%
+    13      2         1.000           01100    50.0%
+    14      2        -0.000           01010   100.0%
+    15      1        -0.000           10001   100.0%
+    16      1        -0.000           10001   100.0%
+    17      1        -0.000           01000   100.0%
+    18      1        -0.000           01001   100.0%
+    19      1        -0.000           01010   100.0%
+    20      1        -0.000           01010   100.0%
+    21      1        -0.000           00011   100.0%
+    22      1        -0.000           10001   100.0%
+    23      1        -0.000           01001   100.0%
+    24      1        -0.000           10101   100.0%
+
+  Weighted average intra-cluster skeleton entropy: 2.2199
+  (0 = perfect skeleton coherence; higher = mixed skeletons)
+
+============================================================================
+SYNTHESIS & VERDICT
+============================================================================
+
+  1. OPTIMAL CLUSTER COUNT
+     Best silhouette k:        15
+     Best NL-char h_ratio k:   25
+     Combined optimal k:       25
+     Silhouette at optimal k:  0.2504
+
+  2. COLLAPSED METRICS AT k=25
+     h_ratio:    0.8486  (NL char: 0.849)
+     hapax:      0.0000
+     Zipf slope: -2.7171
+     Heaps beta: 0.1027
+     Types:      26
+
+  3. VS RANDOM MERGING AT k=25
+     h_ratio: clustered=0.8486, random=0.9708±0.0061, z=-20.02
+     hapax_ratio: clustered=0.0000, random=0.0000±0.0000, z=nan
+
+  4. FEATURE ABLATION
+     context_only    : h_ratio=0.8386, sil=0.241
+     skeleton_only   : h_ratio=0.9474, sil=0.848
+     position_only   : h_ratio=0.8638, sil=0.451
+     all_features    : h_ratio=0.8486, sil=0.250
+
+  5. CLUSTER COHERENCE
+     Average intra-cluster skeleton entropy: 2.2199
+     → POOR: clusters mix different slot skeletons freely
+
+  VERDICT:
+     ★ SUPPORTED: Distributional clustering finds ~25 equivalence
+       classes with better NL-char match than random merging.
+       This suggests a 'true alphabet' of ~25 functional units.
+
+
+  Results saved to results/phase86_chunk_equivalence.txt/.json

@@ -1,367 +1,367 @@
-============================================================================
-PHASE 88 — POSITION × IDENTITY DECOMPOSITION
-============================================================================
-
-  Do VMS chunks form ONE alphabet used at all word positions
-  (NL character-like), or SEPARATE position-specific alphabets
-  (positional cipher-like)?
-
-────────────────────────────────────────────────────────────────────────────
-STEP 1: PARSE CORPORA
-────────────────────────────────────────────────────────────────────────────
-
-  VMS: 40351 words, 78526 chunk tokens, 523 chunk types
-  VMS chunks/word distribution:
-    0:     42 (  0.1%)
-    1:  10838 ( 26.9%)
-    2:  22499 ( 55.8%)
-    3:   5587 ( 13.8%)
-    4:   1085 (  2.7%)
-    5:    211 (  0.5%)
-    6:     89 (  0.2%)
-
-  Latin-Caesar: 44864 words, 275246 chars (23 types, 6.1/word), 101887 syls (2369 types, 2.3/word)
-  Latin-Vulgate: 25908 words, 134187 chars (26 types, 5.2/word), 49538 syls (2242 types, 1.9/word)
-  Latin-Apicius: 29267 words, 147304 chars (36 types, 5.0/word), 56743 syls (2512 types, 1.9/word)
-  Italian-Cucina: 24367 words, 111163 chars (32 types, 4.6/word), 47348 syls (1532 types, 1.9/word)
-  French-Viandier: 13873 words, 66106 chars (30 types, 4.8/word), 23025 syls (1378 types, 1.7/word)
-  English-Cury: 43936 words, 181413 chars (33 types, 4.1/word), 70278 syls (4339 types, 1.6/word)
-  German-Faust: 30959 words, 147946 chars (30 types, 4.8/word), 47662 syls (4112 types, 1.5/word)
-  German-BvgS: 9814 words, 43062 chars (30 types, 4.4/word), 15434 syls (1842 types, 1.6/word)
-
-────────────────────────────────────────────────────────────────────────────
-STEP 2: POSITION METRICS (≥ 2-unit words)
-────────────────────────────────────────────────────────────────────────────
-
-  VMS (≥2 chunks): 29471 words, I=29471, M=8746, F=29471 tokens
-  VMS (≥3 chunks): 6972 words, I=6972, M=8746, F=6972 tokens
-
-  VMS top-20 types by PCI (≥2-chunk words, freq≥20):
-    Type                 Total    PCI  Dom      I%      M%      F%
-    ──────────────────  ──────  ─────  ───  ──────  ──────  ──────
-    q.o.p                  190  1.000    I  100.0%    0.0%    0.0%
-    a.d.y                   21  1.000    F    0.0%    0.0%  100.0%
-    q.o.cth                 30  1.000    I  100.0%    0.0%    0.0%
-    q.k                     21  1.000    I  100.0%    0.0%    0.0%
-    q.o.f                   45  1.000    I  100.0%    0.0%    0.0%
-    sh.e.o.d.y              29  1.000    F    0.0%    0.0%  100.0%
-    ch.e.e.d.y              49  1.000    F    0.0%    0.0%  100.0%
-    sh.e.e.d.y              33  1.000    F    0.0%    0.0%  100.0%
-    e.o.d.y                267  0.996    F    0.0%    0.4%   99.6%
-    q.o.t                 1188  0.996    I   99.6%    0.4%    0.0%
-    q.o.d                  116  0.991    I   99.1%    0.0%    0.9%
-    q.o.k                 3263  0.991    I   99.1%    0.9%    0.0%
-    e.e.d.y                976  0.989    F    0.0%    1.1%   98.9%
-    sh.e.d.y               243  0.988    F    1.2%    0.0%   98.8%
-    q                       78  0.987    I   98.7%    1.3%    0.0%
-    q.o.ckh                 73  0.986    I   98.6%    1.4%    0.0%
-    e.e.e.d.y               61  0.984    F    0.0%    1.6%   98.4%
-    e.e.y                 1277  0.982    F    0.1%    1.7%   98.2%
-    q.o                    269  0.981    I   98.1%    0.7%    1.1%
-    e.d.y                 1074  0.981    F    0.0%    1.9%   98.1%
-
-  VMS bottom-20 types by PCI (most position-flexible):
-    Type                 Total    PCI  Dom      I%      M%      F%
-    ──────────────────  ──────  ─────  ───  ──────  ──────  ──────
-    y.o.k                   21  0.524    M   47.6%   52.4%    0.0%
-    ch.o.d                 182  0.522    I   52.2%   34.1%   13.7%
-    ch.e.d                 301  0.518    I   51.8%   36.5%   11.6%
-    ch.a.l                  83  0.518    F   32.5%   15.7%   51.8%
-    ch.e.o.d                91  0.505    I   50.5%   37.4%   12.1%
-    k                     2640  0.501    I   50.1%   49.6%    0.3%
-    e.e.e                   32  0.500    M    0.0%   50.0%   50.0%
-    a.i                     33  0.485    M    9.1%   48.5%   42.4%
-    y.d                    125  0.480    M   38.4%   48.0%   13.6%
-    sh                      38  0.474    F   34.2%   18.4%   47.4%
-    o.d                    466  0.464    I   46.4%   40.6%   13.1%
-    e.e.e.d                 22  0.455    M   13.6%   45.5%   40.9%
-    ch.d                   274  0.453    I   45.3%   40.5%   14.2%
-    sh.o.l                 116  0.448    F   39.7%   15.5%   44.8%
-    ch.s                    87  0.425    M   24.1%   42.5%   33.3%
-    ch                      66  0.424    F   33.3%   24.2%   42.4%
-    sh.e.o.d                33  0.424    I   42.4%   30.3%   27.3%
-    ch.e.e                  22  0.409    F   31.8%   27.3%   40.9%
-    o                      920  0.400    I   40.0%   30.2%   29.8%
-    o.l                   2905  0.396    F   39.3%   21.1%   39.6%
-
-────────────────────────────────────────────────────────────────────────────
-STEP 3: VMS vs NL CHARACTERS — COMPARISON
-────────────────────────────────────────────────────────────────────────────
-
-  A) VMS chunks vs NL characters (≥2-unit words):
-
-  System                     MeanPCI     WtPCI    Restr%    J(I,F)    J_mean       NMI     MI/H%
-  ────────────────────────  ────────  ────────  ────────  ────────  ────────  ────────  ────────
-  VMS chunks                  0.8036    0.8247    0.6087    0.2410    0.3435    0.5580   12.9902
-  English-Cury                0.5923    0.5864    0.0357    0.9286    0.9524    0.1356    4.6445
-  French-Viandier             0.7236    0.6824    0.3043    0.6522    0.7668    0.2690    9.2655
-  German-BvgS                 0.6678    0.6103    0.2963    0.8400    0.8455    0.1742    6.0547
-  German-Faust                0.7005    0.6423    0.3667    0.6667    0.7184    0.1936    6.4482
-  Italian-Cucina              0.7125    0.6338    0.3214    0.6071    0.7338    0.1983    6.6868
-  Latin-Apicius               0.6544    0.6704    0.1538    0.9200    0.8949    0.1395    4.5615
-  Latin-Caesar                0.6762    0.6885    0.2381    0.7619    0.8413    0.1389    4.2890
-  Latin-Vulgate               0.6825    0.6517    0.3077    0.6800    0.7630    0.1561    5.1464
-  ────────────────────────  ────────  ────────  ────────  ────────  ────────  ────────  ────────
-  NL mean ± std             0.676±0  0.646±0  0.253±0  0.757±0  0.815±0  0.176±0  5.887±1
-  VMS z-score                  +3.32     +5.41     +3.51     -4.39     -6.09     +9.08     +4.63
-
-  B) VMS chunks vs NL syllables (≥2-unit words):
-
-  System                     MeanPCI     WtPCI    Restr%    J(I,F)    J_mean       NMI     MI/H%
-  ────────────────────────  ────────  ────────  ────────  ────────  ────────  ────────  ────────
-  VMS chunks                  0.8036    0.8247    0.6087    0.2410    0.3435    0.5580   12.9902
-  English-Cury                0.8956    0.8434    0.7575    0.0641    0.1545    0.6921   11.6861
-  French-Viandier             0.9231    0.9016    0.8228    0.0390    0.0641    0.8029   14.5614
-  German-BvgS                 0.8751    0.8456    0.7500    0.0548    0.1004    0.7396   13.2943
-  German-Faust                0.8924    0.8857    0.7741    0.0380    0.1186    0.7931   13.2110
-  Italian-Cucina              0.7746    0.7110    0.4605    0.1509    0.2768    0.4510    9.2321
-  Latin-Apicius               0.8861    0.8181    0.7333    0.1050    0.1753    0.6595   12.2786
-  Latin-Caesar                0.9033    0.7815    0.7884    0.0846    0.1421    0.6078   11.4902
-  Latin-Vulgate               0.8705    0.7910    0.7289    0.0909    0.1772    0.6410   11.7736
-  ────────────────────────  ────────  ────────  ────────  ────────  ────────  ────────  ────────
-  NL mean ± std             0.878±0  0.822±0  0.727±0  0.078±0  0.151±0  0.673±0  12.191±
-  VMS z-score                  -1.77     +0.04     -1.13     +4.57     +3.23     -1.08     +0.54
-
-────────────────────────────────────────────────────────────────────────────
-STEP 4: LENGTH-CONTROLLED ANALYSIS (≥ 3-unit words only)
-────────────────────────────────────────────────────────────────────────────
-
-  Rationale: 56% of VMS words are 2-chunk (no M position).
-  The ≥3-unit subset has I, M, AND F positions → fairer comparison.
-
-  A) VMS vs NL characters (≥3-unit words):
-
-  System                     MeanPCI     WtPCI    Restr%    J(I,F)    J_mean       NMI     MI/H%
-  ────────────────────────  ────────  ────────  ────────  ────────  ────────  ────────  ────────
-  VMS chunks                  0.7342    0.7259    0.4151    0.2553    0.3242    0.4316   11.3558
-  English-Cury                0.6274    0.6376    0.1071    0.9286    0.9524    0.1689    5.4720
-  French-Viandier             0.7431    0.7280    0.3913    0.6522    0.7668    0.3004    9.5928
-  German-BvgS                 0.6882    0.6314    0.3704    0.8400    0.8455    0.2050    6.9277
-  German-Faust                0.7104    0.6581    0.4000    0.6667    0.7184    0.2114    6.8863
-  Italian-Cucina              0.7146    0.6684    0.2500    0.5714    0.7100    0.2149    6.8256
-  Latin-Apicius               0.7027    0.7193    0.2800    0.8800    0.8933    0.1748    5.3205
-  Latin-Caesar                0.7101    0.7180    0.3810    0.7143    0.8095    0.1637    4.7937
-  Latin-Vulgate               0.6949    0.6965    0.3600    0.7083    0.7817    0.1714    5.2811
-  ────────────────────────  ────────  ────────  ────────  ────────  ────────  ────────  ────────
-  NL mean ± std             0.699±0  0.682±0  0.317±0  0.745±0  0.810±0  0.201±0  6.387±1
-  VMS z-score                  +1.14     +1.22     +1.04     -4.21     -6.17     +5.47     +3.43
-
-  B) VMS vs NL syllables (≥3-unit words):
-
-  System                     MeanPCI     WtPCI    Restr%    J(I,F)    J_mean       NMI     MI/H%
-  ────────────────────────  ────────  ────────  ────────  ────────  ────────  ────────  ────────
-  VMS chunks                  0.7342    0.7259    0.4151    0.2553    0.3242    0.4316   11.3558
-  English-Cury                0.8164    0.8038    0.5755    0.0719    0.1617    0.6976   13.7185
-  French-Viandier             0.9081    0.9022    0.8286    0.0519    0.0640    0.8028   18.0598
-  German-BvgS                 0.8481    0.8542    0.6154    0.0566    0.0863    0.7698   15.4794
-  German-Faust                0.8561    0.8834    0.6695    0.0420    0.0868    0.8016   14.9271
-  Italian-Cucina              0.7594    0.6985    0.3974    0.2378    0.3033    0.4487    9.5671
-  Latin-Apicius               0.8585    0.8012    0.6667    0.1343    0.1873    0.6403   12.8968
-  Latin-Caesar                0.8976    0.7933    0.7679    0.0980    0.1486    0.6250   12.2007
-  Latin-Vulgate               0.8570    0.7812    0.6720    0.1123    0.1811    0.6309   12.4169
-  ────────────────────────  ────────  ────────  ────────  ────────  ────────  ────────  ────────
-  NL mean ± std             0.850±0  0.815±0  0.649±0  0.101±0  0.152±0  0.677±0  13.658±
-  VMS z-score                  -2.66     -1.47     -1.93     +2.59     +2.39     -2.21     -0.97
-
-  C) TOP-30 ROBUSTNESS CHECK:
-  (Restrict VMS to 30 most frequent chunk types to match NL alphabet size)
-
-  VMS words with all chunks in top-30: 20255/40351 (50.2%)
-  Top-30 chunk types cover 55579/78526 tokens (70.8%)
-
-  Metric        All-chunks      Top-30   NL-char μ
-  ────────────  ──────────  ──────────  ──────────
-  MeanPCI           0.8036      0.8531      0.6762
-  WtPCI             0.8247      0.8527      0.6457
-  Restr%            0.6087      0.7333      0.2530
-  J(I,F)            0.2410      0.4667      0.7571
-  J_mean            0.3435      0.5886      0.8145
-  NMI               0.5580      0.6077      0.1756
-  MI/H%            12.9902     17.9013      5.8871
-
-────────────────────────────────────────────────────────────────────────────
-STEP 5: TYPE PARTITIONING DETAIL
-────────────────────────────────────────────────────────────────────────────
-
-  VMS (≥2-chunk words), threshold = 10 tokens at position:
-    Types at I with ≥10 tokens: 125
-    Types at M with ≥10 tokens: 98
-    Types at F with ≥10 tokens: 117
-    Types at ALL 3 positions:   36
-    I-only types:               50
-    M-only types:               10
-    F-only types:               46
-
-  VMS (≥3-chunk words), threshold = 10 tokens at position:
-    Types at I with ≥10 tokens: 51
-    Types at M with ≥10 tokens: 98
-    Types at F with ≥10 tokens: 67
-    Types at ALL 3 positions:   21
-    I-only types:               10
-    M-only types:               36
-    F-only types:               19
-
-  English-Cury chars: I=27, M=28, F=27, all-3=26, J(I,F)=0.929
-  French-Viandier chars: I=20, M=22, F=18, all-3=15, J(I,F)=0.652
-  German-BvgS chars: I=25, M=26, F=21, all-3=21, J(I,F)=0.840
-  German-Faust chars: I=26, M=29, F=19, all-3=18, J(I,F)=0.667
-  Italian-Cucina chars: I=22, M=25, F=23, all-3=17, J(I,F)=0.607
-  Latin-Apicius chars: I=23, M=24, F=25, all-3=22, J(I,F)=0.920
-  Latin-Caesar chars: I=21, M=21, F=16, all-3=16, J(I,F)=0.762
-  Latin-Vulgate chars: I=22, M=24, F=20, all-3=17, J(I,F)=0.680
-
-────────────────────────────────────────────────────────────────────────────
-STEP 6: NULL MODEL — WITHIN-WORD CHUNK SHUFFLE (50 trials)
-────────────────────────────────────────────────────────────────────────────
-
-  Randomly permute chunk order within each word.
-  This preserves word composition but destroys positional structure.
-  If shuffled MI ≈ 0, the observed MI reflects genuine pos-identity coupling.
-
-  Results:
-    Weighted PCI    observed= 0.8247  shuffled=0.4506±0.0012  z=+305.96
-    J(I,F)          observed= 0.2410  shuffled=0.8885±0.0139  z=-46.48
-    NMI             observed= 0.5580  shuffled=0.0261±0.0006  z=+838.66
-    MI/H(type)%     observed=12.9902  shuffled=0.6066±0.0148  z=+838.66
-
-  INTERPRETATION:
-    Shuffled metrics are FAR from observed → positional structure
-    is NOT an artifact of word composition. Position-identity
-    coupling is genuine and strong.
-
-────────────────────────────────────────────────────────────────────────────
-STEP 7: PHASE 60 RECONCILIATION — PREDICTED vs OBSERVED OVERLAP
-────────────────────────────────────────────────────────────────────────────
-
-  Phase 60 best model: 3-zone positional cipher
-    Consonants: 4 shared + 3 unique/zone = 13 consonant symbols
-    Vowels:     2 shared + 5 unique/zone = 17 vowel symbols
-    Total:      6 shared + 24 zone-unique = 30 symbols
-    Predicted Jaccard: |shared|/|total| = 6/30 = 0.200
-    (between any two zones: |6|/|6+8+8| = 6/22 = 0.273)
-
-  Phase 88 observed:
-    J(I,F) for VMS chunks (≥2-unit):  0.241
-    J_mean for VMS chunks (≥2-unit):  0.344
-    J(I,F) for VMS chunks (≥3-unit):  0.255
-    J_mean for VMS chunks (≥3-unit):  0.324
-
-    NL character J(I,F) mean:         0.757
-    Phase 60 cipher prediction:       0.273
-
-    → VMS J(I,F) is CLOSER to Phase 60 cipher prediction
-      than to NL character baseline.
-    Interpolation: -7% toward NL, 107% toward cipher
-
-────────────────────────────────────────────────────────────────────────────
-STEP 8: SKEPTICAL AUDIT — WHAT COULD INVALIDATE THESE RESULTS?
-────────────────────────────────────────────────────────────────────────────
-
-  1. WORD-LENGTH CONFOUND
-     VMS mean chunks/word: 1.95
-     Latin-Caesar mean chars/word: 6.14
-     Latin-Vulgate mean chars/word: 5.18
-     Latin-Apicius mean chars/word: 5.03
-     Latin-Caesar mean syls/word: 2.27
-     Latin-Vulgate mean syls/word: 1.91
-     Latin-Apicius mean syls/word: 1.94
-     CAVEAT: VMS has SHORTER words (fewer M positions).
-     The ≥3-unit sub-analysis controls for this partially,
-     but NL still has longer words within the ≥3 subset.
-
-  2. ALPHABET SIZE CONFOUND
-     VMS chunk types (freq≥20): 184
-     NL char types: ~26-36
-     NL syl types: ~1400-5000
-     More types → more trivially position-locked rare types.
-     The top-30 robustness check addresses this, as does
-     the freq≥20 threshold for PCI. But the fundamental
-     asymmetry (523 vs 26) means VMS Jaccard is EXPECTED
-     to be somewhat lower simply from more types.
-
-  3. LOOP GRAMMAR ARTIFACT
-     The LOOP grammar defines slot 1 = {ch, sh, y}. These
-     onsets don't constrain chunk POSITION within a word.
-     A 'ch.e.d.y' chunk can appear at I, M, or F. Positional
-     restriction is EMPIRICAL, not grammar-imposed.
-     VERIFIED: the parser is greedy left→right with no
-     position-dependent rules. Slot structure is fixed.
-
-  4. SYLLABLE COMPARISON FAIRNESS
-     NL syllabification is approximate (~87% accuracy per Phase 85).
-     Syllable type counts are high (1000-5000), closer to VMS chunks
-     (523). The syllable comparison is arguably fairer than the
-     character comparison for type-count matching.
-
-  5. SINGLETON EXCLUSION
-     VMS 1-chunk words excluded: 10838 (26.9%)
-     These could bias results if singleton chunks are systematically
-     different. But including them as both-I-and-F would inflate
-     overlap artificially. Exclusion is the conservative choice.
-
-────────────────────────────────────────────────────────────────────────────
-STEP 9: SYNTHESIS & VERDICT
-────────────────────────────────────────────────────────────────────────────
-
-  METRIC SUMMARY (≥2-unit words):
-    Metric               VMS   NL-char μ    NL-syl μ   z(char)    z(syl)
-    ──────────────  ────────  ──────────  ──────────  ────────  ────────
-    MeanPCI           0.8036      0.6762      0.8776     +3.32     -1.77
-    WtPCI             0.8247      0.6457      0.8222     +5.41     +0.04
-    Restr%            0.6087      0.2530      0.7269     +3.51     -1.13
-    J(I,F)            0.2410      0.7571      0.0784     -4.39     +4.57
-    J_mean            0.3435      0.8145      0.1511     -6.09     +3.23
-    NMI               0.5580      0.1756      0.6734     +9.08     -1.08
-    MI/H%            12.9902      5.8871     12.1909     +4.63     +0.54
-
-  METRIC SUMMARY (≥3-unit words):
-    Metric               VMS   NL-char μ   z(char)
-    ──────────────  ────────  ──────────  ────────
-    MeanPCI           0.7342      0.6989     +1.14
-    WtPCI             0.7259      0.6822     +1.22
-    Restr%            0.4151      0.3175     +1.04
-    J(I,F)            0.2553      0.7452     -4.21
-    J_mean            0.3242      0.8097     -6.17
-    NMI               0.4316      0.2013     +5.47
-    MI/H%            11.3558      6.3875     +3.43
-
-  DIRECTIONAL EVIDENCE:
-           MeanPCI: z=+3.32 → CIPHER direction (VMS > NL)
-             WtPCI: z=+5.41 → CIPHER direction (VMS > NL)
-            Restr%: z=+3.51 → CIPHER direction (VMS > NL)
-               NMI: z=+9.08 → CIPHER direction (VMS > NL)
-             MI/H%: z=+4.63 → CIPHER direction (VMS > NL)
-            J(I,F): z=-4.39 → CIPHER direction (VMS < NL overlap)
-            J_mean: z=-6.09 → CIPHER direction (VMS < NL overlap)
-
-  Score: 7 metrics favor CIPHER, 0 favor NL, 0 ambiguous
-
-  PHASE 60 RECONCILIATION:
-    Observed J(I,F):         0.241
-    Cipher prediction:       0.273
-    NL character mean:       0.757
-
-  NULL MODEL VALIDATION:
-    All metrics are z=306+ from shuffled null → positional coupling is GENUINE,
-    not an artifact of word composition.
-
-  ══════════════════════════════════════════════════════════
-  VERDICT
-  ══════════════════════════════════════════════════════════
-
-  ★ VMS chunks show STRONG positional partitioning, significantly
-    exceeding NL character baselines on most metrics.
-    This is consistent with a POSITIONAL ENCODING mechanism
-    where different word positions use different chunk inventories.
-
-  Verdict code: POSITIONAL_ENCODING_SUPPORTED
-
-  REVISED CONFIDENCES (Phase 88):
-  - Positional verbose cipher: 45% → UP (evidence supports)
-  - Natural language: 87% (unchanged)
-  - Chunks = functional characters: 85% (unchanged)
-  - True alphabet ≈ 25: 70% (unchanged)
-  - Hoax/random: <1% (unchanged)
-
-  Results saved to results\phase88_position_identity.txt
-  JSON saved to results\phase88_position_identity.json
+============================================================================
+PHASE 88 — POSITION × IDENTITY DECOMPOSITION
+============================================================================
+
+  Do VMS chunks form ONE alphabet used at all word positions
+  (NL character-like), or SEPARATE position-specific alphabets
+  (positional cipher-like)?
+
+────────────────────────────────────────────────────────────────────────────
+STEP 1: PARSE CORPORA
+────────────────────────────────────────────────────────────────────────────
+
+  VMS: 40351 words, 78526 chunk tokens, 523 chunk types
+  VMS chunks/word distribution:
+    0:     42 (  0.1%)
+    1:  10838 ( 26.9%)
+    2:  22499 ( 55.8%)
+    3:   5587 ( 13.8%)
+    4:   1085 (  2.7%)
+    5:    211 (  0.5%)
+    6:     89 (  0.2%)
+
+  Latin-Caesar: 44864 words, 275246 chars (23 types, 6.1/word), 101887 syls (2369 types, 2.3/word)
+  Latin-Vulgate: 25908 words, 134187 chars (26 types, 5.2/word), 49538 syls (2242 types, 1.9/word)
+  Latin-Apicius: 29267 words, 147304 chars (36 types, 5.0/word), 56743 syls (2512 types, 1.9/word)
+  Italian-Cucina: 24367 words, 111163 chars (32 types, 4.6/word), 47348 syls (1532 types, 1.9/word)
+  French-Viandier: 13873 words, 66106 chars (30 types, 4.8/word), 23025 syls (1378 types, 1.7/word)
+  English-Cury: 43936 words, 181413 chars (33 types, 4.1/word), 70278 syls (4339 types, 1.6/word)
+  German-Faust: 30959 words, 147946 chars (30 types, 4.8/word), 47662 syls (4112 types, 1.5/word)
+  German-BvgS: 9814 words, 43062 chars (30 types, 4.4/word), 15434 syls (1842 types, 1.6/word)
+
+────────────────────────────────────────────────────────────────────────────
+STEP 2: POSITION METRICS (≥ 2-unit words)
+────────────────────────────────────────────────────────────────────────────
+
+  VMS (≥2 chunks): 29471 words, I=29471, M=8746, F=29471 tokens
+  VMS (≥3 chunks): 6972 words, I=6972, M=8746, F=6972 tokens
+
+  VMS top-20 types by PCI (≥2-chunk words, freq≥20):
+    Type                 Total    PCI  Dom      I%      M%      F%
+    ──────────────────  ──────  ─────  ───  ──────  ──────  ──────
+    q.o.p                  190  1.000    I  100.0%    0.0%    0.0%
+    a.d.y                   21  1.000    F    0.0%    0.0%  100.0%
+    q.o.cth                 30  1.000    I  100.0%    0.0%    0.0%
+    q.k                     21  1.000    I  100.0%    0.0%    0.0%
+    q.o.f                   45  1.000    I  100.0%    0.0%    0.0%
+    sh.e.o.d.y              29  1.000    F    0.0%    0.0%  100.0%
+    ch.e.e.d.y              49  1.000    F    0.0%    0.0%  100.0%
+    sh.e.e.d.y              33  1.000    F    0.0%    0.0%  100.0%
+    e.o.d.y                267  0.996    F    0.0%    0.4%   99.6%
+    q.o.t                 1188  0.996    I   99.6%    0.4%    0.0%
+    q.o.d                  116  0.991    I   99.1%    0.0%    0.9%
+    q.o.k                 3263  0.991    I   99.1%    0.9%    0.0%
+    e.e.d.y                976  0.989    F    0.0%    1.1%   98.9%
+    sh.e.d.y               243  0.988    F    1.2%    0.0%   98.8%
+    q                       78  0.987    I   98.7%    1.3%    0.0%
+    q.o.ckh                 73  0.986    I   98.6%    1.4%    0.0%
+    e.e.e.d.y               61  0.984    F    0.0%    1.6%   98.4%
+    e.e.y                 1277  0.982    F    0.1%    1.7%   98.2%
+    q.o                    269  0.981    I   98.1%    0.7%    1.1%
+    e.d.y                 1074  0.981    F    0.0%    1.9%   98.1%
+
+  VMS bottom-20 types by PCI (most position-flexible):
+    Type                 Total    PCI  Dom      I%      M%      F%
+    ──────────────────  ──────  ─────  ───  ──────  ──────  ──────
+    y.o.k                   21  0.524    M   47.6%   52.4%    0.0%
+    ch.o.d                 182  0.522    I   52.2%   34.1%   13.7%
+    ch.e.d                 301  0.518    I   51.8%   36.5%   11.6%
+    ch.a.l                  83  0.518    F   32.5%   15.7%   51.8%
+    ch.e.o.d                91  0.505    I   50.5%   37.4%   12.1%
+    k                     2640  0.501    I   50.1%   49.6%    0.3%
+    e.e.e                   32  0.500    M    0.0%   50.0%   50.0%
+    a.i                     33  0.485    M    9.1%   48.5%   42.4%
+    y.d                    125  0.480    M   38.4%   48.0%   13.6%
+    sh                      38  0.474    F   34.2%   18.4%   47.4%
+    o.d                    466  0.464    I   46.4%   40.6%   13.1%
+    e.e.e.d                 22  0.455    M   13.6%   45.5%   40.9%
+    ch.d                   274  0.453    I   45.3%   40.5%   14.2%
+    sh.o.l                 116  0.448    F   39.7%   15.5%   44.8%
+    ch.s                    87  0.425    M   24.1%   42.5%   33.3%
+    ch                      66  0.424    F   33.3%   24.2%   42.4%
+    sh.e.o.d                33  0.424    I   42.4%   30.3%   27.3%
+    ch.e.e                  22  0.409    F   31.8%   27.3%   40.9%
+    o                      920  0.400    I   40.0%   30.2%   29.8%
+    o.l                   2905  0.396    F   39.3%   21.1%   39.6%
+
+────────────────────────────────────────────────────────────────────────────
+STEP 3: VMS vs NL CHARACTERS — COMPARISON
+────────────────────────────────────────────────────────────────────────────
+
+  A) VMS chunks vs NL characters (≥2-unit words):
+
+  System                     MeanPCI     WtPCI    Restr%    J(I,F)    J_mean       NMI     MI/H%
+  ────────────────────────  ────────  ────────  ────────  ────────  ────────  ────────  ────────
+  VMS chunks                  0.8036    0.8247    0.6087    0.2410    0.3435    0.5580   12.9902
+  English-Cury                0.5923    0.5864    0.0357    0.9286    0.9524    0.1356    4.6445
+  French-Viandier             0.7236    0.6824    0.3043    0.6522    0.7668    0.2690    9.2655
+  German-BvgS                 0.6678    0.6103    0.2963    0.8400    0.8455    0.1742    6.0547
+  German-Faust                0.7005    0.6423    0.3667    0.6667    0.7184    0.1936    6.4482
+  Italian-Cucina              0.7125    0.6338    0.3214    0.6071    0.7338    0.1983    6.6868
+  Latin-Apicius               0.6544    0.6704    0.1538    0.9200    0.8949    0.1395    4.5615
+  Latin-Caesar                0.6762    0.6885    0.2381    0.7619    0.8413    0.1389    4.2890
+  Latin-Vulgate               0.6825    0.6517    0.3077    0.6800    0.7630    0.1561    5.1464
+  ────────────────────────  ────────  ────────  ────────  ────────  ────────  ────────  ────────
+  NL mean ± std             0.676±0  0.646±0  0.253±0  0.757±0  0.815±0  0.176±0  5.887±1
+  VMS z-score                  +3.32     +5.41     +3.51     -4.39     -6.09     +9.08     +4.63
+
+  B) VMS chunks vs NL syllables (≥2-unit words):
+
+  System                     MeanPCI     WtPCI    Restr%    J(I,F)    J_mean       NMI     MI/H%
+  ────────────────────────  ────────  ────────  ────────  ────────  ────────  ────────  ────────
+  VMS chunks                  0.8036    0.8247    0.6087    0.2410    0.3435    0.5580   12.9902
+  English-Cury                0.8956    0.8434    0.7575    0.0641    0.1545    0.6921   11.6861
+  French-Viandier             0.9231    0.9016    0.8228    0.0390    0.0641    0.8029   14.5614
+  German-BvgS                 0.8751    0.8456    0.7500    0.0548    0.1004    0.7396   13.2943
+  German-Faust                0.8924    0.8857    0.7741    0.0380    0.1186    0.7931   13.2110
+  Italian-Cucina              0.7746    0.7110    0.4605    0.1509    0.2768    0.4510    9.2321
+  Latin-Apicius               0.8861    0.8181    0.7333    0.1050    0.1753    0.6595   12.2786
+  Latin-Caesar                0.9033    0.7815    0.7884    0.0846    0.1421    0.6078   11.4902
+  Latin-Vulgate               0.8705    0.7910    0.7289    0.0909    0.1772    0.6410   11.7736
+  ────────────────────────  ────────  ────────  ────────  ────────  ────────  ────────  ────────
+  NL mean ± std             0.878±0  0.822±0  0.727±0  0.078±0  0.151±0  0.673±0  12.191±
+  VMS z-score                  -1.77     +0.04     -1.13     +4.57     +3.23     -1.08     +0.54
+
+────────────────────────────────────────────────────────────────────────────
+STEP 4: LENGTH-CONTROLLED ANALYSIS (≥ 3-unit words only)
+────────────────────────────────────────────────────────────────────────────
+
+  Rationale: 56% of VMS words are 2-chunk (no M position).
+  The ≥3-unit subset has I, M, AND F positions → fairer comparison.
+
+  A) VMS vs NL characters (≥3-unit words):
+
+  System                     MeanPCI     WtPCI    Restr%    J(I,F)    J_mean       NMI     MI/H%
+  ────────────────────────  ────────  ────────  ────────  ────────  ────────  ────────  ────────
+  VMS chunks                  0.7342    0.7259    0.4151    0.2553    0.3242    0.4316   11.3558
+  English-Cury                0.6274    0.6376    0.1071    0.9286    0.9524    0.1689    5.4720
+  French-Viandier             0.7431    0.7280    0.3913    0.6522    0.7668    0.3004    9.5928
+  German-BvgS                 0.6882    0.6314    0.3704    0.8400    0.8455    0.2050    6.9277
+  German-Faust                0.7104    0.6581    0.4000    0.6667    0.7184    0.2114    6.8863
+  Italian-Cucina              0.7146    0.6684    0.2500    0.5714    0.7100    0.2149    6.8256
+  Latin-Apicius               0.7027    0.7193    0.2800    0.8800    0.8933    0.1748    5.3205
+  Latin-Caesar                0.7101    0.7180    0.3810    0.7143    0.8095    0.1637    4.7937
+  Latin-Vulgate               0.6949    0.6965    0.3600    0.7083    0.7817    0.1714    5.2811
+  ────────────────────────  ────────  ────────  ────────  ────────  ────────  ────────  ────────
+  NL mean ± std             0.699±0  0.682±0  0.317±0  0.745±0  0.810±0  0.201±0  6.387±1
+  VMS z-score                  +1.14     +1.22     +1.04     -4.21     -6.17     +5.47     +3.43
+
+  B) VMS vs NL syllables (≥3-unit words):
+
+  System                     MeanPCI     WtPCI    Restr%    J(I,F)    J_mean       NMI     MI/H%
+  ────────────────────────  ────────  ────────  ────────  ────────  ────────  ────────  ────────
+  VMS chunks                  0.7342    0.7259    0.4151    0.2553    0.3242    0.4316   11.3558
+  English-Cury                0.8164    0.8038    0.5755    0.0719    0.1617    0.6976   13.7185
+  French-Viandier             0.9081    0.9022    0.8286    0.0519    0.0640    0.8028   18.0598
+  German-BvgS                 0.8481    0.8542    0.6154    0.0566    0.0863    0.7698   15.4794
+  German-Faust                0.8561    0.8834    0.6695    0.0420    0.0868    0.8016   14.9271
+  Italian-Cucina              0.7594    0.6985    0.3974    0.2378    0.3033    0.4487    9.5671
+  Latin-Apicius               0.8585    0.8012    0.6667    0.1343    0.1873    0.6403   12.8968
+  Latin-Caesar                0.8976    0.7933    0.7679    0.0980    0.1486    0.6250   12.2007
+  Latin-Vulgate               0.8570    0.7812    0.6720    0.1123    0.1811    0.6309   12.4169
+  ────────────────────────  ────────  ────────  ────────  ────────  ────────  ────────  ────────
+  NL mean ± std             0.850±0  0.815±0  0.649±0  0.101±0  0.152±0  0.677±0  13.658±
+  VMS z-score                  -2.66     -1.47     -1.93     +2.59     +2.39     -2.21     -0.97
+
+  C) TOP-30 ROBUSTNESS CHECK:
+  (Restrict VMS to 30 most frequent chunk types to match NL alphabet size)
+
+  VMS words with all chunks in top-30: 20255/40351 (50.2%)
+  Top-30 chunk types cover 55579/78526 tokens (70.8%)
+
+  Metric        All-chunks      Top-30   NL-char μ
+  ────────────  ──────────  ──────────  ──────────
+  MeanPCI           0.8036      0.8531      0.6762
+  WtPCI             0.8247      0.8527      0.6457
+  Restr%            0.6087      0.7333      0.2530
+  J(I,F)            0.2410      0.4667      0.7571
+  J_mean            0.3435      0.5886      0.8145
+  NMI               0.5580      0.6077      0.1756
+  MI/H%            12.9902     17.9013      5.8871
+
+────────────────────────────────────────────────────────────────────────────
+STEP 5: TYPE PARTITIONING DETAIL
+────────────────────────────────────────────────────────────────────────────
+
+  VMS (≥2-chunk words), threshold = 10 tokens at position:
+    Types at I with ≥10 tokens: 125
+    Types at M with ≥10 tokens: 98
+    Types at F with ≥10 tokens: 117
+    Types at ALL 3 positions:   36
+    I-only types:               50
+    M-only types:               10
+    F-only types:               46
+
+  VMS (≥3-chunk words), threshold = 10 tokens at position:
+    Types at I with ≥10 tokens: 51
+    Types at M with ≥10 tokens: 98
+    Types at F with ≥10 tokens: 67
+    Types at ALL 3 positions:   21
+    I-only types:               10
+    M-only types:               36
+    F-only types:               19
+
+  English-Cury chars: I=27, M=28, F=27, all-3=26, J(I,F)=0.929
+  French-Viandier chars: I=20, M=22, F=18, all-3=15, J(I,F)=0.652
+  German-BvgS chars: I=25, M=26, F=21, all-3=21, J(I,F)=0.840
+  German-Faust chars: I=26, M=29, F=19, all-3=18, J(I,F)=0.667
+  Italian-Cucina chars: I=22, M=25, F=23, all-3=17, J(I,F)=0.607
+  Latin-Apicius chars: I=23, M=24, F=25, all-3=22, J(I,F)=0.920
+  Latin-Caesar chars: I=21, M=21, F=16, all-3=16, J(I,F)=0.762
+  Latin-Vulgate chars: I=22, M=24, F=20, all-3=17, J(I,F)=0.680
+
+────────────────────────────────────────────────────────────────────────────
+STEP 6: NULL MODEL — WITHIN-WORD CHUNK SHUFFLE (50 trials)
+────────────────────────────────────────────────────────────────────────────
+
+  Randomly permute chunk order within each word.
+  This preserves word composition but destroys positional structure.
+  If shuffled MI ≈ 0, the observed MI reflects genuine pos-identity coupling.
+
+  Results:
+    Weighted PCI    observed= 0.8247  shuffled=0.4506±0.0012  z=+305.96
+    J(I,F)          observed= 0.2410  shuffled=0.8885±0.0139  z=-46.48
+    NMI             observed= 0.5580  shuffled=0.0261±0.0006  z=+838.66
+    MI/H(type)%     observed=12.9902  shuffled=0.6066±0.0148  z=+838.66
+
+  INTERPRETATION:
+    Shuffled metrics are FAR from observed → positional structure
+    is NOT an artifact of word composition. Position-identity
+    coupling is genuine and strong.
+
+────────────────────────────────────────────────────────────────────────────
+STEP 7: PHASE 60 RECONCILIATION — PREDICTED vs OBSERVED OVERLAP
+────────────────────────────────────────────────────────────────────────────
+
+  Phase 60 best model: 3-zone positional cipher
+    Consonants: 4 shared + 3 unique/zone = 13 consonant symbols
+    Vowels:     2 shared + 5 unique/zone = 17 vowel symbols
+    Total:      6 shared + 24 zone-unique = 30 symbols
+    Predicted Jaccard: |shared|/|total| = 6/30 = 0.200
+    (between any two zones: |6|/|6+8+8| = 6/22 = 0.273)
+
+  Phase 88 observed:
+    J(I,F) for VMS chunks (≥2-unit):  0.241
+    J_mean for VMS chunks (≥2-unit):  0.344
+    J(I,F) for VMS chunks (≥3-unit):  0.255
+    J_mean for VMS chunks (≥3-unit):  0.324
+
+    NL character J(I,F) mean:         0.757
+    Phase 60 cipher prediction:       0.273
+
+    → VMS J(I,F) is CLOSER to Phase 60 cipher prediction
+      than to NL character baseline.
+    Interpolation: -7% toward NL, 107% toward cipher
+
+────────────────────────────────────────────────────────────────────────────
+STEP 8: SKEPTICAL AUDIT — WHAT COULD INVALIDATE THESE RESULTS?
+────────────────────────────────────────────────────────────────────────────
+
+  1. WORD-LENGTH CONFOUND
+     VMS mean chunks/word: 1.95
+     Latin-Caesar mean chars/word: 6.14
+     Latin-Vulgate mean chars/word: 5.18
+     Latin-Apicius mean chars/word: 5.03
+     Latin-Caesar mean syls/word: 2.27
+     Latin-Vulgate mean syls/word: 1.91
+     Latin-Apicius mean syls/word: 1.94
+     CAVEAT: VMS has SHORTER words (fewer M positions).
+     The ≥3-unit sub-analysis controls for this partially,
+     but NL still has longer words within the ≥3 subset.
+
+  2. ALPHABET SIZE CONFOUND
+     VMS chunk types (freq≥20): 184
+     NL char types: ~26-36
+     NL syl types: ~1400-5000
+     More types → more trivially position-locked rare types.
+     The top-30 robustness check addresses this, as does
+     the freq≥20 threshold for PCI. But the fundamental
+     asymmetry (523 vs 26) means VMS Jaccard is EXPECTED
+     to be somewhat lower simply from more types.
+
+  3. LOOP GRAMMAR ARTIFACT
+     The LOOP grammar defines slot 1 = {ch, sh, y}. These
+     onsets don't constrain chunk POSITION within a word.
+     A 'ch.e.d.y' chunk can appear at I, M, or F. Positional
+     restriction is EMPIRICAL, not grammar-imposed.
+     VERIFIED: the parser is greedy left→right with no
+     position-dependent rules. Slot structure is fixed.
+
+  4. SYLLABLE COMPARISON FAIRNESS
+     NL syllabification is approximate (~87% accuracy per Phase 85).
+     Syllable type counts are high (1000-5000), closer to VMS chunks
+     (523). The syllable comparison is arguably fairer than the
+     character comparison for type-count matching.
+
+  5. SINGLETON EXCLUSION
+     VMS 1-chunk words excluded: 10838 (26.9%)
+     These could bias results if singleton chunks are systematically
+     different. But including them as both-I-and-F would inflate
+     overlap artificially. Exclusion is the conservative choice.
+
+────────────────────────────────────────────────────────────────────────────
+STEP 9: SYNTHESIS & VERDICT
+────────────────────────────────────────────────────────────────────────────
+
+  METRIC SUMMARY (≥2-unit words):
+    Metric               VMS   NL-char μ    NL-syl μ   z(char)    z(syl)
+    ──────────────  ────────  ──────────  ──────────  ────────  ────────
+    MeanPCI           0.8036      0.6762      0.8776     +3.32     -1.77
+    WtPCI             0.8247      0.6457      0.8222     +5.41     +0.04
+    Restr%            0.6087      0.2530      0.7269     +3.51     -1.13
+    J(I,F)            0.2410      0.7571      0.0784     -4.39     +4.57
+    J_mean            0.3435      0.8145      0.1511     -6.09     +3.23
+    NMI               0.5580      0.1756      0.6734     +9.08     -1.08
+    MI/H%            12.9902      5.8871     12.1909     +4.63     +0.54
+
+  METRIC SUMMARY (≥3-unit words):
+    Metric               VMS   NL-char μ   z(char)
+    ──────────────  ────────  ──────────  ────────
+    MeanPCI           0.7342      0.6989     +1.14
+    WtPCI             0.7259      0.6822     +1.22
+    Restr%            0.4151      0.3175     +1.04
+    J(I,F)            0.2553      0.7452     -4.21
+    J_mean            0.3242      0.8097     -6.17
+    NMI               0.4316      0.2013     +5.47
+    MI/H%            11.3558      6.3875     +3.43
+
+  DIRECTIONAL EVIDENCE:
+           MeanPCI: z=+3.32 → CIPHER direction (VMS > NL)
+             WtPCI: z=+5.41 → CIPHER direction (VMS > NL)
+            Restr%: z=+3.51 → CIPHER direction (VMS > NL)
+               NMI: z=+9.08 → CIPHER direction (VMS > NL)
+             MI/H%: z=+4.63 → CIPHER direction (VMS > NL)
+            J(I,F): z=-4.39 → CIPHER direction (VMS < NL overlap)
+            J_mean: z=-6.09 → CIPHER direction (VMS < NL overlap)
+
+  Score: 7 metrics favor CIPHER, 0 favor NL, 0 ambiguous
+
+  PHASE 60 RECONCILIATION:
+    Observed J(I,F):         0.241
+    Cipher prediction:       0.273
+    NL character mean:       0.757
+
+  NULL MODEL VALIDATION:
+    All metrics are z=306+ from shuffled null → positional coupling is GENUINE,
+    not an artifact of word composition.
+
+  ══════════════════════════════════════════════════════════
+  VERDICT
+  ══════════════════════════════════════════════════════════
+
+  ★ VMS chunks show STRONG positional partitioning, significantly
+    exceeding NL character baselines on most metrics.
+    This is consistent with a POSITIONAL ENCODING mechanism
+    where different word positions use different chunk inventories.
+
+  Verdict code: POSITIONAL_ENCODING_SUPPORTED
+
+  REVISED CONFIDENCES (Phase 88):
+  - Positional verbose cipher: 45% → UP (evidence supports)
+  - Natural language: 87% (unchanged)
+  - Chunks = functional characters: 85% (unchanged)
+  - True alphabet ≈ 25: 70% (unchanged)
+  - Hoax/random: <1% (unchanged)
+
+  Results saved to results\phase88_position_identity.txt
+  JSON saved to results\phase88_position_identity.json

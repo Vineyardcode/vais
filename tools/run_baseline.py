@@ -108,10 +108,15 @@ def main():
             if k not in before or after[k] != before[k]
         )
 
-        (BASELINE / f"{stem}.stdout.txt").write_text(stdout, encoding="utf-8")
+        # newline='' prevents \r\n in the captured stream from being
+        # re-translated to \r\r\n on disk (Windows)
+        with open(BASELINE / f"{stem}.stdout.txt", "w", encoding="utf-8",
+                  newline="") as fh:
+            fh.write(stdout)
         errfile = BASELINE / f"{stem}.stderr.txt"
         if stderr.strip():
-            errfile.write_text(stderr, encoding="utf-8")
+            with open(errfile, "w", encoding="utf-8", newline="") as fh:
+                fh.write(stderr)
         elif errfile.exists():
             errfile.unlink()
 

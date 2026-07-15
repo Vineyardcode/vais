@@ -281,3 +281,14 @@ gitignored but left on disk for audit; `baseline/` (golden) is committed.
   "≠ golden (N lines)" badge with click-to-view unified diff. Custom-param
   runs are marked not comparable. Refresh with
   `tools/run_baseline.py --outdir golden --hashseed 0`.
+
+### Golden-diff hardening (found during verification)
+- `tools/run_baseline.py` wrote captured output via `write_text`, which
+  re-translated the stream's `\r\n` to `\r\r\n` on disk (Windows). All prior
+  verifications compared like-with-like through the same pipeline, so their
+  conclusions stand; but the UI's in-memory comparison surfaced the artifact.
+  Fixed the writer (`newline=''`), normalized line endings in
+  `compare_to_golden`, and repaired all 129 golden files
+  (`\r\r\n -> \r\n`). Re-verified: default runs of `hebrew_comparison`,
+  `slot_analysis`, `phase106b_bench_variants` all report "= golden" through
+  both the API and the rendered UI badge.

@@ -1,193 +1,193 @@
-========================================================================
-PHASE 60: POSITIONAL-VARIANT VERBOSE CIPHER
-Can position-dependent character mapping close the alphabet gap?
-========================================================================
-
-Loading VMS corpus...
-  VMS: 36259 words, 160710 chars, α=32
-  H(c)=3.857, H(c|p)=2.471, H-ratio=0.641, IC=0.0817
-
-── VMS Positional Profile ──
-  initial : H=3.160, types= 24, top=o(22%), c(18%), q(15%)
-  early   : H=3.215, types= 22, top=h(25%), o(18%), k(13%)
-  medial  : H=3.219, types= 23, top=e(24%), i(13%), a(13%)
-  late    : H=2.650, types= 17, top=d(30%), i(26%), e(14%)
-  final   : H=2.445, types= 22, top=y(41%), n(17%), l(16%)
-  Initial top-3 concentration: 55.3%
-  Final top-3 concentration:   72.0%
-
-Loading Phase 58 reference data...
-  7 NL references loaded
-
-Fetching Italian source text...
-  Italian: 50000 words
-
-========================================================================
-60a) POSITIONAL-VARIANT ENCODING SCHEMES
-========================================================================
-
-  Encoding: A: 3-zone verbose (full variant)
-    α= 39  H(c)=4.938  H(c|p)=2.643  H-rat=0.535  IC=0.0370  MWL=5.74
-    TTR=0.2701  Hapax=0.659  V-fr=0.538  V/C-alt=0.746
-    Distance from VMS: z-normalized=27.063
-    pos/initial : H=2.838, types= 13
-    pos/medial  : H=4.151, types= 26
-    pos/final   : H=3.147, types= 21
-    init-top3=55.4%, final-top3=52.9%
-
-  Encoding: B: 5-zone verbose (full variant)
-    α= 71  H(c)=4.982  H(c|p)=2.593  H-rat=0.520  IC=0.0592  MWL=7.66
-    TTR=0.2701  Hapax=0.659  V-fr=0.352  V/C-alt=0.754
-    Distance from VMS: z-normalized=21.502
-    pos/initial : H=2.837, types= 12
-    pos/medial  : H=3.818, types= 38
-    pos/final   : H=2.930, types= 18
-    init-top3=55.4%, final-top3=57.3%
-
-  Encoding: C: 3-zone, 30% shared chars
-    α= 33  H(c)=4.433  H(c|p)=2.727  H-rat=0.615  IC=0.0620  MWL=5.74
-    TTR=0.2701  Hapax=0.659  V-fr=0.424  V/C-alt=0.706
-    Distance from VMS: z-normalized=13.416
-    pos/initial : H=2.838, types= 13
-    pos/medial  : H=3.881, types= 23
-    pos/final   : H=3.046, types= 19
-    init-top3=55.4%, final-top3=55.0%
-
-  Encoding: D: 5-zone, vowel-only variants
-    α= 33  H(c)=4.151  H(c|p)=2.983  H-rat=0.719  IC=0.0761  MWL=5.74
-    TTR=0.2701  Hapax=0.659  V-fr=0.152  V/C-alt=0.698
-    Distance from VMS: z-normalized=12.456
-    pos/initial : H=2.828, types=  8
-    pos/medial  : H=3.655, types= 23
-    pos/final   : H=3.147, types= 21
-    init-top3=55.5%, final-top3=52.9%
-
-  Encoding: E: Graduated (init/final unique)
-    α= 31  H(c)=4.717  H(c|p)=2.579  H-rat=0.547  IC=0.0414  MWL=5.74
-    TTR=0.2608  Hapax=0.658  V-fr=0.452  V/C-alt=0.703
-    Distance from VMS: z-normalized=23.344
-    pos/initial : H=1.952, types=  8
-    pos/medial  : H=4.088, types= 22
-    pos/final   : H=3.085, types= 17
-    init-top3=86.1%, final-top3=52.9%
-
-  Encoding: F: 3-zone, 50% shared chars
-    α= 27  H(c)=4.005  H(c|p)=2.709  H-rat=0.676  IC=0.0800  MWL=5.74
-    TTR=0.2701  Hapax=0.659  V-fr=0.370  V/C-alt=0.706
-    Distance from VMS: z-normalized=6.079
-    pos/initial : H=2.831, types= 10
-    pos/medial  : H=3.679, types= 20
-    pos/final   : H=2.871, types= 17
-    init-top3=55.5%, final-top3=59.8%
-
-========================================================================
-60b) GRID SEARCH: OPTIMIZING FOR VMS FINGERPRINT
-========================================================================
-
-  Testing 324 parameter combinations...
-
-  Top 10 parameter sets (z-distance from VMS):
-
-  Rank     Dist    α  H(c|p)      IC    MWL Zones Csh Cuq Vsh Vuq  Exp
-  --------------------------------------------------------------------
-  1       3.714   26   2.510  0.0767   5.57     3   0   3   2   5  0.6
-  2       3.783   30   2.593  0.0835   5.72     3   4   3   2   5  0.8
-  3       3.998   30   2.583  0.0834   5.74     3   4   3   2   5  1.0
-  4       4.548   24   2.627  0.0837   5.72     3   4   3   2   3  0.8
-  5       4.566   24   2.629  0.0836   5.74     3   4   3   2   3  1.0
-  6       4.576   30   2.631  0.0856   5.57     3   4   3   2   5  0.6
-  7       4.705   28   2.446  0.0883   5.74     3   2   3   2   5  1.0
-  8       4.860   20   2.507  0.0769   5.57     3   0   3   2   3  0.6
-  9       4.935   26   2.600  0.0836   5.57     3   2   3   0   5  0.6
-  10      4.976   17   2.496  0.0808   5.57     3   0   3   2   2  0.6
-
-  VMS target: α=32, H(c|p)=2.471, IC=0.0817, MWL=4.94
-
-========================================================================
-60c) BEST MODEL — DETAILED FINGERPRINT COMPARISON
-========================================================================
-
-  Best: Optimized (3zone, Csh=0, Cuq=3, Vsh=2, Vuq=5, exp=0.6)
-  Distance from VMS: 3.714
-
-  Theoretical max alphabet: 26
-  Observed alphabet:        26
-
-  Feature             VMS     Best        Δ     NL μ    VMS z   Best z       Δz
-  ------------------------------------------------------------------------
-  alpha_size       32.000   26.000   -6.000   30.714    +0.28    -1.03    -1.31 ✓
-  H_char            3.857    3.919   +0.062    4.133    -3.47    -2.69    +0.78 ✓
-  H_cond            2.471    2.510   +0.039    3.482   -19.87   -19.10    +0.77 ✓
-  H_ratio           0.641    0.641   -0.000    0.843   -12.63   -12.65    -0.01 ✓
-  IC                0.082    0.077   -0.005    0.069    +5.90    +3.50    -2.40 ✗
-  mean_wlen         4.935    5.570   +0.635    4.636    +0.35    +1.09    +0.74 ✓
-  TTR               0.269    0.233   -0.036    0.282    -0.14    -0.53    -0.39 ✓
-  hapax_ratio       0.658    0.630   -0.027    0.641    +0.26    -0.18    -0.44 ✓
-  V_frac            0.281    0.308   +0.026    0.332    -1.06    -0.51    +0.56 ✓
-  VC_alt            0.732    0.659   -0.073    0.708    +0.65    -1.33    -1.98 ✓
-
-  Features matched (|Δz| < 2): 9/10
-
-  Positional profile:
-    initial : H=1.691 (VMS: 3.160), types= 10 (VMS: 24)
-    early   : H=2.885 (VMS: 3.215), types= 12 (VMS: 22)
-    medial  : H=3.218 (VMS: 3.219), types= 15 (VMS: 23)
-    late    : H=2.814 (VMS: 2.650), types= 13 (VMS: 17)
-    final   : H=2.687 (VMS: 2.445), types= 13 (VMS: 22)
-    init-top3:  97.8%  (VMS: 55.3%)
-    final-top3: 58.8%  (VMS: 72.0%)
-
-  Phase 59 baselines for reference:
-    Verbose (no zones):  α=13, H(c|p)=2.453, d=8.31
-    Spanish (nearest NL): d=2.30
-
-========================================================================
-60d) COMPLETE RANKING
-========================================================================
-
-Rank  Scheme                                      Dist    α  H(c|p)      IC    MWL
-----------------------------------------------------------------------------------
-1     Optimized (3zone, Csh=0, Cuq=3, Vsh=2, V   3.714   26   2.510  0.0767   5.57
-2     F: 3-zone, 50% shared chars                6.079   27   2.709  0.0800   5.74
-3     D: 5-zone, vowel-only variants            12.456   33   2.983  0.0761   5.74
-4     C: 3-zone, 30% shared chars               13.416   33   2.727  0.0620   5.74
-5     B: 5-zone verbose (full variant)          21.502   71   2.593  0.0592   7.66
-6     E: Graduated (init/final unique)          23.344   31   2.579  0.0414   5.74
-7     A: 3-zone verbose (full variant)          27.063   39   2.643  0.0370   5.74
-
-      VMS (TARGET)                               0.000   32   2.471  0.0817   4.94
-
-========================================================================
-60e) DOES POSITION-VARIANT CIPHER BEAT NEAREST NL?
-========================================================================
-
-  NO — no scheme beats Spanish (d=2.30)
-
-  Closest: Optimized (3zone, Csh=0, Cuq=3, Vsh=2, Vuq=5, exp=  d=3.714
-  Improvement over Phase 59 baseline (d=8.31): 4.60 (55%)
-
-========================================================================
-60f) CRITICAL SYNTHESIS
-========================================================================
-
-What position-variant encoding FIXES vs Phase 59 baseline:
-  ● Alphabet size: 13 → 26 (VMS: 32)
-  ● H(char): Phase 59 was too low → now 3.919 (VMS: 3.857)
-
-What it PRESERVES:
-  ● H(c|prev): 2.510 (VMS: 2.471)
-
-What STILL doesn't match (|Δz| ≥ 2):
-  ✗ IC: Δz = -2.40 (too low)
-
-INTERPRETATION:
-
-  Significant improvement (d=3.714 vs Phase 59's 8.31)
-  but still farther from VMS than Spanish (d=2.30).
-  The position-variant mechanism HELPS but doesn't fully close
-  the gap. The remaining mismatch may indicate:
-    - Additional encoding complexity beyond position-zones
-    - Source language effects (Italian ≠ actual source)
-    - EVA transcription artifacts in the VMS fingerprint
-
-Results saved to results\phase60_output.json
+========================================================================
+PHASE 60: POSITIONAL-VARIANT VERBOSE CIPHER
+Can position-dependent character mapping close the alphabet gap?
+========================================================================
+
+Loading VMS corpus...
+  VMS: 36259 words, 160710 chars, α=32
+  H(c)=3.857, H(c|p)=2.471, H-ratio=0.641, IC=0.0817
+
+── VMS Positional Profile ──
+  initial : H=3.160, types= 24, top=o(22%), c(18%), q(15%)
+  early   : H=3.215, types= 22, top=h(25%), o(18%), k(13%)
+  medial  : H=3.219, types= 23, top=e(24%), i(13%), a(13%)
+  late    : H=2.650, types= 17, top=d(30%), i(26%), e(14%)
+  final   : H=2.445, types= 22, top=y(41%), n(17%), l(16%)
+  Initial top-3 concentration: 55.3%
+  Final top-3 concentration:   72.0%
+
+Loading Phase 58 reference data...
+  7 NL references loaded
+
+Fetching Italian source text...
+  Italian: 50000 words
+
+========================================================================
+60a) POSITIONAL-VARIANT ENCODING SCHEMES
+========================================================================
+
+  Encoding: A: 3-zone verbose (full variant)
+    α= 39  H(c)=4.938  H(c|p)=2.643  H-rat=0.535  IC=0.0370  MWL=5.74
+    TTR=0.2701  Hapax=0.659  V-fr=0.538  V/C-alt=0.746
+    Distance from VMS: z-normalized=27.063
+    pos/initial : H=2.838, types= 13
+    pos/medial  : H=4.151, types= 26
+    pos/final   : H=3.147, types= 21
+    init-top3=55.4%, final-top3=52.9%
+
+  Encoding: B: 5-zone verbose (full variant)
+    α= 71  H(c)=4.982  H(c|p)=2.593  H-rat=0.520  IC=0.0592  MWL=7.66
+    TTR=0.2701  Hapax=0.659  V-fr=0.352  V/C-alt=0.754
+    Distance from VMS: z-normalized=21.502
+    pos/initial : H=2.837, types= 12
+    pos/medial  : H=3.818, types= 38
+    pos/final   : H=2.930, types= 18
+    init-top3=55.4%, final-top3=57.3%
+
+  Encoding: C: 3-zone, 30% shared chars
+    α= 33  H(c)=4.433  H(c|p)=2.727  H-rat=0.615  IC=0.0620  MWL=5.74
+    TTR=0.2701  Hapax=0.659  V-fr=0.424  V/C-alt=0.706
+    Distance from VMS: z-normalized=13.416
+    pos/initial : H=2.838, types= 13
+    pos/medial  : H=3.881, types= 23
+    pos/final   : H=3.046, types= 19
+    init-top3=55.4%, final-top3=55.0%
+
+  Encoding: D: 5-zone, vowel-only variants
+    α= 33  H(c)=4.151  H(c|p)=2.983  H-rat=0.719  IC=0.0761  MWL=5.74
+    TTR=0.2701  Hapax=0.659  V-fr=0.152  V/C-alt=0.698
+    Distance from VMS: z-normalized=12.456
+    pos/initial : H=2.828, types=  8
+    pos/medial  : H=3.655, types= 23
+    pos/final   : H=3.147, types= 21
+    init-top3=55.5%, final-top3=52.9%
+
+  Encoding: E: Graduated (init/final unique)
+    α= 31  H(c)=4.717  H(c|p)=2.579  H-rat=0.547  IC=0.0414  MWL=5.74
+    TTR=0.2608  Hapax=0.658  V-fr=0.452  V/C-alt=0.703
+    Distance from VMS: z-normalized=23.344
+    pos/initial : H=1.952, types=  8
+    pos/medial  : H=4.088, types= 22
+    pos/final   : H=3.085, types= 17
+    init-top3=86.1%, final-top3=52.9%
+
+  Encoding: F: 3-zone, 50% shared chars
+    α= 27  H(c)=4.005  H(c|p)=2.709  H-rat=0.676  IC=0.0800  MWL=5.74
+    TTR=0.2701  Hapax=0.659  V-fr=0.370  V/C-alt=0.706
+    Distance from VMS: z-normalized=6.079
+    pos/initial : H=2.831, types= 10
+    pos/medial  : H=3.679, types= 20
+    pos/final   : H=2.871, types= 17
+    init-top3=55.5%, final-top3=59.8%
+
+========================================================================
+60b) GRID SEARCH: OPTIMIZING FOR VMS FINGERPRINT
+========================================================================
+
+  Testing 324 parameter combinations...
+
+  Top 10 parameter sets (z-distance from VMS):
+
+  Rank     Dist    α  H(c|p)      IC    MWL Zones Csh Cuq Vsh Vuq  Exp
+  --------------------------------------------------------------------
+  1       3.714   26   2.510  0.0767   5.57     3   0   3   2   5  0.6
+  2       3.783   30   2.593  0.0835   5.72     3   4   3   2   5  0.8
+  3       3.998   30   2.583  0.0834   5.74     3   4   3   2   5  1.0
+  4       4.548   24   2.627  0.0837   5.72     3   4   3   2   3  0.8
+  5       4.566   24   2.629  0.0836   5.74     3   4   3   2   3  1.0
+  6       4.576   30   2.631  0.0856   5.57     3   4   3   2   5  0.6
+  7       4.705   28   2.446  0.0883   5.74     3   2   3   2   5  1.0
+  8       4.860   20   2.507  0.0769   5.57     3   0   3   2   3  0.6
+  9       4.935   26   2.600  0.0836   5.57     3   2   3   0   5  0.6
+  10      4.976   17   2.496  0.0808   5.57     3   0   3   2   2  0.6
+
+  VMS target: α=32, H(c|p)=2.471, IC=0.0817, MWL=4.94
+
+========================================================================
+60c) BEST MODEL — DETAILED FINGERPRINT COMPARISON
+========================================================================
+
+  Best: Optimized (3zone, Csh=0, Cuq=3, Vsh=2, Vuq=5, exp=0.6)
+  Distance from VMS: 3.714
+
+  Theoretical max alphabet: 26
+  Observed alphabet:        26
+
+  Feature             VMS     Best        Δ     NL μ    VMS z   Best z       Δz
+  ------------------------------------------------------------------------
+  alpha_size       32.000   26.000   -6.000   30.714    +0.28    -1.03    -1.31 ✓
+  H_char            3.857    3.919   +0.062    4.133    -3.47    -2.69    +0.78 ✓
+  H_cond            2.471    2.510   +0.039    3.482   -19.87   -19.10    +0.77 ✓
+  H_ratio           0.641    0.641   -0.000    0.843   -12.63   -12.65    -0.01 ✓
+  IC                0.082    0.077   -0.005    0.069    +5.90    +3.50    -2.40 ✗
+  mean_wlen         4.935    5.570   +0.635    4.636    +0.35    +1.09    +0.74 ✓
+  TTR               0.269    0.233   -0.036    0.282    -0.14    -0.53    -0.39 ✓
+  hapax_ratio       0.658    0.630   -0.027    0.641    +0.26    -0.18    -0.44 ✓
+  V_frac            0.281    0.308   +0.026    0.332    -1.06    -0.51    +0.56 ✓
+  VC_alt            0.732    0.659   -0.073    0.708    +0.65    -1.33    -1.98 ✓
+
+  Features matched (|Δz| < 2): 9/10
+
+  Positional profile:
+    initial : H=1.691 (VMS: 3.160), types= 10 (VMS: 24)
+    early   : H=2.885 (VMS: 3.215), types= 12 (VMS: 22)
+    medial  : H=3.218 (VMS: 3.219), types= 15 (VMS: 23)
+    late    : H=2.814 (VMS: 2.650), types= 13 (VMS: 17)
+    final   : H=2.687 (VMS: 2.445), types= 13 (VMS: 22)
+    init-top3:  97.8%  (VMS: 55.3%)
+    final-top3: 58.8%  (VMS: 72.0%)
+
+  Phase 59 baselines for reference:
+    Verbose (no zones):  α=13, H(c|p)=2.453, d=8.31
+    Spanish (nearest NL): d=2.30
+
+========================================================================
+60d) COMPLETE RANKING
+========================================================================
+
+Rank  Scheme                                      Dist    α  H(c|p)      IC    MWL
+----------------------------------------------------------------------------------
+1     Optimized (3zone, Csh=0, Cuq=3, Vsh=2, V   3.714   26   2.510  0.0767   5.57
+2     F: 3-zone, 50% shared chars                6.079   27   2.709  0.0800   5.74
+3     D: 5-zone, vowel-only variants            12.456   33   2.983  0.0761   5.74
+4     C: 3-zone, 30% shared chars               13.416   33   2.727  0.0620   5.74
+5     B: 5-zone verbose (full variant)          21.502   71   2.593  0.0592   7.66
+6     E: Graduated (init/final unique)          23.344   31   2.579  0.0414   5.74
+7     A: 3-zone verbose (full variant)          27.063   39   2.643  0.0370   5.74
+
+      VMS (TARGET)                               0.000   32   2.471  0.0817   4.94
+
+========================================================================
+60e) DOES POSITION-VARIANT CIPHER BEAT NEAREST NL?
+========================================================================
+
+  NO — no scheme beats Spanish (d=2.30)
+
+  Closest: Optimized (3zone, Csh=0, Cuq=3, Vsh=2, Vuq=5, exp=  d=3.714
+  Improvement over Phase 59 baseline (d=8.31): 4.60 (55%)
+
+========================================================================
+60f) CRITICAL SYNTHESIS
+========================================================================
+
+What position-variant encoding FIXES vs Phase 59 baseline:
+  ● Alphabet size: 13 → 26 (VMS: 32)
+  ● H(char): Phase 59 was too low → now 3.919 (VMS: 3.857)
+
+What it PRESERVES:
+  ● H(c|prev): 2.510 (VMS: 2.471)
+
+What STILL doesn't match (|Δz| ≥ 2):
+  ✗ IC: Δz = -2.40 (too low)
+
+INTERPRETATION:
+
+  Significant improvement (d=3.714 vs Phase 59's 8.31)
+  but still farther from VMS than Spanish (d=2.30).
+  The position-variant mechanism HELPS but doesn't fully close
+  the gap. The remaining mismatch may indicate:
+    - Additional encoding complexity beyond position-zones
+    - Source language effects (Italian ≠ actual source)
+    - EVA transcription artifacts in the VMS fingerprint
+
+Results saved to results\phase60_output.json

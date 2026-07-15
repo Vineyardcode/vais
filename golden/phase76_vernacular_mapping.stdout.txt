@@ -1,464 +1,464 @@
-══════════════════════════════════════════════════════════════════════
-PHASE 76: Vernacular Paragraph-Initial Mapping
-══════════════════════════════════════════════════════════════════════
-
-Target VMS distributions:
-  Overall: p=44.9%, t=22.2%, k=10.3%, f=4.0% → 81.4% gallows
-  Recipe:  p=54.4%, t=21.1%, k=7.0%,  f=4.9% → 87.4% gallows
-  Herbal:  p=34.5%, t=28.0%, k=16.8%, f=5.3% → 84.5% gallows
-
-Downloading vernacular texts...
-  [cached] italian_cucina: italian_cucina.txt
-
-──────────────────────────────────────────────────────────────────────
-TEXT: Il libro della cucina del sec. XIV
-Language: Italian (Tuscan) | Genre: cookbook / recipe collection | Era: 14th century (trecento)
-──────────────────────────────────────────────────────────────────────
-Text length: 162,805 chars after boilerplate removal
-Recipe paragraphs extracted: 368
-
-  SAMPLE PARAGRAPH STARTS (first 10):
-      1. INCOMINCIASI IL LIBRO DE LA COCINA....
-      2. =Dei Cauli.=...
-      3. _A fare i Cauli bianchi bene cotti._...
-      4. Togli i torsi del caulo, e mondali bene, sì che de le frondi niente ci rimagna; ...
-      5. _A fare i cauli verdi con carne._...
-      6. Togli le cime dei cauli sane, e gittale nella pentola bugliente con la carne, e ...
-      7. _Dei predetti._...
-      8. Togli i cauli e poni a cocere con carne di castrone, o di porco, o carne insalat...
-      9. _Dei predetti._...
-     10. Togli le cime dei cauli, e fàlle bullire: poi le cava, e friggile nell'oglio con...
-
-  TOP PARAGRAPH-INITIAL WORDS:
-    togli               :  106 ( 28.8%) ██████████████
-    de                  :   67 ( 18.2%) █████████
-    altramente          :   49 ( 13.3%) ██████
-    del                 :   28 (  7.6%) ███
-    a                   :   15 (  4.1%) ██
-    di                  :   10 (  2.7%) █
-    dei                 :    9 (  2.4%) █
-    metti               :    8 (  2.2%) █
-    fà                  :    7 (  1.9%) 
-    tolli               :    6 (  1.6%) 
-    anche               :    5 (  1.4%) 
-    fave                :    3 (  0.8%) 
-    simile              :    3 (  0.8%) 
-    lessa               :    3 (  0.8%) 
-    altrimenti          :    2 (  0.5%) 
-
-  Paragraph-initial letter distribution (n=368):
-    D:   115 ( 31.2%) ███████████████
-         words: de(67), del(28), di(10), dei(9)
-    T:   114 ( 31.0%) ███████████████
-         words: togli(106), tolli(6), taglia(2)
-    A:    72 ( 19.6%) █████████
-         words: altramente(49), a(15), anche(5), altrimenti(2)
-    P:    16 (  4.3%) ██
-         words: peselli(2), poni(2), prendi(2)
-    F:    15 (  4.1%) ██
-         words: fà(7), fave(3)
-    S:    12 (  3.3%) █
-         words: simile(3)
-    M:     8 (  2.2%) █
-         words: metti(8)
-    L:     5 (  1.4%) 
-         words: lessa(3), le(2)
-    I:     3 (  0.8%) 
-    C:     2 (  0.5%) 
-    N:     2 (  0.5%) 
-    G:     1 (  0.3%) 
-    B:     1 (  0.3%) 
-    Q:     1 (  0.3%) 
-    R:     1 (  0.3%) 
-
-  Top-4 letters: ['D', 'T', 'A', 'P'] → coverage: 86.1%
-  VMS gallows coverage: 81.4%
-  Gap: 4.8%
-
-  Testing all 4-letter mappings against VMS gallows distribution...
-    Tested 32,760 mappings
-
-  TOP 10 PARAGRAPH-INITIAL MAPPINGS:
-  Rank    Score       L2   Cov%     p→   t→   k→   f→
-     1 0.0431 0.0362  82.1%       D    T    A    G
-     2 0.0431 0.0362  82.1%       D    T    A    B
-     3 0.0431 0.0362  82.1%       D    T    A    Q
-     4 0.0431 0.0362  82.1%       D    T    A    R
-     5 0.0443 0.0375  82.1%       T    D    A    G
-     6 0.0443 0.0375  82.1%       T    D    A    B
-     7 0.0443 0.0375  82.1%       T    D    A    Q
-     8 0.0443 0.0375  82.1%       T    D    A    R
-     9 0.0456 0.0360  82.3%       D    T    A    C
-    10 0.0456 0.0360  82.3%       D    T    A    N
-
-  BEST MAPPING: {'p': 'D', 't': 'T', 'k': 'A', 'f': 'G'}
-  Score: 0.0431 (L2=0.0362, CovΔ=0.0069)
-  Coverage: 82.1% (VMS: 81.4%)
-  Proportions (within 4 letters):
-    VMS p → Ita D: VMS=0.552, Lang=0.381, Δ=0.171
-    VMS t → Ita T: VMS=0.273, Lang=0.377, Δ=0.105
-    VMS k → Ita A: VMS=0.127, Lang=0.238, Δ=0.111
-    VMS f → Ita G: VMS=0.049, Lang=0.003, Δ=0.045
-
-  CLOSEST COVERAGE MATCH to VMS 81.4%:
-    Letters: ('D', 'T', 'A', 'G') → 82.1% (gap=0.7%)
-
-  COMPARISON WITH VMS RECIPE SECTION (87.4% gallows, 285 paras):
-    Closest 4 letters to 87.4%: ('D', 'T', 'A', 'P') → 86.1% (gap=1.3%)
-  [cached] french_viandier: french_viandier.txt
-
-──────────────────────────────────────────────────────────────────────
-TEXT: Le viandier de Taillevent
-Language: French | Genre: cookbook / recipe collection | Era: c. 1380-1420 (Charles VI)
-──────────────────────────────────────────────────────────────────────
-Text length: 87,268 chars after boilerplate removal
-Recipe paragraphs extracted: 197
-
-  SAMPLE PARAGRAPH STARTS (first 10):
-      1. Potaiges lyans...
-      2. Chaudun de porc cretonnee de poix nouueaux cretonnee de feues nouuelles comme de...
-      3. Porc rosty au vert ius. veau rosty. fraise de veau. pyions. menus oyseaulx. perd...
-      4. Pour malade. chandeau flamant. coulis de perche. blanc mengier de poisson. poiss...
-      5. Saulces non boulies. Cameline. saulce verde. aulz camelins. aulz blanc. aulz ver...
-      6. Cy finist la table & commence le traictie de ce liure    Pour faire brouet blanc...
-      7. Pour faire blanc mengier a poisson de brochet de perche ou dautre poisson auquel...
-      8. Pour faire blanc brouet dalemaigne. prenez veau ou polaille et reffaire / et pui...
-      9. Pour faire salemme. Soit prins brochetz carpes & autres poisson qui y appartient...
-     10. Pour faire brouet georget. prenez veau poulaille ou connin despeces par pieces &...
-
-  TOP PARAGRAPH-INITIAL WORDS:
-    pour                :   89 ( 45.2%) ██████████████████████
-    pastes              :   12 (  6.1%) ███
-    prenez              :    5 (  2.5%) █
-    soit                :    4 (  2.0%) █
-    tartres             :    4 (  2.0%) █
-    bancquet            :    4 (  2.0%) █
-    porc                :    3 (  1.5%) 
-    tartre              :    3 (  1.5%) 
-    cy                  :    2 (  1.0%) 
-    venoison            :    2 (  1.0%) 
-    autre               :    2 (  1.0%) 
-    ciue                :    2 (  1.0%) 
-    cretonnee           :    2 (  1.0%) 
-    blanc               :    2 (  1.0%) 
-    poulles             :    2 (  1.0%) 
-
-  Paragraph-initial letter distribution (n=197):
-    P:   118 ( 59.9%) █████████████████████████████
-         words: pour(89), pastes(12), prenez(5), porc(3), poulles(2)
-    C:    14 (  7.1%) ███
-         words: cy(2), ciue(2), cretonnee(2), chaudun(1)
-    B:    12 (  6.1%) ███
-         words: bancquet(4), blanc(2)
-    S:    11 (  5.6%) ██
-         words: soit(4), saulce(2)
-    V:     8 (  4.1%) ██
-         words: venoison(2), vne(2)
-    T:     8 (  4.1%) ██
-         words: tartres(4), tartre(3)
-    E:     4 (  2.0%) █
-    L:     4 (  2.0%) █
-         words: lemproye(2)
-    H:     3 (  1.5%) 
-    G:     3 (  1.5%) 
-    F:     3 (  1.5%) 
-    A:     2 (  1.0%) 
-         words: autre(2)
-    M:     2 (  1.0%) 
-    I:     2 (  1.0%) 
-    R:     1 (  0.5%) 
-    O:     1 (  0.5%) 
-    D:     1 (  0.5%) 
-
-  Top-4 letters: ['P', 'C', 'B', 'S'] → coverage: 78.7%
-  VMS gallows coverage: 81.4%
-  Gap: -2.7%
-
-  Testing all 4-letter mappings against VMS gallows distribution...
-    Tested 57,120 mappings
-
-  TOP 10 PARAGRAPH-INITIAL MAPPINGS:
-  Rank    Score       L2   Cov%     p→   t→   k→   f→
-     1 0.0743 0.0473  78.7%       P    C    B    S
-     2 0.0749 0.0480  78.7%       P    C    S    B
-     3 0.0767 0.0497  78.7%       P    B    C    S
-     4 0.0786 0.0516  78.7%       P    S    C    B
-     5 0.0787 0.0517  78.7%       P    B    S    C
-     6 0.0799 0.0529  78.7%       P    S    B    C
-     7 0.0893 0.0471  77.2%       P    C    B    V
-     8 0.0893 0.0471  77.2%       P    C    B    T
-     9 0.0917 0.0495  77.2%       P    B    C    V
-    10 0.0917 0.0495  77.2%       P    B    C    T
-
-  BEST MAPPING: {'p': 'P', 't': 'C', 'k': 'B', 'f': 'S'}
-  Score: 0.0743 (L2=0.0473, CovΔ=0.0270)
-  Coverage: 78.7% (VMS: 81.4%)
-  Proportions (within 4 letters):
-    VMS p → Fre P: VMS=0.552, Lang=0.761, Δ=0.210
-    VMS t → Fre C: VMS=0.273, Lang=0.090, Δ=0.182
-    VMS k → Fre B: VMS=0.127, Lang=0.077, Δ=0.050
-    VMS f → Fre S: VMS=0.049, Lang=0.071, Δ=0.022
-
-  CLOSEST COVERAGE MATCH to VMS 81.4%:
-    Letters: ('P', 'C', 'B', 'S') → 78.7% (gap=2.7%)
-
-  COMPARISON WITH VMS RECIPE SECTION (87.4% gallows, 285 paras):
-    Closest 4 letters to 87.4%: ('P', 'C', 'B', 'S') → 78.7% (gap=8.7%)
-  [cached] english_cury: english_cury.txt
-
-──────────────────────────────────────────────────────────────────────
-TEXT: The Forme of Cury
-Language: Middle English | Genre: cookbook / recipe collection | Era: c. 1390 (Richard II)
-──────────────────────────────────────────────────────────────────────
-Text length: 289,414 chars after boilerplate removal
-Recipe paragraphs extracted: 590
-
-  SAMPLE PARAGRAPH STARTS (first 10):
-      1. FOR TO MAKE GRONDEN BENES [1]. I....
-      2. Take benes and dry hem in a nost [2] or in an Ovene and hulle hem wele and wynde...
-      3. FOR TO MAKE DRAWEN BENES. II....
-      4. Take benes and seeþ hem and grynde hem in a morter [1] and drawe hem up [2] with...
-      5. FOR TO MAKE GREWEL FORCED [1]. III....
-      6. Take grewel and do to the fyre with gode flessh and seeþ it wel. take the lire [...
-      7. CABOCHES [1] IN POTAGE. IIII....
-      8. Take Caboches and quarter hem and seeth hem in gode broth with Oynouns y mynced ...
-      9. RAPES [1] IN POTAGE. V....
-     10. Take rapus and make hem clene and waissh hem clene. quare hem [2]. parboile hem....
-
-  TOP PARAGRAPH-INITIAL WORDS:
-    take                :  183 ( 31.0%) ███████████████
-    for                 :   95 ( 16.1%) ████████
-    tak                 :   42 (  7.1%) ███
-    nym                 :   30 (  5.1%) ██
-    sawse               :    6 (  1.0%) 
-    cawdel              :    5 (  0.8%) 
-    connynges           :    4 (  0.7%) 
-    nota                :    4 (  0.7%) 
-    the                 :    4 (  0.7%) 
-    they                :    4 (  0.7%) 
-    mortrews            :    3 (  0.5%) 
-    payn                :    3 (  0.5%) 
-    frytour             :    3 (  0.5%) 
-    crustardes          :    3 (  0.5%) 
-    tart                :    3 (  0.5%) 
-
-  Paragraph-initial letter distribution (n=589):
-    T:   244 ( 41.4%) ████████████████████
-         words: take(183), tak(42), the(4), they(4), tart(3)
-    F:   109 ( 18.5%) █████████
-         words: for(95), frytour(3), fylettes(2)
-    C:    45 (  7.6%) ███
-         words: cawdel(5), connynges(4), crustardes(3), chykens(2)
-    N:    39 (  6.6%) ███
-         words: nym(30), nota(4)
-    S:    27 (  4.6%) ██
-         words: sawse(6), schul(3)
-    P:    21 (  3.6%) █
-         words: payn(3)
-    H:    14 (  2.4%) █
-         words: hares(2)
-    M:    14 (  2.4%) █
-         words: mortrews(3)
-    R:    10 (  1.7%) 
-    B:    10 (  1.7%) 
-    L:    10 (  1.7%) 
-    E:     9 (  1.5%) 
-         words: egurdouce(2)
-    G:     8 (  1.4%) 
-    A:     7 (  1.2%) 
-    D:     6 (  1.0%) 
-    V:     6 (  1.0%) 
-    J:     3 (  0.5%) 
-    O:     3 (  0.5%) 
-    W:     3 (  0.5%) 
-    Y:     1 (  0.2%) 
-
-  Top-4 letters: ['T', 'F', 'C', 'N'] → coverage: 74.2%
-  VMS gallows coverage: 81.4%
-  Gap: -7.2%
-
-  Testing all 4-letter mappings against VMS gallows distribution...
-    Tested 116,280 mappings
-
-  TOP 10 PARAGRAPH-INITIAL MAPPINGS:
-  Rank    Score       L2   Cov%     p→   t→   k→   f→
-     1 0.0758 0.0040  74.2%       T    F    C    N
-     2 0.0771 0.0053  74.2%       T    F    N    C
-     3 0.0955 0.0033  72.2%       T    F    C    S
-     4 0.0994 0.0072  72.2%       T    F    S    C
-     5 0.1016 0.0298  74.2%       T    C    F    N
-     6 0.1053 0.0335  74.2%       T    N    F    C
-     7 0.1057 0.0033  71.1%       T    F    C    P
-     8 0.1064 0.0040  71.1%       T    F    N    S
-     9 0.1090 0.0066  71.1%       T    F    S    N
-    10 0.1109 0.0085  71.1%       T    F    P    C
-
-  BEST MAPPING: {'p': 'T', 't': 'F', 'k': 'C', 'f': 'N'}
-  Score: 0.0758 (L2=0.0040, CovΔ=0.0718)
-  Coverage: 74.2% (VMS: 81.4%)
-  Proportions (within 4 letters):
-    VMS p → Mid T: VMS=0.552, Lang=0.558, Δ=0.007
-    VMS t → Mid F: VMS=0.273, Lang=0.249, Δ=0.023
-    VMS k → Mid C: VMS=0.127, Lang=0.103, Δ=0.024
-    VMS f → Mid N: VMS=0.049, Lang=0.089, Δ=0.041
-
-  CLOSEST COVERAGE MATCH to VMS 81.4%:
-    Letters: ('T', 'F', 'C', 'N') → 74.2% (gap=7.2%)
-
-  COMPARISON WITH VMS RECIPE SECTION (87.4% gallows, 285 paras):
-    Closest 4 letters to 87.4%: ('T', 'F', 'C', 'N') → 74.2% (gap=13.2%)
-  [cached] italian_cucina: italian_cucina.txt
-
-──────────────────────────────────────────────────────────────────────
-ITALIAN TEXT: Recipe-Body-Only Analysis (Excluding Section Headers)
-──────────────────────────────────────────────────────────────────────
-  Total paragraphs: 368
-  Section headers:  184
-  Recipe body:      184
-
-  HEADER initial letters (n=184):
-    D:  110 ( 59.8%)
-    A:   65 ( 35.3%)
-    S:    3 (  1.6%)
-    I:    2 (  1.1%)
-    P:    2 (  1.1%)
-    R:    1 (  0.5%)
-    F:    1 (  0.5%)
-
-  RECIPE BODY initial letters (n=184):
-    T:  114 ( 62.0%)
-    P:   14 (  7.6%)
-    F:   14 (  7.6%)
-    S:    9 (  4.9%)
-    M:    8 (  4.3%)
-    A:    7 (  3.8%)
-    L:    5 (  2.7%)
-    D:    5 (  2.7%)
-    C:    2 (  1.1%)
-    N:    2 (  1.1%)
-    G:    1 (  0.5%)
-    B:    1 (  0.5%)
-    Q:    1 (  0.5%)
-    I:    1 (  0.5%)
-
-  Top-4 body-only letters: ['T', 'P', 'F', 'S'] → 82.1%
-  VMS overall: 81.4%, VMS recipe: 87.4%
-
-  TOP BODY-ONLY paragraph-initial words:
-    togli               :  106 ( 57.6%)
-    metti               :    8 (  4.3%)
-    fà                  :    7 (  3.8%)
-    tolli               :    6 (  3.3%)
-    anche               :    5 (  2.7%)
-    fave                :    3 (  1.6%)
-    simile              :    3 (  1.6%)
-    lessa               :    3 (  1.6%)
-    di                  :    3 (  1.6%)
-    le                  :    2 (  1.1%)
-
-══════════════════════════════════════════════════════════════════════
-CROSS-TEXT COMPARISON
-══════════════════════════════════════════════════════════════════════
-
-  Text                           Lang        Paras  Top4 Cov      Gap Top-4 Letters       
-  ────────────────────────────── ────────── ────── ───────── ──────── ────────────────────
-  VMS (overall)                  Voynich       784     81.4%        — p, t, k, f          
-  VMS (recipe only)              Voynich       285     87.4%        — p, t, k, f          
-  VMS (herbal only)              Voynich       322     84.5%        — p, t, k, f          
-  Il libro della cucina del sec. Italian (T    368     86.1%    +4.8% D, T, A, P          
-  Le viandier de Taillevent      French        197     78.7%    -2.7% P, C, B, S          
-  The Forme of Cury              Middle Eng    590     74.2%    -7.2% T, F, C, N          
-
-  FIRST-WORD DOMINANCE (most common paragraph-opening word per text):
-    Il libro della cucina del sec.: togli(106), de(67), altramente(49)
-      Top word 'togli' = 28.8% of paragraphs
-    Le viandier de Taillevent     : pour(89), pastes(12), prenez(5)
-      Top word 'pour' = 45.2% of paragraphs
-    The Forme of Cury             : take(183), for(95), tak(42)
-      Top word 'take' = 31.0% of paragraphs
-
-  KEY QUESTION: Does any vernacular text reach ≥80% in top-4 letters?
-    ✓ Il libro della cucina del sec.: 86.1% (CLOSE)
-    ✓ Le viandier de Taillevent: 78.7% (CLOSE)
-    ~ The Forme of Cury: 74.2% (moderate)
-    → Some texts approach VMS levels — investigate further!
-
-══════════════════════════════════════════════════════════════════════
-SKEPTICAL ANALYSIS
-══════════════════════════════════════════════════════════════════════
-
-1. PARAGRAPH BOUNDARY RELIABILITY
-   Gutenberg texts use MODERN EDITORIAL paragraph breaks, not original
-   manuscript formatting. The VMS paragraph breaks reflect ACTUAL
-   manuscript layout. This is an imperfect comparison.
-
-   However, for recipe texts specifically, paragraph breaks typically
-   correspond to individual recipes — which IS how the VMS recipe
-   section appears to be structured (one recipe per paragraph).
-
-2. FORMULAIC GENRE CONVENTIONS
-   Recipe texts ARE highly formulaic. Every recipe starts with an
-   imperative verb ("Take X...", "Togli X...", "Prenez X...").
-   This means recipe collections SHOULD show high first-letter
-   concentration — possibly even approaching VMS levels.
-
-   If they DON'T reach 81%, that's a strong signal that VMS gallows
-   are not simple letter substitutions even in a recipe context.
-
-   If they DO reach 81%, we need to check whether the PROPORTIONAL
-   distribution also matches (not just total coverage).
-
-3. EDITORIAL ARTIFACTS
-   Some first "letters" may be:
-   - Roman numeral section numbers (I, V, X, L, C, D, M)
-   - Formatting markers (=, _, ¶)
-   - Page numbers
-   Our parser strips these, but imperfectly.
-
-4. TEXT SIZE MISMATCH
-   VMS recipe section: 285 paragraphs in ~14 folios
-   Vernacular texts: varies widely
-   We should note where paragraph counts are similar.
-
-5. ENTROPY COMPARISON
-   VMS gallows entropy: 1.575 bits (4 symbols)
-   Il libro della cucina del sec.: 1.765 bits (VMS: 1.575)
-   Le viandier de Taillevent: 1.169 bits (VMS: 1.575)
-   The Forme of Cury: 1.618 bits (VMS: 1.575)
-
-══════════════════════════════════════════════════════════════════════
-PHASE 76 SUMMARY
-══════════════════════════════════════════════════════════════════════
-
-  Highest top-4 coverage: 86.1% (Il libro della cucina del sec. XIV)
-  Lowest top-4 coverage:  74.2%
-  Average top-4 coverage: 79.7%
-  VMS overall gallows:    81.4%
-  VMS recipe gallows:     87.4%
-
-  ★ AT LEAST ONE VERNACULAR TEXT REACHES VMS LEVELS
-    This means the VMS concentration is NOT necessarily
-    unusual for recipe collections in this era.
-
-══════════════════════════════════════════════════════════════════════
-KEY FINDINGS:
-══════════════════════════════════════════════════════════════════════
-
-1. Recipe collections are MORE concentrated than general texts
-   because of formulaic imperative verbs.
-
-2. The critical question is whether this formula-driven concentration
-   reaches the VMS level (81-87%) in ANY language.
-
-3. If yes: gallows COULD be simple letter substitutions in a
-   recipe-dominant text.
-   If no: gallows are NOT simple letter substitutions, even in
-   the most favorable genre context.
-
-4. First-word analysis reveals whether concentration comes from
-   one dominant word (like Italian 'Togli' = ~50% of starts)
-   or from several words sharing an initial letter.
-
-
-JSON results → C:\projects\voynich_slop\results\phase76_vernacular_mapping.json
-Full output → C:\projects\voynich_slop\results\phase76_vernacular_mapping.txt
+══════════════════════════════════════════════════════════════════════
+PHASE 76: Vernacular Paragraph-Initial Mapping
+══════════════════════════════════════════════════════════════════════
+
+Target VMS distributions:
+  Overall: p=44.9%, t=22.2%, k=10.3%, f=4.0% → 81.4% gallows
+  Recipe:  p=54.4%, t=21.1%, k=7.0%,  f=4.9% → 87.4% gallows
+  Herbal:  p=34.5%, t=28.0%, k=16.8%, f=5.3% → 84.5% gallows
+
+Downloading vernacular texts...
+  [cached] italian_cucina: italian_cucina.txt
+
+──────────────────────────────────────────────────────────────────────
+TEXT: Il libro della cucina del sec. XIV
+Language: Italian (Tuscan) | Genre: cookbook / recipe collection | Era: 14th century (trecento)
+──────────────────────────────────────────────────────────────────────
+Text length: 162,805 chars after boilerplate removal
+Recipe paragraphs extracted: 368
+
+  SAMPLE PARAGRAPH STARTS (first 10):
+      1. INCOMINCIASI IL LIBRO DE LA COCINA....
+      2. =Dei Cauli.=...
+      3. _A fare i Cauli bianchi bene cotti._...
+      4. Togli i torsi del caulo, e mondali bene, sì che de le frondi niente ci rimagna; ...
+      5. _A fare i cauli verdi con carne._...
+      6. Togli le cime dei cauli sane, e gittale nella pentola bugliente con la carne, e ...
+      7. _Dei predetti._...
+      8. Togli i cauli e poni a cocere con carne di castrone, o di porco, o carne insalat...
+      9. _Dei predetti._...
+     10. Togli le cime dei cauli, e fàlle bullire: poi le cava, e friggile nell'oglio con...
+
+  TOP PARAGRAPH-INITIAL WORDS:
+    togli               :  106 ( 28.8%) ██████████████
+    de                  :   67 ( 18.2%) █████████
+    altramente          :   49 ( 13.3%) ██████
+    del                 :   28 (  7.6%) ███
+    a                   :   15 (  4.1%) ██
+    di                  :   10 (  2.7%) █
+    dei                 :    9 (  2.4%) █
+    metti               :    8 (  2.2%) █
+    fà                  :    7 (  1.9%) 
+    tolli               :    6 (  1.6%) 
+    anche               :    5 (  1.4%) 
+    fave                :    3 (  0.8%) 
+    simile              :    3 (  0.8%) 
+    lessa               :    3 (  0.8%) 
+    altrimenti          :    2 (  0.5%) 
+
+  Paragraph-initial letter distribution (n=368):
+    D:   115 ( 31.2%) ███████████████
+         words: de(67), del(28), di(10), dei(9)
+    T:   114 ( 31.0%) ███████████████
+         words: togli(106), tolli(6), taglia(2)
+    A:    72 ( 19.6%) █████████
+         words: altramente(49), a(15), anche(5), altrimenti(2)
+    P:    16 (  4.3%) ██
+         words: peselli(2), poni(2), prendi(2)
+    F:    15 (  4.1%) ██
+         words: fà(7), fave(3)
+    S:    12 (  3.3%) █
+         words: simile(3)
+    M:     8 (  2.2%) █
+         words: metti(8)
+    L:     5 (  1.4%) 
+         words: lessa(3), le(2)
+    I:     3 (  0.8%) 
+    C:     2 (  0.5%) 
+    N:     2 (  0.5%) 
+    G:     1 (  0.3%) 
+    B:     1 (  0.3%) 
+    Q:     1 (  0.3%) 
+    R:     1 (  0.3%) 
+
+  Top-4 letters: ['D', 'T', 'A', 'P'] → coverage: 86.1%
+  VMS gallows coverage: 81.4%
+  Gap: 4.8%
+
+  Testing all 4-letter mappings against VMS gallows distribution...
+    Tested 32,760 mappings
+
+  TOP 10 PARAGRAPH-INITIAL MAPPINGS:
+  Rank    Score       L2   Cov%     p→   t→   k→   f→
+     1 0.0431 0.0362  82.1%       D    T    A    G
+     2 0.0431 0.0362  82.1%       D    T    A    B
+     3 0.0431 0.0362  82.1%       D    T    A    Q
+     4 0.0431 0.0362  82.1%       D    T    A    R
+     5 0.0443 0.0375  82.1%       T    D    A    G
+     6 0.0443 0.0375  82.1%       T    D    A    B
+     7 0.0443 0.0375  82.1%       T    D    A    Q
+     8 0.0443 0.0375  82.1%       T    D    A    R
+     9 0.0456 0.0360  82.3%       D    T    A    C
+    10 0.0456 0.0360  82.3%       D    T    A    N
+
+  BEST MAPPING: {'p': 'D', 't': 'T', 'k': 'A', 'f': 'G'}
+  Score: 0.0431 (L2=0.0362, CovΔ=0.0069)
+  Coverage: 82.1% (VMS: 81.4%)
+  Proportions (within 4 letters):
+    VMS p → Ita D: VMS=0.552, Lang=0.381, Δ=0.171
+    VMS t → Ita T: VMS=0.273, Lang=0.377, Δ=0.105
+    VMS k → Ita A: VMS=0.127, Lang=0.238, Δ=0.111
+    VMS f → Ita G: VMS=0.049, Lang=0.003, Δ=0.045
+
+  CLOSEST COVERAGE MATCH to VMS 81.4%:
+    Letters: ('D', 'T', 'A', 'G') → 82.1% (gap=0.7%)
+
+  COMPARISON WITH VMS RECIPE SECTION (87.4% gallows, 285 paras):
+    Closest 4 letters to 87.4%: ('D', 'T', 'A', 'P') → 86.1% (gap=1.3%)
+  [cached] french_viandier: french_viandier.txt
+
+──────────────────────────────────────────────────────────────────────
+TEXT: Le viandier de Taillevent
+Language: French | Genre: cookbook / recipe collection | Era: c. 1380-1420 (Charles VI)
+──────────────────────────────────────────────────────────────────────
+Text length: 87,268 chars after boilerplate removal
+Recipe paragraphs extracted: 197
+
+  SAMPLE PARAGRAPH STARTS (first 10):
+      1. Potaiges lyans...
+      2. Chaudun de porc cretonnee de poix nouueaux cretonnee de feues nouuelles comme de...
+      3. Porc rosty au vert ius. veau rosty. fraise de veau. pyions. menus oyseaulx. perd...
+      4. Pour malade. chandeau flamant. coulis de perche. blanc mengier de poisson. poiss...
+      5. Saulces non boulies. Cameline. saulce verde. aulz camelins. aulz blanc. aulz ver...
+      6. Cy finist la table & commence le traictie de ce liure    Pour faire brouet blanc...
+      7. Pour faire blanc mengier a poisson de brochet de perche ou dautre poisson auquel...
+      8. Pour faire blanc brouet dalemaigne. prenez veau ou polaille et reffaire / et pui...
+      9. Pour faire salemme. Soit prins brochetz carpes & autres poisson qui y appartient...
+     10. Pour faire brouet georget. prenez veau poulaille ou connin despeces par pieces &...
+
+  TOP PARAGRAPH-INITIAL WORDS:
+    pour                :   89 ( 45.2%) ██████████████████████
+    pastes              :   12 (  6.1%) ███
+    prenez              :    5 (  2.5%) █
+    soit                :    4 (  2.0%) █
+    tartres             :    4 (  2.0%) █
+    bancquet            :    4 (  2.0%) █
+    porc                :    3 (  1.5%) 
+    tartre              :    3 (  1.5%) 
+    cy                  :    2 (  1.0%) 
+    venoison            :    2 (  1.0%) 
+    autre               :    2 (  1.0%) 
+    ciue                :    2 (  1.0%) 
+    cretonnee           :    2 (  1.0%) 
+    blanc               :    2 (  1.0%) 
+    poulles             :    2 (  1.0%) 
+
+  Paragraph-initial letter distribution (n=197):
+    P:   118 ( 59.9%) █████████████████████████████
+         words: pour(89), pastes(12), prenez(5), porc(3), poulles(2)
+    C:    14 (  7.1%) ███
+         words: cy(2), ciue(2), cretonnee(2), chaudun(1)
+    B:    12 (  6.1%) ███
+         words: bancquet(4), blanc(2)
+    S:    11 (  5.6%) ██
+         words: soit(4), saulce(2)
+    V:     8 (  4.1%) ██
+         words: venoison(2), vne(2)
+    T:     8 (  4.1%) ██
+         words: tartres(4), tartre(3)
+    E:     4 (  2.0%) █
+    L:     4 (  2.0%) █
+         words: lemproye(2)
+    H:     3 (  1.5%) 
+    G:     3 (  1.5%) 
+    F:     3 (  1.5%) 
+    A:     2 (  1.0%) 
+         words: autre(2)
+    M:     2 (  1.0%) 
+    I:     2 (  1.0%) 
+    R:     1 (  0.5%) 
+    O:     1 (  0.5%) 
+    D:     1 (  0.5%) 
+
+  Top-4 letters: ['P', 'C', 'B', 'S'] → coverage: 78.7%
+  VMS gallows coverage: 81.4%
+  Gap: -2.7%
+
+  Testing all 4-letter mappings against VMS gallows distribution...
+    Tested 57,120 mappings
+
+  TOP 10 PARAGRAPH-INITIAL MAPPINGS:
+  Rank    Score       L2   Cov%     p→   t→   k→   f→
+     1 0.0743 0.0473  78.7%       P    C    B    S
+     2 0.0749 0.0480  78.7%       P    C    S    B
+     3 0.0767 0.0497  78.7%       P    B    C    S
+     4 0.0786 0.0516  78.7%       P    S    C    B
+     5 0.0787 0.0517  78.7%       P    B    S    C
+     6 0.0799 0.0529  78.7%       P    S    B    C
+     7 0.0893 0.0471  77.2%       P    C    B    V
+     8 0.0893 0.0471  77.2%       P    C    B    T
+     9 0.0917 0.0495  77.2%       P    B    C    V
+    10 0.0917 0.0495  77.2%       P    B    C    T
+
+  BEST MAPPING: {'p': 'P', 't': 'C', 'k': 'B', 'f': 'S'}
+  Score: 0.0743 (L2=0.0473, CovΔ=0.0270)
+  Coverage: 78.7% (VMS: 81.4%)
+  Proportions (within 4 letters):
+    VMS p → Fre P: VMS=0.552, Lang=0.761, Δ=0.210
+    VMS t → Fre C: VMS=0.273, Lang=0.090, Δ=0.182
+    VMS k → Fre B: VMS=0.127, Lang=0.077, Δ=0.050
+    VMS f → Fre S: VMS=0.049, Lang=0.071, Δ=0.022
+
+  CLOSEST COVERAGE MATCH to VMS 81.4%:
+    Letters: ('P', 'C', 'B', 'S') → 78.7% (gap=2.7%)
+
+  COMPARISON WITH VMS RECIPE SECTION (87.4% gallows, 285 paras):
+    Closest 4 letters to 87.4%: ('P', 'C', 'B', 'S') → 78.7% (gap=8.7%)
+  [cached] english_cury: english_cury.txt
+
+──────────────────────────────────────────────────────────────────────
+TEXT: The Forme of Cury
+Language: Middle English | Genre: cookbook / recipe collection | Era: c. 1390 (Richard II)
+──────────────────────────────────────────────────────────────────────
+Text length: 289,414 chars after boilerplate removal
+Recipe paragraphs extracted: 590
+
+  SAMPLE PARAGRAPH STARTS (first 10):
+      1. FOR TO MAKE GRONDEN BENES [1]. I....
+      2. Take benes and dry hem in a nost [2] or in an Ovene and hulle hem wele and wynde...
+      3. FOR TO MAKE DRAWEN BENES. II....
+      4. Take benes and seeþ hem and grynde hem in a morter [1] and drawe hem up [2] with...
+      5. FOR TO MAKE GREWEL FORCED [1]. III....
+      6. Take grewel and do to the fyre with gode flessh and seeþ it wel. take the lire [...
+      7. CABOCHES [1] IN POTAGE. IIII....
+      8. Take Caboches and quarter hem and seeth hem in gode broth with Oynouns y mynced ...
+      9. RAPES [1] IN POTAGE. V....
+     10. Take rapus and make hem clene and waissh hem clene. quare hem [2]. parboile hem....
+
+  TOP PARAGRAPH-INITIAL WORDS:
+    take                :  183 ( 31.0%) ███████████████
+    for                 :   95 ( 16.1%) ████████
+    tak                 :   42 (  7.1%) ███
+    nym                 :   30 (  5.1%) ██
+    sawse               :    6 (  1.0%) 
+    cawdel              :    5 (  0.8%) 
+    connynges           :    4 (  0.7%) 
+    nota                :    4 (  0.7%) 
+    the                 :    4 (  0.7%) 
+    they                :    4 (  0.7%) 
+    mortrews            :    3 (  0.5%) 
+    payn                :    3 (  0.5%) 
+    frytour             :    3 (  0.5%) 
+    crustardes          :    3 (  0.5%) 
+    tart                :    3 (  0.5%) 
+
+  Paragraph-initial letter distribution (n=589):
+    T:   244 ( 41.4%) ████████████████████
+         words: take(183), tak(42), the(4), they(4), tart(3)
+    F:   109 ( 18.5%) █████████
+         words: for(95), frytour(3), fylettes(2)
+    C:    45 (  7.6%) ███
+         words: cawdel(5), connynges(4), crustardes(3), chykens(2)
+    N:    39 (  6.6%) ███
+         words: nym(30), nota(4)
+    S:    27 (  4.6%) ██
+         words: sawse(6), schul(3)
+    P:    21 (  3.6%) █
+         words: payn(3)
+    H:    14 (  2.4%) █
+         words: hares(2)
+    M:    14 (  2.4%) █
+         words: mortrews(3)
+    R:    10 (  1.7%) 
+    B:    10 (  1.7%) 
+    L:    10 (  1.7%) 
+    E:     9 (  1.5%) 
+         words: egurdouce(2)
+    G:     8 (  1.4%) 
+    A:     7 (  1.2%) 
+    D:     6 (  1.0%) 
+    V:     6 (  1.0%) 
+    J:     3 (  0.5%) 
+    O:     3 (  0.5%) 
+    W:     3 (  0.5%) 
+    Y:     1 (  0.2%) 
+
+  Top-4 letters: ['T', 'F', 'C', 'N'] → coverage: 74.2%
+  VMS gallows coverage: 81.4%
+  Gap: -7.2%
+
+  Testing all 4-letter mappings against VMS gallows distribution...
+    Tested 116,280 mappings
+
+  TOP 10 PARAGRAPH-INITIAL MAPPINGS:
+  Rank    Score       L2   Cov%     p→   t→   k→   f→
+     1 0.0758 0.0040  74.2%       T    F    C    N
+     2 0.0771 0.0053  74.2%       T    F    N    C
+     3 0.0955 0.0033  72.2%       T    F    C    S
+     4 0.0994 0.0072  72.2%       T    F    S    C
+     5 0.1016 0.0298  74.2%       T    C    F    N
+     6 0.1053 0.0335  74.2%       T    N    F    C
+     7 0.1057 0.0033  71.1%       T    F    C    P
+     8 0.1064 0.0040  71.1%       T    F    N    S
+     9 0.1090 0.0066  71.1%       T    F    S    N
+    10 0.1109 0.0085  71.1%       T    F    P    C
+
+  BEST MAPPING: {'p': 'T', 't': 'F', 'k': 'C', 'f': 'N'}
+  Score: 0.0758 (L2=0.0040, CovΔ=0.0718)
+  Coverage: 74.2% (VMS: 81.4%)
+  Proportions (within 4 letters):
+    VMS p → Mid T: VMS=0.552, Lang=0.558, Δ=0.007
+    VMS t → Mid F: VMS=0.273, Lang=0.249, Δ=0.023
+    VMS k → Mid C: VMS=0.127, Lang=0.103, Δ=0.024
+    VMS f → Mid N: VMS=0.049, Lang=0.089, Δ=0.041
+
+  CLOSEST COVERAGE MATCH to VMS 81.4%:
+    Letters: ('T', 'F', 'C', 'N') → 74.2% (gap=7.2%)
+
+  COMPARISON WITH VMS RECIPE SECTION (87.4% gallows, 285 paras):
+    Closest 4 letters to 87.4%: ('T', 'F', 'C', 'N') → 74.2% (gap=13.2%)
+  [cached] italian_cucina: italian_cucina.txt
+
+──────────────────────────────────────────────────────────────────────
+ITALIAN TEXT: Recipe-Body-Only Analysis (Excluding Section Headers)
+──────────────────────────────────────────────────────────────────────
+  Total paragraphs: 368
+  Section headers:  184
+  Recipe body:      184
+
+  HEADER initial letters (n=184):
+    D:  110 ( 59.8%)
+    A:   65 ( 35.3%)
+    S:    3 (  1.6%)
+    I:    2 (  1.1%)
+    P:    2 (  1.1%)
+    R:    1 (  0.5%)
+    F:    1 (  0.5%)
+
+  RECIPE BODY initial letters (n=184):
+    T:  114 ( 62.0%)
+    P:   14 (  7.6%)
+    F:   14 (  7.6%)
+    S:    9 (  4.9%)
+    M:    8 (  4.3%)
+    A:    7 (  3.8%)
+    L:    5 (  2.7%)
+    D:    5 (  2.7%)
+    C:    2 (  1.1%)
+    N:    2 (  1.1%)
+    G:    1 (  0.5%)
+    B:    1 (  0.5%)
+    Q:    1 (  0.5%)
+    I:    1 (  0.5%)
+
+  Top-4 body-only letters: ['T', 'P', 'F', 'S'] → 82.1%
+  VMS overall: 81.4%, VMS recipe: 87.4%
+
+  TOP BODY-ONLY paragraph-initial words:
+    togli               :  106 ( 57.6%)
+    metti               :    8 (  4.3%)
+    fà                  :    7 (  3.8%)
+    tolli               :    6 (  3.3%)
+    anche               :    5 (  2.7%)
+    fave                :    3 (  1.6%)
+    simile              :    3 (  1.6%)
+    lessa               :    3 (  1.6%)
+    di                  :    3 (  1.6%)
+    le                  :    2 (  1.1%)
+
+══════════════════════════════════════════════════════════════════════
+CROSS-TEXT COMPARISON
+══════════════════════════════════════════════════════════════════════
+
+  Text                           Lang        Paras  Top4 Cov      Gap Top-4 Letters       
+  ────────────────────────────── ────────── ────── ───────── ──────── ────────────────────
+  VMS (overall)                  Voynich       784     81.4%        — p, t, k, f          
+  VMS (recipe only)              Voynich       285     87.4%        — p, t, k, f          
+  VMS (herbal only)              Voynich       322     84.5%        — p, t, k, f          
+  Il libro della cucina del sec. Italian (T    368     86.1%    +4.8% D, T, A, P          
+  Le viandier de Taillevent      French        197     78.7%    -2.7% P, C, B, S          
+  The Forme of Cury              Middle Eng    590     74.2%    -7.2% T, F, C, N          
+
+  FIRST-WORD DOMINANCE (most common paragraph-opening word per text):
+    Il libro della cucina del sec.: togli(106), de(67), altramente(49)
+      Top word 'togli' = 28.8% of paragraphs
+    Le viandier de Taillevent     : pour(89), pastes(12), prenez(5)
+      Top word 'pour' = 45.2% of paragraphs
+    The Forme of Cury             : take(183), for(95), tak(42)
+      Top word 'take' = 31.0% of paragraphs
+
+  KEY QUESTION: Does any vernacular text reach ≥80% in top-4 letters?
+    ✓ Il libro della cucina del sec.: 86.1% (CLOSE)
+    ✓ Le viandier de Taillevent: 78.7% (CLOSE)
+    ~ The Forme of Cury: 74.2% (moderate)
+    → Some texts approach VMS levels — investigate further!
+
+══════════════════════════════════════════════════════════════════════
+SKEPTICAL ANALYSIS
+══════════════════════════════════════════════════════════════════════
+
+1. PARAGRAPH BOUNDARY RELIABILITY
+   Gutenberg texts use MODERN EDITORIAL paragraph breaks, not original
+   manuscript formatting. The VMS paragraph breaks reflect ACTUAL
+   manuscript layout. This is an imperfect comparison.
+
+   However, for recipe texts specifically, paragraph breaks typically
+   correspond to individual recipes — which IS how the VMS recipe
+   section appears to be structured (one recipe per paragraph).
+
+2. FORMULAIC GENRE CONVENTIONS
+   Recipe texts ARE highly formulaic. Every recipe starts with an
+   imperative verb ("Take X...", "Togli X...", "Prenez X...").
+   This means recipe collections SHOULD show high first-letter
+   concentration — possibly even approaching VMS levels.
+
+   If they DON'T reach 81%, that's a strong signal that VMS gallows
+   are not simple letter substitutions even in a recipe context.
+
+   If they DO reach 81%, we need to check whether the PROPORTIONAL
+   distribution also matches (not just total coverage).
+
+3. EDITORIAL ARTIFACTS
+   Some first "letters" may be:
+   - Roman numeral section numbers (I, V, X, L, C, D, M)
+   - Formatting markers (=, _, ¶)
+   - Page numbers
+   Our parser strips these, but imperfectly.
+
+4. TEXT SIZE MISMATCH
+   VMS recipe section: 285 paragraphs in ~14 folios
+   Vernacular texts: varies widely
+   We should note where paragraph counts are similar.
+
+5. ENTROPY COMPARISON
+   VMS gallows entropy: 1.575 bits (4 symbols)
+   Il libro della cucina del sec.: 1.765 bits (VMS: 1.575)
+   Le viandier de Taillevent: 1.169 bits (VMS: 1.575)
+   The Forme of Cury: 1.618 bits (VMS: 1.575)
+
+══════════════════════════════════════════════════════════════════════
+PHASE 76 SUMMARY
+══════════════════════════════════════════════════════════════════════
+
+  Highest top-4 coverage: 86.1% (Il libro della cucina del sec. XIV)
+  Lowest top-4 coverage:  74.2%
+  Average top-4 coverage: 79.7%
+  VMS overall gallows:    81.4%
+  VMS recipe gallows:     87.4%
+
+  ★ AT LEAST ONE VERNACULAR TEXT REACHES VMS LEVELS
+    This means the VMS concentration is NOT necessarily
+    unusual for recipe collections in this era.
+
+══════════════════════════════════════════════════════════════════════
+KEY FINDINGS:
+══════════════════════════════════════════════════════════════════════
+
+1. Recipe collections are MORE concentrated than general texts
+   because of formulaic imperative verbs.
+
+2. The critical question is whether this formula-driven concentration
+   reaches the VMS level (81-87%) in ANY language.
+
+3. If yes: gallows COULD be simple letter substitutions in a
+   recipe-dominant text.
+   If no: gallows are NOT simple letter substitutions, even in
+   the most favorable genre context.
+
+4. First-word analysis reveals whether concentration comes from
+   one dominant word (like Italian 'Togli' = ~50% of starts)
+   or from several words sharing an initial letter.
+
+
+JSON results → C:\projects\voynich_slop\results\phase76_vernacular_mapping.json
+Full output → C:\projects\voynich_slop\results\phase76_vernacular_mapping.txt

@@ -1,393 +1,393 @@
-======================================================================
-PHASE 1: Ring-to-Decan Mapping
-======================================================================
-
-  Sign           Total Rings  Ring sizes           Ring names
-  -------------- ----- -----  -------------------- ------------------------------
-  Aries             30     4  [10, 5, 10, 5]       ['outer', 'inner', 'outer', 'inner']
-  Taurus            30     4  [10, 5, 10, 5]       ['outer', 'inner', 'outer', 'inner']
-  Gemini            29     3  [5, 15, 9]           ['top', 'middle', 'inner']
-  Cancer            30     3  [12, 11, 7]          ['outer', 'middle', 'inner']
-  Leo               30     2  [18, 12]             ['outer', 'inner']
-  Virgo             30     2  [18, 12]             ['outer', 'inner']
-  Libra             30     2  [20, 10]             ['outer', 'inner']
-  Scorpio           30     3  [4, 16, 10]          ['top', 'outer', 'inner']
-  Sagittarius       30     3  [4, 16, 10]          ['top', 'outer', 'inner']
-  Pisces            30     3  [19, 10, 1]          ['outer', 'inner', 'central']
-
-  Ring boundary vs decan boundary alignment:
-  Sign           Ring boundaries (cumul.)  Decan boundaries (10,20)
-  -------------- ------------------------ -------------------------
-  Aries          [10, 15, 25]             [10, 20]  ✗
-  Taurus         [10, 15, 25]             [10, 20]  ✗
-  Gemini         [5, 20]                  [10, 20]  ✗
-  Cancer         [12, 23]                 [10, 20]  ✗
-  Leo            [18]                     [10, 20]  ✗
-  Virgo          [18]                     [10, 20]  ✗
-  Libra          [20]                     [10, 20]  ✗
-  Scorpio        [4, 20]                  [10, 20]  ✗
-  Sagittarius    [4, 20]                  [10, 20]  ✗
-  Pisces         [19, 29]                 [10, 20]  ✗
-
-  Detailed degree listing: Cancer
-   Deg Decan  Ring RingN    Clock    Label
-  ---- ----- ----- -------- -------- ------------------------------
-     1     1     0 outer    10:30    olkalaiin
-     2     1     0 outer    11:00    olalsy
-     3     1     0 outer    00:00    oraiinam
-     4     1     0 outer    01:00    osarsheeeo
-     5     1     0 outer    02:00    otoaiin
-     6     1     0 outer    02:30    opoiiinoin.al.ches
-     7     1     0 outer    04:00    ypaiin.alaly
-     8     1     0 outer    05:00    oteey.daiin
-     9     1     0 outer    06:30    oeeodaiin
-    10     1     0 outer    07:00    ofsholdy
-    11     2     0 outer    07:00    opoeey.okaiin
-    12     2     0 outer    10:00    ykolairol
-    13     2     1 middle   11:00    oralkam
-    14     2     1 middle   00:00    ytairal
-    15     2     1 middle   01:00    oeeesaiin
-    16     2     1 middle   01:30    ory
-    17     2     1 middle   02:30    ochey.fydy
-    18     2     1 middle   03:30    of???.o.eeesaly
-    19     2     1 middle   05:00    ykaraiin.airal
-    20     2     1 middle   06:30    okalar
-    21     3     1 middle   08:00    orara
-    22     3     1 middle   09:00    olaiin.olay
-    23     3     1 middle   10:00    olfsheoral
-    24     3     2 inner    10:30    opalal
-    25     3     2 inner    00:00    yfary
-    26     3     2 inner    01:30    oraiiral
-    27     3     2 inner    03:00    ytoar.shar
-    28     3     2 inner    06:00    octho
-    29     3     2 inner    07:30    aral
-    30     3     2 inner    09:00    oletal
-
-======================================================================
-PHASE 2: Positional Test — shared labels at consistent positions?
-======================================================================
-
-  Labels appearing in 2+ zodiac signs: 37
-
-  Label              Count Signs                               Degrees                   Decans          DecanDegs
-  ------------------ ----- ----------------------------------- ------------------------- --------------- --------------------
-  otaly                  6 Ari,Leo,Pis,Sco                     [14, 5, 29, 30, 1, 5]     [2, 1, 3, 3, 1, 1] [4, 5, 9, 10, 1, 5]
-  ar                     5 Pis,Sco,Tau                         [6, 8, 10, 18, 28]        [1, 1, 1, 2, 3] [6, 8, 10, 8, 8]
-  otal                   5 Ari,Gem,Pis,Sco                     [15, 10, 14, 21, 26]      [2, 1, 2, 3, 3] [5, 10, 4, 1, 6]
-  otar                   5 Gem,Pis,Tau                         [20, 21, 8, 14, 16]       [2, 3, 1, 2, 2] [10, 1, 8, 4, 6]
-  oky                    4 Leo,Pis,Sag,Sco                     [5, 20, 24, 23]           [1, 2, 3, 3]    [5, 10, 4, 3]
-  okeey                  4 Gem,Lib,Sco,Tau                     [29, 11, 23, 9]           [3, 2, 3, 1]    [9, 1, 3, 9]
-  okal                   4 Gem,Lib,Sag                         [8, 10, 15, 25]           [1, 1, 2, 3]    [8, 10, 5, 5]
-  okaly                  4 Gem,Leo                             [9, 17, 8, 16]            [1, 2, 1, 2]    [9, 7, 8, 6]
-  am                     3 Ari,Pis,Tau                         [20, 1, 9]                [2, 1, 1]       [10, 1, 9]
-  ary                    3 Gem,Tau                             [18, 29, 11]              [2, 3, 2]       [8, 9, 1]
-  okeody                 3 Sag,Sco,Vir                         [14, 6, 5]                [2, 1, 1]       [4, 6, 5]
-  otaldar                2 Ari,Pis                             [10, 30]                  [1, 3]          [10, 10]
-  chy                    2 Leo,Pis                             [13, 21]                  [2, 3]          [3, 1]
-  arar                   2 Ari,Pis                             [15, 16]                  [2, 2]          [5, 6]
-  okeoly                 2 Lib,Pis                             [17, 4]                   [2, 1]          [7, 4]
-  okydy                  2 Lib,Pis                             [18, 22]                  [2, 3]          [8, 2]
-  al                     2 Can,Pis                             [21, 6]                   [3, 1]          [1, 6]
-  okaram                 2 Gem,Pis                             [25, 3]                   [3, 1]          [5, 3]
-  dy                     2 Ari,Gem                             [1, 13]                   [1, 2]          [1, 3]
-  otalaiin               2 Ari,Tau                             [12, 13]                  [2, 2]          [2, 3]
-  okealar                2 Ari,Gem                             [14, 5]                   [2, 1]          [4, 5]
-  shar                   2 Can,Tau                             [14, 27]                  [2, 3]          [4, 7]
-  otaraldy               2 Gem,Tau                             [22, 6]                   [3, 1]          [2, 6]
-  okeey.ary              2 Gem,Tau                             [29, 11]                  [3, 2]          [9, 1]
-  okalar                 2 Can,Gem                             [7, 20]                   [1, 2]          [7, 10]
-  okam                   2 Gem,Leo                             [23, 3]                   [3, 1]          [3, 3]
-  okaldy                 2 Gem,Leo                             [25, 17]                  [3, 2]          [5, 7]
-  ypaiin                 2 Can,Sag                             [7, 13]                   [1, 2]          [7, 3]
-  oteey                  2 Can,Leo                             [8, 13]                   [1, 2]          [8, 3]
-  daiin                  2 Can,Leo                             [8, 12]                   [1, 2]          [8, 2]
-
-  Degree position consistency test:
-  For each shared label, compute σ(degree) and σ(decan_degree)
-  Low σ = consistent position; high σ = random
-
-  Label                N   σ(deg)  σ(dDeg)  μ(dDeg) Verdict
-  ------------------ --- -------- -------- -------- ---------------
-  otaly                6    11.63     3.04      5.7 random
-  ar                   5     8.10     1.26      8.0 CONSISTENT ◄
-  otal                 5     5.64     2.93      5.2 random
-  otar                 5     4.66     3.12      5.8 random
-  oky                  4     7.65     2.69      5.5 random
-  okeey                4     8.31     3.57      5.5 random
-  okal                 4     6.58     2.12      7.0 moderate
-  okaly                4     4.03     1.12      7.5 CONSISTENT ◄
-  am                   3     7.79     4.03      6.7 random
-  ary                  3     7.41     3.56      6.0 random
-  okeody               3     4.03     0.82      5.0 CONSISTENT ◄
-  otaldar              2    10.00     0.00     10.0 CONSISTENT ◄
-  chy                  2     4.00     1.00      2.0 CONSISTENT ◄
-  arar                 2     0.50     0.50      5.5 CONSISTENT ◄
-  okeoly               2     6.50     1.50      5.5 moderate
-  okydy                2     2.00     3.00      5.0 random
-  al                   2     7.50     2.50      3.5 random
-  okaram               2    11.00     1.00      4.0 CONSISTENT ◄
-  dy                   2     6.00     1.00      2.0 CONSISTENT ◄
-  otalaiin             2     0.50     0.50      2.5 CONSISTENT ◄
-  okealar              2     4.50     0.50      4.5 CONSISTENT ◄
-  shar                 2     6.50     1.50      5.5 moderate
-  otaraldy             2     8.00     2.00      4.0 moderate
-  okeey.ary            2     9.00     4.00      5.0 random
-  okalar               2     6.50     1.50      8.5 moderate
-  okam                 2    10.00     0.00      3.0 CONSISTENT ◄
-  okaldy               2     4.00     1.00      6.0 CONSISTENT ◄
-  ypaiin               2     3.00     2.00      5.0 moderate
-  oteey                2     2.50     2.50      5.5 random
-  daiin                2     2.00     3.00      5.0 random
-
-  Random expectation: σ(degree)=8.66, σ(decan_degree)=2.89
-  Labels with σ(decan_degree) < 1.44: 12
-
-  CONSISTENTLY POSITIONED LABELS:
-    ar                 mean decan_deg=8.0 σ=1.26
-      Pis: degree 6, decan_degree 6
-      Tau: degree 8, decan_degree 8
-      Tau: degree 10, decan_degree 10
-      Tau: degree 18, decan_degree 8
-      Sco: degree 28, decan_degree 8
-    okaly              mean decan_deg=7.5 σ=1.12
-      Gem: degree 9, decan_degree 9
-      Gem: degree 17, decan_degree 7
-      Leo: degree 8, decan_degree 8
-      Leo: degree 16, decan_degree 6
-    okeody             mean decan_deg=5.0 σ=0.82
-      Vir: degree 14, decan_degree 4
-      Sco: degree 6, decan_degree 6
-      Sag: degree 5, decan_degree 5
-    otaldar            mean decan_deg=10.0 σ=0.00
-      Pis: degree 10, decan_degree 10
-      Ari: degree 30, decan_degree 10
-    chy                mean decan_deg=2.0 σ=1.00
-      Pis: degree 13, decan_degree 3
-      Leo: degree 21, decan_degree 1
-    arar               mean decan_deg=5.5 σ=0.50
-      Pis: degree 15, decan_degree 5
-      Ari: degree 16, decan_degree 6
-    okaram             mean decan_deg=4.0 σ=1.00
-      Pis: degree 25, decan_degree 5
-      Gem: degree 3, decan_degree 3
-    dy                 mean decan_deg=2.0 σ=1.00
-      Ari: degree 1, decan_degree 1
-      Gem: degree 13, decan_degree 3
-    otalaiin           mean decan_deg=2.5 σ=0.50
-      Ari: degree 12, decan_degree 2
-      Tau: degree 13, decan_degree 3
-    okealar            mean decan_deg=4.5 σ=0.50
-      Ari: degree 14, decan_degree 4
-      Gem: degree 5, decan_degree 5
-    okam               mean decan_deg=3.0 σ=0.00
-      Gem: degree 23, decan_degree 3
-      Leo: degree 3, decan_degree 3
-    okaldy             mean decan_deg=6.0 σ=1.00
-      Gem: degree 25, decan_degree 5
-      Leo: degree 17, decan_degree 7
-
-  Label distribution at special decan positions:
-
-    Position 1 (decan start):
-      Aries          deg  1: otalchy.tar.am.dy         root=otalchy
-      Aries          deg 11: okoly                     root=kol
-      Aries          deg 21: otaleky                   root=otaleky
-      Cancer         deg  1: olkalaiin                 root=kala
-      Cancer         deg 11: opoeey.okaiin             root=poee
-      Cancer         deg 21: orara                     root=ara
-      Gemini         deg  1: ofchdamy                  root=ofchdamy
-      Gemini         deg 11: okeey.ary                 root=kee
-      Gemini         deg 21: otal                      root=tal
-      Leo            deg  1: ocham                     root=cham
-      Leo            deg 11: sheeos.oy                 root=sheeos
-      Leo            deg 21: chy                       root=ch
-      Libra          deg  1: oeeoty                    root=oeeoty
-      Libra          deg 11: od?dy                     root=od?dy
-      Libra          deg 21: oeeoly                    root=eeol
-      Pisces         deg  1: otalalg                   root=talal
-      Pisces         deg 11: okody                     root=kod
-      Pisces         deg 21: otar.al                   root=tar
-      Sagittarius    deg  1: okol                      root=kol
-      Sagittarius    deg 11: ykeody                    root=keod
-      Sagittarius    deg 21: otedy                     root=ted
-      Scorpio        deg  1: otaly                     root=tal
-      Scorpio        deg 11: ykeeory                   root=keeor
-      Scorpio        deg 21: okary                     root=kar
-      Taurus         deg  1: char.arom                 root=char
-      Taurus         deg 11: ofaom                     root=faom
-      Taurus         deg 21: char.alif                 root=char
-      Virgo          deg  1: oeedey                    root=eede
-      Virgo          deg 11: ofchdysd                  root=ofchdysd
-      Virgo          deg 21: oeedy                     root=eed
-
-    Position 5 (decan midpoint):
-      Aries          deg  5: otaly                     root=tal
-      Aries          deg 15: otear.araydy              root=tear
-      Aries          deg 25: otalaly                   root=talal
-      Cancer         deg  5: otoaiin                   root=toa
-      Cancer         deg 15: oeeesaiin                 root=eeesa
-      Cancer         deg 25: yfary                     root=far
-      Gemini         deg  5: okealar                   root=kealar
-      Gemini         deg 15: okeal                     root=keal
-      Gemini         deg 25: okaldy                    root=kald
-      Leo            deg  5: otcheody                  root=otcheody
-      Leo            deg 15: okeeol                    root=keeol
-      Leo            deg 25: okary                     root=kar
-      Libra          deg  5: oeees                     root=eees
-      Libra          deg 15: okal                      root=kal
-      Libra          deg 25: oeey                      root=ee
-      Pisces         deg  5: oky.ody                   root=k
-      Pisces         deg 15: otal.arar                 root=tal
-      Pisces         deg 25: okaram                    root=karam
-      Sagittarius    deg  5: okeody                    root=keod
-      Sagittarius    deg 15: ofcheesy                  root=ofcheesy
-      Sagittarius    deg 25: okal                      root=kal
-      Scorpio        deg  5: otaly                     root=tal
-      Scorpio        deg 15: okedal                    root=kedal
-      Scorpio        deg 25: chefy                     root=chefy
-      Taurus         deg  5: alcphy                    root=alcphy
-      Taurus         deg 15: sholshdy                  root=sholshdy
-      Taurus         deg 25: ochol.sharam              root=chol
-      Virgo          deg  5: oshesy                    root=shes
-      Virgo          deg 15: okeoldy                   root=keold
-      Virgo          deg 25: oeedaly                   root=eedal
-
-    Position 10 (decan end):
-      Aries          deg 10: otal.ypsharal             root=tal
-      Aries          deg 20: okeoaly                   root=keoal
-      Aries          deg 30: otaldar                   root=taldar
-      Cancer         deg 10: ofsholdy                  root=ofsholdy
-      Cancer         deg 20: okalar                    root=kalar
-      Cancer         deg 30: oletal                    root=oletal
-      Gemini         deg 10: okal                      root=kal
-      Gemini         deg 20: otolam                    root=tolam
-      Leo            deg 10: ofalals                   root=falals
-      Leo            deg 20: oky                       root=k
-      Leo            deg 30: otaly.yty                 root=tal
-      Libra          deg 10: aiinod                    root=aiinod
-      Libra          deg 20: ykeedy                    root=keed
-      Libra          deg 30: okeol                     root=keol
-      Pisces         deg 10: otaldar                   root=taldar
-      Pisces         deg 20: otar.am                   root=tar
-      Pisces         deg 30: otolal                    root=tolal
-      Sagittarius    deg 10: ofals                     root=fals
-      Sagittarius    deg 20: qokeoly                   root=keol
-      Sagittarius    deg 30: ypal                      root=pal
-      Scorpio        deg 10: okeedy                    root=keed
-      Scorpio        deg 20: otey                      root=te
-      Scorpio        deg 30: okeeos                    root=keeos
-      Taurus         deg 10: opalor.ar                 root=palor
-      Taurus         deg 20: ytalshdy                  root=ytalshdy
-      Taurus         deg 30: otainy                    root=otainy
-      Virgo          deg 10: oteodar                   root=teodar
-      Virgo          deg 20: ockhol                    root=ckhol
-      Virgo          deg 30: okeorar                   root=keorar
-
-======================================================================
-PHASE 3: Behenian Star Anchor Test
-======================================================================
-
-  Testing whether labels at Behenian star degree positions are 'special'
-  (i.e., shared across signs, morphologically distinctive, or have unique roots)
-
-  Star             Sign           Deg° Nymph Label                  Prefix Root       Suffix   Shared?
-  ---------------- -------------- ---- ---------------------------- ------ ---------- -------- ----------
-  Algol            Taurus           13° otalaiin                     o      tala       iin      2× (Ari,Tau)
-  Alcyone          Gemini           17° okaly                        o      kal        y        4× (Gem,Leo)
-  Aldebaran        Gemini           27° otam                         o      tam                 unique
-  Capella          Cancer            9° oeeodaiin                    o      eeoda      iin      2× (Can,Vir)
-  Sirius           Cancer            1° olkalaiin                    ol     kala       iin      unique
-  Procyon          Cancer           13° oralkam                             oralkam             unique
-  Regulus          Leo              17° okaldy                       o      kald       y        2× (Gem,Leo)
-  Algorab          Libra             1° oeeoty                              oeeoty              unique (nearest to 0°)
-  Spica            Libra            11° od?dy                               od?dy               unique
-  Arcturus         Libra            11° od?dy                               od?dy               unique
-  Alphecca         Scorpio          29° kar                                 kar                 unique
-  Antares          Sagittarius      27° ykeee                        y      keee                unique
-  Vega             Sagittarius       2° oteody                       o      teod       y        2× (Sag)
-  Deneb Algedi     Pisces           21° otar.al                      o      tar                 unique
-  Fomalhaut        Pisces           21° otar.al                      o      tar                 unique
-
-  Summary:
-    Behenian labels that are SHARED: 5/15
-    Behenian labels that are UNIQUE: 10/15
-
-    Baseline shared rate (all labels): 21.1%
-    Behenian position shared rate:     33.3%
-    → Behenian positions have ELEVATED sharing (notable)
-
-    Roots at Behenian positions: {'tala': 1, 'kal': 1, 'tam': 1, 'eeoda': 1, 'kala': 1, 'oralkam': 1, 'kald': 1, 'oeeoty': 1, 'od?dy': 2, 'kar': 1, 'keee': 1, 'teod': 1, 'tar': 2}
-
-======================================================================
-PHASE 4: Cross-Sign Degree Alignment
-======================================================================
-
-  Do the same degree positions across signs share features?
-  (e.g., does degree 1 always have a certain root or suffix?)
-
-  Degree Unique roots Top root     Top root %   −y %  −iin %  o− %
-  ------ ------------ ------------ ---------- ------ ------- -----
-       1           10 talal               10%    20%     10%   60%
-       2           10 kar                 10%    50%     10%   50%
-       3           10 otar?               10%    30%      0%   70%
-       4           10 t                   10%    50%      0%   40%
-       5            9 tal                 20%    50%     10%   80%
-       6           10 t                   10%    50%     10%   50%
-       7           10 kala                10%     0%     30%   50%
-       8            9 kal                 20%    70%      0%   60%
-       9           10 tald                10%    30%     10%   80%
-      10           10 taldar              10%    10%      0%   80%
-      11           10 kod                 10%    60%      0%   50%
-      12            9 teod                20%    40%     20%   60%
-      13            9 teod                20%    30%     20%   40%
-      14           10 tal                 10%    30%     10%   40%
-      15           10 tal                 10%    10%     10%   80%
-      16           10 tald                10%    60%      0%   50%
-      17           10 keol                10%    50%      0%   60%
-      18           10 okydy               10%    30%     20%   50%
-      19           10 kees                10%    10%     10%   40%
-      20           10 tar                 10%    50%      0%   80%
-      21           10 tar                 10%    50%      0%   70%
-      22           10 talar               10%    20%     10%   60%
-      23           10 talam               10%    40%     10%   70%
-      24           10 olaram              10%    10%      0%   30%
-      25           10 karam               10%    60%      0%   80%
-      26           10 teosal              10%    30%     10%   50%
-      27           10 alols               10%     0%      0%   30%
-      28           10 kaldal              10%    10%      0%   60%
-      29           10 kola                10%    40%     20%   30%
-      30            9 tolal               11%    11%      0%   67%
-
-  Decan-level root sharing:
-   Decan   Avg unique roots Most common root   Root overlap
-  ------ ------------------ ------------------ ------------------------------
-       1                9.8 tal(4), kal(4), kala(2) 7 roots at 2+ positions
-       2                9.8 teod(4), tal(3), tar(3) 11 roots at 2+ positions
-       3                9.9 tal(4), kar(4), pal(3) 7 roots at 2+ positions
-
-======================================================================
-PHASE 5: SYNTHESIS — Ring-to-Decan Mapping Conclusions
-======================================================================
-
-  ┌─────────────────────────────────────────────────────────────────────┐
-  │  RING-TO-DECAN MAPPING RESULTS                                     │
-  │                                                                     │
-  │  1. RING BOUNDARIES ≠ DECAN BOUNDARIES (mostly)                     │
-  │     - No sign has exactly [10, 10, 10] ring structure               │
-  │     - Ring sizes are dictated by PAGE LAYOUT, not decans            │
-  │     - Split signs (Aries, Taurus) have 2 pages × 2 rings each      │
-  │     - Single-page signs have 2-3 rings of variable size             │
-  │     - CONCLUSION: Rings are VISUAL, not SEMANTIC                    │
-  │                                                                     │
-  │  2. DEGREE ORDERING                                                 │
-  │     - Degrees run outer-to-inner, clockwise within each ring        │
-  │     - This follows the file order (established by Petersen)         │
-  │     - Decan 1 = degrees 1-10, Decan 2 = 11-20, Decan 3 = 21-30    │
-  │     - The decan boundary falls MID-RING in most signs               │
-  │                                                                     │
-  │  3. SHARED LABEL POSITIONS: 12 labels show consistent decan positions │
-  │  4. BEHENIAN STARS: 5/15 labels at Behenian positions are shared     │
-  │                                                                     │
-  └─────────────────────────────────────────────────────────────────────┘
-
-  Full data saved to results/ring_decan_results.json
+======================================================================
+PHASE 1: Ring-to-Decan Mapping
+======================================================================
+
+  Sign           Total Rings  Ring sizes           Ring names
+  -------------- ----- -----  -------------------- ------------------------------
+  Aries             30     4  [10, 5, 10, 5]       ['outer', 'inner', 'outer', 'inner']
+  Taurus            30     4  [10, 5, 10, 5]       ['outer', 'inner', 'outer', 'inner']
+  Gemini            29     3  [5, 15, 9]           ['top', 'middle', 'inner']
+  Cancer            30     3  [12, 11, 7]          ['outer', 'middle', 'inner']
+  Leo               30     2  [18, 12]             ['outer', 'inner']
+  Virgo             30     2  [18, 12]             ['outer', 'inner']
+  Libra             30     2  [20, 10]             ['outer', 'inner']
+  Scorpio           30     3  [4, 16, 10]          ['top', 'outer', 'inner']
+  Sagittarius       30     3  [4, 16, 10]          ['top', 'outer', 'inner']
+  Pisces            30     3  [19, 10, 1]          ['outer', 'inner', 'central']
+
+  Ring boundary vs decan boundary alignment:
+  Sign           Ring boundaries (cumul.)  Decan boundaries (10,20)
+  -------------- ------------------------ -------------------------
+  Aries          [10, 15, 25]             [10, 20]  ✗
+  Taurus         [10, 15, 25]             [10, 20]  ✗
+  Gemini         [5, 20]                  [10, 20]  ✗
+  Cancer         [12, 23]                 [10, 20]  ✗
+  Leo            [18]                     [10, 20]  ✗
+  Virgo          [18]                     [10, 20]  ✗
+  Libra          [20]                     [10, 20]  ✗
+  Scorpio        [4, 20]                  [10, 20]  ✗
+  Sagittarius    [4, 20]                  [10, 20]  ✗
+  Pisces         [19, 29]                 [10, 20]  ✗
+
+  Detailed degree listing: Cancer
+   Deg Decan  Ring RingN    Clock    Label
+  ---- ----- ----- -------- -------- ------------------------------
+     1     1     0 outer    10:30    olkalaiin
+     2     1     0 outer    11:00    olalsy
+     3     1     0 outer    00:00    oraiinam
+     4     1     0 outer    01:00    osarsheeeo
+     5     1     0 outer    02:00    otoaiin
+     6     1     0 outer    02:30    opoiiinoin.al.ches
+     7     1     0 outer    04:00    ypaiin.alaly
+     8     1     0 outer    05:00    oteey.daiin
+     9     1     0 outer    06:30    oeeodaiin
+    10     1     0 outer    07:00    ofsholdy
+    11     2     0 outer    07:00    opoeey.okaiin
+    12     2     0 outer    10:00    ykolairol
+    13     2     1 middle   11:00    oralkam
+    14     2     1 middle   00:00    ytairal
+    15     2     1 middle   01:00    oeeesaiin
+    16     2     1 middle   01:30    ory
+    17     2     1 middle   02:30    ochey.fydy
+    18     2     1 middle   03:30    of???.o.eeesaly
+    19     2     1 middle   05:00    ykaraiin.airal
+    20     2     1 middle   06:30    okalar
+    21     3     1 middle   08:00    orara
+    22     3     1 middle   09:00    olaiin.olay
+    23     3     1 middle   10:00    olfsheoral
+    24     3     2 inner    10:30    opalal
+    25     3     2 inner    00:00    yfary
+    26     3     2 inner    01:30    oraiiral
+    27     3     2 inner    03:00    ytoar.shar
+    28     3     2 inner    06:00    octho
+    29     3     2 inner    07:30    aral
+    30     3     2 inner    09:00    oletal
+
+======================================================================
+PHASE 2: Positional Test — shared labels at consistent positions?
+======================================================================
+
+  Labels appearing in 2+ zodiac signs: 37
+
+  Label              Count Signs                               Degrees                   Decans          DecanDegs
+  ------------------ ----- ----------------------------------- ------------------------- --------------- --------------------
+  otaly                  6 Ari,Leo,Pis,Sco                     [14, 5, 29, 30, 1, 5]     [2, 1, 3, 3, 1, 1] [4, 5, 9, 10, 1, 5]
+  ar                     5 Pis,Sco,Tau                         [6, 8, 10, 18, 28]        [1, 1, 1, 2, 3] [6, 8, 10, 8, 8]
+  otal                   5 Ari,Gem,Pis,Sco                     [15, 10, 14, 21, 26]      [2, 1, 2, 3, 3] [5, 10, 4, 1, 6]
+  otar                   5 Gem,Pis,Tau                         [20, 21, 8, 14, 16]       [2, 3, 1, 2, 2] [10, 1, 8, 4, 6]
+  oky                    4 Leo,Pis,Sag,Sco                     [5, 20, 24, 23]           [1, 2, 3, 3]    [5, 10, 4, 3]
+  okeey                  4 Gem,Lib,Sco,Tau                     [29, 11, 23, 9]           [3, 2, 3, 1]    [9, 1, 3, 9]
+  okal                   4 Gem,Lib,Sag                         [8, 10, 15, 25]           [1, 1, 2, 3]    [8, 10, 5, 5]
+  okaly                  4 Gem,Leo                             [9, 17, 8, 16]            [1, 2, 1, 2]    [9, 7, 8, 6]
+  am                     3 Ari,Pis,Tau                         [20, 1, 9]                [2, 1, 1]       [10, 1, 9]
+  ary                    3 Gem,Tau                             [18, 29, 11]              [2, 3, 2]       [8, 9, 1]
+  okeody                 3 Sag,Sco,Vir                         [14, 6, 5]                [2, 1, 1]       [4, 6, 5]
+  otaldar                2 Ari,Pis                             [10, 30]                  [1, 3]          [10, 10]
+  chy                    2 Leo,Pis                             [13, 21]                  [2, 3]          [3, 1]
+  arar                   2 Ari,Pis                             [15, 16]                  [2, 2]          [5, 6]
+  okeoly                 2 Lib,Pis                             [17, 4]                   [2, 1]          [7, 4]
+  okydy                  2 Lib,Pis                             [18, 22]                  [2, 3]          [8, 2]
+  al                     2 Can,Pis                             [21, 6]                   [3, 1]          [1, 6]
+  okaram                 2 Gem,Pis                             [25, 3]                   [3, 1]          [5, 3]
+  dy                     2 Ari,Gem                             [1, 13]                   [1, 2]          [1, 3]
+  otalaiin               2 Ari,Tau                             [12, 13]                  [2, 2]          [2, 3]
+  okealar                2 Ari,Gem                             [14, 5]                   [2, 1]          [4, 5]
+  shar                   2 Can,Tau                             [14, 27]                  [2, 3]          [4, 7]
+  otaraldy               2 Gem,Tau                             [22, 6]                   [3, 1]          [2, 6]
+  okeey.ary              2 Gem,Tau                             [29, 11]                  [3, 2]          [9, 1]
+  okalar                 2 Can,Gem                             [7, 20]                   [1, 2]          [7, 10]
+  okam                   2 Gem,Leo                             [23, 3]                   [3, 1]          [3, 3]
+  okaldy                 2 Gem,Leo                             [25, 17]                  [3, 2]          [5, 7]
+  ypaiin                 2 Can,Sag                             [7, 13]                   [1, 2]          [7, 3]
+  oteey                  2 Can,Leo                             [8, 13]                   [1, 2]          [8, 3]
+  daiin                  2 Can,Leo                             [8, 12]                   [1, 2]          [8, 2]
+
+  Degree position consistency test:
+  For each shared label, compute σ(degree) and σ(decan_degree)
+  Low σ = consistent position; high σ = random
+
+  Label                N   σ(deg)  σ(dDeg)  μ(dDeg) Verdict
+  ------------------ --- -------- -------- -------- ---------------
+  otaly                6    11.63     3.04      5.7 random
+  ar                   5     8.10     1.26      8.0 CONSISTENT ◄
+  otal                 5     5.64     2.93      5.2 random
+  otar                 5     4.66     3.12      5.8 random
+  oky                  4     7.65     2.69      5.5 random
+  okeey                4     8.31     3.57      5.5 random
+  okal                 4     6.58     2.12      7.0 moderate
+  okaly                4     4.03     1.12      7.5 CONSISTENT ◄
+  am                   3     7.79     4.03      6.7 random
+  ary                  3     7.41     3.56      6.0 random
+  okeody               3     4.03     0.82      5.0 CONSISTENT ◄
+  otaldar              2    10.00     0.00     10.0 CONSISTENT ◄
+  chy                  2     4.00     1.00      2.0 CONSISTENT ◄
+  arar                 2     0.50     0.50      5.5 CONSISTENT ◄
+  okeoly               2     6.50     1.50      5.5 moderate
+  okydy                2     2.00     3.00      5.0 random
+  al                   2     7.50     2.50      3.5 random
+  okaram               2    11.00     1.00      4.0 CONSISTENT ◄
+  dy                   2     6.00     1.00      2.0 CONSISTENT ◄
+  otalaiin             2     0.50     0.50      2.5 CONSISTENT ◄
+  okealar              2     4.50     0.50      4.5 CONSISTENT ◄
+  shar                 2     6.50     1.50      5.5 moderate
+  otaraldy             2     8.00     2.00      4.0 moderate
+  okeey.ary            2     9.00     4.00      5.0 random
+  okalar               2     6.50     1.50      8.5 moderate
+  okam                 2    10.00     0.00      3.0 CONSISTENT ◄
+  okaldy               2     4.00     1.00      6.0 CONSISTENT ◄
+  ypaiin               2     3.00     2.00      5.0 moderate
+  oteey                2     2.50     2.50      5.5 random
+  daiin                2     2.00     3.00      5.0 random
+
+  Random expectation: σ(degree)=8.66, σ(decan_degree)=2.89
+  Labels with σ(decan_degree) < 1.44: 12
+
+  CONSISTENTLY POSITIONED LABELS:
+    ar                 mean decan_deg=8.0 σ=1.26
+      Pis: degree 6, decan_degree 6
+      Tau: degree 8, decan_degree 8
+      Tau: degree 10, decan_degree 10
+      Tau: degree 18, decan_degree 8
+      Sco: degree 28, decan_degree 8
+    okaly              mean decan_deg=7.5 σ=1.12
+      Gem: degree 9, decan_degree 9
+      Gem: degree 17, decan_degree 7
+      Leo: degree 8, decan_degree 8
+      Leo: degree 16, decan_degree 6
+    okeody             mean decan_deg=5.0 σ=0.82
+      Vir: degree 14, decan_degree 4
+      Sco: degree 6, decan_degree 6
+      Sag: degree 5, decan_degree 5
+    otaldar            mean decan_deg=10.0 σ=0.00
+      Pis: degree 10, decan_degree 10
+      Ari: degree 30, decan_degree 10
+    chy                mean decan_deg=2.0 σ=1.00
+      Pis: degree 13, decan_degree 3
+      Leo: degree 21, decan_degree 1
+    arar               mean decan_deg=5.5 σ=0.50
+      Pis: degree 15, decan_degree 5
+      Ari: degree 16, decan_degree 6
+    okaram             mean decan_deg=4.0 σ=1.00
+      Pis: degree 25, decan_degree 5
+      Gem: degree 3, decan_degree 3
+    dy                 mean decan_deg=2.0 σ=1.00
+      Ari: degree 1, decan_degree 1
+      Gem: degree 13, decan_degree 3
+    otalaiin           mean decan_deg=2.5 σ=0.50
+      Ari: degree 12, decan_degree 2
+      Tau: degree 13, decan_degree 3
+    okealar            mean decan_deg=4.5 σ=0.50
+      Ari: degree 14, decan_degree 4
+      Gem: degree 5, decan_degree 5
+    okam               mean decan_deg=3.0 σ=0.00
+      Gem: degree 23, decan_degree 3
+      Leo: degree 3, decan_degree 3
+    okaldy             mean decan_deg=6.0 σ=1.00
+      Gem: degree 25, decan_degree 5
+      Leo: degree 17, decan_degree 7
+
+  Label distribution at special decan positions:
+
+    Position 1 (decan start):
+      Aries          deg  1: otalchy.tar.am.dy         root=otalchy
+      Aries          deg 11: okoly                     root=kol
+      Aries          deg 21: otaleky                   root=otaleky
+      Cancer         deg  1: olkalaiin                 root=kala
+      Cancer         deg 11: opoeey.okaiin             root=poee
+      Cancer         deg 21: orara                     root=ara
+      Gemini         deg  1: ofchdamy                  root=ofchdamy
+      Gemini         deg 11: okeey.ary                 root=kee
+      Gemini         deg 21: otal                      root=tal
+      Leo            deg  1: ocham                     root=cham
+      Leo            deg 11: sheeos.oy                 root=sheeos
+      Leo            deg 21: chy                       root=ch
+      Libra          deg  1: oeeoty                    root=oeeoty
+      Libra          deg 11: od?dy                     root=od?dy
+      Libra          deg 21: oeeoly                    root=eeol
+      Pisces         deg  1: otalalg                   root=talal
+      Pisces         deg 11: okody                     root=kod
+      Pisces         deg 21: otar.al                   root=tar
+      Sagittarius    deg  1: okol                      root=kol
+      Sagittarius    deg 11: ykeody                    root=keod
+      Sagittarius    deg 21: otedy                     root=ted
+      Scorpio        deg  1: otaly                     root=tal
+      Scorpio        deg 11: ykeeory                   root=keeor
+      Scorpio        deg 21: okary                     root=kar
+      Taurus         deg  1: char.arom                 root=char
+      Taurus         deg 11: ofaom                     root=faom
+      Taurus         deg 21: char.alif                 root=char
+      Virgo          deg  1: oeedey                    root=eede
+      Virgo          deg 11: ofchdysd                  root=ofchdysd
+      Virgo          deg 21: oeedy                     root=eed
+
+    Position 5 (decan midpoint):
+      Aries          deg  5: otaly                     root=tal
+      Aries          deg 15: otear.araydy              root=tear
+      Aries          deg 25: otalaly                   root=talal
+      Cancer         deg  5: otoaiin                   root=toa
+      Cancer         deg 15: oeeesaiin                 root=eeesa
+      Cancer         deg 25: yfary                     root=far
+      Gemini         deg  5: okealar                   root=kealar
+      Gemini         deg 15: okeal                     root=keal
+      Gemini         deg 25: okaldy                    root=kald
+      Leo            deg  5: otcheody                  root=otcheody
+      Leo            deg 15: okeeol                    root=keeol
+      Leo            deg 25: okary                     root=kar
+      Libra          deg  5: oeees                     root=eees
+      Libra          deg 15: okal                      root=kal
+      Libra          deg 25: oeey                      root=ee
+      Pisces         deg  5: oky.ody                   root=k
+      Pisces         deg 15: otal.arar                 root=tal
+      Pisces         deg 25: okaram                    root=karam
+      Sagittarius    deg  5: okeody                    root=keod
+      Sagittarius    deg 15: ofcheesy                  root=ofcheesy
+      Sagittarius    deg 25: okal                      root=kal
+      Scorpio        deg  5: otaly                     root=tal
+      Scorpio        deg 15: okedal                    root=kedal
+      Scorpio        deg 25: chefy                     root=chefy
+      Taurus         deg  5: alcphy                    root=alcphy
+      Taurus         deg 15: sholshdy                  root=sholshdy
+      Taurus         deg 25: ochol.sharam              root=chol
+      Virgo          deg  5: oshesy                    root=shes
+      Virgo          deg 15: okeoldy                   root=keold
+      Virgo          deg 25: oeedaly                   root=eedal
+
+    Position 10 (decan end):
+      Aries          deg 10: otal.ypsharal             root=tal
+      Aries          deg 20: okeoaly                   root=keoal
+      Aries          deg 30: otaldar                   root=taldar
+      Cancer         deg 10: ofsholdy                  root=ofsholdy
+      Cancer         deg 20: okalar                    root=kalar
+      Cancer         deg 30: oletal                    root=oletal
+      Gemini         deg 10: okal                      root=kal
+      Gemini         deg 20: otolam                    root=tolam
+      Leo            deg 10: ofalals                   root=falals
+      Leo            deg 20: oky                       root=k
+      Leo            deg 30: otaly.yty                 root=tal
+      Libra          deg 10: aiinod                    root=aiinod
+      Libra          deg 20: ykeedy                    root=keed
+      Libra          deg 30: okeol                     root=keol
+      Pisces         deg 10: otaldar                   root=taldar
+      Pisces         deg 20: otar.am                   root=tar
+      Pisces         deg 30: otolal                    root=tolal
+      Sagittarius    deg 10: ofals                     root=fals
+      Sagittarius    deg 20: qokeoly                   root=keol
+      Sagittarius    deg 30: ypal                      root=pal
+      Scorpio        deg 10: okeedy                    root=keed
+      Scorpio        deg 20: otey                      root=te
+      Scorpio        deg 30: okeeos                    root=keeos
+      Taurus         deg 10: opalor.ar                 root=palor
+      Taurus         deg 20: ytalshdy                  root=ytalshdy
+      Taurus         deg 30: otainy                    root=otainy
+      Virgo          deg 10: oteodar                   root=teodar
+      Virgo          deg 20: ockhol                    root=ckhol
+      Virgo          deg 30: okeorar                   root=keorar
+
+======================================================================
+PHASE 3: Behenian Star Anchor Test
+======================================================================
+
+  Testing whether labels at Behenian star degree positions are 'special'
+  (i.e., shared across signs, morphologically distinctive, or have unique roots)
+
+  Star             Sign           Deg° Nymph Label                  Prefix Root       Suffix   Shared?
+  ---------------- -------------- ---- ---------------------------- ------ ---------- -------- ----------
+  Algol            Taurus           13° otalaiin                     o      tala       iin      2× (Ari,Tau)
+  Alcyone          Gemini           17° okaly                        o      kal        y        4× (Gem,Leo)
+  Aldebaran        Gemini           27° otam                         o      tam                 unique
+  Capella          Cancer            9° oeeodaiin                    o      eeoda      iin      2× (Can,Vir)
+  Sirius           Cancer            1° olkalaiin                    ol     kala       iin      unique
+  Procyon          Cancer           13° oralkam                             oralkam             unique
+  Regulus          Leo              17° okaldy                       o      kald       y        2× (Gem,Leo)
+  Algorab          Libra             1° oeeoty                              oeeoty              unique (nearest to 0°)
+  Spica            Libra            11° od?dy                               od?dy               unique
+  Arcturus         Libra            11° od?dy                               od?dy               unique
+  Alphecca         Scorpio          29° kar                                 kar                 unique
+  Antares          Sagittarius      27° ykeee                        y      keee                unique
+  Vega             Sagittarius       2° oteody                       o      teod       y        2× (Sag)
+  Deneb Algedi     Pisces           21° otar.al                      o      tar                 unique
+  Fomalhaut        Pisces           21° otar.al                      o      tar                 unique
+
+  Summary:
+    Behenian labels that are SHARED: 5/15
+    Behenian labels that are UNIQUE: 10/15
+
+    Baseline shared rate (all labels): 21.1%
+    Behenian position shared rate:     33.3%
+    → Behenian positions have ELEVATED sharing (notable)
+
+    Roots at Behenian positions: {'tala': 1, 'kal': 1, 'tam': 1, 'eeoda': 1, 'kala': 1, 'oralkam': 1, 'kald': 1, 'oeeoty': 1, 'od?dy': 2, 'kar': 1, 'keee': 1, 'teod': 1, 'tar': 2}
+
+======================================================================
+PHASE 4: Cross-Sign Degree Alignment
+======================================================================
+
+  Do the same degree positions across signs share features?
+  (e.g., does degree 1 always have a certain root or suffix?)
+
+  Degree Unique roots Top root     Top root %   −y %  −iin %  o− %
+  ------ ------------ ------------ ---------- ------ ------- -----
+       1           10 talal               10%    20%     10%   60%
+       2           10 kar                 10%    50%     10%   50%
+       3           10 otar?               10%    30%      0%   70%
+       4           10 t                   10%    50%      0%   40%
+       5            9 tal                 20%    50%     10%   80%
+       6           10 t                   10%    50%     10%   50%
+       7           10 kala                10%     0%     30%   50%
+       8            9 kal                 20%    70%      0%   60%
+       9           10 tald                10%    30%     10%   80%
+      10           10 taldar              10%    10%      0%   80%
+      11           10 kod                 10%    60%      0%   50%
+      12            9 teod                20%    40%     20%   60%
+      13            9 teod                20%    30%     20%   40%
+      14           10 tal                 10%    30%     10%   40%
+      15           10 tal                 10%    10%     10%   80%
+      16           10 tald                10%    60%      0%   50%
+      17           10 keol                10%    50%      0%   60%
+      18           10 okydy               10%    30%     20%   50%
+      19           10 kees                10%    10%     10%   40%
+      20           10 tar                 10%    50%      0%   80%
+      21           10 tar                 10%    50%      0%   70%
+      22           10 talar               10%    20%     10%   60%
+      23           10 talam               10%    40%     10%   70%
+      24           10 olaram              10%    10%      0%   30%
+      25           10 karam               10%    60%      0%   80%
+      26           10 teosal              10%    30%     10%   50%
+      27           10 alols               10%     0%      0%   30%
+      28           10 kaldal              10%    10%      0%   60%
+      29           10 kola                10%    40%     20%   30%
+      30            9 tolal               11%    11%      0%   67%
+
+  Decan-level root sharing:
+   Decan   Avg unique roots Most common root   Root overlap
+  ------ ------------------ ------------------ ------------------------------
+       1                9.8 tal(4), kal(4), kala(2) 7 roots at 2+ positions
+       2                9.8 teod(4), tal(3), tar(3) 11 roots at 2+ positions
+       3                9.9 tal(4), kar(4), pal(3) 7 roots at 2+ positions
+
+======================================================================
+PHASE 5: SYNTHESIS — Ring-to-Decan Mapping Conclusions
+======================================================================
+
+  ┌─────────────────────────────────────────────────────────────────────┐
+  │  RING-TO-DECAN MAPPING RESULTS                                     │
+  │                                                                     │
+  │  1. RING BOUNDARIES ≠ DECAN BOUNDARIES (mostly)                     │
+  │     - No sign has exactly [10, 10, 10] ring structure               │
+  │     - Ring sizes are dictated by PAGE LAYOUT, not decans            │
+  │     - Split signs (Aries, Taurus) have 2 pages × 2 rings each      │
+  │     - Single-page signs have 2-3 rings of variable size             │
+  │     - CONCLUSION: Rings are VISUAL, not SEMANTIC                    │
+  │                                                                     │
+  │  2. DEGREE ORDERING                                                 │
+  │     - Degrees run outer-to-inner, clockwise within each ring        │
+  │     - This follows the file order (established by Petersen)         │
+  │     - Decan 1 = degrees 1-10, Decan 2 = 11-20, Decan 3 = 21-30    │
+  │     - The decan boundary falls MID-RING in most signs               │
+  │                                                                     │
+  │  3. SHARED LABEL POSITIONS: 12 labels show consistent decan positions │
+  │  4. BEHENIAN STARS: 5/15 labels at Behenian positions are shared     │
+  │                                                                     │
+  └─────────────────────────────────────────────────────────────────────┘
+
+  Full data saved to results/ring_decan_results.json

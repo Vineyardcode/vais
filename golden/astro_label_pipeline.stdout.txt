@@ -1,297 +1,297 @@
-======================================================================
-PHASE 1: Extracting labels from zodiac folios
-======================================================================
-
-  Total locus entries extracted: 328
-  Nymph labels: 292
-  Circular text bands: 36
-  Zodiac pages covered: 12
-
-  Per-sign breakdown:
-    f70v1     Aries        (    April)  labels=15  circ_text=2  total_words= 83
-    f70v2     Pisces       (    March)  labels=29  circ_text=3  total_words=127
-    f71r      Aries        (    April)  labels=15  circ_text=3  total_words= 87
-    f71v      Taurus       (      May)  labels=15  circ_text=3  total_words= 99
-    f72r1     Taurus       (      May)  labels=15  circ_text=3  total_words=102
-    f72r2     Gemini       (     June)  labels=29  circ_text=3  total_words=106
-    f72r3     Cancer       (     July)  labels=30  circ_text=4  total_words=154
-    f72v1     Libra        (  October)  labels=27  circ_text=3  total_words= 95
-    f72v2     Virgo        (September)  labels=29  circ_text=3  total_words=102
-    f72v3     Leo          (   August)  labels=29  circ_text=3  total_words=111
-    f73r      Scorpio      ( November)  labels=30  circ_text=3  total_words= 93
-    f73v      Sagittarius  ( December)  labels=29  circ_text=3  total_words= 94
-
-======================================================================
-PHASE 2: Extracting labels from non-zodiac astro folios
-======================================================================
-  Non-zodiac astro pages: 6
-  Star/sector/radial labels: 209
-    f67r             stars=12  sectors=27  radials=12
-    f67v             stars= 0  sectors=12  radials= 4
-    f68r             stars=64  sectors= 0  radials= 8
-    f68v             stars= 0  sectors= 2  radials= 8
-    f69r             stars= 0  sectors=17  radials= 0
-    f69v_70r         stars= 0  sectors= 0  radials=43
-
-======================================================================
-PHASE 3: Morphological analysis of zodiac nymph labels
-======================================================================
-
-  Total nymph/star label words: 340
-  Successfully parsed: 251 (73.8%)
-
-  o-prefix fraction in labels: 67.4%
-  Prefix distribution:
-    o       164
-    y        25
-    d         5
-    ol        4
-    or        3
-    s         2
-    qo        1
-
-  Unique roots in labels: 149
-  Top 20 roots:
-    tal            12  signs=Aries,Gemini,Leo,Libra,Pisces,Scorpio
-    ar              9  signs=Gemini,Pisces,Scorpio,Taurus
-    kal             8  signs=Gemini,Leo,Libra,Sagittarius
-    tar             5  signs=Aries,Pisces,Taurus
-    kar             5  signs=Leo,Pisces,Scorpio,Virgo
-    a               5  signs=Cancer,Leo,Taurus,Virgo
-    teod            5  signs=Libra,Sagittarius,Virgo
-    keod            5  signs=Sagittarius,Scorpio,Virgo
-    al              4  signs=Aries,Cancer,Pisces,Taurus
-    k               4  signs=Leo,Pisces,Sagittarius,Scorpio
-    keol            4  signs=Libra,Pisces,Sagittarius
-    ta              4  signs=Gemini,Taurus
-    kee             4  signs=Gemini,Libra,Scorpio,Taurus
-    am              3  signs=Aries,Pisces,Taurus
-    t               3  signs=Leo,Pisces
-    kala            3  signs=Cancer,Libra,Pisces
-    pa              3  signs=Cancer,Sagittarius,Scorpio
-    keed            3  signs=Libra,Scorpio
-    pal             3  signs=Leo,Sagittarius,Virgo
-    ke              3  signs=Leo,Sagittarius
-
-  Suffix distribution:
-    y       106
-    iin      23
-    ir        3
-    g         2
-    in        1
-
-  Root type classification (from label words only):
-    Type A (substance): 20 roots
-    Type B (process):   14 roots
-    Mixed:              13 roots
-
-======================================================================
-PHASE 4: Cross-zodiac root analysis
-======================================================================
-
-  Root repertoire per zodiac sign:
-    Pisces        27 unique roots  top: t(2), tald(2), tal(2), tar(2), talal(1)
-    Aries         25 unique roots  top: tal(3), tar(1), am(1), al(1), kalal(1)
-    Taurus        23 unique roots  top: ar(5), ta(3), char(2), tar(2), arom(1)
-    Gemini        16 unique roots  top: kal(4), ar(2), karam(1), kealar(1), tarald(1)
-    Cancer        25 unique roots  top: a(2), kala(1), als(1), toa(1), al(1)
-    Leo           22 unique roots  top: kal(2), tal(2), cham(1), che(1), kam(1)
-    Virgo         22 unique roots  top: cheold(2), eede(1), eeoda(1), keoram(1), a(1)
-    Libra         18 unique roots  top: keol(2), teod(2), cth(1), teol(1), eees(1)
-    Scorpio       18 unique roots  top: tal(3), keed(2), kar(2), ted(1), teeod(1)
-    Sagittarius   23 unique roots  top: keod(3), teod(2), ke(2), kol(1), teed(1)
-
-  Root overlap by ELEMENT:
-    Air    ↔ Earth   shared= 5  jaccard=0.071
-    Air    ↔ Fire    shared= 8  jaccard=0.092
-    Air    ↔ Water   shared= 8  jaccard=0.093
-    Earth  ↔ Fire    shared=11  jaccard=0.113
-    Earth  ↔ Water   shared=12  jaccard=0.126
-    Fire   ↔ Water   shared=20  jaccard=0.187
-
-  Root overlap by MODALITY:
-    Cardinal ↔ Fixed     shared=15  jaccard=0.142
-    Cardinal ↔ Mutable   shared=18  jaccard=0.146
-    Fixed    ↔ Mutable   shared=24  jaccard=0.218
-
-======================================================================
-PHASE 5: Label uniqueness analysis
-======================================================================
-
-  Labels unique to one sign: 243
-  Labels shared across signs: 34
-  Total unique label words: 277
-
-  Most-shared labels (appear in most signs):
-    otaly             6×  in 4 signs  o|tal|y               [Aries, Leo, Pisces, Scorpio]
-    otal              5×  in 4 signs  o|tal|                [Aries, Gemini, Pisces, Scorpio]
-    oky               4×  in 4 signs  o|k|y                 [Leo, Pisces, Sagittarius, Scorpio]
-    okeey             4×  in 4 signs  o|kee|y               [Gemini, Libra, Scorpio, Taurus]
-    am                3×  in 3 signs  |am|                  [Aries, Pisces, Taurus]
-    ar                5×  in 3 signs  |ar|                  [Pisces, Scorpio, Taurus]
-    okal              4×  in 3 signs  o|kal|                [Gemini, Libra, Sagittarius]
-    okeody            3×  in 3 signs  o|keod|y              [Sagittarius, Scorpio, Virgo]
-    dy                2×  in 2 signs  UNPARSED              [Aries, Gemini]
-    otalaiin          2×  in 2 signs  o|tala|iin            [Aries, Taurus]
-    okealar           2×  in 2 signs  o|kealar|             [Aries, Gemini]
-    otaldar           2×  in 2 signs  o|taldar|             [Aries, Pisces]
-    arar              2×  in 2 signs  |arar|                [Aries, Pisces]
-    okeoly            2×  in 2 signs  o|keol|y              [Libra, Pisces]
-    okydy             2×  in 2 signs  UNPARSED              [Libra, Pisces]
-
-======================================================================
-PHASE 6: Zodiac nymph labels vs non-zodiac star labels
-======================================================================
-
-  Zodiac nymph unique words: 277
-  Non-zodiac star unique words: 292
-  Shared vocabulary: 38
-  Jaccard similarity: 0.072
-  Shared words: air, al, aly, am, ar, araly, ary, char, chdy, chek, daiin, dy, ochey, ody, okal, okeal, okeey, okeod, okeody, okeol
-
-======================================================================
-PHASE 7: Suffix consistency across zodiac signs
-======================================================================
-
-  Top suffixes per sign:
-    Pisces        n=12  y(10), g(1), iin(1)
-    Aries         n= 9  y(8), iin(1)
-    Taurus        n=13  y(7), iin(5), in(1)
-    Gemini        n= 9  y(8), ir(1)
-    Cancer        n=17  iin(9), y(8)
-    Leo           n=16  y(14), iin(2)
-    Virgo         n=16  y(12), iin(2), ir(1), g(1)
-    Libra         n=12  y(11), ir(1)
-    Scorpio       n=16  y(15), iin(1)
-    Sagittarius   n=15  y(13), iin(2)
-
-======================================================================
-PHASE 8: Clock position correlation (decan/degree test)
-======================================================================
-
-  Unique clock positions: 32
-
-  Root variety by position (top positions):
-    01:00   n=16  roots: tod(1), teolar(1), kalam(1)
-    00:00   n=15  roots: ar(3), al(1), tala(1)
-    05:00   n=15  roots: ta(2), a(2), teoee(1)
-    02:00   n=14  roots: teo(1), alals(1), aral(1)
-    10:00   n=13  roots: kar(1), tar(1), am(1)
-    11:00   n=12  roots: t(1), tar(1), al(1)
-    03:00   n=12  roots: olaram(1), ta(1), tala(1)
-    08:30   n=11  roots: kees(1), talal(1), chol(1)
-    10:30   n=10  roots: tar(1), am(1), kol(1)
-    05:30   n=10  roots: tal(2), tar(2), arar(1)
-
-======================================================================
-PHASE 9: Decan grouping test (thirds of nymph sequences)
-======================================================================
-
-  Pisces (33 labels, groups: [11, 11, 11]):
-    Group 1: roots=[t(1), ar(1), talar(1)]  suffixes=[y(3)]
-    Group 2: roots=[tal(2), chckhhy(1), karam(1)]  suffixes=[y(3)]
-    Group 3: roots=[tar(2), kees(1), talal(1)]  suffixes=[y(4), g(1), iin(1)]
-
-  Aries (42 labels, groups: [14, 14, 14]):
-    Group 1: roots=[opchey(1), al(1), tala(1)]  suffixes=[y(4), iin(1)]
-    Group 2: roots=[teeol(1), oalcheg(1), talsar(1)]  suffixes=[y(2)]
-    Group 3: roots=[araydy(1), taldar(1), talal(1)]  suffixes=[y(2)]
-
-  Taurus (45 labels, groups: [15, 15, 15]):
-    Group 1: roots=[ar(2), kolar(1), talod(1)]  suffixes=[iin(3), y(2)]
-    Group 2: roots=[ar(2), ta(2), tar(2)]  suffixes=[y(4), iin(2), in(1)]
-    Group 3: roots=[ys(1), ainam(1), otainy(1)]  suffixes=[y(1)]
-
-  Gemini (31 labels, groups: [10, 10, 11]):
-    Group 1: roots=[kal(2), karam(1), okairy(1)]  suffixes=[y(4)]
-    Group 2: roots=[kald(1), ta(1), dy(1)]  suffixes=[y(3), ir(1)]
-    Group 3: roots=[ainaly(1), okyd(1), okarcham(1)]  suffixes=[y(1)]
-
-  Cancer (39 labels, groups: [13, 13, 13]):
-    Group 1: roots=[oraiinam(1), ytairal(1), far(1)]  suffixes=[y(3), iin(2)]
-    Group 2: roots=[toar(1), shar(1), eeesal(1)]  suffixes=[iin(4), y(3)]
-    Group 3: roots=[poee(1), ka(1), aral(1)]  suffixes=[iin(3), y(2)]
-
-  Leo (33 labels, groups: [11, 11, 11]):
-    Group 1: roots=[ke(1), otcheody(1), chcthhy(1)]  suffixes=[y(4)]
-    Group 2: roots=[ocfhhy(1), kar(1), a(1)]  suffixes=[y(2), iin(2)]
-    Group 3: roots=[tal(2), kal(1), kald(1)]  suffixes=[y(8)]
-
-  Virgo (30 labels, groups: [10, 10, 10]):
-    Group 1: roots=[a(1), aim(1), eed(1)]  suffixes=[y(4), ir(1), g(1)]
-    Group 2: roots=[sheoeky(1), eedal(1), teodar(1)]  suffixes=[y(5)]
-    Group 3: roots=[keold(1), keeor(1), ona(1)]  suffixes=[y(3), iin(2)]
-
-  Libra (27 labels, groups: [9, 9, 9]):
-    Group 1: roots=[teod(2), oiiny(1), keeol(1)]  suffixes=[y(3)]
-    Group 2: roots=[ypaim(1), kal(1), tal(1)]  suffixes=[y(2), ir(1)]
-    Group 3: roots=[keed(1), oeeoty(1), eeol(1)]  suffixes=[y(6)]
-
-  Scorpio (30 labels, groups: [10, 10, 10]):
-    Group 1: roots=[keed(2), oteedyl(1), ted(1)]  suffixes=[y(8)]
-    Group 2: roots=[teeos(1), shekal(1), chefy(1)]  suffixes=[y(2)]
-    Group 3: roots=[kar(2), tal(2), pa(1)]  suffixes=[y(5), iin(1)]
-
-  Sagittarius (29 labels, groups: [9, 9, 11]):
-    Group 1: roots=[eer(1), teed(1), eeeod(1)]  suffixes=[y(6)]
-    Group 2: roots=[pa(1), ke(1), fa(1)]  suffixes=[iin(2), y(2)]
-    Group 3: roots=[ke(1), keear(1), pal(1)]  suffixes=[y(5)]
-
-======================================================================
-PHASE 10: Complete label inventory for semantic assignment
-======================================================================
-
-  Total label inventory entries: 340
-
-  Sample entries:
-    otalchy          Aries         @10:30   |otalchy|
-    tar              Aries         @10:30   |tar|
-    am               Aries         @10:30   |am|
-    dy               Aries         @10:30   |dy|
-    opchey           Aries         @00:00   |opchey|
-    sal              Aries         @00:00   s|al|
-    otakaizan        Aries         @01:00   |otakaizan|
-    okalal           Aries         @02:30   o|kalal|
-    otaly            Aries         @03:30   o|tal|y
-    oalcheg          Aries         @04:30   |oalcheg|
-
-======================================================================
-SYNTHESIS: Key findings for semantic assignment
-======================================================================
-
-  Parse rate for labels: 73.8%
-  Total label words: 340
-  o-prefix dominance: 67.4%
-  Labels unique to one sign: 87.7%
-  Top root: 'tal' (12×)
-  Zodiac↔Star vocabulary Jaccard: 0.072
-  Type A roots: 20  Type B: 14
-
-  SEMANTIC CANDIDATES (most-shared labels = likely common nouns):
-  These appear across many signs, suggesting generic terms like
-  'star', 'bright', 'first', 'degree', etc.:
-    'otaly' → o|tal|y  (6× in 4 signs)
-    'otal' → o|tal|  (5× in 4 signs)
-    'oky' → o|k|y  (4× in 4 signs)
-    'okeey' → o|kee|y  (4× in 4 signs)
-    'am' → |am|  (3× in 3 signs)
-    'ar' → |ar|  (5× in 3 signs)
-    'okal' → o|kal|  (4× in 3 signs)
-    'okeody' → o|keod|y  (3× in 3 signs)
-    'dy' → |dy|  (2× in 2 signs)
-    'otalaiin' → o|tala|iin  (2× in 2 signs)
-
-  SIGN-SPECIFIC LABELS (possible star proper names):
-    Aries       : otalchy, tar, opchey, sal, otakaizan
-    Cancer      : olkalaiin, olalsy, oraiinam, osarsheeeo, otoaiin
-    Gemini      : ofchdamy, oklairdy, okairy, oteeary, otair
-    Leo         : ocham, orchey, okey, otcheody, okyeeshy
-    Libra       : oeeoty, octhy, oteoly, oeees, oees
-    Pisces      : otalalg, ykary, oty, ody, okala
-    Sagittarius : okol, oteody, oteedy, eeeody, sheol
-    Scorpio     : chockhy, yteeody, oteedyl, okeedy, ykeeory
-    Taurus      : char, arom, chfaly, okolar, otchody
-    Virgo       : oeedey, okeoram, air, aim, oshesy
-
-  Results saved to C:\projects\voynich_slop\results\astro_label_results.json
-======================================================================
+======================================================================
+PHASE 1: Extracting labels from zodiac folios
+======================================================================
+
+  Total locus entries extracted: 328
+  Nymph labels: 292
+  Circular text bands: 36
+  Zodiac pages covered: 12
+
+  Per-sign breakdown:
+    f70v1     Aries        (    April)  labels=15  circ_text=2  total_words= 83
+    f70v2     Pisces       (    March)  labels=29  circ_text=3  total_words=127
+    f71r      Aries        (    April)  labels=15  circ_text=3  total_words= 87
+    f71v      Taurus       (      May)  labels=15  circ_text=3  total_words= 99
+    f72r1     Taurus       (      May)  labels=15  circ_text=3  total_words=102
+    f72r2     Gemini       (     June)  labels=29  circ_text=3  total_words=106
+    f72r3     Cancer       (     July)  labels=30  circ_text=4  total_words=154
+    f72v1     Libra        (  October)  labels=27  circ_text=3  total_words= 95
+    f72v2     Virgo        (September)  labels=29  circ_text=3  total_words=102
+    f72v3     Leo          (   August)  labels=29  circ_text=3  total_words=111
+    f73r      Scorpio      ( November)  labels=30  circ_text=3  total_words= 93
+    f73v      Sagittarius  ( December)  labels=29  circ_text=3  total_words= 94
+
+======================================================================
+PHASE 2: Extracting labels from non-zodiac astro folios
+======================================================================
+  Non-zodiac astro pages: 6
+  Star/sector/radial labels: 209
+    f67r             stars=12  sectors=27  radials=12
+    f67v             stars= 0  sectors=12  radials= 4
+    f68r             stars=64  sectors= 0  radials= 8
+    f68v             stars= 0  sectors= 2  radials= 8
+    f69r             stars= 0  sectors=17  radials= 0
+    f69v_70r         stars= 0  sectors= 0  radials=43
+
+======================================================================
+PHASE 3: Morphological analysis of zodiac nymph labels
+======================================================================
+
+  Total nymph/star label words: 340
+  Successfully parsed: 251 (73.8%)
+
+  o-prefix fraction in labels: 67.4%
+  Prefix distribution:
+    o       164
+    y        25
+    d         5
+    ol        4
+    or        3
+    s         2
+    qo        1
+
+  Unique roots in labels: 149
+  Top 20 roots:
+    tal            12  signs=Aries,Gemini,Leo,Libra,Pisces,Scorpio
+    ar              9  signs=Gemini,Pisces,Scorpio,Taurus
+    kal             8  signs=Gemini,Leo,Libra,Sagittarius
+    tar             5  signs=Aries,Pisces,Taurus
+    kar             5  signs=Leo,Pisces,Scorpio,Virgo
+    a               5  signs=Cancer,Leo,Taurus,Virgo
+    teod            5  signs=Libra,Sagittarius,Virgo
+    keod            5  signs=Sagittarius,Scorpio,Virgo
+    al              4  signs=Aries,Cancer,Pisces,Taurus
+    k               4  signs=Leo,Pisces,Sagittarius,Scorpio
+    keol            4  signs=Libra,Pisces,Sagittarius
+    ta              4  signs=Gemini,Taurus
+    kee             4  signs=Gemini,Libra,Scorpio,Taurus
+    am              3  signs=Aries,Pisces,Taurus
+    t               3  signs=Leo,Pisces
+    kala            3  signs=Cancer,Libra,Pisces
+    pa              3  signs=Cancer,Sagittarius,Scorpio
+    keed            3  signs=Libra,Scorpio
+    pal             3  signs=Leo,Sagittarius,Virgo
+    ke              3  signs=Leo,Sagittarius
+
+  Suffix distribution:
+    y       106
+    iin      23
+    ir        3
+    g         2
+    in        1
+
+  Root type classification (from label words only):
+    Type A (substance): 20 roots
+    Type B (process):   14 roots
+    Mixed:              13 roots
+
+======================================================================
+PHASE 4: Cross-zodiac root analysis
+======================================================================
+
+  Root repertoire per zodiac sign:
+    Pisces        27 unique roots  top: t(2), tald(2), tal(2), tar(2), talal(1)
+    Aries         25 unique roots  top: tal(3), tar(1), am(1), al(1), kalal(1)
+    Taurus        23 unique roots  top: ar(5), ta(3), char(2), tar(2), arom(1)
+    Gemini        16 unique roots  top: kal(4), ar(2), karam(1), kealar(1), tarald(1)
+    Cancer        25 unique roots  top: a(2), kala(1), als(1), toa(1), al(1)
+    Leo           22 unique roots  top: kal(2), tal(2), cham(1), che(1), kam(1)
+    Virgo         22 unique roots  top: cheold(2), eede(1), eeoda(1), keoram(1), a(1)
+    Libra         18 unique roots  top: keol(2), teod(2), cth(1), teol(1), eees(1)
+    Scorpio       18 unique roots  top: tal(3), keed(2), kar(2), ted(1), teeod(1)
+    Sagittarius   23 unique roots  top: keod(3), teod(2), ke(2), kol(1), teed(1)
+
+  Root overlap by ELEMENT:
+    Air    ↔ Earth   shared= 5  jaccard=0.071
+    Air    ↔ Fire    shared= 8  jaccard=0.092
+    Air    ↔ Water   shared= 8  jaccard=0.093
+    Earth  ↔ Fire    shared=11  jaccard=0.113
+    Earth  ↔ Water   shared=12  jaccard=0.126
+    Fire   ↔ Water   shared=20  jaccard=0.187
+
+  Root overlap by MODALITY:
+    Cardinal ↔ Fixed     shared=15  jaccard=0.142
+    Cardinal ↔ Mutable   shared=18  jaccard=0.146
+    Fixed    ↔ Mutable   shared=24  jaccard=0.218
+
+======================================================================
+PHASE 5: Label uniqueness analysis
+======================================================================
+
+  Labels unique to one sign: 243
+  Labels shared across signs: 34
+  Total unique label words: 277
+
+  Most-shared labels (appear in most signs):
+    otaly             6×  in 4 signs  o|tal|y               [Aries, Leo, Pisces, Scorpio]
+    otal              5×  in 4 signs  o|tal|                [Aries, Gemini, Pisces, Scorpio]
+    oky               4×  in 4 signs  o|k|y                 [Leo, Pisces, Sagittarius, Scorpio]
+    okeey             4×  in 4 signs  o|kee|y               [Gemini, Libra, Scorpio, Taurus]
+    am                3×  in 3 signs  |am|                  [Aries, Pisces, Taurus]
+    ar                5×  in 3 signs  |ar|                  [Pisces, Scorpio, Taurus]
+    okal              4×  in 3 signs  o|kal|                [Gemini, Libra, Sagittarius]
+    okeody            3×  in 3 signs  o|keod|y              [Sagittarius, Scorpio, Virgo]
+    dy                2×  in 2 signs  UNPARSED              [Aries, Gemini]
+    otalaiin          2×  in 2 signs  o|tala|iin            [Aries, Taurus]
+    okealar           2×  in 2 signs  o|kealar|             [Aries, Gemini]
+    otaldar           2×  in 2 signs  o|taldar|             [Aries, Pisces]
+    arar              2×  in 2 signs  |arar|                [Aries, Pisces]
+    okeoly            2×  in 2 signs  o|keol|y              [Libra, Pisces]
+    okydy             2×  in 2 signs  UNPARSED              [Libra, Pisces]
+
+======================================================================
+PHASE 6: Zodiac nymph labels vs non-zodiac star labels
+======================================================================
+
+  Zodiac nymph unique words: 277
+  Non-zodiac star unique words: 292
+  Shared vocabulary: 38
+  Jaccard similarity: 0.072
+  Shared words: air, al, aly, am, ar, araly, ary, char, chdy, chek, daiin, dy, ochey, ody, okal, okeal, okeey, okeod, okeody, okeol
+
+======================================================================
+PHASE 7: Suffix consistency across zodiac signs
+======================================================================
+
+  Top suffixes per sign:
+    Pisces        n=12  y(10), g(1), iin(1)
+    Aries         n= 9  y(8), iin(1)
+    Taurus        n=13  y(7), iin(5), in(1)
+    Gemini        n= 9  y(8), ir(1)
+    Cancer        n=17  iin(9), y(8)
+    Leo           n=16  y(14), iin(2)
+    Virgo         n=16  y(12), iin(2), ir(1), g(1)
+    Libra         n=12  y(11), ir(1)
+    Scorpio       n=16  y(15), iin(1)
+    Sagittarius   n=15  y(13), iin(2)
+
+======================================================================
+PHASE 8: Clock position correlation (decan/degree test)
+======================================================================
+
+  Unique clock positions: 32
+
+  Root variety by position (top positions):
+    01:00   n=16  roots: tod(1), teolar(1), kalam(1)
+    00:00   n=15  roots: ar(3), al(1), tala(1)
+    05:00   n=15  roots: ta(2), a(2), teoee(1)
+    02:00   n=14  roots: teo(1), alals(1), aral(1)
+    10:00   n=13  roots: kar(1), tar(1), am(1)
+    11:00   n=12  roots: t(1), tar(1), al(1)
+    03:00   n=12  roots: olaram(1), ta(1), tala(1)
+    08:30   n=11  roots: kees(1), talal(1), chol(1)
+    10:30   n=10  roots: tar(1), am(1), kol(1)
+    05:30   n=10  roots: tal(2), tar(2), arar(1)
+
+======================================================================
+PHASE 9: Decan grouping test (thirds of nymph sequences)
+======================================================================
+
+  Pisces (33 labels, groups: [11, 11, 11]):
+    Group 1: roots=[t(1), ar(1), talar(1)]  suffixes=[y(3)]
+    Group 2: roots=[tal(2), chckhhy(1), karam(1)]  suffixes=[y(3)]
+    Group 3: roots=[tar(2), kees(1), talal(1)]  suffixes=[y(4), g(1), iin(1)]
+
+  Aries (42 labels, groups: [14, 14, 14]):
+    Group 1: roots=[opchey(1), al(1), tala(1)]  suffixes=[y(4), iin(1)]
+    Group 2: roots=[teeol(1), oalcheg(1), talsar(1)]  suffixes=[y(2)]
+    Group 3: roots=[araydy(1), taldar(1), talal(1)]  suffixes=[y(2)]
+
+  Taurus (45 labels, groups: [15, 15, 15]):
+    Group 1: roots=[ar(2), kolar(1), talod(1)]  suffixes=[iin(3), y(2)]
+    Group 2: roots=[ar(2), ta(2), tar(2)]  suffixes=[y(4), iin(2), in(1)]
+    Group 3: roots=[ys(1), ainam(1), otainy(1)]  suffixes=[y(1)]
+
+  Gemini (31 labels, groups: [10, 10, 11]):
+    Group 1: roots=[kal(2), karam(1), okairy(1)]  suffixes=[y(4)]
+    Group 2: roots=[kald(1), ta(1), dy(1)]  suffixes=[y(3), ir(1)]
+    Group 3: roots=[ainaly(1), okyd(1), okarcham(1)]  suffixes=[y(1)]
+
+  Cancer (39 labels, groups: [13, 13, 13]):
+    Group 1: roots=[oraiinam(1), ytairal(1), far(1)]  suffixes=[y(3), iin(2)]
+    Group 2: roots=[toar(1), shar(1), eeesal(1)]  suffixes=[iin(4), y(3)]
+    Group 3: roots=[poee(1), ka(1), aral(1)]  suffixes=[iin(3), y(2)]
+
+  Leo (33 labels, groups: [11, 11, 11]):
+    Group 1: roots=[ke(1), otcheody(1), chcthhy(1)]  suffixes=[y(4)]
+    Group 2: roots=[ocfhhy(1), kar(1), a(1)]  suffixes=[y(2), iin(2)]
+    Group 3: roots=[tal(2), kal(1), kald(1)]  suffixes=[y(8)]
+
+  Virgo (30 labels, groups: [10, 10, 10]):
+    Group 1: roots=[a(1), aim(1), eed(1)]  suffixes=[y(4), ir(1), g(1)]
+    Group 2: roots=[sheoeky(1), eedal(1), teodar(1)]  suffixes=[y(5)]
+    Group 3: roots=[keold(1), keeor(1), ona(1)]  suffixes=[y(3), iin(2)]
+
+  Libra (27 labels, groups: [9, 9, 9]):
+    Group 1: roots=[teod(2), oiiny(1), keeol(1)]  suffixes=[y(3)]
+    Group 2: roots=[ypaim(1), kal(1), tal(1)]  suffixes=[y(2), ir(1)]
+    Group 3: roots=[keed(1), oeeoty(1), eeol(1)]  suffixes=[y(6)]
+
+  Scorpio (30 labels, groups: [10, 10, 10]):
+    Group 1: roots=[keed(2), oteedyl(1), ted(1)]  suffixes=[y(8)]
+    Group 2: roots=[teeos(1), shekal(1), chefy(1)]  suffixes=[y(2)]
+    Group 3: roots=[kar(2), tal(2), pa(1)]  suffixes=[y(5), iin(1)]
+
+  Sagittarius (29 labels, groups: [9, 9, 11]):
+    Group 1: roots=[eer(1), teed(1), eeeod(1)]  suffixes=[y(6)]
+    Group 2: roots=[pa(1), ke(1), fa(1)]  suffixes=[iin(2), y(2)]
+    Group 3: roots=[ke(1), keear(1), pal(1)]  suffixes=[y(5)]
+
+======================================================================
+PHASE 10: Complete label inventory for semantic assignment
+======================================================================
+
+  Total label inventory entries: 340
+
+  Sample entries:
+    otalchy          Aries         @10:30   |otalchy|
+    tar              Aries         @10:30   |tar|
+    am               Aries         @10:30   |am|
+    dy               Aries         @10:30   |dy|
+    opchey           Aries         @00:00   |opchey|
+    sal              Aries         @00:00   s|al|
+    otakaizan        Aries         @01:00   |otakaizan|
+    okalal           Aries         @02:30   o|kalal|
+    otaly            Aries         @03:30   o|tal|y
+    oalcheg          Aries         @04:30   |oalcheg|
+
+======================================================================
+SYNTHESIS: Key findings for semantic assignment
+======================================================================
+
+  Parse rate for labels: 73.8%
+  Total label words: 340
+  o-prefix dominance: 67.4%
+  Labels unique to one sign: 87.7%
+  Top root: 'tal' (12×)
+  Zodiac↔Star vocabulary Jaccard: 0.072
+  Type A roots: 20  Type B: 14
+
+  SEMANTIC CANDIDATES (most-shared labels = likely common nouns):
+  These appear across many signs, suggesting generic terms like
+  'star', 'bright', 'first', 'degree', etc.:
+    'otaly' → o|tal|y  (6× in 4 signs)
+    'otal' → o|tal|  (5× in 4 signs)
+    'oky' → o|k|y  (4× in 4 signs)
+    'okeey' → o|kee|y  (4× in 4 signs)
+    'am' → |am|  (3× in 3 signs)
+    'ar' → |ar|  (5× in 3 signs)
+    'okal' → o|kal|  (4× in 3 signs)
+    'okeody' → o|keod|y  (3× in 3 signs)
+    'dy' → |dy|  (2× in 2 signs)
+    'otalaiin' → o|tala|iin  (2× in 2 signs)
+
+  SIGN-SPECIFIC LABELS (possible star proper names):
+    Aries       : otalchy, tar, opchey, sal, otakaizan
+    Cancer      : olkalaiin, olalsy, oraiinam, osarsheeeo, otoaiin
+    Gemini      : ofchdamy, oklairdy, okairy, oteeary, otair
+    Leo         : ocham, orchey, okey, otcheody, okyeeshy
+    Libra       : oeeoty, octhy, oteoly, oeees, oees
+    Pisces      : otalalg, ykary, oty, ody, okala
+    Sagittarius : okol, oteody, oteedy, eeeody, sheol
+    Scorpio     : chockhy, yteeody, oteedyl, okeedy, ykeeory
+    Taurus      : char, arom, chfaly, okolar, otchody
+    Virgo       : oeedey, okeoram, air, aim, oshesy
+
+  Results saved to C:\projects\voynich_slop\results\astro_label_results.json
+======================================================================

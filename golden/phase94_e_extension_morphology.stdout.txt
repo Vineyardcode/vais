@@ -1,192 +1,192 @@
-========================================================================
-  PHASE 94 — SLOT2 e-Extension: Productive Morphology
-              or Slot Independence?
-========================================================================
-
-STEP 1 — Load VMS words with positional metadata
-------------------------------------------------------------
-  Total word tokens: 40351
-  Unique word types: 8212
-  A tokens: 11728
-  B tokens: 25504
-
-STEP 2 — Identify base words (at least one chunk with empty SLOT2 + 'o')
-------------------------------------------------------------
-  Word types with ≥1 empty-SLOT2-with-o chunk: 4151
-  (out of 8212 total types = 50.5%)
-
-STEP 3 — e-Extension pairing: For each base, does the e-extended
-         variant exist in the corpus?
-------------------------------------------------------------
-  Base words with e-extended partner: 377/4151 (9.1%)
-  Base words with a-extended partner: 6/4151 (0.1%)
-  Total e-extension pairs: 380
-  Total a-extension pairs: 6
-
-STEP 4 — Anti-circularity: e-insertion at RANDOM positions
-------------------------------------------------------------
-  If LOOP grammar is just capturing noise, inserting 'e' at
-  any position should produce equally many 'pairs'.
-
-  SLOT2 insertion hits: 380
-  Random-position insertion hits by position:
-    Position 0: 12 hits
-    Position 1: 212 hits
-    Position 2: 326 hits
-    Position 3: 265 hits
-    Position 4: 148 hits
-    Position 5: 41 hits
-    Position 6: 5 hits
-  Total random-position hits: 1009
-  Average per position: 144.1
-  SLOT2-specific ratio: 2.64x above random
-
-STEP 5 — Frequency asymmetry: Is base more frequent than extension?
-------------------------------------------------------------
-  NL prediction: base (lemma) > extended (inflection)
-  Cipher prediction: no systematic asymmetry
-
-  Pairs where base freq > extended freq: 201
-  Pairs where extended freq > base freq: 78
-  Equal frequency: 98
-  Ratio (base>ext / ext>base): 2.58
-
-  Top 25 e-extension pairs (by combined frequency):
-  Base                Freq  Extended            Freq   Ratio
-  ────────────────── ─────  ────────────────── ─────  ──────
-  ol                   592  eol                    4     >>1  ◄ base
-  chol                 400  cheol                178     2.2  ◄ base
-  or                   431  eor                    1     >>1  ◄ base
-  chor                 212  cheor                 97     2.2  ◄ base
-  shol                 180  sheol                119     1.5  ◄ base
-  o                    199  eo                     5    39.8  ◄ base
-  chody                 99  cheody                95     1.0  ◄ base
-  sho                  118  sheo                  50     2.4  ◄ base
-  cho                   80  cheo                  82     1.0  ► ext
-  qokol                106  qokeol                52     2.0  ◄ base
-  shor                  99  sheor                 48     2.1  ◄ base
-  okol                  82  okeol                 65     1.3  ◄ base
-  otol                  83  oteol                 36     2.3  ◄ base
-  shody                 56  sheody                55     1.0  ◄ base
-  dol                  106  deol                   1     >>1  ◄ base
-  chos                  41  cheos                 39     1.1  ◄ base
-  cthol                 57  ctheol                10     5.7  ◄ base
-  tol                   47  teol                  17     2.8  ◄ base
-  otody                 18  oteody                43     0.4  ► ext
-  kol                   39  keol                  21     1.9  ◄ base
-  qotol                 47  qoteol                12     3.9  ◄ base
-  qokor                 34  qokeor                23     1.5  ◄ base
-  chodaiin              44  cheodaiin             13     3.4  ◄ base
-  okor                  33  okeor                 22     1.5  ◄ base
-  ody                   53  eody                   1    53.0  ◄ base
-
-  log2(base_freq/ext_freq): mean=0.72, median=0.42
-    (positive = base more frequent; NL expects positive)
-
-STEP 6 — Selectional restrictions: Do ALL bases get extended,
-         or is extension selective?
-------------------------------------------------------------
-      Freq bin   N bases  With e-ext      Rate
-  ────────────  ────────  ──────────  ────────
-      1-1          2870          92      3.2%
-      2-5           929         151     16.3%
-      6-20          245          95     38.8%
-     21-100          83          30     36.1%
-    101-10000        24           9     37.5%
-
-  NL prediction: LOWER frequency bases have LOWER extension rate
-  (rare words have fewer inflected forms in corpus)
-  Cipher prediction: extension rate ~uniform across frequency bins
-
-STEP 7 — Currier distribution: Do base/extended forms
-         concentrate in different Currier sections?
-------------------------------------------------------------
-  Base forms:     A= 2783 (56.6%)  B= 2134 (43.4%)
-  Extended forms: A=  927 (47.4%)  B= 1029 (52.6%)
-  Corpus baseline: A=31.5%, B=68.5%
-
-  Extended-form B enrichment: 0.77x
-  Base-form A enrichment: 1.80x
-  (Phase 93 predicts: extended enriched in B, base enriched in A)
-
-STEP 8 — Positional distribution: Base vs extended by line position
-------------------------------------------------------------
-  Position            Base       %  Extended       %
-  ─────────────── ──────── ───────  ──────── ───────
-  line_start           801   15.2%       333   14.7%
-  mid                 4123   78.5%      1823   80.7%
-  line_end             331    6.3%       104    4.6%
-  para_start            78    1.5%        48    2.1%
-  total               5255              2260
-
-STEP 9 — Folio co-occurrence: Do base and extended forms
-         appear in the same folios?
-------------------------------------------------------------
-  Pairs co-occurring in ≥1 folio: 91/377 (24.1%)
-  Pairs in completely separate folios: 286/377 (75.9%)
-
-  Expected co-occurrence under independence: 53.6
-  Observed / expected ratio: 1.70
-  (>1 = pairs co-occur MORE than chance; supports morphological relationship)
-
-STEP 10 — NL baseline: 'vowel-extension' pairing in Latin
-------------------------------------------------------------
-  caesar         :   9987 types,    9 vowel-insertion pairs (0.1%)
-  galen          :   9851 types,   24 vowel-insertion pairs (0.2%)
-  apicius        :   5948 types,   25 vowel-insertion pairs (0.4%)
-
-STEP 11 — Verify Petrasti's specific examples from thread-5216
-------------------------------------------------------------
-  Base             Freq  Extended         Freq  In corpus?
-  ─────────────── ─────  ─────────────── ─────  ──────────
-  chor              212  cheor              97        BOTH
-  daiin             853  deaiin              1        BOTH
-  kor                27  keor                8        BOTH
-  cho                80  cheo               82        BOTH
-  chol              400  cheol             178        BOTH
-  kaiin              87  keaiin              1        BOTH
-  dor                65  deor                0   base only
-  eees                9  eees                9        BOTH
-
-  Petrasti's prefix paradigm for 'daiin':
-    ✓ daiin                freq=853
-    ✓ deaiin               freq=1
-    ✓ odaiin               freq=70
-    ✓ ydaiin               freq=17
-    ✓ qodaiin              freq=52
-    ✓ chodaiin             freq=44
-    ✓ todaiin              freq=9
-    ✓ tedaiin              freq=3
-    ✓ chedaiin             freq=41
-    ✓ sodaiin              freq=5
-    ✓ oldaiin              freq=11
-    ✓ cheodaiin            freq=13
-
-========================================================================
-  SYNTHESIS & VERDICT
-========================================================================
-
-  KEY METRICS:
-  1. e-Extension pairing rate: 9.1% of bases have e-partner
-  2. Frequency asymmetry: base>ext 2.58x more often
-     Median log2(base/ext): 0.42
-  3. Selectional restrictions: YES
-  4. Currier B enrichment of extended forms: 0.77x
-  5. Folio co-occurrence ratio (obs/exp): 1.70
-
-  VERDICT: PRODUCTIVE_MORPHOLOGY
-  The e-extension behaves like NL inflectional morphology:
-  selective, frequency-asymmetric, and positionally constrained.
-
-  SKEPTICISM NOTES:
-  - LOOP grammar DEFINES SLOT2 as optional. Some pairing is
-    guaranteed by construction. The anti-circularity test (Step 4)
-    measures whether SLOT2 pairing exceeds random-position insertion.
-  - Frequency asymmetry could arise from type-frequency correlation:
-    shorter words (empty SLOT2) may simply be more frequent by Zipf.
-  - Co-occurrence in folios is expected for common words regardless
-    of morphological relationship.
-  - Petrasti's examples are cherry-picked; the systematic rate matters.
-
-  Results saved to C:\projects\voynich_slop\results\phase94_e_extension.json
-  Full output saved to C:\projects\voynich_slop\results\phase94_e_extension.txt
+========================================================================
+  PHASE 94 — SLOT2 e-Extension: Productive Morphology
+              or Slot Independence?
+========================================================================
+
+STEP 1 — Load VMS words with positional metadata
+------------------------------------------------------------
+  Total word tokens: 40351
+  Unique word types: 8212
+  A tokens: 11728
+  B tokens: 25504
+
+STEP 2 — Identify base words (at least one chunk with empty SLOT2 + 'o')
+------------------------------------------------------------
+  Word types with ≥1 empty-SLOT2-with-o chunk: 4151
+  (out of 8212 total types = 50.5%)
+
+STEP 3 — e-Extension pairing: For each base, does the e-extended
+         variant exist in the corpus?
+------------------------------------------------------------
+  Base words with e-extended partner: 377/4151 (9.1%)
+  Base words with a-extended partner: 6/4151 (0.1%)
+  Total e-extension pairs: 380
+  Total a-extension pairs: 6
+
+STEP 4 — Anti-circularity: e-insertion at RANDOM positions
+------------------------------------------------------------
+  If LOOP grammar is just capturing noise, inserting 'e' at
+  any position should produce equally many 'pairs'.
+
+  SLOT2 insertion hits: 380
+  Random-position insertion hits by position:
+    Position 0: 12 hits
+    Position 1: 212 hits
+    Position 2: 326 hits
+    Position 3: 265 hits
+    Position 4: 148 hits
+    Position 5: 41 hits
+    Position 6: 5 hits
+  Total random-position hits: 1009
+  Average per position: 144.1
+  SLOT2-specific ratio: 2.64x above random
+
+STEP 5 — Frequency asymmetry: Is base more frequent than extension?
+------------------------------------------------------------
+  NL prediction: base (lemma) > extended (inflection)
+  Cipher prediction: no systematic asymmetry
+
+  Pairs where base freq > extended freq: 201
+  Pairs where extended freq > base freq: 78
+  Equal frequency: 98
+  Ratio (base>ext / ext>base): 2.58
+
+  Top 25 e-extension pairs (by combined frequency):
+  Base                Freq  Extended            Freq   Ratio
+  ────────────────── ─────  ────────────────── ─────  ──────
+  ol                   592  eol                    4     >>1  ◄ base
+  chol                 400  cheol                178     2.2  ◄ base
+  or                   431  eor                    1     >>1  ◄ base
+  chor                 212  cheor                 97     2.2  ◄ base
+  shol                 180  sheol                119     1.5  ◄ base
+  o                    199  eo                     5    39.8  ◄ base
+  chody                 99  cheody                95     1.0  ◄ base
+  sho                  118  sheo                  50     2.4  ◄ base
+  cho                   80  cheo                  82     1.0  ► ext
+  qokol                106  qokeol                52     2.0  ◄ base
+  shor                  99  sheor                 48     2.1  ◄ base
+  okol                  82  okeol                 65     1.3  ◄ base
+  otol                  83  oteol                 36     2.3  ◄ base
+  shody                 56  sheody                55     1.0  ◄ base
+  dol                  106  deol                   1     >>1  ◄ base
+  chos                  41  cheos                 39     1.1  ◄ base
+  cthol                 57  ctheol                10     5.7  ◄ base
+  tol                   47  teol                  17     2.8  ◄ base
+  otody                 18  oteody                43     0.4  ► ext
+  kol                   39  keol                  21     1.9  ◄ base
+  qotol                 47  qoteol                12     3.9  ◄ base
+  qokor                 34  qokeor                23     1.5  ◄ base
+  chodaiin              44  cheodaiin             13     3.4  ◄ base
+  okor                  33  okeor                 22     1.5  ◄ base
+  ody                   53  eody                   1    53.0  ◄ base
+
+  log2(base_freq/ext_freq): mean=0.72, median=0.42
+    (positive = base more frequent; NL expects positive)
+
+STEP 6 — Selectional restrictions: Do ALL bases get extended,
+         or is extension selective?
+------------------------------------------------------------
+      Freq bin   N bases  With e-ext      Rate
+  ────────────  ────────  ──────────  ────────
+      1-1          2870          92      3.2%
+      2-5           929         151     16.3%
+      6-20          245          95     38.8%
+     21-100          83          30     36.1%
+    101-10000        24           9     37.5%
+
+  NL prediction: LOWER frequency bases have LOWER extension rate
+  (rare words have fewer inflected forms in corpus)
+  Cipher prediction: extension rate ~uniform across frequency bins
+
+STEP 7 — Currier distribution: Do base/extended forms
+         concentrate in different Currier sections?
+------------------------------------------------------------
+  Base forms:     A= 2783 (56.6%)  B= 2134 (43.4%)
+  Extended forms: A=  927 (47.4%)  B= 1029 (52.6%)
+  Corpus baseline: A=31.5%, B=68.5%
+
+  Extended-form B enrichment: 0.77x
+  Base-form A enrichment: 1.80x
+  (Phase 93 predicts: extended enriched in B, base enriched in A)
+
+STEP 8 — Positional distribution: Base vs extended by line position
+------------------------------------------------------------
+  Position            Base       %  Extended       %
+  ─────────────── ──────── ───────  ──────── ───────
+  line_start           801   15.2%       333   14.7%
+  mid                 4123   78.5%      1823   80.7%
+  line_end             331    6.3%       104    4.6%
+  para_start            78    1.5%        48    2.1%
+  total               5255              2260
+
+STEP 9 — Folio co-occurrence: Do base and extended forms
+         appear in the same folios?
+------------------------------------------------------------
+  Pairs co-occurring in ≥1 folio: 91/377 (24.1%)
+  Pairs in completely separate folios: 286/377 (75.9%)
+
+  Expected co-occurrence under independence: 53.6
+  Observed / expected ratio: 1.70
+  (>1 = pairs co-occur MORE than chance; supports morphological relationship)
+
+STEP 10 — NL baseline: 'vowel-extension' pairing in Latin
+------------------------------------------------------------
+  caesar         :   9987 types,    9 vowel-insertion pairs (0.1%)
+  galen          :   9851 types,   24 vowel-insertion pairs (0.2%)
+  apicius        :   5948 types,   25 vowel-insertion pairs (0.4%)
+
+STEP 11 — Verify Petrasti's specific examples from thread-5216
+------------------------------------------------------------
+  Base             Freq  Extended         Freq  In corpus?
+  ─────────────── ─────  ─────────────── ─────  ──────────
+  chor              212  cheor              97        BOTH
+  daiin             853  deaiin              1        BOTH
+  kor                27  keor                8        BOTH
+  cho                80  cheo               82        BOTH
+  chol              400  cheol             178        BOTH
+  kaiin              87  keaiin              1        BOTH
+  dor                65  deor                0   base only
+  eees                9  eees                9        BOTH
+
+  Petrasti's prefix paradigm for 'daiin':
+    ✓ daiin                freq=853
+    ✓ deaiin               freq=1
+    ✓ odaiin               freq=70
+    ✓ ydaiin               freq=17
+    ✓ qodaiin              freq=52
+    ✓ chodaiin             freq=44
+    ✓ todaiin              freq=9
+    ✓ tedaiin              freq=3
+    ✓ chedaiin             freq=41
+    ✓ sodaiin              freq=5
+    ✓ oldaiin              freq=11
+    ✓ cheodaiin            freq=13
+
+========================================================================
+  SYNTHESIS & VERDICT
+========================================================================
+
+  KEY METRICS:
+  1. e-Extension pairing rate: 9.1% of bases have e-partner
+  2. Frequency asymmetry: base>ext 2.58x more often
+     Median log2(base/ext): 0.42
+  3. Selectional restrictions: YES
+  4. Currier B enrichment of extended forms: 0.77x
+  5. Folio co-occurrence ratio (obs/exp): 1.70
+
+  VERDICT: PRODUCTIVE_MORPHOLOGY
+  The e-extension behaves like NL inflectional morphology:
+  selective, frequency-asymmetric, and positionally constrained.
+
+  SKEPTICISM NOTES:
+  - LOOP grammar DEFINES SLOT2 as optional. Some pairing is
+    guaranteed by construction. The anti-circularity test (Step 4)
+    measures whether SLOT2 pairing exceeds random-position insertion.
+  - Frequency asymmetry could arise from type-frequency correlation:
+    shorter words (empty SLOT2) may simply be more frequent by Zipf.
+  - Co-occurrence in folios is expected for common words regardless
+    of morphological relationship.
+  - Petrasti's examples are cherry-picked; the systematic rate matters.
+
+  Results saved to C:\projects\voynich_slop\results\phase94_e_extension.json
+  Full output saved to C:\projects\voynich_slop\results\phase94_e_extension.txt

@@ -1,136 +1,136 @@
-Loading lines...
-  4508 lines, 35747 tokens, 3319 types
-
-======================================================================
-51a: IS MORPHOLOGICAL MI JUST CHARACTER MI?
-    Does suffix→prefix MI survive after controlling for
-    last_char→first_char?
-======================================================================
-
-  MI(suffix, next_prefix) = 0.0833 bits
-  MI(last_char, first_char) = 0.1597 bits
-
-  MI(sfx, gpfx | last_char, first_char) = 0.0036 bits
-  Unconditional MI(sfx, gpfx): 0.0833
-  Explained by characters: 95.6%
-  RESIDUAL (morphology beyond characters): 0.0036 bits (4.4%)
-
-  Shuffled conditional MI: 0.0014 ± 0.0002
-  z-score (morph BEYOND characters): 9.2
-
-  Suffix given last character:
-  last='a' (N=   55): H(sfx|lc)=0.000, top: X:100%
-  last='d' (N=  530): H(sfx|lc)=0.000, top: X:100%
-  last='e' (N=  148): H(sfx|lc)=0.000, top: X:100%
-  last='g' (N=   92): H(sfx|lc)=0.000, top: X:100%
-  last='l' (N= 5627): H(sfx|lc)=1.542, top: ol:45%, al:29%, X:26%
-  last='m' (N=  904): H(sfx|lc)=0.000, top: X:100%
-  last='n' (N= 5851): H(sfx|lc)=1.692, top: aiin:53%, ain:24%, iin:18%
-  last='o' (N= 1281): H(sfx|lc)=0.000, top: X:100%
-  last='r' (N= 5537): H(sfx|lc)=1.568, top: ar:39%, X:35%, or:26%
-  last='s' (N= 1224): H(sfx|lc)=0.000, top: X:100%
-  last='y' (N=14354): H(sfx|lc)=1.194, top: y:54%, dy:42%, X:4%
-
-  Prefix given first character:
-  first='a' (N= 2736): H(gpfx|fc)=0.000, top: X:100%
-  first='c' (N= 5771): H(gpfx|fc)=0.000, top: X:100%
-  first='d' (N= 3401): H(gpfx|fc)=0.530, top: d:90%, do:8%, X:2%
-  first='e' (N= 1296): H(gpfx|fc)=0.000, top: X:100%
-  first='l' (N= 1434): H(gpfx|fc)=0.000, top: X:100%
-  first='o' (N= 8675): H(gpfx|fc)=0.190, top: o:97%, X:3%
-  first='q' (N= 5420): H(gpfx|fc)=0.209, top: qo:97%, q:3%
-  first='r' (N=  488): H(gpfx|fc)=0.000, top: X:100%
-  first='s' (N= 4314): H(gpfx|fc)=0.338, top: X:94%, so:6%
-  first='y' (N= 2100): H(gpfx|fc)=0.850, top: y:72%, X:28%
-
-======================================================================
-51b: IS LOW H(char|prev) A TRANSCRIPTION ARTIFACT?
-    EVA compound glyphs may inflate character count and
-    deflate conditional entropy
-======================================================================
-
-  EVA character level:
-  Alphabet size: 27
-  H(char): 3.864 bits
-  H(char|prev): 2.078 bits
-  Total chars: 212056
-
-  Glyph level (compound glyphs merged):
-  Alphabet size: 44
-  H(glyph): 4.025 bits
-  H(glyph|prev): 2.319 bits
-  Total glyphs: 179683
-
-  Mean EVA chars/word: 4.93
-  Mean glyphs/word: 4.03
-  Bits/word (EVA bigram): 10.25
-  Bits/word (glyph bigram): 9.34
-
-  CRITICAL COMPARISON (bits per word from character model):
-  VMS (EVA):   10.25 bits/word
-  VMS (glyph): 9.34 bits/word
-  English*:    ~15.5 bits/word (3.3 × 4.7 chars)
-  * English values are literature estimates
-
-======================================================================
-51c: CAN WE EXCLUDE CONSTRUCTED LANGUAGE?
-    Is sparse word bigram just a corpus size effect?
-======================================================================
-
-  Bigram sparsity comparison:
-                      Model        N        V    %Unseen
-                        VMS    35747     3319      51.1%
-     Constructed (rigid AB)    35768     7092      77.7%
-       Unigram (no grammar)    35747     3319      64.9%
-
-  If constructed lang has LESS unseen than VMS, our 'excludes constructed'
-  claim may be wrong.
-
-======================================================================
-51d: THE COMPOSITIONALITY TEST
-    If words = pfx+stem+sfx, novel combinations should exist
-======================================================================
-
-  Stems with 1 suffix: 1057
-  Stems with 2+ suffixes: 319
-  Stems with 3+ suffixes: 162
-
-  Frequent stems (2+ suffixes, 10+ tokens): 123
-
-  Paradigm gap analysis:
-  Total gaps (stem×suffix combinations NOT directly observed): 678
-  Gaps filled by prefix variants: 57 (8.4%)
-  True gaps (never observed): 621 (91.6%)
-
-  Random baseline fill rate: 33.7% ± 1.2%
-  Observed fill rate: 8.4%
-  z-score: -20.8
-
-======================================================================
-51e: CARDAN GRILLE / TABLE-GENERATED TEXT
-    Does table-based generation produce VMS-like statistics?
-======================================================================
-
-                          Metric          VMS       Grille
-                          Tokens        35747        35747
-                           Types         3319         5404
-                         H(word)        8.481       10.139
-                         Hapax %        57.8%        60.6%
-                      Self-rep %         2.0%         0.6%
-        MI(sfx→gpfx) within-line       0.0833       0.0028
-         MI(sfx→gpfx) cross-line       0.0106       0.0133
-              Cross/within ratio        0.127        4.801
-                    H(char|prev)        1.922        2.260
-                Type-token ratio       0.0928       0.1512
-
-  GRILLE MODEL MATCHES:
-  ✗ Within-line MI differs (0.0028 vs 0.0833)
-  ✗ Cross-line MI doesn't drop enough
-  ✓ Hapax ratio similar
-  ✓ Word entropy similar
-
-  Score: 2 match, 2 mismatch out of 4
-
-======================================================================
-PHASE 51 COMPLETE — ATTACKING THE SYNTHESIS
-======================================================================
+Loading lines...
+  4508 lines, 35747 tokens, 3319 types
+
+======================================================================
+51a: IS MORPHOLOGICAL MI JUST CHARACTER MI?
+    Does suffix→prefix MI survive after controlling for
+    last_char→first_char?
+======================================================================
+
+  MI(suffix, next_prefix) = 0.0833 bits
+  MI(last_char, first_char) = 0.1597 bits
+
+  MI(sfx, gpfx | last_char, first_char) = 0.0036 bits
+  Unconditional MI(sfx, gpfx): 0.0833
+  Explained by characters: 95.6%
+  RESIDUAL (morphology beyond characters): 0.0036 bits (4.4%)
+
+  Shuffled conditional MI: 0.0014 ± 0.0002
+  z-score (morph BEYOND characters): 9.2
+
+  Suffix given last character:
+  last='a' (N=   55): H(sfx|lc)=0.000, top: X:100%
+  last='d' (N=  530): H(sfx|lc)=0.000, top: X:100%
+  last='e' (N=  148): H(sfx|lc)=0.000, top: X:100%
+  last='g' (N=   92): H(sfx|lc)=0.000, top: X:100%
+  last='l' (N= 5627): H(sfx|lc)=1.542, top: ol:45%, al:29%, X:26%
+  last='m' (N=  904): H(sfx|lc)=0.000, top: X:100%
+  last='n' (N= 5851): H(sfx|lc)=1.692, top: aiin:53%, ain:24%, iin:18%
+  last='o' (N= 1281): H(sfx|lc)=0.000, top: X:100%
+  last='r' (N= 5537): H(sfx|lc)=1.568, top: ar:39%, X:35%, or:26%
+  last='s' (N= 1224): H(sfx|lc)=0.000, top: X:100%
+  last='y' (N=14354): H(sfx|lc)=1.194, top: y:54%, dy:42%, X:4%
+
+  Prefix given first character:
+  first='a' (N= 2736): H(gpfx|fc)=0.000, top: X:100%
+  first='c' (N= 5771): H(gpfx|fc)=0.000, top: X:100%
+  first='d' (N= 3401): H(gpfx|fc)=0.530, top: d:90%, do:8%, X:2%
+  first='e' (N= 1296): H(gpfx|fc)=0.000, top: X:100%
+  first='l' (N= 1434): H(gpfx|fc)=0.000, top: X:100%
+  first='o' (N= 8675): H(gpfx|fc)=0.190, top: o:97%, X:3%
+  first='q' (N= 5420): H(gpfx|fc)=0.209, top: qo:97%, q:3%
+  first='r' (N=  488): H(gpfx|fc)=0.000, top: X:100%
+  first='s' (N= 4314): H(gpfx|fc)=0.338, top: X:94%, so:6%
+  first='y' (N= 2100): H(gpfx|fc)=0.850, top: y:72%, X:28%
+
+======================================================================
+51b: IS LOW H(char|prev) A TRANSCRIPTION ARTIFACT?
+    EVA compound glyphs may inflate character count and
+    deflate conditional entropy
+======================================================================
+
+  EVA character level:
+  Alphabet size: 27
+  H(char): 3.864 bits
+  H(char|prev): 2.078 bits
+  Total chars: 212056
+
+  Glyph level (compound glyphs merged):
+  Alphabet size: 44
+  H(glyph): 4.025 bits
+  H(glyph|prev): 2.319 bits
+  Total glyphs: 179683
+
+  Mean EVA chars/word: 4.93
+  Mean glyphs/word: 4.03
+  Bits/word (EVA bigram): 10.25
+  Bits/word (glyph bigram): 9.34
+
+  CRITICAL COMPARISON (bits per word from character model):
+  VMS (EVA):   10.25 bits/word
+  VMS (glyph): 9.34 bits/word
+  English*:    ~15.5 bits/word (3.3 × 4.7 chars)
+  * English values are literature estimates
+
+======================================================================
+51c: CAN WE EXCLUDE CONSTRUCTED LANGUAGE?
+    Is sparse word bigram just a corpus size effect?
+======================================================================
+
+  Bigram sparsity comparison:
+                      Model        N        V    %Unseen
+                        VMS    35747     3319      51.1%
+     Constructed (rigid AB)    35768     7092      77.7%
+       Unigram (no grammar)    35747     3319      64.9%
+
+  If constructed lang has LESS unseen than VMS, our 'excludes constructed'
+  claim may be wrong.
+
+======================================================================
+51d: THE COMPOSITIONALITY TEST
+    If words = pfx+stem+sfx, novel combinations should exist
+======================================================================
+
+  Stems with 1 suffix: 1057
+  Stems with 2+ suffixes: 319
+  Stems with 3+ suffixes: 162
+
+  Frequent stems (2+ suffixes, 10+ tokens): 123
+
+  Paradigm gap analysis:
+  Total gaps (stem×suffix combinations NOT directly observed): 678
+  Gaps filled by prefix variants: 57 (8.4%)
+  True gaps (never observed): 621 (91.6%)
+
+  Random baseline fill rate: 33.7% ± 1.2%
+  Observed fill rate: 8.4%
+  z-score: -20.8
+
+======================================================================
+51e: CARDAN GRILLE / TABLE-GENERATED TEXT
+    Does table-based generation produce VMS-like statistics?
+======================================================================
+
+                          Metric          VMS       Grille
+                          Tokens        35747        35747
+                           Types         3319         5404
+                         H(word)        8.481       10.139
+                         Hapax %        57.8%        60.6%
+                      Self-rep %         2.0%         0.6%
+        MI(sfx→gpfx) within-line       0.0833       0.0028
+         MI(sfx→gpfx) cross-line       0.0106       0.0133
+              Cross/within ratio        0.127        4.801
+                    H(char|prev)        1.922        2.260
+                Type-token ratio       0.0928       0.1512
+
+  GRILLE MODEL MATCHES:
+  ✗ Within-line MI differs (0.0028 vs 0.0833)
+  ✗ Cross-line MI doesn't drop enough
+  ✓ Hapax ratio similar
+  ✓ Word entropy similar
+
+  Score: 2 match, 2 mismatch out of 4
+
+======================================================================
+PHASE 51 COMPLETE — ATTACKING THE SYNTHESIS
+======================================================================

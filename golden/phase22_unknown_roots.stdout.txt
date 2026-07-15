@@ -1,667 +1,667 @@
-============================================================================
-PHASE 22: CRACK THE HIGH-FREQUENCY UNKNOWN ROOTS
-============================================================================
-
-Loading data...
-  39564 corpus tokens
-
-============================================================================
-PHASE 22a: DISTRIBUTIONAL PROFILES OF UNKNOWN HIGH-FREQ ROOTS
-============================================================================
-
-  --- Top 30 roots by frequency ---
-  Root          Count      % Known?
-  e              5451  13.8% ◀ UNKNOWN 
-  a              4022  10.2% ◀ UNKNOWN 
-  ch             3792   9.6% ◀ UNKNOWN 
-  ar             2103   5.3% ✓ king/great
-  h              2031   5.1% ◀ UNKNOWN 
-  ol             1849   4.7% ✓ carry/lift
-  al             1792   4.5% ✓ stone
-  l              1375   3.5% ◀ UNKNOWN 
-  d              1241   3.1% ◀ UNKNOWN 
-  o              1228   3.1% ◀ UNKNOWN 
-  or             1108   2.8% ✓ king/great(var)
-  che             732   1.9% ◀ UNKNOWN 
-  cho             600   1.5% ✓ substance
-  y               502   1.3% ◀ UNKNOWN 
-  air             449   1.1% ◀ UNKNOWN 
-  lch             433   1.1% ◀ UNKNOWN 
-  he              417   1.1% ✓ fall/occur
-  am              413   1.0% ✓ water
-  r               370   0.9% ◀ UNKNOWN 
-  ed              355   0.9% ◀ UNKNOWN 
-  eo              304   0.8% ◀ UNKNOWN 
-  ho              273   0.7% ◀ UNKNOWN 
-  cheo            271   0.7% ◀ UNKNOWN 
-  sh              222   0.6% ◀ UNKNOWN 
-  ched            195   0.5% ◀ UNKNOWN 
-  lsh             180   0.5% ◀ UNKNOWN 
-  eod             174   0.4% ◀ UNKNOWN 
-  es              171   0.4% ✓ star(short)
-  od              152   0.4% ◀ UNKNOWN 
-  i               134   0.3% ◀ UNKNOWN 
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  ROOT: 'e' — 5451 tokens (13.8% of corpus)
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  Determinatives: k:3017(55%), t:1769(32%), p:364(7%), ∅:220(4%), f:81(1%)
-  Det enrichment:
-    t:  32.5% (base  18.5%)  1.75x ▲
-    k:  55.3% (base  28.6%)  1.94x ▲
-    f:   1.5% (base   1.2%)  1.21x  
-    p:   6.7% (base   4.2%)  1.58x ▲
-  Prefixes: qo:1926, o:1833, ∅:1075, y:483, q:57, d:40
-  Key prefix rates: s-/so-:0.6%, o-:33.6%, d-:0.7%, qo-:35.3%
-  Suffixes: -dy:2207, -y:2025, -ody:415, -ol:407, -or:191, -ar:89, -al:49, -aiin:31
-  Morphological class: verbal_sfx=415 (8%), nominal_sfx=2070 (38%), case_sfx=736 (14%)
-  Section enrichment:
-    text        :  33.2% (base  26.7%) 1.25x  
-    bio         :  21.6% (base  17.1%) 1.26x  
-    herbal-A    :  17.0% (base  27.9%) 0.61x ▼
-    pharma      :   9.4% (base   7.9%) 1.20x  
-    cosmo       :   8.4% (base   9.2%) 0.91x  
-  Left context:  e(1205), ch(507), h(443), a(358), ol(146), l(145), ar(135), d(127)
-  Right context: e(1205), a(474), ch(404), ar(215), h(211), al(210), l(207), ol(185)
-  Top word forms: qokeey(318), qokeedy(311), qokedy(281), okeey(189), otedy(172), oteey(150), okedy(120), qokey(110), okeedy(110), oteedy(104)
-  Candidate meanings:
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  ROOT: 'a' — 4022 tokens (10.2% of corpus)
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  Determinatives: ∅:2111(52%), k:1213(30%), t:621(15%), p:64(2%), f:13(0%)
-  Det enrichment:
-    t:  15.4% (base  18.5%)  0.83x  
-    k:  30.2% (base  28.6%)  1.06x  
-    f:   0.3% (base   1.2%)  0.26x ▼
-    p:   1.6% (base   4.2%)  0.38x ▼
-  Prefixes: d:1158, ∅:957, qo:778, o:735, s:213, y:165
-  Key prefix rates: s-/so-:5.5%, o-:18.3%, d-:28.8%, qo-:19.3%
-  Suffixes: -iin:2809, -in:1146, -y:24, -dy:12, -ar:6, -ey:5, -sy:5, -aiin:4
-  Morphological class: verbal_sfx=6 (0%), nominal_sfx=3984 (99%), case_sfx=13 (0%)
-  Section enrichment:
-    text        :  31.3% (base  26.7%) 1.17x  
-    herbal-A    :  27.3% (base  27.9%) 0.98x  
-    bio         :  17.6% (base  17.1%) 1.03x  
-    cosmo       :  11.0% (base   9.2%) 1.19x  
-    pharma      :   6.2% (base   7.9%) 0.79x  
-  Left context:  e(474), ch(461), a(323), h(226), ar(197), ol(189), or(171), al(118)
-  Right context: ch(518), e(358), a(323), h(279), al(221), ar(212), ol(182), l(120)
-  Top word forms: daiin(901), aiin(565), qokain(287), qokaiin(284), dain(225), okaiin(225), otaiin(169), okain(144), saiin(135), ain(120)
-  Candidate meanings:
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  ROOT: 'ch' — 3792 tokens (9.6% of corpus)
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  Determinatives: ∅:2845(75%), k:555(15%), t:285(8%), p:82(2%), f:25(1%)
-  Det enrichment:
-    t:   7.5% (base  18.5%)  0.41x ▼
-    k:  14.6% (base  28.6%)  0.51x ▼
-    f:   0.7% (base   1.2%)  0.54x ▼
-    p:   2.2% (base   4.2%)  0.51x ▼
-  Prefixes: ∅:3367, d:187, y:113, o:70, s:34, qo:16
-  Key prefix rates: s-/so-:0.9%, o-:1.8%, d-:4.9%, qo-:0.4%
-  Suffixes: -ey:1058, -edy:739, -y:528, -ol:483, -or:297, -dy:209, -ody:126, -ar:117
-  Morphological class: verbal_sfx=1923 (51%), nominal_sfx=656 (17%), case_sfx=979 (26%)
-  Section enrichment:
-    herbal-A    :  35.6% (base  27.9%) 1.28x  
-    text        :  25.3% (base  26.7%) 0.95x  
-    bio         :  17.9% (base  17.1%) 1.05x  
-    cosmo       :   7.1% (base   9.2%) 0.77x  
-    pharma      :   5.8% (base   7.9%) 0.74x ▼
-  Left context:  a(518), e(404), ch(356), ol(257), ar(175), al(165), or(152), h(111)
-  Right context: e(507), a(461), ch(356), ar(198), al(175), ol(171), d(133), l(132)
-  Top word forms: chedy(530), chol(415), chey(373), chor(225), cheey(197), chy(176), chdy(162), chckhy(142), chody(103), char(87)
-  Candidate meanings:
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  ROOT: 'h' — 2031 tokens (5.1% of corpus)
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  Determinatives: ∅:1594(78%), k:285(14%), t:124(6%), p:18(1%), f:10(0%)
-  Det enrichment:
-    t:   6.1% (base  18.5%)  0.33x ▼
-    k:  14.0% (base  28.6%)  0.49x ▼
-    f:   0.5% (base   1.2%)  0.40x ▼
-    p:   0.9% (base   4.2%)  0.21x ▼
-  Prefixes: s:1982, ∅:15, y:13, qo:7, q:7, o:7
-  Key prefix rates: s-/so-:97.6%, o-:0.3%, d-:0.0%, qo-:0.3%
-  Suffixes: -ey:672, -edy:572, -y:251, -ol:200, -or:110, -ody:67, -dy:55, -ar:43
-  Morphological class: verbal_sfx=1311 (65%), nominal_sfx=290 (14%), case_sfx=374 (18%)
-  Section enrichment:
-    bio         :  31.0% (base  17.1%) 1.81x ▲
-    herbal-A    :  26.1% (base  27.9%) 0.94x  
-    text        :  23.5% (base  26.7%) 0.88x  
-    cosmo       :   8.0% (base   9.2%) 0.87x  
-    pharma      :   4.7% (base   7.9%) 0.60x ▼
-  Left context:  a(279), e(211), ol(178), ar(141), ch(111), al(111), h(94), or(85)
-  Right context: e(443), a(226), ol(119), ch(111), h(94), al(85), ar(81), l(70)
-  Top word forms: shedy(455), shey(291), shol(192), sheey(162), shor(104), shy(103), sheedy(87), shckhy(62), shody(59), shdy(49)
-  Candidate meanings:
-    he       = fall/perish          (SKEL  Coptic  0.5) ✓ verbal
-    ha       = upon/under           (SKEL  Coptic  0.5) 
-    ho       = face/front           (SKEL  Coptic  0.5) 
-    hi       = on/upon              (SKEL  Coptic  0.5) 
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  ROOT: 'l' — 1375 tokens (3.5% of corpus)
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  Determinatives: k:733(53%), ∅:453(33%), t:95(7%), p:59(4%), f:35(3%)
-  Det enrichment:
-    t:   6.9% (base  18.5%)  0.37x ▼
-    k:  53.3% (base  28.6%)  1.87x ▲
-    f:   2.5% (base   1.2%)  2.07x ▲
-    p:   4.3% (base   4.2%)  1.02x  
-  Prefixes: o:717, ∅:530, qo:54, so:33, do:28, d:10
-  Key prefix rates: s-/so-:2.4%, o-:52.1%, d-:0.7%, qo-:3.9%
-  Suffixes: -edy:248, -ey:192, -aiin:190, -y:186, -dy:108, -ain:107, -ar:106, -or:96
-  Morphological class: verbal_sfx=447 (33%), nominal_sfx=484 (35%), case_sfx=325 (24%)
-  Section enrichment:
-    text        :  37.6% (base  26.7%) 1.41x ▲
-    bio         :  31.2% (base  17.1%) 1.82x ▲
-    cosmo       :  12.1% (base   9.2%) 1.31x ▲
-    herbal-A    :  10.8% (base  27.9%) 0.39x ▼
-    pharma      :   3.3% (base   7.9%) 0.43x ▼
-  Left context:  e(207), ch(132), a(120), ar(71), h(70), l(66), ol(59), al(55)
-  Right context: e(145), ch(110), a(108), ar(72), al(68), h(67), l(66), ol(57)
-  Top word forms: oly(60), olaiin(59), lkaiin(51), olkeedy(50), olkeey(42), lol(40), lkeey(39), lor(39), lkeedy(37), lkar(35)
-  Candidate meanings:
-    le       = cease                (SKEL  Coptic  0.5) 
-    la       = ?                    (SKEL  Coptic  0.5) 
-    lo       = (rest)               (SKEL  Coptic  0.5) 
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  ROOT: 'd' — 1241 tokens (3.1% of corpus)
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  Determinatives: ∅:685(55%), t:214(17%), k:184(15%), p:125(10%), f:33(3%)
-  Det enrichment:
-    t:  17.2% (base  18.5%)  0.93x  
-    k:  14.8% (base  28.6%)  0.52x ▼
-    f:   2.7% (base   1.2%)  2.16x ▲
-    p:  10.1% (base   4.2%)  2.38x ▲
-  Prefixes: o:474, ∅:380, qo:259, y:92, so:15, do:12
-  Key prefix rates: s-/so-:1.5%, o-:38.2%, d-:0.5%, qo-:20.9%
-  Suffixes: -y:815, -aiin:194, -ar:83, -al:50, -ain:46, -or:18, -ey:11, -ol:8
-  Morphological class: verbal_sfx=19 (2%), nominal_sfx=1055 (85%), case_sfx=159 (13%)
-  Section enrichment:
-    herbal-A    :  37.8% (base  27.9%) 1.35x ▲
-    text        :  18.5% (base  26.7%) 0.69x ▼
-    cosmo       :  16.3% (base   9.2%) 1.77x ▲
-    bio         :  10.0% (base  17.1%) 0.58x ▼
-    herbal-B    :   6.2% (base   3.8%) 1.64x ▲
-  Left context:  e(157), ch(133), a(92), d(68), h(63), al(62), o(56), ol(46)
-  Right context: e(127), ch(94), a(74), ar(73), d(68), o(58), h(54), ol(43)
-  Top word forms: dy(286), odaiin(72), qokchdy(59), ody(53), qodaiin(53), otchdy(35), odar(28), qotchdy(27), okchdy(24), kchdy(23)
-  Candidate meanings:
-    de       = but/and              (SKEL  Coptic  0.5) 
-
-============================================================================
-PHASE 22b: YED=HAND CORPUS-WIDE VALIDATION
-============================================================================
-
-  Words with root 'yed': 2
-  Words containing 'yed' substring: 0
-  Words matching 'yed/yad' pattern (e→a): 2
-
-  Word forms with 'yed' pattern:
-    dykeedain                 x   1  root=yed      pfx=d    det=k   sfx=ain
-    oyteeedar                 x   1  root=yed      pfx=o    det=t   sfx=ar
-
-  Section distribution:
-    herbal-A    :    1 ( 50.0% vs  27.9% base) 1.79x 
-    zodiac      :    1 ( 50.0% vs   7.5% base) 6.71x 
-
-  Roots in ±2-word window around 'yed':
-    ch           x   2  
-    e            x   1  
-    a            x   1  
-    h            x   1  
-    ych          x   1  
-
-  Body-part roots in context: 0/6 (0.0%)
-
-============================================================================
-PHASE 22c: ROOT PAIR DISTRIBUTIONAL CONTRASTS
-============================================================================
-
-  ────────────────────────────────────────────────────────────────────────
-  h (n=2031) vs he (n=417) — Is 'h' a shortened form of 'he' (fall/occur)?
-    Section           h %     he %     diff
-    bio             31.0%    14.9%    16.1% ◀
-    cosmo            8.0%     6.2%     1.7%
-    herbal-A        26.1%    25.9%     0.2%
-    herbal-B         3.1%     5.8%     2.7%
-    pharma           4.7%    15.6%    10.9% ◀
-    text            23.5%    24.7%     1.2%
-    zodiac           3.7%     7.0%     3.3%
-    Determinatives:
-      t   :   6.1% vs   2.9%
-      k   :  14.0% vs  11.8%
-      f   :   0.5% vs   0.2%
-      p   :   0.9% vs   1.4%
-      ∅   :  78.5% vs  83.7%
-    s-prefix: 97.6% vs 99.3% 
-    o-prefix: 0.3% vs 0.7% 
-    VERDICT: DIFFERENT distributions → likely distinct morphemes
-
-  ────────────────────────────────────────────────────────────────────────
-  h (n=2031) vs ho (n=273) — Is 'h' related to 'ho' (face/front)?
-    Section           h %     ho %     diff
-    bio             31.0%     2.2%    28.8% ◀
-    cosmo            8.0%     5.1%     2.8%
-    herbal-A        26.1%    56.4%    30.3% ◀
-    herbal-B         3.1%     4.8%     1.7%
-    pharma           4.7%     9.9%     5.2%
-    text            23.5%    13.6%     9.9%
-    zodiac           3.7%     8.1%     4.4%
-    Determinatives:
-      t   :   6.1% vs  15.8%
-      k   :  14.0% vs  24.2% ◀
-      f   :   0.5% vs   4.0%
-      p   :   0.9% vs   2.2%
-      ∅   :  78.5% vs  53.8% ◀
-    s-prefix: 97.6% vs 99.6% 
-    o-prefix: 0.3% vs 0.0% 
-    VERDICT: DIFFERENT distributions → likely distinct morphemes
-
-  ────────────────────────────────────────────────────────────────────────
-  l (n=1375) vs le (n=68) — Is 'l' the same as 'le' (cease)?
-    Section           l %     le %     diff
-    bio             31.2%     4.4%    26.8% ◀
-    cosmo           12.1%    14.7%     2.6%
-    herbal-A        10.8%    13.2%     2.5%
-    herbal-B         2.5%     4.4%     1.9%
-    pharma           3.3%    10.3%     6.9%
-    text            37.6%    48.5%    10.9% ◀
-    zodiac           2.5%     4.4%     1.9%
-    Determinatives:
-      t   :   6.9% vs  11.8%
-      k   :  53.3% vs  77.9% ◀
-      f   :   2.5% vs   1.5%
-      p   :   4.3% vs   2.9%
-      ∅   :  32.9% vs   5.9% ◀
-    s-prefix: 2.4% vs 0.0% 
-    o-prefix: 52.1% vs 51.5% 
-    VERDICT: DIFFERENT distributions → likely distinct morphemes
-
-  ────────────────────────────────────────────────────────────────────────
-  l (n=1375) vs lo (n=76) — Is 'l' related to 'lo' (cease/rest)?
-    Section           l %     lo %     diff
-    bio             31.2%    22.4%     8.8%
-    cosmo           12.1%     5.3%     6.8%
-    herbal-A        10.8%    18.4%     7.7%
-    herbal-B         2.5%     1.3%     1.2%
-    pharma           3.3%     2.6%     0.7%
-    text            37.6%    47.4%     9.8%
-    zodiac           2.5%     2.6%     0.1%
-    Determinatives:
-      t   :   6.9% vs  13.2%
-      k   :  53.3% vs  25.0% ◀
-      f   :   2.5% vs   0.0%
-      p   :   4.3% vs   0.0%
-      ∅   :  32.9% vs  61.8% ◀
-    s-prefix: 2.4% vs 0.0% 
-    o-prefix: 52.1% vs 31.6% ◀ DIFFERENT
-    VERDICT: SIMILAR distributions → possibly related
-
-  ────────────────────────────────────────────────────────────────────────
-  d (n=1241) vs de (n=3) — Is 'd' the Coptic conjunction 'de' (but/and)?
-    Too few tokens, skipping
-
-  ────────────────────────────────────────────────────────────────────────
-  e (n=5451) vs ei (n=1) — Is 'e' Coptic 'ei' (come)?
-    Too few tokens, skipping
-
-  ────────────────────────────────────────────────────────────────────────
-  ch (n=3792) vs cho (n=600) — Is 'ch' shortened 'cho' (substance)?
-    Section          ch %    cho %     diff
-    bio             17.9%     0.5%    17.4% ◀
-    cosmo            7.1%     4.7%     2.5%
-    herbal-A        35.6%    53.5%    17.9% ◀
-    herbal-B         3.4%     3.2%     0.2%
-    pharma           5.8%     8.2%     2.4%
-    text            25.3%    17.2%     8.1%
-    zodiac           4.9%    12.8%     7.9%
-    Determinatives:
-      t   :   7.5% vs  31.0% ◀
-      k   :  14.6% vs  37.0% ◀
-      f   :   0.7% vs   2.5%
-      p   :   2.2% vs   4.2%
-      ∅   :  75.0% vs  25.3% ◀
-    s-prefix: 0.9% vs 0.7% 
-    o-prefix: 1.8% vs 1.3% 
-    VERDICT: DIFFERENT distributions → likely distinct morphemes
-
-  ────────────────────────────────────────────────────────────────────────
-  a (n=4022) vs ar (n=2103) — Is 'a' shortened 'ar' (king/great)?
-    Section           a %     ar %     diff
-    bio             17.6%    13.4%     4.2%
-    cosmo           11.0%    17.9%     6.9%
-    herbal-A        27.3%    24.7%     2.5%
-    herbal-B         3.2%     3.9%     0.7%
-    pharma           6.2%     4.7%     1.5%
-    text            31.3%    26.1%     5.2%
-    zodiac           3.5%     9.3%     5.8%
-    Determinatives:
-      t   :  15.4% vs  19.2%
-      k   :  30.2% vs  24.1%
-      f   :   0.3% vs   1.1%
-      p   :   1.6% vs   3.7%
-      ∅   :  52.5% vs  51.9%
-    s-prefix: 5.5% vs 5.7% 
-    o-prefix: 18.3% vs 20.9% 
-    VERDICT: SIMILAR distributions → possibly related
-
-============================================================================
-PHASE 22d: AUTOMATIC REGISTER CLASSIFICATION
-============================================================================
-
-  Folio          n    s-%  -edy%  -ody%   -ol%   -ey%   qok%  Predicted     Actual  Match
-  ───────────────────────────────────────────────────────────────────────────────────────────────
-  f100r        108  19.4%   0.0%   0.0%  19.0%  19.0%   2.8%     herbal     pharma      ✓
-  f100v_101r   307  14.3%   0.0%   4.5%  15.9%  22.7%   1.0%     herbal     pharma      ✓
-  f101v_part   201   7.0%   0.0%   7.1%  28.6%  14.3%   2.0%     herbal     pharma      ✓
-  f101v_part_102r   438  10.3%   0.0%   4.4%  11.1%  26.7%   2.7%     herbal     pharma      ✓
-  f102v_part   295  13.6%   0.0%   7.5%   7.5%  30.0%   3.4%     herbal     pharma      ✓
-  f103r        517  20.1%  20.2%   1.0%   8.7%  26.0%  11.2%     herbal       text      ✗
-  f103v        443  15.3%  23.5%   0.0%   4.4%  27.9%   6.3%     herbal       text      ✗
-  f104r        432   5.1%   9.1%  13.6%   0.0%  13.6%   2.5%     herbal       text      ✗
-  f104v        459   7.8%  13.9%   5.6%  16.7%  16.7%   5.2%     herbal       text      ✗
-  f105r        371   6.2%  13.0%   4.3%   4.3%  26.1%   4.0%       text       text      ✓
-  f105v        387   3.1%   0.0%   0.0%   0.0%  16.7%   1.0%       text       text      ✓
-  f106r        427  11.0%  14.9%   2.1%   8.5%  10.6%   3.5%     herbal       text      ✗
-  f106v        441  14.5%  17.2%   9.4%   3.1%   4.7%   3.2%     herbal       text      ✗
-  f107r        476   6.7%   9.4%   3.1%   6.2%  28.1%   2.5%     herbal       text      ✗
-  f107v        449   5.3%  25.0%   0.0%   8.3%  12.5%   7.3%     herbal       text      ✗
-  f108r        483   5.2%  24.0%   4.0%  16.0%   8.0%  10.6%     herbal       text      ✗
-  f108v        566  11.3%  18.8%   0.0%   6.2%  29.7%  12.5%     herbal       text      ✗
-  f10r          90   4.4%   0.0%   0.0%   0.0%   0.0%   1.1%     herbal   herbal-A      ✓
-  f10v          57  12.3%   0.0%   0.0%   0.0%   0.0%   1.8%     herbal   herbal-A      ✓
-  f111r        599  11.0%  19.7%   1.5%   1.5%  24.2%   8.7%     herbal       text      ✗
-  f111v        543  13.3%  11.1%   0.0%   1.4%  26.4%   3.5%     herbal       text      ✗
-  f112r        385   8.6%  12.1%   3.0%   9.1%   6.1%   8.1%     herbal       text      ✗
-  f112v        412   8.5%  17.1%   5.7%   2.9%  17.1%   7.3%     herbal       text      ✗
-  f113r        512  11.5%   6.8%   3.4%  11.9%  11.9%   3.9%     herbal       text      ✗
-  f113v        484   3.1%  26.7%   6.7%   6.7%  26.7%   3.1%     herbal       text      ✗
-  f114r        443   4.1%  16.7%   5.6%   5.6%   0.0%   2.5%     herbal       text      ✗
-  f114v        360   6.9%  24.0%   4.0%   4.0%   4.0%   2.5%     herbal       text      ✗
-  f115r        449   5.1%  17.4%   4.3%   8.7%  21.7%   5.6%     herbal       text      ✗
-  f115v        399   9.3%  18.9%   2.7%   2.7%  13.5%   5.3%     herbal       text      ✗
-  f116r        522  14.8%  14.3%   0.0%   2.6%  33.8%   4.8%     herbal       text      ✗
-  f11r          52  13.5%   0.0%   0.0%   0.0%  14.3%   0.0%     herbal   herbal-A      ✓
-  f11v          48  14.6%   0.0%   0.0%  28.6%   0.0%   2.1%     herbal   herbal-A      ✓
-  f13r          69  14.5%   0.0%   0.0%  20.0%  10.0%   4.3%     herbal   herbal-A      ✓
-  f13v          60   6.7%   0.0%   0.0%  25.0%   0.0%   5.0%     herbal   herbal-A      ✓
-  f14r          74  14.9%   0.0%   0.0%   9.1%   9.1%   1.4%     herbal   herbal-A      ✓
-  f14v          72   1.4%   0.0%   0.0%   0.0%   0.0%   0.0%     zodiac   herbal-A      ✗
-  f15r          90  20.0%   0.0%   0.0%   0.0%  16.7%   0.0%     herbal   herbal-A      ✓
-  f15v          66   7.6%   0.0%   0.0%  40.0%   0.0%   1.5%     herbal   herbal-A      ✓
-  f16r          81  16.0%   0.0%   7.7%   0.0%   7.7%   1.2%     herbal   herbal-A      ✓
-  f16v          73   6.8%   0.0%   0.0%   0.0%   0.0%   1.4%       text   herbal-A      ✗
-  f17r          77   7.8%   0.0%   0.0%  16.7%   0.0%   1.3%     herbal   herbal-A      ✓
-  f17v         132   7.6%   0.0%   0.0%  20.0%  10.0%   0.8%     herbal   herbal-A      ✓
-  f18r          82   7.3%   0.0%   0.0%   0.0%   0.0%   1.2%     herbal   herbal-A      ✓
-  f18v          66   3.0%   0.0%   0.0%   0.0%   0.0%  12.1%     herbal   herbal-A      ✓
-  f19r          74   6.8%   0.0%   0.0%   0.0%   0.0%   2.7%     herbal   herbal-A      ✓
-  f19v          75   1.3%   0.0%   0.0%   0.0%   0.0%   1.3%     herbal   herbal-A      ✓
-  f1r          203  18.2%   0.0%   8.1%   8.1%  16.2%   0.0%     herbal   herbal-A      ✓
-  f1v           88  10.2%   0.0%  22.2%  33.3%  11.1%   0.0%     herbal   herbal-A      ✓
-  f20r          87   8.0%   0.0%  14.3%  14.3%   0.0%   1.1%     herbal   herbal-A      ✓
-  f20v          82  20.7%   0.0%   0.0%  17.6%   0.0%   0.0%     herbal   herbal-A      ✓
-  f21r          96  13.5%   0.0%   7.7%  23.1%  23.1%   1.0%     herbal   herbal-A      ✓
-  f21v          54  11.1%   0.0%   0.0%  16.7%  16.7%   3.7%     herbal   herbal-A      ✓
-  f22r         104   4.8%   0.0%   0.0%  60.0%   0.0%   2.9%     herbal   herbal-A      ✓
-  f22v          74  14.9%   0.0%   9.1%   9.1%   0.0%   5.4%     herbal   herbal-A      ✓
-  f23r          99   3.0%   0.0%   0.0%   0.0%   0.0%   3.0%     herbal   herbal-A      ✓
-  f23v          87   9.2%   0.0%   0.0%  25.0%   0.0%   1.1%     herbal   herbal-A      ✓
-  f24r         100   7.0%   0.0%   0.0%   0.0%  14.3%   2.0%     herbal   herbal-A      ✓
-  f24v          82   9.8%   0.0%   0.0%  12.5%   0.0%   0.0%     herbal   herbal-A      ✓
-  f25r          45  13.3%   0.0%  16.7%   0.0%   0.0%   0.0%     herbal   herbal-A      ✓
-  f25v          55   7.3%   0.0%   0.0%  25.0%   0.0%   0.0%     herbal   herbal-A      ✓
-  f26r          81  12.3%  20.0%   0.0%   0.0%  10.0%  11.1%     herbal   herbal-A      ✓
-  f26v          89  11.2%  20.0%  10.0%   0.0%  10.0%   4.5%       text   herbal-A      ✗
-  f27r          88  15.9%   0.0%   0.0%  14.3%  21.4%   1.1%     herbal   herbal-A      ✓
-  f27v          60  20.0%   0.0%   0.0%  16.7%   0.0%   1.7%     herbal   herbal-A      ✓
-  f28r          67  11.9%   0.0%   0.0%  12.5%   0.0%   0.0%     herbal   herbal-A      ✓
-  f28v          65  12.3%   0.0%   0.0%  12.5%  12.5%   1.5%     herbal   herbal-A      ✓
-  f29r          64  18.8%   0.0%   0.0%   0.0%  16.7%   3.1%     herbal   herbal-A      ✓
-  f29v          90  18.9%   0.0%   5.9%   0.0%  11.8%   0.0%     herbal   herbal-A      ✓
-  f2r          100  17.0%   0.0%   0.0%  11.8%  17.6%   2.0%     herbal   herbal-A      ✓
-  f2v           59  10.2%   0.0%   0.0%  16.7%  16.7%   0.0%     herbal   herbal-A      ✓
-  f30r          96  12.5%   0.0%   0.0%   0.0%  33.3%   2.1%     herbal   herbal-A      ✓
-  f30v          62  17.7%   0.0%   0.0%   0.0%   9.1%   0.0%     herbal   herbal-A      ✓
-  f31r          97  14.4%   7.1%   7.1%  14.3%  28.6%  10.3%     herbal   herbal-A      ✓
-  f31v         104   5.8%  16.7%   0.0%   0.0%  16.7%   1.0%     herbal   herbal-A      ✓
-  f32r          75  14.7%   0.0%   9.1%   0.0%  18.2%   2.7%     herbal   herbal-A      ✓
-  f32v          80  13.8%   0.0%   0.0%   0.0%   9.1%   0.0%     herbal   herbal-A      ✓
-  f33r          72   8.3%  33.3%  16.7%   0.0%   0.0%   4.2%        bio   herbal-A      ✗
-  f33v         113   8.0%  11.1%   0.0%  11.1%  22.2%   0.0%     herbal   herbal-A      ✓
-  f34r         138   5.1%  28.6%  14.3%   0.0%   0.0%   4.3%     herbal   herbal-A      ✓
-  f34v         115   7.8%  33.3%   0.0%   0.0%   0.0%   4.3%        bio   herbal-A      ✗
-  f35r          87   9.2%   0.0%   0.0%  12.5%  12.5%   1.1%     herbal   herbal-A      ✓
-  f35v          83   9.6%   0.0%   0.0%  25.0%  12.5%   0.0%     herbal   herbal-A      ✓
-  f36r          58   8.6%   0.0%   0.0%   0.0%   0.0%   0.0%       text   herbal-A      ✗
-  f36v          69   5.8%   0.0%   0.0%   0.0%   0.0%   1.4%     herbal   herbal-A      ✓
-  f37r          77  11.7%   0.0%   0.0%  11.1%   0.0%   2.6%     herbal   herbal-A      ✓
-  f37v          86  11.6%   0.0%   0.0%   0.0%   0.0%   0.0%     herbal   herbal-A      ✓
-  f38r          41   2.4%   0.0%   0.0%   0.0%   0.0%   0.0%     zodiac   herbal-A      ✗
-  f38v          58   6.9%   0.0%   0.0%  25.0%  25.0%   3.4%     herbal   herbal-A      ✓
-  f39r         153  11.8%  27.8%   0.0%   5.6%  27.8%   1.3%     herbal   herbal-A      ✓
-  f39v         140  11.4%  18.8%  12.5%   6.2%   6.2%   1.4%     herbal   herbal-A      ✓
-  f3r          111  13.5%   0.0%   0.0%  13.3%  20.0%   3.6%     herbal   herbal-A      ✓
-  f3v           79  10.1%   0.0%   0.0%  12.5%   0.0%   1.3%     herbal   herbal-A      ✓
-  f40r          99   4.0%   0.0%   0.0%   0.0%   0.0%   1.0%     herbal   herbal-A      ✓
-  f40v          99   7.1%  14.3%  14.3%  14.3%   0.0%   6.1%     herbal   herbal-A      ✓
-  f41r          97  11.3%  27.3%   0.0%   0.0%  27.3%  12.4%       text   herbal-A      ✗
-  f41v          65   4.6%   0.0%   0.0%   0.0%  33.3%   4.6%     herbal   herbal-A      ✓
-  f42r         137  20.4%   0.0%   0.0%  50.0%   0.0%   0.0%     herbal   herbal-A      ✓
-  f42v         106  15.1%   0.0%   0.0%   6.2%  18.8%   0.9%     herbal   herbal-A      ✓
-  f43r         151  13.2%  10.0%  15.0%  20.0%   5.0%   2.0%     herbal   herbal-A      ✓
-  f43v         149   6.0%  33.3%  11.1%   0.0%  11.1%   2.0%        bio   herbal-A      ✗
-  f44r          71   8.5%   0.0%   0.0%  16.7%  16.7%   2.8%     herbal   herbal-A      ✓
-  f44v          95  12.6%   0.0%   8.3%  41.7%   8.3%   1.1%     herbal   herbal-A      ✓
-  f45r          85   5.9%   0.0%   0.0%   0.0%  20.0%   2.4%     herbal   herbal-A      ✓
-  f45v          81   4.9%   0.0%   0.0%   0.0%   0.0%   2.5%     herbal   herbal-A      ✓
-  f46r         156  24.4%   7.9%   0.0%  13.2%  15.8%   1.9%     herbal   herbal-A      ✓
-  f46v         107   8.4%  66.7%   0.0%  11.1%  11.1%   4.7%        bio   herbal-A      ✗
-  f47r          76  11.8%   0.0%   0.0%  44.4%  11.1%   0.0%     herbal   herbal-A      ✓
-  f47v          84  13.1%   0.0%   0.0%   9.1%   9.1%   0.0%     herbal   herbal-A      ✓
-  f48r          86   5.8%   0.0%  20.0%  40.0%   0.0%   2.3%     herbal   herbal-A      ✓
-  f48v         122   5.7%  14.3%  14.3%   0.0%  14.3%   0.0%     herbal   herbal-A      ✓
-  f49r         111  16.2%   0.0%   0.0%  11.1%   0.0%   0.9%     herbal   herbal-A      ✓
-  f49v         136   8.1%   0.0%   0.0%  27.3%   0.0%   0.7%     herbal   herbal-A      ✓
-  f4r           63  22.2%   0.0%   0.0%  42.9%   7.1%   0.0%     herbal   herbal-A      ✓
-  f4v           81  24.7%   0.0%  10.0%   0.0%  10.0%   2.5%     herbal   herbal-A      ✓
-  f50r          91   9.9%  11.1%   0.0%   0.0%   0.0%   6.6%     herbal   herbal-A      ✓
-  f50v          97   5.2%  20.0%  20.0%   0.0%   0.0%   6.2%     herbal   herbal-A      ✓
-  f51r          87   2.3%   0.0%   0.0%  50.0%  50.0%   3.4%     herbal   herbal-A      ✓
-  f51v          78  10.3%   0.0%   0.0%  12.5%  12.5%   3.8%     herbal   herbal-A      ✓
-  f52r          67  10.4%   0.0%   0.0%   0.0%  14.3%   4.5%     herbal   herbal-A      ✓
-  f52v          76  10.5%   0.0%   0.0%  12.5%   0.0%   2.6%     herbal   herbal-A      ✓
-  f53r          58   5.2%   0.0%   0.0%   0.0%   0.0%   1.7%     herbal   herbal-A      ✓
-  f53v          72  18.1%   0.0%  15.4%  15.4%  23.1%   0.0%     herbal   herbal-A      ✓
-  f54r         101  14.9%   0.0%   0.0%   0.0%   6.7%   0.0%     herbal   herbal-A      ✓
-  f54v          86   2.3%   0.0%  50.0%   0.0%   0.0%   1.2%     herbal   herbal-A      ✓
-  f55r         119   3.4%   0.0%   0.0%   0.0%  25.0%   2.5%     herbal   herbal-A      ✓
-  f55v         101   2.0%   0.0%   0.0%   0.0%  50.0%   2.0%     herbal   herbal-A      ✓
-  f56r          96   8.3%   0.0%   0.0%  25.0%  12.5%   3.1%     herbal   herbal-A      ✓
-  f56v          85  11.8%   0.0%   0.0%  30.0%  10.0%   1.2%     herbal   herbal-A      ✓
-  f57r          84  14.3%  16.7%  16.7%   0.0%  33.3%   3.6%     herbal   herbal-A      ✓
-  f57v          71  12.7%   0.0%   0.0%   0.0%  11.1%   0.0%     herbal   herbal-A      ✓
-  f58r         368  10.9%   2.5%   2.5%  20.0%   5.0%   2.2%     herbal   herbal-A      ✓
-  f58v         365   8.5%   3.2%   0.0%   6.5%  22.6%   3.6%     herbal   herbal-A      ✓
-  f5r           53  15.1%   0.0%  37.5%   0.0%   0.0%   0.0%     herbal   herbal-A      ✓
-  f5v           45   6.7%   0.0%   0.0%  66.7%   0.0%   0.0%     herbal   herbal-A      ✓
-  f65v          43  18.6%  12.5%  12.5%   0.0%  12.5%   0.0%       text   herbal-A      ✗
-  f66r         313  18.2%  17.5%   5.3%  15.8%  10.5%   6.7%     herbal   herbal-A      ✓
-  f66v         113  15.0%   0.0%  17.6%   0.0%  23.5%   1.8%     herbal   herbal-A      ✓
-  f67r         335  11.6%   0.0%   2.6%   2.6%  15.4%   0.6%     herbal     zodiac      ✗
-  f67v         129   7.0%   0.0%   0.0%   0.0%  11.1%   1.6%     herbal     zodiac      ✗
-  f68r         244   4.5%   0.0%   0.0%   9.1%  18.2%   2.9%     herbal     zodiac      ✗
-  f68v         357  15.1%   0.0%   5.6%   5.6%  27.8%   1.4%     herbal     zodiac      ✗
-  f69r         153  11.1%   0.0%   0.0%   5.9%  23.5%   0.7%     herbal     zodiac      ✗
-  f69v_70r     470   8.9%   2.4%   4.8%   7.1%  16.7%   0.0%     herbal     zodiac      ✗
-  f6r           81  11.1%   0.0%   0.0%  33.3%   0.0%   0.0%     herbal   herbal-A      ✓
-  f6v          105   4.8%   0.0%   0.0%  20.0%   0.0%   0.0%     zodiac   herbal-A      ✗
-  f70v_part    210   9.5%   0.0%   5.0%   5.0%  25.0%   0.0%     herbal     zodiac      ✗
-  f71r          88   6.8%   0.0%   0.0%   0.0%  33.3%   0.0%     herbal     zodiac      ✗
-  f71v_72r     465   8.4%   2.6%   2.6%  12.8%  17.9%   0.0%     herbal     zodiac      ✗
-  f72v_part    311   8.7%  14.8%   3.7%   7.4%  25.9%   0.0%     herbal     zodiac      ✗
-  f73r          93   4.3%   0.0%   0.0%   0.0%   0.0%   0.0%     zodiac     zodiac      ✓
-  f73v          94   5.3%  60.0%   0.0%  20.0%   0.0%   3.2%        bio     zodiac      ✗
-  f75r         411  17.3%  28.2%   0.0%   7.0%  28.2%  12.7%     herbal        bio      ✗
-  f75v         347  13.0%  26.7%   2.2%   0.0%  37.8%   8.1%     herbal        bio      ✗
-  f76r         544  18.2%  32.3%   0.0%   3.0%  22.2%   6.8%        bio        bio      ✓
-  f76v         388  19.3%  26.7%   0.0%   2.7%  25.3%   8.8%     herbal        bio      ✗
-  f77r         323  15.8%  37.3%   2.0%   9.8%  15.7%   9.0%        bio        bio      ✓
-  f77v         329  15.8%  48.1%   0.0%   7.7%  17.3%  10.6%        bio        bio      ✓
-  f78r         286  10.5%  46.7%   0.0%   0.0%  13.3%  10.5%        bio        bio      ✓
-  f78v         286  12.6%  44.4%   0.0%   8.3%  13.9%   7.7%        bio        bio      ✓
-  f79r         370  18.4%  20.6%   0.0%  13.2%  26.5%   3.5%     herbal        bio      ✗
-  f79v         349   9.2%  31.2%   0.0%   0.0%  43.8%  12.6%        bio        bio      ✓
-  f7r           64  14.1%   0.0%  11.1%  22.2%  44.4%   3.1%     herbal   herbal-A      ✓
-  f7v           73  11.0%   0.0%   0.0%  12.5%  12.5%   2.7%     herbal   herbal-A      ✓
-  f80r         432  16.9%  19.2%   0.0%   5.5%  39.7%   5.3%     herbal        bio      ✗
-  f80v         371  13.2%  22.4%   0.0%   6.1%  26.5%   4.6%     herbal        bio      ✗
-  f81r         205  13.7%  46.4%   0.0%   3.6%  10.7%   7.3%        bio        bio      ✓
-  f81v         249  11.6%  34.5%   0.0%   6.9%  20.7%   5.2%        bio        bio      ✓
-  f82r         284  12.3%  31.4%   0.0%   5.7%  28.6%  13.0%        bio        bio      ✓
-  f82v         311  11.9%  32.4%   0.0%  10.8%  27.0%   8.0%        bio        bio      ✓
-  f83r         337  24.9%  32.1%   0.0%   3.6%  16.7%  12.5%        bio        bio      ✓
-  f83v         256  17.2%  36.4%   0.0%  13.6%  15.9%   7.4%        bio        bio      ✓
-  f84r         359  14.5%  44.2%   0.0%   1.9%  11.5%   9.2%        bio        bio      ✓
-  f84v         333  14.1%  40.4%   0.0%   6.4%  19.1%  11.4%        bio        bio      ✓
-  f85r_part    494  11.7%  20.7%   1.7%   3.4%  12.1%   3.2%     herbal      cosmo      ✗
-  f85r_part_86v_part  1822   9.9%  13.3%   6.1%   6.1%  14.4%   2.5%     herbal      cosmo      ✗
-  f86v_part   1328   9.2%   9.8%   8.2%   7.4%  15.6%   2.3%     herbal      cosmo      ✗
-  f87r          98  25.5%   0.0%   8.0%   8.0%   8.0%   0.0%     herbal   herbal-B      ✓
-  f87v          87  13.8%   0.0%   8.3%   8.3%  25.0%   0.0%     herbal   herbal-B      ✓
-  f88r         145  11.0%   0.0%   0.0%   6.2%   0.0%   1.4%     herbal     pharma      ✓
-  f88v_89r     501  10.2%   3.9%   5.9%  15.7%  11.8%   5.0%     herbal     pharma      ✓
-  f89v_part    321   9.7%   0.0%   3.2%  12.9%  22.6%   0.9%     herbal     pharma      ✓
-  f89v_part_90r   430  10.9%   0.0%   2.1%  17.0%  14.9%   1.2%     herbal     pharma      ✓
-  f8r          148  16.2%   0.0%   4.2%  20.8%   8.3%   0.0%     herbal   herbal-A      ✓
-  f8v          118  17.8%   0.0%   0.0%  23.8%   4.8%   0.0%     herbal   herbal-A      ✓
-  f90r         109  14.7%   0.0%   0.0%  25.0%   0.0%   1.8%     herbal   herbal-B      ✓
-  f90v_part    155  20.6%   0.0%   9.4%  21.9%  12.5%   2.6%     herbal   herbal-B      ✓
-  f93r         137  19.7%   0.0%  18.5%  14.8%   3.7%   0.0%     herbal   herbal-B      ✓
-  f93v          84   9.5%   0.0%   0.0%  25.0%   0.0%   1.2%     herbal   herbal-B      ✓
-  f94r          78   3.8%   0.0%   0.0%   0.0%   0.0%   3.8%     herbal   herbal-B      ✓
-  f94v_95r     273   4.8%   0.0%  15.4%   7.7%  15.4%   3.7%     herbal   herbal-B      ✓
-  f95v         171  14.0%  16.7%   8.3%   4.2%  12.5%   2.3%     herbal   herbal-B      ✓
-  f95v_part    171  14.0%  16.7%   8.3%   4.2%  12.5%   2.3%     herbal   herbal-B      ✓
-  f96r          81  13.6%   0.0%   9.1%  36.4%   0.0%   3.7%     herbal   herbal-B      ✓
-  f96v          55  14.5%   0.0%   0.0%   0.0%  12.5%   0.0%       text   herbal-B      ✗
-  f99r         187   9.6%   0.0%   0.0%  27.8%  11.1%   3.2%     herbal     pharma      ✓
-  f99v         173   6.9%   0.0%   8.3%  33.3%  25.0%   2.3%     herbal     pharma      ✓
-  f9r           81  12.3%   0.0%   0.0%  10.0%   0.0%   1.2%     herbal   herbal-A      ✓
-  f9v           85   3.5%   0.0%   0.0%  33.3%   0.0%   0.0%     zodiac   herbal-A      ✗
-
-  Classification accuracy: 143/198 (72.2%)
-
-  Misclassified folios (55):
-    f103r: actual=text, predicted=herbal
-    f103v: actual=text, predicted=herbal
-    f104r: actual=text, predicted=herbal
-    f104v: actual=text, predicted=herbal
-    f106r: actual=text, predicted=herbal
-    f106v: actual=text, predicted=herbal
-    f107r: actual=text, predicted=herbal
-    f107v: actual=text, predicted=herbal
-    f108r: actual=text, predicted=herbal
-    f108v: actual=text, predicted=herbal
-
-============================================================================
-PHASE 22e: SYNTHESIS — BEST CANDIDATE MEANINGS
-============================================================================
-
-  ══════════════════════════════════════════════════════════════════════
-  ROOT 'h' — 2031 tokens
-  ══════════════════════════════════════════════════════════════════════
-  s-prefix: 97.6% | o-prefix: 0.3% | d-prefix: 0.0%
-  Verbal suffixes: 64.5% | Nominal suffixes: 14.3%
-  k-det: 14.0% | t-det: 6.1% | no-det: 78.5%
-  Bio: 31.0% | Herbal: 29.1% | Text: 23.5%
-  Morphological class: VERB/ACTION
-  Best Coptic candidates:
-
-  ► JUDGMENT: 'h' takes s-prefix heavily (98%), verbal suffixes (65%), bio-enriched.
-    BEST CANDIDATE: Coptic 'he' (fall/occur) with reduced vowel,
-    or Coptic 'ho' (face/front) — possibly the most generic verb root.
-    Given s-h-ey (662×) and s-h-edy (569×) dominate the corpus,
-    'h' is likely the BOUND FORM of 'he' = 'fall/occur/happen'.
-
-  ══════════════════════════════════════════════════════════════════════
-  ROOT 'l' — 1375 tokens
-  ══════════════════════════════════════════════════════════════════════
-  s-prefix: 2.4% | o-prefix: 52.1% | d-prefix: 0.7%
-  Verbal suffixes: 32.5% | Nominal suffixes: 35.2%
-  k-det: 53.3% | t-det: 6.9% | no-det: 32.9%
-  Bio: 31.2% | Herbal: 13.2% | Text: 37.6%
-  Morphological class: MIXED (nominal-verbal)
-  Best Coptic candidates:
-
-  ► JUDGMENT: 'l' profile suggests verbal word.
-    BEST CANDIDATES: Coptic 'lo' (cease/rest) or 'le' (cease),
-    or possibly a PROCLITIC (definite article fragment).
-
-  ══════════════════════════════════════════════════════════════════════
-  ROOT 'd' — 1241 tokens
-  ══════════════════════════════════════════════════════════════════════
-  s-prefix: 1.5% | o-prefix: 38.2% | d-prefix: 0.5%
-  Verbal suffixes: 1.5% | Nominal suffixes: 85.0%
-  k-det: 14.8% | t-det: 17.2% | no-det: 55.2%
-  Bio: 10.0% | Herbal: 44.0% | Text: 18.5%
-  Morphological class: NOUN/ENTITY
-  Best Coptic candidates:
-
-  ► JUDGMENT: 'd' is likely a function word.
-    BEST CANDIDATE: Coptic 'de' (but/and) — conjunction/particle.
-    High d-prefix usage (0%) suggests 'd' itself
-    may be the genitive 'of' marker appearing as a standalone root
-    when the parser strips it as prefix from the following word.
-
-  ══════════════════════════════════════════════════════════════════════
-  ROOT 'e' — 5451 tokens
-  ══════════════════════════════════════════════════════════════════════
-  s-prefix: 0.6% | o-prefix: 33.6% | d-prefix: 0.7%
-  Verbal suffixes: 7.6% | Nominal suffixes: 38.0%
-  k-det: 55.3% | t-det: 32.5% | no-det: 4.0%
-  Bio: 21.6% | Herbal: 20.2% | Text: 33.2%
-  Morphological class: NOUN/ENTITY
-  Best Coptic candidates:
-
-  ► JUDGMENT: 'e' is the most frequent root — nominal/function.
-    BEST CANDIDATE: Coptic 'e-' (to/toward, directional prefix),
-    or the VOWEL REDUCTION artifact of longer roots (ee→e).
-    Given it appears in qo-k-e-dy (= qokeedy), where we identified
-    it as the relative pronoun root, 'e' may be a DEMONSTRATIVE BASE.
-
-  ══════════════════════════════════════════════════════════════════════
-  ROOT 'ch' — 3792 tokens
-  ══════════════════════════════════════════════════════════════════════
-  s-prefix: 0.9% | o-prefix: 1.8% | d-prefix: 4.9%
-  Verbal suffixes: 50.7% | Nominal suffixes: 17.3%
-  k-det: 14.6% | t-det: 7.5% | no-det: 75.0%
-  Bio: 17.9% | Herbal: 39.0% | Text: 25.3%
-  Morphological class: VERB/ACTION
-  Best Coptic candidates:
-
-  ► JUDGMENT: 'ch' profile.
-    BEST CANDIDATE: Coptic 'cho' (substance) bound form,
-    or an independent classifier root for 'thing/matter'.
-
-  ══════════════════════════════════════════════════════════════════════
-  ROOT 'a' — 4022 tokens
-  ══════════════════════════════════════════════════════════════════════
-  s-prefix: 5.5% | o-prefix: 18.3% | d-prefix: 28.8%
-  Verbal suffixes: 0.1% | Nominal suffixes: 99.1%
-  k-det: 30.2% | t-det: 15.4% | no-det: 52.5%
-  Bio: 17.6% | Herbal: 30.5% | Text: 31.3%
-  Morphological class: NOUN/ENTITY
-  Best Coptic candidates:
-
-  ► JUDGMENT: 'a' profile.
-    BEST CANDIDATE: Coptic 'a-' (imperative prefix, or 'do/make'),
-    or Arabic definite article 'al-' bound form.
-
-  Results saved to results/phase22_results.json
+============================================================================
+PHASE 22: CRACK THE HIGH-FREQUENCY UNKNOWN ROOTS
+============================================================================
+
+Loading data...
+  39564 corpus tokens
+
+============================================================================
+PHASE 22a: DISTRIBUTIONAL PROFILES OF UNKNOWN HIGH-FREQ ROOTS
+============================================================================
+
+  --- Top 30 roots by frequency ---
+  Root          Count      % Known?
+  e              5451  13.8% ◀ UNKNOWN 
+  a              4022  10.2% ◀ UNKNOWN 
+  ch             3792   9.6% ◀ UNKNOWN 
+  ar             2103   5.3% ✓ king/great
+  h              2031   5.1% ◀ UNKNOWN 
+  ol             1849   4.7% ✓ carry/lift
+  al             1792   4.5% ✓ stone
+  l              1375   3.5% ◀ UNKNOWN 
+  d              1241   3.1% ◀ UNKNOWN 
+  o              1228   3.1% ◀ UNKNOWN 
+  or             1108   2.8% ✓ king/great(var)
+  che             732   1.9% ◀ UNKNOWN 
+  cho             600   1.5% ✓ substance
+  y               502   1.3% ◀ UNKNOWN 
+  air             449   1.1% ◀ UNKNOWN 
+  lch             433   1.1% ◀ UNKNOWN 
+  he              417   1.1% ✓ fall/occur
+  am              413   1.0% ✓ water
+  r               370   0.9% ◀ UNKNOWN 
+  ed              355   0.9% ◀ UNKNOWN 
+  eo              304   0.8% ◀ UNKNOWN 
+  ho              273   0.7% ◀ UNKNOWN 
+  cheo            271   0.7% ◀ UNKNOWN 
+  sh              222   0.6% ◀ UNKNOWN 
+  ched            195   0.5% ◀ UNKNOWN 
+  lsh             180   0.5% ◀ UNKNOWN 
+  eod             174   0.4% ◀ UNKNOWN 
+  es              171   0.4% ✓ star(short)
+  od              152   0.4% ◀ UNKNOWN 
+  i               134   0.3% ◀ UNKNOWN 
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ROOT: 'e' — 5451 tokens (13.8% of corpus)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Determinatives: k:3017(55%), t:1769(32%), p:364(7%), ∅:220(4%), f:81(1%)
+  Det enrichment:
+    t:  32.5% (base  18.5%)  1.75x ▲
+    k:  55.3% (base  28.6%)  1.94x ▲
+    f:   1.5% (base   1.2%)  1.21x  
+    p:   6.7% (base   4.2%)  1.58x ▲
+  Prefixes: qo:1926, o:1833, ∅:1075, y:483, q:57, d:40
+  Key prefix rates: s-/so-:0.6%, o-:33.6%, d-:0.7%, qo-:35.3%
+  Suffixes: -dy:2207, -y:2025, -ody:415, -ol:407, -or:191, -ar:89, -al:49, -aiin:31
+  Morphological class: verbal_sfx=415 (8%), nominal_sfx=2070 (38%), case_sfx=736 (14%)
+  Section enrichment:
+    text        :  33.2% (base  26.7%) 1.25x  
+    bio         :  21.6% (base  17.1%) 1.26x  
+    herbal-A    :  17.0% (base  27.9%) 0.61x ▼
+    pharma      :   9.4% (base   7.9%) 1.20x  
+    cosmo       :   8.4% (base   9.2%) 0.91x  
+  Left context:  e(1205), ch(507), h(443), a(358), ol(146), l(145), ar(135), d(127)
+  Right context: e(1205), a(474), ch(404), ar(215), h(211), al(210), l(207), ol(185)
+  Top word forms: qokeey(318), qokeedy(311), qokedy(281), okeey(189), otedy(172), oteey(150), okedy(120), qokey(110), okeedy(110), oteedy(104)
+  Candidate meanings:
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ROOT: 'a' — 4022 tokens (10.2% of corpus)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Determinatives: ∅:2111(52%), k:1213(30%), t:621(15%), p:64(2%), f:13(0%)
+  Det enrichment:
+    t:  15.4% (base  18.5%)  0.83x  
+    k:  30.2% (base  28.6%)  1.06x  
+    f:   0.3% (base   1.2%)  0.26x ▼
+    p:   1.6% (base   4.2%)  0.38x ▼
+  Prefixes: d:1158, ∅:957, qo:778, o:735, s:213, y:165
+  Key prefix rates: s-/so-:5.5%, o-:18.3%, d-:28.8%, qo-:19.3%
+  Suffixes: -iin:2809, -in:1146, -y:24, -dy:12, -ar:6, -ey:5, -sy:5, -aiin:4
+  Morphological class: verbal_sfx=6 (0%), nominal_sfx=3984 (99%), case_sfx=13 (0%)
+  Section enrichment:
+    text        :  31.3% (base  26.7%) 1.17x  
+    herbal-A    :  27.3% (base  27.9%) 0.98x  
+    bio         :  17.6% (base  17.1%) 1.03x  
+    cosmo       :  11.0% (base   9.2%) 1.19x  
+    pharma      :   6.2% (base   7.9%) 0.79x  
+  Left context:  e(474), ch(461), a(323), h(226), ar(197), ol(189), or(171), al(118)
+  Right context: ch(518), e(358), a(323), h(279), al(221), ar(212), ol(182), l(120)
+  Top word forms: daiin(901), aiin(565), qokain(287), qokaiin(284), dain(225), okaiin(225), otaiin(169), okain(144), saiin(135), ain(120)
+  Candidate meanings:
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ROOT: 'ch' — 3792 tokens (9.6% of corpus)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Determinatives: ∅:2845(75%), k:555(15%), t:285(8%), p:82(2%), f:25(1%)
+  Det enrichment:
+    t:   7.5% (base  18.5%)  0.41x ▼
+    k:  14.6% (base  28.6%)  0.51x ▼
+    f:   0.7% (base   1.2%)  0.54x ▼
+    p:   2.2% (base   4.2%)  0.51x ▼
+  Prefixes: ∅:3367, d:187, y:113, o:70, s:34, qo:16
+  Key prefix rates: s-/so-:0.9%, o-:1.8%, d-:4.9%, qo-:0.4%
+  Suffixes: -ey:1058, -edy:739, -y:528, -ol:483, -or:297, -dy:209, -ody:126, -ar:117
+  Morphological class: verbal_sfx=1923 (51%), nominal_sfx=656 (17%), case_sfx=979 (26%)
+  Section enrichment:
+    herbal-A    :  35.6% (base  27.9%) 1.28x  
+    text        :  25.3% (base  26.7%) 0.95x  
+    bio         :  17.9% (base  17.1%) 1.05x  
+    cosmo       :   7.1% (base   9.2%) 0.77x  
+    pharma      :   5.8% (base   7.9%) 0.74x ▼
+  Left context:  a(518), e(404), ch(356), ol(257), ar(175), al(165), or(152), h(111)
+  Right context: e(507), a(461), ch(356), ar(198), al(175), ol(171), d(133), l(132)
+  Top word forms: chedy(530), chol(415), chey(373), chor(225), cheey(197), chy(176), chdy(162), chckhy(142), chody(103), char(87)
+  Candidate meanings:
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ROOT: 'h' — 2031 tokens (5.1% of corpus)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Determinatives: ∅:1594(78%), k:285(14%), t:124(6%), p:18(1%), f:10(0%)
+  Det enrichment:
+    t:   6.1% (base  18.5%)  0.33x ▼
+    k:  14.0% (base  28.6%)  0.49x ▼
+    f:   0.5% (base   1.2%)  0.40x ▼
+    p:   0.9% (base   4.2%)  0.21x ▼
+  Prefixes: s:1982, ∅:15, y:13, qo:7, q:7, o:7
+  Key prefix rates: s-/so-:97.6%, o-:0.3%, d-:0.0%, qo-:0.3%
+  Suffixes: -ey:672, -edy:572, -y:251, -ol:200, -or:110, -ody:67, -dy:55, -ar:43
+  Morphological class: verbal_sfx=1311 (65%), nominal_sfx=290 (14%), case_sfx=374 (18%)
+  Section enrichment:
+    bio         :  31.0% (base  17.1%) 1.81x ▲
+    herbal-A    :  26.1% (base  27.9%) 0.94x  
+    text        :  23.5% (base  26.7%) 0.88x  
+    cosmo       :   8.0% (base   9.2%) 0.87x  
+    pharma      :   4.7% (base   7.9%) 0.60x ▼
+  Left context:  a(279), e(211), ol(178), ar(141), ch(111), al(111), h(94), or(85)
+  Right context: e(443), a(226), ol(119), ch(111), h(94), al(85), ar(81), l(70)
+  Top word forms: shedy(455), shey(291), shol(192), sheey(162), shor(104), shy(103), sheedy(87), shckhy(62), shody(59), shdy(49)
+  Candidate meanings:
+    he       = fall/perish          (SKEL  Coptic  0.5) ✓ verbal
+    ha       = upon/under           (SKEL  Coptic  0.5) 
+    ho       = face/front           (SKEL  Coptic  0.5) 
+    hi       = on/upon              (SKEL  Coptic  0.5) 
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ROOT: 'l' — 1375 tokens (3.5% of corpus)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Determinatives: k:733(53%), ∅:453(33%), t:95(7%), p:59(4%), f:35(3%)
+  Det enrichment:
+    t:   6.9% (base  18.5%)  0.37x ▼
+    k:  53.3% (base  28.6%)  1.87x ▲
+    f:   2.5% (base   1.2%)  2.07x ▲
+    p:   4.3% (base   4.2%)  1.02x  
+  Prefixes: o:717, ∅:530, qo:54, so:33, do:28, d:10
+  Key prefix rates: s-/so-:2.4%, o-:52.1%, d-:0.7%, qo-:3.9%
+  Suffixes: -edy:248, -ey:192, -aiin:190, -y:186, -dy:108, -ain:107, -ar:106, -or:96
+  Morphological class: verbal_sfx=447 (33%), nominal_sfx=484 (35%), case_sfx=325 (24%)
+  Section enrichment:
+    text        :  37.6% (base  26.7%) 1.41x ▲
+    bio         :  31.2% (base  17.1%) 1.82x ▲
+    cosmo       :  12.1% (base   9.2%) 1.31x ▲
+    herbal-A    :  10.8% (base  27.9%) 0.39x ▼
+    pharma      :   3.3% (base   7.9%) 0.43x ▼
+  Left context:  e(207), ch(132), a(120), ar(71), h(70), l(66), ol(59), al(55)
+  Right context: e(145), ch(110), a(108), ar(72), al(68), h(67), l(66), ol(57)
+  Top word forms: oly(60), olaiin(59), lkaiin(51), olkeedy(50), olkeey(42), lol(40), lkeey(39), lor(39), lkeedy(37), lkar(35)
+  Candidate meanings:
+    le       = cease                (SKEL  Coptic  0.5) 
+    la       = ?                    (SKEL  Coptic  0.5) 
+    lo       = (rest)               (SKEL  Coptic  0.5) 
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ROOT: 'd' — 1241 tokens (3.1% of corpus)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Determinatives: ∅:685(55%), t:214(17%), k:184(15%), p:125(10%), f:33(3%)
+  Det enrichment:
+    t:  17.2% (base  18.5%)  0.93x  
+    k:  14.8% (base  28.6%)  0.52x ▼
+    f:   2.7% (base   1.2%)  2.16x ▲
+    p:  10.1% (base   4.2%)  2.38x ▲
+  Prefixes: o:474, ∅:380, qo:259, y:92, so:15, do:12
+  Key prefix rates: s-/so-:1.5%, o-:38.2%, d-:0.5%, qo-:20.9%
+  Suffixes: -y:815, -aiin:194, -ar:83, -al:50, -ain:46, -or:18, -ey:11, -ol:8
+  Morphological class: verbal_sfx=19 (2%), nominal_sfx=1055 (85%), case_sfx=159 (13%)
+  Section enrichment:
+    herbal-A    :  37.8% (base  27.9%) 1.35x ▲
+    text        :  18.5% (base  26.7%) 0.69x ▼
+    cosmo       :  16.3% (base   9.2%) 1.77x ▲
+    bio         :  10.0% (base  17.1%) 0.58x ▼
+    herbal-B    :   6.2% (base   3.8%) 1.64x ▲
+  Left context:  e(157), ch(133), a(92), d(68), h(63), al(62), o(56), ol(46)
+  Right context: e(127), ch(94), a(74), ar(73), d(68), o(58), h(54), ol(43)
+  Top word forms: dy(286), odaiin(72), qokchdy(59), ody(53), qodaiin(53), otchdy(35), odar(28), qotchdy(27), okchdy(24), kchdy(23)
+  Candidate meanings:
+    de       = but/and              (SKEL  Coptic  0.5) 
+
+============================================================================
+PHASE 22b: YED=HAND CORPUS-WIDE VALIDATION
+============================================================================
+
+  Words with root 'yed': 2
+  Words containing 'yed' substring: 0
+  Words matching 'yed/yad' pattern (e→a): 2
+
+  Word forms with 'yed' pattern:
+    dykeedain                 x   1  root=yed      pfx=d    det=k   sfx=ain
+    oyteeedar                 x   1  root=yed      pfx=o    det=t   sfx=ar
+
+  Section distribution:
+    herbal-A    :    1 ( 50.0% vs  27.9% base) 1.79x 
+    zodiac      :    1 ( 50.0% vs   7.5% base) 6.71x 
+
+  Roots in ±2-word window around 'yed':
+    ch           x   2  
+    e            x   1  
+    a            x   1  
+    h            x   1  
+    ych          x   1  
+
+  Body-part roots in context: 0/6 (0.0%)
+
+============================================================================
+PHASE 22c: ROOT PAIR DISTRIBUTIONAL CONTRASTS
+============================================================================
+
+  ────────────────────────────────────────────────────────────────────────
+  h (n=2031) vs he (n=417) — Is 'h' a shortened form of 'he' (fall/occur)?
+    Section           h %     he %     diff
+    bio             31.0%    14.9%    16.1% ◀
+    cosmo            8.0%     6.2%     1.7%
+    herbal-A        26.1%    25.9%     0.2%
+    herbal-B         3.1%     5.8%     2.7%
+    pharma           4.7%    15.6%    10.9% ◀
+    text            23.5%    24.7%     1.2%
+    zodiac           3.7%     7.0%     3.3%
+    Determinatives:
+      t   :   6.1% vs   2.9%
+      k   :  14.0% vs  11.8%
+      f   :   0.5% vs   0.2%
+      p   :   0.9% vs   1.4%
+      ∅   :  78.5% vs  83.7%
+    s-prefix: 97.6% vs 99.3% 
+    o-prefix: 0.3% vs 0.7% 
+    VERDICT: DIFFERENT distributions → likely distinct morphemes
+
+  ────────────────────────────────────────────────────────────────────────
+  h (n=2031) vs ho (n=273) — Is 'h' related to 'ho' (face/front)?
+    Section           h %     ho %     diff
+    bio             31.0%     2.2%    28.8% ◀
+    cosmo            8.0%     5.1%     2.8%
+    herbal-A        26.1%    56.4%    30.3% ◀
+    herbal-B         3.1%     4.8%     1.7%
+    pharma           4.7%     9.9%     5.2%
+    text            23.5%    13.6%     9.9%
+    zodiac           3.7%     8.1%     4.4%
+    Determinatives:
+      t   :   6.1% vs  15.8%
+      k   :  14.0% vs  24.2% ◀
+      f   :   0.5% vs   4.0%
+      p   :   0.9% vs   2.2%
+      ∅   :  78.5% vs  53.8% ◀
+    s-prefix: 97.6% vs 99.6% 
+    o-prefix: 0.3% vs 0.0% 
+    VERDICT: DIFFERENT distributions → likely distinct morphemes
+
+  ────────────────────────────────────────────────────────────────────────
+  l (n=1375) vs le (n=68) — Is 'l' the same as 'le' (cease)?
+    Section           l %     le %     diff
+    bio             31.2%     4.4%    26.8% ◀
+    cosmo           12.1%    14.7%     2.6%
+    herbal-A        10.8%    13.2%     2.5%
+    herbal-B         2.5%     4.4%     1.9%
+    pharma           3.3%    10.3%     6.9%
+    text            37.6%    48.5%    10.9% ◀
+    zodiac           2.5%     4.4%     1.9%
+    Determinatives:
+      t   :   6.9% vs  11.8%
+      k   :  53.3% vs  77.9% ◀
+      f   :   2.5% vs   1.5%
+      p   :   4.3% vs   2.9%
+      ∅   :  32.9% vs   5.9% ◀
+    s-prefix: 2.4% vs 0.0% 
+    o-prefix: 52.1% vs 51.5% 
+    VERDICT: DIFFERENT distributions → likely distinct morphemes
+
+  ────────────────────────────────────────────────────────────────────────
+  l (n=1375) vs lo (n=76) — Is 'l' related to 'lo' (cease/rest)?
+    Section           l %     lo %     diff
+    bio             31.2%    22.4%     8.8%
+    cosmo           12.1%     5.3%     6.8%
+    herbal-A        10.8%    18.4%     7.7%
+    herbal-B         2.5%     1.3%     1.2%
+    pharma           3.3%     2.6%     0.7%
+    text            37.6%    47.4%     9.8%
+    zodiac           2.5%     2.6%     0.1%
+    Determinatives:
+      t   :   6.9% vs  13.2%
+      k   :  53.3% vs  25.0% ◀
+      f   :   2.5% vs   0.0%
+      p   :   4.3% vs   0.0%
+      ∅   :  32.9% vs  61.8% ◀
+    s-prefix: 2.4% vs 0.0% 
+    o-prefix: 52.1% vs 31.6% ◀ DIFFERENT
+    VERDICT: SIMILAR distributions → possibly related
+
+  ────────────────────────────────────────────────────────────────────────
+  d (n=1241) vs de (n=3) — Is 'd' the Coptic conjunction 'de' (but/and)?
+    Too few tokens, skipping
+
+  ────────────────────────────────────────────────────────────────────────
+  e (n=5451) vs ei (n=1) — Is 'e' Coptic 'ei' (come)?
+    Too few tokens, skipping
+
+  ────────────────────────────────────────────────────────────────────────
+  ch (n=3792) vs cho (n=600) — Is 'ch' shortened 'cho' (substance)?
+    Section          ch %    cho %     diff
+    bio             17.9%     0.5%    17.4% ◀
+    cosmo            7.1%     4.7%     2.5%
+    herbal-A        35.6%    53.5%    17.9% ◀
+    herbal-B         3.4%     3.2%     0.2%
+    pharma           5.8%     8.2%     2.4%
+    text            25.3%    17.2%     8.1%
+    zodiac           4.9%    12.8%     7.9%
+    Determinatives:
+      t   :   7.5% vs  31.0% ◀
+      k   :  14.6% vs  37.0% ◀
+      f   :   0.7% vs   2.5%
+      p   :   2.2% vs   4.2%
+      ∅   :  75.0% vs  25.3% ◀
+    s-prefix: 0.9% vs 0.7% 
+    o-prefix: 1.8% vs 1.3% 
+    VERDICT: DIFFERENT distributions → likely distinct morphemes
+
+  ────────────────────────────────────────────────────────────────────────
+  a (n=4022) vs ar (n=2103) — Is 'a' shortened 'ar' (king/great)?
+    Section           a %     ar %     diff
+    bio             17.6%    13.4%     4.2%
+    cosmo           11.0%    17.9%     6.9%
+    herbal-A        27.3%    24.7%     2.5%
+    herbal-B         3.2%     3.9%     0.7%
+    pharma           6.2%     4.7%     1.5%
+    text            31.3%    26.1%     5.2%
+    zodiac           3.5%     9.3%     5.8%
+    Determinatives:
+      t   :  15.4% vs  19.2%
+      k   :  30.2% vs  24.1%
+      f   :   0.3% vs   1.1%
+      p   :   1.6% vs   3.7%
+      ∅   :  52.5% vs  51.9%
+    s-prefix: 5.5% vs 5.7% 
+    o-prefix: 18.3% vs 20.9% 
+    VERDICT: SIMILAR distributions → possibly related
+
+============================================================================
+PHASE 22d: AUTOMATIC REGISTER CLASSIFICATION
+============================================================================
+
+  Folio          n    s-%  -edy%  -ody%   -ol%   -ey%   qok%  Predicted     Actual  Match
+  ───────────────────────────────────────────────────────────────────────────────────────────────
+  f100r        108  19.4%   0.0%   0.0%  19.0%  19.0%   2.8%     herbal     pharma      ✓
+  f100v_101r   307  14.3%   0.0%   4.5%  15.9%  22.7%   1.0%     herbal     pharma      ✓
+  f101v_part   201   7.0%   0.0%   7.1%  28.6%  14.3%   2.0%     herbal     pharma      ✓
+  f101v_part_102r   438  10.3%   0.0%   4.4%  11.1%  26.7%   2.7%     herbal     pharma      ✓
+  f102v_part   295  13.6%   0.0%   7.5%   7.5%  30.0%   3.4%     herbal     pharma      ✓
+  f103r        517  20.1%  20.2%   1.0%   8.7%  26.0%  11.2%     herbal       text      ✗
+  f103v        443  15.3%  23.5%   0.0%   4.4%  27.9%   6.3%     herbal       text      ✗
+  f104r        432   5.1%   9.1%  13.6%   0.0%  13.6%   2.5%     herbal       text      ✗
+  f104v        459   7.8%  13.9%   5.6%  16.7%  16.7%   5.2%     herbal       text      ✗
+  f105r        371   6.2%  13.0%   4.3%   4.3%  26.1%   4.0%       text       text      ✓
+  f105v        387   3.1%   0.0%   0.0%   0.0%  16.7%   1.0%       text       text      ✓
+  f106r        427  11.0%  14.9%   2.1%   8.5%  10.6%   3.5%     herbal       text      ✗
+  f106v        441  14.5%  17.2%   9.4%   3.1%   4.7%   3.2%     herbal       text      ✗
+  f107r        476   6.7%   9.4%   3.1%   6.2%  28.1%   2.5%     herbal       text      ✗
+  f107v        449   5.3%  25.0%   0.0%   8.3%  12.5%   7.3%     herbal       text      ✗
+  f108r        483   5.2%  24.0%   4.0%  16.0%   8.0%  10.6%     herbal       text      ✗
+  f108v        566  11.3%  18.8%   0.0%   6.2%  29.7%  12.5%     herbal       text      ✗
+  f10r          90   4.4%   0.0%   0.0%   0.0%   0.0%   1.1%     herbal   herbal-A      ✓
+  f10v          57  12.3%   0.0%   0.0%   0.0%   0.0%   1.8%     herbal   herbal-A      ✓
+  f111r        599  11.0%  19.7%   1.5%   1.5%  24.2%   8.7%     herbal       text      ✗
+  f111v        543  13.3%  11.1%   0.0%   1.4%  26.4%   3.5%     herbal       text      ✗
+  f112r        385   8.6%  12.1%   3.0%   9.1%   6.1%   8.1%     herbal       text      ✗
+  f112v        412   8.5%  17.1%   5.7%   2.9%  17.1%   7.3%     herbal       text      ✗
+  f113r        512  11.5%   6.8%   3.4%  11.9%  11.9%   3.9%     herbal       text      ✗
+  f113v        484   3.1%  26.7%   6.7%   6.7%  26.7%   3.1%     herbal       text      ✗
+  f114r        443   4.1%  16.7%   5.6%   5.6%   0.0%   2.5%     herbal       text      ✗
+  f114v        360   6.9%  24.0%   4.0%   4.0%   4.0%   2.5%     herbal       text      ✗
+  f115r        449   5.1%  17.4%   4.3%   8.7%  21.7%   5.6%     herbal       text      ✗
+  f115v        399   9.3%  18.9%   2.7%   2.7%  13.5%   5.3%     herbal       text      ✗
+  f116r        522  14.8%  14.3%   0.0%   2.6%  33.8%   4.8%     herbal       text      ✗
+  f11r          52  13.5%   0.0%   0.0%   0.0%  14.3%   0.0%     herbal   herbal-A      ✓
+  f11v          48  14.6%   0.0%   0.0%  28.6%   0.0%   2.1%     herbal   herbal-A      ✓
+  f13r          69  14.5%   0.0%   0.0%  20.0%  10.0%   4.3%     herbal   herbal-A      ✓
+  f13v          60   6.7%   0.0%   0.0%  25.0%   0.0%   5.0%     herbal   herbal-A      ✓
+  f14r          74  14.9%   0.0%   0.0%   9.1%   9.1%   1.4%     herbal   herbal-A      ✓
+  f14v          72   1.4%   0.0%   0.0%   0.0%   0.0%   0.0%     zodiac   herbal-A      ✗
+  f15r          90  20.0%   0.0%   0.0%   0.0%  16.7%   0.0%     herbal   herbal-A      ✓
+  f15v          66   7.6%   0.0%   0.0%  40.0%   0.0%   1.5%     herbal   herbal-A      ✓
+  f16r          81  16.0%   0.0%   7.7%   0.0%   7.7%   1.2%     herbal   herbal-A      ✓
+  f16v          73   6.8%   0.0%   0.0%   0.0%   0.0%   1.4%       text   herbal-A      ✗
+  f17r          77   7.8%   0.0%   0.0%  16.7%   0.0%   1.3%     herbal   herbal-A      ✓
+  f17v         132   7.6%   0.0%   0.0%  20.0%  10.0%   0.8%     herbal   herbal-A      ✓
+  f18r          82   7.3%   0.0%   0.0%   0.0%   0.0%   1.2%     herbal   herbal-A      ✓
+  f18v          66   3.0%   0.0%   0.0%   0.0%   0.0%  12.1%     herbal   herbal-A      ✓
+  f19r          74   6.8%   0.0%   0.0%   0.0%   0.0%   2.7%     herbal   herbal-A      ✓
+  f19v          75   1.3%   0.0%   0.0%   0.0%   0.0%   1.3%     herbal   herbal-A      ✓
+  f1r          203  18.2%   0.0%   8.1%   8.1%  16.2%   0.0%     herbal   herbal-A      ✓
+  f1v           88  10.2%   0.0%  22.2%  33.3%  11.1%   0.0%     herbal   herbal-A      ✓
+  f20r          87   8.0%   0.0%  14.3%  14.3%   0.0%   1.1%     herbal   herbal-A      ✓
+  f20v          82  20.7%   0.0%   0.0%  17.6%   0.0%   0.0%     herbal   herbal-A      ✓
+  f21r          96  13.5%   0.0%   7.7%  23.1%  23.1%   1.0%     herbal   herbal-A      ✓
+  f21v          54  11.1%   0.0%   0.0%  16.7%  16.7%   3.7%     herbal   herbal-A      ✓
+  f22r         104   4.8%   0.0%   0.0%  60.0%   0.0%   2.9%     herbal   herbal-A      ✓
+  f22v          74  14.9%   0.0%   9.1%   9.1%   0.0%   5.4%     herbal   herbal-A      ✓
+  f23r          99   3.0%   0.0%   0.0%   0.0%   0.0%   3.0%     herbal   herbal-A      ✓
+  f23v          87   9.2%   0.0%   0.0%  25.0%   0.0%   1.1%     herbal   herbal-A      ✓
+  f24r         100   7.0%   0.0%   0.0%   0.0%  14.3%   2.0%     herbal   herbal-A      ✓
+  f24v          82   9.8%   0.0%   0.0%  12.5%   0.0%   0.0%     herbal   herbal-A      ✓
+  f25r          45  13.3%   0.0%  16.7%   0.0%   0.0%   0.0%     herbal   herbal-A      ✓
+  f25v          55   7.3%   0.0%   0.0%  25.0%   0.0%   0.0%     herbal   herbal-A      ✓
+  f26r          81  12.3%  20.0%   0.0%   0.0%  10.0%  11.1%     herbal   herbal-A      ✓
+  f26v          89  11.2%  20.0%  10.0%   0.0%  10.0%   4.5%       text   herbal-A      ✗
+  f27r          88  15.9%   0.0%   0.0%  14.3%  21.4%   1.1%     herbal   herbal-A      ✓
+  f27v          60  20.0%   0.0%   0.0%  16.7%   0.0%   1.7%     herbal   herbal-A      ✓
+  f28r          67  11.9%   0.0%   0.0%  12.5%   0.0%   0.0%     herbal   herbal-A      ✓
+  f28v          65  12.3%   0.0%   0.0%  12.5%  12.5%   1.5%     herbal   herbal-A      ✓
+  f29r          64  18.8%   0.0%   0.0%   0.0%  16.7%   3.1%     herbal   herbal-A      ✓
+  f29v          90  18.9%   0.0%   5.9%   0.0%  11.8%   0.0%     herbal   herbal-A      ✓
+  f2r          100  17.0%   0.0%   0.0%  11.8%  17.6%   2.0%     herbal   herbal-A      ✓
+  f2v           59  10.2%   0.0%   0.0%  16.7%  16.7%   0.0%     herbal   herbal-A      ✓
+  f30r          96  12.5%   0.0%   0.0%   0.0%  33.3%   2.1%     herbal   herbal-A      ✓
+  f30v          62  17.7%   0.0%   0.0%   0.0%   9.1%   0.0%     herbal   herbal-A      ✓
+  f31r          97  14.4%   7.1%   7.1%  14.3%  28.6%  10.3%     herbal   herbal-A      ✓
+  f31v         104   5.8%  16.7%   0.0%   0.0%  16.7%   1.0%     herbal   herbal-A      ✓
+  f32r          75  14.7%   0.0%   9.1%   0.0%  18.2%   2.7%     herbal   herbal-A      ✓
+  f32v          80  13.8%   0.0%   0.0%   0.0%   9.1%   0.0%     herbal   herbal-A      ✓
+  f33r          72   8.3%  33.3%  16.7%   0.0%   0.0%   4.2%        bio   herbal-A      ✗
+  f33v         113   8.0%  11.1%   0.0%  11.1%  22.2%   0.0%     herbal   herbal-A      ✓
+  f34r         138   5.1%  28.6%  14.3%   0.0%   0.0%   4.3%     herbal   herbal-A      ✓
+  f34v         115   7.8%  33.3%   0.0%   0.0%   0.0%   4.3%        bio   herbal-A      ✗
+  f35r          87   9.2%   0.0%   0.0%  12.5%  12.5%   1.1%     herbal   herbal-A      ✓
+  f35v          83   9.6%   0.0%   0.0%  25.0%  12.5%   0.0%     herbal   herbal-A      ✓
+  f36r          58   8.6%   0.0%   0.0%   0.0%   0.0%   0.0%       text   herbal-A      ✗
+  f36v          69   5.8%   0.0%   0.0%   0.0%   0.0%   1.4%     herbal   herbal-A      ✓
+  f37r          77  11.7%   0.0%   0.0%  11.1%   0.0%   2.6%     herbal   herbal-A      ✓
+  f37v          86  11.6%   0.0%   0.0%   0.0%   0.0%   0.0%     herbal   herbal-A      ✓
+  f38r          41   2.4%   0.0%   0.0%   0.0%   0.0%   0.0%     zodiac   herbal-A      ✗
+  f38v          58   6.9%   0.0%   0.0%  25.0%  25.0%   3.4%     herbal   herbal-A      ✓
+  f39r         153  11.8%  27.8%   0.0%   5.6%  27.8%   1.3%     herbal   herbal-A      ✓
+  f39v         140  11.4%  18.8%  12.5%   6.2%   6.2%   1.4%     herbal   herbal-A      ✓
+  f3r          111  13.5%   0.0%   0.0%  13.3%  20.0%   3.6%     herbal   herbal-A      ✓
+  f3v           79  10.1%   0.0%   0.0%  12.5%   0.0%   1.3%     herbal   herbal-A      ✓
+  f40r          99   4.0%   0.0%   0.0%   0.0%   0.0%   1.0%     herbal   herbal-A      ✓
+  f40v          99   7.1%  14.3%  14.3%  14.3%   0.0%   6.1%     herbal   herbal-A      ✓
+  f41r          97  11.3%  27.3%   0.0%   0.0%  27.3%  12.4%       text   herbal-A      ✗
+  f41v          65   4.6%   0.0%   0.0%   0.0%  33.3%   4.6%     herbal   herbal-A      ✓
+  f42r         137  20.4%   0.0%   0.0%  50.0%   0.0%   0.0%     herbal   herbal-A      ✓
+  f42v         106  15.1%   0.0%   0.0%   6.2%  18.8%   0.9%     herbal   herbal-A      ✓
+  f43r         151  13.2%  10.0%  15.0%  20.0%   5.0%   2.0%     herbal   herbal-A      ✓
+  f43v         149   6.0%  33.3%  11.1%   0.0%  11.1%   2.0%        bio   herbal-A      ✗
+  f44r          71   8.5%   0.0%   0.0%  16.7%  16.7%   2.8%     herbal   herbal-A      ✓
+  f44v          95  12.6%   0.0%   8.3%  41.7%   8.3%   1.1%     herbal   herbal-A      ✓
+  f45r          85   5.9%   0.0%   0.0%   0.0%  20.0%   2.4%     herbal   herbal-A      ✓
+  f45v          81   4.9%   0.0%   0.0%   0.0%   0.0%   2.5%     herbal   herbal-A      ✓
+  f46r         156  24.4%   7.9%   0.0%  13.2%  15.8%   1.9%     herbal   herbal-A      ✓
+  f46v         107   8.4%  66.7%   0.0%  11.1%  11.1%   4.7%        bio   herbal-A      ✗
+  f47r          76  11.8%   0.0%   0.0%  44.4%  11.1%   0.0%     herbal   herbal-A      ✓
+  f47v          84  13.1%   0.0%   0.0%   9.1%   9.1%   0.0%     herbal   herbal-A      ✓
+  f48r          86   5.8%   0.0%  20.0%  40.0%   0.0%   2.3%     herbal   herbal-A      ✓
+  f48v         122   5.7%  14.3%  14.3%   0.0%  14.3%   0.0%     herbal   herbal-A      ✓
+  f49r         111  16.2%   0.0%   0.0%  11.1%   0.0%   0.9%     herbal   herbal-A      ✓
+  f49v         136   8.1%   0.0%   0.0%  27.3%   0.0%   0.7%     herbal   herbal-A      ✓
+  f4r           63  22.2%   0.0%   0.0%  42.9%   7.1%   0.0%     herbal   herbal-A      ✓
+  f4v           81  24.7%   0.0%  10.0%   0.0%  10.0%   2.5%     herbal   herbal-A      ✓
+  f50r          91   9.9%  11.1%   0.0%   0.0%   0.0%   6.6%     herbal   herbal-A      ✓
+  f50v          97   5.2%  20.0%  20.0%   0.0%   0.0%   6.2%     herbal   herbal-A      ✓
+  f51r          87   2.3%   0.0%   0.0%  50.0%  50.0%   3.4%     herbal   herbal-A      ✓
+  f51v          78  10.3%   0.0%   0.0%  12.5%  12.5%   3.8%     herbal   herbal-A      ✓
+  f52r          67  10.4%   0.0%   0.0%   0.0%  14.3%   4.5%     herbal   herbal-A      ✓
+  f52v          76  10.5%   0.0%   0.0%  12.5%   0.0%   2.6%     herbal   herbal-A      ✓
+  f53r          58   5.2%   0.0%   0.0%   0.0%   0.0%   1.7%     herbal   herbal-A      ✓
+  f53v          72  18.1%   0.0%  15.4%  15.4%  23.1%   0.0%     herbal   herbal-A      ✓
+  f54r         101  14.9%   0.0%   0.0%   0.0%   6.7%   0.0%     herbal   herbal-A      ✓
+  f54v          86   2.3%   0.0%  50.0%   0.0%   0.0%   1.2%     herbal   herbal-A      ✓
+  f55r         119   3.4%   0.0%   0.0%   0.0%  25.0%   2.5%     herbal   herbal-A      ✓
+  f55v         101   2.0%   0.0%   0.0%   0.0%  50.0%   2.0%     herbal   herbal-A      ✓
+  f56r          96   8.3%   0.0%   0.0%  25.0%  12.5%   3.1%     herbal   herbal-A      ✓
+  f56v          85  11.8%   0.0%   0.0%  30.0%  10.0%   1.2%     herbal   herbal-A      ✓
+  f57r          84  14.3%  16.7%  16.7%   0.0%  33.3%   3.6%     herbal   herbal-A      ✓
+  f57v          71  12.7%   0.0%   0.0%   0.0%  11.1%   0.0%     herbal   herbal-A      ✓
+  f58r         368  10.9%   2.5%   2.5%  20.0%   5.0%   2.2%     herbal   herbal-A      ✓
+  f58v         365   8.5%   3.2%   0.0%   6.5%  22.6%   3.6%     herbal   herbal-A      ✓
+  f5r           53  15.1%   0.0%  37.5%   0.0%   0.0%   0.0%     herbal   herbal-A      ✓
+  f5v           45   6.7%   0.0%   0.0%  66.7%   0.0%   0.0%     herbal   herbal-A      ✓
+  f65v          43  18.6%  12.5%  12.5%   0.0%  12.5%   0.0%       text   herbal-A      ✗
+  f66r         313  18.2%  17.5%   5.3%  15.8%  10.5%   6.7%     herbal   herbal-A      ✓
+  f66v         113  15.0%   0.0%  17.6%   0.0%  23.5%   1.8%     herbal   herbal-A      ✓
+  f67r         335  11.6%   0.0%   2.6%   2.6%  15.4%   0.6%     herbal     zodiac      ✗
+  f67v         129   7.0%   0.0%   0.0%   0.0%  11.1%   1.6%     herbal     zodiac      ✗
+  f68r         244   4.5%   0.0%   0.0%   9.1%  18.2%   2.9%     herbal     zodiac      ✗
+  f68v         357  15.1%   0.0%   5.6%   5.6%  27.8%   1.4%     herbal     zodiac      ✗
+  f69r         153  11.1%   0.0%   0.0%   5.9%  23.5%   0.7%     herbal     zodiac      ✗
+  f69v_70r     470   8.9%   2.4%   4.8%   7.1%  16.7%   0.0%     herbal     zodiac      ✗
+  f6r           81  11.1%   0.0%   0.0%  33.3%   0.0%   0.0%     herbal   herbal-A      ✓
+  f6v          105   4.8%   0.0%   0.0%  20.0%   0.0%   0.0%     zodiac   herbal-A      ✗
+  f70v_part    210   9.5%   0.0%   5.0%   5.0%  25.0%   0.0%     herbal     zodiac      ✗
+  f71r          88   6.8%   0.0%   0.0%   0.0%  33.3%   0.0%     herbal     zodiac      ✗
+  f71v_72r     465   8.4%   2.6%   2.6%  12.8%  17.9%   0.0%     herbal     zodiac      ✗
+  f72v_part    311   8.7%  14.8%   3.7%   7.4%  25.9%   0.0%     herbal     zodiac      ✗
+  f73r          93   4.3%   0.0%   0.0%   0.0%   0.0%   0.0%     zodiac     zodiac      ✓
+  f73v          94   5.3%  60.0%   0.0%  20.0%   0.0%   3.2%        bio     zodiac      ✗
+  f75r         411  17.3%  28.2%   0.0%   7.0%  28.2%  12.7%     herbal        bio      ✗
+  f75v         347  13.0%  26.7%   2.2%   0.0%  37.8%   8.1%     herbal        bio      ✗
+  f76r         544  18.2%  32.3%   0.0%   3.0%  22.2%   6.8%        bio        bio      ✓
+  f76v         388  19.3%  26.7%   0.0%   2.7%  25.3%   8.8%     herbal        bio      ✗
+  f77r         323  15.8%  37.3%   2.0%   9.8%  15.7%   9.0%        bio        bio      ✓
+  f77v         329  15.8%  48.1%   0.0%   7.7%  17.3%  10.6%        bio        bio      ✓
+  f78r         286  10.5%  46.7%   0.0%   0.0%  13.3%  10.5%        bio        bio      ✓
+  f78v         286  12.6%  44.4%   0.0%   8.3%  13.9%   7.7%        bio        bio      ✓
+  f79r         370  18.4%  20.6%   0.0%  13.2%  26.5%   3.5%     herbal        bio      ✗
+  f79v         349   9.2%  31.2%   0.0%   0.0%  43.8%  12.6%        bio        bio      ✓
+  f7r           64  14.1%   0.0%  11.1%  22.2%  44.4%   3.1%     herbal   herbal-A      ✓
+  f7v           73  11.0%   0.0%   0.0%  12.5%  12.5%   2.7%     herbal   herbal-A      ✓
+  f80r         432  16.9%  19.2%   0.0%   5.5%  39.7%   5.3%     herbal        bio      ✗
+  f80v         371  13.2%  22.4%   0.0%   6.1%  26.5%   4.6%     herbal        bio      ✗
+  f81r         205  13.7%  46.4%   0.0%   3.6%  10.7%   7.3%        bio        bio      ✓
+  f81v         249  11.6%  34.5%   0.0%   6.9%  20.7%   5.2%        bio        bio      ✓
+  f82r         284  12.3%  31.4%   0.0%   5.7%  28.6%  13.0%        bio        bio      ✓
+  f82v         311  11.9%  32.4%   0.0%  10.8%  27.0%   8.0%        bio        bio      ✓
+  f83r         337  24.9%  32.1%   0.0%   3.6%  16.7%  12.5%        bio        bio      ✓
+  f83v         256  17.2%  36.4%   0.0%  13.6%  15.9%   7.4%        bio        bio      ✓
+  f84r         359  14.5%  44.2%   0.0%   1.9%  11.5%   9.2%        bio        bio      ✓
+  f84v         333  14.1%  40.4%   0.0%   6.4%  19.1%  11.4%        bio        bio      ✓
+  f85r_part    494  11.7%  20.7%   1.7%   3.4%  12.1%   3.2%     herbal      cosmo      ✗
+  f85r_part_86v_part  1822   9.9%  13.3%   6.1%   6.1%  14.4%   2.5%     herbal      cosmo      ✗
+  f86v_part   1328   9.2%   9.8%   8.2%   7.4%  15.6%   2.3%     herbal      cosmo      ✗
+  f87r          98  25.5%   0.0%   8.0%   8.0%   8.0%   0.0%     herbal   herbal-B      ✓
+  f87v          87  13.8%   0.0%   8.3%   8.3%  25.0%   0.0%     herbal   herbal-B      ✓
+  f88r         145  11.0%   0.0%   0.0%   6.2%   0.0%   1.4%     herbal     pharma      ✓
+  f88v_89r     501  10.2%   3.9%   5.9%  15.7%  11.8%   5.0%     herbal     pharma      ✓
+  f89v_part    321   9.7%   0.0%   3.2%  12.9%  22.6%   0.9%     herbal     pharma      ✓
+  f89v_part_90r   430  10.9%   0.0%   2.1%  17.0%  14.9%   1.2%     herbal     pharma      ✓
+  f8r          148  16.2%   0.0%   4.2%  20.8%   8.3%   0.0%     herbal   herbal-A      ✓
+  f8v          118  17.8%   0.0%   0.0%  23.8%   4.8%   0.0%     herbal   herbal-A      ✓
+  f90r         109  14.7%   0.0%   0.0%  25.0%   0.0%   1.8%     herbal   herbal-B      ✓
+  f90v_part    155  20.6%   0.0%   9.4%  21.9%  12.5%   2.6%     herbal   herbal-B      ✓
+  f93r         137  19.7%   0.0%  18.5%  14.8%   3.7%   0.0%     herbal   herbal-B      ✓
+  f93v          84   9.5%   0.0%   0.0%  25.0%   0.0%   1.2%     herbal   herbal-B      ✓
+  f94r          78   3.8%   0.0%   0.0%   0.0%   0.0%   3.8%     herbal   herbal-B      ✓
+  f94v_95r     273   4.8%   0.0%  15.4%   7.7%  15.4%   3.7%     herbal   herbal-B      ✓
+  f95v         171  14.0%  16.7%   8.3%   4.2%  12.5%   2.3%     herbal   herbal-B      ✓
+  f95v_part    171  14.0%  16.7%   8.3%   4.2%  12.5%   2.3%     herbal   herbal-B      ✓
+  f96r          81  13.6%   0.0%   9.1%  36.4%   0.0%   3.7%     herbal   herbal-B      ✓
+  f96v          55  14.5%   0.0%   0.0%   0.0%  12.5%   0.0%       text   herbal-B      ✗
+  f99r         187   9.6%   0.0%   0.0%  27.8%  11.1%   3.2%     herbal     pharma      ✓
+  f99v         173   6.9%   0.0%   8.3%  33.3%  25.0%   2.3%     herbal     pharma      ✓
+  f9r           81  12.3%   0.0%   0.0%  10.0%   0.0%   1.2%     herbal   herbal-A      ✓
+  f9v           85   3.5%   0.0%   0.0%  33.3%   0.0%   0.0%     zodiac   herbal-A      ✗
+
+  Classification accuracy: 143/198 (72.2%)
+
+  Misclassified folios (55):
+    f103r: actual=text, predicted=herbal
+    f103v: actual=text, predicted=herbal
+    f104r: actual=text, predicted=herbal
+    f104v: actual=text, predicted=herbal
+    f106r: actual=text, predicted=herbal
+    f106v: actual=text, predicted=herbal
+    f107r: actual=text, predicted=herbal
+    f107v: actual=text, predicted=herbal
+    f108r: actual=text, predicted=herbal
+    f108v: actual=text, predicted=herbal
+
+============================================================================
+PHASE 22e: SYNTHESIS — BEST CANDIDATE MEANINGS
+============================================================================
+
+  ══════════════════════════════════════════════════════════════════════
+  ROOT 'h' — 2031 tokens
+  ══════════════════════════════════════════════════════════════════════
+  s-prefix: 97.6% | o-prefix: 0.3% | d-prefix: 0.0%
+  Verbal suffixes: 64.5% | Nominal suffixes: 14.3%
+  k-det: 14.0% | t-det: 6.1% | no-det: 78.5%
+  Bio: 31.0% | Herbal: 29.1% | Text: 23.5%
+  Morphological class: VERB/ACTION
+  Best Coptic candidates:
+
+  ► JUDGMENT: 'h' takes s-prefix heavily (98%), verbal suffixes (65%), bio-enriched.
+    BEST CANDIDATE: Coptic 'he' (fall/occur) with reduced vowel,
+    or Coptic 'ho' (face/front) — possibly the most generic verb root.
+    Given s-h-ey (662×) and s-h-edy (569×) dominate the corpus,
+    'h' is likely the BOUND FORM of 'he' = 'fall/occur/happen'.
+
+  ══════════════════════════════════════════════════════════════════════
+  ROOT 'l' — 1375 tokens
+  ══════════════════════════════════════════════════════════════════════
+  s-prefix: 2.4% | o-prefix: 52.1% | d-prefix: 0.7%
+  Verbal suffixes: 32.5% | Nominal suffixes: 35.2%
+  k-det: 53.3% | t-det: 6.9% | no-det: 32.9%
+  Bio: 31.2% | Herbal: 13.2% | Text: 37.6%
+  Morphological class: MIXED (nominal-verbal)
+  Best Coptic candidates:
+
+  ► JUDGMENT: 'l' profile suggests verbal word.
+    BEST CANDIDATES: Coptic 'lo' (cease/rest) or 'le' (cease),
+    or possibly a PROCLITIC (definite article fragment).
+
+  ══════════════════════════════════════════════════════════════════════
+  ROOT 'd' — 1241 tokens
+  ══════════════════════════════════════════════════════════════════════
+  s-prefix: 1.5% | o-prefix: 38.2% | d-prefix: 0.5%
+  Verbal suffixes: 1.5% | Nominal suffixes: 85.0%
+  k-det: 14.8% | t-det: 17.2% | no-det: 55.2%
+  Bio: 10.0% | Herbal: 44.0% | Text: 18.5%
+  Morphological class: NOUN/ENTITY
+  Best Coptic candidates:
+
+  ► JUDGMENT: 'd' is likely a function word.
+    BEST CANDIDATE: Coptic 'de' (but/and) — conjunction/particle.
+    High d-prefix usage (0%) suggests 'd' itself
+    may be the genitive 'of' marker appearing as a standalone root
+    when the parser strips it as prefix from the following word.
+
+  ══════════════════════════════════════════════════════════════════════
+  ROOT 'e' — 5451 tokens
+  ══════════════════════════════════════════════════════════════════════
+  s-prefix: 0.6% | o-prefix: 33.6% | d-prefix: 0.7%
+  Verbal suffixes: 7.6% | Nominal suffixes: 38.0%
+  k-det: 55.3% | t-det: 32.5% | no-det: 4.0%
+  Bio: 21.6% | Herbal: 20.2% | Text: 33.2%
+  Morphological class: NOUN/ENTITY
+  Best Coptic candidates:
+
+  ► JUDGMENT: 'e' is the most frequent root — nominal/function.
+    BEST CANDIDATE: Coptic 'e-' (to/toward, directional prefix),
+    or the VOWEL REDUCTION artifact of longer roots (ee→e).
+    Given it appears in qo-k-e-dy (= qokeedy), where we identified
+    it as the relative pronoun root, 'e' may be a DEMONSTRATIVE BASE.
+
+  ══════════════════════════════════════════════════════════════════════
+  ROOT 'ch' — 3792 tokens
+  ══════════════════════════════════════════════════════════════════════
+  s-prefix: 0.9% | o-prefix: 1.8% | d-prefix: 4.9%
+  Verbal suffixes: 50.7% | Nominal suffixes: 17.3%
+  k-det: 14.6% | t-det: 7.5% | no-det: 75.0%
+  Bio: 17.9% | Herbal: 39.0% | Text: 25.3%
+  Morphological class: VERB/ACTION
+  Best Coptic candidates:
+
+  ► JUDGMENT: 'ch' profile.
+    BEST CANDIDATE: Coptic 'cho' (substance) bound form,
+    or an independent classifier root for 'thing/matter'.
+
+  ══════════════════════════════════════════════════════════════════════
+  ROOT 'a' — 4022 tokens
+  ══════════════════════════════════════════════════════════════════════
+  s-prefix: 5.5% | o-prefix: 18.3% | d-prefix: 28.8%
+  Verbal suffixes: 0.1% | Nominal suffixes: 99.1%
+  k-det: 30.2% | t-det: 15.4% | no-det: 52.5%
+  Bio: 17.6% | Herbal: 30.5% | Text: 31.3%
+  Morphological class: NOUN/ENTITY
+  Best Coptic candidates:
+
+  ► JUDGMENT: 'a' profile.
+    BEST CANDIDATE: Coptic 'a-' (imperative prefix, or 'do/make'),
+    or Arabic definite article 'al-' bound form.
+
+  Results saved to results/phase22_results.json

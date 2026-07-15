@@ -114,7 +114,13 @@ def compare_to_golden(name, stdout, had_overrides):
         return {"state": "no_reference"}
     if had_overrides:
         return {"state": "not_comparable_overrides"}
-    ref_text = ref.read_text(encoding="utf-8", errors="replace")
+    # Normalize line endings on both sides: golden files are written with
+    # newline='' but may carry legacy \r\r\n from older captures, and the
+    # in-memory stream uses \r\n.
+    def norm(t):
+        return t.replace("\r\r\n", "\n").replace("\r\n", "\n").replace("\r", "\n")
+    ref_text = norm(ref.read_text(encoding="utf-8", errors="replace", newline=""))
+    stdout = norm(stdout)
     if ref_text == stdout:
         return {"state": "identical"}
     a, b = ref_text.splitlines(), stdout.splitlines()

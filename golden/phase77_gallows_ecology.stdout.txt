@@ -1,330 +1,330 @@
-══════════════════════════════════════════════════════════════════════
-PHASE 77: Gallows Positional Ecology
-══════════════════════════════════════════════════════════════════════
-
-Question: Do paragraph-initial gallows function DIFFERENTLY from
-body-text gallows, or are they the SAME characters in the SAME role?
-
-Parsing VMS folios...
-  Paragraphs: 784
-  Body words: 35991
-  Para-initial words: 784
-
-══════════════════════════════════════════════════════════════════════
-TEST A: SUCCESSOR DIVERGENCE — Same glyph, different contexts
-══════════════════════════════════════════════════════════════════════
-
-For each gallows, compare what glyph FOLLOWS it when it appears at
-paragraph start vs in body text. If gallows have ONE function, the
-successor distributions should be similar (low JSD). If the paragraph-
-initial function is different, JSD should be high.
-
-   Gallows | n(para-init)  n(body-all) n(body-init) | JSD(init/body) JSD(init/bodyW1)
-  ──────── | ──────────── ──────────── ──────────── | ────────────── ────────────────
-         p |          354          999          212 |         0.1136           0.0531
-         t |          183         5272          858 |         0.2605           0.1382
-         k |           80         9464         1190 |         0.3810           0.2417
-         f |           32          327           83 |         0.1275           0.1075
-
-  Gallows 'p' successor distributions:
-      Succ |  Para-init      % |  Body-init      %
-        ch |        133  37.6% |        122  57.5%
-         o |        134  37.9% |         45  21.2%
-        sh |         35   9.9% |         14   6.6%
-         a |         21   5.9% |         21   9.9%
-         d |         18   5.1% |          3   1.4%
-         y |         12   3.4% |          5   2.4%
-
-  Gallows 't' successor distributions:
-      Succ |  Para-init      % |  Body-init      %
-        ch |         59  32.2% |        217  25.3%
-         a |         10   5.5% |        204  23.8%
-         e |         14   7.7% |        196  22.8%
-         o |         49  26.8% |        160  18.6%
-        sh |         47  25.7% |         47   5.5%
-         y |          2   1.1% |         24   2.8%
-         d |          2   1.1% |          6   0.7%
-
-  Gallows 'k' successor distributions:
-      Succ |  Para-init      % |  Body-init      %
-         e |          5   6.2% |        410  34.5%
-         a |          3   3.8% |        303  25.5%
-        ch |         23  28.7% |        235  19.7%
-         o |         29  36.2% |        139  11.7%
-        sh |         14  17.5% |         64   5.4%
-         y |          2   2.5% |         32   2.7%
-         s |          3   3.8% |          2   0.2%
-
-  Gallows 'f' successor distributions:
-      Succ |  Para-init      % |  Body-init      %
-        ch |         12  37.5% |         54  65.1%
-         o |         11  34.4% |         12  14.5%
-         a |          3   9.4% |          8   9.6%
-        sh |          4  12.5% |          4   4.8%
-         d |          2   6.2% |          1   1.2%
-         y |          0   0.0% |          3   3.6%
-
-══════════════════════════════════════════════════════════════════════
-TEST B: WORD-FORM OVERLAP — Do paragraph-initial words also appear in body?
-══════════════════════════════════════════════════════════════════════
-
-If gallows = letters, the words starting with gallows at paragraph starts
-should also appear throughout body text (like 'Take' appears both at
-recipe starts and mid-recipe). If gallows = special markers, paragraph-
-initial words would be a SEPARATE vocabulary.
-
-  Overall:
-    Unique paragraph-initial word forms: 578
-    Unique body word forms:              6924
-    Overlap (appear in both):            194 (33.6% of para-init)
-    Para-init only:                      384 (66.4%)
-
-  Per gallows letter:
-     Gallows | Para-init forms   Body forms  Overlap Overlap% | Para-init only
-    ──────── | ─────────────── ──────────── ──────── ──────── | ──────────────
-           p |             233          104       46    19.7% |            187
-           t |             125          269       42    33.6% |             83
-           k |              70          301       26    37.1% |             44
-           f |              31           56        6    19.4% |             25
-
-  TOP 25 paragraph-initial words:
-    Rank            Word Para-init#    Body#    Ratio     Status
-       1          tchedy         11       29     2.6x     SHARED ★
-       2             pol         10        9     0.9x     SHARED ★
-       3         pchedar          7        3     0.4x     SHARED ★
-       4             tol          7       38     5.4x     SHARED ★
-       5         polaiin          7        1     0.1x     SHARED ★
-       6          pcheol          6        5     0.8x     SHARED ★
-       7           pchor          6        7     1.2x     SHARED ★
-       8          pchedy          6       32     5.3x     SHARED ★
-       9           tchor          5       16     3.2x     SHARED ★
-      10           tchol          5       11     2.2x     SHARED ★
-      11         pchdair          5        1     0.2x     SHARED ★
-      12         podaiin          5        2     0.4x     SHARED ★
-      13        polchedy          5        2     0.4x     SHARED ★
-      14          tshedy          5        6     1.2x     SHARED ★
-      15       pchedaiin          5        0     0.0x  PARA-ONLY ★
-      16          pcheor          5        0     0.0x  PARA-ONLY ★
-      17           tshol          4        2     0.5x     SHARED ★
-      18             tar          4       45    11.2x     SHARED ★
-      19        pcheodar          4        0     0.0x  PARA-ONLY ★
-      20         psheody          4        1     0.2x     SHARED ★
-      21         pchedal          4        1     0.2x     SHARED ★
-      22          tchody          3        8     2.7x     SHARED ★
-      23           pshol          3        1     0.3x     SHARED ★
-      24        pchocthy          3        0     0.0x  PARA-ONLY ★
-      25            pcho          3        1     0.3x     SHARED ★
-
-══════════════════════════════════════════════════════════════════════
-TEST C: CHARACTER-POSITION PROFILE — Where do gallows appear in words?
-══════════════════════════════════════════════════════════════════════
-
-In body text, are gallows primarily word-INITIAL (position 1) or do they
-also appear word-medially (position 2, 3, ...)?
-
-If gallows = regular letters → expect some medial/final appearances
-If gallows = word-initial markers only → expect position-1 dominance
-
-Also compare plain gallows (p,t,k,f) with compound gallows (cph,cfh,ckh,cth).
-
-
-  PLAIN GALLOWS position profile (body text only):
-     Glyph |    Pos 1    Pos 2    Pos 3    Pos 4   Pos 5+ |    Total  %Pos1
-    ────── | ──────── ──────── ──────── ──────── ──────── | ──────── ──────
-         p |      216      445      288       38       41 |     1028  21.0%
-         t |      865     2601     1542      142      184 |     5334  16.2%
-         k |     1200     3327     4283      428      309 |     9547  12.6%
-         f |       84      103      104       33       17 |      341  24.6%
-
-  COMPOUND GALLOWS position profile (body text only):
-     Glyph |    Pos 1    Pos 2    Pos 3    Pos 4   Pos 5+ |    Total  %Pos1
-    ────── | ──────── ──────── ──────── ──────── ──────── | ──────── ──────
-       cfh |       35       13       16        3        3 |       70  50.0%
-       ckh |      183      371      249       44       29 |      876  20.9%
-       cph |      119       39       25        7        4 |      194  61.3%
-       cth |      477      219      149       30       33 |      908  52.5%
-
-══════════════════════════════════════════════════════════════════════
-TEST D: COMPOUND vs PLAIN GALLOWS AT PARAGRAPH STARTS
-══════════════════════════════════════════════════════════════════════
-
-If paragraph-initial gallows are just the first letter of a word, BOTH plain
-(p,t,k,f) AND compound (cph,cfh,ckh,cth) gallows should appear — compound
-gallows are just gallows preceded by 'c'. If the paragraph-start function is
-specific to the PLAIN gallows visual form (decorative capitals?), compounds
-should be absent or rare at paragraph starts.
-
-  Total paragraphs: 784
-  Start with PLAIN gallows:    650 (82.9%)
-    p: 354 (45.2%)
-    t: 183 (23.3%)
-    k: 81 (10.3%)
-    f: 32 (4.1%)
-  Start with COMPOUND gallows: 4 (0.5%)
-    cph: 4 (0.5%)
-  Start with other:            130 (16.6%)
-
-  SIGNIFICANCE: If gallows are just letters, compound gallows
-  should appear at paragraph starts at their body-text word-initial rate.
-
-══════════════════════════════════════════════════════════════════════
-TEST E: GALLOWS RATIO — Paragraph-initial vs Body-text
-══════════════════════════════════════════════════════════════════════
-
-If gallows serve the SAME function everywhere, their proportions (p:t:k:f)
-should be similar at paragraph starts and in body text. If the paragraph-
-initial role is different (structural markers), the ratios should diverge.
-
-
-                    Context |        p       t       k       f |    Total   Gal%
-  ───────────────────────── | ──────────────────────────────── | ──────── ──────
-   Para-initial (1st glyph) |    45.2%   23.3%   10.3%    4.1% |      650  82.9%
-          Body word-initial |     0.6%    2.4%    3.3%    0.2% |     2365   6.6%
-     Body any-char-position |     0.6%    3.3%    5.9%    0.2% |    16250  10.0%
-
-  WITHIN-GALLOWS PROPORTIONS (normalized to sum=1):
-                    Context |        p       t       k       f
-               Para-initial |    54.5%   28.2%   12.5%    4.9%
-          Body word-initial |     9.1%   36.6%   50.7%    3.6%
-          Body any-position |     6.3%   32.8%   58.8%    2.1%
-
-  JSD(para-initial vs body-word-initial): 0.2237
-  JSD(para-initial vs body-any-position):  0.2809
-  (0 = identical, 1 = maximally different)
-
-  PER-SECTION gallows ratios (para-initial vs body-word-initial):
-
-    herbal (pi=272, body=1166, JSD=0.1586):
-             |        p       t       k       f
-          pi |    40.8%   33.1%   19.9%    6.2%
-        body |     6.5%   36.1%   53.2%    4.2%
-
-    recipe (pi=251, body=636, JSD=0.2836):
-             |        p       t       k       f
-          pi |    61.8%   24.3%    8.0%    6.0%
-        body |    11.6%   29.2%   55.5%    3.6%
-
-    balneo (pi=69, body=304, JSD=0.2973):
-             |        p       t       k       f
-          pi |    72.5%   20.3%    7.2%    0.0%
-        body |    13.5%   42.4%   42.1%    2.0%
-
-    cosmo (pi=50, body=238, JSD=0.3781):
-             |        p       t       k       f
-          pi |    76.0%   20.0%    4.0%    0.0%
-        body |    10.1%   50.4%   37.0%    2.5%
-
-    astro (pi=8, body=21, JSD=0.3705):
-             |        p       t       k       f
-          pi |     0.0%  100.0%    0.0%    0.0%
-        body |     4.8%   42.9%   52.4%    0.0%
-
-══════════════════════════════════════════════════════════════════════
-TEST F: PARAGRAPH-INITIAL WORD DIVERSITY
-══════════════════════════════════════════════════════════════════════
-
-Medieval recipe texts have ONE dominant opening word ('Togli' 28.8%,
-'Pour' 45.2%, 'Take' 31.0%). If VMS gallows are first letters of such
-words, VMS should also show a small number of dominant paragraph-initial
-word forms. If gallows are structural markers prepended to diverse content,
-we should see MANY different word forms all starting with the same gallows.
-
-  Total paragraph-initial tokens: 784
-  Unique word forms: 578
-  Type-token ratio (TTR): 0.737
-  Most common word: 'tchedy' = 11 (1.4%)
-
-  PER-GALLOWS DIVERSITY:
-
-    Gallows 'p': 354 tokens, 233 unique forms (TTR=0.658)
-      Top 10 forms:
-                         pol:   10 (  2.8%) █
-                     pchedar:    7 (  2.0%) 
-                     polaiin:    7 (  2.0%) 
-                      pcheol:    6 (  1.7%) 
-                       pchor:    6 (  1.7%) 
-                      pchedy:    6 (  1.7%) 
-                     pchdair:    5 (  1.4%) 
-                     podaiin:    5 (  1.4%) 
-                    polchedy:    5 (  1.4%) 
-                   pchedaiin:    5 (  1.4%) 
-
-    Gallows 't': 183 tokens, 125 unique forms (TTR=0.683)
-      Top 10 forms:
-                      tchedy:   11 (  6.0%) ███
-                         tol:    7 (  3.8%) █
-                       tchor:    5 (  2.7%) █
-                       tchol:    5 (  2.7%) █
-                      tshedy:    5 (  2.7%) █
-                       tshol:    4 (  2.2%) █
-                         tar:    4 (  2.2%) █
-                      tchody:    3 (  1.6%) 
-                       tshey:    3 (  1.6%) 
-                        tchy:    2 (  1.1%) 
-
-    Gallows 'k': 81 tokens, 70 unique forms (TTR=0.864)
-      Top 10 forms:
-                      kooiin:    2 (  2.5%) █
-                       kchor:    2 (  2.5%) █
-                       ksheo:    2 (  2.5%) █
-                       kchol:    2 (  2.5%) █
-                        ksho:    2 (  2.5%) █
-                         kol:    2 (  2.5%) █
-                         kor:    2 (  2.5%) █
-                     kchedar:    2 (  2.5%) █
-                      koldal:    2 (  2.5%) █
-                       kosar:    2 (  2.5%) █
-
-    Gallows 'f': 32 tokens, 31 unique forms (TTR=0.969)
-      Top 10 forms:
-                        fcho:    2 (  6.2%) ███
-                      fachys:    1 (  3.1%) █
-                        foar:    1 (  3.1%) █
-                   fchodaiin:    1 (  3.1%) █
-                      fochor:    1 (  3.1%) █
-                    foldaiin:    1 (  3.1%) █
-                      fshody:    1 (  3.1%) █
-                    fchodees:    1 (  3.1%) █
-                       faiis:    1 (  3.1%) █
-                       fshor:    1 (  3.1%) █
-
-  COMPARISON: VMS vs Medieval Recipe Texts
-                            Text |        Top word      % | TTR (para-init)
-  ────────────────────────────── | ─────────────── ────── | ───────────────
-              VMS (all sections) |          tchedy   1.4% |           0.737
-       Italian (Il libro cucina) |           togli  28.8% |           ~0.28
-               French (Viandier) |            pour  45.2% |           ~0.26
-         English (Forme of Cury) |            take  31.0% |           ~0.26
-
-══════════════════════════════════════════════════════════════════════
-PHASE 77 SYNTHESIS
-══════════════════════════════════════════════════════════════════════
-
-  1. SUCCESSOR DIVERGENCE:
-     'p' successors SIMILAR in both contexts (JSD=0.053)
-     't' successors DIVERGE between para-init and body (JSD=0.138)
-     'k' successors DIVERGE between para-init and body (JSD=0.242)
-     'f' successors DIVERGE between para-init and body (JSD=0.108)
-
-  2. WORD OVERLAP:
-     33.6% of paragraph-initial word forms also appear in body text
-     → Moderate evidence for distinct vocabulary
-
-  3. COMPOUND GALLOWS AT PARA STARTS:
-     Plain gallows: 650 (82.9%)
-     Compound gallows: 4 (0.5%)
-     → Near-zero compound gallows — strongly supports form-specific function
-
-  4. POSITION PROFILE (body text):
-     'p': 21% word-initial → substantial medial presence
-     't': 16% word-initial → substantial medial presence
-     'k': 13% word-initial → substantial medial presence
-     'f': 25% word-initial → substantial medial presence
-
-  5. RATIO DIVERGENCE (JSD=0.2237):
-     p:t:k:f ratios STRONGLY DIFFER between para-init and body → DIFFERENT function
-
-  VERDICT:
-  ─────────
-
-Full output → C:\projects\voynich_slop\results\phase77_gallows_ecology.txt
+══════════════════════════════════════════════════════════════════════
+PHASE 77: Gallows Positional Ecology
+══════════════════════════════════════════════════════════════════════
+
+Question: Do paragraph-initial gallows function DIFFERENTLY from
+body-text gallows, or are they the SAME characters in the SAME role?
+
+Parsing VMS folios...
+  Paragraphs: 784
+  Body words: 35991
+  Para-initial words: 784
+
+══════════════════════════════════════════════════════════════════════
+TEST A: SUCCESSOR DIVERGENCE — Same glyph, different contexts
+══════════════════════════════════════════════════════════════════════
+
+For each gallows, compare what glyph FOLLOWS it when it appears at
+paragraph start vs in body text. If gallows have ONE function, the
+successor distributions should be similar (low JSD). If the paragraph-
+initial function is different, JSD should be high.
+
+   Gallows | n(para-init)  n(body-all) n(body-init) | JSD(init/body) JSD(init/bodyW1)
+  ──────── | ──────────── ──────────── ──────────── | ────────────── ────────────────
+         p |          354          999          212 |         0.1136           0.0531
+         t |          183         5272          858 |         0.2605           0.1382
+         k |           80         9464         1190 |         0.3810           0.2417
+         f |           32          327           83 |         0.1275           0.1075
+
+  Gallows 'p' successor distributions:
+      Succ |  Para-init      % |  Body-init      %
+        ch |        133  37.6% |        122  57.5%
+         o |        134  37.9% |         45  21.2%
+        sh |         35   9.9% |         14   6.6%
+         a |         21   5.9% |         21   9.9%
+         d |         18   5.1% |          3   1.4%
+         y |         12   3.4% |          5   2.4%
+
+  Gallows 't' successor distributions:
+      Succ |  Para-init      % |  Body-init      %
+        ch |         59  32.2% |        217  25.3%
+         a |         10   5.5% |        204  23.8%
+         e |         14   7.7% |        196  22.8%
+         o |         49  26.8% |        160  18.6%
+        sh |         47  25.7% |         47   5.5%
+         y |          2   1.1% |         24   2.8%
+         d |          2   1.1% |          6   0.7%
+
+  Gallows 'k' successor distributions:
+      Succ |  Para-init      % |  Body-init      %
+         e |          5   6.2% |        410  34.5%
+         a |          3   3.8% |        303  25.5%
+        ch |         23  28.7% |        235  19.7%
+         o |         29  36.2% |        139  11.7%
+        sh |         14  17.5% |         64   5.4%
+         y |          2   2.5% |         32   2.7%
+         s |          3   3.8% |          2   0.2%
+
+  Gallows 'f' successor distributions:
+      Succ |  Para-init      % |  Body-init      %
+        ch |         12  37.5% |         54  65.1%
+         o |         11  34.4% |         12  14.5%
+         a |          3   9.4% |          8   9.6%
+        sh |          4  12.5% |          4   4.8%
+         d |          2   6.2% |          1   1.2%
+         y |          0   0.0% |          3   3.6%
+
+══════════════════════════════════════════════════════════════════════
+TEST B: WORD-FORM OVERLAP — Do paragraph-initial words also appear in body?
+══════════════════════════════════════════════════════════════════════
+
+If gallows = letters, the words starting with gallows at paragraph starts
+should also appear throughout body text (like 'Take' appears both at
+recipe starts and mid-recipe). If gallows = special markers, paragraph-
+initial words would be a SEPARATE vocabulary.
+
+  Overall:
+    Unique paragraph-initial word forms: 578
+    Unique body word forms:              6924
+    Overlap (appear in both):            194 (33.6% of para-init)
+    Para-init only:                      384 (66.4%)
+
+  Per gallows letter:
+     Gallows | Para-init forms   Body forms  Overlap Overlap% | Para-init only
+    ──────── | ─────────────── ──────────── ──────── ──────── | ──────────────
+           p |             233          104       46    19.7% |            187
+           t |             125          269       42    33.6% |             83
+           k |              70          301       26    37.1% |             44
+           f |              31           56        6    19.4% |             25
+
+  TOP 25 paragraph-initial words:
+    Rank            Word Para-init#    Body#    Ratio     Status
+       1          tchedy         11       29     2.6x     SHARED ★
+       2             pol         10        9     0.9x     SHARED ★
+       3         pchedar          7        3     0.4x     SHARED ★
+       4             tol          7       38     5.4x     SHARED ★
+       5         polaiin          7        1     0.1x     SHARED ★
+       6          pcheol          6        5     0.8x     SHARED ★
+       7           pchor          6        7     1.2x     SHARED ★
+       8          pchedy          6       32     5.3x     SHARED ★
+       9           tchor          5       16     3.2x     SHARED ★
+      10           tchol          5       11     2.2x     SHARED ★
+      11         pchdair          5        1     0.2x     SHARED ★
+      12         podaiin          5        2     0.4x     SHARED ★
+      13        polchedy          5        2     0.4x     SHARED ★
+      14          tshedy          5        6     1.2x     SHARED ★
+      15       pchedaiin          5        0     0.0x  PARA-ONLY ★
+      16          pcheor          5        0     0.0x  PARA-ONLY ★
+      17           tshol          4        2     0.5x     SHARED ★
+      18             tar          4       45    11.2x     SHARED ★
+      19        pcheodar          4        0     0.0x  PARA-ONLY ★
+      20         psheody          4        1     0.2x     SHARED ★
+      21         pchedal          4        1     0.2x     SHARED ★
+      22          tchody          3        8     2.7x     SHARED ★
+      23           pshol          3        1     0.3x     SHARED ★
+      24        pchocthy          3        0     0.0x  PARA-ONLY ★
+      25            pcho          3        1     0.3x     SHARED ★
+
+══════════════════════════════════════════════════════════════════════
+TEST C: CHARACTER-POSITION PROFILE — Where do gallows appear in words?
+══════════════════════════════════════════════════════════════════════
+
+In body text, are gallows primarily word-INITIAL (position 1) or do they
+also appear word-medially (position 2, 3, ...)?
+
+If gallows = regular letters → expect some medial/final appearances
+If gallows = word-initial markers only → expect position-1 dominance
+
+Also compare plain gallows (p,t,k,f) with compound gallows (cph,cfh,ckh,cth).
+
+
+  PLAIN GALLOWS position profile (body text only):
+     Glyph |    Pos 1    Pos 2    Pos 3    Pos 4   Pos 5+ |    Total  %Pos1
+    ────── | ──────── ──────── ──────── ──────── ──────── | ──────── ──────
+         p |      216      445      288       38       41 |     1028  21.0%
+         t |      865     2601     1542      142      184 |     5334  16.2%
+         k |     1200     3327     4283      428      309 |     9547  12.6%
+         f |       84      103      104       33       17 |      341  24.6%
+
+  COMPOUND GALLOWS position profile (body text only):
+     Glyph |    Pos 1    Pos 2    Pos 3    Pos 4   Pos 5+ |    Total  %Pos1
+    ────── | ──────── ──────── ──────── ──────── ──────── | ──────── ──────
+       cfh |       35       13       16        3        3 |       70  50.0%
+       ckh |      183      371      249       44       29 |      876  20.9%
+       cph |      119       39       25        7        4 |      194  61.3%
+       cth |      477      219      149       30       33 |      908  52.5%
+
+══════════════════════════════════════════════════════════════════════
+TEST D: COMPOUND vs PLAIN GALLOWS AT PARAGRAPH STARTS
+══════════════════════════════════════════════════════════════════════
+
+If paragraph-initial gallows are just the first letter of a word, BOTH plain
+(p,t,k,f) AND compound (cph,cfh,ckh,cth) gallows should appear — compound
+gallows are just gallows preceded by 'c'. If the paragraph-start function is
+specific to the PLAIN gallows visual form (decorative capitals?), compounds
+should be absent or rare at paragraph starts.
+
+  Total paragraphs: 784
+  Start with PLAIN gallows:    650 (82.9%)
+    p: 354 (45.2%)
+    t: 183 (23.3%)
+    k: 81 (10.3%)
+    f: 32 (4.1%)
+  Start with COMPOUND gallows: 4 (0.5%)
+    cph: 4 (0.5%)
+  Start with other:            130 (16.6%)
+
+  SIGNIFICANCE: If gallows are just letters, compound gallows
+  should appear at paragraph starts at their body-text word-initial rate.
+
+══════════════════════════════════════════════════════════════════════
+TEST E: GALLOWS RATIO — Paragraph-initial vs Body-text
+══════════════════════════════════════════════════════════════════════
+
+If gallows serve the SAME function everywhere, their proportions (p:t:k:f)
+should be similar at paragraph starts and in body text. If the paragraph-
+initial role is different (structural markers), the ratios should diverge.
+
+
+                    Context |        p       t       k       f |    Total   Gal%
+  ───────────────────────── | ──────────────────────────────── | ──────── ──────
+   Para-initial (1st glyph) |    45.2%   23.3%   10.3%    4.1% |      650  82.9%
+          Body word-initial |     0.6%    2.4%    3.3%    0.2% |     2365   6.6%
+     Body any-char-position |     0.6%    3.3%    5.9%    0.2% |    16250  10.0%
+
+  WITHIN-GALLOWS PROPORTIONS (normalized to sum=1):
+                    Context |        p       t       k       f
+               Para-initial |    54.5%   28.2%   12.5%    4.9%
+          Body word-initial |     9.1%   36.6%   50.7%    3.6%
+          Body any-position |     6.3%   32.8%   58.8%    2.1%
+
+  JSD(para-initial vs body-word-initial): 0.2237
+  JSD(para-initial vs body-any-position):  0.2809
+  (0 = identical, 1 = maximally different)
+
+  PER-SECTION gallows ratios (para-initial vs body-word-initial):
+
+    herbal (pi=272, body=1166, JSD=0.1586):
+             |        p       t       k       f
+          pi |    40.8%   33.1%   19.9%    6.2%
+        body |     6.5%   36.1%   53.2%    4.2%
+
+    recipe (pi=251, body=636, JSD=0.2836):
+             |        p       t       k       f
+          pi |    61.8%   24.3%    8.0%    6.0%
+        body |    11.6%   29.2%   55.5%    3.6%
+
+    balneo (pi=69, body=304, JSD=0.2973):
+             |        p       t       k       f
+          pi |    72.5%   20.3%    7.2%    0.0%
+        body |    13.5%   42.4%   42.1%    2.0%
+
+    cosmo (pi=50, body=238, JSD=0.3781):
+             |        p       t       k       f
+          pi |    76.0%   20.0%    4.0%    0.0%
+        body |    10.1%   50.4%   37.0%    2.5%
+
+    astro (pi=8, body=21, JSD=0.3705):
+             |        p       t       k       f
+          pi |     0.0%  100.0%    0.0%    0.0%
+        body |     4.8%   42.9%   52.4%    0.0%
+
+══════════════════════════════════════════════════════════════════════
+TEST F: PARAGRAPH-INITIAL WORD DIVERSITY
+══════════════════════════════════════════════════════════════════════
+
+Medieval recipe texts have ONE dominant opening word ('Togli' 28.8%,
+'Pour' 45.2%, 'Take' 31.0%). If VMS gallows are first letters of such
+words, VMS should also show a small number of dominant paragraph-initial
+word forms. If gallows are structural markers prepended to diverse content,
+we should see MANY different word forms all starting with the same gallows.
+
+  Total paragraph-initial tokens: 784
+  Unique word forms: 578
+  Type-token ratio (TTR): 0.737
+  Most common word: 'tchedy' = 11 (1.4%)
+
+  PER-GALLOWS DIVERSITY:
+
+    Gallows 'p': 354 tokens, 233 unique forms (TTR=0.658)
+      Top 10 forms:
+                         pol:   10 (  2.8%) █
+                     pchedar:    7 (  2.0%) 
+                     polaiin:    7 (  2.0%) 
+                      pcheol:    6 (  1.7%) 
+                       pchor:    6 (  1.7%) 
+                      pchedy:    6 (  1.7%) 
+                     pchdair:    5 (  1.4%) 
+                     podaiin:    5 (  1.4%) 
+                    polchedy:    5 (  1.4%) 
+                   pchedaiin:    5 (  1.4%) 
+
+    Gallows 't': 183 tokens, 125 unique forms (TTR=0.683)
+      Top 10 forms:
+                      tchedy:   11 (  6.0%) ███
+                         tol:    7 (  3.8%) █
+                       tchor:    5 (  2.7%) █
+                       tchol:    5 (  2.7%) █
+                      tshedy:    5 (  2.7%) █
+                       tshol:    4 (  2.2%) █
+                         tar:    4 (  2.2%) █
+                      tchody:    3 (  1.6%) 
+                       tshey:    3 (  1.6%) 
+                        tchy:    2 (  1.1%) 
+
+    Gallows 'k': 81 tokens, 70 unique forms (TTR=0.864)
+      Top 10 forms:
+                      kooiin:    2 (  2.5%) █
+                       kchor:    2 (  2.5%) █
+                       ksheo:    2 (  2.5%) █
+                       kchol:    2 (  2.5%) █
+                        ksho:    2 (  2.5%) █
+                         kol:    2 (  2.5%) █
+                         kor:    2 (  2.5%) █
+                     kchedar:    2 (  2.5%) █
+                      koldal:    2 (  2.5%) █
+                       kosar:    2 (  2.5%) █
+
+    Gallows 'f': 32 tokens, 31 unique forms (TTR=0.969)
+      Top 10 forms:
+                        fcho:    2 (  6.2%) ███
+                      fachys:    1 (  3.1%) █
+                        foar:    1 (  3.1%) █
+                   fchodaiin:    1 (  3.1%) █
+                      fochor:    1 (  3.1%) █
+                    foldaiin:    1 (  3.1%) █
+                      fshody:    1 (  3.1%) █
+                    fchodees:    1 (  3.1%) █
+                       faiis:    1 (  3.1%) █
+                       fshor:    1 (  3.1%) █
+
+  COMPARISON: VMS vs Medieval Recipe Texts
+                            Text |        Top word      % | TTR (para-init)
+  ────────────────────────────── | ─────────────── ────── | ───────────────
+              VMS (all sections) |          tchedy   1.4% |           0.737
+       Italian (Il libro cucina) |           togli  28.8% |           ~0.28
+               French (Viandier) |            pour  45.2% |           ~0.26
+         English (Forme of Cury) |            take  31.0% |           ~0.26
+
+══════════════════════════════════════════════════════════════════════
+PHASE 77 SYNTHESIS
+══════════════════════════════════════════════════════════════════════
+
+  1. SUCCESSOR DIVERGENCE:
+     'p' successors SIMILAR in both contexts (JSD=0.053)
+     't' successors DIVERGE between para-init and body (JSD=0.138)
+     'k' successors DIVERGE between para-init and body (JSD=0.242)
+     'f' successors DIVERGE between para-init and body (JSD=0.108)
+
+  2. WORD OVERLAP:
+     33.6% of paragraph-initial word forms also appear in body text
+     → Moderate evidence for distinct vocabulary
+
+  3. COMPOUND GALLOWS AT PARA STARTS:
+     Plain gallows: 650 (82.9%)
+     Compound gallows: 4 (0.5%)
+     → Near-zero compound gallows — strongly supports form-specific function
+
+  4. POSITION PROFILE (body text):
+     'p': 21% word-initial → substantial medial presence
+     't': 16% word-initial → substantial medial presence
+     'k': 13% word-initial → substantial medial presence
+     'f': 25% word-initial → substantial medial presence
+
+  5. RATIO DIVERGENCE (JSD=0.2237):
+     p:t:k:f ratios STRONGLY DIFFER between para-init and body → DIFFERENT function
+
+  VERDICT:
+  ─────────
+
+Full output → C:\projects\voynich_slop\results\phase77_gallows_ecology.txt

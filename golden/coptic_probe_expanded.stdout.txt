@@ -1,567 +1,567 @@
-Loading Voynich data...
-  Loaded 39531 word tokens
-Building root lexicon...
-  Built 1694 unique roots
-========================================================================
-ANALYSIS 1: COMPREHENSIVE COPTIC MATCHING
-  Coptic vocabulary: 352 terms
-  Voynich roots: 1694
-========================================================================
-
-  ── Match Tier Summary ──
-  EXACT matches:      19
-  NEAR-EXACT matches: 8
-  CONTAINS matches:   101
-  WITHIN matches:     78
-  SKELETON matches:   396
-  TOTAL roots matched: 602 / 1694 (35.5%)
-
-  ── Top 60 Matches ──
-   Score Type         V-Root         Coptic           Meaning                 Freq Section    Det 
-  -----------------------------------------------------------------------------------------------
-    1.00 EXACT        she            she              wood/tree                 35 text       ∅   
-    1.00 EXACT        al             al               stone/rock              1792 text       ∅   
-    1.00 EXACT        che            he               fall/occur               732 text       ∅   
-    1.00 EXACT        he             he               fall/occur               417 herbal-A   ∅   
-    1.00 EXACT        esh            ash              what                      34 text       k   
-    1.00 EXACT        eal            al               stone/rock                12 zodiac     k   
-    1.00 EXACT        les            las              tongue                    14 text       k   
-    1.00 EXACT        ro             ro               mouth                     30 text       ∅   
-    1.00 EXACT        leos           laos             people/nation              2 text       k   
-    1.00 EXACT        el             al               stone/rock                 5 text       k   
-    1.00 EXACT        ale            al               stone/rock                 8 herbal-A   k   
-    1.00 EXACT        ran            ran              name                       2 text       ∅   
-    1.00 EXACT        sche           she              wood/tree                  2 herbal-A   ∅   
-    1.00 EXACT        res            res              south                      1 herbal-A   t   
-    1.00 EXACT        hach           hah              much/many                  1 herbal-A   ∅   
-    1.00 EXACT        ash            ash              what                       1 herbal-A   t   
-    1.00 EXACT        asch           ash              what                       1 zodiac     ∅   
-    1.00 EXACT        heh            hah              much/many                  1 bio        p   
-    1.00 EXACT        las            las              tongue                     1 herbal-A   ∅   
-    0.95 NEAR-EXACT   choo           houo             more/excess               16 herbal-A   k   
-    0.95 NEAR-EXACT   oa             oua              one                       10 text       k   
-    0.95 NEAR-EXACT   eso            esou             ram/sheep                  2 text       k   
-    0.95 NEAR-EXACT   oe             oue              far/distant               18 herbal-A   k   
-    0.95 NEAR-EXACT   eoa            oua              one                        1 text       k   
-    0.95 NEAR-EXACT   hoo            houo             more/excess               10 herbal-A   t   
-    0.95 NEAR-EXACT   hoeo           houo             more/excess                1 herbal-A   t   
-    0.95 NEAR-EXACT   amo            amou             donkey                     1 herbal-A   ∅   
-    0.80 CONTAINS     chor           horasis          vision                    40 herbal-A   ∅   
-    0.80 CONTAINS     heod           aphoditē         Venus                     29 text       ∅   
-    0.80 CONTAINS     hod            aphoditē         Venus                     53 herbal-A   ∅   
-    0.80 CONTAINS     eos            laos             people/nation            131 zodiac     t   
-    0.80 CONTAINS     cheo           choeis           lord/master              267 text       ∅   
-    0.80 CONTAINS     chol           sholm            smell/sniff               96 herbal-A   ∅   
-    0.80 CONTAINS     cho            choeis           lord/master              600 herbal-A   k   
-    0.80 CONTAINS     hole           sholm            smell/sniff                2 pharma     k   
-    0.80 CONTAINS     chod           aphoditē         Venus                    110 herbal-A   ∅   
-    0.80 CONTAINS     hoe            choeis           lord/master                6 herbal-A   k   
-    0.80 CONTAINS     choe           choeis           lord/master               24 herbal-A   k   
-    0.80 CONTAINS     cheoe          choeis           lord/master                8 text       k   
-    0.80 CONTAINS     dar            daraga           degree (zodiac)            3 herbal-A   ∅   
-    0.80 CONTAINS     sho            shoue            dry                       19 herbal-A   ∅   
-    0.80 CONTAINS     hol            sholm            smell/sniff               30 herbal-A   ∅   
-    0.80 CONTAINS     ach            makh             neck/nape                  3 pharma     k   
-    0.80 CONTAINS     oro            horoskopos       horoscope/ascendant        2 pharma     k   
-    0.80 CONTAINS     ies            piesou           the ram                    1 pharma     ∅   
-    0.80 CONTAINS     rsh            ōrsh             cold                      25 bio        ∅   
-    0.80 CONTAINS     alo            aloli            grape                     19 text       ∅   
-    0.80 CONTAINS     char           pharmakon        drug/medicine             12 text       ∅   
-    0.80 CONTAINS     hal            halēt            bird/pigeon                6 text       k   
-    0.80 CONTAINS     chal           halēt            bird/pigeon               26 herbal-A   ∅   
-    0.80 CONTAINS     lor            olor             grape-cluster              8 bio        ∅   
-    0.80 CONTAINS     lol            aloli            grape                     20 bio        ∅   
-    0.80 CONTAINS     lan            planētēs         planet/wanderer            2 text       ∅   
-    0.80 CONTAINS     echo           choeis           lord/master                4 zodiac     k   
-    0.80 CONTAINS     sheo           shoue            dry                       18 text       ∅   
-    0.80 CONTAINS     chei           boētheia         help/remedy                1 text       t   
-    0.80 CONTAINS     rom            rompe            year                       5 cosmo      ∅   
-    0.80 CONTAINS     den            denebola         Denebola (beta Leonis)     1 text       ∅   
-    0.80 CONTAINS     roes           keros            cinnamon                   1 text       ∅   
-    0.80 CONTAINS     leo            laos             people/nation             14 text       k   
-
-  ── ALL EXACT Matches ──
-    she = she (wood/tree) [freq=35, sec=text, det=∅]
-    al = al (stone/rock) [freq=1792, sec=text, det=∅]
-    che = he (fall/occur) [freq=732, sec=text, det=∅]
-    he = he (fall/occur) [freq=417, sec=herbal-A, det=∅]
-    esh = ash (what) [freq=34, sec=text, det=k]
-    eal = al (stone/rock) [freq=12, sec=zodiac, det=k]
-    les = las (tongue) [freq=14, sec=text, det=k]
-    ro = ro (mouth) [freq=30, sec=text, det=∅]
-    leos = laos (people/nation) [freq=2, sec=text, det=k]
-    el = al (stone/rock) [freq=5, sec=text, det=k]
-    ale = al (stone/rock) [freq=8, sec=herbal-A, det=k]
-    ran = ran (name) [freq=2, sec=text, det=∅]
-    sche = she (wood/tree) [freq=2, sec=herbal-A, det=∅]
-    res = res (south) [freq=1, sec=herbal-A, det=t]
-    hach = hah (much/many) [freq=1, sec=herbal-A, det=∅]
-    ash = ash (what) [freq=1, sec=herbal-A, det=t]
-    asch = ash (what) [freq=1, sec=zodiac, det=∅]
-    heh = hah (much/many) [freq=1, sec=bio, det=p]
-    las = las (tongue) [freq=1, sec=herbal-A, det=∅]
-
-========================================================================
-ANALYSIS 2: DOMAIN CORRELATION (Coptic domain vs. Voynich section)
-========================================================================
-
-  ── Coptic Domain → Voynich Section (score≥0.50) ──
-  Domain          herbal-A  herbal-B    zodiac       bio     cosmo    pharma      text   TOTAL
-  --------------------------------------------------------------------------------------------
-  action            24(38%)     2( 3%)     8(12%)     4( 6%)     2( 3%)     6( 9%)    18(28%)      64
-  anatomy           11(33%)     1( 3%)     3( 9%)     1( 3%)     3( 9%)     6(18%)     8(24%)      33
-  animal            11(38%)     0( 0%)     1( 3%)     2( 7%)     0( 0%)     3(10%)    12(41%)      29
-  astro              9(36%)     0( 0%)     1( 4%)     0( 0%)     3(12%)     4(16%)     8(32%)      25
-  astronomical      11(34%)     0( 0%)     4(12%)     0( 0%)     1( 3%)     4(12%)    12(38%)      32
-  botanical         43(25%)     6( 3%)    25(14%)    23(13%)     8( 5%)    20(11%)    50(29%)     175
-  elemental         20(34%)     3( 5%)    13(22%)     2( 3%)     0( 0%)     5( 8%)    16(27%)      59
-  function           6(25%)     0( 0%)     5(21%)     3(12%)     0( 0%)     3(12%)     7(29%)      24
-  medical            3(43%)     0( 0%)     0( 0%)     0( 0%)     0( 0%)     1(14%)     3(43%)       7
-  mineral            0( 0%)     0( 0%)     0( 0%)     1(100%)     0( 0%)     0( 0%)     0( 0%)       1
-  number             0( 0%)     0( 0%)     0( 0%)     0( 0%)     0( 0%)     0( 0%)     2(100%)       2
-  social            10(43%)     0( 0%)     3(13%)     0( 0%)     0( 0%)     1( 4%)     9(39%)      23
-
-  ── Coptic Domain → Voynich Determinative (score≥0.50) ──
-  Domain                ∅        t        k        f        p   TOTAL
-  -------------------------------------------------------------------
-  action           38(59%)   11(17%)   14(22%)    0( 0%)    1( 2%)      64
-  anatomy          19(58%)    5(15%)    8(24%)    0( 0%)    1( 3%)      33
-  animal           14(48%)    5(17%)    9(31%)    1( 3%)    0( 0%)      29
-  astro            17(68%)    4(16%)    2( 8%)    1( 4%)    1( 4%)      25
-  astronomical     13(41%)   10(31%)    8(25%)    1( 3%)    0( 0%)      32
-  botanical        92(53%)   17(10%)   54(31%)    3( 2%)    9( 5%)     175
-  elemental        30(51%)    9(15%)   20(34%)    0( 0%)    0( 0%)      59
-  function         10(42%)    3(12%)    6(25%)    1( 4%)    4(17%)      24
-  medical           4(57%)    2(29%)    0( 0%)    0( 0%)    1(14%)       7
-  mineral           1(100%)    0( 0%)    0( 0%)    0( 0%)    0( 0%)       1
-  number            0( 0%)    0( 0%)    2(100%)    0( 0%)    0( 0%)       2
-  social            8(35%)    5(22%)    7(30%)    2( 9%)    1( 4%)      23
-
-  ── Key Correlation Tests ──
-  Botanical Coptic → herbal sections: 49/175 (28.0%)
-  Astronomical Coptic → zodiac/cosmo: 9/57 (15.8%)
-  Botanical Coptic → f-gallows: 3/175 (1.7%)
-  Anatomy/Medical Coptic → bio/pharma: 8/40 (20.0%)
-
-  ── Baseline Section Distribution (all roots) ──
-    herbal-A: 534/1694 (31.5%)
-    herbal-B: 43/1694 (2.5%)
-    zodiac: 209/1694 (12.3%)
-    bio: 141/1694 (8.3%)
-    cosmo: 79/1694 (4.7%)
-    pharma: 166/1694 (9.8%)
-    text: 522/1694 (30.8%)
-
-========================================================================
-ANALYSIS 3: STATISTICAL SIGNIFICANCE — Coptic vs Finnish (control)
-========================================================================
-
-   Threshold     Coptic    Finnish      Ratio     Excess
-  -------------------------------------------------------
-        0.40        602        128       4.70x       +474
-        0.50        474        114       4.16x       +360
-        0.60        472        114       4.14x       +358
-        0.70        206         35       5.89x       +171
-        0.80        128         33       3.88x        +95
-        0.90         27          0        infx        +27
-        1.00         19          0        infx        +19
-
-  ── Match Rate by Root Length (score≥0.50) ──
-    Len     Coptic    Finnish    Cop-Tot    Fin-Tot     Cop%     Fin%    Ratio
-  ---------------------------------------------------------------------------
-      2         15          5        130        130    11.5%     3.8%    3.00x
-      3         98         32        282        282    34.8%    11.3%    3.06x
-      4        146         50        438        438    33.3%    11.4%    2.92x
-      5        124         21        421        421    29.5%     5.0%    5.90x
-      6         60          5        262        262    22.9%     1.9%   12.00x
-      7         24          1        109        109    22.0%     0.9%   24.00x
-
-========================================================================
-ANALYSIS 4: PHONETIC CORRESPONDENCE PATTERNS
-========================================================================
-
-  High-confidence matches (score≥0.70): 206
-
-  ── Letter-by-letter Correspondences ──
-
-  V-char   → Most common Coptic correspondences
-  --------------------------------------------------
-  a        → a:32, s:7, l:6
-  c        → h:14, s:8, c:4
-  d        → o:3, d:3, a:2
-  e        → e:23, a:17, h:14
-  g        → g:2, r:1, a:1
-  h        → h:52, e:21, a:16
-  i        → i:3, a:2, h:2
-  l        → l:24, s:16, o:9
-  m        → m:5, o:2, r:1
-  n        → n:3, a:3
-  o        → o:34, h:11, e:11
-  r        → r:10, a:8, o:6
-  s        → s:38, h:28, e:10
-  y        → a:1, r:1
-  z        → a:1
-
-  ── Testing Leo-Anchor Hypotheses ──
-  e→a       : support=46, contradict=84, rate=35%
-  s→s       : support=102, contradict=0, rate=100%
-  d→d       : support=8, contradict=20, rate=29%
-  ch→kh     : support=1, contradict=37, rate=3%
-  r→r       : support=41, contradict=15, rate=73%
-  l→l       : support=42, contradict=27, rate=61%
-  sh→sh     : support=75, contradict=2, rate=97%
-
-========================================================================
-ANALYSIS 5: HIGH-VALUE MATCHES (root length ≥ 3, score ≥ 0.60)
-========================================================================
-
-  Matches passing filter: 457
-
-   Score Type         V-Root         Coptic           Meaning                Domain        Freq Section   
-  ---------------------------------------------------------------------------------------------------------
-    1.00 EXACT        she            she              wood/tree              botanical       35 text      
-    1.00 EXACT        che            he               fall/occur             action         732 text      
-    1.00 EXACT        esh            ash              what                   function        34 text      
-    1.00 EXACT        eal            al               stone/rock             astronomical    12 zodiac    
-    1.00 EXACT        les            las              tongue                 anatomy         14 text      
-    1.00 EXACT        leos           laos             people/nation          social           2 text      
-    1.00 EXACT        ale            al               stone/rock             astronomical     8 herbal-A  
-    1.00 EXACT        ran            ran              name                   function         2 text      
-    1.00 EXACT        sche           she              wood/tree              botanical        2 herbal-A  
-    1.00 EXACT        res            res              south                  astronomical     1 herbal-A  
-    1.00 EXACT        hach           hah              much/many              function         1 herbal-A  
-    1.00 EXACT        ash            ash              what                   function         1 herbal-A  
-    1.00 EXACT        asch           ash              what                   function         1 zodiac    
-    1.00 EXACT        heh            hah              much/many              function         1 bio       
-    1.00 EXACT        las            las              tongue                 anatomy          1 herbal-A  
-    0.95 NEAR-EXACT   choo           houo             more/excess            anatomy         16 herbal-A  
-    0.95 NEAR-EXACT   eso            esou             ram/sheep              animal           2 text      
-    0.95 NEAR-EXACT   eoa            oua              one                    number           1 text      
-    0.95 NEAR-EXACT   hoo            houo             more/excess            anatomy         10 herbal-A  
-    0.95 NEAR-EXACT   hoeo           houo             more/excess            anatomy          1 herbal-A  
-    0.95 NEAR-EXACT   amo            amou             donkey                 animal           1 herbal-A  
-    0.80 CONTAINS     chor           horasis          vision                 astronomical    40 herbal-A  
-    0.80 CONTAINS     heod           aphoditē         Venus                  astro           29 text      
-    0.80 CONTAINS     hod            aphoditē         Venus                  astro           53 herbal-A  
-    0.80 CONTAINS     eos            laos             people/nation          social         131 zodiac    
-    0.80 CONTAINS     cheo           choeis           lord/master            elemental      267 text      
-    0.80 CONTAINS     chol           sholm            smell/sniff            action          96 herbal-A  
-    0.80 CONTAINS     cho            choeis           lord/master            elemental      600 herbal-A  
-    0.80 CONTAINS     hole           sholm            smell/sniff            action           2 pharma    
-    0.80 CONTAINS     chod           aphoditē         Venus                  astro          110 herbal-A  
-    0.80 CONTAINS     hoe            choeis           lord/master            elemental        6 herbal-A  
-    0.80 CONTAINS     choe           choeis           lord/master            elemental       24 herbal-A  
-    0.80 CONTAINS     cheoe          choeis           lord/master            elemental        8 text      
-    0.80 CONTAINS     dar            daraga           degree (zodiac)        astro            3 herbal-A  
-    0.80 CONTAINS     sho            shoue            dry                    botanical       19 herbal-A  
-    0.80 CONTAINS     hol            sholm            smell/sniff            action          30 herbal-A  
-    0.80 CONTAINS     ach            makh             neck/nape              anatomy          3 pharma    
-    0.80 CONTAINS     oro            horoskopos       horoscope/ascendant    astro            2 pharma    
-    0.80 CONTAINS     ies            piesou           the ram                astro            1 pharma    
-    0.80 CONTAINS     rsh            ōrsh             cold                   elemental       25 bio       
-    0.80 CONTAINS     alo            aloli            grape                  botanical       19 text      
-    0.80 CONTAINS     char           pharmakon        drug/medicine          medical         12 text      
-    0.80 CONTAINS     hal            halēt            bird/pigeon            animal           6 text      
-    0.80 CONTAINS     chal           halēt            bird/pigeon            animal          26 herbal-A  
-    0.80 CONTAINS     lor            olor             grape-cluster          botanical        8 bio       
-    0.80 CONTAINS     lol            aloli            grape                  botanical       20 bio       
-    0.80 CONTAINS     lan            planētēs         planet/wanderer        astro            2 text      
-    0.80 CONTAINS     echo           choeis           lord/master            elemental        4 zodiac    
-    0.80 CONTAINS     sheo           shoue            dry                    botanical       18 text      
-    0.80 CONTAINS     chei           boētheia         help/remedy            medical          1 text      
-    0.80 CONTAINS     rom            rompe            year                   astronomical     5 cosmo     
-    0.80 CONTAINS     den            denebola         Denebola (beta Leonis) astro            1 text      
-    0.80 CONTAINS     roes           keros            cinnamon               botanical        1 text      
-    0.80 CONTAINS     leo            laos             people/nation          social          14 text      
-    0.80 CONTAINS     edar           daraga           degree (zodiac)        astro            3 cosmo     
-    0.80 CONTAINS     hor            horasis          vision                 astronomical    10 herbal-A  
-    0.80 CONTAINS     loo            loole            grape                  botanical        1 text      
-    0.80 CONTAINS     los            regoulos         Regulus (alpha Leonis) astro           11 text      
-    0.80 CONTAINS     ras            horasis          vision                 astronomical     1 text      
-    0.80 CONTAINS     heol           sholm            smell/sniff            action          17 herbal-A  
-    0.80 CONTAINS     rag            daraga           degree (zodiac)        astro            2 text      
-    0.80 CONTAINS     hoed           aphoditē         Venus                  astro            1 text      
-    0.80 CONTAINS     chom           shomte           acacia                 botanical       18 herbal-A  
-    0.80 CONTAINS     esho           shoue            dry                    botanical        2 text      
-    0.80 CONTAINS     osh            trosh            red                    elemental        4 zodiac    
-    0.80 CONTAINS     chan           thanatos         death                  social          13 herbal-A  
-    0.80 CONTAINS     loes           regoulos         Regulus (alpha Leonis) astro            3 herbal-A  
-    0.80 CONTAINS     ara            daraga           degree (zodiac)        astro            2 text      
-    0.80 CONTAINS     chai           shai             write/inscribe         action           2 text      
-    0.80 CONTAINS     hai            shai             write/inscribe         action           1 text      
-    0.80 CONTAINS     eoesh          trosh            red                    elemental        1 text      
-    0.80 CONTAINS     rshe           ōrsh             cold                   elemental        3 bio       
-    0.80 CONTAINS     heoed          aphoditē         Venus                  astro            1 text      
-    0.80 CONTAINS     ros            keros            cinnamon               botanical        1 text      
-    0.80 CONTAINS     alol           aloli            grape                  botanical        4 text      
-    0.80 CONTAINS     ean            saane            garden                 botanical        2 text      
-    0.80 CONTAINS     lom            klom             wreath/crown           mineral          8 bio       
-    0.80 CONTAINS     cher           hermēs           Mercury                astro            3 herbal-A  
-    0.80 CONTAINS     olo            olor             grape-cluster          botanical        7 herbal-A  
-    0.80 CONTAINS     han            thanatos         death                  social           6 herbal-A  
-
-  ── Domain Distribution of Filtered Matches ──
-    botanical     : 170
-    action        : 61
-    elemental     : 57
-    anatomy       : 31
-    astronomical  : 30
-    animal        : 28
-    function      : 24
-    astro         : 24
-    social        : 23
-    medical       : 7
-    number        : 1
-    mineral       : 1
-
-========================================================================
-ANALYSIS 6: PERMUTATION TEST — Is Coptic match rate above chance?
-========================================================================
-
-  Real Coptic matches (score≥0.60, len≥3): 457/1564
-  Random baseline (100 trials): mean=359.9, std=66.5
-  Z-score: 1.46
-  Interpretation: NOT SIGNIFICANT (z≤2)
-
-  Random match count distribution:
-    Min: 230, Max: 505, Real: 457
-    Random trials ≥ real: 10.0% (p-value ≈ 0.100)
-
-========================================================================
-ANALYSIS 7: SEMANTIC COHERENCE — Do meanings make contextual sense?
-========================================================================
-
-  High-confidence matches: 200
-
-  ── Match-by-Match Semantic Assessment ──
-    ✗ MISMATCH     she          = she            (wood/tree         ) [botanical] in [text]
-    ✓ COHERENT     che          = he             (fall/occur        ) [action] in [text]
-    ✓ COHERENT     esh          = ash            (what              ) [function] in [text]
-    ✓ COHERENT     eal          = al             (stone/rock        ) [astronomical] in [zodiac]
-    ✗ MISMATCH     les          = las            (tongue            ) [anatomy] in [text]
-    ✓ COHERENT     leos         = laos           (people/nation     ) [social] in [text]
-    ✗ MISMATCH     ale          = al             (stone/rock        ) [astronomical] in [herbal-A]
-    ✓ COHERENT     ran          = ran            (name              ) [function] in [text]
-    ✓ COHERENT     sche         = she            (wood/tree         ) [botanical] in [herbal-A]
-    ✗ MISMATCH     res          = res            (south             ) [astronomical] in [herbal-A]
-    ✗ MISMATCH     hach         = hah            (much/many         ) [function] in [herbal-A]
-    ✗ MISMATCH     ash          = ash            (what              ) [function] in [herbal-A]
-    ✗ MISMATCH     asch         = ash            (what              ) [function] in [zodiac]
-    ✗ MISMATCH     heh          = hah            (much/many         ) [function] in [bio]
-    ✗ MISMATCH     las          = las            (tongue            ) [anatomy] in [herbal-A]
-    ✗ MISMATCH     choo         = houo           (more/excess       ) [anatomy] in [herbal-A]
-    ✗ MISMATCH     eso          = esou           (ram/sheep         ) [animal] in [text]
-    ✗ MISMATCH     eoa          = oua            (one               ) [number] in [text]
-    ✗ MISMATCH     hoo          = houo           (more/excess       ) [anatomy] in [herbal-A]
-    ✗ MISMATCH     hoeo         = houo           (more/excess       ) [anatomy] in [herbal-A]
-    ✗ MISMATCH     amo          = amou           (donkey            ) [animal] in [herbal-A]
-    ✗ MISMATCH     chor         = horasis        (vision            ) [astronomical] in [herbal-A]
-    ✗ MISMATCH     heod         = aphoditē       (Venus             ) [astro] in [text]
-    ✗ MISMATCH     hod          = aphoditē       (Venus             ) [astro] in [herbal-A]
-    ✗ MISMATCH     eos          = laos           (people/nation     ) [social] in [zodiac]
-    ✗ MISMATCH     cheo         = choeis         (lord/master       ) [elemental] in [text]
-    ✗ MISMATCH     chol         = sholm          (smell/sniff       ) [action] in [herbal-A]
-    ✗ MISMATCH     cho          = choeis         (lord/master       ) [elemental] in [herbal-A]
-    ✗ MISMATCH     hole         = sholm          (smell/sniff       ) [action] in [pharma]
-    ✗ MISMATCH     chod         = aphoditē       (Venus             ) [astro] in [herbal-A]
-    ✗ MISMATCH     hoe          = choeis         (lord/master       ) [elemental] in [herbal-A]
-    ✗ MISMATCH     choe         = choeis         (lord/master       ) [elemental] in [herbal-A]
-    ✗ MISMATCH     cheoe        = choeis         (lord/master       ) [elemental] in [text]
-    ✗ MISMATCH     dar          = daraga         (degree (zodiac)   ) [astro] in [herbal-A]
-    ✓ COHERENT     sho          = shoue          (dry               ) [botanical] in [herbal-A]
-    ✗ MISMATCH     hol          = sholm          (smell/sniff       ) [action] in [herbal-A]
-    ✓ COHERENT     ach          = makh           (neck/nape         ) [anatomy] in [pharma]
-    ✗ MISMATCH     oro          = horoskopos     (horoscope/ascendant) [astro] in [pharma]
-    ✗ MISMATCH     ies          = piesou         (the ram           ) [astro] in [pharma]
-    ✗ MISMATCH     rsh          = ōrsh           (cold              ) [elemental] in [bio]
-    ✗ MISMATCH     alo          = aloli          (grape             ) [botanical] in [text]
-    ✗ MISMATCH     char         = pharmakon      (drug/medicine     ) [medical] in [text]
-    ✗ MISMATCH     hal          = halēt          (bird/pigeon       ) [animal] in [text]
-    ✗ MISMATCH     chal         = halēt          (bird/pigeon       ) [animal] in [herbal-A]
-    ✗ MISMATCH     lor          = olor           (grape-cluster     ) [botanical] in [bio]
-    ✗ MISMATCH     lol          = aloli          (grape             ) [botanical] in [bio]
-    ✗ MISMATCH     lan          = planētēs       (planet/wanderer   ) [astro] in [text]
-    ✓ COHERENT     echo         = choeis         (lord/master       ) [elemental] in [zodiac]
-    ✗ MISMATCH     sheo         = shoue          (dry               ) [botanical] in [text]
-    ✗ MISMATCH     chei         = boētheia       (help/remedy       ) [medical] in [text]
-    ✓ COHERENT     rom          = rompe          (year              ) [astronomical] in [cosmo]
-    ✗ MISMATCH     den          = denebola       (Denebola (beta Leonis)) [astro] in [text]
-    ✗ MISMATCH     roes         = keros          (cinnamon          ) [botanical] in [text]
-    ✓ COHERENT     leo          = laos           (people/nation     ) [social] in [text]
-    ✓ COHERENT     edar         = daraga         (degree (zodiac)   ) [astro] in [cosmo]
-    ✗ MISMATCH     hor          = horasis        (vision            ) [astronomical] in [herbal-A]
-    ✗ MISMATCH     loo          = loole          (grape             ) [botanical] in [text]
-    ✗ MISMATCH     los          = regoulos       (Regulus (alpha Leonis)) [astro] in [text]
-    ✗ MISMATCH     ras          = horasis        (vision            ) [astronomical] in [text]
-    ✗ MISMATCH     heol         = sholm          (smell/sniff       ) [action] in [herbal-A]
-    ✗ MISMATCH     rag          = daraga         (degree (zodiac)   ) [astro] in [text]
-    ✗ MISMATCH     hoed         = aphoditē       (Venus             ) [astro] in [text]
-    ✓ COHERENT     chom         = shomte         (acacia            ) [botanical] in [herbal-A]
-    ✗ MISMATCH     esho         = shoue          (dry               ) [botanical] in [text]
-    ✓ COHERENT     osh          = trosh          (red               ) [elemental] in [zodiac]
-    ✗ MISMATCH     chan         = thanatos       (death             ) [social] in [herbal-A]
-    ✗ MISMATCH     loes         = regoulos       (Regulus (alpha Leonis)) [astro] in [herbal-A]
-    ✗ MISMATCH     ara          = daraga         (degree (zodiac)   ) [astro] in [text]
-    ✓ COHERENT     chai         = shai           (write/inscribe    ) [action] in [text]
-    ✓ COHERENT     hai          = shai           (write/inscribe    ) [action] in [text]
-    ✗ MISMATCH     eoesh        = trosh          (red               ) [elemental] in [text]
-    ✗ MISMATCH     rshe         = ōrsh           (cold              ) [elemental] in [bio]
-    ✗ MISMATCH     heoed        = aphoditē       (Venus             ) [astro] in [text]
-    ✗ MISMATCH     ros          = keros          (cinnamon          ) [botanical] in [text]
-    ✗ MISMATCH     alol         = aloli          (grape             ) [botanical] in [text]
-    ✗ MISMATCH     ean          = saane          (garden            ) [botanical] in [text]
-    ✗ MISMATCH     lom          = klom           (wreath/crown      ) [mineral] in [bio]
-    ✗ MISMATCH     cher         = hermēs         (Mercury           ) [astro] in [herbal-A]
-    ✓ COHERENT     olo          = olor           (grape-cluster     ) [botanical] in [herbal-A]
-    ✗ MISMATCH     han          = thanatos       (death             ) [social] in [herbal-A]
-    ✗ MISMATCH     ase          = mase           (calf              ) [animal] in [herbal-A]
-    ✗ MISMATCH     alg          = algieba        (Algieba (gamma Leonis)) [astro] in [pharma]
-    ✓ COHERENT     hom          = shomte         (acacia            ) [botanical] in [herbal-A]
-    ✓ COHERENT     eosh         = trosh          (red               ) [elemental] in [zodiac]
-    ✗ MISMATCH     ios          = bios           (life/living       ) [social] in [herbal-A]
-    ✗ MISMATCH     eche         = mehe           (feather           ) [anatomy] in [herbal-B]
-    ✗ MISMATCH     arag         = daraga         (degree (zodiac)   ) [astro] in [herbal-A]
-    ✗ MISMATCH     choro        = horoskopos     (horoscope/ascendant) [astro] in [herbal-A]
-    ✓ COHERENT     choor        = shoor          (thorn             ) [botanical] in [herbal-A]
-    ✗ MISMATCH     shol         = sholm          (smell/sniff       ) [action] in [herbal-A]
-    ✓ COHERENT     lole         = aloli          (grape             ) [botanical] in [herbal-A]
-    ✓ COHERENT     eho          = taho           (stand-up/cure     ) [medical] in [herbal-A]
-    ✓ COHERENT     her          = pharmakon      (drug/medicine     ) [medical] in [herbal-A]
-    ✓ COHERENT     har          = pharmakon      (drug/medicine     ) [medical] in [herbal-A]
-    ✓ COHERENT     ole          = kole           (reed/reed-bed     ) [botanical] in [herbal-A]
-    ✗ MISMATCH     heal         = halēt          (bird/pigeon       ) [animal] in [herbal-A]
-    ✗ MISMATCH     heole        = sholm          (smell/sniff       ) [action] in [herbal-A]
-    ✗ MISMATCH     aos          = laos           (people/nation     ) [social] in [herbal-A]
-    ✓ COHERENT     ore          = horasis        (vision            ) [astronomical] in [zodiac]
-    ✓ COHERENT     eis          = choeis         (lord/master       ) [elemental] in [zodiac]
-    ✗ MISMATCH     lao          = laos           (people/nation     ) [social] in [zodiac]
-    ✗ MISMATCH     chio         = hioue          (strike/hit        ) [action] in [zodiac]
-    ✓ COHERENT     hel          = halēt          (bird/pigeon       ) [animal] in [zodiac]
-    ✗ MISMATCH     leol         = aloli          (grape             ) [botanical] in [bio]
-    ✓ COHERENT     aza          = mazal          (constellation/zodiac) [astro] in [zodiac]
-    ✓ COHERENT     echeo        = choeis         (lord/master       ) [elemental] in [zodiac]
-    ✗ MISMATCH     ear          = shaar          (skin/hide         ) [anatomy] in [zodiac]
-    ✗ MISMATCH     leor         = olor           (grape-cluster     ) [botanical] in [zodiac]
-    ✗ MISMATCH     eolo         = olor           (grape-cluster     ) [botanical] in [zodiac]
-    ✗ MISMATCH     eoos         = hmoos          (sit/dwell         ) [action] in [zodiac]
-    ✗ MISMATCH     eish         = mishe          (fight/struggle    ) [action] in [bio]
-    ✗ MISMATCH     heai         = shai           (write/inscribe    ) [action] in [bio]
-    ✓ COHERENT     heoro        = horoskopos     (horoscope/ascendant) [astro] in [cosmo]
-    ✗ MISMATCH     ache         = amahe          (seize/grasp       ) [action] in [cosmo]
-    ✗ MISMATCH     hea          = shaar          (skin/hide         ) [anatomy] in [cosmo]
-    ✓ COHERENT     reg          = regoulos       (Regulus (alpha Leonis)) [astro] in [cosmo]
-    ✗ MISMATCH     echoe        = choeis         (lord/master       ) [elemental] in [herbal-B]
-    ✓ COHERENT     heom         = shomte         (acacia            ) [botanical] in [pharma]
-    ✗ MISMATCH     rosh         = trosh          (red               ) [elemental] in [pharma]
-    ✗ MISMATCH     ora          = horasis        (vision            ) [astronomical] in [pharma]
-    ✓ COHERENT     arem         = pharmakon      (drug/medicine     ) [medical] in [pharma]
-    ✗ MISMATCH     ama          = amahe          (seize/grasp       ) [action] in [herbal-B]
-    ✓ COHERENT     cholshe      = she            (wood/tree         ) [botanical] in [pharma]
-    ✓ COHERENT     lesos        = las            (tongue            ) [anatomy] in [pharma]
-    ✗ MISMATCH     laran        = ran            (name              ) [function] in [pharma]
-    ✓ COHERENT     rsheol       = she            (wood/tree         ) [botanical] in [pharma]
-    ✗ MISMATCH     desho        = ash            (what              ) [function] in [pharma]
-    ✓ COHERENT     heshe        = she            (wood/tree         ) [botanical] in [pharma]
-    ✗ MISMATCH     lesh         = las            (tongue            ) [anatomy] in [text]
-    ✗ MISMATCH     eshe         = she            (wood/tree         ) [botanical] in [text]
-    ✗ MISMATCH     lsheo        = she            (wood/tree         ) [botanical] in [text]
-    ✗ MISMATCH     sheod        = she            (wood/tree         ) [botanical] in [text]
-    ✗ MISMATCH     shes         = she            (wood/tree         ) [botanical] in [text]
-    ✗ MISMATCH     eshed        = she            (wood/tree         ) [botanical] in [text]
-    ✗ MISMATCH     lesd         = las            (tongue            ) [anatomy] in [text]
-    ✗ MISMATCH     lshe         = she            (wood/tree         ) [botanical] in [bio]
-    ✗ MISMATCH     alsheod      = she            (wood/tree         ) [botanical] in [text]
-    ✗ MISMATCH     shed         = she            (wood/tree         ) [botanical] in [text]
-    ✗ MISMATCH     lshed        = she            (wood/tree         ) [botanical] in [bio]
-    ✓ COHERENT     charan       = ran            (name              ) [function] in [text]
-    ✓ COHERENT     chesh        = ash            (what              ) [function] in [text]
-    ✓ COHERENT     eshd         = ash            (what              ) [function] in [text]
-    ✓ COHERENT     eshos        = ash            (what              ) [function] in [text]
-    ✓ COHERENT     arash        = ash            (what              ) [function] in [text]
-    ✗ MISMATCH     alshe        = she            (wood/tree         ) [botanical] in [text]
-    ✓ COHERENT     sheos        = she            (wood/tree         ) [botanical] in [herbal-A]
-    ✗ MISMATCH     lshes        = she            (wood/tree         ) [botanical] in [bio]
-    ✗ MISMATCH     lshalsh      = sha            (nose              ) [anatomy] in [text]
-    ✗ MISMATCH     cheh         = hah            (much/many         ) [function] in [herbal-A]
-    ✓ COHERENT     chooishe     = she            (wood/tree         ) [botanical] in [herbal-A]
-    ✓ COHERENT     shedair      = she            (wood/tree         ) [botanical] in [herbal-A]
-    ✗ MISMATCH     lshaiir      = sha            (nose              ) [anatomy] in [herbal-A]
-    ✗ MISMATCH     arshed       = she            (wood/tree         ) [botanical] in [cosmo]
-    ✓ COHERENT     lsches       = she            (wood/tree         ) [botanical] in [herbal-A]
-    ✗ MISMATCH     aleosh       = laos           (people/nation     ) [social] in [herbal-A]
-    ✗ MISMATCH     chooran      = ran            (name              ) [function] in [herbal-A]
-    ✗ MISMATCH     hesh         = ash            (what              ) [function] in [herbal-A]
-    ✗ MISMATCH     shal         = sha            (nose              ) [anatomy] in [herbal-A]
-    ✓ COHERENT     shealair     = she            (wood/tree         ) [botanical] in [herbal-A]
-    ✓ COHERENT     sshe         = she            (wood/tree         ) [botanical] in [herbal-A]
-    ✓ COHERENT     holord       = olor           (grape-cluster     ) [botanical] in [herbal-A]
-    ✗ MISMATCH     hoesh        = ash            (what              ) [function] in [herbal-A]
-    ✗ MISMATCH     eolales      = las            (tongue            ) [anatomy] in [zodiac]
-    ✗ MISMATCH     aran         = ran            (name              ) [function] in [zodiac]
-    ✗ MISMATCH     shesas       = she            (wood/tree         ) [botanical] in [zodiac]
-    ✗ MISMATCH     chshe        = she            (wood/tree         ) [botanical] in [zodiac]
-    ✗ MISMATCH     arsheod      = she            (wood/tree         ) [botanical] in [zodiac]
-    ✗ MISMATCH     eshs         = ash            (what              ) [function] in [zodiac]
-    ✗ MISMATCH     osha         = sha            (nose              ) [anatomy] in [zodiac]
-    ✗ MISMATCH     sarsheo      = she            (wood/tree         ) [botanical] in [zodiac]
-    ✗ MISMATCH     cheshes      = she            (wood/tree         ) [botanical] in [zodiac]
-    ✗ MISMATCH     yesh         = ash            (what              ) [function] in [zodiac]
-    ✗ MISMATCH     dairan       = ran            (name              ) [function] in [zodiac]
-    ✓ COHERENT     ares         = res            (south             ) [astronomical] in [zodiac]
-    ✗ MISMATCH     lshedar      = she            (wood/tree         ) [botanical] in [bio]
-    ✗ MISMATCH     ledaran      = ran            (name              ) [function] in [bio]
-    ✗ MISMATCH     sheols       = she            (wood/tree         ) [botanical] in [bio]
-    ✗ MISMATCH     rshed        = she            (wood/tree         ) [botanical] in [bio]
-    ✗ MISMATCH     sheal        = she            (wood/tree         ) [botanical] in [bio]
-    ✗ MISMATCH     alshes       = she            (wood/tree         ) [botanical] in [bio]
-    ✗ MISMATCH     sheyqor      = she            (wood/tree         ) [botanical] in [bio]
-    ✗ MISMATCH     ashyed       = ash            (what              ) [function] in [bio]
-    ✓ COHERENT     lshal        = sha            (nose              ) [anatomy] in [bio]
-    ✗ MISMATCH     lsheg        = she            (wood/tree         ) [botanical] in [bio]
-    ✗ MISMATCH     lsheam       = she            (wood/tree         ) [botanical] in [bio]
-    ✗ MISMATCH     shey         = she            (wood/tree         ) [botanical] in [bio]
-    ✗ MISMATCH     rsheod       = she            (wood/tree         ) [botanical] in [cosmo]
-    ✗ MISMATCH     aiinsham     = sha            (nose              ) [anatomy] in [cosmo]
-    ✗ MISMATCH     dsheo        = she            (wood/tree         ) [botanical] in [cosmo]
-    ✗ MISMATCH     lshech       = she            (wood/tree         ) [botanical] in [cosmo]
-    ✓ COHERENT     sher         = she            (wood/tree         ) [botanical] in [herbal-B]
-    ✓ COHERENT     rsheo        = she            (wood/tree         ) [botanical] in [pharma]
-    ✓ COHERENT     aloiinshe    = she            (wood/tree         ) [botanical] in [pharma]
-    ✗ MISMATCH     yaran        = ran            (name              ) [function] in [pharma]
-    ✓ COHERENT     lsheos       = she            (wood/tree         ) [botanical] in [pharma]
-    ✓ COHERENT     lsheod       = she            (wood/tree         ) [botanical] in [herbal-B]
-    ✓ COHERENT     olsheos      = she            (wood/tree         ) [botanical] in [herbal-B]
-    ✓ COHERENT     sheog        = she            (wood/tree         ) [botanical] in [herbal-B]
-    ✓ COHERENT     esshe        = she            (wood/tree         ) [botanical] in [herbal-B]
-    ✓ COHERENT     ralas        = las            (tongue            ) [anatomy] in [pharma]
-
-  Coherent:   61/200 (30.5%)
-  Mismatch:   139/200 (69.5%)
-  Neutral:    0/200
-
-  Chance level for coherence: ~14%
-
-========================================================================
-SYNTHESIS: COPTIC AS SUBSTRATE LANGUAGE — VERDICT
-========================================================================
-
-  MATCHES:
-    Exact matches:           19
-    Near-exact matches:      8
-    High-conf (≥0.70):       206
-    Filtered (len≥3, ≥0.60): 457
-
-  CONTROL COMPARISON (score≥0.50):
-    Coptic matches:          474
-    Finnish matches:         114
-    Ratio:                   4.16x
-
-  STATISTICAL:
-    Z-score vs random:       1.46
-    Real vs random mean:     457 vs 359.9
-
-  ╔════════════════════════════════════════════════════════════════════╗
-  ║  VERDICT: WEAK EVIDENCE — Coptic signal above noise but marginal║
-  ╚════════════════════════════════════════════════════════════════════╝
-
-Results saved to results/coptic_probe_results.json
+Loading Voynich data...
+  Loaded 39531 word tokens
+Building root lexicon...
+  Built 1694 unique roots
+========================================================================
+ANALYSIS 1: COMPREHENSIVE COPTIC MATCHING
+  Coptic vocabulary: 352 terms
+  Voynich roots: 1694
+========================================================================
+
+  ── Match Tier Summary ──
+  EXACT matches:      19
+  NEAR-EXACT matches: 8
+  CONTAINS matches:   101
+  WITHIN matches:     78
+  SKELETON matches:   396
+  TOTAL roots matched: 602 / 1694 (35.5%)
+
+  ── Top 60 Matches ──
+   Score Type         V-Root         Coptic           Meaning                 Freq Section    Det 
+  -----------------------------------------------------------------------------------------------
+    1.00 EXACT        she            she              wood/tree                 35 text       ∅   
+    1.00 EXACT        al             al               stone/rock              1792 text       ∅   
+    1.00 EXACT        che            he               fall/occur               732 text       ∅   
+    1.00 EXACT        he             he               fall/occur               417 herbal-A   ∅   
+    1.00 EXACT        esh            ash              what                      34 text       k   
+    1.00 EXACT        eal            al               stone/rock                12 zodiac     k   
+    1.00 EXACT        les            las              tongue                    14 text       k   
+    1.00 EXACT        ro             ro               mouth                     30 text       ∅   
+    1.00 EXACT        leos           laos             people/nation              2 text       k   
+    1.00 EXACT        el             al               stone/rock                 5 text       k   
+    1.00 EXACT        ale            al               stone/rock                 8 herbal-A   k   
+    1.00 EXACT        ran            ran              name                       2 text       ∅   
+    1.00 EXACT        sche           she              wood/tree                  2 herbal-A   ∅   
+    1.00 EXACT        res            res              south                      1 herbal-A   t   
+    1.00 EXACT        hach           hah              much/many                  1 herbal-A   ∅   
+    1.00 EXACT        ash            ash              what                       1 herbal-A   t   
+    1.00 EXACT        asch           ash              what                       1 zodiac     ∅   
+    1.00 EXACT        heh            hah              much/many                  1 bio        p   
+    1.00 EXACT        las            las              tongue                     1 herbal-A   ∅   
+    0.95 NEAR-EXACT   choo           houo             more/excess               16 herbal-A   k   
+    0.95 NEAR-EXACT   oa             oua              one                       10 text       k   
+    0.95 NEAR-EXACT   eso            esou             ram/sheep                  2 text       k   
+    0.95 NEAR-EXACT   oe             oue              far/distant               18 herbal-A   k   
+    0.95 NEAR-EXACT   eoa            oua              one                        1 text       k   
+    0.95 NEAR-EXACT   hoo            houo             more/excess               10 herbal-A   t   
+    0.95 NEAR-EXACT   hoeo           houo             more/excess                1 herbal-A   t   
+    0.95 NEAR-EXACT   amo            amou             donkey                     1 herbal-A   ∅   
+    0.80 CONTAINS     chor           horasis          vision                    40 herbal-A   ∅   
+    0.80 CONTAINS     heod           aphoditē         Venus                     29 text       ∅   
+    0.80 CONTAINS     hod            aphoditē         Venus                     53 herbal-A   ∅   
+    0.80 CONTAINS     eos            laos             people/nation            131 zodiac     t   
+    0.80 CONTAINS     cheo           choeis           lord/master              267 text       ∅   
+    0.80 CONTAINS     chol           sholm            smell/sniff               96 herbal-A   ∅   
+    0.80 CONTAINS     cho            choeis           lord/master              600 herbal-A   k   
+    0.80 CONTAINS     hole           sholm            smell/sniff                2 pharma     k   
+    0.80 CONTAINS     chod           aphoditē         Venus                    110 herbal-A   ∅   
+    0.80 CONTAINS     hoe            choeis           lord/master                6 herbal-A   k   
+    0.80 CONTAINS     choe           choeis           lord/master               24 herbal-A   k   
+    0.80 CONTAINS     cheoe          choeis           lord/master                8 text       k   
+    0.80 CONTAINS     dar            daraga           degree (zodiac)            3 herbal-A   ∅   
+    0.80 CONTAINS     sho            shoue            dry                       19 herbal-A   ∅   
+    0.80 CONTAINS     hol            sholm            smell/sniff               30 herbal-A   ∅   
+    0.80 CONTAINS     ach            makh             neck/nape                  3 pharma     k   
+    0.80 CONTAINS     oro            horoskopos       horoscope/ascendant        2 pharma     k   
+    0.80 CONTAINS     ies            piesou           the ram                    1 pharma     ∅   
+    0.80 CONTAINS     rsh            ōrsh             cold                      25 bio        ∅   
+    0.80 CONTAINS     alo            aloli            grape                     19 text       ∅   
+    0.80 CONTAINS     char           pharmakon        drug/medicine             12 text       ∅   
+    0.80 CONTAINS     hal            halēt            bird/pigeon                6 text       k   
+    0.80 CONTAINS     chal           halēt            bird/pigeon               26 herbal-A   ∅   
+    0.80 CONTAINS     lor            olor             grape-cluster              8 bio        ∅   
+    0.80 CONTAINS     lol            aloli            grape                     20 bio        ∅   
+    0.80 CONTAINS     lan            planētēs         planet/wanderer            2 text       ∅   
+    0.80 CONTAINS     echo           choeis           lord/master                4 zodiac     k   
+    0.80 CONTAINS     sheo           shoue            dry                       18 text       ∅   
+    0.80 CONTAINS     chei           boētheia         help/remedy                1 text       t   
+    0.80 CONTAINS     rom            rompe            year                       5 cosmo      ∅   
+    0.80 CONTAINS     den            denebola         Denebola (beta Leonis)     1 text       ∅   
+    0.80 CONTAINS     roes           keros            cinnamon                   1 text       ∅   
+    0.80 CONTAINS     leo            laos             people/nation             14 text       k   
+
+  ── ALL EXACT Matches ──
+    she = she (wood/tree) [freq=35, sec=text, det=∅]
+    al = al (stone/rock) [freq=1792, sec=text, det=∅]
+    che = he (fall/occur) [freq=732, sec=text, det=∅]
+    he = he (fall/occur) [freq=417, sec=herbal-A, det=∅]
+    esh = ash (what) [freq=34, sec=text, det=k]
+    eal = al (stone/rock) [freq=12, sec=zodiac, det=k]
+    les = las (tongue) [freq=14, sec=text, det=k]
+    ro = ro (mouth) [freq=30, sec=text, det=∅]
+    leos = laos (people/nation) [freq=2, sec=text, det=k]
+    el = al (stone/rock) [freq=5, sec=text, det=k]
+    ale = al (stone/rock) [freq=8, sec=herbal-A, det=k]
+    ran = ran (name) [freq=2, sec=text, det=∅]
+    sche = she (wood/tree) [freq=2, sec=herbal-A, det=∅]
+    res = res (south) [freq=1, sec=herbal-A, det=t]
+    hach = hah (much/many) [freq=1, sec=herbal-A, det=∅]
+    ash = ash (what) [freq=1, sec=herbal-A, det=t]
+    asch = ash (what) [freq=1, sec=zodiac, det=∅]
+    heh = hah (much/many) [freq=1, sec=bio, det=p]
+    las = las (tongue) [freq=1, sec=herbal-A, det=∅]
+
+========================================================================
+ANALYSIS 2: DOMAIN CORRELATION (Coptic domain vs. Voynich section)
+========================================================================
+
+  ── Coptic Domain → Voynich Section (score≥0.50) ──
+  Domain          herbal-A  herbal-B    zodiac       bio     cosmo    pharma      text   TOTAL
+  --------------------------------------------------------------------------------------------
+  action            24(38%)     2( 3%)     8(12%)     4( 6%)     2( 3%)     6( 9%)    18(28%)      64
+  anatomy           11(33%)     1( 3%)     3( 9%)     1( 3%)     3( 9%)     6(18%)     8(24%)      33
+  animal            11(38%)     0( 0%)     1( 3%)     2( 7%)     0( 0%)     3(10%)    12(41%)      29
+  astro              9(36%)     0( 0%)     1( 4%)     0( 0%)     3(12%)     4(16%)     8(32%)      25
+  astronomical      11(34%)     0( 0%)     4(12%)     0( 0%)     1( 3%)     4(12%)    12(38%)      32
+  botanical         43(25%)     6( 3%)    25(14%)    23(13%)     8( 5%)    20(11%)    50(29%)     175
+  elemental         20(34%)     3( 5%)    13(22%)     2( 3%)     0( 0%)     5( 8%)    16(27%)      59
+  function           6(25%)     0( 0%)     5(21%)     3(12%)     0( 0%)     3(12%)     7(29%)      24
+  medical            3(43%)     0( 0%)     0( 0%)     0( 0%)     0( 0%)     1(14%)     3(43%)       7
+  mineral            0( 0%)     0( 0%)     0( 0%)     1(100%)     0( 0%)     0( 0%)     0( 0%)       1
+  number             0( 0%)     0( 0%)     0( 0%)     0( 0%)     0( 0%)     0( 0%)     2(100%)       2
+  social            10(43%)     0( 0%)     3(13%)     0( 0%)     0( 0%)     1( 4%)     9(39%)      23
+
+  ── Coptic Domain → Voynich Determinative (score≥0.50) ──
+  Domain                ∅        t        k        f        p   TOTAL
+  -------------------------------------------------------------------
+  action           38(59%)   11(17%)   14(22%)    0( 0%)    1( 2%)      64
+  anatomy          19(58%)    5(15%)    8(24%)    0( 0%)    1( 3%)      33
+  animal           14(48%)    5(17%)    9(31%)    1( 3%)    0( 0%)      29
+  astro            17(68%)    4(16%)    2( 8%)    1( 4%)    1( 4%)      25
+  astronomical     13(41%)   10(31%)    8(25%)    1( 3%)    0( 0%)      32
+  botanical        92(53%)   17(10%)   54(31%)    3( 2%)    9( 5%)     175
+  elemental        30(51%)    9(15%)   20(34%)    0( 0%)    0( 0%)      59
+  function         10(42%)    3(12%)    6(25%)    1( 4%)    4(17%)      24
+  medical           4(57%)    2(29%)    0( 0%)    0( 0%)    1(14%)       7
+  mineral           1(100%)    0( 0%)    0( 0%)    0( 0%)    0( 0%)       1
+  number            0( 0%)    0( 0%)    2(100%)    0( 0%)    0( 0%)       2
+  social            8(35%)    5(22%)    7(30%)    2( 9%)    1( 4%)      23
+
+  ── Key Correlation Tests ──
+  Botanical Coptic → herbal sections: 49/175 (28.0%)
+  Astronomical Coptic → zodiac/cosmo: 9/57 (15.8%)
+  Botanical Coptic → f-gallows: 3/175 (1.7%)
+  Anatomy/Medical Coptic → bio/pharma: 8/40 (20.0%)
+
+  ── Baseline Section Distribution (all roots) ──
+    herbal-A: 534/1694 (31.5%)
+    herbal-B: 43/1694 (2.5%)
+    zodiac: 209/1694 (12.3%)
+    bio: 141/1694 (8.3%)
+    cosmo: 79/1694 (4.7%)
+    pharma: 166/1694 (9.8%)
+    text: 522/1694 (30.8%)
+
+========================================================================
+ANALYSIS 3: STATISTICAL SIGNIFICANCE — Coptic vs Finnish (control)
+========================================================================
+
+   Threshold     Coptic    Finnish      Ratio     Excess
+  -------------------------------------------------------
+        0.40        602        128       4.70x       +474
+        0.50        474        114       4.16x       +360
+        0.60        472        114       4.14x       +358
+        0.70        206         35       5.89x       +171
+        0.80        128         33       3.88x        +95
+        0.90         27          0        infx        +27
+        1.00         19          0        infx        +19
+
+  ── Match Rate by Root Length (score≥0.50) ──
+    Len     Coptic    Finnish    Cop-Tot    Fin-Tot     Cop%     Fin%    Ratio
+  ---------------------------------------------------------------------------
+      2         15          5        130        130    11.5%     3.8%    3.00x
+      3         98         32        282        282    34.8%    11.3%    3.06x
+      4        146         50        438        438    33.3%    11.4%    2.92x
+      5        124         21        421        421    29.5%     5.0%    5.90x
+      6         60          5        262        262    22.9%     1.9%   12.00x
+      7         24          1        109        109    22.0%     0.9%   24.00x
+
+========================================================================
+ANALYSIS 4: PHONETIC CORRESPONDENCE PATTERNS
+========================================================================
+
+  High-confidence matches (score≥0.70): 206
+
+  ── Letter-by-letter Correspondences ──
+
+  V-char   → Most common Coptic correspondences
+  --------------------------------------------------
+  a        → a:32, s:7, l:6
+  c        → h:14, s:8, c:4
+  d        → o:3, d:3, a:2
+  e        → e:23, a:17, h:14
+  g        → g:2, r:1, a:1
+  h        → h:52, e:21, a:16
+  i        → i:3, a:2, h:2
+  l        → l:24, s:16, o:9
+  m        → m:5, o:2, r:1
+  n        → n:3, a:3
+  o        → o:34, h:11, e:11
+  r        → r:10, a:8, o:6
+  s        → s:38, h:28, e:10
+  y        → a:1, r:1
+  z        → a:1
+
+  ── Testing Leo-Anchor Hypotheses ──
+  e→a       : support=46, contradict=84, rate=35%
+  s→s       : support=102, contradict=0, rate=100%
+  d→d       : support=8, contradict=20, rate=29%
+  ch→kh     : support=1, contradict=37, rate=3%
+  r→r       : support=41, contradict=15, rate=73%
+  l→l       : support=42, contradict=27, rate=61%
+  sh→sh     : support=75, contradict=2, rate=97%
+
+========================================================================
+ANALYSIS 5: HIGH-VALUE MATCHES (root length ≥ 3, score ≥ 0.60)
+========================================================================
+
+  Matches passing filter: 457
+
+   Score Type         V-Root         Coptic           Meaning                Domain        Freq Section   
+  ---------------------------------------------------------------------------------------------------------
+    1.00 EXACT        she            she              wood/tree              botanical       35 text      
+    1.00 EXACT        che            he               fall/occur             action         732 text      
+    1.00 EXACT        esh            ash              what                   function        34 text      
+    1.00 EXACT        eal            al               stone/rock             astronomical    12 zodiac    
+    1.00 EXACT        les            las              tongue                 anatomy         14 text      
+    1.00 EXACT        leos           laos             people/nation          social           2 text      
+    1.00 EXACT        ale            al               stone/rock             astronomical     8 herbal-A  
+    1.00 EXACT        ran            ran              name                   function         2 text      
+    1.00 EXACT        sche           she              wood/tree              botanical        2 herbal-A  
+    1.00 EXACT        res            res              south                  astronomical     1 herbal-A  
+    1.00 EXACT        hach           hah              much/many              function         1 herbal-A  
+    1.00 EXACT        ash            ash              what                   function         1 herbal-A  
+    1.00 EXACT        asch           ash              what                   function         1 zodiac    
+    1.00 EXACT        heh            hah              much/many              function         1 bio       
+    1.00 EXACT        las            las              tongue                 anatomy          1 herbal-A  
+    0.95 NEAR-EXACT   choo           houo             more/excess            anatomy         16 herbal-A  
+    0.95 NEAR-EXACT   eso            esou             ram/sheep              animal           2 text      
+    0.95 NEAR-EXACT   eoa            oua              one                    number           1 text      
+    0.95 NEAR-EXACT   hoo            houo             more/excess            anatomy         10 herbal-A  
+    0.95 NEAR-EXACT   hoeo           houo             more/excess            anatomy          1 herbal-A  
+    0.95 NEAR-EXACT   amo            amou             donkey                 animal           1 herbal-A  
+    0.80 CONTAINS     chor           horasis          vision                 astronomical    40 herbal-A  
+    0.80 CONTAINS     heod           aphoditē         Venus                  astro           29 text      
+    0.80 CONTAINS     hod            aphoditē         Venus                  astro           53 herbal-A  
+    0.80 CONTAINS     eos            laos             people/nation          social         131 zodiac    
+    0.80 CONTAINS     cheo           choeis           lord/master            elemental      267 text      
+    0.80 CONTAINS     chol           sholm            smell/sniff            action          96 herbal-A  
+    0.80 CONTAINS     cho            choeis           lord/master            elemental      600 herbal-A  
+    0.80 CONTAINS     hole           sholm            smell/sniff            action           2 pharma    
+    0.80 CONTAINS     chod           aphoditē         Venus                  astro          110 herbal-A  
+    0.80 CONTAINS     hoe            choeis           lord/master            elemental        6 herbal-A  
+    0.80 CONTAINS     choe           choeis           lord/master            elemental       24 herbal-A  
+    0.80 CONTAINS     cheoe          choeis           lord/master            elemental        8 text      
+    0.80 CONTAINS     dar            daraga           degree (zodiac)        astro            3 herbal-A  
+    0.80 CONTAINS     sho            shoue            dry                    botanical       19 herbal-A  
+    0.80 CONTAINS     hol            sholm            smell/sniff            action          30 herbal-A  
+    0.80 CONTAINS     ach            makh             neck/nape              anatomy          3 pharma    
+    0.80 CONTAINS     oro            horoskopos       horoscope/ascendant    astro            2 pharma    
+    0.80 CONTAINS     ies            piesou           the ram                astro            1 pharma    
+    0.80 CONTAINS     rsh            ōrsh             cold                   elemental       25 bio       
+    0.80 CONTAINS     alo            aloli            grape                  botanical       19 text      
+    0.80 CONTAINS     char           pharmakon        drug/medicine          medical         12 text      
+    0.80 CONTAINS     hal            halēt            bird/pigeon            animal           6 text      
+    0.80 CONTAINS     chal           halēt            bird/pigeon            animal          26 herbal-A  
+    0.80 CONTAINS     lor            olor             grape-cluster          botanical        8 bio       
+    0.80 CONTAINS     lol            aloli            grape                  botanical       20 bio       
+    0.80 CONTAINS     lan            planētēs         planet/wanderer        astro            2 text      
+    0.80 CONTAINS     echo           choeis           lord/master            elemental        4 zodiac    
+    0.80 CONTAINS     sheo           shoue            dry                    botanical       18 text      
+    0.80 CONTAINS     chei           boētheia         help/remedy            medical          1 text      
+    0.80 CONTAINS     rom            rompe            year                   astronomical     5 cosmo     
+    0.80 CONTAINS     den            denebola         Denebola (beta Leonis) astro            1 text      
+    0.80 CONTAINS     roes           keros            cinnamon               botanical        1 text      
+    0.80 CONTAINS     leo            laos             people/nation          social          14 text      
+    0.80 CONTAINS     edar           daraga           degree (zodiac)        astro            3 cosmo     
+    0.80 CONTAINS     hor            horasis          vision                 astronomical    10 herbal-A  
+    0.80 CONTAINS     loo            loole            grape                  botanical        1 text      
+    0.80 CONTAINS     los            regoulos         Regulus (alpha Leonis) astro           11 text      
+    0.80 CONTAINS     ras            horasis          vision                 astronomical     1 text      
+    0.80 CONTAINS     heol           sholm            smell/sniff            action          17 herbal-A  
+    0.80 CONTAINS     rag            daraga           degree (zodiac)        astro            2 text      
+    0.80 CONTAINS     hoed           aphoditē         Venus                  astro            1 text      
+    0.80 CONTAINS     chom           shomte           acacia                 botanical       18 herbal-A  
+    0.80 CONTAINS     esho           shoue            dry                    botanical        2 text      
+    0.80 CONTAINS     osh            trosh            red                    elemental        4 zodiac    
+    0.80 CONTAINS     chan           thanatos         death                  social          13 herbal-A  
+    0.80 CONTAINS     loes           regoulos         Regulus (alpha Leonis) astro            3 herbal-A  
+    0.80 CONTAINS     ara            daraga           degree (zodiac)        astro            2 text      
+    0.80 CONTAINS     chai           shai             write/inscribe         action           2 text      
+    0.80 CONTAINS     hai            shai             write/inscribe         action           1 text      
+    0.80 CONTAINS     eoesh          trosh            red                    elemental        1 text      
+    0.80 CONTAINS     rshe           ōrsh             cold                   elemental        3 bio       
+    0.80 CONTAINS     heoed          aphoditē         Venus                  astro            1 text      
+    0.80 CONTAINS     ros            keros            cinnamon               botanical        1 text      
+    0.80 CONTAINS     alol           aloli            grape                  botanical        4 text      
+    0.80 CONTAINS     ean            saane            garden                 botanical        2 text      
+    0.80 CONTAINS     lom            klom             wreath/crown           mineral          8 bio       
+    0.80 CONTAINS     cher           hermēs           Mercury                astro            3 herbal-A  
+    0.80 CONTAINS     olo            olor             grape-cluster          botanical        7 herbal-A  
+    0.80 CONTAINS     han            thanatos         death                  social           6 herbal-A  
+
+  ── Domain Distribution of Filtered Matches ──
+    botanical     : 170
+    action        : 61
+    elemental     : 57
+    anatomy       : 31
+    astronomical  : 30
+    animal        : 28
+    function      : 24
+    astro         : 24
+    social        : 23
+    medical       : 7
+    number        : 1
+    mineral       : 1
+
+========================================================================
+ANALYSIS 6: PERMUTATION TEST — Is Coptic match rate above chance?
+========================================================================
+
+  Real Coptic matches (score≥0.60, len≥3): 457/1564
+  Random baseline (100 trials): mean=359.9, std=66.5
+  Z-score: 1.46
+  Interpretation: NOT SIGNIFICANT (z≤2)
+
+  Random match count distribution:
+    Min: 230, Max: 505, Real: 457
+    Random trials ≥ real: 10.0% (p-value ≈ 0.100)
+
+========================================================================
+ANALYSIS 7: SEMANTIC COHERENCE — Do meanings make contextual sense?
+========================================================================
+
+  High-confidence matches: 200
+
+  ── Match-by-Match Semantic Assessment ──
+    ✗ MISMATCH     she          = she            (wood/tree         ) [botanical] in [text]
+    ✓ COHERENT     che          = he             (fall/occur        ) [action] in [text]
+    ✓ COHERENT     esh          = ash            (what              ) [function] in [text]
+    ✓ COHERENT     eal          = al             (stone/rock        ) [astronomical] in [zodiac]
+    ✗ MISMATCH     les          = las            (tongue            ) [anatomy] in [text]
+    ✓ COHERENT     leos         = laos           (people/nation     ) [social] in [text]
+    ✗ MISMATCH     ale          = al             (stone/rock        ) [astronomical] in [herbal-A]
+    ✓ COHERENT     ran          = ran            (name              ) [function] in [text]
+    ✓ COHERENT     sche         = she            (wood/tree         ) [botanical] in [herbal-A]
+    ✗ MISMATCH     res          = res            (south             ) [astronomical] in [herbal-A]
+    ✗ MISMATCH     hach         = hah            (much/many         ) [function] in [herbal-A]
+    ✗ MISMATCH     ash          = ash            (what              ) [function] in [herbal-A]
+    ✗ MISMATCH     asch         = ash            (what              ) [function] in [zodiac]
+    ✗ MISMATCH     heh          = hah            (much/many         ) [function] in [bio]
+    ✗ MISMATCH     las          = las            (tongue            ) [anatomy] in [herbal-A]
+    ✗ MISMATCH     choo         = houo           (more/excess       ) [anatomy] in [herbal-A]
+    ✗ MISMATCH     eso          = esou           (ram/sheep         ) [animal] in [text]
+    ✗ MISMATCH     eoa          = oua            (one               ) [number] in [text]
+    ✗ MISMATCH     hoo          = houo           (more/excess       ) [anatomy] in [herbal-A]
+    ✗ MISMATCH     hoeo         = houo           (more/excess       ) [anatomy] in [herbal-A]
+    ✗ MISMATCH     amo          = amou           (donkey            ) [animal] in [herbal-A]
+    ✗ MISMATCH     chor         = horasis        (vision            ) [astronomical] in [herbal-A]
+    ✗ MISMATCH     heod         = aphoditē       (Venus             ) [astro] in [text]
+    ✗ MISMATCH     hod          = aphoditē       (Venus             ) [astro] in [herbal-A]
+    ✗ MISMATCH     eos          = laos           (people/nation     ) [social] in [zodiac]
+    ✗ MISMATCH     cheo         = choeis         (lord/master       ) [elemental] in [text]
+    ✗ MISMATCH     chol         = sholm          (smell/sniff       ) [action] in [herbal-A]
+    ✗ MISMATCH     cho          = choeis         (lord/master       ) [elemental] in [herbal-A]
+    ✗ MISMATCH     hole         = sholm          (smell/sniff       ) [action] in [pharma]
+    ✗ MISMATCH     chod         = aphoditē       (Venus             ) [astro] in [herbal-A]
+    ✗ MISMATCH     hoe          = choeis         (lord/master       ) [elemental] in [herbal-A]
+    ✗ MISMATCH     choe         = choeis         (lord/master       ) [elemental] in [herbal-A]
+    ✗ MISMATCH     cheoe        = choeis         (lord/master       ) [elemental] in [text]
+    ✗ MISMATCH     dar          = daraga         (degree (zodiac)   ) [astro] in [herbal-A]
+    ✓ COHERENT     sho          = shoue          (dry               ) [botanical] in [herbal-A]
+    ✗ MISMATCH     hol          = sholm          (smell/sniff       ) [action] in [herbal-A]
+    ✓ COHERENT     ach          = makh           (neck/nape         ) [anatomy] in [pharma]
+    ✗ MISMATCH     oro          = horoskopos     (horoscope/ascendant) [astro] in [pharma]
+    ✗ MISMATCH     ies          = piesou         (the ram           ) [astro] in [pharma]
+    ✗ MISMATCH     rsh          = ōrsh           (cold              ) [elemental] in [bio]
+    ✗ MISMATCH     alo          = aloli          (grape             ) [botanical] in [text]
+    ✗ MISMATCH     char         = pharmakon      (drug/medicine     ) [medical] in [text]
+    ✗ MISMATCH     hal          = halēt          (bird/pigeon       ) [animal] in [text]
+    ✗ MISMATCH     chal         = halēt          (bird/pigeon       ) [animal] in [herbal-A]
+    ✗ MISMATCH     lor          = olor           (grape-cluster     ) [botanical] in [bio]
+    ✗ MISMATCH     lol          = aloli          (grape             ) [botanical] in [bio]
+    ✗ MISMATCH     lan          = planētēs       (planet/wanderer   ) [astro] in [text]
+    ✓ COHERENT     echo         = choeis         (lord/master       ) [elemental] in [zodiac]
+    ✗ MISMATCH     sheo         = shoue          (dry               ) [botanical] in [text]
+    ✗ MISMATCH     chei         = boētheia       (help/remedy       ) [medical] in [text]
+    ✓ COHERENT     rom          = rompe          (year              ) [astronomical] in [cosmo]
+    ✗ MISMATCH     den          = denebola       (Denebola (beta Leonis)) [astro] in [text]
+    ✗ MISMATCH     roes         = keros          (cinnamon          ) [botanical] in [text]
+    ✓ COHERENT     leo          = laos           (people/nation     ) [social] in [text]
+    ✓ COHERENT     edar         = daraga         (degree (zodiac)   ) [astro] in [cosmo]
+    ✗ MISMATCH     hor          = horasis        (vision            ) [astronomical] in [herbal-A]
+    ✗ MISMATCH     loo          = loole          (grape             ) [botanical] in [text]
+    ✗ MISMATCH     los          = regoulos       (Regulus (alpha Leonis)) [astro] in [text]
+    ✗ MISMATCH     ras          = horasis        (vision            ) [astronomical] in [text]
+    ✗ MISMATCH     heol         = sholm          (smell/sniff       ) [action] in [herbal-A]
+    ✗ MISMATCH     rag          = daraga         (degree (zodiac)   ) [astro] in [text]
+    ✗ MISMATCH     hoed         = aphoditē       (Venus             ) [astro] in [text]
+    ✓ COHERENT     chom         = shomte         (acacia            ) [botanical] in [herbal-A]
+    ✗ MISMATCH     esho         = shoue          (dry               ) [botanical] in [text]
+    ✓ COHERENT     osh          = trosh          (red               ) [elemental] in [zodiac]
+    ✗ MISMATCH     chan         = thanatos       (death             ) [social] in [herbal-A]
+    ✗ MISMATCH     loes         = regoulos       (Regulus (alpha Leonis)) [astro] in [herbal-A]
+    ✗ MISMATCH     ara          = daraga         (degree (zodiac)   ) [astro] in [text]
+    ✓ COHERENT     chai         = shai           (write/inscribe    ) [action] in [text]
+    ✓ COHERENT     hai          = shai           (write/inscribe    ) [action] in [text]
+    ✗ MISMATCH     eoesh        = trosh          (red               ) [elemental] in [text]
+    ✗ MISMATCH     rshe         = ōrsh           (cold              ) [elemental] in [bio]
+    ✗ MISMATCH     heoed        = aphoditē       (Venus             ) [astro] in [text]
+    ✗ MISMATCH     ros          = keros          (cinnamon          ) [botanical] in [text]
+    ✗ MISMATCH     alol         = aloli          (grape             ) [botanical] in [text]
+    ✗ MISMATCH     ean          = saane          (garden            ) [botanical] in [text]
+    ✗ MISMATCH     lom          = klom           (wreath/crown      ) [mineral] in [bio]
+    ✗ MISMATCH     cher         = hermēs         (Mercury           ) [astro] in [herbal-A]
+    ✓ COHERENT     olo          = olor           (grape-cluster     ) [botanical] in [herbal-A]
+    ✗ MISMATCH     han          = thanatos       (death             ) [social] in [herbal-A]
+    ✗ MISMATCH     ase          = mase           (calf              ) [animal] in [herbal-A]
+    ✗ MISMATCH     alg          = algieba        (Algieba (gamma Leonis)) [astro] in [pharma]
+    ✓ COHERENT     hom          = shomte         (acacia            ) [botanical] in [herbal-A]
+    ✓ COHERENT     eosh         = trosh          (red               ) [elemental] in [zodiac]
+    ✗ MISMATCH     ios          = bios           (life/living       ) [social] in [herbal-A]
+    ✗ MISMATCH     eche         = mehe           (feather           ) [anatomy] in [herbal-B]
+    ✗ MISMATCH     arag         = daraga         (degree (zodiac)   ) [astro] in [herbal-A]
+    ✗ MISMATCH     choro        = horoskopos     (horoscope/ascendant) [astro] in [herbal-A]
+    ✓ COHERENT     choor        = shoor          (thorn             ) [botanical] in [herbal-A]
+    ✗ MISMATCH     shol         = sholm          (smell/sniff       ) [action] in [herbal-A]
+    ✓ COHERENT     lole         = aloli          (grape             ) [botanical] in [herbal-A]
+    ✓ COHERENT     eho          = taho           (stand-up/cure     ) [medical] in [herbal-A]
+    ✓ COHERENT     her          = pharmakon      (drug/medicine     ) [medical] in [herbal-A]
+    ✓ COHERENT     har          = pharmakon      (drug/medicine     ) [medical] in [herbal-A]
+    ✓ COHERENT     ole          = kole           (reed/reed-bed     ) [botanical] in [herbal-A]
+    ✗ MISMATCH     heal         = halēt          (bird/pigeon       ) [animal] in [herbal-A]
+    ✗ MISMATCH     heole        = sholm          (smell/sniff       ) [action] in [herbal-A]
+    ✗ MISMATCH     aos          = laos           (people/nation     ) [social] in [herbal-A]
+    ✓ COHERENT     ore          = horasis        (vision            ) [astronomical] in [zodiac]
+    ✓ COHERENT     eis          = choeis         (lord/master       ) [elemental] in [zodiac]
+    ✗ MISMATCH     lao          = laos           (people/nation     ) [social] in [zodiac]
+    ✗ MISMATCH     chio         = hioue          (strike/hit        ) [action] in [zodiac]
+    ✓ COHERENT     hel          = halēt          (bird/pigeon       ) [animal] in [zodiac]
+    ✗ MISMATCH     leol         = aloli          (grape             ) [botanical] in [bio]
+    ✓ COHERENT     aza          = mazal          (constellation/zodiac) [astro] in [zodiac]
+    ✓ COHERENT     echeo        = choeis         (lord/master       ) [elemental] in [zodiac]
+    ✗ MISMATCH     ear          = shaar          (skin/hide         ) [anatomy] in [zodiac]
+    ✗ MISMATCH     leor         = olor           (grape-cluster     ) [botanical] in [zodiac]
+    ✗ MISMATCH     eolo         = olor           (grape-cluster     ) [botanical] in [zodiac]
+    ✗ MISMATCH     eoos         = hmoos          (sit/dwell         ) [action] in [zodiac]
+    ✗ MISMATCH     eish         = mishe          (fight/struggle    ) [action] in [bio]
+    ✗ MISMATCH     heai         = shai           (write/inscribe    ) [action] in [bio]
+    ✓ COHERENT     heoro        = horoskopos     (horoscope/ascendant) [astro] in [cosmo]
+    ✗ MISMATCH     ache         = amahe          (seize/grasp       ) [action] in [cosmo]
+    ✗ MISMATCH     hea          = shaar          (skin/hide         ) [anatomy] in [cosmo]
+    ✓ COHERENT     reg          = regoulos       (Regulus (alpha Leonis)) [astro] in [cosmo]
+    ✗ MISMATCH     echoe        = choeis         (lord/master       ) [elemental] in [herbal-B]
+    ✓ COHERENT     heom         = shomte         (acacia            ) [botanical] in [pharma]
+    ✗ MISMATCH     rosh         = trosh          (red               ) [elemental] in [pharma]
+    ✗ MISMATCH     ora          = horasis        (vision            ) [astronomical] in [pharma]
+    ✓ COHERENT     arem         = pharmakon      (drug/medicine     ) [medical] in [pharma]
+    ✗ MISMATCH     ama          = amahe          (seize/grasp       ) [action] in [herbal-B]
+    ✓ COHERENT     cholshe      = she            (wood/tree         ) [botanical] in [pharma]
+    ✓ COHERENT     lesos        = las            (tongue            ) [anatomy] in [pharma]
+    ✗ MISMATCH     laran        = ran            (name              ) [function] in [pharma]
+    ✓ COHERENT     rsheol       = she            (wood/tree         ) [botanical] in [pharma]
+    ✗ MISMATCH     desho        = ash            (what              ) [function] in [pharma]
+    ✓ COHERENT     heshe        = she            (wood/tree         ) [botanical] in [pharma]
+    ✗ MISMATCH     lesh         = las            (tongue            ) [anatomy] in [text]
+    ✗ MISMATCH     eshe         = she            (wood/tree         ) [botanical] in [text]
+    ✗ MISMATCH     lsheo        = she            (wood/tree         ) [botanical] in [text]
+    ✗ MISMATCH     sheod        = she            (wood/tree         ) [botanical] in [text]
+    ✗ MISMATCH     shes         = she            (wood/tree         ) [botanical] in [text]
+    ✗ MISMATCH     eshed        = she            (wood/tree         ) [botanical] in [text]
+    ✗ MISMATCH     lesd         = las            (tongue            ) [anatomy] in [text]
+    ✗ MISMATCH     lshe         = she            (wood/tree         ) [botanical] in [bio]
+    ✗ MISMATCH     alsheod      = she            (wood/tree         ) [botanical] in [text]
+    ✗ MISMATCH     shed         = she            (wood/tree         ) [botanical] in [text]
+    ✗ MISMATCH     lshed        = she            (wood/tree         ) [botanical] in [bio]
+    ✓ COHERENT     charan       = ran            (name              ) [function] in [text]
+    ✓ COHERENT     chesh        = ash            (what              ) [function] in [text]
+    ✓ COHERENT     eshd         = ash            (what              ) [function] in [text]
+    ✓ COHERENT     eshos        = ash            (what              ) [function] in [text]
+    ✓ COHERENT     arash        = ash            (what              ) [function] in [text]
+    ✗ MISMATCH     alshe        = she            (wood/tree         ) [botanical] in [text]
+    ✓ COHERENT     sheos        = she            (wood/tree         ) [botanical] in [herbal-A]
+    ✗ MISMATCH     lshes        = she            (wood/tree         ) [botanical] in [bio]
+    ✗ MISMATCH     lshalsh      = sha            (nose              ) [anatomy] in [text]
+    ✗ MISMATCH     cheh         = hah            (much/many         ) [function] in [herbal-A]
+    ✓ COHERENT     chooishe     = she            (wood/tree         ) [botanical] in [herbal-A]
+    ✓ COHERENT     shedair      = she            (wood/tree         ) [botanical] in [herbal-A]
+    ✗ MISMATCH     lshaiir      = sha            (nose              ) [anatomy] in [herbal-A]
+    ✗ MISMATCH     arshed       = she            (wood/tree         ) [botanical] in [cosmo]
+    ✓ COHERENT     lsches       = she            (wood/tree         ) [botanical] in [herbal-A]
+    ✗ MISMATCH     aleosh       = laos           (people/nation     ) [social] in [herbal-A]
+    ✗ MISMATCH     chooran      = ran            (name              ) [function] in [herbal-A]
+    ✗ MISMATCH     hesh         = ash            (what              ) [function] in [herbal-A]
+    ✗ MISMATCH     shal         = sha            (nose              ) [anatomy] in [herbal-A]
+    ✓ COHERENT     shealair     = she            (wood/tree         ) [botanical] in [herbal-A]
+    ✓ COHERENT     sshe         = she            (wood/tree         ) [botanical] in [herbal-A]
+    ✓ COHERENT     holord       = olor           (grape-cluster     ) [botanical] in [herbal-A]
+    ✗ MISMATCH     hoesh        = ash            (what              ) [function] in [herbal-A]
+    ✗ MISMATCH     eolales      = las            (tongue            ) [anatomy] in [zodiac]
+    ✗ MISMATCH     aran         = ran            (name              ) [function] in [zodiac]
+    ✗ MISMATCH     shesas       = she            (wood/tree         ) [botanical] in [zodiac]
+    ✗ MISMATCH     chshe        = she            (wood/tree         ) [botanical] in [zodiac]
+    ✗ MISMATCH     arsheod      = she            (wood/tree         ) [botanical] in [zodiac]
+    ✗ MISMATCH     eshs         = ash            (what              ) [function] in [zodiac]
+    ✗ MISMATCH     osha         = sha            (nose              ) [anatomy] in [zodiac]
+    ✗ MISMATCH     sarsheo      = she            (wood/tree         ) [botanical] in [zodiac]
+    ✗ MISMATCH     cheshes      = she            (wood/tree         ) [botanical] in [zodiac]
+    ✗ MISMATCH     yesh         = ash            (what              ) [function] in [zodiac]
+    ✗ MISMATCH     dairan       = ran            (name              ) [function] in [zodiac]
+    ✓ COHERENT     ares         = res            (south             ) [astronomical] in [zodiac]
+    ✗ MISMATCH     lshedar      = she            (wood/tree         ) [botanical] in [bio]
+    ✗ MISMATCH     ledaran      = ran            (name              ) [function] in [bio]
+    ✗ MISMATCH     sheols       = she            (wood/tree         ) [botanical] in [bio]
+    ✗ MISMATCH     rshed        = she            (wood/tree         ) [botanical] in [bio]
+    ✗ MISMATCH     sheal        = she            (wood/tree         ) [botanical] in [bio]
+    ✗ MISMATCH     alshes       = she            (wood/tree         ) [botanical] in [bio]
+    ✗ MISMATCH     sheyqor      = she            (wood/tree         ) [botanical] in [bio]
+    ✗ MISMATCH     ashyed       = ash            (what              ) [function] in [bio]
+    ✓ COHERENT     lshal        = sha            (nose              ) [anatomy] in [bio]
+    ✗ MISMATCH     lsheg        = she            (wood/tree         ) [botanical] in [bio]
+    ✗ MISMATCH     lsheam       = she            (wood/tree         ) [botanical] in [bio]
+    ✗ MISMATCH     shey         = she            (wood/tree         ) [botanical] in [bio]
+    ✗ MISMATCH     rsheod       = she            (wood/tree         ) [botanical] in [cosmo]
+    ✗ MISMATCH     aiinsham     = sha            (nose              ) [anatomy] in [cosmo]
+    ✗ MISMATCH     dsheo        = she            (wood/tree         ) [botanical] in [cosmo]
+    ✗ MISMATCH     lshech       = she            (wood/tree         ) [botanical] in [cosmo]
+    ✓ COHERENT     sher         = she            (wood/tree         ) [botanical] in [herbal-B]
+    ✓ COHERENT     rsheo        = she            (wood/tree         ) [botanical] in [pharma]
+    ✓ COHERENT     aloiinshe    = she            (wood/tree         ) [botanical] in [pharma]
+    ✗ MISMATCH     yaran        = ran            (name              ) [function] in [pharma]
+    ✓ COHERENT     lsheos       = she            (wood/tree         ) [botanical] in [pharma]
+    ✓ COHERENT     lsheod       = she            (wood/tree         ) [botanical] in [herbal-B]
+    ✓ COHERENT     olsheos      = she            (wood/tree         ) [botanical] in [herbal-B]
+    ✓ COHERENT     sheog        = she            (wood/tree         ) [botanical] in [herbal-B]
+    ✓ COHERENT     esshe        = she            (wood/tree         ) [botanical] in [herbal-B]
+    ✓ COHERENT     ralas        = las            (tongue            ) [anatomy] in [pharma]
+
+  Coherent:   61/200 (30.5%)
+  Mismatch:   139/200 (69.5%)
+  Neutral:    0/200
+
+  Chance level for coherence: ~14%
+
+========================================================================
+SYNTHESIS: COPTIC AS SUBSTRATE LANGUAGE — VERDICT
+========================================================================
+
+  MATCHES:
+    Exact matches:           19
+    Near-exact matches:      8
+    High-conf (≥0.70):       206
+    Filtered (len≥3, ≥0.60): 457
+
+  CONTROL COMPARISON (score≥0.50):
+    Coptic matches:          474
+    Finnish matches:         114
+    Ratio:                   4.16x
+
+  STATISTICAL:
+    Z-score vs random:       1.46
+    Real vs random mean:     457 vs 359.9
+
+  ╔════════════════════════════════════════════════════════════════════╗
+  ║  VERDICT: WEAK EVIDENCE — Coptic signal above noise but marginal║
+  ╚════════════════════════════════════════════════════════════════════╝
+
+Results saved to results/coptic_probe_results.json
