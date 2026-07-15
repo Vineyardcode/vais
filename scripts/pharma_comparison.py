@@ -28,7 +28,7 @@ import json
 import math
 from pathlib import Path
 from collections import Counter, defaultdict
-from common import get_root
+from common import get_root, result_path
 
 # ═══════════════════════════════════════════════════════════════════════════
 # PARSER (reused)
@@ -757,5 +757,5 @@ def analyze():
 
 if __name__ == "__main__":
     results = analyze()
-    with open("pharma_results.json", "w") as f:
+    with open(result_path("pharma_results.json"), "w") as f:
         json.dump(results, f, indent=2, default=str)

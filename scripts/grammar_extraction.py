@@ -19,6 +19,7 @@ import math
 from pathlib import Path
 from collections import Counter, defaultdict
 from itertools import combinations
+from common import result_path
 
 # ── Reuse core infrastructure from ring_text_analysis.py ─────────────────
 
@@ -996,6 +997,6 @@ if __name__ == "__main__":
             "comma_positions": rt.get("comma_positions", []),
         })
 
-    with open("grammar_results.json", "w") as f:
+    with open(result_path("grammar_results.json"), "w") as f:
         json.dump(results, f, indent=2)
-    print(f"\n\nResults saved to grammar_results.json")
+    print(f"\n\nResults saved to results/grammar_results.json")

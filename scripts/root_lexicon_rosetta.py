@@ -32,7 +32,7 @@ import json
 import math
 from pathlib import Path
 from collections import Counter, defaultdict
-from common import classify_folio, collapse_echains, gallows_base_v2 as gallows_base, parse_morphology, strip_gallows
+from common import classify_folio, collapse_echains, gallows_base_v2 as gallows_base, parse_morphology, strip_gallows, result_path
 
 # ── Section classification ────────────────────────────────────────────────
 
@@ -1041,7 +1041,7 @@ def main():
     results["herbal_labels"] = analysis6_herbal_labels(all_data)
     synthesis(results)
 
-    out = Path("root_lexicon_results.json")
+    out = result_path("root_lexicon_results.json")
     with open(out, "w", encoding="utf-8") as f:
         json.dump(results, f, indent=2, default=str, ensure_ascii=False)
     print(f"\nResults saved to {out}")

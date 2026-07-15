@@ -27,7 +27,7 @@ import json
 import math
 from pathlib import Path
 from collections import Counter, defaultdict
-from common import classify_folio_v3 as classify_folio, entropy_v2 as entropy
+from common import classify_folio_v3 as classify_folio, entropy_v2 as entropy, result_path
 
 # ── Slot Definitions (Zattera system) ──────────────────────────────────────
 # Order matters: longer tokens must be checked before shorter ones in each slot.
@@ -553,7 +553,7 @@ def main():
             for word, (slots, rem) in word_decompositions.items()
         },
     }
-    out_path = Path("slot_analysis_results.json")
+    out_path = result_path("slot_analysis_results.json")
     with open(out_path, "w", encoding="utf-8") as f:
         json.dump(output, f, indent=2, ensure_ascii=False)
     print(f"\n  Full decomposition data saved to {out_path}")

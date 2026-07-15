@@ -1,5 +1,5 @@
 {
-  "coptic_terms_tested": 340,
+  "coptic_terms_tested": 352,
   "voynich_roots_tested": 1694,
   "exact_matches": [
     {
@@ -733,6 +733,17 @@
       "det": "k"
     },
     {
+      "voynich": "dar",
+      "coptic": "daraga",
+      "meaning": "degree (zodiac)",
+      "domain": "astro",
+      "score": 0.8,
+      "type": "CONTAINS",
+      "freq": 3,
+      "top_section": "herbal-A",
+      "det": "∅"
+    },
+    {
       "voynich": "sho",
       "coptic": "shoue",
       "meaning": "dry",
@@ -762,6 +773,17 @@
       "score": 0.8,
       "type": "CONTAINS",
       "freq": 3,
+      "top_section": "pharma",
+      "det": "k"
+    },
+    {
+      "voynich": "oro",
+      "coptic": "horoskopos",
+      "meaning": "horoscope/ascendant",
+      "domain": "astro",
+      "score": 0.8,
+      "type": "CONTAINS",
+      "freq": 2,
       "top_section": "pharma",
       "det": "k"
     },
@@ -909,6 +931,17 @@
       "det": "∅"
     },
     {
+      "voynich": "den",
+      "coptic": "denebola",
+      "meaning": "Denebola (beta Leonis)",
+      "domain": "astro",
+      "score": 0.8,
+      "type": "CONTAINS",
+      "freq": 1,
+      "top_section": "text",
+      "det": "∅"
+    },
+    {
       "voynich": "roes",
       "coptic": "keros",
       "meaning": "cinnamon",
@@ -929,39 +962,6 @@
       "freq": 14,
       "top_section": "text",
       "det": "k"
-    },
-    {
-      "voynich": "hor",
-      "coptic": "horasis",
-      "meaning": "vision",
-      "domain": "astronomical",
-      "score": 0.8,
-      "type": "CONTAINS",
-      "freq": 10,
-      "top_section": "herbal-A",
-      "det": "∅"
-    },
-    {
-      "voynich": "loo",
-      "coptic": "loole",
-      "meaning": "grape",
-      "domain": "botanical",
-      "score": 0.8,
-      "type": "CONTAINS",
-      "freq": 1,
-      "top_section": "text",
-      "det": "∅"
-    },
-    {
-      "voynich": "ras",
-      "coptic": "horasis",
-      "meaning": "vision",
-      "domain": "astronomical",
-      "score": 0.8,
-      "type": "CONTAINS",
-      "freq": 1,
-      "top_section": "text",
-      "det": "∅"
     }
   ],
   "filtered_matches": [
@@ -1329,6 +1329,17 @@
       "det": "k"
     },
     {
+      "voynich": "dar",
+      "coptic": "daraga",
+      "meaning": "degree (zodiac)",
+      "domain": "astro",
+      "score": 0.8,
+      "type": "CONTAINS",
+      "freq": 3,
+      "top_section": "herbal-A",
+      "det": "∅"
+    },
+    {
       "voynich": "sho",
       "coptic": "shoue",
       "meaning": "dry",
@@ -1358,6 +1369,17 @@
       "score": 0.8,
       "type": "CONTAINS",
       "freq": 3,
+      "top_section": "pharma",
+      "det": "k"
+    },
+    {
+      "voynich": "oro",
+      "coptic": "horoskopos",
+      "meaning": "horoscope/ascendant",
+      "domain": "astro",
+      "score": 0.8,
+      "type": "CONTAINS",
+      "freq": 2,
       "top_section": "pharma",
       "det": "k"
     },
@@ -1505,6 +1527,17 @@
       "det": "∅"
     },
     {
+      "voynich": "den",
+      "coptic": "denebola",
+      "meaning": "Denebola (beta Leonis)",
+      "domain": "astro",
+      "score": 0.8,
+      "type": "CONTAINS",
+      "freq": 1,
+      "top_section": "text",
+      "det": "∅"
+    },
+    {
       "voynich": "roes",
       "coptic": "keros",
       "meaning": "cinnamon",
@@ -1525,6 +1558,17 @@
       "freq": 14,
       "top_section": "text",
       "det": "k"
+    },
+    {
+      "voynich": "edar",
+      "coptic": "daraga",
+      "meaning": "degree (zodiac)",
+      "domain": "astro",
+      "score": 0.8,
+      "type": "CONTAINS",
+      "freq": 3,
+      "top_section": "cosmo",
+      "det": "t"
     },
     {
       "voynich": "hor",
@@ -1549,6 +1593,17 @@
       "det": "∅"
     },
     {
+      "voynich": "los",
+      "coptic": "regoulos",
+      "meaning": "Regulus (alpha Leonis)",
+      "domain": "astro",
+      "score": 0.8,
+      "type": "CONTAINS",
+      "freq": 11,
+      "top_section": "text",
+      "det": "∅"
+    },
+    {
       "voynich": "ras",
       "coptic": "horasis",
       "meaning": "vision",
@@ -1568,6 +1623,17 @@
       "type": "CONTAINS",
       "freq": 17,
       "top_section": "herbal-A",
+      "det": "∅"
+    },
+    {
+      "voynich": "rag",
+      "coptic": "daraga",
+      "meaning": "degree (zodiac)",
+      "domain": "astro",
+      "score": 0.8,
+      "type": "CONTAINS",
+      "freq": 2,
+      "top_section": "text",
       "det": "∅"
     },
     {
@@ -1624,6 +1690,28 @@
       "freq": 13,
       "top_section": "herbal-A",
       "det": "∅"
+    },
+    {
+      "voynich": "loes",
+      "coptic": "regoulos",
+      "meaning": "Regulus (alpha Leonis)",
+      "domain": "astro",
+      "score": 0.8,
+      "type": "CONTAINS",
+      "freq": 3,
+      "top_section": "herbal-A",
+      "det": "∅"
+    },
+    {
+      "voynich": "ara",
+      "coptic": "daraga",
+      "meaning": "degree (zodiac)",
+      "domain": "astro",
+      "score": 0.8,
+      "type": "CONTAINS",
+      "freq": 2,
+      "top_section": "text",
+      "det": "t"
     },
     {
       "voynich": "chai",
@@ -1769,6 +1857,17 @@
       "det": "∅"
     },
     {
+      "voynich": "alg",
+      "coptic": "algieba",
+      "meaning": "Algieba (gamma Leonis)",
+      "domain": "astro",
+      "score": 0.8,
+      "type": "CONTAINS",
+      "freq": 4,
+      "top_section": "pharma",
+      "det": "∅"
+    },
+    {
       "voynich": "hom",
       "coptic": "shomte",
       "meaning": "acacia",
@@ -1811,6 +1910,28 @@
       "freq": 3,
       "top_section": "herbal-B",
       "det": "t"
+    },
+    {
+      "voynich": "arag",
+      "coptic": "daraga",
+      "meaning": "degree (zodiac)",
+      "domain": "astro",
+      "score": 0.8,
+      "type": "CONTAINS",
+      "freq": 1,
+      "top_section": "herbal-A",
+      "det": "∅"
+    },
+    {
+      "voynich": "choro",
+      "coptic": "horoskopos",
+      "meaning": "horoscope/ascendant",
+      "domain": "astro",
+      "score": 0.8,
+      "type": "CONTAINS",
+      "freq": 2,
+      "top_section": "herbal-A",
+      "det": "∅"
     },
     {
       "voynich": "choor",
@@ -1943,127 +2064,6 @@
       "freq": 1,
       "top_section": "zodiac",
       "det": "∅"
-    },
-    {
-      "voynich": "lao",
-      "coptic": "laos",
-      "meaning": "people/nation",
-      "domain": "social",
-      "score": 0.8,
-      "type": "CONTAINS",
-      "freq": 1,
-      "top_section": "zodiac",
-      "det": "k"
-    },
-    {
-      "voynich": "chio",
-      "coptic": "hioue",
-      "meaning": "strike/hit",
-      "domain": "action",
-      "score": 0.8,
-      "type": "CONTAINS",
-      "freq": 1,
-      "top_section": "zodiac",
-      "det": "∅"
-    },
-    {
-      "voynich": "hel",
-      "coptic": "halēt",
-      "meaning": "bird/pigeon",
-      "domain": "animal",
-      "score": 0.8,
-      "type": "CONTAINS",
-      "freq": 1,
-      "top_section": "zodiac",
-      "det": "∅"
-    },
-    {
-      "voynich": "leol",
-      "coptic": "aloli",
-      "meaning": "grape",
-      "domain": "botanical",
-      "score": 0.8,
-      "type": "CONTAINS",
-      "freq": 4,
-      "top_section": "bio",
-      "det": "k"
-    },
-    {
-      "voynich": "echeo",
-      "coptic": "choeis",
-      "meaning": "lord/master",
-      "domain": "elemental",
-      "score": 0.8,
-      "type": "CONTAINS",
-      "freq": 1,
-      "top_section": "zodiac",
-      "det": "t"
-    },
-    {
-      "voynich": "ear",
-      "coptic": "shaar",
-      "meaning": "skin/hide",
-      "domain": "anatomy",
-      "score": 0.8,
-      "type": "CONTAINS",
-      "freq": 2,
-      "top_section": "zodiac",
-      "det": "t"
-    },
-    {
-      "voynich": "leor",
-      "coptic": "olor",
-      "meaning": "grape-cluster",
-      "domain": "botanical",
-      "score": 0.8,
-      "type": "CONTAINS",
-      "freq": 1,
-      "top_section": "zodiac",
-      "det": "f"
-    },
-    {
-      "voynich": "eolo",
-      "coptic": "olor",
-      "meaning": "grape-cluster",
-      "domain": "botanical",
-      "score": 0.8,
-      "type": "CONTAINS",
-      "freq": 2,
-      "top_section": "zodiac",
-      "det": "k"
-    },
-    {
-      "voynich": "eoos",
-      "coptic": "hmoos",
-      "meaning": "sit/dwell",
-      "domain": "action",
-      "score": 0.8,
-      "type": "CONTAINS",
-      "freq": 1,
-      "top_section": "zodiac",
-      "det": "t"
-    },
-    {
-      "voynich": "eish",
-      "coptic": "mishe",
-      "meaning": "fight/struggle",
-      "domain": "action",
-      "score": 0.8,
-      "type": "CONTAINS",
-      "freq": 1,
-      "top_section": "bio",
-      "det": "k"
-    },
-    {
-      "voynich": "heai",
-      "coptic": "shai",
-      "meaning": "write/inscribe",
-      "domain": "action",
-      "score": 0.8,
-      "type": "CONTAINS",
-      "freq": 1,
-      "top_section": "bio",
-      "det": "k"
     }
   ]
 }

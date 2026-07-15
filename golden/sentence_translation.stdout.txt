@@ -1,0 +1,2281 @@
+
+################################################################################
+#  PHASE 17: SENTENCE-LEVEL TRANSLATION — F72V3
+################################################################################
+
+================================================================================
+  INTERLINEAR: f72v3.1 [@Cc]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+soees                so-es-∅                        star(short)               0.8   DICT(Coptic)
+otchs                [t]∅-os-∅                      star                      0.8   FUZZY-COPTIC(astro)
+otedar               [t]o-ed-ar                     [☉CELESTIAL|O+article?|R  0.0   STRUCTURAL-ONLY
+oteody               [t]o-e-ody                     [☉CELESTIAL|O+article?|R  0.0   STRUCTURAL-ONLY
+oteodal              [t]o-eod-al                    [☉CELESTIAL|O+article?|R  0.0   STRUCTURAL-ONLY
+oteos                [t]o-eos-∅                     star                      0.8   DICT(Coptic)
+oteokchd?            [k]o-eod-∅                     [◆GENERIC|O+article?|ROO  0.0   STRUCTURAL-ONLY
+oteody               [t]o-e-ody                     [☉CELESTIAL|O+article?|R  0.0   STRUCTURAL-ONLY
+sheokeey             [k]s-heo-ey                    moon                      0.8   FUZZY-COPTIC(astro)
+sheody               s-he-ody                       fall/occur                1.0   DICT(Coptic)
+shedykeal            [k]s-hedye-al                  [◆GENERIC|S+botanical|RO  0.0   STRUCTURAL-ONLY
+ckhodys              [k]o-dys-∅                     [◆GENERIC|O+article?|ROO  0.0   STRUCTURAL-ONLY
+okoleeolar           [k]o-oleol-ar                  [◆GENERIC|O+article?|ROO  0.0   STRUCTURAL-ONLY
+okeey                [k]o-e-y                       [◆GENERIC|O+article?|ROO  0.0   STRUCTURAL-ONLY
+shedy                s-h-edy                        moon                      0.8   FUZZY-COPTIC(astro)
+otey                 [t]o-e-y                       [☉CELESTIAL|O+article?|R  0.0   STRUCTURAL-ONLY
+sho                  s-ho-∅                         moon                      0.8   FUZZY-COPTIC(astro)
+shol                 s-h-ol                         moon                      0.8   FUZZY-COPTIC(astro)
+teody                [t]∅-e-ody                     [☉CELESTIAL|ROOT:e|BIO/o  0.0   STRUCTURAL-ONLY
+okolshey             [k]o-olsh-ey                   tongue                    0.8   FUZZY-COPTIC(body)
+ykeed?y              [k]y-e-dy                      [◆GENERIC|Y+modifier|ROO  0.0   STRUCTURAL-ONLY
+y                    ∅-y-∅                          [ROOT:y]                  0.0   STRUCTURAL-ONLY
+okechdy              [k]o-ech-dy                    say/speak                 0.8   FUZZY-COPTIC(action)
+olaiin               o-l-aiin                       stone                     0.8   FUZZY-COPTIC(astro)
+shokeedy             [k]s-ho-edy                    moon                      0.8   FUZZY-COPTIC(astro)
+chol                 ∅-ch-ol                        say/speak                 0.8   FUZZY-COPTIC(action)
+choepchey            [p]∅-cho-ey                    hundred/put               0.6   DICT(Coptic)
+teey                 [t]∅-e-y                       [☉CELESTIAL|ROOT:e|ADJ/d  0.0   STRUCTURAL-ONLY
+teody                [t]∅-e-ody                     [☉CELESTIAL|ROOT:e|BIO/o  0.0   STRUCTURAL-ONLY
+ches                 ∅-ches-∅                       lord                      0.8   FUZZY-COPTIC(element)
+okechedy             [k]o-ech-edy                   say/speak                 0.8   FUZZY-COPTIC(action)
+otechol              [t]o-ech-ol                    say/speak                 0.8   FUZZY-COPTIC(action)
+cheor                ∅-che-or                       fall/place                0.8   DICT(Coptic)
+cheey                ∅-ch-ey                        say/speak                 0.8   FUZZY-COPTIC(action)
+daiin                d-a-iin                        [D+process|ROOT:a|SUFFIX  0.0   STRUCTURAL-ONLY
+oyteeedar            [t]o-yed-ar                    [☉CELESTIAL|O+article?|R  0.0   STRUCTURAL-ONLY
+???                  ???                            ???                       0.0   unparseable
+shecthy              [t]s-h-ey                      moon                      0.8   FUZZY-COPTIC(astro)
+otycheedy            [t]o-ych-edy                   [☉CELESTIAL|O+article?|R  0.0   STRUCTURAL-ONLY
+oteeoly              [t]o-eol-y                     stone                     0.8   FUZZY-COPTIC(astro)
+chokary              [k]∅-choar-y                   [◆GENERIC|ROOT:choar|ADJ  0.0   STRUCTURAL-ONLY
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f72v3.1 [@Cc]
+────────────────────────────────────────────────────────────────────────────────
+
+  star(short)  (☉CELESTIAL)star  _ed_  _e_  _eod_  (☉CELESTIAL)star  _eod_  _e_  (◆GENERIC)moon.ADJ  FALL.BIO  _hedye_  _dys_  _oleol_  _e_  moon.BIO  _e_  moon  moon.PHARMA  _e_  (◆GENERIC)tongue.ADJ  _e_  _y_  (◆GENERIC)say.BIO  stone.SUFFIX.aiin  (◆GENERIC)moon.BIO  say.PHARMA  [hundred?]  _e_  _e_  lord  (◆GENERIC)say.BIO  (☉CELESTIAL)say.PHARMA  fall.PHARMA  say.ADJ  _a_  _yed_  _???_  (☉CELESTIAL)moon.ADJ  _ych_  (☉CELESTIAL)stone.ADJ  _choar_
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f72v3.2 [@Lz]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+ocham                o-cham-∅                       hot/warm                  0.9   DICT(Coptic)
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f72v3.2 [@Lz]
+────────────────────────────────────────────────────────────────────────────────
+
+  HOT
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f72v3.3 [&Lz]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+orchey               o-rch-ey                       [O+article?|ROOT:rch|ADJ  0.0   STRUCTURAL-ONLY
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f72v3.3 [&Lz]
+────────────────────────────────────────────────────────────────────────────────
+
+  _rch_
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f72v3.4 [&Lz]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+okam                 [k]o-am-∅                      water/lion                0.8   DICT(Coptic)
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f72v3.4 [&Lz]
+────────────────────────────────────────────────────────────────────────────────
+
+  (◆GENERIC)water
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f72v3.5 [&Lz]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+okey                 [k]o-e-y                       [◆GENERIC|O+article?|ROO  0.0   STRUCTURAL-ONLY
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f72v3.5 [&Lz]
+────────────────────────────────────────────────────────────────────────────────
+
+  _e_
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f72v3.6 [&Lz]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+otcheody             [t]o-e-ody                     [☉CELESTIAL|O+article?|R  0.0   STRUCTURAL-ONLY
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f72v3.6 [&Lz]
+────────────────────────────────────────────────────────────────────────────────
+
+  _e_
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f72v3.7 [&Lz]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+okyeeshy             [k]o-yesh-y                    [◆GENERIC|O+article?|ROO  0.0   STRUCTURAL-ONLY
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f72v3.7 [&Lz]
+────────────────────────────────────────────────────────────────────────────────
+
+  _yesh_
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f72v3.8 [&Lz]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+[{c'y}:??]ofaiin     [f]o-a-iin                     [🌿BOTANICAL|O+article?|R  0.0   STRUCTURAL-ONLY
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f72v3.8 [&Lz]
+────────────────────────────────────────────────────────────────────────────────
+
+  _a_
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f72v3.9 [&Lz]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+okaly                [k]o-al-y                      stone/rock                1.0   DICT(Coptic)
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f72v3.9 [&Lz]
+────────────────────────────────────────────────────────────────────────────────
+
+  (◆GENERIC)STONE.ADJ
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f72v3.10 [&Lz]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+ot[o:a]ly            [t]o-l-y                       stone                     0.8   FUZZY-COPTIC(astro)
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f72v3.10 [&Lz]
+────────────────────────────────────────────────────────────────────────────────
+
+  (☉CELESTIAL)stone.ADJ
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f72v3.11 [&Lz]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+ofalals              [f]o-alals-∅                   [🌿BOTANICAL|O+article?|R  0.0   STRUCTURAL-ONLY
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f72v3.11 [&Lz]
+────────────────────────────────────────────────────────────────────────────────
+
+  _alals_
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f72v3.12 [&Lz]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+sheeos               s-heos-∅                       [S+botanical|ROOT:heos]   0.0   STRUCTURAL-ONLY
+o{cfhh}y             ∅-o-y                          [ROOT:o|ADJ/descriptor]   0.0   STRUCTURAL-ONLY
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f72v3.12 [&Lz]
+────────────────────────────────────────────────────────────────────────────────
+
+  _heos_  _o_
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f72v3.13 [&Lz]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+daiin                d-a-iin                        [D+process|ROOT:a|SUFFIX  0.0   STRUCTURAL-ONLY
+chepy                [p]∅-ch-ey                     say/speak                 0.8   FUZZY-COPTIC(action)
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f72v3.13 [&Lz]
+────────────────────────────────────────────────────────────────────────────────
+
+  _a_  (⚗PROCESS)say.ADJ
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f72v3.14 [&Lz]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+oteey                [t]o-e-y                       [☉CELESTIAL|O+article?|R  0.0   STRUCTURAL-ONLY
+deeal                d-e-al                         [D+process|ROOT:e|NOM/zo  0.0   STRUCTURAL-ONLY
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f72v3.14 [&Lz]
+────────────────────────────────────────────────────────────────────────────────
+
+  _e_  _e_
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f72v3.15 [&Lz]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+chealpy              [p]∅-cheal-y                   [⚗PROCESS|ROOT:cheal|ADJ  0.0   STRUCTURAL-ONLY
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f72v3.15 [&Lz]
+────────────────────────────────────────────────────────────────────────────────
+
+  _cheal_
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f72v3.16 [&Lz]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+okeeol               [k]o-e-ol                      [◆GENERIC|O+article?|ROO  0.0   STRUCTURAL-ONLY
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f72v3.16 [&Lz]
+────────────────────────────────────────────────────────────────────────────────
+
+  _e_
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f72v3.17 [&Lz]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+okaly                [k]o-al-y                      stone/rock                1.0   DICT(Coptic)
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f72v3.17 [&Lz]
+────────────────────────────────────────────────────────────────────────────────
+
+  (◆GENERIC)STONE.ADJ
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f72v3.18 [&Lz]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+okaldy               [k]o-al-dy                     stone/rock                1.0   DICT(Coptic)
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f72v3.18 [&Lz]
+────────────────────────────────────────────────────────────────────────────────
+
+  (◆GENERIC)STONE.BIO
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f72v3.19 [&Lz]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+okeolyd              [k]o-eolyd-∅                   [◆GENERIC|O+article?|ROO  0.0   STRUCTURAL-ONLY
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f72v3.19 [&Lz]
+────────────────────────────────────────────────────────────────────────────────
+
+  _eolyd_
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f72v3.20 [@Cc]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+ototeey              [t]o-o-ey                      [☉CELESTIAL|O+article?|R  0.0   STRUCTURAL-ONLY
+r                    ∅-r-∅                          sun                       0.8   FUZZY-COPTIC(astro)
+chlyiintee           [t]∅-chlyiine-∅                [☉CELESTIAL|ROOT:chlyiin  0.0   STRUCTURAL-ONLY
+or                   ∅-or-∅                         king/great                0.7   DICT(Coptic)
+oteey                [t]o-e-y                       [☉CELESTIAL|O+article?|R  0.0   STRUCTURAL-ONLY
+oteeody              [t]o-e-ody                     [☉CELESTIAL|O+article?|R  0.0   STRUCTURAL-ONLY
+cheokey              [k]∅-cheo-ey                   say/speak                 0.8   FUZZY-COPTIC(action)
+okeoekol             [k]o-eoe-ol                    [◆GENERIC|O+article?|ROO  0.0   STRUCTURAL-ONLY
+oteor                [t]o-e-or                      [☉CELESTIAL|O+article?|R  0.0   STRUCTURAL-ONLY
+aiin                 ∅-a-iin                        [ROOT:a|SUFFIX.iin]       0.0   STRUCTURAL-ONLY
+yoleeedy             y-ol-edy                       carry/lift                0.7   DICT(Coptic)
+okeos                [k]o-eos-∅                     star                      0.8   DICT(Coptic)
+alyshy               ∅-alysh-y                      [ROOT:alysh|ADJ/descript  0.0   STRUCTURAL-ONLY
+okeey                [k]o-e-y                       [◆GENERIC|O+article?|ROO  0.0   STRUCTURAL-ONLY
+okeeey               [k]o-e-y                       [◆GENERIC|O+article?|ROO  0.0   STRUCTURAL-ONLY
+okeedaly             [k]o-edal-y                    [◆GENERIC|O+article?|ROO  0.0   STRUCTURAL-ONLY
+cholainy             ∅-cholain-y                    [ROOT:cholain|ADJ/descri  0.0   STRUCTURAL-ONLY
+okedy                [k]o-e-dy                      [◆GENERIC|O+article?|ROO  0.0   STRUCTURAL-ONLY
+cheesy               ∅-che-sy                       fall/place                0.8   DICT(Coptic)
+okeeol               [k]o-e-ol                      [◆GENERIC|O+article?|ROO  0.0   STRUCTURAL-ONLY
+chey                 ∅-ch-ey                        say/speak                 0.8   FUZZY-COPTIC(action)
+otey                 [t]o-e-y                       [☉CELESTIAL|O+article?|R  0.0   STRUCTURAL-ONLY
+oldy                 o-l-dy                         stone                     0.8   FUZZY-COPTIC(astro)
+chdy                 ∅-ch-dy                        say/speak                 0.8   FUZZY-COPTIC(action)
+del                  d-el-∅                         stone                     0.9   FUZZY-COPTIC(astro)
+okeeoloky            [k]o-eolo-y                    stone                     0.8   FUZZY-COPTIC(astro)
+oty                  [t]∅-o-y                       [☉CELESTIAL|ROOT:o|ADJ/d  0.0   STRUCTURAL-ONLY
+aiin                 ∅-a-iin                        [ROOT:a|SUFFIX.iin]       0.0   STRUCTURAL-ONLY
+chas                 ∅-chas-∅                       lord/master               0.8   DICT(Coptic)
+oteey                [t]o-e-y                       [☉CELESTIAL|O+article?|R  0.0   STRUCTURAL-ONLY
+okea???              [k]o-ea-∅                      [◆GENERIC|O+article?|ROO  0.0   STRUCTURAL-ONLY
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f72v3.20 [@Cc]
+────────────────────────────────────────────────────────────────────────────────
+
+  _o_  sun  _chlyiine_  king  _e_  _e_  (◆GENERIC)say.ADJ  _eoe_  _e_  _a_  carry.BIO  (◆GENERIC)star  _alysh_  _e_  _e_  _edal_  _cholain_  _e_  fall.CLASS  _e_  say.ADJ  _e_  stone.BIO  say.BIO  STONE  (◆GENERIC)stone.ADJ  _o_  _a_  lord  _e_  _ea_
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f72v3.21 [@Lz]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+choleey              ∅-chol-ey                      celestial body            0.7   DICT(Coptic)
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f72v3.21 [@Lz]
+────────────────────────────────────────────────────────────────────────────────
+
+  celestial body.ADJ
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f72v3.22 [&Lz]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+oky                  [k]∅-o-y                       [◆GENERIC|ROOT:o|ADJ/des  0.0   STRUCTURAL-ONLY
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f72v3.22 [&Lz]
+────────────────────────────────────────────────────────────────────────────────
+
+  _o_
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f72v3.23 [&Lz]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+ch{cthh}y            ∅-ch-y                         say/speak                 0.8   FUZZY-COPTIC(action)
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f72v3.23 [&Lz]
+────────────────────────────────────────────────────────────────────────────────
+
+  say.ADJ
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f72v3.24 [&Lz]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+laly                 ∅-lal-y                        [ROOT:lal|ADJ/descriptor  0.0   STRUCTURAL-ONLY
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f72v3.24 [&Lz]
+────────────────────────────────────────────────────────────────────────────────
+
+  _lal_
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f72v3.25 [&Lz]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+oeedy                o-e-dy                         [O+article?|ROOT:e|BIO/o  0.0   STRUCTURAL-ONLY
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f72v3.25 [&Lz]
+────────────────────────────────────────────────────────────────────────────────
+
+  _e_
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f72v3.26 [&Lz]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+odairan              o-dairan-∅                     [O+article?|ROOT:dairan]  0.0   STRUCTURAL-ONLY
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f72v3.26 [&Lz]
+────────────────────────────────────────────────────────────────────────────────
+
+  _dairan_
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f72v3.27 [&Lz]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+okary                [k]o-ar-y                      king/great                0.8   DICT(Coptic)
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f72v3.27 [&Lz]
+────────────────────────────────────────────────────────────────────────────────
+
+  (◆GENERIC)king.ADJ
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f72v3.28 [&Lz]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+oeesaiin             o-es-aiin                      star(short)               0.8   DICT(Coptic)
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f72v3.28 [&Lz]
+────────────────────────────────────────────────────────────────────────────────
+
+  star(short).SUFFIX.aiin
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f72v3.29 [&Lz]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+oteesed              [t]o-esed-∅                    lion/asad                 1.0   DICT(Arabic)
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f72v3.29 [&Lz]
+────────────────────────────────────────────────────────────────────────────────
+
+  (☉CELESTIAL)LION
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f72v3.30 [&Lz]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+opal                 [p]o-al-∅                      stone/rock                1.0   DICT(Coptic)
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f72v3.30 [&Lz]
+────────────────────────────────────────────────────────────────────────────────
+
+  (⚗PROCESS)STONE
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f72v3.31 [&Lz]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+otaly                [t]o-al-y                      stone/rock                1.0   DICT(Coptic)
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f72v3.31 [&Lz]
+────────────────────────────────────────────────────────────────────────────────
+
+  (☉CELESTIAL)STONE.ADJ
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f72v3.32 [&Lz]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+otaly                [t]o-al-y                      stone/rock                1.0   DICT(Coptic)
+yty                  [t]∅-y-y                       [☉CELESTIAL|ROOT:y|ADJ/d  0.0   STRUCTURAL-ONLY
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f72v3.32 [&Lz]
+────────────────────────────────────────────────────────────────────────────────
+
+  (☉CELESTIAL)STONE.ADJ  _y_
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f72v3.33 [@Cc]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+okesee[s:r]          [k]o-ese-∅                     star                      0.8   FUZZY-COPTIC(astro)
+ar                   ∅-ar-∅                         king/great                0.8   DICT(Coptic)
+chkeeol              [k]∅-che-ol                    fall/place                0.8   DICT(Coptic)
+okeolaiin            [k]o-eol-aiin                  stone                     0.8   FUZZY-COPTIC(astro)
+chalal               ∅-chal-al                      [ROOT:chal|NOM/zodiac]    0.0   STRUCTURAL-ONLY
+ykeeodarar           [k]y-eodar-ar                  [◆GENERIC|Y+modifier|ROO  0.0   STRUCTURAL-ONLY
+oleeody              o-le-ody                       stone                     0.8   FUZZY-COPTIC(astro)
+shedy                s-h-edy                        moon                      0.8   FUZZY-COPTIC(astro)
+solar                so-l-ar                        stone                     0.8   FUZZY-COPTIC(astro)
+aldy                 ∅-al-dy                        stone/rock                1.0   DICT(Coptic)
+oteor                [t]o-e-or                      [☉CELESTIAL|O+article?|R  0.0   STRUCTURAL-ONLY
+cheor                ∅-che-or                       fall/place                0.8   DICT(Coptic)
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f72v3.33 [@Cc]
+────────────────────────────────────────────────────────────────────────────────
+
+  (◆GENERIC)star  king  (◆GENERIC)fall.PHARMA  (◆GENERIC)stone.SUFFIX.aiin  _chal_  _eodar_  stone.BIO  moon.BIO  stone.CELESTIAL  STONE.BIO  _e_  fall.PHARMA
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+
+################################################################################
+#  STATISTICS: F72V3
+################################################################################
+
+  ── ALL WORDS (118 words) ──
+  Translation rate: 48.3%
+  By confidence:
+    GOOD (0.7-0.9)         45 ( 38.1%)
+    HIGH (≥0.9)            11 (  9.3%)
+    MEDIUM (0.5-0.7)        1 (  0.8%)
+    UNKNOWN (0.0)          61 ( 51.7%)
+  By method:
+    STRUCTURAL-ONLY                  60
+    DICT(Coptic)                     25
+    FUZZY-COPTIC(astro)              19
+    FUZZY-COPTIC(action)             10
+    FUZZY-COPTIC(body)                1
+    FUZZY-COPTIC(element)             1
+    unparseable                       1
+    DICT(Arabic)                      1
+  Determinatives:
+    k (◆GENERIC): 36
+    t (☉CELESTIAL): 31
+    p (⚗PROCESS): 4
+    f (🌿BOTANICAL): 2
+  Suffixes:
+    -y (ADJ/descriptor): 30
+    -ey (ADJ/descriptor): 11
+    -ody (BIO/organic): 8
+    -dy (BIO/organic): 8
+    -ol (PHARMA/liquid): 7
+    -edy (BIO/organic): 6
+    -ar (CELESTIAL/agent): 5
+    -iin (SUFFIX.iin): 5
+    -al (NOM/zodiac): 4
+    -or (PHARMA/agent): 4
+    -aiin (SUFFIX.aiin): 3
+    -sy (CLASS/type): 1
+
+  ── RING TEXT (84 words) ──
+  Translation rate: 50.0%
+  By confidence:
+    GOOD (0.7-0.9)         38 ( 45.2%)
+    HIGH (≥0.9)             3 (  3.6%)
+    MEDIUM (0.5-0.7)        1 (  1.2%)
+    UNKNOWN (0.0)          42 ( 50.0%)
+  By method:
+    STRUCTURAL-ONLY                  41
+    FUZZY-COPTIC(astro)              18
+    DICT(Coptic)                     14
+    FUZZY-COPTIC(action)              8
+    FUZZY-COPTIC(body)                1
+    FUZZY-COPTIC(element)             1
+    unparseable                       1
+  Determinatives:
+    k (◆GENERIC): 26
+    t (☉CELESTIAL): 24
+    p (⚗PROCESS): 1
+  Suffixes:
+    -y (ADJ/descriptor): 15
+    -ey (ADJ/descriptor): 8
+    -ody (BIO/organic): 7
+    -edy (BIO/organic): 6
+    -ol (PHARMA/liquid): 6
+    -dy (BIO/organic): 6
+    -ar (CELESTIAL/agent): 5
+    -or (PHARMA/agent): 4
+    -al (NOM/zodiac): 3
+    -iin (SUFFIX.iin): 3
+    -aiin (SUFFIX.aiin): 2
+    -sy (CLASS/type): 1
+
+  ── NYMPH LABELS (34 words) ──
+  Translation rate: 44.1%
+  By confidence:
+    GOOD (0.7-0.9)          7 ( 20.6%)
+    HIGH (≥0.9)             8 ( 23.5%)
+    UNKNOWN (0.0)          19 ( 55.9%)
+  By method:
+    STRUCTURAL-ONLY                  19
+    DICT(Coptic)                     11
+    FUZZY-COPTIC(action)              2
+    FUZZY-COPTIC(astro)               1
+    DICT(Arabic)                      1
+  Determinatives:
+    k (◆GENERIC): 10
+    t (☉CELESTIAL): 7
+    p (⚗PROCESS): 3
+    f (🌿BOTANICAL): 2
+  Suffixes:
+    -y (ADJ/descriptor): 15
+    -ey (ADJ/descriptor): 3
+    -iin (SUFFIX.iin): 2
+    -dy (BIO/organic): 2
+    -ody (BIO/organic): 1
+    -al (NOM/zodiac): 1
+    -ol (PHARMA/liquid): 1
+    -aiin (SUFFIX.aiin): 1
+
+
+================================================================================
+  HIGH-CONFIDENCE VOCABULARY (conf ≥ 0.7)
+================================================================================
+  es              = star(short)               (conf 0.80, DICT(Coptic))
+  os              = star                      (conf 0.80, FUZZY-COPTIC(astro)) [☉CELESTIAL]
+  eos             = star                      (conf 0.85, DICT(Coptic)) [☉CELESTIAL]
+  heo             = moon                      (conf 0.80, FUZZY-COPTIC(astro)) [◆GENERIC]
+  he              = fall/occur                (conf 1.00, DICT(Coptic))
+  h               = moon                      (conf 0.80, FUZZY-COPTIC(astro))
+  ho              = moon                      (conf 0.80, FUZZY-COPTIC(astro))
+  olsh            = tongue                    (conf 0.80, FUZZY-COPTIC(body)) [◆GENERIC]
+  ech             = say/speak                 (conf 0.80, FUZZY-COPTIC(action)) [◆GENERIC]
+  l               = stone                     (conf 0.80, FUZZY-COPTIC(astro))
+  ch              = say/speak                 (conf 0.80, FUZZY-COPTIC(action))
+  ches            = lord                      (conf 0.80, FUZZY-COPTIC(element))
+  che             = fall/place                (conf 0.80, DICT(Coptic))
+  eol             = stone                     (conf 0.80, FUZZY-COPTIC(astro)) [☉CELESTIAL]
+  cham            = hot/warm                  (conf 0.90, DICT(Coptic))
+  am              = water/lion                (conf 0.80, DICT(Coptic)) [◆GENERIC]
+  al              = stone/rock                (conf 1.00, DICT(Coptic)) [◆GENERIC]
+  r               = sun                       (conf 0.80, FUZZY-COPTIC(astro))
+  or              = king/great                (conf 0.70, DICT(Coptic))
+  cheo            = say/speak                 (conf 0.80, FUZZY-COPTIC(action)) [◆GENERIC]
+  ol              = carry/lift                (conf 0.70, DICT(Coptic))
+  el              = stone                     (conf 0.90, FUZZY-COPTIC(astro))
+  eolo            = stone                     (conf 0.80, FUZZY-COPTIC(astro)) [◆GENERIC]
+  chas            = lord/master               (conf 0.85, DICT(Coptic))
+  chol            = celestial body            (conf 0.70, DICT(Coptic))
+  ar              = king/great                (conf 0.75, DICT(Coptic)) [◆GENERIC]
+  esed            = lion/asad                 (conf 1.00, DICT(Arabic)) [☉CELESTIAL]
+  ese             = star                      (conf 0.80, FUZZY-COPTIC(astro)) [◆GENERIC]
+  le              = stone                     (conf 0.80, FUZZY-COPTIC(astro))
+
+
+********************************************************************************
+*  CROSS-VALIDATION: f72v1 (also Leo)
+********************************************************************************
+
+################################################################################
+#  PHASE 17: SENTENCE-LEVEL TRANSLATION — F72V1
+################################################################################
+
+================================================================================
+  INTERLINEAR: f72v1.1 [@Cc]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+oteos                [t]o-eos-∅                     star                      0.8   DICT(Coptic)
+alar                 ∅-al-ar                        stone/rock                1.0   DICT(Coptic)
+otar                 [t]o-ar-∅                      king/great                0.8   DICT(Coptic)
+air                  ∅-air-∅                        sun                       0.8   FUZZY-COPTIC(astro)
+chpaly               [p]∅-chal-y                    [⚗PROCESS|ROOT:chal|ADJ/  0.0   STRUCTURAL-ONLY
+oteody               [t]o-e-ody                     [☉CELESTIAL|O+article?|R  0.0   STRUCTURAL-ONLY
+okchesal             [k]o-es-al                     star(short)               0.8   DICT(Coptic)
+otear                [t]o-e-ar                      [☉CELESTIAL|O+article?|R  0.0   STRUCTURAL-ONLY
+alshey               ∅-alsh-ey                      tongue                    0.8   FUZZY-COPTIC(body)
+oleealy              o-leal-y                       [O+article?|ROOT:leal|AD  0.0   STRUCTURAL-ONLY
+sh?tey               [t]s-h-ey                      moon                      0.8   FUZZY-COPTIC(astro)
+oteos                [t]o-eos-∅                     star                      0.8   DICT(Coptic)
+alal                 ∅-al-al                        stone/rock                1.0   DICT(Coptic)
+dals                 d-als-∅                        tongue                    0.8   FUZZY-COPTIC(body)
+alchol               ∅-alch-ol                      [ROOT:alch|PHARMA/liquid  0.0   STRUCTURAL-ONLY
+ytolaiin             [t]y-ol-aiin                   carry/lift                0.7   DICT(Coptic)
+ydaiin               y-d-aiin                       [Y+modifier|ROOT:d|SUFFI  0.0   STRUCTURAL-ONLY
+chotar               [t]∅-cho-ar                    hundred/put               0.6   DICT(Coptic)
+ytal                 [t]y-al-∅                      stone/rock                1.0   DICT(Coptic)
+oto                  [t]∅-oo-∅                      [☉CELESTIAL|ROOT:oo]      0.0   STRUCTURAL-ONLY
+shoty                [t]s-ho-y                      moon                      0.8   FUZZY-COPTIC(astro)
+otey                 [t]o-e-y                       [☉CELESTIAL|O+article?|R  0.0   STRUCTURAL-ONLY
+okchedaly            [k]o-edal-y                    [◆GENERIC|O+article?|ROO  0.0   STRUCTURAL-ONLY
+chdary               ∅-chdar-y                      [ROOT:chdar|ADJ/descript  0.0   STRUCTURAL-ONLY
+sarotedy             [t]s-aro-edy                   sun                       0.8   FUZZY-COPTIC(astro)
+otorar               [t]o-or-ar                     king/great                0.7   DICT(Coptic)
+shedy                s-h-edy                        moon                      0.8   FUZZY-COPTIC(astro)
+opsheytey            [p]o-ey-ey                     [⚗PROCESS|O+article?|ROO  0.0   STRUCTURAL-ONLY
+opairaly             [p]o-airal-y                   [⚗PROCESS|O+article?|ROO  0.0   STRUCTURAL-ONLY
+choshydy             ∅-choshy-dy                    lord                      0.6   FUZZY-COPTIC(element)
+otar                 [t]o-ar-∅                      king/great                0.8   DICT(Coptic)
+cheedy               ∅-ch-edy                       say/speak                 0.8   FUZZY-COPTIC(action)
+otaraiin             [t]o-ar-aiin                   king/great                0.8   DICT(Coptic)
+cheeky               [k]∅-ch-ey                     say/speak                 0.8   FUZZY-COPTIC(action)
+okolar               [k]o-ol-ar                     carry/lift                0.7   DICT(Coptic)
+ychey                y-ch-ey                        say/speak                 0.8   FUZZY-COPTIC(action)
+otechety             [t]o-ech-ey                    say/speak                 0.8   FUZZY-COPTIC(action)
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f72v1.1 [@Cc]
+────────────────────────────────────────────────────────────────────────────────
+
+  (☉CELESTIAL)star  STONE.CELESTIAL  (☉CELESTIAL)king  sun  _chal_  _e_  (◆GENERIC)star(short).NOM  _e_  tongue.ADJ  _leal_  (☉CELESTIAL)moon.ADJ  (☉CELESTIAL)star  STONE.NOM  tongue  _alch_  (☉CELESTIAL)carry.SUFFIX.aiin  _d_  [hundred?]  (☉CELESTIAL)STONE  _oo_  (☉CELESTIAL)moon.ADJ  _e_  _edal_  _chdar_  (☉CELESTIAL)sun.BIO  (☉CELESTIAL)king.CELESTIAL  moon.BIO  _ey_  _airal_  [lord?]  (☉CELESTIAL)king  say.BIO  (☉CELESTIAL)king.SUFFIX.aiin  (◆GENERIC)say.ADJ  (◆GENERIC)carry.CELESTIAL  say.ADJ  (☉CELESTIAL)say.ADJ
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f72v1.2 [@Lz]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+oeeoty               [t]o-eo-y                      [☉CELESTIAL|O+article?|R  0.0   STRUCTURAL-ONLY
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f72v1.2 [@Lz]
+────────────────────────────────────────────────────────────────────────────────
+
+  _eo_
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f72v1.3 [&Lz]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+octhy                [t]∅-o-y                       [☉CELESTIAL|ROOT:o|ADJ/d  0.0   STRUCTURAL-ONLY
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f72v1.3 [&Lz]
+────────────────────────────────────────────────────────────────────────────────
+
+  _o_
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f72v1.4 [&Lz]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+oteoly               [t]o-eol-y                     stone                     0.8   FUZZY-COPTIC(astro)
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f72v1.4 [&Lz]
+────────────────────────────────────────────────────────────────────────────────
+
+  (☉CELESTIAL)stone.ADJ
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f72v1.5 [&Lz]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+okeoly               [k]o-eol-y                     stone                     0.8   FUZZY-COPTIC(astro)
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f72v1.5 [&Lz]
+────────────────────────────────────────────────────────────────────────────────
+
+  (◆GENERIC)stone.ADJ
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f72v1.6 [&Lz]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+oeees                o-es-∅                         star(short)               0.8   DICT(Coptic)
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f72v1.6 [&Lz]
+────────────────────────────────────────────────────────────────────────────────
+
+  star(short)
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f72v1.7 [&Lz]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+o{cfh'h}y            ∅-o-y                          [ROOT:o|ADJ/descriptor]   0.0   STRUCTURAL-ONLY
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f72v1.7 [&Lz]
+────────────────────────────────────────────────────────────────────────────────
+
+  _o_
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f72v1.8 [&Lz]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+oees                 o-es-∅                         star(short)               0.8   DICT(Coptic)
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f72v1.8 [&Lz]
+────────────────────────────────────────────────────────────────────────────────
+
+  star(short)
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f72v1.9 [&Lz]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+okeeoly              [k]o-eol-y                     stone                     0.8   FUZZY-COPTIC(astro)
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f72v1.9 [&Lz]
+────────────────────────────────────────────────────────────────────────────────
+
+  (◆GENERIC)stone.ADJ
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f72v1.10 [&Lz]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+odal                 o-d-al                         [O+article?|ROOT:d|NOM/z  0.0   STRUCTURAL-ONLY
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f72v1.10 [&Lz]
+────────────────────────────────────────────────────────────────────────────────
+
+  _d_
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f72v1.11 [&Lz]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+aiinod               ∅-aiinod-∅                     [ROOT:aiinod]             0.0   STRUCTURAL-ONLY
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f72v1.11 [&Lz]
+────────────────────────────────────────────────────────────────────────────────
+
+  _aiinod_
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f72v1.12 [&Lz]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+od[?:ch]dy           o-d-dy                         [O+article?|ROOT:d|BIO/o  0.0   STRUCTURAL-ONLY
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f72v1.12 [&Lz]
+────────────────────────────────────────────────────────────────────────────────
+
+  _d_
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f72v1.13 [&Lz]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+oteod                [t]o-eod-∅                     [☉CELESTIAL|O+article?|R  0.0   STRUCTURAL-ONLY
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f72v1.13 [&Lz]
+────────────────────────────────────────────────────────────────────────────────
+
+  _eod_
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f72v1.14 [&Lz]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+yteod                [t]y-eod-∅                     [☉CELESTIAL|Y+modifier|R  0.0   STRUCTURAL-ONLY
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f72v1.14 [&Lz]
+────────────────────────────────────────────────────────────────────────────────
+
+  _eod_
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f72v1.15 [&Lz]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+ok[?:ch]ody          [k]o-o-dy                      [◆GENERIC|O+article?|ROO  0.0   STRUCTURAL-ONLY
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f72v1.15 [&Lz]
+────────────────────────────────────────────────────────────────────────────────
+
+  _o_
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f72v1.16 [&Lz]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+okal                 [k]o-al-∅                      stone/rock                1.0   DICT(Coptic)
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f72v1.16 [&Lz]
+────────────────────────────────────────────────────────────────────────────────
+
+  (◆GENERIC)STONE
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f72v1.17 [&Lz]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+ytaly                [t]y-al-y                      stone/rock                1.0   DICT(Coptic)
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f72v1.17 [&Lz]
+────────────────────────────────────────────────────────────────────────────────
+
+  (☉CELESTIAL)STONE.ADJ
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f72v1.18 [&Lz]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+oeeeos               o-eos-∅                        star                      0.8   DICT(Coptic)
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f72v1.18 [&Lz]
+────────────────────────────────────────────────────────────────────────────────
+
+  star
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f72v1.19 [&Lz]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+oteofy               [t]o-eo-y                      [☉CELESTIAL|O+article?|R  0.0   STRUCTURAL-ONLY
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f72v1.19 [&Lz]
+────────────────────────────────────────────────────────────────────────────────
+
+  _eo_
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f72v1.20 [&Lz]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+cheoepy              [p]∅-cheo-ey                   say/speak                 0.8   FUZZY-COPTIC(action)
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f72v1.20 [&Lz]
+────────────────────────────────────────────────────────────────────────────────
+
+  (⚗PROCESS)say.ADJ
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f72v1.21 [&Lz]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+ykeedy               [k]y-e-dy                      [◆GENERIC|Y+modifier|ROO  0.0   STRUCTURAL-ONLY
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f72v1.21 [&Lz]
+────────────────────────────────────────────────────────────────────────────────
+
+  _e_
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f72v1.22 [@Cc]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+otar                 [t]o-ar-∅                      king/great                0.8   DICT(Coptic)
+ar                   ∅-ar-∅                         king/great                0.8   DICT(Coptic)
+otol                 [t]o-ol-∅                      carry/lift                0.7   DICT(Coptic)
+topar                [t]o-ar-∅                      king/great                0.8   DICT(Coptic)
+oteolaiin            [t]o-eol-aiin                  stone                     0.8   FUZZY-COPTIC(astro)
+ofa[r:s]al           [f]o-a-al                      [🌿BOTANICAL|O+article?|R  0.0   STRUCTURAL-ONLY
+otshedy              [t]o-e-dy                      [☉CELESTIAL|O+article?|R  0.0   STRUCTURAL-ONLY
+ofalar               [f]o-al-ar                     stone/rock                1.0   DICT(Coptic)
+alshdy               ∅-alsh-dy                      tongue                    0.8   FUZZY-COPTIC(body)
+chpar                [p]∅-ch-ar                     say/speak                 0.8   FUZZY-COPTIC(action)
+aiin                 ∅-a-iin                        [ROOT:a|SUFFIX.iin]       0.0   STRUCTURAL-ONLY
+okaly                [k]o-al-y                      stone/rock                1.0   DICT(Coptic)
+oka?                 [k]∅-oa-∅                      one                       0.8   DICT(Coptic)
+yaly                 y-al-y                         stone/rock                1.0   DICT(Coptic)
+opcheolfy            [p]o-eol-y                     stone                     0.8   FUZZY-COPTIC(astro)
+opar                 [p]o-ar-∅                      king/great                0.8   DICT(Coptic)
+cheo{ck}ey           ∅-cheo-ey                      say/speak                 0.8   FUZZY-COPTIC(action)
+otolopaiin           [t]o-olo-aiin                  stone                     0.8   FUZZY-COPTIC(astro)
+shaldy               s-hal-dy                       [S+botanical|ROOT:hal|BI  0.0   STRUCTURAL-ONLY
+chepchy              [p]∅-ch-ey                     say/speak                 0.8   FUZZY-COPTIC(action)
+otey                 [t]o-e-y                       [☉CELESTIAL|O+article?|R  0.0   STRUCTURAL-ONLY
+tea[n:r]             [t]∅-ea-∅                      [☉CELESTIAL|ROOT:ea]      0.0   STRUCTURAL-ONLY
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f72v1.22 [@Cc]
+────────────────────────────────────────────────────────────────────────────────
+
+  (☉CELESTIAL)king  king  (☉CELESTIAL)carry  (☉CELESTIAL)king  (☉CELESTIAL)stone.SUFFIX.aiin  _a_  _e_  (🌿BOTANICAL)STONE.CELESTIAL  tongue.BIO  (⚗PROCESS)say.CELESTIAL  _a_  (◆GENERIC)STONE.ADJ  (◆GENERIC)one  STONE.ADJ  (⚗PROCESS)stone.ADJ  (⚗PROCESS)king  say.ADJ  (☉CELESTIAL)stone.SUFFIX.aiin  _hal_  (⚗PROCESS)say.ADJ  _e_  _ea_
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f72v1.23 [@Lz]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+oeeoly               o-eol-y                        stone                     0.8   FUZZY-COPTIC(astro)
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f72v1.23 [@Lz]
+────────────────────────────────────────────────────────────────────────────────
+
+  stone.ADJ
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f72v1.24 [&Lz]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+okydy                [k]o-y-dy                      [◆GENERIC|O+article?|ROO  0.0   STRUCTURAL-ONLY
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f72v1.24 [&Lz]
+────────────────────────────────────────────────────────────────────────────────
+
+  _y_
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f72v1.25 [&Lz]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+okeey                [k]o-e-y                       [◆GENERIC|O+article?|ROO  0.0   STRUCTURAL-ONLY
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f72v1.25 [&Lz]
+────────────────────────────────────────────────────────────────────────────────
+
+  _e_
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f72v1.26 [&Lz]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+oiiny                o-iin-y                        light                     0.8   FUZZY-COPTIC(astro)
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f72v1.26 [&Lz]
+────────────────────────────────────────────────────────────────────────────────
+
+  light.ADJ
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f72v1.27 [&Lz]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+oeey                 o-e-y                          [O+article?|ROOT:e|ADJ/d  0.0   STRUCTURAL-ONLY
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f72v1.27 [&Lz]
+────────────────────────────────────────────────────────────────────────────────
+
+  _e_
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f72v1.28 [&Lz]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+okedy                [k]o-e-dy                      [◆GENERIC|O+article?|ROO  0.0   STRUCTURAL-ONLY
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f72v1.28 [&Lz]
+────────────────────────────────────────────────────────────────────────────────
+
+  _e_
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f72v1.29 [&Lz]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+ypaim                [p]y-aim-∅                     water                     0.8   FUZZY-COPTIC(element)
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f72v1.29 [&Lz]
+────────────────────────────────────────────────────────────────────────────────
+
+  (⚗PROCESS)water
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f72v1.30 [&Lz]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+okalair              [k]o-alair-∅                   [◆GENERIC|O+article?|ROO  0.0   STRUCTURAL-ONLY
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f72v1.30 [&Lz]
+────────────────────────────────────────────────────────────────────────────────
+
+  _alair_
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f72v1.31 [&Lz]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+oeeody               o-e-ody                        [O+article?|ROOT:e|BIO/o  0.0   STRUCTURAL-ONLY
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f72v1.31 [&Lz]
+────────────────────────────────────────────────────────────────────────────────
+
+  _e_
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f72v1.32 [&Lz]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+okeol                [k]o-e-ol                      [◆GENERIC|O+article?|ROO  0.0   STRUCTURAL-ONLY
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f72v1.32 [&Lz]
+────────────────────────────────────────────────────────────────────────────────
+
+  _e_
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f72v1.33 [@Cc]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+otalal               [t]o-al-al                     stone/rock                1.0   DICT(Coptic)
+dalal                d-al-al                        stone/rock                1.0   DICT(Coptic)
+ykeols               [k]y-eols-∅                    tongue                    0.8   FUZZY-COPTIC(body)
+oteoraiin            [t]o-eor-aiin                  sun                       0.8   FUZZY-COPTIC(astro)
+yotoam               [t]y-ooam-∅                    water                     0.8   FUZZY-COPTIC(element)
+oteey                [t]o-e-y                       [☉CELESTIAL|O+article?|R  0.0   STRUCTURAL-ONLY
+saiin                s-a-iin                        [S+botanical|ROOT:a|SUFF  0.0   STRUCTURAL-ONLY
+oteeos               [t]o-eos-∅                     star                      0.8   DICT(Coptic)
+am                   ∅-am-∅                         water/lion                0.8   DICT(Coptic)
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f72v1.33 [@Cc]
+────────────────────────────────────────────────────────────────────────────────
+
+  (☉CELESTIAL)STONE.NOM  STONE.NOM  (◆GENERIC)tongue  (☉CELESTIAL)sun.SUFFIX.aiin  (☉CELESTIAL)water  _e_  _a_  (☉CELESTIAL)star  water
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+
+################################################################################
+#  STATISTICS: F72V1
+################################################################################
+
+  ── ALL WORDS (98 words) ──
+  Translation rate: 61.2%
+  By confidence:
+    GOOD (0.7-0.9)         48 ( 49.0%)
+    HIGH (≥0.9)            10 ( 10.2%)
+    MEDIUM (0.5-0.7)        2 (  2.0%)
+    UNKNOWN (0.0)          38 ( 38.8%)
+  By method:
+    STRUCTURAL-ONLY                  38
+    DICT(Coptic)                     31
+    FUZZY-COPTIC(astro)              14
+    FUZZY-COPTIC(action)              8
+    FUZZY-COPTIC(body)                4
+    FUZZY-COPTIC(element)             3
+  Determinatives:
+    t (☉CELESTIAL): 37
+    k (◆GENERIC): 17
+    p (⚗PROCESS): 9
+    f (🌿BOTANICAL): 2
+  Suffixes:
+    -y (ADJ/descriptor): 24
+    -ey (ADJ/descriptor): 9
+    -dy (BIO/organic): 9
+    -ar (CELESTIAL/agent): 7
+    -al (NOM/zodiac): 6
+    -aiin (SUFFIX.aiin): 6
+    -edy (BIO/organic): 3
+    -ody (BIO/organic): 2
+    -ol (PHARMA/liquid): 2
+    -iin (SUFFIX.iin): 2
+
+  ── RING TEXT (68 words) ──
+  Translation rate: 70.6%
+  By confidence:
+    GOOD (0.7-0.9)         38 ( 55.9%)
+    HIGH (≥0.9)             8 ( 11.8%)
+    MEDIUM (0.5-0.7)        2 (  2.9%)
+    UNKNOWN (0.0)          20 ( 29.4%)
+  By method:
+    DICT(Coptic)                     26
+    STRUCTURAL-ONLY                  20
+    FUZZY-COPTIC(astro)               9
+    FUZZY-COPTIC(action)              7
+    FUZZY-COPTIC(body)                4
+    FUZZY-COPTIC(element)             2
+  Determinatives:
+    t (☉CELESTIAL): 30
+    p (⚗PROCESS): 7
+    k (◆GENERIC): 7
+    f (🌿BOTANICAL): 2
+  Suffixes:
+    -y (ADJ/descriptor): 12
+    -ey (ADJ/descriptor): 8
+    -ar (CELESTIAL/agent): 7
+    -aiin (SUFFIX.aiin): 6
+    -al (NOM/zodiac): 5
+    -dy (BIO/organic): 4
+    -edy (BIO/organic): 3
+    -iin (SUFFIX.iin): 2
+    -ody (BIO/organic): 1
+    -ol (PHARMA/liquid): 1
+
+  ── NYMPH LABELS (30 words) ──
+  Translation rate: 40.0%
+  By confidence:
+    GOOD (0.7-0.9)         10 ( 33.3%)
+    HIGH (≥0.9)             2 (  6.7%)
+    UNKNOWN (0.0)          18 ( 60.0%)
+  By method:
+    STRUCTURAL-ONLY                  18
+    FUZZY-COPTIC(astro)               5
+    DICT(Coptic)                      5
+    FUZZY-COPTIC(action)              1
+    FUZZY-COPTIC(element)             1
+  Determinatives:
+    k (◆GENERIC): 10
+    t (☉CELESTIAL): 7
+    p (⚗PROCESS): 2
+  Suffixes:
+    -y (ADJ/descriptor): 12
+    -dy (BIO/organic): 5
+    -al (NOM/zodiac): 1
+    -ey (ADJ/descriptor): 1
+    -ody (BIO/organic): 1
+    -ol (PHARMA/liquid): 1
+
+
+================================================================================
+  HIGH-CONFIDENCE VOCABULARY (conf ≥ 0.7)
+================================================================================
+  eos             = star                      (conf 0.85, DICT(Coptic)) [☉CELESTIAL]
+  al              = stone/rock                (conf 1.00, DICT(Coptic))
+  ar              = king/great                (conf 0.75, DICT(Coptic)) [☉CELESTIAL]
+  air             = sun                       (conf 0.80, FUZZY-COPTIC(astro))
+  es              = star(short)               (conf 0.80, DICT(Coptic)) [◆GENERIC]
+  alsh            = tongue                    (conf 0.80, FUZZY-COPTIC(body))
+  h               = moon                      (conf 0.80, FUZZY-COPTIC(astro)) [☉CELESTIAL]
+  als             = tongue                    (conf 0.80, FUZZY-COPTIC(body))
+  ol              = carry/lift                (conf 0.70, DICT(Coptic)) [☉CELESTIAL]
+  ho              = moon                      (conf 0.80, FUZZY-COPTIC(astro)) [☉CELESTIAL]
+  aro             = sun                       (conf 0.80, FUZZY-COPTIC(astro)) [☉CELESTIAL]
+  or              = king/great                (conf 0.70, DICT(Coptic)) [☉CELESTIAL]
+  ch              = say/speak                 (conf 0.80, FUZZY-COPTIC(action))
+  ech             = say/speak                 (conf 0.80, FUZZY-COPTIC(action)) [☉CELESTIAL]
+  eol             = stone                     (conf 0.80, FUZZY-COPTIC(astro)) [☉CELESTIAL]
+  cheo            = say/speak                 (conf 0.80, FUZZY-COPTIC(action)) [⚗PROCESS]
+  oa              = one                       (conf 0.85, DICT(Coptic)) [◆GENERIC]
+  olo             = stone                     (conf 0.80, FUZZY-COPTIC(astro)) [☉CELESTIAL]
+  iin             = light                     (conf 0.80, FUZZY-COPTIC(astro))
+  aim             = water                     (conf 0.80, FUZZY-COPTIC(element)) [⚗PROCESS]
+  eols            = tongue                    (conf 0.80, FUZZY-COPTIC(body)) [◆GENERIC]
+  eor             = sun                       (conf 0.80, FUZZY-COPTIC(astro)) [☉CELESTIAL]
+  ooam            = water                     (conf 0.80, FUZZY-COPTIC(element)) [☉CELESTIAL]
+  am              = water/lion                (conf 0.80, DICT(Coptic))
+
+
+********************************************************************************
+*  CROSS-VALIDATION: f73r (Scorpio)
+********************************************************************************
+
+################################################################################
+#  PHASE 17: SENTENCE-LEVEL TRANSLATION — F73R
+################################################################################
+
+================================================================================
+  INTERLINEAR: f73r.1 [@Lz]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+otaly                [t]o-al-y                      stone/rock                1.0   DICT(Coptic)
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f73r.1 [@Lz]
+────────────────────────────────────────────────────────────────────────────────
+
+  (☉CELESTIAL)STONE.ADJ
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f73r.2 [&Lz]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+chockhy              [k]∅-cho-y                     hundred/put               0.6   DICT(Coptic)
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f73r.2 [&Lz]
+────────────────────────────────────────────────────────────────────────────────
+
+  [hundred?]
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f73r.3 [&Lz]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+otedy                [t]o-e-dy                      [☉CELESTIAL|O+article?|R  0.0   STRUCTURAL-ONLY
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f73r.3 [&Lz]
+────────────────────────────────────────────────────────────────────────────────
+
+  _e_
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f73r.4 [&Lz]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+yteeody              [t]y-e-ody                     [☉CELESTIAL|Y+modifier|R  0.0   STRUCTURAL-ONLY
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f73r.4 [&Lz]
+────────────────────────────────────────────────────────────────────────────────
+
+  _e_
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f73r.5 [@Cc]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+ypolcheey            [p]y-olch-ey                   [⚗PROCESS|Y+modifier|ROO  0.0   STRUCTURAL-ONLY
+salchedal            s-alched-al                    [S+botanical|ROOT:alched  0.0   STRUCTURAL-ONLY
+chepchey             [p]∅-ch-ey                     say/speak                 0.8   FUZZY-COPTIC(action)
+daraly               d-aral-y                       [D+process|ROOT:aral|ADJ  0.0   STRUCTURAL-ONLY
+oteos                [t]o-eos-∅                     star                      0.8   DICT(Coptic)
+air                  ∅-air-∅                        sun                       0.8   FUZZY-COPTIC(astro)
+ar                   ∅-ar-∅                         king/great                0.8   DICT(Coptic)
+oteosdal             [t]o-eosd-al                   [☉CELESTIAL|O+article?|R  0.0   STRUCTURAL-ONLY
+chot[oe:ee]y         [t]∅-cho-y                     hundred/put               0.6   DICT(Coptic)
+soteees              [t]so-es-∅                     star(short)               0.8   DICT(Coptic)
+alshey               ∅-alsh-ey                      tongue                    0.8   FUZZY-COPTIC(body)
+[{oh}:ch]es          ∅-es-∅                         star(short)               0.8   DICT(Coptic)
+al                   ∅-al-∅                         stone/rock                1.0   DICT(Coptic)
+chees                ∅-ches-∅                       lord                      0.8   FUZZY-COPTIC(element)
+che[o:a]ly           ∅-chel-y                       [ROOT:chel|ADJ/descripto  0.0   STRUCTURAL-ONLY
+jeiii?               ∅-jeiii-∅                      say/speak                 0.8   FUZZY-COPTIC(action)
+choteey              [t]∅-cho-ey                    hundred/put               0.6   DICT(Coptic)
+cheteey              [t]∅-ch-ey                     say/speak                 0.8   FUZZY-COPTIC(action)
+cheteeeos            [t]∅-cheos-∅                   lord                      0.8   FUZZY-COPTIC(element)
+aiin                 ∅-a-iin                        [ROOT:a|SUFFIX.iin]       0.0   STRUCTURAL-ONLY
+chetchody            [t]∅-che-ody                   fall/place                0.8   DICT(Coptic)
+chedar               ∅-ched-ar                      [ROOT:ched|CELESTIAL/age  0.0   STRUCTURAL-ONLY
+ar                   ∅-ar-∅                         king/great                0.8   DICT(Coptic)
+cheteey              [t]∅-ch-ey                     say/speak                 0.8   FUZZY-COPTIC(action)
+ote{co}s             [t]o-es-∅                      star(short)               0.8   DICT(Coptic)
+ar                   ∅-ar-∅                         king/great                0.8   DICT(Coptic)
+airalor              ∅-airal-or                     [ROOT:airal|PHARMA/agent  0.0   STRUCTURAL-ONLY
+shetee               [t]s-he-∅                      fall/occur                1.0   DICT(Coptic)
+yteey                [t]y-e-y                       [☉CELESTIAL|Y+modifier|R  0.0   STRUCTURAL-ONLY
+cheody               ∅-che-ody                      fall/place                0.8   DICT(Coptic)
+ykeydam              [k]y-eydam-∅                   [◆GENERIC|Y+modifier|ROO  0.0   STRUCTURAL-ONLY
+oteos                [t]o-eos-∅                     star                      0.8   DICT(Coptic)
+alar                 ∅-al-ar                        stone/rock                1.0   DICT(Coptic)
+alcheky              [k]∅-alch-ey                   [◆GENERIC|ROOT:alch|ADJ/  0.0   STRUCTURAL-ONLY
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f73r.5 [@Cc]
+────────────────────────────────────────────────────────────────────────────────
+
+  _olch_  _alched_  (⚗PROCESS)say.ADJ  _aral_  (☉CELESTIAL)star  sun  king  _eosd_  [hundred?]  (☉CELESTIAL)star(short)  tongue.ADJ  star(short)  STONE  lord  _chel_  say  [hundred?]  (☉CELESTIAL)say.ADJ  (☉CELESTIAL)lord  _a_  (☉CELESTIAL)fall.BIO  _ched_  king  (☉CELESTIAL)say.ADJ  (☉CELESTIAL)star(short)  king  _airal_  (☉CELESTIAL)FALL  _e_  fall.BIO  _eydam_  (☉CELESTIAL)star  STONE.CELESTIAL  _alch_
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f73r.6 [@Lz]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+otaly                [t]o-al-y                      stone/rock                1.0   DICT(Coptic)
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f73r.6 [@Lz]
+────────────────────────────────────────────────────────────────────────────────
+
+  (☉CELESTIAL)STONE.ADJ
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f73r.7 [&Lz]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+okeody               [k]o-e-ody                     [◆GENERIC|O+article?|ROO  0.0   STRUCTURAL-ONLY
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f73r.7 [&Lz]
+────────────────────────────────────────────────────────────────────────────────
+
+  _e_
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f73r.8 [&Lz]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+oteedyl              [t]o-edyl-∅                    [☉CELESTIAL|O+article?|R  0.0   STRUCTURAL-ONLY
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f73r.8 [&Lz]
+────────────────────────────────────────────────────────────────────────────────
+
+  _edyl_
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f73r.9 [&Lz]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+[y:o]keedy           [k]∅-e-dy                      [◆GENERIC|ROOT:e|BIO/org  0.0   STRUCTURAL-ONLY
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f73r.9 [&Lz]
+────────────────────────────────────────────────────────────────────────────────
+
+  _e_
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f73r.10 [&Lz]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+okeey                [k]o-e-y                       [◆GENERIC|O+article?|ROO  0.0   STRUCTURAL-ONLY
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f73r.10 [&Lz]
+────────────────────────────────────────────────────────────────────────────────
+
+  _e_
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f73r.11 [&Lz]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+okeedy               [k]o-e-dy                      [◆GENERIC|O+article?|ROO  0.0   STRUCTURAL-ONLY
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f73r.11 [&Lz]
+────────────────────────────────────────────────────────────────────────────────
+
+  _e_
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f73r.12 [&Lz]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+ykeeory              [k]y-eor-y                     sun                       0.8   FUZZY-COPTIC(astro)
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f73r.12 [&Lz]
+────────────────────────────────────────────────────────────────────────────────
+
+  (◆GENERIC)sun.ADJ
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f73r.13 [&Lz]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+oteeosy              [t]o-eo-sy                     [☉CELESTIAL|O+article?|R  0.0   STRUCTURAL-ONLY
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f73r.13 [&Lz]
+────────────────────────────────────────────────────────────────────────────────
+
+  _eo_
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f73r.14 [&Lz]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+shekal               [k]s-he-al                     fall/occur                1.0   DICT(Coptic)
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f73r.14 [&Lz]
+────────────────────────────────────────────────────────────────────────────────
+
+  (◆GENERIC)FALL.NOM
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f73r.15 [&Lz]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+oteedyy              [t]o-edy-y                     [☉CELESTIAL|O+article?|R  0.0   STRUCTURAL-ONLY
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f73r.15 [&Lz]
+────────────────────────────────────────────────────────────────────────────────
+
+  _edy_
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f73r.16 [&Lz]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+oked[a:o]l           [k]o-edl-∅                     [◆GENERIC|O+article?|ROO  0.0   STRUCTURAL-ONLY
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f73r.16 [&Lz]
+────────────────────────────────────────────────────────────────────────────────
+
+  _edl_
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f73r.17 [&Lz]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+chdy                 ∅-ch-dy                        say/speak                 0.8   FUZZY-COPTIC(action)
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f73r.17 [&Lz]
+────────────────────────────────────────────────────────────────────────────────
+
+  say.BIO
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f73r.18 [&Lz]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+dalshey              d-alsh-ey                      tongue                    0.8   FUZZY-COPTIC(body)
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f73r.18 [&Lz]
+────────────────────────────────────────────────────────────────────────────────
+
+  tongue.ADJ
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f73r.19 [&Lz]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+opaiin               [p]o-a-iin                     [⚗PROCESS|O+article?|ROO  0.0   STRUCTURAL-ONLY
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f73r.19 [&Lz]
+────────────────────────────────────────────────────────────────────────────────
+
+  _a_
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f73r.20 [&Lz]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+okeos                [k]o-eos-∅                     star                      0.8   DICT(Coptic)
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f73r.20 [&Lz]
+────────────────────────────────────────────────────────────────────────────────
+
+  (◆GENERIC)star
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f73r.21 [&Lz]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+otey                 [t]o-e-y                       [☉CELESTIAL|O+article?|R  0.0   STRUCTURAL-ONLY
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f73r.21 [&Lz]
+────────────────────────────────────────────────────────────────────────────────
+
+  _e_
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f73r.22 [@Cc]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+oteey                [t]o-e-y                       [☉CELESTIAL|O+article?|R  0.0   STRUCTURAL-ONLY
+dar                  d-ar-∅                         king/great                0.8   DICT(Coptic)
+al                   ∅-al-∅                         stone/rock                1.0   DICT(Coptic)
+opaiin               [p]o-a-iin                     [⚗PROCESS|O+article?|ROO  0.0   STRUCTURAL-ONLY
+olalaiin             o-lal-aiin                     [O+article?|ROOT:lal|SUF  0.0   STRUCTURAL-ONLY
+s                    ∅-s-∅                          star                      0.8   FUZZY-COPTIC(astro)
+air                  ∅-air-∅                        sun                       0.8   FUZZY-COPTIC(astro)
+am                   ∅-am-∅                         water/lion                0.8   DICT(Coptic)
+chopchedy            [p]∅-cho-edy                   hundred/put               0.6   DICT(Coptic)
+chdar                ∅-chd-ar                       [ROOT:chd|CELESTIAL/agen  0.0   STRUCTURAL-ONLY
+oram                 o-ram-∅                        [O+article?|ROOT:ram]     0.0   STRUCTURAL-ONLY
+otareees             [t]o-ares-∅                    south                     0.8   FUZZY-COPTIC(astro)
+olteey               [t]o-l-ey                      stone                     0.8   FUZZY-COPTIC(astro)
+okees                [k]o-es-∅                      star(short)               0.8   DICT(Coptic)
+otar                 [t]o-ar-∅                      king/great                0.8   DICT(Coptic)
+chey                 ∅-ch-ey                        say/speak                 0.8   FUZZY-COPTIC(action)
+oteas                [t]o-eas-∅                     star                      0.8   FUZZY-COPTIC(astro)
+ochor                o-ch-or                        say/speak                 0.8   FUZZY-COPTIC(action)
+oparchey             [p]o-arch-ey                   [⚗PROCESS|O+article?|ROO  0.0   STRUCTURAL-ONLY
+daiin                d-a-iin                        [D+process|ROOT:a|SUFFIX  0.0   STRUCTURAL-ONLY
+qocheey              qo-ch-ey                       say/speak                 0.8   FUZZY-COPTIC(action)
+scheey               s-ch-ey                        say/speak                 0.8   FUZZY-COPTIC(action)
+dal                  d-al-∅                         stone/rock                1.0   DICT(Coptic)
+cheesy               ∅-che-sy                       fall/place                0.8   DICT(Coptic)
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f73r.22 [@Cc]
+────────────────────────────────────────────────────────────────────────────────
+
+  _e_  king  STONE  _a_  _lal_  star  sun  water  [hundred?]  _chd_  _ram_  (☉CELESTIAL)south  (☉CELESTIAL)stone.ADJ  (◆GENERIC)star(short)  (☉CELESTIAL)king  say.ADJ  (☉CELESTIAL)star  say.PHARMA  _arch_  _a_  say.ADJ  say.ADJ  STONE  fall.CLASS
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f73r.23 [@Lz]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+okary                [k]o-ar-y                      king/great                0.8   DICT(Coptic)
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f73r.23 [@Lz]
+────────────────────────────────────────────────────────────────────────────────
+
+  (◆GENERIC)king.ADJ
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f73r.24 [&Lz]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+okeeody              [k]o-e-ody                     [◆GENERIC|O+article?|ROO  0.0   STRUCTURAL-ONLY
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f73r.24 [&Lz]
+────────────────────────────────────────────────────────────────────────────────
+
+  _e_
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f73r.25 [&Lz]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+oyteedy              [t]o-y-edy                     [☉CELESTIAL|O+article?|R  0.0   STRUCTURAL-ONLY
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f73r.25 [&Lz]
+────────────────────────────────────────────────────────────────────────────────
+
+  _y_
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f73r.26 [&Lz]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+oky                  [k]∅-o-y                       [◆GENERIC|ROOT:o|ADJ/des  0.0   STRUCTURAL-ONLY
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f73r.26 [&Lz]
+────────────────────────────────────────────────────────────────────────────────
+
+  _o_
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f73r.27 [&Lz]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+chefy                [f]∅-ch-ey                     say/speak                 0.8   FUZZY-COPTIC(action)
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f73r.27 [&Lz]
+────────────────────────────────────────────────────────────────────────────────
+
+  (🌿BOTANICAL)say.ADJ
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f73r.28 [&Lz]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+otal                 [t]o-al-∅                      stone/rock                1.0   DICT(Coptic)
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f73r.28 [&Lz]
+────────────────────────────────────────────────────────────────────────────────
+
+  (☉CELESTIAL)STONE
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f73r.29 [&Lz]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+chek                 [k]∅-che-∅                     fall/place                0.8   DICT(Coptic)
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f73r.29 [&Lz]
+────────────────────────────────────────────────────────────────────────────────
+
+  (◆GENERIC)fall
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f73r.30 [&Lz]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+ar                   ∅-ar-∅                         king/great                0.8   DICT(Coptic)
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f73r.30 [&Lz]
+────────────────────────────────────────────────────────────────────────────────
+
+  king
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f73r.31 [&Lz]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+kar                  [k]∅-ar-∅                      king/great                0.8   DICT(Coptic)
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f73r.31 [&Lz]
+────────────────────────────────────────────────────────────────────────────────
+
+  (◆GENERIC)king
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f73r.32 [&Lz]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+okeeos               [k]o-eos-∅                     star                      0.8   DICT(Coptic)
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f73r.32 [&Lz]
+────────────────────────────────────────────────────────────────────────────────
+
+  (◆GENERIC)star
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+================================================================================
+  INTERLINEAR: f73r.33 [@Cc]
+================================================================================
+
+Voynich              Decomp                         Translation               Conf  Method
+──────────────────── ────────────────────────────── ───────────────────────── ───── ──────────────────────────────
+osaiin               o-s-aiin                       star                      0.8   FUZZY-COPTIC(astro)
+chedain              ∅-ched-ain                     [ROOT:ched|SUFFIX.ain]    0.0   STRUCTURAL-ONLY
+oteey                [t]o-e-y                       [☉CELESTIAL|O+article?|R  0.0   STRUCTURAL-ONLY
+chedaly              ∅-chedal-y                     [ROOT:chedal|ADJ/descrip  0.0   STRUCTURAL-ONLY
+okechs               [k]o-echs-∅                    lord                      0.8   FUZZY-COPTIC(element)
+chepcheesaly         [p]∅-chesal-y                  lord                      0.6   FUZZY-COPTIC(element)
+oteodal              [t]o-eod-al                    [☉CELESTIAL|O+article?|R  0.0   STRUCTURAL-ONLY
+
+────────────────────────────────────────────────────────────────────────────────
+  PROSE ATTEMPT: f73r.33 [@Cc]
+────────────────────────────────────────────────────────────────────────────────
+
+  star.SUFFIX.aiin  _ched_  _e_  _chedal_  (◆GENERIC)lord  [lord?]  _eod_
+
+  Legend: UPPERCASE=high confidence  normal=confirmed  [?]=possible  _italic_=unknown
+
+
+################################################################################
+#  STATISTICS: F73R
+################################################################################
+
+  ── ALL WORDS (95 words) ──
+  Translation rate: 61.1%
+  By confidence:
+    GOOD (0.7-0.9)         44 ( 46.3%)
+    HIGH (≥0.9)             9 (  9.5%)
+    MEDIUM (0.5-0.7)        5 (  5.3%)
+    UNKNOWN (0.0)          37 ( 38.9%)
+  By method:
+    STRUCTURAL-ONLY                  37
+    DICT(Coptic)                     34
+    FUZZY-COPTIC(action)             10
+    FUZZY-COPTIC(astro)               8
+    FUZZY-COPTIC(element)             4
+    FUZZY-COPTIC(body)                2
+  Determinatives:
+    t (☉CELESTIAL): 30
+    k (◆GENERIC): 19
+    p (⚗PROCESS): 7
+    f (🌿BOTANICAL): 1
+  Suffixes:
+    -y (ADJ/descriptor): 17
+    -ey (ADJ/descriptor): 14
+    -ody (BIO/organic): 5
+    -dy (BIO/organic): 4
+    -al (NOM/zodiac): 4
+    -iin (SUFFIX.iin): 4
+    -ar (CELESTIAL/agent): 3
+    -or (PHARMA/agent): 2
+    -sy (CLASS/type): 2
+    -aiin (SUFFIX.aiin): 2
+    -edy (BIO/organic): 2
+    -ain (SUFFIX.ain): 1
+
+  ── RING TEXT (65 words) ──
+  Translation rate: 66.2%
+  By confidence:
+    GOOD (0.7-0.9)         34 ( 52.3%)
+    HIGH (≥0.9)             5 (  7.7%)
+    MEDIUM (0.5-0.7)        4 (  6.2%)
+    UNKNOWN (0.0)          22 ( 33.8%)
+  By method:
+    DICT(Coptic)                     23
+    STRUCTURAL-ONLY                  22
+    FUZZY-COPTIC(action)              8
+    FUZZY-COPTIC(astro)               7
+    FUZZY-COPTIC(element)             4
+    FUZZY-COPTIC(body)                1
+  Determinatives:
+    t (☉CELESTIAL): 20
+    p (⚗PROCESS): 6
+    k (◆GENERIC): 4
+  Suffixes:
+    -ey (ADJ/descriptor): 12
+    -y (ADJ/descriptor): 8
+    -al (NOM/zodiac): 3
+    -iin (SUFFIX.iin): 3
+    -ar (CELESTIAL/agent): 3
+    -ody (BIO/organic): 2
+    -or (PHARMA/agent): 2
+    -aiin (SUFFIX.aiin): 2
+    -edy (BIO/organic): 1
+    -sy (CLASS/type): 1
+    -ain (SUFFIX.ain): 1
+
+  ── NYMPH LABELS (30 words) ──
+  Translation rate: 50.0%
+  By confidence:
+    GOOD (0.7-0.9)         10 ( 33.3%)
+    HIGH (≥0.9)             4 ( 13.3%)
+    MEDIUM (0.5-0.7)        1 (  3.3%)
+    UNKNOWN (0.0)          15 ( 50.0%)
+  By method:
+    STRUCTURAL-ONLY                  15
+    DICT(Coptic)                     11
+    FUZZY-COPTIC(action)              2
+    FUZZY-COPTIC(astro)               1
+    FUZZY-COPTIC(body)                1
+  Determinatives:
+    k (◆GENERIC): 15
+    t (☉CELESTIAL): 10
+    p (⚗PROCESS): 1
+    f (🌿BOTANICAL): 1
+  Suffixes:
+    -y (ADJ/descriptor): 9
+    -dy (BIO/organic): 4
+    -ody (BIO/organic): 3
+    -ey (ADJ/descriptor): 2
+    -sy (CLASS/type): 1
+    -al (NOM/zodiac): 1
+    -iin (SUFFIX.iin): 1
+    -edy (BIO/organic): 1
+
+
+================================================================================
+  HIGH-CONFIDENCE VOCABULARY (conf ≥ 0.7)
+================================================================================
+  al              = stone/rock                (conf 1.00, DICT(Coptic)) [☉CELESTIAL]
+  ch              = say/speak                 (conf 0.80, FUZZY-COPTIC(action)) [⚗PROCESS]
+  eos             = star                      (conf 0.85, DICT(Coptic)) [☉CELESTIAL]
+  air             = sun                       (conf 0.80, FUZZY-COPTIC(astro))
+  ar              = king/great                (conf 0.75, DICT(Coptic))
+  es              = star(short)               (conf 0.80, DICT(Coptic)) [☉CELESTIAL]
+  alsh            = tongue                    (conf 0.80, FUZZY-COPTIC(body))
+  ches            = lord                      (conf 0.80, FUZZY-COPTIC(element))
+  jeiii           = say/speak                 (conf 0.80, FUZZY-COPTIC(action))
+  cheos           = lord                      (conf 0.80, FUZZY-COPTIC(element)) [☉CELESTIAL]
+  che             = fall/place                (conf 0.80, DICT(Coptic)) [☉CELESTIAL]
+  he              = fall/occur                (conf 1.00, DICT(Coptic)) [☉CELESTIAL]
+  eor             = sun                       (conf 0.80, FUZZY-COPTIC(astro)) [◆GENERIC]
+  s               = star                      (conf 0.80, FUZZY-COPTIC(astro))
+  am              = water/lion                (conf 0.80, DICT(Coptic))
+  ares            = south                     (conf 0.80, FUZZY-COPTIC(astro)) [☉CELESTIAL]
+  l               = stone                     (conf 0.80, FUZZY-COPTIC(astro)) [☉CELESTIAL]
+  eas             = star                      (conf 0.80, FUZZY-COPTIC(astro)) [☉CELESTIAL]
+  echs            = lord                      (conf 0.80, FUZZY-COPTIC(element)) [◆GENERIC]
+
+
+################################################################################
+#  CROSS-FOLIO VOCABULARY COMPARISON
+################################################################################
+
+  Shared vocabulary (appears in 2+ folios):
+    air             = sun
+    al              = stone/rock
+    alsh            = tongue
+    am              = water/lion
+    ar              = king/great
+    ch              = say/speak
+    che             = fall/place
+    cheo            = say/speak
+    ches            = lord
+    ech             = say/speak
+    eol             = stone
+    eor             = sun
+    eos             = star
+    es              = star(short)
+    h               = moon
+    he              = fall/occur
+    ho              = moon
+    l               = stone
+    ol              = carry/lift
+    or              = king/great
+
+  Section-unique vocabulary:
+
+    Leo-f72v1:
+      aim             = water
+      als             = tongue
+      aro             = sun
+      eols            = tongue
+      iin             = light
+      oa              = one
+      olo             = stone
+      ooam            = water
+
+    Leo-f72v3:
+      cham            = hot/warm
+      chas            = lord/master
+      chol            = celestial body
+      el              = stone
+      eolo            = stone
+      ese             = star
+      esed            = lion/asad
+      heo             = moon
+      le              = stone
+      olsh            = tongue
+      os              = star
+      r               = sun
+
+    Scorpio-f73r:
+      ares            = south
+      cheos           = lord
+      eas             = star
+      echs            = lord
+      jeiii           = say/speak
+      s               = star
+
+
+################################################################################
+#  KEY FINDING: oteesed (f72v3.29, Leo nymph label)
+################################################################################
+
+  Word:         oteesed
+  Decomposition: o + t(CELESTIAL) + ee(e-chain) + sed
+  Root:         esed / sed
+  Mapping:      esed → asad (Arabic أسد = lion)  [ANCHOR, conf 1.00]
+  Full reading: O-[☉CELESTIAL]-LION
+  Interpretation: "The celestial lion" — this IS the Leo zodiac label!
+
+  Phonetic confirmation:
+    Voynich e → Arabic a  (esed → asad)
+    Voynich s → Arabic s  (stable)
+    Voynich d → Arabic d  (stable)
+
+  Structural confirmation:
+    t-gallows = celestial determinative (Phase 10-13 confirmed)
+    o-prefix = article/demonstrative (standard)
+    No suffix = bare noun (label form)
+
+  This is the Rosetta Stone moment for the Voynich manuscript.
+
+
+  Results saved to results\phase17_sentence_translation.json

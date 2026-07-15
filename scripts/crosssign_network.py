@@ -19,11 +19,12 @@ import math
 from pathlib import Path
 from collections import Counter, defaultdict
 from itertools import combinations
+from common import result_path
 
 # ── Load data ────────────────────────────────────────────────────────────
 
 def load_ring_data():
-    with open("ring_decan_results.json", encoding="utf-8") as f:
+    with open(result_path("ring_decan_results.json"), encoding="utf-8") as f:
         return json.load(f)
 
 # ── Parser (from pipeline) ───────────────────────────────────────────────

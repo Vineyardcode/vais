@@ -30,7 +30,7 @@ import math
 import random
 from pathlib import Path
 from collections import Counter, defaultdict
-from common import collapse_echains, gallows_base_v2 as gallows_base, parse_morphology, strip_gallows
+from common import collapse_echains, gallows_base_v2 as gallows_base, parse_morphology, strip_gallows, classify_folio
 
 # ═══════════════════════════════════════════════���══════════════════════════
 # MORPHOLOGICAL PIPELINE (standard from previous phases)
@@ -66,27 +66,6 @@ def full_decompose(word):
         "determinative": gal_bases[0] if gal_bases else ""
     }
 
-def classify_folio(filepath):
-    stem = filepath.stem if hasattr(filepath, 'stem') else Path(filepath).stem
-    m = re.match(r'f(\d+)', stem)
-    if not m:
-        return "unknown"
-    num = int(m.group(1))
-    if num <= 58 or 65 <= num <= 66:
-        return "herbal-A"
-    elif 67 <= num <= 73:
-        return "zodiac"
-    elif 75 <= num <= 84:
-        return "bio"
-    elif 85 <= num <= 86:
-        return "cosmo"
-    elif 87 <= num <= 102:
-        if num in (88, 89, 99, 100, 101, 102):
-            return "pharma"
-        return "herbal-B"
-    elif 103 <= num <= 116:
-        return "text"
-    return "unknown"
 
 def extract_all_words():
     """Extract all tokens from all folios with section + locus tagging."""

@@ -22,7 +22,7 @@ import json
 import math
 from pathlib import Path
 from collections import Counter, defaultdict
-from common import classify_folio, gallows_base_v2 as gallows_base, strip_gallows
+from common import classify_folio, gallows_base_v2 as gallows_base, strip_gallows, result_path
 
 # ── Section classification ────────────────────────────────────────────────
 
@@ -643,6 +643,6 @@ if __name__ == "__main__":
         "stable_roots": len(stable),
         "root_profiles": {r: p for r, p in root_profiles.items()},
     }
-    with open("gallows_semantics_results.json", "w") as f:
+    with open(result_path("gallows_semantics_results.json"), "w") as f:
         json.dump(results, f, indent=2)
-    print(f"\nResults saved to gallows_semantics_results.json")
+    print(f"\nResults saved to results/gallows_semantics_results.json")

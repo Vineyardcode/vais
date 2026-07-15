@@ -25,7 +25,7 @@ import json
 import math
 from pathlib import Path
 from collections import Counter, defaultdict
-from common import get_root
+from common import get_root, result_path
 
 # ═══════════════════════════════════════════════════════════════════════════
 # PARSER
@@ -228,7 +228,7 @@ def analyze():
 
         # Look up root frequency from paradigm tables
         try:
-            pt = json.load(open("attack_plan_results.json"))["paradigm_tables"]
+            pt = json.load(open(result_path("attack_plan_results.json")))["paradigm_tables"]
             rf = pt.get(root, {}).get("freq", 0)
         except:
             rf = 0
@@ -454,7 +454,7 @@ def analyze():
 
     # Check root frequency ordering
     try:
-        pt = json.load(open("attack_plan_results.json"))["paradigm_tables"]
+        pt = json.load(open(result_path("attack_plan_results.json")))["paradigm_tables"]
         root_freqs = [pt.get(r, {}).get("freq", 0) for _, _, _, r, _ in clean_entries]
         print(f"  Root frequency sequence: {root_freqs}")
         # Is it sorted?
@@ -507,8 +507,8 @@ def analyze():
 
     # Load earlier data
     try:
-        pt = json.load(open("attack_plan_results.json"))["paradigm_tables"]
-        fr = json.load(open("freq_rank_results.json"))
+        pt = json.load(open(result_path("attack_plan_results.json")))["paradigm_tables"]
+        fr = json.load(open(result_path("freq_rank_results.json")))
     except:
         pt = {}
         fr = {}
@@ -668,7 +668,7 @@ def analyze():
     print(f"     → Same base substance, different preparations?")
     print()
 
-    print("  Results saved to f66r_results.json")
+    print("  Results saved to results/f66r_results.json")
     print()
     print("═" * 90)
     print("f66r ANALYSIS COMPLETE")
@@ -679,5 +679,5 @@ def analyze():
 
 if __name__ == "__main__":
     results = analyze()
-    with open("f66r_results.json", "w") as f:
+    with open(result_path("f66r_results.json"), "w") as f:
         json.dump(results, f, indent=2, default=str)

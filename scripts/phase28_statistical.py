@@ -56,6 +56,8 @@ COMPOUND_GSH   = ["tsh","ksh","psh","fsh"]
 ALL_GALLOWS    = BENCH_GALLOWS + COMPOUND_GCH + COMPOUND_GSH + SIMPLE_GALLOWS
 
 PREFIXES = ['qo','q','so','do','o','d','s','y']
+# Declared variant: common.MORPH_SUFFIXES_NO_SY (kept as a local literal so
+# the web UI exposes it as a parameter; see common/core.py for why order matters).
 SUFFIXES = ['aiin','ain','iin','in','ar','or','al','ol',
             'eedy','edy','ody','dy','ey','y']
 

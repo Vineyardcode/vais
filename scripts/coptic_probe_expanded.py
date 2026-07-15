@@ -22,7 +22,7 @@ import math
 import random
 from pathlib import Path
 from collections import Counter, defaultdict
-from common import classify_folio, collapse_echains, gallows_base_v2 as gallows_base, parse_morphology, strip_gallows
+from common import classify_folio, collapse_echains, gallows_base_v2 as gallows_base, parse_morphology, strip_gallows, result_path
 
 # ══════════════════════════════════════════════════════════════════════════
 # MORPHOLOGICAL PIPELINE (from root_lexicon_rosetta.py)
@@ -1263,6 +1263,6 @@ if __name__ == "__main__":
         "top_60": sorted_best[:60],
         "filtered_matches": filtered[:100],
     }
-    with open("coptic_probe_results.json", "w", encoding="utf-8") as f:
+    with open(result_path("coptic_probe_results.json"), "w", encoding="utf-8") as f:
         json.dump(results, f, indent=2, ensure_ascii=False)
-    print(f"\nResults saved to coptic_probe_results.json")
+    print(f"\nResults saved to results/coptic_probe_results.json")

@@ -443,26 +443,6 @@
       "freq": 377
     },
     {
-      "stripped": "oeey",
-      "originals": [
-        "ockheey",
-        "octheey",
-        "oeecthy",
-        "oeey",
-        "oekey",
-        "okcheey",
-        "okeey",
-        "opcheeky",
-        "opcheey",
-        "otcheey",
-        "oteey",
-        "otsheey",
-        "pokeey",
-        "tocpheey"
-      ],
-      "freq": 372
-    },
-    {
       "stripped": "dy",
       "originals": [
         "cfhdy",
@@ -484,6 +464,26 @@
         "pshdy",
         "tchdy",
         "tshdy"
+      ],
+      "freq": 372
+    },
+    {
+      "stripped": "oeey",
+      "originals": [
+        "ockheey",
+        "octheey",
+        "oeecthy",
+        "oeey",
+        "oekey",
+        "okcheey",
+        "okeey",
+        "opcheeky",
+        "opcheey",
+        "otcheey",
+        "oteey",
+        "otsheey",
+        "pokeey",
+        "tocpheey"
       ],
       "freq": 372
     },

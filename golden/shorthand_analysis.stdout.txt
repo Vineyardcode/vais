@@ -1,0 +1,397 @@
+══════════════════════════════════════════════════════════════════════════════════════════
+VOYNICH — PHARMACEUTICAL SHORTHAND HYPOTHESIS
+══════════════════════════════════════════════════════════════════════════════════════════
+
+  Loading corpus...
+  39,433 tokens, 7,905 types, 2818 fully parsed (35.6%)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+TEST 1: f66r LIST DECONSTRUCTION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  15-WORD LIST — Morphological decomposition:
+    #  Word          Prefix    Root      Suffix    Remainder 
+  ───  ────────────  ────────  ────────  ────────  ──────────
+    1  rary          r         a         ry        —         
+    2  sals          ∅         sa        ∅         ls        
+    3  qorn          qor                 n         —         
+    4  dary          ∅         da        ry        —         
+    5  ykeol         y         keo       l         —         
+    6  saly          ∅         sa        ly        —         
+    7  salf          ∅         sa        ∅         lf        
+    8  fary          ∅         fa        ry        —         
+    9  qotesy        qo        tes       y         —         
+   10  ykaly         y         ka        ly        —         
+   11  doly          ∅         do        ly        —         
+   12  saiin         ∅         sa        iin       —         
+   13  qokal         qo        ka        l         —         
+   14  qolsa         qol       sa        ∅         —         
+   15  raral         r         a         l         ra        
+
+  PREFIX distribution in list:
+    ∅        7
+    r        2
+    y        2
+    qo       2
+    qor      1
+    qol      1
+
+  SUFFIX distribution in list:
+    ry       3
+    ∅        3
+    l        3
+    ly       3
+    n        1
+    y        1
+    iin      1
+
+  FRAME templates (prefix+suffix combos):
+    ∅+_+∅                     2
+    ∅+_+ry                    2
+    ∅+_+ly                    2
+    r+_+ry                    1
+    qor+_+n                   1
+    y+_+l                     1
+    qo+_+y                    1
+    y+_+ly                    1
+    ∅+_+iin                   1
+    qo+_+l                    1
+    qol+_+∅                   1
+    r+_+l                     1
+
+  SINGLE-CHARACTER COLUMN (33 readable + 3 unknown):
+    y, o, s, sh, y, d, o, f, ?, x, air, d, sh, y, f, f, y, o, d, s, f, c, ?, x, t, o, ?, l, r, t, o, x, p, d
+
+  Character frequency:
+    o     5
+    y     4
+    d     4
+    f     4
+    x     3
+    s     2
+    sh    2
+    t     2
+    air   1
+    c     1
+    l     1
+    r     1
+    p     1
+
+  CHAR → WORD initial mapping:
+    'd' → could abbreviate: dary, doly
+    'f' → could abbreviate: fary
+    'r' → could abbreviate: rary, raral
+    's' → could abbreviate: sals, saly, salf, saiin
+    'y' → could abbreviate: ykeol, ykaly
+
+  RATIO: 31 single chars / 15 words = 2.1 chars per word
+  (If 2:1, each word may be described by a 2-char code)
+  (If chars are a separate parallel list, they are an independent column)
+
+  Single chars appearing in word list: ['d', 'f', 'l', 'o', 'r', 's', 't', 'y']
+  Single chars NOT in word list: ['c', 'p', 'x']
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+TEST 2: RECIPE PATTERN DETECTION
+        (Same prefix+suffix frame, different roots = same operation, different ingredients)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  Total frame-constant runs found: 1277
+  Run length distribution:
+    2-word runs:  1154  ████████████████████████████████████████████████████████████
+    3-word runs:   114  ████████████████████████████████████████████████████████████
+    4-word runs:     8  ████████
+    6-word runs:     1  █
+
+  Top 15 most common frames (prefix+suffix combos in runs):
+  Frame                       Count
+  ─────────────────────────  ──────
+  ∅+_+l                         271
+  ∅+_+y                         261
+  ∅+_+r                         205
+  qo+_+y                        204
+  o+_+y                          89
+  ∅+_+iin                        35
+  ∅+_+dy                         29
+  ∅+_+∅                          28
+  l+_+y                          22
+  o+_+r                          21
+  o+_+l                          12
+  y+_+y                          12
+  o+_+iin                        12
+  ∅+_+in                          7
+  qo+_+l                          6
+
+  LONGEST RECIPE-LIKE RUNS (same frame, varying roots):
+
+  ┌─ Frame: ∅+_+y  (6 words, folio f34v, section herbal)
+  │ Roots: ched → che → keed → ch → ked → d
+  │ Words: chedy chey keedy chy kedy dy
+  └──────────────────────────────────────────────────────────────────────
+
+  ┌─ Frame: qo+_+y  (4 words, folio f104v, section astro)
+  │ Roots: kee → che → tcheed → tched
+  │ Words: qokeey qochey qotcheedy qotchedy
+  └──────────────────────────────────────────────────────────────────────
+
+  ┌─ Frame: ∅+_+l  (4 words, folio f21r, section herbal)
+  │ Roots: sho → cho → sho → tcho
+  │ Words: shol chol shol tchol
+  └──────────────────────────────────────────────────────────────────────
+
+  ┌─ Frame: ∅+_+∅  (4 words, folio f30v, section herbal)
+  │ Roots: sho → kcho → tcho → ctho
+  │ Words: sho kcho tcho ctho
+  └──────────────────────────────────────────────────────────────────────
+
+  ┌─ Frame: ∅+_+r  (4 words, folio f32v, section herbal)
+  │ Roots: o → ch → cho → do
+  │ Words: or chr chor dor
+  └──────────────────────────────────────────────────────────────────────
+
+  ┌─ Frame: ∅+_+y  (4 words, folio f33v, section herbal)
+  │ Roots: cth → d → t → d
+  │ Words: cthy dy ty dy
+  └──────────────────────────────────────────────────────────────────────
+
+  ┌─ Frame: ∅+_+y  (4 words, folio f69r, section astro)
+  │ Roots: shee → te → ch → cth
+  │ Words: sheey tey chy cthy
+  └──────────────────────────────────────────────────────────────────────
+
+  ┌─ Frame: qo+_+y  (4 words, folio f75r, section bio)
+  │ Roots: ked → keed → tee → teed
+  │ Words: qokedy qokeedy qoteey qoteedy
+  └──────────────────────────────────────────────────────────────────────
+
+  ┌─ Frame: ∅+_+l  (4 words, folio f84r, section bio)
+  │ Roots: pcho → cpho → so → teo
+  │ Words: pchol cphol sol teol
+  └──────────────────────────────────────────────────────────────────────
+
+  ┌─ Frame: ∅+_+l  (3 words, folio f100r, section pharma)
+  │ Roots: cho → cpho → sho
+  │ Words: chol cphol shol
+  └──────────────────────────────────────────────────────────────────────
+
+  INGREDIENT-LIST LINES (low frame diversity, high root diversity):
+    [f101v_part/pharma] Frame: +l (5×)  →  teol cheol cheol cthol chol qkar
+    [f101v_part_102r/pharma] Frame: +l (5×)  →  teol cheol cheol cthol chol qkar
+    [f103r/astro] Frame: qo+y (3×)  →  qotedy qokeey shol qotey
+    [f103r/astro] Frame: qo+y (3×)  →  dsheey qoteeey qokey qoty
+    [f106v/astro] Frame: +l (3×)  →  sar sheol chol shar chol
+    [f108r/astro] Frame: o+y (3×)  →  okedy oteal okedy otedy
+    [f115v/astro] Frame: +y (2×)  →  chey keey lcho
+    [f115v/astro] Frame: l+in (2×)  →  lchain lpchdain qopchedy
+    [f115v/astro] Frame: qo+y (4×)  →  soiin qokeedy qokeedy qokeedy qotedy
+    [f115v/astro] Frame: +y (2×)  →  sheo shedy tchy
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+TEST 3: SECTION-SPECIFIC NOTATION
+        (Pharmaceutical shorthand → sections should use different morpheme subsets)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  Section         Words   Parsed   Roots   Frames   Root H   Pfx H   Suf H
+  ────────────  ───────  ───────  ──────  ───────  ───────  ──────  ──────
+  herbal          11166     8584     205      180     5.72    1.96    3.02
+  pharma           2655     2084     118      107     5.31    1.98    2.93
+  astro           15485    11535     227      211     5.67    2.32    3.02
+  bio              6128     5209     139      157     5.14    2.53    2.40
+  text             3142     2554     158      117     5.55    2.38    2.93
+
+  SECTION DIVERGENCE (Jensen-Shannon Distance):
+  Sections                     Prefix JSD    Suffix JSD     Onset JSD     Average
+  ─────────────────────────  ────────────  ────────────  ────────────  ──────────
+  herbal      ↔ bio                0.2994        0.2861        0.2781      0.2879
+  pharma      ↔ bio                0.2580        0.3204        0.2527      0.2770
+  bio         ↔ text               0.1940        0.2680        0.1617      0.2079
+  pharma      ↔ text               0.1519        0.1779        0.2913      0.2070
+  pharma      ↔ astro              0.1823        0.1780        0.2504      0.2036
+  astro       ↔ bio                0.1981        0.2258        0.1347      0.1862
+  herbal      ↔ astro              0.2081        0.1047        0.2213      0.1780
+  herbal      ↔ text               0.1768        0.1091        0.2431      0.1763
+  herbal      ↔ pharma             0.0994        0.1258        0.1935      0.1396
+  astro       ↔ text               0.1042        0.1011        0.1306      0.1120
+
+  TOP 5 PREFIXES BY SECTION:
+    herbal       ∅(5210,61%)  o(1246,15%)  qo(916,11%)  y(569,7%)  d(197,2%)
+    pharma       ∅(1240,60%)  o(294,14%)  qo(285,14%)  y(104,5%)  ol(55,3%)
+    astro        ∅(5239,46%)  o(2413,21%)  qo(1891,16%)  l(645,6%)  y(512,4%)
+    bio          ∅(2215,43%)  qo(1270,24%)  o(577,11%)  ol(303,6%)  l(272,5%)
+    text         ∅(1212,48%)  o(430,17%)  qo(400,16%)  y(179,7%)  ol(115,5%)
+
+  TOP 5 SUFFIXES BY SECTION:
+    herbal       y(2275,27%)  r(1479,17%)  l(1418,17%)  iin(1191,14%)  ∅(671,8%)
+    pharma       l(539,26%)  y(435,21%)  r(350,17%)  iin(267,13%)  dy(152,7%)
+    astro        y(3707,32%)  l(1691,15%)  r(1585,14%)  iin(1430,12%)  ∅(770,7%)
+    bio          y(2475,48%)  l(1024,20%)  r(477,9%)  in(403,8%)  iin(361,7%)
+    text         y(791,31%)  r(472,19%)  iin(323,13%)  l(323,13%)  dy(233,9%)
+
+  SECTION-EXCLUSIVE ROOTS (appear only in one section, freq≥5):
+    herbal       [5 exclusive]: sho, d, kch, tcho, tch
+    pharma       [4 exclusive]: keo, sheo, keeo, teo
+    astro        [1 exclusive]: tee
+    bio          [1 exclusive]: k
+
+  ✓ SIGNIFICANT SECTION DIVERGENCE: avg JSD = 0.1975
+    → Different sections use detectably different notation
+    → Consistent with domain-specific shorthand
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+TEST 4: POSITIONAL COMPOSITION — Tironian/Cistercian structural parallels
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  SLOT ENTROPIES (higher = more variety):
+    prefix     2.302 bits  ███████████
+    root       5.809 bits  █████████████████████████████
+    suffix     2.962 bits  ██████████████
+
+  Reference: Tironian base=high, modifier=low
+  Reference: Cistercian all quadrants ≈ equal (~3.3 bits each)
+
+  MUTUAL INFORMATION (0 = independent, higher = dependent):
+    I(prefix;suffix)          0.0618 bits
+    I(prefix;root)            0.6612 bits
+    I(root;suffix)            1.2336 bits
+
+  NORMALIZED MI (0 = independent, 1 = fully determined):
+    NMI(prefix;suffix)        0.0269
+    NMI(prefix;root)          0.2872
+    NMI(root;suffix)          0.4164
+
+  ✗ DEPENDENT: Strong slot correlation (max NMI=0.4164)
+    → More like natural language morphology than notation
+
+  INFORMATION DENSITY (bits per EVA character):
+    prefix_bits_per_char      3.2201
+    root_bits_per_char        2.2120
+    suffix_bits_per_char      2.2014
+
+  COMPOSITIONALITY:
+    Word entropy (actual):        10.407 bits
+    Sum of part entropies:         11.074 bits
+    Ratio (1.0 = fully compositional): 0.940
+
+  COMBINATORIAL COVERAGE:
+    23 prefixes × 265 roots × 30 suffixes = 182,850 possible
+    2,818 attested = 1.54% coverage
+
+  → SPARSE: only 1.5% of possible combinations attested
+    Natural language is typically sparse. But a notation system
+    limited to real plants/preparations would also be sparse.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+TEST 5: FORMULAIC SEQUENCES — Repeated multi-word templates
+        (Recipe openings, preparation instructions, ingredient lists)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  Total distinct frame n-grams: 26,873
+  Recurring templates (≥3 uses, ≥2 distinct root fills): 2371
+
+
+  ── 5-WORD TEMPLATES ──
+
+  ┌─ [qo+_+y | qo+_+y | qo+_+y | qo+_+y | qo+_+y]  (4 uses, 4 distinct root fills)
+  │  f108v: qokeedy qokeedy qokeedy qotey qokeey  (roots: keed+keed+keed+te+kee)
+  │  f108v: qokeedy qokeedy qotey qokeey qokeey  (roots: keed+keed+te+kee+kee)
+  │  f75r: qokeedy qokeedy qokedy qokedy qokeedy  (roots: keed+keed+ked+ked+keed)
+  └──────────────────────────────────────────────────────────────────────
+
+  ┌─ [∅+_+r | ∅+_+iin | o+_+r | ∅+_+r | ∅+_+l]  (3 uses, 2 distinct root fills)
+  │  f101v_part: chor aiin okor cheeor sheeol  (roots: cho+a+ko+cheeo+sheeo)
+  │  f101v_part_102r: chor aiin okor cheeor sheeol  (roots: cho+a+ko+cheeo+sheeo)
+  │  f34r: char aiin okor ar tol  (roots: cha+a+ko+a+to)
+  └──────────────────────────────────────────────────────────────────────
+
+  ┌─ [∅+_+r | ∅+_+y | qo+_+y | ∅+_+y | qo+_+y]  (3 uses, 2 distinct root fills)
+  │  f103r: sar shey qokey keedy qokeey  (roots: sa+she+ke+keed+kee)
+  │  f85r_part_86v_part: shdar shedy qody sheey qotedy  (roots: shda+shed+d+shee+ted)
+  │  f86v_part: shdar shedy qody sheey qotedy  (roots: shda+shed+d+shee+ted)
+  └──────────────────────────────────────────────────────────────────────
+
+  ┌─ [∅+_+l | ∅+_+l | ∅+_+y | ∅+_+l | ∅+_+y]  (3 uses, 3 distinct root fills)
+  │  f10v: kchol ol ty chol dy  (roots: kcho+o+t+cho+d)
+  │  f27r: keol chol chy shol chy  (roots: keo+cho+ch+sho+ch)
+  │  f75r: dal shal shy kol shedy  (roots: da+sha+sh+ko+shed)
+  └──────────────────────────────────────────────────────────────────────
+
+  ┌─ [∅+_+y | qo+_+y | qo+_+y | qo+_+l | ∅+_+y]  (3 uses, 3 distinct root fills)
+  │  f111v: chedy qokeey qokeedy qokeol shedy  (roots: ched+kee+keed+keo+shed)
+  │  f80v: shey qopshedy qoteedy qotol shy  (roots: she+pshed+teed+to+sh)
+  │  f82v: chedy qokey qokedy qokol chedy  (roots: ched+ke+ked+ko+ched)
+  └──────────────────────────────────────────────────────────────────────
+
+  ┌─ [qo+_+y | ∅+_+iin | ∅+_+y | ∅+_+∅ | ∅+_+y]  (3 uses, 2 distinct root fills)
+  │  f14r: qotchy koiin sy sho ty  (roots: tch+ko+s+sho+t)
+  │  f89v_part: qokey daiin cheey ctho dy  (roots: ke+da+chee+ctho+d)
+  │  f89v_part_90r: qokey daiin cheey ctho dy  (roots: ke+da+chee+ctho+d)
+  └──────────────────────────────────────────────────────────────────────
+
+  ── 4-WORD TEMPLATES ──
+
+  ┌─ [qo+_+y | qo+_+y | qo+_+y | qo+_+y]  (11 uses, 11 distinct root fills)
+  │  f104v: qokeey qochey qotcheedy qotchedy  (roots: kee+che+tcheed+tched)
+  │  f108v: qokeedy qokeedy qokeedy qotey  (roots: keed+keed+keed+te)
+  │  f108v: qokeedy qokeedy qotey qokeey  (roots: keed+keed+te+kee)
+  └──────────────────────────────────────────────────────────────────────
+
+  ┌─ [∅+_+l | ∅+_+l | ∅+_+y | qo+_+y]  (11 uses, 9 distinct root fills)
+  │  f108v: cheol keol chedy qokeey  (roots: cheo+keo+ched+kee)
+  │  f112r: chol ol chedy qokedy  (roots: cho+o+ched+ked)
+  │  f112v: ol cheol chedy qokeey  (roots: o+cheo+ched+kee)
+  └──────────────────────────────────────────────────────────────────────
+
+  ┌─ [∅+_+l | ∅+_+y | ∅+_+l | ∅+_+y]  (9 uses, 9 distinct root fills)
+  │  f101v_part_102r: dol shey dol sheey  (roots: do+she+do+shee)
+  │  f10v: ol ty chol dy  (roots: o+t+cho+d)
+  │  f116r: chol keedy ol cheey  (roots: cho+keed+o+chee)
+  └──────────────────────────────────────────────────────────────────────
+
+  ┌─ [qo+_+y | ∅+_+y | qo+_+y | qo+_+y]  (9 uses, 9 distinct root fills)
+  │  f103r: qokeey chedy qokeey qokeey  (roots: kee+ched+kee+kee)
+  │  f103v: qoky dy qokeey qokeey  (roots: k+d+kee+kee)
+  │  f108v: qokeedy chey qokeey qokeedy  (roots: keed+che+kee+keed)
+  └──────────────────────────────────────────────────────────────────────
+
+  ┌─ [∅+_+y | qo+_+y | qo+_+y | qo+_+y]  (9 uses, 8 distinct root fills)
+  │  f115v: sheey qokey qokchey qokchey  (roots: shee+ke+kche+kche)
+  │  f75r: keedy qokedy qokedy qokedy  (roots: keed+ked+ked+ked)
+  │  f77r: shedy qokeedy qokedy qokeey  (roots: shed+keed+ked+kee)
+  └──────────────────────────────────────────────────────────────────────
+
+  ┌─ [∅+_+y | ∅+_+l | ∅+_+y | qo+_+y]  (8 uses, 8 distinct root fills)
+  │  f106v: py chal shedy qoteedy  (roots: p+cha+shed+teed)
+  │  f111v: chey kal keedy qopchedy  (roots: che+ka+keed+pched)
+  │  f31r: cheey keeol chedy qokey  (roots: chee+keeo+ched+ke)
+  └──────────────────────────────────────────────────────────────────────
+
+══════════════════════════════════════════════════════════════════════════════════════════
+SUMMARY — PHARMACEUTICAL SHORTHAND HYPOTHESIS
+══════════════════════════════════════════════════════════════════════════════════════════
+
+  1. f66r WORD LIST:
+     15 words using 12 distinct frames, dominant suffix: ry (3×)
+     2.1 single-chars per word → possibly a 2-character index code
+  2. RECIPE PATTERNS:
+     1277 frame-constant runs found
+     30 runs of 3+ words (≈ multi-ingredient recipe lines)
+  3. SECTION DIVERGENCE: avg JSD = 0.1975
+     Most different: herbal ↔ bio (JSD=0.2879)
+  4. SLOT INDEPENDENCE: max NMI = 0.4164
+  5. FORMULAIC TEMPLATES: 2371 recurring templates
+     25 templates of 3+ words → repeated procedural phrases
+
+  ── VERDICT ──
+
+  [-] Slot dependence → supports natural language
+  [+] Section-specific notation → supports domain shorthand
+  [+] Many recipe-like frame runs → supports preparation notation
+  [+] Recurring formulaic templates → supports procedural shorthand
+
+  Score: 3 for shorthand / 1 against
+
+  Results saved to results/shorthand_results.json
+
+══════════════════════════════════════════════════════════════════════════════════════════
+PHARMACEUTICAL SHORTHAND ANALYSIS COMPLETE
+══════════════════════════════════════════════════════════════════════════════════════════

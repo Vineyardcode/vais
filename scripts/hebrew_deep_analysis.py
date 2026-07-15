@@ -19,7 +19,7 @@ import random
 from pathlib import Path
 from collections import Counter, defaultdict
 from itertools import combinations
-from common import classify_folio_v3 as classify_folio, get_root
+from common import classify_folio_v3 as classify_folio, get_root, result_path
 
 # ═══════════════════════════════════════════════════════════════════════════
 # PARSER (reused from attack_plan.py)
@@ -1298,10 +1298,10 @@ def main():
         results['line_sums'] = line_sum_result
 
     # Save
-    with open('hebrew_deep_results.json', 'w', encoding='utf-8') as f:
+    with open(result_path('hebrew_deep_results.json'), 'w', encoding='utf-8') as f:
         json.dump(results, f, indent=2, ensure_ascii=False, default=str)
     print()
-    print(f"  Results saved to hebrew_deep_results.json")
+    print(f"  Results saved to results/hebrew_deep_results.json")
     print()
     print("═" * 90)
     print("DEEP ANALYSIS COMPLETE")

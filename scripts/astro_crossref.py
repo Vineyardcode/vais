@@ -20,10 +20,11 @@ import re
 from collections import Counter, defaultdict
 from pathlib import Path
 from itertools import combinations
+from common import result_path
 
 # ── Load pipeline results ────────────────────────────────────────────────
 
-RESULTS_PATH = Path("astro_label_results.json")
+RESULTS_PATH = result_path("astro_label_results.json")
 with open(RESULTS_PATH, "r", encoding="utf-8") as f:
     PIPELINE = json.load(f)
 
@@ -801,7 +802,7 @@ def main():
     phase_8_comprehensive_synthesis()
     
     # Save results
-    out_path = Path("astro_crossref_results.json")
+    out_path = result_path("astro_crossref_results.json")
     with open(out_path, "w", encoding="utf-8") as f:
         json.dump(results, f, indent=2, ensure_ascii=False)
     print(f"\n  Results saved to {out_path}")

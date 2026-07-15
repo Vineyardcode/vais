@@ -1,0 +1,510 @@
+Loading all manuscript data...
+Loaded 39531 tokens from 200 folios
+Extracting Leo folio (f72v3)...
+Leo folio: 112 words
+
+========================================================================
+ANALYSIS 1: FULL LEO FOLIO DECOMPOSITION
+========================================================================
+
+  Total words on Leo folio: 112
+  Nymph labels: 34 words
+  Ring text: 78 words
+
+  -- Nymph Label Decompositions (outer ring = 1-19, inner = 21-32) --
+    # 2 10:00 OUTER  ocham                -> det=-  pf=o   root=cham       sf=-
+    # 3 11:00 OUTER  orchey               -> det=-  pf=o   root=rch        sf=ey
+    # 4 11:30 OUTER  okam                 -> det=k  pf=o   root=am         sf=-
+    # 5 00:00 OUTER  okey                 -> det=k  pf=o   root=e          sf=y
+    # 6 00:30 OUTER  otcheody             -> det=t  pf=o   root=e          sf=ody
+    # 7 01:00 OUTER  okyeeshy             -> det=k  pf=o   root=yesh       sf=y
+    # 8 01:30 OUTER  cyofaiin             -> det=f  pf=-   root=cyo        sf=aiin
+    # 9 02:00 OUTER  okaly                -> det=k  pf=o   root=al         sf=y
+    #10 02:45 OUTER  otoly                -> det=t  pf=o   root=ol         sf=y
+    #11 03:30 OUTER  ofalals              -> det=f  pf=o   root=alals      sf=-
+    #12 04:00 OUTER  sheeos               -> det=-  pf=s   root=heos       sf=-
+    #12 04:00 OUTER  ocfhhy               -> det=f  pf=o   root=h          sf=y
+    #13 05:00 OUTER  daiin                -> det=-  pf=d   root=a          sf=iin
+    #13 05:00 OUTER  chepy                -> det=p  pf=-   root=ch         sf=ey
+    #14 06:00 OUTER  oteey                -> det=t  pf=o   root=e          sf=y
+    #14 06:00 OUTER  deeal                -> det=-  pf=d   root=e          sf=al
+    #15 07:00 OUTER  chealpy              -> det=p  pf=-   root=cheal      sf=y
+    #16 07:30 OUTER  okeeol               -> det=k  pf=o   root=e          sf=ol
+    #17 08:30 OUTER  okaly                -> det=k  pf=o   root=al         sf=y
+    #18 09:00 OUTER  okaldy               -> det=k  pf=o   root=al         sf=dy
+    #19 09:30 OUTER  okeolyd              -> det=k  pf=o   root=eolyd      sf=-
+    #21 10:30 INNER  choleey              -> det=-  pf=-   root=chol       sf=ey
+    #22 11:30 INNER  oky                  -> det=k  pf=-   root=o          sf=y
+    #23 00:30 INNER  chcthhy              -> det=t  pf=-   root=chh        sf=y
+    #24 01:00 INNER  laly                 -> det=-  pf=-   root=lal        sf=y
+    #25 02:00 INNER  oeedy                -> det=-  pf=o   root=e          sf=dy
+    #26 03:00 INNER  odairan              -> det=-  pf=o   root=dairan     sf=-
+    #27 04:00 INNER  okary                -> det=k  pf=o   root=ar         sf=y
+    #28 05:00 INNER  oeesaiin             -> det=-  pf=o   root=es         sf=aiin
+    #29 06:30 INNER  oteesed              -> det=t  pf=o   root=esed       sf=- *
+    #30 07:30 INNER  opal                 -> det=p  pf=o   root=al         sf=-
+    #31 08:30 INNER  otaly                -> det=t  pf=o   root=al         sf=y
+    #32 09:30 INNER  otaly                -> det=t  pf=o   root=al         sf=y
+    #32 09:30 INNER  yty                  -> det=t  pf=-   root=y          sf=y
+
+  -- Nymph Roots (top 15) --
+    e                6
+    al               6
+    cham             1
+    rch              1
+    am               1
+    yesh             1
+    cyo              1
+    ol               1
+    alals            1
+    heos             1
+    h                1
+    a                1
+    ch               1
+    cheal            1
+    eolyd            1
+
+  -- Ring Text Roots (top 20) --
+    e                17
+    h                4
+    ch               4
+    ech              3
+    l                3
+    che              3
+    a                3
+    eos              2
+    ho               2
+    ches             2
+    eol              2
+    o                2
+    es               1
+    os               1
+    ed               1
+    eod              1
+    heo              1
+    he               1
+    hedye            1
+    dys              1
+
+  -- Determinative Distribution --
+    Det       Nymph     Ring
+    t             8       24
+    k            10       23
+    f             3        0
+    p             3        1
+    -            10       30
+
+  -- Suffix Distribution --
+    Suffix      Nymph     Ring
+    y              15       15
+    -               8       14
+    ey              3        8
+    ody             1        7
+    dy              2        5
+    ol              1        6
+    edy             0        6
+    ar              0        5
+    iin             1        3
+    or              0        4
+    aiin            2        2
+    al              1        3
+
+========================================================================
+ANALYSIS 2: ANCHOR-BASED VOCABULARY MATCHING
+========================================================================
+
+  Unique roots on Leo folio: 58
+  * Anchor: esed = asad (Arabic 'lion')
+  -> This confirms: Voynich 'e' can map to Arabic 'a' (aleph)
+  -> This confirms: Voynich 's' = Arabic 's' (sin)
+  -> This confirms: Voynich 'd' = Arabic 'd' (dal)
+
+  -- Matching ALL Leo roots against expanded vocabulary --
+
+  Score Type             Root         Known           Lang       Category        Meaning
+  ----------------------------------------------------------------------------------------------------
+   1.00 CONSONANT-EXACT  al           leo             Latin      leo_names       lion
+   1.00 CONSONANT-EXACT  am           mui             Coptic     leo_names       lion ? ????
+   1.00 CONSONANT-EXACT  ar           ero             Coptic     qualities       king ? ???
+   1.00 CONSONANT-EXACT  chas         choeis          Coptic     qualities       lord ? ?????
+   1.00 CONSONANT-EXACT  ches         choeis          Coptic     qualities       lord ? ?????
+   1.00 CONSONANT-EXACT  el           leo             Latin      leo_names       lion
+   1.00 CONSONANT-EXACT  eol          leo             Latin      leo_names       lion
+   1.00 CONSONANT-EXACT  eolo         leo             Latin      leo_names       lion
+   1.00 CONSONANT-EXACT  eos          siou            Coptic     astronomical    star ? ????
+   1.00 CONSONANT-EXACT  es           siou            Coptic     astronomical    star ? ????
+   1.00 CONSONANT-EXACT  esed         asad            Arabic     leo_names       lion ? ???
+   1.00 CONSONANT-EXACT  h            hoou            Coptic     astronomical    day ? ????
+   1.00 CONSONANT-EXACT  he           hoou            Coptic     astronomical    day ? ????
+   1.00 CONSONANT-EXACT  heo          hoou            Coptic     astronomical    day ? ????
+   1.00 CONSONANT-EXACT  ho           hoou            Coptic     astronomical    day ? ????
+   1.00 CONSONANT-EXACT  l            leo             Latin      leo_names       lion
+   1.00 CONSONANT-EXACT  le           leo             Latin      leo_names       lion
+   1.00 CONSONANT-EXACT  ol           leo             Latin      leo_names       lion
+   1.00 CONSONANT-EXACT  or           ero             Coptic     qualities       king ? ???
+   1.00 CONSONANT-EXACT  os           siou            Coptic     astronomical    star ? ????
+   0.85 CONTAINS         oleol        leo             Latin      leo_names       lion
+   0.85 CONTAINS         yesh         esh             Hebrew     elemental       fire ? ??
+   0.75 WITHIN           cho          choeis          Coptic     qualities       lord ? ?????
+   0.67 CONSONANT        alals        helios          Greek      solar           sun ? ?????
+   0.67 LCS              ar           nar             Arabic     elemental       fire ? ???
+   0.67 CONSONANT        ch           choeis          Coptic     qualities       lord ? ?????
+   0.67 CONSONANT        chal         zuhal           Arabic     leo_decans      Saturn ? ???
+   0.67 CONSONANT        chal         helios          Greek      solar           sun ? ?????
+   0.67 CONSONANT        chal         choeis          Coptic     qualities       lord ? ?????
+   0.67 CONSONANT        cham         hom             Hebrew     elemental       hot/warm ? ??
+   0.67 CONSONANT        cham         hmom            Coptic     elemental       hot ? ????
+   0.67 CONSONANT        cham         choeis          Coptic     qualities       lord ? ?????
+   0.67 CONSONANT        chas         helios          Greek      solar           sun ? ?????
+   0.67 LCS              che          rhe             Coptic     solar           sun ? ??
+   0.67 CONSONANT        che          choeis          Coptic     qualities       lord ? ?????
+   0.67 CONSONANT        cheal        zuhal           Arabic     leo_decans      Saturn ? ???
+   0.67 CONSONANT        cheal        helios          Greek      solar           sun ? ?????
+   0.67 CONSONANT        cheal        choeis          Coptic     qualities       lord ? ?????
+   0.67 CONSONANT        cheo         choeis          Coptic     qualities       lord ? ?????
+   0.67 CONSONANT        ches         helios          Greek      solar           sun ? ?????
+   0.67 CONSONANT        chh          choeis          Coptic     qualities       lord ? ?????
+   0.67 LCS              cho          cor             Latin      body_parts      heart
+   0.67 LCS              cho          hom             Hebrew     elemental       hot/warm ? ??
+   0.67 CONSONANT        choar        zahr            Arabic     body_parts      back ? ???
+   0.67 CONSONANT        choar        cor             Latin      body_parts      heart
+   0.67 CONSONANT        choar        harara          Arabic     elemental       heat ? ?????
+   0.67 CONSONANT        choar        choeis          Coptic     qualities       lord ? ?????
+   0.67 CONSONANT        chol         zuhal           Arabic     leo_decans      Saturn ? ???
+   0.67 CONSONANT        chol         helios          Greek      solar           sun ? ?????
+   0.67 CONSONANT        chol         choeis          Coptic     qualities       lord ? ?????
+   0.67 LCS              cyo          cor             Latin      body_parts      heart
+   0.67 CONSONANT        dairan       sadr            Arabic     body_parts      chest/breast ? ???
+   0.67 CONSONANT        dairan       daraja          Arabic     astronomical    degree ? ????
+   0.67 LCS              ech          esh             Hebrew     elemental       fire ? ??
+   0.67 CONSONANT        ech          choeis          Coptic     qualities       lord ? ?????
+   0.67 LCS              eod          leo             Latin      leo_names       lion
+   0.67 LCS              eod          ero             Coptic     qualities       king ? ???
+   0.67 CONSONANT        eodar        sadr            Arabic     body_parts      chest/breast ? ???
+   0.67 CONSONANT        eodar        daraja          Arabic     astronomical    degree ? ????
+   0.67 LCS              eoe          leo             Latin      leo_names       lion
+   0.67 LCS              eoe          ero             Coptic     qualities       king ? ???
+   0.67 LCS              eol          sol             Latin      solar           sun
+   0.67 LCS              eol          ero             Coptic     qualities       king ? ???
+   0.67 LCS              eos          leo             Latin      leo_names       lion
+   0.67 LCS              eos          esh             Hebrew     elemental       fire ? ??
+   0.67 LCS              eos          ero             Coptic     qualities       king ? ???
+   0.67 LCS              es           esh             Hebrew     elemental       fire ? ??
+   0.67 CONSONANT        esed         sadr            Arabic     body_parts      chest/breast ? ???
+   0.67 LCS              he           rhe             Coptic     solar           sun ? ??
+   0.67 LCS              heo          leo             Latin      leo_names       lion
+   0.67 LCS              heo          rhe             Coptic     solar           sun ? ??
+   0.67 LCS              heo          hom             Hebrew     elemental       hot/warm ? ??
+   0.67 LCS              heo          ero             Coptic     qualities       king ? ???
+   0.67 CONSONANT        heos         helios          Greek      solar           sun ? ?????
+   0.67 CONSONANT        heos         choeis          Coptic     qualities       lord ? ?????
+   0.67 LCS              ho           hom             Hebrew     elemental       hot/warm ? ??
+   0.67 LCS              le           lev             Hebrew     body_parts      heart ? ??
+   0.67 LCS              ol           sol             Latin      solar           sun
+   0.67 CONSONANT        olsh         laith           Arabic     leo_names       lion (poetic) ? ???
+   0.67 CONSONANT        olsh         helios          Greek      solar           sun ? ?????
+   0.67 CONSONANT        olsh         esh             Hebrew     elemental       fire ? ??
+   0.67 LCS              or           cor             Latin      body_parts      heart
+   0.67 CONSONANT        rch          arieh           Hebrew     leo_names       lion ? ????
+   0.67 CONSONANT        rch          rhe             Coptic     solar           sun ? ??
+   0.67 CONSONANT        rch          choeis          Coptic     qualities       lord ? ?????
+   0.67 CONSONANT        ych          choeis          Coptic     qualities       lord ? ?????
+   0.60 LCS              cham         shams           Arabic     solar           sun ? ???
+   0.60 LCS              chas         shams           Arabic     solar           sun ? ???
+   0.60 LCS              oleol        leon            Greek      leo_names       lion ? ????
+
+  Total matches (score >= 0.6): 89
+
+========================================================================
+ANALYSIS 3: PHONETIC VALUE HYPOTHESES FROM ANCHOR
+========================================================================
+
+  -- Phonetic Correspondence Table --
+  (from esed=asad + structural analysis)
+
+    EVA    -> Proposed Sound Value    Evidence
+    ------------------------------------------------------------
+    e      -> a/e (short vowel)       esed=asad, e-chains non-structural
+    s      -> s                        esed=asad, s+f complement pair
+    d      -> d                        esed=asad, d+p complement pair
+    ch     -> kh/x/h                   ch is most common - guttural?
+    sh     -> sh/sh                    standard sibilant
+    a      -> a (long vowel)           a vs e = long vs short
+    o      -> o/u (back vowel)         o-prefix = locative?
+    r      -> r                        standard
+    l      -> l                        standard
+    n      -> n                        standard (only in iin/aiin)
+    y      -> y/i (semivowel/suffix)   y as suffix marker
+    h      -> h                        standard aspirate
+    i      -> i (always in iin/aiin)   genitive/possessive?
+
+  -- Testing ch=kh hypothesis with Leo roots --
+    Roots containing 'ch': ['ch', 'chal', 'cham', 'chas', 'che', 'cheal', 'cheo', 'ches', 'chh', 'chlyiine', 'cho', 'choar', 'chol', 'cholain', 'ech', 'rch', 'ych']
+
+    cham -> kham: Arabic 'kham' (raw) or Hebrew 'cham' (hot/warm)
+         Leo = fire sign, 'hot' is perfectly contextual!
+    cheo -> kheo: possibly related to Coptic 'choeis' (lord)?
+    ches -> khes: Coptic 'kes' (bone)? Hebrew 'chas' (compassion)?
+    chol -> khol: Arabic 'kohl' (antimony)? Hebrew 'kol' (all)?
+
+  -- Testing other Leo-unique roots --
+    yesh -> Hebrew 'yesh' (existence/there is) - common predicate
+    rch  -> Hebrew 'reach' (smell/spirit) or Arabic 'rih' (wind)
+         OR: reversed reading of chr -> Coptic 'chrisma' (anointing)
+    heos -> kheos? Greek 'theos' (god)? Coptic 'hise' (suffering)?
+    esed -> asad (CONFIRMED: Arabic 'asad' (lion))
+
+  -- Context around oteesed (nymph #29, inner ring) --
+    #21 10:30 choleey         -> det=-  root=chol       sf=ey
+    #22 11:30 oky             -> det=k  root=o          sf=y
+    #23 00:30 chcthhy         -> det=t  root=chh        sf=y
+    #24 01:00 laly            -> det=-  root=lal        sf=y
+    #25 02:00 oeedy           -> det=-  root=e          sf=dy
+    #26 03:00 odairan         -> det=-  root=dairan     sf=-
+    #27 04:00 okary           -> det=k  root=ar         sf=y
+    #28 05:00 oeesaiin        -> det=-  root=es         sf=aiin
+    #29 06:30 oteesed         -> det=t  root=esed       sf=- * ANCHOR
+    #30 07:30 opal            -> det=p  root=al         sf=-
+    #31 08:30 otaly           -> det=t  root=al         sf=y
+    #32 09:30 otaly           -> det=t  root=al         sf=y
+    #32 09:30 yty             -> det=t  root=y          sf=y
+
+========================================================================
+ANALYSIS 4: CROSS-MANUSCRIPT ROOT DISTRIBUTION
+========================================================================
+
+  -- Leo Root Distribution Across Manuscript --
+  Root           Leo   herbal   bio   cosmo   text   pharma   zodiac  Note
+  ------------------------------------------------------------------------------------------
+  e               23     1099  1177     456   1812      511      392  
+  al               7      491   391     160    453       86      211  
+  ch               5     1478   679     270    958      220      187  
+  h                5      592   629     162    477       96       75  
+  a                4     1225   708     442   1258      248      141  
+  ech              3       13    10       8     62        3       14  
+  o                3      618   156      92    190       78       91  
+  che              3      224    75      36    201      130       66  
+  l                3      182   429     166    517       46       35  
+  ar               2      603   282     374    549       98      195  
+  ches             2       23    19      10     25        8       12  
+  eos              2       30     0       4     22       18       57  
+  ho               2      167     6      14     37       27       22  
+  es               2       57    13      24     30        7       40  
+  eol              2        7     8       0      7       10       22  
+  ol               2      625   511     138    247      242       86  
+  am               1      152    23      70    104       30       34  
+  eolyd            1        0     0       0      0        0        1  ZODIAC-ONLY
+  cham             1       15     2       0      4        2        4  
+  olsh             1        1     1       0      0        0        3  zodiac-heavy
+  esed             1        0     0       0      0        0        1  ZODIAC-ONLY
+  eses             1        0     1       0      0        0        1  
+  heo              1       35     2       8     40       19       13  
+  rch              1       13    22       6     14        6        1  
+  le               1       12     3      10     33        7        3  
+  lal              1        6     1       2      2        2        5  
+  dairan           1        0     0       0      0        0        1  ZODIAC-ONLY
+  yesh             1        0     0       0      0        0        1  ZODIAC-ONLY
+  alysh            1        0     0       0      0        0        1  ZODIAC-ONLY
+  os               1       47     1      16      9       13       17  
+  heos             1        5     0       4      4        3        4  
+  el               1        1     1       0      2        0        1  
+  yed              1        1     0       0      0        0        1  
+  cheal            1        1     3       0      2        0        3  
+  cho              1      340     3      28    103       49       77  
+  chas             1        0     0       0      0        0        2  ZODIAC-ONLY
+  cheo             1       53     5      12    117       49       31  
+  y                1      382    26      22     25       20       26  
+  or               1      527   141     134    144      130       32  
+  eoe              1        1     0       0      0        2        1  
+  chh              1       11     2       2      8        0        4  
+  eod              1       53     0      18     37       16       50  
+  eodar            1        0     0       0      1        0        1  
+  chal             1        9     1       2      7        2        5  
+  dys              1        0     1       0      1        0        1  
+  choar            1        0     0       0      0        1        1  
+  ych              1        4     3       0      2        0        4  
+  alals            1        0     0       0      0        0        2  ZODIAC-ONLY
+  ed               1       54    62      36    187        4       12  
+  chlyiine         1        0     0       0      0        0        1  ZODIAC-ONLY
+  eolo             1        0     0       0      0        1        1  
+  edal             1        1     1       2      0        0        4  
+  cholain          1        0     0       0      0        0        1  ZODIAC-ONLY
+  he               1      132    62      26    103       65       29  
+  chol             1       44     4       8     17       13       10  
+  oleol            1        0     0       0      0        0        1  ZODIAC-ONLY
+  hedye            1        0     0       0      0        0        1  ZODIAC-ONLY
+  cyo              1        0     0       0      0        0        1  ZODIAC-ONLY
+
+  -- Roots exclusive to Leo folio within zodiac --
+  Leo-exclusive roots (not in other zodiac folios): ['alysh', 'cham', 'chlyiine', 'choar', 'cholain', 'cyo', 'dairan', 'dys', 'edal', 'el', 'eodar', 'eoe', 'eolo', 'eolyd', 'esed', 'eses', 'hedye', 'oleol', 'rch', 'ych', 'yed', 'yesh']
+
+========================================================================
+ANALYSIS 5: RING TEXT SEMANTIC STRUCTURE
+========================================================================
+
+  -- C1_outer (37 words) --
+    Top roots: [('e', 7), ('h', 3), ('ech', 3), ('ho', 2), ('ch', 2), ('es', 1), ('os', 1), ('ed', 1), ('eod', 1), ('eos', 1)]
+    Determinatives: {'-': 11, 't': 15, 'k': 10, 'p': 1}
+    Suffixes: {'-': 6, 'ar': 3, 'ody': 5, 'al': 2, 'ey': 5, 'y': 5, 'edy': 4, 'ol': 3, 'dy': 1, 'aiin': 1, 'or': 1, 'iin': 1}
+    Full text (decomposed):
+       1. soees                -> det=-  pf=so  root=es         sf=-
+       2. otchs                -> det=t  pf=-   root=os         sf=-
+       3. otedar               -> det=t  pf=o   root=ed         sf=ar
+       4. oteody               -> det=t  pf=o   root=e          sf=ody
+       5. oteodal              -> det=t  pf=o   root=eod        sf=al
+       6. oteos                -> det=t  pf=o   root=eos        sf=-
+       7. oteody               -> det=t  pf=o   root=e          sf=ody
+       8. sheokeey             -> det=k  pf=s   root=heo        sf=ey
+       9. sheody               -> det=-  pf=s   root=he         sf=ody
+      10. shedykeal            -> det=k  pf=s   root=hedye      sf=al
+      11. ckhodys              -> det=k  pf=o   root=dys        sf=-
+      12. okoleeolar           -> det=k  pf=o   root=oleol      sf=ar
+      13. okeey                -> det=k  pf=o   root=e          sf=y
+      14. shedy                -> det=-  pf=s   root=h          sf=edy
+      15. otey                 -> det=t  pf=o   root=e          sf=y
+      ... (22 more)
+
+  -- C2_middle (29 words) --
+    Top roots: [('e', 9), ('o', 2), ('a', 2), ('ch', 2), ('chlyiine', 1), ('or', 1), ('cheo', 1), ('eoe', 1), ('ol', 1), ('eos', 1)]
+    Determinatives: {'t': 8, '-': 12, 'k': 9}
+    Suffixes: {'ey': 3, '-': 6, 'y': 10, 'ody': 1, 'ol': 2, 'or': 1, 'iin': 2, 'edy': 1, 'dy': 3}
+    Full text (decomposed):
+       1. ototeey              -> det=t  pf=o   root=o          sf=ey
+       2. chlyiintee           -> det=t  pf=-   root=chlyiine   sf=-
+       3. or                   -> det=-  pf=-   root=or         sf=-
+       4. oteey                -> det=t  pf=o   root=e          sf=y
+       5. oteeody              -> det=t  pf=o   root=e          sf=ody
+       6. cheokey              -> det=k  pf=-   root=cheo       sf=ey
+       7. okeoekol             -> det=k  pf=o   root=eoe        sf=ol
+       8. oteor                -> det=t  pf=o   root=e          sf=or
+       9. aiin                 -> det=-  pf=-   root=a          sf=iin
+      10. yoleeedy             -> det=-  pf=y   root=ol         sf=edy
+      11. okeos                -> det=k  pf=o   root=eos        sf=-
+      12. alyshy               -> det=-  pf=-   root=alysh      sf=y
+      13. okeey                -> det=k  pf=o   root=e          sf=y
+      14. okeeey               -> det=k  pf=o   root=e          sf=y
+      15. okeedaly             -> det=k  pf=o   root=edal       sf=y
+      ... (14 more)
+
+  -- C3_inner (12 words) --
+    Top roots: [('che', 2), ('eses', 1), ('ar', 1), ('eol', 1), ('chal', 1), ('eodar', 1), ('le', 1), ('h', 1), ('l', 1), ('al', 1)]
+    Determinatives: {'k': 4, '-': 7, 't': 1}
+    Suffixes: {'-': 2, 'ol': 1, 'aiin': 1, 'al': 1, 'ar': 2, 'ody': 1, 'edy': 1, 'dy': 1, 'or': 2}
+    Full text (decomposed):
+       1. okesees              -> det=k  pf=o   root=eses       sf=-
+       2. ar                   -> det=-  pf=-   root=ar         sf=-
+       3. chkeeol              -> det=k  pf=-   root=che        sf=ol
+       4. okeolaiin            -> det=k  pf=o   root=eol        sf=aiin
+       5. chalal               -> det=-  pf=-   root=chal       sf=al
+       6. ykeeodarar           -> det=k  pf=y   root=eodar      sf=ar
+       7. oleeody              -> det=-  pf=o   root=le         sf=ody
+       8. shedy                -> det=-  pf=s   root=h          sf=edy
+       9. solar                -> det=-  pf=so  root=l          sf=ar
+      10. aldy                 -> det=-  pf=-   root=al         sf=dy
+      11. oteor                -> det=t  pf=o   root=e          sf=or
+      12. cheor                -> det=-  pf=-   root=che        sf=or
+
+  -- Ring Comparison --
+    C1_outer    :  37 words,  25 unique roots, t=41%, k=27%, bare=30%
+    C2_middle   :  29 words,  18 unique roots, t=28%, k=31%, bare=41%
+    C3_inner    :  12 words,  11 unique roots, t=8%, k=33%, bare=58%
+
+========================================================================
+ANALYSIS 6: 'esed' (=asad/lion) ACROSS THE ENTIRE MANUSCRIPT
+========================================================================
+
+  Instances of root 'esed' across manuscript: 2
+    oteesed               [    zodiac]    f72v_part nymph     det=t pf=o root=esed sf=-
+    shesed                [  herbal-A]          f8r paragraph  det=- pf=s root=hesed sf=-
+
+  -- Also checking 'sed', 'esd', 'sd' roots --
+    qopchsd               [      text]        f105v paragraph  root=sd
+    opchsd                [      text]        f108r paragraph  root=sd
+    qokesd                [  herbal-A]         f65v paragraph  root=esd
+    osdaiin               [    zodiac]         f68r star      root=sd
+    kesd                  [       bio]         f83r paragraph  root=esd
+    opchsd                [     cosmo]    f85r_part paragraph  root=sd
+    opchsd                [     cosmo] f85r_part_86v_part paragraph  root=sd
+
+  -- Raw words containing 'esed' substring --
+    esedy                 [  herbal-A]         f56r paragraph  det=- root=es sf=edy
+    oteesed               [    zodiac]    f72v_part nymph     det=t root=esed sf=-
+    qoesedy               [       bio]         f82r paragraph  det=- root=es sf=edy
+    shesed                [  herbal-A]          f8r paragraph  det=- root=hesed sf=-
+
+========================================================================
+ANALYSIS 7: NYMPH-BY-NYMPH INTERPRETIVE ATTEMPT
+========================================================================
+
+  Using anchor esed=asad + expanded vocabulary to attempt
+  interpretation of each Leo nymph label.
+
+  -- OUTER RING --
+    # 2 ocham              [        -] root=cham       -> hot/warm ? ?? (Hebrew, 0.67)
+    # 3 orchey             [        -] root=rch        -> lion ? ???? (Hebrew, 0.67)
+    # 4 okam               [  GENERIC] root=am         -> lion ? ???? (Coptic, 1.00)
+    # 5 okey               [  GENERIC] root=e          -> ?
+    # 6 otcheody           [CELESTIAL] root=e          -> ?
+    # 7 okyeeshy           [  GENERIC] root=yesh       -> fire ? ?? (Hebrew, 0.85)
+    # 8 cyofaiin           [BOTANICAL] root=cyo        -> heart (Latin, 0.67)
+    # 9 okaly              [  GENERIC] root=al         -> lion (Latin, 1.00)
+    #10 otoly              [CELESTIAL] root=ol         -> lion (Latin, 1.00)
+    #11 ofalals            [BOTANICAL] root=alals      -> sun ? ????? (Greek, 0.67)
+    #12 sheeos             [        -] root=heos       -> sun ? ????? (Greek, 0.67)
+    #12 ocfhhy             [BOTANICAL] root=h          -> day ? ???? (Coptic, 1.00)
+    #13 daiin              [        -] root=a          -> ?
+    #13 chepy              [  PROCESS] root=ch         -> lord ? ????? (Coptic, 0.67)
+    #14 oteey              [CELESTIAL] root=e          -> ?
+    #14 deeal              [        -] root=e          -> ?
+    #15 chealpy            [  PROCESS] root=cheal      -> Saturn ? ??? (Arabic, 0.67)
+    #16 okeeol             [  GENERIC] root=e          -> ?
+    #17 okaly              [  GENERIC] root=al         -> lion (Latin, 1.00)
+    #18 okaldy             [  GENERIC] root=al         -> lion (Latin, 1.00)
+    #19 okeolyd            [  GENERIC] root=eolyd      -> ?
+
+  -- INNER RING --
+    #21 choleey            [        -] root=chol       -> Saturn ? ??? (Arabic, 0.67)
+    #22 oky                [  GENERIC] root=o          -> ?
+    #23 chcthhy            [CELESTIAL] root=chh        -> lord ? ????? (Coptic, 0.67)
+    #24 laly               [        -] root=lal        -> ?
+    #25 oeedy              [        -] root=e          -> ?
+    #26 odairan            [        -] root=dairan     -> chest/breast ? ??? (Arabic, 0.67)
+    #27 okary              [  GENERIC] root=ar         -> king ? ??? (Coptic, 1.00)
+    #28 oeesaiin           [        -] root=es         -> star ? ???? (Coptic, 1.00)
+    #29 oteesed            [CELESTIAL] root=esed       -> ? LION (Arabic asad)
+    #30 opal               [  PROCESS] root=al         -> lion (Latin, 1.00)
+    #31 otaly              [CELESTIAL] root=al         -> lion (Latin, 1.00)
+    #32 otaly              [CELESTIAL] root=al         -> lion (Latin, 1.00)
+    #32 yty                [CELESTIAL] root=y          -> ?
+
+
+========================================================================
+SYNTHESIS: LEO FOLIO DEEP-DIVE RESULTS
+========================================================================
+
+    +--------------------------------------------------------------------+
+    |  LEO FOLIO (f72v3) - STRUCTURAL AND INTERPRETIVE SUMMARY           |
+    +--------------------------------------------------------------------+
+    |                                                                    |
+    |  ANCHOR: oteesed = o[prefix] + t[celestial] + esed[lion/asad]      |
+    |  Inner ring, nymph #29, clock position 06:30                       |
+    |                                                                    |
+    |  Total words: 112    Unique roots: 58                       |
+    |  Nymph labels: 34   Ring text words: 78                      |
+    |  Vocabulary matches (>=0.65): 43 roots                          |
+    |                                                                    |
+    |  DETERMINATIVE PROFILE:                                            |
+    |    t (celestial) dominates - expected for zodiac Leo               |
+    |    k (generic) for classification entries                          |
+    |    f (botanical) minimal - Leo = not a plant section               |
+    |                                                                    |
+    |  KEY INTERPRETIVE CANDIDATES:                                      |
+    |    esed  = asad (lion) - CONFIRMED anchor                          |
+    |    cham  = ham/kham (hot/warm) - Hebrew, fire sign context         |
+    |    sol   = sol (sun) - Leo's ruling planet (also a logogram)       |
+    |    yesh  = Hebrew (existence) - predicate marker?                  |
+    |    rch   = ruah (spirit/wind) - Hebrew                             |
+    |                                                                    |
+    +--------------------------------------------------------------------+
+
+Results saved to results/leo_deepdive_results.json

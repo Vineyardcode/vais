@@ -24,6 +24,7 @@ import math
 import os
 import sys
 from collections import Counter, defaultdict
+from common import result_path
 
 # ─────────────────────────────────────────────────────────────
 # HEBREW VERB CONJUGATION REFERENCE DATA
@@ -518,7 +519,7 @@ def main():
     print("=" * 90)
 
     # Load data
-    results_path = 'attack_plan_results.json'
+    results_path = result_path('attack_plan_results.json')
     if not os.path.exists(results_path):
         print(f"ERROR: {results_path} not found. Run attack_plan.py first.")
         sys.exit(1)
@@ -885,9 +886,9 @@ def main():
         'binyan': [{k: v for k, v in r.items() if k != 'roots_detail'}
                    for r in (binyan_results[:20] if binyan_results else [])],
     }
-    with open('hebrew_comparison_results.json', 'w', encoding='utf-8') as f:
+    with open(result_path('hebrew_comparison_results.json'), 'w', encoding='utf-8') as f:
         json.dump(output, f, indent=2, ensure_ascii=False, default=str)
-    print(f"  Saved to hebrew_comparison_results.json")
+    print(f"  Saved to results/hebrew_comparison_results.json")
     print()
     print("═" * 90)
     print("HEBREW COMPARISON COMPLETE")

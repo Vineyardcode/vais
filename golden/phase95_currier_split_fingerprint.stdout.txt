@@ -1,0 +1,198 @@
+========================================================================
+  PHASE 95 — CURRIER A/B INDEPENDENT FINGERPRINT ANALYSIS
+========================================================================
+  Question: Is VMS_TARGET a valid monolithic baseline, or are
+  we averaging two different systems?
+========================================================================
+
+▸ Parsing VMS corpus by Currier section...
+     A:    9,853 tokens,  3,162 types
+     B:   26,171 tokens,  5,212 types
+   MID:    4,327 tokens,  1,977 types
+   ALL:   40,351 tokens,  8,212 types
+
+========================================================================
+  FULL FINGERPRINT COMPARISON
+========================================================================
+
+  Section          h_char    Heaps    hapax     wlen     Zipf      TTR    Types   Tokens
+  ────────────── ──────── ──────── ──────── ──────── ──────── ──────── ──────── ────────
+  VMS_TARGET       0.6410   0.7530   0.6560   4.9400   0.9420   0.3420        ─        ─
+  NL_range        .82-.90  .60-.80  .50-.70  4.0-6.0 .90-1.10  .30-.50
+  VMS_ALL          0.6530   0.7506   0.7188   5.0530   0.9237   0.3770    8,212   40,351
+                 Distance to VMS_TARGET: 0.1446
+  VMS_A            0.6758   0.7682   0.7363   4.8982   0.9191   0.3770    3,162    9,853
+                 Distance to VMS_TARGET: 0.1717
+  VMS_B            0.6208   0.7698   0.4954   5.1145   0.9662   0.2520    5,212   26,171
+                 Distance to VMS_TARGET: 0.3641
+  VMS_MID          0.6904   0.8286   0.7701   5.0335   0.7780   0.4569    1,977    4,327
+                 Distance to VMS_TARGET: 0.4357
+
+========================================================================
+  KEY QUESTION: h_char ANOMALY — MIXING ARTIFACT OR INTRINSIC?
+========================================================================
+
+  h_char(ALL)      = 0.6530
+  h_char(A)        = 0.6758
+  h_char(B)        = 0.6208
+  h_char(NL range) = 0.82 — 0.90
+
+  Gap ALL→NL:  0.1670
+  Gap A→NL:    0.1442
+  Gap B→NL:    0.1992
+
+  Mixed result: one section differs from mixture.
+
+  Weighted average of split h_chars: 0.6358
+  Gap closed by splitting: -8.3% of distance to NL midpoint
+
+========================================================================
+  BOOTSTRAP SIGNIFICANCE: A vs B DIFFERENCES
+========================================================================
+
+  Running 200-iteration bootstrap (this may take a moment)...
+
+  Dimension            A_mean           A_95CI   B_mean           B_95CI  Cohen_d   Sig?
+  ────────────────── ──────── ──────────────── ──────── ──────────────── ──────── ──────
+  h_char_ratio         0.6928  [0.6891,0.6968]   0.6392  [0.6369,0.6415]    33.20    ***
+  heaps_beta           0.6948  [0.6789,0.7130]   0.6700  [0.6590,0.6851]     3.21      *
+  hapax_ratio_mid      0.5690  [0.5495,0.5886]   0.5134  [0.4977,0.5305]     5.97    ***
+  mean_word_len        4.8960  [4.8531,4.9394]   5.1139  [5.0930,5.1379]    12.04    ***
+  zipf_alpha           0.8662  [0.8452,0.8851]   0.9477  [0.9343,0.9622]     9.16    ***
+  ttr_5000             0.3224  [0.3138,0.3326]   0.3286  [0.3192,0.3382]     1.24      *
+
+  Significant differences (non-overlapping 95% CI): 4/6
+  → A and B are COMPREHENSIVELY different — treating VMS as monolith is WRONG
+
+========================================================================
+  CONTROL: RANDOM 50/50 SPLIT (same corpus, no structural divide)
+========================================================================
+
+  Split            h_char    Heaps    hapax     wlen     Zipf      TTR
+  ────────────── ──────── ──────── ──────── ──────── ──────── ────────
+  Random_A         0.6700   0.7414   0.6942   5.0450   0.9092   0.3842
+  Random_B         0.6687   0.7677   0.7015   5.0610   0.9105   0.3774
+
+  Max dimension difference — Random split: 0.0263
+  Max dimension difference — Currier A/B:  0.2409
+  Ratio: Currier is 9.1x larger than random
+  → Currier A/B difference is FAR beyond sampling noise
+
+========================================================================
+  CONTROL: SUBSAMPLE B TO A's SIZE (corpus-size effect check)
+========================================================================
+  Subsampling B (26,171 words) to A's size (9,853)...
+
+  B subsampled to 9,853 words (10 trials):
+  Dimension                 A   B_full B_sub_mean  B_sub_std
+  ────────────────── ──────── ──────── ────────── ──────────
+  h_char_ratio         0.6758   0.6208     0.6381     0.0010
+  heaps_beta           0.7682   0.7698     0.7160     0.0078
+  hapax_ratio_mid      0.7363   0.4954     0.6383     0.0090
+  mean_word_len        4.8982   5.1145     5.1085     0.0161
+  zipf_alpha           0.9191   0.9662     0.9251     0.0070
+  ttr_5000             0.3770   0.2520     0.3292     0.0063
+
+  If B_sub ≈ B_full → size doesn't explain differences
+  If B_sub ≈ A → the 'difference' was a sample-size artifact
+
+========================================================================
+  VOCABULARY ANALYSIS
+========================================================================
+
+  VOCABULARY COMPARISON:
+    Types in A: 3,162
+    Types in B: 5,212
+    Shared:     1,192 (16.6% of union)
+    Only in A:  1,970
+    Only in B:  4,020
+    Jaccard similarity: 0.1660
+
+    Top 15 words distinctive to A (freq_A >> freq_B):
+      choiin           A:   13 B:    0 ratio:13194.0x
+      v                A:   12 B:    0 ratio:12179.0x
+      kchy             A:   31 B:    1 ratio:82.3x
+      dchor            A:   21 B:    1 ratio:55.8x
+      tchy             A:   24 B:    2 ratio:31.9x
+      qot              A:   12 B:    1 ratio:31.9x
+      t                A:   11 B:    1 ratio:29.2x
+      cthy             A:   87 B:    9 ratio:25.7x
+      cthor            A:   37 B:    4 ratio:24.6x
+      cthar            A:   15 B:    2 ratio:19.9x
+      dchy             A:   20 B:    3 ratio:17.7x
+      otchor           A:   12 B:    2 ratio:15.9x
+      qotchol          A:   11 B:    2 ratio:14.6x
+      chokchy          A:   11 B:    2 ratio:14.6x
+      ty               A:   16 B:    3 ratio:14.2x
+
+    Top 15 words distinctive to B (freq_B >> freq_A):
+      qotain           A:    0 B:   60 ratio:22926.1x
+      lkaiin           A:    0 B:   51 ratio:19487.2x
+      olkeey           A:    0 B:   41 ratio:15666.2x
+      olkain           A:    0 B:   35 ratio:13373.6x
+      lkar             A:    0 B:   34 ratio:12991.5x
+      lkain            A:    0 B:   34 ratio:12991.5x
+      qopchedy         A:    0 B:   33 ratio:12609.4x
+      olkar            A:    0 B:   28 ratio:10698.9x
+      qokain           A:    4 B:  280 ratio:26.4x
+      qol              A:    2 B:  139 ratio:26.2x
+      lchedy           A:    2 B:  112 ratio:21.1x
+      olkeedy          A:    1 B:   49 ratio:18.4x
+      oteedy           A:    2 B:   90 ratio:16.9x
+      otchedy          A:    1 B:   39 ratio:14.7x
+      qokchedy         A:    1 B:   38 ratio:14.3x
+
+========================================================================
+  GLYPH DISTRIBUTION COMPARISON
+========================================================================
+
+  GLYPH FREQUENCY COMPARISON (top 20):
+    Glyph    A_pct   B_pct   Delta Note
+    ────── ─────── ─────── ─────── ────────────────────
+    o       15.95%  14.04%  -1.90% z=+9.5 ***
+    e        7.19%  13.03%  +5.84% z=-32.2 ***
+    y       10.76%  10.12%  -0.64% z=+3.7 ***
+    a        7.77%   8.53%  +0.76% z=-4.8 ***
+    d        8.04%   7.67%  -0.38% z=+2.5 **
+    i        7.97%   6.97%  -1.00% z=+6.8 ***
+    ch       8.72%   5.62%  -3.11% z=+22.4 ***
+    l        5.03%   6.28%  +1.25% z=-9.3 ***
+    k        5.17%   5.96%  +0.79% z=-6.0 ***
+    r        4.76%   4.26%  -0.50% z=+4.3 ***
+    n        4.07%   3.74%  -0.33% z=+3.0 ***
+    q        2.16%   3.82%  +1.66% z=-16.2 ***
+    t        3.75%   3.23%  -0.51% z=+5.0 ***
+    sh       2.88%   2.62%  -0.27% z=+2.9 **
+    s        1.74%   1.41%  -0.33% z=+4.8 ***
+    p        0.75%   0.89%  +0.15% z=-2.8 **
+    m        0.76%   0.56%  -0.20% z=+4.6 ***
+    cth      1.10%   0.36%  -0.75% z=+17.8 ***
+    ckh      0.57%   0.51%  -0.06% 
+    f        0.32%   0.20%  -0.12% z=+4.4 ***
+
+========================================================================
+  CRITICAL VERDICT
+========================================================================
+
+  1. h_char ANOMALY:
+     Full corpus:  0.6530 (gap to NL min: 0.1670)
+     Currier A:    0.6758 (gap to NL min: 0.1442)
+     Currier B:    0.6208 (gap to NL min: 0.1992)
+     → A is more NL-like than B. Anomaly is STRONGER in B.
+
+  2. DISTANCE TO VMS_TARGET:
+     VMS_ALL: 0.1446
+     VMS_A: 0.1717
+     VMS_B: 0.3641
+
+     Closer section: A (by 0.1924)
+
+  3. MONOLITH VALIDITY:
+     VMS_TARGET as monolithic baseline is QUESTIONABLE.
+     Future experiments should test against A and B targets separately.
+
+  4. IMPLICATIONS FOR PRIOR RESULTS:
+     Phase 83 best match (distance 0.1277) was against whole-corpus target.
+     → Should recompute against section-specific targets.
+
+  Results saved to C:\projects\voynich_slop\results\phase95_currier_split_fingerprint.txt

@@ -18,7 +18,7 @@ import math
 from pathlib import Path
 from collections import Counter, defaultdict
 from itertools import combinations
-from common import classify_folio_v3 as classify_folio, entropy_v2 as entropy, get_root
+from common import classify_folio_v3 as classify_folio, entropy_v2 as entropy, get_root, result_path
 
 # ════════════════════════════════════════════════════════════════════════════
 # 1. IMPROVED PARSER
@@ -743,7 +743,7 @@ def main():
             "i1": counts.get(1, 0), "i2": counts.get(2, 0), "i3": counts.get(3, 0),
         })
 
-    out_path = Path("attack_plan_results.json")
+    out_path = result_path("attack_plan_results.json")
     with open(out_path, "w", encoding="utf-8") as f:
         json.dump(results, f, indent=2, ensure_ascii=False)
     print(f"  Saved to {out_path}")

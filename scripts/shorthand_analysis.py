@@ -22,7 +22,7 @@ import math
 from pathlib import Path
 from collections import Counter, defaultdict
 from itertools import combinations
-from common import classify_folio_v3 as classify_folio, get_root
+from common import classify_folio_v3 as classify_folio, get_root, result_path
 
 # ═══════════════════════════════════════════════════════════════════════════
 # PARSER (reused)
@@ -1175,9 +1175,9 @@ def main():
     print(f"  Score: {evidence_for} for shorthand / {evidence_against} against")
     print()
 
-    with open('shorthand_results.json', 'w', encoding='utf-8') as f:
+    with open(result_path('shorthand_results.json'), 'w', encoding='utf-8') as f:
         json.dump(results, f, indent=2, ensure_ascii=False, default=str)
-    print(f"  Results saved to shorthand_results.json")
+    print(f"  Results saved to results/shorthand_results.json")
     print()
     print("═" * 90)
     print("PHARMACEUTICAL SHORTHAND ANALYSIS COMPLETE")

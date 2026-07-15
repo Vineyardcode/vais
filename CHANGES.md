@@ -225,3 +225,59 @@ originals under fixed hash seed · 2 differ only in printed wall-clock text ·
 4 differ exactly as the documented bug fixes intend.
 Scratch evidence dirs (`rerun/`, `baseline_prime/`, `.bp_scripts/`) are
 gitignored but left on disk for audit; `baseline/` (golden) is committed.
+
+## Follow-up work package (requested 2026-07-15, after initial handoff)
+
+### 1. Result I/O standardized into results/
+- `common.result_path(name)` added; **26 scripts** rewritten so every
+  inter-script result JSON is read AND written at `results/<name>` (the
+  pre-phase-19 scripts previously used the project root, and
+  `four_tasks_audit` was reading a stale committed snapshot under results/
+  while its producer wrote to the root).
+- The 23 root-level snapshots were moved to `attic/root_result_snapshots/`
+  (nothing hard-deleted). Note: the atticked `slot_analysis_results.json`
+  had been overwritten by the UI error-surfacing test's poisoned run during
+  Phase 4; the clean output lives at `results/slot_analysis_results.json`.
+- Verification: all 27 affected tests re-ran ok; stdout diffs are exactly
+  the "saved to …" path lines; all relocated result files are
+  content-identical to the pre-move state; the reader scripts
+  (`crosssign_network`, `medieval_degrees`, `innermost_ring_dive`,
+  `four_tasks_audit`, `f66r_analysis`, `hebrew_comparison`,
+  `herbal_crossref`, `astro_crossref`) produce identical output.
+
+### 2. classify_folio taxonomies consolidated
+- `common/core.py` now carries a documented taxonomy block: number-based
+  (`classify_folio` / alias `classify_folio_by_number`), header-based
+  (`classify_folio_v3` / alias `classify_folio_by_header`), the new
+  `classify_folio_header_section` (deep_dive family) and
+  `classify_folio_labels_taxonomy` (herbal_labels' genuine 58-64→herbal-B
+  variant).
+- 7 scripts rewired. `gallows_test`/`herbal_crossref`/`four_tasks_audit`/
+  `leo_deepdive` were proven equivalent to the canonical classifier by
+  exhaustive evaluation over all 201 folio files before rewiring; all 7
+  re-ran byte-identical.
+
+### 3. phase23-31 SUFFIXES variant declared
+- `common.MORPH_SUFFIXES_NO_SY` documents the variant list (no 'sy',
+  eedy-first order — order is load-bearing); the 9 scripts keep a local
+  literal (verified equal to the constant) so the web UI continues to
+  expose SUFFIXES as a tunable parameter, now with a cross-referencing
+  comment. Comment-only change; outputs unaffected.
+
+### 4. Gutenberg disk cache
+- `common.fetch_gutenberg` now caches raw downloads in
+  `data/gutenberg_cache/` (committed, 10 texts, 16.5 MB — includes the
+  phase72 English fallback pair #10/#100). The 3 local fetch copies
+  (phase58/72/73, semantically identical modulo User-Agent) were rewired to
+  the common one. `tools/prefetch_gutenberg.py` repopulates the cache.
+- Verified: phase58 cached run is byte-identical to its network run and
+  drops from ~60s to 3.7s.
+
+### 5. Golden-diff wiring in the web UI
+- New committed reference `golden/` = current-code outputs at
+  `PYTHONHASHSEED=0` (assembled from the verified rerun captures; changed
+  scripts re-captured). The UI runner now pins `PYTHONHASHSEED=0`, and every
+  default-parameter run is auto-compared to golden: "= golden" /
+  "≠ golden (N lines)" badge with click-to-view unified diff. Custom-param
+  runs are marked not comparable. Refresh with
+  `tools/run_baseline.py --outdir golden --hashseed 0`.

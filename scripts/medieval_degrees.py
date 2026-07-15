@@ -23,10 +23,11 @@ import math
 from pathlib import Path
 from collections import Counter, defaultdict
 from itertools import groupby
+from common import result_path
 
 # ── Load ring_decan_results from previous Phase ─────────────────────────
 
-RESULTS_FILE = Path("ring_decan_results.json")
+RESULTS_FILE = result_path("ring_decan_results.json")
 
 def load_results():
     with open(RESULTS_FILE, encoding="utf-8") as f:

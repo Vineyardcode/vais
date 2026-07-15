@@ -1386,14 +1386,14 @@
       [
         "hebrew",
         "tlh",
-        "alch",
+        "olsh",
         "CONSONANT",
         0.6666666666666666
       ],
       [
         "hebrew",
         "tlh",
-        "olsh",
+        "alch",
         "CONSONANT",
         0.6666666666666666
       ],
@@ -1416,14 +1416,14 @@
       [
         "hebrew",
         "shor",
-        "alsh",
+        "shoda",
         "CONSONANT",
         0.6666666666666666
       ],
       [
         "hebrew",
         "shor",
-        "shoda",
+        "alsh",
         "CONSONANT",
         0.6666666666666666
       ],
@@ -1437,14 +1437,14 @@
       [
         "hebrew",
         "shr",
-        "alsh",
+        "shoda",
         "CONSONANT",
         0.6666666666666666
       ],
       [
         "hebrew",
         "shr",
-        "shoda",
+        "alsh",
         "CONSONANT",
         0.6666666666666666
       ]

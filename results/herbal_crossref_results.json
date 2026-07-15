@@ -353,13 +353,13 @@
       "score": 0.0023841306371537325
     },
     {
-      "word": "daly",
+      "word": "sheo",
       "ring_freq": 3,
       "herbA_freq": 15,
       "score": 0.002358073782245741
     },
     {
-      "word": "sheo",
+      "word": "daly",
       "ring_freq": 3,
       "herbA_freq": 15,
       "score": 0.002358073782245741
@@ -383,15 +383,15 @@
       "score": 0.0021952472224131773
     },
     {
-      "word": "okar",
-      "ring_freq": 1,
-      "herbA_freq": 36,
-      "score": 0.0021091253092246054
-    },
-    {
       "word": "chees",
       "ring_freq": 3,
       "herbA_freq": 12,
+      "score": 0.0021091253092246054
+    },
+    {
+      "word": "okar",
+      "ring_freq": 1,
+      "herbA_freq": 36,
       "score": 0.0021091253092246054
     },
     {
@@ -413,13 +413,13 @@
       "score": 0.002019333744706606
     },
     {
-      "word": "keey",
+      "word": "ykeey",
       "ring_freq": 2,
       "herbA_freq": 16,
       "score": 0.0019885024113665234
     },
     {
-      "word": "ykeey",
+      "word": "keey",
       "ring_freq": 2,
       "herbA_freq": 16,
       "score": 0.0019885024113665234
@@ -443,13 +443,7 @@
       "score": 0.0018929978981788375
     },
     {
-      "word": "otor",
-      "ring_freq": 2,
-      "herbA_freq": 14,
-      "score": 0.0018600736840268368
-    },
-    {
-      "word": "sheey",
+      "word": "kol",
       "ring_freq": 1,
       "herbA_freq": 28,
       "score": 0.0018600736840268368
@@ -461,9 +455,15 @@
       "score": 0.0018600736840268368
     },
     {
-      "word": "kol",
+      "word": "sheey",
       "ring_freq": 1,
       "herbA_freq": 28,
+      "score": 0.0018600736840268368
+    },
+    {
+      "word": "otor",
+      "ring_freq": 2,
+      "herbA_freq": 14,
       "score": 0.0018600736840268368
     },
     {

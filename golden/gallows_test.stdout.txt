@@ -1,0 +1,244 @@
+Extracting all words from corpus...
+
+Total tokens extracted: 39433
+
+========================================================================
+TEST 1: VOCABULARY COLLAPSE (GALLOWS REMOVAL)
+========================================================================
+
+  Original vocabulary: 7905 unique words
+  After gallows removal: 4795 unique words
+  Collapsed: 3110 words (39.3%)
+
+  Collision groups (words that merge): 1080
+
+  Top 30 collision groups (by total frequency):
+    'daiin' [915]: daiin(900), pdaiin(4), pchdaiin(4), tchdaiin(3), tdaiin(1), pshdaiin(1)
+    'ol' [874]: ol(596), cthol(59), tol(48), kol(39), kchol(27), pol(21)
+    'aiin' [744]: aiin(565), kaiin(87), taiin(51), cthaiin(12), paiin(8), cphaiin(6)
+    'or' [630]: or(440), cthor(44), kor(27), tor(25), tchor(22), kchor(20)
+    'chey' [621]: chey(372), cheky(64), checkhy(48), chckhey(32), checthy(30), chety(22)
+    'ar' [598]: ar(436), kar(63), tar(50), cthar(17), par(7), cphar(4)
+    'chedy' [567]: chedy(529), chckhedy(11), chcthedy(6), chkedy(5), chcphedy(4), chetdy(2)
+    'qoedy' [516]: qokedy(281), qotedy(91), qokchedy(41), qopchedy(33), qotchedy(27), qokshedy(12)
+    'shedy' [473]: shedy(455), shckhedy(6), shefchdy(3), sheckhdy(2), shetshdy(2), shkchedy(2)
+    'chy' [468]: chy(176), chckhy(141), chcthy(86), chky(17), chty(14), chcphy(10)
+    'qoy' [461]: qoky(150), qoty(94), qokchy(69), qotchy(63), qockhy(22), qopchy(16)
+    'oaiin' [458]: okaiin(225), otaiin(169), oaiin(26), opaiin(18), ofaiin(4), toaiin(3)
+    'oedy' [454]: otedy(172), okedy(120), opchedy(53), otchedy(43), okchedy(26), otshedy(10)
+    'chol' [437]: chol(415), chtol(5), chckhol(4), chkol(3), chkchol(3), chtchol(1)
+    'qoeedy' [423]: qokeedy(311), qoteedy(78), qoeedy(21), qoekedy(3), qopcheedy(3), qotcheedy(3)
+    'shey' [421]: shey(291), sheky(34), sheckhy(33), shecthy(20), shckhey(11), shety(10)
+    'oy' [419]: oty(123), oky(107), otchy(46), okchy(31), opchy(14), okshy(13)
+    'qoaiin' [413]: qokaiin(284), qotaiin(91), qoaiin(24), qopaiin(8), qofaiin(2), qokchaiin(2)
+    'qoeey' [399]: qokeey(318), qoteey(45), qoeey(18), qopcheey(6), qockheey(4), qokcheey(2)
+    'oar' [378]: otar(165), okar(151), oar(14), opar(9), otchar(7), ofar(7)
+    'dar' [377]: dar(362), pchdar(4), kchdar(3), pdar(3), pshdar(2), dkar(1)
+    'dy' [372]: dy(285), kchdy(23), tchdy(17), pchdy(10), cthdy(8), tshdy(6)
+    'oeey' [372]: okeey(189), oteey(150), oeey(9), opcheey(6), okcheey(5), otcheey(3)
+    'qoain' [359]: qokain(287), qotain(62), qoain(7), qokchain(1), qofain(1), qotchain(1)
+    'al' [352]: al(271), tal(30), kal(28), cthal(8), ckhal(4), pchal(3)
+    'oal' [341]: okal(157), otal(153), opal(9), okchal(4), ofal(3), otchal(3)
+    'y' [317]: cthy(106), ckhy(38), kchy(36), ky(31), tchy(28), ty(19)
+    'oey' [282]: okey(65), otey(62), otchey(36), opchey(33), okchey(33), otshey(12)
+    'qoar' [282]: qokar(185), qotar(73), qoar(9), qopar(9), qotchar(3), qopchar(2)
+    'qoal' [281]: qokal(206), qotal(64), qoal(6), qopal(2), qockhal(1), qofchal(1)
+
+  Tokens in collision groups: 33371 / 39433 (84.6%)
+
+  Words that become empty/trivial (<2 chars) after stripping: 68
+    Examples: cthy(106), ckhy(38), kchy(36), ky(31), tchy(28), ctho(20), ty(19), ot(15), cphy(12), kcho(9), tcho(9), yk(9), ksho(8), cfhy(8), kshy(7)
+
+========================================================================
+TEST 2: GALLOWS POSITIONAL RIGIDITY
+========================================================================
+
+  Normalized position of gallows in words (0=start, 1=end):
+    t      n=1913  mean=0.302  median=0.250  early(<0.3)=57%
+    k      n=2612  mean=0.352  median=0.333  early(<0.3)=46%
+    f      n= 361  mean=0.337  median=0.250  early(<0.3)=52%
+    p      n= 877  mean=0.236  median=0.167  early(<0.3)=68%
+    cth    n= 241  mean=0.255  median=0.286  early(<0.3)=54%
+    ckh    n= 243  mean=0.310  median=0.333  early(<0.3)=44%
+    cph    n= 111  mean=0.185  median=0.111  early(<0.3)=66%
+    cfh    n=  53  mean=0.274  median=0.333  early(<0.3)=47%
+    tch    n= 300  mean=0.205  median=0.200  early(<0.3)=72%
+    kch    n= 322  mean=0.240  median=0.200  early(<0.3)=65%
+    pch    n= 321  mean=0.206  median=0.167  early(<0.3)=72%
+    fch    n= 119  mean=0.193  median=0.167  early(<0.3)=72%
+
+  Absolute character position (character index in word):
+    t      pos1=724, pos0=353, pos2=344, pos3=220, pos4=115, pos5=78
+    k      pos1=800, pos2=560, pos3=395, pos0=339, pos4=252, pos5=122
+    f      pos1=105, pos0=82, pos2=56, pos3=51, pos4=36, pos6=13
+    p      pos0=292, pos1=283, pos2=115, pos3=92, pos4=50, pos5=20
+    cth    pos0=81, pos2=54, pos3=37, pos1=32, pos4=24, pos5=9
+    ckh    pos2=75, pos0=51, pos3=43, pos4=29, pos1=26, pos5=13
+
+========================================================================
+TEST 3: COMBINATORIAL FREEDOM
+========================================================================
+
+  Onset  |  Words containing  |  Unique frames  |  Frame ratio
+  -------+-------------------+-----------------+-----------
+    t      |      1867         |      1867       |  1.000
+    k      |      2518         |      2518       |  1.000
+    f      |       357         |       357       |  1.000
+    p      |       865         |       865       |  1.000
+    cth    |       241         |       241       |  1.000
+    ckh    |       241         |       241       |  1.000
+    ch     |      2884         |      2884       |  1.000
+    sh     |      1236         |      1236       |  1.000
+
+  Gallows swappability (replace one gallows with another → valid word):
+    k → t: 731 valid swaps
+    t → k: 729 valid swaps
+    t → p: 306 valid swaps
+    p → t: 305 valid swaps
+    k → p: 297 valid swaps
+    p → k: 297 valid swaps
+    k → f: 170 valid swaps
+    f → k: 170 valid swaps
+    t → f: 166 valid swaps
+    f → t: 166 valid swaps
+    f → p: 125 valid swaps
+    p → f: 125 valid swaps
+    ch → sh: 614 valid swaps (comparison)
+    sh → ch: 620 valid swaps (comparison)
+
+  Total gallows inter-swaps: 3587
+  Total ch↔sh swaps: 1234
+  → Gallows are MORE swappable than ch/sh — supports marker hypothesis
+
+========================================================================
+TEST 4: SECTION-DEPENDENT GALLOWS DISTRIBUTION
+========================================================================
+
+  Gallows rate (% of words containing this gallows):
+  Gallows   herbal-A   herbal-B     pharma        bio      cosmo       text     zodiac
+  t           20.3%      22.9%      11.2%      14.5%      23.7%      17.3%      26.0%
+  k           25.3%      29.1%      31.3%      33.3%      21.3%      32.3%      27.5%
+  f            1.8%       2.3%       1.5%       0.6%       1.7%       1.0%       1.3%
+  p            4.2%       3.9%       3.4%       3.0%       6.7%       5.5%       3.5%
+  cth          4.4%       5.2%       2.8%       1.7%       1.4%       1.1%       1.4%
+  ckh          2.5%       3.7%       4.2%       2.9%       1.0%       1.9%       1.2%
+  cph          0.9%       0.8%       0.7%       0.3%       0.6%       0.4%       0.4%
+  cfh          0.3%       0.5%       0.3%       0.1%       0.3%       0.1%       0.1%
+  ANY         50.8%      57.0%      46.5%      50.9%      52.8%      55.3%      57.0%
+
+  Simple vs bench gallows ratio:
+    herbal-A      simple=5674  bench= 888  ratio=6.4×
+    herbal-B      simple= 870  bench= 153  ratio=5.7×
+    pharma        simple=1459  bench= 247  ratio=5.9×
+    bio           simple=3472  bench= 341  ratio=10.2×
+    cosmo         simple=1942  bench= 122  ratio=15.9×
+    text          simple=5910  bench= 361  ratio=16.4×
+    zodiac        simple=1711  bench=  91  ratio=18.8×
+
+========================================================================
+TEST 5: GALLOWS-SWAP PAIRS — DISTRIBUTION CORRELATION
+========================================================================
+
+  Found 1794 gallows-swap word pairs
+  Pairs appearing in SAME section(s): 1265
+  Pairs appearing in DIFFERENT sections only: 529
+
+  Example swap pairs and their sections:
+    chckhol (k) ↔ chcthol (t)
+      chckhol: {'text': 1, 'herbal-A': 3}
+      chcthol: {'pharma': 1}
+    cheeky (k) ↔ cheety (t)
+      cheeky: {'text': 5, 'herbal-A': 7, 'zodiac': 2, 'bio': 10}
+      cheety: {'text': 1, 'bio': 2}
+    qokoeey (k) ↔ qotoeey (t)
+      qokoeey: {'text': 1}
+      qotoeey: {'herbal-A': 2}
+    kar (k) ↔ tar (t)
+      kar: {'pharma': 1, 'text': 19, 'herbal-A': 22, 'zodiac': 1, 'bio': 8, 'cosmo': 10, 'herbal-B': 2}
+      tar: {'text': 14, 'herbal-A': 11, 'zodiac': 1, 'bio': 6, 'cosmo': 12, 'herbal-B': 6}
+    okchdy (k) ↔ otchdy (t)
+      okchdy: {'text': 4, 'herbal-A': 5, 'zodiac': 3, 'bio': 7, 'cosmo': 4, 'herbal-B': 1}
+      otchdy: {'text': 9, 'herbal-A': 8, 'zodiac': 4, 'bio': 4, 'cosmo': 8, 'herbal-B': 2}
+    okor (k) ↔ otor (t)
+      okor: {'pharma': 11, 'text': 2, 'herbal-A': 14, 'zodiac': 2, 'bio': 4, 'herbal-B': 1}
+      otor: {'text': 8, 'herbal-A': 14, 'zodiac': 5, 'bio': 4, 'cosmo': 6, 'pharma': 2, 'herbal-B': 3}
+    chkaly (k) ↔ chtaly (t)
+      chkaly: {'text': 1, 'herbal-A': 1}
+      chtaly: {'zodiac': 1}
+    okalaiin (k) ↔ otalaiin (t)
+      okalaiin: {'zodiac': 1, 'herbal-B': 2}
+      otalaiin: {'text': 1, 'zodiac': 2, 'herbal-B': 1}
+    oko (k) ↔ oto (t)
+      oko: {'text': 1, 'herbal-A': 1, 'zodiac': 1, 'pharma': 1, 'herbal-B': 1}
+      oto: {'pharma': 1, 'text': 1, 'herbal-A': 1, 'zodiac': 5, 'cosmo': 2}
+    dyky (k) ↔ dyty (t)
+      dyky: {'herbal-A': 4, 'bio': 1}
+      dyty: {'herbal-A': 2, 'bio': 1}
+    okchd (k) ↔ otchd (t)
+      okchd: {'text': 3, 'herbal-A': 2, 'bio': 1}
+      otchd: {'text': 1}
+    qok (k) ↔ qot (t)
+      qok: {'pharma': 3, 'text': 5, 'herbal-A': 3, 'bio': 2, 'herbal-B': 1}
+      qot: {'herbal-A': 12, 'text': 1}
+    okcheochy (k) ↔ otcheochy (t)
+      okcheochy: {'text': 1}
+      otcheochy: {'text': 1}
+    ckheor (k) ↔ ctheor (t)
+      ckheor: {'herbal-B': 1}
+      ctheor: {'pharma': 1, 'herbal-A': 1, 'herbal-B': 2}
+    okedy (k) ↔ otedy (t)
+      okedy: {'text': 32, 'herbal-A': 27, 'zodiac': 5, 'bio': 45, 'cosmo': 8, 'herbal-B': 3}
+      otedy: {'text': 60, 'herbal-A': 21, 'zodiac': 5, 'bio': 53, 'cosmo': 30, 'herbal-B': 3}
+
+========================================================================
+TEST 6: GALLOWS AT BOUNDARIES
+========================================================================
+
+  Gallows word rate by position:
+    Line-first:  2997/5427 (55.2%)
+    Line-middle: 15733/29377 (53.6%)
+    Line-last:   1993/4629 (43.1%)
+
+  By gallows type at first position:
+    t      first=22.0%  mid=18.2%  ratio=1.21×
+    k      first=24.7%  mid=30.8%  ratio=0.80×
+    f      first=1.4%  mid=1.3%  ratio=1.11×
+    p      first=9.2%  mid=3.8%  ratio=2.43×
+    cth    first=1.0%  mid=2.6%  ratio=0.38×
+    ckh    first=1.0%  mid=2.7%  ratio=0.36×
+
+========================================================================
+TEST 7: STRIPPED WORD PARSEABILITY
+========================================================================
+
+  Gallows words: 5323
+  Non-empty after stripping: 5255
+  Stripped parse rate: 4143/5255 (78.8%)
+  Non-gallows word parse rate: 1789/2582 (69.3%)
+
+  If stripped parse rate ≈ non-gallows rate: gallows are separable markers
+  If stripped parse rate << non-gallows rate: gallows are integral to morphology
+
+========================================================================
+TEST 8: SYNTHESIS — GALLOWS AS MARKERS?
+========================================================================
+
+  Corpus: 39433 tokens, 7905 types
+  Words containing gallows: 5323 types (67.3%)
+  Gallows tokens: 20723 (52.6%)
+  Words with 2+ gallows: 434
+
+  ── Evidence Summary ──
+  PRO marker hypothesis:
+    - Gallows always at onset position (never final/standalone)
+    - Bench gallows near-absent from ring texts (0.8% vs 6.4% herbal)
+    - Section-dependent distribution (bio q-heavy, herbal bench-heavy)
+    - User observation: spanning gallows in f78r cross word boundaries
+
+  AGAINST marker hypothesis:
+    - Vocabulary collapse = 1080 collision groups (high = pro, low = against)
+
+  Key question: Does stripping gallows produce a COHERENT
+  sub-vocabulary, or does it produce nonsense?
+
+Results saved to results/gallows_test_results.json

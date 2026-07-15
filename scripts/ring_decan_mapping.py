@@ -17,6 +17,7 @@ import json
 import math
 from pathlib import Path
 from collections import Counter, defaultdict
+from common import result_path
 
 FOLIOS_DIR = Path("folios")
 
@@ -745,7 +746,7 @@ if __name__ == "__main__":
             ]
         }
     
-    with open("ring_decan_results.json", "w", encoding="utf-8") as f:
+    with open(result_path("ring_decan_results.json"), "w", encoding="utf-8") as f:
         json.dump(output, f, indent=2, ensure_ascii=False)
     
-    print(f"\n  Full data saved to ring_decan_results.json")
+    print(f"\n  Full data saved to results/ring_decan_results.json")

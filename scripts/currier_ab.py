@@ -29,7 +29,7 @@ import json
 import math
 from pathlib import Path
 from collections import Counter, defaultdict
-from common import get_root
+from common import get_root, result_path
 
 # ═══════════════════════════════════════════════════════════════════════════
 # PARSER (reused)
@@ -582,7 +582,7 @@ def analyze():
             "prefix": herbal_pfx_jsd,
         }
 
-    print("  Results saved to currier_ab_results.json")
+    print("  Results saved to results/currier_ab_results.json")
     print()
     print("═" * 90)
     print("CURRIER A↔B ANALYSIS COMPLETE")
@@ -593,5 +593,5 @@ def analyze():
 
 if __name__ == "__main__":
     results = analyze()
-    with open("currier_ab_results.json", "w") as f:
+    with open(result_path("currier_ab_results.json"), "w") as f:
         json.dump(results, f, indent=2, default=str)

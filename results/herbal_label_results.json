@@ -1193,83 +1193,19 @@
   ],
   "label_only_roots": [
     [
-      "dor",
-      2
-    ],
-    [
       "oro",
       2
     ],
     [
-      "ydarar",
+      "dor",
+      2
+    ],
+    [
+      "yda",
       1
     ],
     [
-      "lrod",
-      1
-    ],
-    [
-      "orch",
-      1
-    ],
-    [
-      "odal",
-      1
-    ],
-    [
-      "loeadag",
-      1
-    ],
-    [
-      "arairdl",
-      1
-    ],
-    [
-      "loral",
-      1
-    ],
-    [
-      "ora",
-      1
-    ],
-    [
-      "osh",
-      1
-    ],
-    [
-      "aloih",
-      1
-    ],
-    [
-      "aror",
-      1
-    ],
-    [
-      "aiisal",
-      1
-    ],
-    [
-      "esar",
-      1
-    ],
-    [
-      "oih",
-      1
-    ],
-    [
-      "lear",
-      1
-    ],
-    [
-      "lcheom",
-      1
-    ],
-    [
-      "alyd",
-      1
-    ],
-    [
-      "iin",
+      "asold",
       1
     ],
     [
@@ -1277,111 +1213,27 @@
       1
     ],
     [
-      "choia",
+      "osh",
       1
     ],
     [
-      "ios",
+      "lcheom",
       1
     ],
     [
-      "aldo",
+      "oral",
       1
     ],
     [
-      "yaran",
+      "arolal",
       1
     ],
     [
-      "yolg",
+      "ydar",
       1
     ],
     [
-      "yc",
-      1
-    ],
-    [
-      "chosarosh",
-      1
-    ],
-    [
-      "cheye",
-      1
-    ],
-    [
-      "lsa",
-      1
-    ],
-    [
-      "aiiinc",
-      1
-    ],
-    [
-      "raro",
-      1
-    ],
-    [
-      "archd",
-      1
-    ],
-    [
-      "dardsh",
-      1
-    ],
-    [
-      "laran",
-      1
-    ],
-    [
-      "yda",
-      1
-    ],
-    [
-      "ach",
-      1
-    ],
-    [
-      "aramd",
-      1
-    ],
-    [
-      "ered",
-      1
-    ],
-    [
-      "ralas",
-      1
-    ],
-    [
-      "chals",
-      1
-    ],
-    [
-      "choar",
-      1
-    ],
-    [
-      "daraiil",
-      1
-    ],
-    [
-      "iil",
-      1
-    ],
-    [
-      "odeod",
-      1
-    ],
-    [
-      "ydch",
-      1
-    ],
-    [
-      "lesos",
-      1
-    ],
-    [
-      "sam",
+      "eon",
       1
     ],
     [
@@ -1389,7 +1241,155 @@
       1
     ],
     [
-      "dc",
+      "ora",
+      1
+    ],
+    [
+      "ao",
+      1
+    ],
+    [
+      "aarod",
+      1
+    ],
+    [
+      "cheye",
+      1
+    ],
+    [
+      "arairdl",
+      1
+    ],
+    [
+      "aloiinshe",
+      1
+    ],
+    [
+      "olal",
+      1
+    ],
+    [
+      "loral",
+      1
+    ],
+    [
+      "choar",
+      1
+    ],
+    [
+      "odarag",
+      1
+    ],
+    [
+      "laran",
+      1
+    ],
+    [
+      "aiisal",
+      1
+    ],
+    [
+      "ararchod",
+      1
+    ],
+    [
+      "arem",
+      1
+    ],
+    [
+      "choia",
+      1
+    ],
+    [
+      "olar",
+      1
+    ],
+    [
+      "ydarar",
+      1
+    ],
+    [
+      "rald",
+      1
+    ],
+    [
+      "aloiir",
+      1
+    ],
+    [
+      "chosarosh",
+      1
+    ],
+    [
+      "cheys",
+      1
+    ],
+    [
+      "yc",
+      1
+    ],
+    [
+      "aiiinc",
+      1
+    ],
+    [
+      "oal",
+      1
+    ],
+    [
+      "sam",
+      1
+    ],
+    [
+      "dardsh",
+      1
+    ],
+    [
+      "ered",
+      1
+    ],
+    [
+      "ach",
+      1
+    ],
+    [
+      "orch",
+      1
+    ],
+    [
+      "roldair",
+      1
+    ],
+    [
+      "ydch",
+      1
+    ],
+    [
+      "sar",
+      1
+    ],
+    [
+      "oram",
+      1
+    ],
+    [
+      "ysyd",
+      1
+    ],
+    [
+      "dard",
+      1
+    ],
+    [
+      "yolg",
+      1
+    ],
+    [
+      "aradag",
+      1
+    ],
+    [
+      "amamm",
       1
     ]
   ],

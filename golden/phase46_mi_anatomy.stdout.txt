@@ -1,0 +1,167 @@
+Loading lines...
+  4508 lines, 35747 word tokens, 3319 types
+  H(word) = 8.481, H(word|prev) = 5.282, MI = 3.199, MI/H = 0.377
+
+======================================================================
+46a: MI CONCENTRATION
+    How is MI distributed across word pairs?
+======================================================================
+
+  Total MI from PMI sum: 3.1373 bits
+  (Direct MI estimate: 3.1991 bits)
+
+  Cumulative MI concentration:
+      Top N pairs   % of total MI
+               10            1.5%
+               25            2.4%
+               50            3.6%
+              100            5.2%
+              250            8.7%
+              500           13.1%
+             1000           20.5%
+
+  Total bigram types: 18157
+  50% of MI reached at top 3896 pairs (21.5% of types)
+
+  Top 20 MI contributors:
+            Word1           Word2  Count     PMI  Contrib    %MI
+            qoedy           qoedy    116    2.47  0.00918   0.3%
+               or            aiin     73    2.86  0.00669   0.2%
+                s            aiin     60    3.44  0.00661   0.2%
+            shedy           qoedy     71    2.51  0.00570   0.2%
+                o               l     27    4.53  0.00391   0.1%
+             shey           qoain     39    2.84  0.00354   0.1%
+             oedy           qoedy     56    1.95  0.00350   0.1%
+             shey            qoey     41    1.97  0.00259   0.1%
+                r            aiin     25    3.17  0.00254   0.1%
+            chedy           qoedy     46    1.70  0.00250   0.1%
+               ar            aiin     39    1.98  0.00247   0.1%
+            qoedy            oedy     45    1.63  0.00235   0.1%
+             oedy            oedy     37    1.88  0.00223   0.1%
+            chedy            qoey     37    1.84  0.00218   0.1%
+             chol           daiin     32    1.96  0.00201   0.1%
+            shedy          qoaiin     27    2.30  0.00199   0.1%
+            shedy            qoey     33    1.86  0.00196   0.1%
+              oar              ar     25    2.44  0.00195   0.1%
+            chedy           qoain     26    2.26  0.00188   0.1%
+              qol           chedy     19    2.99  0.00182   0.1%
+
+  Positive MI: 3.1952 from 16775 types
+  Negative MI: -0.0579 from 1382 types
+  Net MI: 3.1373
+  Negative/positive ratio: 0.018
+
+======================================================================
+46b: POSITION 1 DEEP DIVE
+    What words appear at position 1 (second word of line)?
+======================================================================
+
+  initial: 4508 tokens, 1020 types, H=8.417 bits
+    Top 5: daiin(173,3.8%), qoedy(105,2.3%), y(82,1.8%), qoey(80,1.8%), or(79,1.8%)
+    Top 10 concentration: 18.7%
+
+  pos1: 4508 tokens, 793 types, H=7.777 bits
+    Top 5: chey(166,3.7%), shey(141,3.1%), ol(131,2.9%), qoedy(110,2.4%), shedy(99,2.2%)
+    Top 10 concentration: 24.4%
+
+  pos2: 4280 tokens, 792 types, H=7.804 bits
+    Top 5: chey(142,3.3%), qoedy(142,3.3%), qoey(118,2.8%), ol(107,2.5%), shey(98,2.3%)
+    Top 10 concentration: 23.7%
+
+  interior: 26731 tokens, 2281 types, H=8.075 bits
+    Top 5: chey(802,3.0%), qoedy(780,2.9%), ol(655,2.5%), aiin(595,2.2%), qoey(570,2.1%)
+    Top 10 concentration: 22.9%
+
+  final: 4508 tokens, 1203 types, H=8.653 bits
+    Top 5: daiin(128,2.8%), dy(106,2.4%), y(102,2.3%), am(83,1.8%), oy(82,1.8%)
+    Top 10 concentration: 18.5%
+
+  Position 1 suffix distribution:
+    Suffix    Pos1%     All%    Ratio
+         X    24.1%    23.8%    1.02x
+      aiin     7.2%     8.7%    0.83x
+       ain     3.1%     3.9%    0.80x
+        al     3.1%     4.5%    0.70x
+        ar     4.6%     6.0%    0.77x
+        dy    16.3%    17.0%    0.96x
+       iin     2.7%     2.9%    0.94x
+        in     0.7%     0.5%    1.21x
+        ol     8.7%     7.1%    1.23x
+        or     4.8%     4.1%    1.17x
+         y    24.5%    21.5%    1.14x
+
+  Position 1 class distribution:
+     Class    Pos1%     All%    Ratio
+         A    40.8%    38.5%    1.06x
+         M    29.4%    30.3%    0.97x
+         B    29.8%    31.2%    0.95x
+
+  Words ONLY at position 1: 226
+    oaes (2 tokens)
+    araly (2 tokens)
+    sheoiin (2 tokens)
+    orarol (2 tokens)
+    oeder (2 tokens)
+    yodaiir (2 tokens)
+    shshdar (2 tokens)
+    seody (2 tokens)
+    qoeda (2 tokens)
+    eraiin (2 tokens)
+
+======================================================================
+46c: VOCABULARY-CONTROLLED MI
+    Is high MI/H just from small vocabulary?
+======================================================================
+
+    Min freq  Eff vocab     H(W)  H(W|prev)       MI     MI/H
+           1       3319    8.481      5.282    3.199    0.377
+           2       1402    7.896      5.479    2.417    0.306
+           3        924    7.584      5.543    2.041    0.269
+           5        597    7.232      5.562    1.671    0.231
+          10        369    6.775      5.521    1.253    0.185
+          20        231    6.246      5.346    0.900    0.144
+          50        120    5.335      4.868    0.466    0.087
+
+  Shuffled comparison (destroy word order, keep frequencies):
+  Shuffled MI/H: mean=0.3576, std=0.0008
+  Actual MI/H:   0.3772
+  z-score:        25.6
+
+  Global shuffle (destroy all structure):
+  Global shuffle MI/H: mean=0.3466, std=0.0009
+  z-score vs global:   32.9
+
+======================================================================
+46d: WORD-LEVEL DISTANCE DECAY
+    MI(word_i, word_{i+k}) for k=1..5
+======================================================================
+  Gap 1: MI=3.1991, shuffled=3.0327±0.0061, excess=0.1664, z=27.4
+  Gap 2: MI=3.1634, shuffled=3.1452±0.0091, excess=0.0182, z=2.0
+  Gap 3: MI=3.2786, shuffled=3.2764±0.0095, excess=0.0022, z=0.2
+  Gap 4: MI=3.4440, shuffled=3.4304±0.0125, excess=0.0136, z=1.1
+  Gap 5: MI=3.6500, shuffled=3.6137±0.0150, excess=0.0363, z=2.4
+
+======================================================================
+46e: GENERATIVE MODEL COMPARISON
+    Generate text from models, compare MI/H
+======================================================================
+
+  Generating 10 samples of each model (4508 lines each)...
+
+               Model     H(W)       MI     MI/H
+          ACTUAL VMS    8.481    3.199    0.377
+             unigram    8.403    2.799    0.333 ± 0.002
+        class_bigram    8.398    2.808    0.334 ± 0.002
+         word_bigram    8.319    3.529    0.424 ± 0.003
+
+  MI/H decomposition:
+    Unigram baseline:                  0.3331
+    Class bigram adds:                +0.0013 (class syntax)
+    Word bigram adds:                 +0.0898 (word-specific)
+    Actual VMS MI/H:                   0.3772
+    Word bigram model explains:        112.4% of actual
+    Gap (actual - word bigram):        -0.0469
+
+======================================================================
+PHASE 46 COMPLETE
+======================================================================

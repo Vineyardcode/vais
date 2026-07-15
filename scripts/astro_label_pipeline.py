@@ -32,6 +32,7 @@ import json
 import math
 from pathlib import Path
 from collections import Counter, defaultdict
+from common import result_path
 
 # ── Zattera Slot System (from slot_analysis.py) ──────────────────────────
 
@@ -948,7 +949,7 @@ def main():
     results["synthesis"] = synthesis
     
     # ── Save results ─────────────────────────────────────────────────────
-    output_path = Path("astro_label_results.json")
+    output_path = result_path("astro_label_results.json")
     
     # Serialize: convert Counter objects and sets
     def clean_for_json(obj):

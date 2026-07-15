@@ -95,3 +95,7 @@ so phases 58-65 and 72-73 run fully offline. Re-populate with
 All inter-script result JSONs live in `results/` via `common.result_path()`;
 producers and consumers can no longer drift apart (the pre-refactor root-level
 snapshots are preserved in `attic/root_result_snapshots/`).
+
+Known benign case: `phase72_naibbe_calibration` and `phase73_abbreviation_model`
+print wall-clock "Elapsed:" lines, so their golden badge will report a few
+differing lines on every run — the click-through diff shows only the timings.

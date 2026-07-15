@@ -24,7 +24,7 @@ import json
 import math
 from pathlib import Path
 from collections import Counter, defaultdict
-from common import get_root
+from common import get_root, classify_folio_header_section as classify_folio
 
 # ═══════════════════════════════════════════════════════════════════════════
 # PARSER (reused)
@@ -127,19 +127,6 @@ def parse_word(word):
 # DATA
 # ═══════════════════════════════════════════════════════════════════════════
 
-def classify_folio(header_lines):
-    text = "\n".join(header_lines).lower()
-    if "herbal" in text:
-        return "herbal"
-    elif "astro" in text or "cosmo" in text or "star" in text or "zodiac" in text:
-        return "astro"
-    elif "pharm" in text or "recipe" in text or "balneo" in text:
-        return "pharma"
-    elif "biolog" in text or "bathy" in text:
-        return "bio"
-    elif "text only" in text:
-        return "text"
-    return "other"
 
 
 def load_lines():

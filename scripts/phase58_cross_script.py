@@ -46,6 +46,7 @@ from pathlib import Path
 from collections import Counter, defaultdict
 import urllib.request
 import numpy as np
+from common import fetch_gutenberg
 
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
 sys.stdout.reconfigure(line_buffering=True)
@@ -109,18 +110,6 @@ def vms_char_sequence(words):
 
 # ─── Reference text helpers ────────────────────────────────────────────
 
-def fetch_gutenberg(ebook_id):
-    """Fetch a Project Gutenberg text, strip header/footer."""
-    url = f'https://www.gutenberg.org/cache/epub/{ebook_id}/pg{ebook_id}.txt'
-    req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0 (VoynichResearch)'})
-    resp = urllib.request.urlopen(req, timeout=30)
-    data = resp.read().decode('utf-8', errors='replace')
-    start = data.find('*** START OF')
-    end = data.find('*** END OF')
-    if start > 0 and end > 0:
-        body = data[data.index('\n', start)+1:end]
-        return body
-    return data
 
 def text_to_words_and_chars(text, script='latin'):
     """

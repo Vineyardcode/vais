@@ -23,7 +23,7 @@ import json
 import math
 from pathlib import Path
 from collections import Counter, defaultdict
-from common import collapse_echains, gallows_base_v2 as gallows_base, parse_morphology, strip_gallows
+from common import collapse_echains, gallows_base_v2 as gallows_base, parse_morphology, strip_gallows, result_path, classify_folio
 
 # ── Morphological machinery (from Phase 15) ────────────────────────────
 
@@ -63,27 +63,6 @@ def consonant_skeleton(word):
 
 # ── Section classifier ───────────────────────────────────────────────────
 
-def classify_folio(filepath):
-    stem = filepath.stem if hasattr(filepath, 'stem') else Path(filepath).stem
-    m = re.match(r'f(\d+)', stem)
-    if not m:
-        return "unknown"
-    num = int(m.group(1))
-    if num <= 58 or 65 <= num <= 66:
-        return "herbal-A"
-    elif 67 <= num <= 73:
-        return "zodiac"
-    elif 75 <= num <= 84:
-        return "bio"
-    elif 85 <= num <= 86:
-        return "cosmo"
-    elif 87 <= num <= 102:
-        if num in (88, 89, 99, 100, 101, 102):
-            return "pharma"
-        return "herbal-B"
-    elif 103 <= num <= 116:
-        return "text"
-    return "unknown"
 
 # ── Expanded multilingual vocabulary for Leo context ─────────────────────
 
@@ -913,6 +892,6 @@ if __name__ == "__main__":
         }
     }
     
-    with open("leo_deepdive_results.json", "w", encoding="utf-8") as f:
+    with open(result_path("leo_deepdive_results.json"), "w", encoding="utf-8") as f:
         json.dump(results, f, indent=2, ensure_ascii=False)
-    print("Results saved to leo_deepdive_results.json")
+    print("Results saved to results/leo_deepdive_results.json")

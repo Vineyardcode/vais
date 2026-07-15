@@ -19,7 +19,7 @@ import math
 from pathlib import Path
 from collections import Counter, defaultdict
 from itertools import combinations
-from common import get_root
+from common import get_root, result_path, classify_folio_header_section as classify_folio
 
 # ═══════════════════════════════════════════════════════════════════════════
 # PARSER (reused)
@@ -122,19 +122,6 @@ def parse_word(word):
 # DATA EXTRACTION
 # ═══════════════════════════════════════════════════════════════════════════
 
-def classify_folio(header_lines):
-    text = "\n".join(header_lines).lower()
-    if "herbal" in text:
-        return "herbal"
-    elif "astro" in text or "cosmo" in text or "star" in text or "zodiac" in text:
-        return "astro"
-    elif "pharm" in text or "recipe" in text or "balneo" in text:
-        return "pharma"
-    elif "biolog" in text or "bathy" in text:
-        return "bio"
-    elif "text only" in text:
-        return "text"
-    return "other"
 
 
 def extract_parsed_lines(txt_files):
@@ -759,7 +746,7 @@ def analyze(all_lines):
     results["y_position"] = {"first_pct": y_first_rate, "last_pct": y_last_rate}
     results["b_runs_ge2"] = sum(b_run_lengths.values())
 
-    print("  Results saved to deep_dive_results.json")
+    print("  Results saved to results/deep_dive_results.json")
     print()
     print("═" * 90)
     print("PHASE 1 DEEP DIVE COMPLETE")
@@ -782,5 +769,5 @@ if __name__ == "__main__":
 
     results = analyze(all_lines)
 
-    with open("deep_dive_results.json", "w") as f:
+    with open(result_path("deep_dive_results.json"), "w") as f:
         json.dump(results, f, indent=2, default=str)

@@ -1,0 +1,152 @@
+========================================================================
+PHASE 79 — GALLOWS COLLAPSE: REVEALING THE TRUE VOCABULARY
+========================================================================
+
+Total word tokens: 40351
+Total word types: 8212
+
+========================================================================
+TEST A: GALLOWS PREDICTABILITY (Mutual Information)
+========================================================================
+
+Can we predict which gallows appears from context?
+If H(gallows|successor) ≈ 0 → gallows fully redundant
+If H(gallows|successor) ≈ H(gallows) → gallows independent
+
+H(gallows) = 1.4192 bits  (max = 2.0000 for 4 equally likely)
+  Gallows distribution: {'k': 10555, 't': 6421, 'p': 1538, 'f': 439}
+
+H(gallows | successor glyph) = 1.2987 bits
+  → MI(gallows; successor) = 0.1205 bits (8.5% of gallows entropy)
+  → Successor explains 8.5% of gallows choice
+
+H(gallows | predecessor glyph) = 1.3644 bits
+  → MI(gallows; predecessor) = 0.0548 bits (3.9% of gallows entropy)
+
+H(gallows | both pred+succ) = 1.2464 bits
+  → MI(gallows; context) = 0.1728 bits (12.2% of gallows entropy)
+  → Context explains 12.2% of gallows choice
+
+Gallows prediction accuracy from successor glyph:
+  Accuracy (majority vote per successor): 10584/18953 = 55.8%
+  Baseline (always predict most common gallows 'k'): 55.7%
+
+  Accuracy (majority vote per pred+succ context): 10758/18953 = 56.8%
+
+Two-class prediction ({p,f} vs {t,k}):
+  H(class) = 0.4825 bits
+  H(class | successor) = 0.3766 bits
+  → MI = 0.1059 bits (22.0% of class entropy)
+  Two-class accuracy from successor: 16980/18953 = 89.6%
+
+========================================================================
+TEST B: VOCABULARY COLLAPSE
+========================================================================
+
+Method                            Types  Reduction  % of orig
+--------------------------------------------------------------
+Original                           8212                100.0%
+Two-class ({p,f}→P, {t,k}→T)       7378       +834      89.8%
+Full collapse (all→G)              6939      +1273      84.5%
+Compound→simple then →G            6788      +1424      82.7%
+
+Merge analysis (full collapse):
+  Collapsed types that map to 1 original: 6051
+  Collapsed types that merge 2 originals: 597
+  Collapsed types that merge 3 originals: 197
+  Collapsed types that merge 4+ originals: 94
+
+Top 15 merge groups (full collapse):
+  Gor                  [4 types, 62 tokens]: kor(27), tor(25), por(8), for(2)
+  CGar                 [4 types, 26 tokens]: cthar(17), cphar(4), ckhar(3), cfhar(2)
+  chGaiin              [4 types, 23 tokens]: chkaiin(18), chtaiin(3), chpaiin(1), chfaiin(1)
+  yGaiin               [4 types, 117 tokens]: ykaiin(61), ytaiin(53), ypaiin(2), yfaiin(1)
+  oGaiin               [4 types, 409 tokens]: okaiin(221), otaiin(165), opaiin(18), ofaiin(5)
+  CGaiin               [4 types, 19 tokens]: cthaiin(8), cphaiin(6), ckhaiin(3), cfhaiin(2)
+  oGchol               [4 types, 48 tokens]: otchol(29), okchol(13), opchol(5), ofchol(1)
+  choCGy               [4 types, 47 tokens]: chockhy(23), chocthy(19), chocphy(3), chocfhy(2)
+  CGol                 [4 types, 94 tokens]: cthol(57), ckhol(21), cphol(12), cfhol(4)
+  CGey                 [4 types, 92 tokens]: cthey(50), ckhey(28), cphey(11), cfhey(3)
+  CGy                  [4 types, 156 tokens]: cthy(99), ckhy(38), cphy(11), cfhy(8)
+  Gol                  [4 types, 111 tokens]: tol(47), kol(39), pol(21), fol(4)
+  Gshy                 [4 types, 13 tokens]: kshy(7), tshy(4), fshy(1), pshy(1)
+  Gchey                [4 types, 58 tokens]: tchey(25), kchey(23), pchey(8), fchey(2)
+  oGol                 [4 types, 170 tokens]: otol(83), okol(82), opol(4), ofol(1)
+
+========================================================================
+TEST C: LINGUISTIC QUALITY COMPARISON
+========================================================================
+
+Metric                            Original        Two-class    Full collapse Compound→simple→G
+---------------------------------------------------------------------------------------------
+Zipf α (ideal ≈ -1.0)               -0.924           -0.976           -0.982           -1.001
+Hapax ratio                          0.657            0.653            0.649            0.649
+TTR (types/tokens)                   0.204            0.183            0.172            0.168
+Glyph entropy (bits)                 3.864            3.749            3.685            3.640
+Word entropy (bits)                 10.430           10.095            9.975            9.912
+Word bigram H (bits)                 4.327            4.546            4.644            4.692
+
+========================================================================
+TEST D: LINE POSITION vs SUCCESSOR — Independent or redundant?
+========================================================================
+
+Does knowing line position help predict gallows BEYOND what
+the successor glyph already tells us?
+
+H(gallows) = 1.4192 bits
+H(gallows | line_position) = 1.3813 bits
+  → MI(gallows; line) = 0.0378 bits (2.7%)
+
+H(gallows | successor) = 1.2987 bits
+H(gallows | line + successor) = 1.2729 bits
+  → MI(gallows; line+succ) = 0.1463 bits (10.3%)
+
+Additional info from line beyond successor: 0.0259 bits
+Additional info from successor beyond line: 0.1085 bits
+
+========================================================================
+TEST E: SECTION-LEVEL COMPRESSION
+========================================================================
+
+Does gallows collapse affect sections differently?
+
+Section      Orig types    Collapsed    Reduction   % compress
+------------------------------------------------------------
+herbal             4492         3815         +677        15.1%
+recipe             3059         2630         +429        14.0%
+balneo             1565         1355         +210        13.4%
+cosmo               817          705         +112        13.7%
+astro              1530         1368         +162        10.6%
+
+========================================================================
+TEST F: RESIDUAL INFORMATION — What gallows encode beyond context
+========================================================================
+
+After accounting for successor and line position, how much
+unexplained gallows entropy remains?
+
+H(gallows | pred + succ + line + section) = 1.1328 bits
+  → MI(gallows; all_context) = 0.2864 bits (20.2%)
+  → RESIDUAL unexplained entropy: 1.1328 bits (79.8%)
+
+● Gallows are partially predictable from context but retain
+  significant independent information.
+
+========================================================================
+PHASE 79 — SYNTHESIS
+========================================================================
+
+Original vocabulary: 8212 types / 40351 tokens
+After full gallows collapse: 6939 types (84.5% of original)
+Vocabulary inflation from gallows: 1273 types (15.5%)
+
+Gallows entropy budget:
+  Total: 1.4192 bits
+  Explained by successor: 0.1205 bits (8.5%)
+  Explained by predecessor: 0.0548 bits (3.9%)
+  Explained by line position: 0.0378 bits (2.7%)
+  Explained by all context: 0.2864 bits (20.2%)
+  RESIDUAL (independent): 1.1328 bits (79.8%)
+
+
+Results saved to C:\projects\voynich_slop\results\phase79_gallows_collapse.txt

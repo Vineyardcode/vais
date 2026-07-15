@@ -50,7 +50,7 @@ import numpy as np
 from pathlib import Path
 from collections import Counter, defaultdict
 import urllib.request
-from common import load_vms_words
+from common import load_vms_words, fetch_gutenberg
 
 _print = print
 OUTPUT = []
@@ -184,16 +184,6 @@ def l2_raw(fp):
 # SOURCE TEXT LOADING
 # ═══════════════════════════════════════════════════════════════════════
 
-def fetch_gutenberg(ebook_id):
-    url = f'https://www.gutenberg.org/cache/epub/{ebook_id}/pg{ebook_id}.txt'
-    req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0 (VMS-Research)'})
-    resp = urllib.request.urlopen(req, timeout=30)
-    data = resp.read().decode('utf-8', errors='replace')
-    start = data.find('*** START OF')
-    end   = data.find('*** END OF')
-    if start > 0 and end > 0:
-        return data[data.index('\n', start)+1:end]
-    return data
 
 def strip_diacritics(text):
     """Normalize diacritics to base Latin letters (č→c, á→a, ř→r, etc.).

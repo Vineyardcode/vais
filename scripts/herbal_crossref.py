@@ -21,7 +21,7 @@ import json
 import math
 from pathlib import Path
 from collections import Counter, defaultdict
-from common import get_root
+from common import get_root, result_path, classify_folio
 
 # ── Section classification ───────────────────────────────────────────────
 
@@ -29,33 +29,6 @@ from common import get_root
 # Based on standard Voynich section assignments
 SECTION_MAP = {}
 
-def classify_folio(filename):
-    """Classify a folio file into manuscript section."""
-    stem = filename.stem
-    # Extract folio number
-    m = re.match(r'f(\d+)', stem)
-    if not m:
-        return "unknown"
-    num = int(m.group(1))
-
-    if num <= 57 or (num == 58):
-        return "herbal-A"
-    elif 65 <= num <= 66:
-        return "herbal-A"  # sometimes classified as herbal continuation
-    elif 67 <= num <= 73:
-        return "zodiac"
-    elif 75 <= num <= 84:
-        return "bio"
-    elif 85 <= num <= 86:
-        return "cosmo"
-    elif 87 <= num <= 102:
-        # Sub-classify pharma vs herbal-B
-        if num in (88, 89, 99, 100, 101, 102):
-            return "pharma"
-        return "herbal-B"
-    elif 103 <= num <= 116:
-        return "text"
-    return "unknown"
 
 
 # ── Parser (from currier_ab.py — fuller version) ────────────────────────
@@ -230,7 +203,7 @@ def extract_all_folios():
 
 def extract_ring_text_data():
     """Load ring text data from grammar_results.json."""
-    with open("grammar_results.json") as f:
+    with open(result_path("grammar_results.json")) as f:
         data = json.load(f)
 
     ring_words = Counter()
@@ -780,6 +753,6 @@ if __name__ == "__main__":
             "word": w, "ring_freq": rf, "herbA_freq": hf, "score": sc
         })
 
-    with open("herbal_crossref_results.json", "w") as f:
+    with open(result_path("herbal_crossref_results.json"), "w") as f:
         json.dump(results, f, indent=2)
-    print(f"\n\nResults saved to herbal_crossref_results.json")
+    print(f"\n\nResults saved to results/herbal_crossref_results.json")

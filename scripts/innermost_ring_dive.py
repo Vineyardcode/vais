@@ -25,11 +25,12 @@ import re
 import json
 from collections import Counter, defaultdict
 from pathlib import Path
+from common import result_path
 
 # ── Load data ────────────────────────────────────────────────────────────
 
 def load_data():
-    with open("grammar_results.json") as f:
+    with open(result_path("grammar_results.json")) as f:
         grammar = json.load(f)
 
     # Separate inner rings (idx >= 2) and outer rings (idx < 2)
@@ -42,7 +43,7 @@ def load_data():
             outer.append(sent)
 
     # Load ring text results for additional context
-    with open("ring_text_results.json") as f:
+    with open(result_path("ring_text_results.json")) as f:
         ring_results = json.load(f)
 
     return inner, outer, grammar, ring_results

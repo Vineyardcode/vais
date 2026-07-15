@@ -80,13 +80,13 @@ Skeptical calibration: can Naibbe encoding reproduce VMS fingerprint?
 
 4. RUNNING MONTE CARLO EXPERIMENTS
 ───────────────────────────────────────────────────────────────────────────
-  [latin] done: 510 experiments, 104.6s elapsed
-  [italian] done: 1020 experiments, 196.1s elapsed
-  [english] done: 1530 experiments, 286.8s elapsed
-  [czech] done: 2040 experiments, 381.4s elapsed
+  [latin] done: 510 experiments, 80.3s elapsed
+  [italian] done: 1020 experiments, 160.3s elapsed
+  [english] done: 1530 experiments, 265.6s elapsed
+  [czech] done: 2040 experiments, 385.0s elapsed
 
   Total experiments: 2040
-  Elapsed: 381.4s
+  Elapsed: 385.0s
 
 5. RESULTS ANALYSIS
 ═══════════════════════════════════════════════════════════════════════════
@@ -365,4 +365,4 @@ Skeptical calibration: can Naibbe encoding reproduce VMS fingerprint?
      Naibbe variable (best)  0.3412  0.7029  0.4952  0.6187  0.3646  4.8456  0.3676  0.6720
   Naibbe word_aligned (best)  0.9088  0.7653  0.6520  0.7648  0.4444  5.8336  0.3550  0.9975
 
-Total runtime: 382.3s
+Total runtime: 386.1s

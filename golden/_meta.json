@@ -1,0 +1,1203 @@
+{
+ "gallows_semantics": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 1.38,
+  "stdout_bytes": 35496,
+  "results_files_touched": [
+   "gallows_semantics_results.json"
+  ]
+ },
+ "hebrew_comparison": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.58,
+  "stdout_bytes": 13907,
+  "results_files_touched": [
+   "hebrew_comparison_results.json"
+  ]
+ },
+ "phase39_syntax": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 135.36,
+  "stdout_bytes": 6141,
+  "results_files_touched": []
+ },
+ "phase85R_revalidation": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 6.88,
+  "stdout_bytes": 9594,
+  "results_files_touched": [
+   "phase85R_revalidation.json",
+   "phase85R_revalidation.txt"
+  ]
+ },
+ "slot_analysis": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 1.02,
+  "stdout_bytes": 17073,
+  "results_files_touched": [
+   "slot_analysis_results.json"
+  ]
+ },
+ "astro_crossref": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.42,
+  "stdout_bytes": 15605,
+  "results_files_touched": [
+   "astro_crossref_results.json"
+  ]
+ },
+ "astro_label_pipeline": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.71,
+  "stdout_bytes": 14088,
+  "results_files_touched": [
+   "astro_label_results.json"
+  ]
+ },
+ "attack_plan": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 1.15,
+  "stdout_bytes": 43870,
+  "results_files_touched": [
+   "attack_plan_results.json"
+  ]
+ },
+ "coptic_probe_expanded": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 117.28,
+  "stdout_bytes": 43763,
+  "results_files_touched": [
+   "coptic_probe_results.json"
+  ]
+ },
+ "crosssign_network": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.41,
+  "stdout_bytes": 20813,
+  "results_files_touched": []
+ },
+ "currier_ab": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 1.13,
+  "stdout_bytes": 12376,
+  "results_files_touched": [
+   "currier_ab_results.json"
+  ]
+ },
+ "diacritic_audit": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.63,
+  "stdout_bytes": 10341,
+  "results_files_touched": []
+ },
+ "download_folios": {
+  "status": "skipped",
+  "reason": "pure downloader (network, ~1GB)"
+ },
+ "download_latin": {
+  "status": "skipped",
+  "reason": "pure downloader (network)"
+ },
+ "egyptian_connection": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 1.09,
+  "stdout_bytes": 26398,
+  "results_files_touched": [
+   "egyptian_connection_results.json"
+  ]
+ },
+ "f66r_analysis": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 2.04,
+  "stdout_bytes": 14279,
+  "results_files_touched": [
+   "f66r_results.json"
+  ]
+ },
+ "freq_rank_mapping": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 1.61,
+  "stdout_bytes": 22722,
+  "results_files_touched": [
+   "freq_rank_results.json"
+  ]
+ },
+ "hebrew_deep_analysis": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 72.2,
+  "stdout_bytes": 19550,
+  "results_files_touched": [
+   "hebrew_deep_results.json"
+  ]
+ },
+ "pharma_comparison": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 1.43,
+  "stdout_bytes": 10461,
+  "results_files_touched": [
+   "pharma_results.json"
+  ]
+ },
+ "phase101_currier_ab_dichotomy": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 308.34,
+  "stdout_bytes": 14909,
+  "results_files_touched": [
+   "phase100_decipherment.json",
+   "phase100_decipherment.txt",
+   "phase101_currier_ab_dichotomy.json",
+   "phase101_currier_ab_dichotomy.txt"
+  ]
+ },
+ "phase102_historical_validation": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 2.89,
+  "stdout_bytes": 18242,
+  "results_files_touched": [
+   "phase102_historical_validation.json",
+   "phase102_historical_validation.txt"
+  ]
+ },
+ "phase103_positional_class_decomposition": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 28.15,
+  "stdout_bytes": 12571,
+  "results_files_touched": [
+   "phase103_positional_class_decomposition.json",
+   "phase103_positional_class_decomposition.txt"
+  ]
+ },
+ "phase104_latin_ending_test": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 7.33,
+  "stdout_bytes": 14402,
+  "results_files_touched": [
+   "phase104_latin_ending_test.json",
+   "phase104_latin_ending_test.txt"
+  ]
+ },
+ "phase105_cappelli_retest": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 32.67,
+  "stdout_bytes": 14344,
+  "results_files_touched": [
+   "phase105_cappelli_retest.json",
+   "phase105_cappelli_retest.txt"
+  ]
+ },
+ "phase106_abbreviation_decode": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.09,
+  "stdout_bytes": 16963,
+  "results_files_touched": [
+   "phase106_abbreviation_decode.txt"
+  ]
+ },
+ "phase106b_bench_variants": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.11,
+  "stdout_bytes": 14623,
+  "results_files_touched": [
+   "phase106b_bench_variants.txt"
+  ]
+ },
+ "phase106c_positional_freq_match": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 3.59,
+  "stdout_bytes": 2426,
+  "results_files_touched": [
+   "phase106c_positional_frequency_match.txt"
+  ]
+ },
+ "phase107_slot_mi_decomposition": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 116.92,
+  "stdout_bytes": 9474,
+  "results_files_touched": [
+   "phase107_slot_mi_decomposition.txt"
+  ]
+ },
+ "phase19_zodiac_alignment": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 1.5,
+  "stdout_bytes": 27690,
+  "results_files_touched": [
+   "phase19_results.json"
+  ]
+ },
+ "phase20_template_subtraction": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 1.04,
+  "stdout_bytes": 17462,
+  "results_files_touched": [
+   "phase20_results.json"
+  ]
+ },
+ "phase21_highest_leverage": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.96,
+  "stdout_bytes": 18759,
+  "results_files_touched": [
+   "phase21_results.json"
+  ]
+ },
+ "phase22_unknown_roots": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 1.26,
+  "stdout_bytes": 39679,
+  "results_files_touched": [
+   "phase22_results.json"
+  ]
+ },
+ "phase32_artifact_test": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 3.01,
+  "stdout_bytes": 11567,
+  "results_files_touched": [
+   "phase32_output.txt",
+   "phase32_results.json"
+  ]
+ },
+ "phase33_cascade_audit": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 6.68,
+  "stdout_bytes": 11483,
+  "results_files_touched": [
+   "phase33_output.txt",
+   "phase33_results.json"
+  ]
+ },
+ "phase34_model_audit": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 3.26,
+  "stdout_bytes": 12770,
+  "results_files_touched": [
+   "phase34_output.txt",
+   "phase34_results.json"
+  ]
+ },
+ "phase35_prefix_disentangle": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 1.5,
+  "stdout_bytes": 9156,
+  "results_files_touched": []
+ },
+ "phase36_parser_free": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 4.33,
+  "stdout_bytes": 9927,
+  "results_files_touched": []
+ },
+ "phase37_parser_free_analysis": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 1.18,
+  "stdout_bytes": 14715,
+  "results_files_touched": []
+ },
+ "phase38_bigram_null": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 62.12,
+  "stdout_bytes": 7118,
+  "results_files_touched": []
+ },
+ "phase40_supplement": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 57.46,
+  "stdout_bytes": 4841,
+  "results_files_touched": []
+ },
+ "phase40_syntax_attack": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 41.62,
+  "stdout_bytes": 5097,
+  "results_files_touched": []
+ },
+ "phase41_grammar": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 24.11,
+  "stdout_bytes": 8796,
+  "results_files_touched": []
+ },
+ "phase42_class_system": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 19.37,
+  "stdout_bytes": 6759,
+  "results_files_touched": []
+ },
+ "phase43_attack_classes": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 52.37,
+  "stdout_bytes": 10667,
+  "results_files_touched": []
+ },
+ "phase44_word_classes": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 1.48,
+  "stdout_bytes": 8101,
+  "results_files_touched": []
+ },
+ "phase45_word_predictability": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.72,
+  "stdout_bytes": 9097,
+  "results_files_touched": []
+ },
+ "phase46_mi_anatomy": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 131.42,
+  "stdout_bytes": 7043,
+  "results_files_touched": []
+ },
+ "phase47_word_network": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 5.96,
+  "stdout_bytes": 12373,
+  "results_files_touched": []
+ },
+ "phase48_cross_validation": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 19.24,
+  "stdout_bytes": 12575,
+  "results_files_touched": []
+ },
+ "phase49_generalization": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 15.46,
+  "stdout_bytes": 5766,
+  "results_files_touched": []
+ },
+ "phase50_synthesis": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 7.83,
+  "stdout_bytes": 9685,
+  "results_files_touched": []
+ },
+ "phase51_attack_synthesis": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 57.8,
+  "stdout_bytes": 5451,
+  "results_files_touched": []
+ },
+ "phase52_discriminators": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 7.25,
+  "stdout_bytes": 7256,
+  "results_files_touched": []
+ },
+ "phase53_cipher_tests": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 17.54,
+  "stdout_bytes": 6168,
+  "results_files_touched": []
+ },
+ "phase54_natlang_vs_cipher": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 30.72,
+  "stdout_bytes": 5290,
+  "results_files_touched": []
+ },
+ "phase55_vc_separation": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 10.02,
+  "stdout_bytes": 8720,
+  "results_files_touched": []
+ },
+ "phase56_syllabary_test": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 90.5,
+  "stdout_bytes": 7270,
+  "results_files_touched": []
+ },
+ "phase57_bax_test": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 17.38,
+  "stdout_bytes": 9269,
+  "results_files_touched": []
+ },
+ "phase59_forward_model": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 6.31,
+  "stdout_bytes": 6781,
+  "results_files_touched": [
+   "phase59_output.json"
+  ]
+ },
+ "phase60_positional_verbose": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 139.95,
+  "stdout_bytes": 8758,
+  "results_files_touched": [
+   "phase60_output.json"
+  ]
+ },
+ "phase61_word_shape_validation": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 3.59,
+  "stdout_bytes": 8941,
+  "results_files_touched": [
+   "phase61_output.json"
+  ]
+ },
+ "phase62_word_anatomy": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 281.59,
+  "stdout_bytes": 11383,
+  "results_files_touched": [
+   "phase62_output.json",
+   "phase62_output.txt"
+  ]
+ },
+ "phase63_codicological_coherence": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 6.55,
+  "stdout_bytes": 10158,
+  "results_files_touched": [
+   "phase63_output.json",
+   "phase63_output.txt"
+  ]
+ },
+ "phase64_encoding_tournament": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 5.85,
+  "stdout_bytes": 8837,
+  "results_files_touched": [
+   "phase64_output.json",
+   "phase64_output.txt"
+  ]
+ },
+ "phase65_reverse_engineer_script": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 34.62,
+  "stdout_bytes": 12910,
+  "results_files_touched": [
+   "phase65_output.json",
+   "phase65_output.txt"
+  ]
+ },
+ "phase66_glyph_resegmentation": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 1.92,
+  "stdout_bytes": 13586,
+  "results_files_touched": [
+   "phase66_output.json",
+   "phase66_output.txt"
+  ]
+ },
+ "phase67_run_length_morphology": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 2.58,
+  "stdout_bytes": 14930,
+  "results_files_touched": [
+   "phase67_output.json",
+   "phase67_output.txt"
+  ]
+ },
+ "phase68_run_conditioned_transitions": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 1.51,
+  "stdout_bytes": 19205,
+  "results_files_touched": [
+   "phase68_output.json",
+   "phase68_output.txt"
+  ]
+ },
+ "phase71_paragraph_initials": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.55,
+  "stdout_bytes": 29902,
+  "results_files_touched": [
+   "phase71_paragraph_initials.txt"
+  ]
+ },
+ "phase74_paragraph_framing": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.86,
+  "stdout_bytes": 24199,
+  "results_files_touched": [
+   "phase74_paragraph_framing.json",
+   "phase74_paragraph_framing.txt"
+  ]
+ },
+ "phase75_latin_mapping": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 117.48,
+  "stdout_bytes": 20005,
+  "results_files_touched": [
+   "phase75_latin_mapping.json",
+   "phase75_latin_mapping.txt"
+  ]
+ },
+ "phase76_vernacular_mapping": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.91,
+  "stdout_bytes": 19146,
+  "results_files_touched": [
+   "phase76_vernacular_mapping.json",
+   "phase76_vernacular_mapping.txt"
+  ]
+ },
+ "phase77_gallows_ecology": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.9,
+  "stdout_bytes": 15760,
+  "results_files_touched": [
+   "phase77_gallows_ecology.txt"
+  ]
+ },
+ "phase77b_line_position_gallows": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.48,
+  "stdout_bytes": 11712,
+  "results_files_touched": [
+   "phase77b_line_position_gallows.txt"
+  ]
+ },
+ "phase78_allograph_test": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 2.21,
+  "stdout_bytes": 13583,
+  "results_files_touched": [
+   "phase78_allograph_test.txt"
+  ]
+ },
+ "phase79_gallows_collapse": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 1.79,
+  "stdout_bytes": 7424,
+  "results_files_touched": [
+   "phase79_gallows_collapse.txt"
+  ]
+ },
+ "phase80_abjad_hypothesis": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 2.25,
+  "stdout_bytes": 11543,
+  "results_files_touched": [
+   "phase80_abjad_hypothesis.txt"
+  ]
+ },
+ "phase81_german_genre_fingerprint": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 111.41,
+  "stdout_bytes": 13394,
+  "results_files_touched": [
+   "phase81_german_genre_fingerprint.txt"
+  ]
+ },
+ "phase82_charm_fingerprint": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 3.05,
+  "stdout_bytes": 13558,
+  "results_files_touched": [
+   "phase82_charm_fingerprint.txt"
+  ]
+ },
+ "phase82_line1_body_separation": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 137.51,
+  "stdout_bytes": 14416,
+  "results_files_touched": [
+   "phase82_line1_body_separation.txt"
+  ]
+ },
+ "phase83_encoding_layer_sweep": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 24.77,
+  "stdout_bytes": 16231,
+  "results_files_touched": [
+   "phase83_encoding_sweep.txt"
+  ]
+ },
+ "phase83_subword_segmentation": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 30.09,
+  "stdout_bytes": 19821,
+  "results_files_touched": [
+   "phase83_subword_segmentation.txt"
+  ]
+ },
+ "phase84_mi_meaning_area": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 51.84,
+  "stdout_bytes": 17587,
+  "results_files_touched": [
+   "phase84_mi_meaning_area.json",
+   "phase84_mi_meaning_area.txt"
+  ]
+ },
+ "phase85_chunk_fingerprint": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 42.16,
+  "stdout_bytes": 13167,
+  "results_files_touched": [
+   "phase85_chunk_fingerprint.json",
+   "phase85_chunk_fingerprint.txt"
+  ]
+ },
+ "phase85_pelling_verbose_cipher": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 21.68,
+  "stdout_bytes": 14511,
+  "results_files_touched": [
+   "phase85_pelling_verbose.txt"
+  ]
+ },
+ "phase86R_revalidation": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 36.16,
+  "stdout_bytes": 9574,
+  "results_files_touched": [
+   "phase86R_revalidation.json",
+   "phase86R_revalidation.txt"
+  ]
+ },
+ "phase87_gallows_null_test": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 2.63,
+  "stdout_bytes": 12497,
+  "results_files_touched": [
+   "phase87_gallows_null_test.txt"
+  ]
+ },
+ "phase87_spectral_vc": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 3.89,
+  "stdout_bytes": 13399,
+  "results_files_touched": [
+   "phase87_spectral_vc.json",
+   "phase87_spectral_vc.txt"
+  ]
+ },
+ "phase87R_revalidation": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 1.67,
+  "stdout_bytes": 10963,
+  "results_files_touched": [
+   "phase87R_revalidation.json",
+   "phase87R_revalidation.txt"
+  ]
+ },
+ "phase88_position_identity": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 5.72,
+  "stdout_bytes": 20301,
+  "results_files_touched": [
+   "phase88_position_identity.json",
+   "phase88_position_identity.txt"
+  ]
+ },
+ "phase89_context_divergence": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 3.42,
+  "stdout_bytes": 25991,
+  "results_files_touched": [
+   "phase89_context_divergence.json",
+   "phase89_context_divergence.txt"
+  ]
+ },
+ "phase90_crossword_chunk_mi": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 12.19,
+  "stdout_bytes": 12914,
+  "results_files_touched": [
+   "phase90_crossword_chunk_mi.json",
+   "phase90_crossword_chunk_mi.txt"
+  ]
+ },
+ "phase91_zodiac_galenic_axis": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 1.42,
+  "stdout_bytes": 13621,
+  "results_files_touched": [
+   "phase91_zodiac_galenic.json",
+   "phase91_zodiac_galenic.txt"
+  ]
+ },
+ "phase92_ae_minimal_pairs": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 1.0,
+  "stdout_bytes": 12737,
+  "results_files_touched": [
+   "phase92_ae_minimal_pairs.json",
+   "phase92_ae_minimal_pairs.txt"
+  ]
+ },
+ "phase93_currier_slot2_regime": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 3.12,
+  "stdout_bytes": 11351,
+  "results_files_touched": [
+   "phase93_currier_slot2.json",
+   "phase93_currier_slot2.txt"
+  ]
+ },
+ "phase94_e_extension_morphology": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.91,
+  "stdout_bytes": 8984,
+  "results_files_touched": [
+   "phase94_e_extension.json",
+   "phase94_e_extension.txt"
+  ]
+ },
+ "phase95_currier_split_fingerprint": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 27.86,
+  "stdout_bytes": 9287,
+  "results_files_touched": [
+   "phase95_currier_split_fingerprint.txt"
+  ]
+ },
+ "phase96_cluster_hchar": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 4.18,
+  "stdout_bytes": 5484,
+  "results_files_touched": []
+ },
+ "phase97_slot_grammar_hchar": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 50.68,
+  "stdout_bytes": 8192,
+  "results_files_touched": [
+   "phase97_slot_grammar_hchar.json"
+  ]
+ },
+ "phase98_generative_chunk_model": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 35.24,
+  "stdout_bytes": 9090,
+  "results_files_touched": [
+   "phase98_generative_chunk_model.json",
+   "phase98_generative_chunk_model.txt"
+  ]
+ },
+ "phase99_script_typology": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 8.73,
+  "stdout_bytes": 13231,
+  "results_files_touched": [
+   "phase99_script_typology.json",
+   "phase99_script_typology.txt"
+  ]
+ },
+ "ring_decan_mapping": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.42,
+  "stdout_bytes": 24757,
+  "results_files_touched": [
+   "ring_decan_results.json"
+  ]
+ },
+ "ring_text_analysis": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.47,
+  "stdout_bytes": 19952,
+  "results_files_touched": [
+   "ring_text_results.json"
+  ]
+ },
+ "root_lexicon_rosetta": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 1.52,
+  "stdout_bytes": 26212,
+  "results_files_touched": [
+   "root_lexicon_results.json"
+  ]
+ },
+ "rtl_direction_test": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.99,
+  "stdout_bytes": 10289,
+  "results_files_touched": []
+ },
+ "sentence_translation": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.44,
+  "stdout_bytes": 123162,
+  "results_files_touched": [
+   "phase17_sentence_translation.json"
+  ]
+ },
+ "shorthand_analysis": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 1.39,
+  "stdout_bytes": 18438,
+  "results_files_touched": [
+   "shorthand_results.json"
+  ]
+ },
+ "phase100_decipherment": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 2204.23,
+  "stdout_bytes": 13989,
+  "results_files_touched": [
+   "phase100_decipherment.json",
+   "phase100_decipherment.txt",
+   "phase101_currier_ab_dichotomy.json",
+   "phase101_currier_ab_dichotomy.txt",
+   "phase103_positional_class_decomposition.json",
+   "phase103_positional_class_decomposition.txt",
+   "phase19_results.json",
+   "phase23_results.json",
+   "phase24_results.json",
+   "phase25_results.json",
+   "phase26_results.json",
+   "phase27_output.txt",
+   "phase27_results.json",
+   "phase28_output.txt",
+   "phase28_results.json",
+   "phase29_output.txt",
+   "phase29_results.json",
+   "phase30_output.txt",
+   "phase30_results.json",
+   "phase31_output.txt",
+   "phase31_results.json",
+   "phase32_output.txt",
+   "phase32_results.json",
+   "phase60_output.json",
+   "phase61_output.json",
+   "phase63_output.json",
+   "phase63_output.txt",
+   "phase67_output.json",
+   "phase67_output.txt",
+   "phase68_output.json",
+   "phase68_output.txt",
+   "phase72_naibbe_calibration.txt",
+   "phase72_naibbe_raw.json",
+   "phase73_abbreviation_model.txt",
+   "phase73_abbreviation_raw.json",
+   "phase75_latin_mapping.json",
+   "phase75_latin_mapping.txt",
+   "phase79_gallows_collapse.txt",
+   "phase83_subword_segmentation.txt",
+   "phase84_mi_meaning_area.json",
+   "phase84_mi_meaning_area.txt",
+   "phase85_chunk_fingerprint.json",
+   "phase85_chunk_fingerprint.txt",
+   "phase86_chunk_equivalence.json",
+   "phase86_chunk_equivalence.txt",
+   "phase87_gallows_null_test.txt",
+   "phase89_context_divergence.json",
+   "phase89_context_divergence.txt",
+   "phase92_ae_minimal_pairs.json",
+   "phase92_ae_minimal_pairs.txt",
+   "phase94_e_extension.json",
+   "phase94_e_extension.txt"
+  ]
+ },
+ "phase23_full_translation": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.95,
+  "stdout_bytes": 48737,
+  "results_files_touched": [
+   "phase23_results.json"
+  ]
+ },
+ "phase24_classifier_semantics": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 1.35,
+  "stdout_bytes": 45170,
+  "results_files_touched": [
+   "phase24_results.json"
+  ]
+ },
+ "phase25_narrative_translation": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 4.88,
+  "stdout_bytes": 75628,
+  "results_files_touched": [
+   "phase25_results.json"
+  ]
+ },
+ "phase26_expansion": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 2.82,
+  "stdout_bytes": 36262,
+  "results_files_touched": [
+   "phase26_results.json"
+  ]
+ },
+ "phase27_self_audit": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 11.83,
+  "stdout_bytes": 26026,
+  "results_files_touched": [
+   "phase27_output.txt",
+   "phase27_results.json"
+  ]
+ },
+ "phase28_statistical": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 21.23,
+  "stdout_bytes": 24536,
+  "results_files_touched": [
+   "phase28_output.txt",
+   "phase28_results.json"
+  ]
+ },
+ "phase29_compounds": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 2.64,
+  "stdout_bytes": 21859,
+  "results_files_touched": [
+   "phase29_output.txt",
+   "phase29_results.json"
+  ]
+ },
+ "phase30_validation": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 11.7,
+  "stdout_bytes": 12170,
+  "results_files_touched": [
+   "phase30_output.txt",
+   "phase30_results.json"
+  ]
+ },
+ "phase31_prefix_paradox": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 3.1,
+  "stdout_bytes": 15778,
+  "results_files_touched": [
+   "phase31_output.txt",
+   "phase31_results.json"
+  ]
+ },
+ "grammar_extraction": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.45,
+  "stdout_bytes": 19969,
+  "results_files_touched": [
+   "grammar_results.json"
+  ]
+ },
+ "innermost_ring_dive": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.55,
+  "stdout_bytes": 26217,
+  "results_files_touched": []
+ },
+ "medieval_degrees": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.46,
+  "stdout_bytes": 15615,
+  "results_files_touched": []
+ },
+ "phase86_chunk_equivalence": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 96.76,
+  "stdout_bytes": 13380,
+  "results_files_touched": [
+   "phase86_chunk_equivalence.json",
+   "phase86_chunk_equivalence.txt"
+  ]
+ },
+ "deep_dive": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 1.12,
+  "stdout_bytes": 15906,
+  "results_files_touched": [
+   "deep_dive_results.json"
+  ]
+ },
+ "deep_dive_phase1": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 1.11,
+  "stdout_bytes": 17320,
+  "results_files_touched": []
+ },
+ "four_tasks_audit": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 19.26,
+  "stdout_bytes": 30588,
+  "results_files_touched": [
+   "four_tasks_audit.json"
+  ]
+ },
+ "gallows_test": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 21.66,
+  "stdout_bytes": 12399,
+  "results_files_touched": [
+   "gallows_test_results.json"
+  ]
+ },
+ "herbal_crossref": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 1.1,
+  "stdout_bytes": 17772,
+  "results_files_touched": [
+   "herbal_crossref_results.json"
+  ]
+ },
+ "herbal_labels": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.7,
+  "stdout_bytes": 19714,
+  "results_files_touched": [
+   "herbal_label_results.json"
+  ]
+ },
+ "leo_deepdive": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 1.01,
+  "stdout_bytes": 32727,
+  "results_files_touched": [
+   "leo_deepdive_results.json"
+  ]
+ },
+ "phase58_cross_script": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 3.69,
+  "stdout_bytes": 10206,
+  "results_files_touched": [
+   "phase58_output.json"
+  ]
+ },
+ "phase72_naibbe_calibration": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 386.75,
+  "stdout_bytes": 20584,
+  "results_files_touched": [
+   "phase72_naibbe_calibration.txt",
+   "phase72_naibbe_raw.json"
+  ]
+ },
+ "phase73_abbreviation_model": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 181.97,
+  "stdout_bytes": 15246,
+  "results_files_touched": [
+   "phase73_abbreviation_model.txt",
+   "phase73_abbreviation_raw.json"
+  ]
+ }
+}

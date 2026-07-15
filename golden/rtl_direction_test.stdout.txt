@@ -1,0 +1,308 @@
+Extracting sentences from all folios...
+
+Total sentences/lines: 5427
+Total words: 39433
+
+========================================================================
+TEST 1: PARSE RATE COMPARISON — LTR vs REVERSED vs ROLE-SWAP
+========================================================================
+
+  Unique words tested: 7905
+
+  Parse rates:
+    LTR (original):               3283/7905 (41.5%)
+    Character-reversed (LTR parse):250/7905 (3.2%)
+    Role-swapped parser:           1150/7905 (14.5%)
+    Reversed + role-swapped:       1707/7905 (21.6%)
+
+  Mean parse quality (LTR):     2.11 / 3.0
+  Mean parse quality (reversed): 1.94 / 3.0
+
+  Words that parse ONLY as LTR:     3101
+  Words that parse ONLY as reversed: 68
+  Words that parse BOTH ways:        296
+
+  Examples of reverse-only parses (word → reversed → parse):
+    aky → yka → prefix='y' root='ka' suffix=''
+    alet → tela → prefix='' root='tela' suffix=''
+    alfo → ofla → prefix='o' root='fla' suffix=''
+    alky → ykla → prefix='y' root='kla' suffix=''
+    aloky → ykola → prefix='y' root='kola' suffix=''
+    apo → opa → prefix='o' root='pa' suffix=''
+    aroky → ykora → prefix='y' root='kora' suffix=''
+    aty → yta → prefix='y' root='ta' suffix=''
+    daky → ykad → prefix='y' root='kad' suffix=''
+    dalky → yklad → prefix='y' root='klad' suffix=''
+    daloky → ykolad → prefix='y' root='kolad' suffix=''
+    daseky → ykesad → prefix='y' root='kesad' suffix=''
+    deeety → yteeed → prefix='y' root='teeed' suffix=''
+    defo → ofed → prefix='o' root='fed' suffix=''
+    dlod → dold → prefix='d' root='old' suffix=''
+
+========================================================================
+TEST 2: CHARACTER DISTRIBUTION ASYMMETRY (INITIAL vs FINAL)
+========================================================================
+
+  Initial character entropy: 3.154 bits
+  Final character entropy:   2.472 bits
+  Difference (init - final): 0.683 bits
+  → Final MORE constrained — typical of RTL suffix system (or LTR with rich suffixes)
+
+  Top 10 initial characters:
+    'o': 9035 (22.9%)
+    'c': 7314 (18.5%)
+    'q': 5721 (14.5%)
+    's': 4469 (11.3%)
+    'd': 3802 (9.6%)
+    'a': 2302 (5.8%)
+    'y': 1848 (4.7%)
+    'k': 1314 (3.3%)
+    'l': 1312 (3.3%)
+    't': 1086 (2.8%)
+
+  Top 10 final characters:
+    'y': 16103 (40.8%)
+    'n': 6503 (16.5%)
+    'r': 6116 (15.5%)
+    'l': 6055 (15.4%)
+    'o': 1182 (3.0%)
+    's': 1138 (2.9%)
+    'm': 1093 (2.8%)
+    'd': 609 (1.5%)
+    'g': 132 (0.3%)
+    'e': 93 (0.2%)
+
+  Initial bigram entropy: 4.766 bits
+  Final bigram entropy:   4.065 bits
+
+========================================================================
+TEST 3: WORD-ORDER BIGRAM PATTERNS (LTR vs RTL)
+========================================================================
+
+  Unique word bigrams (LTR): 26828
+  Bigrams occurring >1 (LTR): 4156
+  Bigrams occurring >1 (RTL): 4156
+
+  Top 15 word bigrams (LTR = assumed reading direction):
+    or → aiin: 70
+    chol → daiin: 35
+    ar → aiin: 35
+    ol → shedy: 25
+    chol → chol: 24
+    ol → aiin: 23
+    shedy → qokedy: 22
+    ol → chedy: 22
+    chedy → qokeey: 19
+    chedy → qokain: 18
+    qokeedy → qokeedy: 18
+    shedy → qokaiin: 18
+    ar → al: 18
+    shey → qokain: 17
+    aiin → ol: 15
+
+  Top 15 word bigrams (RTL = reversed reading direction):
+    aiin → or: 70
+    daiin → chol: 35
+    aiin → ar: 35
+    shedy → ol: 25
+    chol → chol: 24
+    aiin → ol: 23
+    qokedy → shedy: 22
+    chedy → ol: 22
+    qokeey → chedy: 19
+    qokain → chedy: 18
+    qokeedy → qokeedy: 18
+    qokaiin → shedy: 18
+    al → ar: 18
+    qokain → shey: 17
+    ol → aiin: 15
+
+  Word bigram entropy (LTR): 14.490 bits
+  Word bigram entropy (RTL): 14.490 bits
+  Note: these should be identical by symmetry — checking...
+
+  Opener concentration (top-5 cover what % of lines?):
+    LTR openers: 7.9%  ([('daiin', 173), ('saiin', 58), ('dain', 51)])
+    RTL openers: 9.5%  ([('daiin', 145), ('dy', 105), ('am', 77)])
+
+  Closer concentration (top-5 cover what %):
+    LTR closers: 9.5%  ([('daiin', 145), ('dy', 105), ('am', 77)])
+    RTL closers: 7.9%  ([('daiin', 173), ('saiin', 58), ('dain', 51)])
+
+  Opener entropy:  LTR=9.862  RTL=9.757
+  Closer entropy:  LTR=9.757  RTL=9.862
+
+  Lower entropy = more structured = more likely real openers/closers
+  → RTL openers more constrained — supports RTL reading
+
+========================================================================
+TEST 4: PREFIX/SUFFIX POSITION FIDELITY
+========================================================================
+
+  Testing claimed prefixes — are they really word-initial?
+  Prefix      At start      At end   In middle     Start %
+  qo               731           3          21       96.8%
+  q                829           0          29       96.6%
+  do                97          13          22       73.5%
+  dy                45        1066          37        3.9%
+  so               130           6          13       87.2%
+  sy                 8          68           5        9.9%
+  ol               280         433         552       22.1%
+  or                86         379         173       13.5%
+  o               1750         309        3260       32.9%
+  y                579        3054         236       15.0%
+  d                595         325        2049       20.0%
+  s                848         493         881       38.2%
+
+  Testing claimed suffixes — are they really word-final?
+  Suffix        At end    At start   In middle       End %
+  aiin             462           8           0       98.3%
+  aiir              39           7           0       84.8%
+  ain              270           5           0       98.2%
+  air              105          13           0       89.0%
+  am               243           9           0       96.4%
+  an                55           1           0       98.2%
+  ar               505          65           0       88.6%
+  al               393         104           0       79.1%
+  as                38           5           0       88.4%
+  iin              581           0           0      100.0%
+  iir               55           2           0       96.5%
+  in               866           0           0      100.0%
+  ir               167           0           0      100.0%
+  dy              1066          45           0       95.9%
+  ey               655           1           0       99.8%
+
+========================================================================
+TEST 5: PALINDROMES AND WORD SYMMETRY
+========================================================================
+
+  True palindromes (word == reversed): 33
+    lol (freq=40)
+    yty (freq=25)
+    rar (freq=16)
+    ror (freq=15)
+    yky (freq=14)
+    oto (freq=10)
+    ydy (freq=9)
+    lal (freq=7)
+    lkl (freq=7)
+    oro (freq=6)
+    oko (freq=5)
+    sos (freq=5)
+    olo (freq=4)
+    shs (freq=4)
+    oeeo (freq=3)
+    dod (freq=2)
+    oraro (freq=2)
+    yetey (freq=1)
+    seees (freq=1)
+    soeos (freq=1)
+
+  Reverse-pair words (w and w[::-1] both exist): 68
+    oty (123) ↔ yto (5)
+    lod (2) ↔ dol (112)
+    yko (3) ↔ oky (107)
+    sol (70) ↔ los (6)
+    rod (1) ↔ dor (68)
+    lor (39) ↔ rol (20)
+    ldy (25) ↔ ydl (1)
+    ral (18) ↔ lar (8)
+    ytol (16) ↔ loty (4)
+    ykl (1) ↔ lky (19)
+    yteol (7) ↔ loety (1)
+    dyky (5) ↔ ykyd (1)
+    oeky (1) ↔ ykeo (4)
+    lom (4) ↔ mol (1)
+    odl (3) ↔ ldo (2)
+
+========================================================================
+TEST 6: PARAGRAPH MARKER ANALYSIS
+========================================================================
+
+  Total transcribed lines: 5766
+  Lines with paragraph markers: 1560
+  Marker at LEFT (transcription start): 764
+  Marker at RIGHT (transcription end):  780
+
+  Paragraph markers show mixed or right-aligned pattern.
+
+  Paragraph-initial words (top 10):
+    daiin: 33
+    dain: 17
+    sain: 16
+    tchedy: 14
+    saiin: 13
+    pol: 13
+    dair: 13
+    tol: 11
+    sor: 11
+    dar: 10
+
+  Non-paragraph line-initial words (top 10):
+    daiin: 140
+    saiin: 46
+    dar: 36
+    or: 34
+    dain: 34
+    sol: 31
+    dshedy: 30
+    qokaiin: 30
+    qokeey: 27
+    sho: 25
+
+  Top-20 para-initial ∩ top-20 line-final: 4 words
+    {'daiin', 'dar', 'dain', 'ol'}
+  (High overlap would suggest para markers are at line END = possible RTL)
+
+========================================================================
+TEST 7: CHARACTER-LEVEL BIGRAM ENTROPY
+========================================================================
+
+  LTR character bigram entropy: 5.712 bits
+  RTL character bigram entropy: 5.712 bits
+
+  Cross-word boundary bigram entropy:
+    LTR (last_char → first_char of next): 5.313 bits
+    RTL (last_char of next → first_char):  5.582 bits
+    → LTR cross-boundary MORE structured — supports LTR
+
+  Top 10 cross-word bigrams (LTR: end_of_word → start_of_next):
+    'y' → 'q': 3685
+    'y' → 'o': 2823
+    'y' → 'c': 2139
+    'n' → 'o': 1726
+    'n' → 'c': 1624
+    'r' → 'o': 1484
+    'y' → 'd': 1407
+    'l' → 'c': 1307
+    'r' → 'c': 1273
+    'y' → 's': 1161
+
+  Top 10 cross-word bigrams (RTL: end_of_next → start_of_word):
+    'y' → 'o': 3038
+    'y' → 'q': 2524
+    'y' → 'c': 2485
+    'y' → 's': 1804
+    'n' → 'o': 1290
+    'y' → 'd': 1249
+    'n' → 'c': 1172
+    'r' → 'o': 1170
+    'l' → 'o': 1106
+    'l' → 'c': 1068
+
+========================================================================
+TEST 8: RTL SYNTHESIS
+========================================================================
+
+  The RTL hypothesis predicts:
+    1. Reversed words should parse ≥ as well as LTR words
+    2. 'Suffixes' should be more position-constrained than 'prefixes'
+    3. Word-final characters should be more diverse than word-initial
+    4. Paragraph markers should align with RTL conventions
+    5. Line-final words should function as openers
+
+  Evidence assessment printed above — check each test result.
+
+========================================================================
+RTL test complete.
+========================================================================

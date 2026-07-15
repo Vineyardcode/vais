@@ -25,7 +25,7 @@ import numpy as np
 from pathlib import Path
 from collections import Counter, defaultdict
 from itertools import combinations
-from common import classify_folio_v3 as classify_folio, get_root
+from common import classify_folio_v3 as classify_folio, get_root, result_path
 
 # ═══════════════════════════════════════════════════════════════════════════
 # PARSER (reused from previous scripts)
@@ -807,7 +807,7 @@ def analyze(data):
     print(f"           suffix -l/-r = adjective/modifier form")
     print()
 
-    print("  Results saved to freq_rank_results.json")
+    print("  Results saved to results/freq_rank_results.json")
     print()
     print("═" * 90)
     print("FREQUENCY-RANK MAPPING COMPLETE")
@@ -830,5 +830,5 @@ if __name__ == "__main__":
 
     results = analyze(data)
 
-    with open("freq_rank_results.json", "w") as f:
+    with open(result_path("freq_rank_results.json"), "w") as f:
         json.dump(results, f, indent=2, default=str)

@@ -30,7 +30,7 @@ import json
 import math
 from pathlib import Path
 from collections import Counter, defaultdict
-from common import collapse_echains, gallows_base_v2 as gallows_base, parse_morphology, strip_gallows
+from common import collapse_echains, gallows_base_v2 as gallows_base, parse_morphology, strip_gallows, result_path, classify_folio_labels_taxonomy as classify_folio
 
 # ══════════════════════════════════════════════════════════════════════════
 # MORPHOLOGICAL PIPELINE (from root_lexicon_rosetta.py)
@@ -70,33 +70,6 @@ def full_decompose(word):
 # SECTION CLASSIFICATION
 # ══════════════════════════════════════════════════════════════════════════
 
-def classify_folio(folio_id):
-    """Classify folio by section based on folio number."""
-    m = re.match(r'f(\d+)', folio_id)
-    if not m:
-        return "unknown"
-    num = int(m.group(1))
-    if num <= 25:
-        return "herbal-A"
-    elif 26 <= num <= 56:
-        return "herbal-A"
-    elif num in (57,):
-        return "herbal-A"
-    elif 58 <= num <= 66:
-        return "herbal-B" if num not in (65, 66) else "herbal-A"
-    elif 67 <= num <= 73:
-        return "zodiac"
-    elif 75 <= num <= 84:
-        return "bio"
-    elif 85 <= num <= 86:
-        return "cosmo"
-    elif 87 <= num <= 102:
-        if num in (88, 89, 99, 100, 101, 102):
-            return "pharma"
-        return "herbal-B"
-    elif 103 <= num <= 116:
-        return "text"
-    return "unknown"
 
 # ══════════════════════════════════════════════════════════════════════════
 # COPTIC VOCABULARY (from coptic_probe_expanded.py — top matches)
@@ -601,9 +574,9 @@ def main():
         "det_by_label_type": {lt: dict(c) for lt, c in det_by_type.items()},
     }
 
-    with open("herbal_label_results.json", "w", encoding="utf-8") as f:
+    with open(result_path("herbal_label_results.json"), "w", encoding="utf-8") as f:
         json.dump(results, f, indent=2, ensure_ascii=False)
-    print("Results saved to herbal_label_results.json")
+    print("Results saved to results/herbal_label_results.json")
 
 
 if __name__ == "__main__":

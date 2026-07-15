@@ -73,6 +73,15 @@ MAX_CHUNKS = 6
 SIMPLE_GALLOWS = ["t", "k", "f", "p"]
 
 
+# Declared variant of MORPH_SUFFIXES used by the phase23-31 translation-era
+# family: no 'sy', and 'eedy' is tried before 'edy'/'ody'. Order is
+# significant (parse_morphology takes the first endswith match), so these
+# two lists produce different decompositions BY DESIGN. The scripts keep a
+# local literal copy so the web UI exposes it as a tunable parameter; this
+# constant is the canonical reference they are checked against.
+MORPH_SUFFIXES_NO_SY = ['aiin', 'ain', 'iin', 'in', 'ar', 'or', 'al', 'ol',
+        'eedy', 'edy', 'ody', 'dy', 'ey', 'y']
+
 MORPH_SUFFIXES = ['aiin','ain','iin','in','ar','or','al','ol',
         'edy','ody','eedy','dy','sy','ey','y']
 
@@ -99,6 +108,18 @@ def parse_morphology(stripped_word):
 # ── get_collapsed: phase39 statistical family (20 scripts) — composed of
 #    strip_gallows_v2 (string-returning) + collapse_e
 def get_collapsed(w): return collapse_e(strip_gallows_v2(w))
+
+
+def result_path(name):
+    """Canonical location for inter-script result files: results/<name>.
+
+    All scripts read AND write their result JSONs through this helper, so
+    producers and consumers can never drift apart again (pre-refactor, the
+    pre-phase-19 scripts used the project root while later scripts and the
+    committed snapshots used results/).
+    """
+    RESULTS_DIR.mkdir(exist_ok=True)
+    return RESULTS_DIR / name
 
 
 def utf8_stdout():
@@ -133,6 +154,66 @@ def char_bigram_predictability(char_list):
 
 def chunk_to_str(chunk):
     return '.'.join(chunk)
+
+# ─────────────────────────────────────────────────────────────────────────
+# FOLIO -> SECTION TAXONOMIES (consolidated, explicitly named)
+#
+# Two independent classification methods coexist across research eras:
+#   by NUMBER (folio number ranges)  -> herbal-A/B, zodiac, bio, cosmo,
+#                                       pharma, text, unknown
+#   by HEADER (IVTFF header comments)-> herbal, astro, pharma, bio, text,
+#                                       other (+ Currier language A/B)
+# They are NOT interchangeable; each script keeps the taxonomy it was
+# written with. Named aliases below make the choice explicit at import
+# sites. classify_folio_labels_taxonomy is a genuine variant used only by
+# herbal_labels.py: folios 58-64 count as herbal-B there (elsewhere:
+# 58 -> herbal-A, 59-64 -> unknown).
+# ─────────────────────────────────────────────────────────────────────────
+
+def classify_folio_header_section(header_lines):
+    """Header-comment taxonomy, section only (deep_dive family)."""
+    text = "\n".join(header_lines).lower()
+    if "herbal" in text:
+        return "herbal"
+    elif "astro" in text or "cosmo" in text or "star" in text or "zodiac" in text:
+        return "astro"
+    elif "pharm" in text or "recipe" in text or "balneo" in text:
+        return "pharma"
+    elif "biolog" in text or "bathy" in text:
+        return "bio"
+    elif "text only" in text:
+        return "text"
+    return "other"
+
+
+def classify_folio_labels_taxonomy(folio_id):
+    """Number taxonomy VARIANT used by herbal_labels.py (58-64 -> herbal-B)."""
+    m = re.match(r'f(\d+)', folio_id)
+    if not m:
+        return "unknown"
+    num = int(m.group(1))
+    if num <= 25:
+        return "herbal-A"
+    elif 26 <= num <= 56:
+        return "herbal-A"
+    elif num in (57,):
+        return "herbal-A"
+    elif 58 <= num <= 66:
+        return "herbal-B" if num not in (65, 66) else "herbal-A"
+    elif 67 <= num <= 73:
+        return "zodiac"
+    elif 75 <= num <= 84:
+        return "bio"
+    elif 85 <= num <= 86:
+        return "cosmo"
+    elif 87 <= num <= 102:
+        if num in (88, 89, 99, 100, 101, 102):
+            return "pharma"
+        return "herbal-B"
+    elif 103 <= num <= 116:
+        return "text"
+    return "unknown"
+
 
 def classify_folio(filepath):
     stem = filepath.stem
@@ -299,10 +380,23 @@ def extract_words_from_line(text):
     return words
 
 def fetch_gutenberg(ebook_id):
-    url = f'https://www.gutenberg.org/cache/epub/{ebook_id}/pg{ebook_id}.txt'
-    req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0 (VoynichResearch)'})
-    resp = urllib.request.urlopen(req, timeout=30)
-    data = resp.read().decode('utf-8', errors='replace')
+    """Project Gutenberg text with header/footer stripped.
+
+    Downloads are cached raw in data/gutenberg_cache/pg<id>.txt, so once the
+    cache is populated (tools/prefetch_gutenberg.py) every network test runs
+    fully offline and reproducibly.
+    """
+    cache_dir = DATA_DIR / 'gutenberg_cache'
+    cache = cache_dir / f'pg{ebook_id}.txt'
+    if cache.exists():
+        data = cache.read_text(encoding='utf-8', errors='replace')
+    else:
+        url = f'https://www.gutenberg.org/cache/epub/{ebook_id}/pg{ebook_id}.txt'
+        req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0 (VoynichResearch)'})
+        resp = urllib.request.urlopen(req, timeout=30)
+        data = resp.read().decode('utf-8', errors='replace')
+        cache_dir.mkdir(parents=True, exist_ok=True)
+        cache.write_text(data, encoding='utf-8')
     start = data.find('*** START OF')
     end = data.find('*** END OF')
     if start > 0 and end > 0:
@@ -751,3 +845,9 @@ def zipf_alpha(words):
     A = np.vstack([log_rank, np.ones(n)]).T
     result = np.linalg.lstsq(A, log_freq, rcond=None)
     return float(-result[0][0])
+
+
+# Descriptive aliases for the taxonomy families (see block above).
+classify_folio_by_number = classify_folio
+classify_folio_by_number_v2 = classify_folio_v2
+classify_folio_by_header = classify_folio_v3  # returns (section, currier_lang)

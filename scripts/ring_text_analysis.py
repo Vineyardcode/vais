@@ -20,6 +20,7 @@ import math
 from pathlib import Path
 from collections import Counter, defaultdict
 from itertools import combinations
+from common import result_path
 
 # ── File mapping ─────────────────────────────────────────────────────────
 
@@ -754,7 +755,7 @@ if __name__ == "__main__":
         })
         results["per_sign"][sign]["total_words"] += rt["word_count"]
 
-    with open("ring_text_results.json", "w", encoding="utf-8") as f:
+    with open(result_path("ring_text_results.json"), "w", encoding="utf-8") as f:
         json.dump(results, f, indent=2, ensure_ascii=False)
-    print(f"\n  Results saved to ring_text_results.json")
+    print(f"\n  Results saved to results/ring_text_results.json")
     print(f"\n  Analysis complete.")

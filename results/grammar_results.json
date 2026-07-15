@@ -49,12 +49,12 @@
       "tagged": [
         {
           "word": "dalalody",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "dalalody",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "D-CONT",
+          "coarse": "P",
+          "prefix": "d",
+          "root": "alalod",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "oteoshey",
@@ -97,9 +97,9 @@
           "class": "O-CONT",
           "coarse": "O",
           "prefix": "o",
-          "root": "t",
-          "suffix": "or",
-          "suf_class": "-R"
+          "root": "tor",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "ochy",
@@ -133,25 +133,25 @@
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "cheody",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "root": "cheod",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "cheey",
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "cheey",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "root": "chee",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "oteo",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oteo",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "teo",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -193,30 +193,30 @@
         },
         {
           "word": "oteodaiin",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oteodaiin",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "teoda",
+          "suffix": "iin",
+          "suf_class": "-IIN"
         },
         {
           "word": "ykeody",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "ykeody",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "Y-CONT",
+          "coarse": "P",
+          "prefix": "y",
+          "root": "keod",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "oteody",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oteody",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "teod",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "sheo",
@@ -241,8 +241,8 @@
           "class": "O-CONT",
           "coarse": "O",
           "prefix": "o",
-          "root": "t",
-          "suffix": "eedy",
+          "root": "teed",
+          "suffix": "y",
           "suf_class": "-Y"
         },
         {
@@ -274,10 +274,10 @@
         },
         {
           "word": "okeeo",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "okeeo",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "keeo",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -286,18 +286,18 @@
           "class": "FUNC",
           "coarse": "F",
           "prefix": "d",
-          "root": "a",
-          "suffix": "l",
-          "suf_class": "-l"
+          "root": "al",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "cheody",
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "cheody",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "root": "cheod",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "okchoteees",
@@ -310,12 +310,12 @@
         },
         {
           "word": "oteeody",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oteeody",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "teeod",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "cheokeo",
@@ -331,9 +331,9 @@
           "class": "O-CONT",
           "coarse": "O",
           "prefix": "o",
-          "root": "t",
-          "suffix": "aiin",
-          "suf_class": "-AIIN"
+          "root": "ta",
+          "suffix": "iin",
+          "suf_class": "-IIN"
         },
         {
           "word": "shes",
@@ -358,27 +358,27 @@
           "class": "FUNC",
           "coarse": "F",
           "prefix": "",
-          "root": "a",
-          "suffix": "r",
-          "suf_class": "-r"
+          "root": "ar",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "oly",
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "o",
-          "suffix": "ly",
-          "suf_class": "-ly"
+          "root": "ol",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "daly",
           "class": "D-CONT",
           "coarse": "P",
           "prefix": "d",
-          "root": "a",
-          "suffix": "ly",
-          "suf_class": "-ly"
+          "root": "al",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "sheal",
@@ -440,16 +440,16 @@
           "class": "O-CONT",
           "coarse": "O",
           "prefix": "o",
-          "root": "k",
-          "suffix": "ey",
+          "root": "ke",
+          "suffix": "y",
           "suf_class": "-Y"
         },
         {
           "word": "otodal",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "otodal",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "todal",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -464,10 +464,10 @@
         },
         {
           "word": "okeodal",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "okeodal",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "keodal",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -476,9 +476,9 @@
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "sh",
-          "suffix": "ol",
-          "suf_class": "-L"
+          "root": "shol",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "olaiin",
@@ -509,10 +509,10 @@
         },
         {
           "word": "qokeeol",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "qokeeol",
+          "class": "Q-CONT",
+          "coarse": "Q",
+          "prefix": "qo",
+          "root": "keeol",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -536,12 +536,12 @@
         },
         {
           "word": "oteosaiin",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oteosaiin",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "teosa",
+          "suffix": "iin",
+          "suf_class": "-IIN"
         },
         {
           "word": "chekey",
@@ -554,10 +554,10 @@
         },
         {
           "word": "okeolol",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "okeolol",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "keolol",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -593,18 +593,18 @@
           "class": "FUNC",
           "coarse": "F",
           "prefix": "d",
-          "root": "a",
-          "suffix": "l",
-          "suf_class": "-l"
+          "root": "al",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "al",
           "class": "FUNC",
           "coarse": "F",
           "prefix": "",
-          "root": "a",
-          "suffix": "l",
-          "suf_class": "-l"
+          "root": "al",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "s",
@@ -629,9 +629,9 @@
           "class": "FUNC",
           "coarse": "F",
           "prefix": "d",
-          "root": "a",
-          "suffix": "l",
-          "suf_class": "-l"
+          "root": "al",
+          "suffix": "",
+          "suf_class": "\u2205"
         }
       ],
       "comma_positions": [
@@ -702,27 +702,27 @@
           "class": "FUNC",
           "coarse": "F",
           "prefix": "d",
-          "root": "a",
-          "suffix": "r",
-          "suf_class": "-r"
+          "root": "ar",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "otey",
           "class": "O-CONT",
           "coarse": "O",
           "prefix": "o",
-          "root": "t",
-          "suffix": "ey",
+          "root": "te",
+          "suffix": "y",
           "suf_class": "-Y"
         },
         {
           "word": "ykeey",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "ykeey",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "Y-CONT",
+          "coarse": "P",
+          "prefix": "y",
+          "root": "kee",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "tchy",
@@ -756,8 +756,8 @@
           "class": "FUNC?",
           "coarse": "F",
           "prefix": "",
-          "root": "sh",
-          "suffix": "ey",
+          "root": "she",
+          "suffix": "y",
           "suf_class": "-Y"
         },
         {
@@ -792,17 +792,17 @@
           "class": "FUNC",
           "coarse": "F",
           "prefix": "s",
-          "root": "a",
-          "suffix": "l",
-          "suf_class": "-l"
+          "root": "al",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "ody",
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "o",
-          "suffix": "dy",
+          "root": "od",
+          "suffix": "y",
           "suf_class": "-Y"
         },
         {
@@ -834,10 +834,10 @@
         },
         {
           "word": "yteos",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "yteos",
+          "class": "Y-CONT",
+          "coarse": "P",
+          "prefix": "y",
+          "root": "teos",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -846,18 +846,18 @@
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "alain",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "root": "ala",
+          "suffix": "in",
+          "suf_class": "-IIN"
         },
         {
           "word": "sheodaly",
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "sheodaly",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "root": "sheodal",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "cho",
@@ -897,28 +897,28 @@
         },
         {
           "word": "oteody",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oteody",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "teod",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "cholaiin",
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "cholaiin",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "root": "chola",
+          "suffix": "iin",
+          "suf_class": "-IIN"
         },
         {
           "word": "oteeoal",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oteeoal",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "teeoal",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -927,9 +927,9 @@
           "class": "FUNC",
           "coarse": "F",
           "prefix": "",
-          "root": "a",
-          "suffix": "l",
-          "suf_class": "-l"
+          "root": "al",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "sheeos",
@@ -945,8 +945,8 @@
           "class": "O-CONT",
           "coarse": "O",
           "prefix": "o",
-          "root": "k",
-          "suffix": "ey",
+          "root": "ke",
+          "suffix": "y",
           "suf_class": "-Y"
         },
         {
@@ -954,9 +954,9 @@
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "ch",
-          "suffix": "ol",
-          "suf_class": "-L"
+          "root": "chol",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "dy",
@@ -969,10 +969,10 @@
         },
         {
           "word": "otees",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "otees",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "tees",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -999,45 +999,45 @@
           "class": "O-CONT",
           "coarse": "O",
           "prefix": "ol",
-          "root": "a",
-          "suffix": "r",
-          "suf_class": "-r"
+          "root": "ar",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "otoaiin",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "otoaiin",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "toa",
+          "suffix": "iin",
+          "suf_class": "-IIN"
         },
         {
           "word": "oteeody",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oteeody",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "teeod",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "sos",
           "class": "S-CONT",
           "coarse": "P",
           "prefix": "s",
-          "root": "o",
-          "suffix": "s",
-          "suf_class": "-S"
+          "root": "os",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "todaiin",
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "todaiin",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "root": "toda",
+          "suffix": "iin",
+          "suf_class": "-IIN"
         },
         {
           "word": "chokain",
@@ -1050,19 +1050,19 @@
         },
         {
           "word": "otalal",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "otalal",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "talal",
           "suffix": "",
           "suf_class": "\u2205"
         },
         {
           "word": "oteeam",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oteeam",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "teeam",
           "suffix": "",
           "suf_class": "\u2205"
         }
@@ -1124,9 +1124,9 @@
           "class": "O-CONT",
           "coarse": "O",
           "prefix": "o",
-          "root": "t",
-          "suffix": "ar",
-          "suf_class": "-R"
+          "root": "tar",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "am",
@@ -1151,27 +1151,27 @@
           "class": "O-CONT",
           "coarse": "O",
           "prefix": "o",
-          "root": "t",
-          "suffix": "air",
-          "suf_class": "-R"
+          "root": "ta",
+          "suffix": "ir",
+          "suf_class": "-IIN"
         },
         {
           "word": "chedaiin",
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "chedaiin",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "root": "cheda",
+          "suffix": "iin",
+          "suf_class": "-IIN"
         },
         {
           "word": "oteey",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oteey",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "tee",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "dair",
@@ -1205,18 +1205,18 @@
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "chalaly",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "root": "chalal",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "oteody",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oteody",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "teod",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "chotol",
@@ -1232,8 +1232,8 @@
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "ch",
-          "suffix": "edy",
+          "root": "ched",
+          "suffix": "y",
           "suf_class": "-Y"
         },
         {
@@ -1250,27 +1250,27 @@
           "class": "O-CONT",
           "coarse": "O",
           "prefix": "o",
-          "root": "teee",
-          "suffix": "or",
-          "suf_class": "-R"
+          "root": "teeeor",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "ar",
           "class": "FUNC",
           "coarse": "F",
           "prefix": "",
-          "root": "a",
-          "suffix": "r",
-          "suf_class": "-r"
+          "root": "ar",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "alody",
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "alody",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "root": "alod",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "daiir",
@@ -1283,37 +1283,37 @@
         },
         {
           "word": "oteedar",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oteedar",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "teedar",
           "suffix": "",
           "suf_class": "\u2205"
         },
         {
           "word": "oteey",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oteey",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "tee",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "teey",
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "teey",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "root": "tee",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "dalal",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "dalal",
+          "class": "D-CONT",
+          "coarse": "P",
+          "prefix": "d",
+          "root": "alal",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -1331,8 +1331,8 @@
           "class": "O-CONT",
           "coarse": "O",
           "prefix": "o",
-          "root": "t",
-          "suffix": "eedy",
+          "root": "teed",
+          "suffix": "y",
           "suf_class": "-Y"
         },
         {
@@ -1346,19 +1346,19 @@
         },
         {
           "word": "okeeol",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "okeeol",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "keeol",
           "suffix": "",
           "suf_class": "\u2205"
         },
         {
           "word": "ykeeos",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "ykeeos",
+          "class": "Y-CONT",
+          "coarse": "P",
+          "prefix": "y",
+          "root": "keeos",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -1367,8 +1367,8 @@
           "class": "FUNC?",
           "coarse": "F",
           "prefix": "",
-          "root": "sh",
-          "suffix": "ey",
+          "root": "she",
+          "suffix": "y",
           "suf_class": "-Y"
         },
         {
@@ -1376,9 +1376,9 @@
           "class": "Y-CONT",
           "coarse": "P",
           "prefix": "y",
-          "root": "k",
-          "suffix": "air",
-          "suf_class": "-R"
+          "root": "ka",
+          "suffix": "ir",
+          "suf_class": "-IIN"
         },
         {
           "word": "arar",
@@ -1438,25 +1438,25 @@
           "class": "O-CONT",
           "coarse": "O",
           "prefix": "o",
-          "root": "t",
-          "suffix": "al",
-          "suf_class": "-L"
+          "root": "tal",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "daly",
           "class": "D-CONT",
           "coarse": "P",
           "prefix": "d",
-          "root": "a",
-          "suffix": "ly",
-          "suf_class": "-ly"
+          "root": "al",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "oteoal",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oteoal",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "teoal",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -1465,9 +1465,9 @@
           "class": "FUNC",
           "coarse": "F",
           "prefix": "d",
-          "root": "a",
-          "suffix": "l",
-          "suf_class": "-l"
+          "root": "al",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "aildy",
@@ -1483,36 +1483,36 @@
           "class": "O-CONT",
           "coarse": "O",
           "prefix": "o",
-          "root": "t",
-          "suffix": "aiin",
-          "suf_class": "-AIIN"
+          "root": "ta",
+          "suffix": "iin",
+          "suf_class": "-IIN"
         },
         {
           "word": "ar",
           "class": "FUNC",
           "coarse": "F",
           "prefix": "",
-          "root": "a",
-          "suffix": "r",
-          "suf_class": "-r"
+          "root": "ar",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "oteey",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oteey",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "tee",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "shal",
           "class": "FUNC",
           "coarse": "F",
           "prefix": "",
-          "root": "sh",
-          "suffix": "al",
-          "suf_class": "-L"
+          "root": "shal",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "o",
@@ -1525,10 +1525,10 @@
         },
         {
           "word": "qoteeal",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "qoteeal",
+          "class": "Q-CONT",
+          "coarse": "Q",
+          "prefix": "qo",
+          "root": "teeal",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -1537,52 +1537,52 @@
           "class": "FUNC",
           "coarse": "F",
           "prefix": "",
-          "root": "a",
-          "suffix": "r",
-          "suf_class": "-r"
+          "root": "ar",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "al",
           "class": "FUNC",
           "coarse": "F",
           "prefix": "",
-          "root": "a",
-          "suffix": "l",
-          "suf_class": "-l"
+          "root": "al",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "otaiin",
           "class": "O-CONT",
           "coarse": "O",
           "prefix": "o",
-          "root": "t",
-          "suffix": "aiin",
-          "suf_class": "-AIIN"
+          "root": "ta",
+          "suffix": "iin",
+          "suf_class": "-IIN"
         },
         {
           "word": "al",
           "class": "FUNC",
           "coarse": "F",
           "prefix": "",
-          "root": "a",
-          "suffix": "l",
-          "suf_class": "-l"
+          "root": "al",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "teodaiin",
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "teodaiin",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "root": "teoda",
+          "suffix": "iin",
+          "suf_class": "-IIN"
         },
         {
           "word": "oteeo",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oteeo",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "teeo",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -1591,25 +1591,25 @@
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "cth",
-          "suffix": "ey",
+          "root": "cthe",
+          "suffix": "y",
           "suf_class": "-Y"
         },
         {
           "word": "oteeos",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oteeos",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "teeos",
           "suffix": "",
           "suf_class": "\u2205"
         },
         {
           "word": "oteos",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oteos",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "teos",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -1684,29 +1684,29 @@
       "tagged": [
         {
           "word": "olkeeody",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "olkeeody",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "ol",
+          "root": "keeod",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "okody",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "okody",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "kod",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "okeeedy",
           "class": "O-CONT",
           "coarse": "O",
           "prefix": "o",
-          "root": "keee",
-          "suffix": "dy",
+          "root": "keeed",
+          "suffix": "y",
           "suf_class": "-Y"
         },
         {
@@ -1729,10 +1729,10 @@
         },
         {
           "word": "okeodar",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "okeodar",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "keodar",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -1747,19 +1747,19 @@
         },
         {
           "word": "oteody",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oteody",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "teod",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "oto",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oto",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "to",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -1768,9 +1768,9 @@
           "class": "O-CONT",
           "coarse": "O",
           "prefix": "o",
-          "root": "t",
-          "suffix": "ol",
-          "suf_class": "-L"
+          "root": "tol",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "oteeyar",
@@ -1783,10 +1783,10 @@
         },
         {
           "word": "yko",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "yko",
+          "class": "Y-CONT",
+          "coarse": "P",
+          "prefix": "y",
+          "root": "ko",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -1795,9 +1795,9 @@
           "class": "O-CONT",
           "coarse": "O",
           "prefix": "o",
-          "root": "a",
-          "suffix": "r",
-          "suf_class": "-r"
+          "root": "ar",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "aiin",
@@ -1819,10 +1819,10 @@
         },
         {
           "word": "okeo",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "okeo",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "keo",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -1840,16 +1840,16 @@
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "keody",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "root": "keod",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "okeodar",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "okeodar",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "keodar",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -1894,45 +1894,45 @@
           "class": "FUNC",
           "coarse": "F",
           "prefix": "",
-          "root": "o",
-          "suffix": "r",
-          "suf_class": "-r"
+          "root": "or",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "ar",
           "class": "FUNC",
           "coarse": "F",
           "prefix": "",
-          "root": "a",
-          "suffix": "r",
-          "suf_class": "-r"
+          "root": "ar",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "al",
           "class": "FUNC",
           "coarse": "F",
           "prefix": "",
-          "root": "a",
-          "suffix": "l",
-          "suf_class": "-l"
+          "root": "al",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "otol",
           "class": "O-CONT",
           "coarse": "O",
           "prefix": "o",
-          "root": "t",
-          "suffix": "ol",
-          "suf_class": "-L"
+          "root": "tol",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "al",
           "class": "FUNC",
           "coarse": "F",
           "prefix": "",
-          "root": "a",
-          "suffix": "l",
-          "suf_class": "-l"
+          "root": "al",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "shckhy",
@@ -1945,30 +1945,30 @@
         },
         {
           "word": "oteeeodar",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oteeeodar",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "teeeodar",
           "suffix": "",
           "suf_class": "\u2205"
         },
         {
           "word": "oteody",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oteody",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "teod",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "otol",
           "class": "O-CONT",
           "coarse": "O",
           "prefix": "o",
-          "root": "t",
-          "suffix": "ol",
-          "suf_class": "-L"
+          "root": "tol",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "aiin",
@@ -1990,10 +1990,10 @@
         },
         {
           "word": "solalald",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "solalald",
+          "class": "S-CONT",
+          "coarse": "P",
+          "prefix": "s",
+          "root": "olalald",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -2020,9 +2020,9 @@
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "choly",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "root": "chol",
+          "suffix": "y",
+          "suf_class": "-Y"
         }
       ],
       "comma_positions": [
@@ -2068,19 +2068,19 @@
       "tagged": [
         {
           "word": "oteody",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oteody",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "teod",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "oteos",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oteos",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "teos",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -2113,39 +2113,39 @@
         },
         {
           "word": "okalody",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "okalody",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "kalod",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "shs",
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "sh",
-          "suffix": "s",
-          "suf_class": "-S"
+          "root": "shs",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "shey",
           "class": "FUNC?",
           "coarse": "F",
           "prefix": "",
-          "root": "sh",
-          "suffix": "ey",
+          "root": "she",
+          "suffix": "y",
           "suf_class": "-Y"
         },
         {
           "word": "oteey",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oteey",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "tee",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "otechar",
@@ -2167,28 +2167,28 @@
         },
         {
           "word": "okody",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "okody",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "kod",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "eeedy",
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "eee",
-          "suffix": "dy",
+          "root": "eeed",
+          "suffix": "y",
           "suf_class": "-Y"
         },
         {
           "word": "oteodal",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oteodal",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "teodal",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -2221,19 +2221,19 @@
         },
         {
           "word": "okeeees",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "okeeees",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "keeees",
           "suffix": "",
           "suf_class": "\u2205"
         },
         {
           "word": "ykees",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "ykees",
+          "class": "Y-CONT",
+          "coarse": "P",
+          "prefix": "y",
+          "root": "kees",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -2242,34 +2242,34 @@
           "class": "FUNC",
           "coarse": "F",
           "prefix": "",
-          "root": "a",
-          "suffix": "l",
-          "suf_class": "-l"
+          "root": "al",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "okeey",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "okeey",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "kee",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "otey",
           "class": "O-CONT",
           "coarse": "O",
           "prefix": "o",
-          "root": "t",
-          "suffix": "ey",
+          "root": "te",
+          "suffix": "y",
           "suf_class": "-Y"
         },
         {
           "word": "oteo",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oteo",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "teo",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -2278,9 +2278,9 @@
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "shaly",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "root": "shal",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "o",
@@ -2315,10 +2315,10 @@
       "tagged": [
         {
           "word": "oteeol",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oteeol",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "teeol",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -2327,27 +2327,27 @@
           "class": "O-CONT",
           "coarse": "O",
           "prefix": "o",
-          "root": "t",
-          "suffix": "al",
-          "suf_class": "-L"
+          "root": "tal",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "chs",
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "ch",
-          "suffix": "s",
-          "suf_class": "-S"
+          "root": "chs",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "char",
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "ch",
-          "suffix": "ar",
-          "suf_class": "-R"
+          "root": "char",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "cheky",
@@ -2369,21 +2369,21 @@
         },
         {
           "word": "okeeody",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "okeeody",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "keeod",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "oteey",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oteey",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "tee",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "chekea",
@@ -2396,10 +2396,10 @@
         },
         {
           "word": "okeol",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "okeol",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "keol",
           "suffix": "",
           "suf_class": "\u2205"
         }
@@ -2454,10 +2454,10 @@
       "tagged": [
         {
           "word": "osheo",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "osheo",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "sheo",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -2472,12 +2472,12 @@
         },
         {
           "word": "oteeodaiin",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oteeodaiin",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "teeoda",
+          "suffix": "iin",
+          "suf_class": "-IIN"
         },
         {
           "word": "she",
@@ -2520,36 +2520,36 @@
           "class": "FUNC",
           "coarse": "F",
           "prefix": "d",
-          "root": "a",
-          "suffix": "l",
-          "suf_class": "-l"
+          "root": "al",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "al",
           "class": "FUNC",
           "coarse": "F",
           "prefix": "",
-          "root": "a",
-          "suffix": "l",
-          "suf_class": "-l"
+          "root": "al",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "oteey",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oteey",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "tee",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "teey",
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "teey",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "root": "tee",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "dy",
@@ -2574,9 +2574,9 @@
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "keey",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "root": "kee",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "sheeo",
@@ -2592,8 +2592,8 @@
           "class": "O-CONT",
           "coarse": "O",
           "prefix": "o",
-          "root": "ch",
-          "suffix": "ey",
+          "root": "che",
+          "suffix": "y",
           "suf_class": "-Y"
         },
         {
@@ -2601,8 +2601,8 @@
           "class": "FUNC?",
           "coarse": "F",
           "prefix": "",
-          "root": "ch",
-          "suffix": "ey",
+          "root": "che",
+          "suffix": "y",
           "suf_class": "-Y"
         },
         {
@@ -2619,9 +2619,9 @@
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "sheealody",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "root": "sheealod",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "cheol",
@@ -2637,25 +2637,25 @@
           "class": "O-CONT",
           "coarse": "O",
           "prefix": "o",
-          "root": "t",
-          "suffix": "ar",
-          "suf_class": "-R"
+          "root": "tar",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "okam",
           "class": "O-CONT",
           "coarse": "O",
           "prefix": "o",
-          "root": "k",
-          "suffix": "am",
-          "suf_class": "-M/N"
+          "root": "kam",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "oteodar",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oteodar",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "teodar",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -2682,9 +2682,9 @@
           "class": "FUNC",
           "coarse": "F",
           "prefix": "",
-          "root": "a",
-          "suffix": "l",
-          "suf_class": "-l"
+          "root": "al",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "aiin",
@@ -2706,21 +2706,21 @@
         },
         {
           "word": "okeodaly",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "okeodaly",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "keodal",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "oteey",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oteey",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "tee",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "teeey",
@@ -2733,12 +2733,12 @@
         },
         {
           "word": "oteey",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oteey",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "tee",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "keor",
@@ -2754,9 +2754,9 @@
           "class": "FUNC",
           "coarse": "F",
           "prefix": "",
-          "root": "o",
-          "suffix": "r",
-          "suf_class": "-r"
+          "root": "or",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "arol",
@@ -2832,16 +2832,16 @@
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "ch",
-          "suffix": "al",
-          "suf_class": "-L"
+          "root": "chal",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "oteeos",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oteeos",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "teeos",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -2850,9 +2850,9 @@
           "class": "FUNC",
           "coarse": "F",
           "prefix": "",
-          "root": "a",
-          "suffix": "l",
-          "suf_class": "-l"
+          "root": "al",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "sheky",
@@ -2865,10 +2865,10 @@
         },
         {
           "word": "okalar",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "okalar",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "kalar",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -2877,16 +2877,16 @@
           "class": "FUNC",
           "coarse": "F",
           "prefix": "",
-          "root": "a",
-          "suffix": "r",
-          "suf_class": "-r"
+          "root": "ar",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "okeo",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "okeo",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "keo",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -2895,9 +2895,9 @@
           "class": "FUNC",
           "coarse": "F",
           "prefix": "d",
-          "root": "a",
-          "suffix": "r",
-          "suf_class": "-r"
+          "root": "ar",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "oty",
@@ -2910,10 +2910,10 @@
         },
         {
           "word": "oto",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oto",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "to",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -2922,17 +2922,17 @@
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "k",
-          "suffix": "aiin",
-          "suf_class": "-AIIN"
+          "root": "ka",
+          "suffix": "iin",
+          "suf_class": "-IIN"
         },
         {
           "word": "chey",
           "class": "FUNC?",
           "coarse": "F",
           "prefix": "",
-          "root": "ch",
-          "suffix": "ey",
+          "root": "che",
+          "suffix": "y",
           "suf_class": "-Y"
         },
         {
@@ -2940,9 +2940,9 @@
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "t",
-          "suffix": "al",
-          "suf_class": "-L"
+          "root": "tal",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "otchr",
@@ -2985,9 +2985,9 @@
           "class": "O-CONT",
           "coarse": "O",
           "prefix": "o",
-          "root": "t",
-          "suffix": "or",
-          "suf_class": "-R"
+          "root": "tor",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "sheo",
@@ -3012,25 +3012,25 @@
           "class": "FUNC",
           "coarse": "F",
           "prefix": "",
-          "root": "a",
-          "suffix": "r",
-          "suf_class": "-r"
+          "root": "ar",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "aly",
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "a",
-          "suffix": "ly",
-          "suf_class": "-ly"
+          "root": "al",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "okeo",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "okeo",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "keo",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -3039,54 +3039,54 @@
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "cheey",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "root": "chee",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "otal",
           "class": "O-CONT",
           "coarse": "O",
           "prefix": "o",
-          "root": "t",
-          "suffix": "al",
-          "suf_class": "-L"
+          "root": "tal",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "al",
           "class": "FUNC",
           "coarse": "F",
           "prefix": "",
-          "root": "a",
-          "suffix": "l",
-          "suf_class": "-l"
+          "root": "al",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "shldy",
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "shldy",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "root": "shld",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "otaly",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "otaly",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "tal",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "okol",
           "class": "O-CONT",
           "coarse": "O",
           "prefix": "o",
-          "root": "k",
-          "suffix": "ol",
-          "suf_class": "-L"
+          "root": "kol",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "sheeor",
@@ -3125,19 +3125,19 @@
       "tagged": [
         {
           "word": "okeey",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "okeey",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "kee",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "okeosar",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "okeosar",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "keosar",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -3146,9 +3146,9 @@
           "class": "O-CONT",
           "coarse": "O",
           "prefix": "o",
-          "root": "t",
-          "suffix": "aiin",
-          "suf_class": "-AIIN"
+          "root": "ta",
+          "suffix": "iin",
+          "suf_class": "-IIN"
         },
         {
           "word": "chkeeal",
@@ -3164,9 +3164,9 @@
           "class": "O-CONT",
           "coarse": "O",
           "prefix": "o",
-          "root": "k",
-          "suffix": "al",
-          "suf_class": "-L"
+          "root": "kal",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "cheekaiin",
@@ -3182,9 +3182,9 @@
           "class": "O-CONT",
           "coarse": "O",
           "prefix": "o",
-          "root": "k",
-          "suffix": "aiin",
-          "suf_class": "-AIIN"
+          "root": "ka",
+          "suffix": "iin",
+          "suf_class": "-IIN"
         },
         {
           "word": "okchor",
@@ -3200,27 +3200,27 @@
           "class": "FUNC",
           "coarse": "F",
           "prefix": "d",
-          "root": "a",
-          "suffix": "r",
-          "suf_class": "-r"
+          "root": "ar",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "oteey",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oteey",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "tee",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "kal",
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "k",
-          "suffix": "al",
-          "suf_class": "-L"
+          "root": "kal",
+          "suffix": "",
+          "suf_class": "\u2205"
         }
       ],
       "comma_positions": []
@@ -3276,10 +3276,10 @@
       "tagged": [
         {
           "word": "oteeo",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oteeo",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "teeo",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -3288,8 +3288,8 @@
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "cth",
-          "suffix": "ey",
+          "root": "cthe",
+          "suffix": "y",
           "suf_class": "-Y"
         },
         {
@@ -3312,10 +3312,10 @@
         },
         {
           "word": "olcheor",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "olcheor",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "ol",
+          "root": "cheor",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -3324,18 +3324,18 @@
           "class": "FUNC",
           "coarse": "F",
           "prefix": "",
-          "root": "a",
-          "suffix": "l",
-          "suf_class": "-l"
+          "root": "al",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "oteey",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oteey",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "tee",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "chedal",
@@ -3351,27 +3351,27 @@
           "class": "O-CONT",
           "coarse": "O",
           "prefix": "o",
-          "root": "t",
-          "suffix": "eedy",
+          "root": "teed",
+          "suffix": "y",
           "suf_class": "-Y"
         },
         {
           "word": "okeodaly",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "okeodaly",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "keodal",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "chol",
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "ch",
-          "suffix": "ol",
-          "suf_class": "-L"
+          "root": "chol",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "chokeol",
@@ -3396,17 +3396,17 @@
           "class": "O-CONT",
           "coarse": "O",
           "prefix": "o",
-          "root": "k",
-          "suffix": "aiir",
-          "suf_class": "-AIIN"
+          "root": "ka",
+          "suffix": "iir",
+          "suf_class": "-IIN"
         },
         {
           "word": "okeedy",
           "class": "O-CONT",
           "coarse": "O",
           "prefix": "o",
-          "root": "k",
-          "suffix": "eedy",
+          "root": "keed",
+          "suffix": "y",
           "suf_class": "-Y"
         },
         {
@@ -3441,9 +3441,9 @@
           "class": "Y-CONT",
           "coarse": "P",
           "prefix": "y",
-          "root": "da",
-          "suffix": "l",
-          "suf_class": "-l"
+          "root": "dal",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "okochey",
@@ -3477,18 +3477,18 @@
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "sh",
-          "suffix": "ol",
-          "suf_class": "-L"
+          "root": "shol",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "chalaiin",
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "chalaiin",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "root": "chala",
+          "suffix": "iin",
+          "suf_class": "-IIN"
         },
         {
           "word": "chekeol",
@@ -3504,27 +3504,27 @@
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "k",
-          "suffix": "ol",
-          "suf_class": "-L"
+          "root": "kol",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "otos",
           "class": "O-CONT",
           "coarse": "O",
           "prefix": "o",
-          "root": "t",
-          "suffix": "os",
-          "suf_class": "-S"
+          "root": "tos",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "ar",
           "class": "FUNC",
           "coarse": "F",
           "prefix": "",
-          "root": "a",
-          "suffix": "r",
-          "suf_class": "-r"
+          "root": "ar",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "aiin",
@@ -3540,18 +3540,18 @@
           "class": "O-CONT",
           "coarse": "O",
           "prefix": "o",
-          "root": "t",
-          "suffix": "am",
-          "suf_class": "-M/N"
+          "root": "tam",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "otam",
           "class": "O-CONT",
           "coarse": "O",
           "prefix": "o",
-          "root": "t",
-          "suffix": "am",
-          "suf_class": "-M/N"
+          "root": "tam",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "chotam",
@@ -3567,16 +3567,16 @@
           "class": "FUNC",
           "coarse": "F",
           "prefix": "s",
-          "root": "a",
-          "suffix": "l",
-          "suf_class": "-l"
+          "root": "al",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "okeo",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "okeo",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "keo",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -3585,18 +3585,18 @@
           "class": "FUNC",
           "coarse": "F",
           "prefix": "d",
-          "root": "a",
-          "suffix": "r",
-          "suf_class": "-r"
+          "root": "ar",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "ar",
           "class": "FUNC",
           "coarse": "F",
           "prefix": "",
-          "root": "a",
-          "suffix": "r",
-          "suf_class": "-r"
+          "root": "ar",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "adal",
@@ -3612,16 +3612,16 @@
           "class": "FUNC",
           "coarse": "F",
           "prefix": "d",
-          "root": "a",
-          "suffix": "r",
-          "suf_class": "-r"
+          "root": "ar",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "okeeas",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "okeeas",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "keeas",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -3636,21 +3636,21 @@
         },
         {
           "word": "oteey",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oteey",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "tee",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "okaiin",
           "class": "O-CONT",
           "coarse": "O",
           "prefix": "o",
-          "root": "k",
-          "suffix": "aiin",
-          "suf_class": "-AIIN"
+          "root": "ka",
+          "suffix": "iin",
+          "suf_class": "-IIN"
         }
       ],
       "comma_positions": []
@@ -3691,10 +3691,10 @@
       "tagged": [
         {
           "word": "oteodar",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oteodar",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "teodar",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -3703,8 +3703,8 @@
           "class": "Y-CONT",
           "coarse": "P",
           "prefix": "y",
-          "root": "t",
-          "suffix": "ey",
+          "root": "te",
+          "suffix": "y",
           "suf_class": "-Y"
         },
         {
@@ -3712,8 +3712,8 @@
           "class": "O-CONT",
           "coarse": "O",
           "prefix": "o",
-          "root": "t",
-          "suffix": "ey",
+          "root": "te",
+          "suffix": "y",
           "suf_class": "-Y"
         },
         {
@@ -3736,10 +3736,10 @@
         },
         {
           "word": "okalal",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "okalal",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "kalal",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -3748,27 +3748,27 @@
           "class": "O-CONT",
           "coarse": "O",
           "prefix": "o",
-          "root": "t",
-          "suffix": "aiin",
-          "suf_class": "-AIIN"
+          "root": "ta",
+          "suffix": "iin",
+          "suf_class": "-IIN"
         },
         {
           "word": "sheolaiin",
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "sheolaiin",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "root": "sheola",
+          "suffix": "iin",
+          "suf_class": "-IIN"
         },
         {
           "word": "otaiin",
           "class": "O-CONT",
           "coarse": "O",
           "prefix": "o",
-          "root": "t",
-          "suffix": "aiin",
-          "suf_class": "-AIIN"
+          "root": "ta",
+          "suffix": "iin",
+          "suf_class": "-IIN"
         },
         {
           "word": "chetey",
@@ -3790,10 +3790,10 @@
         },
         {
           "word": "oteo",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oteo",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "teo",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -3802,18 +3802,18 @@
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "teeody",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "root": "teeod",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "otar",
           "class": "O-CONT",
           "coarse": "O",
           "prefix": "o",
-          "root": "t",
-          "suffix": "ar",
-          "suf_class": "-R"
+          "root": "tar",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "chokaiin",
@@ -3829,18 +3829,18 @@
           "class": "O-CONT",
           "coarse": "O",
           "prefix": "o",
-          "root": "k",
-          "suffix": "aiin",
-          "suf_class": "-AIIN"
+          "root": "ka",
+          "suffix": "iin",
+          "suf_class": "-IIN"
         },
         {
           "word": "al",
           "class": "FUNC",
           "coarse": "F",
           "prefix": "",
-          "root": "a",
-          "suffix": "l",
-          "suf_class": "-l"
+          "root": "al",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "alo",
@@ -3856,16 +3856,16 @@
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "ch",
-          "suffix": "eedy",
+          "root": "cheed",
+          "suffix": "y",
           "suf_class": "-Y"
         },
         {
           "word": "otear",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "otear",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "tear",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -3874,9 +3874,9 @@
           "class": "FUNC",
           "coarse": "F",
           "prefix": "",
-          "root": "a",
-          "suffix": "r",
-          "suf_class": "-r"
+          "root": "ar",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "cheky",
@@ -3901,18 +3901,18 @@
           "class": "O-CONT",
           "coarse": "O",
           "prefix": "o",
-          "root": "t",
-          "suffix": "ar",
-          "suf_class": "-R"
+          "root": "tar",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "al",
           "class": "FUNC",
           "coarse": "F",
           "prefix": "",
-          "root": "a",
-          "suffix": "l",
-          "suf_class": "-l"
+          "root": "al",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "o",
@@ -3928,9 +3928,9 @@
           "class": "Q-CONT",
           "coarse": "Q",
           "prefix": "qo",
-          "root": "k",
-          "suffix": "ar",
-          "suf_class": "-R"
+          "root": "kar",
+          "suffix": "",
+          "suf_class": "\u2205"
         }
       ],
       "comma_positions": [
@@ -3962,10 +3962,10 @@
       "tagged": [
         {
           "word": "okeeols",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "okeeols",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "keeols",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -3974,16 +3974,16 @@
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "aroly",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "root": "arol",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "okees",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "okees",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "kees",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -3992,16 +3992,16 @@
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "alaiin",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "root": "ala",
+          "suffix": "iin",
+          "suf_class": "-IIN"
         },
         {
           "word": "okeor",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "okeor",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "keor",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -4010,9 +4010,9 @@
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "ch",
-          "suffix": "ol",
-          "suf_class": "-L"
+          "root": "chol",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "o",
@@ -4025,10 +4025,10 @@
         },
         {
           "word": "oteos",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oteos",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "teos",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -4046,18 +4046,18 @@
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "ch",
-          "suffix": "al",
-          "suf_class": "-L"
+          "root": "chal",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "otaiin",
           "class": "O-CONT",
           "coarse": "O",
           "prefix": "o",
-          "root": "t",
-          "suffix": "aiin",
-          "suf_class": "-AIIN"
+          "root": "ta",
+          "suffix": "iin",
+          "suf_class": "-IIN"
         },
         {
           "word": "atchor",
@@ -4130,10 +4130,10 @@
       "tagged": [
         {
           "word": "oteos",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oteos",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "teos",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -4148,10 +4148,10 @@
         },
         {
           "word": "okeo",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "okeo",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "keo",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -4166,12 +4166,12 @@
         },
         {
           "word": "okeey",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "okeey",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "kee",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "cheo",
@@ -4196,16 +4196,16 @@
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "ch",
-          "suffix": "ol",
-          "suf_class": "-L"
+          "root": "chol",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "okeol",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "okeol",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "keol",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -4232,18 +4232,18 @@
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "t",
-          "suffix": "ey",
+          "root": "te",
+          "suffix": "y",
           "suf_class": "-Y"
         },
         {
           "word": "okalaiin",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "okalaiin",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "kala",
+          "suffix": "iin",
+          "suf_class": "-IIN"
         },
         {
           "word": "okalchal",
@@ -4259,8 +4259,8 @@
           "class": "FUNC?",
           "coarse": "F",
           "prefix": "",
-          "root": "ch",
-          "suffix": "ey",
+          "root": "che",
+          "suffix": "y",
           "suf_class": "-Y"
         },
         {
@@ -4268,9 +4268,9 @@
           "class": "FUNC",
           "coarse": "F",
           "prefix": "",
-          "root": "a",
-          "suffix": "l",
-          "suf_class": "-l"
+          "root": "al",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "o",
@@ -4286,9 +4286,9 @@
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "keey",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "root": "kee",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "daiin",
@@ -4304,18 +4304,18 @@
           "class": "O-CONT",
           "coarse": "O",
           "prefix": "o",
-          "root": "t",
-          "suffix": "ar",
-          "suf_class": "-R"
+          "root": "tar",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "al",
           "class": "FUNC",
           "coarse": "F",
           "prefix": "",
-          "root": "a",
-          "suffix": "l",
-          "suf_class": "-l"
+          "root": "al",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "chotaiin",
@@ -4337,10 +4337,10 @@
         },
         {
           "word": "qoeeeo",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "qoeeeo",
+          "class": "Q-CONT",
+          "coarse": "Q",
+          "prefix": "qo",
+          "root": "eeeo",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -4358,9 +4358,9 @@
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "ckh",
-          "suffix": "al",
-          "suf_class": "-L"
+          "root": "ckhal",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "chekaiin",
@@ -4376,9 +4376,9 @@
           "class": "O-CONT",
           "coarse": "O",
           "prefix": "o",
-          "root": "t",
-          "suffix": "aiin",
-          "suf_class": "-AIIN"
+          "root": "ta",
+          "suffix": "iin",
+          "suf_class": "-IIN"
         },
         {
           "word": "chy",
@@ -4421,9 +4421,9 @@
           "class": "FUNC",
           "coarse": "F",
           "prefix": "",
-          "root": "a",
-          "suffix": "l",
-          "suf_class": "-l"
+          "root": "al",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "y",
@@ -4454,19 +4454,19 @@
         },
         {
           "word": "okedal",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "okedal",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "kedal",
           "suffix": "",
           "suf_class": "\u2205"
         },
         {
           "word": "qokeodal",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "qokeodal",
+          "class": "Q-CONT",
+          "coarse": "Q",
+          "prefix": "qo",
+          "root": "keodal",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -4490,10 +4490,10 @@
         },
         {
           "word": "otees",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "otees",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "tees",
           "suffix": "",
           "suf_class": "\u2205"
         }
@@ -4539,20 +4539,20 @@
       "tagged": [
         {
           "word": "oteey",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oteey",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "tee",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "tey",
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "t",
-          "suffix": "ey",
+          "root": "te",
+          "suffix": "y",
           "suf_class": "-Y"
         },
         {
@@ -4578,9 +4578,9 @@
           "class": "FUNC",
           "coarse": "F",
           "prefix": "",
-          "root": "o",
-          "suffix": "l",
-          "suf_class": "-l"
+          "root": "ol",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "cheol",
@@ -4596,9 +4596,9 @@
           "class": "FUNC",
           "coarse": "F",
           "prefix": "",
-          "root": "o",
-          "suffix": "l",
-          "suf_class": "-l"
+          "root": "ol",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "aiin",
@@ -4611,10 +4611,10 @@
         },
         {
           "word": "oteo",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oteo",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "teo",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -4641,8 +4641,8 @@
           "class": "O-CONT",
           "coarse": "O",
           "prefix": "o",
-          "root": "t",
-          "suffix": "ey",
+          "root": "te",
+          "suffix": "y",
           "suf_class": "-Y"
         },
         {
@@ -4650,36 +4650,36 @@
           "class": "O-CONT",
           "coarse": "O",
           "prefix": "o",
-          "root": "t",
-          "suffix": "aiin",
-          "suf_class": "-AIIN"
+          "root": "ta",
+          "suffix": "iin",
+          "suf_class": "-IIN"
         },
         {
           "word": "otaly",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "otaly",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "tal",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "dal",
           "class": "FUNC",
           "coarse": "F",
           "prefix": "d",
-          "root": "a",
-          "suffix": "l",
-          "suf_class": "-l"
+          "root": "al",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "okaly",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "okaly",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "kal",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "dalchdy",
@@ -4704,27 +4704,27 @@
           "class": "O-CONT",
           "coarse": "O",
           "prefix": "o",
-          "root": "k",
-          "suffix": "al",
-          "suf_class": "-L"
+          "root": "kal",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "shey",
           "class": "FUNC?",
           "coarse": "F",
           "prefix": "",
-          "root": "sh",
-          "suffix": "ey",
+          "root": "she",
+          "suffix": "y",
           "suf_class": "-Y"
         },
         {
           "word": "qoteeody",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "qoteeody",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "Q-CONT",
+          "coarse": "Q",
+          "prefix": "qo",
+          "root": "teeod",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "sheycthy",
@@ -4749,16 +4749,16 @@
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "ch",
-          "suffix": "as",
-          "suf_class": "-S"
+          "root": "chas",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "otoees",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "otoees",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "toees",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -4802,10 +4802,10 @@
       "tagged": [
         {
           "word": "otoar",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "otoar",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "toar",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -4823,25 +4823,25 @@
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "aloy",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "root": "alo",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "okaiin",
           "class": "O-CONT",
           "coarse": "O",
           "prefix": "o",
-          "root": "k",
-          "suffix": "aiin",
-          "suf_class": "-AIIN"
+          "root": "ka",
+          "suffix": "iin",
+          "suf_class": "-IIN"
         },
         {
           "word": "otees",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "otees",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "tees",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -4850,9 +4850,9 @@
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "ch",
-          "suffix": "s",
-          "suf_class": "-S"
+          "root": "chs",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "chchs",
@@ -4868,36 +4868,36 @@
           "class": "FUNC",
           "coarse": "F",
           "prefix": "",
-          "root": "a",
-          "suffix": "r",
-          "suf_class": "-r"
+          "root": "ar",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "aly",
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "a",
-          "suffix": "ly",
-          "suf_class": "-ly"
+          "root": "al",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "taly",
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "taly",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "root": "tal",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "dar",
           "class": "FUNC",
           "coarse": "F",
           "prefix": "d",
-          "root": "a",
-          "suffix": "r",
-          "suf_class": "-r"
+          "root": "ar",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "otchey",
@@ -4913,9 +4913,9 @@
           "class": "O-CONT",
           "coarse": "O",
           "prefix": "o",
-          "root": "k",
-          "suffix": "aiin",
-          "suf_class": "-AIIN"
+          "root": "ka",
+          "suffix": "iin",
+          "suf_class": "-IIN"
         },
         {
           "word": "olaiin",
@@ -4997,12 +4997,12 @@
       "tagged": [
         {
           "word": "okeey",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "okeey",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "kee",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "chekoy",
@@ -5015,37 +5015,37 @@
         },
         {
           "word": "oteo",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oteo",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "teo",
           "suffix": "",
           "suf_class": "\u2205"
         },
         {
           "word": "ykeey",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "ykeey",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "Y-CONT",
+          "coarse": "P",
+          "prefix": "y",
+          "root": "kee",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "chedaiin",
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "chedaiin",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "root": "cheda",
+          "suffix": "iin",
+          "suf_class": "-IIN"
         },
         {
           "word": "okeeol",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "okeeol",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "keeol",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -5072,52 +5072,52 @@
           "class": "FUNC",
           "coarse": "F",
           "prefix": "",
-          "root": "a",
-          "suffix": "r",
-          "suf_class": "-r"
+          "root": "ar",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "oteody",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oteody",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "teod",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "oteedy",
           "class": "O-CONT",
           "coarse": "O",
           "prefix": "o",
-          "root": "t",
-          "suffix": "eedy",
+          "root": "teed",
+          "suffix": "y",
           "suf_class": "-Y"
         },
         {
           "word": "okeolaiin",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "okeolaiin",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "keola",
+          "suffix": "iin",
+          "suf_class": "-IIN"
         },
         {
           "word": "oteey",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oteey",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "tee",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "okarar",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "okarar",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "karar",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -5144,9 +5144,9 @@
           "class": "FUNC",
           "coarse": "F",
           "prefix": "",
-          "root": "a",
-          "suffix": "l",
-          "suf_class": "-l"
+          "root": "al",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "alaiiin",
@@ -5159,10 +5159,10 @@
         },
         {
           "word": "okeos",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "okeos",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "keos",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -5171,18 +5171,18 @@
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "alaiin",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "root": "ala",
+          "suffix": "iin",
+          "suf_class": "-IIN"
         },
         {
           "word": "okor",
           "class": "O-CONT",
           "coarse": "O",
           "prefix": "o",
-          "root": "k",
-          "suffix": "or",
-          "suf_class": "-R"
+          "root": "kor",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "o",
@@ -5204,10 +5204,10 @@
         },
         {
           "word": "okee",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "okee",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "kee",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -5225,9 +5225,9 @@
           "class": "FUNC",
           "coarse": "F",
           "prefix": "",
-          "root": "a",
-          "suffix": "r",
-          "suf_class": "-r"
+          "root": "ar",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "aiin",
@@ -5261,8 +5261,8 @@
           "class": "O-CONT",
           "coarse": "O",
           "prefix": "o",
-          "root": "t",
-          "suffix": "eedy",
+          "root": "teed",
+          "suffix": "y",
           "suf_class": "-Y"
         },
         {
@@ -5279,18 +5279,18 @@
           "class": "O-CONT",
           "coarse": "O",
           "prefix": "o",
-          "root": "k",
-          "suffix": "ar",
-          "suf_class": "-R"
+          "root": "kar",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "choly",
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "choly",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "root": "chol",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "ches",
@@ -5306,9 +5306,9 @@
           "class": "PART",
           "coarse": "F",
           "prefix": "",
-          "root": "o",
-          "suffix": "s",
-          "suf_class": "-S"
+          "root": "os",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "oiin",
@@ -5333,9 +5333,9 @@
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "cheey",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "root": "chee",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "ches",
@@ -5348,21 +5348,21 @@
         },
         {
           "word": "okeody",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "okeody",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "keod",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "chealdy",
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "chealdy",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "root": "cheald",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "shocthy",
@@ -5387,9 +5387,9 @@
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "sheoly",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "root": "sheol",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "oheol",
@@ -5405,18 +5405,18 @@
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "sheey",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "root": "shee",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "chorain",
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "chorain",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "root": "chora",
+          "suffix": "in",
+          "suf_class": "-IIN"
         }
       ],
       "comma_positions": [
@@ -5489,8 +5489,8 @@
           "class": "O-CONT",
           "coarse": "O",
           "prefix": "o",
-          "root": "t",
-          "suffix": "ey",
+          "root": "te",
+          "suffix": "y",
           "suf_class": "-Y"
         },
         {
@@ -5507,34 +5507,34 @@
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "koey",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "root": "koe",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "sheedy",
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "sh",
-          "suffix": "eedy",
+          "root": "sheed",
+          "suffix": "y",
           "suf_class": "-Y"
         },
         {
           "word": "oteodar",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oteodar",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "teodar",
           "suffix": "",
           "suf_class": "\u2205"
         },
         {
           "word": "ykeolol",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "ykeolol",
+          "class": "Y-CONT",
+          "coarse": "P",
+          "prefix": "y",
+          "root": "keolol",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -5558,10 +5558,10 @@
         },
         {
           "word": "oteos",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oteos",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "teos",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -5594,21 +5594,21 @@
         },
         {
           "word": "ykeeoly",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "ykeeoly",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "Y-CONT",
+          "coarse": "P",
+          "prefix": "y",
+          "root": "keeol",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "otaiin",
           "class": "O-CONT",
           "coarse": "O",
           "prefix": "o",
-          "root": "t",
-          "suffix": "aiin",
-          "suf_class": "-AIIN"
+          "root": "ta",
+          "suffix": "iin",
+          "suf_class": "-IIN"
         },
         {
           "word": "shear",
@@ -5633,9 +5633,9 @@
           "class": "O-CONT",
           "coarse": "O",
           "prefix": "or",
-          "root": "a",
-          "suffix": "l",
-          "suf_class": "-l"
+          "root": "al",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "o",
@@ -5651,9 +5651,9 @@
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "tealy",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "root": "teal",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "cheokeor",
@@ -5666,12 +5666,12 @@
         },
         {
           "word": "oteody",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oteody",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "teod",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "ockes",
@@ -5684,10 +5684,10 @@
         },
         {
           "word": "otees",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "otees",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "tees",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -5702,28 +5702,28 @@
         },
         {
           "word": "doteey",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "doteey",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "D-CONT",
+          "coarse": "P",
+          "prefix": "do",
+          "root": "tee",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "sosor",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "sosor",
+          "class": "S-CONT",
+          "coarse": "P",
+          "prefix": "s",
+          "root": "osor",
           "suffix": "",
           "suf_class": "\u2205"
         },
         {
           "word": "oteol",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oteol",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "teol",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -5732,27 +5732,27 @@
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "sh",
-          "suffix": "ol",
-          "suf_class": "-L"
+          "root": "shol",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "cheeg",
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "cheeg",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "root": "chee",
+          "suffix": "g",
+          "suf_class": "-g"
         },
         {
           "word": "okeody",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "okeody",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "keod",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "ch'eol",
@@ -5768,8 +5768,8 @@
           "class": "FUNC?",
           "coarse": "F",
           "prefix": "",
-          "root": "sh",
-          "suffix": "ey",
+          "root": "she",
+          "suffix": "y",
           "suf_class": "-Y"
         },
         {
@@ -5810,10 +5810,10 @@
         },
         {
           "word": "okeeol",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "okeeol",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "keeol",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -5828,21 +5828,21 @@
         },
         {
           "word": "okeeo",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "okeeo",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "keeo",
           "suffix": "",
           "suf_class": "\u2205"
         },
         {
           "word": "ykoly",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "ykoly",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "Y-CONT",
+          "coarse": "P",
+          "prefix": "y",
+          "root": "kol",
+          "suffix": "y",
+          "suf_class": "-Y"
         }
       ],
       "comma_positions": [
@@ -5890,30 +5890,30 @@
       "tagged": [
         {
           "word": "oteey",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oteey",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "tee",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "arary",
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "arary",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "root": "arar",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "eeer",
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "eee",
-          "suffix": "r",
-          "suf_class": "-r"
+          "root": "eeer",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "cheshees",
@@ -5935,10 +5935,10 @@
         },
         {
           "word": "oteeor",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oteeor",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "teeor",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -5974,18 +5974,18 @@
           "class": "O-CONT",
           "coarse": "O",
           "prefix": "o",
-          "root": "teee",
-          "suffix": "s",
-          "suf_class": "-S"
+          "root": "teees",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "ar",
           "class": "FUNC",
           "coarse": "F",
           "prefix": "",
-          "root": "a",
-          "suffix": "r",
-          "suf_class": "-r"
+          "root": "ar",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "am",
@@ -6007,10 +6007,10 @@
         },
         {
           "word": "otedar",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "otedar",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "tedar",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -6019,9 +6019,9 @@
           "class": "O-CONT",
           "coarse": "O",
           "prefix": "ol",
-          "root": "o",
-          "suffix": "l",
-          "suf_class": "-l"
+          "root": "ol",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "choty",
@@ -6034,10 +6034,10 @@
         },
         {
           "word": "oteol",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oteol",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "teol",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -6055,8 +6055,8 @@
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "ch",
-          "suffix": "edy",
+          "root": "ched",
+          "suffix": "y",
           "suf_class": "-Y"
         },
         {
@@ -6064,8 +6064,8 @@
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "ch",
-          "suffix": "edy",
+          "root": "ched",
+          "suffix": "y",
           "suf_class": "-Y"
         },
         {
@@ -6091,8 +6091,8 @@
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "ee",
-          "suffix": "dy",
+          "root": "eed",
+          "suffix": "y",
           "suf_class": "-Y"
         },
         {
@@ -6118,9 +6118,9 @@
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "ckh",
-          "suffix": "ol",
-          "suf_class": "-L"
+          "root": "ckhol",
+          "suffix": "",
+          "suf_class": "\u2205"
         }
       ],
       "comma_positions": [
@@ -6147,10 +6147,10 @@
       "tagged": [
         {
           "word": "okeos",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "okeos",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "keos",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -6183,28 +6183,28 @@
         },
         {
           "word": "octheolarl",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "octheolarl",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "ctheolarl",
           "suffix": "",
           "suf_class": "\u2205"
         },
         {
           "word": "okeeody",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "okeeody",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "keeod",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "oteos",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oteos",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "teos",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -6222,9 +6222,9 @@
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "koly",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "root": "kol",
+          "suffix": "y",
+          "suf_class": "-Y"
         }
       ],
       "comma_positions": [
@@ -6282,10 +6282,10 @@
       "tagged": [
         {
           "word": "oteos",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oteos",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "teos",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -6303,9 +6303,9 @@
           "class": "O-CONT",
           "coarse": "O",
           "prefix": "o",
-          "root": "t",
-          "suffix": "ar",
-          "suf_class": "-R"
+          "root": "tar",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "air",
@@ -6327,12 +6327,12 @@
         },
         {
           "word": "oteody",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oteody",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "teod",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "okchesal",
@@ -6345,10 +6345,10 @@
         },
         {
           "word": "otear",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "otear",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "tear",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -6363,12 +6363,12 @@
         },
         {
           "word": "oleealy",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oleealy",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "ol",
+          "root": "eeal",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "shtey",
@@ -6381,10 +6381,10 @@
         },
         {
           "word": "oteos",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oteos",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "teos",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -6399,10 +6399,10 @@
         },
         {
           "word": "dals",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "dals",
+          "class": "D-CONT",
+          "coarse": "P",
+          "prefix": "d",
+          "root": "als",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -6417,12 +6417,12 @@
         },
         {
           "word": "ytolaiin",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "ytolaiin",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "Y-CONT",
+          "coarse": "P",
+          "prefix": "y",
+          "root": "tola",
+          "suffix": "iin",
+          "suf_class": "-IIN"
         },
         {
           "word": "ydaiin",
@@ -6456,16 +6456,16 @@
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "t",
-          "suffix": "al",
-          "suf_class": "-L"
+          "root": "tal",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "oto",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oto",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "to",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -6483,8 +6483,8 @@
           "class": "O-CONT",
           "coarse": "O",
           "prefix": "o",
-          "root": "t",
-          "suffix": "ey",
+          "root": "te",
+          "suffix": "y",
           "suf_class": "-Y"
         },
         {
@@ -6528,25 +6528,25 @@
           "class": "FUNC",
           "coarse": "F",
           "prefix": "",
-          "root": "a",
-          "suffix": "r",
-          "suf_class": "-r"
+          "root": "ar",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "otedy",
           "class": "O-CONT",
           "coarse": "O",
           "prefix": "o",
-          "root": "t",
-          "suffix": "edy",
+          "root": "ted",
+          "suffix": "y",
           "suf_class": "-Y"
         },
         {
           "word": "otorar",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "otorar",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "torar",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -6555,8 +6555,8 @@
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "sh",
-          "suffix": "edy",
+          "root": "shed",
+          "suffix": "y",
           "suf_class": "-Y"
         },
         {
@@ -6591,27 +6591,27 @@
           "class": "O-CONT",
           "coarse": "O",
           "prefix": "o",
-          "root": "t",
-          "suffix": "ar",
-          "suf_class": "-R"
+          "root": "tar",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "cheedy",
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "ch",
-          "suffix": "eedy",
+          "root": "cheed",
+          "suffix": "y",
           "suf_class": "-Y"
         },
         {
           "word": "otaraiin",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "otaraiin",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "tara",
+          "suffix": "iin",
+          "suf_class": "-IIN"
         },
         {
           "word": "cheeky",
@@ -6624,10 +6624,10 @@
         },
         {
           "word": "okolar",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "okolar",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "kolar",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -6636,8 +6636,8 @@
           "class": "Y-CONT",
           "coarse": "P",
           "prefix": "y",
-          "root": "ch",
-          "suffix": "ey",
+          "root": "che",
+          "suffix": "y",
           "suf_class": "-Y"
         },
         {
@@ -6692,27 +6692,27 @@
           "class": "O-CONT",
           "coarse": "O",
           "prefix": "o",
-          "root": "t",
-          "suffix": "ar",
-          "suf_class": "-R"
+          "root": "tar",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "ar",
           "class": "FUNC",
           "coarse": "F",
           "prefix": "",
-          "root": "a",
-          "suffix": "r",
-          "suf_class": "-r"
+          "root": "ar",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "otol",
           "class": "O-CONT",
           "coarse": "O",
           "prefix": "o",
-          "root": "t",
-          "suffix": "ol",
-          "suf_class": "-L"
+          "root": "tol",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "topar",
@@ -6725,19 +6725,19 @@
         },
         {
           "word": "oteolaiin",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oteolaiin",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "teola",
+          "suffix": "iin",
+          "suf_class": "-IIN"
         },
         {
           "word": "ofaral",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "ofaral",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "faral",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -6752,10 +6752,10 @@
         },
         {
           "word": "ofalar",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "ofalar",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "falar",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -6788,19 +6788,19 @@
         },
         {
           "word": "okaly",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "okaly",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "kal",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "oka",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oka",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "ka",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -6809,9 +6809,9 @@
           "class": "Y-CONT",
           "coarse": "P",
           "prefix": "y",
-          "root": "a",
-          "suffix": "ly",
-          "suf_class": "-ly"
+          "root": "al",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "opcheolfy",
@@ -6827,9 +6827,9 @@
           "class": "O-CONT",
           "coarse": "O",
           "prefix": "o",
-          "root": "p",
-          "suffix": "ar",
-          "suf_class": "-R"
+          "root": "par",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "cheockey",
@@ -6854,9 +6854,9 @@
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "shaldy",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "root": "shald",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "chepchy",
@@ -6872,8 +6872,8 @@
           "class": "O-CONT",
           "coarse": "O",
           "prefix": "o",
-          "root": "t",
-          "suffix": "ey",
+          "root": "te",
+          "suffix": "y",
           "suf_class": "-Y"
         },
         {
@@ -6912,37 +6912,37 @@
       "tagged": [
         {
           "word": "otalal",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "otalal",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "talal",
           "suffix": "",
           "suf_class": "\u2205"
         },
         {
           "word": "dalal",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "dalal",
+          "class": "D-CONT",
+          "coarse": "P",
+          "prefix": "d",
+          "root": "alal",
           "suffix": "",
           "suf_class": "\u2205"
         },
         {
           "word": "ykeols",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "ykeols",
+          "class": "Y-CONT",
+          "coarse": "P",
+          "prefix": "y",
+          "root": "keols",
           "suffix": "",
           "suf_class": "\u2205"
         },
         {
           "word": "oteo",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oteo",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "teo",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -6975,12 +6975,12 @@
         },
         {
           "word": "oteey",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oteey",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "tee",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "saiin",
@@ -6993,10 +6993,10 @@
         },
         {
           "word": "oteeos",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oteeos",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "teeos",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -7065,18 +7065,18 @@
           "class": "O-CONT",
           "coarse": "O",
           "prefix": "o",
-          "root": "t",
-          "suffix": "os",
-          "suf_class": "-S"
+          "root": "tos",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "chs",
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "ch",
-          "suffix": "s",
-          "suf_class": "-S"
+          "root": "chs",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "oty",
@@ -7089,10 +7089,10 @@
         },
         {
           "word": "oteos",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oteos",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "teos",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -7164,8 +7164,8 @@
           "class": "FUNC?",
           "coarse": "F",
           "prefix": "",
-          "root": "sh",
-          "suffix": "ey",
+          "root": "she",
+          "suffix": "y",
           "suf_class": "-Y"
         },
         {
@@ -7191,9 +7191,9 @@
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "choraiin",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "root": "chora",
+          "suffix": "iin",
+          "suf_class": "-IIN"
         },
         {
           "word": "chekaiphy",
@@ -7206,10 +7206,10 @@
         },
         {
           "word": "oteeos",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oteeos",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "teeos",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -7218,17 +7218,17 @@
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "a",
-          "suffix": "ly",
-          "suf_class": "-ly"
+          "root": "al",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "okeedy",
           "class": "O-CONT",
           "coarse": "O",
           "prefix": "o",
-          "root": "k",
-          "suffix": "eedy",
+          "root": "keed",
+          "suffix": "y",
           "suf_class": "-Y"
         },
         {
@@ -7260,10 +7260,10 @@
         },
         {
           "word": "okedl",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "okedl",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "kedl",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -7272,8 +7272,8 @@
           "class": "O-CONT",
           "coarse": "O",
           "prefix": "o",
-          "root": "k",
-          "suffix": "edy",
+          "root": "ked",
+          "suffix": "y",
           "suf_class": "-Y"
         },
         {
@@ -7287,10 +7287,10 @@
         },
         {
           "word": "okeeor",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "okeeor",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "keeor",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -7299,27 +7299,27 @@
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "cheey",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "root": "chee",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "okeey",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "okeey",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "kee",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "teey",
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "teey",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "root": "tee",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "cheeey",
@@ -7332,10 +7332,10 @@
         },
         {
           "word": "okeolol",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "okeolol",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "keolol",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -7386,12 +7386,12 @@
         },
         {
           "word": "okolsaiin",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "okolsaiin",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "kolsa",
+          "suffix": "iin",
+          "suf_class": "-IIN"
         }
       ],
       "comma_positions": [
@@ -7441,28 +7441,28 @@
       "tagged": [
         {
           "word": "oteesody",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oteesody",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "teesod",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "otey",
           "class": "O-CONT",
           "coarse": "O",
           "prefix": "o",
-          "root": "t",
-          "suffix": "ey",
+          "root": "te",
+          "suffix": "y",
           "suf_class": "-Y"
         },
         {
           "word": "oteeos",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oteeos",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "teeos",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -7477,39 +7477,39 @@
         },
         {
           "word": "yteeg",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "yteeg",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "Y-CONT",
+          "coarse": "P",
+          "prefix": "y",
+          "root": "tee",
+          "suffix": "g",
+          "suf_class": "-g"
         },
         {
           "word": "dchsaiin",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "dchsaiin",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "D-CONT",
+          "coarse": "P",
+          "prefix": "d",
+          "root": "chsa",
+          "suffix": "iin",
+          "suf_class": "-IIN"
         },
         {
           "word": "shol",
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "sh",
-          "suffix": "ol",
-          "suf_class": "-L"
+          "root": "shol",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "okeees",
           "class": "O-CONT",
           "coarse": "O",
           "prefix": "o",
-          "root": "keee",
-          "suffix": "s",
-          "suf_class": "-S"
+          "root": "keees",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "air",
@@ -7534,16 +7534,16 @@
           "class": "FUNC?",
           "coarse": "F",
           "prefix": "",
-          "root": "sh",
-          "suffix": "ey",
+          "root": "she",
+          "suffix": "y",
           "suf_class": "-Y"
         },
         {
           "word": "qokeodal",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "qokeodal",
+          "class": "Q-CONT",
+          "coarse": "Q",
+          "prefix": "qo",
+          "root": "keodal",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -7558,19 +7558,19 @@
         },
         {
           "word": "oteoldy",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oteoldy",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "teold",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "oteal",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oteal",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "teal",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -7579,8 +7579,8 @@
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "ch",
-          "suffix": "edy",
+          "root": "ched",
+          "suffix": "y",
           "suf_class": "-Y"
         },
         {
@@ -7597,9 +7597,9 @@
           "class": "O-CONT",
           "coarse": "O",
           "prefix": "o",
-          "root": "k",
-          "suffix": "al",
-          "suf_class": "-L"
+          "root": "kal",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "cheol",
@@ -7615,9 +7615,9 @@
           "class": "FUNC",
           "coarse": "F",
           "prefix": "s",
-          "root": "a",
-          "suffix": "r",
-          "suf_class": "-r"
+          "root": "ar",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "aiin",
@@ -7639,21 +7639,21 @@
         },
         {
           "word": "sardy",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "sardy",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "S-CONT",
+          "coarse": "P",
+          "prefix": "s",
+          "root": "ard",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "otol",
           "class": "O-CONT",
           "coarse": "O",
           "prefix": "o",
-          "root": "t",
-          "suffix": "ol",
-          "suf_class": "-L"
+          "root": "tol",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "chekar",
@@ -7678,18 +7678,18 @@
           "class": "O-CONT",
           "coarse": "O",
           "prefix": "ol",
-          "root": "t",
-          "suffix": "ar",
-          "suf_class": "-R"
+          "root": "tar",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "ar",
           "class": "FUNC",
           "coarse": "F",
           "prefix": "",
-          "root": "a",
-          "suffix": "r",
-          "suf_class": "-r"
+          "root": "ar",
+          "suffix": "",
+          "suf_class": "\u2205"
         }
       ],
       "comma_positions": [
@@ -7725,9 +7725,9 @@
           "class": "O-CONT",
           "coarse": "O",
           "prefix": "o",
-          "root": "t",
-          "suffix": "aiin",
-          "suf_class": "-AIIN"
+          "root": "ta",
+          "suffix": "iin",
+          "suf_class": "-IIN"
         },
         {
           "word": "otshedy",
@@ -7749,10 +7749,10 @@
         },
         {
           "word": "otes",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "otes",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "tes",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -7761,27 +7761,27 @@
           "class": "FUNC",
           "coarse": "F",
           "prefix": "",
-          "root": "a",
-          "suffix": "l",
-          "suf_class": "-l"
+          "root": "al",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "al",
           "class": "FUNC",
           "coarse": "F",
           "prefix": "",
-          "root": "a",
-          "suffix": "l",
-          "suf_class": "-l"
+          "root": "al",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "ar",
           "class": "FUNC",
           "coarse": "F",
           "prefix": "",
-          "root": "a",
-          "suffix": "r",
-          "suf_class": "-r"
+          "root": "ar",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "chetolain",
@@ -7797,9 +7797,9 @@
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "sheodaly",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "root": "sheodal",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "sheokey",
@@ -7812,12 +7812,12 @@
         },
         {
           "word": "okealy",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "okealy",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "keal",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "rary",
@@ -7887,9 +7887,9 @@
           "class": "S-CONT",
           "coarse": "P",
           "prefix": "so",
-          "root": "ee",
-          "suffix": "s",
-          "suf_class": "-S"
+          "root": "ees",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "otchs",
@@ -7902,37 +7902,37 @@
         },
         {
           "word": "otedar",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "otedar",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "tedar",
           "suffix": "",
           "suf_class": "\u2205"
         },
         {
           "word": "oteody",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oteody",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "teod",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "oteodal",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oteodal",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "teodal",
           "suffix": "",
           "suf_class": "\u2205"
         },
         {
           "word": "oteos",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oteos",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "teos",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -7947,12 +7947,12 @@
         },
         {
           "word": "oteody",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oteody",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "teod",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "sheokeey",
@@ -7968,9 +7968,9 @@
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "sheody",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "root": "sheod",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "shedykeal",
@@ -7992,29 +7992,29 @@
         },
         {
           "word": "okoleeolar",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "okoleeolar",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "koleeolar",
           "suffix": "",
           "suf_class": "\u2205"
         },
         {
           "word": "okeey",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "okeey",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "kee",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "shedy",
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "sh",
-          "suffix": "edy",
+          "root": "shed",
+          "suffix": "y",
           "suf_class": "-Y"
         },
         {
@@ -8022,8 +8022,8 @@
           "class": "O-CONT",
           "coarse": "O",
           "prefix": "o",
-          "root": "t",
-          "suffix": "ey",
+          "root": "te",
+          "suffix": "y",
           "suf_class": "-Y"
         },
         {
@@ -8040,18 +8040,18 @@
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "sh",
-          "suffix": "ol",
-          "suf_class": "-L"
+          "root": "shol",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "teody",
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "teody",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "root": "teod",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "okolshey",
@@ -8067,8 +8067,8 @@
           "class": "Y-CONT",
           "coarse": "P",
           "prefix": "y",
-          "root": "k",
-          "suffix": "eedy",
+          "root": "keed",
+          "suffix": "y",
           "suf_class": "-Y"
         },
         {
@@ -8112,9 +8112,9 @@
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "ch",
-          "suffix": "ol",
-          "suf_class": "-L"
+          "root": "chol",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "choepchey",
@@ -8130,18 +8130,18 @@
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "teey",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "root": "tee",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "teody",
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "teody",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "root": "teod",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "ches",
@@ -8184,9 +8184,9 @@
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "cheey",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "root": "chee",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "daiin",
@@ -8226,12 +8226,12 @@
         },
         {
           "word": "oteeoly",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oteeoly",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "teeol",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "chokary",
@@ -8320,27 +8320,27 @@
           "class": "FUNC",
           "coarse": "F",
           "prefix": "",
-          "root": "o",
-          "suffix": "r",
-          "suf_class": "-r"
+          "root": "or",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "oteey",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oteey",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "tee",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "oteeody",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oteeody",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "teeod",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "cheokey",
@@ -8362,10 +8362,10 @@
         },
         {
           "word": "oteor",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oteor",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "teor",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -8380,19 +8380,19 @@
         },
         {
           "word": "yoleeedy",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "yoleeedy",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "Y-CONT",
+          "coarse": "P",
+          "prefix": "y",
+          "root": "oleeed",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "okeos",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "okeos",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "keos",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -8407,12 +8407,12 @@
         },
         {
           "word": "okeey",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "okeey",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "kee",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "okeeey",
@@ -8425,12 +8425,12 @@
         },
         {
           "word": "okeedaly",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "okeedaly",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "keedal",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "cholainy",
@@ -8446,8 +8446,8 @@
           "class": "O-CONT",
           "coarse": "O",
           "prefix": "o",
-          "root": "k",
-          "suffix": "edy",
+          "root": "ked",
+          "suffix": "y",
           "suf_class": "-Y"
         },
         {
@@ -8470,10 +8470,10 @@
         },
         {
           "word": "okeeol",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "okeeol",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "keeol",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -8482,8 +8482,8 @@
           "class": "FUNC?",
           "coarse": "F",
           "prefix": "",
-          "root": "ch",
-          "suffix": "ey",
+          "root": "che",
+          "suffix": "y",
           "suf_class": "-Y"
         },
         {
@@ -8491,8 +8491,8 @@
           "class": "O-CONT",
           "coarse": "O",
           "prefix": "o",
-          "root": "t",
-          "suffix": "ey",
+          "root": "te",
+          "suffix": "y",
           "suf_class": "-Y"
         },
         {
@@ -8500,17 +8500,17 @@
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "oldy",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "root": "old",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "chdy",
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "ch",
-          "suffix": "dy",
+          "root": "chd",
+          "suffix": "y",
           "suf_class": "-Y"
         },
         {
@@ -8518,9 +8518,9 @@
           "class": "D-CONT",
           "coarse": "P",
           "prefix": "d",
-          "root": "e",
-          "suffix": "l",
-          "suf_class": "-l"
+          "root": "el",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "okeeoloky",
@@ -8554,25 +8554,25 @@
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "ch",
-          "suffix": "as",
-          "suf_class": "-S"
-        },
-        {
-          "word": "oteey",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oteey",
+          "root": "chas",
           "suffix": "",
           "suf_class": "\u2205"
         },
         {
+          "word": "oteey",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "tee",
+          "suffix": "y",
+          "suf_class": "-Y"
+        },
+        {
           "word": "okea",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "okea",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "kea",
           "suffix": "",
           "suf_class": "\u2205"
         }
@@ -8604,10 +8604,10 @@
       "tagged": [
         {
           "word": "okesees",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "okesees",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "kesees",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -8616,9 +8616,9 @@
           "class": "FUNC",
           "coarse": "F",
           "prefix": "",
-          "root": "a",
-          "suffix": "r",
-          "suf_class": "-r"
+          "root": "ar",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "chkeeol",
@@ -8631,12 +8631,12 @@
         },
         {
           "word": "okeolaiin",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "okeolaiin",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "keola",
+          "suffix": "iin",
+          "suf_class": "-IIN"
         },
         {
           "word": "chalal",
@@ -8649,37 +8649,37 @@
         },
         {
           "word": "ykeeodarar",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "ykeeodarar",
+          "class": "Y-CONT",
+          "coarse": "P",
+          "prefix": "y",
+          "root": "keeodarar",
           "suffix": "",
           "suf_class": "\u2205"
         },
         {
           "word": "oleeody",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oleeody",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "ol",
+          "root": "eeod",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "shedy",
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "sh",
-          "suffix": "edy",
+          "root": "shed",
+          "suffix": "y",
           "suf_class": "-Y"
         },
         {
           "word": "solar",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "solar",
+          "class": "S-CONT",
+          "coarse": "P",
+          "prefix": "s",
+          "root": "olar",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -8688,16 +8688,16 @@
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "aldy",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "root": "ald",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "oteor",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oteor",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "teor",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -8787,19 +8787,19 @@
         },
         {
           "word": "daraly",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "daraly",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "D-CONT",
+          "coarse": "P",
+          "prefix": "d",
+          "root": "aral",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "oteos",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oteos",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "teos",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -8817,16 +8817,16 @@
           "class": "FUNC",
           "coarse": "F",
           "prefix": "",
-          "root": "a",
-          "suffix": "r",
-          "suf_class": "-r"
+          "root": "ar",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "oteosdal",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oteosdal",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "teosdal",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -8844,9 +8844,9 @@
           "class": "S-CONT",
           "coarse": "P",
           "prefix": "so",
-          "root": "teee",
-          "suffix": "s",
-          "suf_class": "-S"
+          "root": "teees",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "alshey",
@@ -8871,9 +8871,9 @@
           "class": "FUNC",
           "coarse": "F",
           "prefix": "",
-          "root": "a",
-          "suffix": "l",
-          "suf_class": "-l"
+          "root": "al",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "chees",
@@ -8889,9 +8889,9 @@
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "cheoly",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "root": "cheol",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "jeiii",
@@ -8961,9 +8961,9 @@
           "class": "FUNC",
           "coarse": "F",
           "prefix": "",
-          "root": "a",
-          "suffix": "r",
-          "suf_class": "-r"
+          "root": "ar",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "cheteey",
@@ -8988,9 +8988,9 @@
           "class": "FUNC",
           "coarse": "F",
           "prefix": "",
-          "root": "a",
-          "suffix": "r",
-          "suf_class": "-r"
+          "root": "ar",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "airalor",
@@ -9012,21 +9012,21 @@
         },
         {
           "word": "yteey",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "yteey",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "Y-CONT",
+          "coarse": "P",
+          "prefix": "y",
+          "root": "tee",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "cheody",
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "cheody",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "root": "cheod",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "ykeydam",
@@ -9039,10 +9039,10 @@
         },
         {
           "word": "oteos",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oteos",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "teos",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -9108,48 +9108,48 @@
       "tagged": [
         {
           "word": "oteey",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oteey",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "tee",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "dar",
           "class": "FUNC",
           "coarse": "F",
           "prefix": "d",
-          "root": "a",
-          "suffix": "r",
-          "suf_class": "-r"
+          "root": "ar",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "al",
           "class": "FUNC",
           "coarse": "F",
           "prefix": "",
-          "root": "a",
-          "suffix": "l",
-          "suf_class": "-l"
+          "root": "al",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "opaiin",
           "class": "O-CONT",
           "coarse": "O",
           "prefix": "o",
-          "root": "p",
-          "suffix": "aiin",
-          "suf_class": "-AIIN"
+          "root": "pa",
+          "suffix": "iin",
+          "suf_class": "-IIN"
         },
         {
           "word": "olalaiin",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "olalaiin",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "ol",
+          "root": "ala",
+          "suffix": "iin",
+          "suf_class": "-IIN"
         },
         {
           "word": "s",
@@ -9198,37 +9198,37 @@
         },
         {
           "word": "oram",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oram",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "or",
+          "root": "am",
           "suffix": "",
           "suf_class": "\u2205"
         },
         {
           "word": "otareees",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "otareees",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "tareees",
           "suffix": "",
           "suf_class": "\u2205"
         },
         {
           "word": "olteey",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "olteey",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "ol",
+          "root": "tee",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "okees",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "okees",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "kees",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -9237,25 +9237,25 @@
           "class": "O-CONT",
           "coarse": "O",
           "prefix": "o",
-          "root": "t",
-          "suffix": "ar",
-          "suf_class": "-R"
+          "root": "tar",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "chey",
           "class": "FUNC?",
           "coarse": "F",
           "prefix": "",
-          "root": "ch",
-          "suffix": "ey",
+          "root": "che",
+          "suffix": "y",
           "suf_class": "-Y"
         },
         {
           "word": "oteas",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oteas",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "teas",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -9264,9 +9264,9 @@
           "class": "O-CONT",
           "coarse": "O",
           "prefix": "o",
-          "root": "ch",
-          "suffix": "or",
-          "suf_class": "-R"
+          "root": "chor",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "oparchey",
@@ -9288,12 +9288,12 @@
         },
         {
           "word": "qocheey",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "qocheey",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "Q-CONT",
+          "coarse": "Q",
+          "prefix": "qo",
+          "root": "chee",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "s",
@@ -9309,27 +9309,27 @@
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "cheey",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "root": "chee",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "dal",
           "class": "FUNC",
           "coarse": "F",
           "prefix": "d",
-          "root": "a",
-          "suffix": "l",
-          "suf_class": "-l"
+          "root": "al",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "cheesy",
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "cheesy",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "root": "chees",
+          "suffix": "y",
+          "suf_class": "-Y"
         }
       ],
       "comma_positions": [
@@ -9367,27 +9367,27 @@
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "chedain",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "root": "cheda",
+          "suffix": "in",
+          "suf_class": "-IIN"
         },
         {
           "word": "oteey",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oteey",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "tee",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "chedaly",
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "chedaly",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "root": "chedal",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "okechs",
@@ -9409,10 +9409,10 @@
         },
         {
           "word": "oteodal",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oteodal",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "teodal",
           "suffix": "",
           "suf_class": "\u2205"
         }
@@ -9463,30 +9463,30 @@
       "tagged": [
         {
           "word": "otoar",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "otoar",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "toar",
           "suffix": "",
           "suf_class": "\u2205"
         },
         {
           "word": "ykeody",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "ykeody",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "Y-CONT",
+          "coarse": "P",
+          "prefix": "y",
+          "root": "keod",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "okodeey",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "okodeey",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "kodee",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "qopchey",
@@ -9502,17 +9502,17 @@
           "class": "O-CONT",
           "coarse": "O",
           "prefix": "o",
-          "root": "p",
-          "suffix": "aiin",
-          "suf_class": "-AIIN"
+          "root": "pa",
+          "suffix": "iin",
+          "suf_class": "-IIN"
         },
         {
           "word": "qoteedy",
           "class": "Q-CONT",
           "coarse": "Q",
           "prefix": "qo",
-          "root": "t",
-          "suffix": "eedy",
+          "root": "teed",
+          "suffix": "y",
           "suf_class": "-Y"
         },
         {
@@ -9529,8 +9529,8 @@
           "class": "O-CONT",
           "coarse": "O",
           "prefix": "o",
-          "root": "t",
-          "suffix": "edy",
+          "root": "ted",
+          "suffix": "y",
           "suf_class": "-Y"
         },
         {
@@ -9538,18 +9538,18 @@
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "sh",
-          "suffix": "edy",
+          "root": "shed",
+          "suffix": "y",
           "suf_class": "-Y"
         },
         {
           "word": "qokeody",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "qokeody",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "Q-CONT",
+          "coarse": "Q",
+          "prefix": "qo",
+          "root": "keod",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "cheor",
@@ -9565,9 +9565,9 @@
           "class": "FUNC",
           "coarse": "F",
           "prefix": "",
-          "root": "a",
-          "suffix": "l",
-          "suf_class": "-l"
+          "root": "al",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "okegal",
@@ -9580,28 +9580,28 @@
         },
         {
           "word": "oteody",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oteody",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "teod",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "shedy",
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "sh",
-          "suffix": "edy",
+          "root": "shed",
+          "suffix": "y",
           "suf_class": "-Y"
         },
         {
           "word": "otesalod",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "otesalod",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "tesalod",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -9625,12 +9625,12 @@
         },
         {
           "word": "ykeesaly",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "ykeesaly",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "Y-CONT",
+          "coarse": "P",
+          "prefix": "y",
+          "root": "keesal",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "y",
@@ -9646,9 +9646,9 @@
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "keoly",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "root": "keol",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "dys",
@@ -9682,9 +9682,9 @@
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "toly",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "root": "tol",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "chfaikchy",
@@ -9697,10 +9697,10 @@
         },
         {
           "word": "ytedar",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "ytedar",
+          "class": "Y-CONT",
+          "coarse": "P",
+          "prefix": "y",
+          "root": "tedar",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -9715,12 +9715,12 @@
         },
         {
           "word": "qokeey",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "qokeey",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "Q-CONT",
+          "coarse": "Q",
+          "prefix": "qo",
+          "root": "kee",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "oty",
@@ -9736,8 +9736,8 @@
           "class": "Y-CONT",
           "coarse": "P",
           "prefix": "y",
-          "root": "t",
-          "suffix": "eedy",
+          "root": "teed",
+          "suffix": "y",
           "suf_class": "-Y"
         },
         {
@@ -9745,18 +9745,18 @@
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "choldy",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "root": "chold",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "qokalaiin",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "qokalaiin",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "Q-CONT",
+          "coarse": "Q",
+          "prefix": "qo",
+          "root": "kala",
+          "suffix": "iin",
+          "suf_class": "-IIN"
         },
         {
           "word": "ykaipy",
@@ -9772,9 +9772,9 @@
           "class": "O-CONT",
           "coarse": "O",
           "prefix": "or",
-          "root": "a",
-          "suffix": "ry",
-          "suf_class": "-ry"
+          "root": "ar",
+          "suffix": "y",
+          "suf_class": "-Y"
         }
       ],
       "comma_positions": [
@@ -9833,12 +9833,12 @@
         },
         {
           "word": "oteolain",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oteolain",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "teola",
+          "suffix": "in",
+          "suf_class": "-IIN"
         },
         {
           "word": "chokeedam",
@@ -9851,12 +9851,12 @@
         },
         {
           "word": "otody",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "otody",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "tod",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "qoty",
@@ -9872,8 +9872,8 @@
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "sh",
-          "suffix": "edy",
+          "root": "shed",
+          "suffix": "y",
           "suf_class": "-Y"
         },
         {
@@ -9881,8 +9881,8 @@
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "ch",
-          "suffix": "dy",
+          "root": "chd",
+          "suffix": "y",
           "suf_class": "-Y"
         },
         {
@@ -9896,12 +9896,12 @@
         },
         {
           "word": "oteody",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "oteody",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "teod",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "cheytey",
@@ -9926,8 +9926,8 @@
           "class": "O-CONT",
           "coarse": "O",
           "prefix": "o",
-          "root": "k",
-          "suffix": "ey",
+          "root": "ke",
+          "suffix": "y",
           "suf_class": "-Y"
         },
         {
@@ -9953,8 +9953,8 @@
           "class": "O-CONT",
           "coarse": "O",
           "prefix": "o",
-          "root": "t",
-          "suffix": "ey",
+          "root": "te",
+          "suffix": "y",
           "suf_class": "-Y"
         },
         {
@@ -9962,17 +9962,17 @@
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "chodaiin",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "root": "choda",
+          "suffix": "iin",
+          "suf_class": "-IIN"
         },
         {
           "word": "chey",
           "class": "FUNC?",
           "coarse": "F",
           "prefix": "",
-          "root": "ch",
-          "suffix": "ey",
+          "root": "che",
+          "suffix": "y",
           "suf_class": "-Y"
         },
         {
@@ -9980,8 +9980,8 @@
           "class": "O-CONT",
           "coarse": "O",
           "prefix": "o",
-          "root": "k",
-          "suffix": "eedy",
+          "root": "keed",
+          "suffix": "y",
           "suf_class": "-Y"
         },
         {
@@ -9989,27 +9989,27 @@
           "class": "S-CONT",
           "coarse": "P",
           "prefix": "s",
-          "root": "a",
-          "suffix": "ly",
-          "suf_class": "-ly"
+          "root": "al",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "ar",
           "class": "FUNC",
           "coarse": "F",
           "prefix": "",
-          "root": "a",
-          "suffix": "r",
-          "suf_class": "-r"
+          "root": "ar",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "daly",
           "class": "D-CONT",
           "coarse": "P",
           "prefix": "d",
-          "root": "a",
-          "suffix": "ly",
-          "suf_class": "-ly"
+          "root": "al",
+          "suffix": "y",
+          "suf_class": "-Y"
         }
       ],
       "comma_positions": [
@@ -10063,10 +10063,10 @@
         },
         {
           "word": "otolam",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "otolam",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "tolam",
           "suffix": "",
           "suf_class": "\u2205"
         },
@@ -10093,9 +10093,9 @@
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "ch",
-          "suffix": "ar",
-          "suf_class": "-R"
+          "root": "char",
+          "suffix": "",
+          "suf_class": "\u2205"
         },
         {
           "word": "y",
@@ -10108,28 +10108,28 @@
         },
         {
           "word": "ytaly",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "ytaly",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "class": "Y-CONT",
+          "coarse": "P",
+          "prefix": "y",
+          "root": "tal",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "alaly",
           "class": "BARE",
           "coarse": "B",
           "prefix": "",
-          "root": "alaly",
-          "suffix": "",
-          "suf_class": "\u2205"
+          "root": "alal",
+          "suffix": "y",
+          "suf_class": "-Y"
         },
         {
           "word": "otaram",
-          "class": "BARE",
-          "coarse": "B",
-          "prefix": "",
-          "root": "otaram",
+          "class": "O-CONT",
+          "coarse": "O",
+          "prefix": "o",
+          "root": "taram",
           "suffix": "",
           "suf_class": "\u2205"
         }

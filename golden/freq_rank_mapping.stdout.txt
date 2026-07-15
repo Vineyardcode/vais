@@ -1,0 +1,422 @@
+  Loading 201 folios...
+  Extracted 4945 text lines
+
+  Total parsed tokens: 30186
+  Total parsed labels: 251
+
+==========================================================================================
+TEST 1: ZIPF'S LAW FOR ROOTS
+==========================================================================================
+
+  If roots = real-world ingredients, they should follow Zipf's law
+  (a few very common, long tail of rare ones)
+
+  Distinct roots: 264
+  Total root tokens: 30186
+
+  Zipf exponent α = 1.675  (natural language ≈ 1.0)
+  R² = 0.9095
+  ✗ STEEPER than Zipf: extreme concentration on few roots
+
+  Rank  Root            Freq       %    Cum%  Suffix profile
+  ────  ────────────  ──────  ──────  ──────  ────────────────────────────────────────
+     1  ka              2575    8.5%    8.5%  iin:756, in:571, r:512, l:419
+     2  da              2483    8.2%   16.8%  iin:1063, r:428, l:291, in:264
+     3  a               2327    7.7%   24.5%  iin:829, r:517, l:327, in:206
+     4  o               1837    6.1%   30.6%  l:839, r:573, ∅:94, ly:76
+     5  ta              1370    4.5%   35.1%  iin:368, r:318, l:268, in:199
+     6  cho             1062    3.5%   38.6%  l:459, r:284, ∅:114, dy:113
+     7  ched             818    2.7%   41.3%  y:783, ∅:31, l:3, r:1
+     8  kee              731    2.4%   43.7%  y:723, ∅:3, l:2, m:2
+     9  keed             648    2.1%   45.9%  y:619, ∅:29
+    10  shed             613    2.0%   47.9%  y:587, ∅:26
+    11  cheo             592    2.0%   49.9%  l:222, r:120, ∅:110, dy:108
+    12  sho              571    1.9%   51.8%  l:201, ∅:145, r:126, dy:61
+    13  che              544    1.8%   53.6%  y:538, ∅:3, r:2, ry:1
+    14  ked              543    1.8%   55.4%  y:530, ∅:12, l:1
+    15  ch               524    1.7%   57.1%  y:244, dy:213, l:35, ∅:12
+    16  ko               481    1.6%   58.7%  l:249, r:109, dy:31, iin:25
+    17  sa               460    1.5%   60.2%  iin:150, r:90, in:75, l:56
+    18  keo              436    1.4%   61.7%  l:167, dy:119, r:63, ∅:45
+    19  d                430    1.4%   63.1%  y:373, l:29, ∅:20, r:3
+    20  to               427    1.4%   64.5%  l:195, r:108, dy:55, ∅:23
+    21  k                423    1.4%   65.9%  y:358, ∅:31, l:20, dy:6
+    22  she              397    1.3%   67.2%  y:367, ∅:29, r:1
+    23  ted              349    1.2%   68.4%  y:343, ∅:6
+    24  sheo             341    1.1%   69.5%  l:136, dy:65, r:57, ∅:56
+    25  kch              310    1.0%   70.5%  y:169, dy:125, d:12, ∅:4
+    26  t                308    1.0%   71.6%  y:267, ∅:32, l:4, dy:2
+    27  cha              297    1.0%   72.5%  r:99, l:60, iin:58, in:26
+    28  do               272    0.9%   73.4%  l:117, r:84, ∅:17, iin:13
+    29  chee             271    0.9%   74.3%  y:268, ∅:2, l:1
+    30  tch              266    0.9%   75.2%  y:160, dy:92, d:7, ∅:5
+
+==========================================================================================
+TEST 2: ROOT FUNCTIONAL CLASSES — Clustering by suffix profile
+==========================================================================================
+
+  If suffix = form/preparation, roots with similar suffix profiles
+  belong to the same SUBSTANCE CLASS (e.g., herbs, minerals, liquids)
+
+  Found 36 suffix-profile clusters among 112 roots (freq≥20)
+
+  MONO-y                          n= 38  total=  8414
+    ched(818), kee(731), keed(648), shed(613), che(544), ked(543), d(430), she(397), ... +30 more
+
+  POLY-iin+r+l                    n=  4  total=  6302
+    da(2483), a(2327), ta(1370), pa(122)
+
+  POLY-l+r+∅                      n=  6  total=  4147
+    o(1837), cho(1062), cheo(592), do(272), kcho(192), tcho(192)
+
+  POLY-iin+in+r                   n=  1  total=  2575
+    ka(2575)
+
+  DOM-y+dy                        n=  5  total=   900
+    kch(310), tch(266), sh(231), ksh(58), tsh(35)
+
+  POLY-l+dy+r                     n=  2  total=   777
+    keo(436), sheo(341)
+
+  POLY-l+r+dy                     n=  3  total=   631
+    to(427), ctho(177), cpho(27)
+
+  POLY-l+∅+r                      n=  2  total=   615
+    sho(571), sheeo(44)
+
+  DOM-l+r                         n=  2  total=   542
+    ko(481), ckho(61)
+
+  POLY-y+dy+l                     n=  1  total=   524
+    ch(524)
+
+  POLY-r+l+iin                    n=  5  total=   521
+    cha(297), chda(106), shea(62), shda(33), pcha(23)
+
+  DOM-y+∅                         n=  3  total=   489
+    k(423), kshed(36), p(30)
+
+  POLY-iin+r+in                   n=  1  total=   460
+    sa(460)
+
+  POLY-dy+∅+l                     n=  2  total=   349
+    keeo(260), teeo(89)
+
+  POLY-dy+l+∅                     n=  2  total=   263
+    teo(224), tcheo(39)
+
+==========================================================================================
+TEST 3: SECTION DISTRIBUTION — Where each root appears
+==========================================================================================
+
+  If root = ingredient, common ones should appear everywhere
+  Specialist roots should cluster in specific sections
+
+  Root            herbal    pharma     astro       bio      text    Spread  Specialist? 
+  ────────────  ────────  ────────  ────────  ────────  ────────  ────────  ────────────
+  ka               17.8%      1.7%     46.3%     25.0%      9.0%     1.87b              
+  da               41.6%     11.1%     27.1%     11.0%      8.6%     2.04b              
+  a                16.5%      5.0%     58.1%      7.8%     11.6%     1.75b  → astro     
+  o                20.7%      7.9%     28.8%     31.6%     10.3%     2.14b              
+  ta               16.9%      1.1%     54.7%     14.8%     12.2%     1.76b  → astro     
+  cho              61.0%     11.6%     21.1%      1.6%      4.1%     1.55b  → herbal    
+  ched             10.3%      0.1%     41.3%     37.8%     10.5%     1.75b              
+  kee              10.8%     10.0%     56.2%     18.5%      4.1%     1.79b  → astro     
+  keed              8.2%      0.2%     46.3%     39.2%      5.6%     1.59b              
+  shed              8.8%      0.2%     28.1%     49.6%     12.9%     1.72b              
+  cheo             22.6%     22.1%     41.7%      8.3%      4.6%     1.99b              
+  sho              62.9%      5.4%     22.2%      3.7%      5.4%     1.53b  → herbal    
+  che              21.5%      7.2%     37.7%     25.0%      8.1%     2.07b              
+  ked              17.9%      0.2%     27.1%     47.1%      7.7%     1.77b              
+  ch               46.8%      3.4%     27.9%     13.0%      8.4%     1.88b              
+  ko               42.6%     18.3%     21.8%     11.0%      3.5%     1.97b              
+  sa               21.7%      8.5%     38.0%     21.7%      9.6%     2.11b              
+  keo              21.6%     31.4%     33.3%      2.8%      5.5%     1.90b              
+  d                46.0%      5.6%     21.4%     19.8%      6.0%     1.93b              
+  to               44.7%      6.3%     29.5%      9.1%      9.4%     1.93b              
+  k                34.3%      4.0%     29.6%     25.3%      5.9%     1.98b              
+  she              18.1%      5.8%     38.8%     28.7%      8.3%     2.03b              
+  ted              17.2%      0.0%     33.5%     37.2%     11.5%     1.85b              
+  sheo             24.3%     18.2%     35.2%     13.2%      8.5%     2.16b              
+  kch              53.5%      1.3%     26.8%      8.7%      9.7%     1.71b  → herbal    
+  t                43.8%      0.3%     31.2%     17.2%      6.5%     1.77b              
+  cha              47.1%      0.7%     43.8%      5.1%      3.0%     1.45b              
+  do               53.7%     15.1%     10.3%     14.3%      5.9%     1.87b  → herbal    
+  chee             16.6%      9.2%     50.2%     18.8%      4.1%     1.89b  → astro     
+  tch              56.8%      1.5%     24.4%      5.6%     11.7%     1.65b  → herbal    
+
+==========================================================================================
+TEST 4: PREFIX × SUFFIX MATRIX — Preparation category map
+==========================================================================================
+
+  If prefix=operation and suffix=form, then prefix×suffix = preparation type
+  E.g., qo+_+y might always mean 'decoction', ∅+_+l might mean 'simple'
+
+    prefix        y        l        r      iin        ∅       dy       in        m       ir       ly    TOTAL
+  ────────  ───────  ───────  ───────  ───────  ───────  ───────  ───────  ───────  ───────  ───────  ───────
+         ∅     3836     2987     2633     2013      869      889      537      362      291      224    15202
+         o     1796      767      631      551      308      288      288      134       57       71     5025
+        qo     2115      638      481      493      219      251      378       55       37       29     4791
+         y      547      150      209      162      109      132       46       31       28       22     1476
+         l      509      117      128       77       99       56       46       25        7       12     1101
+        ol      410       74      115      114       70       42       55       33        7       10      947
+         d      204       59       64        8       37       27        3        2        2        3      415
+         q       39      150       35        7       55        2        4        1        1        7      306
+         r       42       44       33       72       20        5       24       13        4        4      272
+        or       23       24       16       47        9        1       16       15        3        3      166
+
+  NORMALIZED (% of prefix going to each suffix):
+    prefix        y        l        r      iin        ∅       dy       in        m       ir       ly
+  ────────  ───────  ───────  ───────  ───────  ───────  ───────  ───────  ───────  ───────  ───────
+         ∅    25.2%    19.6%    17.3%    13.2%     5.7%     5.8%     3.5%     2.4%     1.9%     1.5%
+         o    35.7%    15.3%    12.6%    11.0%     6.1%     5.7%     5.7%     2.7%     1.1%     1.4%
+        qo    44.1%    13.3%    10.0%    10.3%     4.6%     5.2%     7.9%     1.1%     0.8%     0.6%
+         y    37.1%    10.2%    14.2%    11.0%     7.4%     8.9%     3.1%     2.1%     1.9%     1.5%
+         l    46.2%    10.6%    11.6%     7.0%     9.0%     5.1%     4.2%     2.3%     0.6%     1.1%
+        ol    43.3%     7.8%    12.1%    12.0%     7.4%     4.4%     5.8%     3.5%     0.7%     1.1%
+         d    49.2%    14.2%    15.4%     1.9%     8.9%     6.5%     0.7%     0.5%     0.5%     0.7%
+         q    12.7%    49.0%    11.4%     2.3%    18.0%     0.7%     1.3%     0.3%     0.3%     2.3%
+         r    15.4%    16.2%    12.1%    26.5%     7.4%     1.8%     8.8%     4.8%     1.5%     1.5%
+        or    13.9%    14.5%     9.6%    28.3%     5.4%     0.6%     9.6%     9.0%     1.8%     1.8%
+
+  PREFIX SPECIFICITY (how much each prefix biases suffix choice):
+    prefix    KL div  Top suffix bias               
+  ────────  ────────  ──────────────────────────────
+         ∅     0.026  r:1.2×, l:1.2×, iin:1.1×
+         o     0.012  in:1.2×, m:1.2×, y:1.1×
+        qo     0.085  in:1.7×, y:1.4×, dy:0.9×
+         y     0.061  dy:1.6×, ∅:1.2×, y:1.1×
+         l     0.104  ∅:1.5×, y:1.4×, m:1.0×
+        ol     0.099  m:1.5×, y:1.3×, in:1.2×
+         d     0.245  y:1.5×, ∅:1.5×, dy:1.1×
+         q     0.749  ∅:3.0×, l:2.9×, ly:1.8×
+         r     0.273  iin:2.2×, m:2.1×, in:1.9×
+        or     0.439  m:4.0×, iin:2.4×, in:2.0×
+
+==========================================================================================
+TEST 5: ROOT CO-OCCURRENCE — Common ingredient pairs
+==========================================================================================
+
+  In recipe texts, certain ingredients commonly appear together
+  (e.g., honey+vinegar, wormwood+wine). Check if root pairs co-occur
+  more than expected by chance within lines.
+
+  Total lines with parsed roots: 4571
+
+  TOP 20 ROOT PAIRS BY PMI (freq≥5):
+  Root 1        Root 2          Obs      Exp     PMI
+  ────────────  ────────────  ─────  ───────  ──────
+  ked           ted              81     25.8    1.65
+  ked           keed            127     48.0    1.40
+  kch           tch              38     15.3    1.32
+  ked           shed            113     46.8    1.27
+  keed          ted              81     33.7    1.26
+  ched          ked             139     60.3    1.21
+  shed          ted              70     32.9    1.09
+  ched          keed            165     78.7    1.07
+  cheo          keo              78     39.6    0.98
+  ched          ted              83     42.3    0.97
+  keo           sheo             48     25.0    0.94
+  t             tch              30     15.8    0.92
+  k             t                47     25.1    0.91
+  keed          shed            114     61.1    0.90
+  chee          kee              59     33.1    0.83
+  t             to               43     24.3    0.83
+  tch           to               37     21.1    0.81
+  kee           keed            121     69.2    0.81
+  che           kee             112     64.1    0.80
+  ched          shed            132     76.7    0.78
+
+  TOP 20 ROOT PAIRS BY RAW FREQUENCY:
+  Root 1        Root 2         Count  Expected   Ratio
+  ────────────  ────────────  ──────  ────────  ──────
+  a             ka               686     559.9    1.2×
+  ka            o                602     484.6    1.2×
+  a             da               600     607.1    1.0×
+  a             o                585     456.6    1.3×
+  da            ka               572     644.3    0.9×
+  ka            ta               506     371.7    1.4×
+  da            o                477     525.4    0.9×
+  a             ta               444     350.3    1.3×
+  cho           da               391     324.5    1.2×
+  da            ta               373     403.1    0.9×
+  o             ta               350     303.1    1.2×
+  ched          ka               350     242.3    1.4×
+  ched          o                271     197.6    1.4×
+  ka            shed             268     188.2    1.4×
+  a             ched             265     228.3    1.2×
+  ka            keed             249     192.9    1.3×
+  a             kee              240     200.8    1.2×
+  ka            kee              233     213.1    1.1×
+  ched          da               231     262.7    0.9×
+  cho           o                230     244.0    0.9×
+
+==========================================================================================
+TEST 6: LABEL vs TEXT ROOT COMPARISON
+==========================================================================================
+
+  Labels (plant names, diagram markers) should use ingredient-roots
+  more often than operation-roots. If our clustering is correct,
+  labels should be enriched in certain root clusters.
+
+  Label tokens: 251
+  Text tokens: 30186
+
+  ROOTS ENRICHED IN LABELS (≥3 label occurrences):
+  Root           Labels     Text   Enrichment
+  ────────────  ───────  ───────  ───────────
+  fa                  4       33        14.6×
+  ko                 16      481         4.0×
+  to                 13      427         3.7×
+  sa                 11      460         2.9×
+  s                   3      135         2.7×
+  do                  6      272         2.7×
+  ted                 6      349         2.1×
+  kch                 5      310         1.9×
+  d                   6      430         1.7×
+  sh                  3      231         1.6×
+  ta                 17     1370         1.5×
+  keo                 5      436         1.4×
+  tch                 3      266         1.4×
+  cha                 3      297         1.2×
+  k                   4      423         1.1×
+
+  ROOTS DEPLETED IN LABELS (label-avoidant):
+  Root           Labels     Text   Enrichment
+  ────────────  ───────  ───────  ───────────
+  cheo                3      592        0.61×
+  ch                  3      524        0.69×
+  o                  11     1837        0.72×
+  da                 19     2483        0.92×
+  cho                 9     1062        1.02×
+  ka                 22     2575        1.03×
+  a                  21     2327        1.09×
+  k                   4      423        1.14×
+  cha                 3      297        1.21×
+  tch                 3      266        1.36×
+
+==========================================================================================
+TEST 7: PHARMACEUTICAL ROLE ASSIGNMENT — Tentative mapping
+==========================================================================================
+
+  Combine all evidence to assign provisional roles:
+  - Root class (by suffix profile)
+  - Section preference (herbal/pharma/astro/bio/text)
+  - Label enrichment (is it a 'naming' root?)
+  - Co-occurrence partners (what does it appear with?)
+
+  ROOT: ka        freq= 2575  role=POLY-FORM SUBSTANCE (multiple preparations)
+    dominant suffix: iin(29%)  dominant prefix: qo(41%)  section: astro(46%)
+    top partners: a, o, da   label ratio: 1.0×
+
+  ROOT: da        freq= 2483  role=POLY-FORM SUBSTANCE (multiple preparations)
+    dominant suffix: iin(43%)  dominant prefix: ∅(85%)  section: herbal(42%)
+    top partners: a, ka, o   label ratio: 0.9×
+
+  ROOT: a         freq= 2327  role=POLY-FORM SUBSTANCE (multiple preparations)
+    dominant suffix: iin(36%)  dominant prefix: ∅(75%)  section: astro(58%)
+    top partners: ka, da, o   label ratio: 1.1×
+
+  ROOT: o         freq= 1837  role=POLY-FORM SUBSTANCE (multiple preparations)
+    dominant suffix: l(46%)  dominant prefix: ∅(69%)  section: bio(32%)
+    top partners: ka, a, da   label ratio: 0.7×
+
+  ROOT: ta        freq= 1370  role=POLY-FORM SUBSTANCE (multiple preparations)
+    dominant suffix: iin(27%)  dominant prefix: o(51%)  section: astro(55%)
+    top partners: ka, a, da   label ratio: 1.5×
+
+  ROOT: cho       freq= 1062  role=POLY-FORM SUBSTANCE (multiple preparations)
+    dominant suffix: l(43%)  dominant prefix: ∅(85%)  section: herbal(61%)
+    top partners: da, o, a   label ratio: 1.0×
+
+  ROOT: ched      freq=  818  role=PROCESS-WORD (y-dominant → verbal/action)
+    dominant suffix: y(96%)  dominant prefix: ∅(67%)  section: astro(41%)
+    top partners: ka, o, a   label ratio: 0.1×
+
+  ROOT: kee       freq=  731  role=PROCESS-WORD (y-dominant → verbal/action)
+    dominant suffix: y(99%)  dominant prefix: qo(44%)  section: astro(56%)
+    top partners: a, ka, o   label ratio: 0.0×
+
+  ROOT: keed      freq=  648  role=PROCESS-WORD (y-dominant → verbal/action)
+    dominant suffix: y(96%)  dominant prefix: qo(51%)  section: astro(46%)
+    top partners: ka, a, o   label ratio: 0.2×
+
+  ROOT: shed      freq=  613  role=PROCESS-WORD (y-dominant → verbal/action)
+    dominant suffix: y(96%)  dominant prefix: ∅(77%)  section: bio(50%)
+    top partners: ka, o, da   label ratio: 0.2×
+
+  ROOT: cheo      freq=  592  role=POLY-FORM SUBSTANCE (multiple preparations)
+    dominant suffix: l(38%)  dominant prefix: ∅(81%)  section: astro(42%)
+    top partners: da, a, o   label ratio: 0.6×
+
+  ROOT: sho       freq=  571  role=POLY-FORM SUBSTANCE (multiple preparations)
+    dominant suffix: l(35%)  dominant prefix: ∅(90%)  section: herbal(63%)
+    top partners: da, a, cho   label ratio: 0.2×
+
+  ROOT: che       freq=  544  role=PROCESS-WORD (y-dominant → verbal/action)
+    dominant suffix: y(99%)  dominant prefix: ∅(69%)  section: astro(38%)
+    top partners: ka, a, o   label ratio: 0.0×
+
+  ROOT: ked       freq=  543  role=PROCESS-WORD (y-dominant → verbal/action)
+    dominant suffix: y(98%)  dominant prefix: qo(53%)  section: bio(47%)
+    top partners: ka, da, o   label ratio: 0.4×
+
+  ROOT: ch        freq=  524  role=GENERAL-PURPOSE
+    dominant suffix: y(47%)  dominant prefix: ∅(75%)  section: herbal(47%)
+    top partners: da, ka, a   label ratio: 0.7×
+
+  ROOT: ko        freq=  481  role=NAMING-ROOT (label-enriched → plant name?)
+    dominant suffix: l(52%)  dominant prefix: qo(38%)  section: herbal(43%)
+    top partners: da, ka, a   label ratio: 4.0×
+
+  ROOT: sa        freq=  460  role=POLY-FORM SUBSTANCE (multiple preparations)
+    dominant suffix: iin(33%)  dominant prefix: ∅(92%)  section: astro(38%)
+    top partners: a, ka, o   label ratio: 2.9×
+
+  ROOT: keo       freq=  436  role=POLY-FORM SUBSTANCE (multiple preparations)
+    dominant suffix: l(38%)  dominant prefix: o(37%)  section: astro(33%)
+    top partners: da, a, o   label ratio: 1.4×
+
+  ROOT: d         freq=  430  role=PROCESS-WORD (y-dominant → verbal/action)
+    dominant suffix: y(87%)  dominant prefix: ∅(73%)  section: herbal(46%)
+    top partners: da, ka, a   label ratio: 1.7×
+
+  ROOT: to        freq=  427  role=POLY-FORM SUBSTANCE (multiple preparations)
+    dominant suffix: l(46%)  dominant prefix: o(40%)  section: herbal(45%)
+    top partners: da, ka, a   label ratio: 3.7×
+
+══════════════════════════════════════════════════════════════════════════════════════════
+GRAND SUMMARY — FREQUENCY-RANK MAPPING
+══════════════════════════════════════════════════════════════════════════════════════════
+
+  1. ZIPF'S LAW: α=1.68, R²=0.909
+     → Root distribution deviates from Zipf's law
+
+  2. FUNCTIONAL CLASSES: 36 clusters found
+     → 1 MONO-y clusters (process/verb-like roots)
+     → 1 other MONO clusters (fixed-form roots)
+     → 27 POLY clusters (multi-form substance roots)
+
+  3. SECTION SPECIALISTS: 9/30 top roots have section preference
+
+  4. KEY INSIGHT — TWO ROOT TYPES:
+     TYPE A ('substances'): ka, da, a, o, ta, cho, ko, sa, cha, do, to
+       → Multiple suffix forms (iin, r, l, in, m = different preparations)
+       → Appear across all sections
+       → High prefix variety (operations applied to them)
+     TYPE B ('processes'): ched, kee, keed, shed, che, ked, she, ted, chee, kch
+       → Almost exclusively suffix -y (95%+)
+       → Often prefixed with qo- or ∅
+       → These behave like VERBS or ACTIONS
+
+  5. PHARMACEUTICAL INTERPRETATION:
+     prefix (operation) + root (ingredient/action) + suffix (form)
+     Where suffix -y = verb/process form
+           suffix -iin/-in = noun/substance form
+           suffix -l/-r = adjective/modifier form
+
+  Results saved to results/freq_rank_results.json
+
+══════════════════════════════════════════════════════════════════════════════════════════
+FREQUENCY-RANK MAPPING COMPLETE
+══════════════════════════════════════════════════════════════════════════════════════════
