@@ -406,3 +406,9 @@ advance.
 - `sanity_checks/run_all.py`: ALL PASS.
 - Full test vs reference: `astro_label_pipeline` byte-identical (above).
 - Web UI: served 129 tests, default run ok, golden badge "identical".
+
+### Remote rename — COMPLETED (2026-07-16)
+The user renamed the GitHub repository to `vais`; local remote updated via
+`git remote set-url origin https://github.com/Vineyardcode/vais.git` and
+verified (`git ls-remote` returns HEAD e1036c2). Rebrand is now complete
+end-to-end: code, docs, UI, remote, and folder.
