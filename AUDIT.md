@@ -269,3 +269,98 @@ the resubstitution inflation diagnosis); z +11.71 → **+7.01** (honest null
 has wider variance); p unchanged at 0.0000; real LOO accuracy unchanged at
 0.886. 6 diff lines vs golden, all inside the Step-6 block. `baseline/` +
 `golden/` refreshed for this test.
+
+## Phase 3 — verification ledger (final)
+
+Full-suite rerun (current code, PYTHONHASHSEED=0) vs `golden/`:
+- **127 / 129 byte-identical**, including the three audit-fixed tests
+  against their refreshed references (phase56, phase74, phase101).
+- **2** (`phase72`, `phase73`) differ only in printed wall-clock
+  "Elapsed:" lines (verified: zero non-timing diff lines) — documented
+  benign since the previous pass.
+- The mechanical rebrand commit is therefore proven zero-impact on every
+  analysis output.
+
+UI re-exercise: default runs ok with "= golden" badge; custom-param run ok
+with override verified in output and correctly marked not-comparable;
+preset save→load→delete round-trip ok; deliberately invalid input
+(`N_SIM="not_a_number"`) surfaced as `param_error` with the exact message.
+`sanity_checks/run_all.py`: ALL PASS.
+
+## Phase 4 — executive summary
+
+### Findings by severity
+**CRITICAL (wrong results)**
+- **A4** phase74: star annotations silently discarded by three defects in
+  the paragraph state machine (incl. a never-assigned function attribute);
+  test 7a was a degenerate all-NONE bucket. Fixed; now agrees exactly with
+  phase71 (DARK n=14). *(original-author bug)*
+- **A5** phase56: JSD distance matrix NaN-poisoned by one-sided numpy
+  masking (`0 × -inf`); the "most similar character pairs" ranking printed
+  all-nan. Fixed with per-distribution masks. *(original-author bug)*
+
+**MAJOR**
+- **A6** phase101: classifier permutation null used resubstitution while
+  the real metric used LOO — inconsistent protocols (conservative bias).
+  Fixed; corrected null lands at the theoretical chance level (0.505),
+  z +11.71→+7.01, p unchanged 0.0000. Also: docstring/comment claimed
+  "logistic regression" for a nearest-centroid classifier — labels fixed.
+  *(original-author bug)*
+- **A2** webui registry DEPENDS wrong in both directions (f66r_analysis's
+  two real dependencies missing; phase86R missing; hebrew_deep_analysis
+  edge false). Fixed. *(previous-pass error)*
+- **A1** phase96: five hardcoded absolute paths survived the previous
+  pass's fix, and CHANGES.md claimed the job complete. Fixed; byte-
+  identical verified. *(previous-pass error — found before the folder
+  rename could break it)*
+
+**MINOR (hygiene)**
+- **A3** dead `progress_cb` parameter removed; `extract_words`/
+  `extract_words_from_line` byte-identical twins documented `[REVIEW]`
+  (left as-is: 15+ import sites, zero behavior gain);
+  `mean_word_length` numpy-absence crash noted (numpy is a hard dep
+  everywhere); JSD "distance vs divergence" docstring mislabels in
+  currier_ab/shorthand documented `[REVIEW]` (values intentionally not
+  changed); f66r bare-except fallbacks documented `[REVIEW]`;
+  diff tools count each changed line twice (both sides of the unified
+  diff) — consistent across tools, labeled loosely, left alone.
+
+### Areas verified clean (explicitly)
+- All shared math in `scripts/common` hand-verified (permanent
+  `sanity_checks/` suite): entropy/MI/conditional-entropy/IC/Zipf/TTR/
+  hapax + EVA tokenization boundaries + chunk grammar + taxonomies +
+  webui coercion/splicing/golden-diff.
+- All 26 numpy log-domain sites (only phase56 was defective).
+- Loader-family cross-consistency via corpus-size tabulation (6 families,
+  each internally exact).
+- `heaps_exponent` (8 variants), `compute_fingerprint` (10),
+  `cramers_v`, JSD family (10) — formula-audited; era differences are
+  documented intent.
+- Previous pass's fixes re-verified (grammar loop, phase86 paths,
+  results-JSON population); attic completeness; no import shadowing; no
+  duplicate defs; UI parity spot checks; `--only` rerun semantics.
+
+### Rebrand status
+Code/docs/config rebrand complete and proven zero-impact (127/129
+byte-identical, 2 timing-only). Remaining old-name occurrences are
+exactly three history-preserving files (CHANGES.md quotes, Phase-1
+reading notes, this file's sweep table) — intentional. Remote rename
+requires the GitHub UI (no `gh` CLI on this machine); exact steps are in
+the Phase-0.5 section above. The folder rename happens after this commit
+(Phase 5), with the 51/45 golden/baseline path-print rewrites logged in
+advance.
+
+### Least confident about (honest note)
+- The ~110 analysis scripts' *inline* statistics beyond the shared
+  helpers and the systematic hunts (masked logs, JSD/Heaps/fingerprint
+  families, permutation protocols) were audited by targeted extraction,
+  not line-by-line re-derivation of every formula; a subtle inline error
+  in an individual phase's bespoke metric could still hide there. The
+  cross-consistency and golden-stability nets reduce but don't eliminate
+  this risk.
+- Bare-except fallbacks (f66r especially) mask corrupt-input scenarios by
+  design; if inputs are ever half-written, results degrade silently.
+- The Currier-language folio table in `common.get_currier_language` is
+  the original scripts' convention; phase101's own docstring notes the
+  hardcoded A/B function was historically ~42% wrong vs $L= tags. Tests
+  that still use the hardcoded table inherit that caveat.

@@ -2,9 +2,9 @@
 PHASE 106b — BENCH SUBSTITUTION VARIANT SCAN
 ================================================================================
 Total f1r tokens: 215
-ch variants: ['cr', 'ct', 'er', 'ee', 'cc']
+ch variants: ['cr', 'ct', 'er']
 sh variants: ['se', 'sr', 'sc', 'ce', 'ss']
-Total combinations: 25
+Total combinations: 15
 
 ────────────────────────────────────────────────────────────────────────────────
 RANKING BY LATIN PHARMACEUTICAL WORD HITS (≥3 chars)
@@ -21,17 +21,6 @@ RANKING BY LATIN PHARMACEUTICAL WORD HITS (≥3 chars)
     shar                 → ssarum                    (matched: arum)
     ... and 31 more
 
-  ch→ee, sh→ss: 38 hits
-    fachys               → faraeeyer                 (matched: far)
-    ar                   → arum                      (matched: arum)
-    shol                 → ssol                      (matched: sol)
-    cthres               → ctereer                   (matched: ter)
-    kor                  → Iorum                     (matched: orum)
-    sholdy               → ssoldus                   (matched: sol)
-    ckhar                → ckarum                    (matched: arum)
-    or                   → orum                      (matched: orum)
-    ... and 30 more
-
   ch→cr, sh→ss: 37 hits
     fachys               → faracryer                 (matched: far)
     ar                   → arum                      (matched: arum)
@@ -45,17 +34,6 @@ RANKING BY LATIN PHARMACEUTICAL WORD HITS (≥3 chars)
 
   ch→ct, sh→ss: 37 hits
     fachys               → faractyer                 (matched: far)
-    ar                   → arum                      (matched: arum)
-    shol                 → ssol                      (matched: sol)
-    kor                  → Iorum                     (matched: orum)
-    sholdy               → ssoldus                   (matched: sol)
-    ckhar                → ckarum                    (matched: arum)
-    or                   → orum                      (matched: orum)
-    shar                 → ssarum                    (matched: arum)
-    ... and 29 more
-
-  ch→cc, sh→ss: 37 hits
-    fachys               → faraccyer                 (matched: far)
     ar                   → arum                      (matched: arum)
     shol                 → ssol                      (matched: sol)
     kor                  → Iorum                     (matched: orum)
@@ -109,16 +87,38 @@ RANKING BY LATIN PHARMACEUTICAL WORD HITS (≥3 chars)
     cthar                → ctrarum                   (matched: arum)
     ... and 27 more
 
-  ch→ee, sh→sc: 35 hits
-    fachys               → faraeeyer                 (matched: far)
+  ch→cr, sh→sc: 34 hits
+    fachys               → faracryer                 (matched: far)
     ar                   → arum                      (matched: arum)
     shory                → scorus                    (matched: cor)
-    cthres               → ctereer                   (matched: ter)
     kor                  → Iorum                     (matched: orum)
     ckhar                → ckarum                    (matched: arum)
     or                   → orum                      (matched: orum)
     shar                 → scarum                    (matched: arum)
-    ... and 27 more
+    cthar                → ctrarum                   (matched: arum)
+    ... and 26 more
+
+  ch→ct, sh→sc: 34 hits
+    fachys               → faractyer                 (matched: far)
+    ar                   → arum                      (matched: arum)
+    shory                → scorus                    (matched: cor)
+    kor                  → Iorum                     (matched: orum)
+    ckhar                → ckarum                    (matched: arum)
+    or                   → orum                      (matched: orum)
+    shar                 → scarum                    (matched: arum)
+    cthar                → cttarum                   (matched: arum)
+    ... and 26 more
+
+  ch→cr, sh→se: 33 hits
+    fachys               → faracryer                 (matched: far)
+    ar                   → arum                      (matched: arum)
+    kor                  → Iorum                     (matched: orum)
+    ckhar                → ckarum                    (matched: arum)
+    or                   → orum                      (matched: orum)
+    shar                 → searum                    (matched: arum)
+    cthar                → ctrarum                   (matched: arum)
+    cthar                → ctrarum                   (matched: arum)
+    ... and 25 more
 
 ────────────────────────────────────────────────────────────────────────────────
 BEST COMBINATION: ch→er, sh→ss (39 hits)
@@ -287,10 +287,8 @@ FIRST LINE WORD-BY-WORD — ALL 25 BENCH VARIANTS
 ────────────────────────────────────────────────────────────────────────────────
 
   EVA: fachys
-       → faraccyer
        → faracryer
        → faractyer
-       → faraeeyer
        → faraeryer
 
   EVA: ykal
@@ -317,8 +315,6 @@ FIRST LINE WORD-BY-WORD — ALL 25 BENCH VARIANTS
        → ssorus
 
   EVA: cthres
-       → ctcreer
-       → ctereer
        → ctrreer
        → cttreer
 

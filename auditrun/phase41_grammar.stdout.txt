@@ -1,0 +1,192 @@
+Loading lines...
+  4508 lines, 35747 word tokens
+
+======================================================================
+41a: INTERACTION TEST
+    Is syntax more than independent prefix + suffix channels?
+    If MI(class→class) > MI(pfx→pfx) + MI(sfx→sfx),
+    there are genuine word classes (prefix×suffix combinations)
+    that matter beyond their individual components.
+======================================================================
+
+  Measure                                   MI (bits)
+  --------------------------------------------------
+  MI(pfx_i → pfx_j) same feature               0.0472
+  MI(sfx_i → sfx_j) same feature               0.0665
+  MI(pfx_i → sfx_j) cross-feature              0.0190
+  MI(sfx_i → pfx_j) cross-feature              0.1211
+  MI(class_i → class_j) combined               0.4436
+  Sum: MI(pfx) + MI(sfx)                       0.1137
+  MI(pfx, sfx) within-word                     0.1990
+
+  Interaction: MI(class) - MI(pfx) - MI(sfx) = 0.3299 bits
+  Interaction as % of total class MI: 74.4%
+
+  Permutation test for cross-feature MI:
+  MI(pfx_i→sfx_j): obs=0.0190, null=0.0112±0.0009, z=8.7
+  MI(sfx_i→pfx_j): obs=0.1211, null=0.0112±0.0009, z=116.7
+  → Cross-feature syntax EXISTS: prefixes predict following suffixes (or vice versa)
+    This means there are genuine WORD CLASSES, not just independent affix channels
+
+======================================================================
+41b: TRIGRAM TEST — Does 3-word structure exist beyond bigrams?
+    MI(pfx_i; pfx_{i+2} | pfx_{i+1}): does knowing the first word's
+    prefix help predict the third, BEYOND what the middle tells you?
+======================================================================
+
+  Measure                                      Prefix     Suffix
+  ------------------------------------------------------------
+  MI(word_i; word_{i+1})                       0.0464     0.0745
+  MI(word_i; word_{i+2})                       0.0230     0.0271
+  MI(word_i; word_{i+2} | word_{i+1})          0.0594     0.0534
+
+  Permutation test (shuffle within lines):
+  MI(pfx_i;pfx_{i+2}|pfx_{i+1}): obs=0.0594, null=0.0532±0.0018, z=3.4
+  MI(sfx_i;sfx_{i+2}|sfx_{i+1}): obs=0.0534, null=0.0472±0.0017, z=3.7
+  → TRIGRAM SYNTAX EXISTS — 3-word dependencies beyond pairwise
+
+======================================================================
+41c: CROSS-LINE SYNTAX
+    Do lines chain together, or is each an independent utterance?
+======================================================================
+
+  Cross-line pairs: 4449
+  MI(pfx last→first): obs=0.0316, null=0.0242±0.0029, z=2.6
+  MI(sfx last→first): obs=0.0284, null=0.0178±0.0024, z=4.5
+
+  For comparison:
+    Within-line MI(pfx): 0.0472
+    Cross-line MI(pfx):  0.0316 (67% of within-line)
+    Within-line MI(sfx): 0.0665
+    Cross-line MI(sfx):  0.0284 (43% of within-line)
+
+  Per-section cross-line MI:
+    bio          n=  692 MI(pfx)=0.1453 MI(sfx)=0.1083
+    cosmo        n=  121 MI(pfx)=0.4689 MI(sfx)=0.4595
+    herbal-A     n= 1481 MI(pfx)=0.0553 MI(sfx)=0.0556
+    pharma       n=  163 MI(pfx)=0.3739 MI(sfx)=0.4327
+    text         n= 1946 MI(pfx)=0.0507 MI(sfx)=0.0631
+    unknown      n=   46 MI(pfx)=0.5817 MI(sfx)=0.9192
+
+======================================================================
+41d: sh→qo DECOMPOSITION
+    How much prefix MI depends on the sh→qo transition?
+    If we remove all sh→qo pairs, what fraction of MI remains?
+======================================================================
+
+  Total MI(pfx→pfx) = 0.0472 bits
+
+  Top 15 contributions (positive = attraction, negative = avoidance):
+  Transition           MI contrib % of total   Count
+  -----------------------------------------------
+  sh→qo                0.0283      60.1%     893
+  X→X                 0.0197      41.7%    1073
+  o→o                 0.0120      25.5%    2102
+  qo→qo                0.0115      24.4%     960
+  qo→X                -0.0107     -22.7%     472
+  X→qo               -0.0104     -22.1%     386
+  o→qo               -0.0090     -19.1%     916
+  sh→ch               -0.0071     -15.0%     327
+  ch→sh               -0.0059     -12.5%     300
+  X→o                 0.0051      10.8%    1239
+  y→y                 0.0051      10.7%     167
+  qo→ch                0.0050      10.7%     964
+  ch→d                 0.0050      10.7%     502
+  d→d                 0.0044       9.3%     270
+  sh→X                -0.0043      -9.2%     361
+                       Cumulative     103.2%
+
+  sh→qo specifically: 0.0283 bits = 60.1% of total prefix MI
+
+  MI excluding all sh/qo words: 0.0279 (was 0.0472)
+  z-score without sh/qo: 7.8 (null=0.0170±0.0014)
+  → Prefix syntax SURVIVES removal of sh and qo
+
+======================================================================
+41e: SUFFIX ORDERING GRAMMAR
+    Mapping suffix→suffix transitions for DIFFERENT-suffix pairs.
+    What are the 'grammatical rules' of suffix sequencing?
+======================================================================
+
+  Different-suffix pairs: 24383
+  Total MI: 0.2633 bits
+
+  TOP ATTRACTIONS (positive MI contributions):
+  Transition           MI contrib   Count  Obs/Exp
+  -----------------------------------------------
+  X→iin               0.0322     508     2.92
+  dy→y                 0.0233    1134     1.41
+  X→y                 0.0231    1295     1.35
+  y→X                 0.0212    1339     1.31
+  y→dy                0.0177    1030     1.34
+  ar→X                 0.0137     560     1.51
+  y→aiin              0.0120     636     1.37
+  aiin→X                 0.0094     658     1.27
+  y→ain               0.0084     337     1.52
+  dy→ar                0.0079     381     1.42
+  y→ol                0.0079     477     1.32
+  X→dy                0.0077     842     1.17
+
+  TOP AVOIDANCES (negative MI contributions):
+  y→iin              -0.0037     101     0.54
+  dy→iin              -0.0031      41     0.28
+  or→dy               -0.0030     132     0.68
+  X→al               -0.0030     200     0.78
+  ar→aiin             -0.0026     114     0.68
+  ar→ol               -0.0025      75     0.58
+  aiin→iin              -0.0019      24     0.26
+  ol→al               -0.0019      73     0.64
+  ain→aiin             -0.0018      71     0.65
+  ol→ain              -0.0017      51     0.56
+  ain→ol               -0.0016      50     0.58
+  or→al               -0.0013      39     0.56
+
+  DIRECTIONALITY: Is suffix ordering symmetric or directional?
+  Pair          A→B cnt  B→A cnt  A→B ratio  B→A ratio Symmetric?
+  ----------------------------------------------------------
+  X/iin            508      236       2.92       1.23       ASYM
+  dy/y             1134     1030       1.41       1.34       ~SYM
+  X/y             1295     1339       1.35       1.31       ~SYM
+  ar/X              560      322       1.51       1.01       ASYM
+  y/aiin           636      617       1.37       1.20       ~SYM
+  aiin/X              658      467       1.27       1.08       ~SYM
+  y/ain            337      349       1.52       1.44       ~SYM
+  dy/ar             381      347       1.42       1.25       ~SYM
+  y/ol             477      496       1.32       1.18       ~SYM
+  X/dy             842      811       1.17       1.01       ~SYM
+  or/X              366      252       1.42       1.32       ~SYM
+  al/dy             303      303       1.51       1.40       ~SYM
+  X/ol             429      469       1.27       1.11       ~SYM
+  dy/aiin           450      422       1.24       1.09       ~SYM
+  y/al             360      246       1.31       0.92       ASYM
+
+======================================================================
+PHASE 41 SYNTHESIS: The Grammar of Voynichese
+======================================================================
+
+  41a: PREFIX×SUFFIX INTERACTION
+    MI(class→class) = 0.4436
+    MI(pfx) + MI(sfx) = 0.1137
+    Interaction (excess) = 0.3299 (74.4% of class MI)
+    Cross-feature: pfx_i→sfx_j z=8.7, sfx_i→pfx_j z=116.7
+    → WORD CLASSES EXIST — prefix and suffix channels interact
+
+  41b: TRIGRAM SYNTAX
+    MI(word_i; word_{i+2} | word_{i+1}): pfx z=3.4, sfx z=3.7
+    → 3-WORD DEPENDENCIES EXIST beyond bigrams
+
+  41c: CROSS-LINE CONTINUITY
+    Cross-line MI: pfx z=2.6, sfx z=4.5
+    Cross-line = 67% of within-line (pfx), 43% (sfx)
+    → Lines are CONNECTED — text-level coherence
+
+  41d: sh→qo DEPENDENCY
+    sh→qo = 60.1% of total prefix MI
+    Without ALL sh/qo words: z=7.8
+    → Prefix syntax survives without sh/qo
+
+  41e: SUFFIX ORDERING
+    Rich structure in suffix transitions — see tables above.
+    Cross-suffix MI for different-suffix pairs: 0.2633 bits
+
+[Phase 41 Complete]

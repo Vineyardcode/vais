@@ -232,16 +232,6 @@
    "phase74_paragraph_framing.txt"
   ]
  },
- "phase101_currier_ab_dichotomy": {
-  "status": "ok",
-  "returncode": 0,
-  "duration_s": 454.41,
-  "stdout_bytes": 14909,
-  "results_files_touched": [
-   "phase101_currier_ab_dichotomy.json",
-   "phase101_currier_ab_dichotomy.txt"
-  ]
- },
  "phase102_historical_validation": {
   "status": "ok",
   "returncode": 0,
@@ -499,6 +489,668 @@
   "results_files_touched": [
    "phase101_currier_ab_dichotomy.json",
    "phase101_currier_ab_dichotomy.txt"
+  ]
+ },
+ "phase39_syntax": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 192.6,
+  "stdout_bytes": 6141,
+  "results_files_touched": []
+ },
+ "phase40_supplement": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 103.03,
+  "stdout_bytes": 4841,
+  "results_files_touched": []
+ },
+ "phase40_syntax_attack": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 75.98,
+  "stdout_bytes": 5097,
+  "results_files_touched": []
+ },
+ "phase41_grammar": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 43.22,
+  "stdout_bytes": 8796,
+  "results_files_touched": []
+ },
+ "phase42_class_system": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 32.82,
+  "stdout_bytes": 6759,
+  "results_files_touched": []
+ },
+ "phase43_attack_classes": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 93.22,
+  "stdout_bytes": 10667,
+  "results_files_touched": []
+ },
+ "phase44_word_classes": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 1.36,
+  "stdout_bytes": 8101,
+  "results_files_touched": []
+ },
+ "phase45_word_predictability": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.65,
+  "stdout_bytes": 9097,
+  "results_files_touched": []
+ },
+ "phase46_mi_anatomy": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 297.48,
+  "stdout_bytes": 7043,
+  "results_files_touched": []
+ },
+ "phase47_word_network": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 8.74,
+  "stdout_bytes": 12373,
+  "results_files_touched": []
+ },
+ "phase48_cross_validation": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 33.09,
+  "stdout_bytes": 12575,
+  "results_files_touched": []
+ },
+ "phase49_generalization": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 24.99,
+  "stdout_bytes": 5766,
+  "results_files_touched": []
+ },
+ "phase50_synthesis": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 12.23,
+  "stdout_bytes": 9685,
+  "results_files_touched": []
+ },
+ "phase51_attack_synthesis": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 62.23,
+  "stdout_bytes": 5451,
+  "results_files_touched": []
+ },
+ "phase52_discriminators": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 11.87,
+  "stdout_bytes": 7256,
+  "results_files_touched": []
+ },
+ "phase53_cipher_tests": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 36.66,
+  "stdout_bytes": 6168,
+  "results_files_touched": []
+ },
+ "phase54_natlang_vs_cipher": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 52.19,
+  "stdout_bytes": 5290,
+  "results_files_touched": []
+ },
+ "phase55_vc_separation": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 14.88,
+  "stdout_bytes": 8720,
+  "results_files_touched": []
+ },
+ "phase57_bax_test": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 16.16,
+  "stdout_bytes": 9269,
+  "results_files_touched": []
+ },
+ "phase58_cross_script": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 3.29,
+  "stdout_bytes": 10206,
+  "results_files_touched": [
+   "phase58_output.json"
+  ]
+ },
+ "phase59_forward_model": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 4.38,
+  "stdout_bytes": 6781,
+  "results_files_touched": [
+   "phase59_output.json"
+  ]
+ },
+ "phase60_positional_verbose": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 132.26,
+  "stdout_bytes": 8758,
+  "results_files_touched": [
+   "phase60_output.json"
+  ]
+ },
+ "phase61_word_shape_validation": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 1.72,
+  "stdout_bytes": 8941,
+  "results_files_touched": [
+   "phase61_output.json"
+  ]
+ },
+ "phase62_word_anatomy": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 257.9,
+  "stdout_bytes": 11383,
+  "results_files_touched": [
+   "phase62_output.json",
+   "phase62_output.txt"
+  ]
+ },
+ "phase63_codicological_coherence": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 6.15,
+  "stdout_bytes": 10158,
+  "results_files_touched": [
+   "phase63_output.json",
+   "phase63_output.txt"
+  ]
+ },
+ "phase64_encoding_tournament": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 3.55,
+  "stdout_bytes": 8837,
+  "results_files_touched": [
+   "phase64_output.json",
+   "phase64_output.txt"
+  ]
+ },
+ "phase65_reverse_engineer_script": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 29.55,
+  "stdout_bytes": 12910,
+  "results_files_touched": [
+   "phase65_output.json",
+   "phase65_output.txt"
+  ]
+ },
+ "phase66_glyph_resegmentation": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 1.8,
+  "stdout_bytes": 13586,
+  "results_files_touched": [
+   "phase66_output.json",
+   "phase66_output.txt"
+  ]
+ },
+ "phase67_run_length_morphology": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 2.62,
+  "stdout_bytes": 14930,
+  "results_files_touched": [
+   "phase67_output.json",
+   "phase67_output.txt"
+  ]
+ },
+ "phase68_run_conditioned_transitions": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 1.51,
+  "stdout_bytes": 19205,
+  "results_files_touched": [
+   "phase68_output.json",
+   "phase68_output.txt"
+  ]
+ },
+ "phase71_paragraph_initials": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.7,
+  "stdout_bytes": 29902,
+  "results_files_touched": [
+   "phase71_paragraph_initials.txt"
+  ]
+ },
+ "phase72_naibbe_calibration": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 401.13,
+  "stdout_bytes": 20584,
+  "results_files_touched": [
+   "phase72_naibbe_calibration.txt",
+   "phase72_naibbe_raw.json"
+  ]
+ },
+ "phase73_abbreviation_model": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 219.6,
+  "stdout_bytes": 15246,
+  "results_files_touched": [
+   "phase73_abbreviation_model.txt",
+   "phase73_abbreviation_raw.json"
+  ]
+ },
+ "phase75_latin_mapping": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 182.56,
+  "stdout_bytes": 20005,
+  "results_files_touched": [
+   "phase75_latin_mapping.json",
+   "phase75_latin_mapping.txt"
+  ]
+ },
+ "phase76_vernacular_mapping": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.93,
+  "stdout_bytes": 19146,
+  "results_files_touched": [
+   "phase76_vernacular_mapping.json",
+   "phase76_vernacular_mapping.txt"
+  ]
+ },
+ "phase77_gallows_ecology": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.97,
+  "stdout_bytes": 15760,
+  "results_files_touched": [
+   "phase77_gallows_ecology.txt"
+  ]
+ },
+ "phase77b_line_position_gallows": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.56,
+  "stdout_bytes": 11712,
+  "results_files_touched": [
+   "phase77b_line_position_gallows.txt"
+  ]
+ },
+ "phase78_allograph_test": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 2.4,
+  "stdout_bytes": 13583,
+  "results_files_touched": [
+   "phase78_allograph_test.txt"
+  ]
+ },
+ "phase79_gallows_collapse": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 1.83,
+  "stdout_bytes": 7424,
+  "results_files_touched": [
+   "phase79_gallows_collapse.txt"
+  ]
+ },
+ "phase80_abjad_hypothesis": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 2.32,
+  "stdout_bytes": 11543,
+  "results_files_touched": [
+   "phase80_abjad_hypothesis.txt"
+  ]
+ },
+ "phase81_german_genre_fingerprint": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 163.91,
+  "stdout_bytes": 13394,
+  "results_files_touched": [
+   "phase81_german_genre_fingerprint.txt"
+  ]
+ },
+ "phase82_charm_fingerprint": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 3.0,
+  "stdout_bytes": 13558,
+  "results_files_touched": [
+   "phase82_charm_fingerprint.txt"
+  ]
+ },
+ "phase82_line1_body_separation": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 133.31,
+  "stdout_bytes": 14416,
+  "results_files_touched": [
+   "phase82_line1_body_separation.txt"
+  ]
+ },
+ "phase83_encoding_layer_sweep": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 22.83,
+  "stdout_bytes": 16231,
+  "results_files_touched": [
+   "phase83_encoding_sweep.txt"
+  ]
+ },
+ "phase83_subword_segmentation": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 27.49,
+  "stdout_bytes": 19821,
+  "results_files_touched": [
+   "phase83_subword_segmentation.txt"
+  ]
+ },
+ "phase84_mi_meaning_area": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 55.54,
+  "stdout_bytes": 17587,
+  "results_files_touched": [
+   "phase84_mi_meaning_area.json",
+   "phase84_mi_meaning_area.txt"
+  ]
+ },
+ "phase85_chunk_fingerprint": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 43.66,
+  "stdout_bytes": 13167,
+  "results_files_touched": [
+   "phase85_chunk_fingerprint.json",
+   "phase85_chunk_fingerprint.txt"
+  ]
+ },
+ "phase85_pelling_verbose_cipher": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 21.58,
+  "stdout_bytes": 14511,
+  "results_files_touched": [
+   "phase85_pelling_verbose.txt"
+  ]
+ },
+ "phase85R_revalidation": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 4.13,
+  "stdout_bytes": 9594,
+  "results_files_touched": [
+   "phase85R_revalidation.json",
+   "phase85R_revalidation.txt"
+  ]
+ },
+ "phase86_chunk_equivalence": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 47.66,
+  "stdout_bytes": 13380,
+  "results_files_touched": [
+   "phase86_chunk_equivalence.json",
+   "phase86_chunk_equivalence.txt"
+  ]
+ },
+ "phase86R_revalidation": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 35.65,
+  "stdout_bytes": 9574,
+  "results_files_touched": [
+   "phase86R_revalidation.json",
+   "phase86R_revalidation.txt"
+  ]
+ },
+ "phase87_gallows_null_test": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 2.53,
+  "stdout_bytes": 12497,
+  "results_files_touched": [
+   "phase87_gallows_null_test.txt"
+  ]
+ },
+ "phase87_spectral_vc": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 4.16,
+  "stdout_bytes": 13399,
+  "results_files_touched": [
+   "phase87_spectral_vc.json",
+   "phase87_spectral_vc.txt"
+  ]
+ },
+ "phase87R_revalidation": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 1.61,
+  "stdout_bytes": 10963,
+  "results_files_touched": [
+   "phase87R_revalidation.json",
+   "phase87R_revalidation.txt"
+  ]
+ },
+ "phase88_position_identity": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 6.08,
+  "stdout_bytes": 20301,
+  "results_files_touched": [
+   "phase88_position_identity.json",
+   "phase88_position_identity.txt"
+  ]
+ },
+ "phase89_context_divergence": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 4.07,
+  "stdout_bytes": 25991,
+  "results_files_touched": [
+   "phase89_context_divergence.json",
+   "phase89_context_divergence.txt"
+  ]
+ },
+ "phase90_crossword_chunk_mi": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 12.63,
+  "stdout_bytes": 12914,
+  "results_files_touched": [
+   "phase90_crossword_chunk_mi.json",
+   "phase90_crossword_chunk_mi.txt"
+  ]
+ },
+ "phase91_zodiac_galenic_axis": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 1.45,
+  "stdout_bytes": 13621,
+  "results_files_touched": [
+   "phase91_zodiac_galenic.json",
+   "phase91_zodiac_galenic.txt"
+  ]
+ },
+ "phase92_ae_minimal_pairs": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 1.06,
+  "stdout_bytes": 12737,
+  "results_files_touched": [
+   "phase92_ae_minimal_pairs.json",
+   "phase92_ae_minimal_pairs.txt"
+  ]
+ },
+ "phase93_currier_slot2_regime": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 3.34,
+  "stdout_bytes": 11351,
+  "results_files_touched": [
+   "phase93_currier_slot2.json",
+   "phase93_currier_slot2.txt"
+  ]
+ },
+ "phase94_e_extension_morphology": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.93,
+  "stdout_bytes": 8984,
+  "results_files_touched": [
+   "phase94_e_extension.json",
+   "phase94_e_extension.txt"
+  ]
+ },
+ "phase95_currier_split_fingerprint": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 28.06,
+  "stdout_bytes": 9287,
+  "results_files_touched": [
+   "phase95_currier_split_fingerprint.txt"
+  ]
+ },
+ "phase97_slot_grammar_hchar": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 51.91,
+  "stdout_bytes": 8192,
+  "results_files_touched": [
+   "phase97_slot_grammar_hchar.json"
+  ]
+ },
+ "phase98_generative_chunk_model": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 37.64,
+  "stdout_bytes": 9090,
+  "results_files_touched": [
+   "phase98_generative_chunk_model.json",
+   "phase98_generative_chunk_model.txt"
+  ]
+ },
+ "phase99_script_typology": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 9.36,
+  "stdout_bytes": 13231,
+  "results_files_touched": [
+   "phase99_script_typology.json",
+   "phase99_script_typology.txt"
+  ]
+ },
+ "ring_decan_mapping": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.42,
+  "stdout_bytes": 24757,
+  "results_files_touched": [
+   "ring_decan_results.json"
+  ]
+ },
+ "ring_text_analysis": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.41,
+  "stdout_bytes": 19952,
+  "results_files_touched": [
+   "ring_text_results.json"
+  ]
+ },
+ "root_lexicon_rosetta": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.88,
+  "stdout_bytes": 26212,
+  "results_files_touched": [
+   "root_lexicon_results.json"
+  ]
+ },
+ "rtl_direction_test": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 1.09,
+  "stdout_bytes": 10289,
+  "results_files_touched": []
+ },
+ "sentence_translation": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.43,
+  "stdout_bytes": 123162,
+  "results_files_touched": [
+   "phase17_sentence_translation.json"
+  ]
+ },
+ "shorthand_analysis": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 1.03,
+  "stdout_bytes": 18438,
+  "results_files_touched": [
+   "shorthand_results.json"
+  ]
+ },
+ "slot_analysis": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 1.03,
+  "stdout_bytes": 17073,
+  "results_files_touched": [
+   "slot_analysis_results.json"
+  ]
+ },
+ "phase101_currier_ab_dichotomy": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 448.54,
+  "stdout_bytes": 14907,
+  "results_files_touched": [
+   "phase101_currier_ab_dichotomy.json",
+   "phase101_currier_ab_dichotomy.txt"
+  ]
+ },
+ "phase56_syllabary_test": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 260.21,
+  "stdout_bytes": 7685,
+  "results_files_touched": []
+ },
+ "phase74_paragraph_framing": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.95,
+  "stdout_bytes": 24623,
+  "results_files_touched": [
+   "phase74_paragraph_framing.json",
+   "phase74_paragraph_framing.txt"
   ]
  }
 }

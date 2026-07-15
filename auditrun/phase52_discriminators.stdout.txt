@@ -1,0 +1,176 @@
+Loading corpus...
+  35747 tokens, 3319 types, 4508 lines
+
+=================================================================
+52a: CHARACTER MODEL vs. LEXICON
+=================================================================
+  Alphabet: 22 characters: abcdeghijlmnoqrsuvwxyz
+  Generating all bigram-possible words (len 2-7)...
+  Generated 500012 possible words
+  Observed types (len 2-7): 2927
+  Of these, bigram-possible: 1 (0.0%)
+  Unobserved but bigram-possible: 499996
+
+  Log-probability statistics:
+    Observed:   mean=-16.11, median=-15.79, min=-45.40, max=-4.22
+    Unobserved: mean=-45.79, median=-45.75, min=-74.50, max=-18.91
+    Top 100 most probable: 16 observed (16.0%)
+    Top 500 most probable: 16 observed (3.2%)
+    Top 1000 most probable: 16 observed (1.6%)
+    Top 3000 most probable: 16 observed (0.5%)
+    Top 5000 most probable: 16 observed (0.3%)
+
+  Correlation(char_bigram_logprob, log_freq) = 0.613
+  (Positive = high-prob words are high-freq = generative model)
+  (Near zero = word freq independent of char model = codebook)
+
+  Lexicon selectivity: 0.0000 (0.00%)
+  (Low selectivity = many possible words unused = constrained/codebook)
+  (High selectivity = most possible words used = generative)
+
+=================================================================
+52b: WORD BURSTINESS
+=================================================================
+  Testing 100 words with freq >= 20
+
+  Burstiness B: (σ-μ)/(σ+μ)
+  B > 0: bursty (natural language)
+  B ≈ 0: Poisson (random/codebook)
+  B < 0: regular (mechanical)
+
+  Overall: mean B = 0.246, median B = 0.221
+  Range: [0.065, 0.564]
+  Bursty (B>0.1): 93/100 (93%)
+  Poisson-like (|B|<0.1): 7/100 (7%)
+  Regular (B<-0.1): 0/100 (0%)
+
+  Top 10 most bursty words:
+    qoedy            freq=  925  B=+0.564  μ_gap=36.7
+    qoain            freq=  353  B=+0.496  μ_gap=96.3
+    qol              freq=  156  B=+0.484  μ_gap=217.4
+    oedy             freq=  641  B=+0.482  μ_gap=53.2
+    lchedy           freq=  122  B=+0.478  μ_gap=276.4
+    shedy            freq=  552  B=+0.474  μ_gap=61.8
+    oeo              freq=   70  B=+0.472  μ_gap=508.4
+    chedy            freq=  627  B=+0.433  μ_gap=54.2
+    chor             freq=  217  B=+0.433  μ_gap=165.2
+    chody            freq=  110  B=+0.423  μ_gap=318.4
+
+  Top 10 least bursty (most regular/Poisson):
+    r                freq=  158  B=+0.124  μ_gap=224.8
+    chey             freq=  893  B=+0.116  μ_gap=39.9
+    sar              freq=   76  B=+0.102  μ_gap=457.9
+    chear            freq=   77  B=+0.099  μ_gap=460.3
+    sheol            freq=  136  B=+0.096  μ_gap=262.7
+    ches             freq=   80  B=+0.092  μ_gap=447.2
+    oor              freq=  113  B=+0.091  μ_gap=317.6
+    chy              freq=  411  B=+0.087  μ_gap=85.2
+    saiin            freq=  124  B=+0.069  μ_gap=283.1
+    chal             freq=   72  B=+0.065  μ_gap=492.6
+
+  Poisson null comparison:
+  Poisson null: mean B = -0.005, median = -0.005
+  VMS actual:   mean B = 0.246
+  Difference:   +0.251
+
+=================================================================
+52c: WITHIN-LINE SURPRISAL CURVE
+=================================================================
+  Unigram surprisal by word position (lines >= 5 words):
+   Pos     Mean     Std       N
+     1    9.191   3.020    3625
+     2    8.095   2.662    3625
+     3    8.096   2.650    3625
+     4    8.111   2.649    3625
+     5    8.289   2.752    3625
+     6    8.295   2.755    3185
+     7    8.349   2.856    2768
+     8    8.404   2.884    2375
+     9    8.456   2.803    1945
+    10    8.630   2.905    1412
+    11    8.861   3.033     929
+    12    9.042   2.940     531
+
+  Bigram surprisal by word position:
+   Pos     Mean     Std       N
+     2    4.650   2.478    3625
+     3    5.349   2.272    3625
+     4    5.366   2.251    3625
+     5    5.431   2.316    3625
+     6    5.373   2.329    3185
+     7    5.409   2.321    2768
+     8    5.326   2.381    2375
+     9    5.450   2.378    1945
+    10    5.605   2.239    1412
+    11    5.608   2.302     929
+    12    5.629   2.501     531
+
+  Unigram surprisal: first half mean = 8.346, second half = 8.624
+  Trend: RISING (+0.278 bits)
+  Bigram surprisal:  first half mean = 5.234, second half = 5.504
+  Trend: RISING (+0.271 bits)
+
+=================================================================
+52d: CHARACTER POSITIONAL ENTROPY
+=================================================================
+  H(char | position) within words:
+   Pos        H   N_chars                            Top3
+     1    3.018     35708          o(24%), c(16%), q(15%)
+     2    3.010     34091          h(26%), o(22%), a(15%)
+     3    3.211     29938          e(25%), o(13%), i(12%)
+     4    3.313     22983          y(20%), d(16%), i(15%)
+     5    3.140     12968          y(28%), n(18%), i(12%)
+     6    3.079      4892          y(25%), n(22%), i(16%)
+     7    2.986      1840          n(25%), y(22%), i(20%)
+     8    2.612       689          n(42%), y(21%), i(13%)
+     9    2.560       167          n(41%), y(20%), i(14%)
+
+  Unconditional H(char) = 3.617
+  Mean H(char|pos) = 2.992
+  Reduction: 0.625 bits (17.3%)
+
+  Position 1 H = 3.018 (HIGH)
+  Position 2 H = 3.010 (HIGH)
+  Position 3 H = 3.211 (HIGH)
+
+  Skip-gram MI within words (position i, position i+2):
+  Gap 2: MI = 0.8942 bits (73520 pairs)
+  Gap 3: MI = 0.4988 bits (43582 pairs)
+
+=================================================================
+52e: CHARACTER-LEVEL COMPOSITIONALITY
+=================================================================
+  Word types with length >= 4: 2979
+  Unique first-2 patterns: 98
+  Unique last-2 patterns:  112
+  Total possible combos:   10976
+  Observed combos:         1102
+  Fill rate:               0.1004 (10.04%)
+  Random expected fill:    0.2377 (23.77%)
+  Permutation fill rate:   0.0982 ± 0.0009
+  z-score:                 2.3
+  Direction: COMPOSITIONAL (more combos than random)
+
+  Single-character edge test (first-1 × last-1):
+    len>=3: 19×17=323 cells, fill=46.4%, perm=45.9%, z=0.5
+    len>=4: 17×17=289 cells, fill=44.6%, perm=45.6%, z=-1.2
+    len>=5: 13×17=221 cells, fill=51.1%, perm=51.2%, z=-0.1
+
+=================================================================
+PHASE 52 SYNTHESIS
+=================================================================
+
+Key questions Phase 52 addressed:
+1. Is the vocabulary generated by character-level rules, or is it a fixed list?
+2. Do words cluster in usage (natural language) or distribute uniformly (codebook)?
+3. Do lines have sentence-like information structure?
+4. Are within-word character positions phonotactically constrained?
+5. Is the vocabulary compositional at the character level (not just morphological)?
+
+Implications for hypothesis discrimination:
+- Natural language: expects burstiness, declining surprisal, phonotactic positional H
+- Cipher/encoding: expects uniform burstiness, flat surprisal, uniform positional H  
+- Mechanical generation: expects regularity, possibly cyclic patterns
+
+
+Phase 52 complete. Run: python scripts/phase52_discriminators.py > results/phase52_output.txt

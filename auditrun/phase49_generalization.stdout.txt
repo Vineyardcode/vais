@@ -1,0 +1,156 @@
+Loading lines...
+  4508 lines, 35747 tokens, 3319 types
+
+======================================================================
+49a: CROSS-VALIDATED MORPHOLOGICAL MI
+    Does suffix→prefix MI survive on held-out data?
+======================================================================
+
+  Within-sample MI(sfx→gpfx):
+  Full:  0.0833 bits
+  Even:  0.0851 bits
+  Odd:   0.0844 bits
+
+  Marginal H(gpfx) = 1.9627 bits
+
+  Cross-entropy H_cross(gpfx | sfx):
+  Full on Full: 1.8796 bits
+  Even on Odd:  1.8871 bits
+  Odd on Even:  1.8805 bits
+
+  Cross-validated MI:
+  Even→Odd: 0.0756 bits
+  Odd→Even: 0.0822 bits
+  Mean:     0.0789 bits
+  Within:   0.0833 bits
+  Retention: 94.7%
+
+  Shuffled cross-val MI: 0.0203 ± 0.0026
+  z-score: 22.1
+
+======================================================================
+49b: CROSS-VALIDATED CHARACTER MI
+    Does last_char→first_char MI generalize?
+======================================================================
+
+  Within-sample MI(last_char, first_char):
+  Full: 0.1960
+  Even: 0.2086
+  Odd:  0.1953
+
+  Cross-validated character MI: 0.1675
+  Within-sample:                0.1960
+  Retention:                    85.5%
+
+======================================================================
+49c: LINE BOUNDARY TEST
+    Within-line vs cross-line transitions
+======================================================================
+
+  Within-line MI(sfx→gpfx):  0.0833 bits (N=31239)
+  Cross-line MI(sfx→gpfx):   0.0106 bits (N=4507)
+  Cross/within ratio:        0.127
+
+  Shuffled cross-line MI: 0.0115 ± 0.0021
+  Cross-line z-score:    -0.5
+
+  Key transitions, within vs cross:
+         Sfx→Gpfx    Within%     Cross%      Ratio
+            dy→qo      33.5%      15.0%      0.45x
+             dy→X      33.1%      31.3%      0.94x
+             dy→o      21.8%      21.1%      0.97x
+             dy→d       7.0%      15.9%      2.29x
+             y→qo      21.9%      14.1%      0.64x
+              y→X      40.7%      33.6%      0.82x
+              y→o      21.7%      18.6%      0.86x
+              y→d      10.7%      15.3%      1.44x
+             X→qo       5.4%      11.0%      2.02x
+              X→X      63.7%      34.1%      0.54x
+              X→o      21.0%      21.0%      1.00x
+              X→d       6.0%      15.1%      2.52x
+          aiin→qo       8.7%      13.0%      1.48x
+           aiin→X      46.9%      33.2%      0.71x
+           aiin→o      31.1%      23.0%      0.74x
+           aiin→d       6.6%      14.1%      2.12x
+            ol→qo       9.9%      15.2%      1.54x
+             ol→X      53.3%      35.3%      0.66x
+             ol→o      21.5%      22.8%      1.06x
+             ol→d      10.9%      12.0%      1.10x
+
+  Character-level:
+  Within-line MI(last,first): 0.1960 (N=31239)
+  Cross-line MI(last,first):  0.0404 (N=4507)
+  Cross/within ratio:         0.206
+
+======================================================================
+49d: JACKKNIFE STABILITY
+    Do key findings survive leave-10%-out?
+======================================================================
+
+  Jackknife results (leave 10% out, 20 trials):
+
+  Morph MI(sfx→gpfx):
+    Full: 0.0833
+    Jack: 0.0832 ± 0.0009
+    Min:  0.0822
+
+  Char MI(last,first):
+    Full: 0.1960
+    Jack: 0.1964 ± 0.0025
+    Min:  0.1899
+
+  L→R asymmetry (H(sfx|gpfx) - H(gpfx|sfx)):
+    Jack: 1.0464 ± 0.0031
+    All > 0? True (L→R in all samples)
+
+======================================================================
+49e: THE qo-WORD NETWORK
+    Among -dy→qo transitions, is qo-word predicted by predecessor?
+======================================================================
+
+  -dy → qo- transitions: 1847
+  Unique -dy words: 160
+  Unique qo- words: 134
+
+  H(-dy word) = 4.738
+  H(qo- word) = 4.394
+  MI(dy_word, qo_word) = 1.0961
+  MI/H(qo) = 0.2494
+
+  Shuffled MI: 0.9272 ± 0.0203
+  Excess: 0.1689
+  z-score: 8.3
+
+  Top -dy → qo- word pairs:
+          DY word         QO word    Count      O/E
+            qoedy           qoedy      116    1.40x
+            shedy           qoedy       71    1.07x
+             oedy           qoedy       56    1.11x
+            chedy           qoedy       46    0.80x
+            chedy            qoey       37    1.40x
+            qoedy            qoey       36    0.94x
+            shedy            qoey       33    1.08x
+            shedy          qoaiin       27    1.33x
+            chedy           qoain       26    1.72x
+              edy           qoedy       26    1.10x
+             oedy            qoey       21    0.90x
+            chedy          qoaiin       21    1.20x
+            qoedy           qoain       20    0.92x
+             oedy             qoy       19    1.62x
+            chedy            qoar       19    1.59x
+
+  H(qo_word | dy_word) for common -dy words:
+            qoedy N= 325, H=3.885, top: qoedy(116), qoey(36), qoain(20)
+            shedy N= 261, H=3.967, top: qoedy(71), qoey(33), qoaiin(27)
+            chedy N= 225, H=3.824, top: qoedy(46), qoey(37), qoain(26)
+             oedy N= 199, H=3.950, top: qoedy(56), qoey(21), qoy(19)
+              edy N=  93, H=3.435, top: qoedy(26), qoey(15), qody(10)
+              ody N=  41, H=3.700, top: qoedy(8), qody(5), qoy(5)
+             qody N=  39, H=3.204, top: qool(9), qoy(6), qody(5)
+           lchedy N=  39, H=3.880, top: qoey(7), qoedy(7), qoy(3)
+            oledy N=  35, H=2.796, top: qoedy(14), qoaiin(5), qoey(4)
+             chdy N=  30, H=3.298, top: qoedy(6), qoaiin(4), qoar(4)
+
+======================================================================
+PHASE 49 COMPLETE
+======================================================================

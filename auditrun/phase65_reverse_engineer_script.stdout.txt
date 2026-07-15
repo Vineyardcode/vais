@@ -1,0 +1,262 @@
+╔════════════════════════════════════════════════════════════════════╗
+║  Phase 65: Reverse-Engineering the Script via BPE Merging        ║
+╚════════════════════════════════════════════════════════════════════╝
+
+Loading VMS...
+  VMS: 36259 words, 160710 glyphs, 32 glyph types
+Loading Italian (Dante)...
+  Italian: 50000 words
+
+══════════════════════════════════════════════════════════════════════
+TEST A: BPE MERGE SWEEP ON ITALIAN
+══════════════════════════════════════════════════════════════════════
+
+  Iteratively merging most frequent character bigrams in Italian.
+  After each merge, recomputing all 7 fingerprint statistics.
+  Finding merge count that minimizes L2 distance to VMS.
+
+  Running 150 BPE merge steps...
+    Step   1: merged c+h → ch  [36 symbols, wlen=3.93, H(c|p)/H(c)=0.8520]
+    Step   2: merged e+r → er  [37 symbols, wlen=3.93, H(c|p)/H(c)=0.8473]
+    Step   3: merged c+o → co  [38 symbols, wlen=3.93, H(c|p)/H(c)=0.8484]
+    Step   4: merged a+n → an  [39 symbols, wlen=3.93, H(c|p)/H(c)=0.8466]
+    Step   5: merged d+i → di  [40 symbols, wlen=3.93, H(c|p)/H(c)=0.8473]
+    Step   6: merged t+o → to  [41 symbols, wlen=3.93, H(c|p)/H(c)=0.8458]
+    Step   7: merged e+n → en  [42 symbols, wlen=3.93, H(c|p)/H(c)=0.8431]
+    Step   8: merged n+o → no  [43 symbols, wlen=3.93, H(c|p)/H(c)=0.8413]
+    Step   9: merged ch+e → che  [44 symbols, wlen=3.93, H(c|p)/H(c)=0.8440]
+    Step  10: merged l+a → la  [45 symbols, wlen=3.93, H(c|p)/H(c)=0.8435]
+    Step  11: merged a+l → al  [46 symbols, wlen=3.93, H(c|p)/H(c)=0.8429]
+    Step  12: merged a+r → ar  [47 symbols, wlen=3.93, H(c|p)/H(c)=0.8407]
+    Step  13: merged t+e → te  [48 symbols, wlen=3.93, H(c|p)/H(c)=0.8393]
+    Step  14: merged t+r → tr  [49 symbols, wlen=3.93, H(c|p)/H(c)=0.8382]
+    Step  15: merged q+u → qu  [49 symbols, wlen=3.93, H(c|p)/H(c)=0.8419]
+    Step  16: merged i+o → io  [50 symbols, wlen=3.93, H(c|p)/H(c)=0.8401]
+    Step  17: merged i+n → in  [51 symbols, wlen=3.93, H(c|p)/H(c)=0.8387]
+    Step  18: merged s+e → se  [52 symbols, wlen=3.93, H(c|p)/H(c)=0.8369]
+    Step  19: merged i+a → ia  [53 symbols, wlen=3.93, H(c|p)/H(c)=0.8357]
+    Step  20: merged e+l → el  [54 symbols, wlen=3.93, H(c|p)/H(c)=0.8335]
+    Step  30: merged r+i → ri  [64 symbols, wlen=3.93, H(c|p)/H(c)=0.8275]
+    Step  40: merged t+u → tu  [74 symbols, wlen=3.93, H(c|p)/H(c)=0.8222]
+    Step  50: merged c+a → ca  [84 symbols, wlen=3.93, H(c|p)/H(c)=0.8189]
+    Step  60: merged t+to → tto  [94 symbols, wlen=3.93, H(c|p)/H(c)=0.8183]
+    Step  70: merged v+er → ver  [104 symbols, wlen=3.93, H(c|p)/H(c)=0.8171]
+    Step  80: merged pi+ù → più  [114 symbols, wlen=3.93, H(c|p)/H(c)=0.8152]
+    Step  90: merged z+a → za  [124 symbols, wlen=3.93, H(c|p)/H(c)=0.8114]
+    Step 100: merged to+r → tor  [134 symbols, wlen=3.93, H(c|p)/H(c)=0.8068]
+    Step 110: merged f+o → fo  [144 symbols, wlen=3.93, H(c|p)/H(c)=0.8028]
+    Step 120: merged no+i → noi  [154 symbols, wlen=3.93, H(c|p)/H(c)=0.8008]
+    Step 130: merged e+i → ei  [164 symbols, wlen=3.93, H(c|p)/H(c)=0.7960]
+    Step 140: merged g+en → gen  [174 symbols, wlen=3.93, H(c|p)/H(c)=0.7926]
+    Step 150: merged l+ui → lui  [184 symbols, wlen=3.93, H(c|p)/H(c)=0.7903]
+
+  Computing L2 distances (z-normalized)...
+
+  OPTIMAL: 150 BPE merges (L2=20.465)
+
+   Step  Merges  H(c|p)/H(c)  Mean wlen    Heaps β     TTR@5K    L2 dist
+  ----------------------------------------------------------------------
+      0               0.8393      3.930     0.7515     0.3374     20.992
+      1               0.8520      3.930     0.7515     0.3374     21.151
+      2               0.8473      3.930     0.7515     0.3374     21.091
+      3               0.8484      3.930     0.7515     0.3374     21.105
+      4               0.8466      3.930     0.7515     0.3374     21.083
+      5               0.8473      3.930     0.7515     0.3374     21.091
+      6               0.8458      3.930     0.7515     0.3374     21.073
+      7               0.8431      3.930     0.7515     0.3374     21.039
+      8               0.8413      3.930     0.7515     0.3374     21.017
+      9               0.8440      3.930     0.7515     0.3374     21.050
+     10               0.8435      3.930     0.7515     0.3374     21.044
+     11               0.8429      3.930     0.7515     0.3374     21.036
+     12               0.8407      3.930     0.7515     0.3374     21.010
+     13               0.8393      3.930     0.7515     0.3374     20.993
+     14               0.8382      3.930     0.7515     0.3374     20.979
+     15               0.8419      3.930     0.7515     0.3374     21.024
+     16               0.8401      3.930     0.7515     0.3374     21.002
+     17               0.8387      3.930     0.7515     0.3374     20.986
+     18               0.8369      3.930     0.7515     0.3374     20.964
+     19               0.8357      3.930     0.7515     0.3374     20.950
+     20               0.8335      3.930     0.7515     0.3374     20.923
+     21               0.8335      3.930     0.7515     0.3374     20.923
+     22               0.8322      3.930     0.7515     0.3374     20.908
+     23               0.8318      3.930     0.7515     0.3374     20.903
+     24               0.8304      3.930     0.7515     0.3374     20.887
+     25               0.8309      3.930     0.7515     0.3374     20.893
+     26               0.8324      3.930     0.7515     0.3374     20.910
+     27               0.8309      3.930     0.7515     0.3374     20.893
+     28               0.8295      3.930     0.7515     0.3374     20.876
+     29               0.8288      3.930     0.7515     0.3374     20.868
+     30               0.8275      3.930     0.7515     0.3374     20.853
+     40               0.8222      3.930     0.7515     0.3374     20.793
+     50               0.8189      3.930     0.7515     0.3374     20.756
+     60               0.8183      3.930     0.7515     0.3374     20.749
+     70               0.8171      3.930     0.7515     0.3374     20.737
+     80               0.8152      3.930     0.7515     0.3374     20.716
+     90               0.8114      3.930     0.7515     0.3374     20.675
+    100               0.8068      3.930     0.7515     0.3374     20.627
+    110               0.8028      3.930     0.7515     0.3374     20.586
+    120               0.8008      3.930     0.7515     0.3374     20.567
+    130               0.7960      3.930     0.7515     0.3374     20.519
+    140               0.7926      3.930     0.7515     0.3374     20.486
+    150               0.7903      3.930     0.7515     0.3374     20.465 ◄◄◄
+    VMS  target       0.6407      4.935     0.7533     0.3420      0.000
+
+══════════════════════════════════════════════════════════════════════
+TEST B: EVA COMPOUND GLYPH CONTRIBUTION TO BIGRAM ANOMALY
+══════════════════════════════════════════════════════════════════════
+
+  Raw EVA characters (no merging):
+    Alphabet size: 26
+    H(c|prev)/H(c) = 0.5965
+
+  EVA glyphs (ch/sh/th merged):
+    Alphabet size: 32
+    H(c|prev)/H(c) = 0.6407
+
+  Gap from Italian (0.839):
+    Raw:   0.839 - 0.5965 = 0.2425
+    Glyph: 0.839 - 0.6407 = 0.1983
+    EVA compound glyphs explain 18.2% of the bigram anomaly
+
+  Top 20 most deterministic bigram transitions in VMS (EVA glyphs):
+     Glyph  H(next)   Count   Top succ   P(top)
+  --------------------------------------------------
+         q    0.184    5462          o    98.1%
+         i    1.426   11335          n    51.6%
+         d    1.578   11525          y    57.0%
+         p    1.751    1030         ch    61.1%
+       ckh    1.766     828          y    51.9%
+         a    1.894   13648          i    47.3%
+        sh    1.901    4281          e    60.1%
+         f    1.910     331         ch    52.3%
+       cth    1.989     824          y    42.0%
+         k    2.106    9364          e    40.4%
+       cph    2.152     185          e    38.9%
+         s    2.188    1109          a    47.3%
+       cfh    2.265      70          y    37.1%
+         t    2.317    5502          e    32.1%
+        ch    2.331   10076          e    47.7%
+         r    2.355    1389          a    44.1%
+         e    2.600   19133          e    26.2%
+         y    2.683    1963          k    34.1%
+         m    2.725      31          o    25.8%
+         o    2.952   22143          k    26.2%
+
+══════════════════════════════════════════════════════════════════════
+TEST C: DOES BPE-MERGED ITALIAN DEVELOP POSITIONAL SPECIALIZATION?
+══════════════════════════════════════════════════════════════════════
+
+  Mean positional entropy (lower = more specialized):
+    Italian (raw):       0.9043
+    Italian (BPE-150):  0.9450
+    VMS (EVA glyphs):    0.7617
+
+  BPE merging does NOT increase positional specialization
+
+  Top positionally-specialized symbols (BPE-150 Italian):
+        Symbol  Max pos %   Count
+           ché     100.0%     204
+            gg     100.0%     267
+           più     100.0%     283
+          quel     100.0%     398
+           poi     100.0%     168
+            là     100.0%     173
+           già     100.0%     140
+          come     100.0%     277
+            ei     100.0%     160
+            sì     100.0%     521
+           mio     100.0%     166
+           lui     100.0%     140
+        quando     100.0%     155
+          ques     100.0%     218
+           suo     100.0%     176
+
+  Top positionally-specialized glyphs (VMS):
+         Glyph  Max pos %   Count
+             i      99.9%   11344
+             q      99.5%    5464
+             e      98.9%   19232
+             n      98.8%    5967
+             m      96.8%     958
+             g      93.3%     104
+             y      88.1%   16478
+             k      86.9%    9450
+             a      84.0%   13704
+             t      83.5%    5575
+             r      80.2%    7008
+           ckh      79.4%     829
+             p      76.8%    1065
+            sh      73.9%    4314
+             f      69.2%     360
+
+══════════════════════════════════════════════════════════════════════
+TEST D: TRANSITION MATRIX STRUCTURE — BPE ITALIAN vs VMS
+══════════════════════════════════════════════════════════════════════
+
+                        Symbols  Nonzero  Possible  Density
+  ----------------------------------------------------------
+         Italian (raw)       35      586      1225    0.478
+       Italian BPE-150      184    13307     33856    0.393
+      VMS (EVA glyphs)       32      475      1024    0.464
+
+  Top-10 bigram concentration:
+    Italian (raw):     14.6%
+    Italian BPE-150:  1.7%
+    VMS (EVA glyphs):  34.2%
+
+  Mean successor entropy per symbol:
+    Italian (raw):     2.892 bits (σ=1.039)
+    Italian BPE-150:  4.929 bits (σ=1.217)
+    VMS (EVA glyphs):  2.375 bits (σ=0.706)
+
+══════════════════════════════════════════════════════════════════════
+ADJUDICATION
+══════════════════════════════════════════════════════════════════════
+
+  Optimal BPE merge count: 150
+  L2 distance at optimum:  20.465
+  L2 at step 0 (raw):     20.992
+  Improvement:             2.5%
+
+  Fingerprint at optimum vs VMS:
+              heaps_beta:  VMS=0.7533  BPE-150=0.7515  Δ=-0.0018
+         hapax_ratio_mid:  VMS=0.6555  BPE-150=0.6390  Δ=-0.0164
+        char_bigram_pred:  VMS=0.6407  BPE-150=0.7903  Δ=+0.1496
+        word_bigram_pred:  VMS=0.4448  BPE-150=0.4639  Δ=+0.0191
+           mean_word_len:  VMS=4.9352  BPE-150=3.9302  Δ=-1.0050
+                ttr_5000:  VMS=0.3420  BPE-150=0.3374  Δ=-0.0046
+              zipf_alpha:  VMS=0.9415  BPE-150=1.0207  Δ=+0.0792
+
+  Character bigram gap:
+    Before BPE (Italian vs VMS): 0.1983
+    After BPE-150 (merged vs VMS): 0.1496
+    → BPE CLOSES 25% of the gap
+
+  Positional specialization:
+    BPE moves Italian from 0.9043 to 0.9450 (VMS target: 0.7617)
+    → BPE does NOT move Italian closer to VMS
+
+  Transition matrix density:
+    BPE: 0.393  VMS: 0.464
+    Mean successor entropy:
+    BPE: 4.929  VMS: 2.375
+
+  INTERPRETATION:
+
+    Merging the 150 most common Italian character bigrams
+    into single symbols reduces the VMS-Italian distance by
+    2.5%.
+    150 merges implies an implausibly large symbol set.
+    BPE may be overfitting or the anomaly has a different source.
+
+  REVISED CONFIDENCES (Phase 65):
+    - NL with partially syllabic script: 75% (compatible)
+      BPE partially closes the gap; other script features
+      likely contribute
+    - Simple monoalphabetic cipher: WEAKENED
+      (Cannot explain H(c|prev)/H(c) = 0.641 since substitution
+       preserves the ratio at 0.839)
+    - Hoax/random: <3% (unchanged)
+
+Saved to C:\projects\voynich_slop\results\phase65_output.txt
+Saved to C:\projects\voynich_slop\results\phase65_output.json

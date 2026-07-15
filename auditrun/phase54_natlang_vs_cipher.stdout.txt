@@ -1,0 +1,136 @@
+Loading corpus...
+  35747 tokens, 3319 types, 4508 lines
+
+=================================================================
+54a: WITHIN-WORD vs BETWEEN-WORD TRANSITION MATRICES
+=================================================================
+  Correlation(within-word, between-word) = 0.3343
+  Using 8 characters with >=50 obs in both contexts
+  Active cells: 135 (of 176)
+
+  Per-character correlation (successor distribution within vs between):
+   Char   Within_N   Between_N     Corr        Note
+      r       1271        5060    0.768     SIMILAR
+      l       3986        5040    0.663     SIMILAR
+      o      21606        1193    0.634     SIMILAR
+      n         63        5146    0.487    MODERATE
+      e      13734         139    0.445    MODERATE
+      y       1885       12651    0.219    MODERATE
+      d      11330         427    0.216    MODERATE
+      s       4931        1075   -0.021   DIFFERENT
+
+  Mean per-character correlation: 0.426
+  Interpretation:
+    > 0.5: Same process (natural language)
+    0.2-0.5: Partially overlapping (ambiguous)
+    < 0.2: Different processes (cipher)
+
+  Jensen-Shannon Divergence per character:
+  Mean JSD = 0.2926
+  Most similar: r (JSD=0.1189)
+  Most different: s (JSD=0.6191)
+
+=================================================================
+54b: CROSS-PREDICTION TEST
+=================================================================
+  Test within-word pairs: 54419
+  Test between-word pairs: 15685
+
+            Model   On Within   On Between   Unseen_W   Unseen_B
+      Within-word       1.838        4.393      0.1%      5.3%
+     Between-word       5.250        2.851     30.6%      0.3%
+         Combined       1.871        3.008      0.0%      0.2%
+
+  Cross-prediction analysis:
+  Within→Within:  1.838 bits/char (self)
+  Within→Between: 4.393 bits/char (cross)
+  Cross penalty:  +2.555 bits
+  Between→Between: 2.851 bits/char (self)
+  Between→Within:  5.250 bits/char (cross)
+  Cross penalty:   +2.399 bits
+
+  Average cross-prediction penalty: +2.477 bits
+  Interpretation:
+    Small penalty (<0.5): Similar processes (natural language)
+    Large penalty (>1.0): Different processes (cipher)
+
+=================================================================
+54c: WORD LENGTH AUTOCORRELATION
+=================================================================
+  Adjacent word length pairs: 31239
+  Correlation(len_i, len_{i+1}) = 0.1197
+  Permutation null: -0.0003 ± 0.0054
+  z-score = 22.3
+  Direction: POSITIVE (adjacent lengths correlate)
+
+  Length correlation at different gaps:
+    Gap 1: r = 0.1197 (31239 pairs)
+    Gap 2: r = 0.0803 (26731 pairs)
+    Gap 3: r = 0.0776 (22451 pairs)
+    Gap 4: r = 0.0554 (18455 pairs)
+    Gap 5: r = 0.0660 (14830 pairs)
+
+  MI(prev_word_length, next_word):
+  H(next_word) = 8.481
+  H(next_word | prev_length) = 7.928
+  MI = 0.5530 bits (6.52% of H)
+
+=================================================================
+54d: HAPAX CLUSTERING
+=================================================================
+  Total hapaxes: 1918 (57.8% of types)
+
+  Hapax distribution by section:
+     Section   Tokens   Types   Hapaxes   Hapax/Type   Hapax/Token
+       astro     1728     608       176       28.9%      10.185%
+         bio     6410     808       263       32.5%       4.103%
+       cosmo     1911     618       198       32.0%      10.361%
+      herbal     8259    1226       464       37.8%       5.618%
+      pharma     3960     730       166       22.7%       4.192%
+        text    10089    1525       651       42.7%       6.453%
+
+  Chi-square (hapax concentration) = 216.1 (df=5)
+  CONCENTRATED (non-uniform)
+
+  Hapax spatial distribution:
+  Mean inter-hapax gap: 2.4 lines
+  Burstiness B = 0.591
+  CLUSTERED (topic-specific)
+
+=================================================================
+54e: CONDITIONAL WORD-LENGTH ENTROPY
+=================================================================
+  H(word_length) = 2.6249 bits
+  H(word_length | prev_length) = 2.5920 bits
+  MI(length_i, length_i+1) = 0.0329 bits
+  MI/H = 0.0125
+  Permutation null MI: 0.0103 ± 0.0023
+  z-score = 9.9
+  SIGNIFICANT: lengths carry order info
+
+  Most skewed length transitions (observed/expected ratio):
+     L1→L2     Obs      Exp   Ratio
+    1→1       189     63.6    2.97
+    4→0         1      9.8    0.10
+    0→3         1      7.2    0.14
+    6→9        16      9.2    1.73
+    9→6        15      9.1    1.66
+    7→7        51     31.0    1.65
+    1→8        10     20.5    0.49
+    5→0         4      7.9    0.51
+    7→8        20     14.0    1.42
+    4→9        18     31.1    0.58
+
+=================================================================
+PHASE 54 SYNTHESIS
+=================================================================
+
+Natural Language vs. Syllable Cipher discrimination:
+
+54a: Are within-word and between-word char transitions from same process?
+54b: Can within-word model predict between-word transitions (and vice versa)?
+54c: Are adjacent word lengths correlated (natural language feature)?
+54d: Are hapaxes topic-clustered (natural language) or uniform (cipher)?
+54e: Does word length carry sequential information?
+
+Phase 54 complete.

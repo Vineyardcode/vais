@@ -1,0 +1,212 @@
+========================================================================
+PHASE 57 — TESTING THE BAX/VOGT DECIPHERMENT PROPOSAL
+========================================================================
+
+────────────────────────────────────────────────────────────────────────
+57a) APPLYING VOGT MAPPING TO f2r
+────────────────────────────────────────────────────────────────────────
+
+f2r contains 83 words (EVA)
+Words: kydainy ypchol daiin otchalypchaiin ckholsy dorchorychkar sshor cthy qotaiincthey ychor chy ydychaiin aiidychtod dycphy dalschokaiin d otochor alshodaiinchol danytchaiin dan...
+
+--- Label analysis ---
+  EVA 'ytoail' → full: 'ngaw.s' → phonetic: 'ngaws'
+    Closest centaurea cognate: 'centaure' (normalized edit dist: 0.750)
+  EVA 'iosanon' → full: '.aSw.a.' → phonetic: 'aSwa'
+    Closest centaurea cognate: 'centaura' (normalized edit dist: 0.750)
+
+--- All f2r words mapped ---
+
+  Top 10 closest f2r words to any centaurea cognate:
+    EVA 'kydainy' → 'kntwn' ↔ 'kentaurion' (dist: 0.600)
+    EVA 'ychor' → 'nhar' ↔ 'centaure' (dist: 0.625)
+    EVA 'yor' → 'nar' ↔ 'centaure' (dist: 0.625)
+    EVA 'kydain' → 'kntw' ↔ 'kentauria' (dist: 0.667)
+    EVA 'ykody' → 'nkatn' ↔ 'qantariun' (dist: 0.667)
+    EVA 'sorytoldydchol' → 'Sarngastnthas' ↔ 'santariya' (dist: 0.692)
+    EVA 'qotaiincthey' → '?qagwJon' ↔ 'kentaurion' (dist: 0.700)
+    EVA 'olsheey' → 'asxoon' ↔ 'kentaurion' (dist: 0.700)
+    EVA 'qokey' → '?qakon' ↔ 'kentaurion' (dist: 0.700)
+    EVA 'daiincthey' → 'twJon' ↔ 'kentaurion' (dist: 0.700)
+
+  BEST match: EVA 'kydainy' → 'kntwn' ↔ 'kentaurion' (dist: 0.600)
+
+  Interpretation: normalized edit distance ranges 0.0 (identical) to 1.0 (total mismatch)
+  Values < 0.3 might indicate genuine cognates; > 0.5 is likely coincidence
+
+────────────────────────────────────────────────────────────────────────
+57b) V/C CONSISTENCY — DO VOGT'S ASSIGNMENTS MATCH POSITIONAL PROFILES?
+────────────────────────────────────────────────────────────────────────
+
+Corpus: 39422 words
+
+  Positional profiles (start%/mid%/end%) for Vogt's vowels vs consonants:
+  Char   Vogt  Count  Start%    Mid%    End%
+  ──── ────── ────── ─────── ─────── ───────
+     o      V  26230    33.9    61.8     4.4
+     e      V  20920     0.8    98.8     0.4
+     y      C  18511    11.0     5.0    84.0
+     h      -  18127     0.0    99.6     0.4
+     a      V  15313    14.7    84.9     0.4
+     d      C  13618    27.0    68.9     4.1
+     c      -  13398    52.1    47.9     0.0
+     i      ·  12461     0.1    99.9     0.1
+     k      C  11200    11.6    87.7     0.7
+     l      C  10939    13.6    32.6    53.8
+     r      C   7861     6.6    18.1    75.3
+     s      C   7531    61.5    24.4    14.0
+     t      C   7191    15.1    84.0     0.9
+     n      ·   6518     0.0     2.7    97.3
+     q      ?   5673    99.0     1.0     0.0
+     p      C   1710    33.6    64.7     1.7
+     m      C   1110     1.1     5.0    93.9
+     f      C    500    25.4    70.6     4.0
+     g      ?    126     9.5     7.1    83.3
+
+  Vogt vowels   (o,a,e):  mean start% = 16.5, mean end% = 1.7
+  Vogt consonants:        mean start% = 20.7, mean end% = 33.2
+
+  In natural languages, consonants tend to start words more, vowels less.
+  Difference: consonants start +4.2% more often
+
+  Our SVD groups (z=−8.2): {q}, {c,s}, {a,i}, {h,l,o,y}, {d,e,n,r}
+  Vogt vowels {o,a,e} span TWO SVD groups: {h,l,o,y} and {d,e,n,r}
+  Vogt consonants span THREE SVD groups — suggesting Vogt's V/C split
+  does NOT align cleanly with the manuscript's internal character classes.
+
+────────────────────────────────────────────────────────────────────────
+57c) ALTERNATION — DOES MAPPING IMPROVE V/C ALTERNATION?
+────────────────────────────────────────────────────────────────────────
+
+  Mean V/C alternation rates (higher = more CVCV-like):
+    Sukhotin V/C on raw EVA:          0.6457 (n=35480)
+    Vogt V/C on raw EVA:              0.7408 (n=32668)
+    Vogt V/C on mapped (no markers):  0.7128 (n=31858)
+
+  Natural languages typically show alternation = 0.55-0.75
+  A perfect CV syllabary shows alternation ≈ 1.0
+
+────────────────────────────────────────────────────────────────────────
+57d) DEGREES OF FREEDOM — HOW SPECIAL IS THE VOGT MAPPING?
+────────────────────────────────────────────────────────────────────────
+
+  EVA chars in f2r: a c d e f h i k l n o p q r s t y (17 chars)
+  Sound inventory: 17 phoneme values
+
+  Vogt mapping best edit distance to centaurea: 0.600
+
+  1000 random mappings tested:
+    Mean best distance:   0.689
+    Std:                  0.069
+    Min achieved:         0.444
+    Max achieved:         0.889
+    Vogt distance:        0.600
+    Random ≤ Vogt:        99/1000 = p=0.0990
+    → Vogt's mapping is NOT significantly better than random
+      (9.9% of random mappings match centaurea equally well or better)
+
+  Combinatorial degrees of freedom:
+    17 distinct EVA chars × 17 possible sounds = 8.27e+20 possible mappings
+    This massive space means coincidental matches are EXPECTED
+
+────────────────────────────────────────────────────────────────────────
+57e) CORPUS-WIDE COHERENCE — INTERNAL CONSISTENCY OF VOGT MAPPING
+────────────────────────────────────────────────────────────────────────
+
+  Mapped corpus: 37236 words, 163544 characters
+  Unique mapped characters: 25
+
+  Frequency distribution (mapped phonemes):
+     a (V):  25975 ( 15.9%) ███████████████████████████████
+     o (V):  20912 ( 12.8%) █████████████████████████
+     n (C):  18173 ( 11.1%) ██████████████████████
+     w (V):  14568 (  8.9%) █████████████████
+     t (C):  13557 (  8.3%) ████████████████
+     h (C):  11293 (  6.9%) █████████████
+     s (C):  10751 (  6.6%) █████████████
+     k (C):  10294 (  6.3%) ████████████
+     r (C):   7696 (  4.7%) █████████
+     g (C):   6381 (  3.9%) ███████
+     ? (?):   5896 (  3.6%) ███████
+     q (?):   5673 (  3.5%) ██████
+     x (C):   4744 (  2.9%) █████
+     S (C):   2469 (  1.5%) ███
+     b (C):   1512 (  0.9%) █
+     R (C):   1098 (  0.7%) █
+     J (C):    921 (  0.6%) █
+     C (C):    888 (  0.5%) █
+     p (C):    416 (  0.3%) 
+     v (C):    219 (  0.1%) 
+     f (C):     74 (  0.0%) 
+     c (?):     10 (  0.0%) 
+     j (?):      9 (  0.0%) 
+     u (?):      8 (  0.0%) 
+     z (?):      7 (  0.0%) 
+
+  V/C ratio: 61455/90486 = 0.68
+  Vowel %: 40.4%
+  Natural languages typically have 40-55% vowels in running text
+
+  Bigram V/C patterns (mapped text):
+    CV:  35146 ( 27.8%)
+    VC:  44128 ( 34.9%)
+    CC:  24845 ( 19.7%)
+    VV:  10378 (  8.2%)
+  Natural language: CV≈30%, VC≈25%, CC≈25%, VV≈20% (varies widely)
+
+  Conditional entropy of mapped text:
+    H(char|prev) mapped:   2.200 bits
+    H(char|prev) EVA:      1.922 bits (from Phase 28)
+    English:               ~3.3 bits
+    If mapping reveals real phonetics, entropy should increase
+    toward natural language levels (more combinatorial freedom)
+
+========================================================================
+PHASE 57 — SYNTHESIS
+========================================================================
+
+RESULTS SUMMARY:
+
+57a) CENTAUREA MATCH ON f2r:
+    The Vogt mapping applied to f2r words does NOT produce a clear
+    phonetic match with any centaurea cognate. The labels "ytoail"
+    and "iosanon" map to phonetic strings that are distant from all
+    tested centaurea forms in multiple languages.
+
+57b) V/C CONSISTENCY:
+    Vogt's vowel assignments {o,a,e} and consonant assignments
+    span multiple SVD character groups, suggesting the mapping does
+    NOT respect the manuscript's own internal character classes.
+    The positional profiles show some V/C differentiation but less
+    clean separation than expected for a natural phonetic system.
+
+57c) ALTERNATION:
+    The V/C alternation rate under Vogt's mapping can be compared
+    to the raw EVA rate and to natural language expectations.
+
+57d) DEGREES OF FREEDOM:
+    The massive mapping space (10^N possible assignments) means
+    that finding plant-name "matches" by adjusting character-sound
+    pairs is almost guaranteed. The key question is whether the
+    Vogt mapping is statistically distinguished from random — and
+    if not, the entire approach falls to the multiple comparisons
+    problem.
+
+57e) CORPUS-WIDE:
+    Applying the mapping corpus-wide produces a phoneme distribution
+    and bigram structure that can be compared to natural languages.
+
+KEY SKEPTICAL INSIGHT:
+    The Bax/Vogt approach is unfalsifiable as presented: with ~20
+    free parameters (character→sound assignments), ~14 plant IDs to
+    match against hundreds of possible cognates in dozens of languages,
+    the degrees of freedom are enormously high. Our random mapping
+    test quantifies exactly how easy it is to find spurious matches.
+
+QUANTITATIVE VERDICT:
+  Vogt mapping: best centaurea edit distance = 0.600
+  Random mappings beating Vogt: 9.9%
+  → The mapping's centaurea match is NOT better than chance.
+  → This does NOT prove Bax/Vogt wrong (the mapping wasn't
+    optimized for f2r alone), but it means the f2r evidence
+    alone cannot support the phonetic hypothesis.

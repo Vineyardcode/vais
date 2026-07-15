@@ -1,0 +1,465 @@
+============================================================================
+PHASE 83 — SUB-WORD GLYPH-GROUP SEGMENTATION VIA BRANCHING ENTROPY
+============================================================================
+
+  Do VMS words contain repeating cipher-group units?
+  If each plaintext letter maps to a 1-2 glyph sequence,
+  branching entropy should SPIKE at group boundaries.
+
+────────────────────────────────────────────────────────────────────────────
+STEP 1: PARSE AND TOKENIZE
+────────────────────────────────────────────────────────────────────────────
+
+  Total words:  36706
+  Total glyphs: 166386
+  Mean word length (glyphs): 4.53
+
+  Word-length distribution:
+     1 glyphs:   1175 words (3.2%)
+     2 glyphs:   3083 words (8.4%)
+     3 glyphs:   6054 words (16.5%)
+     4 glyphs:   8205 words (22.4%)
+     5 glyphs:   8230 words (22.4%)
+     6 glyphs:   5654 words (15.4%)
+     7 glyphs:   2870 words (7.8%)
+     8 glyphs:    786 words (2.1%)
+     9 glyphs:    332 words (0.9%)
+    10 glyphs:    127 words (0.3%)
+    11 glyphs:     73 words (0.2%)
+    12 glyphs:     51 words (0.1%)
+    13 glyphs:     24 words (0.1%)
+    14 glyphs:     23 words (0.1%)
+    15 glyphs:     10 words (0.0%)
+
+  ✓ Word count 36706 is in expected range (~36,700)
+
+────────────────────────────────────────────────────────────────────────────
+STEP 2: FULL-TRIE BRANCHING ENTROPY (H of next glyph | full prefix)
+────────────────────────────────────────────────────────────────────────────
+
+  At each depth k, H(g_{k+1} | g_1...g_k) measures how
+  predictable the next glyph is given the entire prefix.
+  Low H = within a group. High H = group boundary.
+
+  Depth    Mean H     Wtd H    Contexts      Tokens
+  ─────  ────────  ────────  ──────────  ──────────
+      0    3.4476    3.4476           1       36706
+      1    1.8947    1.9729          22       35526
+      2    1.6270    2.1701         193       32393
+      3    1.2649    1.8160         651       26028
+      4    1.0393    1.4633        1032       17210
+      5    0.7389    1.0871         879        8353
+      6    0.4805    0.5203         446        2837
+      7    0.2789    0.3662         187         528
+      8    0.1334    0.2036          62         143
+      9    0.1364    0.1304          22          46
+     10    0.0000    0.0000          11          24
+     11    0.0000    0.0000          10          20
+     12    0.0000    0.0000           6          12
+
+  INTERPRETATION:
+    If cipher-groups exist, we expect:
+    - LOW entropy within groups (predictable continuation)
+    - HIGH entropy at boundaries (new group = new plaintext letter)
+    - A repeating LOW-HIGH pattern at regular intervals
+
+    Minimum H at depth 10 = 0.0000
+    Maximum H at depth 0 = 3.4476
+    Range: 3.4476 bits
+    Direction changes: 2 (periodic would show regular peaks)
+
+────────────────────────────────────────────────────────────────────────────
+STEP 3: BIGRAM-CONDITIONED BRANCHING ENTROPY H(g_k | g_{k-1})
+────────────────────────────────────────────────────────────────────────────
+
+  Simpler model: condition only on the previous glyph (not full prefix).
+  More data per estimate, better statistics at higher positions.
+
+    Pos   H(g|prev)    H(g|pos)   N bigrams
+  ─────  ──────────  ──────────  ──────────
+      0         ---      3.4476       36706
+      1      1.9729      3.3454       35531
+      2      2.4030      3.6497       32448
+      3      2.1323      3.4835       26394
+      4      1.9584      3.3625       18189
+      5      1.7466      3.1867        9959
+      6      1.4901      3.0088        4305
+      7      1.7727      3.4014        1435
+      8      1.7996      3.5006         649
+      9      1.8296      3.5553         317
+     10      1.8030      3.6432         190
+
+  COMPARE: If positions 2,4,6 have LOW H and 1,3,5 have HIGH H,
+  that suggests 2-glyph groups. If 3,6,9 are low, 3-glyph groups.
+
+────────────────────────────────────────────────────────────────────────────
+STEP 4: LENGTH-STRATIFIED BOUNDARY DETECTION
+────────────────────────────────────────────────────────────────────────────
+
+  For each word length, build a separate trie and find entropy peaks.
+  A peak at position k means: the transition from g_k to g_{k+1}
+  is unusually uncertain — a candidate group boundary.
+
+  len= 3  n= 6054  H=[3.34 1.98 1.35]  boundaries=[none]  → 1 groups
+  len= 4  n= 8205  H=[3.32 1.76 1.80 0.91]  boundaries=[2]  → 2 groups
+  len= 5  n= 8230  H=[3.33 1.68 1.58 1.29 0.67]  boundaries=[none]  → 1 groups
+  len= 6  n= 5654  H=[2.79 1.57 1.80 1.24 0.96 0.42]  boundaries=[2]  → 2 groups
+  len= 7  n= 2870  H=[2.72 1.13 1.82 1.38 0.68 0.54 0.17]  boundaries=[2]  → 2 groups
+  len= 8  n=  786  H=[3.29 1.62 1.78 1.41 0.94 0.63 0.27 0.08]  boundaries=[2]  → 2 groups
+  len= 9  n=  332  H=[3.26 1.67 1.67 1.04 0.83 0.66 0.16 0.07 0.10]  boundaries=[none]  → 1 groups
+  len=10  n=  127  H=[3.21 1.30 1.51 1.16 0.67 0.64 0.23 0.11 0.00 0.00]  boundaries=[2]  → 2 groups
+
+────────────────────────────────────────────────────────────────────────────
+STEP 5: GLYPH-GROUP CATALOGUE
+────────────────────────────────────────────────────────────────────────────
+
+  Total group tokens: 54519
+  Unique group types: 4183
+  Mean groups/word:   1.49
+
+  TOP 30 GROUPS (by frequency):
+  Rank         Group    Count   Freq %    Cum %
+  ────  ────────────  ───────  ───────  ───────
+     1             y     3924    7.20%     7.2%
+     2         q.o.k     2372    4.35%    11.5%
+     3             r     1541    2.83%    14.4%
+     4             l     1431    2.62%    17.0%
+     5         e.d.y     1120    2.05%    19.1%
+     6         i.i.n      990    1.82%    20.9%
+     7             n      985    1.81%    22.7%
+     8     d.a.i.i.n      952    1.75%    24.4%
+     9       a.i.i.n      836    1.53%    26.0%
+    10         q.o.t      790    1.45%    27.4%
+    11         a.i.n      665    1.22%    28.6%
+    12        ch.e.d      618    1.13%    29.8%
+    13         o.k.a      607    1.11%    30.9%
+    14         e.e.y      589    1.08%    32.0%
+    15           o.l      574    1.05%    33.0%
+    16         a.i.i      571    1.05%    34.1%
+    17         o.t.a      560    1.03%    35.1%
+    18        ch.e.o      549    1.01%    36.1%
+    19             s      532    0.98%    37.1%
+    20        ch.o.l      526    0.96%    38.0%
+    21       e.e.d.y      502    0.92%    38.9%
+    22        ch.e.y      500    0.92%    39.9%
+    23        sh.e.d      500    0.92%    40.8%
+    24         d.a.r      451    0.83%    41.6%
+    25         d.a.i      430    0.79%    42.4%
+    26           o.r      415    0.76%    43.2%
+    27         d.a.l      389    0.71%    43.9%
+    28         o.k.e      371    0.68%    44.6%
+    29           a.r      367    0.67%    45.2%
+    30             o      357    0.65%    45.9%
+
+  Group type count: 4183
+  For reference: European alphabets have ~23-30 letters.
+  If group types >> 30, the segmentation is too fine (noise).
+  If group types << 13, the segmentation is too coarse.
+
+  GROUP LENGTH DISTRIBUTION:
+    1 glyph(s):    9380 (17.2%)
+    2 glyph(s):    3083 (5.7%)
+    3 glyph(s):   29448 (54.0%)
+    4 glyph(s):    2870 (5.3%)
+    5 glyph(s):    9089 (16.7%)
+    6 glyph(s):      73 (0.1%)
+    7 glyph(s):     127 (0.2%)
+    9 glyph(s):     383 (0.7%)
+    10 glyph(s):      24 (0.0%)
+    11 glyph(s):      23 (0.0%)
+    15 glyph(s):      10 (0.0%)
+    16 glyph(s):       4 (0.0%)
+    17 glyph(s):       2 (0.0%)
+    18 glyph(s):       2 (0.0%)
+    20 glyph(s):       1 (0.0%)
+
+────────────────────────────────────────────────────────────────────────────
+STEP 6: FREQUENCY DISTRIBUTION — DOES IT LOOK LIKE A LETTER DISTRIBUTION?
+────────────────────────────────────────────────────────────────────────────
+
+  H(group distribution):   8.386 bits
+  H(uniform, 4183 types):   12.030 bits
+  Uniformity ratio:        0.697
+
+  REFERENCE: English letter H ≈ 4.17 bits (uniformity ~0.89)
+  If group H is close to this and n_types is ~13-26, the distribution
+  matches a letter-frequency distribution.
+
+  Zipf slope (top 50): -0.766 (letter frequencies: ~-0.5 to -1.0)
+
+────────────────────────────────────────────────────────────────────────────
+STEP 7: CROSS-VALIDATION — ARE GROUPS CONSISTENT ACROSS SECTIONS?
+────────────────────────────────────────────────────────────────────────────
+
+  TOP-50 GROUP OVERLAP (Jaccard similarity):
+                 astro    balneo     cosmo    herbal    recipe
+       astro     1.000     0.333     0.408     0.493     0.429
+      balneo     0.333     1.000     0.449     0.471     0.587
+       cosmo     0.408     0.449     1.000     0.493     0.587
+      herbal     0.493     0.471     0.493     1.000     0.538
+      recipe     0.429     0.587     0.587     0.538     1.000
+
+  SECTION-SPECIFIC BRANCHING ENTROPY (trie depth 0-5):
+       astro (  481 words): H = [3.326 2.121 1.887 1.279 0.829 0.642]
+      balneo ( 6600 words): H = [3.142 1.503 1.810 1.442 1.139 0.786]
+       cosmo ( 3264 words): H = [3.261 1.880 1.835 1.290 0.819 0.409]
+      herbal (14606 words): H = [3.428 2.079 2.267 1.831 1.333 0.984]
+      recipe (10580 words): H = [3.272 1.836 1.923 1.645 1.410 1.116]
+
+────────────────────────────────────────────────────────────────────────────
+STEP 8: VALIDATION — KNOWN VERBOSE CIPHER (Phase 60 model)
+────────────────────────────────────────────────────────────────────────────
+
+  Generate a verbose cipher from Italian text using the Phase 60 model.
+  Then apply the SAME branching entropy analysis.
+  If our method works, it should detect group boundaries at the
+  cipher-unit level, with ~13-30 unique groups.
+
+  Synthetic cipher: 36706 words,262063 chars  Cipher alphabet size: 23
+
+  Depth   VMS Wtd H  Cipher Wtd H
+  ─────  ──────────  ────────────
+      0      3.4476        2.6400
+      1      1.9729        2.0695
+      2      2.1701        2.4232
+      3      1.8160        2.2729
+      4      1.4633        2.2024
+      5      1.0871        1.8877
+      6      0.5203        1.6351
+      7      0.3662        1.4024
+      8      0.2036        1.1880
+      9      0.1304        0.8300
+     10      0.0000        0.8711
+
+  The cipher SHOULD show: low H at even depths (within vowel
+  expansion pairs) and high H at odd depths (boundaries between
+  cipher units). If VMS shows a SIMILAR pattern, that supports
+  the verbose-cipher model.
+
+  Cipher group types:    9712
+  Cipher group tokens:   83170
+  Expected (source alphabet): ~21 (Italian letters)
+  Cipher groups/word:    2.27
+
+  TOP 15 CIPHER GROUPS:
+      1.        G.g.J  count= 1867
+      2.        G.g.D  count= 1860
+      3.            q  count= 1639
+      4.          M.q  count= 1368
+      5.          A.a  count= 1263
+      6.        G.g.A  count= 1207
+      7.        D.d.D  count= 1008
+      8.        A.a.D  count= 1005
+      9.        D.d.J  count= 1003
+     10.        A.a.J  count=  978
+     11.            n  count=  944
+     12.        G.g.I  count=  885
+     13.          J.l  count=  883
+     14.        D.J.l  count=  866
+     15.            D  count=  861
+
+────────────────────────────────────────────────────────────────────────────
+STEP 8b: DEPTH-2 BUMP TEST — VMS vs NATURAL LANGUAGES vs CIPHER
+────────────────────────────────────────────────────────────────────────────
+
+  KEY DIAGNOSTIC: Does branching entropy at depth 2 EXCEED depth 1?
+  The "d2/d1 ratio" measures whether there is a bump (>1) or
+  monotonic decay (<1) in the branching entropy profile.
+
+                  Text       d0       d1       d2    d2/d1   Bump?
+  ────────────────────  ───────  ───────  ───────  ───────  ──────
+          Latin Caesar    4.084    2.261    1.900    0.841      no
+         Latin Vulgate    4.083    2.309    1.923    0.832      no
+         Latin Apicius    4.080    2.510    1.892    0.754      no
+          German Faust    4.256    2.365    1.808    0.765      no
+           German BvgS    4.110    2.209    1.413    0.640      no
+        Italian Cucina    4.130    2.363    2.096    0.887      no
+       French Viandier    4.083    2.158    1.600    0.741      no
+          English Cury    4.260    2.341    1.813    0.774      no
+      VMS (EVA glyphs)    3.448    1.973    2.170    1.100     YES  ★
+        Verbose cipher    2.640    2.070    2.423    1.171     YES  ★
+
+  NL mean d2/d1: 0.779 (std=0.076)
+  VMS d2/d1:     1.100
+  VMS z-score vs NL: 4.2
+  → VMS is 41.2% above NL mean
+
+  BOOTSTRAP VMS d2/d1 (500 resamples):
+    mean=1.0903  95%CI=[1.0756, 1.1040]
+    Samples with d2/d1 > 1.0: 500/500 (100%)
+
+  FINDING: The depth-2 branching entropy bump (d2/d1 > 1) appears
+  in VMS and the verbose cipher but in ZERO of 8 natural languages.
+  This is a novel discriminative feature that distinguishes VMS
+  from natural language text.
+
+────────────────────────────────────────────────────────────────────────────
+STEP 9: REVERSE BRANCHING ENTROPY (RIGHT-TO-LEFT)
+────────────────────────────────────────────────────────────────────────────
+
+  In some cipher systems, the END of a group is more constrained
+  than the start. Scan R→L to check for complementary peaks.
+
+  Depth   Fwd Wtd H   Rev Wtd H
+  ─────  ──────────  ──────────
+      0      3.4476      2.4933
+      1      1.9729      1.6869
+      2      2.1701      2.0852
+      3      1.8160      1.8648
+      4      1.4633      1.8392
+      5      1.0871      1.2375
+      6      0.5203      1.1284
+      7      0.3662      1.0716
+      8      0.2036      0.5362
+      9      0.1304      0.2041
+     10      0.0000      0.0769
+     11      0.0000      0.0000
+     12      0.0000      0.0000
+
+  If forward peaks at depth k and reverse peaks at depth (wlen-k),
+  the boundaries are real. If peaks are in DIFFERENT positions,
+  the segmentation is ambiguous.
+
+────────────────────────────────────────────────────────────────────────────
+STEP 10: POSITIONAL CLASS ANALYSIS OF GROUPS
+────────────────────────────────────────────────────────────────────────────
+
+  Do the extracted groups respect the I-M-F positional grammar?
+  If groups are cipher units, they should span WITHIN a positional
+  zone, not cross zone boundaries.
+
+  GROUP CLASS PROFILES (top 20):
+          Profile    Count     Freq
+  ───────────────  ───────  ───────
+                F     8679   15.92%
+            I→M→M     7741   14.20%
+            M→M→F     6617   12.14%
+            M→M→M     4356    7.99%
+            I→M→F     3515    6.45%
+        M→M→M→M→F     2871    5.27%
+        I→M→M→M→F     2092    3.84%
+              M→F     2073    3.80%
+          M→M→M→F     2033    3.73%
+            F→M→M     1165    2.14%
+            M→F→M     1018    1.87%
+            M→I→M      968    1.78%
+            F→M→F      963    1.77%
+        F→M→M→M→F      738    1.35%
+                M      621    1.14%
+            M→M→I      484    0.89%
+        M→I→M→M→F      482    0.88%
+              I→F      476    0.87%
+            F→I→M      468    0.86%
+        M→M→I→M→F      384    0.70%
+
+  Groups within single I/M/F zone: 14031 (25.7%)
+  Groups crossing zone boundaries: 40488 (74.3%)
+
+  If cipher-groups correspond to single plaintext letters, they
+  should stay within one zone (because zones correspond to
+  positions in the cipher alphabet). Cross-zone groups suggest
+  the segmentation is wrong OR the I-M-F grammar is not zone-based.
+
+────────────────────────────────────────────────────────────────────────────
+STEP 11: SYNTHESIS AND CRITICAL ASSESSMENT
+────────────────────────────────────────────────────────────────────────────
+
+  Q1: PERIODIC BRANCHING PATTERN?
+      Even-depth mean H: 1.1150
+      Odd-depth mean H:  0.8954
+      Difference:        -0.2196
+      → POSSIBLE 2-glyph periodicity (|diff| > 0.2)
+
+  Q2: GROUP COUNT = ALPHABET SIZE?
+      Unique group types: 4183
+      → TOO MANY: segmentation is too fine (capturing noise)
+
+  Q3: GROUPS PER WORD
+      Mean: 1.49
+      Expected for verbose cipher: ~2-3 (mean word = ~4.5 glyphs,
+      groups of ~1.5-2 glyphs each)
+      → UNLIKELY for verbose cipher model
+
+  Q4: CROSS-SECTION CONSISTENCY
+      Mean Jaccard (top-50 groups across sections): 0.479
+      → MODERATE consistency
+
+  Q5: VALIDATION — DOES METHOD WORK ON KNOWN CIPHER?
+      Known cipher alphabet: 23 chars
+      Recovered group types: 9712
+      Expected source alphabet: ~21
+      → POOR recovery (462.5× expected)
+        The method may not be reliable for this type of cipher.
+
+  Q6: DO GROUPS RESPECT I-M-F ZONES?
+      Cross-zone groups: 74.3%
+      → NO — groups freely cross zones
+        I-M-F grammar is NOT a group-level property
+
+  OVERALL VERDICT:
+
+  PART A — BOUNDARY-BASED GROUP SEGMENTATION:
+
+    Group types recovered:     4183 (expected 13-30 for cipher)
+    Groups/word:               1.49 (expected 2-3)
+    Cipher validation:         9712 types (expected ~21)
+    Cross-zone groups:         74.3%
+
+    → GROUP SEGMENTATION FAILED. The local-maximum boundary
+      detection algorithm does not work — it fails on both VMS
+      and the known verbose cipher. This approach cannot extract
+      cipher-group alphabets from branching entropy profiles.
+
+  PART B — DEPTH-2 BRANCHING ENTROPY BUMP (d2/d1):
+
+    VMS d2/d1:        1.100 (BUMP — d2 exceeds d1)
+    NL mean d2/d1:    0.779 (std=0.076)
+    Verbose cipher:   1.171 (BUMP)
+    z-score (VMS vs NL): 4.2
+
+    Natural languages tested: 8 (Latin×3, German×2, Italian,
+    French, English) — ALL show d2/d1 < 1 (monotonic decay)
+
+    → THE DEPTH-2 BUMP IS A NOVEL DISCRIMINATIVE FEATURE.
+      VMS and the verbose cipher both show it.
+      ZERO natural languages show it.
+      This is the first known entropy-space feature that
+      separates VMS from natural language word structure.
+
+  PART C — INTERPRETATION:
+
+    The bump means: after seeing 2 glyphs, the 3rd is LESS
+    predictable than the 2nd was given the 1st. VMS words
+    begin with tight "bench bigrams" (q→o 97%, d→a 81%,
+    ch→e 53%) that then RELEASE into variable continuations.
+
+    This is consistent with:
+    (a) A verbose cipher where each plaintext letter maps to
+        1-2 glyphs, creating tight initial pairs, OR
+    (b) A constructed writing system with mandatory word-opening
+        conventions, OR
+    (c) A syllabary where the first 2 glyphs encode consonant+vowel
+        jointly, followed by the next syllable unit.
+
+    All 3 explanations are non-NL. The bump RULES OUT plain
+    natural language text (no encoding or constructed system).
+    Simple substitution cipher (which preserves NL statistics)
+    is also ruled out — it would preserve the NL d2/d1 < 1.
+
+  CRITICAL CAVEATS:
+    1. The group segmentation failed completely — we cannot
+       extract a cipher alphabet from this analysis.
+    2. The depth-2 bump could theoretically be caused by ANY
+       system with strong initial bigrams — not just ciphers.
+       However, no tested natural language produces it.
+    3. We tested only 8 NL texts. Languages with very different
+       phonotactics (e.g., Hawaiian with CV syllables) might
+       show different patterns. The sample is European-biased.
+    4. The verbose cipher was designed to match VMS, so finding
+       similarity is partially circular. Independent cipher
+       designs should be tested.
+    5. The bump is robust (bootstrap CI entirely > 1.0) but
+       its mechanistic interpretation is ambiguous — it
+       constrains the type of system but does not identify it.
+
+  Results saved: C:\projects\voynich_slop\results\phase83_subword_segmentation.txt

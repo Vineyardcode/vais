@@ -1,0 +1,144 @@
+Loading lines...
+  4508 lines, 35747 word tokens
+
+======================================================================
+42a: TWO-CLASS SUFFIX MODEL
+    CLASS A (attract qo): dy, y, X
+    CLASS B (attract sh/ch): aiin, ain, iin, in, ar, or, al, ol
+    How much of the sfx→pfx MI does this binary capture?
+======================================================================
+
+  MI(sfx→pfx) full 11 classes: 0.1211
+  MI(sfx_class→pfx) binary A/B: 0.0433
+  Binary captures 35.7% of full MI
+  MI(sfx_3class→pfx) A/M/B: 0.0971 (80.1%)
+
+  Binary model z-score: 151.7 (null=0.0012±0.0003)
+
+  Class A suffix → following prefix distribution:
+  Prefix    After A  After B  Overall  A ratio  B ratio
+  qo          0.195    0.080    0.151     1.30     0.53
+  sh          0.067    0.123    0.089     0.75     1.39
+  ch          0.143    0.226    0.175     0.82     1.29
+  o           0.221    0.287    0.247     0.90     1.16
+  d           0.080    0.075    0.078     1.02     0.96
+  X           0.175    0.128    0.157     1.12     0.82
+  y           0.043    0.051    0.046     0.94     1.10
+  l           0.042    0.013    0.031     1.36     0.43
+
+======================================================================
+42b: SECTION-SPECIFIC GRAMMAR
+    Does each section have its own transition probabilities,
+    or is one global matrix sufficient?
+======================================================================
+
+  Section       N pairs    LL global     LL local         LR     LR/N
+  --------------------------------------------------------------
+  text            16441     -45396.3     -45076.6      319.7   0.0194
+  herbal-A         7534     -21884.6     -21137.6      747.0   0.0992
+  bio              4926     -13671.3     -13194.3      476.9   0.0968
+  pharma           1162      -3271.6      -3168.3      103.3   0.0889
+
+  Null test: random splits of same size as each section:
+  text         LR=319.7, null_LR=36.5±5.7, excess=283.2, z=49.4
+  herbal-A     LR=747.0, null_LR=53.1±7.5, excess=693.9, z=92.1
+  bio          LR=476.9, null_LR=56.7±8.3, excess=420.2, z=50.7
+  pharma       LR=103.3, null_LR=48.0±9.7, excess=55.3, z=5.7
+
+======================================================================
+42c: SYNERGY TEST — Does (pfx,sfx) class predict better than
+    independent prefix × suffix for specific bigrams?
+======================================================================
+
+  Bigram              Count  CLS ratio    PFX×SFX  Synergy
+  --------------------------------------------------------
+  "chol daiin"           41       3.10       1.51     2.05
+  "shdy qody"           112       4.16       3.42     1.22
+  "shy qoain"            46       4.16       2.65     1.57
+  "oX Xiin"             170       3.17       2.60     1.22
+  "shdy qoaiin"          39       3.77       1.98     1.90
+  "chol chol"            44       3.46       2.14     1.62
+  "qody qody"           163       3.68       2.23     1.65
+  "ody qody"            130       2.92       1.39     2.10
+  "chdy qoain"           38       3.27       1.24     2.63
+  "daiin chol"           14       1.00       0.99     1.00
+
+  Synergy > 1.5: genuine interaction (combined class matters)
+  Synergy ≈ 1.0: decomposable into independent prefix + suffix effects
+  Synergy < 0.7: combined class is LESS likely than parts predict (anti-synergy)
+
+======================================================================
+42d: POSITIONAL INFORMATION PROFILE
+    Entropy of prefix/suffix at each absolute position.
+    Does position 0 (line-initial) or position -1 (line-final)
+    carry more or less variety than interior positions?
+======================================================================
+
+  Position (from start):
+   Pos       N   H(pfx)   H(sfx)      Top pfx      Top sfx
+  -------------------------------------------------------
+     0    4508    3.054    3.052      o(21%)      X(23%)
+     1    4508    2.880    2.919      o(21%)      y(24%)
+     2    4280    2.917    2.996      o(23%)      y(24%)
+     3    3996    2.912    2.987      o(25%)      y(23%)
+     4    3625    2.917    3.022      o(24%)      X(22%)
+     5    3185    2.943    2.989      o(23%)      X(22%)
+    6+   11645    2.878    2.923      o(27%)      X(27%)
+
+  Position (from end):
+   Pos       N   H(pfx)   H(sfx)      Top pfx      Top sfx
+  -------------------------------------------------------
+  last    4508    2.906    2.765      o(26%)      X(34%)
+    -1    4508    2.917    3.023      o(25%)      X(24%)
+    -2    4280    2.902    3.010      o(26%)      X(23%)
+    -3    3996    2.935    3.014      o(24%)      y(23%)
+    -4    3625    2.936    3.007      o(24%)      y(22%)
+    -5    3185    2.935    2.982      o(23%)      y(22%)
+    -6   11645    3.003    3.002      o(24%)      X(24%)
+
+======================================================================
+42e: PREDICTIVE ASYMMETRY
+    Is MI(word_i→word_{i+1}) symmetric, or does one direction
+    carry more information? In natural language, left-to-right
+    and right-to-left prediction differ (head-directionality).
+======================================================================
+
+  Direction                           H(target|source) H(source|target)
+  -------------------------------------------------------------------
+  pfx_i → pfx_j (same feature)                  2.8725           2.9138
+  sfx_i → sfx_j (same feature)                  2.9038           2.9430
+  sfx_i → pfx_j (cross-feature)                 2.7985           2.8883
+  pfx_i → sfx_j (cross-feature)                 2.9513           2.9420
+
+  Interpretation:
+  Lower H(target|source) = source is a better predictor of target
+
+  Forward H(class_j | class_i): 5.2301
+  Backward H(class_i | class_j): 5.3189
+  Asymmetry (fwd - bwd): -0.0888
+  → Forward (left→right) predicts BETTER — consistent with head-initial
+
+======================================================================
+PHASE 42 SYNTHESIS
+======================================================================
+
+  42a: TWO-CLASS MODEL
+    Binary A/B captures 35.7% of sfx→pfx MI (z=151.7)
+    The suffix system has a clear binary backbone:
+      Class A (dy/y/X) → attracts qo, repels sh/ch
+      Class B (aiin/ol/al/ain/ar/or/iin/in) → attracts sh/ch/d, repels qo
+
+  42b: SECTION-SPECIFIC GRAMMAR
+    (See tables above — LR excess over random splits tests reality)
+
+  42c: "chol daiin" SYNERGY
+    (See table — synergy > 1.5 = genuine word-class effect)
+
+  42d: POSITIONAL PROFILE
+    (See entropy tables above)
+
+  42e: PREDICTIVE ASYMMETRY
+    Forward H(class) = 5.2301, Backward = 5.3189
+    ASYMMETRIC (left→right better)
+
+[Phase 42 Complete]

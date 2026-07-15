@@ -1,0 +1,152 @@
+Loading lines...
+  4508 lines, 35747 word tokens
+
+======================================================================
+39a: WORD-ORDER MI — Does word order matter?
+======================================================================
+
+  Observed bigram MI:
+    MI(pfx_i, pfx_{i+1})   = 0.0472 bits
+    MI(sfx_i, sfx_{i+1})   = 0.0665 bits
+    MI(pfx_i, sfx_{i+1})   = 0.0190 bits
+
+  Running 500 within-line shuffles (Null 1: destroy order, keep composition)...
+
+  Null 1 (within-line shuffle — destroys ORDER, keeps composition):
+  Feature                     Observed          Null 1        z
+  ----------------------------------------------------------
+  MI(pfx→pfx)                   0.0472   0.0168±0.0011     28.3
+  MI(sfx→sfx)                   0.0665   0.0223±0.0011     38.6
+  MI(pfx→sfx_next)              0.0190   0.0112±0.0009      9.1
+
+  Running 500 across-line shuffles within section (Null 2)...
+
+  Null 2 (across-line shuffle within section — destroys line composition):
+  Feature                     Observed          Null 2        z
+  ----------------------------------------------------------
+  MI(pfx→pfx)                   0.0472   0.0046±0.0005     84.5
+  MI(sfx→sfx)                   0.0665   0.0038±0.0005    135.7
+
+  INTERPRETATION:
+  → z >> 3 against Null 1: WORD ORDER MATTERS — genuine syntax signal
+  → z >> 3 against Null 2: LINE-LEVEL co-occurrence is real
+
+======================================================================
+39b: MORPHOLOGICAL AGREEMENT
+    Do adjacent words share prefix/suffix more than expected?
+======================================================================
+
+  Observed same-prefix rate:  18.87%
+  Observed same-suffix rate:  21.95%
+  Running 500 position×section-controlled shuffles...
+
+  Position×Section controlled null:
+                              Observed            Null        z
+  ----------------------------------------------------------
+  Same prefix rate              18.87%   15.95%±0.20%     14.5
+  Same suffix rate              21.95%   16.21%±0.20%     29.3
+  → Prefix agreement is REAL — not explained by position/section
+  → Suffix agreement is REAL — not explained by position/section
+
+======================================================================
+39c: DISTANCE DECAY
+    Does MI decay with word distance? (syntax = fast decay)
+======================================================================
+
+   Gap    MI(pfx,pfx)    MI(sfx,sfx)    N pairs
+  ----------------------------------------------
+     1         0.0472         0.0665      31239
+     2         0.0230         0.0271      26731
+     3         0.0192         0.0203      22451
+     4         0.0202         0.0202      18455
+     5         0.0185         0.0196      14830
+     6         0.0161         0.0155      11645
+
+  With z-scores vs within-line shuffle (50 perms):
+   Gap     z(pfx)     z(sfx) | Verdict
+  ----------------------------------------------
+     1       34.4       37.6 | ORDER MATTERS
+     2        5.2        4.3 | ORDER MATTERS
+     3        1.5       -1.0 | no order effect
+     4        1.1       -1.0 | no order effect
+     5       -0.7       -1.2 | no order effect
+     6       -2.6       -3.5 | no order effect
+
+======================================================================
+39d: THE sh→qo PATTERN — REAL OR POSITIONAL?
+======================================================================
+
+  Pattern          All pairs   Mid-line only    Base rate
+  -------------------------------------------------------
+  sh→qo         30.0% (2.0x)    31.2% (1.9x)    15.1%
+  qo→ch         19.6% (1.1x)    20.0% (1.1x)    17.5%
+  ch→d           9.7% (1.2x)     7.9% (1.2x)     7.8%
+  d→o           22.9% (0.9x)    24.4% (1.0x)    24.7%
+  y→y            8.9% (1.9x)    11.1% (2.4x)     4.6%
+  ∅→∅           23.4% (1.5x)    20.7% (1.4x)    15.7%
+  l→l            7.3% (2.4x)     6.3% (2.1x)     3.1%
+
+  What follows sh- words? (all positions)
+  Next pfx    Obs %    Exp %    Ratio
+  ------------------------------------
+  qo          30.0%    15.1%    1.99x
+  o           21.6%    24.7%    0.88x
+  NONE        12.1%    15.7%    0.77x
+  ch          11.0%    17.5%    0.63x
+  sh          10.2%     8.9%    1.15x
+  d            5.7%     7.8%    0.73x
+  y            4.6%     4.6%    0.98x
+  l            1.7%     3.1%    0.56x
+  do           0.8%     0.8%    0.99x
+  q            0.7%     0.3%    2.53x
+  lch          0.7%     0.9%    0.78x
+  so           0.5%     0.3%    1.44x
+  lsh          0.4%     0.3%    1.37x
+
+======================================================================
+39e: COMPREHENSIVE SYNTAX TEST
+    Position×Section controlled word-order MI
+======================================================================
+
+  Running 200 position×section shuffles...
+    ... 50/200 done
+    ... 100/200 done
+    ... 150/200 done
+    ... 200/200 done
+
+  RESULTS (word-class bigram MI, pos×sec controlled):
+    Observed MI:  1.4555 bits
+    Null MI:      1.1669 ± 0.0046 bits
+    z = 62.8
+    → STRONG SYNTAX: word order carries information beyond position/section
+
+    Position×section explains: 80.2% of bigram MI
+    Residual (genuine syntax): 19.8%
+
+======================================================================
+PHASE 39 SYNTHESIS
+======================================================================
+
+  WORD-ORDER TEST (39a):
+    MI(pfx→pfx): obs=0.0472, null1=0.0168, z=28.3
+    MI(sfx→sfx): obs=0.0665, null1=0.0223, z=38.6
+    If z > 3: word ORDER within lines carries information
+
+  AGREEMENT (39b):
+    Prefix agreement: obs=18.87%, null=15.95%, z=14.5
+    Suffix agreement: obs=21.95%, null=16.21%, z=29.3
+
+  DISTANCE DECAY (39c):
+    See table above. Syntax → fast decay. Confound → slow decay.
+
+  sh→qo (39d):
+    All: 30.0%
+    Mid-line: 31.2%
+    If mid-line rate drops → positional artifact
+
+  COMPREHENSIVE (39e):
+    Observed MI=1.4555, Pos×Sec null=1.1669±0.0046
+    z=62.8
+    STRONG SYNTAX: word order carries information beyond position/section
+
+[Phase 39 Complete]

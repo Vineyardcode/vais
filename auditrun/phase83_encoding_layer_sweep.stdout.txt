@@ -1,0 +1,247 @@
+================================================================================
+PHASE 83 — ENCODING LAYER PARAMETER SWEEP
+  What (language × encoding) minimizes distance to VMS?
+================================================================================
+
+────────────────────────────────────────────────────────────────────────────────
+STEP 1: VMS BASELINE
+────────────────────────────────────────────────────────────────────────────────
+  Tokens: 40,368   Types: 8,662
+  h_char=0.6566  Heaps=0.7134  hapax=0.7337  wlen=5.10  Zipf=0.9268  TTR=0.3908
+
+────────────────────────────────────────────────────────────────────────────────
+STEP 2: REFERENCE CORPORA
+────────────────────────────────────────────────────────────────────────────────
+
+  German_Faust         tokens=30,000  h_char=0.8239  baseline_dist=0.3219
+  German_BvgS          tokens= 8,368  h_char=0.8270  baseline_dist=0.4575
+  Latin_Caesar         tokens=30,000  h_char=0.8647  baseline_dist=0.5012
+  Latin_Vulgate        tokens=25,908  h_char=0.8693  baseline_dist=0.4199
+  Latin_Apicius        tokens=29,458  h_char=0.8688  baseline_dist=0.4397
+  Italian_Cucina       tokens=24,558  h_char=0.8541  baseline_dist=0.4483
+  French_Viandier      tokens=14,052  h_char=0.8249  baseline_dist=0.6434
+  English_Cury         tokens=30,000  h_char=0.8569  baseline_dist=0.4296
+
+  Loaded 8 corpora for encoding sweep.
+
+────────────────────────────────────────────────────────────────────────────────
+STEP 3: PARAMETER SWEEP — 8 languages × 24 encodings = 192 tests
+────────────────────────────────────────────────────────────────────────────────
+
+  Testing German_Faust...
+    Best: E1_null  dist=0.3219
+  Testing German_BvgS...
+    Best: E2_vowexp_p70  dist=0.1277
+  Testing Latin_Caesar...
+    Best: E5_collapse_m30  dist=0.4101
+  Testing Latin_Vulgate...
+    Best: E5_collapse_m10  dist=0.4082
+  Testing Latin_Apicius...
+    Best: E5_collapse_m10  dist=0.4383
+  Testing Italian_Cucina...
+    Best: E1_null  dist=0.4483
+  Testing French_Viandier...
+    Best: E2_vowexp_p30  dist=0.2353
+  Testing English_Cury...
+    Best: E2_vowexp_p85  dist=0.2499
+
+────────────────────────────────────────────────────────────────────────────────
+STEP 4: TOP 30 (language × encoding) COMBINATIONS
+────────────────────────────────────────────────────────────────────────────────
+
+  Rank  Language              Encoding                   dist   h_char    heaps    hapax     wlen     zipf      ttr
+  ─────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+     1  German_BvgS           E2_vowexp_p70            0.1277   0.6632   0.7580   0.7085     5.35   0.9223   0.3552
+     2  German_BvgS           E2_vowexp_p85            0.1614   0.6182   0.7540   0.6970     5.59   0.9632   0.3232
+     3  German_BvgS           E2_vowexp_p50            0.1728   0.7151   0.7644   0.7182     5.02   0.9141   0.3688
+     4  German_BvgS           E2_vowexp_p30            0.2211   0.7640   0.7638   0.7137     4.68   0.9321   0.3546
+     5  French_Viandier       E2_vowexp_p30            0.2353   0.7547   0.6883   0.6682     5.40   0.8662   0.3522
+     6  English_Cury          E2_vowexp_p85            0.2499   0.6308   0.7073   0.6969     5.57   0.9616   0.4084
+     7  French_Viandier       E2_vowexp_p50            0.2678   0.7020   0.6953   0.6743     5.83   0.8354   0.3776
+     8  French_Viandier       E2_vowexp_p70            0.2941   0.6448   0.6886   0.6498     6.25   0.8565   0.3516
+     9  English_Cury          E2_vowexp_p100           0.3016   0.5677   0.6238   0.5870     5.82   0.9734   0.3196
+    10  German_Faust          E1_null                  0.3219   0.8239   0.6809   0.6605     4.79   1.0094   0.3706
+    11  English_Cury          E2_vowexp_p70            0.3230   0.6781   0.7385   0.7214     5.32   0.9536   0.4414
+    12  German_Faust          E2_vowexp_p100           0.3710   0.5690   0.6809   0.6605     6.53   1.0094   0.3706
+    13  German_Faust          E5_collapse_m5           0.3736   0.8386   0.6809   0.6605     4.19   1.0094   0.3706
+    14  French_Viandier       E2_vowexp_p85            0.3788   0.5957   0.6580   0.6330     6.56   0.9070   0.3042
+    15  English_Cury          E2_vowexp_p30            0.3861   0.7846   0.7345   0.7232     4.66   0.9498   0.4414
+    16  German_Faust          E5_collapse_m10          0.3872   0.8339   0.6809   0.6605     3.98   1.0094   0.3706
+    17  English_Cury          E2_vowexp_p50            0.3875   0.7327   0.7436   0.7356     5.00   0.9428   0.4578
+    18  German_Faust          E5_collapse_m15          0.3893   0.8239   0.6809   0.6605     3.85   1.0094   0.3706
+    19  German_BvgS           E2_vowexp_p100           0.3910   0.5556   0.6916   0.6276     5.84   1.0178   0.2412
+    20  German_Faust          E5_collapse_m20          0.3939   0.8178   0.6809   0.6605     3.75   1.0094   0.3706
+    21  German_Faust          E5_collapse_m30          0.4018   0.8070   0.6809   0.6605     3.61   1.0094   0.3706
+    22  Latin_Vulgate         E5_collapse_m10          0.4082   0.8515   0.8135   0.6043     4.41   0.8408   0.2902
+    23  Latin_Vulgate         E5_collapse_m5           0.4082   0.8608   0.8135   0.6043     4.72   0.8408   0.2902
+    24  Latin_Caesar          E5_collapse_m30          0.4101   0.8256   0.7216   0.6235     4.52   0.8058   0.4206
+    25  Latin_Vulgate         E5_collapse_m15          0.4113   0.8427   0.8135   0.6043     4.19   0.8408   0.2902
+    26  Latin_Vulgate         E5_collapse_m20          0.4147   0.8355   0.8135   0.6043     4.05   0.8408   0.2902
+    27  Latin_Caesar          E5_collapse_m20          0.4191   0.8398   0.7216   0.6235     4.75   0.8058   0.4206
+    28  Latin_Vulgate         E1_null                  0.4199   0.8693   0.8135   0.6043     5.18   0.8408   0.2902
+    29  Latin_Vulgate         E5_collapse_m30          0.4239   0.8249   0.8135   0.6043     3.83   0.8408   0.2902
+    30  German_Faust          E2_vowexp_p85            0.4240   0.6279   0.7438   0.7277     6.27   0.9757   0.4466
+
+        VMS TARGET                                     0.0000   0.6410   0.7530   0.6560     4.94   0.9420   0.3420
+
+────────────────────────────────────────────────────────────────────────────────
+STEP 5: BEST ENCODING PER LANGUAGE (what does each language need?)
+────────────────────────────────────────────────────────────────────────────────
+
+  Language              Best Encoding              dist   h_char   Δh_char     wlen    Δwlen
+  ───────────────────────────────────────────────────────────────────────────────────────────────
+  German_BvgS           E2_vowexp_p70            0.1277   0.6632   +0.0222     5.35    +0.41
+  French_Viandier       E2_vowexp_p30            0.2353   0.7547   +0.1137     5.40    +0.46
+  English_Cury          E2_vowexp_p85            0.2499   0.6308   -0.0102     5.57    +0.63
+  German_Faust          E1_null                  0.3219   0.8239   +0.1829     4.79    -0.15
+  Latin_Vulgate         E5_collapse_m10          0.4082   0.8515   +0.2105     4.41    -0.53
+  Latin_Caesar          E5_collapse_m30          0.4101   0.8256   +0.1846     4.52    -0.42
+  Latin_Apicius         E5_collapse_m10          0.4383   0.8501   +0.2091     4.26    -0.68
+  Italian_Cucina        E1_null                  0.4483   0.8541   +0.2131     4.57    -0.37
+
+────────────────────────────────────────────────────────────────────────────────
+STEP 6: BEST LANGUAGE PER ENCODING FAMILY (what does each encoding do best?)
+────────────────────────────────────────────────────────────────────────────────
+
+  E1 — NULL (identity):
+    German_Faust          E1_null                 dist=0.3219  h_char=0.8239  wlen=4.79
+    Latin_Vulgate         E1_null                 dist=0.4199  h_char=0.8693  wlen=5.18
+    English_Cury          E1_null                 dist=0.4296  h_char=0.8569  wlen=4.16
+
+  E2 — VOWEL EXPANSION:
+    German_BvgS           E2_vowexp_p70           dist=0.1277  h_char=0.6632  wlen=5.35
+    German_BvgS           E2_vowexp_p85           dist=0.1614  h_char=0.6182  wlen=5.59
+    German_BvgS           E2_vowexp_p50           dist=0.1728  h_char=0.7151  wlen=5.02
+
+  E3 — POSITIONAL SUB:
+    English_Cury          E3_possub_z2            dist=0.7219  h_char=0.7038  wlen=8.31
+    English_Cury          E3_possub_z3            dist=0.7243  h_char=0.7143  wlen=8.31
+    English_Cury          E3_possub_z5            dist=0.7250  h_char=0.7173  wlen=8.31
+
+  E4 — COMBINED (E2+E3):
+    German_BvgS           E4_comb_p50z2           dist=1.0441  h_char=0.6925  wlen=10.04
+    German_BvgS           E4_comb_p50z5           dist=1.0445  h_char=0.6952  wlen=10.04
+    German_BvgS           E4_comb_p50z3           dist=1.0445  h_char=0.6954  wlen=10.04
+
+  E5 — BIGRAM COLLAPSE:
+    German_Faust          E5_collapse_m5          dist=0.3736  h_char=0.8386  wlen=4.19
+    German_Faust          E5_collapse_m10         dist=0.3872  h_char=0.8339  wlen=3.98
+    German_Faust          E5_collapse_m15         dist=0.3893  h_char=0.8239  wlen=3.85
+
+────────────────────────────────────────────────────────────────────────────────
+STEP 7: h_char ANOMALY — WHICH ENCODINGS APPROACH 0.641?
+────────────────────────────────────────────────────────────────────────────────
+
+  Closest to VMS h_char (0.641), regardless of other metrics:
+     1. French_Viandier      E2_vowexp_p70          h_char=0.6448 (Δ=+0.0038)  overall_dist=0.2941
+     2. English_Cury         E2_vowexp_p85          h_char=0.6308 (Δ=-0.0102)  overall_dist=0.2499
+     3. German_Faust         E2_vowexp_p85          h_char=0.6279 (Δ=-0.0131)  overall_dist=0.4240
+     4. Latin_Apicius        E2_vowexp_p85          h_char=0.6240 (Δ=-0.0170)  overall_dist=0.6199
+     5. Latin_Vulgate        E2_vowexp_p85          h_char=0.6234 (Δ=-0.0176)  overall_dist=0.5530
+     6. Italian_Cucina       E2_vowexp_p70          h_char=0.6621 (Δ=+0.0211)  overall_dist=0.6935
+     7. German_BvgS          E2_vowexp_p70          h_char=0.6632 (Δ=+0.0222)  overall_dist=0.1277
+     8. German_BvgS          E2_vowexp_p85          h_char=0.6182 (Δ=-0.0228)  overall_dist=0.1614
+     9. Latin_Caesar         E2_vowexp_p85          h_char=0.6159 (Δ=-0.0251)  overall_dist=0.9678
+    10. Latin_Caesar         E2_vowexp_p70          h_char=0.6683 (Δ=+0.0273)  overall_dist=1.0565
+    11. German_Faust         E2_vowexp_p70          h_char=0.6712 (Δ=+0.0302)  overall_dist=0.4873
+    12. Italian_Cucina       E2_vowexp_p85          h_char=0.6101 (Δ=-0.0309)  overall_dist=0.5990
+    13. Latin_Vulgate        E2_vowexp_p70          h_char=0.6749 (Δ=+0.0339)  overall_dist=0.6157
+    14. Latin_Apicius        E2_vowexp_p70          h_char=0.6754 (Δ=+0.0344)  overall_dist=0.7051
+    15. French_Viandier      E3_possub_z2           h_char=0.6759 (Δ=+0.0349)  overall_dist=1.0951
+
+  Encodings achieving h_char < 0.70: 53 / 192
+    French_Viandier      E2_vowexp_p100         h_char=0.5275  dist=0.7186  heaps=0.5482  zipf=1.0184
+    Italian_Cucina       E2_vowexp_p100         h_char=0.5394  dist=0.4874  heaps=0.5983  zipf=0.9489
+    Latin_Caesar         E2_vowexp_p100         h_char=0.5461  dist=0.8433  heaps=0.7216  zipf=0.8058
+    Latin_Vulgate        E2_vowexp_p100         h_char=0.5543  dist=0.5805  heaps=0.8135  zipf=0.8408
+    German_BvgS          E2_vowexp_p100         h_char=0.5556  dist=0.3910  heaps=0.6916  zipf=1.0178
+    Latin_Apicius        E2_vowexp_p100         h_char=0.5557  dist=0.5515  heaps=0.6019  zipf=0.9146
+    English_Cury         E2_vowexp_p100         h_char=0.5677  dist=0.3016  heaps=0.6238  zipf=0.9734
+    German_Faust         E2_vowexp_p100         h_char=0.5690  dist=0.3710  heaps=0.6809  zipf=1.0094
+    French_Viandier      E2_vowexp_p85          h_char=0.5957  dist=0.3788  heaps=0.6580  zipf=0.9070
+    Italian_Cucina       E2_vowexp_p85          h_char=0.6101  dist=0.5990  heaps=0.7047  zipf=0.9330
+
+────────────────────────────────────────────────────────────────────────────────
+STEP 8: CONSTRAINT ANALYSIS — What the sweep tells us
+────────────────────────────────────────────────────────────────────────────────
+
+  Which metric kills the top-ranked (lang × encoding) combos?
+  (Largest normalized deviation from VMS target)
+
+     1. German_BvgS          E2_vowexp_p70          dist=0.1277  WORST: mean_word_len (Δ=0.082)
+     2. German_BvgS          E2_vowexp_p85          dist=0.1614  WORST: mean_word_len (Δ=0.132)
+     3. German_BvgS          E2_vowexp_p50          dist=0.1728  WORST: h_char_ratio (Δ=0.116)
+     4. German_BvgS          E2_vowexp_p30          dist=0.2211  WORST: h_char_ratio (Δ=0.192)
+     5. French_Viandier      E2_vowexp_p30          dist=0.2353  WORST: h_char_ratio (Δ=0.177)
+     6. English_Cury         E2_vowexp_p85          dist=0.2499  WORST: ttr_5000 (Δ=0.194)
+     7. French_Viandier      E2_vowexp_p50          dist=0.2678  WORST: mean_word_len (Δ=0.180)
+     8. French_Viandier      E2_vowexp_p70          dist=0.2941  WORST: mean_word_len (Δ=0.265)
+     9. English_Cury         E2_vowexp_p100         dist=0.3016  WORST: mean_word_len (Δ=0.179)
+    10. German_Faust         E1_null                dist=0.3219  WORST: h_char_ratio (Δ=0.285)
+
+────────────────────────────────────────────────────────────────────────────────
+STEP 9: PREDICTION TESTS
+────────────────────────────────────────────────────────────────────────────────
+
+  P1: Does COMBINED encoding (E4) win?
+      Winner: German_BvgS + E2_vowexp_p70 (dist=0.1277)
+      VERDICT: REFUTED
+
+  P2: Can any encoding push h_char below 0.60?
+      YES — 9 combos achieve h_char < 0.60
+      VERDICT: REFUTED — target may be reachable
+
+  P3: Do strong encodings (E2 p=1.0, E4) destroy vocabulary metrics?
+      Heaps β range under strong encoding: [0.5482, 0.8594]  (VMS: 0.7530)
+      Zipf α range under strong encoding: [0.7086, 1.0184]  (VMS: 0.9420)
+      Heaps preserved (<20% deviation): YES
+      Zipf preserved (<20% deviation): YES
+      VERDICT: REFUTED — metrics preserved!
+
+  P4: Does LANGUAGE matter more than ENCODING?
+      Language best-distance spread: 0.3206
+      Encoding best-distance spread: 0.9164
+      VERDICT: REFUTED — encoding matters more than language
+
+  P5: Does Italian outperform German overall?
+      Italian Cucina best:  0.4483
+      German Faust best:   0.3219
+      German BvgS best:    0.1277
+      VERDICT: REFUTED — German (BvgS) beats Italian!
+
+────────────────────────────────────────────────────────────────────────────────
+STEP 10: CRITICAL SYNTHESIS
+────────────────────────────────────────────────────────────────────────────────
+
+  1. THE h_char CONSTRAINT:
+     53 encoding(s) achieve h_char < 0.70.
+     Closest to 0.641: French_Viandier + E2_vowexp_p70
+     h_char=0.6448, BUT overall dist=0.2941
+     → The encoding that fixes h_char BREAKS other metrics.
+
+  2. OVERALL WINNER:
+     German_BvgS + E2_vowexp_p70 at dist=0.1277
+     Fingerprint: h_char=0.6632  heaps=0.7580  wlen=5.35
+
+  3. LANGUAGE RANKING (best achievable distance under ANY encoding):
+     German_BvgS           0.1277  (via E2_vowexp_p70)
+     French_Viandier       0.2353  (via E2_vowexp_p30)
+     English_Cury          0.2499  (via E2_vowexp_p85)
+     German_Faust          0.3219  (via E1_null)
+     Latin_Vulgate         0.4082  (via E5_collapse_m10)
+     Latin_Caesar          0.4101  (via E5_collapse_m30)
+     Latin_Apicius         0.4383  (via E5_collapse_m10)
+     Italian_Cucina        0.4483  (via E1_null)
+
+  4. WHAT THIS MEANS FOR DECIPHERMENT:
+     The (language, encoding) approach reveals the VMS fingerprint's
+     achievability envelope: how close can any known language GET to
+     VMS under parametric encoding. The gap between the best result
+     (0.1277) and zero is the RESIDUAL that must be
+     explained by either:
+       a) The correct source language not being in our corpus
+       b) A more sophisticated encoding than tested here
+       c) Properties of the VMS script itself (EVA artifacts)
+       d) VMS being a constructed system, not encoded NL
+
+  Results saved to phase83_encoding_sweep.txt

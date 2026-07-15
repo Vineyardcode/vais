@@ -1,0 +1,99 @@
+Loading lines...
+  4508 lines, 35747 tokens
+
+======================================================================
+40b-FIX: PROPER POSITION-STRATIFIED PERMUTATION TEST
+  For each pair, independently resample prefixes from the pool
+  at the same (pos_bin, section). This preserves positional and
+  section distributions while destroying pair-level correlations.
+======================================================================
+
+  5 bins:
+    MI(pfx→pfx): obs=0.0472, null=0.0051±0.0005, z=80.0, pos×sec explains 10.8%
+    MI(sfx→sfx): obs=0.0665, null=0.0042±0.0005, z=128.0, pos×sec explains 6.3%
+
+  10 bins:
+    MI(pfx→pfx): obs=0.0472, null=0.0053±0.0006, z=68.8, pos×sec explains 11.3%
+    MI(sfx→sfx): obs=0.0665, null=0.0042±0.0005, z=117.1, pos×sec explains 6.3%
+
+  20 bins:
+    MI(pfx→pfx): obs=0.0472, null=0.0053±0.0005, z=79.0, pos×sec explains 11.2%
+    MI(sfx→sfx): obs=0.0665, null=0.0041±0.0005, z=118.0, pos×sec explains 6.2%
+
+======================================================================
+40a-FIX: CORRECTED BOUNDARY CHARACTER CONTROL
+  Problem: conditioning on first_char_j nearly determines pfx_j,
+  so MI(pfx_i; pfx_j | first_char_j) ≈ 0 by construction.
+  Fix: condition ONLY on last_char_i (captures boundary effect
+  from preceding word without touching outcome variable).
+======================================================================
+
+  Measure                                               Value
+  ----------------------------------------------------------
+  MI(pfx_i; pfx_j) unconditional                       0.0472
+  MI(pfx_i; pfx_j | last_char_i)                       0.0700
+  MI(pfx_i; pfx_j | last_char_i × sec × pos5)          0.2655
+  MI(sfx_i; sfx_j) unconditional                       0.0665
+  MI(sfx_i; sfx_j | first_char_j)                      0.0706
+
+  last_char_i explains -48.4% of pfx→pfx MI
+  first_char_j explains -6.2% of sfx→sfx MI
+
+  Permutation tests (200 within-line shuffles):
+
+  Measure                                                Obs         Null       z
+  ----------------------------------------------------------------------------
+  MI(pfx→pfx | last_char_i)                           0.0700 0.0436±0.0015    18.0
+  MI(pfx→pfx | last_char_i × sec × pos5)              0.2655 0.2617±0.0028     1.3
+  MI(sfx→sfx | first_char_j)                          0.0706 0.0436±0.0015    18.3
+
+======================================================================
+BOUNDARY DECOMPOSITION: Which boundary transitions drive the signal?
+======================================================================
+
+  Boundary       Count      %    MI(pfx)    MI(sfx)
+  --------------------------------------------------
+  y→q            3446  11.0%     0.0024     0.0314
+  y→o            2789   8.9%     0.0000     0.0330
+  n→o            1666   5.3%     0.0000     0.0324
+  y→c            1623   5.2%     0.0056     0.0353
+  r→o            1416   4.5%     0.0000     0.0356
+  y→d            1272   4.1%     0.0137     0.0382
+  n→c            1259   4.0%     0.0000     0.0283
+  l→o            1128   3.6%     0.0000     0.0443
+  l→c            1122   3.6%     0.0000     0.0396
+  y→s            1100   3.5%     0.0306     0.0309
+  r→a            1031   3.3%     0.0000     0.0373
+  r→c             986   3.2%     0.0025     0.0597
+  y→l             778   2.5%     0.0251     0.0393
+  l→s             730   2.3%     0.0476     0.0543
+  n→s             701   2.2%     0.0256     0.0660
+
+======================================================================
+PHASE 40 SUPPLEMENT SYNTHESIS
+======================================================================
+
+  40b-FIX (Position Control):
+    The original 40b had a bug that inflated null MI with sparse cells.
+    The corrected stratified permutation test properly controls for
+    position and section while testing for pair-level ordering effects.
+    Check z-scores above across 5/10/20 bins.
+
+  40a-FIX (Boundary Characters):
+    Original conditioning on (last_char, first_char) was over-controlling
+    because first_char nearly determines prefix (collider issue).
+
+    Corrected: MI(pfx→pfx | last_char_i) only — z = 18.0
+    With combined control: MI(pfx→pfx | last_char_i × sec × pos) — z = 1.3
+    MI(sfx→sfx | first_char_j) — z = 18.3
+
+    Prefix syntax SURVIVES corrected boundary control
+    Suffix syntax SURVIVES boundary control
+
+  KEY INSIGHT: In Voynich, boundary characters ARE the morphological
+  features (prefix = first chars, suffix = last chars). So "boundary
+  phonotactics" vs "morphological agreement" is a false dichotomy.
+  The real question is: does word-level ordering exist beyond position
+  and section effects? That's what the stratified permutation tests answer.
+
+[Phase 40 Supplement Complete]

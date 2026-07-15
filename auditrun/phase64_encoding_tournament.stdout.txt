@@ -1,0 +1,185 @@
+╔════════════════════════════════════════════════════════════════════╗
+║  Phase 64: Encoding Model Tournament — Generative Discrimination  ║
+╚════════════════════════════════════════════════════════════════════╝
+
+Loading VMS...
+  VMS: 36259 words, 160710 glyphs
+
+Loading Italian (Dante, Gutenberg #1012)...
+  Italian: 50000 words
+
+Generating encoded texts...
+  [C] Simple substitution...
+  [D] Homophonic (fan=3)...
+  [E] Syllabic encoding...
+  [F] Verbose cipher...
+  [G] Anagram (in-word shuffle)...
+  [H] Null (VMS char+len matched)...
+
+══════════════════════════════════════════════════════════════════════
+TEST 1: VOCABULARY GROWTH CURVES (Heaps' Law)
+══════════════════════════════════════════════════════════════════════
+
+  VMS                             N= 36259  V= 6415  β=0.7533
+  Italian                         N= 50000  V= 8196  β=0.7515
+  Italian (raw)                   N= 50000  V= 8196  β=0.7515
+  Simple subst.                   N= 50000  V= 8196  β=0.7515
+  Homophonic (fan=3)              N= 50000  V=25779  β=0.9032
+  Syllabic                        N= 91231  V= 1219  β=0.4292
+  Verbose (letter→word)           N=196510  V=   35  β=0.0767
+  Anagram                         N= 50000  V=21827  β=0.8929
+  Null (VMS-matched)              N= 36000  V=30399  β=0.9695
+
+  Heaps β interpretation:
+    β ≈ 0.4-0.6 → natural language (open, productive vocabulary)
+    β ≈ 0.6-0.8 → high-diversity text or morphologically rich language
+    β < 0.3     → restricted/closed vocabulary (code, cipher)
+    β → 0       → fixed vocabulary (verbose letter-cipher)
+
+
+══════════════════════════════════════════════════════════════════════
+TEST 2: FULL FINGERPRINT COMPARISON
+══════════════════════════════════════════════════════════════════════
+
+  VMS fingerprint computed.
+  Italian fingerprint computed.
+  Simple subst. fingerprint computed.
+  Homophonic (fan=3) fingerprint computed.
+  Syllabic fingerprint computed.
+  Verbose (letter→word) fingerprint computed.
+  Anagram fingerprint computed.
+  Null (VMS-matched) fingerprint computed.
+
+  Model                               Heaps β    Hapax@mid  H(c|p)/H(c)  H(w|p)/H(w)    Mean wlen       TTR@5K       Zipf α
+  ------------------------------------------------------------------------------------------------------------------
+  VMS                                  0.7533       0.6555       0.6407       0.4448       4.9352       0.3420       0.9415
+  Italian (raw)                        0.7515       0.6390       0.8393       0.4639       3.9302       0.3374       1.0207
+  Simple subst.                        0.7515       0.6390       0.8393       0.4639       3.9302       0.3374       1.0207
+  Homophonic (fan=3)                   0.9032       0.8930       0.7404       0.2061       7.8604       0.6640       0.8389
+  Syllabic                             0.4292       0.2525       0.8393       0.7044       2.1540       0.0970       1.3033
+  Verbose (letter→word)                0.0767       0.0000       0.6782       0.8393       3.0000       0.0060       2.5307
+  Anagram                              0.8929       0.8946       0.9746       0.3027       3.9302       0.5606       1.1275
+  Null (VMS-matched)                   0.9695       0.9524       0.9994       0.0427       4.9395       0.9186       0.7832
+
+══════════════════════════════════════════════════════════════════════
+TEST 3: MODEL SCORING (L2 distance from VMS fingerprint)
+══════════════════════════════════════════════════════════════════════
+
+  Model                             L2 dist   Rank
+  --------------------------------------------------
+  Italian (raw)                       1.777      1 ◄◄◄ BEST MATCH
+  Simple subst.                       1.777      2
+  Homophonic (fan=3)                  2.703      3
+  Anagram                             3.167      4
+  Syllabic                            3.349      5
+  Null (VMS-matched)                  4.191      6
+  Verbose (letter→word)               5.012      7
+
+══════════════════════════════════════════════════════════════════════
+TEST 4: PER-STATISTIC DEVIATION (VMS vs each model, in σ)
+══════════════════════════════════════════════════════════════════════
+
+  Best match: Italian (raw)
+
+        Statistic       VMS    Italian (raw)    Italian (raw)         Syllabic  Null (VMS-match
+  --------------------------------------------------------------------------------
+          Heaps β    0.7533   0.7515(-0.0σ)   0.7515(-0.0σ)   0.4292(-1.2σ)   0.9695(+0.8σ)
+        Hapax@mid    0.6555   0.6390(-0.1σ)   0.6390(-0.1σ)   0.2525(-1.3σ)   0.9524(+0.9σ)
+      H(c|p)/H(c)    0.6407   0.8393(+1.7σ)   0.8393(+1.7σ)   0.8393(+1.7σ)   0.9994(+3.0σ)
+      H(w|p)/H(w)    0.4448   0.4639(+0.1σ)   0.4639(+0.1σ)   0.7044(+1.1σ)   0.0427(-1.7σ)
+        Mean wlen    4.9352   3.9302(-0.6σ)   3.9302(-0.6σ)   2.1540(-1.8σ)   4.9395(+0.0σ)
+           TTR@5K    0.3420   0.3374(-0.0σ)   0.3374(-0.0σ)   0.0970(-0.9σ)   0.9186(+2.1σ)
+           Zipf α    0.9415   1.0207(+0.2σ)   1.0207(+0.2σ)   1.3033(+0.7σ)   0.7832(-0.3σ)
+
+══════════════════════════════════════════════════════════════════════
+TEST 5: VMS LANGUAGE A vs B VOCABULARY DYNAMICS
+══════════════════════════════════════════════════════════════════════
+
+  Language A: 22751 words
+  Language B: 13508 words
+
+  Heaps β:  A=0.7561  B=0.7317  Combined=0.7533
+  Hapax@mid: A=0.6701  B=0.6351
+  TTR@5K:   A=0.3318  B=0.3112
+  Vocab A: 4956, Vocab B: 2864
+  Shared: 1405 (21.9%)
+  Only A: 3551, Only B: 1459
+
+  Combined-vs-separate vocabulary test:
+    V(A)=4956, V(B)=2864, V(A∪B)=6415
+    If same language: expect ~5452 (mild growth)
+    If different languages: expect ~7820 (near sum)
+    Actual growth from larger to combined: 29.4%
+    → SUGGESTS overlapping vocabulary
+
+══════════════════════════════════════════════════════════════════════
+TEST 6: CROSS-SECTION VOCABULARY OVERLAP (Jaccard matrix)
+══════════════════════════════════════════════════════════════════════
+
+  Sections: ['astro', 'bio', 'cosmo', 'cosmo2', 'herbal', 'pharma', 'text']
+    astro: 1827 words, 937 types
+    bio: 6520 words, 1366 types
+    cosmo: 2028 words, 1018 types
+    cosmo2: 3392 words, 718 types
+    herbal: 8314 words, 2295 types
+    pharma: 4086 words, 1306 types
+    text: 10092 words, 2665 types
+
+                astro      bio    cosmo   cosmo2   herbal   pharma     text
+       astro        —    0.149    0.164    0.161    0.138    0.168    0.129
+         bio    0.149        —    0.120    0.162    0.164    0.155    0.192
+       cosmo    0.164    0.120        —    0.133    0.140    0.153    0.123
+      cosmo2    0.161    0.162    0.133        —    0.137    0.161    0.141
+      herbal    0.138    0.164    0.140    0.137        —    0.193    0.184
+      pharma    0.168    0.155    0.153    0.161    0.193        —    0.156
+        text    0.129    0.192    0.123    0.141    0.184    0.156        —
+
+  Section-unique words (appear in ONLY that section):
+    astro: 369 unique words (39.4% of its vocab)
+    bio: 555 unique words (40.6% of its vocab)
+    cosmo: 446 unique words (43.8% of its vocab)
+    cosmo2: 205 unique words (28.6% of its vocab)
+    herbal: 1162 unique words (50.6% of its vocab)
+    pharma: 518 unique words (39.7% of its vocab)
+    text: 1416 unique words (53.1% of its vocab)
+
+══════════════════════════════════════════════════════════════════════
+ADJUDICATION
+══════════════════════════════════════════════════════════════════════
+
+  VMS Heaps β = 0.7533
+  Italian β   = 0.7515
+
+  MODEL RANKING (closest to VMS):
+    1. Italian (raw) (L2=1.777)
+    2. Simple subst. (L2=1.777)
+    3. Homophonic (fan=3) (L2=2.703)
+    4. Anagram (L2=3.167)
+    5. Syllabic (L2=3.349)
+    6. Null (VMS-matched) (L2=4.191)
+    7. Verbose (letter→word) (L2=5.012)
+
+  BEST MATCH: Italian (raw)
+
+  Interpretation:
+    VMS fingerprint is closest to natural language or simple
+    substitution. This is CONSISTENT with the NL hypothesis.
+    Simple substitution is statistically identical to NL
+    (it just relabels characters), so this cannot distinguish
+    between plaintext NL and monoalphabetic cipher of NL.
+
+  CRITICAL CONSTRAINTS from this phase:
+    Null model distance: 4.191
+    Best model distance: 1.777
+    → VMS is 2.4× farther from null than from
+      best model. Structure is NOT just char-freq + word-length.
+
+    Verbose cipher distance: 5.012 (rank 7)
+    → Verbose cipher CONFIRMED excluded (as per Phase 45)
+
+    A/B Heaps divergence: |β_A - β_B| = 0.0244
+    → SIMILAR vocabulary dynamics between A and B
+      Compatible with same language in different hands
+
+Saved to C:\projects\voynich_slop\results\phase64_output.txt
+Saved to C:\projects\voynich_slop\results\phase64_output.json

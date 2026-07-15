@@ -1,0 +1,562 @@
+===========================================================================
+PHASE 71: PARAGRAPH-INITIAL LETTER ANALYSIS
+Skeptical revalidation of paragraph-start patterns
+===========================================================================
+
+Total paragraphs detected: 784
+Total words: 42336
+Total lines: 5758
+
+───────────────────────────────────────────────────────────────────────────
+1. BASELINE CHARACTER FREQUENCIES (entire manuscript)
+───────────────────────────────────────────────────────────────────────────
+
+Total characters: 207762
+Unique characters: 26
+
+Top 15 characters by frequency:
+  'o':  27024 (13.0%)
+  'e':  21527 (10.4%)
+  'h':  19001 (9.1%)
+  'y':  18910 (9.1%)
+  'a':  16039 (7.7%)
+  'c':  14045 (6.8%)
+  'd':  14001 (6.7%)
+  'i':  13059 (6.3%)
+  'k':  11484 (5.5%)
+  'l':  11380 (5.5%)
+  'r':   8207 (4.0%)
+  's':   7874 (3.8%)
+  't':   7442 (3.6%)
+  'n':   6719 (3.2%)
+  'q':   6038 (2.9%)
+
+───────────────────────────────────────────────────────────────────────────
+2. PARAGRAPH-INITIAL FIRST CHARACTER (all paragraphs)
+───────────────────────────────────────────────────────────────────────────
+
+Paragraph-initial character distribution (n=784):
+  'p':  352 (44.9%)  [baseline: 1.0%, ratio: 45.64x]
+  't':  174 (22.2%)  [baseline: 3.6%, ratio: 6.20x]
+  'k':   81 (10.3%)  [baseline: 5.5%, ratio: 1.87x]
+  'f':   31 (4.0%)  [baseline: 0.4%, ratio: 10.28x]
+  'o':   31 (4.0%)  [baseline: 13.0%, ratio: 0.30x]
+  'q':   27 (3.4%)  [baseline: 2.9%, ratio: 1.19x]
+  'c':   23 (2.9%)  [baseline: 6.8%, ratio: 0.43x]
+  's':   19 (2.4%)  [baseline: 3.8%, ratio: 0.64x]
+  'd':   14 (1.8%)  [baseline: 6.7%, ratio: 0.26x]
+  'y':   14 (1.8%)  [baseline: 9.1%, ratio: 0.20x]
+  'n':    4 (0.5%)  [baseline: 3.2%, ratio: 0.16x]
+  'e':    4 (0.5%)  [baseline: 10.4%, ratio: 0.05x]
+  'w':    4 (0.5%)  [baseline: 0.0%, ratio: 22.08x]
+  'l':    2 (0.3%)  [baseline: 5.5%, ratio: 0.05x]
+  'h':    2 (0.3%)  [baseline: 9.1%, ratio: 0.03x]
+
+Chi-squared test vs baseline character freq:
+  χ² = 16905.4, df = 18, p ≈ 0.00e+00
+  >>> SIGNIFICANT: paragraph-initial chars differ from baseline
+
+───────────────────────────────────────────────────────────────────────────
+3. PARAGRAPH-INITIAL FIRST GLYPH (digraph-aware)
+───────────────────────────────────────────────────────────────────────────
+
+Top 15 paragraph-initial glyphs:
+  'p':  352 (44.9%)
+  't':  174 (22.2%)
+  'k':   81 (10.3%)
+  'f':   31 (4.0%)
+  'o':   31 (4.0%)
+  'q':   27 (3.4%)
+  's':   15 (1.9%)
+  'c':   14 (1.8%)
+  'd':   14 (1.8%)
+  'y':   14 (1.8%)
+  'ch':    5 (0.6%)
+  'cph':    4 (0.5%)
+  'sh':    4 (0.5%)
+  'n':    4 (0.5%)
+  'e':    4 (0.5%)
+
+───────────────────────────────────────────────────────────────────────────
+4. PARAGRAPH-INITIAL FIRST WORD
+───────────────────────────────────────────────────────────────────────────
+
+Top 20 paragraph-initial words:
+  'c':   14 (1.8%)  [global: 0.45%, ratio: 3.9x]
+  'pol':   10 (1.3%)  [global: 0.05%, ratio: 25.7x]
+  'tchedy':    8 (1.0%)  [global: 0.08%, ratio: 12.3x]
+  'polaiin':    7 (0.9%)  [global: 0.02%, ratio: 47.2x]
+  'tol':    7 (0.9%)  [global: 0.11%, ratio: 8.0x]
+  'pchedar':    7 (0.9%)  [global: 0.03%, ratio: 31.5x]
+  'pcheol':    6 (0.8%)  [global: 0.03%, ratio: 29.5x]
+  'pchedy':    6 (0.8%)  [global: 0.09%, ratio: 8.5x]
+  'pchor':    6 (0.8%)  [global: 0.03%, ratio: 24.9x]
+  'polchedy':    5 (0.6%)  [global: 0.02%, ratio: 38.6x]
+  'pcheor':    5 (0.6%)  [global: 0.01%, ratio: 54.0x]
+  'pchedaiin':    5 (0.6%)  [global: 0.01%, ratio: 54.0x]
+  'tshedy':    5 (0.6%)  [global: 0.03%, ratio: 24.5x]
+  'tchor':    5 (0.6%)  [global: 0.05%, ratio: 12.3x]
+  'pchdair':    5 (0.6%)  [global: 0.01%, ratio: 45.0x]
+  'podaiin':    5 (0.6%)  [global: 0.02%, ratio: 38.6x]
+  'pchedal':    4 (0.5%)  [global: 0.01%, ratio: 43.2x]
+  'tar':    4 (0.5%)  [global: 0.12%, ratio: 4.3x]
+  'psheody':    4 (0.5%)  [global: 0.01%, ratio: 43.2x]
+  'pcheodar':    4 (0.5%)  [global: 0.01%, ratio: 36.0x]
+
+───────────────────────────────────────────────────────────────────────────
+5. CONTROL: LINE-INITIAL first character (ALL lines, not just paragraphs)
+───────────────────────────────────────────────────────────────────────────
+
+Line-initial character distribution (n=5758):
+  'o': 1208 (21.0%)  [baseline: 13.0%, ratio: 1.61x]
+  'q':  795 (13.8%)  [baseline: 2.9%, ratio: 4.75x]
+  'd':  776 (13.5%)  [baseline: 6.7%, ratio: 2.00x]
+  's':  744 (12.9%)  [baseline: 3.8%, ratio: 3.41x]
+  'y':  730 (12.7%)  [baseline: 9.1%, ratio: 1.39x]
+  't':  421 (7.3%)  [baseline: 3.6%, ratio: 2.04x]
+  'p':  408 (7.1%)  [baseline: 1.0%, ratio: 7.20x]
+  'c':  232 (4.0%)  [baseline: 6.8%, ratio: 0.60x]
+  'k':  121 (2.1%)  [baseline: 5.5%, ratio: 0.38x]
+  'l':   86 (1.5%)  [baseline: 5.5%, ratio: 0.27x]
+
+Chi-squared test (line-initial vs baseline):
+  χ² = 9623.4, df = 22, p ≈ 0.00e+00
+
+───────────────────────────────────────────────────────────────────────────
+6. PARAGRAPH-INITIAL vs LINE-INITIAL (is paragraph-start special?)
+───────────────────────────────────────────────────────────────────────────
+
+Paragraph-start lines: 784
+Non-paragraph lines: 4974
+
+Comparison (paragraph-initial vs non-paragraph line-initial):
+  Char     Para%   Line%   Ratio
+  'p'      44.9%    1.1%  39.88x
+  't'      22.2%    5.0%   4.47x
+  'k'      10.3%    0.8%  12.85x
+  'f'       4.0%    0.2%  24.58x
+  'o'       4.0%   23.7%   0.17x
+  'q'       3.4%   15.4%   0.22x
+  'c'       2.9%    4.2%   0.70x
+  's'       2.4%   14.6%   0.17x
+  'd'       1.8%   15.3%   0.12x
+  'y'       1.8%   14.4%   0.12x
+
+Chi-squared test (para-initial vs non-para line-initial):
+  χ² = 15883.6, df = 16, p ≈ 0.00e+00
+  >>> SIGNIFICANT: para-initial IS different from line-initial
+
+───────────────────────────────────────────────────────────────────────────
+7. SECTION-BY-SECTION PARAGRAPH-INITIAL ANALYSIS
+───────────────────────────────────────────────────────────────────────────
+
+  === HERBAL section (322 paragraphs) ===
+  Top 5 first chars:  'p'=111(34%) 't'=90(28%) 'k'=54(17%) 'f'=17(5%) 'c'=17(5%) 
+  Top 5 first glyphs: 'p'=111(34%) 't'=90(28%) 'k'=54(17%) 'f'=17(5%) 'c'=11(3%) 
+  Top 5 first words:  'c'=11(3%) 'pcheol'=4(1%) 'tshol'=4(1%) 'tchor'=4(1%) 'pchor'=4(1%) 
+  Concentration: 34% start with 'p'
+
+  === ASTRO section (26 paragraphs) ===
+  Top 5 first chars:  't'=8(31%) 'o'=8(31%) 'y'=5(19%) 'd'=2(8%) 'c'=1(4%) 
+  Top 5 first glyphs: 't'=8(31%) 'o'=8(31%) 'y'=5(19%) 'd'=2(8%) 'ch'=1(4%) 
+  Top 5 first words:  'teeodaiin'=1(4%) 'opodchol'=1(4%) 'odaeiin'=1(4%) 'ydchos'=1(4%) 'oparchy'=1(4%) 
+  Concentration: 31% start with 't'
+
+  === BALNEO section (93 paragraphs) ===
+  Top 5 first chars:  'p'=50(54%) 't'=14(15%) 'q'=10(11%) 'o'=7(8%) 'k'=5(5%) 
+  Top 5 first glyphs: 'p'=50(54%) 't'=14(15%) 'q'=10(11%) 'o'=7(8%) 'k'=5(5%) 
+  Top 5 first words:  'pol'=4(4%) 'polshy'=2(2%) 'pchedar'=2(2%) 'psheoldy'=2(2%) 'polchedy'=2(2%) 
+  Concentration: 54% start with 'p'
+
+  === RECIPE section (285 paragraphs) ===
+  Top 5 first chars:  'p'=155(54%) 't'=60(21%) 'k'=20(7%) 'f'=14(5%) 'd'=8(3%) 
+  Top 5 first glyphs: 'p'=155(54%) 't'=60(21%) 'k'=20(7%) 'f'=14(5%) 'd'=8(3%) 
+  Top 5 first words:  'pol'=5(2%) 'tchedy'=5(2%) 'polaiin'=5(2%) 'pchedal'=4(1%) 'pcheor'=4(1%) 
+  Concentration: 54% start with 'p'
+
+───────────────────────────────────────────────────────────────────────────
+8. STAR MARKER TYPE vs. INITIAL CHARACTER (recipe section)
+───────────────────────────────────────────────────────────────────────────
+
+Recipe section paragraphs with star annotations: 
+
+  DARK stars (14 paragraphs):
+    First chars:  'p'=5(36%) 't'=4(29%) 'q'=3(21%) 'd'=1(7%) 'k'=1(7%) 
+    First glyphs: 'p'=5(36%) 't'=4(29%) 'q'=3(21%) 'd'=1(7%) 'k'=1(7%) 
+    First words:  'pchedal'=1(7%) 'dshol'=1(7%) 'tchoky'=1(7%) 'qokeey'=1(7%) 'pchedy'=1(7%) 
+    All entries:
+         f103r | Dark star, 7 points                 | pchedal
+         f103r | Dark star, 8 points                 | dshol
+         f103r | Dark star, 7 points                 | tchoky
+         f103r | Dark star, 7 points                 | qokeey
+         f103r | Darkish star, 7 points              | pchedy
+         f103r | Dark star, 7 points                 | qokeedy
+         f104r | Darkish star, 8 points, tail?       | tol
+         f104r | Darkish star, 8 points, tail        | toaiin
+         f104r | Darkish star, 7 points, tail        | pchedar
+         f108r | Dark star, 7 points, tail           | pochedy
+         f108r | Dark star, 7 points, tail           | qolshy
+         f108r | Dark star, 7 points, tail           | keol
+         f108r | Dark star, 7 points, tail           | tchedy
+         f108r | Dark star, 7 points, tail           | pcheedy
+
+  LIGHT stars (136 paragraphs):
+    First chars:  'p'=76(56%) 't'=27(20%) 'k'=9(7%) 'd'=5(4%) 'q'=5(4%) 
+    First glyphs: 'p'=76(56%) 't'=27(20%) 'k'=9(7%) 'd'=5(4%) 'q'=5(4%) 
+    First words:  'psheody'=3(2%) 'polaiin'=3(2%) 'polchedy'=2(1%) 'pchedal'=2(1%) 'pcheor'=2(1%) 
+    All entries:
+         f103r | Light star, 8 points                | pocharal
+         f103r | Light star, 8 points                | daroal
+         f103r | Light star, 8 points                | podar
+         f103r | Light star, 7 points                | polchedy
+         f103r | Light star, 7 points                | pcheam
+         f103r | Light star, 7 points                | qokechy
+         f103r | Light star, 8 points                | pcholkchdy
+         f103r | Light star, 7 points                | qoker
+         f103r | Light star, 8 points                | qokeey
+         f103r | Light star, 7 points                | tar
+         f103r | Light star, 8 points                | polarar
+         f103r | Light star, 8 points, tail up?      | pchedal
+         f103v | Lightish star, 7 points             | pcheor
+         f103v | Light star, 7 points                | sal
+         f103v | Light star, 7 points                | qokeedy
+         f103v | Light star, 8 points                | pchear
+         f103v | Light star, 8 points                | olshey
+         f103v | Light star, 8 points                | orain
+         f104r | Light star, 7 points, tail          | kchdal
+         f104r | Lightish star, 7 points, tail       | tshdol
+         f104r | Light star, 7 points, tail          | ocheoey
+         f104r | Light star, 8 points, tail          | tshedar
+         f104r | Light star, 9 points, tail          | okeeo
+         f104r | Light star, 7 points, tail          | psheody
+         f104r | Light star, 8 points, tail          | tsheodl
+         f104v | Light star, 8 points, tail          | solchd
+         f104v | Light star, 7 points, tail          | polchechy
+         f104v | Light star, 8 points, tail          | pcheor
+         f104v | Light star, 8 points, tail          | pchoror
+         f104v | Light star, 8 points, tail          | pchedy
+         f104v | Light star, 8 points, tail          | posairy
+         f105r | Light star, 7 points, tail          | pdar
+         f105r | Light star, 8 points, tail          | lteedy
+         f105r | Light star, 7 points, tail          | pdal
+         f105r | Light star, 7 points, tail          | kodeey
+         f105v | Light star, 7 points, tail          | pchedal
+         f105v | Light star, 7 points, tail          | pchedaiin
+         f105v | Light star, 7 points, tail          | porair
+         f105v | Light star, 8 points, tail          | kchdaldy
+         f105v | Light star, 7 points, tail          | poar
+         f106r | Light star, 8 points, tail          | pcheodair
+         f106r | Light star, 8 points, tail          | pshoair
+         f106r | Light star, 7 points, tail          | podaroar
+         f106r | Light star, 8 points, tail          | tshodair
+         f106r | Light star, 7 points, tail          | tcheoky
+         f106r | Light star, 8 points, tail          | tcheorsho
+         f106r | Light star, 7 points, tail          | pshodaiin
+         f106v | Light star, 7 points, tail          | fsheda
+         f106v | Light star, 8 points, tail          | tshodaiin
+         f106v | Light star, 8 points, tail          | kcheoakar
+         f106v | Light star, 9 points, tail          | polchs
+         f106v | Light star, 8 points, tail          | psheody
+         f106v | Light star, 7 points, tail          | pchodaiin
+         f106v | Light star, 8 points, tail          | ko
+         f107r | Light star, 7 points, tail          | teeody
+         f107r | Light star, 7 points, tail          | polchls
+         f107r | Light star, 8 points, tail          | poalosy
+         f107r | Light star, 7 points, tail          | pal
+         f107r | Light star, 7 points, tail          | pair
+         f107r | Light star, 7 points, tail          | poaral
+         f107r | Light star, 7/8 points, tail        | podky
+         f107v | Light star, 7 points, tail          | tol
+         f107v | Light star, 8 points, tail?         | tshedy
+         f107v | Light star, 7 points, tail          | palar
+         f107v | Light star, 7 points, tail          | kaolkar
+         f107v | Light star, 9 points, tail          | taygap
+         f107v | Light star, 7 points, tail          | poraiin
+         f107v | Light star, 8 points, tail          | pol
+         f108r | Light star, 7 points, tail          | teodeeor
+         f108r | Light star, 7 points, tail          | tchokedy
+         f108r | Light star, 7 points, tail          | polchal
+         f108r | Light star, 7 points, tail          | folaiin
+         f108r | Light star, 7 points, tail          | polchedy
+         f108r | Light star, 7 points, tail          | pychory
+         f108r | Light star, 7 points, tail          | poro
+         f108r | Light star, 7 points, tail          | dain
+         f108v | Light star, 7 points, tail          | polaiin
+         f108v | Light star, 8 points, tail          | tshedky
+         f108v | Light star, 7 points, tail          | polkeedal
+         f111r | Light star, 8 points, tail          | dain
+         f111r | Light star, 7 points, tail          | poeokeey
+         f111v | Light star, 7 points, tail?         | polkiin
+         f111v | Light star, 8 points                | polchey
+         f111v | Light star, 7 points                | pollaiin
+         f112r | Light star, 7 points, tail          | poar
+         f112r | Light star, 7 points, tail          | qoain
+         f112r | Light star, 7 points, tail          | pair
+         f112r | Light star, 8 points, tail          | pam
+         f112r | Light star, 7 points, tail          | pol
+         f112v | Light star, 7 points, tail??        | pcheokeey
+         f112v | Light star, 7 points, tail          | pchodain
+         f112v | Light star, 7 points, tail?         | ycheol
+         f112v | Light star, 7 points, tail          | polor
+         f112v | Light star, 8 points, tail          | tchede
+         f112v | Light star, 6 points, tail          | poly
+         f113r | Light star, 7 points, tail          | pches
+         f113r | Light star, 7 points, tail          | pchosos
+         f113r | Light star, 7 points, tail          | polchor
+         f113r | Light star, 7 points, tail          | kshoraiin
+         f113r | Light star, 8 points, tail          | tchol
+         f113r | Light star, 7 points, tail          | palshsar
+         f113r | Light star, 7? points, tail         | pcheockhy
+         f113r | Light star, 8 points, tail          | tchodairos
+         f113v | Light star, 8 points, tail          | fchoctheody
+         f113v | Light star, 7 points, tail          | polaiin
+         f113v | Light star, 7 points, tail          | pychdar
+         f113v | Light star, 8 points, tail          | tokary
+         f113v | Light star, 7 points, tail          | polsairy
+         f113v | Light star, 8 points, tail          | pcholky
+         f113v | Light star, 8 points, tail          | polaiin
+         f114r | Light star, 6/7 points, tail        | fdeechdy
+         f114r | Light star, 8 points, tail          | dalchy
+         f114r | Light star, 7 points, tail          | pairody
+         f114r | Light star, 7 points, tail          | tcheodaiin
+         f114r | Light star, 7/8 points, tail        | todaiin
+         f114v | Light star, 7 points, tail          | pchdol
+         f114v | Light star, 7 points, tail          | pchedchdy
+         f114v | Light star, 7/8 points, tail        | tsheodar
+         f114v | Light star, 7 points, tail          | tshedain
+         f114v | Light star, 7 points, tail          | pcheodal
+         f114v | Light star, 7 points, tail          | kaiin
+         f115r | Light star, 8 points, tail          | dchedain
+         f115r | Light star, 7/8 points, tail        | tchedy
+         f115r | Light star, 8 points, tail          | psheody
+         f115r | Light star, 8 points, tail          | fshedy
+         f115r | Light star, 8 points, tail          | sorols
+         f115r | Light star, 8 points, tail          | tcheodl
+         f115v | Light star, 8 points, tail          | pchody
+         f115v | Light star, 8 points, tail          | tchdor
+         f115v | Light star, 8 points, tail          | pchodain
+         f115v | Light star, 8 points, tail          | pcheo
+         f115v | Light star, 7 points, tail(?)       | pchdair
+         f115v | Light star, 8 points, tail          | tshar
+         f116r | Light star, 7 points                | kchdpy
+         f116r | Light star, 7 points                | pcholchdy
+         f116r | Light star, 8 points                | pcharalor
+
+  LIGHT_DOTTED stars (129 paragraphs):
+    First chars:  'p'=72(56%) 't'=26(20%) 'k'=10(8%) 'f'=9(7%) 'y'=4(3%) 
+    First glyphs: 'p'=72(56%) 't'=26(20%) 'k'=10(8%) 'f'=9(7%) 'y'=4(3%) 
+    First words:  'pol'=3(2%) 'tchedy'=3(2%) 'pcheor'=2(2%) 'polar'=2(2%) 'tchedor'=2(2%) 
+    All entries:
+         f103v | Light star, dotted, 7 points        | pol
+         f103v | Light star, dotted, 7 points        | pchal
+         f103v | Light star, dotted, 7 points        | teeol
+         f103v | Light star, dotted, 7 points        | pol
+         f103v | Light star, dotted, 6 points        | fcheody
+         f103v | Light star, dotted, 8 points        | yshey
+         f103v | Light star, dotted, 7 points        | polshor
+         f104r | Light star, dotted, [9|8] points, tail | pchol
+         f104r | Light star, dotted, 7 points, tail  | pcholor
+         f104v | Light star, dotted, 8 points, tail  | pchdoiin
+         f104v | Light star, dotted, 7? points, tail | tchodls
+         f104v | Light star, dotted, 8 points, tail  | tolkshey
+         f104v | Light star, dotted, 8 points, tail  | ytchedy
+         f104v | Light star, dotted, 8 points, tail  | kche
+         f104v | Light star, dotted, 8 points, tail  | psheodar
+         f104v | Light star, dotted, 8 points, tail  | tchedy
+         f105r | Light star, dotted, 8 points, tail  | aiin
+         f105r | Light star, dotted, 7 points, tail  | par
+         f105r | Light star, dotted, 7 points, tail  | kesoar
+         f105r | Light star, dotted, 7 points, tail  | pcheor
+         f105r | Light star, dotted, 7 points, tail  | pchsed
+         f105r | Light star, dotted, 7 points, tail  | ypchedy
+         f105v | Light star, dotted, 7 points, tail  | polairy
+         f105v | Light star, dotted, 7 points, tail  | fodal
+         f105v | Light star, dotted, 7 points, tail  | pchor
+         f105v | Light star, dotted, 7 points, tail  | tcholkaiin
+         f105v | Light star, dotted, 7 points, tail  | tdol
+         f106r | Light star, dotted, 7 points, tail  | pshdar
+         f106r | Light star, dotted, 7 points, tail + small light companion with 6/6 points | porarchy
+         f106r | Light star, dotted, 7 points, tail  | pcheol
+         f106r | Light star, dotted, 7 points, tail  | kshed
+         f106r | Light star, dotted, 8 points, tail  | podshedy
+         f106r | Light star, dotted, 8 points, tail  | poral
+         f106r | Light star, dotted, 9/8 points, tail | psheodalo
+         f106r | Light star, dotted, 8 points, tail  | pcheodar
+         f106v | Light star, dotted, 8 points, tail  | tshoar
+         f106v | Light star, dotted, 8 points, tail  | tchdys
+         f106v | Light star, dotted, 7 points, tail  | pshodalos
+         f106v | Light star, dotted, 8 points, tail  | tar
+         f106v | Light star, dotted, 8 points, tail  | polos
+         f106v | Light star, dotted, 8 points, tail  | pyoaly
+         f106v | Light star, dotted, 8? points, tail | py
+         f107r | Light star, dotted, 7 points, tail  | pchdlar
+         f107r | Light star, dotted, 7 points, tail  | torshor
+         f107r | Light star, dotted, 7 points, tail  | taror
+         f107r | Light star, dotted, 7 points, tail  | pydar
+         f107r | Light star, dotted, 7 points, tail  | pairar
+         f107r | Light star, dotted, 7 points, tail  | pcholky
+         f107r | Light star, dotted, 8 points, tail? | fairal
+         f107v | Light star, dotted, 6 points, tail, small dots | kaisar
+         f107v | Light star, dotted, 8 points, tail  | polcheolkain
+         f107v | Light star, dotted, 8 points, tail  | parair
+         f107v | Light star, dotted, 7 points, tail  | palchar
+         f107v | Light star, dotted, 8 points, tail  | tolkeeedy
+         f107v | Light star, dotted, 8 points, tail? | polchedy
+         f107v | Light star, dotted, 7 points, tail  | pokar
+         f108r | Light star, dotted?, 7 points, tail | fcheokair
+         f108v | Light star, dotted, 7 points, long tail | pchedal
+         f108v | Light star, dotted, 8 points, tail  | pchedaiin
+         f108v | Light star, dotted, 7 points, tail  | pcheor
+         f108v | Light star, dotted, 8 points, tail  | polshedaiin
+         f111r | Light star, dotted, 7 points, tail  | kcholchdar
+         f111r | Light star, dotted, 7 points, tail  | polal
+         f111r | Light star, dotted, 7 points, tail  | pchedar
+         f111r | Light star, dotted, 8 points, tail  | polkeeo
+         f111v | Light star, dotted, 8 points, tail  | koshey
+         f111v | Light star, dotted, 7 points        | polar
+         f111v | Light star, dotted, 7 points        | pochey
+         f111v | Light star, 8 points, dotted, tail  | polar
+         f111v | Light star, dotted, 8 points        | psalar
+         f112r | Light star, dotted, 7 points, tail  | folchey
+         f112r | Light star, dotted, 7 points, tail  | tchedy
+         f112r | Light star, dotted, 7 points, tail  | polchdy
+         f112r | Light star, dotted, 8/7 points, tail | pcholkeedy
+         f112r | Light star, dotted, 7 points, tail  | pair
+         f112r | Light star, dotted, 7 points, tail  | polkeedy
+         f112v | Light star, dotted?, 7 points, tail | keeoal
+         f112v | Light star, dotted, 7 points, tail  | tchor
+         f112v | Light star, dotted, 7 points, tail  | pchoraiin
+         f112v | Light star, dotted, 8 points, tail  | pchodain
+         f112v | Light star, dotted, 8 points, tail  | tchedor
+         f112v | Light star, dotted, 7 points, tail  | teodarody
+         f112v | Light star, dotted, 7 points, tail?? | ycheey
+         f113r | Light star, dotted, 7 points, tail  | kcheeos
+         f113r | Light star, dotted, 7 points, tail  | pcheody
+         f113r | Light star, dotted, 8 points, tail  | pcheoor
+         f113r | Light star, dotted, 8 points, tail  | pchedair
+         f113r | Light star, dotted, 7 points, tail  | folchear
+         f113r | Light star, dotted, 8 points, tail  | tshedy
+         f113r | Light star, dotted, 7 points, tail  | pcheodaiin
+         f113v | Light star, dotted, 7 points, tail  | folorarom
+         f113v | Light star, dotted, 7 points, tail  | fcheshd
+         f113v | Light star, dotted, 7 points, tail  | poraiin
+         f113v | Light star, dotted, 7 points, tail  | polaiin
+         f113v | Light star, dotted, 7 points, tail  | paiir
+         f113v | Light star, dotted, 7 points, tail  | ofaral
+         f113v | Light star, dotted, 7 points, tail  | pol
+         f113v | Light star, dotted, 7 points, tail  | polaiin
+         f114r | Light star, dotted, 7 points, tail  | tchedol
+         f114r | Light star, dotted, 7 points, tail  | fchey
+         f114r | Light star, dotted, 7 points, tail  | solpchd
+         f114r | Light star, dotted, 7 points, tail  | tchedair
+         f114r | Light star, dotted, 7 points, tail  | pchedairs
+         f114r | Light star, dotted, 8 points, tail  | pcheos
+         f114r | Light star, dotted, 8? points, tail | poedair
+         f114v | Light star, dotted, 7 points, tail  | tedcheo
+         f114v | Light star, dotted, 7 points, tail  | tchedy
+         f114v | Light star, dotted, 7 points, tail  | dorkcheky
+         f114v | Light star, dotted, 7 points, tail  | pshedy
+         f114v | Light star, dotted, 7 points, tail  | pchdair
+         f114v | Light star, dotted, 8 points, tail  | tshey
+         f115r | Light star, dotted, 7 points, tail  | hfdar
+         f115r | Light star, dotted, 7 points, tail  | kcheor
+         f115r | Light star, dotted, 8 points, tail  | htchedy
+         f115r | Light star, dotted, 9 points, tail  | pcheodain
+         f115r | Light star, dotted, 8 points, tail  | ksheoary
+         f115r | Light star, dotted, 8 points, tail  | posheos
+         f115r | Light star, dotted, 8 points, tail  | paiinody
+         f115v | Light star, dotted, 8 points, tail  | tchedor
+         f115v | Light star, dotted, 8 points, tail  | tchoros
+         f115v | Light star, dotted, 8 points, tail  | pchdarody
+         f115v | Light star, dotted, 9 points, tail  | tshedy
+         f115v | Light star, dotted, 7 points, tail  | polor
+         f115v | Light star, dotted, 8 points, tail  | taiin
+         f115v | Light star, dotted, 8 points, tail  | dcheodl
+         f116r | Light star, dotted, 7 points        | padar
+         f116r | Light star, dotted, 6/7 points      | chdin
+         f116r | Light star, dotted, 7 points        | pchoetal
+         f116r | Light star, dotted, 7 points        | pchallarar
+
+  OTHER stars (1 paragraphs):
+    First chars:  'p'=1(100%) 
+    First glyphs: 'p'=1(100%) 
+    First words:  'pchdar'=1(100%) 
+    All entries:
+         f104r | text only / stars                   | pchdar
+
+  NO STAR annotation (5 paragraphs):
+         f106v | tshod
+         f107v | porain
+         f113r | tchoar
+         f114r | tchedaiin
+         f116r | oqokaiin
+
+───────────────────────────────────────────────────────────────────────────
+9. FIRST WORD vs. ALL OTHER WORDS (vocabulary overlap)
+───────────────────────────────────────────────────────────────────────────
+
+Unique paragraph-initial words: 573
+Words that appear ONLY para-initially: 451
+  Examples: ['chair', 'chdin', 'cphdor', 'cpho', 'cphoar', 'dalchy', 'daroal', 'dchedain', 'dcheodl', 'dorkcheky', 'doror', 'dorsheoy', 'dosar', 'dshol', 'epchedeey', 'etshedal', 'fachys', 'faiis', 'fairal', 'fchaiin']
+
+───────────────────────────────────────────────────────────────────────────
+10. GALLOWS-INITIAL PARAGRAPHS (are gallows over-represented?)
+───────────────────────────────────────────────────────────────────────────
+
+  Gallows-initial rate:
+    All words:           4450/42336 = 10.5%
+    Non-para lines:       363/ 4974 = 7.3%
+    Paragraph-initial:    642/  784 = 81.9%
+    Enrichment ratio:   7.79x vs all words
+
+───────────────────────────────────────────────────────────────────────────
+11. f103r-f116v: INITIAL GLYPH DEEP DIVE
+───────────────────────────────────────────────────────────────────────────
+
+Recipe-range paragraphs: 285
+
+First glyph distribution:
+  p     155 ( 54.4%) ███████████████████████████
+  t      60 ( 21.1%) ██████████
+  k      20 (  7.0%) ███
+  f      14 (  4.9%) ██
+  d       8 (  2.8%) █
+  q       8 (  2.8%) █
+  o       6 (  2.1%) █
+  y       5 (  1.8%) 
+  s       4 (  1.4%) 
+  h       2 (  0.7%) 
+  a       1 (  0.4%) 
+  l       1 (  0.4%) 
+  ch      1 (  0.4%) 
+
+Second glyph after paragraph-initial glyph:
+  After 'p': 'ch'=61 'o'=61 'a'=15 'sh'=10 'y'=5 
+  After 't': 'ch'=26 'sh'=15 'o'=8 'a'=5 'e'=5 
+  After 'k': 'ch'=8 'e'=3 'o'=3 'sh'=3 'a'=3 
+  After 'f': 'ch'=5 'o'=5 'sh'=2 'a'=1 'd'=1 
+  After 'd': 'a'=4 'ch'=2 'sh'=1 'o'=1 
+
+═══════════════════════════════════════════════════════════════════════════
+12. SKEPTICAL SELF-ASSESSMENT
+═══════════════════════════════════════════════════════════════════════════
+
+POTENTIAL CONFOUNDS TO CHECK:
+  a) Is 'paragraph' detection reliable? @P0 vs +P0 in IVTFF format may
+     not map cleanly onto visual paragraph breaks. Cross-check with images.
+  b) Transcription bias: Did transcribers use <%> markers consistently?
+     If some folios lack proper paragraph markers, our counts are skewed.
+  c) Character frequency: If the top 3 characters make up >40% of all chars,
+     it's NOT surprising that they dominate paragraph starts too.
+     The chi-squared test above directly tests this.
+  d) Line-wrap artifact: If paragraphs always start at the left margin
+     and lines wrap mid-word, the 'first character' of a continuation
+     line is random, while the first character of a paragraph is chosen.
+     This WOULD create a real signal — but it might reflect orthographic
+     convention rather than meaning.
+  e) Star markers: The transcription uses # comments for star types.
+     These may not be perfectly consistent across transcribers. The
+     dark/light/dotted distinction should be verified against images.
+    
+
+Results saved to C:\projects\voynich_slop\results\phase71_paragraph_initials.txt

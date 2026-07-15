@@ -1,0 +1,179 @@
+========================================================================
+  PHASE 97 — SLOT GRAMMAR AS h_char GENERATIVE MODEL
+========================================================================
+
+▸ Building annotated glyph streams...
+  ALL: 183,198 glyphs, 183,197 transitions
+  Currier A: 41,764 glyphs
+  Currier B: 121,515 glyphs
+
+========================================================================
+  OBSERVED h_char
+========================================================================
+  ALL         : H1=3.8837  H2=2.5477  h_char=0.6560
+  Currier A   : H1=3.9266  H2=2.6738  h_char=0.6809
+  Currier B   : H1=3.8598  H2=2.4043  h_char=0.6229
+
+========================================================================
+  h_char DECOMPOSITION BY TRANSITION TYPE
+========================================================================
+
+  --- ALL ---
+  Type       Count    Frac  H2_local  H2_contrib  % of H2
+  ──────  ────────  ──────  ────────  ──────────  ───────
+  W-slot     10657   0.058    0.0000      0.0000     0.0%
+  S-slot     93907   0.513    1.9291      0.9889    45.7%
+  X-chnk     38299   0.209    2.2086      0.4617    21.3%
+  X-word     40334   0.220    3.2454      0.7145    33.0%
+                                          2.1651  (h_char=0.5575)
+
+  --- A ---
+  Type       Count    Frac  H2_local  H2_contrib  % of H2
+  ──────  ────────  ──────  ────────  ──────────  ───────
+  W-slot      2137   0.051    0.0000      0.0000     0.0%
+  S-slot     20697   0.496    2.0963      1.0389    44.9%
+  X-chnk      9097   0.218    2.2456      0.4891    21.1%
+  X-word      9832   0.235    3.3335      0.7848    33.9%
+                                          2.3128  (h_char=0.5890)
+
+  --- B ---
+  Type       Count    Frac  H2_local  H2_contrib  % of H2
+  ──────  ────────  ──────  ────────  ──────────  ───────
+  W-slot      7456   0.061    0.0000      0.0000     0.0%
+  S-slot     63314   0.521    1.7679      0.9212    45.6%
+  X-chnk     24570   0.202    2.1051      0.4256    21.1%
+  X-word     26174   0.215    3.1293      0.6740    33.4%
+                                          2.0209  (h_char=0.5236)
+
+========================================================================
+  PER-SLOT INVENTORY AND ENTROPY
+========================================================================
+  UNPARSE   :    769 tokens, 29 types, H=3.386/4.858  [h(182), c(181), g(134), kh(56), x(32), th(24), ph(14), b(14)]
+  S1-onset  :  22028 tokens,  3 types, H=1.470/1.585  [ch(11577), y(5645), sh(4806)]
+  S2-front  :  42744 tokens,  3 types, H=1.422/1.585  [e(21302), a(15665), q(5777)]
+  S3-core   :  26814 tokens,  1 types, H=-0.000/0.000  [o(26814)]
+  S4-back   :  26679 tokens,  2 types, H=0.999/1.000  [d(13902), i(12777)]
+  S5-coda   :  64164 tokens, 14 types, H=3.085/3.807  [y(13196), l(11115), k(10576), r(8040), n(6596), t(6450), s(2859), p(1543)]
+
+========================================================================
+  SLOT-TO-SLOT TRANSITION MATRIX (within-chunk)
+========================================================================
+
+             ?     S1     S2     S3     S4     S5
+  ?       1.00      ─      ─      ─      ─      ─  (n=113)
+  S1      0.01      ─   0.48   0.21   0.07   0.22  (n=18178)
+  S2      0.00      ─   0.13   0.22   0.30   0.34  (n=41577)
+  S3      0.00      ─      ─      ─   0.12   0.88  (n=24278)
+  S4      0.00      ─      ─      ─   0.26   0.74  (n=20142)
+  S5      1.00      ─      ─      ─      ─      ─  (n=276)
+
+  Cross-chunk transitions (top 10):
+    S5→S2: 14209
+    S5→S1: 8704
+    S4→S2: 4625
+    S5→S3: 3920
+    S5→S5: 2166
+    S5→S4: 971
+    S3→S2: 777
+    S4→S1: 612
+    S2→S2: 588
+    S4→S3: 541
+
+  Cross-word transitions (top 10):
+    S5→S1: 10175
+    S5→S3: 7811
+    S5→S2: 7212
+    S5→S5: 5725
+    S5→S4: 2994
+    S1→S1: 899
+    S1→S3: 780
+    S1→S5: 742
+    S3→S5: 667
+    S1→S2: 490
+
+========================================================================
+  NULL MODEL COMPARISON
+========================================================================
+
+  Observed h_char (ALL):     0.6560
+
+  Running Model A: Slot-Resample (50 iterations)...
+  Slot-Resample h_char:     0.9162  [0.9156, 0.9166]
+
+  Running Model B: Slot-Shuffle (50 iterations)...
+  Slot-Shuffle h_char:      0.9162  [0.9158, 0.9167]
+
+  Running Model C: Flat-Shuffle (20 iterations)...
+  Flat-Shuffle h_char:      0.9991  [0.9990, 0.9991]
+
+  ─── SLOT GRAMMAR EXPLANATORY POWER ───
+  Gap: Observed → Flat-shuffle:     0.3430
+  Gap: Slot-resample → Flat-shuffle: 0.0828
+  Slot grammar explains: 24.2% of h_char depression
+  Residual (Slot-resample − Observed): +0.2602
+  → Additional correlations BEYOND slot grammar (0.2602 unexplained)
+
+  --- Currier A ---
+  Observed: 0.6809  Slot-resample: 0.9220  Residual: +0.2410
+
+  --- Currier B ---
+  Observed: 0.6229  Slot-resample: 0.9058  Residual: +0.2829
+
+========================================================================
+  NL BASELINE: CVC SLOT-RESAMPLE COMPARISON
+========================================================================
+  (How much does syllable/CVC structure explain NL h_char?)
+  apicius                       : h_obs=0.8119  h_slot_resample=0.8994  residual=+0.0875  n_slots=8
+  caesar                        : h_obs=0.8652  h_slot_resample=0.9412  residual=+0.0760  n_slots=8
+  erasmus                       : h_obs=0.8673  h_slot_resample=0.9391  residual=+0.0718  n_slots=8
+  galen                         : h_obs=0.8760  h_slot_resample=0.9482  residual=+0.0722  n_slots=8
+  pliny                         : h_obs=0.8826  h_slot_resample=0.9464  residual=+0.0638  n_slots=8
+  vulgate_genesis               : h_obs=0.8693  h_slot_resample=0.9396  residual=+0.0703  n_slots=8
+
+========================================================================
+  SUMMARY COMPARISON TABLE
+========================================================================
+
+  System                            h_obs   h_slot    resid  %_explained
+  ──────────────────────────────  ───────  ───────  ───────  ───────────
+  VMS ALL                          0.6560   0.9162  +0.2602        24.2%
+  VMS Currier A                    0.6809   0.9220  +0.2410        24.2%
+  VMS Currier B                    0.6229   0.9058  +0.2829        24.8%
+  apicius                          0.8119   0.8994  +0.0875  ~     53.5%
+  caesar                           0.8652   0.9412  +0.0760  ~     43.6%
+  erasmus                          0.8673   0.9391  +0.0718  ~     45.9%
+  galen                            0.8760   0.9482  +0.0722  ~     41.8%
+  pliny                            0.8826   0.9464  +0.0638  ~     45.7%
+  vulgate_genesis                  0.8693   0.9396  +0.0703  ~     46.2%
+
+========================================================================
+  KEY DIAGNOSTIC: IS VMS h_char ANOMALOUS GIVEN ITS SLOT GRAMMAR?
+========================================================================
+
+  VMS residual (slot_resample - observed): +0.2602
+  NL mean residual:                        +0.0736
+  NL std residual:                         0.0072
+  VMS z-score vs NL residuals:             +25.91
+
+  → VMS residual is OUTSIDE NL range (|z| = 25.9)
+    VMS has MORE additional correlation beyond slot grammar than NL
+    The slot grammar does NOT fully explain h_char.
+
+========================================================================
+  PHASE 97 VERDICT
+========================================================================
+
+  Observed h_char (VMS):           0.6560
+  Slot-resample h_char (VMS):      0.9162
+  Slot-shuffle h_char (VMS):       0.9162
+  Flat-shuffle h_char (VMS):       0.9991
+  NL typical range:                0.82 — 0.90
+  VMS residual:                    +0.2602
+  VMS z-score vs NL residuals:     +25.91
+  Verdict:                         ADDITIONAL_CORRELATIONS
+
+========================================================================
+  PHASE 97 COMPLETE
+========================================================================
+
+  Results saved to results/phase97_slot_grammar_hchar.json

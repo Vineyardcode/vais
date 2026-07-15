@@ -1,0 +1,155 @@
+Loading corpus...
+  35747 tokens, 3319 types, 4508 lines
+
+=================================================================
+53a: VERBOSE CIPHER EXCLUSION VIA MI
+=================================================================
+  H(word) = 8.481 bits
+  Raw word bigram MI = 3.4040 bits
+  Bias (permutation) = 3.0606 bits
+  Genuine MI = 0.3434 bits
+  z-score = 62.7
+  MI/H = 0.0405
+
+  VERBOSE CIPHER TEST:
+  If each VMS word encodes a plaintext character:
+    Required: MI(word_i, word_j) >= MI(char_i, char_j) in plaintext
+    English char bigram MI ≈ 1.0-1.5 bits
+    Latin char bigram MI  ≈ 0.8-1.2 bits
+    VMS word MI observed  = 0.343 bits
+  Ratio: VMS / English = 0.275
+  VERDICT: EXCLUDED — MI too low by 4×
+
+  SYLLABLE CIPHER TEST:
+  If each VMS word encodes a plaintext syllable:
+    Syllable bigram MI ≈ 0.2-0.5 bits (estimate)
+    VMS word MI = 0.343 bits
+  VERDICT: CONSISTENT — MI in plausible range
+
+=================================================================
+53b: KAPPA TEST (INDEX OF COINCIDENCE)
+=================================================================
+  VMS character IC = 0.0902
+  Random (uniform, 22 chars) IC = 0.0455
+  English IC ≈ 0.0667
+  Latin IC   ≈ 0.077
+  Italian IC ≈ 0.0738
+  German IC  ≈ 0.0762
+
+  VMS IC is ABOVE English
+  VMS IC / English IC = 1.35
+
+  Kappa at different periods (displacement IC):
+  Period  IC_displaced  Ratio_to_base
+       1  0.051211  0.568
+       2  0.057609  0.639
+       3  0.067761  0.751
+       4  0.108968  1.208
+       5  0.122630  1.360
+       6  0.092092  1.021
+       7  0.092790  1.029
+       8  0.103822  1.151
+      10  0.105366  1.168
+      13  0.102326  1.135
+      15  0.101371  1.124
+      20  0.099588  1.104
+      26  0.102474  1.136
+      30  0.102373  1.135
+      50  0.100879  1.119
+
+  If IC drops significantly at small periods and peaks at a specific
+  period, that would indicate polyalphabetic cipher.
+
+=================================================================
+53c: HOMOPHONE DETECTION
+=================================================================
+  Alphabet: 22 characters
+  Characters with >= 200 successor observations: 14
+  Characters: a c d e h i l m n o q r s y
+
+  Top 10 most similar character pairs (lowest JSD on successors):
+    Pair       JSD   Freq1   Freq2            Top_succ_1            Top_succ_2
+  m-  y    0.0287     314   14548     (284), o(8), d(5)   (12663), e(573), a(394)
+  m-  r    0.0352     314    6333     (284), o(8), d(5)   (5062), a(563), o(286)
+  r-  y    0.0390    6333   14548   (5062), a(563), o(286)   (12663), e(573), a(394)
+  m-  n    0.0416     314    5211     (284), o(8), d(5)   (5148), o(18), a(11)
+  n-  y    0.0453    5211   14548   (5148), o(18), a(11)   (12663), e(573), a(394)
+  n-  r    0.0828    5211    6333   (5148), o(18), a(11)   (5062), a(563), o(286)
+  l-  r    0.0861    9029    6333   (5043), a(770), e(661)   (5062), a(563), o(286)
+  l-  y    0.0957    9029   14548   (5043), a(770), e(661)   (12663), e(573), a(394)
+  l-  m    0.1282    9029     314   (5043), a(770), e(661)     (284), o(8), d(5)
+  c-  s    0.1976    7429    6008   h(7421),  (4), e(2)  h(3887),  (1077), a(501)
+
+  Homophone merge test (cross-validated character bigram entropy):
+  Baseline cross-val H(char|prev) = 1.9386
+  Merge m+y: H = 1.9326 (Δ = -0.0060) NEUTRAL
+  Merge m+r: H = 1.9157 (Δ = -0.0229) BETTER
+  Merge r+y: H = 1.9078 (Δ = -0.0308) BETTER
+  Merge m+n: H = 1.9339 (Δ = -0.0046) NEUTRAL
+  Merge n+y: H = 1.9396 (Δ = +0.0011) NEUTRAL
+
+=================================================================
+53d: WORD-INTERNAL STRUCTURE TEST
+=================================================================
+  Generated 43344 synthetic words from char bigram model
+
+  Positional entropy comparison (real VMS vs char-bigram-generated):
+   Pos   H_real   H_synth    Delta        Note
+     1    3.018     2.786   +0.232  REAL>SYNTH
+     2    3.010     3.037   -0.027        SAME
+     3    3.211     3.245   -0.034        SAME
+     4    3.313     3.387   -0.075  REAL<SYNTH
+     5    3.140     3.406   -0.266  REAL<SYNTH
+     6    3.079     3.440   -0.361  REAL<SYNTH
+     7    2.986     3.394   -0.408  REAL<SYNTH
+     8    2.612     3.396   -0.784  REAL<SYNTH
+
+  Word length distribution comparison:
+   Len    Real%    Synth%    Delta
+     2    11.6%     20.0%    +8.3%
+     3    19.5%     20.5%    +1.1%
+     4    28.0%     20.4%    -7.6%
+     5    22.6%     14.3%    -8.3%
+     6     8.5%      8.8%    +0.2%
+     7     3.2%      5.9%    +2.7%
+     8     1.5%      3.7%    +2.3%
+     9     0.3%      2.4%    +2.1%
+    10     0.1%      1.5%    +1.4%
+    11     0.0%      1.0%    +1.0%
+  Mean length: real=4.01, synth=4.46
+  Chi-square (length distribution) = 6363.2 (df=9)
+  DIFFERENT length distributions
+
+=================================================================
+53e: WORD BOUNDARY INFORMATION
+=================================================================
+  Stream model (no word boundaries): H = 2.1269 bits/char
+  Boundary model (with '^' and '$'): H = 2.2721 bits/char
+  Improvement from word boundaries:  -0.1452 bits/char
+  Relative improvement:              -6.8%
+
+  Word-initial characters:
+    Stream: 3.015 bits/char (15711 chars)
+    Boundary: 3.007 bits/char (17965 chars)
+    Improvement: +0.008
+  Later characters:
+    Stream: 1.871 bits/char (54419 chars)
+    Boundary: 2.029 bits/char (54419 chars)
+    Improvement: -0.159
+
+=================================================================
+PHASE 53 SYNTHESIS
+=================================================================
+
+Summary of cipher identification tests:
+
+53a: Is word-level MI compatible with verbose/syllable cipher?
+53b: Does IC match known languages or show polyalphabetic cycling?
+53c: Are there character pairs that could be merged (homophones)?
+53d: Does the char bigram model fully explain word internal structure?
+53e: Do word boundaries carry information beyond character streams?
+
+Together these tests constrain what kind of system could produce VMS.
+
+
+Phase 53 complete.

@@ -180,8 +180,8 @@ STEP 7: Folio-level classifier — can we distinguish A from B?
 
   Classifier permutation test (500 shuffles):
     Real LOO accuracy: 0.886
-    Null accuracy: 0.574 ± 0.027
-    z = +11.71, p = 0.0000
+    Null accuracy: 0.505 ± 0.054
+    z = +7.01, p = 0.0000
 
 ────────────────────────────────────────────────────────────────────────
 STEP 8: Differential features — top distinguishing class bigrams
@@ -324,7 +324,7 @@ STEP 12: Synthesis and conclusions
 
   FINDING 5: CLASSIFIER
     LOO-CV accuracy = 0.886 (majority baseline = 0.578)
-    z = +11.71, p = 0.0000
+    z = +7.01, p = 0.0000
 
   OVERALL ASSESSMENT:
     A and B differ in VOCABULARY (class distribution) but share

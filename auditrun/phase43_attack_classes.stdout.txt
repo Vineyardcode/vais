@@ -1,0 +1,216 @@
+Loading lines...
+  4508 lines, 35747 word tokens
+  31239 adjacent pairs
+
+======================================================================
+43a: SECTION GRAMMAR — MARGINALS vs RULES
+    Phase 42b found z=49-92, but the null preserved GLOBAL marginals.
+    Now: shuffle within section → preserves section marginals,
+    destroys conditionals. If LR drops to near null → marginals did it.
+======================================================================
+
+  text (16441 pairs):
+    Observed LR (local - global): 221.6
+    Null 1 (random subset, global marginals): mean=25.5±3.9
+      z(global null) = 49.9
+    Null 2 (shuffled within section, section marginals): mean=1756.4±57.9
+      z(marginal null) = -26.5
+    If z(marginal) >> 0: genuine RULES beyond marginal frequencies
+    If z(marginal) ≈ 0 but z(global) >> 0: just marginal frequency shifts
+
+  herbal-A (7534 pairs):
+    Observed LR (local - global): 517.8
+    Null 1 (random subset, global marginals): mean=37.5±5.4
+      z(global null) = 88.6
+    Null 2 (shuffled within section, section marginals): mean=907.0±30.3
+      z(marginal null) = -12.8
+    If z(marginal) >> 0: genuine RULES beyond marginal frequencies
+    If z(marginal) ≈ 0 but z(global) >> 0: just marginal frequency shifts
+
+  bio (4926 pairs):
+    Observed LR (local - global): 330.6
+    Null 1 (random subset, global marginals): mean=39.0±6.0
+      z(global null) = 48.3
+    Null 2 (shuffled within section, section marginals): mean=728.0±34.7
+      z(marginal null) = -11.4
+    If z(marginal) >> 0: genuine RULES beyond marginal frequencies
+    If z(marginal) ≈ 0 but z(global) >> 0: just marginal frequency shifts
+
+  pharma (1162 pairs):
+    Observed LR (local - global): 71.6
+    Null 1 (random subset, global marginals): mean=33.5±6.6
+      z(global null) = 5.8
+    Null 2 (shuffled within section, section marginals): mean=146.2±15.1
+      z(marginal null) = -4.9
+    If z(marginal) >> 0: genuine RULES beyond marginal frequencies
+    If z(marginal) ≈ 0 but z(global) >> 0: just marginal frequency shifts
+
+======================================================================
+43b: PREDICTIVE ASYMMETRY PERMUTATION TEST
+    Phase 42e: forward H(class_j|class_i)=5.230 < backward 5.319
+    Asymmetry = −0.089. Is this real?
+    Test 1: Reverse lines → asymmetry should flip sign
+    Test 2: Shuffle within lines → asymmetry should → 0
+======================================================================
+
+  Observed: H(fwd)=5.2301, H(bwd)=5.3189, asym=-0.0888
+
+  Reversed: H(fwd)=5.3189, H(bwd)=5.2301, asym=0.0888
+    Flip check: original sign=-, reversed sign=+
+    → Sign FLIPPED — genuine directional structure
+
+  Shuffled null: mean asym=0.0001±0.0042
+    z(asymmetry) = -21.3
+    Observed = -0.0888, null range = [-0.0104, 0.0107]
+
+  sfx→pfx channel specifically:
+    Observed asym=-0.0898, reversed=-0.0093
+    Shuffled null: -0.0210±0.0028, z=-25.0
+
+======================================================================
+43c: OPTIMAL CLASS COUNT
+    Binary A/B captures 35.7%, three A/M/B captures 80.1%.
+    What about 4, 5, 6, 7, 8 classes?
+    Hierarchical clustering of suffix → following-prefix profiles.
+======================================================================
+
+  Full MI(sfx→pfx) = 0.1211 (11 suffix values)
+  k=11 classes: MI=0.1211 (100.0%)
+  k=10 classes: MI=0.1208 (99.7%)  [merged: ['al'] + ['ol'] → JSD=0.0033]
+  k= 8 classes: MI=0.1188 (98.1%)  [merged: ['ain'] + ['aiin', 'iin'] → JSD=0.0115]
+  k= 7 classes: MI=0.1186 (97.9%)  [merged: ['ar'] + ['in'] → JSD=0.0126]
+  k= 6 classes: MI=0.1166 (96.3%)  [merged: ['or'] + ['aiin', 'ain', 'iin'] → JSD=0.0137]
+  k= 5 classes: MI=0.1099 (90.7%)  [merged: ['dy'] + ['y'] → JSD=0.0175]
+  k= 4 classes: MI=0.1031 (85.1%)  [merged: ['al', 'ol'] + ['aiin', 'ain', 'iin', 'or'] → JSD=0.0222]
+  k= 3 classes: MI=0.0978 (80.7%)  [merged: ['X'] + ['ar', 'in'] → JSD=0.0267]
+  k= 2 classes: MI=0.0737 (60.8%)  [merged: ['aiin', 'ain', 'al', 'iin', 'ol', 'or'] + ['X', 'ar', 'in'] → JSD=0.0394]
+
+  k= 2 classes: MI=0.0737 (60.8%)
+
+  Elbow analysis (MI % captured):
+    k= 2:  60.8% ##############################
+    k= 3:  80.7% ########################################
+    k= 4:  85.1% ##########################################
+    k= 5:  90.7% #############################################
+    k= 6:  96.3% ################################################
+    k= 7:  97.9% ################################################
+    k= 8:  98.1% #################################################
+    k= 9:  99.2% #################################################
+    k=10:  99.7% #################################################
+    k=11: 100.0% ##################################################
+
+  Biggest MI drops (merging from k to k-1):
+    k=7 → k=8: ΔMI=0.0002 (+0.2%)
+    k=10 → k=11: ΔMI=0.0004 (+0.3%)
+    k=9 → k=10: ΔMI=0.0006 (+0.5%)
+    k=8 → k=9: ΔMI=0.0014 (+1.1%)
+    k=6 → k=7: ΔMI=0.0019 (+1.6%)
+
+======================================================================
+43d: SYNERGY BOOTSTRAP
+    Bootstrap CIs for synergy values.
+    Is 'chdy qoain' (synergy=2.63, N=38) robust?
+======================================================================
+
+  'chol daiin': N=41, synergy=2.05, 95% CI=[1.56, 2.69]  *** sig > 1.0
+  'shdy qody': N=112, synergy=1.22, 95% CI=[1.02, 1.44]  *** sig > 1.0
+  'shy qoain': N=46, synergy=1.57, 95% CI=[1.24, 1.96]  *** sig > 1.0
+  'oX Xiin': missing index mapping
+  'shdy qoaiin': N=39, synergy=1.90, 95% CI=[1.42, 2.49]  *** sig > 1.0
+  'chol chol': N=44, synergy=1.62, 95% CI=[1.27, 2.00]  *** sig > 1.0
+  'qody qody': N=163, synergy=1.65, 95% CI=[1.44, 1.86]  *** sig > 1.0
+  'ody qody': N=130, synergy=2.10, 95% CI=[1.80, 2.39]  *** sig > 1.0
+  'chdy qoain': N=38, synergy=2.63, 95% CI=[1.88, 3.32]  *** sig > 1.0
+  'daiin chol': N=14, synergy=1.00, 95% CI=[0.54, 1.59]
+
+======================================================================
+43e: TOP SECTION DISCRIMINATORS
+    Which sfx→pfx transitions contribute most to section differences?
+    Show conditionals P(pfx_j|sfx_i) per section for top transitions.
+======================================================================
+
+  Top 20 section-discriminating transitions:
+  Section      sfx→pfx      P(sec)   P(global)         Δ N(sfx)  
+  ------------------------------------------------------------
+  pharma       al→ch     0.361    0.204      +0.157  36      
+  herbal-A     dy→qo     0.184    0.339      -0.155  843     
+  herbal-A     in→qo     0.200    0.057      +0.143  20      
+  herbal-A     in→o      0.200    0.343      -0.143  20      
+  pharma       al→o      0.111    0.252      -0.141  36      
+  bio          or→o      0.397    0.259      +0.138  116     
+  bio          ar→X      0.089    0.220      -0.131  225     
+  bio          y→qo     0.351    0.223      +0.128  1081    
+  bio          in→sh     0.242    0.120      +0.122  33      
+  bio          in→X      0.061    0.183      -0.122  33      
+  herbal-A     in→ch     0.350    0.234      +0.116  20      
+  bio          ar→sh     0.231    0.122      +0.109  225     
+  bio          aiin→sh     0.223    0.117      +0.106  287     
+  bio          dy→qo     0.443    0.339      +0.104  1490    
+  pharma       aiin→d      0.172    0.069      +0.103  93      
+  herbal-A     y→qo     0.134    0.223      -0.089  1664    
+  herbal-A     ar→X      0.133    0.220      -0.087  375     
+  pharma       aiin→sh     0.032    0.117      -0.085  93      
+  bio          iin→sh     0.179    0.095      +0.085  78      
+  herbal-A     ain→d      0.135    0.052      +0.083  148     
+
+  Marginal frequency comparison (top discriminating suffix values):
+    bio          suffix 'aiin': 0.058 (section) vs 0.087 (global)  ratio=0.67x
+    bio          suffix 'ar': 0.046 (section) vs 0.061 (global)  ratio=0.74x
+    bio          suffix 'dy': 0.302 (section) vs 0.176 (global)  ratio=1.72x
+    bio          suffix 'iin': 0.016 (section) vs 0.030 (global)  ratio=0.53x
+    bio          suffix 'in': 0.007 (section) vs 0.006 (global)  ratio=1.20x
+    bio          suffix 'or': 0.024 (section) vs 0.044 (global)  ratio=0.54x
+    bio          suffix 'y': 0.219 (section) vs 0.214 (global)  ratio=1.03x
+    herbal-A     suffix 'ain': 0.020 (section) vs 0.040 (global)  ratio=0.49x
+    herbal-A     suffix 'ar': 0.050 (section) vs 0.061 (global)  ratio=0.81x
+    herbal-A     suffix 'dy': 0.112 (section) vs 0.176 (global)  ratio=0.63x
+    herbal-A     suffix 'in': 0.003 (section) vs 0.006 (global)  ratio=0.47x
+    herbal-A     suffix 'y': 0.221 (section) vs 0.214 (global)  ratio=1.03x
+    pharma       suffix 'aiin': 0.080 (section) vs 0.087 (global)  ratio=0.91x
+    pharma       suffix 'al': 0.031 (section) vs 0.044 (global)  ratio=0.70x
+
+  Decomposition: Is the deviation from conditionals or marginals?
+  For each top transition, expected = P(pfx_j,sec) / P(pfx_j,global)
+  If actual_dev >> expected_dev → genuine conditional difference
+
+  herbal-A:
+    dy→qo: actual_Δ=-0.155, marginal_Δ=-0.123, conditional_Δ=-0.031
+    in→qo: actual_Δ=+0.143, marginal_Δ=-0.021, conditional_Δ=+0.164
+    in→o: actual_Δ=-0.143, marginal_Δ=-0.030, conditional_Δ=-0.112
+    in→ch: actual_Δ=+0.116, marginal_Δ=+0.053, conditional_Δ=+0.063
+    y→qo: actual_Δ=-0.089, marginal_Δ=-0.081, conditional_Δ=-0.008
+
+  bio:
+    or→o: actual_Δ=+0.138, marginal_Δ=-0.021, conditional_Δ=+0.158
+    ar→X: actual_Δ=-0.131, marginal_Δ=-0.063, conditional_Δ=-0.068
+    y→qo: actual_Δ=+0.128, marginal_Δ=+0.137, conditional_Δ=-0.010
+    in→sh: actual_Δ=+0.122, marginal_Δ=+0.040, conditional_Δ=+0.082
+    in→X: actual_Δ=-0.122, marginal_Δ=-0.052, conditional_Δ=-0.070
+
+  pharma:
+    al→ch: actual_Δ=+0.157, marginal_Δ=+0.034, conditional_Δ=+0.123
+    al→o: actual_Δ=-0.141, marginal_Δ=+0.001, conditional_Δ=-0.142
+    aiin→d: actual_Δ=+0.103, marginal_Δ=+0.025, conditional_Δ=+0.078
+    aiin→sh: actual_Δ=-0.085, marginal_Δ=-0.000, conditional_Δ=-0.084
+
+======================================================================
+PHASE 43 SYNTHESIS
+======================================================================
+
+  43a: SECTION GRAMMAR — MARGINALS vs RULES
+    (See section results above. If z(marginal) >> 0 → real rules)
+
+  43b: PREDICTIVE ASYMMETRY
+    (See reversal and shuffle tests above)
+
+  43c: OPTIMAL CLASS COUNT
+    (See elbow analysis above)
+
+  43d: SYNERGY BOOTSTRAP
+    (See CIs above)
+
+  43e: SECTION DISCRIMINATORS
+    (See conditional decomposition above)
+
+[Phase 43 Complete]
+
