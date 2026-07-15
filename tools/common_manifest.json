@@ -1,0 +1,376 @@
+{
+ "functions": [
+  {
+   "export": "char_bigram_predictability",
+   "name": "char_bigram_predictability",
+   "hash": "dcd5cb194682",
+   "rep": "phase80_abjad_hypothesis.py",
+   "files": 4
+  },
+  {
+   "export": "chunk_to_str",
+   "name": "chunk_to_str",
+   "hash": "8904c65b0c01",
+   "rep": "phase100_decipherment.py",
+   "files": 14
+  },
+  {
+   "export": "classify_folio",
+   "name": "classify_folio",
+   "hash": "f14e941344cc",
+   "rep": "coptic_probe_expanded.py",
+   "files": 6
+  },
+  {
+   "export": "classify_folio_v2",
+   "name": "classify_folio",
+   "hash": "e70d9ea47ba5",
+   "rep": "phase22_unknown_roots.py",
+   "files": 5
+  },
+  {
+   "export": "classify_folio_v3",
+   "name": "classify_folio",
+   "hash": "010c7cb66444",
+   "rep": "attack_plan.py",
+   "files": 5
+  },
+  {
+   "export": "clean_word",
+   "name": "clean_word",
+   "hash": "779dfa3d17c8",
+   "rep": "phase100_decipherment.py",
+   "files": 27
+  },
+  {
+   "export": "clean_word_v2",
+   "name": "clean_word",
+   "hash": "7be2be5081bc",
+   "rep": "phase80_abjad_hypothesis.py",
+   "files": 5
+  },
+  {
+   "export": "collapse_e",
+   "name": "collapse_e",
+   "hash": "651d929f90bc",
+   "rep": "phase39_syntax.py",
+   "files": 20
+  },
+  {
+   "export": "collapse_echains",
+   "name": "collapse_echains",
+   "hash": "507ab6bfce4d",
+   "rep": "coptic_probe_expanded.py",
+   "files": 26
+  },
+  {
+   "export": "compute_H",
+   "name": "compute_H",
+   "hash": "8adab78fbd24",
+   "rep": "phase47_word_network.py",
+   "files": 8
+  },
+  {
+   "export": "compute_mi",
+   "name": "compute_mi",
+   "hash": "e3cd9ad5d078",
+   "rep": "phase38_bigram_null.py",
+   "files": 7
+  },
+  {
+   "export": "conditional_entropy",
+   "name": "conditional_entropy",
+   "hash": "ec64f08e6583",
+   "rep": "phase85_chunk_fingerprint.py",
+   "files": 6
+  },
+  {
+   "export": "entropy",
+   "name": "entropy",
+   "hash": "194316585785",
+   "rep": "phase101_currier_ab_dichotomy.py",
+   "files": 13
+  },
+  {
+   "export": "entropy_v2",
+   "name": "entropy",
+   "hash": "0ce6964aa2ce",
+   "rep": "attack_plan.py",
+   "files": 5
+  },
+  {
+   "export": "eva_to_glyphs",
+   "name": "eva_to_glyphs",
+   "hash": "365e9abe88a9",
+   "rep": "phase100_decipherment.py",
+   "files": 35
+  },
+  {
+   "export": "eva_to_glyphs_v2",
+   "name": "eva_to_glyphs",
+   "hash": "d2d500a8ed99",
+   "rep": "phase59_forward_model.py",
+   "files": 10
+  },
+  {
+   "export": "extract_words",
+   "name": "extract_words",
+   "hash": "ee07dd17bda5",
+   "rep": "phase77b_line_position_gallows.py",
+   "files": 5
+  },
+  {
+   "export": "extract_words_from_line",
+   "name": "extract_words_from_line",
+   "hash": "c7521d58ae4f",
+   "rep": "phase100_decipherment.py",
+   "files": 15
+  },
+  {
+   "export": "fetch_gutenberg",
+   "name": "fetch_gutenberg",
+   "hash": "5ab522e41aa5",
+   "rep": "phase59_forward_model.py",
+   "files": 6
+  },
+  {
+   "export": "folio_section",
+   "name": "folio_section",
+   "hash": "4e179fdade75",
+   "rep": "phase77b_line_position_gallows.py",
+   "files": 6
+  },
+  {
+   "export": "folio_section_v2",
+   "name": "folio_section",
+   "hash": "6b65c64f7c00",
+   "rep": "phase71_paragraph_initials.py",
+   "files": 4
+  },
+  {
+   "export": "full_decompose",
+   "name": "full_decompose",
+   "hash": "14ad277236e4",
+   "rep": "phase19_zodiac_alignment.py",
+   "files": 13
+  },
+  {
+   "export": "gallows_base",
+   "name": "gallows_base",
+   "hash": "7f9400e2ff49",
+   "rep": "phase19_zodiac_alignment.py",
+   "files": 20
+  },
+  {
+   "export": "gallows_base_v2",
+   "name": "gallows_base",
+   "hash": "f70406c32e92",
+   "rep": "coptic_probe_expanded.py",
+   "files": 8
+  },
+  {
+   "export": "get_currier_language",
+   "name": "get_currier_language",
+   "hash": "a57afb611316",
+   "rep": "phase100_decipherment.py",
+   "files": 6
+  },
+  {
+   "export": "get_gram_prefix",
+   "name": "get_gram_prefix",
+   "hash": "64a380ca10c1",
+   "rep": "phase47_word_network.py",
+   "files": 5
+  },
+  {
+   "export": "get_prefix",
+   "name": "get_prefix",
+   "hash": "bd809559bebe",
+   "rep": "phase41_grammar.py",
+   "files": 4
+  },
+  {
+   "export": "get_root",
+   "name": "get_root",
+   "hash": "5f79441263fa",
+   "rep": "attack_plan.py",
+   "files": 10
+  },
+  {
+   "export": "get_suffix",
+   "name": "get_suffix",
+   "hash": "32d195d5438d",
+   "rep": "phase39_syntax.py",
+   "files": 13
+  },
+  {
+   "export": "hapax_ratio_at_midpoint",
+   "name": "hapax_ratio_at_midpoint",
+   "hash": "5d7c85109295",
+   "rep": "phase64_encoding_tournament.py",
+   "files": 5
+  },
+  {
+   "export": "index_of_coincidence",
+   "name": "index_of_coincidence",
+   "hash": "2619a840b16a",
+   "rep": "phase80_abjad_hypothesis.py",
+   "files": 5
+  },
+  {
+   "export": "load_all_tokens",
+   "name": "load_all_tokens",
+   "hash": "45668c764a36",
+   "rep": "phase27_self_audit.py",
+   "files": 8
+  },
+  {
+   "export": "load_bvgs",
+   "name": "load_bvgs",
+   "hash": "d19122915520",
+   "rep": "phase81_german_genre_fingerprint.py",
+   "files": 4
+  },
+  {
+   "export": "load_folio_lines",
+   "name": "load_folio_lines",
+   "hash": "9fbedee8660d",
+   "rep": "phase28_statistical.py",
+   "files": 6
+  },
+  {
+   "export": "load_lines",
+   "name": "load_lines",
+   "hash": "a65a794dd146",
+   "rep": "phase39_syntax.py",
+   "files": 13
+  },
+  {
+   "export": "load_lines_v2",
+   "name": "load_lines",
+   "hash": "757be18b9edb",
+   "rep": "phase51_attack_synthesis.py",
+   "files": 5
+  },
+  {
+   "export": "load_phase86_clusters",
+   "name": "load_phase86_clusters",
+   "hash": "9932adb52b79",
+   "rep": "phase100_decipherment.py",
+   "files": 4
+  },
+  {
+   "export": "load_reference_text",
+   "name": "load_reference_text",
+   "hash": "d3d3efa28e11",
+   "rep": "phase103_positional_class_decomposition.py",
+   "files": 11
+  },
+  {
+   "export": "load_reference_text_v2",
+   "name": "load_reference_text",
+   "hash": "5b9c823fc9f5",
+   "rep": "phase81_german_genre_fingerprint.py",
+   "files": 4
+  },
+  {
+   "export": "load_vms_words",
+   "name": "load_vms_words",
+   "hash": "1690bcb2ce09",
+   "rep": "phase65_reverse_engineer_script.py",
+   "files": 5
+  },
+  {
+   "export": "mean_word_length",
+   "name": "mean_word_length",
+   "hash": "3e477d136fe4",
+   "rep": "phase80_abjad_hypothesis.py",
+   "files": 7
+  },
+  {
+   "export": "parse_one_chunk",
+   "name": "parse_one_chunk",
+   "hash": "8c97676dbebd",
+   "rep": "phase100_decipherment.py",
+   "files": 14
+  },
+  {
+   "export": "parse_word_into_chunks",
+   "name": "parse_word_into_chunks",
+   "hash": "7bb4b0c7524e",
+   "rep": "phase101_currier_ab_dichotomy.py",
+   "files": 11
+  },
+  {
+   "export": "strip_gallows",
+   "name": "strip_gallows",
+   "hash": "1f9112738478",
+   "rep": "coptic_probe_expanded.py",
+   "files": 28
+  },
+  {
+   "export": "strip_gallows_v2",
+   "name": "strip_gallows",
+   "hash": "f571555d5a36",
+   "rep": "phase39_syntax.py",
+   "files": 20
+  },
+  {
+   "export": "ttr_at_n",
+   "name": "ttr_at_n",
+   "hash": "d1e3a3dde284",
+   "rep": "phase80_abjad_hypothesis.py",
+   "files": 7
+  },
+  {
+   "export": "zipf_alpha",
+   "name": "zipf_alpha",
+   "hash": "dead4e542f27",
+   "rep": "phase64_encoding_tournament.py",
+   "files": 4
+  },
+  {
+   "export": "parse_morphology",
+   "name": "parse_morphology",
+   "hash": "a7c1eff7e016",
+   "rep": "phase19_zodiac_alignment.py",
+   "files": 13
+  },
+  {
+   "export": "parse_morphology",
+   "name": "parse_morphology",
+   "hash": "3b97cb9bdb4c",
+   "rep": "coptic_probe_expanded.py",
+   "files": 6
+  },
+  {
+   "export": "get_collapsed",
+   "name": "get_collapsed",
+   "hash": "755288bbbd84",
+   "rep": "phase39_syntax.py",
+   "files": 20
+  }
+ ],
+ "constants": [
+  "SIMPLE_GALLOWS",
+  "BENCH_GALLOWS",
+  "COMPOUND_GCH",
+  "COMPOUND_GSH",
+  "GALLOWS_BI",
+  "MAX_CHUNKS",
+  "ALL_GALLOWS"
+ ],
+ "lifted_constants": [
+  "GALLOWS_TRI",
+  "GRAM_PREFIXES",
+  "PREFIXES",
+  "SLOT1",
+  "SLOT2_RUNS",
+  "SLOT2_SINGLE",
+  "SLOT3",
+  "SLOT4_RUNS",
+  "SLOT4_SINGLE",
+  "SLOT5",
+  "SUFFIXES"
+ ]
+}

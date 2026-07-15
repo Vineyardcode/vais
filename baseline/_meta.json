@@ -449,5 +449,163 @@
   "duration_s": 0.86,
   "stdout_bytes": 14715,
   "results_files_touched": []
+ },
+ "phase39_syntax": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 155.97,
+  "stdout_bytes": 6141,
+  "results_files_touched": []
+ },
+ "phase40_supplement": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 73.64,
+  "stdout_bytes": 4841,
+  "results_files_touched": []
+ },
+ "phase40_syntax_attack": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 61.79,
+  "stdout_bytes": 5097,
+  "results_files_touched": []
+ },
+ "phase41_grammar": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 41.08,
+  "stdout_bytes": 8796,
+  "results_files_touched": []
+ },
+ "phase42_class_system": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 29.53,
+  "stdout_bytes": 6759,
+  "results_files_touched": []
+ },
+ "phase43_attack_classes": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 67.12,
+  "stdout_bytes": 10667,
+  "results_files_touched": []
+ },
+ "phase44_word_classes": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 1.18,
+  "stdout_bytes": 8101,
+  "results_files_touched": []
+ },
+ "phase45_word_predictability": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.66,
+  "stdout_bytes": 9097,
+  "results_files_touched": []
+ },
+ "phase46_mi_anatomy": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 125.16,
+  "stdout_bytes": 7044,
+  "results_files_touched": []
+ },
+ "phase47_word_network": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 5.98,
+  "stdout_bytes": 12373,
+  "results_files_touched": []
+ },
+ "phase48_cross_validation": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 17.89,
+  "stdout_bytes": 12575,
+  "results_files_touched": []
+ },
+ "phase49_generalization": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 13.77,
+  "stdout_bytes": 5766,
+  "results_files_touched": []
+ },
+ "phase50_synthesis": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 5.86,
+  "stdout_bytes": 9685,
+  "results_files_touched": []
+ },
+ "phase51_attack_synthesis": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 28.6,
+  "stdout_bytes": 5451,
+  "results_files_touched": []
+ },
+ "phase52_discriminators": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 6.88,
+  "stdout_bytes": 7256,
+  "results_files_touched": []
+ },
+ "phase53_cipher_tests": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 17.67,
+  "stdout_bytes": 6168,
+  "results_files_touched": []
+ },
+ "phase54_natlang_vs_cipher": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 30.24,
+  "stdout_bytes": 5290,
+  "results_files_touched": []
+ },
+ "phase55_vc_separation": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 9.43,
+  "stdout_bytes": 8720,
+  "results_files_touched": []
+ },
+ "phase56_syllabary_test": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 88.41,
+  "stdout_bytes": 7270,
+  "results_files_touched": []
+ },
+ "phase57_bax_test": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 15.98,
+  "stdout_bytes": 9269,
+  "results_files_touched": []
+ },
+ "phase58_cross_script": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 15.79,
+  "stdout_bytes": 10206,
+  "results_files_touched": [
+   "phase58_output.json"
+  ]
+ },
+ "phase59_forward_model": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 6.09,
+  "stdout_bytes": 6781,
+  "results_files_touched": [
+   "phase59_output.json"
+  ]
  }
 }

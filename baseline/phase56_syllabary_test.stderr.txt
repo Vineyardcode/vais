@@ -1,0 +1,8 @@
+C:\projects\voynich_slop\scripts\phase56_syllabary_test.py:398: RuntimeWarning: divide by zero encountered in log2
+  kl_pm = np.sum(p[mask] * np.log2(p[mask] / m[mask]))
+C:\projects\voynich_slop\scripts\phase56_syllabary_test.py:398: RuntimeWarning: invalid value encountered in multiply
+  kl_pm = np.sum(p[mask] * np.log2(p[mask] / m[mask]))
+C:\projects\voynich_slop\scripts\phase56_syllabary_test.py:399: RuntimeWarning: divide by zero encountered in log2
+  kl_qm = np.sum(q[mask] * np.log2(q[mask] / m[mask]))
+C:\projects\voynich_slop\scripts\phase56_syllabary_test.py:399: RuntimeWarning: invalid value encountered in multiply
+  kl_qm = np.sum(q[mask] * np.log2(q[mask] / m[mask]))
