@@ -1,0 +1,350 @@
+========================================================================
+PHASE 100 — TARGETED DECIPHERMENT WITH 25-CLASS ALPHABET
+========================================================================
+
+────────────────────────────────────────────────────────────────────────
+STEP 1: Collapse VMS to 25-class alphabet
+────────────────────────────────────────────────────────────────────────
+
+  VMS words collapsed: 40,309
+  VMS class vocabulary: 25 classes
+  Classes used: C0, C1, C10, C11, C12, C13, C14, C15, C16, C17, C18, C19, C2, C20, C21, C22, C23, C24, C3, C4, C5, C6, C7, C8, C9
+
+  Class frequency ranking:
+    C0: 0.2085
+    C3: 0.1891
+    C1: 0.1849
+    C5: 0.0926
+    C2: 0.0794
+    C4: 0.0737
+    C9: 0.0627
+    C10: 0.0497
+    C7: 0.0136
+    C6: 0.0118
+    C8: 0.0073
+    C13: 0.0060
+    C18: 0.0039
+    C11: 0.0025
+    C21: 0.0022
+    C12: 0.0020
+    C14: 0.0016
+    C22: 0.0016
+    C15: 0.0015
+    C20: 0.0014
+    C24: 0.0012
+    C16: 0.0011
+    C17: 0.0010
+    C19: 0.0006
+    C23: 0.0004
+
+  Word length distribution (in classes):
+    len=1: 0.2689
+    len=2: 0.5582
+    len=3: 0.1386
+    len=4: 0.0269
+    len=5: 0.0052
+    len=6: 0.0022
+    len=7: 0.0000
+    len=8: 0.0000
+    len=9: 0.0000
+    len=10: 0.0000
+
+────────────────────────────────────────────────────────────────────────
+STEP 2: NL reference corpora — letter-level statistics
+────────────────────────────────────────────────────────────────────────
+
+  Latin: 210,003 words, 27 effective letters, 41,871 unique forms
+    Top 10: i=0.115 e=0.114 a=0.087 t=0.077 u=0.076 s=0.072 r=0.063 n=0.062 o=0.057 m=0.053
+
+  Czech: 599,760 words, 38 effective letters, 40,419 unique forms
+    Top 10: o=0.080 e=0.080 a=0.069 i=0.054 n=0.053 t=0.051 s=0.049 l=0.046 v=0.044 d=0.039
+
+  German: 39,728 words, 30 effective letters, 9,292 unique forms
+    Top 10: e=0.153 n=0.095 i=0.081 t=0.066 r=0.063 s=0.062 h=0.057 a=0.052 d=0.047 u=0.040
+
+  Italian: 24,367 words, 28 effective letters, 4,719 unique forms
+    Top 10: e=0.127 i=0.104 a=0.104 o=0.099 l=0.069 t=0.067 n=0.062 r=0.058 c=0.051 s=0.045
+
+  French: 13,873 words, 24 effective letters, 1,894 unique forms
+    Top 10: e=0.179 s=0.089 a=0.070 u=0.068 r=0.066 l=0.060 t=0.060 n=0.059 i=0.058 o=0.058
+
+  English: 43,936 words, 28 effective letters, 6,423 unique forms
+    Top 10: e=0.130 a=0.079 t=0.075 o=0.073 n=0.069 s=0.067 r=0.066 i=0.061 d=0.045 h=0.043
+
+────────────────────────────────────────────────────────────────────────
+STEP 3: Structural distribution comparison (no mapping needed)
+────────────────────────────────────────────────────────────────────────
+
+  Language       WL JSD    VMS H     NL H  H ratio  VMS α   NL α  α ratio
+  ──────────── ──────── ──────── ──────── ──────── ────── ────── ────────
+  Czech          0.4112    3.172    4.724    0.672     25     38     0.66
+  English        0.3288    3.172    4.263    0.744     25     28     0.89
+  French         0.4245    3.172    4.039    0.785     25     24     1.04
+  German         0.4905    3.172    4.209    0.754     25     30     0.83
+  Italian        0.3473    3.172    4.033    0.787     25     28     0.89
+  Latin          0.4938    3.172    4.068    0.780     25     27     0.93
+
+────────────────────────────────────────────────────────────────────────
+STEP 4: Substitution cipher optimization per language
+────────────────────────────────────────────────────────────────────────
+
+  ── Czech ──
+    Frequency-rank mapping bigram LL: -9.4353
+    Hill-climb optimized bigram LL: -9.1393 (improvement: +0.2960)
+    Dictionary hits (all): 12,003 / 40,309 = 0.2978
+       Len     Hits    Total     Rate
+         1     7084    10838   0.6536
+         2     4333    22499   0.1926
+         3      570     5587   0.1020
+         4       16     1085   0.0147
+         5        0      211   0.0000
+         6        0       89   0.0000
+    Len-3 examples: den←cfhoaiin, dny←otairin, den←otoaiin
+    Len-4 examples: dole←qotchytor, dílo←chckhyoltchedy, díle←qockhyykol
+    Positional JSD: initial=0.4760 medial=0.2664 final=0.4714
+
+  ── English ──
+    Frequency-rank mapping bigram LL: -8.7042
+    Hill-climb optimized bigram LL: -7.8072 (improvement: +0.8970)
+    Dictionary hits (all): 20,987 / 40,309 = 0.5207
+       Len     Hits    Total     Rate
+         1    10838    10838   1.0000
+         2     9726    22499   0.4323
+         3      380     5587   0.0680
+         4       43     1085   0.0396
+         5        0      211   0.0000
+         6        0       89   0.0000
+    Len-3 examples: the←cphesaiin, ale←chydaiin, ale←chordair
+    Len-4 examples: sale←sychodaiin, cole←foldaiin, lete←daiinqokaiiin
+    Positional JSD: initial=0.2725 medial=0.1816 final=0.4184
+
+  ── French ──
+    Frequency-rank mapping bigram LL: -8.9768
+    Hill-climb optimized bigram LL: -8.2331 (improvement: +0.7437)
+    Dictionary hits (all): 1,084 / 40,309 = 0.0269
+       Len     Hits    Total     Rate
+         1      201    10838   0.0185
+         2      746    22499   0.0332
+         3      136     5587   0.0243
+         4        1     1085   0.0009
+         5        0      211   0.0000
+         6        0       89   0.0000
+    Len-3 examples: ont←oydar, ont←oldain, pot←sorain
+    Len-4 examples: pate←rchealcham
+    Positional JSD: initial=0.5411 medial=0.1873 final=0.3799
+
+  ── German ──
+    Frequency-rank mapping bigram LL: -8.4422
+    Hill-climb optimized bigram LL: -7.6911 (improvement: +0.7511)
+    Dictionary hits (all): 29,086 / 40,309 = 0.7216
+       Len     Hits    Total     Rate
+         1    10664    10838   0.9839
+         2    17674    22499   0.7855
+         3      740     5587   0.1325
+         4        6     1085   0.0055
+         5        2      211   0.0095
+         6        0       89   0.0000
+    Len-3 examples: enn←daraiin, hen←oydar, ihn←cfhoaiin
+    Len-4 examples: hans←olkaly, sein←dydchepain, sann←dykaran
+    Len-5 examples: ihnen←cphoaldar, senis←chodydainotchy
+    Positional JSD: initial=0.3649 medial=0.1608 final=0.3552
+
+  ── Italian ──
+    Frequency-rank mapping bigram LL: -8.6467
+    Hill-climb optimized bigram LL: -8.6355 (improvement: +0.0112)
+    Dictionary hits (all): 22,568 / 40,309 = 0.5599
+       Len     Hits    Total     Rate
+         1    10654    10838   0.9830
+         2    11242    22499   0.4997
+         3      646     5587   0.1156
+         4       25     1085   0.0230
+         5        1      211   0.0047
+         6        0       89   0.0000
+    Len-3 examples: dee←daraiin, dei←shodary, ivi←shydksheey
+    Len-4 examples: indi←chykydchy, dino←dchykey, none←keeyfar
+    Len-5 examples: dello←odallseeey
+    Positional JSD: initial=0.3407 medial=0.2126 final=0.1859
+
+  ── Latin ──
+    Frequency-rank mapping bigram LL: -8.2101
+    Hill-climb optimized bigram LL: -8.0654 (improvement: +0.1447)
+    Dictionary hits (all): 31,245 / 40,309 = 0.7751
+       Len     Hits    Total     Rate
+         1    10829    10838   0.9992
+         2    19211    22499   0.8539
+         3     1101     5587   0.1971
+         4      102     1085   0.0940
+         5        2      211   0.0095
+         6        0       89   0.0000
+    Len-3 examples: sie←shodary, sie←darshol, sio←dalor
+    Len-4 examples: sive←ydaraishy, side←danytchaiin, side←chodainchcthy
+    Len-5 examples: eresi←chykychodar, rosis←koldarod
+    Positional JSD: initial=0.3282 medial=0.1695 final=0.4259
+
+────────────────────────────────────────────────────────────────────────
+STEP 5: Null model — random permutation baseline
+────────────────────────────────────────────────────────────────────────
+
+  ── Czech ── (500 random permutations, min_len≥3)
+    Null mean rate (≥3): 0.0087 ± 0.0133
+    Null max rate: 0.0944
+    Optimized rate (≥3): 0.0841
+    z-score: +5.68
+    Null mean hits: 60.9 ± 92.4
+    Optimized hits (≥3): 586
+
+  ── English ── (500 random permutations, min_len≥3)
+    Null mean rate (≥3): 0.0138 ± 0.0153
+    Null max rate: 0.0866
+    Optimized rate (≥3): 0.0607
+    z-score: +3.07
+    Null mean hits: 96.0 ± 106.5
+    Optimized hits (≥3): 423
+
+  ── French ── (500 random permutations, min_len≥3)
+    Null mean rate (≥3): 0.0057 ± 0.0100
+    Null max rate: 0.0789
+    Optimized rate (≥3): 0.0197
+    z-score: +1.39
+    Null mean hits: 40.0 ± 69.8
+    Optimized hits (≥3): 137
+
+  ── German ── (500 random permutations, min_len≥3)
+    Null mean rate (≥3): 0.0169 ± 0.0198
+    Null max rate: 0.1348
+    Optimized rate (≥3): 0.1073
+    z-score: +4.56
+    Null mean hits: 117.5 ± 138.3
+    Optimized hits (≥3): 748
+
+  ── Italian ── (500 random permutations, min_len≥3)
+    Null mean rate (≥3): 0.0068 ± 0.0116
+    Null max rate: 0.0753
+    Optimized rate (≥3): 0.0964
+    z-score: +7.72
+    Null mean hits: 47.7 ± 80.9
+    Optimized hits (≥3): 672
+
+  ── Latin ── (500 random permutations, min_len≥3)
+    Null mean rate (≥3): 0.0245 ± 0.0246
+    Null max rate: 0.1363
+    Optimized rate (≥3): 0.1728
+    z-score: +6.03
+    Null mean hits: 171.1 ± 171.4
+    Optimized hits (≥3): 1205
+
+────────────────────────────────────────────────────────────────────────
+STEP 6: Cross-validation (80/20 train/test split)
+────────────────────────────────────────────────────────────────────────
+
+  Train: 32,247 words, Test: 8,062 words
+
+  Czech: train rate=0.0360, test rate=0.0310, test hits=44/1420
+
+  English: train rate=0.0400, test rate=0.0373, test hits=53/1420
+
+  French: train rate=0.0294, test rate=0.0218, test hits=31/1420
+
+  German: train rate=0.0587, test rate=0.0599, test hits=85/1420
+
+  Italian: train rate=0.1120, test rate=0.1042, test hits=148/1420
+
+  Latin: train rate=0.1736, test rate=0.1669, test hits=237/1420
+
+────────────────────────────────────────────────────────────────────────
+STEP 7: Best mapping summary
+────────────────────────────────────────────────────────────────────────
+
+  Language      z-score Hit rate  Null mean  CV test  Bigram LL
+  ──────────── ──────── ──────── ────────── ──────── ──────────
+  Italian         +7.72   0.0964     0.0068   0.1042    -8.6355
+  Latin           +6.03   0.1728     0.0245   0.1669    -8.0654
+  Czech           +5.68   0.0841     0.0087   0.0310    -9.1393
+  German          +4.56   0.1073     0.0169   0.0599    -7.6911
+  English         +3.07   0.0607     0.0138   0.0373    -7.8072
+  French          +1.39   0.0197     0.0057   0.0218    -8.2331
+
+  Best language: Italian
+  Mapping (class → letter):
+    C0 (freq=0.2085) → 'i'
+    C1 (freq=0.1849) → 'u'
+    C10 (freq=0.0497) → 'l'
+    C11 (freq=0.0025) → 'b'
+    C12 (freq=0.0020) → 'à'
+    C13 (freq=0.0060) → 't'
+    C14 (freq=0.0016) → 'f'
+    C15 (freq=0.0015) → 'm'
+    C16 (freq=0.0011) → 'g'
+    C17 (freq=0.0010) → 'p'
+    C18 (freq=0.0039) → 'a'
+    C19 (freq=0.0006) → 'h'
+    C2 (freq=0.0794) → 'o'
+    C20 (freq=0.0014) → 'z'
+    C21 (freq=0.0022) → 'v'
+    C22 (freq=0.0016) → 'è'
+    C23 (freq=0.0004) → 'ì'
+    C24 (freq=0.0012) → 'x'
+    C3 (freq=0.1891) → 'e'
+    C4 (freq=0.0737) → 'd'
+    C5 (freq=0.0926) → 'c'
+    C6 (freq=0.0118) → 's'
+    C7 (freq=0.0136) → 'r'
+    C8 (freq=0.0073) → 'q'
+    C9 (freq=0.0627) → 'n'
+
+  First 50 words deciphered (Italian):
+    neil ue e ve i ii ulo i nc ii lci ue c i ne ue i er ue ue de lg ui 
+    c ue d ucei uo dee li lc uo uo lcui uxe de ue c ue le i qe ue ue ue 
+    defi de i uc cde 
+
+────────────────────────────────────────────────────────────────────────
+STEP 8: Specificity — do multiple languages produce similar scores?
+────────────────────────────────────────────────────────────────────────
+
+  Best z-score: +7.72 (Italian)
+  Second z-score: +6.03 (Latin)
+  Gap: 1.69
+  ⚠ MODERATE SPECIFICITY: Top two separated by 1-2σ
+
+────────────────────────────────────────────────────────────────────────
+STEP 9: Critical assessment
+────────────────────────────────────────────────────────────────────────
+
+  CRITICAL NOTES ON METHODOLOGY:
+
+  1. THE 25 CLASSES ARE NOT LETTERS. Each class contains multiple
+     chunk variants (C0 has 57 members, C1 has 44). The mapping
+     class→letter conflates structurally different chunks. This
+     necessarily introduces noise.
+
+  2. ALPHABET SIZE MISMATCH. VMS has 25 classes; NL alphabets have
+     22-42 effective letters. When the NL has more letters than VMS
+     classes, the mapping is necessarily lossy (multiple NL letters
+     map to zero VMS classes). When VMS has more, some classes map
+     to the same NL letter.
+
+  3. WORD LENGTH MISMATCH. VMS "words" average ~2 classes (because
+     each class = a chunk ≈ 1 syllable). NL words average 4-6 letters.
+     This fundamental mismatch means dictionary matching is comparing
+     2-class VMS words against 2-letter NL words — which are mostly
+     function words (in, et, de, je). High hit rates on short words
+     are EXPECTED by chance.
+
+  4. THE BIGRAM MODEL IS LANGUAGE-GENERIC. Optimizing bigram LL
+     will find ANY permutation that makes the text look vaguely like
+     the target language's bigram statistics. This does not prove the
+     VMS IS that language — only that bigram structure is transferable.
+
+  5. MEANINGFUL DECIPHERMENT requires: (a) coherent multi-word
+     phrases in the output, (b) topic-appropriate vocabulary matching
+     the manuscript's illustrations, (c) consistent grammar. None of
+     these are tested here — only dictionary word frequency.
+
+  6. EXPECTED OUTCOME: Modest above-chance dictionary hits for ALL
+     languages (because the 25-class VMS shares structural properties
+     with NL text), with no single language dramatically outperforming
+     others. This would indicate the VMS has NL-like STRUCTURE without
+     being recoverable as a simple substitution cipher.
+
+
+  Results saved to C:\projects\voynich_slop\results\phase100_decipherment.json

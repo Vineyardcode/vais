@@ -1,0 +1,41 @@
+{
+  "vms": {
+    "label": "VMS",
+    "n_words": 40300,
+    "last1": {
+      "H_ending": 2.6603572368047943,
+      "n_types": 26,
+      "paradigm_fill": 3.0466101694915255,
+      "paradigm_n_stems": 472,
+      "paradigm_std": 1.9304509968973584,
+      "stem_end_MI": 1.6649222530174885,
+      "stem_end_NMI": 0.6216461646380206,
+      "n_mi_stems": 842,
+      "agree_ratio": 1.188516931108959,
+      "bigram_MI": 0.09607755876855428
+    },
+    "last2": {
+      "H_ending": 4.055089053855611,
+      "n_types": 216,
+      "paradigm_fill": 7.255747126436781,
+      "paradigm_n_stems": 348,
+      "paradigm_std": 5.829039102253063,
+      "stem_end_MI": 1.8984611587174864,
+      "stem_end_NMI": 0.47462011567309037,
+      "n_mi_stems": 654,
+      "agree_ratio": 1.5086551570183084,
+      "bigram_MI": 0.1871183070555933
+    },
+    "h_char": 0.5671361200194712
+  },
+  "densities_tested": [
+    0.0,
+    0.2,
+    0.4,
+    0.6,
+    0.8,
+    1.0
+  ],
+  "n_latin_corpora": 6,
+  "n_vernacular_corpora": 3
+}

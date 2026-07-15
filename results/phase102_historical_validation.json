@@ -1,0 +1,327 @@
+{
+  "temporal_fit": [
+    {
+      "corpus": "Vulgate",
+      "date": "400",
+      "language": "Latin",
+      "genre": "biblical",
+      "wl_jsd": 0.06042,
+      "ttr_diff": 0.01786,
+      "zipf_diff": 0.0031,
+      "h_letter_diff": 0.1768,
+      "composite": 0.02857
+    },
+    {
+      "corpus": "Italian Cucina",
+      "date": "1350",
+      "language": "Italian",
+      "genre": "recipe",
+      "wl_jsd": 0.0714,
+      "ttr_diff": 0.0094,
+      "zipf_diff": 0.0317,
+      "h_letter_diff": 0.2209,
+      "composite": 0.03283
+    },
+    {
+      "corpus": "Galen",
+      "date": "180",
+      "language": "Latin",
+      "genre": "medical",
+      "wl_jsd": 0.0754,
+      "ttr_diff": 0.00531,
+      "zipf_diff": 0.0271,
+      "h_letter_diff": 0.245,
+      "composite": 0.03378
+    },
+    {
+      "corpus": "Caesar",
+      "date": "-50",
+      "language": "Latin",
+      "genre": "military",
+      "wl_jsd": 0.10514,
+      "ttr_diff": 0.01909,
+      "zipf_diff": 0.0024,
+      "h_letter_diff": 0.1273,
+      "composite": 0.03754
+    },
+    {
+      "corpus": "German Faust",
+      "date": "1587",
+      "language": "German",
+      "genre": "literary",
+      "wl_jsd": 0.08343,
+      "ttr_diff": 0.00203,
+      "zipf_diff": 0.0006,
+      "h_letter_diff": 0.3468,
+      "composite": 0.03874
+    },
+    {
+      "corpus": "Apicius",
+      "date": "400",
+      "language": "Latin",
+      "genre": "recipe",
+      "wl_jsd": 0.08417,
+      "ttr_diff": 0.01956,
+      "zipf_diff": 0.048,
+      "h_letter_diff": 0.2405,
+      "composite": 0.04036
+    },
+    {
+      "corpus": "French Viandier",
+      "date": "1390",
+      "language": "French",
+      "genre": "recipe",
+      "wl_jsd": 0.05768,
+      "ttr_diff": 0.0553,
+      "zipf_diff": 0.1767,
+      "h_letter_diff": 0.2444,
+      "composite": 0.0493
+    },
+    {
+      "corpus": "German BvgS",
+      "date": "1400",
+      "language": "German",
+      "genre": "recipe",
+      "wl_jsd": 0.1035,
+      "ttr_diff": 0.03849,
+      "zipf_diff": 0.0472,
+      "h_letter_diff": 0.2904,
+      "composite": 0.05238
+    },
+    {
+      "corpus": "English Cury",
+      "date": "1390",
+      "language": "English",
+      "genre": "recipe",
+      "wl_jsd": 0.07378,
+      "ttr_diff": 0.05978,
+      "zipf_diff": 0.0947,
+      "h_letter_diff": 0.3737,
+      "composite": 0.05681
+    },
+    {
+      "corpus": "Pliny",
+      "date": "77",
+      "language": "Latin",
+      "genre": "encyclopedic",
+      "wl_jsd": 0.07577,
+      "ttr_diff": 0.12496,
+      "zipf_diff": 0.1879,
+      "h_letter_diff": 0.1849,
+      "composite": 0.06882
+    },
+    {
+      "corpus": "Erasmus",
+      "date": "1518",
+      "language": "Latin",
+      "genre": "medical_oration",
+      "wl_jsd": 0.086,
+      "ttr_diff": 0.1759,
+      "zipf_diff": 0.1987,
+      "h_letter_diff": 0.2865,
+      "composite": 0.08973
+    },
+    {
+      "corpus": "Czech Bible",
+      "date": "1613",
+      "language": "Czech",
+      "genre": "biblical",
+      "wl_jsd": 0.07706,
+      "ttr_diff": 0.12288,
+      "zipf_diff": 0.2932,
+      "h_letter_diff": 0.7808,
+      "composite": 0.10369
+    },
+    {
+      "corpus": "German Ortolf",
+      "date": "1450",
+      "language": "German",
+      "genre": "medical",
+      "wl_jsd": 0.10041,
+      "ttr_diff": 0.21729,
+      "zipf_diff": 0.26,
+      "h_letter_diff": 0.3312,
+      "composite": 0.10898
+    }
+  ],
+  "genre_fit": {
+    "genre_distances": {
+      "biblical": 0.24408,
+      "encyclopedic": 0.40829,
+      "literary": 0.0842,
+      "medical": 0.15063,
+      "medical_oration": 0.30105,
+      "military": 0.25704,
+      "recipe": 0.23733
+    },
+    "best_genre": "literary",
+    "vms_mean_wl_glyphs": 4.541
+  },
+  "provenance_test": {
+    "lang_results": {
+      "Czech": {
+        "n_corpora": 1,
+        "rank_jsd": 0.081335,
+        "wl_jsd": 0.077061,
+        "composite": 0.079198,
+        "provenance": false
+      },
+      "English": {
+        "n_corpora": 1,
+        "rank_jsd": 0.034443,
+        "wl_jsd": 0.073784,
+        "composite": 0.054113,
+        "provenance": false
+      },
+      "French": {
+        "n_corpora": 1,
+        "rank_jsd": 0.021009,
+        "wl_jsd": 0.057678,
+        "composite": 0.039343,
+        "provenance": false
+      },
+      "German": {
+        "n_corpora": 3,
+        "rank_jsd": 0.027086,
+        "wl_jsd": 0.086552,
+        "composite": 0.056819,
+        "provenance": true
+      },
+      "Italian": {
+        "n_corpora": 1,
+        "rank_jsd": 0.009857,
+        "wl_jsd": 0.071398,
+        "composite": 0.040627,
+        "provenance": true
+      },
+      "Latin": {
+        "n_corpora": 6,
+        "rank_jsd": 0.011721,
+        "wl_jsd": 0.074458,
+        "composite": 0.04309,
+        "provenance": true
+      }
+    },
+    "prov_mean": 0.046845,
+    "ctrl_mean": 0.057551,
+    "perm_z": -0.901,
+    "perm_p": 0.306
+  },
+  "marginalia": {
+    "f116v_vms_words": 2,
+    "f116v_total_lines": 17
+  },
+  "codicology": {
+    "section_word_counts": {
+      "herbal": 9853,
+      "astro": 1210,
+      "bio": 6895,
+      "bio_fold": 3702,
+      "pharma": 4683,
+      "stars_text": 10889
+    },
+    "hand_lang": {
+      "1": {
+        "A": 105,
+        "B": 1
+      },
+      "2": {
+        "B": 43
+      },
+      "5": {
+        "B": 7
+      },
+      "3": {
+        "A": 2,
+        "B": 26
+      }
+    }
+  },
+  "compatibility_matrix": {
+    "substrate_language": {
+      "Latin": 3,
+      "Italian": 5,
+      "German": 0,
+      "Czech": -2,
+      "Constructed": 1
+    },
+    "encoding_type": {
+      "Simple substitution": -6,
+      "Verbose cipher": 3,
+      "Abbreviation+cipher": 2,
+      "Constructed script": 5,
+      "Meaningless": -5
+    },
+    "genre": {
+      "Pharmaceutical": 7,
+      "Alchemical": 5,
+      "Astronomical": -2,
+      "Encyclopedic": 2
+    },
+    "creation_era": {
+      "1400-1440": 2,
+      "1440-1480": 3,
+      "1480-1530": -1,
+      "Pre-1400": -6
+    }
+  },
+  "contradictions": {
+    "fatal": [
+      [
+        "substrate_language",
+        "Czech",
+        -2
+      ],
+      [
+        "encoding_type",
+        "Simple substitution",
+        -6
+      ],
+      [
+        "encoding_type",
+        "Meaningless",
+        -5
+      ],
+      [
+        "genre",
+        "Astronomical",
+        -2
+      ],
+      [
+        "creation_era",
+        "Pre-1400",
+        -6
+      ]
+    ],
+    "logical_checks": [
+      [
+        "C14 rules out pre-1400 creation",
+        "PASS"
+      ],
+      [
+        "Simple substitution rejected by Phase 75 + 100",
+        "PASS"
+      ],
+      [
+        "Meaningless/hoax rejected by NL-like statistics",
+        "PASS"
+      ],
+      [
+        "Italian provenance consistent with best-fit language",
+        "PASS"
+      ],
+      [
+        "Genre (pharmaceutical) consistent with illustrations",
+        "PASS"
+      ]
+    ],
+    "pass_rate": 1.0
+  },
+  "summary": {
+    "n_phases": 102,
+    "established_facts": 7,
+    "probable_findings": 7,
+    "open_questions": 7,
+    "most_parsimonious": "Italian/Latin pharmaceutical compendium, verbose/constructed encoding, N. Italy ~1440-1480"
+  }
+}

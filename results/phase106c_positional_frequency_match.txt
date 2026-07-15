@@ -1,0 +1,364 @@
+================================================================================
+PHASE 106c — POSITIONAL FREQUENCY MATCHING ACROSS LANGUAGES
+================================================================================
+
+Method: Match VMS EVA glyphs to target language characters
+by positional frequency profiles (initial/final/medial),
+NOT by assumed Latin sound values.
+
+Key insight: The abbreviation mark SHAPES come from Latin
+scribal tradition, but the LANGUAGE could be anything.
+So we match by statistical position, not by meaning.
+
+VMS corpus: 40365 tokens
+VMS f1r: 215 tokens
+VMS distinct glyphs: 40
+
+────────────────────────────────────────────────────────────────────────────────
+VMS GLYPH PROFILES (top 15 per position)
+────────────────────────────────────────────────────────────────────────────────
+
+  INITIAL : o(0.223) ch(0.157) qo(0.138) d(0.093) sh(0.083) y(0.051) l(0.037) s(0.034) a(0.033) k(0.033) t(0.027) ai(0.024) p(0.015) r(0.013) cth(0.012)
+  FINAL   : y(0.400) n(0.159) r(0.155) l(0.153) s(0.036) o(0.033) m(0.027) d(0.016) g(0.004) k(0.002) a(0.002) e(0.002) t(0.002) qo(0.001) sh(0.001)
+  MEDIAL  : e(0.127) o(0.125) d(0.111) k(0.106) a(0.082) ai(0.073) t(0.061) ch(0.061) i(0.060) ee(0.058) l(0.042) r(0.017) sh(0.017) y(0.011) p(0.011)
+  OVERALL : o(0.127) y(0.114) d(0.084) ch(0.070) e(0.067) l(0.067) k(0.064) a(0.051) r(0.049) ai(0.044) n(0.040) t(0.039) qo(0.034) i(0.032) ee(0.031)
+
+────────────────────────────────────────────────────────────────────────────────
+LANGUAGE RANKING BY DECODED WORD MATCHES
+────────────────────────────────────────────────────────────────────────────────
+
+Language                    Corpus Chars  Word Hits Trigram Hits
+─────────────────────────────────────────────────────────────────
+Czech (Bible Kralice)       527627    39          5          176
+Latin (Galen)                48436    31          7          146
+German (Ortolf)               2725    26         11           96
+German (Faust)               33616    30          8          126
+English (Cury)               43930    31          5          137
+Latin (Pliny)                56629    26          2          103
+Latin (Vulgate)              25437    24          2           68
+Italian (Cucina)             24436    33          0           58
+French (Viandier)            16560    30          1           44
+
+────────────────────────────────────────────────────────────────────────────────
+#1: Czech (Bible Kralice) — MAPPING AND DECODE
+────────────────────────────────────────────────────────────────────────────────
+
+  Glyph mapping (by VMS frequency):
+    EVA-o    → a    (VMS: init=0.223 fin=0.033 med=0.125 all=0.127)
+    EVA-d    → n    (VMS: init=0.093 fin=0.016 med=0.111 all=0.084)
+    EVA-ch   → s    (VMS: init=0.157 fin=0.001 med=0.061 all=0.070)
+    EVA-e    → e    (VMS: init=0.002 fin=0.002 med=0.127 all=0.067)
+    EVA-l    → o    (VMS: init=0.037 fin=0.153 med=0.042 all=0.067)
+    EVA-k    → l    (VMS: init=0.033 fin=0.002 med=0.106 all=0.064)
+    EVA-a    → t    (VMS: init=0.033 fin=0.002 med=0.082 all=0.051)
+    EVA-r    → u    (VMS: init=0.013 fin=0.155 med=0.017 all=0.049)
+    EVA-ai   → v    (VMS: init=0.024 fin=0.000 med=0.073 all=0.044)
+    EVA-n    → i    (VMS: init=0.000 fin=0.159 med=0.002 all=0.040)
+    EVA-t    → d    (VMS: init=0.027 fin=0.002 med=0.061 all=0.039)
+    EVA-qo   → j    (VMS: init=0.138 fin=0.001 med=0.001 all=0.034)
+    EVA-i    → y    (VMS: init=0.000 fin=0.000 med=0.060 all=0.032)
+    EVA-ee   → á    (VMS: init=0.002 fin=0.001 med=0.058 all=0.031)
+    EVA-sh   → k    (VMS: init=0.083 fin=0.001 med=0.017 all=0.029)
+    EVA-s    → m    (VMS: init=0.034 fin=0.036 med=0.005 all=0.018)
+    EVA-p    → h    (VMS: init=0.015 fin=0.001 med=0.011 all=0.009)
+    EVA-m    → í    (VMS: init=0.000 fin=0.027 med=0.001 all=0.007)
+    EVA-cth  → r    (VMS: init=0.012 fin=0.000 med=0.006 all=0.006)
+    EVA-ckh  → z    (VMS: init=0.005 fin=0.000 med=0.009 all=0.006)
+    EVA-f    → ě    (VMS: init=0.003 fin=0.001 med=0.003 all=0.003)
+    EVA-oi   → ú    (VMS: init=0.002 fin=0.000 med=0.003 all=0.002)
+    EVA-h    → b    (VMS: init=0.000 fin=0.000 med=0.003 all=0.002)
+    EVA-cph  → ř    (VMS: init=0.003 fin=0.000 med=0.001 all=0.001)
+    EVA-g    → ž    (VMS: init=0.000 fin=0.004 med=0.000 all=0.001)
+
+  Decoded f1r (first 15 lines):
+    f1r.1
+      EVA: fachys ykal ar ataiin shol shory cthres y kor sholdy
+      DEC: ěts[y]m [y]lto tu tdvyi kao kau[y] ruem [y] lau kaon[y]
+
+    f1r.2
+      EVA: sory ckhar or y kair chtaiin shar ase cthar cthar dan
+      DEC: mau[y] ztu au [y] lvu sdvyi ktu tme rtu rtu nti
+
+    f1r.3
+      EVA: syaiir sheky or ykaiin shod cthoary cthes daraiin sy
+      DEC: m[y]vyu kel[y] au [y]lvyi kan ratu[y] rem ntuvyi m[y]
+
+    f1r.4
+      EVA: soiin oteey oteos roloty cthiar daiin okaiin or okan
+      DEC: múyi adá[y] adeam uaoad[y] rytu nvyi alvyi au alti
+
+    f1r.5
+      EVA: sair y chear cthaiin cphar cfhaiin
+      DEC: mvu [y] setu rvyi řtu gvyi
+
+    f1r.6
+      EVA: ydaraishy
+      DEC: [y]ntuvk[y]
+
+    f1r.7
+      EVA: odar c'y shol cphoy oydar sh s cfhoaiin shodary
+      DEC: antu ců[y] kao řa[y] a[y]ntu k m gavyi kantu[y]
+
+    f1r.8
+      EVA: yshey shody okchoy otchol chocthy os chy dain chor kos
+      DEC: [y]ke[y] kan[y] alsa[y] adsao sar[y] am s[y] nvi sau lam
+
+    f1r.9
+      EVA: daiin shos cfhol shody
+      DEC: nvyi kam gao kan[y]
+
+    f1r.10
+      EVA: dain os teody
+      DEC: nvi am dean[y]
+
+    f1r.11
+      EVA: ydain cphesaiin ols cphey ytain shoshy cphodal es
+      DEC: [y]nvi řemvyi aom ře[y] [y]dvi kak[y] řanto em
+
+    f1r.12
+      EVA: oksho kshoy otairin oteol okan shodain sckhey daiin
+      DEC: alka lka[y] advuyi adeao alti kanvi mze[y] nvyi
+
+    f1r.13
+      EVA: shoy ckhey kodaiin cphy cphodaiils cthey sho oldain d
+      DEC: ka[y] ze[y] lanvyi ř[y] řanvyom re[y] ka aonvi n
+
+    f1r.14
+      EVA: dain oiin chol odaiin chodain chdy okain dn cthy kod
+      DEC: nvi úyi sao anvyi sanvi sn[y] alvi ni r[y] lan
+
+    f1r.15
+      EVA: daiin shckhey ckeo r char shey kol chol chol kor chal
+      DEC: nvyi kze[y] clea u stu ke[y] lao sao sao lau sto
+
+  Matched real Czech (Bible Kralice) words:
+    kair                 → lvu
+    shos                 → kam
+    char                 → stu
+    chal                 → sto
+    shok                 → kal
+
+────────────────────────────────────────────────────────────────────────────────
+#2: Latin (Galen) — MAPPING AND DECODE
+────────────────────────────────────────────────────────────────────────────────
+
+  Glyph mapping (by VMS frequency):
+    EVA-o    → t    (VMS: init=0.223 fin=0.033 med=0.125 all=0.127)
+    EVA-y    → e    (VMS: init=0.051 fin=0.400 med=0.011 all=0.114)
+    EVA-d    → i    (VMS: init=0.093 fin=0.016 med=0.111 all=0.084)
+    EVA-e    → r    (VMS: init=0.002 fin=0.002 med=0.127 all=0.067)
+    EVA-l    → s    (VMS: init=0.037 fin=0.153 med=0.042 all=0.067)
+    EVA-k    → n    (VMS: init=0.033 fin=0.002 med=0.106 all=0.064)
+    EVA-a    → a    (VMS: init=0.033 fin=0.002 med=0.082 all=0.051)
+    EVA-r    → m    (VMS: init=0.013 fin=0.155 med=0.017 all=0.049)
+    EVA-ai   → u    (VMS: init=0.024 fin=0.000 med=0.073 all=0.044)
+    EVA-i    → g    (VMS: init=0.000 fin=0.000 med=0.060 all=0.032)
+    EVA-ee   → l    (VMS: init=0.002 fin=0.001 med=0.058 all=0.031)
+    EVA-sh   → c    (VMS: init=0.083 fin=0.001 med=0.017 all=0.029)
+    EVA-s    → o    (VMS: init=0.034 fin=0.036 med=0.005 all=0.018)
+    EVA-p    → h    (VMS: init=0.015 fin=0.001 med=0.011 all=0.009)
+    EVA-m    → d    (VMS: init=0.000 fin=0.027 med=0.001 all=0.007)
+    EVA-cth  → p    (VMS: init=0.012 fin=0.000 med=0.006 all=0.006)
+    EVA-f    → f    (VMS: init=0.003 fin=0.001 med=0.003 all=0.003)
+    EVA-cph  → q    (VMS: init=0.003 fin=0.000 med=0.001 all=0.001)
+    EVA-g    → y    (VMS: init=0.000 fin=0.004 med=0.000 all=0.001)
+    EVA-c    → w    (VMS: init=0.002 fin=0.000 med=0.001 all=0.001)
+    EVA-'    → k    (VMS: init=0.000 fin=0.000 med=0.001 all=0.001)
+    EVA-cfh  → v    (VMS: init=0.001 fin=0.000 med=0.001 all=0.000)
+    EVA-x    → x    (VMS: init=0.000 fin=0.000 med=0.000 all=0.000)
+    EVA-v    → b    (VMS: init=0.000 fin=0.000 med=0.000 all=0.000)
+    EVA-j    → æ    (VMS: init=0.000 fin=0.000 med=0.000 all=0.000)
+
+  Decoded f1r (first 15 lines):
+    f1r.1
+      EVA: fachys ykal ar ataiin shol shory cthres y kor sholdy
+      DEC: fa[ch]eo enas am a[t]ug[n] cts ctme pmro e ntm ctsie
+
+    f1r.2
+      EVA: sory ckhar or y kair chtaiin shar ase cthar cthar dan
+      DEC: otme [ckh]am tm e num [ch][t]ug[n] cam aor pam pam ia[n]
+
+    f1r.3
+      EVA: syaiir sheky or ykaiin shod cthoary cthes daraiin sy
+      DEC: oeugm crne tm enug[n] cti ptame pro iamug[n] oe
+
+    f1r.4
+      EVA: soiin oteey oteos roloty cthiar daiin okaiin or okan
+      DEC: o[oi]g[n] t[t]le t[t]rto mtst[t]e pgam iug[n] tnug[n] tm tna[n]
+
+    f1r.5
+      EVA: sair y chear cthaiin cphar cfhaiin
+      DEC: oum e [ch]ram pug[n] qam vug[n]
+
+    f1r.6
+      EVA: ydaraishy
+      DEC: eiamuce
+
+    f1r.7
+      EVA: odar c'y shol cphoy oydar sh s cfhoaiin shodary
+      DEC: tiam wke cts qte teiam c o vtug[n] ctiame
+
+    f1r.8
+      EVA: yshey shody okchoy otchol chocthy os chy dain chor kos
+      DEC: ecre ctie tn[ch]te t[t][ch]ts [ch]tpe to [ch]e iu[n] [ch]tm nto
+
+    f1r.9
+      EVA: daiin shos cfhol shody
+      DEC: iug[n] cto vts ctie
+
+    f1r.10
+      EVA: dain os teody
+      DEC: iu[n] to [t]rtie
+
+    f1r.11
+      EVA: ydain cphesaiin ols cphey ytain shoshy cphodal es
+      DEC: eiu[n] qroug[n] tso qre e[t]u[n] ctce qtias ro
+
+    f1r.12
+      EVA: oksho kshoy otairin oteol okan shodain sckhey daiin
+      DEC: tnct ncte t[t]umg[n] t[t]rts tna[n] ctiu[n] o[ckh]re iug[n]
+
+    f1r.13
+      EVA: shoy ckhey kodaiin cphy cphodaiils cthey sho oldain d
+      DEC: cte [ckh]re ntiug[n] qe qtiugso pre ct tsiu[n] i
+
+    f1r.14
+      EVA: dain oiin chol odaiin chodain chdy okain dn cthy kod
+      DEC: iu[n] [oi]g[n] [ch]ts tiug[n] [ch]tiu[n] [ch]ie tnu[n] i[n] pe nti
+
+    f1r.15
+      EVA: daiin shckhey ckeo r char shey kol chol chol kor chal
+      DEC: iug[n] c[ckh]re wnrt m [ch]am cre nts [ch]ts [ch]ts ntm [ch]as
+
+  Matched real Latin (Galen) words:
+    kair                 → num
+    cthes                → pro
+    cthey                → pre
+    dar                  → iam
+    dar                  → iam
+    dar                  → iam
+    dar                  → iam
+
+────────────────────────────────────────────────────────────────────────────────
+#3: German (Ortolf) — MAPPING AND DECODE
+────────────────────────────────────────────────────────────────────────────────
+
+  Glyph mapping (by VMS frequency):
+    EVA-o    → b    (VMS: init=0.223 fin=0.033 med=0.125 all=0.127)
+    EVA-d    → t    (VMS: init=0.093 fin=0.016 med=0.111 all=0.084)
+    EVA-ch   → f    (VMS: init=0.157 fin=0.001 med=0.061 all=0.070)
+    EVA-e    → l    (VMS: init=0.002 fin=0.002 med=0.127 all=0.067)
+    EVA-l    → e    (VMS: init=0.037 fin=0.153 med=0.042 all=0.067)
+    EVA-a    → i    (VMS: init=0.033 fin=0.002 med=0.082 all=0.051)
+    EVA-r    → n    (VMS: init=0.013 fin=0.155 med=0.017 all=0.049)
+    EVA-ai   → a    (VMS: init=0.024 fin=0.000 med=0.073 all=0.044)
+    EVA-t    → c    (VMS: init=0.027 fin=0.002 med=0.061 all=0.039)
+    EVA-i    → u    (VMS: init=0.000 fin=0.000 med=0.060 all=0.032)
+    EVA-ee   → o    (VMS: init=0.002 fin=0.001 med=0.058 all=0.031)
+    EVA-s    → m    (VMS: init=0.034 fin=0.036 med=0.005 all=0.018)
+    EVA-p    → g    (VMS: init=0.015 fin=0.001 med=0.011 all=0.009)
+    EVA-m    → s    (VMS: init=0.000 fin=0.027 med=0.001 all=0.007)
+    EVA-cth  → w    (VMS: init=0.012 fin=0.000 med=0.006 all=0.006)
+    EVA-f    → p    (VMS: init=0.003 fin=0.001 med=0.003 all=0.003)
+    EVA-g    → d    (VMS: init=0.000 fin=0.004 med=0.000 all=0.001)
+    EVA-c    → j    (VMS: init=0.002 fin=0.000 med=0.001 all=0.001)
+    EVA-q    → v    (VMS: init=0.003 fin=0.000 med=0.000 all=0.001)
+    EVA-'    → r    (VMS: init=0.000 fin=0.000 med=0.001 all=0.001)
+    EVA-j    → h    (VMS: init=0.000 fin=0.000 med=0.000 all=0.000)
+    EVA-z    → k    (VMS: init=0.000 fin=0.000 med=0.000 all=0.000)
+    EVA-[    → x    (VMS: init=0.000 fin=0.000 med=0.000 all=0.000)
+    EVA-:    → q    (VMS: init=0.000 fin=0.000 med=0.000 all=0.000)
+    EVA-]    → z    (VMS: init=0.000 fin=0.000 med=0.000 all=0.000)
+
+  Decoded f1r (first 15 lines):
+    f1r.1
+      EVA: fachys ykal ar ataiin shol shory cthres y kor sholdy
+      DEC: pif[y]m [y][k]ie in icau[n] [sh]be [sh]bn[y] wnlm [y] [k]bn [sh]bet[y]
+
+    f1r.2
+      EVA: sory ckhar or y kair chtaiin shar ase cthar cthar dan
+      DEC: mbn[y] [ckh]in bn [y] [k]an fcau[n] [sh]in iml win win ti[n]
+
+    f1r.3
+      EVA: syaiir sheky or ykaiin shod cthoary cthes daraiin sy
+      DEC: m[y]aun [sh]l[k][y] bn [y][k]au[n] [sh]bt wbin[y] wlm tinau[n] m[y]
+
+    f1r.4
+      EVA: soiin oteey oteos roloty cthiar daiin okaiin or okan
+      DEC: m[oi]u[n] bco[y] bclbm nbebc[y] wuin tau[n] b[k]au[n] bn b[k]i[n]
+
+    f1r.5
+      EVA: sair y chear cthaiin cphar cfhaiin
+      DEC: man [y] flin wau[n] [cph]in [cfh]au[n]
+
+    f1r.6
+      EVA: ydaraishy
+      DEC: [y]tina[sh][y]
+
+    f1r.7
+      EVA: odar c'y shol cphoy oydar sh s cfhoaiin shodary
+      DEC: btin jr[y] [sh]be [cph]b[y] b[y]tin [sh] m [cfh]bau[n] [sh]btin[y]
+
+    f1r.8
+      EVA: yshey shody okchoy otchol chocthy os chy dain chor kos
+      DEC: [y][sh]l[y] [sh]bt[y] b[k]fb[y] bcfbe fbw[y] bm f[y] ta[n] fbn [k]bm
+
+    f1r.9
+      EVA: daiin shos cfhol shody
+      DEC: tau[n] [sh]bm [cfh]be [sh]bt[y]
+
+    f1r.10
+      EVA: dain os teody
+      DEC: ta[n] bm clbt[y]
+
+    f1r.11
+      EVA: ydain cphesaiin ols cphey ytain shoshy cphodal es
+      DEC: [y]ta[n] [cph]lmau[n] bem [cph]l[y] [y]ca[n] [sh]b[sh][y] [cph]btie lm
+
+    f1r.12
+      EVA: oksho kshoy otairin oteol okan shodain sckhey daiin
+      DEC: b[k][sh]b [k][sh]b[y] bcanu[n] bclbe b[k]i[n] [sh]bta[n] m[ckh]l[y] tau[n]
+
+    f1r.13
+      EVA: shoy ckhey kodaiin cphy cphodaiils cthey sho oldain d
+      DEC: [sh]b[y] [ckh]l[y] [k]btau[n] [cph][y] [cph]btauem wl[y] [sh]b beta[n] t
+
+    f1r.14
+      EVA: dain oiin chol odaiin chodain chdy okain dn cthy kod
+      DEC: ta[n] [oi]u[n] fbe btau[n] fbta[n] ft[y] b[k]a[n] t[n] w[y] [k]bt
+
+    f1r.15
+      EVA: daiin shckhey ckeo r char shey kol chol chol kor chal
+      DEC: tau[n] [sh][ckh]l[y] j[k]lb n fin [sh]l[y] [k]be fbe fbe [k]bn fie
+
+  Matched real German (Ortolf) words:
+    cthar                → win
+    cthar                → win
+    sair                 → man
+    ols                  → bem
+    char                 → fin
+    dar                  → tin
+    dar                  → tin
+    cthal                → wie
+    dar                  → tin
+    dar                  → tin
+    cthar                → win
+
+────────────────────────────────────────────────────────────────────────────────
+ASSESSMENT
+────────────────────────────────────────────────────────────────────────────────
+
+This test matches VMS glyphs to language characters purely
+by POSITIONAL FREQUENCY — the most common word-final VMS glyph
+maps to the most common word-final character in each language,
+etc. No assumed sound values. No abbreviation meanings.
+
+If the VMS uses a simple positional substitution of a known
+language, this should produce recognizable text for the correct
+language, even without knowing the specific key.
+
+CRITICAL CAVEAT: This assumes 1-to-1 glyph-to-character mapping.
+If the encoding is verbose (1 glyph → multiple chars) or
+compressed (multiple glyphs → 1 char), this method cannot work.
+It also treats EVA digraphs (ch, sh) as single units, which
+may or may not be correct.

@@ -1,0 +1,546 @@
+{
+  "vms_metrics": {
+    "inventory_size": 523,
+    "log2_inventory": 9.030667136246942,
+    "within_unit_mi": 1.5403181046776437,
+    "slot_mi": 0.3826072303479408,
+    "n_slots": 5,
+    "mean_fill_rate": 0.4384560527723302,
+    "onset_dominance": 0.6356628773576686,
+    "pos_entropy_ratio": 0.9058402969239354,
+    "h_ratio": 0.8176291314607953,
+    "units_per_word": 1.9481009203899873,
+    "mean_glyphs_per_unit": 2.328782823523419,
+    "n_tokens": 78526,
+    "n_types": 523
+  },
+  "vms_slot_fill_rates": [
+    0.27871023610014517,
+    0.4760716195909635,
+    0.3429692076509691,
+    0.27411303262613657,
+    0.8204161678934365
+  ],
+  "vms_slot_inventory_sizes": [
+    3,
+    3,
+    1,
+    2,
+    14
+  ],
+  "distances": {
+    "Arabic_abjad": {
+      "euclidean": 8.523647689730199,
+      "cosine": 1.4866493849254543
+    },
+    "Cherokee_syllabary": {
+      "euclidean": 7.918354379230783,
+      "cosine": 1.522250521616837
+    },
+    "Cyrillic_alphabet": {
+      "euclidean": 8.666612480098015,
+      "cosine": 1.4776871523837882
+    },
+    "Czech_kralice_syl": {
+      "euclidean": 5.99833233706011,
+      "cosine": 0.970241387208872
+    },
+    "Devanagari_abugida": {
+      "euclidean": 5.653058655777286,
+      "cosine": 0.8721854868581844
+    },
+    "Ethiopic_abugida": {
+      "euclidean": 6.05057306584478,
+      "cosine": 0.9868945909612241
+    },
+    "Hebrew_abjad": {
+      "euclidean": 8.483081929024639,
+      "cosine": 1.520867913234245
+    },
+    "Japanese_hiragana": {
+      "euclidean": 7.814672409667746,
+      "cosine": 1.448555718356784
+    },
+    "Korean_Hangul": {
+      "euclidean": 5.376082694645837,
+      "cosine": 0.7132132112231883
+    },
+    "Latin_alphabet": {
+      "euclidean": 8.426176116080189,
+      "cosine": 1.4757880039589573
+    },
+    "Latin_apicius_syl": {
+      "euclidean": 5.4255885893756375,
+      "cosine": 0.7445227695204824
+    },
+    "Latin_caesar_syl": {
+      "euclidean": 5.535564123522964,
+      "cosine": 0.8310544098464159
+    },
+    "Latin_erasmus_syl": {
+      "euclidean": 5.783139656013948,
+      "cosine": 0.945608828339648
+    },
+    "Latin_galen_syl": {
+      "euclidean": 5.47593089625625,
+      "cosine": 0.7701343853154256
+    },
+    "Latin_pliny_syl": {
+      "euclidean": 5.698823413598626,
+      "cosine": 0.8974383263348259
+    },
+    "Latin_vulgate_genesis_syl": {
+      "euclidean": 5.299174766862858,
+      "cosine": 0.6669543834815764
+    },
+    "Thai_abugida": {
+      "euclidean": 5.174346809121065,
+      "cosine": 0.6126568620708484
+    },
+    "Tibetan_abugida": {
+      "euclidean": 5.282324284656069,
+      "cosine": 0.6560339637356467
+    },
+    "english_cury_syl": {
+      "euclidean": 5.345194159277123,
+      "cosine": 0.6875684051775921
+    },
+    "french_viandier_syl": {
+      "euclidean": 5.70811467577451,
+      "cosine": 0.8613418724630688
+    },
+    "german_faust_syl": {
+      "euclidean": 5.317605702144227,
+      "cosine": 0.6776864185763543
+    },
+    "german_ortolf_raw_syl": {
+      "euclidean": 5.775547834009554,
+      "cosine": 0.8264919981651893
+    },
+    "italian_cucina_syl": {
+      "euclidean": 6.157978299444754,
+      "cosine": 1.0959561063614476
+    }
+  },
+  "type_distances": {
+    "abjad": {
+      "mean": 8.50336480937742,
+      "min": 8.483081929024639,
+      "n": 2
+    },
+    "syllabary": {
+      "mean": 7.866513394449264,
+      "min": 7.814672409667746,
+      "n": 2
+    },
+    "alphabet": {
+      "mean": 8.546394298089101,
+      "min": 8.426176116080189,
+      "n": 2
+    },
+    "NL_syllable": {
+      "mean": 5.62674953777838,
+      "min": 5.299174766862858,
+      "n": 12
+    },
+    "abugida": {
+      "mean": 5.5400757038498005,
+      "min": 5.174346809121065,
+      "n": 4
+    },
+    "featural_alphabetic_syllabary": {
+      "mean": 5.376082694645837,
+      "min": 5.376082694645837,
+      "n": 1
+    }
+  },
+  "nearest_neighbour": "Thai_abugida",
+  "permutation_p_value": 1.0,
+  "sensitivity_stability": "5/8",
+  "nl_syllable_metrics": {
+    "Latin_vulgate_genesis_syl": {
+      "label": "Latin_vulgate_genesis_syl",
+      "inventory_size": 2242,
+      "log2_inventory": 11.130570562805426,
+      "within_unit_mi": 0.6038874387678905,
+      "slot_mi": 0.9309725132397451,
+      "n_slots": 3,
+      "mean_fill_rate": 0.732219037237407,
+      "onset_dominance": 1.104523148743774,
+      "pos_entropy_ratio": 0.8874957021836138,
+      "h_ratio": 0.5119779195044929,
+      "units_per_word": 1.9120734908136483,
+      "mean_glyphs_per_unit": 2.196657111712221,
+      "n_tokens": 49538,
+      "n_types": 2242
+    },
+    "Latin_vulgate_genesis_char": {
+      "label": "Latin_vulgate_genesis_char",
+      "inventory_size": 26,
+      "log2_inventory": 4.700439718141092,
+      "within_unit_mi": 0.0,
+      "slot_mi": 0.0,
+      "n_slots": 1,
+      "mean_fill_rate": 1.0,
+      "onset_dominance": 1.0,
+      "pos_entropy_ratio": 0.8693016949842982,
+      "h_ratio": 0.8693016949842982,
+      "units_per_word": 5.179365446966188,
+      "mean_glyphs_per_unit": 1.0,
+      "n_tokens": 134187,
+      "n_types": 26
+    },
+    "Latin_caesar_syl": {
+      "label": "Latin_caesar_syl",
+      "inventory_size": 2369,
+      "log2_inventory": 11.21006248324023,
+      "within_unit_mi": 0.5380646929827688,
+      "slot_mi": 0.8802089917959639,
+      "n_slots": 3,
+      "mean_fill_rate": 0.7242729690735815,
+      "onset_dominance": 1.176762338401496,
+      "pos_entropy_ratio": 0.885612381062408,
+      "h_ratio": 0.5694394389805658,
+      "units_per_word": 2.2710190798858774,
+      "mean_glyphs_per_unit": 2.1728189072207447,
+      "n_tokens": 101887,
+      "n_types": 2369
+    },
+    "Latin_caesar_char": {
+      "label": "Latin_caesar_char",
+      "inventory_size": 23,
+      "log2_inventory": 4.523561956057013,
+      "within_unit_mi": 0.0,
+      "slot_mi": 0.0,
+      "n_slots": 1,
+      "mean_fill_rate": 1.0,
+      "onset_dominance": 1.0,
+      "pos_entropy_ratio": 0.8651518037022471,
+      "h_ratio": 0.8651518037022471,
+      "units_per_word": 6.135119472182597,
+      "mean_glyphs_per_unit": 1.0,
+      "n_tokens": 275246,
+      "n_types": 23
+    },
+    "Latin_apicius_syl": {
+      "label": "Latin_apicius_syl",
+      "inventory_size": 2512,
+      "log2_inventory": 11.294620748891626,
+      "within_unit_mi": 0.5618105464240333,
+      "slot_mi": 0.9398732926626315,
+      "n_slots": 3,
+      "mean_fill_rate": 0.7220450099571752,
+      "onset_dominance": 1.111249420321691,
+      "pos_entropy_ratio": 0.882995497713357,
+      "h_ratio": 0.4961682390335594,
+      "units_per_word": 1.938804797211877,
+      "mean_glyphs_per_unit": 2.166135029871526,
+      "n_tokens": 56743,
+      "n_types": 2512
+    },
+    "Latin_apicius_char": {
+      "label": "Latin_apicius_char",
+      "inventory_size": 36,
+      "log2_inventory": 5.169925001442312,
+      "within_unit_mi": 0.0,
+      "slot_mi": 0.0,
+      "n_slots": 1,
+      "mean_fill_rate": 1.0,
+      "onset_dominance": 1.0,
+      "pos_entropy_ratio": 0.8681150498263811,
+      "h_ratio": 0.8681150498263811,
+      "units_per_word": 5.033108962312502,
+      "mean_glyphs_per_unit": 1.0,
+      "n_tokens": 147304,
+      "n_types": 36
+    },
+    "Latin_erasmus_syl": {
+      "label": "Latin_erasmus_syl",
+      "inventory_size": 1419,
+      "log2_inventory": 10.470658874060552,
+      "within_unit_mi": 0.5709536243892066,
+      "slot_mi": 0.8917608092953568,
+      "n_slots": 3,
+      "mean_fill_rate": 0.7328295859442191,
+      "onset_dominance": 1.1759577500209575,
+      "pos_entropy_ratio": 0.8864803830023028,
+      "h_ratio": 0.419923223251689,
+      "units_per_word": 2.1932093775262733,
+      "mean_glyphs_per_unit": 2.1984887578326577,
+      "n_tokens": 10852,
+      "n_types": 1419
+    },
+    "Latin_erasmus_char": {
+      "label": "Latin_erasmus_char",
+      "inventory_size": 28,
+      "log2_inventory": 4.807354922057604,
+      "within_unit_mi": 0.0,
+      "slot_mi": 0.0,
+      "n_slots": 1,
+      "mean_fill_rate": 1.0,
+      "onset_dominance": 1.0,
+      "pos_entropy_ratio": 0.8607977865718456,
+      "h_ratio": 0.8607977865718456,
+      "units_per_word": 5.9096604688763135,
+      "mean_glyphs_per_unit": 1.0,
+      "n_tokens": 29241,
+      "n_types": 28
+    },
+    "Latin_galen_syl": {
+      "label": "Latin_galen_syl",
+      "inventory_size": 3857,
+      "log2_inventory": 11.913263430628762,
+      "within_unit_mi": 0.5985055615649982,
+      "slot_mi": 0.9083555970470083,
+      "n_slots": 3,
+      "mean_fill_rate": 0.7103606323513314,
+      "onset_dominance": 1.1666285566579842,
+      "pos_entropy_ratio": 0.8916138540967236,
+      "h_ratio": 0.5169204196754333,
+      "units_per_word": 2.022821265562389,
+      "mean_glyphs_per_unit": 2.131081897053994,
+      "n_tokens": 94399,
+      "n_types": 3857
+    },
+    "Latin_galen_char": {
+      "label": "Latin_galen_char",
+      "inventory_size": 33,
+      "log2_inventory": 5.044394119358453,
+      "within_unit_mi": 0.0,
+      "slot_mi": 0.0,
+      "n_slots": 1,
+      "mean_fill_rate": 1.0,
+      "onset_dominance": 1.0,
+      "pos_entropy_ratio": 0.8785190624478794,
+      "h_ratio": 0.8785190624478794,
+      "units_per_word": 5.384211541346133,
+      "mean_glyphs_per_unit": 1.0,
+      "n_tokens": 251265,
+      "n_types": 33
+    },
+    "Latin_pliny_syl": {
+      "label": "Latin_pliny_syl",
+      "inventory_size": 4990,
+      "log2_inventory": 12.284824100224624,
+      "within_unit_mi": 0.46898785525256764,
+      "slot_mi": 0.844357312998103,
+      "n_slots": 3,
+      "mean_fill_rate": 0.6976405454046305,
+      "onset_dominance": 1.2141818698556015,
+      "pos_entropy_ratio": 0.8999334851878432,
+      "h_ratio": 0.5910565683036062,
+      "units_per_word": 2.247373562528921,
+      "mean_glyphs_per_unit": 2.0929216362138914,
+      "n_tokens": 131132,
+      "n_types": 4990
+    },
+    "Latin_pliny_char": {
+      "label": "Latin_pliny_char",
+      "inventory_size": 28,
+      "log2_inventory": 4.807354922057604,
+      "within_unit_mi": 0.0,
+      "slot_mi": 0.0,
+      "n_slots": 1,
+      "mean_fill_rate": 1.0,
+      "onset_dominance": 1.0,
+      "pos_entropy_ratio": 0.8825618364247518,
+      "h_ratio": 0.8825618364247518,
+      "units_per_word": 5.9276251521020065,
+      "mean_glyphs_per_unit": 1.0,
+      "n_tokens": 345871,
+      "n_types": 28
+    },
+    "german_faust_syl": {
+      "label": "german_faust_syl",
+      "inventory_size": 4112,
+      "log2_inventory": 12.005624549193879,
+      "within_unit_mi": 0.70536827445095,
+      "slot_mi": 0.9795773862529521,
+      "n_slots": 3,
+      "mean_fill_rate": 0.7777125033220035,
+      "onset_dominance": 1.0904480135249366,
+      "pos_entropy_ratio": 0.8907903604600993,
+      "h_ratio": 0.49609087094627824,
+      "units_per_word": 1.5395200103362512,
+      "mean_glyphs_per_unit": 2.3331375099660105,
+      "n_tokens": 47662,
+      "n_types": 4112
+    },
+    "german_faust_char": {
+      "label": "german_faust_char",
+      "inventory_size": 30,
+      "log2_inventory": 4.906890595608519,
+      "within_unit_mi": 0.0,
+      "slot_mi": 0.0,
+      "n_slots": 1,
+      "mean_fill_rate": 1.0,
+      "onset_dominance": 1.0,
+      "pos_entropy_ratio": 0.8236976726778101,
+      "h_ratio": 0.8236976726778101,
+      "units_per_word": 4.778771924157757,
+      "mean_glyphs_per_unit": 1.0,
+      "n_tokens": 147946,
+      "n_types": 30
+    },
+    "german_ortolf_raw_syl": {
+      "label": "german_ortolf_raw_syl",
+      "inventory_size": 3217,
+      "log2_inventory": 11.65150022065274,
+      "within_unit_mi": 0.7023395735477033,
+      "slot_mi": 0.9679884922470297,
+      "n_slots": 3,
+      "mean_fill_rate": 0.7339610976363723,
+      "onset_dominance": 1.1533078468217455,
+      "pos_entropy_ratio": 0.8986039743351771,
+      "h_ratio": 0.3386562666885765,
+      "units_per_word": 1.5985859276998517,
+      "mean_glyphs_per_unit": 2.201883292909117,
+      "n_tokens": 14018,
+      "n_types": 3217
+    },
+    "german_ortolf_raw_char": {
+      "label": "german_ortolf_raw_char",
+      "inventory_size": 26,
+      "log2_inventory": 4.700439718141092,
+      "within_unit_mi": 0.0,
+      "slot_mi": 0.0,
+      "n_slots": 1,
+      "mean_fill_rate": 1.0,
+      "onset_dominance": 1.0,
+      "pos_entropy_ratio": 0.8937501737226089,
+      "h_ratio": 0.8937501737226089,
+      "units_per_word": 4.80659140152811,
+      "mean_glyphs_per_unit": 1.0,
+      "n_tokens": 42149,
+      "n_types": 26
+    },
+    "italian_cucina_syl": {
+      "label": "italian_cucina_syl",
+      "inventory_size": 1532,
+      "log2_inventory": 10.581200581924957,
+      "within_unit_mi": 0.3569730930350627,
+      "slot_mi": 0.5666646801021464,
+      "n_slots": 3,
+      "mean_fill_rate": 0.6436667511475317,
+      "onset_dominance": 1.3357578011353073,
+      "pos_entropy_ratio": 0.9032757287728703,
+      "h_ratio": 0.595882219228629,
+      "units_per_word": 1.9431197931628843,
+      "mean_glyphs_per_unit": 1.9310002534425952,
+      "n_tokens": 47348,
+      "n_types": 1532
+    },
+    "italian_cucina_char": {
+      "label": "italian_cucina_char",
+      "inventory_size": 32,
+      "log2_inventory": 5.0,
+      "within_unit_mi": 0.0,
+      "slot_mi": 0.0,
+      "n_slots": 1,
+      "mean_fill_rate": 1.0,
+      "onset_dominance": 1.0,
+      "pos_entropy_ratio": 0.8528413482178684,
+      "h_ratio": 0.8528413482178684,
+      "units_per_word": 4.562030615176263,
+      "mean_glyphs_per_unit": 1.0,
+      "n_tokens": 111163,
+      "n_types": 32
+    },
+    "french_viandier_syl": {
+      "label": "french_viandier_syl",
+      "inventory_size": 1378,
+      "log2_inventory": 10.428360172704291,
+      "within_unit_mi": 0.8049005003241927,
+      "slot_mi": 0.8929196154519812,
+      "n_slots": 3,
+      "mean_fill_rate": 0.7312196887441188,
+      "onset_dominance": 1.22544497020333,
+      "pos_entropy_ratio": 0.8716672452141355,
+      "h_ratio": 0.43742808287590074,
+      "units_per_word": 1.6596986953074317,
+      "mean_glyphs_per_unit": 2.1936590662323563,
+      "n_tokens": 23025,
+      "n_types": 1378
+    },
+    "french_viandier_char": {
+      "label": "french_viandier_char",
+      "inventory_size": 30,
+      "log2_inventory": 4.906890595608519,
+      "within_unit_mi": 0.0,
+      "slot_mi": 0.0,
+      "n_slots": 1,
+      "mean_fill_rate": 1.0,
+      "onset_dominance": 1.0,
+      "pos_entropy_ratio": 0.8224774301770119,
+      "h_ratio": 0.8224774301770119,
+      "units_per_word": 4.765083255243999,
+      "mean_glyphs_per_unit": 1.0,
+      "n_tokens": 66106,
+      "n_types": 30
+    },
+    "english_cury_syl": {
+      "label": "english_cury_syl",
+      "inventory_size": 4339,
+      "log2_inventory": 12.083146870816742,
+      "within_unit_mi": 0.692934020581949,
+      "slot_mi": 0.9610859863837387,
+      "n_slots": 3,
+      "mean_fill_rate": 0.6966950302133431,
+      "onset_dominance": 1.1513952902571365,
+      "pos_entropy_ratio": 0.8961713498732673,
+      "h_ratio": 0.4792138912646636,
+      "units_per_word": 1.599553896576839,
+      "mean_glyphs_per_unit": 2.0900850906400295,
+      "n_tokens": 70278,
+      "n_types": 4339
+    },
+    "english_cury_char": {
+      "label": "english_cury_char",
+      "inventory_size": 33,
+      "log2_inventory": 5.044394119358453,
+      "within_unit_mi": 0.0,
+      "slot_mi": 0.0,
+      "n_slots": 1,
+      "mean_fill_rate": 1.0,
+      "onset_dominance": 1.0,
+      "pos_entropy_ratio": 0.868934143003829,
+      "h_ratio": 0.868934143003829,
+      "units_per_word": 4.129028587035688,
+      "mean_glyphs_per_unit": 1.0,
+      "n_tokens": 181413,
+      "n_types": 33
+    },
+    "Czech_kralice_syl": {
+      "label": "Czech_kralice_syl",
+      "inventory_size": 5698,
+      "log2_inventory": 12.476239906323851,
+      "within_unit_mi": 0.6766398126447034,
+      "slot_mi": 0.6717982807551315,
+      "n_slots": 3,
+      "mean_fill_rate": 0.648927889098161,
+      "onset_dominance": 1.3735753653101699,
+      "pos_entropy_ratio": 0.8877066246008415,
+      "h_ratio": 0.5906706105698484,
+      "units_per_word": 1.96979,
+      "mean_glyphs_per_unit": 1.9467836672944832,
+      "n_tokens": 393958,
+      "n_types": 5698
+    },
+    "Czech_kralice_char": {
+      "label": "Czech_kralice_char",
+      "inventory_size": 39,
+      "log2_inventory": 5.285402218862249,
+      "within_unit_mi": 0.0,
+      "slot_mi": 0.0,
+      "n_slots": 1,
+      "mean_fill_rate": 1.0,
+      "onset_dominance": 1.0,
+      "pos_entropy_ratio": 0.8324948240649633,
+      "h_ratio": 0.8324948240649633,
+      "units_per_word": 4.581915,
+      "mean_glyphs_per_unit": 1.0,
+      "n_tokens": 916383,
+      "n_types": 39
+    }
+  }
+}

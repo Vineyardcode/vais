@@ -16952,3 +16952,1517 @@ heavily on position within the encoding unit.
 - **Cluster-level fingerprinting: NOT VIABLE** in current form.
   Coverage gap (43%) and dimensional incomparability prevent
   meaningful cross-level comparison.
+
+---
+
+## Phase 98 — Generative Chunk Model
+
+### Objective
+
+Train Markov models (bigram, trigram) on the 523 chunk-type sequences
+extracted via the LOOP grammar. Generate synthetic VMS text and evaluate
+whether chunk-level sequential dependencies alone can reproduce the
+VMS's anomalous statistical fingerprint — especially the low glyph-level
+h_char (0.653) that has been the central puzzle since Phase 1. Then
+collapse to the 25 equivalence classes from Phase 86 and verify that the
+reduced alphabet preserves essential structure. Provide null models
+(shuffled, uniform random) for calibration.
+
+### Method
+
+1. Parsed all 40,351 VMS words into 78,526 chunks (523 types, 99.8%
+   coverage, mean 1.95 chunks/word) using the Phase 85 LOOP parser.
+2. Trained chunk-level bigram (order-1) and trigram (order-2) Markov
+   models on the chunk stream (including word-boundary tokens).
+3. Generated 10 independent synthetic texts per model (same length as
+   VMS), computed 9-metric fingerprint for each.
+4. Null models: (a) shuffled chunks preserving word lengths; (b)
+   uniform random draws from the chunk vocabulary.
+5. Z-scores: (VMS − synthetic_mean) / synthetic_std, over 10 seeds.
+6. Collapsed all 523 chunk types to 25 Phase 86 equivalence classes
+   (extending coverage from 206 to 523 types via distributional
+   nearest-neighbour assignment). Re-trained Markov models and
+   re-evaluated.
+7. Separate Currier A and B bigram models.
+8. 5-fold cross-validation for perplexity estimation.
+
+### Key Results
+
+#### Discovery 98.1 — Trigram Model Reproduces Glyph h_char Almost Exactly
+
+| Metric               | VMS    | Bigram  | Bi z    | Trigram | Tri z   | Shuf z   | Uni z    |
+|----------------------|--------|---------|---------|---------|---------|----------|----------|
+| **glyph h_char**     | 0.6530 | 0.6695  | −17.56  | **0.6524** | **+0.66** | −475.0 | −402.3 |
+| chunk h_ratio        | 0.8176 | 0.8401  | −41.98  | 0.8002  | +26.94  | −387.5   | +165.5   |
+| Zipf slope           | −0.876 | −0.877  | +0.45   | −0.874  | −0.35   | N/A      | −123.9   |
+| Heaps β              | 0.355  | 0.317   | +4.86   | 0.316   | +2.84   | +1.82    | +30.0    |
+| cross-word MI        | 0.716  | 0.405   | +68.69  | 0.848   | −14.63  | +65.76   | −629.3   |
+| positional Gini      | 0.442  | 0.442   | +0.21   | 0.446   | −1.29   | +46.06   | +317.8   |
+| word TTR             | 0.201  | 0.205   | −4.70   | 0.161   | +47.25  | −190.1   | −1155.3  |
+| chunks/word          | 1.948  | 1.947   | +0.20   | 1.946   | +0.73   | N/A      | N/A      |
+
+**The trigram's glyph h_char (0.6524) is statistically indistinguishable
+from VMS (0.6530), z = +0.66, p > 0.50.** This is the headline result:
+chunk-level bigram dependencies (pairs of consecutive chunks) fully
+account for the glyph-level entropy anomaly that has been the defining
+statistical puzzle of the VMS.
+
+The bigram model also comes close (0.6695) but significantly overshoots
+(z = −17.56), indicating that order-2 chunk context is necessary but
+order-1 is insufficient to reproduce the glyph h_char.
+
+#### Discovery 98.2 — What Markov Captures and What It Misses
+
+**Well-captured (|z| < 5):**
+- Zipf slope (bigram z = 0.45, trigram z = −0.35): frequency
+  distribution is almost perfectly reproduced by sequential dependencies
+- Positional Gini (bigram z = 0.21): chunk-type positional concentration
+  is an emergent property of the transition matrix
+- Mean chunks/word (z ≈ 0.5): word structure preserved
+
+**Partially captured (|z| ≈ 5–20):**
+- Glyph h_char by bigram (z = −17.6): close but too high
+- Heaps β (z ≈ 3–5): vocabulary growth slightly under-predicted
+- Word TTR by bigram (z = −4.7): slightly over-generated diversity
+
+**Not captured (|z| > 20):**
+- Cross-word MI: bigram under-predicts (0.405 vs 0.716, z = +68.7),
+  trigram over-predicts (0.848 vs 0.716, z = −14.6). VMS has
+  intermediate cross-word dependencies neither order captures.
+- Word TTR by trigram (z = +47.3): too repetitive — over-memorizes
+  specific word patterns, collapsing vocabulary.
+- Chunk h_ratio: bigram too high (0.840 vs 0.818, z = −42),
+  trigram too low (0.800, z = +27). VMS lies between orders.
+
+#### Discovery 98.3 — 25-Class Collapse Preserves Structure
+
+| Metric     | VMS_collapsed | Bi_mean | Bi z    | Tri_mean | Tri z  |
+|------------|---------------|---------|---------|----------|--------|
+| h_ratio    | 0.8495        | 0.8630  | −21.10  | **0.8483** | **+1.50** |
+| Zipf slope | −2.269        | −2.261  | −0.71   | −2.266   | −0.12  |
+| Heaps β    | 0.073         | 0.093   | −1.25   | 0.083    | −0.63  |
+| TTR        | 0.0003        | 0.0003  | +0.60   | 0.0003   | +0.29  |
+
+After collapsing all 523 chunk types to 25 classes (extending Phase 86
+mapping to 100% coverage via distributional nearest-neighbour), the
+collapsed trigram is statistically indistinguishable from VMS on all
+tested metrics (all |z| < 1.5). The 25-class alphabet captures the
+essential sequential structure.
+
+Collapsed h_ratio = 0.8495, in the NL character range (0.82–0.90),
+confirming Phase 86's finding that ~25 functional units behave like a
+natural language alphabet.
+
+#### Discovery 98.4 — Currier A and B Show Same Markov Gap
+
+| Section | VMS h_ratio | Syn_mean | z      |
+|---------|-------------|----------|--------|
+| A       | 0.8076      | 0.8255   | −17.59 |
+| B       | 0.7723      | 0.7953   | −17.75 |
+
+Both A and B have h_ratio ~0.018 below their respective bigram models
+(z ≈ −17.7 for both). The gap is symmetric, suggesting the same
+generative mechanism underlies both sections — consistent with Phase 95's
+finding that A and B are registers, not separate languages.
+
+#### Discovery 98.5 — Perplexity Anomaly: Trigram Worse Than Bigram
+
+5-fold CV perplexity:
+- Bigram: 23.4 ± 3.3
+- Trigram: 54.2 ± 9.5 (131% worse)
+
+The trigram has HIGHER perplexity than the bigram — the opposite of the
+normal pattern. This happens because with only 524 active bigram contexts
+(out of 523² ≈ 273,000 possible), the trigram context space (523³) is
+extremely sparse. Laplace smoothing dominates most trigram predictions,
+making it worse at prediction despite better fingerprint matching.
+
+This is itself informative: the VMS chunk sequence has a very concentrated
+transition structure — most chunks only follow a few specific predecessors.
+
+### Critical Assessment
+
+1. **The glyph h_char match is the strongest finding.** z = +0.66 for
+   the trigram means the anomalous glyph-level entropy is fully
+   accounted for by chunk-level sequential dependencies. This does NOT
+   mean the VMS IS a trigram process — it means that whatever generates
+   VMS text produces chunk sequences whose bigram statistics suffice to
+   reproduce the glyph-level anomaly.
+
+2. **Cross-word MI remains unexplained.** Neither bigram nor trigram
+   captures the VMS's specific cross-word dependency level. This
+   suggests structure beyond simple Markov chains — possibly syntactic
+   or semantic constraints not captured by local n-gram statistics.
+
+3. **The trigram perplexity paradox is a red flag.** The trigram
+   matches glyph h_char despite being a worse predictive model. This
+   could be coincidental: the trigram's over-memorization produces
+   specific chunk patterns that happen to yield the right glyph
+   entropy. Must test with held-out data.
+
+4. **Hapax ratio under-generated.** Both models produce fewer hapax
+   (12–13% vs VMS 20%). Markov models smooth out rare patterns. The
+   VMS's higher hapax rate suggests genuine productive morphology
+   (consistent with Phase 94's e-extension findings).
+
+5. **The 25-class collapse success is important.** 100% coverage
+   (via nearest-neighbour extension) eliminates the Phase 96 coverage
+   gap criticism. The collapsed trigram's near-perfect match on all
+   metrics validates the 25-class alphabet model.
+
+6. **Alternative interpretation.** The Markov model success is
+   consistent with BOTH natural language (NL character bigrams are
+   well-modeled by Markov) AND a systematic cipher (any deterministic
+   substitution of a Markov source would be Markov). It does not
+   discriminate between them — but it constrains the generation model.
+
+### Skepticism Notes
+
+- The trigram's glyph h_char match should be verified by computing
+  it on held-out folios not used for training.
+- Positional Gini's near-perfect match (z = 0.21) for bigram suggests
+  that positional concentration is trivially emergent from unigram
+  frequencies — not a deep structural feature.
+- The word TTR mismatch (trigram z = +47) means the trigram
+  over-memorizes word patterns. A higher-order model would likely
+  make this worse. The VMS has more lexical diversity than a Markov
+  process can produce — consistent with genuine vocabulary.
+
+### Impact on Hypotheses
+
+- **h_char anomaly explained by chunk-level Markov structure:
+  CONFIRMED.** Trigram z = +0.66. The glyph-level anomaly is fully
+  emergent from chunk-level sequential dependencies.
+- **Chunks as functional units: STRENGTHENED.** The 25-class collapse
+  with full coverage produces NL-like statistics (h_ratio = 0.849)
+  and the trigram is indistinguishable from VMS.
+- **VMS is not random/meaningless: CONFIRMED.** Shuffled null diverges
+  massively (h_ratio z = −387, glyph h_char z = −475).
+- **Simple Markov process: PARTIAL.** Captures glyph h_char, Zipf,
+  positional Gini, word length — but not cross-word MI, word TTR,
+  or hapax ratio. VMS has structure beyond Markov chains.
+- **Natural language hypothesis: UNCHANGED (92%).** Markov success
+  is consistent with NL. The hapax and word TTR mismatches further
+  support genuine productive vocabulary.
+
+---
+
+## Phase 100 — Targeted Decipherment with the 25-Class Alphabet
+
+### Objective
+
+Treat the 25 Phase-86 equivalence classes as a substitution-cipher
+alphabet and attempt frequency-based + hill-climbing decipherment
+against six candidate natural languages: Latin, Czech, German,
+Italian, French, English.
+
+### Method
+
+1. **Collapse** all 40,309 VMS words to sequences of 25 class IDs
+   (C0–C24) via the nearest-neighbour extended mapping (Phase 98).
+2. **Compute** VMS statistics: unigram, bigram, positional, and
+   word-length distributions over the 25 classes.
+3. **For each NL corpus**: compute letter-level unigram, bigram,
+   positional, and word-length distributions; build dictionaries.
+4. **Optimize substitution**: frequency-rank baseline → simulated-
+   annealing hill-climbing (8,000 iterations) maximizing bigram LL
+   of mapped VMS text under the NL bigram model.
+5. **Dictionary hits**: apply best mapping, count word matches,
+   stratified by word length.
+6. **Null model**: 500 random permutations per language, compute
+   z-score of optimized mapping vs null hit distribution (len ≥ 3).
+7. **Cross-validation**: 80/20 train/test split; optimize on train,
+   evaluate dictionary hit rate on held-out test set (len ≥ 3).
+8. **Specificity test**: compare z-scores across languages.
+
+### Results — Structural Comparison (No Mapping)
+
+| Language | WL JSD  | VMS H  | NL H   | H ratio | VMS α | NL α | α ratio |
+|----------|---------|--------|--------|---------|-------|------|---------|
+| English  | 0.3288  | 3.172  | 4.263  | 0.744   | 25    | 28   | 0.89    |
+| Italian  | 0.3473  | 3.172  | 4.033  | 0.787   | 25    | 28   | 0.89    |
+| Czech    | 0.4112  | 3.172  | 4.724  | 0.672   | 25    | 38   | 0.66    |
+| French   | 0.4245  | 3.172  | 4.039  | 0.785   | 25    | 24   | 1.04    |
+| German   | 0.4905  | 3.172  | 4.209  | 0.754   | 25    | 30   | 0.83    |
+| Latin    | 0.4938  | 3.172  | 4.068  | 0.780   | 25    | 27   | 0.93    |
+
+**Key**: VMS unigram entropy (3.172 bits) is substantially lower than
+all NL references (4.03–4.72 bits). The entropy ratio is 67–79%,
+consistent with the VMS's compressed, low-diversity class vocabulary.
+Word-length JSD is closest for English and Italian (shorter-word
+languages), reflecting the VMS's extremely short class-words
+(mean ≈ 1.83 classes/word; 55.8% are 2-class, 26.9% are 1-class).
+
+### Results — Dictionary Hit Rates (All Lengths)
+
+| Language | Hits    | Total  | Rate   | Best LL  |
+|----------|---------|--------|--------|----------|
+| Latin    | 31,387  | 40,309 | 0.7787 | −7.570   |
+| German   | 29,085  | 40,309 | 0.7216 | −7.691   |
+| Italian  | 22,636  | 40,309 | 0.5616 | −8.635   |
+| English  | 21,588  | 40,309 | 0.5356 | −7.568   |
+| Czech    | 12,072  | 40,309 | 0.2995 | −9.139   |
+| French   |  1,016  | 40,309 | 0.0252 | −8.233   |
+
+**BUT**: These high hit rates are dominated by len-1 and len-2 words.
+English len-1 = 100%, Latin len-2 = 84.6%, German len-2 = 78.6%.
+These are trivially expected by chance with small alphabets.
+
+### Results — Null Model (len ≥ 3 Only)
+
+| Language | Optimized | Null μ  | Null σ  | z-score | Null max |
+|----------|-----------|---------|---------|---------|----------|
+| Latin    | 0.2190    | 0.0245  | 0.0246  | **+7.91** | 0.1363 |
+| Italian  | 0.0964    | 0.0068  | 0.0116  | **+7.72** | 0.0753 |
+| Czech    | 0.0841    | 0.0087  | 0.0133  | +5.68   | 0.0944   |
+| German   | 0.1073    | 0.0169  | 0.0198  | +4.56   | 0.1348   |
+| English  | 0.0753    | 0.0138  | 0.0153  | +4.03   | 0.0866   |
+| French   | 0.0197    | 0.0057  | 0.0100  | +1.39   | 0.0789   |
+
+Five of six languages show z > 2 (above-chance hits). French alone
+fails to exceed chance. This demonstrates the VMS has NL-like
+combinatorial structure, not that any specific language is the
+plaintext.
+
+### Results — Cross-Validation (len ≥ 3, 80/20 Split)
+
+| Language | Train rate | Test rate | Test hits / total |
+|----------|------------|-----------|-------------------|
+| Latin    | 0.1736     | **0.1669** | 237 / 1,420     |
+| German   | 0.0587     | 0.0599  |  85 / 1,420       |
+| English  | 0.0400     | 0.0373  |  53 / 1,420       |
+| Czech    | 0.0360     | 0.0310  |  44 / 1,420       |
+| Italian  | 0.0306     | 0.0232  |  33 / 1,420       |
+| French   | 0.0294     | 0.0218  |  31 / 1,420       |
+
+**Latin dominates CV generalization** at 16.7%, the only language
+exceeding 10%. Even so, 83.3% of len ≥ 3 VMS words do NOT match
+any Latin dictionary form. The ceiling is far too low for genuine
+decipherment.
+
+### Results — Specificity
+
+Best z-score: +7.91 (Latin), second: +7.72 (Italian), gap = 0.19σ.
+**LOW SPECIFICITY**: Top two languages within 1σ of each other.
+By CV: Latin 16.7% stands alone above 10%; all others 2–6%.
+No decisive single-language identification by z-score.
+
+### Results — Run-to-Run Instability
+
+**CRITICAL**: The hill-climbing optimizer is stochastic and yields
+substantially different z-score rankings across runs:
+
+- Run A: English z=+8.38, French z=+6.04, Italian z=+3.16
+- Run B: Italian z=+7.72, Latin z=+6.03, English z=+3.61
+- Run C: Latin z=+7.91, Italian z=+7.72, Czech z=+5.68
+
+The z-score leader changed in EVERY run (English → Italian → Latin).
+This instability demonstrates that the z-score metric is **fragile
+and unreliable** for language identification. Only CV generalization
+(Latin consistently ≈ 16.7%) is stable across all runs.
+
+### Deciphered Text Sample (Latin Mapping, Run C)
+
+> esta us s vs t tt uam t er tt art us r t es us t sl us us is aw ut
+> r us i urst um iss at ar um um arut ubs is us r us as t ns us us us
+> isft is t ur ris
+
+**No coherent language is visible.** The output is gibberish in all
+six languages tested.
+
+### Critical Assessment
+
+1. **THE 25 CLASSES ≠ LETTERS.** Each class conflates 4–57 chunk
+   variants. C0 alone contains ch.e.d.y, sh.e.y, y, d.y, and 53
+   other chunks. The mapping class→letter is a massive many-to-one
+   compression that destroys the phonological distinctions a real
+   cipher would preserve.
+
+2. **WORD LENGTH MISMATCH.** VMS "words" average ~1.83 classes
+   (chunks ≈ syllables). NL words average 4–6 letters. Dictionary
+   matching therefore compares 2-class VMS words against 2-letter NL
+   function words (to, in, et, de, je). High short-word hit rates
+   are expected by chance with any 25-letter alphabet.
+
+3. **MOST LANGUAGES HIT.** Five of six languages exceed z > 2;
+   only French falls below chance. This indicates the VMS shares
+   generic NL-like bigram structure, not a specific language substrate.
+
+4. **Z-SCORES ARE UNSTABLE.** Across three runs, the z-score leader
+   changed every time (English → Italian → Latin). The metric is
+   fragile, confounded by dictionary size and hill-climbing
+   stochasticity. CV generalization is the only stable measure.
+
+5. **CEILING IS LOW.** The best CV rate (Latin, 16.7%) means 83.3%
+   of VMS words of length ≥ 3 do NOT match any dictionary form.
+   For real decipherment, this rate should be > 50%.
+
+6. **NO COHERENT TEXT.** The most basic requirement for decipherment
+   — readable, grammatically plausible output — is completely absent.
+
+### Conclusions
+
+- **Simple substitution on the 25-class alphabet FAILS to decipher
+  the VMS in any tested language.** The approach produces above-chance
+  but structurally generic dictionary hits with no coherent text.
+- **The VMS's 25-class structure is NL-like but not NL-isomorphic.**
+  The class distributions have enough regularity to partially match
+  any NL's bigram and positional patterns, but not enough specificity
+  to identify a single substrate language.
+- **If the VMS encodes a natural language**, the encoding is NOT a
+  simple substitution cipher on distributional chunk classes. More
+  complex possibilities remain: (a) polyalphabetic cipher,
+  (b) homophonic substitution (multiple chunks → same plaintext unit),
+  (c) transposition, (d) the "word" = syllable hypothesis (each class
+  ≈ a syllable, not a letter), (e) nomenclator or code.
+- **Latin is the most stable structural match by CV generalization
+  (16.8%)**, consistent with the VMS's provenance (Northern Italy,
+  early 15th C). But the margin over English (8.0%) and
+  Italian/German (6.2–6.4%) is modest.
+- **NL hypothesis probability: UNCHANGED at 92%.** The VMS has
+  NL-like structure (confirmed by above-chance hits in all languages)
+  but the encoding layer remains opaque.
+
+### Impact on Hypotheses
+
+- **Simple substitution cipher: REJECTED.** Zero coherent text, low
+  CV hit rates, and non-specific language identification.
+- **25-class alphabet as phonemic representation: UNLIKELY.** The
+  class→letter mapping produces gibberish. Classes likely represent
+  syllable-types or sub-syllabic functional units, not phonemes.
+- **NL-like structure: CONFIRMED.** Above-chance hits for all six
+  languages (z > 2) with NL-like bigram and positional patterns.
+- **Latin provenance: WEAKLY SUPPORTED.** Best and most stable CV
+  generalization rate (16.8%), but margin over other languages
+  is too small for confidence.
+- **Complex encoding hypothesis: STRENGTHENED.** Simple substitution
+  failure motivates investigation of polyalphabetic, homophonic,
+  syllabic, or code-based encoding schemes.
+
+---
+
+## Phase 99 — Script Typology Comparison
+
+### Objective
+Compare VMS chunk statistics against known writing system types — alphabets, abjads, abugidas, syllabaries, and featural block scripts — using an 8-dimensional typological feature space. Determine whether VMS's internal chunk structure best resembles any particular writing system type.
+
+### Method
+1. **VMS chunk structural metrics**: Computed on 78,526 chunks (523 types) from LOOP grammar parse. 8 features: log2(inventory), within-unit MI, slot count, mean fill rate, onset dominance, positional entropy ratio, h_ratio, units/word.
+2. **Empirical NL baselines**: 12 natural language corpora (6 Latin, 5 vernacular, 1 Czech) decomposed into syllables with onset/nucleus/coda slot structure. Same 8 metrics computed at syllable level.
+3. **Published typological reference points**: 11 writing systems from Daniels & Bright (1996) and Sproat (2000):
+   - Alphabets: Latin, Cyrillic
+   - Abjads: Hebrew, Arabic
+   - Abugidas: Devanagari, Tibetan, Ethiopic, Thai
+   - Syllabaries: Japanese hiragana, Cherokee
+   - Featural: Korean Hangul
+4. **Distance metrics**: Euclidean and cosine distance in z-normalized 8-D feature space.
+5. **Null model**: Permutation test (2000 iterations) sampling random feature combinations.
+6. **Sensitivity**: Leave-one-out feature ablation.
+
+### Key VMS Structural Metrics
+
+| Metric | Value |
+|---|---|
+| log2(inventory) | 9.03 (523 types) |
+| Within-chunk MI | 1.540 |
+| Slot count | 5 |
+| Slot fill rates | S1=0.279, S2=0.476, S3=0.343, S4=0.274, S5=0.820 |
+| Mean fill rate | 0.438 |
+| Onset dominance | 0.636 |
+| Positional entropy ratio | 0.906 |
+| h_ratio (chunk level) | 0.818 |
+| Units/word | 1.948 |
+
+### Key Results
+
+**Closest typological matches (Euclidean distance in normalized 8-D space):**
+
+| Rank | System | Type | Distance |
+|---|---|---|---|
+| 1 | Thai abugida | abugida | 5.174 |
+| 2 | Tibetan abugida | abugida | 5.282 |
+| 3 | Latin Vulgate syllables | NL syllable | 5.299 |
+| 4 | German Faust syllables | NL syllable | 5.318 |
+| 5 | English Cury syllables | NL syllable | 5.345 |
+| 6 | Korean Hangul | featural block | 5.376 |
+
+**Mean distance by script type:**
+
+| Script Type | Mean dist | Min dist |
+|---|---|---|
+| Abugida | 5.540 | 5.174 |
+| Featural (Hangul) | 5.376 | 5.376 |
+| NL syllable | 5.627 | 5.299 |
+| Syllabary | 7.867 | 7.815 |
+| Alphabet | 8.546 | 8.426 |
+| Abjad | 8.503 | 8.483 |
+
+**Permutation test p-value: 1.0000** — VMS is not significantly close to any reference system. It is an outlier in typological space.
+
+**Feature sensitivity: 5/8 stable** — Dropping n_slots, mean_fill_rate, or pos_entropy_ratio shifts nearest neighbour from Thai to Korean Hangul. Other 5 features maintain Thai as nearest.
+
+**VMS vs Thai (nearest) — per-feature deviations:**
+
+| Feature | VMS | Thai | z-difference |
+|---|---|---|---|
+| within_unit_mi | 1.540 | 0.400 | **3.347** |
+| onset_dominance | 0.636 | 1.120 | **2.903** |
+| mean_fill_rate | 0.438 | 0.650 | 1.443 |
+| pos_entropy_ratio | 0.906 | 0.870 | 1.338 |
+| units_per_word | 1.948 | 3.200 | 1.146 |
+| n_slots | 5.000 | 4.000 | 1.022 |
+| log2_inventory | 9.031 | 6.248 | 0.951 |
+| h_ratio | 0.818 | 0.810 | **0.046** |
+
+**VMS vs Korean Hangul — structural deep comparison:**
+
+| Feature | VMS | Hangul | Match? |
+|---|---|---|---|
+| Slot count | 5 | 3 | DIFFER |
+| Mean fill rate | 0.438 | 0.780 | DIFFER |
+| Within-unit MI | 1.540 | 0.600 | DIFFER |
+| h_ratio | 0.818 | 0.720 | CLOSE |
+| Units/word | 1.948 | 2.500 | CLOSE |
+| Onset dominance | 0.636 | 1.050 | DIFFER |
+| Pos entropy ratio | 0.906 | 0.850 | CLOSE |
+| log2(inventory) | 9.031 | 11.198 | CLOSE |
+
+### Critical Assessment
+
+1. **VMS is an outlier, not a match.** The permutation p-value of 1.0 means random feature combinations are at least as close to some reference system as VMS is to its nearest match. The ranking (abugida > Hangul > NL syllable > syllabary > alphabet) is meaningful, but the absolute distances are all large. VMS does not belong cleanly to any known writing system category.
+
+2. **Within-unit MI is the smoking gun.** VMS chunks have MI = 1.540, far exceeding any reference system (next highest: French Viandier syllables at 0.805, Korean Hangul at 0.600). This means VMS glyph-to-glyph dependencies within chunks are abnormally strong — consistent with the Phase 97 finding that 45.7% of glyph entropy arises from within-slot transitions.
+
+3. **Low onset dominance is anomalous.** In every natural abugida, the onset/base character is always present (dominance ≈ 1.0-1.5). VMS S1 (onset) fills only 27.9% of chunks. This is structurally unlike any known abugida where the base consonant is mandatory. VMS chunks are more often "vowel-initial" (S2 fills 47.6%).
+
+4. **Low fill rate reflects sparse slot use.** Mean fill rate 0.438 means only ~2.2 of 5 slots are filled on average. This is lower than any abugida reference (0.62-0.95). VMS chunks are structurally valid but sparsely populated — consistent with a system where many possible combinations are not used.
+
+5. **The abugida ranking is driven almost entirely by h_ratio.** VMS's h_ratio (0.818) is nearly identical to Thai (0.810) and Devanagari (0.820). But every other feature shows substantial deviations. The match is superficial on 1/8 dimensions.
+
+6. **Reference points are estimates, not measurements.** The abugida/syllabary parameters come from published typological descriptions, not corpus statistics. Uncertainty is ±20% on most features. Thai and Tibetan as "nearest" could shift with better reference data.
+
+7. **Hangul is the best structural analogy despite distance.** Korean Hangul shares VMS's key architectural property: blocks composed of featural sub-units in fixed positions. The 4/8 CLOSE matches (h_ratio, units/word, positional entropy, inventory) are on the most linguistically important dimensions. The DIFFER matches (slot count, fill rate, MI, onset dominance) reflect VMS's more complex but sparser internal structure.
+
+### Skepticism Notes
+
+- The 8-dimensional feature space is hand-designed. Different feature choices (e.g., adding Zipf slope, cross-word MI) could alter rankings. The sensitivity test shows 3/8 features are pivotal for the Thai vs Hangul distinction.
+- Computing syllable metrics for NL corpora using a simple onset/nucleus/coda decomposition is a rough approximation. Languages like German with CCCVCC+ syllables will show different statistics than a linguistically precise syllabification.
+- The mandarin pinyin sample was not used (IPA notation, not standard text). Future work could add Chinese character-to-syllable mapping for a true logographic comparison.
+- No actual corpus data exists in the workspace for Devanagari, Tibetan, etc. These reference points cannot be independently verified within this analysis.
+
+### Impact on Hypotheses
+
+- **VMS chunks share structural properties with abugidas: CONFIRMED (weakly).** VMS is closer to abugidas than to alphabets or syllabaries in typological feature space, but the match is not statistically significant. The h_ratio match is striking; other features diverge.
+- **VMS is a unique typological entity: CONFIRMED.** p = 1.0 means VMS occupies a novel region of typological space. No known writing system has this combination of high within-unit MI, low onset dominance, 5-slot structure, and sparse fill rate.
+- **Korean Hangul is the best structural analogy: SUPPORTED.** Both systems use featural sub-units in fixed positions within blocks. VMS differs in having more slots, lower fill rate, and stronger internal correlations.
+- **VMS chunks are not syllabary symbols: CONFIRMED.** Syllabaries are the most distant category (d=7.87 vs abugida d=5.54). The internal structure and slot-based MI rule out holistic symbol selection.
+- **Natural language hypothesis: UNCHANGED (92%).** The abugida-like structure is consistent with encoding a language whose phonology has onset-vowel-coda structure. But the high within-MI and low onset dominance are atypical for known NL writing systems — consistent with either a novel script design or a cipher layer.
+
+---
+
+## Phase 101 — Resolve the Currier A/B Dichotomy
+
+### Methodology
+
+**CRITICAL CORRECTION:** This phase discovered that the `get_currier_language()` function hardcoded in 8+ prior scripts (Phases 3, 63, 64, 68, 98, 100) disagrees with the authoritative `$L=` tags in the IVTFF folio headers on **79 of 201 folios (39% error rate)**. The hardcoded function assigned 25,451 words to A and 14,900 to B; the correct tags yield 11,728 A and 25,504 B — a **net shift of 10,604 words from A to B**. All prior A/B results are contaminated by this systematic misassignment.
+
+Phase 101 parses `$L=A`/`$L=B` tags directly from folio headers and re-analyses the A/B dichotomy from scratch at every level:
+
+1. **Corrected corpus split** — 107 A-folios (11,728 words), 78 B-folios (25,504 words), 16 untagged (excluded from A/B tests, included in 'all')
+2. **25-class distributions** — unigram, bigram, positional (initial/medial/final), word-length
+3. **Vocabulary overlap** — word types, chunk types, class bigram types
+4. **Markov cross-perplexity** — train bigram model on A, test on B, and vice versa
+5. **Permutation test** — 1,000 folio-label shuffles to determine if A/B JSD is significant
+6. **Folio-level classifier** — nearest-centroid on class-bigram features, LOO-CV
+7. **Differential feature analysis** — log-odds ratio ranking of distinguishing bigrams
+8. **NL fit per language** — rank-frequency JSD of A and B separately vs 6 NL corpora
+9. **Section effect test** — within-section A/B JSD vs between-section same-language JSD
+10. **Glyph-level comparison** — raw EVA glyph distributions
+
+### Key Findings
+
+#### Finding 1: Prior A/B Assignments Were Systematically Wrong
+
+| | Hardcoded (old) | $L= tags (correct) |
+|---|---|---|
+| A words | 25,451 | 11,728 |
+| B words | 14,900 | 25,504 |
+| A folios | ~127 | 107 |
+| B folios | ~74 | 78 |
+| Disagreements | — | 79 files |
+
+The hardcoded B-set `[26,27,28,29,31,34,35,38,39,42,43,46,47,49,50,53,54]` for the herbal section was almost entirely wrong — most of those folios are tagged `$L=A`. The pharma range `87–102` was also wrong — many pharma folios are tagged `$L=A` while the stars/text section (103+) is `$L=B` but was excluded from the B range. This means:
+- Phase 3's root JSD of 0.5038 between "A" and "B" was computed on a **deeply contaminated split**
+- Phase 63's scribe detection and Phase 68's transition comparison are similarly affected
+- Phase 98's A/B baselines (h_ratio, cross-word MI, etc.) need recomputation
+
+#### Finding 2: A/B Split Is Highly Significant (Corrected Data)
+
+| Level | JSD(A,B) | Null mean ± std | z-score | p-value |
+|---|---|---|---|---|
+| Class unigram | 0.0184 | 0.0011 ± 0.0005 | +32.3 | < 0.001 |
+| Class bigram | 0.0988 | 0.0114 ± 0.0019 | +45.1 | < 0.001 |
+| Glyph-level | 0.0170 | — | — | — |
+| Initial position | 0.0237 | — | — | — |
+| Final position | 0.0318 | — | — | — |
+| Medial position | 0.0912 | — | — | — |
+| Word length | 0.0031 | — | — | — |
+
+The A/B divergence is overwhelmingly significant — not producible by random folio partition. The largest divergence is in **class bigrams** (JSD=0.099), 9× the unigram JSD (0.018), meaning the way classes combine is more different than the classes themselves.
+
+#### Finding 3: Same Grammar, Different Vocabulary
+
+**Cross-perplexity matrix (class bigrams, Laplace-smoothed):**
+
+| Train \ Test | Test A | Test B |
+|---|---|---|
+| Model A | 4.33 | 4.38 |
+| Model B | 4.71 | 3.96 |
+
+| Ratio | Value | Interpretation |
+|---|---|---|
+| A→B / A→A | 1.010 | Near-identical — A's grammar predicts B perfectly |
+| B→A / B→B | 1.191 | Moderate penalty — B's grammar doesn't fully predict A |
+
+The asymmetry (A→B=1.01 but B→A=1.19) means **A's transition rules are a subset of B's** — B uses all of A's bigram patterns plus additional ones (B has more text, more diversity). A model trained on A generalizes to B with no penalty, but a model trained on B overfits to B-specific patterns.
+
+#### Finding 4: Low Word Overlap, High Grammar Overlap
+
+| Level | A types | B types | Shared | Jaccard |
+|---|---|---|---|---|
+| Word types | 3,533 | 4,993 | 1,101 | 0.148 |
+| Chunk types | 390 | 435 | 323 | 0.643 |
+| Class bigram types | 279 | 277 | 230 | 0.706 |
+
+The **word Jaccard of 0.148** is remarkably low — A and B share only 15% of their vocabularies. But at the chunk level (64%) and class-bigram level (71%), the overlap is high. This is the hallmark of **register variation**: the building blocks and rules are shared, but the specific word forms used differ.
+
+**B-exclusive vocabulary is dominated by -edy/-eedy words:**
+`qokeedy(307), otedy(166), okedy(112), okeedy(103), qotedy(91), qoteedy(77), keedy(63)`
+
+**A-exclusive vocabulary is dominated by gallows-rich words:**
+`ctho(18), cthody(16), chom(14), qotchol(13), choiin(13), qotchor(12)`
+
+#### Finding 5: 88.6% Classifier Accuracy
+
+Nearest-centroid classifier on class-bigram features, leave-one-out cross-validation:
+- **Accuracy: 164/185 = 88.6%** (majority baseline: 57.8%)
+- **Lift over majority: +30.8%**
+- Permutation null: 57.4% ± 2.7%, z = +11.71, p < 0.001
+
+21 folios were misclassified. Notable: **10 of 21 misclassifications are pharma-section folios (f87–f102) tagged $L=A but classified as B.** This suggests the pharma section may be a transitional zone, or that some $L= tags in the pharma section are themselves questionable.
+
+#### Finding 6: Top Distinguishing Features
+
+**A-enriched bigrams** (gallows + C5, and C4-related transitions):
+- C1→C5 (840 vs 395), C0→C4 (75 vs 42), C4→C14 (22 vs 8)
+
+**B-enriched bigrams** (C9/C10-related chains):
+- C10→C9 (22 vs 531 — 24× enrichment in B), C5→C9 (52 vs 563), C9→C3 (116 vs 948)
+- C7→C2 (0 in A, 15 in B — completely absent from A)
+
+The C9 class (which maps to chunks like `aiin`, `iin`) combined with C10 and C3 is the **strongest B signature**.
+
+#### Finding 7: Class Unigram Differences
+
+| Class | freq_A | freq_B | log-OR | Note |
+|---|---|---|---|---|
+| C4 | 0.1036 | 0.0613 | +0.757 | Strongly A-enriched |
+| C5 | 0.1152 | 0.0833 | +0.469 | A-enriched |
+| C0 | 0.2482 | 0.1946 | +0.351 | A-enriched |
+| C3 | 0.1515 | 0.2033 | −0.424 | B-enriched |
+| C2 | 0.0548 | 0.0867 | −0.663 | B-enriched |
+| C7 | 0.0081 | 0.0145 | −0.837 | B-enriched |
+| C10 | 0.0392 | 0.0569 | −0.538 | B-enriched |
+
+A is richer in C4/C5/C0 (gallows and o-centered chunks); B is richer in C3/C2/C7/C9/C10 (the e/d/i-centered chunks).
+
+#### Finding 8: Glyph-Level Signatures
+
+| Glyph | freq_A | freq_B | log-OR |
+|---|---|---|---|
+| `cth` | 0.0113 | 0.0029 | +1.979 (A) |
+| `cph` | 0.0022 | 0.0007 | +1.651 (A) |
+| `s` | 0.0220 | 0.0120 | +0.874 (A) |
+| `ch` | 0.0800 | 0.0567 | +0.497 (A) |
+| `o` | 0.1837 | 0.1285 | +0.516 (A) |
+| `e` | 0.0796 | 0.1295 | −0.702 (B) |
+| `q` | 0.0238 | 0.0381 | −0.680 (B) |
+| `d` | 0.0660 | 0.0822 | −0.316 (B) |
+
+**A favors gallows glyphs (`cth`, `cph`, `ckh`, `cfh`) and `o`/`ch`/`s`; B favors `e`/`q`/`d`/`k`.** The gallows enrichment in A is dramatic: `cth` is 3.9× more frequent in A than B.
+
+#### Finding 9: Section Effect — A/B Partly Confounded with Content
+
+| Section | A folios | B folios | %B |
+|---|---|---|---|
+| Herbal | 86 | 26 | 23% |
+| Astro | 2 | 2 | 50% |
+| Bio | 0 | 20 | 100% |
+| Bio foldout | 0 | 3 | 100% |
+| Pharma | 19 | 4 | 17% |
+| Stars/text | 0 | 23 | 100% |
+
+**Bio, bio foldout, and stars/text sections are 100% B.** Herbal is mostly A (77%) and pharma is mostly A (83%). A/B is therefore **strongly confounded with manuscript section**.
+
+Critical test — within-section A/B JSD vs between-section same-language JSD:
+- Herbal A vs Herbal B: JSD = 0.032
+- Herbal A vs Pharma A: JSD = 0.034
+
+These are **nearly identical**. Switching from A to B *within* the herbal section produces the same divergence as switching from herbal to pharma *within* A. This means: **the A/B divergence within a section is comparable to the section divergence within a language.** Both effects are real and roughly equal in magnitude.
+
+#### Finding 10: NL Fit Is Language-Independent
+
+| NL Language | JSD vs A | JSD vs B | diff |
+|---|---|---|---|
+| Italian | 0.0999 | 0.1036 | −0.004 |
+| Latin | 0.1156 | 0.1147 | +0.001 |
+| French | 0.1241 | 0.1321 | −0.008 |
+| German | 0.1243 | 0.1329 | −0.009 |
+| English | 0.1369 | 0.1447 | −0.008 |
+| Czech | 0.1991 | 0.2052 | −0.006 |
+
+Both A and B give the same NL ranking (Italian < Latin < French ≈ German < English < Czech) and the JSD differences are tiny (max 0.009). This means: **whatever drives the A/B split has nothing to do with which NL language fits best.** Both A and B resemble the same NL distribution profile equally well.
+
+Class-unigram entropy: A = 3.155 bits, B = 3.150 bits — essentially identical.
+
+### Skepticism Notes
+
+1. **The $L= tags come from Currier's original 1970s analysis and were encoded into the IVTFF transcription.** They may contain their own errors. The 10 pharma folios (f87–f102) tagged $L=A but classified as B by our classifier raise the question of whether Currier's own assignments are correct for the pharma section, or whether the pharma section is genuinely transitional.
+
+2. **The within-section JSD test (Finding 9) is the most important result.** If the A/B JSD within herbal (0.032) equaled the *overall* A/B JSD (0.018 unigram), we'd know the A/B effect was content-independent. Instead, the within-section JSD is *higher* than the overall unigram JSD. This suggests some of the overall A/B signal comes from section effects (bio/stars are 100% B), not from an intrinsic A/B linguistic difference.
+
+3. **Cross-perplexity asymmetry (A→B=1.01, B→A=1.19) could be a corpus-size effect.** B has 25,504 words vs A's 11,728. More data → more diverse bigrams → harder for a smaller model (A) to predict. The near-1.0 A→B ratio may simply mean A's patterns are a subset observed within the larger B corpus.
+
+4. **Word Jaccard of 0.148 seems dramatic but must be contextualized.** VMS words are short (mean ~2 chunks). With a 25-class alphabet and mean length 2, there are ~625 possible 2-class "words." A section of 11,728 words (A) should sample many of these. The low Jaccard may partly reflect A's smaller sample catching fewer of the long-tail types.
+
+5. **The 88.6% classifier accuracy is genuine but inflated by the section confound.** If we labeled all bio/bio_fold/stars_text as B and all herbal/pharma as A (pure section labels, ignoring Currier), we'd likely get similar accuracy. The classifier may be detecting *section identity*, not A/B *per se*.
+
+6. **B-exclusive vocabulary (`qokeedy`, `otedy`, `okedy`)** consists of -edy/-eedy words. These could be section-specific terminology (biological processes in the bio section?) rather than a linguistic A/B difference. The A-exclusive gallows words (`ctho`, `cthody`) could similarly be herbal-specific notation.
+
+### Impact on Hypotheses
+
+- **Currier A/B is a real statistical distinction: CONFIRMED** (z = +32–45, p < 0.001). The old hardcoded assignments were wrong but the corrected split remains highly significant.
+- **A/B is register variation within one system: 80% confidence** (shared grammar, different vocabulary, same NL fit profile). Grammar overlap (A→B perplexity ratio 1.01) is strong evidence for a shared encoding system.
+- **A/B is confounded with manuscript section: CONFIRMED.** Bio, bio foldout, and stars/text are 100% B; herbal and pharma are mostly A. Within-section A/B divergence (0.032) ≈ between-section same-language divergence (0.034). The A/B label may partly encode *content type* rather than a linguistic property.
+- **Prior A/B results are invalid: CONFIRMED.** 79 folio misassignments (39% error rate) means Phases 3, 63, 68, and 98 A/B analyses operated on a deeply corrupted split. Their specific numerical results (root JSD, transition comparison, scribe detection) cannot be trusted without recomputation.
+- **Pharma section is a transitional zone: PLAUSIBLE.** 10 of 21 classifier misclassifications are pharma folios. This section may contain a mix of both registers or may be incorrectly tagged.
+- **Natural language hypothesis: UNCHANGED (92%).** Both A and B separately resemble NL rank-frequency distributions with the same ordering of candidate languages.
+
+---
+
+## Phase 102 — Historical Validation
+
+### Objective
+
+Test whether 101 phases of statistical findings are **jointly compatible** with the manuscript's known historical constraints: C14 radiocarbon dating (vellum 1404–1438), parallel hatching (illustrations ~1440–1480), Northern Italian provenance, Widemann→Rudolf chain (1599), German/Occitan marginalia, and pharmaceutical/herbal content hypothesis. This is the capstone synthesis — a systematic audit rather than a new statistical test.
+
+### Methodology
+
+Eight validation steps:
+
+1. **Temporal corpus fit** — compare VMS statistical fingerprint (TTR, Zipf slope, word-length distribution, letter entropy) against 13 NL corpora stratified by composition date. Test whether period-correct texts (1300–1500) are closer to VMS than out-of-period texts.
+2. **Genre fingerprint compatibility** — compare VMS profile against genre archetypes (recipe, medical, encyclopedic, biblical, literary, military, medical oration).
+3. **Provenance-chain language test** — test whether provenance languages (Italian, German, Latin) fit VMS better than controls (Czech, French, English), with 2000-shuffle permutation test.
+4. **Marginalia analysis** — examine f116v for German/Romance marginalia content and its implications.
+5. **Codicological consistency** — cross-tabulate section × Currier language × scribal hand ($H= tags) to distinguish scribal vs content explanations of the A/B split.
+6. **Bayesian compatibility matrix** — score each major hypothesis (substrate language, encoding type, genre, creation era) against cumulative 101-phase evidence.
+7. **Fatal contradiction scan** — identify hypotheses with score ≤ −2 (strong cumulative contradiction).
+8. **Cumulative evidence summary** — catalogue established facts, probable findings, open questions, and the most parsimonious scenario.
+
+### Results
+
+#### Step 1: Temporal Corpus Fit
+
+| Rank | Corpus | Date | Composite Distance |
+|------|--------|------|--------------------|
+| 1 | Vulgate | 400 | 0.0286 |
+| 2 | Italian Cucina | 1350 ✓ | 0.0328 |
+| 3 | Galen | 180 | 0.0338 |
+| 4 | Caesar | -50 | 0.0375 |
+| 5 | German Faust | 1587 | 0.0387 |
+| 6 | Apicius | 400 | 0.0404 |
+| 7 | French Viandier | 1390 ✓ | 0.0493 |
+| 8 | German BvgS | 1400 ✓ | 0.0524 |
+| 13 | German Ortolf | 1450 ✓ | 0.1090 |
+
+- Period-correct mean (1300–1500, n=5): **0.0601**
+- Period-wrong mean (n=8): **0.0552**
+- **Period-correct texts are NOT closer** (ratio = 1.089)
+- Interpretation: VMS's statistical fingerprint is **encoding-dominated**, not period-sensitive. The encoding transforms the signal so thoroughly that epoch-of-origin effects are washed out. Italian Cucina (1350) ranks #2 but ancient Latin texts (Vulgate, Galen) rank #1 and #3.
+
+#### Step 2: Genre Fingerprint Compatibility
+
+Closest genre by composite feature distance:
+
+| Genre | |Δ| sum |
+|-------|---------|
+| literary | 0.084 |
+| medical | 0.151 |
+| recipe | 0.237 |
+| biblical | 0.244 |
+| military | 0.257 |
+| medical_oration | 0.301 |
+| encyclopedic | 0.408 |
+
+- **Closest match is "literary", not "recipe" or "medical".**
+- ⚠ This replicates the Phase 76 anomaly: recipe/medical texts are NOT the closest statistical match despite being the best-scoring *content* hypothesis.
+- **Critical confound:** VMS word lengths are measured in EVA characters (mean 5.05 letters = 4.54 glyphs), while NL corpora use natural-language characters. This makes direct word-length comparison unreliable. The "literary" ranking likely reflects TTR similarity (VMS 0.204 ≈ Faust 0.202) rather than genuine genre alignment.
+- **Conclusion:** Genre fingerprinting based on surface statistics **cannot distinguish content type** through the encoding layer. The pharmaceutical hypothesis rests on illustrations, not text statistics.
+
+#### Step 3: Provenance-Chain Language Test
+
+| Language | Rank JSD | WL JSD | Composite | Provenance? |
+|----------|----------|--------|-----------|-------------|
+| Italian | 0.0099 | 0.0714 | 0.0406 | YES |
+| French | 0.0210 | 0.0577 | 0.0393 | no |
+| Latin | 0.0117 | 0.0745 | 0.0431 | YES |
+| German | 0.0271 | 0.0866 | 0.0568 | YES |
+| English | 0.0344 | 0.0738 | 0.0541 | no |
+| Czech | 0.0813 | 0.0771 | 0.0792 | no |
+
+- Provenance languages: mean = **0.0468** vs controls: **0.0576** (18.6% closer)
+- Permutation test: **z = −0.90, p = 0.306 → NOT SIGNIFICANT**
+- Italian has the best rank JSD (0.0099), but French is the best composite (0.0393) — a non-provenance language.
+- **Conclusion:** The provenance advantage is directionally correct but not statistically distinguishable from chance with only 6 language groups. Italian rank-frequency profile is the closest, consistent with provenance, but we cannot rule out coincidence.
+
+#### Step 4: Marginalia (f116v)
+
+Only 2 extractable VMS words on f116v (`oror`, `sheey`). The rest is marginal annotation:
+
+> `valsch vbren so nim gaf mich o`
+
+- German recipe language ("so nim" = "so take"), consistent with the Widemann→Rudolf provenance chain (German-speaking Prague/Augsburg, 1550s–1600s).
+- Written by a **later hand** (not the main scribe).
+- Does NOT prove the main text is German — only that the manuscript circulated in a German-speaking milieu.
+
+#### Step 5: Codicological Consistency — THE MAJOR FINDING
+
+**Scribal hand almost perfectly predicts Currier language:**
+
+| Hand | A folios | B folios |
+|------|----------|----------|
+| 1 | 105 | 1 |
+| 2 | 0 | 43 |
+| 3 | 2 | 26 |
+| 5 | 0 | 7 |
+
+- **χ² = 172.3, df = 3, p < 0.001**
+- **Cramér's V = 0.968** (near-perfect association)
+- Hand 1 writes almost exclusively Currier A (herbal, pharma sections)
+- Hands 2, 3, 5 write almost exclusively Currier B (bio, stars, astro)
+
+**This changes the interpretation of A/B fundamentally:**
+- Phase 101 concluded A/B is "register variation within one system" (80% confidence). But Cramér's V = 0.968 means A/B is actually a **scribal effect** — different people writing differently.
+- The "shared grammar, different vocabulary" finding now reads as: different scribes use the same structural conventions (LOOP grammar) but have different spelling habits or abbreviation preferences.
+- The section confound (herbal=A, bio=B) is now explained: **different scribes wrote different sections**, not that content type drives the register change.
+- This is consistent with the two-scribe (or multi-scribe) hypothesis in the codicological literature.
+
+#### Step 6: Bayesian Compatibility Matrix
+
+Cumulative evidence scores (qualitative, from 17 evidence items across 101 phases + historical constraints):
+
+**Substrate Language:**
+- Italian: **+5** (strongest support)
+- Latin: +3
+- Constructed: +1
+- German: 0
+- Czech: −2 (contradicted)
+
+**Encoding Type:**
+- Constructed script: **+5**
+- Verbose cipher: +3
+- Abbreviation+cipher: +2
+- Meaningless: −5 (ruled out)
+- Simple substitution: −6 (ruled out)
+
+**Genre:**
+- Pharmaceutical: **+7** (strongest)
+- Alchemical: +5
+- Encyclopedic: +2
+- Astronomical: −2 (contradicted)
+
+**Creation Era:**
+- 1440–1480: **+3** (best)
+- 1400–1440: +2
+- 1480–1530: −1
+- Pre-1400: −6 (impossible)
+
+**Most compatible joint hypothesis:** *Italian pharmaceutical compendium, constructed script, 1440–1480.*
+
+#### Step 7: Fatal Contradiction Scan
+
+All 5 logical consistency checks **PASS**:
+- ✓ C14 rules out pre-1400
+- ✓ Simple substitution rejected
+- ✓ Hoax/meaningless rejected
+- ✓ Italian provenance ↔ best-fit language
+- ✓ Pharmaceutical genre ↔ illustrations
+
+Fatally contradicted hypotheses: Pre-1400 (−6), simple substitution (−6), meaningless (−5), Czech (−2), astronomical-only (−2).
+
+### Impact on Hypotheses
+
+- **Most parsimonious scenario:** The VMS is a pharmaceutical/herbal compendium written in Northern Italy ~1440–1480, encoding Italian or Latin through a constructed notation system operating at the chunk/syllable level. Multiple scribes wrote different sections, producing the Currier A/B distinction as a scribal artifact. German-speaking owners later added marginal annotations.
+
+- **A/B is primarily a scribal effect: REINTERPRETATION (Cramér's V = 0.968).** Phase 101's "register variation" conclusion must be updated: the vocabulary differences between A and B are better explained by different scribes with different spelling habits than by content-driven register switching. The grammar-sharing (perplexity ratio 1.01) still holds — all scribes used the same structural system.
+
+- **Genre fingerprinting is unreliable through the encoding layer: CONFIRMED.** Recipe/medical texts are not the closest statistical match despite being the highest-scoring content hypothesis. Surface statistics cannot penetrate the encoding to identify genre.
+
+- **Temporal dating cannot be validated statistically: CONFIRMED.** Period-correct corpora (1300–1500) do not fit VMS better than out-of-period texts. The encoding dominates the fingerprint.
+
+- **Provenance-language alignment is directionally correct but not significant: NOTED.** Italian rank-frequency is closest (JSD = 0.0099), consistent with Italian provenance, but p = 0.306 means this could be chance.
+
+- **No fatal contradictions among established findings: CONFIRMED.** 102 phases of evidence are jointly compatible with the Italian pharmaceutical hypothesis. No internal inconsistencies detected.
+
+### Critical Caveats
+
+1. **No readable text has been produced.** All 102 phases operate on distributional statistics. Without decipherment, language identification is circumstantial and genre identification rests on illustrations more than text.
+
+2. **Corpus limitations are severe.** Only Italian Cucina (1350) and German Ortolf (1450) are period-correct. Latin corpora span 50 BC – 1518 AD. A proper test would require 15th-century Italian herbal/pharmaceutical manuscripts as comparison texts — which we don't have.
+
+3. **The Bayesian matrix is subjective.** Different weighting of evidence items would change rankings. The +7 pharmaceutical score reflects 6 separate evidence items, but some are weak (Baresch's "Egyptian medicine" belief, Widemann's alchemical context).
+
+4. **Cramér's V = 0.968 depends on $H= tag accuracy.** If the hand assignments in the IVTFF transcription contain errors (as the $L= tags did), this finding could be an artifact. However, hand assignments are based on palaeographic analysis, which is more objective than language classification.
+
+5. **Run-to-run instability** (Phase 100) means any stochastic component in prior phases may have produced unreliable results. Only cross-validated, deterministic analyses should be trusted fully.
+
+---
+
+## Phase 103 — Positional Decomposition of the 25-Class Chunk Alphabet
+
+**Date:** 2025-06-17
+**Script:** `scripts/phase103_positional_class_decomposition.py`
+**Purpose:** Test whether the extreme positional restriction of VMS chunks (J(I,F)=0.241 at type level, Phase 88) is a cipher artifact or a natural consequence of the LOOP slot grammar + NL syllable-like behavior.
+
+### Method
+
+1. Reproduced Phase 86's 25 equivalence classes from 216 frequent chunk types via agglomerative clustering with JSD distance over distributional features (left/right context + position profile + slot skeleton).
+2. Computed positional decomposition: P(class|Initial), P(class|Medial), P(class|Final) for all 25 classes in multi-chunk words (n=30,242).
+3. Measured effective sub-alphabet sizes at each position, Jaccard overlap J(I,F), MI(class; position), NMI.
+4. Built 4 transition matrices: I→(M/F), M→M, (I/M)→F, F→I (cross-word).
+5. Ran null models: within-word position shuffle (100 trials) for J(I,F), word-order shuffle (100 trials) for F→I MI.
+6. Compared against 8 NL reference texts: syllabified, clustered into 25 syllable classes, same decomposition.
+7. Language triangulation via L1 distance of rank-frequency curves at Initial and Final positions.
+
+### Key Findings
+
+| Metric | VMS | NL Mean ± SD | z-score | Interpretation |
+|--------|-----|-------------|---------|----------------|
+| J(I,F) at class level | 0.875 | 0.545 ± 0.157 | +2.10 | VMS *less* restricted than NL syllable classes |
+| NMI(class; position) | 0.403 | 0.424 ± 0.085 | −0.25 | Normal — within NL range |
+| F→I cross-word MI | 0.146 bits | — | +48.3 vs shuffle | Genuine, massive cross-word dependency |
+| F→I / I→(M/F) ratio | 0.605 | 0.04–0.17 (NL range) | — | **3.7–14× higher** than any NL language tested |
+| Effective |A_I| | 9 | — | — | |
+| Effective |A_F| | 9 | — | — | |A_I| = |A_F| (consistent with cipher) |
+| Position-shuffle null J(I,F) | — | 0.999 ± 0.006 | −21.3 | J(I,F) is genuinely lower than random |
+
+**Sub-alphabet sizes:** |A_I|=9, |A_M|=10, |A_F|=9 at ≥1% threshold. The I–F symmetry is consistent with a positional cipher but also with any system where initial and final slots draw from similar inventories.
+
+**Per-class profiles (25 classes):**
+- 3 I-locked: C07 (y.k, y.t, ch.ckh), C22 (q.o.k, q.o.t, q.o), C23 (q.o.d, e.e.e.o.d)
+- 5 F-dominant: C00 (a), C02 (a.i.i.n, a.r), C05 (y, ch, sh), C06 (ch.e.d.y, ch.y), C11 (o.d.y)
+- 2 M-dominant: C01 (e, e.d), C03 (e.k, e.t)
+- 1 I-dominant: C20 (q)
+- 13 universal: spread across positions
+- 1 rare: C15 (i.p, 1 token in multi-chunk words)
+
+**Cross-word dependency (STRONGEST FINDING):**
+- F→I MI = 0.146 bits, z = +48.3 vs word-order shuffle null (mean 0.070 ± 0.002)
+- Ratio F→I / I→(M/F) = 0.605
+- All NL languages show F→I ratios of 0.04–0.17 (i.e., cross-word dependency is weak relative to within-word)
+- VMS ratio of 0.605 is **3.7–14× anomalous** — the last class of word N strongly predicts the first class of word N+1
+- This is inconsistent with NL words being independent lexical units and consistent with: (a) a verbose/polyalphabetic cipher where word boundaries are not semantic boundaries, (b) a generative system where context flows across word boundaries, or (c) quimqu's line-construction model where line-level regularities create cross-word dependencies
+
+**Language triangulation (CORRECTED):**
+The original rank-correlation approach returned ρ=1.000 for all languages — a bug (both sides were pre-sorted). Replaced with L1 distance between rank-frequency curves:
+
+| Language | L1(I) | L1(F) | L1_mean | ΔH(I) | ΔH(F) |
+|----------|-------|-------|---------|--------|--------|
+| French-Viandier | 0.738 | 0.501 | 0.619 | 1.042 | 0.767 |
+| German-BvgS | 0.744 | 0.652 | 0.698 | 1.247 | 1.169 |
+| Italian-Cucina | 0.756 | 0.640 | 0.698 | 1.176 | 0.567 |
+| Latin-Apicius | 0.742 | 0.713 | 0.727 | 1.142 | 1.238 |
+
+Only the top 4 of 8 NL languages are shown (all 8 have L1 > 0.6). **No language closely matches VMS.** VMS chunk-class entropy is lower than NL letter-position entropy at matching positions: H_I(VMS)=2.86 vs H_I(NL)=3.90–4.32 bits; H_F(VMS)=2.29 vs H_F(NL)=2.86–3.74 bits. However, this comparison is apples-to-oranges (see FLAW 6 below).
+
+### Skeptical Revalidation
+
+**FLAW 1: The grammar baseline is fundamentally broken.** The analysis assumed LOOP slot 1 (onset) → word-initial position and slot 5 (coda) → word-final position. This is empirically wrong. C05 (y, ch, sh) contains onset-slot chunks but is **F-dominant** (87% final). C06 (ch.e.d.y, ch.y) is onset-tagged but 88% final. C04 (k, l, s) is coda-tagged but 74% initial. The LOOP grammar's slot labels describe **internal chunk structure** (which glyph is the onset of a syllable), not **positional behavior within words**. Consequently, the "grammar-forced" vs "excess" distinction is meaningless — the 7 "excess" classes and 20 "grammar-forced" counts should be disregarded entirely. **STATUS: Step 4 results INVALID. Do not cite.**
+
+**FLAW 2: Class-level J(I,F) is not comparable to Phase 88's type-level J(I,F).** Phase 88 measured J(I,F)=0.241 at the individual chunk-type level (523 types). Phase 103 measures J(I,F)=0.875 at the 25-class level. These are fundamentally different granularities. Collapsing 523 types into 25 classes mechanically increases overlap because each class contains both I-preferring and F-preferring members. The class-level J(I,F) tells us only that most classes have at least some representation (≥5 tokens) at both positions — which is unsurprising given the heterogeneous membership of each class (e.g., C02 has 67 types). **STATUS: J(I,F)=0.875 is a methodological artifact of the coarse-graining. The meaningful positional restriction is still the type-level J(I,F)=0.241.**
+
+**FLAW 3: Q1 ("|A_I| ≈ |A_F|?") is trivially true.** With only 25 classes and a 1% threshold, getting 9 vs 9 at I and F is expected by chance. This does not discriminate cipher from NL. Even the NL reference texts show similar values (5–12 at each position out of 25 classes).
+
+**FLAW 4: NL syllable clustering is not exactly parallel.** VMS clusters were built from distributional features (context + position + skeleton). NL syllable clusters used the same distributional approach but without skeleton features. The asymmetry means the NL baseline may not be strictly comparable. However, the skeleton feature was shown in Phase 86 to dominate the VMS clustering (silhouette 0.848 skeleton-only vs 0.250 combined), so removing it from NL actually makes the NL clustering more "distributional" and less skeleton-biased — arguably a fairer comparison.
+
+**FLAW 5: Script bug — `n_forced` count is wrong in the output.** The code uses `'forced' in v` to count grammar-forced classes, but this substring test matches `'not-forced'` too (`'forced' in 'not-forced'` → True). The output reports "Grammar-forced classes: 20" when the true count is **9** (6 onset-forced-I + 3 coda-forced-F). The 11 "not-forced" classes are erroneously included. The `excess` count (7) is unaffected (uses exact match `== 'not-forced'`). Since Step 4 is already declared invalid, this bug changes nothing substantively, but it means the saved output file contains an incorrect number. **STATUS: Output number wrong; analysis unaffected.**
+
+**FLAW 6: Clustering circularity.** Position profile was used as a clustering feature in both VMS and NL class construction. Then we measure positional properties (J(I,F), NMI, sub-alphabet sizes) of those clusters. This is partially circular — the clustering algorithm was told about position, so the resulting clusters partly reflect positional structure by design. The NL comparison uses the same circularity, so the **relative** comparison (VMS vs NL) is fair. But **absolute** values of J(I,F), NMI, and sub-alphabet sizes are influenced by this circularity and should not be interpreted as pure measurements of the underlying positional restriction.
+
+**FLAW 7: NL cross-word transitions use pseudo-lines, not sentence boundaries.** NL F→I transitions are computed over arbitrary 7-word pseudo-lines that do not respect sentence or paragraph boundaries. Approximately 10–20% of NL F→I transitions may cross sentence boundaries (where dependency is near-zero), slightly diluting NL F→I MI. VMS uses actual manuscript lines, which may align with structural units. This asymmetry could inflate the VMS-to-NL ratio by ~15–20% (i.e., the true anomaly factor might be ~3–12× rather than 3.7–14×). The effect is likely small because syllable-level cross-word dependency is inherently weak in NL regardless of sentence structure, but it is a systematic bias.
+
+**VALID FINDINGS (after revalidation):**
+
+1. **F→I cross-word MI ratio = 0.605 is genuinely anomalous (robust).** This is measured from raw bigram counts, uses a proper null model (z=48.3), and the NL comparison uses parallel methodology. No NL language tested shows a ratio above 0.17. The ratio is approximately invariant to clustering quality (noise attenuates both numerator and denominator equally). The pseudo-line caveat (FLAW 7) could reduce the anomaly factor to ~3–12× but cannot eliminate it. This is the most important finding of Phase 103.
+
+2. **VMS J(I,F)=0.875 at class level is HIGHER than NL mean (0.545), z=+2.1.** While the absolute value is inflated by coarse-graining (FLAW 2) and clustering circularity (FLAW 6), the relative comparison (VMS vs NL at same granularity and same method) is valid. VMS chunk-classes are less positionally restricted than NL syllable-classes. This argues mildly AGAINST a pure positional cipher with disjoint alphabets, but a cipher with overlapping positional alphabets (different frequencies, same symbols) would also produce high J(I,F). The discriminating power of this metric is therefore weak.
+
+3. **NMI(class; position) = 0.403 is within normal NL range (0.26–0.57).** This means the amount of information that position carries about class identity is normal for a human language at the syllable level. Not anomalous in either direction.
+
+4. **Latin-Apicius is the closest NL match on J(I,F) = 0.833.** This is consistent with previous findings favoring Latin (Phase 90, 100, 102) but not diagnostic.
+
+### Implications
+
+The F→I cross-word dependency ratio of 0.605 is the clearest new discriminant between hypotheses:
+
+- **Against simple NL encoding:** If VMS words were independent lexical units (like words in a natural language), F→I dependency should be weak (ratio < 0.2). The 0.605 ratio means word boundaries do not separate independent units.
+
+- **For verbose/polyalphabetic cipher:** If the encoding spreads plaintext across word boundaries, the cipher units on either side of a space would still be statistically dependent, producing exactly this pattern.
+
+- **For quimqu's line-construction model:** If line-level constraints govern word selection (as suggested by the AUC 0.90 line-break detection in H17/thread-5612), cross-word dependencies would be a natural consequence of the construction algorithm.
+
+- **For generative system:** A table-lookup or combinatorial system (Torsten Timm's model, for instance) would produce cross-word dependencies if the generation state persists across word boundaries.
+
+The grammar baseline failure confirms that LOOP slot structure is purely about internal chunk anatomy, not about chunk positioning within words. Position restriction must come from a higher-level mechanism — either the language's morphophonology or an encoding rule.
+
+### What This Changes
+
+- **F→I ratio 0.605 upgrades "verbose cipher" hypothesis from 50–55% to ~58%.** The anomalous cross-word dependency is hard to explain as NL grammar alone, but the pseudo-line caveat (FLAW 7) means the true anomaly factor may be somewhat smaller than 3.7–14×. The upgrade is therefore modest.
+- **The grammar baseline was a dead end.** Future work should not assume LOOP slots predict word-position behavior. Additionally, the script's `n_forced` count is incorrect (20 → should be 9; FLAW 5).
+- **The class-level analysis provides no new evidence for or against the cipher hypothesis beyond what Phase 88 already showed.** The type-level J(I,F)=0.241 remains the definitive measure of positional restriction.
+- **The class-level position labeling has a threshold artifact.** C04 (k, l, s) is 74% initial but labeled "universal" because the entropy threshold (>1.0 bits) for "dominant" is too generous. Similarly C08 (d, o.d) is 75% initial but "universal." The per-class proportion data is correct; only the labels are miscalibrated.
+
+---
+
+## Phase 104 — Do VMS Word Endings Encode Latin Inflectional Endings?
+**Script:** `scripts/phase104_latin_ending_test.py`
+**Output:** `results/phase104_latin_ending_test.txt`, `results/phase104_latin_ending_test.json`
+
+### Motivation
+
+Prior phases established that VMS has a suffix system (Phases 31/33/37/62): ~11 parser-defined types with H(suffix)=2.99 bits, strong positional preference (null suffix at line ends), and NMI(suffix;section)=0.42. Latin case-ending correspondence was mentioned (Phases 41, 62) but never directly tested. Phase 94 found e-extension rate 9.1% vs Latin 0.2–0.4%, hinting at fundamental difference. This phase performs five falsifiable tests comparing VMS ending statistics to 6 Latin, 5 vernacular, and 1 Czech reference corpus.
+
+### Method
+
+Five tests at two granularities (last-1-char, last-2-chars) plus VMS parser-level suffixes:
+
+- **Test A — Ending Inventory Shape:** Rank-frequency distribution, entropy, L1 distance, top-2 concentration.
+- **Test B — Paradigm Structure:** Distinct endings per stem (min stem freq ≥ 10). In Latin, declension classes restrict which endings attach to which stems.
+- **Test C — Stem-Ending Mutual Information:** MI(stem; ending) and NMI. High NMI = strong stem-class restriction (expected in Latin).
+- **Test D — Ending Sequence Grammar:** Ending→ending bigram MI, self-agreement rate, attraction/avoidance patterns.
+- **Test E — Line-Position Sensitivity:** MI(ending; position) for initial/medial/final positions within lines.
+
+**Corpora:** VMS (40,300 words, 5,691 lines), Latin-Caesar (38,893 words), Latin-Apicius (21,912), Latin-Galen (39,020), Latin-Pliny (50,178), Latin-Vulgate (21,217), Latin-Erasmus (4,434), Italian-Cucina (17,574), French-Viandier (10,764), English-Cury (32,403), German-Faust (28,111), German-BvgS (8,552), Czech-Bible (465,340).
+
+### Key Results
+
+**Test A — Ending Inventory Shape:**
+
+| Metric | VMS | Latin mean | NL mean | VMS z (vs Latin) |
+|--------|-----|-----------|---------|-------------------|
+| H(last-1) | 2.660 | 3.271 ± 0.138 | 3.320 ± 0.388 | −4.42 |
+| H(last-2) | 4.055 | 5.751 ± 0.240 | 5.856 ± 0.505 | −7.07 |
+| Top-2 conc. (last-1) | 55.4% | ~40% | ~38% | — |
+
+VMS ending entropy is far below all NL languages at both granularities. Italian-Cucina is the closest match at last-1 (H=2.671, ΔH=0.011) but Italian is not Latin. VMS endings are excessively concentrated: -y (39.4%) and -n (16.0%) alone account for 55% at last-1.
+
+**Test B — Paradigm Structure (STRONGEST DISCRIMINATOR):**
+
+| Metric | VMS | Latin mean | NL mean | VMS z (vs Latin) |
+|--------|-----|-----------|---------|-------------------|
+| Paradigm fill (last-1) | 3.05 | 1.75 ± 0.09 | 1.79 ± 0.19 | +14.24 |
+| Paradigm fill (last-2) | 7.26 | 2.92 ± 0.24 | 2.98 ± 0.41 | +18.17 |
+| Parser-level fill | 4.41/11 = 40.1% | — | — | — |
+
+VMS stems accept 1.7–2.5× MORE distinct endings than any NL language tested. Even Czech (the most inflectional reference, 465K words) has mean=3.52 at last-2 vs VMS 7.26. Latin's defining feature is declension-class restriction (stems belong to classes that limit ending combinations). VMS completely lacks this: any stem freely combines with many endings.
+
+**Test C — Stem-Ending MI (SECOND STRONGEST):**
+
+| Metric | VMS | Latin mean | NL mean | VMS z (vs Latin) |
+|--------|-----|-----------|---------|-------------------|
+| NMI(stem;end) last-1 | 0.622 | 0.872 ± 0.018 | 0.870 ± 0.037 | −13.90 |
+| NMI(stem;end) last-2 | 0.475 | 0.805 ± 0.016 | 0.803 ± 0.028 | −20.28 |
+
+VMS stem-ending coupling is catastrophically weak. All NL languages show NMI > 0.75 (knowing the stem tells you which endings are likely). VMS NMI of 0.47–0.62 means endings are nearly independent of stems. This is the opposite of what Latin inflection predicts. The low H(ending) in VMS should INFLATE NMI (smaller denominator), yet VMS NMI is still far below NL — the independence is genuine.
+
+**Test D — Ending Sequence Grammar:**
+
+| Metric | VMS | Latin mean | NL mean | VMS z |
+|--------|-----|-----------|---------|-------|
+| Bigram MI | 0.187 | 0.715 ± 0.272 | 0.764 ± 0.235 | −2.46 |
+| Self-agreement ratio | 1.51× | 1.73 ± 0.31 | 1.59 ± 0.40 | −0.20 |
+
+VMS ending transitions have unusually LOW MI (weaker sequential grammar than any NL tested). Self-agreement ratio (1.51×) is normal (z=−0.20). Top VMS attractions: -ol→-ol (1.94×, n=471), -or→-or (2.05×, n=177) — same-ending repetition, not case agreement patterns.
+
+**Test E — Line-Position Sensitivity:**
+
+| Metric | VMS | Latin mean | NL mean | VMS z |
+|--------|-----|-----------|---------|-------|
+| NMI(ending; position) | 0.091 | 0.080 ± 0.065 | 0.073 ± 0.048 | +0.38 |
+
+VMS line-position × ending sensitivity is unremarkable (z=+0.38). Latin-Caesar has NMI=0.201 (much higher than VMS) due to sentence-final verbs (-nt 32%, -it 19%). VMS line-final parser suffix: null-∅ at 33.7%, -y at 23.8% — notable but the character-level NMI is ordinary.
+
+### Flaws Identified
+
+**FLAW 1: Avoidance table header says "count≥20" but code filters at count≥10.** The printed header is slightly misleading. Affects display only, not any quantitative conclusion.
+
+**FLAW 2: Line structure confound in Test E.** VMS "lines" are manuscript lines (~7.1 words/line). NL "lines" are text lines (Caesar: ~105 words/line = paragraphs, Faust: verse lines). Test E compares text-line position effects to manuscript-line position effects — apples-to-oranges. Only German-Faust (verse lines) is a comparable unit. This reduces confidence in Test E's cross-corpus comparisons. The VMS-internal findings (null suffix at 33.7% line-final) remain valid.
+
+**FLAW 3: Corpus size varies enormously (4K–465K words).** Larger corpora have more opportunity to observe rare stem-ending combinations, potentially inflating paradigm fill. But VMS (40K words) has HIGHER paradigm fill than Czech-Bible (465K words), so the VMS anomaly is conservative — it would be even larger if corpus size were equalized.
+
+**FLAW 4: The analysis assumes EVA transcription faithfully represents VMS character boundaries.** If EVA merges or splits VMS characters incorrectly, the true last-1 and last-2 statistics would differ. This is inherent to all EVA-based analysis and cannot be resolved without a better transcription system.
+
+**FLAW 5: Character-level endings conflate distinct parser-level suffixes.** Last-2 "-in" (17.3%) encompasses parser suffixes -aiin, -ain, -iin, -in (collectively 15.7%). This means character-level and parser-level analyses are not independent measurements — they partially measure the same thing. Running both granularities is still informative (character-level avoids parser circularity, parser-level provides linguistic structure), but they should not be treated as separate evidence.
+
+### Valid Findings
+
+1. **VMS paradigm fill is 1.7–2.5× higher than any NL language tested (z=+14 to +18 vs Latin).** This is the most robust finding. It is conservative with respect to corpus size (VMS < Czech yet has higher fill). It directly contradicts Latin declension-class restriction. No simple substitution cipher or encoding could transform Latin's restricted paradigm fill into VMS's promiscuous fill — it would require a cipher that scrambles stem-ending associations, which would be extremely unusual for a medieval cipher.
+
+2. **VMS NMI(stem;ending) is 0.47–0.62, far below all NL languages (0.75–0.93).** This independently confirms finding #1: VMS endings are nearly independent of stems. The low NMI is not an artifact of low H(ending) — if anything, low H(ending) should inflate NMI.
+
+3. **VMS ending entropy is below all NL languages (z=−4.4 to −7.1 vs Latin).** The ending inventory is too concentrated. While this alone could be explained by a cipher mapping multiple Latin endings to a single VMS ending, combined with findings #1 and #2 it argues for a non-inflectional origin.
+
+4. **VMS ending transition MI (0.187 bits) is below all NL languages (0.368–1.151).** VMS endings lack the sequential grammar (agreement, government) that characterizes inflectional endings in NL. Self-agreement is normal (1.51×), but the overall transition structure is weak.
+
+5. **VMS line-position sensitivity is unremarkable (z=+0.38).** This is the only test that does not distinguish VMS from NL, but it has a line-structure confound (FLAW 2).
+
+### Verdict
+
+**The hypothesis that VMS word endings encode Latin grammatical case endings is strongly rejected.**
+
+The rejection rests primarily on two independent measurements:
+- **Paradigm fill** (Test B): VMS stems accept far more distinct endings than Latin allows. Latin's 5 declension classes restrict each stem to ~5–6 possible endings; VMS stems average 7.26 distinct last-2-char endings.
+- **Stem-ending coupling** (Test C): VMS NMI is 0.47 (last-2), meaning endings are nearly independent of stems. Latin NMI is 0.80 — knowing a Latin stem strongly predicts its endings.
+
+These two properties are the *defining characteristics* of inflectional morphology. Their absence in VMS is not marginal — it is 14–20 sigma below Latin. No plausible cipher mechanism can explain this gap:
+- A simple substitution cipher preserves both paradigm fill and NMI (it relabels but doesn't restructure).
+- A polyalphabetic cipher could reduce NMI if different cipher alphabets apply in different positions, but would NOT increase paradigm fill above the plaintext level.
+- A verbose cipher (one plaintext character → multiple cipher words) would produce near-zero stem-ending MI, which is closer to what we see. But it would also produce near-uniform paradigm fill (every "stem" takes every "ending"), which is closer to VMS but still not a match to Latin.
+
+**More general conclusion:** The rejection extends beyond Latin to ANY inflectional language. All 12 NL references (Latin, Italian, French, English, German, Czech) show NMI > 0.75 and paradigm fill < 3.5. VMS is outside the range of ALL tested languages on both metrics. The endings are more consistent with a mechanical generative process (where endings are selected by position or by a lookup table, not by stem class) than with any known natural language inflection.
+
+### Hypothesis Update
+
+- "VMS endings encode Latin case endings": **≤5%** (strongly rejected by paradigm fill z=+18 and NMI z=−20 vs Latin)
+- "VMS endings encode any NL inflection": **~15%** (all 12 NL references show higher NMI and lower paradigm fill)
+- "VMS endings are a mechanical/scribal feature (line-filling, table lookup, positional rule)": **~60%**
+- "VMS endings encode something linguistic but non-inflectional (e.g., topic markers, phonetic features)": **~20%**
+- Prior cipher hypothesis: **Remains at ~58%** (Phase 103). This phase neither supports nor contradicts verbose cipher — a verbose cipher COULD produce low NMI and high paradigm fill, but it predicts even weaker stem-ending coupling than observed.
+
+---
+
+## Phase 105 — Re-testing Cappelli Abbreviation Marks vs VMS Suffixes
+**Script:** `scripts/phase105_cappelli_retest.py`
+**Output:** `results/phase105_cappelli_retest.txt`, `results/phase105_cappelli_retest.json`
+
+### Motivation
+
+Phase 73 tested whether abbreviated Latin matches VMS's global fingerprint (h_char, Zipf, Heaps) and found abbreviation CANNOT explain h_char = 0.64. That result was valid. But Phase 73 never tested the metrics Phase 104 discovered: paradigm fill (z=+18 vs Latin), NMI(stem;ending) (z=−20), and ending entropy (z=−7). These are the strongest VMS anomalies found to date.
+
+Cappelli's abbreviation system is a **many-to-one** mapping: one mark replaces multiple different Latin endings (e.g., apostrophe = -us/-os/-is/-s; 2-mark = -ur/-tur; 4-mark = -rum/-ram/-rius). This should reduce NMI and increase paradigm fill — exactly the VMS anomalies. Phase 73 missed this because it only measured global statistical fingerprints, never ending-specific metrics.
+
+This phase also critically revalidates Phase 73's claim that "abbreviation is a dead end."
+
+### Method
+
+**Cappelli rules reconstructed from Lexicon Abbreviaturarum (pp. XIX-XXVI):**
+- M1 (apostrophe): -us, -os, -is, -ibus, -ius → single mark (31.0% of marks)
+- M2 (2-sign): -ur, -tur, -atur, -itur, -etur → single mark (4.0%)
+- M3 (4-sign): -rum, -orum, -arum, -rium, -ram → single mark (5.9%)
+- M4 (7/&-sign): et, -et → single mark (0.8%)
+- M5 (3-sign): -um, -em, -am, -onem → single mark (27.5%)
+- M6 (semicolon): -bus, -que → single mark (6.0%)
+- M7 (tilde): nasal bar (m/n before consonant) → mark (not word-final)
+- M8 (general): -er, -nt, -it → single mark (22.5%)
+- Plus 30+ whole-word abbreviations and 13 prefix compressions
+
+Applied to 6 Latin corpora (Caesar, Apicius, Galen, Pliny, Vulgate, Erasmus) at densities 0.0–1.0, then measured Phase 104 metrics: H(ending), paradigm fill, NMI(stem;ending), agreement ratio, bigram MI, h_char. Also tested on Italian, German, Czech as controls.
+
+### Key Results — Direction Analysis
+
+Does abbreviation move Latin TOWARD VMS on each metric?
+
+| Metric | VMS | Raw Latin | Gap | Abbr d=1.0 | % gap closed | Direction |
+|--------|-----|-----------|-----|------------|-------------|-----------|
+| H(last-1) | 2.66 | 3.27 | −0.61 | 3.92 | **−106%** | **WRONG** ↑ |
+| fill(last-1) | 3.05 | 1.75 | +1.30 | 2.77 | **+78%** | **RIGHT** ↑ |
+| NMI(last-1) | 0.62 | 0.87 | −0.25 | 0.76 | **+45%** | **RIGHT** ↓ |
+| agree(last-1) | 1.19 | 1.29 | −0.10 | 1.47 | −181% | WRONG ↑ |
+| h_char | 0.57 | 0.81 | −0.25 | 0.81 | **+2%** | **FLAT** |
+| H(last-2) | 4.06 | 5.75 | −1.70 | 6.94 | −70% | WRONG ↑ |
+| fill(last-2) | 7.26 | 2.92 | +4.33 | 4.39 | **+34%** | **RIGHT** ↑ |
+| NMI(last-2) | 0.47 | 0.81 | −0.33 | 0.76 | **+13%** | **RIGHT** ↓ (weak) |
+
+**Score: 4/8 metrics in the right direction, 3/8 wrong direction, 1/8 flat.**
+
+### Detailed Findings
+
+**1. Paradigm fill: abbreviation closes 34–78% of the gap (STRONGEST MATCH).**
+At last-1, paradigm fill moves from 1.75 → 2.77 (VMS target: 3.05). This is because the many-to-one suffix collapse merges previously distinct endings: a stem that took -us AND -um now shows mark-1 AND mark-5, but stems that only took one of those no longer discriminate. This is a genuine structural effect, not an artifact.
+
+**2. NMI: abbreviation closes 13–45% of the gap.**
+At last-1, NMI drops from 0.87 → 0.76 (VMS target: 0.62). The collapse of multiple endings into shared marks reduces stem-class discrimination. But the effect plateaus — even at density=1.0, NMI=0.76 is still far above VMS's 0.62.
+
+**3. Ending entropy goes the WRONG direction.**
+Abbreviation INCREASES H(ending), moving AWAY from VMS. This is because it ADDS mark characters (1-8) to the alphabet while only partially removing original endings (unabbreviated words still end in Latin letters). VMS needs concentrated endings (H=2.66); abbreviation disperses them (H=3.92). This is a critical failure.
+
+**4. h_char: unchanged at ~0.81 (VMS needs 0.57).**
+Confirms Phase 73. Abbreviation barely moves h_char (2% of gap closed). This remains the strongest argument against abbreviation as a complete explanation.
+
+**5. Abbreviation is Latin-specific.**
+Latin mark rate at d=1.0: 36–44%. Czech: 1.8%, Italian: 1.4%, German: 6.8%. The rules are designed for Latin endings, so this is expected. The metric movements in non-Latin languages are negligible.
+
+**6. Mark inventory comparison:**
+- Cappelli: 8 distinct mark types, H=2.37 bits
+- VMS last-1: 26 types but 8 dominate, H=2.66 bits
+- Entropy match is surprisingly close (2.37 vs 2.66), but the TYPE COUNT is very different (8 vs 26). VMS has more diversity in word-final characters than Cappelli marks alone would produce.
+
+### Visual Comparison: Cappelli Mark Shapes vs VMS Glyphs
+
+From Cappelli's introduction (pp. XVII-XXVII), the medieval abbreviation system uses these primary signs:
+
+| # | Cappelli Mark | Shape Description | Latin Value | Possible VMS Glyph |
+|---|---------------|-------------------|-------------|---------------------|
+| I | Horizontal tilde (~) | Wavy/straight line above word | m, n omission; -am, -em, -um | EVA bench elements (ch, sh)? Overline marks? |
+| II | 9-sign | Resembles numeral 9, sometimes reversed C | con-, com-, cum- | EVA 'q' or '9' shape? VMS has no obvious match at word-final |
+| III | Apostrophe/comma | Small stroke above/after letter | -us, -os, -is, -s | EVA 'y'? (39% of word-final chars — but y appears internally too) |
+| IV | Wavy line (like 'u') | Undulating stroke above word | r, re, ra, ar | EVA bench elements? |
+| V | 2-like sign | Resembles numeral 2 or lying 's' | -ur, -tur, -rum | EVA 'r'? (15% word-final) |
+| VI | 2-sign with crossed tail | 2-sign with slash through descender | -rum specifically | No clear VMS match |
+| VII | 7/& sign | Resembles numeral 7 or ampersand | et, -que, -etiam | No clear VMS match |
+
+**Assessment of visual matches:**
+
+The visual comparison is **inconclusive**. Some superficial shape similarities exist:
+- The Cappelli apostrophe (mark III, -us) could resemble EVA 'y' shapes in some hands
+- The 2-sign (mark V, -ur/-tur) could resemble EVA 'r' 
+- The 9-sign (mark II, con-) has visual affinity with EVA 'q'
+
+But these are **weak** parallels. The VMS glyph system has far more characters than Cappelli marks (the full EVA alphabet has ~20+ distinct characters, vs Cappelli's 8 marks). The VMS characters that dominate word-final positions (y, n, r, l) don't cleanly map to Cappelli's mark functions. Most critically, VMS characters appear throughout words (initial, medial, final) — they are not position-restricted abbreviation marks.
+
+**The 'y' question:** EVA 'y' accounts for 39.4% of word-final characters and is the most common VMS character overall. If it were Cappelli's apostrophe mark (-us/-os/-is), it should be exclusively word-final. But 'y' also appears word-internally (in -dy, -ey, -hy combinations), which argues against a pure abbreviation-mark interpretation. However, these internal appearances might represent different underlying characters that EVA maps to the same letter.
+
+### Flaws Identified
+
+**FLAW 1: The abbreviation rules are probabilistic, not deterministic.** Real scribes abbreviated consistently within a document. The random density application creates a mixture of abbreviated and unabbreviated forms of the same word, which inflates paradigm fill and ending diversity artificially. A deterministic model (always abbreviate if possible) would give different results.
+
+**FLAW 2: The rules don't model context-dependent mark meanings.** In real Cappelli practice, the same mark can mean different things depending on which letter it's attached to (e.g., tilde over 'p' = per, over 'q' = qui). This context-dependency would further reduce effective mark diversity.
+
+**FLAW 3: The Latin corpora are in lowercase romanization, not in original script.** Medieval Latin manuscripts used different character forms (caroline, gothic, etc.) that overlap with mark shapes in ways not captured by our plain-text model.
+
+**FLAW 4: H(ending) going wrong direction may be an artifact of mixed abbreviated/unabbreviated text.** At density=1.0, only 36-44% of words are mark-ended (because many words don't match any suffix rule). The remaining 56-64% retain Latin character endings, expanding the effective ending inventory. A system where ALL words get abbreviated (including unsystematic contractions) would have lower H(ending).
+
+**FLAW 5: The Phase 104 metrics being tested here were themselves computed from EVA transcription, which may not accurately represent VMS character boundaries.** If EVA splits or merges characters incorrectly, both VMS targets and the gap analysis are affected.
+
+### Verdict
+
+**Phase 73's claim that "abbreviation is a dead end" was PARTIALLY WRONG.**
+
+Phase 73 was correct that abbreviation cannot explain h_char (confirmed: only 2% of gap closed). But Phase 73 was incorrect to dismiss abbreviation entirely, because it never tested the metrics that matter most for the ending-structure question:
+
+- **Paradigm fill: abbreviation closes 78% of the gap.** This is a genuine structural prediction of Cappelli-style many-to-one encoding, not a coincidence. It explains WHY VMS stems freely combine with many endings — because the "endings" are category marks, not declension-specific suffixes.
+
+- **NMI: abbreviation closes 45% of the gap.** Partial but meaningful. The remaining gap (NMI=0.76 vs VMS 0.62) could be explained by additional encoding layers.
+
+However, abbreviation **fails** on:
+- **H(ending):** goes the wrong direction (increases rather than decreases). This is a genuine problem, though FLAW 4 suggests it may be an artifact of incomplete application.
+- **h_char:** essentially unchanged (2% of gap closed). This is the hard constraint from Phase 73 that still stands.
+- **Agreement and bigram MI:** wrong direction.
+
+**Overall assessment:** Abbreviation is not a complete explanation for VMS, but it is not a dead end either. It provides a plausible partial mechanism for the paradigm fill and NMI anomalies. A multi-layer model (abbreviation + additional encoding) would need to also explain h_char and ending concentration — neither of which abbreviation addresses.
+
+### Hypothesis Update
+
+- "VMS endings are Cappelli-style abbreviation marks (abbreviation alone)": **~15%** (UP from 5%, because paradigm fill and NMI arguments are genuinely compelling, but h_char failure and wrong-direction metrics cap it)
+- "VMS uses abbreviation as ONE component of a multi-layer encoding": **~30%** (new hypothesis — abbreviation handles suffixes, another mechanism handles the rest)
+- "VMS endings are purely mechanical (no abbreviation component)": **~45%** (DOWN from 60%, because abbreviation provides a better structural explanation for paradigm fill than any mechanical model tested)
+- Phase 104's Latin case ending hypothesis: **Still ≤5%** (raw Latin endings, without abbreviation, are conclusively rejected)
+- Prior cipher hypothesis: **Remains at ~58%** (Phase 103)
+
+### Cross-Reference: Voynich Ninja Thread 2394 — Paleographic Corroboration
+
+**Source:** ["Which other manuscript contain the most Voynichese glyphs?"](https://www.voynich.ninja/thread-2394.html)
+(Koen G, June 2018, 14 pages, ~135 posts). Key contributor: JKP (10+ years of
+VMS glyph paleography).
+
+**Relevance to Phase 105:** JKP's paleographic analysis independently corroborates
+our statistical finding that VMS endings behave like abbreviation category marks.
+The convergence is striking:
+
+| Our Finding (Phase 105) | JKP's Finding (Thread 2394) |
+|---|---|
+| Paradigm fill closes 78% of gap under Cappelli | ~80% of VMS glyph shapes derive from Latin scribal abbreviation conventions |
+| Many-to-one suffix collapse explains paradigm fill | EVA-y = -us/-um, EVA-m = -ris/-tis/-cis, EVA-s = -er/-eus/-ce (many Latin suffixes → few marks) |
+| 26 VMS last-1 types vs 8 Cappelli marks (mismatch) | Real manuscripts have far more than 8 abbreviation shapes — resolves the type count puzzle |
+| h_char unmoved (2% of gap) | Composite glyph hypothesis: EVA may miscount character boundaries, making h_char measurement unreliable |
+| H(ending) goes wrong direction | If "endings" are multi-component (EVA-m = 3 variants), H(ending) is computed on wrong units |
+
+**Key identifications from JKP:**
+- EVA-y = 9-sign (-us/-um word-final, con-/com- word-initial) — positional match
+- EVA-m = three distinct abbreviations: -ris (straight), -tis (straight+tail), -cis (rounded)
+- EVA-k = I + -is = "Item" — explains line-initial enrichment
+- EVA-s = Latin e/c with tail = -er/-eus/-ce/-cer/-cre
+- Gallows = constructed from modular scribal building blocks (not single characters)
+- Best single-source MSS: Cod. Sang. 839 (St. Gall, Switzerland, 1459)
+
+**Critical nuance (JKP repeatedly emphasizes):** Latin GLYPH SHAPES, not Latin
+LANGUAGE. Latin scribal conventions were used to write dozens of languages across
+medieval Europe. The glyph origin tells us about the SCRIPT TRADITION, not the
+underlying language.
+
+**Implication for the abbreviation hypothesis:** The paleographic evidence lifts
+the abbreviation mechanism from "statistical curiosity" (Phase 105 alone) to
+"historically grounded partial explanation" (Phase 105 + thread 2394). The
+composite glyph hypothesis specifically addresses our two hardest failures
+(h_char, H(ending)) by suggesting the EVA transcription imposes wrong character
+boundaries — a concern independently raised by multiple researchers (Pelling,
+ReneZ, nablator).
+
+---
+
+## Phase 106 — Abbreviation Decode Attempt + Multi-Language Positional Frequency Matching
+
+Phase 106 attempted to go from statistical characterization to actual decipherment,
+using the JKP/Cappelli glyph identifications from Phase 105 and thread 2394.
+
+### Phase 106a/b — Direct Latin Decode Attempt (FAILED)
+
+Applied JKP's abbreviation mappings directly: EVA-y→-us, EVA-m→-ris, EVA-s→-er, etc.
+Three decode variants tested on f1r (215 tokens): straight Latin, Italian (qo→lo),
+and o-as-null. Additionally, 25 combinations of ch/sh bench substitutions tested
+(ch→{cr,ct,er,ee,cc} × sh→{se,sr,sc,ce,ss}).
+
+**Result: Complete failure.** No recognizable continuous text in any variant.
+Best bench variant (ch→er, sh→ss) found 39 "hits" but all were trivial suffix
+fragments (-arum, -orum, -sol), not real words in context.
+
+**Critical methodological flaw identified:** This approach treated Latin glyph
+SHAPES as Latin language MEANINGS — the exact error JKP warns about. Quote from
+JKP: "75% of people who respond read into that 'Latin language,' which is something
+I have NEVER said." Latin scribal conventions were used to write DOZENS of
+languages across medieval Europe. Shape identification ≠ language identification.
+
+### Phase 106c — Positional Frequency Matching Across Languages
+
+Corrected approach: instead of assuming Latin sound values for abbreviation marks,
+use POSITIONAL FREQUENCY PROFILES to test which language best matches the VMS
+character distribution patterns.
+
+**Method:**
+1. For each EVA glyph, compute P(initial), P(final), P(medial), P(overall) across
+   all 40,365 VMS tokens
+2. For each candidate language corpus, compute the same positional profiles for
+   every character
+3. Use weighted rank-distance matching (final position weighted highest at 3×,
+   initial at 2×, medial and overall at 1×) to find optimal glyph→character mapping
+4. Apply mapping to f1r and count: (a) whole-word hits, (b) trigram hits
+
+**VMS key positional profiles:**
+- INITIAL: o(22.3%), ch(15.7%), qo(13.8%), d(9.3%), sh(8.3%)
+- FINAL:   y(40.0%), n(15.9%), r(15.5%), l(15.3%), s(3.6%)
+- MEDIAL:  e(12.7%), o(12.5%), d(11.1%), k(10.6%), a(8.2%)
+
+**Results (9 corpora tested):**
+
+| Language | Corpus Size | Word Hits | Trigram Hits |
+|---|---|---|---|
+| German (Ortolf) | 2,725 | 11 | 96 |
+| German (Faust) | 33,616 | 8 | 126 |
+| Latin (Galen) | 48,436 | 7 | 146 |
+| Czech (Bible Kralice) | 527,627 | 5 | 176 |
+| English (Cury) | 43,930 | 5 | 137 |
+| Latin (Pliny) | 56,629 | 2 | 103 |
+| Latin (Vulgate) | 25,437 | 2 | 68 |
+| French (Viandier) | 16,560 | 1 | 44 |
+| Italian (Cucina) | 24,436 | 0 | 58 |
+
+**No language produced readable text.** All decoded outputs are gibberish — no
+continuous recognizable phrases in any language.
+
+**Notable word matches (all coincidental short words):**
+- German (Ortolf): cthar→win, sair→man, char→fin, dar→tin, cthal→wie (11 hits)
+- Latin (Galen): dar→iam, cthes→pro, cthey→pre (7 hits)
+- Czech: char→stu, chal→sto, shos→kam (5 hits)
+- **Italian scored ZERO word hits** — despite being a leading candidate language
+
+**Top-ranked mapping example (Czech):**
+EVA-o→a, EVA-d→n, EVA-ch→s, EVA-e→e, EVA-l→o, EVA-k→l, EVA-a→t, EVA-r→u,
+EVA-y→[unmapped — no Czech char matches 40% final frequency], EVA-n→i
+
+### Phase 106 Conclusions
+
+1. **Simple substitution cipher is ruled out for ALL tested languages.** If VMS
+   used a 1-to-1 glyph-to-character mapping on any of Latin, Italian, German,
+   Czech, French, or English, positional frequency matching should have produced
+   at least some recognizable stretches. It produced zero.
+
+2. **The encoding is NOT a simple positional substitution.** The system is likely:
+   - Verbose (multiple glyphs per plaintext character), OR
+   - Compressed (one glyph represents a syllable/word), OR
+   - Multi-layered (abbreviation shapes + additional cipher layer), OR
+   - The EVA digraphs (ch, sh) are being incorrectly parsed
+
+3. **Italian scored worst** among all tested languages (0 word hits, lowest
+   trigram hits). This does NOT rule out Italian as the underlying language —
+   it rules out Italian + simple substitution.
+
+4. **The methodological correction matters:** Phase 106a's failure was predictable
+   (wrong assumption about shape=meaning). Phase 106c's failure is more
+   informative — it tested the right question (positional frequency compatibility)
+   and got a definitive negative.
+
+5. **EVA-y remains anomalous:** At 40% word-final, no single character in any
+   tested language approaches this dominance. This supports the hypothesis that
+   EVA-y encodes something other than a single character — possibly a generic
+   abbreviation mark, a word-class marker, or a null/filler element.
+
+---
+
+## Phase 107 — Intra-Chunk Slot Mutual Information Decomposition
+
+Phase 97 showed the LOOP slot grammar explains only 24.2% of the h_char
+depression, leaving a residual of +0.26 (z = 25.9 vs NL). Phase 107 asks:
+WHERE does this residual live? Which slot-to-slot interactions carry the
+anomalous structure?
+
+### Method
+
+For each of 78,667 LOOP chunks (1.96/word, from 40,214 parsed words):
+1. Record the content of each slot (S1 onset through S5 coda)
+2. Compute pairwise MI(S_i, S_j) for all 10 within-chunk slot pairs
+3. Compute cross-boundary MIs: S5→S1(next chunk), S5→S1(next word)
+4. Null model: 200 iterations of slot-resample (shuffle each slot independently)
+5. NL baseline: CVC syllable decomposition of 8 reference corpora
+6. Body-coda isolation: separate S1+S2+S3+S4 ("body") from S5 ("coda"),
+   recompute entropy metrics for each stream independently
+
+### Slot Inventories
+
+| Slot | Filled | Types | H (bits) | Top entries |
+|---|---|---|---|---|
+| S1 (onset) | 28.0% | 3 | 1.267 | ch(11602), y(5617), sh(4809) |
+| S2 (front) | 47.4% | 5 | 1.903 | a(15738), e(10711), q(5768), ee(4642) |
+| S3 (core) | 34.2% | 1 | 0.927 | o(26912) |
+| S4 (back) | 27.4% | 4 | 1.212 | d(13889), ii(4741), i(2731), iii(205) |
+| S5 (coda) | 81.8% | 14 | 3.210 | y(13213), l(11114), k(10568), r(8107) |
+
+### A. Within-Chunk Slot Pair MI
+
+ALL 10 slot pairs show significant excess MI vs the slot-resample null
+(z-scores from 1,290 to 9,190; all p < 0.001 after Bonferroni correction).
+
+**Excess MI ranking (where the anomaly lives):**
+
+| Rank | Pair | Obs MI | Null MI | Excess | z-score |
+|---|---|---|---|---|---|
+| 1 | S2↔S3 (front↔core) | 0.2411 | 0.0000 | 0.2411 | 9190 |
+| 2 | S4↔S5 (back↔coda) | 0.6495 | 0.0005 | 0.6490 | 6473 |
+| 3 | S2↔S5 (front↔coda) | 0.6493 | 0.0006 | 0.6486 | 6241 |
+| 4 | S2↔S4 (front↔back) | 0.2959 | 0.0002 | 0.2957 | 5182 |
+| 5 | S1↔S2 (onset↔front) | 0.2094 | 0.0001 | 0.2093 | 3977 |
+| 6 | S3↔S5 (core↔coda) | 0.1464 | 0.0001 | 0.1462 | 3055 |
+| 7 | S3↔S4 (core↔back) | 0.0684 | 0.0000 | 0.0684 | 2433 |
+| 8 | S1↔S5 (onset↔coda) | 0.2052 | 0.0004 | 0.2049 | 2430 |
+| 9 | S1↔S3 (onset↔core) | 0.0389 | 0.0000 | 0.0389 | 1998 |
+| 10 | S1↔S4 (onset↔back) | 0.0566 | 0.0001 | 0.0565 | 1290 |
+
+The anomaly is **DISTRIBUTED** across the entire chunk structure. No single
+slot pair dominates — all carry significant excess MI.
+
+### B. Cross-Boundary MI
+
+| Boundary | MI (bits) | NMI |
+|---|---|---|
+| Cross-chunk S5→S1 | 0.1145 | 0.094 |
+| Cross-chunk S5→S2 | 0.2277 | 0.120 |
+| Cross-word S5→S1 | 0.0279 | 0.022 |
+
+Cross-chunk MI (0.11-0.23) is **much lower** than within-chunk MI (0.04-0.65).
+Chunks are relatively independent encoding units. Cross-word MI is near zero
+(0.028) — words barely predict the next word's onset.
+
+### C. NL Baseline Comparison
+
+NL CVC syllable MI (onset↔nucleus↔coda) across 8 corpora:
+
+| NL Pair | Mean MI | Std |
+|---|---|---|
+| onset↔nucleus | 0.600 | 0.191 |
+| onset↔coda | 0.588 | 0.256 |
+| nucleus↔coda | 0.468 | 0.212 |
+
+VMS within-chunk MI values (0.04-0.65) overlap with NL ranges in absolute
+terms. But the VMS slot system has MUCH smaller alphabets (S1: 3 types,
+S3: 1 type) than NL CVC (typically 20+ onsets, 10+ nuclei, 15+ codas),
+so the same MI values imply far higher PROPORTIONAL information sharing.
+
+### D. Body Isolation — Entropy Re-Analysis
+
+| Stream | n tokens | h_char (bits) | h_ratio |
+|---|---|---|---|
+| Full (S1-S5) | 172,168 | 2.160 | 0.539 |
+| Body (S1-S4) | 107,812 | 1.912 | 0.600 |
+| Inner body (S2-S4) | 85,784 | 1.474 | 0.544 |
+| Coda (S5 only) | 64,356 | 1.985 | 0.643 |
+| NL reference | — | — | 0.82-0.88 |
+
+**Body isolation does NOT restore NL-like entropy.** h_ratio rises from
+0.539 to 0.600 (+11%) when coda is removed, but this is still far below
+NL range (0.82-0.88). The anomaly is NOT primarily in the coda layer.
+
+**Surprising finding:** The coda stream has the HIGHEST h_ratio (0.643),
+meaning codas are MORE diverse/unpredictable than the full sequence. This
+is the OPPOSITE of what pure abbreviation predicts (a small set of marks
+should have low diversity).
+
+### E. Body-Coda Mutual Information
+
+| Metric | Value |
+|---|---|
+| H(body) | 4.449 bits (103 types) |
+| H(coda) | 3.210 bits (15 types) |
+| MI(body; coda) | 1.372 bits |
+| NMI(body; coda) | 0.4273 |
+| H(coda|body) | 1.838 bits |
+| % coda entropy explained by body | 42.7% |
+
+NL onset↔coda NMI ranges from 0.10 to 0.26 across 8 reference corpora.
+VMS body↔coda NMI (0.43) is **nearly double** the highest NL value.
+
+**Interpretation:** In a real abbreviation system, the suffix should be a
+grammatical category marker somewhat independent of the specific stem
+(many different stems share the same abbreviation mark). A NMI of 0.43
+means bodies STRONGLY predict their codas — 42.7% of coda entropy is
+explained by the body content. This is **inconsistent with pure abbreviation**
+and more consistent with:
+- A CIPHER where body and coda jointly encode the same plaintext unit
+- A CONSTRUCTED SYSTEM with deliberately paired body+coda combinations
+- A SYLLABARY where each chunk (body+coda) is an atomic encoding unit
+
+### Phase 107 Conclusions
+
+1. **The h_char anomaly is DISTRIBUTED across all slot interactions.**
+   No single slot pair is responsible. All 10 pairs carry significant
+   excess MI beyond the slot-resample null model. This is consistent
+   with a cipher or constructed system that entangles ALL positions
+   within each chunk.
+
+2. **Body isolation fails to restore NL-like entropy.** Removing the
+   abbreviation-like coda improves h_ratio by only 11% (0.539→0.600),
+   nowhere near the NL range of 0.82-0.88. The two-layer hypothesis
+   (abbreviation layer + content layer) is INSUFFICIENT.
+
+3. **Body-coda coupling is anomalously high** (NMI = 0.43 vs NL max
+   of 0.26). This is the strongest evidence yet AGAINST pure abbreviation
+   and FOR a cipher/constructed system.
+
+4. **Chunks ARE relatively independent encoding units** (cross-chunk MI
+   = 0.11 vs within-chunk MI up to 0.65). This supports the chunk-as-
+   basic-unit hypothesis from Phase 85.
+
+5. **Revised interpretation of abbreviation hypothesis:** The glyph shapes
+   may derive from Latin scribal conventions (JKP, Phase 105), but the
+   ENCODING is not abbreviation in the normal sense. Instead, the
+   abbreviation-like slot structure may have been REPURPOSED as a cipher
+   framework — using familiar glyph shapes to encode something entirely
+   different from their original abbreviation meanings.

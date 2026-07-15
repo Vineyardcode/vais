@@ -1,0 +1,218 @@
+================================================================================
+PHASE 107 — INTRA-CHUNK SLOT MUTUAL INFORMATION DECOMPOSITION
+================================================================================
+
+Purpose: Localize WHERE the anomalous h_char residual (+0.26)
+lives within the LOOP slot grammar structure.
+
+Loading VMS corpus...
+  40256 words loaded
+  40214 words parsed, 42 failed
+  78667 total chunks (1.96 chunks/word)
+
+================================================================================
+SLOT INVENTORIES
+================================================================================
+
+  S1: 22028 filled (28.0%), 56639 empty, 3 types, H=1.267 bits
+       Top: ch(11602), y(5617), sh(4809)
+  S2: 37306 filled (47.4%), 41361 empty, 5 types, H=1.903 bits
+       Top: a(15738), e(10711), q(5768), ee(4642), eee(447)
+  S3: 26912 filled (34.2%), 51755 empty, 1 types, H=0.927 bits
+       Top: o(26912)
+  S4: 21566 filled (27.4%), 57101 empty, 4 types, H=1.212 bits
+       Top: d(13889), ii(4741), i(2731), iii(205)
+  S5: 64356 filled (81.8%), 14311 empty, 14 types, H=3.210 bits
+       Top: y(13213), l(11114), k(10568), r(8107), n(6616), t(6448), s(2951), p(1538)
+
+================================================================================
+A. WITHIN-CHUNK PAIRWISE SLOT MI (VMS)
+================================================================================
+
+  Pair               MI      NMI     H(X)     H(Y)   H(X,Y)  Types_X  Types_Y
+  ────────────────────────────────────────────────────────────────────────
+  s1,s2          0.2094   0.1653    1.267    1.903    2.961        4        6
+  s1,s3          0.0389   0.0420    1.267    0.927    2.155        4        2
+  s1,s4          0.0566   0.0467    1.267    1.212    2.422        4        5
+  s1,s5          0.2052   0.1620    1.267    3.210    4.271        4       15
+  s2,s3          0.2411   0.2602    1.903    0.927    2.589        6        2
+  s2,s4          0.2959   0.2441    1.903    1.212    2.820        6        5
+  s2,s5          0.6493   0.3411    1.903    3.210    4.464        6       15
+  s3,s4          0.0684   0.0738    0.927    1.212    2.071        2        5
+  s3,s5          0.1464   0.1579    0.927    3.210    3.990        2       15
+  s4,s5          0.6495   0.5359    1.212    3.210    3.772        5       15
+
+  Ranked by MI:
+    1. s4,s5: MI=0.6495 NMI=0.5359
+    2. s2,s5: MI=0.6493 NMI=0.3411
+    3. s2,s4: MI=0.2959 NMI=0.2441
+    4. s2,s3: MI=0.2411 NMI=0.2602
+    5. s1,s2: MI=0.2094 NMI=0.1653
+
+  Ranked by NMI:
+    1. s4,s5: MI=0.6495 NMI=0.5359
+    2. s2,s5: MI=0.6493 NMI=0.3411
+    3. s2,s3: MI=0.2411 NMI=0.2602
+    4. s2,s4: MI=0.2959 NMI=0.2441
+    5. s1,s2: MI=0.2094 NMI=0.1653
+
+================================================================================
+B. CROSS-BOUNDARY MI
+================================================================================
+
+  cross_chunk_s5_s1        : MI=0.1145  NMI=0.0939  H(X)=2.914  H(Y)=1.219  n=38453
+  cross_chunk_s5_s2        : MI=0.2277  NMI=0.1198  H(X)=2.914  H(Y)=1.901  n=38453
+  cross_word_s5_s1         : MI=0.0279  NMI=0.0216  H(X)=2.563  H(Y)=1.291  n=40213
+
+================================================================================
+C. NULL MODEL: SLOT-RESAMPLE (200 iterations)
+================================================================================
+
+  Shuffling each slot independently to destroy cross-slot correlations...
+
+  Pair           Obs MI   Null μ   Null σ  z-score   Excess
+  ────────────────────────────────────────────────────────
+  s1,s2          0.2094   0.0001   0.0001   3976.6   0.2093 ***
+  s1,s3          0.0389   0.0000   0.0000   1998.1   0.0389 ***
+  s1,s4          0.0566   0.0001   0.0000   1289.8   0.0565 ***
+  s1,s5          0.2052   0.0004   0.0001   2430.1   0.2049 ***
+  s2,s3          0.2411   0.0000   0.0000   9190.0   0.2411 ***
+  s2,s4          0.2959   0.0002   0.0001   5182.0   0.2957 ***
+  s2,s5          0.6493   0.0006   0.0001   6240.9   0.6486 ***
+  s3,s4          0.0684   0.0000   0.0000   2433.4   0.0684 ***
+  s3,s5          0.1464   0.0001   0.0000   3055.3   0.1462 ***
+  s4,s5          0.6495   0.0005   0.0001   6472.8   0.6490 ***
+
+  Significance: * p<0.01  ** p<0.004 (Bonferroni)  *** p<0.001
+
+  EXCESS MI RANKING (where the anomaly lives):
+    1. s2,s3: z=9190.0, excess MI = 0.2411
+    2. s4,s5: z=6472.8, excess MI = 0.6490
+    3. s2,s5: z=6240.9, excess MI = 0.6486
+    4. s2,s4: z=5182.0, excess MI = 0.2957
+    5. s1,s2: z=3976.6, excess MI = 0.2093
+    6. s3,s5: z=3055.3, excess MI = 0.1462
+    7. s3,s4: z=2433.4, excess MI = 0.0684
+    8. s1,s5: z=2430.1, excess MI = 0.2049
+    9. s1,s3: z=1998.1, excess MI = 0.0389
+    10. s1,s4: z=1289.8, excess MI = 0.0565
+
+================================================================================
+D. NL BASELINE: CVC SYLLABLE SLOT MI
+================================================================================
+
+  Latin (Pliny):
+    nucleus,coda: MI=0.2670  NMI=0.1078  n=134662
+    onset,coda: MI=0.2533  NMI=0.1023  n=134662
+    onset,nucleus: MI=0.4149  NMI=0.1234  n=134662
+
+  Latin (Galen):
+    nucleus,coda: MI=0.3724  NMI=0.1246  n=100012
+    onset,coda: MI=0.4022  NMI=0.1345  n=100012
+    onset,nucleus: MI=0.5053  NMI=0.1514  n=100012
+
+  Italian (Cucina):
+    nucleus,coda: MI=0.1743  NMI=0.0771  n=50610
+    onset,coda: MI=0.3751  NMI=0.1660  n=50610
+    onset,nucleus: MI=0.4067  NMI=0.1391  n=50610
+
+  German (Ortolf):
+    nucleus,coda: MI=0.8088  NMI=0.2569  n=3778
+    onset,coda: MI=1.1247  NMI=0.2571  n=3778
+    onset,nucleus: MI=0.9756  NMI=0.3099  n=3778
+
+  German (Faust):
+    nucleus,coda: MI=0.6262  NMI=0.2061  n=51322
+    onset,coda: MI=0.7372  NMI=0.1699  n=51322
+    onset,nucleus: MI=0.4454  NMI=0.1466  n=51322
+
+  French (Viandier):
+    nucleus,coda: MI=0.6560  NMI=0.1941  n=27345
+    onset,coda: MI=0.6500  NMI=0.1924  n=27345
+    onset,nucleus: MI=0.7382  NMI=0.2168  n=27345
+
+  English (Cury):
+    nucleus,coda: MI=0.5616  NMI=0.1768  n=68278
+    onset,coda: MI=0.6808  NMI=0.1847  n=68278
+    onset,nucleus: MI=0.5502  NMI=0.1732  n=68278
+
+  Czech (Kralice):
+    nucleus,coda: MI=0.2765  NMI=0.1081  n=1053101
+    onset,coda: MI=0.4822  NMI=0.1884  n=1053101
+    onset,nucleus: MI=0.7612  NMI=0.2311  n=1053101
+
+  COMPARISON: VMS slot MI vs NL CVC MI
+
+  NL Pair               NL MI μ  NL MI σ
+  ────────────────────────────────────────
+  ('nucleus', 'coda')    0.4678   0.2115
+  ('onset', 'coda')      0.5882   0.2564
+  ('onset', 'nucleus')   0.5997   0.1914
+
+================================================================================
+E. BODY ISOLATION: ENTROPY OF BODY vs CODA vs FULL
+================================================================================
+
+  Separate each chunk into BODY (S1+S2+S3+S4) and CODA (S5).
+  Compute h_char (conditional bigram entropy) for each stream.
+  If the abbreviation layer (coda) is pulling down h_char,
+  removing it should RAISE h_char toward NL range (0.82-0.88).
+
+  Stream                 n_tokens     h_char    h_ratio
+  ───────────────────────────────────────────────────────
+  full                     172168     2.1602     0.5389
+  body_s1234               107812     1.9124     0.5997
+  inner_s234                85784     1.4743     0.5435
+  coda_s5                   64356     1.9849     0.6430
+
+  NL reference range: h_char ≈ 0.82-0.88, h_ratio ≈ 0.82-0.88
+  VMS full h_char (Phase 97): 0.6560
+
+  Δh_char (body S1234 vs full): -0.2478
+  Δh_char (inner S234 vs full): -0.6858
+
+  → Body h_char DROPS when coda removed: coda was ADDING entropy (unexpected)
+
+================================================================================
+F. BODY-CODA MUTUAL INFORMATION
+================================================================================
+
+  Do chunk bodies predict their codas?
+  In a real abbreviation system: LOW MI (suffix = grammatical class, not specific stem)
+  In a cipher: MI could be HIGH (coda encodes part of same plaintext)
+
+  H(body):         4.4494 bits  (103 types)
+  H(coda):         3.2098 bits  (15 types)
+  MI(body; coda):  1.3715 bits
+  NMI(body; coda): 0.4273
+  H(coda|body):    1.8382 bits
+  Fraction of coda entropy explained by body: 42.7%
+
+================================================================================
+PHASE 107 — VERDICT
+================================================================================
+
+  1. DOMINANT ANOMALOUS INTERACTION:
+     s2,s3: z = 9190.0
+     Observed MI = 0.2411, Null MI = 0.0000, Excess = 0.2411
+
+  2. 10 of 10 slot pairs show significant excess MI (Bonferroni α=0.004)
+
+  3. BODY ISOLATION RESULT:
+     Full h_char:  2.1602
+     Body h_char:  1.9124
+     NL range:     0.82-0.88
+     → BODY IS IN NL RANGE: two-layer hypothesis SUPPORTED
+
+  4. BODY-CODA MI:
+     MI(body; coda) = 1.3715
+     NMI = 0.4273
+     → HIGH: bodies strongly predict codas (cipher-like)
+
+  5. IMPLICATIONS:
+
+     Multiple slot pairs carry excess MI: the anomaly is DISTRIBUTED
+     across the chunk structure, not localized to one interaction.
+     This is consistent with a CIPHER that entangles all positions,
+     or with an encoding that is fundamentally different from NL.
+

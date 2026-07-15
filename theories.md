@@ -48,6 +48,8 @@ substitution cipher can produce VMS-like statistical properties from Latin/Itali
   Compatible with 15th-century methods.
 - **Against:** Proof of concept only — author explicitly does not claim it IS the cipher.
   No actual decipherment produced. Still struggles with some features (exact entropy match).
+  Phase 107: distributed slot MI entanglement is consistent with a verbose cipher that
+  links all positions within each encoding unit.
 - **Source:** Greshko (2025, Cryptologia), Pelling (cipher structure analysis)
 - **Forum:** Voynich Ninja — ["The Naibbe cipher"](https://www.voynich.ninja/thread-4848.html) (83 replies, 29,752 views, very active)
 
@@ -59,7 +61,9 @@ or taxonomic language, predating Wilkins (1668) by two centuries.
   100th percentile vs shuffled controls). Hebrew-like agglutinative morphology that
   is "too regular" to be natural language. Suffix categories divide cleanly into
   bimodal classes. Category-based prefix structure (plant names sharing prefixes)
-  would explain repetitive text.
+  would explain repetitive text. Phase 107: distributed MI across all 10 slot pairs
+  (z=1290-9190) and body-coda NMI=0.43 (double NL max) match a constructed system
+  where all positions are deliberately entangled.
 - **Against:** No constructed language from before 1600 is known. Each category should
   share prefixes — not yet demonstrated convincingly. Low information per word is
   unusual for taxonomic systems. Tiltman (1967) found it a "cumbersome mixture of
@@ -68,7 +72,7 @@ or taxonomic language, predating Wilkins (1668) by two centuries.
 - **Forum:** Various threads, Jorge_Stolfi is a prominent proponent
 
 ### A4. Shorthand / Abbreviation System
-**Probability: 5/10**
+**Probability: 6/10**
 Text is heavily abbreviated natural language (Latin, vernacular) — like a pharmacist's
 or physician's personal notation system.
 - **For:** Our pre-phase analysis: 3/4 shorthand tests passed (frame-constant runs,
@@ -78,11 +82,44 @@ or physician's personal notation system.
   ["Specialized shorthand and not a language"](https://www.voynich.ninja/thread-5200.html) (DerrickMay), ["The Voynich-Ms as a
   concatenation of abbreviations"](https://www.voynich.ninja/thread-4008.html) (Helmut Winkler, 69 replies, 45K views).
   Tironian shorthand hypothesis tested structurally (CorwinFr, 2026).
+  **JKP paleographic analysis (thread 2394, 10+ years of study):** ~80% of VMS glyph
+  shapes derive from Latin scribal abbreviation conventions, with not just shape but
+  POSITIONAL matching (glyphs appear in the same word positions as their Latin
+  analogues). Specific identifications: EVA-y = 9-sign (-us/-um word-final, con- word-
+  initial); EVA-m = -ris/-tis/-cis (3 confirmed variants); EVA-k = Item (I + -is);
+  EVA-s = -er/-eus/-ce. Gallows are constructed from modular scribal building blocks
+  (loops + ascenders + -is marks), not single characters. Best single-source MSS for
+  non-gallows glyphs: Cod. Sang. 839 (Swiss, 1459). Remaining ~10-15% Greek scribal
+  conventions, ~5-10% invented but based on scribal concepts.
+  **Phase 105 re-test:** Cappelli abbreviation closes 78% of paradigm fill gap and
+  45% of NMI gap vs VMS, confirming the many-to-one suffix collapse mechanism.
 - **Against:** Slot dependence (NMI = 0.4164) is too high for pure abbreviation —
   the system encodes grammatical relationships. Gibbs's specific proposal was widely
-  rejected as incomplete/circular.
-- **Source:** Feely (1943), Gibbs (2017), ginocaspari (Lingua Volgare), CorwinFr (Tironian)
-- **Forum:** Voynich Ninja — multiple active threads
+  rejected as incomplete/circular. Phase 73 showed abbreviation cannot produce
+  h_char anywhere near VMS level (0/819 experiments in range). Phase 105 confirmed
+  h_char gap closes only 2%. H(ending) goes wrong direction under abbreviation.
+  Some EVA glyphs are drawn differently from their Latin analogues (e.g., EVA-g vs
+  -dis: different loop direction), raising questions about whether visual similarity
+  is meaningful.
+  **Phase 106 decode attempt:** Direct application of JKP abbreviation mappings to
+  f1r produced complete gibberish (106a/b). Positional frequency matching across
+  9 corpora in 6 languages also failed to produce any readable text (106c). Italian
+  scored worst (0 word hits). This rules out simple substitution, not abbreviation
+  as a component — but confirms the encoding involves additional complexity beyond
+  abbreviation marks.
+  **Phase 107 body-coda MI:** Body-coda NMI = 0.4273 (42.7% of coda entropy
+  explained by body). NL onset↔coda NMI ranges 0.10-0.26, so VMS is nearly
+  double the highest NL value. In real abbreviation systems, suffixes are
+  relatively stem-independent; this high coupling argues AGAINST pure abbreviation
+  and FOR a cipher or constructed system where body+coda jointly encode
+  information. Body isolation does not restore NL-like entropy (h_ratio 0.600
+  vs NL 0.82-0.88). The abbreviation-like structure may be a REPURPOSED
+  framework rather than actual abbreviation.
+- **Source:** Feely (1943), Gibbs (2017), ginocaspari (Lingua Volgare), CorwinFr (Tironian),
+  JKP (Voynich Ninja thread 2394, paleographic glyph analysis), Phase 106 (workspace)
+- **Forum:** Voynich Ninja — ["Which other manuscript contain the most Voynichese glyphs?"](https://www.voynich.ninja/thread-2394.html)
+  (Koen G / JKP, 14 pages, ~135 replies — the definitive glyph paleography thread),
+  plus multiple active threads (Winkler, ginocaspari, CorwinFr)
 
 ### A5. Hoax / Meaningless Text
 **Probability: 4/10**
@@ -791,8 +828,8 @@ which suggests good faith, but the tool remains unverified.
 | 2 | Two-language system (Language A/B) | 6/10 | Well-established statistical fact |
 | 3 | Cipher of European natural language | 5/10 | Default hypothesis, no solution found |
 | 4 | Verbose/Complex cipher (e.g. Naibbe) | 5/10 | Best proof-of-concept to date |
-| 5 | Constructed/Artificial language | 5/10 | Explains over-regular structure |
-| 6 | Shorthand/Abbreviation system | 5/10 | Our analysis partially supports |
+| 5 | Constructed/Artificial language | 6/10 | Explains over-regular structure; Phase 107 distributed slot MI matches constructed system |
+| 6 | Shorthand/Abbreviation system | 5/10 | JKP paleography + Phase 105 paradigm fill; Phase 106 rules out simple substitution; Phase 107 body-coda NMI=0.43 argues against pure abbreviation |
 | 7 | Copy of an older manuscript | 5/10 | Explains some oddities |
 | 8 | Latin as underlying language | 5/10 | Expected for the period |
 | 9 | Women's health manual (content) | 5/10 | Fits balneological section |
@@ -1040,6 +1077,116 @@ Brand new theory (posted April 2026 on Cipher Mysteries):
 - **Not yet evaluated.** Should be testable: if the decoder is mechanical, we
   can feed in VMS text and verify whether output is grammatical Latin.
 
+### H15. Voynich Ninja Thread: "Repetition of Words" (Sep 2025 – Mar 2026)
+
+Source: voynich.ninja/thread-4944 — 7 pages, ~65 posts. Key contributors: Mark
+Knowles, Jorge Stolfi, nablator, Mauro, Eiríkur, quimqu, magnesium, pjburkshire.
+
+**Core observation (Knowles):** Consecutive word repetition (e.g., `qokeedy qokeedy`)
+is common in VMS but extremely rare in European languages. Knowles proposes that
+consecutively repeated words are **filler/null words** (extending his H7 partial-hoax
+hypothesis) and suggests an iterative pruning algorithm: remove all word types that
+ever appear consecutively, repeat until no consecutive duplicates remain, then
+examine the residual text's statistical properties.
+
+**Stolfi's cross-linguistic data (key empirical contribution):**
+- **Latin:** Zero consecutive repetitions in Marco's Alchemical Herbal transcription;
+  a handful in Ockam's Dialogus, all across punctuation boundaries (e.g., "policernia.
+  Policernia"). Latin grammar forces adjacent words into different categories
+  (noun/verb/article), suppressing repetition.
+- **Chinese (Mandarin):** Consecutive repetition is **common**. Dream of the Red
+  Chamber: 老老 (lǎo lǎo = "old man") 44 occurrences, 太太 (tàitài) 32 occ., etc.
+  Word doubling is a productive grammatical feature (pluralization, intensification).
+- **Tibetan:** Also common — KHANG KHANG (ཁང་ཁང = "houses") 10 occ. in a sample.
+- **Vietnamese:** Rare in his sample (a missionary translation), but reduplication
+  is grammatically productive in native Vietnamese.
+- European "had had" / "that that" examples exist but are rare and structurally
+  constrained.
+
+**Stolfi's key insight:** Consecutive repetition is a typological marker. It is
+common in **East/Southeast Asian** isolating languages (where word = morpheme ≈
+syllable) and rare in **Indo-European** inflecting languages. If VMS has frequent
+consecutive repetition, this is evidence for either: (a) a non-European substrate,
+(b) an encoding that produces accidental repetition, or (c) deliberate filler insertion.
+
+**Alternative explanations proposed by other posters:**
+- **Incantation/prayer timing** (oaken, Barbrey): In recipe texts, repeated words
+  could be incantations used as timers ("boil while reciting X three times").
+  Barbrey cites the Picatrix and Book of the Holy Trinity as contemporaneous
+  examples of deliberate word repetition in hermetic/alchemical texts. However,
+  no specific manuscript examples of triple-word repetition were produced.
+- **Recipe instructions as timing** (pjburkshire): "Chop, chop, chop" or "Stir,
+  stir, stir" as duration markers before clocks existed.
+- **Intensification/reduplication** (Fontanellean): "far, far away" — a grammatical
+  device for emphasis. Common in some NL families but not typical of Latin/Italian.
+- **Hermetic triple symbolism** (ZamnaMx): Claimed triple repetition encodes
+  alchemical matter→energy→spirit transformation. **Thoroughly debunked by nablator
+  and others**: no actual textual examples were produced, cited sources (Rosarium
+  Philosophorum "coniunctio, coniunctio, coniunctio") do not exist in the original
+  texts, likely AI-generated hallucinations. The poster was subsequently banned.
+- **Numbers** (Kaybo): Repeated words could encode numbers (11, 22, 33...).
+  Speculative, no supporting evidence.
+- **Naibbe cipher / Griffoynich** (magnesium): In the Naibbe cipher model,
+  `qokedy qokedy qokedy` would translate to repeating the same plaintext n-gram
+  (e.g., "I I I"). In Griffoynich (grid-based cipher), the same word repeating
+  means repeating the same grid operations, which usually would NOT produce the
+  same plaintext letter — a distinction with testable implications.
+
+**Eiríkur's "off-by-one" observation (important):** Beyond exact repetition, there
+are many near-duplicates differing by a single glyph (add/remove/replace),
+clustered within the same paragraph. Cites Torsten Timm's work on this pattern.
+Finds f75r particularly "wild" — dense qokeedy/qokedy/qokar clusters. Describes
+this as "copying at the affix and syllable level" but cannot explain a human
+mechanism that would produce it. This is consistent with our LOOP grammar finding
+(Phase 86 chunk equivalence classes) where single-slot substitutions produce
+near-duplicate words.
+
+**Mauro's vocabulary statistics:** VMS has 38,411 tokens and 8,424 types (Rf1a-n
+transcription) → 1 type per 4.56 tokens. De Bello Gallico has similar ratio
+(1:4.67) despite being longer. Stolfi corrects this: raw type/token ratio is
+misleading; Heaps' law (M ≈ K·N^b) should be used for cross-corpus comparison.
+
+**Stolfi's Chinese pharmacopoeia sample (late in thread):** Posts extensive pinyin
+transcription of what appears to be a Chinese herbal/pharmaceutical text. The
+format shows dense repetition of formulaic patterns (味苦寒 = "taste bitter cold",
+主治 = "main treatment") — strikingly similar to VMS's repetitive structure in
+pharmaceutical sections. This is relevant to Stolfi's long-standing Chinese
+hypothesis but also to any syllabic/isolating encoding model.
+
+**Syllable-count comparison (nablator, citing Yoon Mi Oh 2015):**
+- Japanese: 643, Korean: 1104, Mandarin: 1274, Cantonese: 1298
+- Italian: 2729, Spanish: 2778, French: 2949
+- German: 5100, English: 6949
+- VMS has ~523 chunk types (Phase 98), closest to Japanese (643) or Mandarin
+  (1274) range, far below European languages. This is circumstantial evidence
+  for a syllabic/logographic unit size in VMS.
+
+**Skeptical assessment:**
+- Knowles's filler-word hypothesis is **not independently testable** without
+  knowing which words are filler. The pruning algorithm is circular: it assumes
+  consecutive repetitions identify filler, then measures the result of removing
+  them. Any text would change properties after such pruning.
+- Stolfi's cross-linguistic repetition data is the strongest empirical
+  contribution but the comparison is confounded by VMS's unknown encoding. If VMS
+  "words" are not true linguistic words (e.g., they are syllables, or cipher
+  units), then comparing VMS word-repetition rates to NL word-repetition rates is
+  category error.
+- The Chinese/syllabic parallel is intriguing but speculative. Our Phase 99
+  (Script Typology) found VMS is a typological outlier that doesn't match ANY
+  known script, including Chinese. The chunk count (523) is closer to Japanese
+  kana than to Chinese characters (~3000+ in common use).
+- The "off-by-one" clustering observation (Eiríkur/Timm) is genuine and
+  unexplained. It aligns with our LOOP grammar but does not distinguish between
+  encoding artifact and genuine linguistic reduplication.
+- **Probability: 2/10** for Knowles's specific filler-word model. The consecutive
+  repetition phenomenon is real and demands explanation, but "lazy filler
+  insertion" is unfalsifiable and inconsistent with the structured LOOP grammar
+  we've established.
+- **Probability: 4/10** for the broader insight that VMS words may be syllable-
+  sized units in an isolating/agglutinating system, which would naturally explain
+  both the repetition and the low type count. This is compatible with our Phase
+  98–99 findings.
+
 ---
 
 ## I. CODICOLOGICAL & DATING EVIDENCE (From Cipher Mysteries)
@@ -1183,7 +1330,367 @@ From reviewing ~2,250 comments across Cipher Mysteries (2012–2026):
 
 ---
 
-*Last updated: 2026-04-14*
+### H16. Voynich Ninja Thread: "The Structure of the Voynich Text and How It May Be Generated" (Apr 2026)
+
+Source: voynich.ninja/thread-5500 — 6 pages, ~55 posts. Key contributors: quimqu
+(OP, Barcelona), Jorge Stolfi, nablator, DG97EEB (Edward), ReneZ, Rafal, magnesium,
+JoJo_Jost, tavie (moderator).
+
+**Core contribution (quimqu):** A systematic pipeline testing multiple generative
+hypotheses against the VMS text. Rather than describing patterns, quimqu asks: "if
+this were the real mechanism, would it reproduce what we observe?" Models are
+evaluated against simultaneous constraints (repetition rate, local similarity,
+entropy, hapax proportion, vocabulary size, positional distributions).
+
+**Key empirical findings:**
+
+1. **Sequential (Markov) models fail.** Bigram/HMM models either add little
+   structure or collapse. The text is not governed by simple token-to-token rules.
+
+2. **Copy-and-modify models overshoot.** They produce too much chaining and too
+   many identifiable source→target links. The VMS shows no single dominant parent
+   per token — multiple nearby candidates have equally plausible similarity scores.
+
+3. **No directionality in local similarity.** Past vs. future context is symmetric
+   (~31% past vs ~31% future for best-match direction; weighted score ~49.5%
+   vs ~50.5%). Chain reconstruction recovers correct order only 31% vs 26%
+   shuffle baseline. Edit persistence: 0.462 vs 0.459 shuffle. The text does
+   not behave like a left-to-right (or right-to-left) generative chain.
+
+4. **Local compatibility model works best.** Instead of deriving each token from
+   the previous one, building a local pool of compatible forms and selecting
+   from it with weak bias reproduces: exact repetition rate (close match),
+   local similarity (close), vocabulary balance (improved). But it still
+   undershoots hapax rate, vocabulary size, and within-family coherence.
+
+5. **Line-level structure is the most stable unit.** When lines are represented
+   as whole objects (token count, length distributions, entropy, positional
+   patterns), they cluster into a small number of latent types with non-random
+   sequencing. Token-level models struggle; line-level models are much more
+   consistent.
+
+6. **Context symmetry is anomalously high.** Comparing Lev≤1 word pairs, the VMS
+   shows mean absolute left-right asymmetry of only 0.055 — far below natural
+   languages (Latin: 0.100–0.257, Chinese: 0.127, English: 0.187, German: 0.223)
+   and below Timm's generated text (0.103). When two VMS words look similar,
+   their left and right environments also look similar to nearly the same degree.
+   Natural language grammar is directional; VMS local context is not.
+
+7. **`daiin` neighborhood analysis.** Lev≤1 variants of `daiin` do NOT share the
+   same exact neighbors, but they DO share neighbors from the same broad family
+   of similar forms (fuzzy overlap rises strongly). Crucially, `dain` is closer
+   to `daiin` on the left-context side while `aiin` is closer on the right-context
+   side — the system is not freely swapping variants; position matters.
+
+**quimqu's proposed generative framework (tentative):**
+1. The line type defines a space of possible forms.
+2. Local context restricts this space further by favoring compatible forms.
+3. Within that constrained space, the final choice is weakly determined — many
+   candidates are acceptable, no single one is strongly preferred.
+This explains why local similarity is strong but doesn't translate into clear
+parent-child relationships.
+
+**Stolfi's critique (substantial and methodologically sharp):**
+- Any collection of statistical measurements has an algorithm that generates
+  matching text — success at matching stats proves nothing about origin.
+- Copy-and-mutate theories presuppose that the author defined the statistical
+  properties before starting, so they don't actually explain anything.
+- "It is mathematically impossible to prove that a string is random." The only
+  way to show VMS is meaningless would be to find a short deterministic algorithm
+  that generates the exact text (cf. Kolmogorov complexity).
+- Warns that quimqu's analysis implicitly assumes a uniform mechanical process
+  (i.e., gibberish), even when claiming agnosticism.
+- **LAAFU vs PAAFU distinction (critical):** Paragraph-initial anomalies (PAAFU)
+  are expected from herbal structure (plant names → hapax, puffs, unusual
+  morphology). True LAAFU (body-line positional effects) must be tested by
+  excluding paragraph-initial lines, then re-breaking within paragraphs using
+  character-width limits (not word-count limits, which don't create line-breaking
+  bias). Stolfi proposes using widths of φ (1.618) or 1/φ (0.618) times the
+  average line width to avoid coincidental alignment with original breaks.
+- Line-end `m` is likely an abbreviation of `iin` used when space is tight, not
+  evidence of LAAFU per se.
+
+**DG97EEB's empirical tests (using AI-assisted code, all 3 transcriptions):**
+- **Line-rebreak test (initial, flawed):** LAAFU effects (gallows-initial 3.4×,
+  -m final 14.6%) vanish under re-breaking (gallows → ~1×, -m → ~3%). But Stolfi
+  correctly identified that the test destroyed paragraph boundaries and conflated
+  PAAFU with LAAFU.
+- **Corrected rebreak (Herbal A body lines only):** PAAFU confirmed as very strong
+  (79.2% gallows-initial on paragraph-initial lines). Body lines still show 2.0×
+  gallows ratio and 12.7% -m final. Under within-paragraph re-breaking (token
+  widths), all body-line effects vanish (gallows → 0.9–1.1×, -m → 3.6–5.2%).
+  Stolfi objected that token-width breaks don't produce line-breaking bias; the
+  test needs character-width breaks to be valid.
+- **No A→B drift.** Within Scribe 1 Botanical (96 folios), correlation between
+  folio position and distance to Dialect B centroid is r = +0.070 (n.s.). Across
+  all S1 folios: r = −0.057. **Thorsten's gradual-drift claim is not supported.**
+- **Scribe vocabulary separation confirmed.** Cross S1↔S2 JSD = 0.860 vs
+  within-S2 = 0.686. S2↔S3 (both B variants) = 0.719. Scribe 4 (Astrological)
+  sits at A-ness = 0.496, nearly midpoint — Currier's "mostly A" classification
+  is based on specific features, not overall vocabulary distance.
+- Results replicate across ZLZI, Takahashi (TTVE), and Stolfi (JSLI) transcriptions.
+
+**Other notable contributions:**
+- **Rafal:** Argues that if VMS is mechanically generated, the process was
+  "semi-systematic" — the scribe had rules and common tricks but freedom to
+  choose among them and sometimes improvised. Computer models may approximate
+  results but can never prove the actual method.
+- **magnesium:** Suggests spacing ambiguity (randomly dropping 2–3% of spaces,
+  biased left-to-right per line) could boost hapax counts in the generated model.
+  Also notes that any replication of Voynichese could be sharpened by testing
+  whether a "payload" plaintext stream can be embedded.
+- **nablator:** Proposed a less naive self-citation model with sparse
+  initialization, bottlenecks, lazy selection patterns, and non-sequential writing.
+  Suggested Longest Common Subsequence (LCS) might be better than edit distance
+  for detecting line-to-line transfer patterns. Disappointed to find similar
+  frequencies in Timm's generated text as in VMS.
+- **tavie (moderator):** Warned about AI-assisted theories policy and asked
+  participants to keep LAAFU discussion relevant to quimqu's model scope.
+
+**Relevance to our research:**
+
+1. **Confirms our Phase 98 findings.** quimqu's "local compatibility pool" model
+   is essentially the same insight as our LOOP grammar + chunk equivalence classes.
+   Words are drawn from a constrained set defined by position and local context,
+   not by sequential derivation. Our 5-slot model (parsing 99.8%) describes the
+   same structural reality from the inside; quimqu's pipeline approaches it from
+   the outside via generative model failure analysis.
+
+2. **Context symmetry finding is genuinely novel.** Mean asymmetry 0.055 vs 0.100+
+   for all natural languages tested. This is inconsistent with any natural language
+   and inconsistent with simple left-to-right generation. It's consistent with:
+   (a) a tabular/lookup encoding where local context constrains both sides equally,
+   (b) a non-sequential writing process, or (c) a cipher that destroys directional
+   grammatical information. This deserves quantitative replication with our corpus.
+
+3. **The LAAFU/PAAFU distinction matters.** Stolfi's insistence on separating
+   paragraph-initial effects from body-line effects is methodologically correct
+   and highlights a flaw in much VMS positional analysis (including potentially
+   some of our own). The corrected test shows body-line LAAFU effects vanish
+   under token-width rebreaking but the character-width test hasn't been done
+   properly yet — this remains an open question.
+
+4. **No A→B drift (DG97EEB).** Our Phase 102 Cramér's V = 0.968 (scribal hand
+   predicts Currier language) is consistent with discrete dialect assignment
+   rather than gradual drift. This new result independently confirms that from a
+   different angle (folio-level JSD correlation with position).
+
+5. **The meta-lesson (Stolfi + DG97EEB).** DG97EEB reports building ~70 different
+   generators that all look like VMS and pass Bowern-Gaskill tests, yet "tells
+   you absolutely nothing about what the text says or how it was created." This
+   is the statistical matching trap: any sufficiently complex generative model
+   can match any finite set of statistics. Stolfi's Kolmogorov-complexity argument
+   is the formal version of this warning.
+
+**Skeptical assessment:**
+- quimqu's pipeline is methodologically sound — testing models by how they fail
+  is better than testing by how they succeed. But Stolfi's critique lands: the
+  framework implicitly assumes mechanical generation, so it can only evaluate
+  mechanical hypotheses. If VMS encodes a natural language with a one-to-one word
+  cipher, this entire analytical approach is measuring the wrong things.
+- The context-symmetry finding is the thread's strongest novel result but needs
+  independent replication. quimqu measures it with Levenshtein distance, which
+  assumes uniform character substitution — not valid if VMS characters have
+  unequal phonetic/semantic weights.
+- The "no drift" finding is robust across 3 transcriptions and supports discrete
+  dialect separation, but doesn't distinguish between separate scribes and a
+  single scribe deliberately switching registers.
+- Thread suffers from scope creep: started as generative model testing, expanded
+  to LAAFU/PAAFU testing (driven by Stolfi), and never reached a clean conclusion
+  on the original question. quimqu announces a follow-up thread "About the
+  construction of lines in the MS."
+- **Probability that this approach leads to decipherment: ~2/10.** The models can
+  narrow the space of plausible generation mechanisms but cannot identify meaning.
+  The context-symmetry result is actionable for our pipeline.
+
+### H17. Voynich Ninja Thread: "About the Construction of Lines in the MS" (Apr 15–17, 2026)
+
+Source: voynich.ninja/thread-5612 — 3 pages, ~25 posts. Key contributors: quimqu
+(OP), Jorge Stolfi, nablator, ReneZ, Juan_Sali, Fontanellean, oeesordy.
+Follow-up to thread-5500 (H16).
+
+**Core finding (quimqu):** Line breaks in the VMS are statistically structured,
+not arbitrary. A simple classifier trained on word-type signatures at line
+boundaries (end quality, start quality, line-length fit) can predict real line breaks
+vs. interior gaps with high accuracy, out of sample.
+
+**Validation results (paragraph-level cross-validation):**
+
+| Section | Real AUC | Null AUC (random relabeling) |
+|---|---|---|
+| Herbal | 0.905 ± 0.036 | 0.461 ± 0.131 |
+| Biological | 0.891 ± 0.057 | 0.459 ± 0.119 |
+
+Each individual component (end-quality, start-quality, fit-quality) also works
+alone (AUC 0.708–0.797). The model is not memorizing paragraphs — null controls
+collapse to chance.
+
+**Cross-section transfer:** Herbal→Biological AUC = 0.804; Biological→Herbal AUC =
+0.809. When pooled and applied descriptively to other sections:
+
+| Test section | AUC |
+|---|---|
+| Marginal stars | 0.958 |
+| Text-only | 0.859 |
+| Pharmaceutical | 0.782 |
+| Zodiac | 0.746 |
+| Astronomical | 0.739 |
+| Cosmological | 0.727 |
+
+The lineation mechanism is at least partially shared across the entire manuscript.
+
+**Characteristic boundary patterns:**
+- **Herbal endings:** ..am, ..dy, da..an, da..am, ok..am, ot..am, ch..ry
+- **Herbal openings:** yc..or, yc..ol, yc..ey, so..in, so..or, dc..ey, ds..dy, yt..dy, tc..in
+- **Biological endings:** ol..ly, ol..dy, or..ry, ol..ol, ok..ky, qo... tails
+- **Biological openings:** so..dy, so..ey, so..or, sa..ar, sa..in, ds..dy, dc..dy, tc..dy
+
+These are word-family patterns, not just suffix/prefix effects. The effect is
+not reducible to the last two EVA characters — tokens with the same ending behave
+differently depending on their full family membership.
+
+**Stolfi's line-breaking artifact challenge (the central debate):**
+
+Stolfi argues that the trivial line-breaking algorithm (TLA) — "if next word fits,
+write it; else break" — inherently creates statistical anomalies: longer first
+words, shorter last words, and consequently different character/word statistics at
+line edges. He demands that quimqu compare against text re-justified at φ (1.618×)
+and 1/φ (0.618×) of the original average line width, using character-count breaks.
+
+**quimqu's re-justification control (critical test):**
+
+| Section | Dataset | AUC |
+|---|---|---|
+| Biological | Real lines | 0.875 |
+| Biological | Rejust 0.62× | 0.555 |
+| Biological | Rejust 1.00× | 0.631 |
+| Biological | Rejust 1.62× | 0.679 |
+| Herbal | Real lines | 0.885 |
+| Herbal | Rejust 0.62× | 0.731 |
+| Herbal | Rejust 1.00× | 0.742 |
+| Herbal | Rejust 1.62× | 0.642 |
+
+The TLA does create signal (AUC above chance, especially in Herbal). But the gap
+between real and re-justified is large: +0.15 to +0.32 in AUC. More importantly,
+boundary vs. interior score separation is 0.3–0.5 in the real text vs. 0.03–0.1
+in the controls. The TLA explains part of the effect, but not most of it.
+
+**Compression hypothesis (tested and rejected):**
+quimqu tested whether line-final tokens are compressed versions of longer interior
+forms (via prefix matches, edit distance, subsequences). **Result: negative.** Final
+tokens do NOT show an excess of expandable longer forms. If anything, they show
+slightly fewer. Word lengths at line ends (~4.29 chars) are identical to matched
+interior controls (~4.29 chars), yet end-likeness scores differ enormously (+0.95
+vs −0.78). Length alone doesn't explain the pattern.
+
+**Stolfi's counter-arguments (partially accepted):**
+- The `m` character is likely an abbreviation for `iin`, used when space is tight.
+  Stolfi provides detailed frequency data from Starred Parags showing massive
+  enrichment of `-am` words at line end (am, otam, qokam, dam, ram, okam, etc.)
+  and suppression of longer words (otedy, chedar, etc.).
+- Isolated `r` and `s` suppression at line ends may result from ambiguous spacing
+  being resolved differently when space is tight.
+- Line-end `dy` and `y` excess may be suffixes that get written as separate words
+  when the scribe expands spacing.
+- **Stolfi remains unconvinced:** "I still think that the line-position anomalies
+  that are alleged as evidence for LAAFU could be explained as mere artifacts of
+  the Scribe's line breaking algorithm."
+
+**Plant intrusion test (`<->` markers):**
+Tokens before `<->` (image interruptions mid-line) show partial line-ending
+behavior: Biological end-score +0.42 (vs +0.84 at real line ends, −0.89 interior);
+Herbal +0.45 (vs +0.82, −0.60). Tokens after `<->` show weaker but detectable
+start-like behavior. This supports the idea that visual interruptions trigger
+the same mechanism as line breaks, but less strongly — consistent with the scribe
+caring less about margin alignment at image intrusions.
+
+**Space-free test (most convincing result):**
+quimqu stripped all spaces and tested whether line breaks can be detected from
+character-level n-grams alone. **AUC ~0.93 on held-out same-section data, ~0.92 on
+other sections.** Real breaks score +5.69 above nearby non-break positions. In 99%
+of cases the real cut outscores surrounding positions. When spaces are kept as
+characters, AUC rises to ~0.94–0.95, confirming that spacing adds real (not noise)
+information.
+
+**Cross-line vs. within-line predictability (final test):**
+- **Across lines:** Using line-end to predict next line-start yields near-random
+  performance (top-1 only a few percent, rank near middle of candidates).
+- **Within lines:** Using left half to predict right half yields strong signal —
+  average rank ~16/100, median 5, top-1 ~30%, >50% in top 5.
+- **Interpretation:** Strong local structure inside lines, but it does not carry
+  across line boundaries. Even within lines, multiple plausible continuations
+  exist rather than a single determined path.
+
+**Other notable contributions:**
+- **Juan_Sali:** Notes that right margins are quite irregular on many pages — the
+  scribe often leaves space where larger words could have fit. Argues this
+  contradicts a pure space-fitting explanation.
+- **Fontanellean:** Speculates that meaningful content is in the center of each
+  line, with filler words at start and end. (Untested.)
+- **nablator:** Raises the deep spacing problem — scribes seemed to approximate a
+  "correct" tokenization they didn't strictly know. Suggests finding optimal
+  unambiguous slot sequences via hill-climbing on Shannon entropy, noting the
+  Zattera 12-slot sequence is ambiguous (greedy matching differs left-to-right
+  vs. right-to-left). Plans to attempt this.
+- **ReneZ:** "Even if word spaces are largely significant, I am not at all
+  convinced that the bits that are contained between the spaces are actually
+  words. Even in the scenario that there is a meaningful text."
+
+**Relevance to our research:**
+
+1. **Line-as-unit is confirmed.** This directly supports our Phase 98/H16 finding
+   that the strongest structure is at line level, not token level. quimqu's AUC
+   ~0.90 for boundary detection and the within-line vs. cross-line predictability
+   gap are independent quantitative confirmation.
+
+2. **The boundary-pattern families match our LOOP grammar.** The enriched line-start
+   patterns (so..dy, dc..ey, yc..or, tc..in) and line-end patterns (..am, ..dy,
+   ol..ly, da..an) map cleanly onto our 5-slot chunk model's prefix/suffix
+   distributions. The "word families" quimqu identifies are essentially our
+   chunk equivalence classes viewed through a different lens.
+
+3. **Cross-line reset is real.** The near-random cross-line predictability confirms
+   what we've observed with our AC (autocorrelation) measurements: whatever
+   process generates the text, it largely resets at line boundaries. This is
+   the strongest LAAFU-supporting result in the thread, even though Stolfi
+   doesn't concede the point.
+
+4. **The space-free detection result is methodologically important.** It means
+   that our analyses aren't artifacts of possibly incorrect word boundaries.
+   Line structure is real at the character level, independent of tokenization.
+   This partially addresses concerns about the reliability of EVA word boundaries
+   that have plagued VMS computational analysis.
+
+5. **nablator's optimal-tokenization proposal** (hill-climbing on entropy to find
+   the best unambiguous slot sequence) is directly relevant to our LOOP grammar.
+   If he follows through, comparing his entropy-optimal segmentation against our
+   5-slot model would be a strong validation test.
+
+**Skeptical assessment:**
+- quimqu's work is methodologically careful — cross-validated, null-controlled,
+  and iteratively refined in response to Stolfi's critiques. The space-free test
+  is particularly convincing.
+- However, Stolfi's core objection is never fully resolved: the re-justification
+  test used character-count breaks but the TLA + abbreviation + spacing-adjustment
+  model hasn't been fully simulated. The gap between real AUC (0.88–0.90) and
+  control AUC (0.55–0.74) is large but not conclusive until all known scribal
+  behaviors (iin→m abbreviation, spacing compression, word splitting near margins)
+  are modeled together.
+- The compression hypothesis was tested and rejected, which is clean. But Stolfi's
+  specific claim about `-am` abbreviation is supported by his frequency data and
+  wasn't directly tested in quimqu's framework.
+- The cross-line predictability drop is the thread's strongest discrete finding,
+  but it could also be explained by paragraph-level topic shifts or by a cipher
+  that resets per line — it doesn't distinguish between LAAFU-as-production-method
+  and LAAFU-as-cipher-property.
+- **Probability that this line of research leads to decipherment: ~2/10.** The
+  findings constrain how the text was produced but don't identify meaning. The
+  space-free detection result and cross-line reset are immediately useful for our
+  pipeline as validation benchmarks.
+
+---
+
+*Last updated: 2026-04-19 (Phase 107)*
 *Sources: voynich.ninja/forum-58 (all 7 pages), en.wikipedia.org/wiki/Voynich_manuscript,
 ciphermysteries.com (main VMS page + 6 sub-pages + ~2,250 comments), reddit.com/r/voynich,
 project workspace analysis (DISCOVERIES.md, SYNTHESIS.md)*

@@ -1,0 +1,375 @@
+{
+  "corpus_split": {
+    "n_folios_A": 107,
+    "n_folios_B": 78,
+    "n_folios_untagged": 16,
+    "n_words_A": 11728,
+    "n_words_B": 25504,
+    "n_words_all": 40351,
+    "n_disagreements": 79,
+    "old_A": 25451,
+    "old_B": 14900
+  },
+  "distributions": {
+    "jsd_unigram": 0.018405784658134652,
+    "jsd_bigram": 0.09879904245351398,
+    "jsd_initial": 0.023659802223269806,
+    "jsd_final": 0.03181892828084188,
+    "jsd_medial": 0.09118396645829953,
+    "jsd_word_length": 0.003053390548107237,
+    "top_differential_classes": [
+      {
+        "class": "C23",
+        "freq_A": 0.00083,
+        "freq_B": 0.00016,
+        "log_OR": 2.2989
+      },
+      {
+        "class": "C22",
+        "freq_A": 0.00297,
+        "freq_B": 0.00092,
+        "log_OR": 1.6912
+      },
+      {
+        "class": "C24",
+        "freq_A": 0.00201,
+        "freq_B": 0.00088,
+        "log_OR": 1.1971
+      },
+      {
+        "class": "C11",
+        "freq_A": 0.00323,
+        "freq_B": 0.00151,
+        "log_OR": 1.1009
+      },
+      {
+        "class": "C12",
+        "freq_A": 0.00297,
+        "freq_B": 0.0014,
+        "log_OR": 1.08
+      },
+      {
+        "class": "C14",
+        "freq_A": 0.00245,
+        "freq_B": 0.00118,
+        "log_OR": 1.0507
+      },
+      {
+        "class": "C16",
+        "freq_A": 0.00275,
+        "freq_B": 0.00153,
+        "log_OR": 0.8512
+      },
+      {
+        "class": "C7",
+        "freq_A": 0.00812,
+        "freq_B": 0.01453,
+        "log_OR": -0.8368
+      },
+      {
+        "class": "C4",
+        "freq_A": 0.10361,
+        "freq_B": 0.06131,
+        "log_OR": 0.757
+      },
+      {
+        "class": "C20",
+        "freq_A": 0.00087,
+        "freq_B": 0.00142,
+        "log_OR": -0.6811
+      }
+    ]
+  },
+  "vocabulary": {
+    "word_types_A": 3533,
+    "word_types_B": 4993,
+    "word_shared": 1101,
+    "word_jaccard": 0.1483,
+    "chunk_types_A": 390,
+    "chunk_types_B": 435,
+    "chunk_shared": 323,
+    "chunk_jaccard": 0.6434,
+    "class_bigram_types_A": 279,
+    "class_bigram_types_B": 277,
+    "class_bigram_shared": 230,
+    "class_bigram_jaccard": 0.7055
+  },
+  "cross_perplexity": {
+    "ppl_A_on_A": 4.331,
+    "ppl_B_on_B": 3.957,
+    "ppl_A_on_B": 4.376,
+    "ppl_B_on_A": 4.711,
+    "ratio_AB": 1.0104,
+    "ratio_BA": 1.1906
+  },
+  "permutation_test": {
+    "n_permutations": 1000,
+    "unigram_jsd_real": 0.018406,
+    "unigram_jsd_null_mean": 0.00109,
+    "unigram_jsd_null_std": 0.000536,
+    "unigram_z": 32.311,
+    "unigram_p": 0.0,
+    "bigram_jsd_real": 0.098799,
+    "bigram_jsd_null_mean": 0.011373,
+    "bigram_jsd_null_std": 0.001941,
+    "bigram_z": 45.046,
+    "bigram_p": 0.0
+  },
+  "classifier": {
+    "loo_accuracy": 0.8865,
+    "majority_baseline": 0.5784,
+    "n_misclassified": 21,
+    "clf_z": 11.715,
+    "clf_p": 0.0
+  },
+  "differential_bigrams": {
+    "A_enriched": [
+      {
+        "bigram": "C0→C2",
+        "count_A": 13,
+        "count_B": 2,
+        "log_OR": 3.5137
+      },
+      {
+        "bigram": "C11→C5",
+        "count_A": 11,
+        "count_B": 2,
+        "log_OR": 3.2823
+      },
+      {
+        "bigram": "C1→C24",
+        "count_A": 12,
+        "count_B": 3,
+        "log_OR": 2.9172
+      },
+      {
+        "bigram": "C21→C5",
+        "count_A": 8,
+        "count_B": 2,
+        "log_OR": 2.8462
+      },
+      {
+        "bigram": "C24→C5",
+        "count_A": 10,
+        "count_B": 3,
+        "log_OR": 2.6657
+      },
+      {
+        "bigram": "C1→C12",
+        "count_A": 12,
+        "count_B": 4,
+        "log_OR": 2.5546
+      },
+      {
+        "bigram": "C23→C5",
+        "count_A": 9,
+        "count_B": 3,
+        "log_OR": 2.5213
+      },
+      {
+        "bigram": "C4→C14",
+        "count_A": 22,
+        "count_B": 8,
+        "log_OR": 2.4851
+      },
+      {
+        "bigram": "C9→C12",
+        "count_A": 7,
+        "count_B": 3,
+        "log_OR": 2.1802
+      },
+      {
+        "bigram": "C1→C5",
+        "count_A": 840,
+        "count_B": 395,
+        "log_OR": 2.1683
+      },
+      {
+        "bigram": "C0→C11",
+        "count_A": 15,
+        "count_B": 7,
+        "log_OR": 2.128
+      },
+      {
+        "bigram": "C10→C16",
+        "count_A": 8,
+        "count_B": 4,
+        "log_OR": 1.9982
+      },
+      {
+        "bigram": "C14→C4",
+        "count_A": 8,
+        "count_B": 4,
+        "log_OR": 1.9982
+      },
+      {
+        "bigram": "C13→C5",
+        "count_A": 22,
+        "count_B": 12,
+        "log_OR": 1.9287
+      },
+      {
+        "bigram": "C0→C4",
+        "count_A": 75,
+        "count_B": 42,
+        "log_OR": 1.9097
+      }
+    ],
+    "B_enriched": [
+      {
+        "bigram": "C1→C3",
+        "count_A": 640,
+        "count_B": 3145,
+        "log_OR": -1.2153
+      },
+      {
+        "bigram": "C10→C0",
+        "count_A": 99,
+        "count_B": 500,
+        "log_OR": -1.2499
+      },
+      {
+        "bigram": "C10→C8",
+        "count_A": 4,
+        "count_B": 23,
+        "log_OR": -1.304
+      },
+      {
+        "bigram": "C13→C7",
+        "count_A": 4,
+        "count_B": 24,
+        "log_OR": -1.3641
+      },
+      {
+        "bigram": "C9→C2",
+        "count_A": 152,
+        "count_B": 845,
+        "log_OR": -1.3903
+      },
+      {
+        "bigram": "C9→C7",
+        "count_A": 31,
+        "count_B": 180,
+        "log_OR": -1.4379
+      },
+      {
+        "bigram": "C2→C9",
+        "count_A": 3,
+        "count_B": 23,
+        "log_OR": -1.6665
+      },
+      {
+        "bigram": "C7→C0",
+        "count_A": 21,
+        "count_B": 158,
+        "log_OR": -1.8014
+      },
+      {
+        "bigram": "C9→C3",
+        "count_A": 116,
+        "count_B": 948,
+        "log_OR": -1.9446
+      },
+      {
+        "bigram": "C20→C0",
+        "count_A": 2,
+        "count_B": 21,
+        "log_OR": -2.0236
+      },
+      {
+        "bigram": "C5→C9",
+        "count_A": 52,
+        "count_B": 563,
+        "log_OR": -2.3433
+      },
+      {
+        "bigram": "C3→C9",
+        "count_A": 6,
+        "count_B": 94,
+        "log_OR": -2.7811
+      },
+      {
+        "bigram": "C9→C20",
+        "count_A": 1,
+        "count_B": 23,
+        "log_OR": -2.8889
+      },
+      {
+        "bigram": "C10→C9",
+        "count_A": 22,
+        "count_B": 531,
+        "log_OR": -3.4814
+      },
+      {
+        "bigram": "C7→C2",
+        "count_A": 0,
+        "count_B": 15,
+        "log_OR": -3.8735
+      }
+    ]
+  },
+  "nl_fit": {
+    "Czech": {
+      "jsd_A": 0.19912,
+      "jsd_B": 0.205224
+    },
+    "English": {
+      "jsd_A": 0.136862,
+      "jsd_B": 0.144676
+    },
+    "French": {
+      "jsd_A": 0.124123,
+      "jsd_B": 0.132111
+    },
+    "German": {
+      "jsd_A": 0.124285,
+      "jsd_B": 0.132892
+    },
+    "Italian": {
+      "jsd_A": 0.099913,
+      "jsd_B": 0.103643
+    },
+    "Latin": {
+      "jsd_A": 0.115597,
+      "jsd_B": 0.114726
+    }
+  },
+  "entropy": {
+    "class_unigram_A": 3.1545,
+    "class_unigram_B": 3.1497,
+    "word_unigram_A": 9.9444,
+    "word_unigram_B": 9.871
+  },
+  "section_analysis": {
+    "mixed_sections": [
+      "herbal",
+      "astro",
+      "pharma"
+    ],
+    "section_lang_counts": {
+      "herbal": {
+        "A": 86,
+        "B": 26
+      },
+      "astro": {
+        "A": 2,
+        "B": 2
+      },
+      "bio": {
+        "B": 20
+      },
+      "bio_fold": {
+        "B": 3
+      },
+      "pharma": {
+        "A": 19,
+        "B": 4
+      },
+      "stars_text": {
+        "B": 23
+      },
+      "cosmo": {}
+    }
+  },
+  "glyph_jsd": 0.017016
+}

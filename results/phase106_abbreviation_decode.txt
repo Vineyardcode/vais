@@ -1,0 +1,516 @@
+================================================================================
+PHASE 106 — ABBREVIATION DECODE ATTEMPT ON FOLIO 1r
+================================================================================
+
+Method: Apply JKP paleographic identifications (thread 2394)
+and Cappelli abbreviation mappings positionally to EVA tokens.
+
+Mappings used:
+  FINAL: y→-us, m→-ris, s→-er, r→-rum, aiin→-aium, iin→-ium
+  INITIAL: y→con-, k→I, p→per-, f→far-, qo→quo-/lo-
+  MEDIAL: o→o (kept), a→a, e→e, ch→ch, sh→sh
+  GALLOWS: k→I, t→t, p→per, f→far
+
+────────────────────────────────────────────────────────────────────────────────
+DECODE A: Latin Abbreviation (JKP + Cappelli)
+────────────────────────────────────────────────────────────────────────────────
+
+  f1r.1
+    EVA:  fachys ykal ar ataiin shol shory cthres y kor sholdy
+    LAT:  farachuser conIal arum ataium shol shorus cthreer us Iorum sholdus
+
+  f1r.2
+    EVA:  sory ckhar or y kair chtaiin shar ase cthar cthar dan
+    LAT:  sorus ckharum orum us Iairum chtaium sharum ase ctharum ctharum dan
+
+  f1r.3
+    EVA:  syaiir sheky or ykaiin shod cthoary cthes daraiin sy
+    LAT:  susaiirum sheIus orum conIaium shod cthoarus ctheer daraium sus
+
+  f1r.4
+    EVA:  soiin oteey oteos roloty cthiar daiin okaiin or okan
+    LAT:  soiin oteeus oteoer rolotus cthiarum daium oIaium orum oIan
+
+  f1r.5
+    EVA:  sair y chear cthaiin cphar cfhaiin
+    LAT:  sairum us chearum cthaium cpharum cfhaium
+
+  f1r.6
+    EVA:  ydaraishy
+    LAT:  condaraishus
+
+  f1r.7
+    EVA:  odar c'y shol cphoy oydar sh s cfhoaiin shodary
+    LAT:  odarum c'us shol cphous ousdarum sh er cfhoaium shodarus
+
+  f1r.8
+    EVA:  yshey shody okchoy otchol chocthy os chy dain chor kos
+    LAT:  consheus shodus oIchous otchol chocthus oer chus dain chorum Ioer
+
+  f1r.9
+    EVA:  daiin shos cfhol shody
+    LAT:  daium shoer cfhol shodus
+
+  f1r.10
+    EVA:  dain os teody
+    LAT:  dain oer teodus
+
+  f1r.11
+    EVA:  ydain cphesaiin ols cphey ytain shoshy cphodal es
+    LAT:  condain cphesaium oler cpheus contain shoshus cphodal eer
+
+  f1r.12
+    EVA:  oksho kshoy otairin oteol okan shodain sckhey daiin
+    LAT:  oIsho Ishous otairin oteol oIan shodain sckheus daium
+
+  f1r.13
+    EVA:  shoy ckhey kodaiin cphy cphodaiils cthey sho oldain d
+    LAT:  shous ckheus Iodaium cphus cphodaiiler ctheus sho oldain d
+
+  f1r.14
+    EVA:  dain oiin chol odaiin chodain chdy okain dn cthy kod
+    LAT:  dain oiin chol odaium chodain chdus oIain dn cthus Iod
+
+  f1r.15
+    EVA:  daiin shckhey ckeo r char shey kol chol chol kor chal
+    LAT:  daium shckheus cIeo rum charum sheus Iol chol chol Iorum chal
+
+  f1r.16
+    EVA:  sho chol shodan kshy kchy d or chodaiin sho koeam
+    LAT:  sho chol shodan Ishus Ichus d orum chodaium sho Ioearis
+
+  f1r.17
+    EVA:  ycho tchey chekain sheo pshol dydyd cthy daictoy
+    LAT:  concho tcheus cheIain sheo pershol dydyd cthus daictous
+
+  f1r.18
+    EVA:  yto shol she kodshey cphealy dar ain dain ckhyds
+    LAT:  conto shol she Iodsheus cphealus darum ain dain ckhusder
+
+  f1r.19
+    EVA:  dchar shcthaiin okaiir chey chy tol cthols dlocto
+    LAT:  dcharum shcthaium oIaiirum cheus chus tol ctholer dlocto
+
+  f1r.20
+    EVA:  shok chor chey dain ckhey
+    LAT:  shok chorum cheus dain ckheus
+
+  f1r.21
+    EVA:  otol daiiin
+    LAT:  otol daiium
+
+  f1r.22
+    EVA:  cpho shaiin shokcheey chol tshodeesy shey pydeey cha ro dar
+    LAT:  cpho shaium shoIcheeus chol tshodeesus sheus perusdeeus cha ro darum
+
+  f1r.23
+    EVA:  ydoin chol dain cthal dar shear kaiin dar shey cthar
+    LAT:  condoin chol dain cthal darum shearum Iaium darum sheus ctharum
+
+  f1r.24
+    EVA:  cho o kaiin shoaiin okol daiin far cthol daiin ctholdar
+    LAT:  cho o Iaium shoaium oIol daium fararum cthol daium ctholdarum
+
+  f1r.25
+    EVA:  ycheey okeey oky daiin okchey kokaiin ochol kdchy dal
+    LAT:  concheeus oIeeus oIus daium oIcheus IoIaium ochol Idchus dal
+
+  f1r.26
+    EVA:  dcheo shody koshey cthy ok chey keey keey dal chtor
+    LAT:  dcheo shodus Iosheus cthus ok cheus Ieeus Ieeus dal chtorum
+
+  f1r.27
+    EVA:  eo chol chok choty chotey
+    LAT:  eo chol chok chotus choteus
+
+  f1r.28
+    EVA:  dchaiin
+    LAT:  dchaium
+
+────────────────────────────────────────────────────────────────────────────────
+DECODE B: Italian Hypothesis (qo→lo per Pelling)
+────────────────────────────────────────────────────────────────────────────────
+
+  f1r.1
+    EVA:  fachys ykal ar ataiin shol shory cthres y kor sholdy
+    ITA:  farachuser conIal arum ataium shol shorus cthreer us Iorum sholdus
+
+  f1r.2
+    EVA:  sory ckhar or y kair chtaiin shar ase cthar cthar dan
+    ITA:  sorus ckharum orum us Iairum chtaium sharum ase ctharum ctharum dan
+
+  f1r.3
+    EVA:  syaiir sheky or ykaiin shod cthoary cthes daraiin sy
+    ITA:  susaiirum sheIus orum conIaium shod cthoarus ctheer daraium sus
+
+  f1r.4
+    EVA:  soiin oteey oteos roloty cthiar daiin okaiin or okan
+    ITA:  soiin oteeus oteoer rolotus cthiarum daium oIaium orum oIan
+
+  f1r.5
+    EVA:  sair y chear cthaiin cphar cfhaiin
+    ITA:  sairum us chearum cthaium cpharum cfhaium
+
+  f1r.6
+    EVA:  ydaraishy
+    ITA:  condaraishus
+
+  f1r.7
+    EVA:  odar c'y shol cphoy oydar sh s cfhoaiin shodary
+    ITA:  odarum c'us shol cphous ousdarum sh er cfhoaium shodarus
+
+  f1r.8
+    EVA:  yshey shody okchoy otchol chocthy os chy dain chor kos
+    ITA:  consheus shodus oIchous otchol chocthus oer chus dain chorum Ioer
+
+  f1r.9
+    EVA:  daiin shos cfhol shody
+    ITA:  daium shoer cfhol shodus
+
+  f1r.10
+    EVA:  dain os teody
+    ITA:  dain oer teodus
+
+  f1r.11
+    EVA:  ydain cphesaiin ols cphey ytain shoshy cphodal es
+    ITA:  condain cphesaium oler cpheus contain shoshus cphodal eer
+
+  f1r.12
+    EVA:  oksho kshoy otairin oteol okan shodain sckhey daiin
+    ITA:  oIsho Ishous otairin oteol oIan shodain sckheus daium
+
+  f1r.13
+    EVA:  shoy ckhey kodaiin cphy cphodaiils cthey sho oldain d
+    ITA:  shous ckheus Iodaium cphus cphodaiiler ctheus sho oldain d
+
+  f1r.14
+    EVA:  dain oiin chol odaiin chodain chdy okain dn cthy kod
+    ITA:  dain oiin chol odaium chodain chdus oIain dn cthus Iod
+
+  f1r.15
+    EVA:  daiin shckhey ckeo r char shey kol chol chol kor chal
+    ITA:  daium shckheus cIeo rum charum sheus Iol chol chol Iorum chal
+
+  f1r.16
+    EVA:  sho chol shodan kshy kchy d or chodaiin sho koeam
+    ITA:  sho chol shodan Ishus Ichus d orum chodaium sho Ioearis
+
+  f1r.17
+    EVA:  ycho tchey chekain sheo pshol dydyd cthy daictoy
+    ITA:  concho tcheus cheIain sheo pershol dydyd cthus daictous
+
+  f1r.18
+    EVA:  yto shol she kodshey cphealy dar ain dain ckhyds
+    ITA:  conto shol she Iodsheus cphealus darum ain dain ckhusder
+
+  f1r.19
+    EVA:  dchar shcthaiin okaiir chey chy tol cthols dlocto
+    ITA:  dcharum shcthaium oIaiirum cheus chus tol ctholer dlocto
+
+  f1r.20
+    EVA:  shok chor chey dain ckhey
+    ITA:  shok chorum cheus dain ckheus
+
+  f1r.21
+    EVA:  otol daiiin
+    ITA:  otol daiium
+
+  f1r.22
+    EVA:  cpho shaiin shokcheey chol tshodeesy shey pydeey cha ro dar
+    ITA:  cpho shaium shoIcheeus chol tshodeesus sheus perusdeeus cha ro darum
+
+  f1r.23
+    EVA:  ydoin chol dain cthal dar shear kaiin dar shey cthar
+    ITA:  condoin chol dain cthal darum shearum Iaium darum sheus ctharum
+
+  f1r.24
+    EVA:  cho o kaiin shoaiin okol daiin far cthol daiin ctholdar
+    ITA:  cho o Iaium shoaium oIol daium fararum cthol daium ctholdarum
+
+  f1r.25
+    EVA:  ycheey okeey oky daiin okchey kokaiin ochol kdchy dal
+    ITA:  concheeus oIeeus oIus daium oIcheus IoIaium ochol Idchus dal
+
+  f1r.26
+    EVA:  dcheo shody koshey cthy ok chey keey keey dal chtor
+    ITA:  dcheo shodus Iosheus cthus ok cheus Ieeus Ieeus dal chtorum
+
+  f1r.27
+    EVA:  eo chol chok choty chotey
+    ITA:  eo chol chok chotus choteus
+
+  f1r.28
+    EVA:  dchaiin
+    ITA:  dchaium
+
+────────────────────────────────────────────────────────────────────────────────
+DECODE C: Latin + o-as-null (EVA-o removed)
+────────────────────────────────────────────────────────────────────────────────
+
+  f1r.1
+    EVA:  fachys ykal ar ataiin shol shory cthres y kor sholdy
+    NUL:  farachuser conIal arum ataium shol shorus cthreer us Iorum sholdus
+
+  f1r.2
+    EVA:  sory ckhar or y kair chtaiin shar ase cthar cthar dan
+    NUL:  sorus ckharum orum us Iairum chtaium sharum ase ctharum ctharum dan
+
+  f1r.3
+    EVA:  syaiir sheky or ykaiin shod cthoary cthes daraiin sy
+    NUL:  susaiirum sheIus orum conIaium shd ctharus ctheer daraium sus
+
+  f1r.4
+    EVA:  soiin oteey oteos roloty cthiar daiin okaiin or okan
+    NUL:  soiin teeus teer roltus cthiarum daium Iaium orum Ian
+
+  f1r.5
+    EVA:  sair y chear cthaiin cphar cfhaiin
+    NUL:  sairum us chearum cthaium cpharum cfhaium
+
+  f1r.6
+    EVA:  ydaraishy
+    NUL:  condaraishus
+
+  f1r.7
+    EVA:  odar c'y shol cphoy oydar sh s cfhoaiin shodary
+    NUL:  darum c'us shol cphus usdarum sh er cfhaium shdarus
+
+  f1r.8
+    EVA:  yshey shody okchoy otchol chocthy os chy dain chor kos
+    NUL:  consheus shdus Ichus tchol chcthus er chus dain chorum Ier
+
+  f1r.9
+    EVA:  daiin shos cfhol shody
+    NUL:  daium sher cfhol shdus
+
+  f1r.10
+    EVA:  dain os teody
+    NUL:  dain er tedus
+
+  f1r.11
+    EVA:  ydain cphesaiin ols cphey ytain shoshy cphodal es
+    NUL:  condain cphesaium oler cpheus contain shshus cphdal eer
+
+  f1r.12
+    EVA:  oksho kshoy otairin oteol okan shodain sckhey daiin
+    NUL:  Ish Ishus tairin teol Ian shdain sckheus daium
+
+  f1r.13
+    EVA:  shoy ckhey kodaiin cphy cphodaiils cthey sho oldain d
+    NUL:  shus ckheus Idaium cphus cphdaiiler ctheus sh oldain d
+
+  f1r.14
+    EVA:  dain oiin chol odaiin chodain chdy okain dn cthy kod
+    NUL:  dain oiin chol daium chdain chdus Iain dn cthus Id
+
+  f1r.15
+    EVA:  daiin shckhey ckeo r char shey kol chol chol kor chal
+    NUL:  daium shckheus cIe rum charum sheus Iol chol chol Iorum chal
+
+  f1r.16
+    EVA:  sho chol shodan kshy kchy d or chodaiin sho koeam
+    NUL:  sh chol shdan Ishus Ichus d orum chdaium sh Iearis
+
+  f1r.17
+    EVA:  ycho tchey chekain sheo pshol dydyd cthy daictoy
+    NUL:  conch tcheus cheIain she pershol dydyd cthus daictus
+
+  f1r.18
+    EVA:  yto shol she kodshey cphealy dar ain dain ckhyds
+    NUL:  cont shol she Idsheus cphealus darum ain dain ckhusder
+
+  f1r.19
+    EVA:  dchar shcthaiin okaiir chey chy tol cthols dlocto
+    NUL:  dcharum shcthaium Iaiirum cheus chus tol ctholer dlct
+
+  f1r.20
+    EVA:  shok chor chey dain ckhey
+    NUL:  shk chorum cheus dain ckheus
+
+  f1r.21
+    EVA:  otol daiiin
+    NUL:  tol daiium
+
+  f1r.22
+    EVA:  cpho shaiin shokcheey chol tshodeesy shey pydeey cha ro dar
+    NUL:  cph shaium shIcheeus chol tshdeesus sheus perusdeeus cha r darum
+
+  f1r.23
+    EVA:  ydoin chol dain cthal dar shear kaiin dar shey cthar
+    NUL:  condoin chol dain cthal darum shearum Iaium darum sheus ctharum
+
+  f1r.24
+    EVA:  cho o kaiin shoaiin okol daiin far cthol daiin ctholdar
+    NUL:  ch  Iaium shaium Iol daium fararum cthol daium ctholdarum
+
+  f1r.25
+    EVA:  ycheey okeey oky daiin okchey kokaiin ochol kdchy dal
+    NUL:  concheeus Ieeus Ius daium Icheus IIaium chol Idchus dal
+
+  f1r.26
+    EVA:  dcheo shody koshey cthy ok chey keey keey dal chtor
+    NUL:  dche shdus Isheus cthus k cheus Ieeus Ieeus dal chtorum
+
+  f1r.27
+    EVA:  eo chol chok choty chotey
+    NUL:  e chol chk chtus chteus
+
+  f1r.28
+    EVA:  dchaiin
+    NUL:  dchaium
+
+────────────────────────────────────────────────────────────────────────────────
+FREQUENCY ANALYSIS OF DECODED TOKENS
+────────────────────────────────────────────────────────────────────────────────
+
+  Latin — top 30 decoded tokens:
+    daium                   7
+    chol                    7
+    dain                    6
+    orum                    4
+    darum                   4
+    shol                    3
+    us                      3
+    ctharum                 3
+    shodus                  3
+    sho                     3
+    cthus                   3
+    sheus                   3
+    cheus                   3
+    Iorum                   2
+    oIan                    2
+    oer                     2
+    chus                    2
+    chorum                  2
+    ckheus                  2
+    d                       2
+    Iaium                   2
+    dal                     2
+    Ieeus                   2
+    farachuser              1
+    conIal                  1
+    arum                    1
+    ataium                  1
+    shorus                  1
+    cthreer                 1
+    sholdus                 1
+
+  Italian — top 30 decoded tokens:
+    daium                   7
+    chol                    7
+    dain                    6
+    orum                    4
+    darum                   4
+    shol                    3
+    us                      3
+    ctharum                 3
+    shodus                  3
+    sho                     3
+    cthus                   3
+    sheus                   3
+    cheus                   3
+    Iorum                   2
+    oIan                    2
+    oer                     2
+    chus                    2
+    chorum                  2
+    ckheus                  2
+    d                       2
+    Iaium                   2
+    dal                     2
+    Ieeus                   2
+    farachuser              1
+    conIal                  1
+    arum                    1
+    ataium                  1
+    shorus                  1
+    cthreer                 1
+    sholdus                 1
+
+  o-null — top 30 decoded tokens:
+    daium                   8
+    chol                    8
+    dain                    6
+    darum                   5
+    orum                    4
+    sh                      4
+    shol                    3
+    us                      3
+    ctharum                 3
+    Iaium                   3
+    er                      3
+    shdus                   3
+    cthus                   3
+    sheus                   3
+    cheus                   3
+    Ieeus                   3
+    Iorum                   2
+    Ian                     2
+    cfhaium                 2
+    cphus                   2
+    Ichus                   2
+    chus                    2
+    chorum                  2
+    Ishus                   2
+    ckheus                  2
+    d                       2
+    Iol                     2
+    she                     2
+    tol                     2
+    shaium                  2
+
+────────────────────────────────────────────────────────────────────────────────
+RECOGNIZABLE WORD SCAN
+────────────────────────────────────────────────────────────────────────────────
+
+  Latin matches in Decode A:
+    ar                   → arum
+    y                    → us
+    or                   → orum
+    y                    → us
+    or                   → orum
+    or                   → orum
+    y                    → us
+    s                    → er
+    r                    → rum
+    or                   → orum
+    dal                  → dal
+    dal                  → dal
+
+  Italian matches in Decode B:
+
+  Latin matches in Decode C (o-null):
+    ar                   → arum
+    y                    → us
+    or                   → orum
+    y                    → us
+    or                   → orum
+    or                   → orum
+    y                    → us
+    s                    → er
+    os                   → er
+    os                   → er
+    kod                  → Id
+    r                    → rum
+    or                   → orum
+    oky                  → Ius
+    dal                  → dal
+    dal                  → dal
+
+────────────────────────────────────────────────────────────────────────────────
+ASSESSMENT
+────────────────────────────────────────────────────────────────────────────────
+
+This is a MECHANICAL substitution — it applies JKP's glyph
+identifications as if they were a simple cipher key. This is
+almost certainly an oversimplification because:
+  1. The same EVA glyph may represent different abbreviations
+     depending on context (e.g., EVA-y = -us/-um/-os/-con)
+  2. Gallows are composite constructions, not single letters
+  3. EVA character boundaries may be wrong (composite glyphs)
+  4. There may be additional encoding layers (verbose cipher,
+     alphabet substitution) on top of the abbreviation
+  5. We don't know the underlying language
+
+The purpose is to see if ANY recognizable patterns emerge,
+not to produce a translation.

@@ -1,0 +1,205 @@
+========================================================================
+PHASE 99 — SCRIPT TYPOLOGY COMPARISON
+========================================================================
+
+────────────────────────────────────────────────────────────────────────
+STEP 1: VMS chunk structural metrics
+────────────────────────────────────────────────────────────────────────
+
+  VMS chunks: 78,526 tokens, 523 types
+  log2(inventory): 9.03
+  Within-chunk MI: 1.5403
+  Slot MI: 0.3826
+  Slot fill rates: S1=0.279, S2=0.476, S3=0.343, S4=0.274, S5=0.820
+  Mean fill rate: 0.438
+  Onset dominance: 0.636
+  Positional entropy ratio: 0.9058
+  h_ratio (chunk level): 0.8176
+  Units/word: 1.948
+  Mean glyphs/chunk: 2.329
+
+────────────────────────────────────────────────────────────────────────
+STEP 2: NL reference corpora — syllable-level metrics
+────────────────────────────────────────────────────────────────────────
+
+  Loaded 24 NL corpus analyses
+
+  Corpus                              type     inv   w_MI  fill  h_rat   u/w  pos_e
+  ─────────────────────────────────── ────── ───── ────── ───── ────── ───── ──────
+  Czech_kralice_char                  char      39  0.000 1.000 0.8325  4.58 0.8325
+  Czech_kralice_syl                   syl     5698  0.677 0.649 0.5907  1.97 0.8877
+  Latin_apicius_char                  char      36  0.000 1.000 0.8681  5.03 0.8681
+  Latin_apicius_syl                   syl     2512  0.562 0.722 0.4962  1.94 0.8830
+  Latin_caesar_char                   char      23  0.000 1.000 0.8652  6.14 0.8652
+  Latin_caesar_syl                    syl     2369  0.538 0.724 0.5694  2.27 0.8856
+  Latin_erasmus_char                  char      28  0.000 1.000 0.8608  5.91 0.8608
+  Latin_erasmus_syl                   syl     1419  0.571 0.733 0.4199  2.19 0.8865
+  Latin_galen_char                    char      33  0.000 1.000 0.8785  5.38 0.8785
+  Latin_galen_syl                     syl     3857  0.599 0.710 0.5169  2.02 0.8916
+  Latin_pliny_char                    char      28  0.000 1.000 0.8826  5.93 0.8826
+  Latin_pliny_syl                     syl     4990  0.469 0.698 0.5911  2.25 0.8999
+  Latin_vulgate_genesis_char          char      26  0.000 1.000 0.8693  5.18 0.8693
+  Latin_vulgate_genesis_syl           syl     2242  0.604 0.732 0.5120  1.91 0.8875
+  english_cury_char                   char      33  0.000 1.000 0.8689  4.13 0.8689
+  english_cury_syl                    syl     4339  0.693 0.697 0.4792  1.60 0.8962
+  french_viandier_char                char      30  0.000 1.000 0.8225  4.77 0.8225
+  french_viandier_syl                 syl     1378  0.805 0.731 0.4374  1.66 0.8717
+  german_faust_char                   char      30  0.000 1.000 0.8237  4.78 0.8237
+  german_faust_syl                    syl     4112  0.705 0.778 0.4961  1.54 0.8908
+  german_ortolf_raw_char              char      26  0.000 1.000 0.8938  4.81 0.8938
+  german_ortolf_raw_syl               syl     3217  0.702 0.734 0.3387  1.60 0.8986
+  italian_cucina_char                 char      32  0.000 1.000 0.8528  4.56 0.8528
+  italian_cucina_syl                  syl     1532  0.357 0.644 0.5959  1.94 0.9033
+
+────────────────────────────────────────────────────────────────────────
+STEP 3: Typological feature space (8 dimensions)
+────────────────────────────────────────────────────────────────────────
+
+  System                              log2_inv within_u  n_slots mean_fil onset_do pos_entr  h_ratio units_pe
+  ─────────────────────────────────── ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─
+  Arabic_abjad                           5.170    0.080    2.000    0.580    1.400    0.800    0.760    4.500
+  Cherokee_syllabary                     6.409    0.000    1.000    1.000    1.000    0.850    0.830    3.000
+  Cyrillic_alphabet                      5.044    0.000    1.000    1.000    1.000    0.840    0.840    5.500
+  Czech_kralice_syl                     12.476    0.677    3.000    0.649    1.374    0.888    0.591    1.970
+  Devanagari_abugida                     5.585    0.450    3.000    0.720    1.150    0.880    0.820    3.500
+  Ethiopic_abugida                       7.508    0.550    2.000    0.950    1.020    0.900    0.840    3.000
+  Hebrew_abjad                           4.755    0.050    2.000    0.550    1.500    0.820    0.780    4.000
+  Japanese_hiragana                      5.524    0.000    1.000    1.000    1.000    0.880    0.860    3.500
+  Korean_Hangul                         11.198    0.600    3.000    0.780    1.050    0.850    0.720    2.500
+  Latin_alphabet                         4.700    0.000    1.000    1.000    1.000    0.850    0.850    5.000
+  Latin_apicius_syl                     11.295    0.562    3.000    0.722    1.111    0.883    0.496    1.939
+  Latin_caesar_syl                      11.210    0.538    3.000    0.724    1.177    0.886    0.569    2.271
+  Latin_erasmus_syl                     10.471    0.571    3.000    0.733    1.176    0.886    0.420    2.193
+  Latin_galen_syl                       11.913    0.599    3.000    0.710    1.167    0.892    0.517    2.023
+  Latin_pliny_syl                       12.285    0.469    3.000    0.698    1.214    0.900    0.591    2.247
+  Latin_vulgate_genesis_syl             11.131    0.604    3.000    0.732    1.105    0.887    0.512    1.912
+  Thai_abugida                           6.248    0.400    4.000    0.650    1.120    0.870    0.810    3.200
+  Tibetan_abugida                        5.087    0.350    4.000    0.620    1.100    0.860    0.800    2.800
+  VMS_chunks                             9.031    1.540    5.000    0.438    0.636    0.906    0.818    1.948
+  english_cury_syl                      12.083    0.693    3.000    0.697    1.151    0.896    0.479    1.600
+  french_viandier_syl                   10.428    0.805    3.000    0.731    1.225    0.872    0.437    1.660
+  german_faust_syl                      12.006    0.705    3.000    0.778    1.090    0.891    0.496    1.540
+  german_ortolf_raw_syl                 11.652    0.702    3.000    0.734    1.153    0.899    0.339    1.599
+  italian_cucina_syl                    10.581    0.357    3.000    0.644    1.336    0.903    0.596    1.943
+
+────────────────────────────────────────────────────────────────────────
+STEP 4: Distances from VMS to each reference system
+────────────────────────────────────────────────────────────────────────
+
+  System                              Type          Euclidean     Cosine
+  ─────────────────────────────────── ──────────── ────────── ──────────
+  Thai_abugida                        abugida           5.174      0.613
+  Tibetan_abugida                     abugida           5.282      0.656
+  Latin_vulgate_genesis_syl           NL_syl            5.299      0.667
+  german_faust_syl                    NL_syl            5.318      0.678
+  english_cury_syl                    NL_syl            5.345      0.688
+  Korean_Hangul                       featural_alphabetic_syllabary      5.376      0.713
+  Latin_apicius_syl                   NL_syl            5.426      0.745
+  Latin_galen_syl                     NL_syl            5.476      0.770
+  Latin_caesar_syl                    NL_syl            5.536      0.831
+  Devanagari_abugida                  abugida           5.653      0.872
+  Latin_pliny_syl                     NL_syl            5.699      0.897
+  french_viandier_syl                 NL_syl            5.708      0.861
+  german_ortolf_raw_syl               NL_syl            5.776      0.826
+  Latin_erasmus_syl                   NL_syl            5.783      0.946
+  Czech_kralice_syl                   NL_syl            5.998      0.970
+  Ethiopic_abugida                    abugida           6.051      0.987
+  italian_cucina_syl                  NL_syl            6.158      1.096
+  Japanese_hiragana                   syllabary         7.815      1.449
+  Cherokee_syllabary                  syllabary         7.918      1.522
+  Latin_alphabet                      alphabet          8.426      1.476
+  Hebrew_abjad                        abjad             8.483      1.521
+  Arabic_abjad                        abjad             8.524      1.487
+  Cyrillic_alphabet                   alphabet          8.667      1.478
+
+────────────────────────────────────────────────────────────────────────
+STEP 5: Mean distance by script type
+────────────────────────────────────────────────────────────────────────
+
+  Script Type                     Mean dist   Min dist     N
+  ────────────────────────────── ────────── ────────── ─────
+  NL_syllable                         5.627      5.299    12
+  abjad                               8.503      8.483     2
+  abugida                             5.540      5.174     4
+  alphabet                            8.546      8.426     2
+  featural_alphabetic_syllabary       5.376      5.376     1
+  syllabary                           7.867      7.815     2
+
+────────────────────────────────────────────────────────────────────────
+STEP 6: Permutation test — is nearest match significant?
+────────────────────────────────────────────────────────────────────────
+
+  Nearest reference: Thai_abugida (d=5.174)
+  Permutation p-value: 1.0000
+  (Fraction of random feature combinations closer to ANY reference)
+
+────────────────────────────────────────────────────────────────────────
+STEP 7: Feature sensitivity — leave-one-out nearest neighbour
+────────────────────────────────────────────────────────────────────────
+
+  Baseline nearest neighbour: Thai_abugida
+
+  Dropped feature           New NN                         Changed?  
+  ───────────────────────── ────────────────────────────── ──────────
+  log2_inventory            Thai_abugida                   no        
+  within_unit_mi            Thai_abugida                   no        
+  n_slots                   Korean_Hangul                  YES       
+  mean_fill_rate            Korean_Hangul                  YES       
+  onset_dominance           Thai_abugida                   no        
+  pos_entropy_ratio         Korean_Hangul                  YES       
+  h_ratio                   Thai_abugida                   no        
+  units_per_word            Thai_abugida                   no        
+
+  Stability: 5/8 features can be dropped without changing NN
+
+────────────────────────────────────────────────────────────────────────
+STEP 8: Per-feature comparison with nearest reference
+────────────────────────────────────────────────────────────────────────
+
+  VMS vs Thai_abugida:
+  Feature                    VMS_raw  Ref_raw    VMS_z    Ref_z   |diff|
+  ───────────────────────── ──────── ──────── ──────── ──────── ────────
+  log2_inventory               9.031    6.248    0.042   -0.909    0.951
+  within_unit_mi               1.540    0.400    3.139   -0.208    3.347
+  n_slots                      5.000    4.000    2.343    1.321    1.022
+  mean_fill_rate               0.438    0.650   -2.080   -0.637    1.443
+  onset_dominance              0.636    1.120   -2.997   -0.094    2.903
+  pos_entropy_ratio            0.906    0.870    1.170   -0.168    1.338
+  h_ratio                      0.818    0.810    0.974    0.928    0.046
+  units_per_word               1.948    3.200   -0.709    0.437    1.146
+
+────────────────────────────────────────────────────────────────────────
+STEP 9: VMS vs Korean Hangul — structural deep comparison
+────────────────────────────────────────────────────────────────────────
+
+  Feature                          VMS     Hangul     Match?
+  ───────────────────────── ────────── ────────── ──────────
+  Slot count                     5.000      3.000     DIFFER
+  Mean fill rate                 0.438      0.780     DIFFER
+  Within-unit MI                 1.540      0.600     DIFFER
+  h_ratio                        0.818      0.720      CLOSE
+  Units/word                     1.948      2.500      CLOSE
+  Onset dominance                0.636      1.050     DIFFER
+  Pos entropy ratio              0.906      0.850      CLOSE
+  log2(inventory)                9.031     11.198      CLOSE
+
+────────────────────────────────────────────────────────────────────────
+STEP 10: Summary and Verdict
+────────────────────────────────────────────────────────────────────────
+
+  Top 5 closest systems to VMS:
+    1. Thai_abugida (abugida): d=5.174
+    2. Tibetan_abugida (abugida): d=5.282
+    3. Latin_vulgate_genesis_syl (NL_syllable): d=5.299
+    4. german_faust_syl (NL_syllable): d=5.318
+    5. english_cury_syl (NL_syllable): d=5.345
+
+  Top 3 closest by type:
+    abugida                            : mean=5.540, min=5.174
+    syllabary                          : mean=7.867, min=7.815
+    alphabet                           : mean=8.546, min=8.426
+    abjad                              : mean=8.503, min=8.483
+    featural_alphabetic_syllabary      : mean=5.376, min=5.376
+    NL_syllable                        : mean=5.627, min=5.299
+
+  Results saved to C:\projects\voynich_slop\results\phase99_script_typology.json

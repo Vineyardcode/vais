@@ -1,0 +1,177 @@
+========================================================================
+PHASE 98 — GENERATIVE CHUNK MODEL
+========================================================================
+
+────────────────────────────────────────────────────────────────────────
+STEP 1: Parse VMS into chunk sequences
+────────────────────────────────────────────────────────────────────────
+
+  [all] Words: 40,351, Chunks: 78,526, Unparsed glyphs: 354 / 183224 (0.2%)
+  Chunk types: 523, Mean chunks/word: 1.95
+
+  [A] Words: 25,451, Chunks: 49,835, Unparsed glyphs: 235 / 116099 (0.2%)
+  Chunk types: 487, Mean chunks/word: 1.96
+
+  [B] Words: 14,900, Chunks: 28,691, Unparsed glyphs: 119 / 67125 (0.2%)
+  Chunk types: 383, Mean chunks/word: 1.93
+
+────────────────────────────────────────────────────────────────────────
+STEP 2: VMS baseline fingerprints
+────────────────────────────────────────────────────────────────────────
+
+  [all] Chunk h_ratio: 0.8176, Glyph h_char: 0.6530
+          Zipf: -0.876, Heaps: 0.355, TTR: 0.0067, Hapax: 0.197
+          Cross-word MI: 0.7163, Pos Gini: 0.4423
+          Word types: 8118, Word TTR: 0.2014
+
+  [A] Chunk h_ratio: 0.8076, Glyph h_char: 0.6576
+          Zipf: -0.876, Heaps: 0.374, TTR: 0.0098, Hapax: 0.209
+          Cross-word MI: 0.8229, Pos Gini: 0.4485
+          Word types: 6094, Word TTR: 0.2398
+
+  [B] Chunk h_ratio: 0.7723, Glyph h_char: 0.6386
+          Zipf: -0.909, Heaps: 0.335, TTR: 0.0133, Hapax: 0.198
+          Cross-word MI: 0.9696, Pos Gini: 0.4494
+          Word types: 3603, Word TTR: 0.2418
+
+────────────────────────────────────────────────────────────────────────
+STEP 3: Train bigram and trigram Markov models
+────────────────────────────────────────────────────────────────────────
+
+  Bigram model: 524 contexts, held-out perplexity: 21.46
+  Trigram model: 6414 contexts, held-out perplexity: 49.20
+
+────────────────────────────────────────────────────────────────────────
+STEP 4: Generate synthetic texts and compute fingerprints
+────────────────────────────────────────────────────────────────────────
+
+  Synthetic bigram (mean ± std over 10 seeds):
+    h_ratio                  : 0.8401 ± 0.0005  (VMS: 0.8176)
+    glyph_h_char             : 0.6695 ± 0.0009  (VMS: 0.6530)
+    zipf_slope               : -0.8774 ± 0.0041  (VMS: -0.8755)
+    heaps_beta               : 0.3165 ± 0.0079  (VMS: 0.3547)
+    ttr                      : 0.0060 ± 0.0001  (VMS: 0.0067)
+    hapax_ratio              : 0.1201 ± 0.0098  (VMS: 0.1969)
+    cross_word_mi            : 0.4051 ± 0.0045  (VMS: 0.7163)
+    positional_gini          : 0.4415 ± 0.0035  (VMS: 0.4423)
+    word_ttr                 : 0.2051 ± 0.0008  (VMS: 0.2014)
+    mean_chunks_per_word     : 1.9474 ± 0.0033  (VMS: 1.9481)
+
+  Synthetic trigram (mean ± std over 10 seeds):
+    h_ratio                  : 0.8002 ± 0.0006  (VMS: 0.8176)
+    glyph_h_char             : 0.6524 ± 0.0008  (VMS: 0.6530)
+    zipf_slope               : -0.8742 ± 0.0038  (VMS: -0.8755)
+    heaps_beta               : 0.3158 ± 0.0137  (VMS: 0.3547)
+    ttr                      : 0.0060 ± 0.0001  (VMS: 0.0067)
+    hapax_ratio              : 0.1262 ± 0.0120  (VMS: 0.1969)
+    cross_word_mi            : 0.8483 ± 0.0090  (VMS: 0.7163)
+    positional_gini          : 0.4462 ± 0.0031  (VMS: 0.4423)
+    word_ttr                 : 0.1610 ± 0.0009  (VMS: 0.2014)
+    mean_chunks_per_word     : 1.9460 ± 0.0029  (VMS: 1.9481)
+
+────────────────────────────────────────────────────────────────────────
+STEP 5: Null models (shuffled chunks, uniform bigram)
+────────────────────────────────────────────────────────────────────────
+
+  Shuffled null (mean ± std over 10 seeds):
+    h_ratio                  : 0.9410 ± 0.0003  (VMS: 0.8176)
+    glyph_h_char             : 0.7138 ± 0.0001  (VMS: 0.6530)
+    zipf_slope               : -0.8755 ± 0.0000  (VMS: -0.8755)
+    heaps_beta               : 0.3366 ± 0.0100  (VMS: 0.3547)
+    ttr                      : 0.0067 ± 0.0000  (VMS: 0.0067)
+    hapax_ratio              : 0.1969 ± 0.0000  (VMS: 0.1969)
+    cross_word_mi            : 0.5373 ± 0.0027  (VMS: 0.7163)
+    positional_gini          : 0.2660 ± 0.0038  (VMS: 0.4423)
+
+  Uniform random (mean ± std over 10 seeds):
+    h_ratio                  : 0.7715 ± 0.0003  (VMS: 0.8176)
+    glyph_h_char             : 0.7865 ± 0.0003  (VMS: 0.6530)
+    zipf_slope               : -0.0338 ± 0.0068  (VMS: -0.8755)
+    heaps_beta               : 0.2217 ± 0.0044  (VMS: 0.3547)
+    ttr                      : 0.0067 ± 0.0000  (VMS: 0.0067)
+    hapax_ratio              : 0.0000 ± 0.0000  (VMS: 0.1969)
+    cross_word_mi            : 2.8876 ± 0.0035  (VMS: 0.7163)
+    positional_gini          : 0.2518 ± 0.0006  (VMS: 0.4423)
+
+────────────────────────────────────────────────────────────────────────
+STEP 6: Statistical comparison (z-scores: synthetic vs VMS)
+────────────────────────────────────────────────────────────────────────
+
+  Metric                          VMS  Bi_mean     Bi_z Tri_mean    Tri_z   Shuf_z    Uni_z
+  ────────────────────────── ──────── ──────── ──────── ──────── ──────── ──────── ────────
+  h_ratio                      0.8176   0.8401   -41.98   0.8002    26.94   0.9410  -387.48   0.7715   165.50
+  glyph_h_char                 0.6530   0.6695   -17.56   0.6524     0.66   0.7138  -475.04   0.7865  -402.25
+  zipf_slope                  -0.8755  -0.8774     0.45  -0.8742    -0.35      N/A      N/A  -0.0338  -123.87
+  heaps_beta                   0.3547   0.3165     4.86   0.3158     2.84   0.3366     1.82   0.2217    29.96
+  ttr                          0.0067   0.0060    12.62   0.0060    11.06      N/A      N/A      N/A      N/A
+  cross_word_mi                0.7163   0.4051    68.69   0.8483   -14.63   0.5373    65.76   2.8876  -629.30
+  positional_gini              0.4423   0.4415     0.21   0.4462    -1.29   0.2660    46.06   0.2518   317.80
+  word_ttr                     0.2014   0.2051    -4.70   0.1610    47.25   0.3562  -190.06   0.7189 -1155.27
+  mean_chunks_per_word         1.9481   1.9474     0.20   1.9460     0.73      N/A      N/A      N/A      N/A
+
+────────────────────────────────────────────────────────────────────────
+STEP 7: Collapse to 25 equivalence classes (Phase 86)
+────────────────────────────────────────────────────────────────────────
+
+  Phase 86 mapped: 206 / 523 chunk types
+  After extension: 523 / 523 chunk types mapped
+  Number of equivalence classes used: 25
+
+  VMS collapsed: h_ratio=0.8495, types=25, TTR=0.000318
+  Collapsed bigram: 26 contexts
+  Collapsed trigram: 394 contexts
+
+  Collapsed comparison:
+  Metric                    VMS  Bi_mean     Bi_z Tri_mean    Tri_z
+  ──────────────────── ──────── ──────── ──────── ──────── ────────
+  h_ratio                0.8495   0.8630   -21.10   0.8483     1.50
+  zipf_slope            -2.2688  -2.2608    -0.71  -2.2662    -0.12
+  heaps_beta             0.0734   0.0931    -1.25   0.0827    -0.63
+  ttr                    0.0003   0.0003     0.60   0.0003     0.29
+  hapax_ratio            0.0000      N/A      N/A      N/A      N/A
+
+────────────────────────────────────────────────────────────────────────
+STEP 8: Currier A vs B — separate generative models
+────────────────────────────────────────────────────────────────────────
+
+  Currier A:
+  Metric                    VMS Syn_mean        z
+  ──────────────────── ──────── ──────── ────────
+  h_ratio                0.8076   0.8255   -17.59
+  glyph_h_char           0.6576      N/A      N/A
+  zipf_slope            -0.8763  -0.8726    -0.62
+  cross_word_mi          0.8229      N/A      N/A
+  positional_gini        0.4485      N/A      N/A
+
+  Currier B:
+  Metric                    VMS Syn_mean        z
+  ──────────────────── ──────── ──────── ────────
+  h_ratio                0.7723   0.7953   -17.75
+  glyph_h_char           0.6386      N/A      N/A
+  zipf_slope            -0.9095  -0.9100     0.07
+  cross_word_mi          0.9696      N/A      N/A
+  positional_gini        0.4494      N/A      N/A
+
+────────────────────────────────────────────────────────────────────────
+STEP 9: 5-fold cross-validation of Markov models
+────────────────────────────────────────────────────────────────────────
+
+  5-fold CV perplexity:
+    Bigram:  23.40 ± 3.30
+    Trigram: 54.21 ± 9.54
+    Reduction (bi→tri): -131.7%
+
+────────────────────────────────────────────────────────────────────────
+STEP 10: Summary and Verdict
+────────────────────────────────────────────────────────────────────────
+
+  Mean |z| (synthetic vs VMS):
+    Bigram:  16.81 (max: 68.69)
+    Trigram: 11.75 (max: 47.25)
+
+  Key findings:
+    bigram chunk h_ratio: 0.8401 vs VMS 0.8176 (captures 102.8% of VMS value)
+    trigram chunk h_ratio: 0.8002 vs VMS 0.8176 (captures 97.9% of VMS value)
+    Bigram glyph h_char: 0.6695 vs VMS 0.6530
+
+  Results saved to C:\projects\voynich_slop\results\phase98_generative_chunk_model.json

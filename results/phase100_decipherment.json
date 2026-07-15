@@ -1,0 +1,276 @@
+{
+  "vms_class_vocab": [
+    "C0",
+    "C1",
+    "C10",
+    "C11",
+    "C12",
+    "C13",
+    "C14",
+    "C15",
+    "C16",
+    "C17",
+    "C18",
+    "C19",
+    "C2",
+    "C20",
+    "C21",
+    "C22",
+    "C23",
+    "C24",
+    "C3",
+    "C4",
+    "C5",
+    "C6",
+    "C7",
+    "C8",
+    "C9"
+  ],
+  "vms_n_words": 40309,
+  "dist_comparison": {
+    "Latin": {
+      "wl_jsd": 0.4938472885326065,
+      "vms_unigram_h": 3.1722188834649474,
+      "nl_unigram_h": 4.068038659400976,
+      "entropy_ratio": 0.7797907416966535,
+      "vms_alphabet_size": 25,
+      "nl_alphabet_size": 27,
+      "size_ratio": 0.9259259259259259
+    },
+    "Czech": {
+      "wl_jsd": 0.4111502049329736,
+      "vms_unigram_h": 3.1722188834649474,
+      "nl_unigram_h": 4.723785505539537,
+      "entropy_ratio": 0.6715416861635477,
+      "vms_alphabet_size": 25,
+      "nl_alphabet_size": 38,
+      "size_ratio": 0.6578947368421053
+    },
+    "German": {
+      "wl_jsd": 0.4905026842845177,
+      "vms_unigram_h": 3.1722188834649474,
+      "nl_unigram_h": 4.209359409864593,
+      "entropy_ratio": 0.7536108406497395,
+      "vms_alphabet_size": 25,
+      "nl_alphabet_size": 30,
+      "size_ratio": 0.8333333333333334
+    },
+    "Italian": {
+      "wl_jsd": 0.3473253508009488,
+      "vms_unigram_h": 3.1722188834649474,
+      "nl_unigram_h": 4.032987563380646,
+      "entropy_ratio": 0.7865679805880283,
+      "vms_alphabet_size": 25,
+      "nl_alphabet_size": 28,
+      "size_ratio": 0.8928571428571429
+    },
+    "French": {
+      "wl_jsd": 0.42454566465853705,
+      "vms_unigram_h": 3.1722188834649474,
+      "nl_unigram_h": 4.038951005510042,
+      "entropy_ratio": 0.7854066264080262,
+      "vms_alphabet_size": 25,
+      "nl_alphabet_size": 24,
+      "size_ratio": 1.0416666666666667
+    },
+    "English": {
+      "wl_jsd": 0.328828059888597,
+      "vms_unigram_h": 3.1722188834649474,
+      "nl_unigram_h": 4.263487399626266,
+      "entropy_ratio": 0.7440432177055388,
+      "vms_alphabet_size": 25,
+      "nl_alphabet_size": 28,
+      "size_ratio": 0.8928571428571429
+    }
+  },
+  "null_results": {
+    "Czech": {
+      "null_mean_rate": 0.008729202524383247,
+      "null_std_rate": 0.013250009905031118,
+      "null_max_rate": 0.09437751004016064,
+      "opt_rate_3plus": 0.0840504876649455,
+      "opt_hits_3plus": 586,
+      "z_score": 5.684621044091616
+    },
+    "English": {
+      "null_mean_rate": 0.013770223752151462,
+      "null_std_rate": 0.015269524976829473,
+      "null_max_rate": 0.08663224325874928,
+      "opt_rate_3plus": 0.060671256454388985,
+      "opt_hits_3plus": 423,
+      "z_score": 3.071544974280918
+    },
+    "French": {
+      "null_mean_rate": 0.005733218588640275,
+      "null_std_rate": 0.010006022628399445,
+      "null_max_rate": 0.07888697647733792,
+      "opt_rate_3plus": 0.019650028686173264,
+      "opt_hits_3plus": 137,
+      "z_score": 1.3908433564835052
+    },
+    "German": {
+      "null_mean_rate": 0.01685083189902467,
+      "null_std_rate": 0.01983584566750303,
+      "null_max_rate": 0.13482501434308664,
+      "opt_rate_3plus": 0.10728628800917958,
+      "opt_hits_3plus": 748,
+      "z_score": 4.559193372749158
+    },
+    "Italian": {
+      "null_mean_rate": 0.006835628227194492,
+      "null_std_rate": 0.01160069080547119,
+      "null_max_rate": 0.07530120481927711,
+      "opt_rate_3plus": 0.0963855421686747,
+      "opt_hits_3plus": 672,
+      "z_score": 7.71936046250333
+    },
+    "Latin": {
+      "null_mean_rate": 0.02454417670682731,
+      "null_std_rate": 0.024587423942654427,
+      "null_max_rate": 0.13625932300631097,
+      "opt_rate_3plus": 0.17283419391853128,
+      "opt_hits_3plus": 1205,
+      "z_score": 6.031132726940517
+    }
+  },
+  "cv_results": {
+    "Czech": {
+      "train_rate": 0.03602305475504323,
+      "test_rate": 0.030985915492957747,
+      "test_hits": 44,
+      "test_total": 1420
+    },
+    "English": {
+      "train_rate": 0.03998559077809798,
+      "test_rate": 0.03732394366197183,
+      "test_hits": 53,
+      "test_total": 1420
+    },
+    "French": {
+      "train_rate": 0.029358789625360232,
+      "test_rate": 0.021830985915492956,
+      "test_hits": 31,
+      "test_total": 1420
+    },
+    "German": {
+      "train_rate": 0.058717579250720464,
+      "test_rate": 0.05985915492957746,
+      "test_hits": 85,
+      "test_total": 1420
+    },
+    "Italian": {
+      "train_rate": 0.11203170028818443,
+      "test_rate": 0.10422535211267606,
+      "test_hits": 148,
+      "test_total": 1420
+    },
+    "Latin": {
+      "train_rate": 0.17363112391930835,
+      "test_rate": 0.16690140845070423,
+      "test_hits": 237,
+      "test_total": 1420
+    }
+  },
+  "decipherment_summary": {
+    "Czech": {
+      "freq_ll": -9.435270538363374,
+      "best_ll": -9.13928124605724,
+      "total_hits": 12003,
+      "total_words": 40309,
+      "hit_rate": 0.2977746905157657,
+      "positional_jsd": {
+        "initial": 0.47604381935044576,
+        "medial": 0.26641427390022965,
+        "final": 0.47139766723030174
+      }
+    },
+    "English": {
+      "freq_ll": -8.70417827098103,
+      "best_ll": -7.8071872564170395,
+      "total_hits": 20987,
+      "total_words": 40309,
+      "hit_rate": 0.5206529559155524,
+      "positional_jsd": {
+        "initial": 0.272496144316619,
+        "medial": 0.18158544971412927,
+        "final": 0.41841864975352394
+      }
+    },
+    "French": {
+      "freq_ll": -8.976808131781485,
+      "best_ll": -8.233118095718813,
+      "total_hits": 1084,
+      "total_words": 40309,
+      "hit_rate": 0.02689225731226277,
+      "positional_jsd": {
+        "initial": 0.5410734984934886,
+        "medial": 0.18725695496182176,
+        "final": 0.37988988230257276
+      }
+    },
+    "German": {
+      "freq_ll": -8.442168256077071,
+      "best_ll": -7.6910895662397465,
+      "total_hits": 29086,
+      "total_words": 40309,
+      "hit_rate": 0.7215758267384456,
+      "positional_jsd": {
+        "initial": 0.3648518743626442,
+        "medial": 0.16078130575587796,
+        "final": 0.35517380566965895
+      }
+    },
+    "Italian": {
+      "freq_ll": -8.646684163725453,
+      "best_ll": -8.635516016818762,
+      "total_hits": 22568,
+      "total_words": 40309,
+      "hit_rate": 0.5598749658885113,
+      "positional_jsd": {
+        "initial": 0.3407367578542102,
+        "medial": 0.2125960052240633,
+        "final": 0.18586138065044205
+      }
+    },
+    "Latin": {
+      "freq_ll": -8.21012848221159,
+      "best_ll": -8.065396749845101,
+      "total_hits": 31245,
+      "total_words": 40309,
+      "hit_rate": 0.775137066163884,
+      "positional_jsd": {
+        "initial": 0.32815330440165147,
+        "medial": 0.16948132395810417,
+        "final": 0.425878846558275
+      }
+    }
+  },
+  "best_language": "Italian",
+  "best_mapping": {
+    "C0": "i",
+    "C3": "e",
+    "C1": "u",
+    "C5": "c",
+    "C2": "o",
+    "C4": "d",
+    "C9": "n",
+    "C10": "l",
+    "C7": "r",
+    "C6": "s",
+    "C8": "q",
+    "C13": "t",
+    "C18": "a",
+    "C11": "b",
+    "C21": "v",
+    "C12": "\u00e0",
+    "C14": "f",
+    "C22": "\u00e8",
+    "C15": "m",
+    "C20": "z",
+    "C24": "x",
+    "C16": "g",
+    "C17": "p",
+    "C19": "h",
+    "C23": "\u00ec"
+  }
+}
