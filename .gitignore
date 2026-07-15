@@ -1,2 +1,4 @@
-reddit_post.md
 __pycache__/
+*.pyc
+scripts/_webui_*.py
+rerun/
