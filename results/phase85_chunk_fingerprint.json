@@ -172,9 +172,9 @@
     }
   },
   "null_shuffled_grammar": {
-    "h_ratio_mean": 0.6819059817272557,
-    "h_ratio_std": 0.02339117920168056,
-    "z_h_ratio": 5.802321830948499,
+    "h_ratio_mean": 0.679373685208758,
+    "h_ratio_std": 0.021873541762040254,
+    "z_h_ratio": 6.3206703219854585,
     "z_coverage": -1651451774679.0
   },
   "null_char_shuffled": {

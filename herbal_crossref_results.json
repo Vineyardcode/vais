@@ -365,15 +365,15 @@
       "score": 0.002358073782245741
     },
     {
-      "word": "okeedy",
-      "ring_freq": 3,
-      "herbA_freq": 14,
-      "score": 0.0022781157049223274
-    },
-    {
       "word": "otedy",
       "ring_freq": 2,
       "herbA_freq": 21,
+      "score": 0.0022781157049223274
+    },
+    {
+      "word": "okeedy",
+      "ring_freq": 3,
+      "herbA_freq": 14,
       "score": 0.0022781157049223274
     },
     {
@@ -383,15 +383,15 @@
       "score": 0.0021952472224131773
     },
     {
-      "word": "okar",
-      "ring_freq": 1,
-      "herbA_freq": 36,
-      "score": 0.0021091253092246054
-    },
-    {
       "word": "chees",
       "ring_freq": 3,
       "herbA_freq": 12,
+      "score": 0.0021091253092246054
+    },
+    {
+      "word": "okar",
+      "ring_freq": 1,
+      "herbA_freq": 36,
       "score": 0.0021091253092246054
     },
     {
@@ -449,7 +449,7 @@
       "score": 0.0018600736840268368
     },
     {
-      "word": "otor",
+      "word": "tchol",
       "ring_freq": 2,
       "herbA_freq": 14,
       "score": 0.0018600736840268368
@@ -461,7 +461,7 @@
       "score": 0.0018600736840268368
     },
     {
-      "word": "tchol",
+      "word": "otor",
       "ring_freq": 2,
       "herbA_freq": 14,
       "score": 0.0018600736840268368
@@ -473,15 +473,15 @@
       "score": 0.0017924118513914468
     },
     {
-      "word": "tchy",
-      "ring_freq": 1,
-      "herbA_freq": 25,
-      "score": 0.0017576044243538382
-    },
-    {
       "word": "oteedy",
       "ring_freq": 5,
       "herbA_freq": 5,
+      "score": 0.0017576044243538382
+    },
+    {
+      "word": "tchy",
+      "ring_freq": 1,
+      "herbA_freq": 25,
       "score": 0.0017576044243538382
     }
   ]

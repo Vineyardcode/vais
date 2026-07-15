@@ -252,13 +252,13 @@
       "r+_+l": 1
     },
     "char_to_words": {
-      "r": [
-        "rary",
-        "raral"
-      ],
       "d": [
         "dary",
         "doly"
+      ],
+      "y": [
+        "ykeol",
+        "ykaly"
       ],
       "f": [
         "fary"
@@ -269,9 +269,9 @@
         "salf",
         "saiin"
       ],
-      "y": [
-        "ykeol",
-        "ykaly"
+      "r": [
+        "rary",
+        "raral"
       ]
     }
   },

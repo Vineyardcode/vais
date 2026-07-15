@@ -247,9 +247,9 @@ TEST F: ANTI-ALTERNATION DECOMPOSITION
          a          6           0.1%         0.0%
         sh          3           0.0%         0.1%
          f          2           0.0%         0.6%
-         t          1           0.0%         0.0%
          k          1           0.0%         0.0%
          q          1           0.0%         0.0%
+         t          1           0.0%         0.0%
 
   H(c|prev)/H(c) with self-transitions surgically removed:
     Baseline: 0.6407

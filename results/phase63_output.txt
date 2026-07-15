@@ -142,15 +142,15 @@ TEST 5: Section-MI Sensitivity to Simulated Misbinding
 Baseline (current folio order):
   MI(last_char, section) = 0.0474, z = 136.0
 
-  Perturb 10% botanical folios: MI=0.0458 (retain 96.6% of baseline)
-  Perturb 20% botanical folios: MI=0.0440 (retain 92.8% of baseline)
-  Perturb 30% botanical folios: MI=0.0430 (retain 90.7% of baseline)
-  Perturb 50% botanical folios: MI=0.0399 (retain 84.1% of baseline)
+  Perturb 10% botanical folios: MI=0.0459 (retain 96.8% of baseline)
+  Perturb 20% botanical folios: MI=0.0441 (retain 93.0% of baseline)
+  Perturb 30% botanical folios: MI=0.0429 (retain 90.4% of baseline)
+  Perturb 50% botanical folios: MI=0.0404 (retain 85.2% of baseline)
 
 Interpretation: If misbinding affects ~20-30% of botanical folios,
 the section-MI signal should retain:
-  20% perturbation → 92.8% retention
-  30% perturbation → 90.7% retention
+  20% perturbation → 93.0% retention
+  30% perturbation → 90.4% retention
 
 ======================================================================
 TEST 6: Within-Quire Scribe Interleaving Detection
@@ -191,7 +191,7 @@ ADJUDICATION: Critical Assessment
 3. SECTION-MI ROBUSTNESS:
 
    With 20% botanical folios perturbed: MI retains 93% of baseline
-   With 30% botanical folios perturbed: MI retains 91% of baseline
+   With 30% botanical folios perturbed: MI retains 90% of baseline
    → Phase 62 section-MI signals are robust to moderate misbinding
 
 4. LANGUAGE A vs B DISTINCTION:

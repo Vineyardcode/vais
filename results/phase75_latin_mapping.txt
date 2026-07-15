@@ -557,13 +557,13 @@ PHASE 75 SUMMARY
 ══════════════════════════════════════════════════════════════════════
 
 Unique 4-letter sets from best mappings: 7
-  ['C', 'F', 'N', 'R']
-  ['A', 'D', 'N', 'S']
-  ['A', 'M', 'R', 'V']
   ['C', 'M', 'N', 'X']
-  ['A', 'H', 'S', 'V']
-  ['D', 'M', 'R', 'U']
   ['O', 'Q', 'S', 'U']
+  ['D', 'M', 'R', 'U']
+  ['C', 'F', 'N', 'R']
+  ['A', 'H', 'S', 'V']
+  ['A', 'M', 'R', 'V']
+  ['A', 'D', 'N', 'S']
 
 NO Latin text reaches 70% coverage in top-4 letters.
 This suggests VMS 81% gallows concentration is UNUSUAL.

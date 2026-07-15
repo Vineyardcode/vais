@@ -1358,20 +1358,13 @@
       [
         "coptic",
         "klom",
-        "ldam",
+        "oloaram",
         "CONSONANT",
         0.6666666666666666
       ],
       [
         "coptic",
         "klom",
-        "oloaram",
-        "CONSONANT",
-        0.6666666666666666
-      ],
-      [
-        "coptic",
-        "klm",
         "ldam",
         "CONSONANT",
         0.6666666666666666
@@ -1384,9 +1377,16 @@
         0.6666666666666666
       ],
       [
+        "coptic",
+        "klm",
+        "ldam",
+        "CONSONANT",
+        0.6666666666666666
+      ],
+      [
         "hebrew",
         "tlh",
-        "olch",
+        "olsh",
         "CONSONANT",
         0.6666666666666666
       ],
@@ -1400,7 +1400,7 @@
       [
         "hebrew",
         "tlh",
-        "olsh",
+        "olch",
         "CONSONANT",
         0.6666666666666666
       ]
@@ -1409,13 +1409,6 @@
       [
         "hebrew",
         "shor",
-        "alsh",
-        "CONSONANT",
-        0.6666666666666666
-      ],
-      [
-        "hebrew",
-        "shor",
         "osh",
         "CONSONANT",
         0.6666666666666666
@@ -1429,7 +1422,7 @@
       ],
       [
         "hebrew",
-        "shr",
+        "shor",
         "alsh",
         "CONSONANT",
         0.6666666666666666
@@ -1445,6 +1438,13 @@
         "hebrew",
         "shr",
         "shoda",
+        "CONSONANT",
+        0.6666666666666666
+      ],
+      [
+        "hebrew",
+        "shr",
+        "alsh",
         "CONSONANT",
         0.6666666666666666
       ]

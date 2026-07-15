@@ -67,11 +67,11 @@ STEP 3: 25-class distributions — A vs B
   Class      freq_A   freq_B     diff   log_OR
   C23        0.0008   0.0002  +0.0007   +2.299 ***
   C22        0.0030   0.0009  +0.0021   +1.691 ***
+  C24        0.0020   0.0009  +0.0011   +1.197 ***
   C11        0.0032   0.0015  +0.0017   +1.101 ***
   C16        0.0016   0.0008  +0.0009   +1.101 ***
   C12        0.0030   0.0014  +0.0016   +1.080 ***
   C14        0.0024   0.0012  +0.0013   +1.051 ***
-  C24        0.0031   0.0016  +0.0015   +0.932 ***
   C7         0.0081   0.0145  -0.0064   -0.837 ***
   C4         0.1036   0.0613  +0.0423   +0.757 ***
   C20        0.0009   0.0014  -0.0006   -0.681 ***
@@ -80,9 +80,9 @@ STEP 3: 25-class distributions — A vs B
   C17        0.0011   0.0007  +0.0004   +0.624 ***
   C10        0.0392   0.0569  -0.0177   -0.538 ***
   C6         0.0090   0.0128  -0.0037   -0.498   *
+  C15        0.0028   0.0020  +0.0008   +0.482   *
   C5         0.1152   0.0833  +0.0319   +0.469   *
   C8         0.0080   0.0058  +0.0022   +0.463   *
-  C15        0.0016   0.0012  +0.0004   +0.435   *
   C3         0.1515   0.2033  -0.0518   -0.424   *
   C9         0.0547   0.0710  -0.0164   -0.378   *
   C19        0.0006   0.0004  +0.0001   +0.364   *
@@ -91,9 +91,9 @@ STEP 3: 25-class distributions — A vs B
   C1         0.1729   0.1870  -0.0141   -0.113    
   C18        0.0038   0.0037  +0.0001   +0.032    
 
-  Unigram JSD(A,B) = 0.018400
+  Unigram JSD(A,B) = 0.018418
   Bigram  JSD(A,B) = 0.098799
-  Initial JSD(A,B) = 0.023673
+  Initial JSD(A,B) = 0.023693
   Final   JSD(A,B) = 0.031819
   Medial  JSD(A,B) = 0.091184
   WordLen JSD(A,B) = 0.003053
@@ -120,7 +120,7 @@ STEP 4: Vocabulary overlap — A vs B
   CLASS BIGRAM TYPES: A=279  B=277  shared=230
   Jaccard(class bigrams) = 0.7055
 
-  Top A-only words (not in B):  ctho(18), cthody(16), chom(14), choiin(13), qotchol(13), qotchor(12), doiin(10), ctheol(10), okchol(10), qokchor(9), chotchy(9), kcho(9), chory(9), ycheor(9), ksho(8)
+  Top A-only words (not in B):  ctho(18), cthody(16), chom(14), choiin(13), qotchol(13), qotchor(12), okchol(10), doiin(10), ctheol(10), kcho(9), chotchy(9), qokchor(9), chory(9), ycheor(9), ksho(8)
   Top B-only words (not in B):  qokeedy(307), otedy(166), okedy(112), okeedy(103), qotedy(91), qoteedy(77), keedy(63), qokchdy(57), opchedy(53), lkaiin(51), olkeedy(50), kedy(48), kain(46), shdy(45), tedy(42)
 
 ────────────────────────────────────────────────────────────────────────
@@ -129,10 +129,10 @@ STEP 5: Markov cross-perplexity — A vs B
 
   Cross-perplexity matrix (class bigrams, Laplace-smoothed):
   Train \ Test         Test A     Test B
-  Model A                4.33       4.38
+  Model A                4.33       4.37
   Model B                4.71       3.96
 
-  Cross/within ratio: A→B = 1.011  B→A = 1.190
+  Cross/within ratio: A→B = 1.011  B→A = 1.191
   → SIMILAR grammar with moderate divergence
 
 ────────────────────────────────────────────────────────────────────────
@@ -140,7 +140,7 @@ STEP 6: Permutation test — is A/B split significant?
 ────────────────────────────────────────────────────────────────────────
 
   Running 1000 permutations (shuffling folio labels)...
-  Unigram JSD:  real=0.018400  null=0.001091±0.000535  z=+32.34  p=0.0000
+  Unigram JSD:  real=0.018418  null=0.001092±0.000537  z=+32.28  p=0.0000
   Bigram  JSD:  real=0.098799  null=0.011373±0.001941  z=+45.05  p=0.0000
 
   → A/B split is HIGHLY SIGNIFICANT at both unigram and bigram levels
@@ -231,14 +231,14 @@ STEP 9: NL distribution fit — separately for A and B
 
   Rank-frequency JSD (top-25 classes vs top-25 letters):
   NL Language      JSD vs A   JSD vs B       diff
-  Czech            0.199183   0.205247  -0.006064
-  English          0.136878   0.144655  -0.007777
-  French           0.124122   0.132055  -0.007932
-  German           0.124216   0.132847  -0.008631
-  Italian          0.099749   0.103541  -0.003792
-  Latin            0.115664   0.114676  +0.000987
+  Czech            0.199120   0.205298  -0.006178
+  English          0.136862   0.144649  -0.007787
+  French           0.124123   0.132013  -0.007890
+  German           0.124285   0.132768  -0.008483
+  Italian          0.099913   0.103355  -0.003442
+  Latin            0.115597   0.114640  +0.000957
 
-  Class-unigram entropy: A=3.1543 bits  B=3.1496 bits
+  Class-unigram entropy: A=3.1545 bits  B=3.1493 bits
 
   Word-unigram entropy: A=9.9444 bits  B=9.8710 bits
 
@@ -257,12 +257,12 @@ STEP 10: Section effect — is A/B a proxy for manuscript section?
   stars_text              0         23   100.0%    10889
 
   Within-section A/B JSD (sections with both A and B folios):
-    herbal          A= 6983 words  B= 2870 words  JSD=0.032030
+    herbal          A= 6983 words  B= 2870 words  JSD=0.031998
     astro           A=  753 words  B=  457 words  JSD=0.037032
-    pharma          A= 3992 words  B=  691 words  JSD=0.052918
+    pharma          A= 3992 words  B=  691 words  JSD=0.053353
 
   Between-section JSD for SAME language (A only, herbal vs others):
-    herbal-A vs pharma-A  (6983 vs 3992 words)  JSD=0.033689
+    herbal-A vs pharma-A  (6983 vs 3992 words)  JSD=0.033696
 
 ────────────────────────────────────────────────────────────────────────
 STEP 11: Glyph-level A vs B comparison
@@ -308,13 +308,13 @@ STEP 12: Synthesis and conclusions
     ALL prior A/B results (Phases 3, 63, 68, 98) are contaminated.
 
   FINDING 2: DISTRIBUTIONAL DIVERGENCE
-    Class unigram JSD = 0.018400
+    Class unigram JSD = 0.018418
     Class bigram  JSD = 0.098799
     Glyph-level   JSD = 0.017016
     Permutation test: SIGNIFICANT (p=0.0000, z=+32.3)
 
   FINDING 3: GRAMMAR SHARING
-    Cross-perplexity ratio A→B = 1.011, B→A = 1.190
+    Cross-perplexity ratio A→B = 1.011, B→A = 1.191
     → A and B have SIMILAR but distinguishable grammars
 
   FINDING 4: VOCABULARY OVERLAP

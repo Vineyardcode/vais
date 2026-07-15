@@ -1,12 +1,12 @@
 {
   "null_model": {
-    "actual_pct": 99.08256880733946,
-    "random_pct": 21.6954128440367,
-    "z_score": 20.60549477852154
+    "actual_pct": 99.07407407407408,
+    "random_pct": 21.572222222222223,
+    "z_score": 20.95092103306433
   },
   "blend_test": {
-    "avg_real": 0.9362860608402315,
-    "avg_null": 0.7746277580032741
+    "avg_real": 0.9363266834746573,
+    "avg_null": 0.7775434898750532
   },
   "h_permutation": {
     "p_value": 0.0,
@@ -14,8 +14,8 @@
     "n_verbal_h": 10
   },
   "construct_chains": {
-    "self_repeat_ratio": 1.556337406849167,
-    "aba_ratio": 1.4909506214370227
+    "self_repeat_ratio": 1.5505387028980024,
+    "aba_ratio": 1.4858291692682406
   },
   "reparse": {
     "clean_parse_pct": 64.82382133995037,

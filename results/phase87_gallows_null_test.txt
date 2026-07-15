@@ -144,11 +144,11 @@
       'chey' ← ['chey', 'cheky', 'checkhy', 'chckhey', 'checthy']
       'oy' ← ['oty', 'oky', 'oy', 'ockhy', 'octhy']
       'choy' ← ['choky', 'choty', 'chockhy', 'chocthy', 'choy']
-      'shey' ← ['shey', 'sheckhy', 'sheky', 'shecthy', 'shckhey']
+      'shey' ← ['shey', 'sheky', 'sheckhy', 'shecthy', 'shckhey']
       'chy' ← ['chy', 'chckhy', 'chcthy', 'kchy', 'tchy']
       'chedy' ← ['chedy', 'tchedy', 'pchedy', 'kchedy', 'chckhedy']
       'oaiin' ← ['okaiin', 'otaiin', 'oaiin', 'opaiin', 'ofaiin']
-      'cho' ← ['cho', 'tcho', 'kcho', 'chok', 'pcho']
+      'cho' ← ['cho', 'kcho', 'tcho', 'chok', 'pcho']
       'sheey' ← ['sheey', 'sheeky', 'sheety', 'shekey', 'sheckhey']
 
   O_STRIPPED MERGE ANALYSIS:
@@ -157,16 +157,16 @@
     Types that merged: 2980 → 1236 groups
     Net type reduction: 1744 (21.2%)
     Top merge groups:
-      'dl' ← ['dol', 'dl', 'odl', 'odol', 'dolo']
+      'dl' ← ['dol', 'dl', 'odl', 'odol', 'dloo']
       'tar' ← ['otar', 'tar', 'otoar', 'toar', 'taor']
-      'cheey' ← ['cheey', 'ocheey', 'choeey', 'ocheoey', 'cheoey']
-      'cheky' ← ['cheky', 'cheoky', 'choeky', 'cheooky', 'chekoy']
+      'cheey' ← ['cheey', 'ocheey', 'cheoey', 'cheeoy', 'ocheoey']
+      'cheky' ← ['cheky', 'cheoky', 'choeky', 'chekoy', 'ocheky']
       'pchedy' ← ['opchedy', 'pchedy', 'pcheody', 'opcheody', 'pochedy']
       'tchedy' ← ['otchedy', 'tchedy', 'tcheody', 'otcheody', 'otochedy']
       'tees' ← ['otees', 'oteeos', 'teeos', 'toees', 'tees']
       'r' ← ['or', 'r', 'ro', 'oro', 'oor']
-      'daiin' ← ['daiin', 'odaiin', 'doaiin', 'daoiin', 'daiino']
-      'dar' ← ['dar', 'odar', 'daor', 'daro', 'doaro']
+      'daiin' ← ['daiin', 'odaiin', 'daoiin', 'doaiin', 'daiino']
+      'dar' ← ['dar', 'odar', 'daro', 'doaro', 'daor']
 
   GALLOWS+O_STRIPPED MERGE ANALYSIS:
     Original types: 8191
@@ -174,12 +174,12 @@
     Types that merged: 5541 → 1143 groups
     Net type reduction: 4398 (53.7%)
     Top merge groups:
-      'chey' ← ['chey', 'cheky', 'checkhy', 'otchey', 'okchey']
+      'chey' ← ['chey', 'cheky', 'checkhy', 'otchey', 'opchey']
       'chy' ← ['chy', 'chckhy', 'chcthy', 'otchy', 'choky']
       'chedy' ← ['chedy', 'cheody', 'opchedy', 'otchedy', 'tchedy']
       'cheey' ← ['cheey', 'cheeky', 'chkeey', 'checkhey', 'chokeey']
       'y' ← ['y', 'oty', 'cthy', 'oky', 'ckhy']
-      'shey' ← ['shey', 'sheckhy', 'sheky', 'shecthy', 'otshey']
+      'shey' ← ['shey', 'sheky', 'sheckhy', 'shecthy', 'otshey']
       'l' ← ['ol', 'l', 'otol', 'okol', 'cthol']
       'chdy' ← ['chdy', 'chody', 'otchdy', 'okchdy', 'opchdy']
       'eey' ← ['okeey', 'oteey', 'keey', 'teey', 'ctheey']

@@ -106,41 +106,41 @@ STEP 4: WORD FRAME ANALYSIS (SLOT2 replaced with _)
     ──────────────────────────────  ──────────────────────────────  ──────────────────────────────
     o.t|_.l|y                       otaly, otaly                    otaly, otaly, otaly, otaly    
       SLOT2 content — Spring: a=2 e=0  Autumn: a=4 e=0
-    o.k|_.y                         okeey, okeey                    okeey, okey, okeey            
-      SLOT2 content — Spring: a=0 e=2  Autumn: a=0 e=3
     o.t|_.l                         otal, otal, otal, otal          otal                          
       SLOT2 content — Spring: a=4 e=0  Autumn: a=1 e=0
+    o.k|_.y                         okeey, okeey                    okeey, okey, okeey            
+      SLOT2 content — Spring: a=0 e=2  Autumn: a=0 e=3
     _.r                             ar, ar, ar, ar                  ar                            
       SLOT2 content — Spring: a=4 e=0  Autumn: a=1 e=0
-    _.r|y                           ary, ary, ary                   eery                          
-      SLOT2 content — Spring: a=3 e=0  Autumn: a=0 e=1
-    o.k|_.l                         okal, okal                      okal, okal                    
-      SLOT2 content — Spring: a=2 e=0  Autumn: a=2 e=0
-    o.k|_.l|y                       okaly, okaly                    okaly, okaly                  
-      SLOT2 content — Spring: a=2 e=0  Autumn: a=2 e=0
     o.k|y                           oky                             oky, oky, oky                 
       SLOT2 content — Spring: a=0 e=0  Autumn: a=0 e=0
+    _.r|y                           ary, ary, ary                   eery                          
+      SLOT2 content — Spring: a=3 e=0  Autumn: a=0 e=1
+    o.k|_.l|y                       okaly, okaly                    okaly, okaly                  
+      SLOT2 content — Spring: a=2 e=0  Autumn: a=2 e=0
+    o.k|_.l                         okal, okal                      okal, okal                    
+      SLOT2 content — Spring: a=2 e=0  Autumn: a=2 e=0
     o.k|_.o.l|y                     okeoly                          okeoly, okeeoly               
       SLOT2 content — Spring: a=0 e=1  Autumn: a=0 e=2
     o.t|_.y                         oteey                           oteey, otey                   
       SLOT2 content — Spring: a=0 e=1  Autumn: a=0 e=2
-    y.p|_.i.i.n                     ypaiin                          ypaiin                        
-      SLOT2 content — Spring: a=1 e=0  Autumn: a=1 e=0
     o.k|_.l|d.y                     okaldy                          okaldy                        
       SLOT2 content — Spring: a=1 e=0  Autumn: a=1 e=0
     d|_.i.i.n                       daiin                           daiin                         
       SLOT2 content — Spring: a=1 e=0  Autumn: a=1 e=0
-    o|_.o.d|_.i.i.n                 oeeodaiin                       oeeodaiin                     
-      SLOT2 content — Spring: a=1 e=1  Autumn: a=1 e=1
-    o|_.s|_.i.i.n                   oeeesaiin                       oeesaiin                      
-      SLOT2 content — Spring: a=1 e=1  Autumn: a=1 e=1
-    o.k|_.m                         okam                            okam                          
+    y.p|_.i.i.n                     ypaiin                          ypaiin                        
       SLOT2 content — Spring: a=1 e=0  Autumn: a=1 e=0
-    o.k|o.d.y                       okody                           okody                         
-      SLOT2 content — Spring: a=0 e=0  Autumn: a=0 e=0
     o.k|y.d.y                       okydy                           okydy                         
       SLOT2 content — Spring: a=0 e=0  Autumn: a=0 e=0
+    o|_.s|_.i.i.n                   oeeesaiin                       oeesaiin                      
+      SLOT2 content — Spring: a=1 e=1  Autumn: a=1 e=1
     ch.y                            chy                             chy                           
+      SLOT2 content — Spring: a=0 e=0  Autumn: a=0 e=0
+    o.k|_.m                         okam                            okam                          
+      SLOT2 content — Spring: a=1 e=0  Autumn: a=1 e=0
+    o|_.o.d|_.i.i.n                 oeeodaiin                       oeeodaiin                     
+      SLOT2 content — Spring: a=1 e=1  Autumn: a=1 e=1
+    o.k|o.d.y                       okody                           okody                         
       SLOT2 content — Spring: a=0 e=0  Autumn: a=0 e=0
 
   Spring-only frames: 143

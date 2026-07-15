@@ -11,15 +11,15 @@ only ~9 distinct characters {a,e,o,d,l,r,s,m,i}, might ANY
 random 3-5 char string decompose into two 'known' parts?
 
   Characters in real roots (N≥10): abcdeghijlmnoqrswxyz (20 chars)
-  Number of real roots (N≥10): 192
-  Lengths: Counter({2: 62, 3: 56, 4: 42, 1: 20, 5: 11, 0: 1})
+  Number of real roots (N≥10): 191
+  Lengths: Counter({2: 62, 3: 55, 4: 42, 1: 20, 5: 11, 0: 1})
 
   Random 3-char strings decomposable: 1376/5000 (27.5%)
   Random 4-char strings decomposable: 163/5000 (3.3%)
   Random 5-char strings decomposable: 14/5000 (0.3%)
   Random 6-char strings decomposable: 0/5000 (0.0%)
 
-  With N≥5 threshold (318 roots):
+  With N≥5 threshold (315 roots):
   Random 3-char strings decomposable: 1890/5000 (37.8%)
   Random 4-char strings decomposable: 290/5000 (5.8%)
   Random 5-char strings decomposable: 31/5000 (0.6%)
@@ -30,10 +30,10 @@ random 3-5 char string decompose into two 'known' parts?
   Random 5-char strings decomposable: 0/5000 (0.0%)
 
   HEAD-TO-HEAD COMPARISON:
-  Actual long roots decomposable: 108/109 (99.1%)
-  Random strings (same lengths):  avg 21.7% (SD 3.8%)
-  Z-score: 20.61
-  → ACTUAL roots decompose MORE than random (z=20.6). Compounds are REAL.
+  Actual long roots decomposable: 107/108 (99.1%)
+  Random strings (same lengths):  avg 21.6% (SD 3.7%)
+  Z-score: 20.95
+  → ACTUAL roots decompose MORE than random (z=21.0). Compounds are REAL.
 
 ============================================================================
 PHASE 30b: DO COMPOUNDS INHERIT PARENT DISTRIBUTIONS?
@@ -44,27 +44,27 @@ resemble a blend of che's and o's distributions. Test via cosine
 similarity between compound dist and average-of-parents dist.
 
   Compound       N  cos(C,blend)  cos(C,p1)  cos(C,p2)  Verdict
-  cheo         263         0.892      0.961      0.783  SUPPORTS
+  cheo         264         0.892      0.962      0.783  SUPPORTS
   ech          117         0.935      0.964      0.882  SUPPORTS
-  heo          115         0.954      0.973      0.897  SUPPORTS
+  heo          115         0.954      0.973      0.896  SUPPORTS
   chd          112         0.936      0.937      0.932  SUPPORTS
-  eol           52         0.835      0.864      0.775  WEAK
+  eol           52         0.836      0.864      0.775  WEAK
   hod           51         0.995      0.984      0.978  SUPPORTS
-  ald           44         0.964      0.936      0.948  SUPPORTS
-  lche          40         0.976      0.986      0.927  SUPPORTS
-  chl           39         0.970      0.918      0.971  SUPPORTS
-  alsh          38         0.906      0.866      0.919  SUPPORTS
+  ald           44         0.964      0.937      0.948  SUPPORTS
+  lche          41         0.976      0.989      0.923  SUPPORTS
+  chl           39         0.969      0.918      0.971  SUPPORTS
+  alsh          38         0.906      0.865      0.919  SUPPORTS
   chor          37         0.945      0.908      0.972  SUPPORTS
   aram          35         0.960      0.971      0.942  SUPPORTS
-  cheol         29         0.887      0.917      0.820  SUPPORTS
-  chal          24         0.903      0.838      0.935  SUPPORTS
+  cheol         29         0.887      0.918      0.819  SUPPORTS
+  chal          24         0.903      0.839      0.935  SUPPORTS
   arch          20         0.976      0.948      0.985  SUPPORTS
   esh           36         0.937      0.974      0.873  SUPPORTS
   alam          33         0.937      0.940      0.914  SUPPORTS
   lam           37         0.945      0.940      0.908  SUPPORTS
 
   Average cosine(compound, blend): 0.936
-  Average cosine(random, blend):   0.775
+  Average cosine(random, blend):   0.778
   → Compounds resemble parent blends MORE than random. Supports real compounding.
 
 ============================================================================
@@ -74,8 +74,8 @@ PHASE 30c: h- VERBAL PREFIX — PERMUTATION TEST
 Is it remarkable that 10/10 verbal roots start with 'h'?
 Or could this happen by chance given the character frequencies?
 
-  Roots with N≥20: 112
-  h-initial roots: 10 (8.9%)
+  Roots with N≥20: 113
+  h-initial roots: 10 (8.8%)
   Verbal roots (s%>50%): 10
   Verbal AND h-initial: 10
 
@@ -83,7 +83,7 @@ Or could this happen by chance given the character frequencies?
   P(all verbal roots share first letter) = 0.0000
   → HIGHLY SIGNIFICANT. h- verbal prefix is NOT a coincidence.
 
-  Base rate: 10/112 = 8.9% of roots are h-initial
+  Base rate: 10/113 = 8.8% of roots are h-initial
   Expected verbal h-initial by chance: 0.9 out of 10
   Observed: 10 (all of them)
 
@@ -98,8 +98,8 @@ This adds formality/specificity. Test for analogous patterns:
   3) Do bare (prefix-less) words chain together specifically?
 
   Root self-repetition (X-X): 2630/34609 (7.60%)
-  Expected self-repeat under random: 4.88%
-  Ratio observed/expected: 1.56x
+  Expected self-repeat under random: 4.90%
+  Ratio observed/expected: 1.55x
   → Moderate self-repetition. Some construct chaining possible.
 
   TOP 20 ROOT BIGRAMS:
@@ -127,7 +127,7 @@ This adds formality/specificity. Test for analogous patterns:
 
   ABA TRIGRAMS (X-Y-X pattern, construct-chain candidates):
   ABA trigrams: 1967/29732 (6.62%)
-  Expected ABA under random: 4.44%
+  Expected ABA under random: 4.45%
   Ratio: 1.49x
 
   TOP ABA EXAMPLES:
@@ -269,13 +269,13 @@ should occur with multiple prefixes, forming a regular paradigm.
     ∅  +e    (N= 5279): peak=text      (54%)
     h  +e    (N=  410): peak=text      (51%)
     ch +e    (N=  706): peak=text      (52%)
-    sh +e    (N=   32): peak=text      (56%)
-    l  +e    (N=   65): peak=text      (77%)
+    sh +e    (N=   32): peak=text      (59%)
+    l  +e    (N=   65): peak=text      (80%)
 
   Stem 'o':
     ∅  +o    (N= 1175): peak=herbal-A  (42%)
     h  +o    (N=  262): peak=herbal-A  (53%)
-    ch +o    (N=  558): peak=herbal-A  (48%)
+    ch +o    (N=  558): peak=herbal-A  (49%)
     sh +o    (N=   21): peak=herbal-A  (86%)
     l  +o    (N=   78): peak=text      (59%)
 
@@ -301,10 +301,10 @@ should occur with multiple prefixes, forming a regular paradigm.
 PHASE 30: VALIDATION VERDICTS
 ============================================================================
 
-  30a Compound null model: z=20.61 (actual 99.1% vs random 21.7%)
-  30b Distribution blend: real=0.936 vs null=0.775
+  30a Compound null model: z=20.95 (actual 99.1% vs random 21.6%)
+  30b Distribution blend: real=0.936 vs null=0.778
   30c h-prefix permutation: p=0.0000
-  30d Construct chains: self-repeat 1.56x, ABA 1.49x
+  30d Construct chains: self-repeat 1.55x, ABA 1.49x
   30e Revised model coverage: 64.8% clean parse
   30f Paradigm fill: avg 6.2/7 slots
 

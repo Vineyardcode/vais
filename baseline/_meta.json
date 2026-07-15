@@ -185,11 +185,17 @@
   "results_files_touched": []
  },
  "phase100_decipherment": {
-  "status": "timeout",
-  "returncode": null,
-  "duration_s": 900.05,
-  "stdout_bytes": 6853,
-  "results_files_touched": []
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 2333.98,
+  "stdout_bytes": 14026,
+  "results_files_touched": [
+   "four_tasks_audit.json",
+   "phase100_decipherment.json",
+   "phase100_decipherment.txt",
+   "phase85R_revalidation.json",
+   "phase85R_revalidation.txt"
+  ]
  },
  "phase101_currier_ab_dichotomy": {
   "status": "ok",

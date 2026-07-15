@@ -59,7 +59,7 @@ Merge analysis (full collapse):
 Top 15 merge groups (full collapse):
   Gor                  [4 types, 62 tokens]: kor(27), tor(25), por(8), for(2)
   CGar                 [4 types, 26 tokens]: cthar(17), cphar(4), ckhar(3), cfhar(2)
-  chGaiin              [4 types, 23 tokens]: chkaiin(18), chtaiin(3), chfaiin(1), chpaiin(1)
+  chGaiin              [4 types, 23 tokens]: chkaiin(18), chtaiin(3), chpaiin(1), chfaiin(1)
   yGaiin               [4 types, 117 tokens]: ykaiin(61), ytaiin(53), ypaiin(2), yfaiin(1)
   oGaiin               [4 types, 409 tokens]: okaiin(221), otaiin(165), opaiin(18), ofaiin(5)
   CGaiin               [4 types, 19 tokens]: cthaiin(8), cphaiin(6), ckhaiin(3), cfhaiin(2)
@@ -69,7 +69,7 @@ Top 15 merge groups (full collapse):
   CGey                 [4 types, 92 tokens]: cthey(50), ckhey(28), cphey(11), cfhey(3)
   CGy                  [4 types, 156 tokens]: cthy(99), ckhy(38), cphy(11), cfhy(8)
   Gol                  [4 types, 111 tokens]: tol(47), kol(39), pol(21), fol(4)
-  Gshy                 [4 types, 13 tokens]: kshy(7), tshy(4), pshy(1), fshy(1)
+  Gshy                 [4 types, 13 tokens]: kshy(7), tshy(4), fshy(1), pshy(1)
   Gchey                [4 types, 58 tokens]: tchey(25), kchey(23), pchey(8), fchey(2)
   oGol                 [4 types, 170 tokens]: otol(83), okol(82), opol(4), ofol(1)
 

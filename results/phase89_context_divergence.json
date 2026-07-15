@@ -7,13 +7,13 @@
   "vms_suc_IM": {
     "n_shared_types": 64,
     "mean_jsd": 0.6525460215810815,
-    "median_jsd": 0.6233455092583786,
-    "weighted_jsd": 0.513433983986459
+    "median_jsd": 0.6233455092583787,
+    "weighted_jsd": 0.5134339839864591
   },
   "vms_pre_MF": {
     "n_shared_types": 69,
     "mean_jsd": 0.6116581986232587,
-    "median_jsd": 0.5824159208845171,
+    "median_jsd": 0.5824159208845172,
     "weighted_jsd": 0.496105819845134
   },
   "vms_suc_cmi": {
@@ -24,48 +24,48 @@
   "vms_top1_concordance": 0.046875,
   "vms_top3_concordance": 0.546875,
   "zscores_vs_char": {
-    "suc_jsd_mean": 5.800183202463747,
-    "suc_jsd_weighted": 3.6352959640051417,
-    "pre_jsd_mean": 3.5298919978674186,
-    "pre_jsd_weighted": 5.935857230649392,
+    "suc_jsd_mean": 5.8001832024637485,
+    "suc_jsd_weighted": 3.635295964005143,
+    "pre_jsd_mean": 3.5298919978674195,
+    "pre_jsd_weighted": 5.935857230649394,
     "cmi": 4.958287216542741,
     "top1_concordance": -2.3110668991835404
   },
   "zscores_vs_syl": {
-    "suc_jsd_mean": -7.7288923694659335,
-    "suc_jsd_weighted": -10.069020488925851,
-    "pre_jsd_mean": -4.02669929092043,
-    "pre_jsd_weighted": -6.30609997581399,
+    "suc_jsd_mean": -7.728892369465928,
+    "suc_jsd_weighted": -10.06902048892584,
+    "pre_jsd_mean": -4.026699290920431,
+    "pre_jsd_weighted": -6.3060999758139955,
     "cmi": -15.202255846595357,
     "top1_concordance": 1.0328900689960487
   },
   "nl_char_baselines": {
     "English-Cury": {
       "suc_jsd_mean": 0.29225736346422065,
-      "suc_jsd_weighted": 0.28608624648669917,
+      "suc_jsd_weighted": 0.2860862464866991,
       "pre_jsd_mean": 0.3259833025641648,
       "suc_cmi": 0.1728844551819122,
       "n_shared_suc": 28,
       "top1_concordance": 0.21428571428571427
     },
     "French-Viandier": {
-      "suc_jsd_mean": 0.33883728561732346,
-      "suc_jsd_weighted": 0.3465866629738581,
+      "suc_jsd_mean": 0.3388372856173235,
+      "suc_jsd_weighted": 0.34658666297385815,
       "pre_jsd_mean": 0.4837155877760211,
       "suc_cmi": 0.15755066162885628,
       "n_shared_suc": 20,
       "top1_concordance": 0.25
     },
     "German-BvgS": {
-      "suc_jsd_mean": 0.4376674599642749,
+      "suc_jsd_mean": 0.43766745996427486,
       "suc_jsd_weighted": 0.4259506410542889,
-      "pre_jsd_mean": 0.30721302861683764,
+      "pre_jsd_mean": 0.30721302861683775,
       "suc_cmi": 0.23972084648973568,
       "n_shared_suc": 24,
       "top1_concordance": 0.25
     },
     "German-Faust": {
-      "suc_jsd_mean": 0.3491464739205527,
+      "suc_jsd_mean": 0.34914647392055265,
       "suc_jsd_weighted": 0.3498775550484373,
       "pre_jsd_mean": 0.26083446080056377,
       "suc_cmi": 0.1993950158970106,
@@ -75,13 +75,13 @@
     "Italian-Cucina": {
       "suc_jsd_mean": 0.24800983234127347,
       "suc_jsd_weighted": 0.24130197227472397,
-      "pre_jsd_mean": 0.4352538512340992,
+      "pre_jsd_mean": 0.43525385123409915,
       "suc_cmi": 0.11873780809677109,
       "n_shared_suc": 22,
       "top1_concordance": 0.13636363636363635
     },
     "Latin-Apicius": {
-      "suc_jsd_mean": 0.28332148076910735,
+      "suc_jsd_mean": 0.2833214807691073,
       "suc_jsd_weighted": 0.2760430959829255,
       "pre_jsd_mean": 0.29927536654284287,
       "suc_cmi": 0.1364755985951951,
@@ -109,7 +109,7 @@
     "English-Cury": {
       "suc_jsd_mean": 0.9397041578186136,
       "suc_jsd_weighted": 0.933797908903209,
-      "pre_jsd_mean": 0.924613848073142,
+      "pre_jsd_mean": 0.9246138480731422,
       "suc_cmi": 0.6409552406203834,
       "n_shared_suc": 68,
       "top1_concordance": 0.0
@@ -123,15 +123,15 @@
       "top1_concordance": 0.0
     },
     "German-BvgS": {
-      "suc_jsd_mean": 0.9109666504939161,
-      "suc_jsd_weighted": 0.9217998462628155,
-      "pre_jsd_mean": 0.9425792009928082,
+      "suc_jsd_mean": 0.9109666504939159,
+      "suc_jsd_weighted": 0.9217998462628153,
+      "pre_jsd_mean": 0.942579200992808,
       "suc_cmi": 0.6403343594993536,
       "n_shared_suc": 12,
       "top1_concordance": 0.08333333333333333
     },
     "German-Faust": {
-      "suc_jsd_mean": 0.9734879307008211,
+      "suc_jsd_mean": 0.973487930700821,
       "suc_jsd_weighted": 0.9652420324610796,
       "pre_jsd_mean": 0.9242296271314187,
       "suc_cmi": 0.6489046340088326,
@@ -140,8 +140,8 @@
     },
     "Italian-Cucina": {
       "suc_jsd_mean": 0.9063772523764775,
-      "suc_jsd_weighted": 0.8744217329095184,
-      "pre_jsd_mean": 0.8321542365380412,
+      "suc_jsd_weighted": 0.8744217329095182,
+      "pre_jsd_mean": 0.832154236538041,
       "suc_cmi": 0.703214459859169,
       "n_shared_suc": 63,
       "top1_concordance": 0.015873015873015872
@@ -163,7 +163,7 @@
       "top1_concordance": 0.029850746268656716
     },
     "Latin-Vulgate": {
-      "suc_jsd_mean": 0.8984013727157286,
+      "suc_jsd_mean": 0.8984013727157285,
       "suc_jsd_weighted": 0.8748286241335248,
       "pre_jsd_mean": 0.7828367005750279,
       "suc_cmi": 0.6558038547646209,
@@ -173,11 +173,11 @@
   },
   "null_model_suc": {
     "observed": 0.6525460215810815,
-    "null_mean": 0.4213549776643426,
-    "null_std": 0.009643756847812058,
-    "z": 23.973130758599616
+    "null_mean": 0.42135497766434254,
+    "null_std": 0.009643756847812051,
+    "z": 23.97313075859964
   },
-  "mean_z_vs_char": 3.5914081187241496,
-  "mean_z_vs_syl": -7.050012983787585,
+  "mean_z_vs_char": 3.5914081187241504,
+  "mean_z_vs_syl": -7.0500129837875845,
   "verdict": "CONTEXT_DIVERGENCE_BETWEEN_CHAR_AND_SYL"
 }

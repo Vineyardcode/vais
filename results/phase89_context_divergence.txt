@@ -43,10 +43,10 @@ STEP 2: VMS CONTEXT DIVERGENCE (≥3-chunk words)
         y.p                 1.0000     16      5  ch.d              ch.e.d.y             no
         ch.ckh              1.0000      8     12  y.o.cth           y                    no
         ch.e.o.k            1.0000      5     10  e                 y                    no
-        o.ckh               1.0000      5      8  d                 y                    no
-        sh.o.r              1.0000      5      5  y.d               o                    no
         ch.s                1.0000      5     37  k                 y                    no
         ch.cth              1.0000      5     12  y.k               y                    no
+        o.ckh               1.0000      5      8  d                 y                    no
+        sh.o.r              1.0000      5      5  y.d               o                    no
         ch.o.t              0.9122      7     17  a.l               ch.y                 no
         ch.a.l              0.8820     15     13  k                 y                    no
         ckh                 0.8791     20      6  o                 y                    no
@@ -114,8 +114,8 @@ STEP 2: VMS CONTEXT DIVERGENCE (≥3-chunk words)
         Type                   JSD    n@M    n@F  Top1@M            Top1@F            Same?
         ──────────────────  ──────  ─────  ─────  ────────────────  ────────────────  ─────
         e.e.o.d.y           1.0000      7     15  y.k               k                    no
-        ch.a.r              1.0000      7      9  o                 a.l                  no
         sh.e.o              1.0000      6      5  y                 o                    no
+        ch.a.r              1.0000      7      9  o                 a.l                  no
         ch.e.d              0.9181    110      6  p                 a.l                  no
         a.s                 0.8727     24     14  d                 e.e                  no
         sh.o.r              0.8697      5     11  sh.e.f            y                    no

@@ -112,31 +112,45 @@
     "n_types": 7922.0
   },
   "Grid_best": {
-    "name": "Optimized (3zone, Csh=4, Cuq=3, Vsh=2, Vuq=5, exp=0.8)",
-    "alpha_size": 30.0,
-    "H_char": 3.944353410507587,
-    "H_cond": 2.593007435852402,
-    "H_ratio": 0.657397338926259,
-    "IC": 0.08350933487848786,
-    "mean_wlen": 5.720157612609008,
-    "TTR": 0.2658,
-    "hapax_ratio": 0.6621519939804364,
-    "V_frac": 0.36666666666666664,
-    "VC_alt": 0.6912169911603446,
-    "n_chars": 285985.0,
+    "name": "Optimized (3zone, Csh=0, Cuq=3, Vsh=2, Vuq=5, exp=0.6)",
+    "alpha_size": 26.0,
+    "H_char": 3.918727796896157,
+    "H_cond": 2.5099852390972623,
+    "H_ratio": 0.6405102291323489,
+    "IC": 0.0766799743924113,
+    "mean_wlen": 5.570285622849828,
+    "TTR": 0.2326,
+    "hapax_ratio": 0.6302665520206363,
+    "V_frac": 0.3076923076923077,
+    "VC_alt": 0.6591667235206883,
+    "n_chars": 278492.0,
     "n_words": 49996.0,
-    "n_types": 7731.0
+    "n_types": 6641.0
   },
   "_grid_best_params": {
     "n_zones": 3,
-    "n_c_shared": 4,
+    "n_c_shared": 0,
     "n_c_unique": 3,
     "n_v_shared": 2,
     "n_v_unique": 5,
-    "expand_prob": 0.8
+    "expand_prob": 0.6
   },
-  "_grid_best_distance": 3.782616912742091,
+  "_grid_best_distance": 3.714021021140292,
   "_grid_top10": [
+    {
+      "distance": 3.714021021140292,
+      "params": {
+        "n_zones": 3,
+        "n_c_shared": 0,
+        "n_c_unique": 3,
+        "n_v_shared": 2,
+        "n_v_unique": 5,
+        "expand_prob": 0.6
+      },
+      "alpha_size": 26,
+      "H_cond": 2.5099852390972623,
+      "IC": 0.0766799743924113
+    },
     {
       "distance": 3.782616912742091,
       "params": {
@@ -164,34 +178,6 @@
       "alpha_size": 30,
       "H_cond": 2.582814947021301,
       "IC": 0.08339971430628931
-    },
-    {
-      "distance": 4.190971380908779,
-      "params": {
-        "n_zones": 3,
-        "n_c_shared": 0,
-        "n_c_unique": 3,
-        "n_v_shared": 2,
-        "n_v_unique": 5,
-        "expand_prob": 0.6
-      },
-      "alpha_size": 26,
-      "H_cond": 2.5044171278621343,
-      "IC": 0.07673405613255735
-    },
-    {
-      "distance": 4.374587307147591,
-      "params": {
-        "n_zones": 3,
-        "n_c_shared": 0,
-        "n_c_unique": 3,
-        "n_v_shared": 2,
-        "n_v_unique": 3,
-        "expand_prob": 0.6
-      },
-      "alpha_size": 20,
-      "H_cond": 2.503958811663336,
-      "IC": 0.07695542747199818
     },
     {
       "distance": 4.547783013694163,
@@ -222,18 +208,18 @@
       "IC": 0.08360907646894973
     },
     {
-      "distance": 4.656415115157939,
+      "distance": 4.575957217390227,
       "params": {
         "n_zones": 3,
-        "n_c_shared": 2,
+        "n_c_shared": 4,
         "n_c_unique": 3,
-        "n_v_shared": 0,
+        "n_v_shared": 2,
         "n_v_unique": 5,
         "expand_prob": 0.6
       },
-      "alpha_size": 26,
-      "H_cond": 2.5948542497396088,
-      "IC": 0.08332271408813541
+      "alpha_size": 30,
+      "H_cond": 2.6305787435016748,
+      "IC": 0.0856246485337069
     },
     {
       "distance": 4.705326521978691,
@@ -250,21 +236,35 @@
       "IC": 0.08834860110988467
     },
     {
-      "distance": 4.720902726240263,
+      "distance": 4.860403315246438,
       "params": {
         "n_zones": 3,
-        "n_c_shared": 4,
+        "n_c_shared": 0,
         "n_c_unique": 3,
         "n_v_shared": 2,
+        "n_v_unique": 3,
+        "expand_prob": 0.6
+      },
+      "alpha_size": 20,
+      "H_cond": 2.5067469161760267,
+      "IC": 0.07690208400839052
+    },
+    {
+      "distance": 4.935222463958118,
+      "params": {
+        "n_zones": 3,
+        "n_c_shared": 2,
+        "n_c_unique": 3,
+        "n_v_shared": 0,
         "n_v_unique": 5,
         "expand_prob": 0.6
       },
-      "alpha_size": 30,
-      "H_cond": 2.6285039598028446,
-      "IC": 0.08546655640135944
+      "alpha_size": 26,
+      "H_cond": 2.5995772598534446,
+      "IC": 0.08359211578897686
     },
     {
-      "distance": 4.989131302573325,
+      "distance": 4.975555011995455,
       "params": {
         "n_zones": 3,
         "n_c_shared": 0,
@@ -274,8 +274,8 @@
         "expand_prob": 0.6
       },
       "alpha_size": 17,
-      "H_cond": 2.4958672452336965,
-      "IC": 0.08086354700769421
+      "H_cond": 2.496028996984706,
+      "IC": 0.0808232371778429
     }
   ]
 }

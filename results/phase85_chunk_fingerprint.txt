@@ -155,17 +155,17 @@ STEP 4: NULL MODEL — SHUFFLED SLOT GRAMMAR (100 permutations)
     zipf_slope  = -0.8755
 
   Shuffled grammars (N=100):
-    h_ratio  = 0.6819 ± 0.0234  [range: 0.6372 – 0.7682]
-    n_types  = 204 ± 52  [range: 112 – 401]
+    h_ratio  = 0.6794 ± 0.0219  [range: 0.6300 – 0.7645]
+    n_types  = 215 ± 45  [range: 127 – 319]
     coverage = 99.9% ± 0.0%  [range: 99.9% – 99.9%]
-    hapax_ratio = 0.1973 ± 0.0306
-    zipf_slope  = -1.6133 ± 0.2089
+    hapax_ratio = 0.1969 ± 0.0257
+    zipf_slope  = -1.5410 ± 0.2085
 
   Z-scores (Mauro vs shuffled):
-    h_ratio:  z = +5.80
-    n_types:  z = +6.16
+    h_ratio:  z = +6.32
+    n_types:  z = +6.86
     coverage: z = -1651451774679.00
-    hapax:    z = -0.01
+    hapax:    z = -0.00
 
   INTERPRETATION: If |z| < 2, Mauro's grammar is NOT special —
   any random slot grammar gives similar results.
@@ -270,7 +270,7 @@ STEP 10: SYNTHESIS — DOES THE CHUNK HYPOTHESIS HOLD?
     → OUTSIDE NL range (|z|>2) — chunks are NOT behaving like NL syllables
 
   TEST 2: Is Mauro's grammar special? (vs shuffled grammars)
-    h_ratio z vs shuffled: +5.80
+    h_ratio z vs shuffled: +6.32
     coverage z vs shuffled: -1651451774679.00
     → Grammar IS special: produces distinct chunk statistics
 
@@ -301,7 +301,7 @@ VERDICT
     Chunk types:             523
     Chunks/word:             1.946
     Grammar coverage:        99.8%
-    Grammar specificity (z): h_ratio=+5.80, coverage=-1651451774679.00
+    Grammar specificity (z): h_ratio=+6.32, coverage=-1651451774679.00
     Char-shuffle z:          -104.91
     Parse ambiguity:         1.4%
 

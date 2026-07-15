@@ -30,10 +30,10 @@ does the binary suffix split disappear?
               ch        90     0%    31%    17%    13%     7%     8%
               |∅ vs ch| diff: 167 pp
 
-    Stem 'd': deriv      N      y   aiin     ar     al    ain      ∅
-              ∅       1188    62%    16%     7%     4%     4%     3%
-              h         36     0%    14%    42%    14%     0%    22%
-              ch       112     0%    14%    29%    22%     7%     8%
+    Stem 'd': deriv      N      y   aiin     ar     al      ∅    ain
+              ∅       1188    62%    16%     7%     4%     3%     4%
+              h         36     0%    14%    42%    14%    22%     0%
+              ch       112     0%    14%    29%    22%     8%     7%
               |∅ vs ch| diff: 112 pp
 
   ═══ SUFFIX LIST: SHORT (no vowel-eating) ═══
@@ -56,10 +56,10 @@ does the binary suffix split disappear?
               ch        77     0%    36%    19%    16%     8%     9%
               |∅ vs ch| diff: 180 pp
 
-    Stem 'd': deriv      N      y   aiin     ar     al    ain      ∅
-              ∅       1170    63%    16%     7%     4%     4%     3%
-              h         36     0%    14%    42%    14%     0%    22%
-              ch       105     0%    15%    30%    24%     8%     9%
+    Stem 'd': deriv      N      y   aiin     ar     al      ∅    ain
+              ∅       1170    63%    16%     7%     4%     3%     4%
+              h         36     0%    14%    42%    14%    22%     0%
+              ch       105     0%    15%    30%    24%     9%     8%
               |∅ vs ch| diff: 117 pp
 
 

@@ -199,8 +199,14 @@ STEP 10: NL SYLLABLE CROSS-CHECK
   If NL syllables also cluster to ~30 groups with good metrics,
   the method is FLAWED and proves nothing about VMS specifically.
 
-  Latin-Caesar: file not found, skipping
-  Italian-Cucina: file not found, skipping
+  Latin-Caesar: 44864 words, 101887 syllables, 2369 types
+    Base h_ratio=0.5694, hapax=0.2651
+    Random merge to k=30: h_ratio=0.9755±0.0015, types=30.0
+    Random merge to k=25: h_ratio=0.9812±0.0012, types=25.0
+  Italian-Cucina: 24367 words, 47348 syllables, 1532 types
+    Base h_ratio=0.5959, hapax=0.3505
+    Random merge to k=30: h_ratio=0.9635±0.0020, types=30.0
+    Random merge to k=25: h_ratio=0.9716±0.0016, types=25.0
 
 ────────────────────────────────────────────────────────────────────────────
 STEP 11: CLUSTER COHERENCE — DO CLUSTERS SHARE SLOT SKELETONS?

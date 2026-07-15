@@ -11,9 +11,9 @@
     "old_B": 14900
   },
   "distributions": {
-    "jsd_unigram": 0.0183995434913254,
+    "jsd_unigram": 0.018417656541114706,
     "jsd_bigram": 0.09879904245351398,
-    "jsd_initial": 0.02367340206633506,
+    "jsd_initial": 0.023693185153893924,
     "jsd_final": 0.03181892828084188,
     "jsd_medial": 0.09118396645829953,
     "jsd_word_length": 0.003053390548107237,
@@ -29,6 +29,12 @@
         "freq_A": 0.00297,
         "freq_B": 0.00092,
         "log_OR": 1.6912
+      },
+      {
+        "class": "C24",
+        "freq_A": 0.00201,
+        "freq_B": 0.00088,
+        "log_OR": 1.1971
       },
       {
         "class": "C11",
@@ -53,12 +59,6 @@
         "freq_A": 0.00245,
         "freq_B": 0.00118,
         "log_OR": 1.0507
-      },
-      {
-        "class": "C24",
-        "freq_A": 0.00314,
-        "freq_B": 0.00165,
-        "log_OR": 0.9321
       },
       {
         "class": "C7",
@@ -95,19 +95,19 @@
     "class_bigram_jaccard": 0.7055
   },
   "cross_perplexity": {
-    "ppl_A_on_A": 4.327,
-    "ppl_B_on_B": 3.957,
+    "ppl_A_on_A": 4.328,
+    "ppl_B_on_B": 3.956,
     "ppl_A_on_B": 4.375,
-    "ppl_B_on_A": 4.707,
-    "ratio_AB": 1.0112,
-    "ratio_BA": 1.1896
+    "ppl_B_on_A": 4.711,
+    "ratio_AB": 1.0108,
+    "ratio_BA": 1.1906
   },
   "permutation_test": {
     "n_permutations": 1000,
-    "unigram_jsd_real": 0.0184,
-    "unigram_jsd_null_mean": 0.001091,
-    "unigram_jsd_null_std": 0.000535,
-    "unigram_z": 32.342,
+    "unigram_jsd_real": 0.018418,
+    "unigram_jsd_null_mean": 0.001092,
+    "unigram_jsd_null_std": 0.000537,
+    "unigram_z": 32.277,
     "unigram_p": 0.0,
     "bigram_jsd_real": 0.098799,
     "bigram_jsd_null_mean": 0.011373,
@@ -310,33 +310,33 @@
   },
   "nl_fit": {
     "Czech": {
-      "jsd_A": 0.199183,
-      "jsd_B": 0.205247
+      "jsd_A": 0.19912,
+      "jsd_B": 0.205298
     },
     "English": {
-      "jsd_A": 0.136878,
-      "jsd_B": 0.144655
+      "jsd_A": 0.136862,
+      "jsd_B": 0.144649
     },
     "French": {
-      "jsd_A": 0.124122,
-      "jsd_B": 0.132055
+      "jsd_A": 0.124123,
+      "jsd_B": 0.132013
     },
     "German": {
-      "jsd_A": 0.124216,
-      "jsd_B": 0.132847
+      "jsd_A": 0.124285,
+      "jsd_B": 0.132768
     },
     "Italian": {
-      "jsd_A": 0.099749,
-      "jsd_B": 0.103541
+      "jsd_A": 0.099913,
+      "jsd_B": 0.103355
     },
     "Latin": {
-      "jsd_A": 0.115664,
-      "jsd_B": 0.114676
+      "jsd_A": 0.115597,
+      "jsd_B": 0.11464
     }
   },
   "entropy": {
-    "class_unigram_A": 3.1543,
-    "class_unigram_B": 3.1496,
+    "class_unigram_A": 3.1545,
+    "class_unigram_B": 3.1493,
     "word_unigram_A": 9.9444,
     "word_unigram_B": 9.871
   },
