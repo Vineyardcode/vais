@@ -607,5 +607,23 @@
   "results_files_touched": [
    "phase59_output.json"
   ]
+ },
+ "phase60_positional_verbose": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 209.38,
+  "stdout_bytes": 8763,
+  "results_files_touched": [
+   "phase60_output.json"
+  ]
+ },
+ "phase61_word_shape_validation": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 3.61,
+  "stdout_bytes": 8941,
+  "results_files_touched": [
+   "phase61_output.json"
+  ]
  }
 }

@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Voynich Analysis Suite</title>
+<style>
+  :root { --bg:#14161a; --panel:#1d2026; --border:#2c313a; --fg:#d7dae0;
+          --dim:#8b93a1; --acc:#5aa9e6; --ok:#5dbb63; --err:#e05c5c; --warn:#e0b25c; }
+  * { box-sizing: border-box; }
+  body { margin:0; font:14px/1.45 "Segoe UI", system-ui, sans-serif;
+         background:var(--bg); color:var(--fg); display:flex; height:100vh; }
+  #sidebar { width:340px; min-width:260px; border-right:1px solid var(--border);
+             display:flex; flex-direction:column; }
+  #sidebar header { padding:10px 12px; border-bottom:1px solid var(--border); }
+  #sidebar h1 { font-size:15px; margin:0 0 8px; }
+  #search { width:100%; padding:6px 8px; background:var(--panel); border:1px solid var(--border);
+            color:var(--fg); border-radius:4px; }
+  #runall { margin-top:8px; width:100%; }
+  #testlist { overflow-y:auto; flex:1; }
+  .test { padding:7px 12px; cursor:pointer; border-bottom:1px solid #22252b; display:flex; gap:8px; align-items:baseline;}
+  .test:hover { background:#23262d; }
+  .test.sel { background:#26303c; }
+  .test .nm { font-weight:600; font-size:13px; white-space:nowrap; }
+  .test .ds { color:var(--dim); font-size:11.5px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; flex:1;}
+  .dot { width:8px; height:8px; border-radius:50%; background:#555; flex:none; align-self:center;}
+  .dot.ok{background:var(--ok);} .dot.error,.dot.param_error{background:var(--err);}
+  .dot.running{background:var(--acc); animation:pulse 1s infinite;} .dot.timeout{background:var(--warn);}
+  .dot.pending{background:#777;}
+  @keyframes pulse { 50% { opacity:.35; } }
+  #main { flex:1; display:flex; flex-direction:column; overflow:hidden; }
+  #detail { padding:14px 18px; overflow-y:auto; flex:1; }
+  h2 { margin:0 0 2px; font-size:18px; }
+  .meta { color:var(--dim); font-size:12px; margin-bottom:10px; }
+  .badge { display:inline-block; padding:1px 7px; border-radius:9px; font-size:11px;
+           border:1px solid var(--border); margin-right:6px; color:var(--dim);}
+  .badge.net { color:var(--warn); border-color:var(--warn); }
+  .badge.dep { color:var(--acc); border-color:var(--acc); }
+  pre.doc { background:var(--panel); padding:10px; border-radius:6px; font-size:12px;
+            white-space:pre-wrap; color:#aab2c0; border:1px solid var(--border);}
+  #params { margin:12px 0; }
+  .prow { display:flex; gap:10px; margin-bottom:6px; align-items:center; }
+  .prow label { width:230px; font-family:Consolas,monospace; font-size:12.5px; color:#c8d3e0; }
+  .prow input[type=text], .prow input[type=number], .prow textarea {
+      flex:1; padding:5px 7px; background:var(--panel); color:var(--fg);
+      border:1px solid var(--border); border-radius:4px; font-family:Consolas,monospace; font-size:12.5px;}
+  .prow textarea { min-height:44px; resize:vertical; }
+  .prow.changed label { color:var(--acc); }
+  button { background:#2b6cb0; color:#fff; border:0; padding:7px 14px; border-radius:5px;
+           cursor:pointer; font-size:13px; }
+  button.sec { background:#39404b; }
+  button:disabled { opacity:.5; cursor:default; }
+  #controls { display:flex; gap:8px; align-items:center; flex-wrap:wrap; margin:10px 0; }
+  #presetsel { padding:6px; background:var(--panel); color:var(--fg);
+               border:1px solid var(--border); border-radius:4px; }
+  #output { background:#0e1013; border-top:1px solid var(--border); height:42%;
+            display:flex; flex-direction:column; }
+  #outhead { padding:6px 14px; font-size:12px; color:var(--dim); border-bottom:1px solid var(--border);
+             display:flex; gap:16px; }
+  #outpre { margin:0; padding:10px 14px; overflow:auto; flex:1; font:12px/1.4 Consolas,monospace;
+            white-space:pre; color:#cdd6e3; }
+  #outpre.err { color:#f2b8b8; }
+  .empty { color:var(--dim); padding:40px; text-align:center; }
+</style>
+</head>
+<body>
+<div id="sidebar">
+  <header>
+    <h1>Voynich Analysis Suite <span id="count" style="color:var(--dim);font-weight:400"></span></h1>
+    <input id="search" placeholder="filter tests…">
+    <button id="runall" class="sec">Run all (filtered)</button>
+  </header>
+  <div id="testlist"></div>
+</div>
+<div id="main">
+  <div id="detail"><div class="empty">Select a test.</div></div>
+  <div id="output">
+    <div id="outhead"><span id="ostatus">idle</span><span id="otime"></span><span id="ofiles"></span></div>
+    <pre id="outpre"></pre>
+  </div>
+</div>
+<script>
+let TESTS = {}, sel = null, statuses = {}, currentJob = null, pollTimer = null;
+
+const $ = id => document.getElementById(id);
+const esc = s => (s||'').replace(/[&<>]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+
+async function loadTests() {
+  TESTS = await (await fetch('/api/tests')).json();
+  $('count').textContent = '(' + Object.keys(TESTS).length + ')';
+  renderList();
+}
+
+function filteredNames() {
+  const q = $('search').value.toLowerCase();
+  return Object.keys(TESTS).sort().filter(n =>
+    !q || n.toLowerCase().includes(q) || TESTS[n].description.toLowerCase().includes(q));
+}
+
+function renderList() {
+  const box = $('testlist'); box.innerHTML = '';
+  for (const n of filteredNames()) {
+    const t = TESTS[n];
+    const div = document.createElement('div');
+    div.className = 'test' + (n === sel ? ' sel' : '');
+    div.innerHTML = `<span class="dot ${statuses[n]||''}"></span>
+      <span class="nm">${esc(n)}</span><span class="ds">${esc(t.description)}</span>`;
+    div.onclick = () => { sel = n; renderList(); renderDetail(); };
+    box.appendChild(div);
+  }
+}
+
+function inputFor(name, spec) {
+  const v = spec.default;
+  if (spec.type === 'bool')
+    return `<input type="checkbox" data-p="${name}" ${v ? 'checked' : ''}>`;
+  if (spec.type === 'int' || spec.type === 'float')
+    return `<input type="number" step="${spec.type==='float'?'any':'1'}" data-p="${name}" value="${v}">`;
+  if (spec.type === 'str')
+    return `<input type="text" data-p="${name}" value="${esc(String(v))}">`;
+  return `<textarea data-p="${name}">${esc(JSON.stringify(v))}</textarea>`;
+}
+
+function renderDetail() {
+  const t = TESTS[sel];
+  const deps = t.depends.map(d => `<span class="badge dep">needs ${d}</span>`).join('');
+  const net = t.network ? '<span class="badge net">network</span>' : '';
+  const base = t.baseline_seconds != null ? `baseline ${t.baseline_seconds}s (${t.baseline_status})` : 'no baseline';
+  const params = Object.entries(t.params).map(([k, s]) => `
+    <div class="prow" data-row="${k}">
+      <label title="line ${s.line}">${k} <span style="color:var(--dim)">(${s.container||s.type})</span></label>
+      ${inputFor(k, s)}
+    </div>`).join('') || '<div class="meta">No module-level parameters exposed by this script.</div>';
+  $('detail').innerHTML = `
+    <h2>${esc(sel)}</h2>
+    <div class="meta">${esc(t.file)} · ${t.lines} lines · ${base}</div>
+    <div>${net}${deps}</div>
+    <pre class="doc">${esc(t.doc)}</pre>
+    <div id="controls">
+      <button id="runbtn">Run</button>
+      <button id="resetbtn" class="sec">Reset to defaults</button>
+      <select id="presetsel"></select>
+      <button id="loadpreset" class="sec">Load</button>
+      <button id="savepreset" class="sec">Save as…</button>
+      <button id="delpreset" class="sec">Delete</button>
+      <label style="color:var(--dim);font-size:12px">timeout(s)
+        <input id="timeout" type="number" value="" placeholder="auto" style="width:80px;background:var(--panel);color:var(--fg);border:1px solid var(--border);border-radius:4px;padding:4px;">
+      </label>
+    </div>
+    <div id="params">${params}</div>`;
+  $('runbtn').onclick = runSelected;
+  $('resetbtn').onclick = renderDetail;
+  $('savepreset').onclick = savePreset;
+  $('loadpreset').onclick = loadPreset;
+  $('delpreset').onclick = deletePreset;
+  refreshPresets();
+  markChanged();
+  $('detail').querySelectorAll('[data-p]').forEach(el => el.addEventListener('input', markChanged));
+}
+
+function collectParams(onlyChanged=true) {
+  const t = TESTS[sel], out = {};
+  for (const el of $('detail').querySelectorAll('[data-p]')) {
+    const k = el.dataset.p, spec = t.params[k];
+    let v;
+    if (spec.type === 'bool') v = el.checked;
+    else if (spec.type === 'int') v = parseInt(el.value, 10);
+    else if (spec.type === 'float') v = parseFloat(el.value);
+    else if (spec.type === 'str') v = el.value;
+    else { try { v = JSON.parse(el.value); } catch { v = el.value; } }
+    if (!onlyChanged || JSON.stringify(v) !== JSON.stringify(spec.default)) out[k] = v;
+  }
+  return out;
+}
+
+function markChanged() {
+  const t = TESTS[sel];
+  for (const el of $('detail').querySelectorAll('[data-p]')) {
+    const k = el.dataset.p, spec = t.params[k];
+    let v;
+    if (spec.type === 'bool') v = el.checked;
+    else if (spec.type === 'int') v = parseInt(el.value, 10);
+    else if (spec.type === 'float') v = parseFloat(el.value);
+    else if (spec.type === 'str') v = el.value;
+    else { try { v = JSON.parse(el.value); } catch { v = null; } }
+    el.closest('.prow').classList.toggle('changed',
+      JSON.stringify(v) !== JSON.stringify(spec.default));
+  }
+}
+
+async function refreshPresets() {
+  const data = await (await fetch('/api/presets/' + sel)).json();
+  const s = $('presetsel'); s.innerHTML = '';
+  for (const name of Object.keys(data))
+    s.appendChild(new Option(name, name));
+  s.dataset.presets = JSON.stringify(data);
+}
+
+function applyParamValues(params) {
+  const t = TESTS[sel];
+  for (const el of $('detail').querySelectorAll('[data-p]')) {
+    const k = el.dataset.p, spec = t.params[k];
+    const v = (k in params) ? params[k] : spec.default;
+    if (spec.type === 'bool') el.checked = !!v;
+    else if (spec.type === 'json') el.value = JSON.stringify(v);
+    else el.value = v;
+  }
+  markChanged();
+}
+
+function loadPreset() {
+  const data = JSON.parse($('presetsel').dataset.presets || '{}');
+  const name = $('presetsel').value;
+  if (name === 'defaults') applyParamValues({});
+  else applyParamValues(data[name] || {});
+}
+
+async function savePreset() {
+  const name = prompt('Preset name:');
+  if (!name) return;
+  const params = collectParams(true);
+  const r = await fetch('/api/presets/' + sel, {
+    method: 'POST', headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({name, params})});
+  if (!r.ok) alert((await r.json()).error);
+  refreshPresets();
+}
+
+async function deletePreset() {
+  const name = $('presetsel').value;
+  if (name === 'defaults') { alert('Built-in defaults cannot be deleted.'); return; }
+  await fetch(`/api/presets/${sel}/${encodeURIComponent(name)}`, {method: 'DELETE'});
+  refreshPresets();
+}
+
+async function runSelected() {
+  const params = collectParams(true);
+  const timeout = $('timeout').value ? parseInt($('timeout').value, 10) : null;
+  const r = await fetch('/api/run', {method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({name: sel, params, timeout})});
+  const j = await r.json();
+  if (j.error) { alert(j.error); return; }
+  watchJob(j.job);
+}
+
+$('runall').onclick = async () => {
+  const names = filteredNames();
+  if (!confirm(`Run ${names.length} tests sequentially?`)) return;
+  const r = await fetch('/api/run_all', {method: 'POST',
+    headers: {'Content-Type': 'application/json'}, body: JSON.stringify({names})});
+  watchJob((await r.json()).job);
+};
+
+function watchJob(id) {
+  currentJob = id;
+  if (pollTimer) clearInterval(pollTimer);
+  pollTimer = setInterval(pollJob, 800);
+  pollJob();
+}
+
+async function pollJob() {
+  const job = await (await fetch('/api/jobs/' + currentJob)).json();
+  for (const [n, st] of Object.entries(job.tests)) statuses[n] = st.status;
+  renderList();
+  const names = job.names;
+  const showName = (sel && job.tests[sel]) ? sel : (job.current || names[names.length - 1]);
+  const st = job.tests[showName] || {};
+  $('ostatus').textContent = `${showName}: ${st.status || '…'}` +
+      (job.names.length > 1 ? `  [batch ${Object.values(job.tests).filter(t=>['ok','error','timeout','param_error'].includes(t.status)).length}/${names.length}]` : '');
+  $('otime').textContent = st.duration_s != null ? st.duration_s + 's' : '';
+  $('ofiles').textContent = (st.results_files || []).join(', ');
+  const pre = $('outpre');
+  if (st.status === 'param_error') { pre.className = 'err'; pre.textContent = st.error; }
+  else {
+    const err = (st.stderr || '').trim();
+    pre.className = err && st.status !== 'ok' ? 'err' : '';
+    pre.textContent = (st.stdout || '') + (err ? '\n───── stderr ─────\n' + st.stderr : '');
+  }
+  if (job.done) { clearInterval(pollTimer); pollTimer = null; }
+}
+
+$('search').addEventListener('input', renderList);
+loadTests();
+</script>
+</body>
+</html>
