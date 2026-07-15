@@ -1,0 +1,47 @@
+{
+ "latin_plain": {
+  "tokens": 38003,
+  "types": 8932,
+  "lines": 4755
+ },
+ "italian_plain": {
+  "tokens": 38006,
+  "types": 6964,
+  "lines": 4778
+ },
+ "latin_subst": {
+  "tokens": 38003,
+  "types": 8932,
+  "lines": 4755
+ },
+ "latin_verbose": {
+  "tokens": 38003,
+  "types": 8932,
+  "lines": 4755
+ },
+ "latin_abjad": {
+  "tokens": 37540,
+  "types": 6042,
+  "lines": 4755
+ },
+ "vms_word_shuffle": {
+  "tokens": 39486,
+  "types": 8454,
+  "lines": 4877
+ },
+ "vms_char_shuffle": {
+  "tokens": 39486,
+  "types": 33759,
+  "lines": 4877
+ },
+ "grille_table": {
+  "tokens": 38004,
+  "types": 933,
+  "lines": 4721
+ },
+ "self_citation": {
+  "tokens": 38001,
+  "types": 10062,
+  "lines": 3033
+ }
+}
