@@ -660,6 +660,83 @@ def load_folio_lines():
                 lines.append((lid, section, words))
     return lines
 
+def load_folio_lines_ivtff(comma_break=True, min_word_len=1):
+    """IVTFF-aware replacement for load_folio_lines. Same return shape:
+    list of (line_id, section, [words]).
+
+    Fixes three defects of the naive loaders (documented in RESEARCH.md,
+    finding T1): (1) inline <!...> metadata/comments leaked phantom tokens
+    such as 'la' from '$L=A'; (2) alternate readings [r:n] were fused into
+    nonexistent words ('chofarny'); (3) words containing illegible glyphs
+    (%, *, ?) were silently truncated into phantom forms instead of being
+    excluded.
+
+    Policy (each a declared choice, not an accident):
+    - <!...> comments and all other inline <...> tags removed; tags become
+      word breaks (never fuse text across a gap marker).
+    - [x:y:...] alternate readings -> first alternative (transcriber's
+      preferred reading per IVTFF convention).
+    - '!' is alignment padding -> removed, no break ('ch!ol' == 'chol').
+    - Words containing illegible marks (%, *, ?) or residual non-EVA
+      characters are dropped whole (a token with an unreadable glyph is
+      not a countable word; truncating it fabricates one).
+    - comma_break: IVTFF ',' is an UNCERTAIN space. True (default) treats
+      it as a break like '.'; False joins across it. Sensitivity to this
+      knob is part of the assumption audit.
+    - min_word_len: default 1 keeps genuine single-glyph words (the legacy
+      loaders' len>=2 filter dropped ~5.6% of real tokens).
+    """
+    lines = []
+    section_map = {
+        'bio': 'bio', 'cosmo': 'cosmo', 'herbal': 'herbal',
+        'pharma': 'pharma', 'text': 'text', 'zodiac': 'zodiac'
+    }
+    for fpath in sorted(FOLIO_DIR.glob("*.txt")):
+        section = 'unknown'
+        for line in fpath.read_text(encoding='utf-8', errors='replace').splitlines():
+            line = line.strip()
+            if line.startswith('#'):
+                ll = line.lower()
+                for key, val in section_map.items():
+                    if key in ll:
+                        section = val
+                        if val == 'herbal' and '-b' in ll: section = 'herbal-B'
+                        elif val == 'herbal': section = 'herbal-A'
+                continue
+            m = re.match(r'<([^>]+)>', line)
+            if not m:
+                continue
+            lid = m.group(1)
+            rest = line[m.end():].strip()
+            if not rest:
+                continue
+            words = ivtff_clean_words(rest, comma_break=comma_break,
+                                      min_word_len=min_word_len)
+            if words:
+                lines.append((lid, section, words))
+    return lines
+
+def ivtff_clean_words(rest, comma_break=True, min_word_len=1):
+    """Pure IVTFF text-line cleaner (policy documented on
+    load_folio_lines_ivtff). Returns the list of clean words."""
+    rest = re.sub(r'<![^>]*>', '.', rest)
+    rest = re.sub(r'<[^>]*>', '.', rest)
+    rest = re.sub(r'\[([^:\[\]]*)(?::[^\[\]]*)+\]', r'\1', rest)
+    rest = rest.replace('!', '')
+    sep = r'[.\s,;]+' if comma_break else r'[.\s;]+'
+    if not comma_break:
+        rest = rest.replace(',', '')
+    words = []
+    for w in re.split(sep, rest):
+        w = w.lower().strip()
+        if not w:
+            continue
+        if not re.fullmatch(r'[a-z]+', w):
+            continue  # illegible/rare-glyph word: drop whole, never truncate
+        if len(w) >= min_word_len:
+            words.append(w)
+    return words
+
 def load_lines():
     """Load all lines as lists of words, with section metadata."""
     lines = []

@@ -15,6 +15,7 @@ sys.path.insert(0, str(ROOT / "webui"))
 
 import checks_math      # noqa: E402
 import checks_fingerprint  # noqa: E402
+import checks_ivtff  # noqa: E402
 import checks_parsing   # noqa: E402
 import checks_webui     # noqa: E402
 
@@ -23,7 +24,8 @@ sys.path.insert(0, str(ROOT / "sanity_checks"))
 
 def main():
     total_fails = []
-    for mod in (checks_math, checks_parsing, checks_webui, checks_fingerprint):
+    for mod in (checks_math, checks_parsing, checks_webui, checks_fingerprint,
+                checks_ivtff):
         fails = mod.run()
         status = "OK" if not fails else f"{len(fails)} FAIL"
         print(f"  {mod.__name__:<18} {status}")

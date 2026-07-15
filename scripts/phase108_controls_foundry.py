@@ -32,7 +32,7 @@ import random
 import sys
 from pathlib import Path
 
-from common import (DATA_DIR, fetch_gutenberg, load_folio_lines,
+from common import (DATA_DIR, fetch_gutenberg, load_folio_lines_ivtff,
                     load_reference_text, result_path)
 
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
@@ -113,7 +113,11 @@ def build_positive(rng):
 
 
 def build_negative(rng):
-    vms_lines = [words for _, _, words in load_folio_lines() if len(words) >= 2]
+    # IVTFF-aware loader: the naive legacy loader leaked ~5.4% phantom
+    # tokens from markup (RESEARCH.md finding T1); controls derived from
+    # VMS text must not inherit that contamination.
+    vms_lines = [words for _, _, words in load_folio_lines_ivtff()
+                 if len(words) >= 2]
 
     # N1: global word shuffle, original line lengths
     all_words = [w for l in vms_lines for w in l]

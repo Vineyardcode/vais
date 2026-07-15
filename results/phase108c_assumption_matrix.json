@@ -1,0 +1,714 @@
+{
+ "deep_dive_phase1": {
+  "A1_translit": true,
+  "A2_spaces": true,
+  "A3_linear": true,
+  "A5_language": false,
+  "A6_onesystem": true,
+  "A7_pageorder": true
+ },
+ "phase100_decipherment": {
+  "A1_translit": true,
+  "A2_spaces": false,
+  "A3_linear": true,
+  "A5_language": true,
+  "A6_onesystem": false,
+  "A7_pageorder": true
+ },
+ "phase101_currier_ab_dichotomy": {
+  "A1_translit": true,
+  "A2_spaces": false,
+  "A3_linear": true,
+  "A5_language": true,
+  "A6_onesystem": false,
+  "A7_pageorder": true
+ },
+ "phase102_historical_validation": {
+  "A1_translit": true,
+  "A2_spaces": false,
+  "A3_linear": true,
+  "A5_language": true,
+  "A6_onesystem": false,
+  "A7_pageorder": true
+ },
+ "phase103_positional_class_decomposition": {
+  "A1_translit": true,
+  "A2_spaces": false,
+  "A3_linear": true,
+  "A5_language": true,
+  "A6_onesystem": true,
+  "A7_pageorder": true
+ },
+ "phase104_latin_ending_test": {
+  "A1_translit": true,
+  "A2_spaces": false,
+  "A3_linear": true,
+  "A5_language": true,
+  "A6_onesystem": true,
+  "A7_pageorder": true
+ },
+ "phase105_cappelli_retest": {
+  "A1_translit": true,
+  "A2_spaces": true,
+  "A3_linear": true,
+  "A5_language": true,
+  "A6_onesystem": true,
+  "A7_pageorder": true
+ },
+ "phase107_slot_mi_decomposition": {
+  "A1_translit": true,
+  "A2_spaces": true,
+  "A3_linear": true,
+  "A5_language": true,
+  "A6_onesystem": true,
+  "A7_pageorder": false
+ },
+ "phase108_controls_foundry": {
+  "A1_translit": true,
+  "A2_spaces": true,
+  "A3_linear": false,
+  "A5_language": true,
+  "A6_onesystem": true,
+  "A7_pageorder": false
+ },
+ "phase23_full_translation": {
+  "A1_translit": true,
+  "A2_spaces": true,
+  "A3_linear": false,
+  "A5_language": false,
+  "A6_onesystem": true,
+  "A7_pageorder": true
+ },
+ "phase27_self_audit": {
+  "A1_translit": true,
+  "A2_spaces": true,
+  "A3_linear": false,
+  "A5_language": true,
+  "A6_onesystem": true,
+  "A7_pageorder": true
+ },
+ "phase28_statistical": {
+  "A1_translit": true,
+  "A2_spaces": true,
+  "A3_linear": true,
+  "A5_language": false,
+  "A6_onesystem": true,
+  "A7_pageorder": true
+ },
+ "phase29_compounds": {
+  "A1_translit": true,
+  "A2_spaces": true,
+  "A3_linear": false,
+  "A5_language": false,
+  "A6_onesystem": true,
+  "A7_pageorder": true
+ },
+ "phase30_validation": {
+  "A1_translit": true,
+  "A2_spaces": true,
+  "A3_linear": true,
+  "A5_language": true,
+  "A6_onesystem": true,
+  "A7_pageorder": true
+ },
+ "phase31_prefix_paradox": {
+  "A1_translit": true,
+  "A2_spaces": true,
+  "A3_linear": false,
+  "A5_language": false,
+  "A6_onesystem": true,
+  "A7_pageorder": true
+ },
+ "phase32_artifact_test": {
+  "A1_translit": true,
+  "A2_spaces": true,
+  "A3_linear": false,
+  "A5_language": false,
+  "A6_onesystem": true,
+  "A7_pageorder": true
+ },
+ "phase33_cascade_audit": {
+  "A1_translit": true,
+  "A2_spaces": true,
+  "A3_linear": true,
+  "A5_language": false,
+  "A6_onesystem": true,
+  "A7_pageorder": true
+ },
+ "phase34_model_audit": {
+  "A1_translit": true,
+  "A2_spaces": true,
+  "A3_linear": false,
+  "A5_language": false,
+  "A6_onesystem": true,
+  "A7_pageorder": true
+ },
+ "phase35_prefix_disentangle": {
+  "A1_translit": true,
+  "A2_spaces": true,
+  "A3_linear": true,
+  "A5_language": false,
+  "A6_onesystem": true,
+  "A7_pageorder": true
+ },
+ "phase36_parser_free": {
+  "A1_translit": true,
+  "A2_spaces": true,
+  "A3_linear": true,
+  "A5_language": false,
+  "A6_onesystem": true,
+  "A7_pageorder": true
+ },
+ "phase37_parser_free_analysis": {
+  "A1_translit": true,
+  "A2_spaces": true,
+  "A3_linear": false,
+  "A5_language": false,
+  "A6_onesystem": true,
+  "A7_pageorder": true
+ },
+ "phase38_bigram_null": {
+  "A1_translit": true,
+  "A2_spaces": true,
+  "A3_linear": true,
+  "A5_language": false,
+  "A6_onesystem": true,
+  "A7_pageorder": true
+ },
+ "phase39_syntax": {
+  "A1_translit": true,
+  "A2_spaces": true,
+  "A3_linear": true,
+  "A5_language": false,
+  "A6_onesystem": true,
+  "A7_pageorder": true
+ },
+ "phase40_supplement": {
+  "A1_translit": true,
+  "A2_spaces": true,
+  "A3_linear": true,
+  "A5_language": false,
+  "A6_onesystem": true,
+  "A7_pageorder": true
+ },
+ "phase40_syntax_attack": {
+  "A1_translit": true,
+  "A2_spaces": true,
+  "A3_linear": true,
+  "A5_language": false,
+  "A6_onesystem": true,
+  "A7_pageorder": true
+ },
+ "phase41_grammar": {
+  "A1_translit": true,
+  "A2_spaces": true,
+  "A3_linear": true,
+  "A5_language": false,
+  "A6_onesystem": true,
+  "A7_pageorder": true
+ },
+ "phase42_class_system": {
+  "A1_translit": true,
+  "A2_spaces": true,
+  "A3_linear": true,
+  "A5_language": false,
+  "A6_onesystem": true,
+  "A7_pageorder": true
+ },
+ "phase43_attack_classes": {
+  "A1_translit": true,
+  "A2_spaces": true,
+  "A3_linear": true,
+  "A5_language": false,
+  "A6_onesystem": true,
+  "A7_pageorder": true
+ },
+ "phase44_word_classes": {
+  "A1_translit": true,
+  "A2_spaces": true,
+  "A3_linear": true,
+  "A5_language": false,
+  "A6_onesystem": true,
+  "A7_pageorder": true
+ },
+ "phase45_word_predictability": {
+  "A1_translit": true,
+  "A2_spaces": true,
+  "A3_linear": true,
+  "A5_language": false,
+  "A6_onesystem": true,
+  "A7_pageorder": false
+ },
+ "phase46_mi_anatomy": {
+  "A1_translit": true,
+  "A2_spaces": true,
+  "A3_linear": true,
+  "A5_language": false,
+  "A6_onesystem": true,
+  "A7_pageorder": false
+ },
+ "phase47_word_network": {
+  "A1_translit": true,
+  "A2_spaces": true,
+  "A3_linear": true,
+  "A5_language": false,
+  "A6_onesystem": true,
+  "A7_pageorder": true
+ },
+ "phase48_cross_validation": {
+  "A1_translit": true,
+  "A2_spaces": true,
+  "A3_linear": true,
+  "A5_language": false,
+  "A6_onesystem": true,
+  "A7_pageorder": false
+ },
+ "phase49_generalization": {
+  "A1_translit": true,
+  "A2_spaces": true,
+  "A3_linear": true,
+  "A5_language": false,
+  "A6_onesystem": true,
+  "A7_pageorder": false
+ },
+ "phase50_synthesis": {
+  "A1_translit": true,
+  "A2_spaces": true,
+  "A3_linear": true,
+  "A5_language": true,
+  "A6_onesystem": true,
+  "A7_pageorder": true
+ },
+ "phase51_attack_synthesis": {
+  "A1_translit": true,
+  "A2_spaces": true,
+  "A3_linear": true,
+  "A5_language": false,
+  "A6_onesystem": true,
+  "A7_pageorder": false
+ },
+ "phase52_discriminators": {
+  "A1_translit": true,
+  "A2_spaces": true,
+  "A3_linear": true,
+  "A5_language": false,
+  "A6_onesystem": true,
+  "A7_pageorder": false
+ },
+ "phase53_cipher_tests": {
+  "A1_translit": true,
+  "A2_spaces": true,
+  "A3_linear": true,
+  "A5_language": true,
+  "A6_onesystem": true,
+  "A7_pageorder": true
+ },
+ "phase54_natlang_vs_cipher": {
+  "A1_translit": true,
+  "A2_spaces": true,
+  "A3_linear": true,
+  "A5_language": false,
+  "A6_onesystem": true,
+  "A7_pageorder": true
+ },
+ "phase55_vc_separation": {
+  "A1_translit": true,
+  "A2_spaces": true,
+  "A3_linear": true,
+  "A5_language": true,
+  "A6_onesystem": true,
+  "A7_pageorder": false
+ },
+ "phase56_syllabary_test": {
+  "A1_translit": true,
+  "A2_spaces": true,
+  "A3_linear": true,
+  "A5_language": false,
+  "A6_onesystem": true,
+  "A7_pageorder": true
+ },
+ "phase57_bax_test": {
+  "A1_translit": true,
+  "A2_spaces": true,
+  "A3_linear": true,
+  "A5_language": true,
+  "A6_onesystem": true,
+  "A7_pageorder": false
+ },
+ "phase58_cross_script": {
+  "A1_translit": true,
+  "A2_spaces": false,
+  "A3_linear": true,
+  "A5_language": true,
+  "A6_onesystem": true,
+  "A7_pageorder": false
+ },
+ "phase59_forward_model": {
+  "A1_translit": true,
+  "A2_spaces": false,
+  "A3_linear": true,
+  "A5_language": true,
+  "A6_onesystem": true,
+  "A7_pageorder": false
+ },
+ "phase60_positional_verbose": {
+  "A1_translit": true,
+  "A2_spaces": false,
+  "A3_linear": true,
+  "A5_language": true,
+  "A6_onesystem": true,
+  "A7_pageorder": false
+ },
+ "phase61_word_shape_validation": {
+  "A1_translit": true,
+  "A2_spaces": false,
+  "A3_linear": true,
+  "A5_language": true,
+  "A6_onesystem": true,
+  "A7_pageorder": false
+ },
+ "phase62_word_anatomy": {
+  "A1_translit": true,
+  "A2_spaces": false,
+  "A3_linear": false,
+  "A5_language": true,
+  "A6_onesystem": true,
+  "A7_pageorder": true
+ },
+ "phase63_codicological_coherence": {
+  "A1_translit": true,
+  "A2_spaces": false,
+  "A3_linear": true,
+  "A5_language": false,
+  "A6_onesystem": false,
+  "A7_pageorder": true
+ },
+ "phase64_encoding_tournament": {
+  "A1_translit": true,
+  "A2_spaces": true,
+  "A3_linear": true,
+  "A5_language": true,
+  "A6_onesystem": false,
+  "A7_pageorder": true
+ },
+ "phase65_reverse_engineer_script": {
+  "A1_translit": true,
+  "A2_spaces": true,
+  "A3_linear": true,
+  "A5_language": true,
+  "A6_onesystem": true,
+  "A7_pageorder": false
+ },
+ "phase66_glyph_resegmentation": {
+  "A1_translit": true,
+  "A2_spaces": true,
+  "A3_linear": true,
+  "A5_language": true,
+  "A6_onesystem": true,
+  "A7_pageorder": false
+ },
+ "phase67_run_length_morphology": {
+  "A1_translit": true,
+  "A2_spaces": true,
+  "A3_linear": true,
+  "A5_language": true,
+  "A6_onesystem": true,
+  "A7_pageorder": true
+ },
+ "phase68_run_conditioned_transitions": {
+  "A1_translit": true,
+  "A2_spaces": true,
+  "A3_linear": true,
+  "A5_language": false,
+  "A6_onesystem": false,
+  "A7_pageorder": false
+ },
+ "phase71_paragraph_initials": {
+  "A1_translit": true,
+  "A2_spaces": false,
+  "A3_linear": false,
+  "A5_language": false,
+  "A6_onesystem": true,
+  "A7_pageorder": true
+ },
+ "phase72_naibbe_calibration": {
+  "A1_translit": true,
+  "A2_spaces": true,
+  "A3_linear": true,
+  "A5_language": true,
+  "A6_onesystem": true,
+  "A7_pageorder": true
+ },
+ "phase73_abbreviation_model": {
+  "A1_translit": true,
+  "A2_spaces": true,
+  "A3_linear": false,
+  "A5_language": true,
+  "A6_onesystem": true,
+  "A7_pageorder": false
+ },
+ "phase74_paragraph_framing": {
+  "A1_translit": true,
+  "A2_spaces": false,
+  "A3_linear": true,
+  "A5_language": false,
+  "A6_onesystem": true,
+  "A7_pageorder": true
+ },
+ "phase75_latin_mapping": {
+  "A1_translit": true,
+  "A2_spaces": false,
+  "A3_linear": false,
+  "A5_language": true,
+  "A6_onesystem": true,
+  "A7_pageorder": true
+ },
+ "phase77_gallows_ecology": {
+  "A1_translit": true,
+  "A2_spaces": false,
+  "A3_linear": false,
+  "A5_language": true,
+  "A6_onesystem": true,
+  "A7_pageorder": true
+ },
+ "phase77b_line_position_gallows": {
+  "A1_translit": true,
+  "A2_spaces": false,
+  "A3_linear": false,
+  "A5_language": false,
+  "A6_onesystem": true,
+  "A7_pageorder": true
+ },
+ "phase78_allograph_test": {
+  "A1_translit": true,
+  "A2_spaces": false,
+  "A3_linear": false,
+  "A5_language": false,
+  "A6_onesystem": true,
+  "A7_pageorder": true
+ },
+ "phase79_gallows_collapse": {
+  "A1_translit": true,
+  "A2_spaces": false,
+  "A3_linear": true,
+  "A5_language": false,
+  "A6_onesystem": true,
+  "A7_pageorder": true
+ },
+ "phase80_abjad_hypothesis": {
+  "A1_translit": true,
+  "A2_spaces": false,
+  "A3_linear": true,
+  "A5_language": true,
+  "A6_onesystem": true,
+  "A7_pageorder": false
+ },
+ "phase81_german_genre_fingerprint": {
+  "A1_translit": true,
+  "A2_spaces": false,
+  "A3_linear": true,
+  "A5_language": true,
+  "A6_onesystem": true,
+  "A7_pageorder": false
+ },
+ "phase82_charm_fingerprint": {
+  "A1_translit": true,
+  "A2_spaces": false,
+  "A3_linear": true,
+  "A5_language": true,
+  "A6_onesystem": true,
+  "A7_pageorder": true
+ },
+ "phase82_line1_body_separation": {
+  "A1_translit": true,
+  "A2_spaces": false,
+  "A3_linear": true,
+  "A5_language": true,
+  "A6_onesystem": true,
+  "A7_pageorder": true
+ },
+ "phase83_encoding_layer_sweep": {
+  "A1_translit": true,
+  "A2_spaces": false,
+  "A3_linear": true,
+  "A5_language": true,
+  "A6_onesystem": false,
+  "A7_pageorder": true
+ },
+ "phase83_subword_segmentation": {
+  "A1_translit": true,
+  "A2_spaces": false,
+  "A3_linear": true,
+  "A5_language": true,
+  "A6_onesystem": true,
+  "A7_pageorder": true
+ },
+ "phase84_mi_meaning_area": {
+  "A1_translit": true,
+  "A2_spaces": false,
+  "A3_linear": false,
+  "A5_language": true,
+  "A6_onesystem": false,
+  "A7_pageorder": false
+ },
+ "phase85_chunk_fingerprint": {
+  "A1_translit": true,
+  "A2_spaces": false,
+  "A3_linear": true,
+  "A5_language": true,
+  "A6_onesystem": false,
+  "A7_pageorder": true
+ },
+ "phase85_pelling_verbose_cipher": {
+  "A1_translit": true,
+  "A2_spaces": false,
+  "A3_linear": true,
+  "A5_language": true,
+  "A6_onesystem": false,
+  "A7_pageorder": false
+ },
+ "phase85R_revalidation": {
+  "A1_translit": true,
+  "A2_spaces": false,
+  "A3_linear": true,
+  "A5_language": true,
+  "A6_onesystem": true,
+  "A7_pageorder": false
+ },
+ "phase86_chunk_equivalence": {
+  "A1_translit": true,
+  "A2_spaces": false,
+  "A3_linear": true,
+  "A5_language": true,
+  "A6_onesystem": true,
+  "A7_pageorder": false
+ },
+ "phase86R_revalidation": {
+  "A1_translit": true,
+  "A2_spaces": false,
+  "A3_linear": true,
+  "A5_language": true,
+  "A6_onesystem": true,
+  "A7_pageorder": false
+ },
+ "phase87_gallows_null_test": {
+  "A1_translit": true,
+  "A2_spaces": false,
+  "A3_linear": true,
+  "A5_language": false,
+  "A6_onesystem": false,
+  "A7_pageorder": true
+ },
+ "phase87_spectral_vc": {
+  "A1_translit": true,
+  "A2_spaces": false,
+  "A3_linear": true,
+  "A5_language": true,
+  "A6_onesystem": false,
+  "A7_pageorder": true
+ },
+ "phase87R_revalidation": {
+  "A1_translit": true,
+  "A2_spaces": false,
+  "A3_linear": true,
+  "A5_language": true,
+  "A6_onesystem": false,
+  "A7_pageorder": false
+ },
+ "phase88_position_identity": {
+  "A1_translit": true,
+  "A2_spaces": false,
+  "A3_linear": true,
+  "A5_language": true,
+  "A6_onesystem": true,
+  "A7_pageorder": false
+ },
+ "phase89_context_divergence": {
+  "A1_translit": true,
+  "A2_spaces": false,
+  "A3_linear": false,
+  "A5_language": true,
+  "A6_onesystem": true,
+  "A7_pageorder": true
+ },
+ "phase90_crossword_chunk_mi": {
+  "A1_translit": true,
+  "A2_spaces": false,
+  "A3_linear": true,
+  "A5_language": true,
+  "A6_onesystem": true,
+  "A7_pageorder": true
+ },
+ "phase91_zodiac_galenic_axis": {
+  "A1_translit": true,
+  "A2_spaces": false,
+  "A3_linear": false,
+  "A5_language": false,
+  "A6_onesystem": true,
+  "A7_pageorder": true
+ },
+ "phase92_ae_minimal_pairs": {
+  "A1_translit": true,
+  "A2_spaces": true,
+  "A3_linear": false,
+  "A5_language": true,
+  "A6_onesystem": true,
+  "A7_pageorder": true
+ },
+ "phase93_currier_slot2_regime": {
+  "A1_translit": true,
+  "A2_spaces": false,
+  "A3_linear": false,
+  "A5_language": false,
+  "A6_onesystem": false,
+  "A7_pageorder": true
+ },
+ "phase94_e_extension_morphology": {
+  "A1_translit": true,
+  "A2_spaces": false,
+  "A3_linear": false,
+  "A5_language": true,
+  "A6_onesystem": false,
+  "A7_pageorder": true
+ },
+ "phase95_currier_split_fingerprint": {
+  "A1_translit": true,
+  "A2_spaces": false,
+  "A3_linear": true,
+  "A5_language": false,
+  "A6_onesystem": false,
+  "A7_pageorder": true
+ },
+ "phase96_cluster_hchar": {
+  "A1_translit": true,
+  "A2_spaces": false,
+  "A3_linear": true,
+  "A5_language": true,
+  "A6_onesystem": false,
+  "A7_pageorder": false
+ },
+ "phase97_slot_grammar_hchar": {
+  "A1_translit": true,
+  "A2_spaces": false,
+  "A3_linear": true,
+  "A5_language": true,
+  "A6_onesystem": false,
+  "A7_pageorder": false
+ },
+ "phase98_generative_chunk_model": {
+  "A1_translit": true,
+  "A2_spaces": false,
+  "A3_linear": true,
+  "A5_language": false,
+  "A6_onesystem": false,
+  "A7_pageorder": true
+ },
+ "phase99_script_typology": {
+  "A1_translit": true,
+  "A2_spaces": false,
+  "A3_linear": true,
+  "A5_language": true,
+  "A6_onesystem": true,
+  "A7_pageorder": false
+ }
+}

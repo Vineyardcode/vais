@@ -25,23 +25,23 @@
   "lines": 4755
  },
  "vms_word_shuffle": {
-  "tokens": 39486,
-  "types": 8454,
-  "lines": 4877
+  "tokens": 39645,
+  "types": 7297,
+  "lines": 4634
  },
  "vms_char_shuffle": {
-  "tokens": 39486,
-  "types": 33759,
-  "lines": 4877
+  "tokens": 39645,
+  "types": 33352,
+  "lines": 4634
  },
  "grille_table": {
   "tokens": 38004,
-  "types": 933,
-  "lines": 4721
+  "types": 903,
+  "lines": 4734
  },
  "self_citation": {
-  "tokens": 38001,
-  "types": 10062,
-  "lines": 3033
+  "tokens": 38002,
+  "types": 9065,
+  "lines": 2648
  }
 }

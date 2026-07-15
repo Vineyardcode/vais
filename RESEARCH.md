@@ -128,3 +128,116 @@ recorded before any fitting):**
    partially (0.107, inherited from copying whole genuine lines) — line
    effects are a hard discriminator and must be a scored feature in every
    tournament.
+
+---
+
+## Phase 1 — The assumption stack
+
+Every decipherment attempt of the last century, and every one of this
+suite's 129 tests, stands on some subset of seven assumptions. None of them
+is established. This section names them, states what would break if each
+fails, and reports the first measured results of poking at the bottom one.
+
+### The stack, bottom to top
+
+**A1 — The transliteration IS the text.** The suite analyzes the ZL
+(Zandbergen-Landini) EVA transliteration, IVTFF v3b, 201 folio files —
+i.e., one team's reading, through one alphabet's ontology. EVA itself is a
+*convention*: it decides that 'ch' is two letters, that 'iin' is three,
+that a gallows glyph is one unit. Character-level statistics (h2 ≈ 2 bits,
+positional rigidity, the 25-class chunk alphabet) are statements about
+*EVA strings*, not about the manuscript, until proven invariant across
+transliterations and alphabet re-codings (phase110's job).
+
+**A2 — Spaces are word boundaries.** 2,879 of the manuscript's spaces are
+marked *uncertain* (`,` in IVTFF) — ~7% of all boundaries. The suite treats
+them identically to certain spaces. Every word-level statistic (Zipf,
+Heaps, TTR, morphology, slot grammar) inherits this choice.
+
+**A3 — Lines read linearly, left to right, and adjacent tokens are
+syntactically related.** All bigram/MI/Markov statistics assume it. The
+strong line-position effects (measured: line_init_jsd 0.164 vs ~0.001 for
+prose) are themselves evidence that the line is a stronger unit than the
+"sentence flowing across lines" model implies.
+
+**A4 — Every glyph carries signal.** No test in the suite models nulls,
+padding, or decoration. If ~20% of glyphs were nulls (period-attested
+practice), every entropy and morphology number changes.
+
+**A5 — It is language at all.** 49/89 data-touching scripts compare against
+natural-language references; the comparison is only meaningful under A5.
+The negative controls N3/N4 exist precisely because A5 might be false.
+
+**A6 — One system throughout.** 70/89 scripts pool the whole corpus.
+Currier A and B differ enough that pooling may average two different
+systems into a statistical chimera (the phase101 result — 0.94 LOO
+separability — makes pooling actively dangerous).
+
+**A7 — Page and section structure is original and meaningful.** 59/89
+scripts use section labels (herbal/bio/...) or folio identity. Codicology
+says the current binding order is NOT original (quire signatures added
+later); section labels come from illustrations, not text.
+
+### Finding T1 — the bottom assumption failed concretely (ESTABLISHED)
+
+The naive loaders (all four legacy families) mishandle IVTFF markup:
+
+- Page-metadata comments (`<! $Q=S $P=C $F=b $L=A ...>`) leaked phantom
+  tokens: 'la' ×119, 'ih' ×135, 'fb', 'fz', 'qt'... — **878 phantom types**.
+- Alternate readings were fused: `chofa[r:n]y` → nonexistent 'chofarny'
+  (827 groups).
+- Words containing illegible glyphs were silently truncated into phantom
+  forms; genuine single-glyph words (standalone 'y', 's', 'o') were
+  dropped (2,389 tokens, 5.6%).
+- Net: **~2,168 tokens (5.4%) of the analyzed "manuscript" was markup
+  artifact, and the manuscript's type count was inflated 13.6%**
+  (8,842 naive → 7,643 clean).
+
+Fix: `common.core.load_folio_lines_ivtff()` + pure cleaner
+`ivtff_clean_words()` (policy documented in-code; hand-verified in
+`sanity_checks/checks_ivtff.py`). Legacy loaders left untouched — the 129
+golden outputs remain valid as *records of what was computed*; all research
+phases (108+) use the clean loader. Controls rebuilt clean; designed-behavior
+checks re-run: 7/7 PASS.
+
+**Sensitivity of headline features to the loader** (naive vs IVTFF-clean vs
+comma-join; full table `results/phase108b_loader_sensitivity.json`):
+
+| feature | naive | ivtff | comma-join | max shift |
+|---|---|---|---|---|
+| h2_ratio | 0.569 | 0.546 | 0.548 | 4.1% |
+| pos_predict | 0.898 | 0.851 | 0.877 | 5.3% |
+| ttr_5000 | 0.380 | 0.361 | 0.406 | 6.9% |
+| zipf_alpha | 0.896 | 0.929 | 0.897 | 3.7% |
+| line_init_jsd | 0.149 | 0.164 | 0.164 | 10.2% |
+| line_final_jsd | 0.094 | 0.084 | 0.079 | 15.8% |
+
+Verdict: the suite's *qualitative* anomalies survive cleaning (low h2,
+line effects — which actually strengthen, adjacency texture). Its
+*vocabulary-size* claims were inflated ~14% and any argument built on type
+counts or hapax inventories must be re-based on the clean loader. The
+uncertain-space knob moves word-level features by up to 7% — enough to
+matter for close model comparisons, so phase109+ report both settings
+where feasible.
+
+### Dependency matrix (mechanically derived)
+
+Per-script grep-based inheritance over the 89 VMS-data-touching scripts
+(heuristic tags; full per-script table
+`results/phase108c_assumption_matrix.json`):
+
+| assumption | inherited by |
+|---|---|
+| A1 transliteration-is-text | 89/89 (100%) |
+| A2 spaces-are-boundaries | 45/89 (51%) |
+| A3 linear adjacency stats | 68/89 (76%) |
+| A5 language comparisons | 49/89 (55%) |
+| A6 pools A+B as one system | 70/89 (79%) |
+| A7 uses section/folio structure | 59/89 (66%) |
+
+(A4 — nulls — is not grep-detectable: it is inherited by **all 89** by
+omission; no script models null glyphs.)
+
+Reading: 100% of the suite's evidence is conditional on A1; T1 showed A1
+was concretely false at the 5% level and the suite survived — but the
+deeper A1 question (EVA's unit ontology) is untested until phase110.
