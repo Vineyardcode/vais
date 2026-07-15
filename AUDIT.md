@@ -248,3 +248,17 @@ morphology, Mauro chunk grammar); 2 section taxonomies + 1 labels variant.
   exclusion. Before: z=+11.71, p=0.0000, null 0.574±0.027. After: recorded
   below when the rerun completes. Conclusion direction unchanged
   (significant separation); the test is now internally consistent.
+
+**numpy log-domain audit** (all 26 np.log sites reviewed): phase84 MI uses
+a correct double mask; phase103/54/86R JSD helpers eps-smooth + renormalize
+before logs — safe; the "nan" strings in phase86's output are the
+documented by-design sentinel for undersized collapsed corpora (heaps/hapax
+< threshold), not corruption. Only defect: phase56 (A5, fixed).
+
+**Predicted Phase-5 casualty (logged in advance)**: 51 golden/ and 45
+baseline/ captures contain the old absolute project path inside output
+text (scripts that print "saved to <abs path>"). After the folder rename,
+these lines will read `...\vais\...`; the reference files will be
+mechanically rewritten (voynich_slop → vais inside the captured text) in
+the Phase-5 commit so the golden badge stays meaningful. Content otherwise
+unchanged.
