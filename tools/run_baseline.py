@@ -10,8 +10,10 @@ Runs with CWD = project root (required by the CWD-relative scripts).
 Skips pure downloader scripts. Progressive meta writes so a crash loses nothing.
 
 Usage: python tools/run_baseline.py [--only name1,name2] [--timeout SECS]
+                                    [--outdir DIR] [--hashseed N] [--scriptdir DIR]
 """
 import json
+import os
 import subprocess
 import sys
 import time
@@ -37,8 +39,10 @@ def results_snapshot():
 
 
 def main():
+    global BASELINE, SCRIPTS
     only = None
     timeout = DEFAULT_TIMEOUT
+    hashseed = None
     args = sys.argv[1:]
     while args:
         a = args.pop(0)
@@ -46,6 +50,12 @@ def main():
             only = set(args.pop(0).split(","))
         elif a == "--timeout":
             timeout = int(args.pop(0))
+        elif a == "--outdir":
+            BASELINE = Path(args.pop(0))
+        elif a == "--hashseed":
+            hashseed = args.pop(0)
+        elif a == "--scriptdir":
+            SCRIPTS = Path(args.pop(0))
 
     BASELINE.mkdir(exist_ok=True)
     meta_path = BASELINE / "_meta.json"
@@ -71,11 +81,15 @@ def main():
         before = results_snapshot()
         t0 = time.time()
         try:
+            env = dict(os.environ)
+            if hashseed is not None:
+                env["PYTHONHASHSEED"] = hashseed
             proc = subprocess.run(
                 [sys.executable, str(sp)],
                 cwd=str(ROOT),
                 capture_output=True,
                 timeout=timeout,
+                env=env,
             )
             dur = time.time() - t0
             stdout = proc.stdout.decode("utf-8", errors="replace")
