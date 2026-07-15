@@ -262,3 +262,10 @@ these lines will read `...\vais\...`; the reference files will be
 mechanically rewritten (voynich_slop → vais inside the captured text) in
 the Phase-5 commit so the golden badge stays meaningful. Content otherwise
 unchanged.
+
+**A6 after-values**: null accuracy 0.574±0.027 → **0.505±0.054** (the
+corrected LOO null sits at the theoretical ~0.5 chance level, confirming
+the resubstitution inflation diagnosis); z +11.71 → **+7.01** (honest null
+has wider variance); p unchanged at 0.0000; real LOO accuracy unchanged at
+0.886. 6 diff lines vs golden, all inside the Step-6 block. `baseline/` +
+`golden/` refreshed for this test.

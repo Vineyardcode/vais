@@ -1,0 +1,1087 @@
+PHASE 25: NARRATIVE RECONSTRUCTION & REMAINING ROOT RESOLUTION
+============================================================================
+Loaded 39564 word tokens
+
+============================================================================
+PHASE 25a: REMAINING UNKNOWN ROOT CENSUS
+============================================================================
+
+  1672 unknown roots found. Top 25:
+
+  ────────────────────────────────────────────────────────────────────
+  ROOT 'air' — 449 tokens
+  ────────────────────────────────────────────────────────────────────
+    Sections: text:171, herbal-A:110, zodiac:60, cosmo:48
+    Determinatives: k:69, t:56, p:23, f:5
+    Prefixes: d:155, o:65, s:40
+    Suffixes: al:13, ody:11, y:9
+    Top forms: dair(126), air(86), sair(34), otair(29), qokair(21)
+    Left collocates (known): this/that(46), do/make(34), great-one(27), king/great(26)
+    Right collocates (known): stone(43), do/make(40), this/that(37), great-one(32)
+
+  ────────────────────────────────────────────────────────────────────
+  ROOT 'eo' — 302 tokens
+  ────────────────────────────────────────────────────────────────────
+    Sections: text:110, zodiac:67, herbal-A:50, pharma:44
+    Determinatives: k:157, t:104, p:23, f:4
+    Prefixes: o:112, qo:65, y:22
+    Suffixes: y:33, ey:27, ar:6
+    Top forms: okeeo(20), okeo(18), qokeeo(18), oteo(17), keeo(11)
+    Left collocates (known): this/that(46), do/make(16), great-one(14), make-this(10)
+    Right collocates (known): this/that(42), great-one(40), king/great(18), remedy/thing(17)
+    e→a shift: 'eo' → 'ao'
+
+  ────────────────────────────────────────────────────────────────────
+  ROOT 'cheo' — 270 tokens
+  ────────────────────────────────────────────────────────────────────
+    Sections: text:117, pharma:53, herbal-A:42, zodiac:30
+    Determinatives: k:68, t:33, p:11, f:2
+    Prefixes: y:27, d:15, s:2
+    Suffixes: y:50, ey:31, aiin:10
+    Top forms: cheo(85), cheeo(21), ycheo(12), cheockhy(11), cheoky(10)
+    Left collocates (known): this/that(34), great-one(28), remedy/thing(14), do/make(12)
+    Right collocates (known): this/that(32), great-one(30), remedy/thing(21), do/make(18)
+    e→a shift: 'cheo' → 'chao'
+
+  ────────────────────────────────────────────────────────────────────
+  ROOT 'lsh' — 180 tokens
+  ────────────────────────────────────────────────────────────────────
+    Sections: bio:107, text:46, herbal-A:12, cosmo:8
+    Determinatives: p:8, t:8, k:5, f:1
+    Prefixes: o:69, qo:10, so:6
+    Suffixes: edy:86, ey:56, y:19
+    Top forms: lshedy(40), olshedy(25), lshey(16), olshey(13), olsheey(7)
+    Left collocates (known): this/that(37), happen/occur(18), do/make(15), remedy-making(8)
+    Right collocates (known): this/that(40), great-one(17), stone(12), remedy/thing(11)
+
+  ────────────────────────────────────────────────────────────────────
+  ROOT 'eod' — 174 tokens
+  ────────────────────────────────────────────────────────────────────
+    Sections: zodiac:50, text:37, herbal-A:35, cosmo:18
+    Determinatives: k:78, t:71, p:15, f:1
+    Prefixes: o:63, qo:24, y:18
+    Suffixes: ar:43, aiin:40, al:28
+    Top forms: qokeod(8), oteodaiin(8), okeod(7), oteodar(7), pcheodar(6)
+    Left collocates (known): this/that(29), do/make(15), carry/bear(9), happen/occur(8)
+    Right collocates (known): this/that(19), do/make(16), great-one(10), happen/occur(9)
+    e→a shift: 'eod' → 'aod'
+
+  ────────────────────────────────────────────────────────────────────
+  ROOT 'od' — 152 tokens
+  ────────────────────────────────────────────────────────────────────
+    Sections: herbal-A:68, text:28, cosmo:18, pharma:14
+    Determinatives: k:58, t:57, p:11, f:5
+    Prefixes: o:43, qo:28, q:25
+    Suffixes: aiin:25, ar:14, al:7
+    Top forms: qod(8), otodaiin(8), qokod(8), od(7), qokchd(6)
+    Left collocates (known): do/make(24), this/that(22), great-one(9), happen/occur(6)
+    Right collocates (known): great-one(15), this/that(13), king/great(10), do/make(10)
+
+  ────────────────────────────────────────────────────────────────────
+  ROOT 'ai' — 120 tokens
+  ────────────────────────────────────────────────────────────────────
+    Sections: text:36, herbal-A:30, cosmo:24, bio:13
+    Determinatives: k:23, t:10, p:2, f:1
+    Prefixes: d:25, o:12, qo:5
+    Suffixes: iin:97, y:12, dy:2
+    Top forms: aiiin(55), daiiin(22), okaiiin(7), kaiiin(5), qokaiiin(2)
+    Left collocates (known): king/great(18), king/great(14), do/make(12), great-one(12)
+    Right collocates (known): this/that(21), great-one(15), do/make(10), carry/bear(6)
+
+  ────────────────────────────────────────────────────────────────────
+  ROOT 'heo' — 117 tokens
+  ────────────────────────────────────────────────────────────────────
+    Sections: text:40, herbal-A:23, pharma:19, zodiac:13
+    Determinatives: k:33, t:11, p:5
+    Prefixes: s:117
+    Suffixes: y:22, ey:15, edy:4
+    Top forms: sheo(50), sheeo(10), sheoky(7), sheoy(4), sheokey(4)
+    Left collocates (known): this/that(19), carry/bear(7), great-one(7), happen/occur(6)
+    Right collocates (known): this/that(24), great-one(9), carry/bear(6), remedy/thing(5)
+    e→a shift: 'heo' → 'hao'
+
+  ────────────────────────────────────────────────────────────────────
+  ROOT 'chd' — 113 tokens
+  ────────────────────────────────────────────────────────────────────
+    Sections: text:48, herbal-A:24, cosmo:24, bio:7
+    Determinatives: k:5, p:3, t:1
+    Prefixes: d:8, y:2
+    Suffixes: ar:31, al:26, aiin:16
+    Top forms: chdar(24), chdal(24), chdaiin(16), chdor(9), chdain(8)
+    Left collocates (known): this/that(16), do/make(13), great-one(11), matter/thing(7)
+    Right collocates (known): do/make(18), king/great(12), this/that(10), matter/thing(9)
+
+  ────────────────────────────────────────────────────────────────────
+  ROOT 'ech' — 110 tokens
+  ────────────────────────────────────────────────────────────────────
+    Sections: text:62, zodiac:14, herbal-A:12, bio:10
+    Determinatives: k:80, t:25, f:1
+    Prefixes: o:40, qo:36, y:7
+    Suffixes: y:53, dy:19, edy:18
+    Top forms: qokechy(15), qokeechy(6), otechdy(6), kechy(6), okechy(5)
+    Left collocates (known): this/that(17), do/make(12), great-one(6), make-this(5)
+    Right collocates (known): this/that(22), great-one(11), do/make(9), matter/thing(7)
+    e→a shift: 'ech' → 'ach'
+
+  ────────────────────────────────────────────────────────────────────
+  ROOT 'qo' — 105 tokens
+  ────────────────────────────────────────────────────────────────────
+    Sections: herbal-A:46, text:25, bio:23, herbal-B:5
+    Determinatives: k:25, t:17, p:6, f:2
+    Prefixes: o:8, y:2, qo:1
+    Suffixes: ain:3, y:2, aiin:2
+    Top forms: qo(53), qok(15), qot(13), qop(5), qof(2)
+    Left collocates (known): this/that(16), do/make(16), happen/occur(7), great-one(5)
+    Right collocates (known): do/make(19), this/that(13), great-one(13), king/great(6)
+
+  ────────────────────────────────────────────────────────────────────
+  ROOT 'os' — 105 tokens
+  ────────────────────────────────────────────────────────────────────
+    Sections: herbal-A:38, zodiac:18, cosmo:16, pharma:13
+    Determinatives: t:28, k:23, p:4, f:1
+    Prefixes: o:18, q:7, qo:7
+    Suffixes: y:2, ey:1
+    Top forms: os(38), okos(6), sos(5), otos(4), qos(4)
+    Left collocates (known): do/make(11), great-one(5), make-this(4), star(4)
+    Right collocates (known): great-one(17), do/make(6), fall/occur(6), stone(6)
+
+  ────────────────────────────────────────────────────────────────────
+  ROOT 'ches' — 102 tokens
+  ────────────────────────────────────────────────────────────────────
+    Sections: text:26, herbal-A:23, bio:20, zodiac:14
+    Determinatives: k:1
+    Prefixes: y:4, s:3, d:1
+    Suffixes: y:5, ey:1
+    Top forms: ches(45), chees(40), cheesy(2), yches(2), ychees(2)
+    Left collocates (known): great-one(16), this/that(10), stone(9), do/make(8)
+    Right collocates (known): great-one(15), this/that(10), king/great(7), stone(7)
+    e→a shift: 'ches' → 'chas'
+
+  ────────────────────────────────────────────────────────────────────
+  ROOT 'aiir' — 96 tokens
+  ────────────────────────────────────────────────────────────────────
+    Sections: herbal-A:32, text:30, zodiac:20, cosmo:8
+    Determinatives: k:13, p:5, t:4, f:1
+    Prefixes: d:29, o:18, y:4
+    Suffixes: al:3, y:2, ody:1
+    Top forms: aiir(31), daiir(26), okaiir(8), oaiir(4), qokaiir(3)
+    Left collocates (known): do/make(10), carry/bear(9), king/great(7), this/that(5)
+    Right collocates (known): this/that(9), do/make(9), stone(7), happen/occur(5)
+
+  ────────────────────────────────────────────────────────────────────
+  ROOT 'hed' — 90 tokens
+  ────────────────────────────────────────────────────────────────────
+    Sections: text:36, bio:21, cosmo:18, herbal-A:10
+    Determinatives: k:2
+    Prefixes: s:90
+    Suffixes: aiin:21, ain:14, al:14
+    Top forms: shedaiin(21), shed(18), shedain(13), shedal(12), shedar(10)
+    Left collocates (known): great-one(13), this/that(9), king/great(8), stone(6)
+    Right collocates (known): this/that(21), matter/thing(9), do/make(6), happen/occur(5)
+    e→a shift: 'hed' → 'had'
+
+  ────────────────────────────────────────────────────────────────────
+  ROOT 'oo' — 84 tokens
+  ────────────────────────────────────────────────────────────────────
+    Sections: herbal-A:41, text:14, zodiac:10, cosmo:8
+    Determinatives: k:43, t:38, p:3
+    Prefixes: q:35, qo:2, o:1
+    Top forms: oto(10), qokcho(10), qotcho(9), qoko(9), okcho(8)
+    Left collocates (known): this/that(7), great-one(6), king/great(4), matter/thing(4)
+    Right collocates (known): do/make(9), this/that(8), great-one(7), remedy/thing(5)
+
+  ────────────────────────────────────────────────────────────────────
+  ROOT 'lo' — 76 tokens
+  ────────────────────────────────────────────────────────────────────
+    Sections: text:36, bio:17, herbal-A:14, cosmo:4
+    Determinatives: k:19, t:10
+    Prefixes: o:24, do:1, qo:1
+    Suffixes: y:10, iin:9, edy:7
+    Top forms: lo(22), loty(4), loiin(4), oloiin(4), olo(4)
+    Left collocates (known): this/that(17), do/make(8), remedy-making(6), carry/bear(5)
+    Right collocates (known): this/that(8), do/make(6), happen/occur(5), king/great(4)
+
+  ────────────────────────────────────────────────────────────────────
+  ROOT 'ld' — 69 tokens
+  ────────────────────────────────────────────────────────────────────
+    Sections: herbal-A:27, pharma:16, text:8, bio:7
+    Determinatives: k:4, p:4, t:4, f:3
+    Prefixes: o:42, do:3, so:2
+    Suffixes: aiin:20, ar:16, al:7
+    Top forms: oldaiin(12), oldar(8), ldar(5), ld(5), ldaiin(4)
+    Left collocates (known): this/that(6), great-one(5), carry/bear(5), do/make(4)
+    Right collocates (known): do/make(5), this/that(4), carry/bear(4), happen/occur(4)
+
+  ────────────────────────────────────────────────────────────────────
+  ROOT 'le' — 66 tokens
+  ────────────────────────────────────────────────────────────────────
+    Sections: text:33, herbal-A:9, cosmo:8, pharma:7
+    Determinatives: k:51, t:8, p:2, f:1
+    Prefixes: o:35
+    Suffixes: ody:24, ol:23, or:8
+    Top forms: olkeol(7), olkeeody(7), lkeeody(5), lkeol(5), lkeody(4)
+    Left collocates (known): this/that(15), great-one(6), do/make(5), happen/occur(3)
+    Right collocates (known): great-one(11), this/that(8), remedy/thing(6), stone(6)
+    e→a shift: 'le' → 'la'
+
+  ────────────────────────────────────────────────────────────────────
+  ROOT 'cheos' — 64 tokens
+  ────────────────────────────────────────────────────────────────────
+    Sections: text:21, herbal-A:17, pharma:9, zodiac:9
+    Determinatives: p:2, k:2, t:2
+    Prefixes: d:6, y:2, o:1
+    Suffixes: aiin:2, y:1, dy:1
+    Top forms: cheos(39), cheeos(7), dcheos(3), dcheeos(2), ocheos(1)
+    Left collocates (known): this/that(8), great-one(7), happen/occur(5), do/make(4)
+    Right collocates (known): this/that(12), great-one(8), do/make(7), star(3)
+    e→a shift: 'cheos' → 'chaos'
+
+  ────────────────────────────────────────────────────────────────────
+  ROOT 'ls' — 62 tokens
+  ────────────────────────────────────────────────────────────────────
+    Sections: herbal-A:22, bio:11, text:9, pharma:7
+    Determinatives: t:4, k:3
+    Prefixes: o:37, so:4, d:2
+    Suffixes: y:4, ain:3, ey:3
+    Top forms: ols(24), ls(13), sols(3), cthols(2), dls(2)
+    Left collocates (known): great-one(6), king/great(5), this/that(5), happen/occur(5)
+    Right collocates (known): great-one(5), happen/occur(4), king/great(2), carry/bear(2)
+
+  ────────────────────────────────────────────────────────────────────
+  ROOT 'an' — 62 tokens
+  ────────────────────────────────────────────────────────────────────
+    Sections: herbal-A:29, text:12, bio:8, cosmo:6
+    Determinatives: k:23, t:9, p:1
+    Prefixes: d:21, o:12, qo:11
+    Top forms: dan(20), qokan(9), okan(7), an(6), san(3)
+    Left collocates (known): great-one(13), do/make(8), this/that(7), remedy/thing(3)
+    Right collocates (known): do/make(7), great-one(5), carry/bear(4), this/that(2)
+
+  ────────────────────────────────────────────────────────────────────
+  ROOT 'chos' — 61 tokens
+  ────────────────────────────────────────────────────────────────────
+    Sections: herbal-A:19, text:15, pharma:14, herbal-B:8
+    Determinatives: t:3, k:1
+    Prefixes: d:3, y:3, o:2
+    Suffixes: aiin:2, y:2, ar:2
+    Top forms: chos(43), dchos(3), ychos(3), chosaiin(2), ochos(2)
+    Left collocates (known): this/that(6), do/make(6), great-one(5), king/great(4)
+    Right collocates (known): great-one(8), do/make(6), matter/thing(3), king/great(2)
+
+  ────────────────────────────────────────────────────────────────────
+  ROOT 'rch' — 61 tokens
+  ────────────────────────────────────────────────────────────────────
+    Sections: bio:22, text:13, herbal-A:13, pharma:6
+    Determinatives: t:8, k:6, p:1
+    Prefixes: o:21, qo:2, do:2
+    Suffixes: ey:25, edy:14, y:11
+    Top forms: rchedy(10), rchey(8), rcheey(5), orchey(4), rcheky(3)
+    Left collocates (known): this/that(14), do/make(5), happen/occur(4), stone(3)
+    Right collocates (known): this/that(12), happen/occur(5), great-one(3), remedy/thing(3)
+
+  ────────────────────────────────────────────────────────────────────
+  ROOT 'om' — 58 tokens
+  ────────────────────────────────────────────────────────────────────
+    Sections: herbal-A:40, text:9, cosmo:4, pharma:4
+    Determinatives: k:12, t:11, p:3, f:1
+    Prefixes: d:8, o:6, qo:6
+    Suffixes: ody:1
+    Top forms: om(21), dom(8), cthom(5), kom(3), okchom(2)
+    Left collocates (known): do/make(10), great-one(5), king/great(4), king/great(4)
+    Right collocates (known): do/make(7), king/great(3), this/that(2), fall/occur(1)
+
+
+  COVERAGE SUMMARY:
+    Total tokens:   39564
+    Known roots:    29110 (73.6%)
+    Unknown roots:  10454 (26.4%)
+    If top 10 unknowns cracked: 78.6% coverage (+1987 tokens)
+
+============================================================================
+PHASE 25b: 'ho' (=FACE/FRONT?) VALIDATION
+============================================================================
+
+  Total 'ho'-root tokens: 272
+
+  Section distribution:
+    herbal-A      154 (56.6%)
+    text           37 (13.6%)
+    pharma         26 (9.6%)
+    zodiac         22 (8.1%)
+    cosmo          14 (5.1%)
+    herbal-B       13 (4.8%)
+    bio             6 (2.2%)
+
+  Word forms:
+    sho                   127  pfx=s   sfx=      det=
+    shocthy                12  pfx=s   sfx=y     det=t
+    shoky                   9  pfx=s   sfx=y     det=k
+    shokchy                 8  pfx=s   sfx=y     det=k
+    shoiin                  7  pfx=s   sfx=iin   det=
+    shoty                   7  pfx=s   sfx=y     det=t
+    shok                    5  pfx=s   sfx=      det=k
+    shockhy                 5  pfx=s   sfx=y     det=k
+    shokey                  5  pfx=s   sfx=ey    det=k
+    shokal                  5  pfx=s   sfx=al    det=k
+
+  Body-part collocates of 'ho':
+    al         (stone): 34 co-occurrences
+    he         (fall/occur): 13 co-occurrences
+    am         (water): 9 co-occurrences
+    ro         (mouth): 1 co-occurrences
+    she        (tree/plant): 1 co-occurrences
+
+  All known-root collocates of 'ho' (top 15):
+    e          (this/that         ): 155
+    ch         (do/make           ): 127
+    a          (great-one         ): 107
+    h          (happen/occur      ): 94
+    ol         (carry/bear        ): 51
+    cho        (substance         ): 50
+    or         (king/great        ): 46
+    d          (matter/thing      ): 41
+    ar         (king/great        ): 39
+    al         (stone             ): 34
+    ho         (face/front        ): 24
+    l          (remedy/thing      ): 18
+    che        (make-this         ): 15
+    he         (fall/occur        ): 13
+    chod       (substance-matter  ): 9
+
+  BIO 'ho' contexts (6):
+    f75r.16,+P0: ...which/that-which [substance/bodily] king/great | [verbal] happen/occur (described) | remedy-making | **[verbal] [substance/bodily] face/front ones(obl)** | do/make (-state) | the this-substance/bodily (abr.) | which/that-which substance/bodily-noble (pl)...
+    f76v.17,+P0: ...[verbal] king/great | the [substance/bodily] remedy/thing (gen/of) | **[verbal] [substance/bodily] face/front ones(pl)** | [verbal] ?heol? (nominalized) | the this-celestial/astral (abr.) | which this-substance/bodily (abr.)...
+    f79r.19,+P0: ...[verbal] happen/occur (gen/of) | which/that-which substance/bodily-noble (pl) | [verbal] [substance/bodily] ?hey? (-state) | **[verbal] [celestial/astral] face/front (-state)** | the remedy/thing (-state)...
+    f80v.43,+P0: ...[verbal] happen/occur -er/doer | the this-substance/bodily (-state) | of stone -er/doer | **[verbal] [substance/bodily] face/front in/at(place)** | matter/thing (-state)...
+    f82v.10,+P0: ...which/that-which this-celestial/astral (-state) | which/that-which [substance/bodily] stone | **[verbal] [substance/bodily] face/front (-state)** | which/that-which [substance/bodily] stone | do/make (described) | which/that-which [celestial/astral] stone-working (alchemy) (described)...
+    f83r.18,+P0: ...of [discourse/topic] ?alsh? (abr.) | **[verbal] [discourse/topic] face/front (described)** | the [celestial/astral] king/great | [verbal] happen/occur (described) | the this-discourse/topic (abr.)...
+
+  HERBAL 'ho' contexts (167):
+    f10v.4,+P0: ...which/that-which [celestial/astral] ?y? -er | **[verbal] face/front (pl)** | of great-one (pl) | which/that-which this-celestial/astral (-state) | [verbal] [celestial/astral] ?hh? (-state)...
+    f10v.5,+P0: ... | **[verbal] face/front** | [adjectival] this-substance/bodily (-state) | of great-one (pl) | which [celestial/astral] ?o? (-state)...
+    f10v.6,+P0: ... | **[verbal] face/front (pl)** | do/make -er | [verbal] [celestial/astral] happen/occur (-state) | which [celestial/astral] ?o? (-state)...
+    f13v.9,+P0: ...[adjectival] [celestial/astral] stone | substance | [celestial/astral] stone | **[verbal] face/front** | which [celestial/astral] ?o? (-state)...
+    f14r.1,@P0: ...[discourse/topic] ?o? | of great-one (pl) | [discourse/topic] substance (nominalized) | **[verbal] face/front (pl)** | of great-one (pl) | of great-one (pl)...
+    f14r.9,+P0: ...which [celestial/astral] ?o? (-state) | the [substance/bodily] ?i? (pl) | ?s? (-state) | **[verbal] face/front** | [celestial/astral] ?y? | matter/thing (-state)...
+    f14r.10,+P0: ...which/that-which [celestial/astral] king/great | substance-matter | **[verbal] [celestial/astral] face/front (-state)** | do/make (prescribed) | of carry/bear | matter/thing (-state)...
+    f14v.4,+P0: ...[adjectival] [celestial/astral] ?ych? (-state) | [substance/bodily] ?o? | [substance/bodily] ?y? (-state) | **[verbal] [substance/bodily] face/front -er** | [celestial/astral] ?y? (-state) | of king/great (prescribed) | of [celestial/astral] ?yo? (-state)...
+
+============================================================================
+PHASE 25c: 'alch' (=ALCHEMY/STONE-WORKING?) VALIDATION
+============================================================================
+
+  Total 'alch'-root tokens: 71
+
+  Section distribution:
+    bio            20
+    text           18
+    herbal-A       18
+    zodiac          7
+    pharma          5
+    herbal-B        3
+
+  Word forms:
+    alchey                  6  pfx=    sfx=ey    det=
+    dalchy                  5  pfx=d   sfx=y     det=
+    dalchdy                 5  pfx=d   sfx=dy    det=
+    dalchedy                5  pfx=d   sfx=edy   det=
+    alchedy                 4  pfx=    sfx=edy   det=
+    salchedy                4  pfx=s   sfx=edy   det=
+    okalchy                 3  pfx=o   sfx=y     det=k
+    qokalchdy               2  pfx=qo  sfx=dy    det=k
+    okalchedy               2  pfx=o   sfx=edy   det=k
+    kalchdy                 2  pfx=    sfx=dy    det=k
+    alchdy                  2  pfx=    sfx=dy    det=
+    alchy                   2  pfx=    sfx=y     det=
+    dalchey                 2  pfx=d   sfx=ey    det=
+    talchor                 2  pfx=    sfx=or    det=t
+    okalchol                1  pfx=o   sfx=ol    det=k
+    kalchedy                1  pfx=    sfx=edy   det=k
+    alcheey                 1  pfx=    sfx=ey    det=
+    otalchdy                1  pfx=o   sfx=dy    det=t
+    alchky                  1  pfx=    sfx=y     det=k
+    alchor                  1  pfx=    sfx=or    det=
+    palchar                 1  pfx=    sfx=ar    det=p
+    okalchey                1  pfx=o   sfx=ey    det=k
+    alchar                  1  pfx=    sfx=ar    det=
+    okalchdy                1  pfx=o   sfx=dy    det=k
+    dalchor                 1  pfx=d   sfx=or    det=
+    otalchal                1  pfx=o   sfx=al    det=t
+    dalchal                 1  pfx=d   sfx=al    det=
+    qokalchar               1  pfx=qo  sfx=ar    det=k
+    qokalchal               1  pfx=qo  sfx=al    det=k
+    dalcheeeky              1  pfx=d   sfx=ey    det=k
+    otalchy                 1  pfx=o   sfx=y     det=t
+    okalchal                1  pfx=o   sfx=al    det=k
+    alchol                  1  pfx=    sfx=ol    det=
+    alcheky                 1  pfx=    sfx=ey    det=k
+    qokalchey               1  pfx=qo  sfx=ey    det=k
+    qokalchedy              1  pfx=qo  sfx=edy   det=k
+    salchey                 1  pfx=s   sfx=ey    det=
+    qotalchedy              1  pfx=qo  sfx=edy   det=t
+    dalchckhy               1  pfx=d   sfx=y     det=k
+
+  Context examples:
+    f101r.2,+P0 (pharma):
+      ...[substance/bodily] substance (gen/of) | [substance/bodily] do/make (gen/of) | this-celestial/astral (-state) | **the [substance/bodily] stone-working (alchemy) (nominalized)** | [substance/bodily] carry/bear | this-substance/bodily (-state) | king/great...
+    f105v.15,+P0 (text):
+      ...stone | of king/great | ?chd? -er | **[substance/bodily] stone-working (alchemy) (described)** | the [discourse/topic] matter/thing (-state) | of great-one (pl) | the ?r? ones(pl)...
+    f105v.24,+P0 (text):
+      ... | **stone-working (alchemy) (gen/of)** | the substance/bodily-noble (pl) | the [celestial/astral] king/great | [celestial/astral] ?oo?...
+    f106v.12,+P0 (text):
+      ...[adjectival] do/make (gen/of) | which/that-which ?eda? | substance-matter ones(obl) | **the [celestial/astral] stone-working (alchemy) (abr.)** | which/that-which substance/bodily-noble (pl) | [substance/bodily] substance ones(pl) | do/make (prescribed)...
+    f107r.24,+P0 (text):
+      ...[discourse/topic] stone | **[substance/bodily] stone-working (alchemy) (-state)** | the [substance/bodily] ?il? | make-this (nominalized) | [substance/bodily] ?air?...
+    f107r.36,+P0 (text):
+      ...of king/great | **stone-working (alchemy) -er** | [substance/bodily] ?eo? | [substance/bodily] ?r? (gen/of) | do/make ones(pl)...
+    f107v.23,+P0 (text):
+      ... | **[discourse/topic] stone-working (alchemy) -er/doer** | king/great | [substance/bodily] ?aaii? (-state) | do/make -er/doer...
+    f108r.35,+P0 (text):
+      ...which/that-which [botanical/plant] matter/thing (-state) | the [discourse/topic] stone in/at(place) | do/make (described) | **which/that-which [substance/bodily] stone-working (alchemy) (abr.)** | the [discourse/topic] matter/thing (-state)...
+    f111v.22,+P0 (text):
+      ...the substance/bodily-noble (pl) | stone | ?chan? | **the [substance/bodily] stone-working (alchemy) (gen/of)** | [substance/bodily] remedy/thing (gen/of)...
+    f112r.15,+P0 (text):
+      ...the [discourse/topic] king/great | **stone-working (alchemy) -er/doer** | [celestial/astral] ?o? (-state) | the this-celestial/astral (abr.) | which/that-which this-substance/bodily (abr.)...
+    f112v.20,+P0 (text):
+      ...the [discourse/topic] ?r? ones(pl) | king/great | **stone-working (alchemy) (described)** | the [substance/bodily] remedy/thing (described) | which/that-which this-substance/bodily (abr.) | which/that-which celestial/astral-noble (pl)...
+    f113v.16,+P0 (text):
+      ...?chd? ones(obl) | which/that-which substance/bodily-noble (pl) | make-this -er | **the [substance/bodily] stone-working (alchemy) (described)** | which/that-which [substance/bodily] king/great | the [substance/bodily] ?lam? | king/great...
+    f113v.28,+P0 (text):
+      ...the [discourse/topic] happen/occur (gen/of) | this-discourse/topic (abr.) | the this-discourse/topic (prescribed) | **the [substance/bodily] stone-working (alchemy) (abr.)** | which/that-which [celestial/astral] carry/bear | [substance/bodily] ?o? (-state)...
+    f114r.11,+P0 (text):
+      ... | **of stone-working (alchemy) (-state)** | the [substance/bodily] remedy/thing (-state) | which/that-which this-matter ones(pl) | of-the remedy/thing -er...
+    f114r.20,+P0 (text):
+      ...[verbal] ?air? | prepare-this ones(pl) | **of stone-working (alchemy) (abr.)** | of ?aii? (abr.) | the remedy-making (described) | prepare-this ones(pl)...
+
+  Substance/preparation collocates:
+    ch         (do/make           ): 37
+    al         (stone             ): 37
+    l          (remedy/thing      ): 11
+    cho        (substance         ): 10
+    chol       (celestial-body    ): 2
+    am         (water             ): 1
+
+============================================================================
+PHASE 25d: COHERENT PARAGRAPH TRANSLATION
+============================================================================
+
+  Using classifier-merged semantics + medical text template to produce
+  readable English paragraphs from Voynichese.
+
+  Template (medieval astrological-medical):
+  "Concerning [body part / condition], [celestial influence] governs [it].
+   The [substance / remedy] is made [from / with] [ingredients].
+   The great ones / rulers [prescribe / carry] [the treatment]."
+
+
+  ====================================================================
+  f78r — BIO (nymph figures, bodily conditions)
+  ====================================================================
+
+  f78r.1,@Lt [0/1=0%]
+    VOY: okchdldlo
+    ENG: the ?dldlo?
+
+  f78r.2,@Lt [1/1=100%]
+    VOY: okchdy
+    ENG: the bodily matter/thing
+
+  f78r.3,@P0 [6/7=86%]
+    VOY: tshedor shedy qopchedy qokedy dy qokol oky
+    ENG: celestial this-matter agent, verbal happen/occur (descr.), which this discourse [thing], which this bodily [thing], matter/thing, which bodily carry/bear, ?o?
+
+  f78r.4,+P0 [7/7=100%]
+    VOY: qokeedy qokedy shedy tchedy otar olkedy dam
+    ENG: which this bodily [thing], which this bodily [thing], verbal happen/occur (descr.), this celestial [thing], the celestial king/great, the bodily remedy/thing (descr.), of water
+
+  f78r.5,+P0 [7/7=100%]
+    VOY: qckhedy cheky dol chedy qokedy qokain olkedy
+    ENG: which this bodily [thing], bodily do/make (of), of carry/bear, do/make (descr.), which this bodily [thing], which the bodily noble s, the bodily remedy/thing (descr.)
+
+  f78r.6,+P0 [9/9=100%]
+    VOY: yteedy qotal dol shedy qokedar chcthey otor dor or
+    ENG: adj. this celestial [thing], which celestial stone, of carry/bear, verbal happen/occur (descr.), which bodily this-matter agent, celestial do/make (of), the celestial king/great, of king/great, king/great
+
+  f78r.7,+P0 [8/8=100%]
+    VOY: qokal otedy qokedy qokedy dal qokedy qokedy am
+    ENG: which bodily stone, the this celestial [thing], which this bodily [thing], which this bodily [thing], of stone, which this bodily [thing], which this bodily [thing], water
+
+  f78r.8,+P0 [7/8=88%]
+    VOY: dshedy qokedy okar qokedy shedy ykedy shedy qoky
+    ENG: of it-happens (descr.), which this bodily [thing], the bodily king/great, which this bodily [thing], verbal happen/occur (descr.), adj. this bodily [thing], verbal happen/occur (descr.), which ?o?
+
+  f78r.9,+P0 [7/8=88%]
+    VOY: schedy keedy qokedy chckhd qokain chedy qotedy dy
+    ENG: verbal do/make (descr.), this bodily [thing], which this bodily [thing], ?chd?, which the bodily noble s, do/make (descr.), which this celestial [thing], matter/thing
+
+  f78r.10,+P0 [7/8=88%]
+    VOY: dshedy deedy qokeedy otedy otal tedy otey oloiin
+    ENG: of it-happens (descr.), of this/that, which this bodily [thing], the this celestial [thing], the celestial stone, this celestial [thing], the this celestial [thing], the ?lo? s
+
+  f78r.11,+P0 [7/8=88%]
+    VOY: qoky okeedy sheety qoteedy otey shckhedy sokol or
+    ENG: which ?o?, the this bodily [thing], verbal celestial happen/occur (of), which this celestial [thing], the this celestial [thing], verbal bodily happen/occur (descr.), it- bodily carry/bear, king/great
+
+  f78r.12,+P0 [7/8=88%]
+    VOY: dor shekedy qokol kechdy otedy ol tedy chckhedy
+    ENG: of king/great, verbal bodily happen/occur (descr.), which bodily carry/bear, ?ech?, the this celestial [thing], carry/bear, this celestial [thing], bodily do/make (descr.)
+
+  f78r.13,+P0 [10/10=100%]
+    VOY: qokedy ol kedy qokain okedy kedy tol dy qoteedy dy
+    ENG: which this bodily [thing], carry/bear, this bodily [thing], which the bodily noble s, the this bodily [thing], this bodily [thing], celestial carry/bear, matter/thing, which this celestial [thing], matter/thing
+
+  f78r.14,+P0 [8/9=89%]
+    VOY: sor checkhy or chckhdy dol kedy qokededy qokan ol
+    ENG: verbal king/great, bodily do/make (of), king/great, bodily do/make, of carry/bear, this bodily [thing], which bodily this-matter (descr.), which ?an?, carry/bear
+
+  f78r.15,+P0 [8/8=100%]
+    VOY: dchckhedy qokchdy qokedy okedy dal or okeed olkain
+    ENG: of bodily do/make (descr.), which bodily matter/thing, which this bodily [thing], the this bodily [thing], of stone, king/great, the bodily this-matter, the bodily remedy/thing rulers(obl)
+
+  f78r.16,+P0 [5/6=83%]
+    VOY: qokol oted okain ched ar alory
+    ENG: which bodily carry/bear, the celestial this-matter, the the bodily noble s, prepare-this, king/great, ?alor?
+
+  f78r.17,+P0 [4/5=80%]
+    VOY: soiin kar kedy pchey tchdoltdy
+    ENG: it- ?i? s, bodily king/great, this bodily [thing], this discourse [thing], of the celestial remedy/thing
+
+  f78r.18,+P0 [5/5=100%]
+    VOY: chedy qokain dar ar okain
+    ENG: do/make (descr.), which the bodily noble s, of king/great, king/great, the the bodily noble s
+
+  f78r.19,+P0 [3/5=60%]
+    VOY: ches aiin okeedy qokain chl
+    ENG: ?ches?, great-one s, the this bodily [thing], which the bodily noble s, ?chl?
+
+  f78r.20,+P0 [2/4=50%]
+    VOY: sol shedy dalshdy qokychdy
+    ENG: verbal carry/bear, verbal happen/occur (descr.), of ?alsh?, which ?ych?
+
+  f78r.21,+P0 [3/4=75%]
+    VOY: lchedy qokain cheeky lokedy
+    ENG: remedy-making (descr.), which the bodily noble s, bodily do/make (of), ?lo? (descr.)
+
+  f78r.22,+P0 [4/5=80%]
+    VOY: yched qokain daiin chckhdy lr
+    ENG: adj. prepare-this, which the bodily noble s, of great-one s, bodily do/make, ?lr?
+
+  f78r.23,+P0 [5/5=100%]
+    VOY: sain sheor olkchdy roiin okeedy
+    ENG: verbal great-one s, verbal fall/occur agent, the bodily remedy/thing, mouth s, the this bodily [thing]
+
+  f78r.24,+P0 [5/5=100%]
+    VOY: qokeedy kedy qokeey qokedy olol
+    ENG: which this bodily [thing], this bodily [thing], which this bodily [thing], which this bodily [thing], the remedy/thing (nom)
+
+  f78r.25,+P0 [3/5=60%]
+    VOY: sokeedy keol lorain olkeey raiin
+    ENG: it- this bodily [thing], this bodily [thing] (nom), ?lor? rulers(obl), the bodily remedy/thing (of), ?r? rulers
+
+  f78r.26,+P0 [7/8=88%]
+    VOY: sol shey kary or shedy qeedar ain anl
+    ENG: verbal carry/bear, verbal happen/occur (of), bodily king/great, king/great, verbal happen/occur (descr.), which this-matter agent, great-one s, ?anl?
+
+  f78r.27,+P0 [3/4=75%]
+    VOY: daiin chckhal daiil aldy
+    ENG: of great-one s, bodily do/make place, of ?aiil?, stone
+
+  f78r.28,+P0 [7/9=78%]
+    VOY: orain ol qokeedy kchol tchal olkee yfchey ofchedy taly
+    ENG: the ?r? rulers(obl), carry/bear, which this bodily [thing], bodily carry/bear, celestial stone, the ?le?, adj. this plant [thing], the this plant [thing], celestial stone
+
+  f78r.29,+P0 [9/11=82%]
+    VOY: ssheky ol kedy chckhy dain oty qokor oky dain chy ol
+    ENG: verbal bodily it-happens (of), carry/bear, this bodily [thing], bodily do/make, of great-one s, ?o?, which bodily king/great, ?o?, of great-one s, do/make, carry/bear
+
+  f78r.30,+P0 [7/9=78%]
+    VOY: qokeedy qokey daiin olkain dal chedy ololdal chchty tedy
+    ENG: which this bodily [thing], which this bodily [thing], of great-one s, the bodily remedy/thing rulers(obl), of stone, do/make (descr.), the ?lold? place, ?chch?, this celestial [thing]
+
+  f78r.31,+P0 [8/8=100%]
+    VOY: solkeedy sheckhy qokedy otal shedy otar olchedy cthdy
+    ENG: it- bodily remedy/thing (descr.), verbal bodily happen/occur (of), which this bodily [thing], the celestial stone, verbal happen/occur (descr.), the celestial king/great, the remedy-making (descr.), celestial matter/thing
+
+  f78r.32,+P0 [9/9=100%]
+    VOY: qokedy ckhdy qokain chedy dalky lkain ykeedy okaly dy
+    ENG: which this bodily [thing], bodily matter/thing, which the bodily noble s, do/make (descr.), of bodily stone, bodily remedy/thing rulers(obl), adj. this bodily [thing], the bodily stone, matter/thing
+
+  f78r.33,+P0 [7/9=78%]
+    VOY: ytedy daiin ykedy olsheey qokeey okal ol keedy dyky
+    ENG: adj. this celestial [thing], of great-one s, adj. this bodily [thing], the ?lsh? (of), which this bodily [thing], the bodily stone, carry/bear, this bodily [thing], of ?y?
+
+  f78r.34,+P0 [8/8=100%]
+    VOY: dshedy qokeedy qopchedy qokaly dar okaiin keeal am
+    ENG: of it-happens (descr.), which this bodily [thing], which this discourse [thing], which bodily stone, of king/great, the the bodily noble s, this bodily [thing] place, water
+
+  f78r.35,+P0 [8/8=100%]
+    VOY: sain checkhy qokain cheeky daiin daiin tees ol
+    ENG: verbal great-one s, bodily do/make (of), which the bodily noble s, bodily do/make (of), of great-one s, of great-one s, celestial star, carry/bear
+
+  f78r.36,+P0 [6/7=86%]
+    VOY: qotchedy lchedy lchedykedy qol saiin ckhain or
+    ENG: which this celestial [thing], remedy-making (descr.), ?lchedy? (descr.), which carry/bear, verbal great-one s, the bodily noble s, king/great
+
+  f78r.37,+P0 [5/6=83%]
+    VOY: osal ol aiin shee aiin oly
+    ENG: the ?s? place, carry/bear, great-one s, verbal fall/occur, great-one s, the remedy/thing
+
+  f78r.38,+P0 [6/6=100%]
+    VOY: sar aiin oteedy ol aiin chedy
+    ENG: verbal king/great, great-one s, the this celestial [thing], carry/bear, great-one s, do/make (descr.)
+
+  f78r.39,+P0 [4/4=100%]
+    VOY: qotaiin qokaiin otedy keedy
+    ENG: which the celestial noble s, which the bodily noble s, the this celestial [thing], this bodily [thing]
+
+  f78r.40,+P0 [5/5=100%]
+    VOY: shedy qol shedy qokaiin ol
+    ENG: verbal happen/occur (descr.), which carry/bear, verbal happen/occur (descr.), which the bodily noble s, carry/bear
+
+  f78r.41,+P0 [4/5=80%]
+    VOY: ykain chdar chedy qokain dy
+    ENG: adj. the bodily noble s, ?chd? agent, do/make (descr.), which the bodily noble s, matter/thing
+
+  f78r.42,+P0 [4/4=100%]
+    VOY: dain chfaiin opaly kotaly
+    ENG: of great-one s, plant do/make rulers, the discourse stone, the celestial stone
+
+  f78r.43,+P0 [4/4=100%]
+    VOY: lchedy pchedy qokaiin dar
+    ENG: remedy-making (descr.), this discourse [thing], which the bodily noble s, of king/great
+
+  f78r.44,@Lt [1/2=50%]
+    VOY: dar aloifhy
+    ENG: of king/great, ?aloih?
+
+  f78r.45,@Lt [0/1=0%]
+    VOY: dchedaly
+    ENG: of ?chedal?
+
+  f78r.46,@Lt [0/2=0%]
+    VOY: otarodlay orory
+    ENG: the ?arodla?, the ?ror?
+
+  f78r.47,@Lt [1/1=100%]
+    VOY: okaral
+    ENG: the bodily king/great place
+
+
+  SUMMARY for f78r:
+    Total words: 286
+    Known roots: 251 (87.8%)
+    Lines at 100% coverage: 20
+
+  CONNECTED PARAGRAPH (100%-coverage lines only):
+
+    [f78r.2,@Lt] the bodily matter/thing
+    [f78r.4,+P0] which this bodily [thing], which this bodily [thing], verbal happen/occur (descr.), this celestial [thing], the celestial king/great, the bodily remedy/thing (descr.), of water
+    [f78r.5,+P0] which this bodily [thing], bodily do/make (of), of carry/bear, do/make (descr.), which this bodily [thing], which the bodily noble s, the bodily remedy/thing (descr.)
+    [f78r.6,+P0] adj. this celestial [thing], which celestial stone, of carry/bear, verbal happen/occur (descr.), which bodily this-matter agent, celestial do/make (of), the celestial king/great, of king/great, king/great
+    [f78r.7,+P0] which bodily stone, the this celestial [thing], which this bodily [thing], which this bodily [thing], of stone, which this bodily [thing], which this bodily [thing], water
+    [f78r.13,+P0] which this bodily [thing], carry/bear, this bodily [thing], which the bodily noble s, the this bodily [thing], this bodily [thing], celestial carry/bear, matter/thing, which this celestial [thing], matter/thing
+    [f78r.15,+P0] of bodily do/make (descr.), which bodily matter/thing, which this bodily [thing], the this bodily [thing], of stone, king/great, the bodily this-matter, the bodily remedy/thing rulers(obl)
+    [f78r.18,+P0] do/make (descr.), which the bodily noble s, of king/great, king/great, the the bodily noble s
+    [f78r.23,+P0] verbal great-one s, verbal fall/occur agent, the bodily remedy/thing, mouth s, the this bodily [thing]
+    [f78r.24,+P0] which this bodily [thing], this bodily [thing], which this bodily [thing], which this bodily [thing], the remedy/thing (nom)
+    [f78r.31,+P0] it- bodily remedy/thing (descr.), verbal bodily happen/occur (of), which this bodily [thing], the celestial stone, verbal happen/occur (descr.), the celestial king/great, the remedy-making (descr.), celestial matter/thing
+    [f78r.32,+P0] which this bodily [thing], bodily matter/thing, which the bodily noble s, do/make (descr.), of bodily stone, bodily remedy/thing rulers(obl), adj. this bodily [thing], the bodily stone, matter/thing
+    [f78r.34,+P0] of it-happens (descr.), which this bodily [thing], which this discourse [thing], which bodily stone, of king/great, the the bodily noble s, this bodily [thing] place, water
+    [f78r.35,+P0] verbal great-one s, bodily do/make (of), which the bodily noble s, bodily do/make (of), of great-one s, of great-one s, celestial star, carry/bear
+    [f78r.38,+P0] verbal king/great, great-one s, the this celestial [thing], carry/bear, great-one s, do/make (descr.)
+    [f78r.39,+P0] which the celestial noble s, which the bodily noble s, the this celestial [thing], this bodily [thing]
+    [f78r.40,+P0] verbal happen/occur (descr.), which carry/bear, verbal happen/occur (descr.), which the bodily noble s, carry/bear
+    [f78r.42,+P0] of great-one s, plant do/make rulers, the discourse stone, the celestial stone
+    [f78r.43,+P0] remedy-making (descr.), this discourse [thing], which the bodily noble s, of king/great
+    [f78r.47,@Lt] the bodily king/great place
+
+  FULL CONNECTED ATTEMPT (all lines, ?root? = unknown):
+
+     f78r.1,@Lt: the ?dldlo?
+    *f78r.2,@Lt: the bodily matter/thing
+     f78r.3,@P0: celestial this-matter agent, verbal happen/occur (descr.), which this discourse [thing], which this bodily [thing], matter/thing, which bodily carry/bear, ?o?
+    *f78r.4,+P0: which this bodily [thing], which this bodily [thing], verbal happen/occur (descr.), this celestial [thing], the celestial king/great, the bodily remedy/thing (descr.), of water
+    *f78r.5,+P0: which this bodily [thing], bodily do/make (of), of carry/bear, do/make (descr.), which this bodily [thing], which the bodily noble s, the bodily remedy/thing (descr.)
+    *f78r.6,+P0: adj. this celestial [thing], which celestial stone, of carry/bear, verbal happen/occur (descr.), which bodily this-matter agent, celestial do/make (of), the celestial king/great, of king/great, king/great
+    *f78r.7,+P0: which bodily stone, the this celestial [thing], which this bodily [thing], which this bodily [thing], of stone, which this bodily [thing], which this bodily [thing], water
+     f78r.8,+P0: of it-happens (descr.), which this bodily [thing], the bodily king/great, which this bodily [thing], verbal happen/occur (descr.), adj. this bodily [thing], verbal happen/occur (descr.), which ?o?
+     f78r.9,+P0: verbal do/make (descr.), this bodily [thing], which this bodily [thing], ?chd?, which the bodily noble s, do/make (descr.), which this celestial [thing], matter/thing
+     f78r.10,+P0: of it-happens (descr.), of this/that, which this bodily [thing], the this celestial [thing], the celestial stone, this celestial [thing], the this celestial [thing], the ?lo? s
+     f78r.11,+P0: which ?o?, the this bodily [thing], verbal celestial happen/occur (of), which this celestial [thing], the this celestial [thing], verbal bodily happen/occur (descr.), it- bodily carry/bear, king/great
+     f78r.12,+P0: of king/great, verbal bodily happen/occur (descr.), which bodily carry/bear, ?ech?, the this celestial [thing], carry/bear, this celestial [thing], bodily do/make (descr.)
+    *f78r.13,+P0: which this bodily [thing], carry/bear, this bodily [thing], which the bodily noble s, the this bodily [thing], this bodily [thing], celestial carry/bear, matter/thing, which this celestial [thing], matter/thing
+     f78r.14,+P0: verbal king/great, bodily do/make (of), king/great, bodily do/make, of carry/bear, this bodily [thing], which bodily this-matter (descr.), which ?an?, carry/bear
+    *f78r.15,+P0: of bodily do/make (descr.), which bodily matter/thing, which this bodily [thing], the this bodily [thing], of stone, king/great, the bodily this-matter, the bodily remedy/thing rulers(obl)
+     f78r.16,+P0: which bodily carry/bear, the celestial this-matter, the the bodily noble s, prepare-this, king/great, ?alor?
+     f78r.17,+P0: it- ?i? s, bodily king/great, this bodily [thing], this discourse [thing], of the celestial remedy/thing
+    *f78r.18,+P0: do/make (descr.), which the bodily noble s, of king/great, king/great, the the bodily noble s
+     f78r.19,+P0: ?ches?, great-one s, the this bodily [thing], which the bodily noble s, ?chl?
+     f78r.20,+P0: verbal carry/bear, verbal happen/occur (descr.), of ?alsh?, which ?ych?
+     f78r.21,+P0: remedy-making (descr.), which the bodily noble s, bodily do/make (of), ?lo? (descr.)
+     f78r.22,+P0: adj. prepare-this, which the bodily noble s, of great-one s, bodily do/make, ?lr?
+    *f78r.23,+P0: verbal great-one s, verbal fall/occur agent, the bodily remedy/thing, mouth s, the this bodily [thing]
+    *f78r.24,+P0: which this bodily [thing], this bodily [thing], which this bodily [thing], which this bodily [thing], the remedy/thing (nom)
+     f78r.25,+P0: it- this bodily [thing], this bodily [thing] (nom), ?lor? rulers(obl), the bodily remedy/thing (of), ?r? rulers
+     f78r.26,+P0: verbal carry/bear, verbal happen/occur (of), bodily king/great, king/great, verbal happen/occur (descr.), which this-matter agent, great-one s, ?anl?
+     f78r.27,+P0: of great-one s, bodily do/make place, of ?aiil?, stone
+     f78r.28,+P0: the ?r? rulers(obl), carry/bear, which this bodily [thing], bodily carry/bear, celestial stone, the ?le?, adj. this plant [thing], the this plant [thing], celestial stone
+     f78r.29,+P0: verbal bodily it-happens (of), carry/bear, this bodily [thing], bodily do/make, of great-one s, ?o?, which bodily king/great, ?o?, of great-one s, do/make, carry/bear
+     f78r.30,+P0: which this bodily [thing], which this bodily [thing], of great-one s, the bodily remedy/thing rulers(obl), of stone, do/make (descr.), the ?lold? place, ?chch?, this celestial [thing]
+    *f78r.31,+P0: it- bodily remedy/thing (descr.), verbal bodily happen/occur (of), which this bodily [thing], the celestial stone, verbal happen/occur (descr.), the celestial king/great, the remedy-making (descr.), celestial matter/thing
+    *f78r.32,+P0: which this bodily [thing], bodily matter/thing, which the bodily noble s, do/make (descr.), of bodily stone, bodily remedy/thing rulers(obl), adj. this bodily [thing], the bodily stone, matter/thing
+     f78r.33,+P0: adj. this celestial [thing], of great-one s, adj. this bodily [thing], the ?lsh? (of), which this bodily [thing], the bodily stone, carry/bear, this bodily [thing], of ?y?
+    *f78r.34,+P0: of it-happens (descr.), which this bodily [thing], which this discourse [thing], which bodily stone, of king/great, the the bodily noble s, this bodily [thing] place, water
+    *f78r.35,+P0: verbal great-one s, bodily do/make (of), which the bodily noble s, bodily do/make (of), of great-one s, of great-one s, celestial star, carry/bear
+     f78r.36,+P0: which this celestial [thing], remedy-making (descr.), ?lchedy? (descr.), which carry/bear, verbal great-one s, the bodily noble s, king/great
+     f78r.37,+P0: the ?s? place, carry/bear, great-one s, verbal fall/occur, great-one s, the remedy/thing
+    *f78r.38,+P0: verbal king/great, great-one s, the this celestial [thing], carry/bear, great-one s, do/make (descr.)
+    *f78r.39,+P0: which the celestial noble s, which the bodily noble s, the this celestial [thing], this bodily [thing]
+    *f78r.40,+P0: verbal happen/occur (descr.), which carry/bear, verbal happen/occur (descr.), which the bodily noble s, carry/bear
+     f78r.41,+P0: adj. the bodily noble s, ?chd? agent, do/make (descr.), which the bodily noble s, matter/thing
+    *f78r.42,+P0: of great-one s, plant do/make rulers, the discourse stone, the celestial stone
+    *f78r.43,+P0: remedy-making (descr.), this discourse [thing], which the bodily noble s, of king/great
+     f78r.44,@Lt: of king/great, ?aloih?
+     f78r.45,@Lt: of ?chedal?
+     f78r.46,@Lt: the ?arodla?, the ?ror?
+    *f78r.47,@Lt: the bodily king/great place
+
+
+  ====================================================================
+  f76r — BIO (nymph figures, near 100% lines)
+  ====================================================================
+
+  f76r.1,@P0 [8/11=73%]
+    VOY: potchokor chcfhdy opshdy qolp chcphy chcphdy opshey qofshy opchdy sain as
+    ENG: the ?o? agent, plant do/make, the discourse matter/thing, which discourse carry/bear, discourse do/make, discourse do/make, the this discourse [thing], which ?o?, the discourse matter/thing, verbal great-one s, ?as?
+
+  f76r.2,+P0 [10/12=83%]
+    VOY: dshedy qotddyar cthar chep dain okain qokeor shedy qol ain sheals qokeey
+    ENG: of it-happens (descr.), which ?ddy? agent, celestial king/great, discourse make-this, of great-one s, the the bodily noble s, which this bodily [thing] agent, verbal happen/occur (descr.), which carry/bear, great-one s, verbal ?heals?, which this bodily [thing]
+
+  f76r.3,+P0 [11/13=85%]
+    VOY: yshey qokeey qokey qokeed okedy shky qotedy otedy shol qoty ol chedy aiiny
+    ENG: adj. it-happens (of), which this bodily [thing], which this bodily [thing], which bodily this-matter, the this bodily [thing], verbal bodily happen/occur, which this celestial [thing], the this celestial [thing], verbal happen/occur (nom), which ?o?, carry/bear, do/make (descr.), ?aiin?
+
+  f76r.5,=P0 [11/13=85%]
+    VOY: qokedy qokeey or or or chkorol otey qokedy lkedy chdy qokchdy qokal chdam
+    ENG: which this bodily [thing], which this bodily [thing], king/great, king/great, king/great, ?chor? (nom), the this celestial [thing], which this bodily [thing], bodily remedy/thing (descr.), do/make, which bodily matter/thing, which bodily stone, ?chdam?
+
+  f76r.6,+P0 [11/13=85%]
+    VOY: solchedy qokeedy qopchedy qokeeo rol shedy qokedy sheey okees al al chedain dar
+    ENG: it- remedy-making (descr.), which this bodily [thing], which this discourse [thing], which ?eo?, ?r? (nom), verbal happen/occur (descr.), which this bodily [thing], verbal happen/occur (of), the bodily star, stone, stone, prepare-this rulers(obl), of king/great
+
+  f76r.8,=P0 [12/13=92%]
+    VOY: qoaiin ches okeedal qoked qokeey shedy chey lkeedy okey dar aiin chekain oldy
+    ENG: which great-one s, ?ches?, the bodily this-matter place, which bodily this-matter, which this bodily [thing], verbal happen/occur (descr.), do/make (of), bodily remedy/thing (descr.), the this bodily [thing], of king/great, great-one s, bodily make-this rulers(obl), the remedy/thing
+
+  f76r.9,+P0 [12/14=86%]
+    VOY: shed al shckhy ain chcphedy ain olkeey lkar ain otchy lkain chedy dar daly
+    ENG: verbal ?hed?, stone, verbal bodily happen/occur, great-one s, discourse do/make (descr.), great-one s, the bodily remedy/thing (of), bodily remedy/thing agent, great-one s, ?o?, bodily remedy/thing rulers(obl), do/make (descr.), of king/great, of stone
+
+  f76r.11,=P0 [8/12=67%]
+    VOY: qotedshedy qorain oteedy chedy ol chdy raiiin chekain dain chckhy sal oty
+    ENG: which ?edsh? (descr.), which ?r? rulers(obl), the this celestial [thing], do/make (descr.), carry/bear, do/make, ?rai? s, bodily make-this rulers(obl), of great-one s, bodily do/make, verbal stone, ?o?
+
+  f76r.12,+P0 [11/13=85%]
+    VOY: solshedy qool qctheed shdy qa ol keey dain saiin ar shedy qokeor okeedy
+    ENG: it- ?lsh? (descr.), which carry/bear, which celestial this-matter, verbal happen/occur, ?qa?, carry/bear, this bodily [thing], of great-one s, verbal great-one s, king/great, verbal happen/occur (descr.), which this bodily [thing] agent, the this bodily [thing]
+
+  f76r.13,+P0 [12/12=100%]
+    VOY: qokeedy checthy chckhey okal okaiin sheckhey okeedy otey dal kal chedy sar
+    ENG: which this bodily [thing], celestial do/make (of), bodily do/make (of), the bodily stone, the the bodily noble s, verbal bodily happen/occur (of), the this bodily [thing], the this celestial [thing], of stone, bodily stone, do/make (descr.), verbal king/great
+
+  f76r.15,=P0 [11/13=85%]
+    VOY: chorshedy qoked okees al ar aiin ar ain chckheed lchedy shedy qolair chedy
+    ENG: ?chorsh? (descr.), which bodily this-matter, the bodily star, stone, king/great, great-one s, king/great, great-one s, bodily prepare-this, remedy-making (descr.), verbal happen/occur (descr.), which ?lair?, do/make (descr.)
+
+  f76r.16,+P0 [10/11=91%]
+    VOY: qotes chedy shckhy qokeey okeey kain checkhy qokeedy qotey qotain chekair
+    ENG: which celestial star, do/make (descr.), verbal bodily happen/occur, which this bodily [thing], the this bodily [thing], the bodily noble s, bodily do/make (of), which this bodily [thing], which this celestial [thing], which the celestial noble s, ?cheair?
+
+  f76r.17,+P0 [11/12=92%]
+    VOY: chey chckh shey qeeey chol lkain shedy qokeedy okain chedy okeed qokaloro
+    ENG: do/make (of), bodily do/make, verbal happen/occur (of), which this/that, do/make (nom), bodily remedy/thing rulers(obl), verbal happen/occur (descr.), which this bodily [thing], the the bodily noble s, do/make (descr.), the bodily this-matter, which ?aloro?
+
+  f76r.19,=P0 [9/11=82%]
+    VOY: dcheedy qolchey qokeey qokeey chedy qokar shedy shedy lshedy qolchedy otedyl
+    ENG: of do/make (descr.), which remedy-making (of), which this bodily [thing], which this bodily [thing], do/make (descr.), which bodily king/great, verbal happen/occur (descr.), verbal happen/occur (descr.), ?lsh? (descr.), which remedy-making (descr.), the ?edyl?
+
+  f76r.20,+P0 [11/12=92%]
+    VOY: dshedy qo chedy lchedy qokey qolchey qotain chckhy shckhy lchar okar alchdy
+    ENG: of it-happens (descr.), ?qo?, do/make (descr.), remedy-making (descr.), which this bodily [thing], which remedy-making (of), which the celestial noble s, bodily do/make, verbal bodily happen/occur, remedy-making agent, the bodily king/great, stone-working (alchemy)
+
+  f76r.21,+P0 [8/12=67%]
+    VOY: qokchsdy okeey lchedy qo olain ot shedy qotaly dar sain shedy oleeed
+    ENG: which ?s?, the this bodily [thing], remedy-making (descr.), ?qo?, the remedy/thing rulers(obl), ?o?, verbal happen/occur (descr.), which celestial stone, of king/great, verbal great-one s, verbal happen/occur (descr.), the ?led?
+
+  f76r.23,=P0 [12/12=100%]
+    VOY: sheedy qokedy chedy chedy qokain chckhy olchy ain shedy olaiin chedy qokey
+    ENG: verbal happen/occur (descr.), which this bodily [thing], do/make (descr.), do/make (descr.), which the bodily noble s, bodily do/make, the remedy-making, great-one s, verbal happen/occur (descr.), the remedy/thing rulers, do/make (descr.), which this bodily [thing]
+
+  f76r.24,+P0 [10/12=83%]
+    VOY: dalshedy qol sheedy qokaldy chepy dain alolor olain chedy shecthy qokey lor
+    ENG: of ?alsh? (descr.), which carry/bear, verbal happen/occur (descr.), which bodily stone, discourse do/make (of), of great-one s, ?alol? agent, the remedy/thing rulers(obl), do/make (descr.), verbal celestial happen/occur (of), which this bodily [thing], remedy/thing agent
+
+  f76r.25,+P0 [9/13=69%]
+    VOY: qoloin chey qokeey lchedy chckhy chey ky chey qolal lklchey lchedy chey llaiir
+    ENG: which ?lo? s, do/make (of), which this bodily [thing], remedy-making (descr.), bodily do/make, do/make (of), ?y?, do/make (of), which remedy/thing place, ?llch? (of), remedy-making (descr.), do/make (of), ?llaiir?
+
+  f76r.26,+P0 [12/13=92%]
+    VOY: shedal shey qokey qolchedy qolain ain chey qokaiin okain cheedy lchey oly dy
+    ENG: verbal ?hed? place, verbal happen/occur (of), which this bodily [thing], which remedy-making (descr.), which remedy/thing rulers(obl), great-one s, do/make (of), which the bodily noble s, the the bodily noble s, do/make (descr.), remedy-making (of), the remedy/thing, matter/thing
+
+  f76r.28,=P0 [12/13=92%]
+    VOY: soin sheey chear ol aiin chodaiin qokaiin chey qokalchey dal chdy dal ytal
+    ENG: it- ?in?, verbal happen/occur (of), make-this agent, carry/bear, great-one s, substance-matter rulers, which the bodily noble s, do/make (of), which bodily stone-working (alchemy) (of), of stone, do/make, of stone, adj. celestial stone
+
+  f76r.29,+P0 [11/12=92%]
+    VOY: qokar shedy shedy qokar shedy qokain dar shey lshcthy okar okain laiin
+    ENG: which bodily king/great, verbal happen/occur (descr.), verbal happen/occur (descr.), which bodily king/great, verbal happen/occur (descr.), which the bodily noble s, of king/great, verbal happen/occur (of), ?lsh?, the bodily king/great, the the bodily noble s, remedy/thing rulers
+
+  f76r.30,+P0 [9/12=75%]
+    VOY: darchey cheolchey shcthy chedy qo qokey dalaiin sheeky qokain olky sain chy
+    ENG: of ?arch? (of), ?cheolch? (of), verbal celestial happen/occur, do/make (descr.), ?qo?, which this bodily [thing], of stone rulers, verbal bodily happen/occur (of), which the bodily noble s, the bodily remedy/thing, verbal great-one s, do/make
+
+
+  SUMMARY for f76r:
+    Total words: 284
+    Known roots: 241 (84.9%)
+    Lines at 100% coverage: 2
+
+  CONNECTED PARAGRAPH (100%-coverage lines only):
+
+    [f76r.13,+P0] which this bodily [thing], celestial do/make (of), bodily do/make (of), the bodily stone, the the bodily noble s, verbal bodily happen/occur (of), the this bodily [thing], the this celestial [thing], of stone, bodily stone, do/make (descr.), verbal king/great
+    [f76r.23,=P0] verbal happen/occur (descr.), which this bodily [thing], do/make (descr.), do/make (descr.), which the bodily noble s, bodily do/make, the remedy-making, great-one s, verbal happen/occur (descr.), the remedy/thing rulers, do/make (descr.), which this bodily [thing]
+
+  FULL CONNECTED ATTEMPT (all lines, ?root? = unknown):
+
+     f76r.1,@P0: the ?o? agent, plant do/make, the discourse matter/thing, which discourse carry/bear, discourse do/make, discourse do/make, the this discourse [thing], which ?o?, the discourse matter/thing, verbal great-one s, ?as?
+     f76r.2,+P0: of it-happens (descr.), which ?ddy? agent, celestial king/great, discourse make-this, of great-one s, the the bodily noble s, which this bodily [thing] agent, verbal happen/occur (descr.), which carry/bear, great-one s, verbal ?heals?, which this bodily [thing]
+     f76r.3,+P0: adj. it-happens (of), which this bodily [thing], which this bodily [thing], which bodily this-matter, the this bodily [thing], verbal bodily happen/occur, which this celestial [thing], the this celestial [thing], verbal happen/occur (nom), which ?o?, carry/bear, do/make (descr.), ?aiin?
+     f76r.5,=P0: which this bodily [thing], which this bodily [thing], king/great, king/great, king/great, ?chor? (nom), the this celestial [thing], which this bodily [thing], bodily remedy/thing (descr.), do/make, which bodily matter/thing, which bodily stone, ?chdam?
+     f76r.6,+P0: it- remedy-making (descr.), which this bodily [thing], which this discourse [thing], which ?eo?, ?r? (nom), verbal happen/occur (descr.), which this bodily [thing], verbal happen/occur (of), the bodily star, stone, stone, prepare-this rulers(obl), of king/great
+     f76r.8,=P0: which great-one s, ?ches?, the bodily this-matter place, which bodily this-matter, which this bodily [thing], verbal happen/occur (descr.), do/make (of), bodily remedy/thing (descr.), the this bodily [thing], of king/great, great-one s, bodily make-this rulers(obl), the remedy/thing
+     f76r.9,+P0: verbal ?hed?, stone, verbal bodily happen/occur, great-one s, discourse do/make (descr.), great-one s, the bodily remedy/thing (of), bodily remedy/thing agent, great-one s, ?o?, bodily remedy/thing rulers(obl), do/make (descr.), of king/great, of stone
+     f76r.11,=P0: which ?edsh? (descr.), which ?r? rulers(obl), the this celestial [thing], do/make (descr.), carry/bear, do/make, ?rai? s, bodily make-this rulers(obl), of great-one s, bodily do/make, verbal stone, ?o?
+     f76r.12,+P0: it- ?lsh? (descr.), which carry/bear, which celestial this-matter, verbal happen/occur, ?qa?, carry/bear, this bodily [thing], of great-one s, verbal great-one s, king/great, verbal happen/occur (descr.), which this bodily [thing] agent, the this bodily [thing]
+    *f76r.13,+P0: which this bodily [thing], celestial do/make (of), bodily do/make (of), the bodily stone, the the bodily noble s, verbal bodily happen/occur (of), the this bodily [thing], the this celestial [thing], of stone, bodily stone, do/make (descr.), verbal king/great
+     f76r.15,=P0: ?chorsh? (descr.), which bodily this-matter, the bodily star, stone, king/great, great-one s, king/great, great-one s, bodily prepare-this, remedy-making (descr.), verbal happen/occur (descr.), which ?lair?, do/make (descr.)
+     f76r.16,+P0: which celestial star, do/make (descr.), verbal bodily happen/occur, which this bodily [thing], the this bodily [thing], the bodily noble s, bodily do/make (of), which this bodily [thing], which this celestial [thing], which the celestial noble s, ?cheair?
+     f76r.17,+P0: do/make (of), bodily do/make, verbal happen/occur (of), which this/that, do/make (nom), bodily remedy/thing rulers(obl), verbal happen/occur (descr.), which this bodily [thing], the the bodily noble s, do/make (descr.), the bodily this-matter, which ?aloro?
+     f76r.19,=P0: of do/make (descr.), which remedy-making (of), which this bodily [thing], which this bodily [thing], do/make (descr.), which bodily king/great, verbal happen/occur (descr.), verbal happen/occur (descr.), ?lsh? (descr.), which remedy-making (descr.), the ?edyl?
+     f76r.20,+P0: of it-happens (descr.), ?qo?, do/make (descr.), remedy-making (descr.), which this bodily [thing], which remedy-making (of), which the celestial noble s, bodily do/make, verbal bodily happen/occur, remedy-making agent, the bodily king/great, stone-working (alchemy)
+     f76r.21,+P0: which ?s?, the this bodily [thing], remedy-making (descr.), ?qo?, the remedy/thing rulers(obl), ?o?, verbal happen/occur (descr.), which celestial stone, of king/great, verbal great-one s, verbal happen/occur (descr.), the ?led?
+    *f76r.23,=P0: verbal happen/occur (descr.), which this bodily [thing], do/make (descr.), do/make (descr.), which the bodily noble s, bodily do/make, the remedy-making, great-one s, verbal happen/occur (descr.), the remedy/thing rulers, do/make (descr.), which this bodily [thing]
+     f76r.24,+P0: of ?alsh? (descr.), which carry/bear, verbal happen/occur (descr.), which bodily stone, discourse do/make (of), of great-one s, ?alol? agent, the remedy/thing rulers(obl), do/make (descr.), verbal celestial happen/occur (of), which this bodily [thing], remedy/thing agent
+     f76r.25,+P0: which ?lo? s, do/make (of), which this bodily [thing], remedy-making (descr.), bodily do/make, do/make (of), ?y?, do/make (of), which remedy/thing place, ?llch? (of), remedy-making (descr.), do/make (of), ?llaiir?
+     f76r.26,+P0: verbal ?hed? place, verbal happen/occur (of), which this bodily [thing], which remedy-making (descr.), which remedy/thing rulers(obl), great-one s, do/make (of), which the bodily noble s, the the bodily noble s, do/make (descr.), remedy-making (of), the remedy/thing, matter/thing
+     f76r.28,=P0: it- ?in?, verbal happen/occur (of), make-this agent, carry/bear, great-one s, substance-matter rulers, which the bodily noble s, do/make (of), which bodily stone-working (alchemy) (of), of stone, do/make, of stone, adj. celestial stone
+     f76r.29,+P0: which bodily king/great, verbal happen/occur (descr.), verbal happen/occur (descr.), which bodily king/great, verbal happen/occur (descr.), which the bodily noble s, of king/great, verbal happen/occur (of), ?lsh?, the bodily king/great, the the bodily noble s, remedy/thing rulers
+     f76r.30,+P0: of ?arch? (of), ?cheolch? (of), verbal celestial happen/occur, do/make (descr.), ?qo?, which this bodily [thing], of stone rulers, verbal bodily happen/occur (of), which the bodily noble s, the bodily remedy/thing, verbal great-one s, do/make
+
+
+  ====================================================================
+  f1r — HERBAL-A (first herbal page)
+  ====================================================================
+
+  f1r.1,@P0 [6/9=67%]
+    VOY: fachys ykal ar ataiin shol shory cthres kor sholdy
+    ENG: ?achys?, adj. bodily stone, king/great, the celestial noble rulers, verbal happen/occur (nom), verbal ?hor?, celestial south, bodily king/great, verbal ?hol?
+
+  f1r.2,+P0 [6/10=60%]
+    VOY: sory ckhar or kair chtaiin shar ase cthar cthar dan
+    ENG: it- ?r?, bodily king/great, king/great, ?air?, celestial do/make rulers, verbal happen/occur agent, ?ase?, celestial king/great, celestial king/great, of ?an?
+
+  f1r.3,+P0 [6/9=67%]
+    VOY: syaiir sheky or ykaiin shod cthoary cthes daraiin sy
+    ENG: verbal ?yaiir?, verbal bodily happen/occur (of), king/great, adj. the bodily noble s, verbal ?hod?, the celestial king/great, celestial star, of king/great rulers, ?s?
+
+  f1r.4,+P0 [5/9=56%]
+    VOY: soiin oteey oteos roloty cthiar daiin okaiin or okan
+    ENG: it- ?i? s, the this celestial [thing], the celestial star, ?rolo?, ?i? agent, of great-one s, the the bodily noble s, king/great, the ?an?
+
+  f1r.5,+P0 [4/5=80%]
+    VOY: sair chear cthaiin cphar cfhaiin
+    ENG: verbal ?air?, make-this agent, the celestial noble s, discourse king/great, the plant noble s
+
+  f1r.6,=Pt [0/1=0%]
+    VOY: ydaraishy
+    ENG: adj. ?daraish?
+
+  f1r.7,*P0 [4/8=50%]
+    VOY: odar cy shol cphoy oydar sh cfhoaiin shodary
+    ENG: the matter/thing agent, ?c?, verbal happen/occur (nom), ?o?, the ?yd? agent, it-happens, the the plant noble s, verbal ?hodar?
+
+  f1r.8,+P0 [7/10=70%]
+    VOY: yshey shody okchoy otchol chocthy os chy dain chor kos
+    ENG: adj. it-happens (of), verbal happen/occur (prescr.), the ?o?, the celestial carry/bear, celestial substance, ?os?, do/make, of great-one s, do/make agent, ?os?
+
+  f1r.9,+P0 [3/4=75%]
+    VOY: daiin shos cfhol shody
+    ENG: of great-one s, verbal ?hos?, plant carry/bear, verbal happen/occur (prescr.)
+
+  f1r.10,=Pt [2/3=67%]
+    VOY: dain os teody
+    ENG: of great-one s, ?os?, this celestial [thing] (prescr.)
+
+  f1r.11,*P0 [6/8=75%]
+    VOY: ydain cphesaiin ols cphey ytain shoshy cphodal es
+    ENG: adj. matter/thing rulers(obl), discourse star rulers, the ?ls?, this discourse [thing], adj. the celestial noble s, verbal ?hosh?, the discourse matter/thing place, star
+
+  f1r.12,+P0 [3/8=38%]
+    VOY: oksho kshoy otairin oteol okan shodain sckhey daiin
+    ENG: ?oo?, ?o?, the ?air? s, the this celestial [thing] (nom), the ?an?, verbal ?hod? rulers(obl), verbal this bodily [thing], of great-one s
+
+  f1r.13,+P0 [5/8=62%]
+    VOY: shoy ckhey kodaiin cphy cphodaiils cthey sho oldain
+    ENG: verbal face/front, this bodily [thing], the bodily matter/thing rulers, ?y?, the ?daiils?, this celestial [thing], verbal face/front, the ?ld? rulers(obl)
+
+  f1r.14,+P0 [6/9=67%]
+    VOY: dain oiin chol odaiin chodain chdy okain cthy kod
+    ENG: of great-one s, the ?i? s, do/make (nom), the matter/thing rulers, substance-matter rulers(obl), do/make, the the bodily noble s, ?y?, ?od?
+
+  f1r.15,+P0 [9/10=90%]
+    VOY: daiin shckhey ckeo char shey kol chol chol kor chal
+    ENG: of great-one s, verbal bodily happen/occur (of), ?ceo?, do/make agent, verbal happen/occur (of), bodily carry/bear, do/make (nom), do/make (nom), bodily king/great, do/make place
+
+  f1r.16,+P0 [5/9=56%]
+    VOY: sho chol shodan kshy kchy or chodaiin sho koeam
+    ENG: verbal face/front, do/make (nom), verbal ?hodan?, ?y?, ?y?, king/great, substance-matter rulers, verbal face/front, the ?eam?
+
+  f1r.17,+P0 [4/8=50%]
+    VOY: ycho tchey chekain sheo pshol dydyd cthy daictoy
+    ENG: adj. substance, this celestial [thing], bodily make-this rulers(obl), verbal ?heo?, discourse carry/bear, of ?ydyd?, ?y?, of ?aico?
+
+  f1r.18,+P0 [5/9=56%]
+    VOY: yto shol she kodshey cphealy dar ain dain ckhyds
+    ENG: ?yo?, verbal happen/occur (nom), verbal fall/occur, the ?dsh? (of), ?eal?, of king/great, great-one s, of great-one s, adj. ?ds?
+
+  f1r.19,+P0 [5/8=62%]
+    VOY: dchar shcthaiin okaiir chey chy tol cthols dlocto
+    ENG: of do/make agent, verbal celestial happen/occur rulers, the ?aiir?, do/make (of), do/make, celestial carry/bear, the ?ls?, of ?loco?
+
+  f1r.20,+P0 [5/5=100%]
+    VOY: shok chor chey dain ckhey
+    ENG: verbal bodily face/front, do/make agent, do/make (of), of great-one s, this bodily [thing]
+
+
+  SUMMARY for f1r:
+    Total words: 150
+    Known roots: 96 (64.0%)
+    Lines at 100% coverage: 1
+
+  CONNECTED PARAGRAPH (100%-coverage lines only):
+
+    [f1r.20,+P0] verbal bodily face/front, do/make agent, do/make (of), of great-one s, this bodily [thing]
+
+  FULL CONNECTED ATTEMPT (all lines, ?root? = unknown):
+
+     f1r.1,@P0: ?achys?, adj. bodily stone, king/great, the celestial noble rulers, verbal happen/occur (nom), verbal ?hor?, celestial south, bodily king/great, verbal ?hol?
+     f1r.2,+P0: it- ?r?, bodily king/great, king/great, ?air?, celestial do/make rulers, verbal happen/occur agent, ?ase?, celestial king/great, celestial king/great, of ?an?
+     f1r.3,+P0: verbal ?yaiir?, verbal bodily happen/occur (of), king/great, adj. the bodily noble s, verbal ?hod?, the celestial king/great, celestial star, of king/great rulers, ?s?
+     f1r.4,+P0: it- ?i? s, the this celestial [thing], the celestial star, ?rolo?, ?i? agent, of great-one s, the the bodily noble s, king/great, the ?an?
+     f1r.5,+P0: verbal ?air?, make-this agent, the celestial noble s, discourse king/great, the plant noble s
+     f1r.6,=Pt: adj. ?daraish?
+     f1r.7,*P0: the matter/thing agent, ?c?, verbal happen/occur (nom), ?o?, the ?yd? agent, it-happens, the the plant noble s, verbal ?hodar?
+     f1r.8,+P0: adj. it-happens (of), verbal happen/occur (prescr.), the ?o?, the celestial carry/bear, celestial substance, ?os?, do/make, of great-one s, do/make agent, ?os?
+     f1r.9,+P0: of great-one s, verbal ?hos?, plant carry/bear, verbal happen/occur (prescr.)
+     f1r.10,=Pt: of great-one s, ?os?, this celestial [thing] (prescr.)
+     f1r.11,*P0: adj. matter/thing rulers(obl), discourse star rulers, the ?ls?, this discourse [thing], adj. the celestial noble s, verbal ?hosh?, the discourse matter/thing place, star
+     f1r.12,+P0: ?oo?, ?o?, the ?air? s, the this celestial [thing] (nom), the ?an?, verbal ?hod? rulers(obl), verbal this bodily [thing], of great-one s
+     f1r.13,+P0: verbal face/front, this bodily [thing], the bodily matter/thing rulers, ?y?, the ?daiils?, this celestial [thing], verbal face/front, the ?ld? rulers(obl)
+     f1r.14,+P0: of great-one s, the ?i? s, do/make (nom), the matter/thing rulers, substance-matter rulers(obl), do/make, the the bodily noble s, ?y?, ?od?
+     f1r.15,+P0: of great-one s, verbal bodily happen/occur (of), ?ceo?, do/make agent, verbal happen/occur (of), bodily carry/bear, do/make (nom), do/make (nom), bodily king/great, do/make place
+     f1r.16,+P0: verbal face/front, do/make (nom), verbal ?hodan?, ?y?, ?y?, king/great, substance-matter rulers, verbal face/front, the ?eam?
+     f1r.17,+P0: adj. substance, this celestial [thing], bodily make-this rulers(obl), verbal ?heo?, discourse carry/bear, of ?ydyd?, ?y?, of ?aico?
+     f1r.18,+P0: ?yo?, verbal happen/occur (nom), verbal fall/occur, the ?dsh? (of), ?eal?, of king/great, great-one s, of great-one s, adj. ?ds?
+     f1r.19,+P0: of do/make agent, verbal celestial happen/occur rulers, the ?aiir?, do/make (of), do/make, celestial carry/bear, the ?ls?, of ?loco?
+    *f1r.20,+P0: verbal bodily face/front, do/make agent, do/make (of), of great-one s, this bodily [thing]
+
+
+============================================================================
+PHASE 25e: COMPLETE VOCABULARY REFERENCE TABLE
+============================================================================
+
+  ┌────────────┬────────┬──────────────────────────────┬────────────────────┐
+  │ ROOT       │  COUNT │ MEANING                      │ SOURCE             │
+  ├────────────┼────────┼──────────────────────────────┼────────────────────┤
+  │ e          │   5433 │ this/that                    │ Coptic root        │
+  │ a          │   4017 │ great-one                    │ Coptic root        │
+  │ ch         │   3784 │ do/make                      │ Coptic root        │
+  │ ar         │   2103 │ king/great                   │ Arabic             │
+  │ h          │   2030 │ happen/occur                 │ Coptic root        │
+  │ ol         │   1847 │ carry/bear                   │ Coptic (Sahidic)   │
+  │ al         │   1788 │ stone                        │ Coptic (Sahidic)   │
+  │ l          │   1371 │ remedy/thing                 │ Coptic root        │
+  │ d          │   1241 │ matter/thing                 │ Coptic root        │
+  │ or         │   1108 │ king/great                   │ Arabic             │
+  │ cho        │    598 │ substance                    │ Coptic (Sahidic)   │
+  │ he         │    417 │ fall/occur                   │ Coptic (Sahidic)   │
+  │ am         │    413 │ water                        │ Coptic (Sahidic)   │
+  │ ho         │    272 │ face/front                   │ Coptic (Sahidic)   │
+  │ es         │    189 │ star                         │ Coptic+Arabic      │
+  │ eos        │    133 │ star                         │ Coptic+Arabic      │
+  │ chol       │     96 │ celestial-body               │ Coptic (Sahidic)   │
+  │ she        │     33 │ tree/plant                   │ Coptic (Sahidic)   │
+  │ ro         │     29 │ mouth                        │ Coptic (Sahidic)   │
+  │ cham       │     27 │ hot/warm                     │ Coptic+Arabic      │
+  │ sheo       │     18 │ dry                          │ Coptic+Arabic      │
+  │ les        │     16 │ tongue                       │ Coptic (Sahidic)   │
+  │ rar        │     16 │ king                         │ Arabic             │
+  │ choam      │      8 │ hot                          │ Coptic+Arabic      │
+  │ eosh       │      3 │ dry                          │ Coptic+Arabic      │
+  │ ran        │      2 │ name                         │ Coptic (Sahidic)   │
+  │ chas       │      2 │ lord/master                  │ Arabic             │
+  │ yed        │      2 │ hand                         │ Arabic             │
+  │ esed       │      1 │ lion                         │ Arabic             │
+  │ res        │      1 │ south                        │ Arabic             │
+  ├────────────┼────────┼──────────────────────────────┼────────────────────┤
+  │ COMPOUND   │  COUNT │ MEANING                      │ COMPONENTS         │
+  ├────────────┼────────┼──────────────────────────────┼────────────────────┤
+  │ che        │    727 │ make-this                    │ compound           │
+  │ lch        │    432 │ remedy-making                │ compound           │
+  │ ed         │    355 │ this-matter                  │ compound           │
+  │ sh         │    222 │ it-happens                   │ compound           │
+  │ ched       │    195 │ prepare-this                 │ compound           │
+  │ chod       │    110 │ substance-matter             │ compound           │
+  │ alch       │     71 │ stone-working (alchemy)      │ compound           │
+  └────────────┴────────┴──────────────────────────────┴────────────────────┘
+
+  GRAMMAR MORPHEMES:
+
+  Prefixes:
+    qo-         4793  which/that-which
+    q-          834  which
+    o-         8063  the
+    do-          152  of-the
+    d-         3400  of
+    so-          213  it-[verbs]
+    s-         4197  [verbal]
+    y-         1749  [adjectival]
+
+  Suffixes:
+    -aiin       1417  ones(pl)
+    -ain         594  ones(obl)
+    -iin        3094  (pl)
+    -in         1258  (pl)
+    -ar         1233  -er/doer
+    -or         1263  -er
+    -al          858  in/at(place)
+    -ol         1950  (nominalized)
+    -eedy          0  (intensely-described)
+    -edy        2159  (described)
+    -ody        1003  (prescribed)
+    -dy         3208  (abr.)
+    -ey         2728  (gen/of)
+    -y          6763  (-state)
+
+  Gallows Determinatives:
+    [k]        11297  substance/bodily
+    [t]         7330  celestial/astral
+    [f]          486  botanical/plant
+    [p]         1671  discourse/topic
+
+  FINAL COVERAGE: 29110/39564 = 73.6%
+  Known roots: 30 confirmed + 7 compounds = 37 total
+
+  Results saved to results/phase25_results.json

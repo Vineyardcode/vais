@@ -308,5 +308,197 @@
   "results_files_touched": [
    "phase106c_positional_frequency_match.txt"
   ]
+ },
+ "phase107_slot_mi_decomposition": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 201.87,
+  "stdout_bytes": 9474,
+  "results_files_touched": [
+   "phase107_slot_mi_decomposition.txt"
+  ]
+ },
+ "phase19_zodiac_alignment": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 1.58,
+  "stdout_bytes": 27690,
+  "results_files_touched": [
+   "phase19_results.json"
+  ]
+ },
+ "phase20_template_subtraction": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 1.21,
+  "stdout_bytes": 17462,
+  "results_files_touched": [
+   "phase20_results.json"
+  ]
+ },
+ "phase21_highest_leverage": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 1.71,
+  "stdout_bytes": 18759,
+  "results_files_touched": [
+   "phase21_results.json"
+  ]
+ },
+ "phase22_unknown_roots": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 1.3,
+  "stdout_bytes": 39679,
+  "results_files_touched": [
+   "phase22_results.json"
+  ]
+ },
+ "phase23_full_translation": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.79,
+  "stdout_bytes": 48737,
+  "results_files_touched": [
+   "phase23_results.json"
+  ]
+ },
+ "phase24_classifier_semantics": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 1.82,
+  "stdout_bytes": 45170,
+  "results_files_touched": [
+   "phase24_results.json"
+  ]
+ },
+ "phase25_narrative_translation": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 5.2,
+  "stdout_bytes": 75628,
+  "results_files_touched": [
+   "phase25_results.json"
+  ]
+ },
+ "phase26_expansion": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 3.26,
+  "stdout_bytes": 36262,
+  "results_files_touched": [
+   "phase26_results.json"
+  ]
+ },
+ "phase27_self_audit": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 12.77,
+  "stdout_bytes": 26026,
+  "results_files_touched": [
+   "phase27_output.txt",
+   "phase27_results.json"
+  ]
+ },
+ "phase28_statistical": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 30.71,
+  "stdout_bytes": 24536,
+  "results_files_touched": [
+   "phase28_output.txt",
+   "phase28_results.json"
+  ]
+ },
+ "phase29_compounds": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 2.52,
+  "stdout_bytes": 21859,
+  "results_files_touched": [
+   "phase29_output.txt",
+   "phase29_results.json"
+  ]
+ },
+ "phase30_validation": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 20.46,
+  "stdout_bytes": 12170,
+  "results_files_touched": [
+   "phase30_output.txt",
+   "phase30_results.json"
+  ]
+ },
+ "phase31_prefix_paradox": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 2.69,
+  "stdout_bytes": 15778,
+  "results_files_touched": [
+   "phase31_output.txt",
+   "phase31_results.json"
+  ]
+ },
+ "phase32_artifact_test": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 2.7,
+  "stdout_bytes": 11567,
+  "results_files_touched": [
+   "phase32_output.txt",
+   "phase32_results.json"
+  ]
+ },
+ "phase33_cascade_audit": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 10.56,
+  "stdout_bytes": 11483,
+  "results_files_touched": [
+   "phase33_output.txt",
+   "phase33_results.json"
+  ]
+ },
+ "phase34_model_audit": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 3.06,
+  "stdout_bytes": 12770,
+  "results_files_touched": [
+   "phase34_output.txt",
+   "phase34_results.json"
+  ]
+ },
+ "phase35_prefix_disentangle": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 1.62,
+  "stdout_bytes": 9156,
+  "results_files_touched": []
+ },
+ "phase36_parser_free": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 4.88,
+  "stdout_bytes": 9927,
+  "results_files_touched": []
+ },
+ "phase37_parser_free_analysis": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 1.16,
+  "stdout_bytes": 14715,
+  "results_files_touched": []
+ },
+ "phase38_bigram_null": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 165.69,
+  "stdout_bytes": 7118,
+  "results_files_touched": [
+   "phase101_currier_ab_dichotomy.json",
+   "phase101_currier_ab_dichotomy.txt"
+  ]
  }
 }

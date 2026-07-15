@@ -1,0 +1,291 @@
+PHASE 33: CASCADE AUDIT — FULL SYSTEM RE-VALIDATION
+============================================================================
+Loaded 40300 word tokens
+
+============================================================================
+PHASE 33a: RECLASSIFICATION — HOW MANY TOKENS CHANGE?
+============================================================================
+
+  Total tokens: 40300
+  Tokens changed: 5951 (14.8%)
+
+  DERIV PREFIX COUNTS:
+    Prefix      LONG   SHORT   Change
+    ∅          33518   29767    -3751 ←←←
+    ch          3377    5250    +1873 ←←←
+    h           1468    2766    +1298 ←←←
+    l           1588    1558      -30
+    lch          160     493     +333
+    sh           124     258     +134
+    lsh           65     208     +143
+
+  DERIV PREFIX TRANSITIONS (top 10):
+    ∅     → ch   : 1873
+    ∅     → h    : 1298
+    ∅     → l    : 446
+    l     → lch  : 333
+    l     → lsh  : 143
+    ∅     → sh   : 134
+
+  STEM TRANSITIONS (top 15):
+    ch       → e       : 2084
+    h        → e       : 1233
+    e        → eo      : 631
+    l        → e       : 439
+    sh       → e       : 273
+    o        → oe      : 156
+    ch       → o       : 122
+    eo       → eoe     : 87
+    h        → o       : 65
+    ech      → eche    : 41
+    rch      → rche    : 38
+    y        → ye      : 36
+    alch     → alche   : 32
+    d        → de      : 24
+    ed       → ede     : 23
+
+  ═══ CRITICAL: 'FUNCTION WORD' RECLASSIFICATION ═══
+  Phase 31 identified ch(3628), h(2003), sh(209), l(1351) as 'function words'
+  because they appeared as bare roots with no deriv prefix.
+  How many of these were actually deriv-prefix + stem under SHORT list?
+    Words rescued from 'function word' → deriv+stem:
+      stem='ch': 1873 rescued of 4068 (46%)
+      stem='h': 1298 rescued of 2042 (64%)
+      stem='l': 446 rescued of 1418 (31%)
+      stem='sh': 134 rescued of 394 (34%)
+
+============================================================================
+PHASE 33b: PARADIGM TABLES — CORRECTED PARSER
+============================================================================
+
+  PARADIGM FILL RATES (corrected parser):
+  Stem × (Deriv × Suffix) — counting slots with N≥3
+
+    Stem          N  DerivSlots SfxSlots  Derivs present
+    e          9951           7/7         9/11 ∅, h, ch, sh, l, lch, lsh
+    a          4080           4/7        10/11 ∅, h, ch, l
+    o          2148           7/7        10/11 ∅, h, ch, sh, l, lch, lsh
+    ar         2023           3/7        10/11 ∅, ch, l
+    ol         1875           4/7         8/11 ∅, h, ch, l
+    ch         1857           4/7         9/11 ∅, h, ch, l
+    al         1740           4/7         9/11 ∅, h, ch, l
+    d          1395           5/7         8/11 ∅, h, ch, l, lch, lsh
+    eo         1265           7/7         9/11 ∅, h, ch, sh, l, lch, lsh
+    or         1090           3/7         7/11 ∅, h, ch, l
+    l           972           4/7         9/11 ∅, h, ch, l, lch, lsh
+    h           741           3/7         9/11 ∅, h, ch
+    ed          659           7/7         8/11 ∅, h, ch, sh, l, lch, lsh
+    y           521           2/7         8/11 ∅, h, ch, l
+    am          468           4/7         2/11 ∅, h, ch, l, lch
+
+    Avg deriv fill: 4.5/7
+    Avg suffix fill: 8.3/11
+
+  COMPARISON: LONG vs SHORT paradigm fill
+    LONG avg deriv fill: 4.5/7
+    SHORT avg deriv fill: 4.5/7
+    → Corrected parser IMPROVES paradigm fill by 0.1 slots
+
+============================================================================
+PHASE 33c: SAME-STEM CO-OCCURRENCE — CORRECTED PARSER
+============================================================================
+
+  Total lines (≥3 words): 4679
+  Lines with same-stem co-occurrence: 3204 (68.5%)
+  Phase 31 reported: 36.9% — DIFFERENT
+
+  Permutation test (1000 shuffles):
+    Observed: 3204
+    Null mean: 3565.3 ± 11.0
+    z = -32.70, p = 1.0000
+    → CO-OCCURRENCE NOT SIGNIFICANT (p≥0.05)
+
+  Examples:
+    f100r.12,@P0: stem='e' → ∅+e+ol, ∅+e+y, h+e+y
+    f100r.13,+P0: stem='e' → sh+e+or, ∅+e+y, ∅+e+y, ∅+e+y
+    f100r.14,+P0: stem='e' → ch+e+y, ∅+e+y, ∅+e+ol
+    f100r.15,+P0: stem='e' → ch+e+or, ∅+e+ol
+    f100r.22,@P0: stem='e' → ch+e+ol, h+e+y
+
+============================================================================
+PHASE 33d: IS -ODY A REAL SUFFIX?
+============================================================================
+
+Phase 32 showed -ody has 69% vowel-initial roots (mostly 'e').
+If -ody is just stem-vowel-o + dy, then words like 'cheody'
+are really ch + e + o + dy (stem 'eo' + suffix 'dy').
+If -ody is real, it should appear after non-'o' stems too.
+
+  Words ending in 'ody': 1470
+  Character before 'ody': {'e': 671, '(empty)': 215, 'h': 208, 'q': 145, 'o': 99, 'r': 40, 'l': 37, 'y': 24, 'd': 13, 's': 8}
+
+  PARSE COMPARISON:
+  If we use -ody as suffix vs treating 'o' as part of stem:
+
+  Under SUFFIXES_ODY, stems taking -ody: {'e': 631, 'ch': 122, 'h': 65, 'ar': 19, 'al': 18, 'air': 9, 'oe': 8, 'l': 7, 'o': 7, 'ol': 6}
+  Under SUFFIXES_NO_ODY, same words:     {'eo': 631, 'o': 198, 'aro': 19, 'alo': 18, 'airo': 9, 'oeo': 8, 'oo': 7, 'olo': 6, 'echo': 5, 'olsheo': 3}
+
+  Without -ody suffix:
+    Roots ending in 'o': 999 (100%)
+    Roots NOT ending in 'o': 0 (0%)
+
+  → -ody is likely just stem-vowel-'o' + suffix '-dy' (ARTIFACT)
+     The 'o' belongs to stems like 'eo', 'o', 'eod-o' etc.
+
+============================================================================
+PHASE 33e: WHY IS STEM 'O' SPECIAL?
+============================================================================
+
+Under corrected parser, stem 'o' shows a 42pp derivational effect
+(∅+o → -y at 75% vs ch+o → -y at 33%). This is real. Why?
+
+  Stem 'o' by deriv prefix:
+
+    ∅+o (N=1157):
+      Suffixes: {'y': 868, '∅': 112, 'dy': 103, 'iin': 32, 'aiin': 12, 'ar': 12}
+      Sections: {'herbal-A': 495, 'text': 425, 'bio': 138, 'pharma': 48, 'unknown': 29}
+      Gram pfx: {'q': 440, 'o': 101, 'qo': 54, 'y': 50, 'd': 6}
+      Gallows:  {'k': 516, 't': 511, 'p': 82, 'f': 20}
+
+    h+o (N=293):
+      Suffixes: {'∅': 132, 'dy': 65, 'y': 50, 'aiin': 11, 'ol': 8, 'ar': 7}
+      Sections: {'herbal-A': 159, 'text': 108, 'pharma': 11, 'bio': 7, 'unknown': 4}
+      Gram pfx: {'s': 282, 'y': 3, 'q': 1}
+      Gallows:  {'k': 51, 't': 32, 'p': 5, 'f': 5}
+
+    ch+o (N=579):
+      Suffixes: {'y': 191, 'dy': 119, '∅': 109, 'aiin': 41, 'ar': 29, 'ol': 27}
+      Sections: {'herbal-A': 294, 'text': 229, 'pharma': 30, 'cosmo': 11, 'unknown': 10}
+      Gram pfx: {'d': 14, 'o': 11, 'y': 11, 'qo': 3, 's': 1}
+      Gallows:  {'k': 165, 't': 143, 'p': 17, 'f': 14}
+
+    sh+o (N=23):
+      Suffixes: {'∅': 16, 'dy': 3, 'y': 2, 'iin': 1, 'ar': 1}
+      Sections: {'herbal-A': 19, 'text': 3, 'pharma': 1}
+      Gram pfx: {'d': 11, 'y': 6, 'o': 3, 's': 1, 'so': 1}
+      Gallows:  {'t': 2, 'p': 2, 'k': 1}
+
+    l+o (N=73):
+      Suffixes: {'∅': 33, 'y': 10, 'dy': 7, 'ar': 6, 'iin': 6, 'aiin': 3}
+      Sections: {'text': 38, 'herbal-A': 21, 'bio': 13, 'unknown': 1}
+      Gram pfx: {'o': 21, 'qo': 4, 'do': 3, 'd': 1, 'so': 1}
+      Gallows:  {'t': 15, 'k': 11}
+
+  SECTION DISTRIBUTION COMPARISON:
+    Section         ∅+o   ch+o    h+o
+    herbal-A        43%    51%    54%
+    herbal-B         0%     0%     0%
+    pharma           4%     5%     4%
+    bio             12%     1%     2%
+    text            37%    40%    37%
+    cosmo            2%     2%     1%
+    zodiac           0%     0%     0%
+
+    Cosine similarity:
+      ∅+o vs ch+o: 0.980
+      ∅+o vs h+o:  0.979
+      ch+o vs h+o: 0.997
+    (Phase 30 null=0.775, real compounds=0.936)
+
+  SUFFIX BY GRAM PREFIX (stem 'o'):
+    ∅  +o with gpfx=∅   (N= 500): y=78%, ∅=22%
+    ∅  +o with gpfx=qo  (N=  54): dy=54%, iin=20%, y=9%, aiin=6%
+    ∅  +o with gpfx=o   (N= 101): dy=54%, y=17%, iin=13%, ar=6%
+    ch +o with gpfx=∅   (N= 539): y=33%, dy=21%, ∅=17%, aiin=7%
+
+============================================================================
+PHASE 33f: VALIDATED GRAMMAR SKETCH
+============================================================================
+
+Using ONLY findings that survived Phase 32 revalidation.
+
+  1. WORD ORDER
+  ----------------------------------------
+    Element      N     Mean   Median  Init<.2  Final>.8
+    deriv:∅      28272    0.504    0.500    21.3%     22.3%
+    deriv:h       2697    0.439    0.400    25.7%     13.3%
+    deriv:ch      5048    0.501    0.500    20.4%     19.5%
+    deriv:sh       245    0.117    0.000    80.8%      5.3%
+    deriv:l       1499    0.616    0.700    16.9%     39.9%
+    gal:t         6927    0.519    0.545    20.4%     23.5%
+    gal:k        10715    0.491    0.500    19.1%     18.9%
+
+  2. SUFFIX INVENTORY (corrected)
+  ----------------------------------------
+    ∅       :  13061 ( 32.4%)
+    y       :   9252 ( 23.0%)
+    dy      :   6301 ( 15.6%)
+    iin     :   2998 (  7.4%)
+    ol      :   1972 (  4.9%)
+    aiin    :   1464 (  3.6%)
+    or      :   1282 (  3.2%)
+    ar      :   1277 (  3.2%)
+    in      :   1219 (  3.0%)
+    al      :    865 (  2.1%)
+    ain     :    609 (  1.5%)
+
+  3. GALLOWS ↔ DERIV COMPLEMENTARITY
+  ----------------------------------------
+    Mutual information (det, deriv): 0.0642 bits
+    (0=independent, higher=dependent)
+    Cramér's V (det × deriv): 0.145
+    (0=independent, 1=perfect association)
+
+  4. MORPHEME HIERARCHY (validated)
+  ----------------------------------------
+    Slot           Fill%
+    gram_prefix     :  57.2%
+    gallows         :  52.8%
+    deriv_prefix    :  26.1%
+    stem            : 100.0%
+    suffix          :  67.6%
+
+  5. SLOT CO-OCCURRENCE CONSTRAINTS
+  ----------------------------------------
+    gpfx  + sfx  :  16513
+    gal   + sfx  :  14942
+    gpfx  + gal  :  13972
+    deriv + sfx  :   8261
+    gpfx  + deriv:   4541
+    gal   + deriv:   3298
+
+    Words with gallows: 21267
+    Words with deriv prefix: 10533
+    Words with BOTH: 3298
+    Expected if independent: 5558
+    Observed/Expected: 0.59x
+    → MODERATE REPULSION
+
+  ═══════════════════════════════════════
+  GRAMMAR SKETCH BASED ON VALIDATED DATA
+  ═══════════════════════════════════════
+
+  WORD STRUCTURE: (gram-pfx) + (gallows | deriv-pfx) + STEM + (suffix)
+    - gallows and deriv prefixes are ~mutually exclusive (O/E=0.59x)
+    - ~15-20 core stems combine via agglutination
+
+  WORD ORDER:
+    - sh-prefixed words are LINE-INITIAL (>80%)
+    - h-prefixed words skew EARLY (mean ~0.44)
+    - l-prefixed words skew LATE (mean ~0.62)
+    - Suggests: sh_X ... h_X ... X ... l_X pattern
+
+  DERIVATIONAL SYSTEM:
+    - h- marks verbal forms (confirmed Phase 30, p=0.0000)
+    - ch- function unclear (does NOT change section distribution)
+    - sh- possibly sentential/clausal marker (rare, line-initial)
+    - l- possibly clause-final marker
+
+  INFLECTIONAL SYSTEM:
+    - Suffixes: -dy, -y, -ol, -or, -ar, -al, -aiin, -ain, -iin, -in
+    - Gram prefixes: qo, q, so, do, o, d, s, y
+    - Same-stem co-occurrence suggests paradigmatic inflection
+
+  OPEN QUESTIONS:
+    - What do ch- and l- actually do?
+    - Why does stem 'o' behave differently from stem 'e'?
+    - Are suffixes functionally grouped (e.g., case vs tense)?
+    - What role do gallows play beyond section-marking?
+
+  Results saved to results/phase33_results.json
+

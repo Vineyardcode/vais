@@ -1,0 +1,946 @@
+PHASE 24: CLASSIFIER SEMANTICS & COMPOUND ROOT RESOLUTION
+============================================================================
+Loaded 39564 word tokens
+
+============================================================================
+PHASE 24a: CLASSIFIER (GALLOWS DETERMINATIVE) SEMANTIC MAP
+============================================================================
+
+  ====================================================================
+  CLASSIFIER 'k' — 11297 tokens
+  ====================================================================
+
+  Top roots classified by 'k':
+    e           3014 ( 26.7%)  this/that
+    a           1213 ( 10.7%)  great-one
+    l            732 (  6.5%)  remedy/thing
+    al           580 (  5.1%)  stone
+    o            555 (  4.9%)  ?o?
+    ch           551 (  4.9%)  do/make
+    ar           506 (  4.5%)  king/great
+    ol           407 (  3.6%)  carry/bear
+    h            285 (  2.5%)  happen/occur
+    cho          221 (  2.0%)  substance
+    y            200 (  1.8%)  ?y?
+    or           187 (  1.7%)  king/great
+    d            184 (  1.6%)  matter/thing
+    eo           157 (  1.4%)  ?eo?
+    ed           140 (  1.2%)  ?ed?
+
+  Section distribution for 'k':
+    text          3372 ( 29.8%)
+    herbal-A      2757 ( 24.4%)
+    bio           2236 ( 19.8%)
+    pharma         953 (  8.4%)
+    zodiac         790 (  7.0%)
+    cosmo          762 (  6.7%)
+    herbal-B       427 (  3.8%)
+
+  Top suffixes with 'k':
+    -y         2783 ( 32.8%)
+    -dy        1398 ( 16.5%)
+    -ey         791 (  9.3%)
+    -iin        731 (  8.6%)
+    -in         514 (  6.1%)
+    -ol         380 (  4.5%)
+    -edy        350 (  4.1%)
+    -ar         300 (  3.5%)
+
+  Top prefixes with 'k':
+    qo-         3100 ( 39.3%)
+    o-         3069 ( 38.9%)
+    y-          662 (  8.4%)
+    s-          535 (  6.8%)
+    q-          360 (  4.6%)
+    d-          106 (  1.3%)
+
+  ====================================================================
+  CLASSIFIER 't' — 7330 tokens
+  ====================================================================
+
+  Top roots classified by 't':
+    e           1765 ( 24.1%)  this/that
+    a            621 (  8.5%)  great-one
+    o            551 (  7.5%)  ?o?
+    ar           403 (  5.5%)  king/great
+    ol           386 (  5.3%)  carry/bear
+    al           368 (  5.0%)  stone
+    ch           284 (  3.9%)  do/make
+    y            249 (  3.4%)  ?y?
+    or           245 (  3.3%)  king/great
+    d            214 (  2.9%)  matter/thing
+    cho          186 (  2.5%)  substance
+    ed           133 (  1.8%)  ?ed?
+    h            124 (  1.7%)  happen/occur
+    eo           104 (  1.4%)  ?eo?
+    am           102 (  1.4%)  water
+
+  Section distribution for 't':
+    herbal-A      2219 ( 30.3%)
+    text          1815 ( 24.8%)
+    bio            978 ( 13.3%)
+    cosmo          864 ( 11.8%)
+    zodiac         760 ( 10.4%)
+    pharma         351 (  4.8%)
+    herbal-B       343 (  4.7%)
+
+  Top suffixes with 't':
+    -y         1880 ( 38.2%)
+    -dy         917 ( 18.6%)
+    -iin        419 (  8.5%)
+    -ey         310 (  6.3%)
+    -in         212 (  4.3%)
+    -ol         206 (  4.2%)
+    -ody        198 (  4.0%)
+    -ar         195 (  4.0%)
+
+  Top prefixes with 't':
+    o-         2719 ( 55.8%)
+    qo-         1031 ( 21.2%)
+    y-          567 ( 11.6%)
+    s-          233 (  4.8%)
+    q-          213 (  4.4%)
+    d-           84 (  1.7%)
+
+  ====================================================================
+  CLASSIFIER 'f' — 486 tokens
+  ====================================================================
+
+  Top roots classified by 'f':
+    e             80 ( 16.5%)  this/that
+    l             35 (  7.2%)  remedy/thing
+    d             33 (  6.8%)  matter/thing
+    ol            26 (  5.3%)  carry/bear
+    ch            25 (  5.1%)  do/make
+    ar            24 (  4.9%)  king/great
+    o             20 (  4.1%)  ?o?
+    y             16 (  3.3%)  ?y?
+    cho           15 (  3.1%)  substance
+    or            15 (  3.1%)  king/great
+    a             13 (  2.7%)  great-one
+    che           12 (  2.5%)  ?che?
+    ho            11 (  2.3%)  ?ho?
+    al            10 (  2.1%)  stone
+    h             10 (  2.1%)  happen/occur
+
+  Section distribution for 'f':
+    herbal-A       183 ( 37.7%)
+    text            94 ( 19.3%)
+    cosmo           62 ( 12.8%)
+    pharma          40 (  8.2%)
+    bio             38 (  7.8%)
+    zodiac          36 (  7.4%)
+    herbal-B        33 (  6.8%)
+
+  Top suffixes with 'f':
+    -y          121 ( 36.8%)
+    -dy          46 ( 14.0%)
+    -ey          26 (  7.9%)
+    -aiin        21 (  6.4%)
+    -ar          20 (  6.1%)
+    -ol          19 (  5.8%)
+    -edy         18 (  5.5%)
+    -al          14 (  4.3%)
+
+  Top prefixes with 'f':
+    o-          141 ( 52.2%)
+    qo-           44 ( 16.3%)
+    s-           37 ( 13.7%)
+    y-           27 ( 10.0%)
+    d-           13 (  4.8%)
+    q-            4 (  1.5%)
+
+  ====================================================================
+  CLASSIFIER 'p' — 1671 tokens
+  ====================================================================
+
+  Top roots classified by 'p':
+    e            358 ( 21.4%)  this/that
+    d            125 (  7.5%)  matter/thing
+    ol            96 (  5.7%)  carry/bear
+    ch            82 (  4.9%)  do/make
+    ar            78 (  4.7%)  king/great
+    o             72 (  4.3%)  ?o?
+    a             64 (  3.8%)  great-one
+    or            59 (  3.5%)  king/great
+    l             59 (  3.5%)  remedy/thing
+    ed            51 (  3.1%)  ?ed?
+    al            47 (  2.8%)  stone
+    y             28 (  1.7%)  ?y?
+    cho           25 (  1.5%)  substance
+    eo            23 (  1.4%)  ?eo?
+    air           23 (  1.4%)  ?air?
+
+  Section distribution for 'p':
+    text           555 ( 33.2%)
+    herbal-A       437 ( 26.2%)
+    cosmo          238 ( 14.2%)
+    bio            194 ( 11.6%)
+    pharma         100 (  6.0%)
+    zodiac          95 (  5.7%)
+    herbal-B        52 (  3.1%)
+
+  Top suffixes with 'p':
+    -y          397 ( 33.1%)
+    -dy         226 ( 18.9%)
+    -aiin        88 (  7.3%)
+    -ey          81 (  6.8%)
+    -ar          78 (  6.5%)
+    -iin         66 (  5.5%)
+    -ol          52 (  4.3%)
+    -edy         52 (  4.3%)
+
+  Top prefixes with 'p':
+    o-          593 ( 59.0%)
+    qo-          172 ( 17.1%)
+    y-          105 ( 10.4%)
+    d-           54 (  5.4%)
+    s-           41 (  4.1%)
+    q-           36 (  3.6%)
+
+  ====================================================================
+  CRITICAL: ROOT 'e' + DETERMINATIVE COMBINATIONS
+  ====================================================================
+
+  e + k-determinative (3014 tokens):
+    qokeey                318  pfx=qo  sfx=y
+    qokeedy               311  pfx=qo  sfx=dy
+    qokedy                281  pfx=qo  sfx=dy
+    okeey                 189  pfx=o   sfx=y
+    okedy                 120  pfx=o   sfx=dy
+    qokey                 110  pfx=qo  sfx=y
+    okeedy                110  pfx=o   sfx=dy
+    okeol                  66  pfx=o   sfx=ol
+  Sections: {'text': 1033, 'bio': 731, 'herbal-A': 490, 'pharma': 348, 'zodiac': 179}
+
+  e + t-determinative (1765 tokens):
+    otedy                 172  pfx=o   sfx=dy
+    oteey                 150  pfx=o   sfx=y
+    oteedy                104  pfx=o   sfx=dy
+    qotedy                 91  pfx=qo  sfx=dy
+    qoteedy                78  pfx=qo  sfx=dy
+    otey                   62  pfx=o   sfx=y
+    cthey                  56  pfx=    sfx=y
+    qoteey                 45  pfx=qo  sfx=y
+  Sections: {'text': 559, 'bio': 336, 'herbal-A': 313, 'cosmo': 218, 'zodiac': 176}
+
+  e + f-determinative (80 tokens):
+    fchedy                  9  pfx=    sfx=dy
+    qofchedy                9  pfx=qo  sfx=dy
+    ofchedy                 7  pfx=o   sfx=dy
+    fcheey                  6  pfx=    sfx=y
+    fcheody                 4  pfx=    sfx=ody
+    ofchey                  4  pfx=o   sfx=y
+    cfhey                   3  pfx=    sfx=y
+    yfchey                  3  pfx=y   sfx=y
+  Sections: {'text': 22, 'herbal-A': 22, 'bio': 15, 'pharma': 10, 'cosmo': 6}
+
+  e + p-determinative (358 tokens):
+    opchedy                54  pfx=o   sfx=dy
+    pchedy                 38  pfx=    sfx=dy
+    opchey                 33  pfx=o   sfx=y
+    qopchedy               33  pfx=qo  sfx=dy
+    cphey                  12  pfx=    sfx=y
+    ypchedy                12  pfx=y   sfx=dy
+    pcheol                 11  pfx=    sfx=ol
+    qopchey                11  pfx=qo  sfx=y
+  Sections: {'text': 132, 'bio': 68, 'herbal-A': 64, 'cosmo': 52, 'pharma': 20}
+
+  ====================================================================
+  ROOT 'a' + DETERMINATIVE COMBINATIONS
+  ====================================================================
+
+  a + k-determinative (1213 tokens):
+    qokain                287  pfx=qo  sfx=in
+    qokaiin               284  pfx=qo  sfx=iin
+    okaiin                225  pfx=o   sfx=iin
+    okain                 144  pfx=o   sfx=in
+    kaiin                  87  pfx=    sfx=iin
+    ykaiin                 62  pfx=y   sfx=iin
+    kain                   47  pfx=    sfx=in
+    ykain                  14  pfx=y   sfx=in
+  Sections: {'text': 468, 'bio': 364, 'herbal-A': 190, 'cosmo': 122, 'herbal-B': 40}
+
+  a + t-determinative (621 tokens):
+    otaiin                169  pfx=o   sfx=iin
+    otain                 106  pfx=o   sfx=in
+    qotaiin                91  pfx=qo  sfx=iin
+    qotain                 62  pfx=qo  sfx=in
+    ytaiin                 54  pfx=y   sfx=iin
+    taiin                  51  pfx=    sfx=iin
+    ytain                  17  pfx=y   sfx=in
+    cthaiin                12  pfx=    sfx=iin
+  Sections: {'text': 246, 'herbal-A': 126, 'cosmo': 116, 'bio': 83, 'herbal-B': 23}
+
+  a + f-determinative (13 tokens):
+    ofaiin                  4  pfx=o   sfx=iin
+    cfhaiin                 2  pfx=    sfx=iin
+    qofaiin                 2  pfx=qo  sfx=iin
+    cfhoaiin                1  pfx=o   sfx=iin
+    fchaiin                 1  pfx=    sfx=iin
+    yfain                   1  pfx=y   sfx=in
+    yfaiin                  1  pfx=y   sfx=iin
+    qofain                  1  pfx=qo  sfx=in
+  Sections: {'herbal-A': 5, 'herbal-B': 4, 'zodiac': 2, 'pharma': 2}
+
+  a + p-determinative (64 tokens):
+    opaiin                 18  pfx=o   sfx=iin
+    qopaiin                 8  pfx=qo  sfx=iin
+    paiin                   8  pfx=    sfx=iin
+    cphaiin                 6  pfx=    sfx=iin
+    pchdaiin                4  pfx=d   sfx=iin
+    pdaiin                  4  pfx=d   sfx=iin
+    opain                   2  pfx=o   sfx=in
+    ypaiin                  2  pfx=y   sfx=iin
+  Sections: {'herbal-A': 23, 'text': 17, 'cosmo': 14, 'zodiac': 7, 'pharma': 2}
+
+============================================================================
+PHASE 24b: COMPOUND ROOT RESOLUTION
+============================================================================
+
+  ────────────────────────────────────────────────────────────────────
+  'lch' (n=432) = 'l' + 'ch'?
+  Hypothesis: remedy+do/make = 'remedy-making'?
+  ────────────────────────────────────────────────────────────────────
+  Section distribution:
+  Section           lch        l       ch
+    bio             48.1%    31.3%    17.9%
+    cosmo            3.2%    12.1%     7.1%
+    herbal-A         8.6%    10.6%    35.6%
+    herbal-B         0.9%     2.5%     3.4%
+    pharma           3.0%     3.2%     5.8%
+    text            35.9%    37.7%    25.3%
+    zodiac           0.2%     2.6%     4.9%
+  Determinatives:
+    t:    1.4%    6.9%    7.5%
+    k:    3.2%   53.4%   14.6%
+    f:    0.5%    2.6%    0.7%
+    p:    3.7%    4.3%    2.2%
+  Top word forms with root 'lch':
+    lchedy                     116
+    lchey                       50
+    olchedy                     39
+    olchey                      26
+    lchdy                       19
+  VERDICT: Distribution closer to 'l' (diff1=0.34, diff2=0.82)
+
+  ────────────────────────────────────────────────────────────────────
+  'ed' (n=355) = 'e' + 'd'?
+  Hypothesis: this/that+matter = 'this matter'?
+  ────────────────────────────────────────────────────────────────────
+  Section distribution:
+  Section            ed        e        d
+    bio             17.5%    21.6%    10.0%
+    cosmo           10.1%     8.3%    16.3%
+    herbal-A        11.5%    16.9%    37.8%
+    herbal-B         3.7%     3.2%     6.2%
+    pharma           1.1%     9.5%     5.6%
+    text            52.7%    33.3%    18.5%
+    zodiac           3.4%     7.1%     5.6%
+  Determinatives:
+    t:   37.5%   32.5%   17.2%
+    k:   39.4%   55.5%   14.8%
+    f:    1.4%    1.5%    2.7%
+    p:   14.4%    6.6%   10.1%
+  Top word forms with root 'ed':
+    qokeed                      19
+    pchedar                     12
+    otedar                      11
+    oteed                        8
+    qokedar                      8
+  VERDICT: Distribution closer to 'e' (diff1=0.43, diff2=0.83)
+
+  ────────────────────────────────────────────────────────────────────
+  'che' (n=727) = 'ch' + 'e'?
+  Hypothesis: do/make+this = 'make this'?
+  ────────────────────────────────────────────────────────────────────
+  Section distribution:
+  Section           che       ch        e
+    bio             10.2%    17.9%    21.6%
+    cosmo            5.0%     7.1%     8.3%
+    herbal-A        26.0%    35.6%    16.9%
+    herbal-B         4.7%     3.4%     3.2%
+    pharma          17.9%     5.8%     9.5%
+    text            27.5%    25.3%    33.3%
+    zodiac           8.8%     4.9%     7.1%
+  Determinatives:
+    t:    3.7%    7.5%   32.5%
+    k:   11.4%   14.6%   55.5%
+    f:    1.7%    0.7%    1.5%
+    p:    2.3%    2.2%    6.6%
+  Top word forms with root 'che':
+    cheol                      181
+    cheor                       98
+    cheody                      98
+    chear                       56
+    cheal                       30
+  VERDICT: Distribution closer to 'ch' (diff1=0.39, diff2=0.41)
+
+  ────────────────────────────────────────────────────────────────────
+  'sh' (n=222) = 's' + 'h'?
+  Hypothesis: VERB+happen = verbal prefix + root?
+  ────────────────────────────────────────────────────────────────────
+  Section distribution:
+  Section            sh        s        h
+    bio             26.1%     0.0%    31.0%
+    cosmo           10.8%     0.0%     8.0%
+    herbal-A        32.9%     0.0%    26.1%
+    herbal-B         3.6%     0.0%     3.1%
+    pharma           3.2%     0.0%     4.7%
+    text            18.9%     0.0%    23.4%
+    zodiac           4.5%     0.0%     3.7%
+  Determinatives:
+    t:    2.3%    0.0%    6.1%
+    k:    5.0%    0.0%   14.0%
+    f:    0.9%    0.0%    0.5%
+    p:    0.5%    0.0%    0.9%
+  Top word forms with root 'sh':
+    dshedy                      37
+    sh                          23
+    dshor                       16
+    yshey                       14
+    dshey                       13
+
+  ────────────────────────────────────────────────────────────────────
+  'ched' (n=195) = 'ch' + 'ed'?
+  Hypothesis: do/make+this-matter = compound?
+  ────────────────────────────────────────────────────────────────────
+  Section distribution:
+  Section          ched       ch       ed
+    bio             14.9%    17.9%    17.5%
+    cosmo            5.1%     7.1%    10.1%
+    herbal-A         5.6%    35.6%    11.5%
+    herbal-B         3.6%     3.4%     3.7%
+    pharma           0.5%     5.8%     1.1%
+    text            64.6%    25.3%    52.7%
+    zodiac           5.6%     4.9%     3.4%
+  Determinatives:
+    t:    1.0%    7.5%   37.5%
+    k:    3.1%   14.6%   39.4%
+    f:    0.5%    0.7%    1.4%
+    p:    0.5%    2.2%   14.4%
+  Top word forms with root 'ched':
+    chedaiin                    41
+    chedar                      35
+    chedal                      25
+    chedain                     20
+    ched                        19
+  VERDICT: Distribution closer to 'ed' (diff1=0.81, diff2=0.28)
+
+  ────────────────────────────────────────────────────────────────────
+  'chod' (n=110) = 'cho' + 'd'?
+  Hypothesis: substance+matter?
+  ────────────────────────────────────────────────────────────────────
+  Section distribution:
+  Section          chod      cho        d
+    bio              0.9%     0.5%    10.0%
+    cosmo            5.5%     4.7%    16.3%
+    herbal-A        46.4%    53.3%    37.8%
+    herbal-B         8.2%     3.2%     6.2%
+    pharma          12.7%     8.2%     5.6%
+    text            21.8%    17.2%    18.5%
+    zodiac           4.5%    12.9%     5.6%
+  Determinatives:
+    t:    4.5%   31.1%   17.2%
+    k:    0.9%   37.0%   14.8%
+    f:    0.0%    2.5%    2.7%
+    p:    0.9%    4.2%   10.1%
+  Top word forms with root 'chod':
+    chodaiin                    49
+    chodar                      14
+    chod                        12
+    chodain                      8
+    chodal                       7
+  VERDICT: Distribution closer to 'cho' (diff1=0.31, diff2=0.42)
+
+  ────────────────────────────────────────────────────────────────────
+  'ho' (n=272) = 'h' + 'o'?
+  Hypothesis: happen+DEF article? or Coptic ho=face?
+  ────────────────────────────────────────────────────────────────────
+  Section distribution:
+  Section            ho        h        o
+    bio              2.2%    31.0%     0.0%
+    cosmo            5.1%     8.0%     0.0%
+    herbal-A        56.6%    26.1%     0.0%
+    herbal-B         4.8%     3.1%     0.0%
+    pharma           9.6%     4.7%     0.0%
+    text            13.6%    23.4%     0.0%
+    zodiac           8.1%     3.7%     0.0%
+  Determinatives:
+    t:   15.8%    6.1%    0.0%
+    k:   23.9%   14.0%    0.0%
+    f:    4.0%    0.5%    0.0%
+    p:    2.2%    0.9%    0.0%
+  Top word forms with root 'ho':
+    sho                        127
+    shocthy                     12
+    shoky                        9
+    shokchy                      8
+    shoiin                       7
+
+  ────────────────────────────────────────────────────────────────────
+  'alch' (n=71) = 'al' + 'ch'?
+  Hypothesis: stone+do/make?
+  ────────────────────────────────────────────────────────────────────
+  Section distribution:
+  Section          alch       al       ch
+    bio             28.2%    21.9%    17.9%
+    cosmo            0.0%     8.9%     7.1%
+    herbal-A        25.4%    24.2%    35.6%
+    herbal-B         4.2%     3.2%     3.4%
+    pharma           7.0%     4.6%     5.8%
+    text            25.4%    25.3%    25.3%
+    zodiac           9.9%    11.8%     4.9%
+  Determinatives:
+    t:    8.5%   20.6%    7.5%
+    k:   31.0%   32.4%   14.6%
+    f:    0.0%    0.6%    0.7%
+    p:    1.4%    2.6%    2.2%
+  Top word forms with root 'alch':
+    alchey                       6
+    dalchy                       5
+    dalchdy                      5
+    dalchedy                     5
+    alchedy                      4
+  VERDICT: Distribution closer to 'al' (diff1=0.22, diff2=0.35)
+
+============================================================================
+PHASE 24c: DAIIN CONTEXT ANALYSIS (most frequent word: 1,049x)
+============================================================================
+
+  Total 'daiin' occurrences: 901
+
+  Section distribution:
+    herbal-A       460 ( 51.1%)
+    pharma         123 ( 13.7%)
+    text           120 ( 13.3%)
+    bio             82 (  9.1%)
+    cosmo           54 (  6.0%)
+    zodiac          34 (  3.8%)
+    herbal-B        28 (  3.1%)
+
+  Words immediately BEFORE 'daiin' (top 15):
+    chol                   35  root=ch, meaning=do/make
+    daiin                  13  root=a, meaning=great-one
+    qoky                   12  root=o, meaning=?o?
+    qokeey                 11  root=e, meaning=this/that
+    chedy                  10  root=ch, meaning=do/make
+    cheey                  10  root=ch, meaning=do/make
+    ol                      9  root=ol, meaning=carry/bear
+    cthy                    9  root=y, meaning=?y?
+    dy                      9  root=d, meaning=matter/thing
+    shol                    9  root=h, meaning=happen/occur
+    chor                    9  root=ch, meaning=do/make
+    chy                     9  root=ch, meaning=do/make
+    qokol                   8  root=ol, meaning=carry/bear
+    chey                    8  root=ch, meaning=do/make
+    dal                     7  root=al, meaning=stone
+
+  Words immediately AFTER 'daiin' (top 15):
+    chey                   13  root=ch, meaning=do/make
+    daiin                  13  root=a, meaning=great-one
+    dal                    12  root=al, meaning=stone
+    cthy                   11  root=y, meaning=?y?
+    ol                     10  root=ol, meaning=carry/bear
+    or                     10  root=or, meaning=king/great
+    shey                   10  root=h, meaning=happen/occur
+    chedy                  10  root=ch, meaning=do/make
+    dain                   10  root=a, meaning=great-one
+    dar                     9  root=ar, meaning=king/great
+    chckhy                  9  root=ch, meaning=do/make
+    dam                     8  root=am, meaning=water
+    cthor                   8  root=or, meaning=king/great
+    okaiin                  8  root=a, meaning=great-one
+    chor                    8  root=ch, meaning=do/make
+
+  Root distribution BEFORE daiin:
+    ch          129  (do/make)
+    e           103  (this/that)
+    ol           62  (carry/bear)
+    o            51  (?o?)
+    h            41  (happen/occur)
+    a            40  (great-one)
+    or           25  (king/great)
+    d            25  (matter/thing)
+    y            22  (?y?)
+    al           19  (stone)
+
+  Root distribution AFTER daiin:
+    ch          101  (do/make)
+    e            77  (this/that)
+    a            55  (great-one)
+    h            53  (happen/occur)
+    ol           40  (carry/bear)
+    al           38  (stone)
+    or           31  (king/great)
+    ar           27  (king/great)
+    o            25  (?o?)
+    y            22  (?y?)
+
+  Total 'aiin' occurrences: 565
+  Section: {'text': 207, 'herbal-A': 119, 'cosmo': 102, 'pharma': 44, 'zodiac': 42, 'bio': 40, 'herbal-B': 11}
+
+  Words immediately BEFORE 'aiin' (top 10):
+    or                     70  root=or, meaning=king/great
+    ar                     35  root=ar, meaning=king/great
+    ol                     23  root=ol, meaning=carry/bear
+    dar                    10  root=ar, meaning=king/great
+    sar                     9  root=ar, meaning=king/great
+    ches                    9  root=ches, meaning=?ches?
+    chor                    8  root=ch, meaning=do/make
+    os                      8  root=os, meaning=?os?
+    sor                     6  root=or, meaning=king/great
+    lor                     5  root=l, meaning=remedy/thing
+
+============================================================================
+PHASE 24d: CONNECTED PROSE TRANSLATION — f78r (BIO)
+============================================================================
+
+  Using classifier-merged glossing (e+k = 'this bodily [thing]', etc.)
+  Medieval medical context: nymph figures describe bodily conditions
+  under astrological influences
+
+  f78r.1,@Lt [0/1=0%]
+    VOY: okchdldlo
+    ENG: the [substance/bodily] ?dldlo?
+
+  f78r.2,@Lt [1/1=100%]
+    VOY: okchdy
+    ENG: the [substance/bodily] matter/thing (-state)
+
+  f78r.3,@P0 [5/7=71%]
+    VOY: tshedor shedy qopchedy qokedy dy qokol oky
+    ENG: [celestial/astral] ?ed? -er | [verbal] happen/occur (described) | which/that-which this-discourse/topic (abr.) | which/that-which this-substance/bodily (abr.) | matter/thing (-state) | which/that-which [substance/bodily] carry/bear | [substance/bodily] ?o? (-state)
+
+  f78r.4,+P0 [7/7=100%]
+    VOY: qokeedy qokedy shedy tchedy otar olkedy dam
+    ENG: which/that-which this-substance/bodily (abr.) | which/that-which this-substance/bodily (abr.) | [verbal] happen/occur (described) | this-celestial/astral (abr.) | the [celestial/astral] king/great | the [substance/bodily] remedy/thing (described) | of water
+
+  f78r.5,+P0 [7/7=100%]
+    VOY: qckhedy cheky dol chedy qokedy qokain olkedy
+    ENG: which this-substance/bodily (abr.) | [substance/bodily] do/make (gen/of) | of carry/bear | do/make (described) | which/that-which this-substance/bodily (abr.) | which/that-which substance/bodily-noble (pl) | the [substance/bodily] remedy/thing (described)
+
+  f78r.6,+P0 [8/9=89%]
+    VOY: yteedy qotal dol shedy qokedar chcthey otor dor or
+    ENG: [adjectival] this-celestial/astral (abr.) | which/that-which [celestial/astral] stone | of carry/bear | [verbal] happen/occur (described) | which/that-which [substance/bodily] ?ed? -er/doer | [celestial/astral] do/make (gen/of) | the [celestial/astral] king/great | of king/great | king/great
+
+  f78r.7,+P0 [8/8=100%]
+    VOY: qokal otedy qokedy qokedy dal qokedy qokedy am
+    ENG: which/that-which [substance/bodily] stone | the this-celestial/astral (abr.) | which/that-which this-substance/bodily (abr.) | which/that-which this-substance/bodily (abr.) | of stone | which/that-which this-substance/bodily (abr.) | which/that-which this-substance/bodily (abr.) | water
+
+  f78r.8,+P0 [6/8=75%]
+    VOY: dshedy qokedy okar qokedy shedy ykedy shedy qoky
+    ENG: of ?sh? (described) | which/that-which this-substance/bodily (abr.) | the [substance/bodily] king/great | which/that-which this-substance/bodily (abr.) | [verbal] happen/occur (described) | [adjectival] this-substance/bodily (abr.) | [verbal] happen/occur (described) | which [substance/bodily] ?o? (-state)
+
+  f78r.9,+P0 [7/8=88%]
+    VOY: schedy keedy qokedy chckhd qokain chedy qotedy dy
+    ENG: [verbal] do/make (described) | this-substance/bodily (abr.) | which/that-which this-substance/bodily (abr.) | [substance/bodily] ?chd? | which/that-which substance/bodily-noble (pl) | do/make (described) | which/that-which this-celestial/astral (abr.) | matter/thing (-state)
+
+  f78r.10,+P0 [6/8=75%]
+    VOY: dshedy deedy qokeedy otedy otal tedy otey oloiin
+    ENG: of ?sh? (described) | of this/that (abr.) | which/that-which this-substance/bodily (abr.) | the this-celestial/astral (abr.) | the [celestial/astral] stone | this-celestial/astral (abr.) | the this-celestial/astral (-state) | the ?lo? (pl)
+
+  f78r.11,+P0 [7/8=88%]
+    VOY: qoky okeedy sheety qoteedy otey shckhedy sokol or
+    ENG: which [substance/bodily] ?o? (-state) | the this-substance/bodily (abr.) | [verbal] [celestial/astral] happen/occur (gen/of) | which/that-which this-celestial/astral (abr.) | the this-celestial/astral (-state) | [verbal] [substance/bodily] happen/occur (described) | it-[verbs] [substance/bodily] carry/bear | king/great
+
+  f78r.12,+P0 [7/8=88%]
+    VOY: dor shekedy qokol kechdy otedy ol tedy chckhedy
+    ENG: of king/great | [verbal] [substance/bodily] happen/occur (described) | which/that-which [substance/bodily] carry/bear | [substance/bodily] ?ech? (abr.) | the this-celestial/astral (abr.) | carry/bear | this-celestial/astral (abr.) | [substance/bodily] do/make (described)
+
+  f78r.13,+P0 [10/10=100%]
+    VOY: qokedy ol kedy qokain okedy kedy tol dy qoteedy dy
+    ENG: which/that-which this-substance/bodily (abr.) | carry/bear | this-substance/bodily (abr.) | which/that-which substance/bodily-noble (pl) | the this-substance/bodily (abr.) | this-substance/bodily (abr.) | [celestial/astral] carry/bear | matter/thing (-state) | which/that-which this-celestial/astral (abr.) | matter/thing (-state)
+
+  f78r.14,+P0 [7/9=78%]
+    VOY: sor checkhy or chckhdy dol kedy qokededy qokan ol
+    ENG: [verbal] king/great | [substance/bodily] do/make (gen/of) | king/great | [substance/bodily] do/make (abr.) | of carry/bear | this-substance/bodily (abr.) | which/that-which [substance/bodily] ?ed? (described) | which/that-which [substance/bodily] ?an? | carry/bear
+
+  f78r.15,+P0 [7/8=88%]
+    VOY: dchckhedy qokchdy qokedy okedy dal or okeed olkain
+    ENG: of [substance/bodily] do/make (described) | which/that-which [substance/bodily] matter/thing (-state) | which/that-which this-substance/bodily (abr.) | the this-substance/bodily (abr.) | of stone | king/great | the [substance/bodily] ?ed? | the [substance/bodily] remedy/thing ones(obl)
+
+  f78r.16,+P0 [3/6=50%]
+    VOY: qokol oted okain ched ar alory
+    ENG: which/that-which [substance/bodily] carry/bear | the [celestial/astral] ?ed? | the substance/bodily-noble (pl) | ?ched? | king/great | ?alor? (-state)
+
+  f78r.17,+P0 [4/5=80%]
+    VOY: soiin kar kedy pchey tchdoltdy
+    ENG: it-[verbs] ?i? (pl) | [substance/bodily] king/great | this-substance/bodily (abr.) | this-discourse/topic (-state) | of-the [celestial/astral] remedy/thing (abr.)
+
+  f78r.18,+P0 [5/5=100%]
+    VOY: chedy qokain dar ar okain
+    ENG: do/make (described) | which/that-which substance/bodily-noble (pl) | of king/great | king/great | the substance/bodily-noble (pl)
+
+  f78r.19,+P0 [3/5=60%]
+    VOY: ches aiin okeedy qokain chl
+    ENG: ?ches? | great-one (pl) | the this-substance/bodily (abr.) | which/that-which substance/bodily-noble (pl) | ?chl?
+
+  f78r.20,+P0 [2/4=50%]
+    VOY: sol shedy dalshdy qokychdy
+    ENG: [verbal] carry/bear | [verbal] happen/occur (described) | of ?alsh? (abr.) | which/that-which [substance/bodily] ?ych? (abr.)
+
+  f78r.21,+P0 [2/4=50%]
+    VOY: lchedy qokain cheeky lokedy
+    ENG: ?lch? (described) | which/that-which substance/bodily-noble (pl) | [substance/bodily] do/make (gen/of) | [substance/bodily] ?lo? (described)
+
+  f78r.22,+P0 [3/5=60%]
+    VOY: yched qokain daiin chckhdy lr
+    ENG: [adjectival] ?ched? | which/that-which substance/bodily-noble (pl) | of great-one (pl) | [substance/bodily] do/make (abr.) | ?lr?
+
+  f78r.23,+P0 [5/5=100%]
+    VOY: sain sheor olkchdy roiin okeedy
+    ENG: [verbal] great-one (pl) | [verbal] fall/occur -er | the [substance/bodily] remedy/thing (abr.) | mouth (pl) | the this-substance/bodily (abr.)
+
+  f78r.24,+P0 [5/5=100%]
+    VOY: qokeedy kedy qokeey qokedy olol
+    ENG: which/that-which this-substance/bodily (abr.) | this-substance/bodily (abr.) | which/that-which this-substance/bodily (-state) | which/that-which this-substance/bodily (abr.) | the remedy/thing (nominalized)
+
+  f78r.25,+P0 [3/5=60%]
+    VOY: sokeedy keol lorain olkeey raiin
+    ENG: it-[verbs] this-substance/bodily (abr.) | this-substance/bodily (nominalized) | ?lor? ones(obl) | the [substance/bodily] remedy/thing (gen/of) | ?r? ones(pl)
+
+  f78r.26,+P0 [6/8=75%]
+    VOY: sol shey kary or shedy qeedar ain anl
+    ENG: [verbal] carry/bear | [verbal] happen/occur (gen/of) | [substance/bodily] king/great (-state) | king/great | [verbal] happen/occur (described) | which ?ed? -er/doer | great-one (pl) | ?anl?
+
+  f78r.27,+P0 [3/4=75%]
+    VOY: daiin chckhal daiil aldy
+    ENG: of great-one (pl) | [substance/bodily] do/make in/at(place) | of ?aiil? | stone (abr.)
+
+  f78r.28,+P0 [7/9=78%]
+    VOY: orain ol qokeedy kchol tchal olkee yfchey ofchedy taly
+    ENG: the ?r? ones(obl) | carry/bear | which/that-which this-substance/bodily (abr.) | [substance/bodily] carry/bear | [celestial/astral] stone | the [substance/bodily] ?le? | [adjectival] this-botanical/plant (-state) | the this-botanical/plant (abr.) | [celestial/astral] stone (-state)
+
+  f78r.29,+P0 [8/11=73%]
+    VOY: ssheky ol kedy chckhy dain oty qokor oky dain chy ol
+    ENG: [verbal] [substance/bodily] ?sh? (gen/of) | carry/bear | this-substance/bodily (abr.) | [substance/bodily] do/make (-state) | of great-one (pl) | [celestial/astral] ?o? (-state) | which/that-which [substance/bodily] king/great | [substance/bodily] ?o? (-state) | of great-one (pl) | do/make (-state) | carry/bear
+
+  f78r.30,+P0 [7/9=78%]
+    VOY: qokeedy qokey daiin olkain dal chedy ololdal chchty tedy
+    ENG: which/that-which this-substance/bodily (abr.) | which/that-which this-substance/bodily (-state) | of great-one (pl) | the [substance/bodily] remedy/thing ones(obl) | of stone | do/make (described) | the ?lold? in/at(place) | [celestial/astral] ?chch? (-state) | this-celestial/astral (abr.)
+
+  f78r.31,+P0 [7/8=88%]
+    VOY: solkeedy sheckhy qokedy otal shedy otar olchedy cthdy
+    ENG: it-[verbs] [substance/bodily] remedy/thing (described) | [verbal] [substance/bodily] happen/occur (gen/of) | which/that-which this-substance/bodily (abr.) | the [celestial/astral] stone | [verbal] happen/occur (described) | the [celestial/astral] king/great | the ?lch? (described) | [celestial/astral] matter/thing (-state)
+
+  f78r.32,+P0 [9/9=100%]
+    VOY: qokedy ckhdy qokain chedy dalky lkain ykeedy okaly dy
+    ENG: which/that-which this-substance/bodily (abr.) | [substance/bodily] matter/thing (-state) | which/that-which substance/bodily-noble (pl) | do/make (described) | of [substance/bodily] stone (-state) | [substance/bodily] remedy/thing ones(obl) | [adjectival] this-substance/bodily (abr.) | the [substance/bodily] stone (-state) | matter/thing (-state)
+
+  f78r.33,+P0 [7/9=78%]
+    VOY: ytedy daiin ykedy olsheey qokeey okal ol keedy dyky
+    ENG: [adjectival] this-celestial/astral (abr.) | of great-one (pl) | [adjectival] this-substance/bodily (abr.) | the ?lsh? (gen/of) | which/that-which this-substance/bodily (-state) | the [substance/bodily] stone | carry/bear | this-substance/bodily (abr.) | of [substance/bodily] ?y? (-state)
+
+  f78r.34,+P0 [7/8=88%]
+    VOY: dshedy qokeedy qopchedy qokaly dar okaiin keeal am
+    ENG: of ?sh? (described) | which/that-which this-substance/bodily (abr.) | which/that-which this-discourse/topic (abr.) | which/that-which [substance/bodily] stone (-state) | of king/great | the substance/bodily-noble (pl) | this-substance/bodily in/at(place) | water
+
+  f78r.35,+P0 [8/8=100%]
+    VOY: sain checkhy qokain cheeky daiin daiin tees ol
+    ENG: [verbal] great-one (pl) | [substance/bodily] do/make (gen/of) | which/that-which substance/bodily-noble (pl) | [substance/bodily] do/make (gen/of) | of great-one (pl) | of great-one (pl) | [celestial/astral] star | carry/bear
+
+  f78r.36,+P0 [5/7=71%]
+    VOY: qotchedy lchedy lchedykedy qol saiin ckhain or
+    ENG: which/that-which this-celestial/astral (abr.) | ?lch? (described) | [substance/bodily] ?lchedy? (described) | which carry/bear | [verbal] great-one (pl) | substance/bodily-noble (pl) | king/great
+
+  f78r.37,+P0 [5/6=83%]
+    VOY: osal ol aiin shee aiin oly
+    ENG: the ?s? in/at(place) | carry/bear | great-one (pl) | [verbal] fall/occur | great-one (pl) | the remedy/thing (-state)
+
+  f78r.38,+P0 [6/6=100%]
+    VOY: sar aiin oteedy ol aiin chedy
+    ENG: [verbal] king/great | great-one (pl) | the this-celestial/astral (abr.) | carry/bear | great-one (pl) | do/make (described)
+
+  f78r.39,+P0 [4/4=100%]
+    VOY: qotaiin qokaiin otedy keedy
+    ENG: which/that-which celestial/astral-noble (pl) | which/that-which substance/bodily-noble (pl) | the this-celestial/astral (abr.) | this-substance/bodily (abr.)
+
+  f78r.40,+P0 [5/5=100%]
+    VOY: shedy qol shedy qokaiin ol
+    ENG: [verbal] happen/occur (described) | which carry/bear | [verbal] happen/occur (described) | which/that-which substance/bodily-noble (pl) | carry/bear
+
+  f78r.41,+P0 [4/5=80%]
+    VOY: ykain chdar chedy qokain dy
+    ENG: [adjectival] substance/bodily-noble (pl) | ?chd? -er/doer | do/make (described) | which/that-which substance/bodily-noble (pl) | matter/thing (-state)
+
+  f78r.42,+P0 [4/4=100%]
+    VOY: dain chfaiin opaly kotaly
+    ENG: of great-one (pl) | [botanical/plant] do/make ones(pl) | the [discourse/topic] stone (-state) | the [celestial/astral] stone (-state)
+
+  f78r.43,+P0 [3/4=75%]
+    VOY: lchedy pchedy qokaiin dar
+    ENG: ?lch? (described) | this-discourse/topic (abr.) | which/that-which substance/bodily-noble (pl) | of king/great
+
+  f78r.44,@Lt [1/2=50%]
+    VOY: dar aloifhy
+    ENG: of king/great | [botanical/plant] ?aloih? (-state)
+
+  f78r.45,@Lt [0/1=0%]
+    VOY: dchedaly
+    ENG: of ?chedal? (-state)
+
+  f78r.46,@Lt [0/2=0%]
+    VOY: otarodlay orory
+    ENG: the [celestial/astral] ?arodla? (-state) | the ?ror? (-state)
+
+  f78r.47,@Lt [1/1=100%]
+    VOY: okaral
+    ENG: the [substance/bodily] king/great in/at(place)
+
+
+  ====================================================================
+  f76r lines 12-17 (around the 100%-translated line)
+  ====================================================================
+
+  f76r.11,=P0 [7/12=58%]
+    VOY: qotedshedy qorain oteedy chedy ol chdy raiiin chekain dain chckhy sal oty
+    ENG: which/that-which [celestial/astral] ?edsh? (described) | which/that-which ?r? ones(obl) | the this-celestial/astral (abr.) | do/make (described) | carry/bear | do/make (abr.) | ?rai? (pl) | [substance/bodily] ?che? ones(obl) | of great-one (pl) | [substance/bodily] do/make (-state) | [verbal] stone | [celestial/astral] ?o? (-state)
+
+  f76r.12,+P0 [10/13=77%]
+    VOY: solshedy qool qctheed shdy qa ol keey dain saiin ar shedy qokeor okeedy
+    ENG: it-[verbs] ?lsh? (described) | which/that-which carry/bear | which [celestial/astral] ?ed? | [verbal] happen/occur (abr.) | ?qa? | carry/bear | this-substance/bodily (-state) | of great-one (pl) | [verbal] great-one (pl) | king/great | [verbal] happen/occur (described) | which/that-which this-substance/bodily -er | the this-substance/bodily (abr.)
+
+  f76r.13,+P0 [12/12=100%]
+    VOY: qokeedy checthy chckhey okal okaiin sheckhey okeedy otey dal kal chedy sar
+    ENG: which/that-which this-substance/bodily (abr.) | [celestial/astral] do/make (gen/of) | [substance/bodily] do/make (gen/of) | the [substance/bodily] stone | the substance/bodily-noble (pl) | [verbal] [substance/bodily] happen/occur (gen/of) | the this-substance/bodily (abr.) | the this-celestial/astral (-state) | of stone | [substance/bodily] stone | do/make (described) | [verbal] king/great
+
+  f76r.15,=P0 [8/13=62%]
+    VOY: chorshedy qoked okees al ar aiin ar ain chckheed lchedy shedy qolair chedy
+    ENG: ?chorsh? (described) | which/that-which [substance/bodily] ?ed? | the [substance/bodily] star | stone | king/great | great-one (pl) | king/great | great-one (pl) | [substance/bodily] ?ched? | ?lch? (described) | [verbal] happen/occur (described) | which/that-which ?lair? | do/make (described)
+
+  f76r.16,+P0 [10/11=91%]
+    VOY: qotes chedy shckhy qokeey okeey kain checkhy qokeedy qotey qotain chekair
+    ENG: which/that-which [celestial/astral] star | do/make (described) | [verbal] [substance/bodily] happen/occur (-state) | which/that-which this-substance/bodily (-state) | the this-substance/bodily (-state) | substance/bodily-noble (pl) | [substance/bodily] do/make (gen/of) | which/that-which this-substance/bodily (abr.) | which/that-which this-celestial/astral (-state) | which/that-which celestial/astral-noble (pl) | [substance/bodily] ?cheair?
+
+  f76r.17,+P0 [10/12=83%]
+    VOY: chey chckh shey qeeey chol lkain shedy qokeedy okain chedy okeed qokaloro
+    ENG: do/make (gen/of) | [substance/bodily] do/make | [verbal] happen/occur (gen/of) | which this/that (-state) | do/make (nominalized) | [substance/bodily] remedy/thing ones(obl) | [verbal] happen/occur (described) | which/that-which this-substance/bodily (abr.) | the substance/bodily-noble (pl) | do/make (described) | the [substance/bodily] ?ed? | which/that-which [substance/bodily] ?aloro?
+
+
+============================================================================
+PHASE 24e: PREDICTIVE MODEL — BIO PARAGRAPH CONTENT EXPECTATIONS
+============================================================================
+
+  Medieval astrological-medical texts (e.g., Picatrix, Albumasar) describe:
+  - Which celestial body RULES (ar/or) each body part
+  - What BEFALLS (h/he) the body under each influence
+  - What SUBSTANCE (cho/l) or PREPARATION (ch-ol) treats conditions
+  - Which GREAT ONES (a/ar) influence the outcome
+
+  Bio sections (nymph figures in tubs/channels) should describe:
+  - Bodily conditions under astrological influence
+  - Water (am) treatments and preparations (ch-ol)
+  - References to rulers/planets (ar/or) as governing forces
+
+  TESTING: Do our translations match this template?
+
+
+  BIO: Top meaning-pair bigrams (known-root → known-root):
+    this/that          → this/that           293
+    happen/occur       → this/that           170
+    great-one          → do/make             146
+    great-one          → happen/occur        116
+    carry/bear         → do/make             102
+    this/that          → great-one           100
+    do/make            → this/that            97
+    carry/bear         → happen/occur         97
+    do/make            → great-one            94
+    happen/occur       → great-one            85
+    king/great         → happen/occur         76
+    this/that          → do/make              76
+    this/that          → stone                73
+    this/that          → remedy/thing         73
+    this/that          → carry/bear           67
+    this/that          → king/great           63
+    this/that          → happen/occur         63
+    great-one          → great-one            57
+    great-one          → this/that            57
+    do/make            → stone                55
+
+  BIO: Top classifier→meaning bigrams:
+    [substance/bodily] → this/that           334
+    [substance/bodily] → do/make             233
+    [substance/bodily] → happen/occur        227
+    [substance/bodily] → great-one           192
+    [celestial/astral] → this/that           162
+    [substance/bodily] → carry/bear          146
+    [substance/bodily] → remedy/thing        143
+    [substance/bodily] → stone               138
+    [substance/bodily] → king/great          115
+    [celestial/astral] → do/make              92
+    [celestial/astral] → great-one            73
+    [celestial/astral] → happen/occur         70
+    [celestial/astral] → king/great           65
+    [celestial/astral] → remedy/thing         58
+    [celestial/astral] → carry/bear           58
+
+  HERBAL: Top meaning-pair bigrams (known-root → known-root):
+    do/make            → do/make             207
+    this/that          → this/that           183
+    do/make            → great-one           177
+    king/great         → do/make             158
+    do/make            → this/that           129
+    king/great         → great-one           117
+    this/that          → do/make             116
+    do/make            → king/great          112
+    great-one          → do/make             111
+    king/great         → king/great          111
+    great-one          → king/great          103
+    great-one          → great-one           101
+    carry/bear         → do/make              87
+    this/that          → great-one            86
+    carry/bear         → great-one            73
+    happen/occur       → this/that            72
+    do/make            → carry/bear           71
+    king/great         → happen/occur         69
+    this/that          → king/great           69
+    great-one          → this/that            64
+
+  HERBAL: Top classifier→meaning bigrams:
+    [substance/bodily] → do/make             377
+    [substance/bodily] → king/great          264
+    [substance/bodily] → great-one           261
+    [celestial/astral] → do/make             260
+    [substance/bodily] → this/that           230
+    [celestial/astral] → great-one           221
+    [celestial/astral] → king/great          185
+    [celestial/astral] → this/that           179
+    [substance/bodily] → stone               154
+    [substance/bodily] → matter/thing        129
+    [substance/bodily] → happen/occur        126
+    [celestial/astral] → carry/bear          124
+    [substance/bodily] → carry/bear          122
+    [celestial/astral] → matter/thing        110
+    [celestial/astral] → happen/occur        108
+
+  Meaning pairs UNIQUE to BIO (10):
+    do/make -> mouth
+    fall/occur -> remedy/thing
+    king/great -> tree/plant
+    mouth -> happen/occur
+    remedy/thing -> hot/warm
+    remedy/thing -> mouth
+    remedy/thing -> tree/plant
+    this/that -> mouth
+    tree/plant -> carry/bear
+    water -> remedy/thing
+
+  Meaning pairs UNIQUE to HERBAL (92):
+    carry/bear -> celestial-body
+    carry/bear -> substance
+    celestial-body -> carry/bear
+    celestial-body -> happen/occur
+    celestial-body -> king/great
+    celestial-body -> matter/thing
+    celestial-body -> remedy/thing
+    celestial-body -> stone
+    celestial-body -> this/that
+    do/make -> celestial-body
+    do/make -> hot/warm
+    do/make -> star
+    do/make -> substance
+    dry -> do/make
+    dry -> stone
+
+  Results saved to results/phase24_results.json

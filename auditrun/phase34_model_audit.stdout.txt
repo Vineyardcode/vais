@@ -1,0 +1,296 @@
+PHASE 34: ARE THE REMAINING MODEL ASSUMPTIONS VALID?
+============================================================================
+Loaded 40300 word tokens
+
+============================================================================
+PHASE 34a: IS GRAM PREFIX 's' A REAL MORPHEME?
+============================================================================
+
+Parser splits 'shedy' as s+h+e+dy. But 'sh' is a deriv prefix.
+If 's' only appears before 'h', it's not a real gram prefix —
+it's just the first letter of deriv prefix 'sh'.
+
+  Total gram_prefix='s' tokens: 4144
+  s + deriv='h': 2700 (65%)
+  s + deriv=other: 1444 (35%)
+
+  s + non-h deriv prefixes: {'∅': 1377, 'ch': 44, 'sh': 23}
+  s + non-h stems: {'h': 644, 'a': 194, 'ar': 105, 'al': 68, 'ol': 62, 'e': 53, 'or': 50, 'air': 38, 'ch': 18, 'am': 14}
+  s + non-h top words: {'shol': 178, 'saiin': 125, 'shor': 95, 'shy': 94, 'sar': 80, 'sol': 62, 'sain': 61, 'shckhy': 58, 'sal': 51, 'sor': 48}
+
+  SECTION DISTRIBUTIONS:
+    Section          s+h    ∅+sh s+other
+    herbal-A         23%      0%     32%
+    herbal-B          0%      0%      0%
+    pharma            4%      0%      4%
+    bio              21%      0%     18%
+    text             49%      0%     41%
+    cosmo             2%      0%      3%
+    zodiac            0%      0%      0%
+
+    Cosine(s+h, ∅+sh): 0.000
+    Cosine(s+other, s+h): 0.979
+
+  LINE POSITION:
+    s+h (=sh?)      N= 2678  mean=0.443  init<.2=25%  final>.8=14%
+    s+other         N= 1388  mean=0.388  init<.2=39%  final>.8=16%
+
+  ═══ VERDICT ═══
+  's' has 35% non-h usage — may be a real gram prefix
+
+============================================================================
+PHASE 34b: ARE ALL GRAM PREFIXES REAL?
+============================================================================
+
+For each gram prefix, check: what deriv prefix follows?
+If a gram prefix ALWAYS pairs with the same deriv prefix,
+they might be one morpheme, not two.
+
+  gpfx='∅' (N=17232): H(deriv|gpfx)=1.29 bits
+    ∅=11240(65%), ch=4749(28%), l=810(5%), lch=280(2%), lsh=107(1%)
+
+  gpfx='qo' (N= 4808): H(deriv|gpfx)=0.21 bits
+    ∅=4698(98%), l=42(1%), lch=32(1%), ch=20(0%), lsh=8(0%)
+
+  gpfx='q' (N=  804): H(deriv|gpfx)=0.06 bits
+    ∅=799(99%), h=4(0%), ch=1(0%)
+
+  gpfx='so' (N=  222): H(deriv|gpfx)=1.17 bits
+    ∅=170(77%), l=28(13%), lch=13(6%), lsh=9(4%), ch=1(0%)
+
+  gpfx='do' (N=  157): H(deriv|gpfx)=1.23 bits
+    ∅=115(73%), l=26(17%), lch=9(6%), lsh=5(3%), ch=2(1%)
+
+  gpfx='o' (N= 7962): H(deriv|gpfx)=0.74 bits
+    ∅=6978(88%), l=639(8%), lch=157(2%), lsh=78(1%), ch=70(1%)
+
+  gpfx='d' (N= 3318): H(deriv|gpfx)=0.56 bits
+    ∅=3009(91%), ch=184(6%), sh=112(3%), l=10(0%), lch=2(0%)
+
+  gpfx='s' (N= 4144): H(deriv|gpfx)=1.04 bits
+    h=2700(65%), ∅=1377(33%), ch=44(1%), sh=23(1%)
+
+  gpfx='y' (N= 1653): H(deriv|gpfx)=0.83 bits
+    ∅=1381(84%), ch=179(11%), sh=81(5%), h=9(1%), l=3(0%)
+
+  OVERLAP CHECK:
+  Are 'so','do' just 's'/'d' + 'o' (two gram prefixes)?
+
+  gpfx='so' stem starts: {'e': 44, 'i': 26, 'l': 19, 'r': 18, 'd': 17}
+  gpfx='s' stem starts:  {'e': 1609, 'h': 651, 'o': 289, 'eo': 283, 'a': 201}
+  gpfx='do' stem starts: {'e': 21, 'l': 20, 'i': 13, 'd': 11, 'ar': 9}
+  gpfx='d' stem starts:  {'a': 1084, 'ar': 462, 'al': 460, 'ai': 335, 'e': 191}
+
+============================================================================
+PHASE 34c: DOES E-CHAIN COLLAPSE DESTROY MEANINGFUL INFO?
+============================================================================
+
+  E-chain length distribution (after gallows removal):
+    e×1:  10469 ( 66.5%)
+    e×2:   4719 ( 30.0%)
+    e×3:    520 (  3.3%)
+    e×4:     35 (  0.2%)
+    e×5:      1 (  0.0%)
+    e×6:      2 (  0.0%)
+    e×7:      1 (  0.0%)
+
+  SECTION DISTRIBUTION by e-chain length:
+    elen   herbal-A  herbal-B    pharma       bio      text     cosmo    zodiac
+    e×1         19%        0%        5%       20%       52%        2%        0%  (N=10061)
+    e×2         14%        0%        4%       17%       59%        3%        0%  (N=4681)
+    e×3         18%        0%        4%        7%       60%        6%        0%  (N=519)
+
+  STEM COMPARISON: with vs without e-collapse:
+    Tokens whose stem changes: 5239 (13.0%)
+
+    Top stems WITHOUT collapse:
+      e           :   6417
+      a           :   4080
+      ee          :   3216
+      o           :   2148
+      ar          :   2023
+      ol          :   1875
+      ch          :   1857
+      al          :   1740
+      d           :   1395
+      or          :   1090
+      l           :    972
+      eo          :    922
+      h           :    741
+      y           :    521
+      ed          :    488
+
+    Top stems WITH collapse:
+      e           :   9951
+      a           :   4080
+      o           :   2148
+      ar          :   2023
+      ol          :   1875
+      ch          :   1857
+      al          :   1740
+      d           :   1395
+      eo          :   1265
+      or          :   1090
+      l           :    972
+      h           :    741
+      ed          :    659
+      y           :    521
+      am          :    468
+
+  SPECIFIC: Are 'e' and 'ee' the same morpheme?
+    stem='e': 6417, stem='ee': 3216
+    Section           e     ee
+    herbal-A        17%    12%
+    herbal-B         0%     0%
+    pharma           4%     4%
+    bio             26%    22%
+    text            49%    58%
+    cosmo            2%     2%
+    zodiac           0%     0%
+
+    Suffix preference:
+    stem='e': {'dy': 2814, 'y': 2138, 'ol': 697, 'or': 310, 'ar': 165, 'al': 111}
+    stem='ee': {'y': 1731, 'dy': 1149, 'ol': 118, 'or': 86, 'ar': 45, '∅': 40}
+
+============================================================================
+PHASE 34d: IS STEM 'e' A REAL MORPHEME OR PARSING RESIDUE?
+============================================================================
+
+24.7% of tokens have stem='e'. This is suspicious — it could be
+the minimum leftover after stripping all affixes.
+
+  Section distribution of stem 'e' vs corpus:
+    Section           e  corpus   diff
+    herbal-A        15%     25%   -10
+    herbal-B         0%      0%    +0
+    pharma           4%      4%    -0
+    bio             24%     15%    +9
+    text            52%     49%    +3
+    cosmo            2%      2%    -0
+    zodiac           0%      0%    +0
+
+    Chi2(e vs corpus): 992.0 (df=6)
+    → stem e differs from corpus
+
+  Chi2 for top stems (how much does each differ from corpus?):
+    e      (N= 9951): chi2=   992.0 ***
+    o      (N= 2148): chi2=   507.7 ***
+    eo     (N= 1265): chi2=   340.2 ***
+    ch     (N= 1857): chi2=   334.1 ***
+    ol     (N= 1875): chi2=   218.1 ***
+    l      (N=  972): chi2=   175.9 ***
+    or     (N= 1090): chi2=   149.3 ***
+    ed     (N=  659): chi2=   147.2 ***
+    al     (N= 1740): chi2=   134.5 ***
+    h      (N=  741): chi2=    99.8 ***
+    ar     (N= 2023): chi2=    91.8 ***
+    d      (N= 1395): chi2=    75.8 ***
+    am     (N=  468): chi2=    56.1 ***
+    a      (N= 4080): chi2=    16.8    
+    es     (N=  329): chi2=    15.0    
+
+  Suffix distribution of stem 'e' by deriv prefix:
+    deriv      N      y     dy     ol     or     ar     al      ∅   aiin
+    ∅       4884    40%    44%     8%     4%     2%     1%     0%     1%
+    h       1578    42%    36%     9%     4%     2%     2%     4%     1%
+    ch      2329    44%    31%    10%     6%     4%     2%     1%     1%
+    sh       155    43%    41%     7%     4%     1%     0%     4%     0%
+    l        481    40%    51%     5%     2%     0%     1%     0%     0%
+    lch      365    36%    55%     5%     2%     1%     1%     0%     0%
+    lsh      159    36%    53%     6%     2%     0%     1%     2%     0%
+
+  Total stem='e' tokens: 9951
+
+============================================================================
+PHASE 34e: DO THE 10 SUFFIXES CLUSTER FUNCTIONALLY?
+============================================================================
+
+  Section distribution by suffix:
+    sfx         N herbal herbal pharma    bio   text  cosmo zodiac
+    dy       6301    16%     0%     2%    27%    51%     2%     0%
+    y        9252    26%     0%     4%    16%    48%     3%     0%
+    ol       1972    33%     0%     8%    12%    44%     1%     0%
+    or       1282    39%     0%     7%     9%    42%     2%     0%
+    ar       1277    20%     0%     2%     8%    64%     2%     0%
+    al        865    17%     0%     3%    13%    63%     1%     0%
+    aiin     1464    31%     0%     4%     6%    55%     2%     0%
+    ain       609    20%     0%     3%    15%    60%     2%     0%
+    iin      2998    30%     0%     3%    11%    52%     3%     0%
+    in       1219    15%     0%     2%    27%    54%     1%     0%
+    ∅       13061    27%     0%     4%    11%    47%     2%     0%
+
+  Pairwise cosine similarity (section distribution):
+              dy     y    ol    or    ar    al  aiin   ain   iin    in     ∅
+    dy      1.00  0.96  0.91  0.86  0.94  0.96  0.91  0.97  0.94  1.00  0.94
+    y       0.96  1.00  0.99  0.96  0.97  0.97  0.98  0.98  1.00  0.96  1.00
+    ol      0.91  0.99  1.00  0.99  0.94  0.93  0.98  0.95  0.99  0.91  0.99
+    or      0.86  0.96  0.99  1.00  0.90  0.88  0.97  0.90  0.97  0.85  0.97
+    ar      0.94  0.97  0.94  0.90  1.00  1.00  0.98  0.99  0.98  0.95  0.97
+    al      0.96  0.97  0.93  0.88  1.00  1.00  0.96  1.00  0.97  0.97  0.97
+    aiin    0.91  0.98  0.98  0.97  0.98  0.96  1.00  0.97  1.00  0.91  0.99
+    ain     0.97  0.98  0.95  0.90  0.99  1.00  0.97  1.00  0.98  0.98  0.98
+    iin     0.94  1.00  0.99  0.97  0.98  0.97  1.00  0.98  1.00  0.94  1.00
+    in      1.00  0.96  0.91  0.85  0.95  0.97  0.91  0.98  0.94  1.00  0.94
+    ∅       0.94  1.00  0.99  0.97  0.97  0.97  0.99  0.98  1.00  0.94  1.00
+
+  Suffix × deriv prefix distribution:
+    sfx         N      ∅      h     ch     sh      l
+    dy       6301    58%    12%    18%     1%     6%
+    y        9252    65%    10%    19%     1%     4%
+    ol       1972    70%     9%    16%     1%     3%
+    or       1282    72%     6%    17%     1%     3%
+    ar       1277    68%     7%    20%     0%     4%
+    al        865    64%     9%    21%     1%     4%
+    aiin     1464    69%     7%    19%     0%     3%
+    ain       609    68%     6%    20%     0%     5%
+    iin      2998    98%     0%     1%     0%     1%
+    in       1219   100%     0%     0%     0%     0%
+    ∅       13061    83%     4%     8%     0%     4%
+
+  Suffix × gram prefix distribution:
+    sfx         N     ∅    qo     q     o     d     s     y    so    do
+    dy       6301   36%   19%    0%   22%    4%   13%    5%    0%    0%
+    y        9252   42%   11%    5%   20%    3%   13%    4%    1%    0%
+    ol       1972   50%    7%    0%   15%    4%   19%    4%    0%    0%
+    or       1282   48%    6%    1%   17%    7%   15%    6%    0%    0%
+    ar       1277   46%    7%    1%   25%    4%   11%    5%    1%    0%
+    al        865   47%    6%    0%   24%    5%   13%    3%    1%    0%
+    aiin     1464   41%    8%    0%   31%    3%   10%    5%    1%    0%
+    ain       609   46%    9%    0%   26%    4%    9%    4%    1%    1%
+    iin      2998   29%   14%    0%   17%   30%    5%    4%    1%    0%
+    in       1219   15%   30%    0%   27%   18%    5%    3%    2%    1%
+    ∅       13061   50%   10%    2%   17%   10%    7%    4%    0%    0%
+
+  Line position by suffix:
+    sfx         N   Mean   Init  Final
+    dy       6099  0.500    20%    20%
+    y        8746  0.505    20%    21%
+    ol       1880  0.434    26%    13%
+    or       1226  0.420    31%    14%
+    ar       1185  0.488    24%    21%
+    al        795  0.501    22%    23%
+    aiin     1386  0.494    22%    21%
+    ain       585  0.507    22%    25%
+    iin      2911  0.496    22%    22%
+    in       1190  0.475    24%    19%
+    ∅       12445  0.519    22%    25%
+
+  ═══ ARE -aiin/-ain/-iin/-in RELATED? ═══
+  Cosine similarities:
+    aiin  vs ain  : section=0.970  deriv=0.999
+    aiin  vs iin  : section=0.995  deriv=0.961
+    aiin  vs in   : section=0.911  deriv=0.959
+    ain   vs iin  : section=0.978  deriv=0.958
+    ain   vs in   : section=0.977  deriv=0.956
+    iin   vs in   : section=0.939  deriv=1.000
+
+  ═══ ARE -ar/-or/-al/-ol RELATED? ═══
+    ar    vs or   : section=0.900  deriv=0.999
+    ar    vs al   : section=0.997  deriv=0.999
+    ar    vs ol   : section=0.936  deriv=0.997
+    or    vs al   : section=0.883  deriv=0.995
+    or    vs ol   : section=0.992  deriv=0.999
+    al    vs ol   : section=0.928  deriv=0.995
+
+  Results saved to results/phase34_results.json
+

@@ -1,0 +1,301 @@
+Loading tokens...
+  36259 tokens loaded
+  3439 distinct collapsed forms
+
+======================================================================
+37a: ARE PREFIXES MEANINGFUL?
+    Test: does adding a prefix change section/position distribution?
+======================================================================
+
+  Matched prefix pairs (base + suffix constant, prefix varies):
+
+  Base+Sfx       Form A           N_A Form B           N_B | Sec cosine   Δpos
+  e+y            ey               358 chey             894 |      0.944 -0.001
+  e+y            ey               358 ley               71 |      0.820 +0.029
+  e+y            ey               358 lchey             67 |      0.752 -0.053
+  e+y            ey               358 lshey             26 |      0.654 -0.165
+  e+y            ey               358 oey              634 |      0.906 -0.013
+  e+y            ey               358 qey               21 |      0.848 +0.059
+  e+y            ey               358 qoey             674 |      0.889 -0.051
+  e+y            ey               358 shey             634 |      0.881 -0.040
+  e+y            ey               358 yey              155 |      0.964 -0.108
+  e+dy           edy              317 chedy            627 |      0.991 +0.075
+  e+dy           edy              317 ledy             110 |      0.876 +0.037
+  e+dy           edy              317 lchedy           122 |      0.955 +0.051
+  e+dy           edy              317 lshedy            46 |      0.926 -0.061
+  e+dy           edy              317 oedy             646 |      0.973 +0.049
+  e+dy           edy              317 qoedy            927 |      0.965 -0.017
+  e+dy           edy              317 shedy            552 |      0.959 -0.026
+  e+dy           edy              317 yedy             133 |      0.956 -0.049
+  l              l                194 chl               29 |      0.994 +0.030
+  l              l                194 dl                21 |      0.979 +0.219
+  l              l                194 ol               810 |      0.865 +0.015
+  o+y            oy               354 choy             166 |      0.975 -0.101
+  o+y            oy               354 qoy              429 |      0.963 -0.086
+  o+y            oy               354 shoy              47 |      0.982 -0.175
+  d+aiin         daiin            815 odaiin            90 |      0.946 -0.013
+  d+aiin         daiin            815 qodaiin           55 |      0.875 +0.009
+
+  Aggregate prefix effects (mean over matched pairs):
+  Prefix   Pairs  Mean cos  Std cos  Mean Δpos | Verdict
+  ch          17     0.954    0.033     -0.003 | PHONOTACTIC (no section change)
+  d            8     0.888    0.106     -0.045 | WEAK meaning signal
+  l            3     0.838    0.026     +0.118 | MEANINGFUL (section changes)
+  lch          2     0.854    0.102     -0.001 | WEAK meaning signal
+  lsh          2     0.790    0.136     -0.113 | MEANINGFUL (section changes)
+  o           27     0.922    0.091     -0.037 | WEAK meaning signal
+  q           10     0.943    0.054     -0.040 | WEAK meaning signal
+  qo          14     0.927    0.070     -0.027 | WEAK meaning signal
+  sh          10     0.934    0.056     -0.081 | WEAK meaning signal
+  y            4     0.956    0.010     -0.084 | PHONOTACTIC (no section change)
+
+======================================================================
+37b: THE DAIIN/AIIN COMPLEX — IS daiin = d + aiin?
+======================================================================
+
+  Collapsed forms ending in 'aiin' (N≥10):
+  Form                 N mean_pos |   bio  herbA  text cosmo pharma
+  daiin              815    0.482 | 10.1  45.8  35.8   1.6   6.1
+  aiin               718    0.541 |  7.0  21.9  63.9   3.1   2.2
+  oaiin              429    0.508 |  9.8  23.8  61.5   2.6   1.6
+  qoaiin             405    0.469 | 23.0  14.3  58.8   3.0   0.7
+  saiin              128    0.359 | 21.1  26.6  43.8   1.6   5.5
+  yaiin              114    0.426 |  3.5  23.7  57.0  15.8   0.0
+  olaiin              97    0.483 | 13.4  15.5  60.8   0.0   8.2
+  odaiin              90    0.469 |  1.1  38.9  54.4   2.2   2.2
+  chaiin              71    0.571 |  4.2  57.7  38.0   0.0   0.0
+  raiin               65    0.611 | 18.5   6.2  72.3   3.1   0.0
+  laiin               64    0.563 | 12.5   4.7  82.8   0.0   0.0
+  qodaiin             55    0.491 |  0.0  29.1  61.8   7.3   1.8
+  chedaiin            46    0.527 | 13.0  10.9  67.4   8.7   0.0
+  chodaiin            43    0.471 |  0.0  44.2  48.8   0.0   4.7
+  oraiin              40    0.525 |  2.5  20.0  72.5   0.0   5.0
+  choaiin             38    0.524 |  0.0  31.6  57.9   5.3   5.3
+  shaiin              27    0.326 |  0.0  55.6  44.4   0.0   0.0
+  cheaiin             26    0.545 |  3.8  50.0  38.5   0.0   7.7
+  shodaiin            24    0.403 |  0.0  54.2  41.7   4.2   0.0
+  qoedaiin            21    0.431 |  4.8  14.3  81.0   0.0   0.0
+  shedaiin            20    0.453 | 20.0   5.0  65.0  10.0   0.0
+  oedaiin             19    0.454 |  5.3   0.0  94.7   0.0   0.0
+  ydaiin              17    0.244 |  0.0  52.9  35.3   0.0   5.9
+  chdaiin             16    0.500 |  0.0  37.5  62.5   0.0   0.0
+  eodaiin             14    0.546 |  0.0  28.6  64.3   0.0   7.1
+  sheaiin             13    0.489 |  7.7  69.2  23.1   0.0   0.0
+  cheodaiin           12    0.560 |  0.0  41.7  41.7   0.0   8.3
+  araiin              12    0.672 |  8.3  16.7  75.0   0.0   0.0
+  cholaiin            11    0.487 |  9.1  27.3  63.6   0.0   0.0
+  alaiin              11    0.647 |  0.0  18.2  72.7   9.1   0.0
+  shoaiin             11    0.336 |  9.1  36.4  54.5   0.0   0.0
+  oodaiin             11    0.591 |  0.0   9.1  63.6  18.2   0.0
+  oeodaiin            10    0.267 |  0.0  20.0  70.0   0.0   0.0
+
+  Distributional comparison:
+  daiin          N=  815: pos=0.482 init=27.7%  bio=10.1% hA=45.8% txt=35.8%
+  aiin           N=  718: pos=0.541 init=15.2%  bio=7.0% hA=21.9% txt=63.9%
+  d+other        N= 2661: pos=0.538 init=24.3%  bio=16.0% hA=33.5% txt=41.0%
+  all *aiin      N= 3845: pos=0.488 init=22.1%  bio=9.6% hA=28.8% txt=54.4%
+
+  Cosine(daiin, aiin) = 0.837
+  Cosine(daiin, d+other) = 0.969
+  Cosine(daiin, all *aiin) = 0.915
+  → If daiin≈d+other, d- is the controlling prefix
+  → If daiin≈aiin, d- doesn't change meaning
+  → If daiin≈all_aiin, -aiin controls the distribution
+
+  daiin line position profile:
+    [0-20%]:  27.7% █████████████
+    [20-40%]:  13.6% ██████
+    [40-60%]:  16.8% ████████
+    [60-80%]:  16.3% ████████
+    [80-100%]:  25.5% ████████████
+
+======================================================================
+37c: WHAT DO EDGES ENCODE? (Section + position by raw prefix/suffix)
+======================================================================
+
+  Section enrichment by raw prefix (observed/expected):
+  Pfx         N |    bio  cosmo  herbA  herbB pharma   text
+  ch       5791 |  0.75x  0.93x  1.21x  0.00x  1.12x  0.97x
+  sh       3186 |  1.25x  0.83x  1.07x  0.00x  0.92x  0.92x
+  l        1013 |  0.99x  0.20x  0.32x  0.00x  0.26x  1.45x
+  lch       309 |  2.20x  0.00x  0.14x  0.00x  0.17x  1.18x
+  lsh       117 |  2.50x  0.85x  0.41x  0.00x  0.22x  0.93x
+  qo       5338 |  1.65x  0.88x  0.68x  0.00x  0.91x  0.99x
+  o        8898 |  0.90x  0.96x  0.93x  0.00x  1.06x  1.05x
+  d        3476 |  0.93x  1.17x  1.45x  0.00x  1.40x  0.77x
+  y        2147 |  0.46x  2.04x  1.51x  0.00x  0.94x  0.88x
+  q          97 |  1.51x  0.51x  0.53x  0.00x  0.81x  1.14x
+  NONE     5887 |  0.82x  1.06x  0.88x  0.00x  0.90x  1.11x
+
+  Section enrichment by raw suffix:
+  Sfx         N |    bio  cosmo  herbA  herbB pharma   text
+  aiin     3127 |  0.65x  1.26x  1.21x  0.00x  0.92x  1.01x
+  ain      1415 |  1.63x  0.56x  0.57x  0.00x  0.48x  1.10x
+  iin      1046 |  0.52x  1.14x  0.99x  0.00x  0.70x  1.17x
+  in        196 |  1.14x  0.00x  0.51x  0.00x  0.80x  1.28x
+  ar       2177 |  0.75x  1.14x  0.80x  0.00x  0.64x  1.18x
+  or       1493 |  0.61x  0.43x  1.60x  0.00x  1.95x  0.78x
+  al       1649 |  1.27x  0.78x  0.62x  0.00x  0.83x  1.13x
+  ol       2570 |  1.01x  0.72x  1.22x  0.00x  2.15x  0.81x
+  dy       6152 |  1.70x  1.08x  0.64x  0.00x  0.55x  1.00x
+  y        7786 |  1.06x  1.28x  1.02x  0.00x  1.15x  0.94x
+  ∅        8648 |  0.60x  0.86x  1.20x  0.00x  0.95x  1.03x
+
+  Line position by raw prefix:
+  Pfx         N   mean  init%  final%
+  ch       5791  0.510  15.9%   17.6%
+  sh       3186  0.424  26.6%   11.8%
+  l        1013  0.587  13.1%   30.4%
+  lch       309  0.513  18.4%   24.3%
+  lsh       117  0.358  36.8%    6.8%
+  qo       5338  0.475  18.6%   15.4%
+  o        8898  0.519  18.2%   21.5%
+  d        3476  0.525  25.1%   29.3%
+  y        2147  0.399  37.0%   16.9%
+  q          97  0.467  16.5%   14.4%
+  NONE     5887  0.530  20.8%   26.9%
+
+  Line position by raw suffix:
+  Sfx         N   mean  init%  final%
+  aiin     3127  0.476  23.7%   18.9%
+  ain      1415  0.483  22.2%   19.9%
+  iin      1046  0.513  18.5%   21.7%
+  in        196  0.477  19.4%   19.9%
+  ar       2177  0.517  19.3%   22.0%
+  or       1493  0.404  31.1%   11.9%
+  al       1649  0.545  15.9%   24.1%
+  ol       2570  0.428  25.6%   12.2%
+  dy       6152  0.505  17.9%   18.9%
+  y        7786  0.499  20.0%   20.1%
+  ∅        8648  0.529  20.5%   26.2%
+
+======================================================================
+37d: RAW WORD CLUSTERING (top collapsed forms)
+======================================================================
+
+  Top 15 most similar pairs (section+position cosine):
+    qoedy          ↔ shedy           cos=0.9975  N=927,552
+    qoedy          ↔ qoain           cos=0.9969  N=927,353
+    aiin           ↔ oaiin           cos=0.9968  N=718,429
+    chor           ↔ cho             cos=0.9960  N=217,89
+    oaiin          ↔ oar             cos=0.9953  N=429,340
+    or             ↔ o               cos=0.9949  N=573,262
+    qoar           ↔ ain             cos=0.9944  N=271,171
+    oey            ↔ l               cos=0.9942  N=634,194
+    oey            ↔ air             cos=0.9938  N=634,109
+    oar            ↔ oal             cos=0.9936  N=340,312
+    qoaiin         ↔ qoar            cos=0.9934  N=405,271
+    oey            ↔ olaiin          cos=0.9934  N=634,97
+    aiin           ↔ ar              cos=0.9934  N=718,566
+    oaiin          ↔ qody            cos=0.9929  N=429,142
+    shedy          ↔ qoain           cos=0.9926  N=552,353
+
+  Top 10 most dissimilar pairs:
+    qol            ↔ cho             cos=0.5196  N=157,89
+    qoal           ↔ sho             cos=0.5110  N=273,127
+    qol            ↔ am              cos=0.5098  N=157,115
+    sho            ↔ ledy            cos=0.5035  N=127,110
+    shol           ↔ am              cos=0.4872  N=178,115
+    qoain          ↔ sho             cos=0.4743  N=353,127
+    sho            ↔ lchedy          cos=0.4642  N=127,122
+    sho            ↔ am              cos=0.4543  N=127,115
+    sho            ↔ oly             cos=0.4537  N=127,97
+    qol            ↔ sho             cos=0.4458  N=157,127
+
+  6-cluster grouping (seed-based):
+
+  Cluster 0 (seed=qoedy, 25 forms, 7954 tokens):
+    Section: bio=27% herb=19% text=48%
+    Position: mean=0.468
+    Members: qoedy(927), chey(894), ol(810), qoey(674), shey(634)
+
+  Cluster 1 (seed=sho, 23 forms, 6107 tokens):
+    Section: bio=9% herb=45% phar=5% text=38%
+    Position: mean=0.469
+    Members: daiin(815), y(592), or(573), qoy(429), chol(415)
+
+  Cluster 2 (seed=qol, 1 forms, 157 tokens):
+    Section: bio=57% text=40%
+    Position: mean=0.435
+    Members: qol(157)
+
+  Cluster 3 (seed=oly, 4 forms, 855 tokens):
+    Section: bio=20% herb=30% text=42%
+    Position: mean=0.657
+    Members: dy(312), dal(248), ody(198), oly(97)
+
+  Cluster 4 (seed=am, 1 forms, 115 tokens):
+    Section: bio=8% cosm=12% herb=23% text=53%
+    Position: mean=0.882
+    Members: am(115)
+
+  Cluster 5 (seed=lchedy, 26 forms, 7468 tokens):
+    Section: bio=15% herb=16% text=62%
+    Position: mean=0.520
+    Members: aiin(718), oedy(646), oey(634), chedy(627), ar(566)
+
+======================================================================
+37e: ARE SUFFIXES INFLECTIONAL OR DERIVATIONAL?
+    Inflectional → same base + diff suffix = same section dist
+    Derivational → same base + diff suffix = different sections
+======================================================================
+
+  Found 429 base×suffix pairs to compare
+
+  Mean section cosine between suffix variants: 0.897
+  (>0.95 = strongly inflectional, <0.85 = derivational)
+
+  Base         Sfx A    N_A Sfx B    N_B  Cosine
+  y            ol        38 ain       29   0.410
+  s            ∅        324 ol        60   0.501
+  y            ol        38 ar        82   0.507
+  y            ain       29 or        44   0.517
+  y            al        29 ol        38   0.518
+  y            aiin     114 ol        38   0.550
+  qo           or        99 ain      353   0.553
+  y            y         84 ain       29   0.586
+  qo           or        99 al       273   0.595
+  cho          ol        26 ar        27   0.601
+  ol           aiin      97 ain       49   0.614
+  y            ar        82 or        44   0.628
+  cho          ∅         89 ar        27   0.631
+  ol           ain       49 ar        47   0.637
+  y            al        29 or        44   0.638
+  ...
+  l            aiin      64 ain       39   1.000
+  o            ar       340 aiin     429   0.999
+  dch          y         29 or        23   0.999
+  lche         dy       122 y         67   0.999
+  o            al       312 ar       340   0.999
+  qo           al       273 ain      353   0.998
+  cho          ol        26 y        166   0.998
+  l            ar        47 ain       39   0.998
+  she          ol       138 ar        31   0.998
+  y            al        29 ar        82   0.998
+
+  Permutation test:
+    Observed mean cosine: 0.897
+    Null (random pairs):  0.843 ± 0.010
+    z = 5.45
+    → If z >> 0, suffix variants of same base have MORE similar
+      section profiles than random = INFLECTIONAL
+
+  Direct test: do suffixes differ in section distribution?
+
+  Suffix pairwise section cosines:
+  Most DIFFERENT:
+    in     ↔ or    : 0.832
+    ain    ↔ or    : 0.840
+    or     ↔ dy    : 0.854
+    or     ↔ al    : 0.862
+    ar     ↔ or    : 0.894
+  Most SIMILAR:
+    aiin   ↔ y     : 0.991
+    ain    ↔ al    : 0.995
+    in     ↔ al    : 0.996
+    iin    ↔ ar    : 0.996
+    ain    ↔ dy    : 0.998
+  Mean pairwise cosine between suffixes: 0.953
+
+
+[Phase 37 Complete]

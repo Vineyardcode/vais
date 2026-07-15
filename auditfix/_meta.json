@@ -18,5 +18,40 @@
    "phase100_decipherment.json",
    "phase100_decipherment.txt"
   ]
+ },
+ "phase101_currier_ab_dichotomy": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 431.11,
+  "stdout_bytes": 14907,
+  "results_files_touched": [
+   "phase101_currier_ab_dichotomy.json",
+   "phase101_currier_ab_dichotomy.txt",
+   "phase107_slot_mi_decomposition.txt",
+   "phase19_results.json",
+   "phase20_results.json",
+   "phase21_results.json",
+   "phase22_results.json",
+   "phase23_results.json",
+   "phase24_results.json",
+   "phase25_results.json",
+   "phase26_results.json",
+   "phase27_output.txt",
+   "phase27_results.json",
+   "phase28_output.txt",
+   "phase28_results.json",
+   "phase29_output.txt",
+   "phase29_results.json",
+   "phase30_output.txt",
+   "phase30_results.json",
+   "phase31_output.txt",
+   "phase31_results.json",
+   "phase32_output.txt",
+   "phase32_results.json",
+   "phase33_output.txt",
+   "phase33_results.json",
+   "phase34_output.txt",
+   "phase34_results.json"
+  ]
  }
 }

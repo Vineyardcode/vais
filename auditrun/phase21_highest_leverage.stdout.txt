@@ -1,0 +1,275 @@
+============================================================================
+PHASE 21: HIGHEST-LEVERAGE ATTACKS
+============================================================================
+
+Loading data...
+  12 zodiac signs, 39564 corpus tokens
+
+============================================================================
+PHASE 21a: ELEMENT-EXCLUSIVE VOCABULARY CRACK
+============================================================================
+
+────────────────────────────────────────────────────────────────────────────
+  WATER SIGNS: Pisces, Cancer, Scorpio
+────────────────────────────────────────────────────────────────────────────
+  Total residual roots: 64, Exclusive: 37, Shared with other elements: 27
+
+  --- Matching 37 exclusive roots against expanded glossaries ---
+
+    Root           × Ref          Meaning              Match            Scr Semantic? Signs
+    eosd           1 asad         lion/Leo             SKEL-Arabic     0.50       --- Scorpio
+    cheos          2 choeis       lord                 SKEL-Coptic     0.42       --- Cancer,Scorpio
+    choes          1 choeis       lord                 SKEL-Coptic     0.42       --- Cancer
+    arch           1 arche        begin                SKEL-Coptic     0.40       --- Scorpio
+    alos           1 les          tongue               SKEL-Coptic     0.38       --- Pisces
+    ares           1 ras          head                 SKEL-Arabic     0.38       --- Scorpio
+    choo           1 chi          take                 SKEL-Coptic     0.38       --- Scorpio
+    echs           1 choeis       lord                 SKEL-Coptic     0.33       --- Scorpio
+    chalal         1 cham         hot                  PREFIX-Coptic   0.30       --- Pisces
+    cheoe          1 chi          take                 SKEL-Coptic     0.30       --- Cancer
+    choo           1 choeis       lord                 PREFIX-Coptic   0.30       --- Scorpio
+
+  --- Confirmed vocab in Water ring residual ---
+
+────────────────────────────────────────────────────────────────────────────
+  FIRE SIGNS: Aries-dark, Aries-light, Leo, Sagittarius
+────────────────────────────────────────────────────────────────────────────
+  Total residual roots: 68, Exclusive: 42, Shared with other elements: 26
+
+  --- Matching 42 exclusive roots against expanded glossaries ---
+
+    Root           × Ref          Meaning              Match            Scr Semantic? Signs
+    yed            1 yad          hand                 E→A-Arabic      0.90       --- Leo
+    chai           1 chi          take                 SKEL-Coptic     0.38       --- Sagittarius
+    esal           1 sol          counsel              SKEL-Coptic     0.38       --- Sagittarius
+    olam           1 ilm          knowledge            SKEL-Arabic     0.38       --- Sagittarius
+    chai           1 cham         hot                  PREFIX-Coptic   0.30     ✓ YES Sagittarius
+    choar          1 choeis       lord                 PREFIX-Coptic   0.30       --- Leo
+    chod           1 choeis       lord                 PREFIX-Coptic   0.30       --- Sagittarius
+    choedam        1 choeis       lord                 PREFIX-Coptic   0.30       --- Sagittarius
+    cholain        1 choeis       lord                 PREFIX-Coptic   0.30       --- Leo
+    echeo          1 chi          take                 SKEL-Coptic     0.30       --- Aries-dark
+    cheoeo         3 chi          take                 SKEL-Coptic     0.25       --- Aries-dark,Aries-light
+    hs             1 hise         womb                 SKEL-Coptic     0.25       --- Aries-light
+
+  --- Confirmed vocab in Fire ring residual ---
+
+────────────────────────────────────────────────────────────────────────────
+  EARTH SIGNS: Taurus-light, Taurus-dark, Virgo
+────────────────────────────────────────────────────────────────────────────
+  Total residual roots: 45, Exclusive: 19, Shared with other elements: 26
+
+  --- Matching 19 exclusive roots against expanded glossaries ---
+
+    Root           × Ref          Meaning              Match            Scr Semantic? Signs
+    ols            1 les          tongue               SKEL-Coptic     0.50       --- Virgo
+    choam          1 cham         hot                  SKEL-Coptic     0.40       --- Taurus-dark
+    sheo           1 shuoe        dry                  SKEL-Coptic     0.40     ✓ YES Taurus-light
+    heal           1 hol          fly                  SKEL-Coptic     0.38       --- Taurus-light
+    sheo           1 she          cut/measure          SKEL-Coptic     0.38       --- Taurus-light
+    sheo           1 sho          hundred              SKEL-Coptic     0.38       --- Taurus-light
+    sheo           1 osh          cut/amputate         SKEL-Coptic     0.38       --- Taurus-light
+    chos           1 choeis       lord                 SKEL-Coptic     0.33       --- Taurus-light
+    hl             1 hol          fly                  SKEL-Coptic     0.33       --- Taurus-light
+    choam          1 choeis       lord                 PREFIX-Coptic   0.30       --- Taurus-dark
+    sheo           1 shedj        arm                  PREFIX-Coptic   0.30       --- Taurus-light
+    sheo           1 shel         vessel/vein          PREFIX-Coptic   0.30       --- Taurus-light
+    sheo           1 shem         walk                 PREFIX-Coptic   0.30       --- Taurus-light
+    sheo           1 shep         receive              PREFIX-Coptic   0.30       --- Taurus-light
+    sheo           1 shenoufe     heal                 PREFIX-Coptic   0.30       --- Taurus-light
+
+  --- Confirmed vocab in Earth ring residual ---
+    sheo         x  1 = dry(variant) (Coptic, 80%)
+    choam        x  1 = hot (Coptic, 75%)
+
+────────────────────────────────────────────────────────────────────────────
+  AIR SIGNS: Gemini, Libra
+────────────────────────────────────────────────────────────────────────────
+  Total residual roots: 30, Exclusive: 11, Shared with other elements: 19
+
+  --- Matching 11 exclusive roots against expanded glossaries ---
+
+    Root           × Ref          Meaning              Match            Scr Semantic? Signs
+    als            1 les          tongue               SKEL-Coptic     0.50       --- Libra
+    choshy         1 choeis       lord                 PREFIX-Coptic   0.30       --- Libra
+
+  --- Confirmed vocab in Air ring residual ---
+
+============================================================================
+PHASE 21b: VERB CONJUGATION PARADIGM — -ey/-edy/-ody/-ol
+============================================================================
+
+  --- Conjugation table: top s-roots × suffix ---
+  s-ROOT             -ey    -edy    -ody     -ol   -eedy     -dy      -y       ∅   TOTAL
+  ──────────────────────────────────────────────────────────────────────────────────────────
+  s-h               662     569      62     197       0      54     227       0    1771
+  s-he                0       0      66     140       0       0       0      67     273
+  s-ho               29       5       1      10       0       0      51     138     234
+  s-a                 0       0       0       0       0       0       1       0       1
+  s-ar                0       0       0       4       0       1      12      88     105
+  s-heo              15       4       0       0       0       0      22      63     104
+  s-hed               2       1       0       1       0       0       0      24      28
+  s-al                1       1       0       1       0       4       5      57      69
+
+  --- Position analysis: does suffix correlate with sentence position? ---
+  Suffix     initial    medial     final  init%   fin%
+  -ey            192       478        85   25.4%  11.3%
+  -edy           153       391        78   24.6%  12.5%
+  -ody            37        83        19   26.6%  13.7%
+  -ol            126       221        40   32.6%  10.3%
+  -dy             16        75        19   14.5%  17.3%
+  -y             107       249        96   23.7%  21.2%
+
+  --- Section distribution: do verb suffixes vary by manuscript section? ---
+  Suffix    herbal-A    zodiac       bio     cosmo    pharma  herbal-B      text
+  -ey          17.1%      7.4%     31.9%      6.8%      8.5%      2.5%     25.8%  (n=761)
+  -edy          9.3%      1.4%     54.1%      7.7%      0.3%      1.3%     25.9%  (n=625)
+  -ody         33.8%      6.5%      1.4%     15.8%     10.1%     12.9%     19.4%  (n=139)
+  -ol          39.4%      4.6%     15.3%      5.6%     13.5%      6.9%     14.8%  (n=393)
+
+  --- Right context: what follows each verb form? ---
+    After s-*-ey   (n=730): roots=[e(196), a(107), ol(45), ar(32), ch(30)]  det=[k(322), ∅(222), t(145), p(31)]
+    After s-*-edy  (n=597): roots=[e(192), a(58), h(35), ol(34), al(33)]  det=[k(264), ∅(171), t(128), p(29)]
+    After s-*-ody  (n=127): roots=[e(21), o(9), a(9), ch(7), ol(7)]  det=[k(45), ∅(34), t(27), p(15)]
+    After s-*-ol   (n=380): roots=[e(71), a(42), ch(30), ol(28), h(26)]  det=[∅(161), k(129), t(74), p(12)]
+
+  --- Root × suffix × section: does 'sh-ey' differ from 'sh-edy'? ---
+    s-h-ey  : n= 662  bio(219), text(184), herbal-A(107), pharma(51)
+    s-h-edy : n= 569  bio(305), text(147), herbal-A(53), cosmo(46)
+    s-h-ol  : n= 197  herbal-A(118), text(22), bio(19), pharma(10)
+    s-he-ol  : n= 140  pharma(32), bio(31), text(29), herbal-A(20)
+    s-ho-ey  : n=  29  pharma(7), herbal-A(7), text(6), zodiac(5)
+    s-ho-edy : n=   5  cosmo(2), text(1), zodiac(1), bio(1)
+    s-ho-ol  : n=  10  herbal-A(4), herbal-B(3), pharma(2), text(1)
+
+============================================================================
+PHASE 21c: BIO-SECTION PARAGRAPH TRANSLATION ATTEMPT
+============================================================================
+
+  Extracted 111 bio-section paragraphs
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  PARAGRAPH #1: f79r from f79r.35,+P0
+  Translation density: 2.31 (score=67, n=29)
+  Features: {'qok': 1, 'conf': 11, 's_verb': 9, 'p_open': 1, 'det': 11, 'n': 29}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  Raw: polchedy shedy qoteedy qotain ody chckhes otal sol sheeol ol cheey os sheky sheol or shear oly lcheol ol ol sheey olsheey sholkeey okchey dain pol olkeeey sheol qokeey
+
+  Word                   Pfx  Det  Root       Sfx    Translation
+  ────────────────────────────────────────────────────────────────────────────────
+  polchedy               o    p    lch        edy    ART: [DISC] [lch] -CONJ
+  shedy                  s         h          edy    VERB: [h] -CONJ
+  qoteedy                qo   t    e          dy     DEMO: [celestial] [e] -ADJ
+  qotain                 qo   t    a          in     DEMO: [celestial] [a] -PL
+  ody                    o         d          y      ART: [d] -ADJ
+  chckhes                     k    ches              [substance] [ches]
+  otal                   o    t    al                ART: [celestial] 'stone'
+  sol                    s         ol                VERB: 'carry/lift'
+  sheeol                 s         he         ol     VERB: 'fall/occur' -NOM
+  ol                               ol                'carry/lift'
+  cheey                            ch         ey     [ch] -CONJ
+  os                               os                [os]
+  sheky                  s    k    h          ey     VERB: [substance] [h] -CONJ
+  sheol                  s         he         ol     VERB: 'fall/occur' -NOM
+  or                               or                'king/great(var)'
+  shear                  s         he         ar     VERB: 'fall/occur' -AGT
+  oly                    o         l          y      ART: [l] -ADJ
+  lcheol                           lche       ol     [lche] -NOM
+  ol                               ol                'carry/lift'
+  ol                               ol                'carry/lift'
+  sheey                  s         h          ey     VERB: [h] -CONJ
+  olsheey                o         lsh        ey     ART: [lsh] -CONJ
+  sholkeey               s    k    hol        ey     VERB: [substance] ~'fly' -CONJ
+  okchey                 o    k    e          y      ART: [substance] [e] -ADJ
+  dain                   d         a          in     of- [a] -PL
+  pol                         p    ol                [DISC] 'carry/lift'
+  olkeeey                o    k    l          ey     ART: [substance] [l] -CONJ
+  sheol                  s         he         ol     VERB: 'fall/occur' -NOM
+  qokeey                 qo   k    e          y      REL.PRON 'that-which'
+
+  ── Gloss attempt ──
+  ART: [DISC] [lch] -CONJ | VERB: [h] -CONJ | DEMO: [celestial] [e] -ADJ | DEMO: [celestial] [a] -PL | ART: [d] -ADJ | [substance] [ches] | ART: [celestial] 'stone' | VERB: 'carry/lift' | VERB: 'fall/occur' -NOM | 'carry/lift' | [ch] -CONJ | [os] | VERB: [substance] [h] -CONJ | VERB: 'fall/occur' -NOM | 'king/great(var)' | VERB: 'fall/occur' -AGT | ART: [l] -ADJ | [lche] -NOM | 'carry/lift' | 'carry/lift' | VERB: [h] -CONJ | ART: [lsh] -CONJ | VERB: [substance] ~'fly' -CONJ | ART: [substance] [e] -ADJ | of- [a] -PL | [DISC] 'carry/lift' | ART: [substance] [l] -CONJ | VERB: 'fall/occur' -NOM | REL.PRON 'that-which'
+
+  Translated: 11/29 (38%) confirmed, 12/29 (41%) with tentative
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  PARAGRAPH #2: f75v from f75v.18,@Ln
+  Translation density: 2.24 (score=47, n=21)
+  Features: {'qok': 0, 'conf': 11, 's_verb': 2, 'p_open': 0, 'det': 10, 'n': 21}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  Raw: okshy saral dokal darol daldy dal shd dalkar qokal dly ory oty lchy dary dal daldy qoted rkal ykedy olkchy otoly
+
+  Word                   Pfx  Det  Root       Sfx    Translation
+  ────────────────────────────────────────────────────────────────────────────────
+  okshy                       k    o          y      [substance] [o] -ADJ
+  saral                  s         ar         al     VERB: 'king/great' -LOC
+  dokal                  do   k    al                [substance] 'stone'
+  darol                  d         ar         ol     of- 'king/great' -NOM
+  daldy                  d         al         dy     of- 'stone' -ADJ
+  dal                    d         al                of- 'stone'
+  shd                    s         hd                VERB: [hd]
+  dalkar                 d    k    al         ar     of- [substance] 'stone' -AGT
+  qokal                  qo   k    al                DEMO: [substance] 'stone'
+  dly                    d         l          y      of- [l] -ADJ
+  ory                    o         r          y      ART: [r] -ADJ
+  oty                         t    o          y      [celestial] [o] -ADJ
+  lchy                             lch        y      [lch] -ADJ
+  dary                   d         ar         y      of- 'king/great' -ADJ
+  dal                    d         al                of- 'stone'
+  daldy                  d         al         dy     of- 'stone' -ADJ
+  qoted                  qo   t    ed                DEMO: [celestial] [ed]
+  rkal                        k    r          al     [substance] [r] -LOC
+  ykedy                  y    k    e          dy     CONJ: [substance] [e] -ADJ
+  olkchy                 o    k    l          y      ART: [substance] [l] -ADJ
+  otoly                  o    t    ol         y      ART: [celestial] 'carry/lift' -ADJ
+
+  ── Gloss attempt ──
+  [substance] [o] -ADJ | VERB: 'king/great' -LOC | [substance] 'stone' | of- 'king/great' -NOM | of- 'stone' -ADJ | of- 'stone' | VERB: [hd] | of- [substance] 'stone' -AGT | DEMO: [substance] 'stone' | of- [l] -ADJ | ART: [r] -ADJ | [celestial] [o] -ADJ | [lch] -ADJ | of- 'king/great' -ADJ | of- 'stone' | of- 'stone' -ADJ | DEMO: [celestial] [ed] | [substance] [r] -LOC | CONJ: [substance] [e] -ADJ | ART: [substance] [l] -ADJ | ART: [celestial] 'carry/lift' -ADJ
+
+  Translated: 11/21 (52%) confirmed, 11/21 (52%) with tentative
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  PARAGRAPH #3: f82r from f82r.34,@Ln
+  Translation density: 2.17 (score=26, n=12)
+  Features: {'qok': 0, 'conf': 5, 's_verb': 2, 'p_open': 0, 'det': 7, 'n': 12}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  Raw: okor darol okal okaldy darary okairady sororl olkoky sokoly dolol olaiin okeear
+
+  Word                   Pfx  Det  Root       Sfx    Translation
+  ────────────────────────────────────────────────────────────────────────────────
+  okor                   o    k    or                ART: [substance] 'king/great(var)'
+  darol                  d         ar         ol     of- 'king/great' -NOM
+  okal                   o    k    al                ART: [substance] 'stone'
+  okaldy                 o    k    al         dy     ART: [substance] 'stone' -ADJ
+  darary                 d         arar       y      of- [arar] -ADJ
+  okairady               o    k    aira       dy     ART: [substance] [aira] -ADJ
+  sororl                 so        rorl              VERB: [rorl]
+  olkoky                 o    k    lo         y      ART: [substance] [lo] -ADJ
+  sokoly                 so   k    ol         y      VERB: [substance] 'carry/lift' -ADJ
+  dolol                  do        l          ol     [l] -NOM
+  olaiin                 o         l          aiin   ART: [l] -PL?
+  okeear                 o    k    e          ar     ART: [substance] [e] -AGT
+
+  ── Gloss attempt ──
+  ART: [substance] 'king/great(var)' | of- 'king/great' -NOM | ART: [substance] 'stone' | ART: [substance] 'stone' -ADJ | of- [arar] -ADJ | ART: [substance] [aira] -ADJ | VERB: [rorl] | ART: [substance] [lo] -ADJ | VERB: [substance] 'carry/lift' -ADJ | [l] -NOM | ART: [l] -PL? | ART: [substance] [e] -AGT
+
+  Translated: 5/12 (42%) confirmed, 5/12 (42%) with tentative
+
+============================================================================
+PHASE 21d: FIXED-CROSS REFERENCE TEST
+============================================================================
+
+  The Fixed Cross in astrology: Taurus ↔ Scorpio ↔ Leo ↔ Aquarius.
+  Phase 20 found 'eosd' (≈ asad = lion) in SCORPIO, not Leo.
+  Hypothesis: signs reference their Fixed-cross counterpart.
+
+  Testing: Do other signs contain roots that name OTHER signs?
+
+  Root found      In Sign            Matches              Relationship                  
+  ─────────────────────────────────────────────────────────────────────────────────────
+  eosd            Scorpio            ~asad    =Leo(lion)       SAME MODALITY (Fixed)
+
+  Results saved to results/phase21_results.json

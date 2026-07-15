@@ -119,7 +119,7 @@
     "loo_accuracy": 0.8865,
     "majority_baseline": 0.5784,
     "n_misclassified": 21,
-    "clf_z": 11.715,
+    "clf_z": 7.007,
     "clf_p": 0.0
   },
   "differential_bigrams": {
