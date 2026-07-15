@@ -142,14 +142,14 @@ TEST 5: Section-MI Sensitivity to Simulated Misbinding
 Baseline (current folio order):
   MI(last_char, section) = 0.0474, z = 136.0
 
-  Perturb 10% botanical folios: MI=0.0459 (retain 96.7% of baseline)
-  Perturb 20% botanical folios: MI=0.0443 (retain 93.5% of baseline)
+  Perturb 10% botanical folios: MI=0.0458 (retain 96.6% of baseline)
+  Perturb 20% botanical folios: MI=0.0440 (retain 92.8% of baseline)
   Perturb 30% botanical folios: MI=0.0430 (retain 90.7% of baseline)
-  Perturb 50% botanical folios: MI=0.0400 (retain 84.3% of baseline)
+  Perturb 50% botanical folios: MI=0.0399 (retain 84.1% of baseline)
 
 Interpretation: If misbinding affects ~20-30% of botanical folios,
 the section-MI signal should retain:
-  20% perturbation → 93.5% retention
+  20% perturbation → 92.8% retention
   30% perturbation → 90.7% retention
 
 ======================================================================
@@ -177,8 +177,11 @@ ADJUDICATION: Critical Assessment
 
 1. MISBINDING DETECTION FROM TEXT STATISTICS:
 
-   Cross-folio MI is only -57% lower than within-folio.
-   → Weak evidence for misbinding from bigram MI alone
+   CAUTION: Cross-folio MI is 1.57x HIGHER than within-folio!
+   N_cross=199 vs N_within=36059: small-sample MI BIAS inflates
+   cross-folio values. This does NOT mean cross-folio bigrams
+   are more informative — it is a well-known estimation artifact.
+   → Bigram MI test is INCONCLUSIVE for misbinding detection.
 
 2. SCRIBE/LANGUAGE DETECTION:
 
@@ -187,7 +190,7 @@ ADJUDICATION: Critical Assessment
 
 3. SECTION-MI ROBUSTNESS:
 
-   With 20% botanical folios perturbed: MI retains 94% of baseline
+   With 20% botanical folios perturbed: MI retains 93% of baseline
    With 30% botanical folios perturbed: MI retains 91% of baseline
    → Phase 62 section-MI signals are robust to moderate misbinding
 

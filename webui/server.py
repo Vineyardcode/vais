@@ -181,5 +181,7 @@ def api_presets_delete(test, preset):
 
 
 if __name__ == "__main__":
+    import os
+    port = int(os.environ.get("PORT", "5000"))
     print(f"Registry: {len(REGISTRY)} tests")
-    app.run(host="127.0.0.1", port=5000, debug=False)
+    app.run(host="127.0.0.1", port=port, debug=False)

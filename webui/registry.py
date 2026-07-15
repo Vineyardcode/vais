@@ -88,9 +88,14 @@ def extract_params(tree):
             container = None
         if len(repr(val)) > MAX_LIST_REPR:
             continue
+        try:
+            default = (sorted(val) if isinstance(val, set)
+                       else list(val) if isinstance(val, tuple) else val)
+            json.dumps(default)
+        except TypeError:
+            continue  # not JSON-representable (e.g. tuple-keyed dict)
         params[name] = {
-            "default": sorted(val) if isinstance(val, set) else
-                       list(val) if isinstance(val, tuple) else val,
+            "default": default,
             "type": _param_type(val),
             "container": container,
             "line": node.lineno,
@@ -101,7 +106,10 @@ def extract_params(tree):
 def build_registry():
     meta = {}
     if BASELINE_META.exists():
-        meta = json.loads(BASELINE_META.read_text(encoding="utf-8"))
+        try:
+            meta = json.loads(BASELINE_META.read_text(encoding="utf-8"))
+        except (json.JSONDecodeError, OSError):
+            meta = {}
     tests = {}
     for p in sorted(SCRIPTS.glob("*.py")):
         if p.name in EXCLUDE or p.name.startswith((".", "_")):

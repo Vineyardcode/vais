@@ -625,5 +625,84 @@
   "results_files_touched": [
    "phase61_output.json"
   ]
+ },
+ "phase62_word_anatomy": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 329.07,
+  "stdout_bytes": 11383,
+  "results_files_touched": [
+   "phase62_output.json",
+   "phase62_output.txt"
+  ]
+ },
+ "phase63_codicological_coherence": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 9.97,
+  "stdout_bytes": 10158,
+  "results_files_touched": [
+   "phase63_output.json",
+   "phase63_output.txt"
+  ]
+ },
+ "phase64_encoding_tournament": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 8.47,
+  "stdout_bytes": 8837,
+  "results_files_touched": [
+   "phase64_output.json",
+   "phase64_output.txt"
+  ]
+ },
+ "phase65_reverse_engineer_script": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 57.85,
+  "stdout_bytes": 12910,
+  "results_files_touched": [
+   "phase65_output.json",
+   "phase65_output.txt"
+  ]
+ },
+ "phase66_glyph_resegmentation": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 2.15,
+  "stdout_bytes": 13586,
+  "results_files_touched": [
+   "phase66_output.json",
+   "phase66_output.txt"
+  ]
+ },
+ "phase67_run_length_morphology": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 2.67,
+  "stdout_bytes": 14930,
+  "results_files_touched": [
+   "phase67_output.json",
+   "phase67_output.txt"
+  ]
+ },
+ "phase68_run_conditioned_transitions": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 1.57,
+  "stdout_bytes": 19205,
+  "results_files_touched": [
+   "phase68_output.json",
+   "phase68_output.txt"
+  ]
+ },
+ "phase71_paragraph_initials": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.32,
+  "stdout_bytes": 29902,
+  "results_files_touched": [
+   "phase71_paragraph_initials.txt"
+  ]
  }
 }

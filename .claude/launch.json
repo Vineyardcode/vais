@@ -1,0 +1,12 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "voynich-webui",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["webui/server.py"],
+      "port": 5000,
+      "autoPort": true
+    }
+  ]
+}

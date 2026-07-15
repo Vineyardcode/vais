@@ -122,7 +122,9 @@ def main():
             "stdout_bytes": len(stdout),
             "results_files_touched": touched,
         }
-        meta_path.write_text(json.dumps(meta, indent=1), encoding="utf-8")
+        tmp_meta = meta_path.with_suffix(".json.tmp")
+        tmp_meta.write_text(json.dumps(meta, indent=1), encoding="utf-8")
+        tmp_meta.replace(meta_path)
         print(f"    -> {status} rc={rc} {dur:.1f}s, wrote {len(touched)} results files",
               flush=True)
 

@@ -204,20 +204,20 @@ TEST C: WORD-BOUNDARY PREDICTION FROM SLOT GRAMMAR
   HIGH BOUNDARY PROBABILITY (likely word breaks):
            A→B  P(break)  Boundary   Within    Pos A    Pos B    Grammar
   ---------------------------------------------------------------------------
-         n→cph    100.0%        24        0        F        I      F→I ✓
-           n→q    100.0%       514        0        F        I      F→I ✓
-           m→t    100.0%        53        0        F        M      F→M ✓
-         n→cth    100.0%        96        0        F        I      F→I ✓
-           s→q    100.0%        64        0        F        I      F→I ✓
-           r→s    100.0%        99        0        F        F      F→F ✓
-         r→ckh    100.0%        28        0        F        M      F→M ✓
-           d→q    100.0%       111        0        M        I      M→I ?
-           m→q    100.0%        92        0        F        I      F→I ✓
-         r→cth    100.0%        79        0        F        I      F→I ✓
-           y→y    100.0%       590        0        F        F      F→F ✓
            r→q    100.0%       336        0        F        I      F→I ✓
-         n→ckh    100.0%        42        0        F        M      F→M ✓
+         n→cph    100.0%        24        0        F        I      F→I ✓
+           m→t    100.0%        53        0        F        M      F→M ✓
+           n→q    100.0%       514        0        F        I      F→I ✓
+           s→q    100.0%        64        0        F        I      F→I ✓
+         r→ckh    100.0%        28        0        F        M      F→M ✓
            m→s    100.0%        88        0        F        F      F→F ✓
+         n→ckh    100.0%        42        0        F        M      F→M ✓
+           r→s    100.0%        99        0        F        F      F→F ✓
+         n→cth    100.0%        96        0        F        I      F→I ✓
+           d→q    100.0%       111        0        M        I      M→I ?
+         r→cth    100.0%        79        0        F        I      F→I ✓
+           m→q    100.0%        92        0        F        I      F→I ✓
+           y→y    100.0%       590        0        F        F      F→F ✓
           n→ch     99.8%      1316        2        F        I      F→I ✓
            y→q     99.7%      3698       12        F        I      F→I ✓
            l→q     99.6%       478        2        F        I      F→I ✓
@@ -233,31 +233,31 @@ TEST C: WORD-BOUNDARY PREDICTION FROM SLOT GRAMMAR
   LOW BOUNDARY PROBABILITY (within-word transitions):
            A→B  P(break)  Boundary   Within    Pos A    Pos B    Grammar
   ---------------------------------------------------------------------------
-         ckh→y      0.0%         0      430        M        F      M→F ✓
-          ch→p      0.0%         0       33        I        M      I→M ✓
-           t→e      0.0%         0     1767        M        M      M→M ✓
-         e→ckh      0.0%         0      137        M        M      M→M ✓
-         cfh→y      0.0%         0       26        M        F      M→F ✓
-         cth→a      0.0%         0       55        I        M      I→M ✓
-         cth→e      0.0%         0      187        I        M      I→M ✓
          cph→e      0.0%         0       72        I        M      I→M ✓
-          ch→l      0.0%         0       49        I        F      I→F ✓
-           a→n      0.0%         0      102        M        F      M→F ✓
-          sh→e      0.0%         0     2572        I        M      I→M ✓
-         ckh→o      0.0%         0       93        M        M      M→M ✓
-         ckh→a      0.0%         0       30        M        M      M→M ✓
-           e→g      0.0%         0       22        M        F      M→F ✓
-          ch→e      0.0%         0     4809        I        M      I→M ✓
-           i→n      0.0%         0     5848        M        F      M→F ✓
-        ch→cph      0.0%         0       26        I        I      I→I ?
-        ch→ckh      0.0%         0      228        I        M      I→M ✓
-        ch→cth      0.0%         0      128        I        I      I→I ?
-           q→o      0.0%         0     5356        I        M      I→M ✓
-          ch→t      0.0%         0       73        I        M      I→M ✓
-           i→r      0.0%         0      696        M        F      M→F ✓
-         cph→o      0.0%         0       43        I        M      I→M ✓
          cph→y      0.0%         0       40        I        F      I→F ✓
+         cph→o      0.0%         0       43        I        M      I→M ✓
+          ch→t      0.0%         0       73        I        M      I→M ✓
+         cth→a      0.0%         0       55        I        M      I→M ✓
+        sh→ckh      0.0%         0       89        I        M      I→M ✓
+           t→e      0.0%         0     1767        M        M      M→M ✓
+           i→n      0.0%         0     5848        M        F      M→F ✓
+           q→e      0.0%         0       55        I        M      I→M ✓
+         cfh→y      0.0%         0       26        M        F      M→F ✓
+          ch→p      0.0%         0       33        I        M      I→M ✓
+           a→m      0.0%         0      745        M        F      M→F ✓
+        ch→ckh      0.0%         0      228        I        M      I→M ✓
+          ch→l      0.0%         0       49        I        F      I→F ✓
+           e→p      0.0%         0       77        M        M      M→M ✓
+        ch→cth      0.0%         0      128        I        I      I→I ?
+         e→ckh      0.0%         0      137        M        M      M→M ✓
+         cth→e      0.0%         0      187        I        M      I→M ✓
+           i→m      0.0%         0       50        M        F      M→F ✓
+         ckh→d      0.0%         0       30        M        M      M→M ✓
            i→i      0.0%         0     4592        M        M      M→M ✓
+           i→r      0.0%         0      696        M        F      M→F ✓
+         ckh→a      0.0%         0       30        M        M      M→M ✓
+          ch→e      0.0%         0     4809        I        M      I→M ✓
+          sh→e      0.0%         0     2572        I        M      I→M ✓
 
   Slot grammar boundary prediction accuracy: 189/207 (91.3%)
 
