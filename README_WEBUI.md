@@ -68,3 +68,30 @@ webui/
   static/index.html  single-page frontend (vanilla JS, no build step)
   presets.json  saved presets (created on first save)
 ```
+
+## Golden-diff integration
+
+Every default-parameter run is automatically compared against the committed
+golden reference (`golden/<test>.stdout.txt`, captured with
+`PYTHONHASHSEED=0`; UI runs are executed under the same hash seed so the
+comparison is meaningful). The output header shows a badge:
+
+- **`= golden`** — stdout byte-identical to the reference,
+- **`≠ golden (N lines)`** — click the badge to view the unified diff,
+- runs with custom parameters (or errors/timeouts) are marked not comparable.
+
+Refresh the reference after intentional changes with
+`python tools/run_baseline.py --outdir golden --hashseed 0 [--only names]`.
+
+## Offline reference corpora
+
+`data/gutenberg_cache/` (~16 MB, committed) holds every Project Gutenberg
+text the network tests use; `common.fetch_gutenberg` reads the cache first,
+so phases 58-65 and 72-73 run fully offline. Re-populate with
+`python tools/prefetch_gutenberg.py`.
+
+## Result-file convention
+
+All inter-script result JSONs live in `results/` via `common.result_path()`;
+producers and consumers can no longer drift apart (the pre-refactor root-level
+snapshots are preserved in `attic/root_result_snapshots/`).

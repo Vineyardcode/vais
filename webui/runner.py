@@ -8,6 +8,7 @@ __file__-based paths behave exactly like a manual run; stdout/stderr are
 captured. No analysis logic lives in the web layer.
 """
 import ast
+import difflib
 import json
 import os
 import subprocess
@@ -19,8 +20,10 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 SCRIPTS = ROOT / "scripts"
 RESULTS = ROOT / "results"
+GOLDEN = ROOT / "golden"
 
 DEFAULT_TIMEOUT = 900
+MAX_DIFF_LINES = 400
 
 
 class ParamError(ValueError):
@@ -99,6 +102,36 @@ def _results_snapshot():
     return {p.name: p.stat().st_mtime_ns for p in RESULTS.iterdir() if p.is_file()}
 
 
+def compare_to_golden(name, stdout, had_overrides):
+    """Diff a default-parameter run against the committed golden output.
+
+    Runs execute under PYTHONHASHSEED=0, matching how golden/ was captured,
+    so an identical result really means "nothing changed". Runs with
+    parameter overrides are not comparable and are marked as such.
+    """
+    ref = GOLDEN / f"{name}.stdout.txt"
+    if not ref.exists():
+        return {"state": "no_reference"}
+    if had_overrides:
+        return {"state": "not_comparable_overrides"}
+    ref_text = ref.read_text(encoding="utf-8", errors="replace")
+    if ref_text == stdout:
+        return {"state": "identical"}
+    a, b = ref_text.splitlines(), stdout.splitlines()
+    diff = list(difflib.unified_diff(a, b, fromfile="golden", tofile="this run",
+                                     lineterm=""))
+    changed = sum(1 for d in diff
+                  if d[:1] in "+-" and d[:3] not in ("+++", "---"))
+    return {
+        "state": "differs",
+        "changed_lines": changed,
+        "golden_lines": len(a),
+        "run_lines": len(b),
+        "diff": "\n".join(diff[:MAX_DIFF_LINES]) +
+                ("\n… (diff truncated)" if len(diff) > MAX_DIFF_LINES else ""),
+    }
+
+
 def run_test(name, overrides=None, param_specs=None, timeout=DEFAULT_TIMEOUT,
              progress_cb=None):
     script = SCRIPTS / f"{name}.py"
@@ -123,7 +156,9 @@ def run_test(name, overrides=None, param_specs=None, timeout=DEFAULT_TIMEOUT,
             proc = subprocess.run(
                 [sys.executable, str(run_path)],
                 cwd=str(ROOT), capture_output=True, timeout=timeout,
-                env={**os.environ, "PYTHONIOENCODING": "utf-8"},
+                # PYTHONHASHSEED pinned so outputs are comparable with golden/
+                env={**os.environ, "PYTHONIOENCODING": "utf-8",
+                     "PYTHONHASHSEED": "0"},
             )
             dur = time.time() - t0
             stdout = proc.stdout.decode("utf-8", errors="replace")
@@ -141,6 +176,8 @@ def run_test(name, overrides=None, param_specs=None, timeout=DEFAULT_TIMEOUT,
             "status": status, "returncode": rc, "duration_s": round(dur, 2),
             "stdout": stdout, "stderr": stderr, "results_files": touched,
             "overrides": overrides,
+            "golden": compare_to_golden(name, stdout, bool(overrides))
+                      if status == "ok" else {"state": "not_comparable_" + status},
         }
     except ParamError as e:
         return {"status": "param_error", "error": str(e)}
