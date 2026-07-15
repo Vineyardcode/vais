@@ -1,0 +1,706 @@
+PHASE 23: FULL-PASSAGE TRANSLATION WITH 28 CONFIRMED ROOTS
+============================================================================
+Vocabulary: 29 roots confirmed
+Grammar: prefixes (8), suffixes (14), determinatives (4)
+
+============================================================================
+PHASE 23a: FULL TRANSLATION — BIO SECTION (f76r)
+============================================================================
+
+  ────────────────────────────────────────────────────────────────────────
+  f76r.1,@P0 (8/11 roots known = 73%)
+  ────────────────────────────────────────────────────────────────────────
+  VOY: potchokor chcfhdy opshdy qolp chcphy chcphdy opshey qofshy opchdy sain as
+  GLO: DEF.[CEL].?o?.-AGT [BOT].do/make.-ABR DEF.[DIS].matter/thing.-ST REL.[DIS].carry/bear [DIS].do/make.-ST [DIS].do/make.-ABR DEF.[DIS].this/that.-ST REL.[BOT].?o?.-ST DEF.[DIS].matter/thing.-ST VERB.great-one.-PL ?as?
+  ENG: [potchokor] | (BOT).do/make(~) | the-(DIS).matter/thing(-of) | which-(DIS).carry/bear | (DIS).do/make(-of) | (DIS).do/make(~) | the-(DIS).this/that(-of) | [qofshy] | the-(DIS).matter/thing(-of) | V:great-one(PL) | [as]
+
+  ────────────────────────────────────────────────────────────────────────
+  f76r.2,+P0 (8/12 roots known = 67%)
+  ────────────────────────────────────────────────────────────────────────
+  VOY: dshedy qotddyar cthar chep dain okain qokeor shedy qol ain sheals qokeey
+  GLO: GEN.?sh?.-DESC REL.[CEL].?ddy?.-AGT [CEL].king/great [DIS].?che? GEN.great-one.-PL DEF.[SUB].great-one.-PL REL.[SUB].this/that.-AGT VERB.happen/occur.-DESC REL.carry/bear great-one.-PL VERB.?heals? REL.[SUB].this/that.-ST
+  ENG: [dshedy] | [qotddyar] | (CEL).king/great | [chep] | of-great-one(PL) | the-(SUB).great-one(PL) | which-(SUB).this/that(-er) | V:happen/occur(-DESC) | which-carry/bear | great-one(PL) | [sheals] | which-(SUB).this/that(-of)
+
+  ────────────────────────────────────────────────────────────────────────
+  f76r.3,+P0 (9/13 roots known = 69%)
+  ────────────────────────────────────────────────────────────────────────
+  VOY: yshey qokeey qokey qokeed okedy shky qotedy otedy shol qoty ol chedy aiiny
+  GLO: ADJ.?sh?.-GEN REL.[SUB].this/that.-ST REL.[SUB].this/that.-ST REL.[SUB].?ed? DEF.[SUB].this/that.-ABR VERB.[SUB].happen/occur.-ST REL.[CEL].this/that.-ABR DEF.[CEL].this/that.-ABR VERB.happen/occur.-NOM REL.[CEL].?o?.-ST carry/bear do/make.-DESC ?aiin?.-ST
+  ENG: [yshey] | which-(SUB).this/that(-of) | which-(SUB).this/that(-of) | [qokeed] | the-(SUB).this/that(~) | V:(SUB).happen/occur(-of) | which-(CEL).this/that(~) | the-(CEL).this/that(~) | V:happen/occur(-NOM) | [qoty] | carry/bear | do/make(-DESC) | [aiiny]
+
+  ────────────────────────────────────────────────────────────────────────
+  f76r.5,=P0 (11/13 roots known = 85%)
+  ────────────────────────────────────────────────────────────────────────
+  VOY: qokedy qokeey or or or chkorol otey qokedy lkedy chdy qokchdy qokal chdam
+  GLO: REL.[SUB].this/that.-ABR REL.[SUB].this/that.-ST king/great king/great king/great [SUB].?chor?.-NOM DEF.[CEL].this/that.-ST REL.[SUB].this/that.-ABR [SUB].remedy/thing.-DESC do/make.-ABR REL.[SUB].matter/thing.-ST REL.[SUB].stone ?chdam?
+  ENG: which-(SUB).this/that(~) | which-(SUB).this/that(-of) | king/great | king/great | king/great | [chkorol] | the-(CEL).this/that(-of) | which-(SUB).this/that(~) | (SUB).remedy/thing(-DESC) | do/make(~) | which-(SUB).matter/thing(-of) | which-(SUB).stone | [chdam]
+
+  ────────────────────────────────────────────────────────────────────────
+  f76r.6,+P0 (9/13 roots known = 69%)
+  ────────────────────────────────────────────────────────────────────────
+  VOY: solchedy qokeedy qopchedy qokeeo rol shedy qokedy sheey okees al al chedain dar
+  GLO: VERB.?lch?.-DESC REL.[SUB].this/that.-ABR REL.[DIS].this/that.-ABR REL.[SUB].?eo? ?r?.-NOM VERB.happen/occur.-DESC REL.[SUB].this/that.-ABR VERB.happen/occur.-GEN DEF.[SUB].star stone stone ?ched?.-PL.OBL GEN.king/great
+  ENG: [solchedy] | which-(SUB).this/that(~) | which-(DIS).this/that(~) | [qokeeo] | [rol] | V:happen/occur(-DESC) | which-(SUB).this/that(~) | V:happen/occur(-of) | the-(SUB).star | stone | stone | [chedain] | of-king/great
+
+  ────────────────────────────────────────────────────────────────────────
+  f76r.8,=P0 (9/13 roots known = 69%)
+  ────────────────────────────────────────────────────────────────────────
+  VOY: qoaiin ches okeedal qoked qokeey shedy chey lkeedy okey dar aiin chekain oldy
+  GLO: REL.great-one.-PL ?ches? DEF.[SUB].?ed?.-LOC REL.[SUB].?ed? REL.[SUB].this/that.-ST VERB.happen/occur.-DESC do/make.-GEN [SUB].remedy/thing.-DESC DEF.[SUB].this/that.-ST GEN.king/great great-one.-PL [SUB].?che?.-PL.OBL DEF.remedy/thing.-ABR
+  ENG: which-great-one(PL) | [ches] | [okeedal] | [qoked] | which-(SUB).this/that(-of) | V:happen/occur(-DESC) | do/make(-of) | (SUB).remedy/thing(-DESC) | the-(SUB).this/that(-of) | of-king/great | great-one(PL) | [chekain] | the-remedy/thing(~)
+
+  ────────────────────────────────────────────────────────────────────────
+  f76r.9,+P0 (12/14 roots known = 86%)
+  ────────────────────────────────────────────────────────────────────────
+  VOY: shed al shckhy ain chcphedy ain olkeey lkar ain otchy lkain chedy dar daly
+  GLO: VERB.?hed? stone VERB.[SUB].happen/occur.-ST great-one.-PL [DIS].do/make.-DESC great-one.-PL DEF.[SUB].remedy/thing.-GEN [SUB].remedy/thing.-AGT great-one.-PL [CEL].?o?.-ST [SUB].remedy/thing.-PL.OBL do/make.-DESC GEN.king/great GEN.stone.-ST
+  ENG: [shed] | stone | V:(SUB).happen/occur(-of) | great-one(PL) | (DIS).do/make(-DESC) | great-one(PL) | the-(SUB).remedy/thing(-of) | (SUB).remedy/thing(-er) | great-one(PL) | [otchy] | (SUB).remedy/thing(PL) | do/make(-DESC) | of-king/great | of-stone(-of)
+
+  ────────────────────────────────────────────────────────────────────────
+  f76r.11,=P0 (7/12 roots known = 58%)
+  ────────────────────────────────────────────────────────────────────────
+  VOY: qotedshedy qorain oteedy chedy ol chdy raiiin chekain dain chckhy sal oty
+  GLO: REL.[CEL].?edsh?.-DESC REL.?r?.-PL.OBL DEF.[CEL].this/that.-ABR do/make.-DESC carry/bear do/make.-ABR ?rai?.-PL [SUB].?che?.-PL.OBL GEN.great-one.-PL [SUB].do/make.-ST VERB.stone [CEL].?o?.-ST
+  ENG: [qotedshedy] | [qorain] | the-(CEL).this/that(~) | do/make(-DESC) | carry/bear | do/make(~) | [raiiin] | [chekain] | of-great-one(PL) | (SUB).do/make(-of) | V:stone | [oty]
+
+  ────────────────────────────────────────────────────────────────────────
+  f76r.12,+P0 (10/13 roots known = 77%)
+  ────────────────────────────────────────────────────────────────────────
+  VOY: solshedy qool qctheed shdy qa ol keey dain saiin ar shedy qokeor okeedy
+  GLO: VERB.?lsh?.-DESC REL.carry/bear REL.[CEL].?ed? VERB.happen/occur.-ABR ?qa? carry/bear [SUB].this/that.-ST GEN.great-one.-PL VERB.great-one.-PL king/great VERB.happen/occur.-DESC REL.[SUB].this/that.-AGT DEF.[SUB].this/that.-ABR
+  ENG: [solshedy] | which-carry/bear | [qctheed] | V:happen/occur(~) | [qa] | carry/bear | (SUB).this/that(-of) | of-great-one(PL) | V:great-one(PL) | king/great | V:happen/occur(-DESC) | which-(SUB).this/that(-er) | the-(SUB).this/that(~)
+
+  ────────────────────────────────────────────────────────────────────────
+  f76r.13,+P0 (12/12 roots known = 100%)
+  ────────────────────────────────────────────────────────────────────────
+  VOY: qokeedy checthy chckhey okal okaiin sheckhey okeedy otey dal kal chedy sar
+  GLO: REL.[SUB].this/that.-ABR [CEL].do/make.-GEN [SUB].do/make.-GEN DEF.[SUB].stone DEF.[SUB].great-one.-PL VERB.[SUB].happen/occur.-GEN DEF.[SUB].this/that.-ABR DEF.[CEL].this/that.-ST GEN.stone [SUB].stone do/make.-DESC VERB.king/great
+  ENG: which-(SUB).this/that(~) | (CEL).do/make(-of) | (SUB).do/make(-of) | the-(SUB).stone | the-(SUB).great-one(PL) | V:(SUB).happen/occur(-of) | the-(SUB).this/that(~) | the-(CEL).this/that(-of) | of-stone | (SUB).stone | do/make(-DESC) | V:king/great
+
+  ────────────────────────────────────────────────────────────────────────
+  f76r.15,=P0 (8/13 roots known = 62%)
+  ────────────────────────────────────────────────────────────────────────
+  VOY: chorshedy qoked okees al ar aiin ar ain chckheed lchedy shedy qolair chedy
+  GLO: ?chorsh?.-DESC REL.[SUB].?ed? DEF.[SUB].star stone king/great great-one.-PL king/great great-one.-PL [SUB].?ched? ?lch?.-DESC VERB.happen/occur.-DESC REL.?lair? do/make.-DESC
+  ENG: [chorshedy] | [qoked] | the-(SUB).star | stone | king/great | great-one(PL) | king/great | great-one(PL) | [chckheed] | [lchedy] | V:happen/occur(-DESC) | [qolair] | do/make(-DESC)
+
+  ────────────────────────────────────────────────────────────────────────
+  f76r.16,+P0 (10/11 roots known = 91%)
+  ────────────────────────────────────────────────────────────────────────
+  VOY: qotes chedy shckhy qokeey okeey kain checkhy qokeedy qotey qotain chekair
+  GLO: REL.[CEL].star do/make.-DESC VERB.[SUB].happen/occur.-ST REL.[SUB].this/that.-ST DEF.[SUB].this/that.-ST [SUB].great-one.-PL [SUB].do/make.-GEN REL.[SUB].this/that.-ABR REL.[CEL].this/that.-ST REL.[CEL].great-one.-PL [SUB].?cheair?
+  ENG: which-(CEL).star | do/make(-DESC) | V:(SUB).happen/occur(-of) | which-(SUB).this/that(-of) | the-(SUB).this/that(-of) | (SUB).great-one(PL) | (SUB).do/make(-of) | which-(SUB).this/that(~) | which-(CEL).this/that(-of) | which-(CEL).great-one(PL) | [chekair]
+
+  ────────────────────────────────────────────────────────────────────────
+  f76r.17,+P0 (10/12 roots known = 83%)
+  ────────────────────────────────────────────────────────────────────────
+  VOY: chey chckh shey qeeey chol lkain shedy qokeedy okain chedy okeed qokaloro
+  GLO: do/make.-GEN [SUB].do/make VERB.happen/occur.-GEN REL.this/that.-ST do/make.-NOM [SUB].remedy/thing.-PL.OBL VERB.happen/occur.-DESC REL.[SUB].this/that.-ABR DEF.[SUB].great-one.-PL do/make.-DESC DEF.[SUB].?ed? REL.[SUB].?aloro?
+  ENG: do/make(-of) | (SUB).do/make | V:happen/occur(-of) | which-this/that(-of) | do/make(-NOM) | (SUB).remedy/thing(PL) | V:happen/occur(-DESC) | which-(SUB).this/that(~) | the-(SUB).great-one(PL) | do/make(-DESC) | [okeed] | [qokaloro]
+
+  ────────────────────────────────────────────────────────────────────────
+  f76r.19,=P0 (7/11 roots known = 64%)
+  ────────────────────────────────────────────────────────────────────────
+  VOY: dcheedy qolchey qokeey qokeey chedy qokar shedy shedy lshedy qolchedy otedyl
+  GLO: GEN.do/make.-DESC REL.?lch?.-GEN REL.[SUB].this/that.-ST REL.[SUB].this/that.-ST do/make.-DESC REL.[SUB].king/great VERB.happen/occur.-DESC VERB.happen/occur.-DESC ?lsh?.-DESC REL.?lch?.-DESC DEF.[CEL].?edyl?
+  ENG: of-do/make(-DESC) | [qolchey] | which-(SUB).this/that(-of) | which-(SUB).this/that(-of) | do/make(-DESC) | which-(SUB).king/great | V:happen/occur(-DESC) | V:happen/occur(-DESC) | [lshedy] | [qolchedy] | [otedyl]
+
+  ────────────────────────────────────────────────────────────────────────
+  f76r.20,+P0 (6/12 roots known = 50%)
+  ────────────────────────────────────────────────────────────────────────
+  VOY: dshedy qo chedy lchedy qokey qolchey qotain chckhy shckhy lchar okar alchdy
+  GLO: GEN.?sh?.-DESC ?qo? do/make.-DESC ?lch?.-DESC REL.[SUB].this/that.-ST REL.?lch?.-GEN REL.[CEL].great-one.-PL [SUB].do/make.-ST VERB.[SUB].happen/occur.-ST ?lch?.-AGT DEF.[SUB].king/great ?alch?.-ABR
+  ENG: [dshedy] | [qo] | do/make(-DESC) | [lchedy] | which-(SUB).this/that(-of) | [qolchey] | which-(CEL).great-one(PL) | (SUB).do/make(-of) | V:(SUB).happen/occur(-of) | [lchar] | the-(SUB).king/great | [alchdy]
+
+  ────────────────────────────────────────────────────────────────────────
+  f76r.21,+P0 (7/12 roots known = 58%)
+  ────────────────────────────────────────────────────────────────────────
+  VOY: qokchsdy okeey lchedy qo olain ot shedy qotaly dar sain shedy oleeed
+  GLO: REL.[SUB].?s?.-ABR DEF.[SUB].this/that.-ST ?lch?.-DESC ?qo? DEF.remedy/thing.-PL.OBL [CEL].?o? VERB.happen/occur.-DESC REL.[CEL].stone.-ST GEN.king/great VERB.great-one.-PL VERB.happen/occur.-DESC DEF.?led?
+  ENG: [qokchsdy] | the-(SUB).this/that(-of) | [lchedy] | [qo] | the-remedy/thing(PL) | [ot] | V:happen/occur(-DESC) | which-(CEL).stone(-of) | of-king/great | V:great-one(PL) | V:happen/occur(-DESC) | [oleeed]
+
+  ────────────────────────────────────────────────────────────────────────
+  f76r.23,=P0 (11/12 roots known = 92%)
+  ────────────────────────────────────────────────────────────────────────
+  VOY: sheedy qokedy chedy chedy qokain chckhy olchy ain shedy olaiin chedy qokey
+  GLO: VERB.happen/occur.-DESC REL.[SUB].this/that.-ABR do/make.-DESC do/make.-DESC REL.[SUB].great-one.-PL [SUB].do/make.-ST DEF.?lch?.-ST great-one.-PL VERB.happen/occur.-DESC DEF.remedy/thing.-PL do/make.-DESC REL.[SUB].this/that.-ST
+  ENG: V:happen/occur(-DESC) | which-(SUB).this/that(~) | do/make(-DESC) | do/make(-DESC) | which-(SUB).great-one(PL) | (SUB).do/make(-of) | [olchy] | great-one(PL) | V:happen/occur(-DESC) | the-remedy/thing(PL) | do/make(-DESC) | which-(SUB).this/that(-of)
+
+  ────────────────────────────────────────────────────────────────────────
+  f76r.24,+P0 (10/12 roots known = 83%)
+  ────────────────────────────────────────────────────────────────────────
+  VOY: dalshedy qol sheedy qokaldy chepy dain alolor olain chedy shecthy qokey lor
+  GLO: GEN.?alsh?.-DESC REL.carry/bear VERB.happen/occur.-DESC REL.[SUB].stone.-ABR [DIS].do/make.-GEN GEN.great-one.-PL ?alol?.-AGT DEF.remedy/thing.-PL.OBL do/make.-DESC VERB.[CEL].happen/occur.-GEN REL.[SUB].this/that.-ST remedy/thing.-AGT
+  ENG: [dalshedy] | which-carry/bear | V:happen/occur(-DESC) | which-(SUB).stone(~) | (DIS).do/make(-of) | of-great-one(PL) | [alolor] | the-remedy/thing(PL) | do/make(-DESC) | V:(CEL).happen/occur(-of) | which-(SUB).this/that(-of) | remedy/thing(-er)
+
+  ────────────────────────────────────────────────────────────────────────
+  f76r.25,+P0 (7/13 roots known = 54%)
+  ────────────────────────────────────────────────────────────────────────
+  VOY: qoloin chey qokeey lchedy chckhy chey ky chey qolal lklchey lchedy chey llaiir
+  GLO: REL.?lo?.-PL do/make.-GEN REL.[SUB].this/that.-ST ?lch?.-DESC [SUB].do/make.-ST do/make.-GEN [SUB].?y? do/make.-GEN REL.remedy/thing.-LOC [SUB].?llch?.-GEN ?lch?.-DESC do/make.-GEN ?llaiir?
+  ENG: [qoloin] | do/make(-of) | which-(SUB).this/that(-of) | [lchedy] | (SUB).do/make(-of) | do/make(-of) | [ky] | do/make(-of) | which-remedy/thing(-place) | [lklchey] | [lchedy] | do/make(-of) | [llaiir]
+
+  ────────────────────────────────────────────────────────────────────────
+  f76r.26,+P0 (10/13 roots known = 77%)
+  ────────────────────────────────────────────────────────────────────────
+  VOY: shedal shey qokey qolchedy qolain ain chey qokaiin okain cheedy lchey oly dy
+  GLO: VERB.?hed?.-LOC VERB.happen/occur.-GEN REL.[SUB].this/that.-ST REL.?lch?.-DESC REL.remedy/thing.-PL.OBL great-one.-PL do/make.-GEN REL.[SUB].great-one.-PL DEF.[SUB].great-one.-PL do/make.-DESC ?lch?.-GEN DEF.remedy/thing.-ST matter/thing.-ST
+  ENG: [shedal] | V:happen/occur(-of) | which-(SUB).this/that(-of) | [qolchedy] | which-remedy/thing(PL) | great-one(PL) | do/make(-of) | which-(SUB).great-one(PL) | the-(SUB).great-one(PL) | do/make(-DESC) | [lchey] | the-remedy/thing(-of) | matter/thing(-of)
+
+  ────────────────────────────────────────────────────────────────────────
+  f76r.28,=P0 (9/13 roots known = 69%)
+  ────────────────────────────────────────────────────────────────────────
+  VOY: soin sheey chear ol aiin chodaiin qokaiin chey qokalchey dal chdy dal ytal
+  GLO: VERB.?in? VERB.happen/occur.-GEN ?che?.-AGT carry/bear great-one.-PL ?chod?.-PL REL.[SUB].great-one.-PL do/make.-GEN REL.[SUB].?alch?.-GEN GEN.stone do/make.-ABR GEN.stone ADJ.[CEL].stone
+  ENG: [soin] | V:happen/occur(-of) | [chear] | carry/bear | great-one(PL) | [chodaiin] | which-(SUB).great-one(PL) | do/make(-of) | [qokalchey] | of-stone | do/make(~) | of-stone | adj:(CEL).stone
+
+  ────────────────────────────────────────────────────────────────────────
+  f76r.29,+P0 (11/12 roots known = 92%)
+  ────────────────────────────────────────────────────────────────────────
+  VOY: qokar shedy shedy qokar shedy qokain dar shey lshcthy okar okain laiin
+  GLO: REL.[SUB].king/great VERB.happen/occur.-DESC VERB.happen/occur.-DESC REL.[SUB].king/great VERB.happen/occur.-DESC REL.[SUB].great-one.-PL GEN.king/great VERB.happen/occur.-GEN [CEL].?lsh?.-ST DEF.[SUB].king/great DEF.[SUB].great-one.-PL remedy/thing.-PL
+  ENG: which-(SUB).king/great | V:happen/occur(-DESC) | V:happen/occur(-DESC) | which-(SUB).king/great | V:happen/occur(-DESC) | which-(SUB).great-one(PL) | of-king/great | V:happen/occur(-of) | [lshcthy] | the-(SUB).king/great | the-(SUB).great-one(PL) | remedy/thing(PL)
+
+  ========================================================================
+  SUMMARY: 201/272 roots translated (73.9%)
+  ========================================================================
+
+============================================================================
+PHASE 23a: FULL TRANSLATION — HERBAL SECTION (f1r)
+============================================================================
+
+  ────────────────────────────────────────────────────────────────────────
+  f1r.1,@P0 (6/9 roots known = 67%)
+  ────────────────────────────────────────────────────────────────────────
+  VOY: fachys ykal ar ataiin shol shory cthres kor sholdy
+  GLO: [BOT].?achys? ADJ.[SUB].stone king/great [CEL].great-one.-PL VERB.happen/occur.-NOM VERB.?hor?.-ST [CEL].south [SUB].king/great VERB.?hol?.-ABR
+  ENG: [fachys] | adj:(SUB).stone | king/great | (CEL).great-one(PL) | V:happen/occur(-NOM) | [shory] | (CEL).south | (SUB).king/great | [sholdy]
+
+  ────────────────────────────────────────────────────────────────────────
+  f1r.2,+P0 (6/10 roots known = 60%)
+  ────────────────────────────────────────────────────────────────────────
+  VOY: sory ckhar or kair chtaiin shar ase cthar cthar dan
+  GLO: VERB.?r?.-ST [SUB].king/great king/great [SUB].?air? [CEL].do/make.-PL VERB.happen/occur.-AGT ?ase? [CEL].king/great [CEL].king/great GEN.?an?
+  ENG: [sory] | (SUB).king/great | king/great | [kair] | (CEL).do/make(PL) | V:happen/occur(-er) | [ase] | (CEL).king/great | (CEL).king/great | [dan]
+
+  ────────────────────────────────────────────────────────────────────────
+  f1r.3,+P0 (6/9 roots known = 67%)
+  ────────────────────────────────────────────────────────────────────────
+  VOY: syaiir sheky or ykaiin shod cthoary cthes daraiin sy
+  GLO: VERB.?yaiir? VERB.[SUB].happen/occur.-GEN king/great ADJ.[SUB].great-one.-PL VERB.?hod? DEF.[CEL].king/great.-ST [CEL].star GEN.king/great.-PL ?s?.-ST
+  ENG: [syaiir] | V:(SUB).happen/occur(-of) | king/great | adj:(SUB).great-one(PL) | [shod] | the-(CEL).king/great(-of) | (CEL).star | of-king/great(PL) | [sy]
+
+  ────────────────────────────────────────────────────────────────────────
+  f1r.4,+P0 (5/9 roots known = 56%)
+  ────────────────────────────────────────────────────────────────────────
+  VOY: soiin oteey oteos roloty cthiar daiin okaiin or okan
+  GLO: VERB.?i?.-PL DEF.[CEL].this/that.-ST DEF.[CEL].star [CEL].?rolo?.-ST [CEL].?i?.-AGT GEN.great-one.-PL DEF.[SUB].great-one.-PL king/great DEF.[SUB].?an?
+  ENG: [soiin] | the-(CEL).this/that(-of) | the-(CEL).star | [roloty] | [cthiar] | of-great-one(PL) | the-(SUB).great-one(PL) | king/great | [okan]
+
+  ────────────────────────────────────────────────────────────────────────
+  f1r.5,+P0 (3/5 roots known = 60%)
+  ────────────────────────────────────────────────────────────────────────
+  VOY: sair chear cthaiin cphar cfhaiin
+  GLO: VERB.?air? ?che?.-AGT [CEL].great-one.-PL [DIS].king/great [BOT].great-one.-PL
+  ENG: [sair] | [chear] | (CEL).great-one(PL) | (DIS).king/great | (BOT).great-one(PL)
+
+  ────────────────────────────────────────────────────────────────────────
+  f1r.6,=Pt (0/1 roots known = 0%)
+  ────────────────────────────────────────────────────────────────────────
+  VOY: ydaraishy
+  GLO: ADJ.?daraish?.-ST
+  ENG: [ydaraishy]
+
+  ────────────────────────────────────────────────────────────────────────
+  f1r.7,*P0 (3/8 roots known = 38%)
+  ────────────────────────────────────────────────────────────────────────
+  VOY: odar cy shol cphoy oydar sh cfhoaiin shodary
+  GLO: DEF.matter/thing.-AGT ?c?.-ST VERB.happen/occur.-NOM [DIS].?o?.-ST DEF.?yd?.-AGT ?sh? DEF.[BOT].great-one.-PL VERB.?hodar?.-ST
+  ENG: the-matter/thing(-er) | [cy] | V:happen/occur(-NOM) | [cphoy] | [oydar] | [sh] | the-(BOT).great-one(PL) | [shodary]
+
+  ────────────────────────────────────────────────────────────────────────
+  f1r.8,+P0 (6/10 roots known = 60%)
+  ────────────────────────────────────────────────────────────────────────
+  VOY: yshey shody okchoy otchol chocthy os chy dain chor kos
+  GLO: ADJ.?sh?.-GEN VERB.happen/occur.-PRESC DEF.[SUB].?o?.-ST DEF.[CEL].carry/bear [CEL].substance.-ST ?os? do/make.-ST GEN.great-one.-PL do/make.-AGT [SUB].?os?
+  ENG: [yshey] | V:happen/occur(-PRESC) | [okchoy] | the-(CEL).carry/bear | (CEL).substance(-of) | [os] | do/make(-of) | of-great-one(PL) | do/make(-er) | [kos]
+
+  ────────────────────────────────────────────────────────────────────────
+  f1r.9,+P0 (3/4 roots known = 75%)
+  ────────────────────────────────────────────────────────────────────────
+  VOY: daiin shos cfhol shody
+  GLO: GEN.great-one.-PL VERB.?hos? [BOT].carry/bear VERB.happen/occur.-PRESC
+  ENG: of-great-one(PL) | [shos] | (BOT).carry/bear | V:happen/occur(-PRESC)
+
+  ────────────────────────────────────────────────────────────────────────
+  f1r.10,=Pt (2/3 roots known = 67%)
+  ────────────────────────────────────────────────────────────────────────
+  VOY: dain os teody
+  GLO: GEN.great-one.-PL ?os? [CEL].this/that.-PRESC
+  ENG: of-great-one(PL) | [os] | (CEL).this/that(-PRESC)
+
+  ────────────────────────────────────────────────────────────────────────
+  f1r.11,*P0 (6/8 roots known = 75%)
+  ────────────────────────────────────────────────────────────────────────
+  VOY: ydain cphesaiin ols cphey ytain shoshy cphodal es
+  GLO: ADJ.matter/thing.-PL.OBL [DIS].star.-PL DEF.?ls? [DIS].this/that.-ST ADJ.[CEL].great-one.-PL VERB.?hosh?.-ST DEF.[DIS].matter/thing.-LOC star
+  ENG: adj:matter/thing(PL) | (DIS).star(PL) | [ols] | (DIS).this/that(-of) | adj:(CEL).great-one(PL) | [shoshy] | the-(DIS).matter/thing(-place) | star
+
+  ────────────────────────────────────────────────────────────────────────
+  f1r.12,+P0 (3/8 roots known = 38%)
+  ────────────────────────────────────────────────────────────────────────
+  VOY: oksho kshoy otairin oteol okan shodain sckhey daiin
+  GLO: [SUB].?oo? [SUB].?o?.-ST DEF.[CEL].?air?.-PL DEF.[CEL].this/that.-NOM DEF.[SUB].?an? VERB.?hod?.-PL.OBL VERB.[SUB].this/that.-ST GEN.great-one.-PL
+  ENG: [oksho] | [kshoy] | [otairin] | the-(CEL).this/that(-NOM) | [okan] | [shodain] | V:(SUB).this/that(-of) | of-great-one(PL)
+
+  ────────────────────────────────────────────────────────────────────────
+  f1r.13,+P0 (3/8 roots known = 38%)
+  ────────────────────────────────────────────────────────────────────────
+  VOY: shoy ckhey kodaiin cphy cphodaiils cthey sho oldain
+  GLO: VERB.?ho?.-ST [SUB].this/that.-ST DEF.[SUB].matter/thing.-PL [DIS].?y? DEF.[DIS].?daiils? [CEL].this/that.-ST VERB.?ho? DEF.?ld?.-PL.OBL
+  ENG: [shoy] | (SUB).this/that(-of) | the-(SUB).matter/thing(PL) | [cphy] | [cphodaiils] | (CEL).this/that(-of) | [sho] | [oldain]
+
+  ────────────────────────────────────────────────────────────────────────
+  f1r.14,+P0 (5/9 roots known = 56%)
+  ────────────────────────────────────────────────────────────────────────
+  VOY: dain oiin chol odaiin chodain chdy okain cthy kod
+  GLO: GEN.great-one.-PL DEF.?i?.-PL do/make.-NOM DEF.matter/thing.-PL ?chod?.-PL.OBL do/make.-ABR DEF.[SUB].great-one.-PL [CEL].?y? [SUB].?od?
+  ENG: of-great-one(PL) | [oiin] | do/make(-NOM) | the-matter/thing(PL) | [chodain] | do/make(~) | the-(SUB).great-one(PL) | [cthy] | [kod]
+
+  ────────────────────────────────────────────────────────────────────────
+  f1r.15,+P0 (9/10 roots known = 90%)
+  ────────────────────────────────────────────────────────────────────────
+  VOY: daiin shckhey ckeo char shey kol chol chol kor chal
+  GLO: GEN.great-one.-PL VERB.[SUB].happen/occur.-GEN [SUB].?ceo? do/make.-AGT VERB.happen/occur.-GEN [SUB].carry/bear do/make.-NOM do/make.-NOM [SUB].king/great do/make.-LOC
+  ENG: of-great-one(PL) | V:(SUB).happen/occur(-of) | [ckeo] | do/make(-er) | V:happen/occur(-of) | (SUB).carry/bear | do/make(-NOM) | do/make(-NOM) | (SUB).king/great | do/make(-place)
+
+  ────────────────────────────────────────────────────────────────────────
+  f1r.16,+P0 (2/9 roots known = 22%)
+  ────────────────────────────────────────────────────────────────────────
+  VOY: sho chol shodan kshy kchy or chodaiin sho koeam
+  GLO: VERB.?ho? do/make.-NOM VERB.?hodan? [SUB].?y? [SUB].?y? king/great ?chod?.-PL VERB.?ho? DEF.[SUB].?eam?
+  ENG: [sho] | do/make(-NOM) | [shodan] | [kshy] | [kchy] | king/great | [chodaiin] | [sho] | [koeam]
+
+  ────────────────────────────────────────────────────────────────────────
+  f1r.17,+P0 (3/8 roots known = 38%)
+  ────────────────────────────────────────────────────────────────────────
+  VOY: ycho tchey chekain sheo pshol dydyd cthy daictoy
+  GLO: ADJ.substance [CEL].this/that.-ST [SUB].?che?.-PL.OBL VERB.?heo? [DIS].carry/bear GEN.?ydyd? [CEL].?y? GEN.[CEL].?aico?.-ST
+  ENG: adj:substance | (CEL).this/that(-of) | [chekain] | [sheo] | (DIS).carry/bear | [dydyd] | [cthy] | [daictoy]
+
+  ────────────────────────────────────────────────────────────────────────
+  f1r.18,+P0 (5/9 roots known = 56%)
+  ────────────────────────────────────────────────────────────────────────
+  VOY: yto shol she kodshey cphealy dar ain dain ckhyds
+  GLO: [CEL].?yo? VERB.happen/occur.-NOM VERB.fall/occur DEF.[SUB].?dsh?.-GEN [DIS].?eal?.-ST GEN.king/great great-one.-PL GEN.great-one.-PL ADJ.[SUB].?ds?
+  ENG: [yto] | V:happen/occur(-NOM) | V:fall/occur | [kodshey] | [cphealy] | of-king/great | great-one(PL) | of-great-one(PL) | [ckhyds]
+
+  ────────────────────────────────────────────────────────────────────────
+  f1r.19,+P0 (5/8 roots known = 62%)
+  ────────────────────────────────────────────────────────────────────────
+  VOY: dchar shcthaiin okaiir chey chy tol cthols dlocto
+  GLO: GEN.do/make.-AGT VERB.[CEL].happen/occur.-PL DEF.[SUB].?aiir? do/make.-GEN do/make.-ST [CEL].carry/bear DEF.[CEL].?ls? GEN.[CEL].?loco?
+  ENG: of-do/make(-er) | V:(CEL).happen/occur(PL) | [okaiir] | do/make(-of) | do/make(-of) | (CEL).carry/bear | [cthols] | [dlocto]
+
+  ========================================================================
+  SUMMARY: 81/145 roots translated (55.9%)
+  ========================================================================
+
+============================================================================
+PHASE 23a: FULL TRANSLATION — BIO SECTION 2 (f78r)
+============================================================================
+
+  ────────────────────────────────────────────────────────────────────────
+  f78r.3,@P0 (5/7 roots known = 71%)
+  ────────────────────────────────────────────────────────────────────────
+  VOY: tshedor shedy qopchedy qokedy dy qokol oky
+  GLO: [CEL].?ed?.-AGT VERB.happen/occur.-DESC REL.[DIS].this/that.-ABR REL.[SUB].this/that.-ABR matter/thing.-ST REL.[SUB].carry/bear [SUB].?o?.-ST
+  ENG: [tshedor] | V:happen/occur(-DESC) | which-(DIS).this/that(~) | which-(SUB).this/that(~) | matter/thing(-of) | which-(SUB).carry/bear | [oky]
+
+  ────────────────────────────────────────────────────────────────────────
+  f78r.4,+P0 (7/7 roots known = 100%)
+  ────────────────────────────────────────────────────────────────────────
+  VOY: qokeedy qokedy shedy tchedy otar olkedy dam
+  GLO: REL.[SUB].this/that.-ABR REL.[SUB].this/that.-ABR VERB.happen/occur.-DESC [CEL].this/that.-ABR DEF.[CEL].king/great DEF.[SUB].remedy/thing.-DESC GEN.water
+  ENG: which-(SUB).this/that(~) | which-(SUB).this/that(~) | V:happen/occur(-DESC) | (CEL).this/that(~) | the-(CEL).king/great | the-(SUB).remedy/thing(-DESC) | of-water
+
+  ────────────────────────────────────────────────────────────────────────
+  f78r.5,+P0 (7/7 roots known = 100%)
+  ────────────────────────────────────────────────────────────────────────
+  VOY: qckhedy cheky dol chedy qokedy qokain olkedy
+  GLO: REL.[SUB].this/that.-ABR [SUB].do/make.-GEN GEN.carry/bear do/make.-DESC REL.[SUB].this/that.-ABR REL.[SUB].great-one.-PL DEF.[SUB].remedy/thing.-DESC
+  ENG: which-(SUB).this/that(~) | (SUB).do/make(-of) | of-carry/bear | do/make(-DESC) | which-(SUB).this/that(~) | which-(SUB).great-one(PL) | the-(SUB).remedy/thing(-DESC)
+
+  ────────────────────────────────────────────────────────────────────────
+  f78r.6,+P0 (8/9 roots known = 89%)
+  ────────────────────────────────────────────────────────────────────────
+  VOY: yteedy qotal dol shedy qokedar chcthey otor dor or
+  GLO: ADJ.[CEL].this/that.-ABR REL.[CEL].stone GEN.carry/bear VERB.happen/occur.-DESC REL.[SUB].?ed?.-AGT [CEL].do/make.-GEN DEF.[CEL].king/great GEN.king/great king/great
+  ENG: adj:(CEL).this/that(~) | which-(CEL).stone | of-carry/bear | V:happen/occur(-DESC) | [qokedar] | (CEL).do/make(-of) | the-(CEL).king/great | of-king/great | king/great
+
+  ────────────────────────────────────────────────────────────────────────
+  f78r.7,+P0 (8/8 roots known = 100%)
+  ────────────────────────────────────────────────────────────────────────
+  VOY: qokal otedy qokedy qokedy dal qokedy qokedy am
+  GLO: REL.[SUB].stone DEF.[CEL].this/that.-ABR REL.[SUB].this/that.-ABR REL.[SUB].this/that.-ABR GEN.stone REL.[SUB].this/that.-ABR REL.[SUB].this/that.-ABR water
+  ENG: which-(SUB).stone | the-(CEL).this/that(~) | which-(SUB).this/that(~) | which-(SUB).this/that(~) | of-stone | which-(SUB).this/that(~) | which-(SUB).this/that(~) | water
+
+  ────────────────────────────────────────────────────────────────────────
+  f78r.8,+P0 (6/8 roots known = 75%)
+  ────────────────────────────────────────────────────────────────────────
+  VOY: dshedy qokedy okar qokedy shedy ykedy shedy qoky
+  GLO: GEN.?sh?.-DESC REL.[SUB].this/that.-ABR DEF.[SUB].king/great REL.[SUB].this/that.-ABR VERB.happen/occur.-DESC ADJ.[SUB].this/that.-ABR VERB.happen/occur.-DESC REL.[SUB].?o?.-ST
+  ENG: [dshedy] | which-(SUB).this/that(~) | the-(SUB).king/great | which-(SUB).this/that(~) | V:happen/occur(-DESC) | adj:(SUB).this/that(~) | V:happen/occur(-DESC) | [qoky]
+
+  ────────────────────────────────────────────────────────────────────────
+  f78r.9,+P0 (7/8 roots known = 88%)
+  ────────────────────────────────────────────────────────────────────────
+  VOY: schedy keedy qokedy chckhd qokain chedy qotedy dy
+  GLO: VERB.do/make.-DESC [SUB].this/that.-ABR REL.[SUB].this/that.-ABR [SUB].?chd? REL.[SUB].great-one.-PL do/make.-DESC REL.[CEL].this/that.-ABR matter/thing.-ST
+  ENG: V:do/make(-DESC) | (SUB).this/that(~) | which-(SUB).this/that(~) | [chckhd] | which-(SUB).great-one(PL) | do/make(-DESC) | which-(CEL).this/that(~) | matter/thing(-of)
+
+  ────────────────────────────────────────────────────────────────────────
+  f78r.10,+P0 (6/8 roots known = 75%)
+  ────────────────────────────────────────────────────────────────────────
+  VOY: dshedy deedy qokeedy otedy otal tedy otey oloiin
+  GLO: GEN.?sh?.-DESC GEN.this/that.-ABR REL.[SUB].this/that.-ABR DEF.[CEL].this/that.-ABR DEF.[CEL].stone [CEL].this/that.-ABR DEF.[CEL].this/that.-ST DEF.?lo?.-PL
+  ENG: [dshedy] | of-this/that(~) | which-(SUB).this/that(~) | the-(CEL).this/that(~) | the-(CEL).stone | (CEL).this/that(~) | the-(CEL).this/that(-of) | [oloiin]
+
+  ────────────────────────────────────────────────────────────────────────
+  f78r.11,+P0 (7/8 roots known = 88%)
+  ────────────────────────────────────────────────────────────────────────
+  VOY: qoky okeedy sheety qoteedy otey shckhedy sokol or
+  GLO: REL.[SUB].?o?.-ST DEF.[SUB].this/that.-ABR VERB.[CEL].happen/occur.-GEN REL.[CEL].this/that.-ABR DEF.[CEL].this/that.-ST VERB.[SUB].happen/occur.-DESC VERB.[SUB].carry/bear king/great
+  ENG: [qoky] | the-(SUB).this/that(~) | V:(CEL).happen/occur(-of) | which-(CEL).this/that(~) | the-(CEL).this/that(-of) | V:(SUB).happen/occur(-DESC) | V:(SUB).carry/bear | king/great
+
+  ────────────────────────────────────────────────────────────────────────
+  f78r.12,+P0 (7/8 roots known = 88%)
+  ────────────────────────────────────────────────────────────────────────
+  VOY: dor shekedy qokol kechdy otedy ol tedy chckhedy
+  GLO: GEN.king/great VERB.[SUB].happen/occur.-DESC REL.[SUB].carry/bear [SUB].?ech?.-ABR DEF.[CEL].this/that.-ABR carry/bear [CEL].this/that.-ABR [SUB].do/make.-DESC
+  ENG: of-king/great | V:(SUB).happen/occur(-DESC) | which-(SUB).carry/bear | [kechdy] | the-(CEL).this/that(~) | carry/bear | (CEL).this/that(~) | (SUB).do/make(-DESC)
+
+  ────────────────────────────────────────────────────────────────────────
+  f78r.13,+P0 (10/10 roots known = 100%)
+  ────────────────────────────────────────────────────────────────────────
+  VOY: qokedy ol kedy qokain okedy kedy tol dy qoteedy dy
+  GLO: REL.[SUB].this/that.-ABR carry/bear [SUB].this/that.-ABR REL.[SUB].great-one.-PL DEF.[SUB].this/that.-ABR [SUB].this/that.-ABR [CEL].carry/bear matter/thing.-ST REL.[CEL].this/that.-ABR matter/thing.-ST
+  ENG: which-(SUB).this/that(~) | carry/bear | (SUB).this/that(~) | which-(SUB).great-one(PL) | the-(SUB).this/that(~) | (SUB).this/that(~) | (CEL).carry/bear | matter/thing(-of) | which-(CEL).this/that(~) | matter/thing(-of)
+
+  ────────────────────────────────────────────────────────────────────────
+  f78r.14,+P0 (7/9 roots known = 78%)
+  ────────────────────────────────────────────────────────────────────────
+  VOY: sor checkhy or chckhdy dol kedy qokededy qokan ol
+  GLO: VERB.king/great [SUB].do/make.-GEN king/great [SUB].do/make.-ABR GEN.carry/bear [SUB].this/that.-ABR REL.[SUB].?ed?.-DESC REL.[SUB].?an? carry/bear
+  ENG: V:king/great | (SUB).do/make(-of) | king/great | (SUB).do/make(~) | of-carry/bear | (SUB).this/that(~) | [qokededy] | [qokan] | carry/bear
+
+  ────────────────────────────────────────────────────────────────────────
+  f78r.15,+P0 (7/8 roots known = 88%)
+  ────────────────────────────────────────────────────────────────────────
+  VOY: dchckhedy qokchdy qokedy okedy dal or okeed olkain
+  GLO: GEN.[SUB].do/make.-DESC REL.[SUB].matter/thing.-ST REL.[SUB].this/that.-ABR DEF.[SUB].this/that.-ABR GEN.stone king/great DEF.[SUB].?ed? DEF.[SUB].remedy/thing.-PL.OBL
+  ENG: of-(SUB).do/make(-DESC) | which-(SUB).matter/thing(-of) | which-(SUB).this/that(~) | the-(SUB).this/that(~) | of-stone | king/great | [okeed] | the-(SUB).remedy/thing(PL)
+
+  ────────────────────────────────────────────────────────────────────────
+  f78r.16,+P0 (3/6 roots known = 50%)
+  ────────────────────────────────────────────────────────────────────────
+  VOY: qokol oted okain ched ar alory
+  GLO: REL.[SUB].carry/bear DEF.[CEL].?ed? DEF.[SUB].great-one.-PL ?ched? king/great ?alor?.-ST
+  ENG: which-(SUB).carry/bear | [oted] | the-(SUB).great-one(PL) | [ched] | king/great | [alory]
+
+  ────────────────────────────────────────────────────────────────────────
+  f78r.17,+P0 (4/5 roots known = 80%)
+  ────────────────────────────────────────────────────────────────────────
+  VOY: soiin kar kedy pchey tchdoltdy
+  GLO: VERB.?i?.-PL [SUB].king/great [SUB].this/that.-ABR [DIS].this/that.-ST GEN.[CEL].remedy/thing.-ABR
+  ENG: [soiin] | (SUB).king/great | (SUB).this/that(~) | (DIS).this/that(-of) | of-(CEL).remedy/thing(~)
+
+  ────────────────────────────────────────────────────────────────────────
+  f78r.18,+P0 (5/5 roots known = 100%)
+  ────────────────────────────────────────────────────────────────────────
+  VOY: chedy qokain dar ar okain
+  GLO: do/make.-DESC REL.[SUB].great-one.-PL GEN.king/great king/great DEF.[SUB].great-one.-PL
+  ENG: do/make(-DESC) | which-(SUB).great-one(PL) | of-king/great | king/great | the-(SUB).great-one(PL)
+
+  ────────────────────────────────────────────────────────────────────────
+  f78r.19,+P0 (3/5 roots known = 60%)
+  ────────────────────────────────────────────────────────────────────────
+  VOY: ches aiin okeedy qokain chl
+  GLO: ?ches? great-one.-PL DEF.[SUB].this/that.-ABR REL.[SUB].great-one.-PL ?chl?
+  ENG: [ches] | great-one(PL) | the-(SUB).this/that(~) | which-(SUB).great-one(PL) | [chl]
+
+  ────────────────────────────────────────────────────────────────────────
+  f78r.20,+P0 (2/4 roots known = 50%)
+  ────────────────────────────────────────────────────────────────────────
+  VOY: sol shedy dalshdy qokychdy
+  GLO: VERB.carry/bear VERB.happen/occur.-DESC GEN.?alsh?.-ABR REL.[SUB].?ych?.-ABR
+  ENG: V:carry/bear | V:happen/occur(-DESC) | [dalshdy] | [qokychdy]
+
+  ────────────────────────────────────────────────────────────────────────
+  f78r.21,+P0 (2/4 roots known = 50%)
+  ────────────────────────────────────────────────────────────────────────
+  VOY: lchedy qokain cheeky lokedy
+  GLO: ?lch?.-DESC REL.[SUB].great-one.-PL [SUB].do/make.-GEN [SUB].?lo?.-DESC
+  ENG: [lchedy] | which-(SUB).great-one(PL) | (SUB).do/make(-of) | [lokedy]
+
+  ========================================================================
+  SUMMARY: 111/134 roots translated (82.8%)
+  ========================================================================
+
+============================================================================
+PHASE 23b: UNKNOWN ROOT CENSUS
+============================================================================
+
+  Top 20 UNKNOWN roots (most translation-blocking):
+  Root          Count  Example words
+  ────────────────────────────────────────────────────────────
+  lch              14  solchedy, lchedy, lchey
+  o                12  qoty, otchy, oty
+  ed               11  qokededy, qoked, qokedar
+  sh                7  dshedy, yshey, sh
+  che               6  chekain, chear, chep
+  y                 6  cthy, cphy, kshy
+  an                4  okan, dan, qokan
+  i                 4  oiin, cthiar, soiin
+  ho                4  sho, shoy
+  r                 3  sory, qorain, rol
+  ched              3  ched, chedain, chckheed
+  lsh               3  lshedy, lshcthy, solshedy
+  lo                3  qoloin, lokedy, oloiin
+  chod              3  chodaiin, chodain
+  air               3  kair, sair, otairin
+  os                3  kos, os
+  ches              2  ches
+  hed               2  shed, shedal
+  qo                2  qo
+  alch              2  alchdy, qokalchey
+
+  Top 20 KNOWN roots (most translated):
+  Root          Count  Meaning
+  ────────────────────────────────────────────────────────────
+  e                87  this/that
+  ch               64  do/make
+  a                56  great-one
+  h                48  happen/occur
+  ar               29  king/great
+  ol               25  carry/bear
+  al               21  stone
+  l                19  remedy/thing
+  or               17  king/great
+  d                14  matter/thing
+  es                6  star
+  cho               2  substance
+  am                2  water
+  res               1  south
+  eos               1  star
+  he                1  fall/occur
+
+============================================================================
+PHASE 23c: INTERNAL COHERENCE TEST
+============================================================================
+
+  BIO SECTION SEMANTIC FIELD DISTRIBUTION:
+  ────────────────────────────────────────────────────────────
+  Body/condition words:    38 (12.2%)
+  Plant/substance words:    2 (0.6%)
+  Astro/celestial words:   35 (11.2%)
+  Action/process words:   109 (34.9%)
+  Grammar/function:       146 (46.8%)
+  Total known meanings:  312
+
+  Top meanings in BIO:
+    this/that              79
+    do/make                51
+    great-one              39
+    happen/occur           38
+    king/great             32
+    carry/bear             20
+    stone                  20
+    remedy/thing           19
+    matter/thing            9
+    star                    3
+
+  Determinative distribution in BIO:
+    SUB(k):  149 (71.3%)
+    CEL(t):   46 (22.0%)
+    DIS(p):   12 (5.7%)
+    BOT(f):    2 (1.0%)
+
+  Suffix distribution in BIO:
+    DESC(edy):   70 (23.4%)
+    ABR(dy):   67 (22.4%)
+    ST(y):   57 (19.1%)
+    PL(in):   32 (10.7%)
+    GEN(ey):   31 (10.4%)
+    PL(iin):   11 (3.7%)
+    PL.OBL(ain):   10 (3.3%)
+    AGT(or):    6 (2.0%)
+
+  HERBAL SECTION SEMANTIC FIELD DISTRIBUTION:
+  ────────────────────────────────────────────────────────────
+  Body/condition words:    11 (13.6%)
+  Plant/substance words:    2 (2.5%)
+  Astro/celestial words:   19 (23.5%)
+  Action/process words:    29 (35.8%)
+  Grammar/function:        30 (37.0%)
+  Total known meanings:  81
+
+  Top meanings in HERBAL:
+    great-one              17
+    king/great             14
+    do/make                13
+    happen/occur           10
+    this/that               8
+    matter/thing            5
+    carry/bear              5
+    star                    4
+    substance               2
+    stone                   1
+
+  Determinative distribution in HERBAL:
+    SUB(k):   29 (41.4%)
+    CEL(t):   28 (40.0%)
+    DIS(p):    9 (12.9%)
+    BOT(f):    4 (5.7%)
+
+  Suffix distribution in HERBAL:
+    ST(y):   24 (28.2%)
+    PL(in):   10 (11.8%)
+    PL(iin):    9 (10.6%)
+    PL(aiin):    8 (9.4%)
+    NOM(ol):    8 (9.4%)
+    AGT(ar):    7 (8.2%)
+    GEN(ey):    6 (7.1%)
+    PL.OBL(ain):    5 (5.9%)
+
+  ============================================================
+  COHERENCE VERDICT:
+  ============================================================
+
+============================================================================
+PHASE 23d: CROSS-SECTION TRANSLATION COVERAGE
+============================================================================
+
+  Section-level coverage:
+  Section        Words   Known   Total  Coverage
+  ──────────────────────────────────────────────────
+  herbal-A       11034    7204   11029     65.3%
+  herbal-B        1499     961    1497     64.2%
+  zodiac          2487    1447    2487     58.2%
+  bio             6748    5176    6748     76.7%
+  cosmo           3602    2642    3602     73.3%
+  pharma          2969    1892    2969     63.7%
+  text           10561    7070   10561     66.9%
+  ──────────────────────────────────────────────────
+  TOTAL          38900   26392   38893     67.9%
+
+  Top 10 highest-coverage folios:
+  Folio                Section       Words   Cov%
+  ──────────────────────────────────────────────────
+  f78r                 bio             278  83.5%
+  f81r                 bio             205  83.4%
+  f84r                 bio             345  82.6%
+  f84v                 bio             333  82.3%
+  f33r                 herbal-A         72  81.9%
+  f78v                 bio             286  81.5%
+  f33v                 herbal-A        113  80.5%
+  f48v                 herbal-A        122  80.3%
+  f75r                 bio             411  80.0%
+  f55v                 herbal-A        101  79.2%
+
+  Bottom 10 lowest-coverage folios (>20 words):
+  Folio                Section       Words   Cov%
+  ──────────────────────────────────────────────────
+  f53r                 herbal-A         58  36.2%
+  f96v                 herbal-B         55  44.4%
+  f87v                 herbal-B         87  46.5%
+  f14v                 herbal-A         72  48.6%
+  f57r                 herbal-A         84  48.8%
+  f73r                 zodiac           63  49.2%
+  f17r                 herbal-A         77  49.4%
+  f27v                 herbal-A         60  50.0%
+  f68r                 zodiac          244  50.4%
+  f44r                 herbal-A         71  50.7%
+
+============================================================================
+PHASE 23e: BEST TRANSLATED LINES (SHOWCASE)
+============================================================================
+
+  Lines with >=50% root coverage (min 4 words):
+
+  ────────────────────────────────────────────────────────────────────
+  BIO | f76r.13,+P0 | 12/12 = 100%
+  VOY: qokeedy checthy chckhey okal okaiin sheckhey okeedy otey dal kal chedy sar
+  ENG: which-this/that do/make do/make the-stone the-great-ones happen/occur the-this/that the-this/that of-stone stone do/make(desc.) king/great
+
+  ────────────────────────────────────────────────────────────────────
+  BIO | f78r.13,+P0 | 10/10 = 100%
+  VOY: qokedy ol kedy qokain okedy kedy tol dy qoteedy dy
+  ENG: which-this/that carry/bear this/that which-great-ones the-this/that this/that carry/bear matter/thing which-this/that matter/thing
+
+  ────────────────────────────────────────────────────────────────────
+  BIO | f78r.7,+P0 | 8/8 = 100%
+  VOY: qokal otedy qokedy qokedy dal qokedy qokedy am
+  ENG: which-stone the-this/that which-this/that which-this/that of-stone which-this/that which-this/that water
+
+  ────────────────────────────────────────────────────────────────────
+  BIO | f78r.4,+P0 | 7/7 = 100%
+  VOY: qokeedy qokedy shedy tchedy otar olkedy dam
+  ENG: which-this/that which-this/that happen/occur(desc.) this/that the-king/great the-remedy/thing(desc.) of-water
+
+  ────────────────────────────────────────────────────────────────────
+  BIO | f78r.5,+P0 | 7/7 = 100%
+  VOY: qckhedy cheky dol chedy qokedy qokain olkedy
+  ENG: which-this/that do/make of-carry/bear do/make(desc.) which-this/that which-great-ones the-remedy/thing(desc.)
+
+  ────────────────────────────────────────────────────────────────────
+  BIO | f78r.18,+P0 | 5/5 = 100%
+  VOY: chedy qokain dar ar okain
+  ENG: do/make(desc.) which-great-ones of-king/great king/great the-great-ones
+
+  ────────────────────────────────────────────────────────────────────
+  BIO | f76r.23,=P0 | 11/12 = 92%
+  VOY: sheedy qokedy chedy chedy qokain chckhy olchy ain shedy olaiin chedy qokey
+  ENG: happen/occur(desc.) which-this/that do/make(desc.) do/make(desc.) which-great-ones do/make [?] great-ones happen/occur(desc.) the-remedy/things do/make(desc.) which-this/that
+
+  ────────────────────────────────────────────────────────────────────
+  BIO | f76r.29,+P0 | 11/12 = 92%
+  VOY: qokar shedy shedy qokar shedy qokain dar shey lshcthy okar okain laiin
+  ENG: which-king/great happen/occur(desc.) happen/occur(desc.) which-king/great happen/occur(desc.) which-great-ones of-king/great happen/occur [?] the-king/great the-great-ones remedy/things
+
+  ────────────────────────────────────────────────────────────────────
+  BIO | f76r.16,+P0 | 10/11 = 91%
+  VOY: qotes chedy shckhy qokeey okeey kain checkhy qokeedy qotey qotain chekair
+  ENG: which-star do/make(desc.) happen/occur which-this/that the-this/that great-ones do/make which-this/that which-this/that which-great-ones [?]
+
+  ────────────────────────────────────────────────────────────────────
+  HERBAL | f1r.15,+P0 | 9/10 = 90%
+  VOY: daiin shckhey ckeo char shey kol chol chol kor chal
+  ENG: of-great-ones happen/occur [?] do/make happen/occur carry/bear do/make(nom.) do/make(nom.) king/great do/make
+
+  ────────────────────────────────────────────────────────────────────
+  BIO | f78r.6,+P0 | 8/9 = 89%
+  VOY: yteedy qotal dol shedy qokedar chcthey otor dor or
+  ENG: this/that which-stone of-carry/bear happen/occur(desc.) [?] do/make the-king/great of-king/great king/great
+
+  ────────────────────────────────────────────────────────────────────
+  BIO | f78r.9,+P0 | 7/8 = 88%
+  VOY: schedy keedy qokedy chckhd qokain chedy qotedy dy
+  ENG: do/make(desc.) this/that which-this/that [?] which-great-ones do/make(desc.) which-this/that matter/thing
+
+  ────────────────────────────────────────────────────────────────────
+  BIO | f78r.11,+P0 | 7/8 = 88%
+  VOY: qoky okeedy sheety qoteedy otey shckhedy sokol or
+  ENG: [?] the-this/that happen/occur which-this/that the-this/that happen/occur(desc.) carry/bear king/great
+
+  ────────────────────────────────────────────────────────────────────
+  BIO | f78r.12,+P0 | 7/8 = 88%
+  VOY: dor shekedy qokol kechdy otedy ol tedy chckhedy
+  ENG: of-king/great happen/occur(desc.) which-carry/bear [?] the-this/that carry/bear this/that do/make(desc.)
+
+  ────────────────────────────────────────────────────────────────────
+  BIO | f78r.15,+P0 | 7/8 = 88%
+  VOY: dchckhedy qokchdy qokedy okedy dal or okeed olkain
+  ENG: of-do/make(desc.) which-matter/thing which-this/that the-this/that of-stone king/great [?] the-remedy/things
+
+  Results saved to results/phase23_results.json

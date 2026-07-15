@@ -1,0 +1,17 @@
+{
+  "transitions": {
+    "A->A": 10758,
+    "A->B": 4314,
+    "B->B": 3246,
+    "B->A": 4331
+  },
+  "ba_ratio": 0.8579845545001903,
+  "bb_ratio": 1.2834485525326227,
+  "line_initial_entropy_ratio": 1.0424335421818702,
+  "substance_coverage": 42.695238095238096,
+  "process_coverage": 0.3259088055612488,
+  "complexity_corr": 0.7579075996865818,
+  "mean_jaccard": 0.29951992840561786,
+  "score_for": 4,
+  "score_against": 2
+}

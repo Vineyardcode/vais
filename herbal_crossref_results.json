@@ -1,0 +1,488 @@
+{
+  "sections": {
+    "pharma": {
+      "total_tokens": 2193,
+      "unique_words": 554,
+      "top_20": {
+        "daiin": 123,
+        "ol": 52,
+        "chol": 50,
+        "cheol": 44,
+        "aiin": 44,
+        "or": 44,
+        "okeol": 33,
+        "dar": 32,
+        "chor": 31,
+        "dal": 30,
+        "chey": 29,
+        "qokol": 28,
+        "okeey": 28,
+        "qokeol": 27,
+        "qokeey": 24,
+        "cheey": 23,
+        "cheor": 23,
+        "sheol": 23,
+        "sheey": 22,
+        "shey": 22
+      }
+    },
+    "text": {
+      "total_tokens": 8124,
+      "unique_words": 1358,
+      "top_20": {
+        "aiin": 207,
+        "chedy": 198,
+        "qokeey": 159,
+        "ar": 146,
+        "al": 137,
+        "qokeedy": 136,
+        "chey": 125,
+        "daiin": 120,
+        "qokaiin": 120,
+        "shedy": 116,
+        "ol": 113,
+        "qokain": 100,
+        "okaiin": 97,
+        "okeey": 97,
+        "shey": 84,
+        "cheey": 80,
+        "otaiin": 77,
+        "or": 71,
+        "okain": 68,
+        "oteey": 64
+      }
+    },
+    "herbal-A": {
+      "total_tokens": 8395,
+      "unique_words": 1480,
+      "top_20": {
+        "daiin": 458,
+        "chol": 230,
+        "chor": 155,
+        "dy": 148,
+        "or": 121,
+        "aiin": 118,
+        "chy": 116,
+        "dar": 116,
+        "shol": 116,
+        "ar": 107,
+        "sho": 95,
+        "cthy": 93,
+        "dain": 92,
+        "ol": 84,
+        "chey": 82,
+        "dal": 78,
+        "shor": 68,
+        "shy": 66,
+        "chedy": 62,
+        "okaiin": 56
+      }
+    },
+    "zodiac": {
+      "total_tokens": 870,
+      "unique_words": 398,
+      "top_20": {
+        "ar": 30,
+        "daiin": 20,
+        "al": 18,
+        "okeey": 17,
+        "dy": 17,
+        "dal": 16,
+        "dar": 15,
+        "dair": 12,
+        "shey": 11,
+        "aiin": 11,
+        "air": 9,
+        "okal": 9,
+        "oteey": 8,
+        "okeody": 7,
+        "sar": 7,
+        "otar": 7,
+        "ary": 7,
+        "chol": 7,
+        "qokal": 7,
+        "dam": 6
+      }
+    },
+    "bio": {
+      "total_tokens": 5663,
+      "unique_words": 848,
+      "top_20": {
+        "shedy": 247,
+        "ol": 230,
+        "chedy": 207,
+        "qokedy": 166,
+        "qokain": 163,
+        "qokeedy": 154,
+        "qokal": 108,
+        "qol": 108,
+        "shey": 96,
+        "chey": 88,
+        "qokeey": 87,
+        "qokaiin": 87,
+        "daiin": 82,
+        "or": 72,
+        "dar": 65,
+        "dal": 65,
+        "qoky": 62,
+        "lchedy": 59,
+        "dy": 53,
+        "otedy": 51
+      }
+    },
+    "cosmo": {
+      "total_tokens": 2744,
+      "unique_words": 494,
+      "top_20": {
+        "aiin": 100,
+        "or": 94,
+        "ol": 72,
+        "ar": 68,
+        "dar": 48,
+        "daiin": 46,
+        "qokar": 42,
+        "chedy": 36,
+        "qokaiin": 34,
+        "ykaiin": 32,
+        "shedy": 30,
+        "otar": 30,
+        "ytaiin": 30,
+        "am": 26,
+        "chey": 26,
+        "otal": 26,
+        "dal": 24,
+        "otaiin": 24,
+        "chol": 24,
+        "chdy": 24
+      }
+    },
+    "herbal-B": {
+      "total_tokens": 1055,
+      "unique_words": 448,
+      "top_20": {
+        "daiin": 28,
+        "ol": 25,
+        "or": 20,
+        "chdy": 19,
+        "dar": 15,
+        "chol": 13,
+        "shody": 11,
+        "chody": 11,
+        "aiin": 11,
+        "saiin": 10,
+        "shol": 10,
+        "sheol": 10,
+        "okar": 10,
+        "otain": 10,
+        "cthey": 9,
+        "cheol": 9,
+        "dain": 9,
+        "oty": 9,
+        "chedy": 9,
+        "qoky": 8
+      }
+    }
+  },
+  "bridge_words": [
+    {
+      "word": "chol",
+      "ring_freq": 5,
+      "herbA_freq": 230,
+      "score": 0.011920653185768662
+    },
+    {
+      "word": "shol",
+      "ring_freq": 5,
+      "herbA_freq": 116,
+      "score": 0.008465743963184212
+    },
+    {
+      "word": "otaiin",
+      "ring_freq": 11,
+      "herbA_freq": 34,
+      "score": 0.006798090375621853
+    },
+    {
+      "word": "okaiin",
+      "ring_freq": 5,
+      "herbA_freq": 56,
+      "score": 0.0058820694572651626
+    },
+    {
+      "word": "shedy",
+      "ring_freq": 6,
+      "herbA_freq": 42,
+      "score": 0.00558022105208051
+    },
+    {
+      "word": "chedy",
+      "ring_freq": 4,
+      "herbA_freq": 62,
+      "score": 0.005535756430704046
+    },
+    {
+      "word": "oty",
+      "ring_freq": 5,
+      "herbA_freq": 46,
+      "score": 0.005331078171915631
+    },
+    {
+      "word": "otar",
+      "ring_freq": 9,
+      "herbA_freq": 25,
+      "score": 0.005272813273061514
+    },
+    {
+      "word": "cheor",
+      "ring_freq": 6,
+      "herbA_freq": 33,
+      "score": 0.004946337294914777
+    },
+    {
+      "word": "sho",
+      "ring_freq": 2,
+      "herbA_freq": 95,
+      "score": 0.0048453810144365545
+    },
+    {
+      "word": "otol",
+      "ring_freq": 5,
+      "herbA_freq": 30,
+      "score": 0.004305234009325058
+    },
+    {
+      "word": "okal",
+      "ring_freq": 3,
+      "herbA_freq": 49,
+      "score": 0.004261964227624176
+    },
+    {
+      "word": "oteey",
+      "ring_freq": 19,
+      "herbA_freq": 7,
+      "score": 0.004053936608106194
+    },
+    {
+      "word": "cheey",
+      "ring_freq": 6,
+      "herbA_freq": 21,
+      "score": 0.003945812146446059
+    },
+    {
+      "word": "otey",
+      "ring_freq": 11,
+      "herbA_freq": 11,
+      "score": 0.0038667297335784434
+    },
+    {
+      "word": "cheol",
+      "ring_freq": 4,
+      "herbA_freq": 30,
+      "score": 0.0038507183615579177
+    },
+    {
+      "word": "okeey",
+      "ring_freq": 7,
+      "herbA_freq": 17,
+      "score": 0.0038346401353372087
+    },
+    {
+      "word": "cho",
+      "ring_freq": 2,
+      "herbA_freq": 55,
+      "score": 0.0036867821436906223
+    },
+    {
+      "word": "chdy",
+      "ring_freq": 2,
+      "herbA_freq": 47,
+      "score": 0.003408121426098369
+    },
+    {
+      "word": "otal",
+      "ring_freq": 3,
+      "herbA_freq": 30,
+      "score": 0.0033348199239283476
+    },
+    {
+      "word": "saiin",
+      "ring_freq": 3,
+      "herbA_freq": 29,
+      "score": 0.0032787685382668426
+    },
+    {
+      "word": "char",
+      "ring_freq": 2,
+      "herbA_freq": 38,
+      "score": 0.0030644880273913433
+    },
+    {
+      "word": "shy",
+      "ring_freq": 1,
+      "herbA_freq": 66,
+      "score": 0.002855769168721732
+    },
+    {
+      "word": "cheody",
+      "ring_freq": 3,
+      "herbA_freq": 21,
+      "score": 0.002790110526040255
+    },
+    {
+      "word": "okedy",
+      "ring_freq": 2,
+      "herbA_freq": 27,
+      "score": 0.0025831404055950353
+    },
+    {
+      "word": "oteody",
+      "ring_freq": 13,
+      "herbA_freq": 4,
+      "score": 0.0025348531495960527
+    },
+    {
+      "word": "oky",
+      "ring_freq": 1,
+      "herbA_freq": 51,
+      "score": 0.002510361240442638
+    },
+    {
+      "word": "cthey",
+      "ring_freq": 2,
+      "herbA_freq": 23,
+      "score": 0.0023841306371537325
+    },
+    {
+      "word": "sheo",
+      "ring_freq": 3,
+      "herbA_freq": 15,
+      "score": 0.002358073782245741
+    },
+    {
+      "word": "daly",
+      "ring_freq": 3,
+      "herbA_freq": 15,
+      "score": 0.002358073782245741
+    },
+    {
+      "word": "okeedy",
+      "ring_freq": 3,
+      "herbA_freq": 14,
+      "score": 0.0022781157049223274
+    },
+    {
+      "word": "otedy",
+      "ring_freq": 2,
+      "herbA_freq": 21,
+      "score": 0.0022781157049223274
+    },
+    {
+      "word": "okey",
+      "ring_freq": 3,
+      "herbA_freq": 13,
+      "score": 0.0021952472224131773
+    },
+    {
+      "word": "okar",
+      "ring_freq": 1,
+      "herbA_freq": 36,
+      "score": 0.0021091253092246054
+    },
+    {
+      "word": "chees",
+      "ring_freq": 3,
+      "herbA_freq": 12,
+      "score": 0.0021091253092246054
+    },
+    {
+      "word": "olaiin",
+      "ring_freq": 5,
+      "herbA_freq": 7,
+      "score": 0.0020796256003212357
+    },
+    {
+      "word": "sheol",
+      "ring_freq": 2,
+      "herbA_freq": 17,
+      "score": 0.002049701369714899
+    },
+    {
+      "word": "qokar",
+      "ring_freq": 1,
+      "herbA_freq": 33,
+      "score": 0.002019333744706606
+    },
+    {
+      "word": "ykeey",
+      "ring_freq": 2,
+      "herbA_freq": 16,
+      "score": 0.0019885024113665234
+    },
+    {
+      "word": "keey",
+      "ring_freq": 2,
+      "herbA_freq": 16,
+      "score": 0.0019885024113665234
+    },
+    {
+      "word": "qoty",
+      "ring_freq": 1,
+      "herbA_freq": 31,
+      "score": 0.0019571854555739347
+    },
+    {
+      "word": "otam",
+      "ring_freq": 2,
+      "herbA_freq": 15,
+      "score": 0.0019253591807789588
+    },
+    {
+      "word": "otchy",
+      "ring_freq": 1,
+      "herbA_freq": 29,
+      "score": 0.0018929978981788375
+    },
+    {
+      "word": "kol",
+      "ring_freq": 1,
+      "herbA_freq": 28,
+      "score": 0.0018600736840268368
+    },
+    {
+      "word": "otor",
+      "ring_freq": 2,
+      "herbA_freq": 14,
+      "score": 0.0018600736840268368
+    },
+    {
+      "word": "sheey",
+      "ring_freq": 1,
+      "herbA_freq": 28,
+      "score": 0.0018600736840268368
+    },
+    {
+      "word": "tchol",
+      "ring_freq": 2,
+      "herbA_freq": 14,
+      "score": 0.0018600736840268368
+    },
+    {
+      "word": "chal",
+      "ring_freq": 2,
+      "herbA_freq": 13,
+      "score": 0.0017924118513914468
+    },
+    {
+      "word": "tchy",
+      "ring_freq": 1,
+      "herbA_freq": 25,
+      "score": 0.0017576044243538382
+    },
+    {
+      "word": "oteedy",
+      "ring_freq": 5,
+      "herbA_freq": 5,
+      "score": 0.0017576044243538382
+    }
+  ]
+}

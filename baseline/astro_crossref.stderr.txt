@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "C:\projects\voynich_slop\scripts\astro_crossref.py", line 27, in <module>
+    with open(RESULTS_PATH, "r", encoding="utf-8") as f:
+         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'astro_label_results.json'

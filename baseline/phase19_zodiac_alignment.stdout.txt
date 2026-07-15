@@ -1,0 +1,507 @@
+============================================================================
+PHASE 19: CROSS-ZODIAC ALIGNMENT, VOWEL RECOVERY, GRAMMAR
+============================================================================
+
+Loading zodiac data...
+  Found 12 zodiac signs
+
+Loading full corpus...
+  39564 tokens from 200 folios
+
+============================================================================
+PHASE 19a: CROSS-ZODIAC COMPARATIVE RING TEXT ALIGNMENT
+============================================================================
+
+  RATIONALE: Medieval astrological manuals describe each zodiac sign using a
+  formulaic template ("X is the house of Y, of the Z triplicity...").  If the
+  ring text follows such a template, the SAME function words and grammar
+  markers should recur at similar positions across all 12 signs, while
+  DIFFERENT content words (planet names, element names, body parts) should
+  fill the same structural slots. By overlaying all 12 ring texts we can
+  separate template vocabulary from sign-specific vocabulary.
+    
+  --- Ring text inventory ---
+    Aries-dark          2 ring(s)  58 words
+    Aries-light         3 ring(s)  69 words
+    Cancer              4 ring(s)  116 words
+    Gemini              3 ring(s)  74 words
+    Leo                 3 ring(s)  79 words
+    Libra               3 ring(s)  68 words
+    Pisces              3 ring(s)  93 words
+    Sagittarius         3 ring(s)  65 words
+    Scorpio             3 ring(s)  63 words
+    Taurus-dark         3 ring(s)  79 words
+    Taurus-light        3 ring(s)  77 words
+    Virgo               3 ring(s)  72 words
+
+  --- Roots shared across multiple signs (of 12 total) ---
+
+    Present in ≥12/12 signs (5 roots):
+      e               x 133  (12 signs)
+      al              x  74  (12 signs)
+      a               x  59  (12 signs)
+      ch              x  55  (12 signs)
+      ar              x  53  (12 signs)
+
+    Present in ≥11/12 signs (7 roots):
+      e               x 133  (12 signs)
+      al              x  74  (12 signs)
+      a               x  59  (12 signs)
+      ch              x  55  (12 signs)
+      ar              x  53  (12 signs)
+      h               x  28  (11 signs)
+      eos             x  24  (11 signs)
+
+    Present in ≥10/12 signs (10 roots):
+      e               x 133  (12 signs)
+      al              x  74  (12 signs)
+      a               x  59  (12 signs)
+      ch              x  55  (12 signs)
+      ar              x  53  (12 signs)
+      h               x  28  (11 signs)
+      eos             x  24  (11 signs)
+      cho             x  23  (10 signs)
+      eod             x  19  (10 signs)
+      es              x  16  (10 signs)
+
+    Present in ≥9/12 signs (15 roots):
+      e               x 133  (12 signs)
+      al              x  74  (12 signs)
+      a               x  59  (12 signs)
+      ch              x  55  (12 signs)
+      ar              x  53  (12 signs)
+      eo              x  30  ( 9 signs)
+      h               x  28  (11 signs)
+      che             x  26  ( 9 signs)
+      eos             x  24  (11 signs)
+      cho             x  23  (10 signs)
+      eod             x  19  (10 signs)
+      o               x  18  ( 9 signs)
+      l               x  16  ( 9 signs)
+      es              x  16  (10 signs)
+      ol              x  16  ( 9 signs)
+
+    Present in ≥6/12 signs (22 roots):
+      e               x 133  (12 signs)
+      al              x  74  (12 signs)
+      a               x  59  (12 signs)
+      ch              x  55  (12 signs)
+      ar              x  53  (12 signs)
+      eo              x  30  ( 9 signs)
+      h               x  28  (11 signs)
+      che             x  26  ( 9 signs)
+      eos             x  24  (11 signs)
+      cho             x  23  (10 signs)
+      eod             x  19  (10 signs)
+      o               x  18  ( 9 signs)
+      l               x  16  ( 9 signs)
+      es              x  16  (10 signs)
+      ol              x  16  ( 9 signs)
+      he              x  12  ( 6 signs)
+      eol             x  12  ( 6 signs)
+      air             x  11  ( 8 signs)
+      d               x  10  ( 6 signs)
+      ho              x   9  ( 7 signs)
+      or              x   9  ( 6 signs)
+      am              x   9  ( 7 signs)
+
+  --- Sign-EXCLUSIVE roots (1 sign only, freq ≥ 2): 1 ---
+      i               x   2  ONLY in Cancer
+
+  --- Positional alignment of OUTER ring texts ---
+
+    Positions 0-9 of each outer ring line:
+    Sign                       P0         P1         P2         P3         P4         P5         P6         P7         P8         P9
+    ----------------------------------------------------------------------------------------------------------------------
+    Aries-dark               alal      teosh       koeo        kho          r        tor         ch        air        che         ch
+    Aries-light               kle         ko         ke         ko         ch       keod        keo         te        too        tol
+    Cancer                     ke      kcheo        teo         ke       ched         ke        che       tcho         ar         te
+    Gemini                   teos          a        keo          a         ke       cheo       keod         ch         ke        klh
+    Leo                        es        tos        ted         te       teod       teos         te       kheo         he     khedye
+    Libra                    teos         al        tar        air      pchal         te        kes         te       alsh       leal
+    Pisces                    keo         ar         te         ke         ty        teo        teo          h        the   peoldair
+    Sagittarius                to         ke        kod         pe         pa         te         pd         te          h         ke
+    Scorpio                 polch     alched        pch       aral       teos        air         ar      teosd      tchoo        tes
+    Taurus-dark               teo         te        chl        che       lche         al         te       ched         te     keodal
+    Taurus-light             sheo        par       teod         he         ta          a        teo         al         al         te
+    Virgo                     tos        chs         to       teos         to       tcho         ch       pcho       tych        teo
+
+  --- Opening word pattern per ring ---
+    Sign               Ring 1 opener             Ring 2 opener             Ring 3 opener            
+    Aries-dark         dalalody (d--alal-ody)    daiin (d--a-iin)          —                        
+    Aries-light        olkeeody (o-k-le-ody)     oteody (o-t-e-ody)        oteeol (o-t-e-ol)        
+    Cancer             okeey (o-k-e-y)           otochedy (o-t-och-edy)    oteey (o-t-e-y)          
+    Gemini             oteos (o-t-eos-)          oteey (o-t-e-y)           otoar (o-t-o-ar)         
+    Leo                soees (so--es-)           ototeey (o-t-o-ey)        okesees (o-k-eses-)      
+    Libra              oteos (o-t-eos-)          otar (o-t-ar-)            otalal (o-t-al-al)       
+    Pisces             okcheo (o-k-eo-)          daiiamdy (d--aiiam-dy)    otal (o-t-al-)           
+    Sagittarius        otoar (o-t-o-ar)          oteotos (o-t-eoos-)       otedchor (o-t-edch-or)   
+    Scorpio            ypolcheey (y-p-olch-ey)   oteey (o-t-e-y)           osaiin (o--s-aiin)       
+    Taurus-dark        oteeo (o-t-eo-)           oteodar (o-t-eod-ar)      okeeols (o-k-eols-)      
+    Taurus-light       osheo (o--sheo-)          chal (--ch-al)            okeey (o-k-e-y)          
+    Virgo              otos (o-t-os-)            oteesody (o-t-es-ody)     otaiin (o-t-a-iin)       
+
+  --- Cross-sign shared bigrams (ring text) ---
+    Bigrams in ≥4 signs: 31
+      e          → e           (10 signs)
+      ar         → al          (7 signs)
+      al         → al          (6 signs)
+      a          → e           (6 signs)
+      eos        → al          (6 signs)
+      e          → al          (6 signs)
+      al         → e           (6 signs)
+      al         → ar          (6 signs)
+      ch         → e           (6 signs)
+      ar         → e           (5 signs)
+      e          → eos         (5 signs)
+      e          → h           (5 signs)
+      e          → ch          (5 signs)
+      eos        → a           (5 signs)
+      h          → e           (5 signs)
+      o          → e           (5 signs)
+      cho        → e           (5 signs)
+      ch         → a           (5 signs)
+      e          → a           (5 signs)
+      al         → che         (4 signs)
+
+  --- Suffix distribution per sign (ring text) ---
+    Sign                   n     -y    -dy    -al    -ol    -ar    -or  -aiin   -edy (none)
+    Aries-dark            58  10.3%   1.7%   8.6%   5.2%   1.7%   0.0%   6.9%   0.0%  36.2%
+    Aries-light           69  20.3%   5.8%   1.4%   5.8%  10.1%   0.0%   0.0%   0.0%  33.3%
+    Cancer               116  19.0%   4.3%   1.7%   9.5%   6.0%   4.3%   6.0%   3.4%  27.6%
+    Gemini                74  23.0%   1.4%   9.5%   4.1%   1.4%   0.0%   6.8%   0.0%  32.4%
+    Leo                   79  19.0%   6.3%   3.8%   7.6%   6.3%   5.1%   2.5%   7.6%  19.0%
+    Libra                 68  16.2%   7.4%   7.4%   1.5%  11.8%   0.0%   7.4%   2.9%  29.4%
+    Pisces                93  14.0%   3.2%   8.6%   2.2%   4.3%   1.1%   5.4%   2.2%  37.6%
+    Sagittarius           65  38.5%  10.8%   1.5%   0.0%   6.2%   3.1%   3.1%   4.6%  18.5%
+    Scorpio               63  11.1%   0.0%   4.8%   0.0%   4.8%   3.2%   3.2%   1.6%  39.7%
+    Taurus-dark           79  10.1%   2.5%   7.6%   8.9%   2.5%   7.6%   5.1%   1.3%  34.2%
+    Taurus-light          77  20.8%   1.3%   3.9%   3.9%   7.8%   3.9%   2.6%   0.0%  40.3%
+    Virgo                 72  20.8%   6.9%   5.6%   5.6%   2.8%   1.4%   4.2%   2.8%  30.6%
+
+  --- Determinative distribution per sign (ring text) ---
+    Sign                   n      t      k      f      p   none
+    Aries-dark            58  29.3%  22.4%   0.0%   0.0%  48.3%
+    Aries-light           69  31.9%  39.1%   0.0%   0.0%  29.0%
+    Cancer               116  25.9%  25.0%   0.0%   1.7%  47.4%
+    Gemini                74  33.8%  23.0%   0.0%   0.0%  43.2%
+    Leo                   79  30.4%  30.4%   0.0%   1.3%  38.0%
+    Libra                 68  42.6%  10.3%   2.9%  10.3%  33.8%
+    Pisces                93  45.2%   8.6%   0.0%   1.1%  45.2%
+    Sagittarius           65  33.8%  24.6%   0.0%   6.2%  35.4%
+    Scorpio               63  31.7%   6.3%   0.0%   9.5%  52.4%
+    Taurus-dark           79  31.6%  27.8%   0.0%   0.0%  40.5%
+    Taurus-light          77  31.2%  24.7%   0.0%   6.5%  37.7%
+    Virgo                 72  36.1%  27.8%   0.0%   1.4%  34.7%
+
+============================================================================
+PHASE 19b: E-CHAIN VOWEL RECOVERY
+============================================================================
+
+  Phase 18 proved root='e' is a parsing artifact from collapse_echains().
+  Here we UNDO the collapse: treat e, ee, eee as distinct phonemes.
+  This should expand the effective vocabulary and reveal patterns
+  hidden by the collapse.
+    
+  Unique roots WITH collapse:    1716
+  Unique roots WITHOUT collapse:  1931
+  Vocabulary expansion:           215 new roots (+12.5%)
+
+  --- What root='e' becomes after recovery ---
+  root='e' splits into 4 distinct roots:
+    e                    x 4893
+    ee                   x  525
+    eee                  x   31
+    eeee                 x    2
+
+  --- Do split e-roots distribute differently? ---
+    Testing top split roots: ee, eee, eeee
+
+    Root                   bio      cosmo   herbal-A   herbal-B     pharma       text     zodiac
+    ee                    6.1%       8.3%      13.6%       5.5%      16.3%      36.0%      14.2%
+    eee                   3.0%      12.1%       9.1%       9.1%      15.2%      24.2%      27.3%
+    eeee                  0.0%       0.0%      50.0%       0.0%       0.0%       0.0%      50.0%
+
+  --- Jensen-Shannon divergence between top split e-roots ---
+    JSD(ee        , eee       ) = 0.0364  similar
+    JSD(ee        , eeee      ) = 0.5167  DIFFERENT
+    JSD(eee       , eeee      ) = 0.4551  DIFFERENT
+
+  --- E-chain length frequency by section ---
+    Section           e×1      e×2      e×3     e×4+  ratio 2:1
+    bio              2340      910       38        2      0.389
+    cosmo             822      338       52        6      0.411
+    herbal-A         1945      635       90        5      0.326
+    herbal-B          373      134       19        1      0.359
+    pharma            898      368       44        0      0.410
+    text             3074     1843      188        7      0.600
+    zodiac            862      465       79        9      0.539
+
+  --- Top 20 preserved roots that were HIDDEN by collapse ---
+    ee                   x  528  (invisible under collapse)
+    chee                 x  119  (invisible under collapse)
+    eed                  x  116  (invisible under collapse)
+    eeo                  x  115  (invisible under collapse)
+    ees                  x   89  (invisible under collapse)
+    hee                  x   83  (invisible under collapse)
+    lee                  x   66  (invisible under collapse)
+    eeod                 x   46  (invisible under collapse)
+    chees                x   44  (invisible under collapse)
+    eeos                 x   41  (invisible under collapse)
+    eees                 x   40  (invisible under collapse)
+    cheeo                x   36  (invisible under collapse)
+    eee                  x   33  (invisible under collapse)
+    cheed                x   23  (invisible under collapse)
+    eech                 x   21  (invisible under collapse)
+    heeo                 x   13  (invisible under collapse)
+    cheee                x   13  (invisible under collapse)
+    leed                 x   13  (invisible under collapse)
+    eeed                 x   12  (invisible under collapse)
+    cheeos               x   11  (invisible under collapse)
+
+============================================================================
+PHASE 19c: COLLOCATIONAL GRAMMAR ANALYSIS
+============================================================================
+
+  For each word with a confirmed translation, extract its immediate
+  bigram/trigram neighborhood.  If grammar is consistent, the same
+  frames should recur.  E.g. if o-t-esed-y = "the celestial lion",
+  does o-t-X-y appear around other nouns?
+    
+  --- Bigram neighborhoods of confirmed words ---
+
+  ROOT: she        = tree/plant           (conf 1.00, 35 occurrences)
+    Morphological frames:
+      d--ROOT-ol                     x9
+      y--ROOT-or                     x4
+      d--ROOT-ody                    x3
+      y--ROOT-ody                    x3
+      d--ROOT-or                     x2
+    Left neighbors (top 5 roots): ch(4)  e(3)  am(3)  h(3)  al(3)
+    Right neighbors (top 5 roots): e(9)  ch(4)  a(3)  che(3)  ol(2)
+
+  ROOT: al         = stone                (conf 1.00, 1792 occurrences)
+    Morphological frames:
+      --ROOT-                        x271
+      d--ROOT-                       x260
+      qo-k-ROOT-                     x208
+      o-k-ROOT-                      x162
+      o-t-ROOT-                      x159
+    Left neighbors (top 5 roots): a(227)  e(218)  ch(182)  ar(149)  al(141)
+    Right neighbors (top 5 roots): ch(180)  a(165)  e(158)  ar(148)  al(141)
+    Recurring trigrams:
+      a | al=stone | a                                   x29
+      ch | al=stone | ch                                 x27
+      e | al=stone | ch                                  x23
+      e | al=stone | a                                   x22
+      a | al=stone | al=stone                            x22
+
+  ROOT: he         = fall/occur           (conf 1.00, 417 occurrences)
+    Morphological frames:
+      s--ROOT-ol                     x132
+      s--ROOT-ody                    x61
+      s--ROOT-or                     x55
+      s--ROOT-                       x40
+      s--ROOT-ar                     x28
+    Left neighbors (top 5 roots): a(73)  e(43)  ol(26)  or(23)  h(22)
+    Right neighbors (top 5 roots): e(76)  a(44)  h(31)  ol(26)  ch(24)
+    Recurring trigrams:
+      a | he=fall/occur | e                              x23
+      a | he=fall/occur | a                              x11
+      e | he=fall/occur | e                              x10
+      e | he=fall/occur | ol=carry/lift                  x5
+      a | he=fall/occur | ch                             x5
+
+  ROOT: ro         = mouth                (conf 1.00, 30 occurrences)
+    Morphological frames:
+      --ROOT-                        x10
+      o--ROOT-                       x6
+      --ROOT-iin                     x4
+      do--ROOT-iin                   x2
+      o-p-ROOT-                      x1
+    Left neighbors (top 5 roots): e(6)  ch(4)  or(3)  cho(3)  l(2)
+    Right neighbors (top 5 roots): e(5)  l(3)  h(3)  ol(3)  cheo(2)
+
+  ROOT: les        = tongue               (conf 0.95, 14 occurrences)
+    Morphological frames:
+      -k-ROOT-                       x4
+      o-k-ROOT-                      x4
+      o--ROOT-                       x2
+      --ROOT-ain                     x1
+      o--ROOT-ey                     x1
+    Left neighbors (top 5 roots): e(3)  o(2)  l(2)  dair(1)  ch(1)
+    Right neighbors (top 5 roots): ol(2)  am(1)  d(1)  o(1)  or(1)
+
+  ROOT: cham       = hot/warm             (conf 0.90, 27 occurrences)
+    Morphological frames:
+      --ROOT-                        x17
+      -k-ROOT-                       x4
+      -t-ROOT-                       x3
+      -p-ROOT-                       x1
+      o--ROOT-                       x1
+    Left neighbors (top 5 roots): ar(4)  ch(4)  e(3)  al(3)  am(2)
+    Right neighbors (top 5 roots): ch(4)  ol(3)  ar(2)  rch(2)  l(2)
+
+  ROOT: eos        = star                 (conf 0.85, 131 occurrences)
+    Morphological frames:
+      o-t-ROOT-                      x42
+      o-k-ROOT-                      x20
+      qo-k-ROOT-                     x12
+      -t-ROOT-                       x11
+      -k-ROOT-                       x9
+    Left neighbors (top 5 roots): e(17)  ch(11)  a(10)  h(6)  al(6)
+    Right neighbors (top 5 roots): a(24)  al(13)  e(9)  ar(8)  h(6)
+    Recurring trigrams:
+      e | eos=star | a                                   x4
+      ch | eos=star | a                                  x4
+      a | eos=star | e                                   x3
+      a | eos=star | a                                   x3
+
+  ROOT: es         = star(short)          (conf 0.80, 171 occurrences)
+    Morphological frames:
+      o-t-ROOT-                      x28
+      o--ROOT-                       x25
+      o-k-ROOT-                      x25
+      --ROOT-                        x16
+      qo-k-ROOT-                     x13
+    Left neighbors (top 5 roots): a(18)  e(17)  d(13)  h(10)  ol(9)
+    Right neighbors (top 5 roots): a(28)  e(14)  ar(13)  ch(13)  al(10)
+    Recurring trigrams:
+      e | es=star(short) | a                             x8
+      a | es=star(short) | a                             x5
+      h | es=star(short) | al=stone                      x3
+      a | es=star(short) | e                             x3
+      or=king/great(var) | es=star(short) | a            x3
+
+  ROOT: ar         = king/great           (conf 0.75, 2103 occurrences)
+    Morphological frames:
+      --ROOT-                        x436
+      d--ROOT-                       x362
+      qo-k-ROOT-                     x186
+      o-t-ROOT-                      x180
+      o-k-ROOT-                      x157
+    Left neighbors (top 5 roots): a(231)  e(230)  ch(207)  ar(197)  al(148)
+    Right neighbors (top 5 roots): a(218)  ch(198)  ar(197)  e(172)  al(149)
+    Recurring trigrams:
+      a | ar=king/great | a                              x38
+      ch | ar=king/great | ch                            x26
+      a | ar=king/great | ar=king/great                  x24
+      ch | ar=king/great | e                             x24
+      ar=king/great | ar=king/great | ar=king/great      x24
+
+  ROOT: or         = king/great(var)      (conf 0.70, 1108 occurrences)
+    Morphological frames:
+      --ROOT-                        x440
+      -t-ROOT-                       x97
+      d--ROOT-                       x68
+      o-t-ROOT-                      x65
+      -k-ROOT-                       x60
+    Left neighbors (top 5 roots): a(127)  e(125)  ch(99)  ar(63)  ol(54)
+    Right neighbors (top 5 roots): a(182)  ch(159)  h(85)  e(55)  ar(52)
+    Recurring trigrams:
+      e | or=king/great(var) | a                         x21
+      a | or=king/great(var) | a                         x21
+      e | or=king/great(var) | ch                        x18
+      ar=king/great | or=king/great(var) | a             x18
+      ch | or=king/great(var) | a                        x16
+
+  ROOT: ol         = carry/lift           (conf 0.70, 1849 occurrences)
+    Morphological frames:
+      --ROOT-                        x597
+      q--ROOT-                       x145
+      -t-ROOT-                       x134
+      qo-k-ROOT-                     x132
+      o-t-ROOT-                      x125
+    Left neighbors (top 5 roots): a(206)  e(203)  ch(180)  h(125)  ol(115)
+    Right neighbors (top 5 roots): ch(265)  a(204)  h(180)  e(162)  ol(115)
+    Recurring trigrams:
+      e | ol=carry/lift | ch                             x38
+      ch | ol=carry/lift | ch                            x34
+      ch | ol=carry/lift | a                             x26
+      ol=carry/lift | ol=carry/lift | ch                 x26
+      h | ol=carry/lift | ch                             x24
+
+  ROOT: am         = water/lion           (conf 0.70, 413 occurrences)
+    Morphological frames:
+      --ROOT-                        x102
+      d--ROOT-                       x97
+      o-t-ROOT-                      x61
+      o-k-ROOT-                      x37
+      qo-k-ROOT-                     x26
+    Left neighbors (top 5 roots): a(54)  e(48)  ch(43)  ar(40)  al(19)
+    Right neighbors (top 5 roots): a(51)  e(45)  ch(36)  ar(29)  or(21)
+    Recurring trigrams:
+      e | am=water/lion | a                              x9
+      a | am=water/lion | a                              x8
+      e | am=water/lion | e                              x7
+      ch | am=water/lion | e                             x7
+      a | am=water/lion | ar=king/great                  x6
+
+  ROOT: chol       = celestial body       (conf 0.70, 96 occurrences)
+    Morphological frames:
+      --ROOT-y                       x19
+      --ROOT-dy                      x13
+      -k-ROOT-aiin                   x6
+      --ROOT-aiin                    x5
+      -k-ROOT-y                      x5
+    Left neighbors (top 5 roots): a(17)  ch(14)  e(13)  l(5)  o(4)
+    Right neighbors (top 5 roots): ar(9)  ch(9)  al(7)  a(7)  e(5)
+    Recurring trigrams:
+      ch | chol=celestial body | e                       x3
+      a | chol=celestial body | l                        x3
+
+  ROOT: cho        = substance(herbal)    (conf 0.70, 600 occurrences)
+    Morphological frames:
+      --ROOT-                        x85
+      -k-ROOT-y                      x85
+      -t-ROOT-y                      x78
+      -k-ROOT-ey                     x37
+      -t-ROOT-ey                     x33
+    Left neighbors (top 5 roots): e(68)  a(66)  ch(63)  cho(33)  ol(30)
+    Right neighbors (top 5 roots): ch(93)  e(62)  a(47)  o(36)  cho(33)
+    Recurring trigrams:
+      e | cho=substance(herbal) | e                      x13
+      ch | cho=substance(herbal) | ch                    x12
+      e | cho=substance(herbal) | ch                     x10
+      a | cho=substance(herbal) | ch                     x10
+      cho=substance(herbal) | cho=substance(herbal) | ch x10
+
+
+  --- Grammatical frame extraction ---
+  Looking for recurring PREFIX-DET-*-SUFFIX frames:
+
+  Frame                                Tokens  Unique  Top fillers
+  ----------------------------------------------------------------------------------------------------
+  o-t-*-                                  928     144  ar(180), al(159), ol(125), or(65), am(61), eos(42), eo(30), air(29)
+  -k-*-y                                  868      87  o(172), e(171), ch(166), cho(85), y(41), d(36), cheo(24), l(22)
+  -t-*-                                   867     123  y(163), ol(134), or(97), ar(72), o(56), al(40), oo(21), eo(18)
+  o-k-*-                                  862     134  al(162), ar(157), ol(105), or(56), eo(43), am(37), es(25), eos(20)
+  -k-*-                                   833     176  y(123), ol(90), ar(69), or(60), eo(34), al(34), o(32), oo(21)
+  qo-k-*-                                 796      58  al(208), ar(186), ol(132), or(44), eo(32), ed(28), am(26), air(21)
+  -t-*-y                                  758      64  o(204), e(169), ch(107), cho(78), y(50), d(33), cheo(12), aih(7)
+  qo-k-*-dy                               709      21  e(662), o(11), al(10), ech(3), ol(3), a(3), alch(2), y(2)
+  qo-k-*-y                                683      25  e(535), d(69), ech(23), al(17), eo(5), l(4), esh(3), c(3)
+  o-k-*-y                                 603      73  e(356), d(46), l(35), al(24), ar(12), eol(8), ol(7), ech(7)
+  o-t-*-y                                 519      64  e(282), d(85), al(24), ol(10), o(10), l(9), ar(8), ech(6)
+  o-t-*-dy                                432      29  e(338), o(33), al(10), ol(9), ech(6), l(6), y(4), ly(2)
+  -k-*-ey                                 415      43  ch(235), l(68), cho(37), cheo(16), ech(4), lch(4), rch(3), al(3)
+  o-k-*-dy                                372      26  e(278), o(24), l(20), al(12), ol(8), ech(4), y(4), eol(2)
+  qo-t-*-                                 347      43  ar(76), al(64), ol(63), or(41), eo(15), am(14), ed(13), es(11)
+  o-k-*-iin                               251       7  a(229), o(11), ai(7), l(1), oi(1), lo(1), ro(1)
+  qo-t-*-dy                               230       9  e(208), o(15), a(1), ed(1), or(1), ol(1), y(1), al(1)
+  -p-*-                                   213      59  ol(44), or(26), y(19), ar(18), eo(10), o(10), al(7), che(5)
+  -k-*-dy                                 204      22  e(153), ch(15), l(5), ech(4), al(4), edy(2), lesh(2), chol(2)
+  y-k-*-                                  186      55  ar(43), ol(23), eo(13), or(12), al(11), air(8), es(8), eos(7)
+  o-t-*-iin                               182       6  a(177), qoai(1), o(1), ald(1), ai(1), ar(1)
+  -k-*-edy                                177      34  l(89), ch(31), cho(10), chol(5), lo(3), lech(3), ech(3), al(3)
+  s-k-*-ey                                176      12  h(137), ho(16), heo(13), sh(2), hec(1), hosh(1), cho(1), hc(1)
+  y-t-*-                                  173      39  ar(31), or(27), ol(24), al(18), am(15), air(6), eo(5), eos(5)
+  qo-t-*-y                                168      23  e(104), d(33), al(5), ech(2), o(2), ol(2), dc(2), esh(2)
+
+  --- Word position vs determinative (sentence-initial, medial, final) ---
+    Position         t%       k%       f%       p%
+    initial       38.7%    42.2%     1.8%    17.3%
+    medial        34.1%    56.7%     2.2%     7.0%
+    final         39.6%    50.9%     2.8%     6.7%
+
+  Results saved to results/phase19_results.json

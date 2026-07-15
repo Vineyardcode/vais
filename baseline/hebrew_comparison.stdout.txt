@@ -1,0 +1,223 @@
+==========================================================================================
+VOYNICH ↔ HEBREW MORPHOLOGICAL COMPARISON
+==========================================================================================
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+TEST 1: PARADIGM GRID SHAPE — Voynich vs Hebrew vs Others
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  Metric                        VOYNICH    Hebrew (Semitic)    Arabic (Semitic)    Latin (fusional)   Turkish (agglut.)   Enochian (Kelley)
+  ────────────────────────── ──────────  ──────────────────  ──────────────────  ──────────────────  ──────────────────  ──────────────────
+  Avg # prefixes                  11.51                4.75                5.00                1.00                1.00                2.00
+  Avg # suffixes                   9.00               11.25               12.00               30.00               24.00                5.00
+  Prefix/Suffix ratio              1.28                0.42                0.42                0.03                0.04                0.40
+  Grid fill rate                   0.41                0.35                0.32                1.00                1.00                0.60
+  Prefix entropy (bits)            1.67                1.73                1.90                0.00                0.00                0.50
+  Suffix entropy (bits)            1.41                3.12                3.20                4.90                4.60                1.80
+  Entropy ratio (pfx/suf)          1.18                0.55                0.59                0.00                0.00                0.28
+
+  SHAPE DISTANCES from Voynich (lower = more similar):
+    Arabic (Semitic)       1.0483  ████████████████████
+    Hebrew (Semitic)       1.0652  █████████████████████
+    Enochian (Kelley)      1.2759  █████████████████████████
+    Turkish (agglut.)      1.8109  ████████████████████████████████████
+    Latin (fusional)       1.8166  ████████████████████████████████████
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+TEST 2: ARE VOYNICH PREFIXES PERSON MARKERS? (like Hebrew yi-/ti-/ʼe-/ni-)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  Roots analyzed (freq≥200): 37
+  Avg significant prefixes per root:    6.0
+  Median significant prefixes per root:  6
+  Avg prefix entropy:  1.67 bits
+  Avg suffix entropy:  1.41 bits
+
+  Hebrew prediction:  4-5 person prefixes, entropy ~1.5-2.0 bits
+  Latin prediction:   1 prefix (none), entropy ~0.0 bits
+  Turkish prediction: 1 prefix (none), entropy ~0.0 bits
+
+  Distribution of prefix count per root:
+     4 prefixes:   4 roots  ████
+     5 prefixes:   9 roots  █████████
+     6 prefixes:  12 roots  ████████████
+     7 prefixes:   9 roots  █████████
+     8 prefixes:   2 roots  ██
+    10 prefixes:   1 roots  █
+
+  ✓ MATCH: Voynich prefix count (6) is consistent with Hebrew-style person marking (4-6)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+TEST 3: DO ∅-PREFIX AND PREFIXED FORMS USE DIFFERENT SUFFIXES?
+        (Hebrew perfect vs imperfect use different suffix sets)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  Root               ∅-frac    JSD(∅ vs pfx)  Top5-overlap  ∅-suffixes          Prefixed-suffixes
+  ─────────────── ────────── ────────────── ──────────── ──────────────────── ────────────────────
+  ka                  10.2%        0.1692         80%    iin, r, in, l, ir    iin, in, r, l, m
+  da                  85.3%        0.1459         80%    iin, r, l, in, ir    iin, r, in, l, m
+  a                   74.8%        0.2210        100%    iin, r, l, in, m     iin, in, r, l, m
+  o                   69.2%        0.3241         80%    l, r, ly, dy, iin    l, r, ∅, iin, ly
+  ta                  12.3%        0.2265         80%    iin, r, l, ir, in    iin, r, l, in, m
+  cho                 84.9%        0.2233         80%    l, r, dy, ∅, ly      r, l, ∅, dy, d
+  ched                67.4%        0.0715         40%    y, ∅, l              y, ∅, r
+  kee                  7.9%        0.1197         60%    y, l, m              y, ∅, l, m, ly
+  keed                10.3%        0.0321         40%    y, ∅                 y, ∅
+  shed                77.2%        0.0382         40%    y, ∅                 y, ∅
+  cheo                80.7%        0.1889         80%    l, dy, r, ∅, m       l, ∅, r, dy, d
+  sho                 90.2%        0.2873         80%    l, ∅, r, dy, d       r, ∅, l, dy, iin
+  che                 69.5%        0.0893         20%    y, ∅, r, ry          y
+  ked                  9.0%        0.0323         40%    y, ∅                 y, ∅, l
+  ch                  74.8%        0.1072        100%    y, dy, l, ∅, r       y, dy, l, ∅, r
+  ko                  19.1%        0.1779        100%    l, r, dy, iin, ∅     l, r, dy, iin, ∅
+  sa                  91.7%        0.2777        100%    iin, r, in, l, ir    iin, in, r, l, ir
+  keo                 15.4%        0.2022         80%    dy, l, ∅, r, y       l, dy, r, ∅, d
+  d                   72.8%        0.3236         40%    y, l, dy, iiin, m    y, ∅, l, r
+  to                  23.0%        0.1350         80%    l, r, dy, y, ∅       l, r, dy, ∅, ly
+
+  Average JSD (∅ vs prefixed): 0.2052
+  Average top-5 suffix overlap: 60%
+
+  ✓ DIVERGENCE: ∅-prefix and prefixed rows use somewhat different suffixes
+    This is consistent with a Hebrew-like perfect/imperfect split
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+TEST 4: DO DIFFERENT PREFIXES SHARE THE SAME SUFFIX SET?
+        (Hebrew: yi-/ti-/ʼe-/ni- all use same suffixes ∅/i/u/na)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  Root               Top prefixes                    Avg suffix Jaccard
+  ─────────────── ──────────────────────────────── ────────────────────
+  ka               qo, o, ∅, y                         0.614
+  da               ∅, o, qo, y                         0.493
+  a                ∅, r, ol, or                        0.630
+  o                ∅, q, l, ol                         0.523
+  ta               o, qo, ∅, y                         0.554
+  cho              ∅, d, y, l                          0.651
+  ched             ∅, l, ol, d                         0.694
+  kee              qo, o, y, ∅                         0.369
+  keed             qo, o, ∅, ol                        0.750
+  shed             ∅, l, d, ol                         0.750
+  cheo             ∅, y, d, l                          0.778
+  sho              ∅, d, y, l                          0.455
+  che              ∅, l, ol, y                         0.625
+  ked              qo, o, ∅, l                         0.833
+  ch               ∅, d, l, ol                         0.419
+
+  Average suffix-set Jaccard across all roots: 0.596
+
+  ~ MODERATE OVERLAP: Prefixes share most suffixes (Jaccard=0.60)
+    Partially consistent with person markers, but some suffix differentiation
+
+  DETAIL for root 'ka':
+      qo ↔ o   : Jaccard=0.667  shared=[dy, iiin, iin, iir, il, im, in, ir]
+      qo ↔ ∅   : Jaccard=0.550  shared=[iiin, iin, iir, in, ir, l, ly, m]
+      qo ↔ y   : Jaccard=0.611  shared=[dy, iin, iir, il, in, ir, l, ly]
+       o ↔ ∅   : Jaccard=0.700  shared=[i, iiin, iin, iir, in, ir, iry, l]
+       o ↔ y   : Jaccard=0.600  shared=[dy, iin, iir, il, in, ir, l, ly]
+       ∅ ↔ y   : Jaccard=0.556  shared=[iin, iir, in, ir, l, ly, m, n]
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+TEST 5: BINYAN HYPOTHESIS — Does onset (ch/sh/k/t) act like Hebrew verb stems?
+        (Hebrew: same root in different binyanim → same prefix/suffix grid)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  Body pattern    Onsets (≈ binyanim)          Prefix J.  Suffix J.  Frequencies
+  ────────────── ──────────────────────────── ────────── ────────── ────────────
+  a               k, t, ch, p, sh                   0.605      0.867   [2575, 1370, 297, 122, 111]
+  o               ch, sh, k, t, kch, tch, cth       0.646      0.730   [1062, 571, 481, 427, 192, 192, 177]
+  ed              ch, sh, k, t, pch, tch, kch       0.617      0.713   [818, 613, 543, 349, 153, 130, 126]
+  eo              ch, k, sh, t                      0.563      0.833   [592, 436, 341, 224]
+  e               ch, sh, k, t, kch, tch            0.522      0.456   [544, 397, 232, 123, 106, 101]
+  ee              k, ch, t, sh                      0.619      0.381   [731, 271, 264, 218]
+  eed             k, t, sh                          0.448      0.778   [648, 251, 122]
+  ch              k, t, p                           0.778      0.867   [310, 266, 104]
+
+  Average prefix Jaccard across onset groups: 0.600
+  Average suffix Jaccard across onset groups: 0.703
+
+  ✓ STRONG PARALLEL: Roots with different onsets but same body share
+    the same prefix/suffix grid → onset acts like a Hebrew binyan marker!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+TEST 6: DETAILED PARADIGM COMPARISON — Top 6 Voynich roots
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  Hebrew Qal paradigm shape:
+    5 prefixes × 12 suffixes, 19 filled cells, fill rate=32%
+    Prefix entropy ≈ 1.8 bits, Suffix entropy ≈ 3.2 bits
+
+  ┌─ VOYNICH ROOT: 'ka'  (freq: 2575, 110 forms)
+  │ 17 prefixes × 23 suffixes, fill rate=28%
+  │ Prefix entropy: 2.25 bits  (Hebrew Qal: 1.8)  Δ=0.45
+  │ Suffix entropy: 2.63 bits  (Hebrew Qal: 3.2)  Δ=0.57
+  │ Prefixes: qo(1048)  o(785)  ∅(262)  y(158)  l(141)  ol(134)
+  │ Suffixes: iin(756)  in(571)  r(512)  l(419)  m(98)  ir(70)
+  │ Hebrew similarity score: 52% (pfx_entropy:75% suf_entropy:82% pfx_count:0%)
+  └────────────────────────────────────────────────────────────────────────────────
+
+  ┌─ VOYNICH ROOT: 'da'  (freq: 2483, 76 forms)
+  │ 14 prefixes × 22 suffixes, fill rate=25%
+  │ Prefix entropy: 0.94 bits  (Hebrew Qal: 1.8)  Δ=0.86
+  │ Suffix entropy: 2.62 bits  (Hebrew Qal: 3.2)  Δ=0.58
+  │ Prefixes: ∅(2117)  o(159)  qo(100)  y(39)  ol(28)  l(16)
+  │ Suffixes: iin(1063)  r(428)  l(291)  in(264)  ir(138)  m(119)
+  │ Hebrew similarity score: 45% (pfx_entropy:52% suf_entropy:82% pfx_count:0%)
+  └────────────────────────────────────────────────────────────────────────────────
+
+  ┌─ VOYNICH ROOT: 'a'  (freq: 2327, 113 forms)
+  │ 19 prefixes × 22 suffixes, fill rate=27%
+  │ Prefix entropy: 1.59 bits  (Hebrew Qal: 1.8)  Δ=0.21
+  │ Suffix entropy: 2.73 bits  (Hebrew Qal: 3.2)  Δ=0.47
+  │ Prefixes: ∅(1741)  r(150)  ol(107)  or(100)  o(63)  qo(50)
+  │ Suffixes: iin(829)  r(517)  l(327)  in(206)  m(133)  ir(106)
+  │ Hebrew similarity score: 58% (pfx_entropy:88% suf_entropy:85% pfx_count:0%)
+  └────────────────────────────────────────────────────────────────────────────────
+
+  ┌─ VOYNICH ROOT: 'o'  (freq: 1837, 88 forms)
+  │ 14 prefixes × 19 suffixes, fill rate=33%
+  │ Prefix entropy: 1.64 bits  (Hebrew Qal: 1.8)  Δ=0.16
+  │ Suffix entropy: 2.26 bits  (Hebrew Qal: 3.2)  Δ=0.94
+  │ Prefixes: ∅(1272)  q(239)  l(126)  ol(63)  r(58)  or(29)
+  │ Suffixes: l(839)  r(573)  ∅(94)  ly(76)  dy(65)  iin(58)
+  │ Hebrew similarity score: 54% (pfx_entropy:91% suf_entropy:71% pfx_count:0%)
+  └────────────────────────────────────────────────────────────────────────────────
+
+  ┌─ VOYNICH ROOT: 'ta'  (freq: 1370, 74 forms)
+  │ 10 prefixes × 21 suffixes, fill rate=35%
+  │ Prefix entropy: 1.85 bits  (Hebrew Qal: 1.8)  Δ=0.05
+  │ Suffix entropy: 2.69 bits  (Hebrew Qal: 3.2)  Δ=0.51
+  │ Prefixes: o(705)  qo(323)  ∅(168)  y(149)  ol(10)  l(9)
+  │ Suffixes: iin(368)  r(318)  l(268)  in(199)  m(93)  ir(51)
+  │ Hebrew similarity score: 61% (pfx_entropy:97% suf_entropy:84% pfx_count:0%)
+  └────────────────────────────────────────────────────────────────────────────────
+
+  ┌─ VOYNICH ROOT: 'cho'  (freq: 1062, 52 forms)
+  │ 13 prefixes × 11 suffixes, fill rate=36%
+  │ Prefix entropy: 1.00 bits  (Hebrew Qal: 1.8)  Δ=0.80
+  │ Suffix entropy: 2.25 bits  (Hebrew Qal: 3.2)  Δ=0.95
+  │ Prefixes: ∅(902)  d(63)  y(35)  l(19)  o(17)  s(9)
+  │ Suffixes: l(459)  r(284)  ∅(114)  dy(113)  ly(21)  d(17)
+  │ Hebrew similarity score: 42% (pfx_entropy:55% suf_entropy:70% pfx_count:0%)
+  └────────────────────────────────────────────────────────────────────────────────
+
+
+══════════════════════════════════════════════════════════════════════════════════════════
+SUMMARY: HEBREW MORPHOLOGICAL COMPARISON
+══════════════════════════════════════════════════════════════════════════════════════════
+
+  Feature                              Voynich        Hebrew         Match?
+  ──────────────────────────────────── ────────────── ────────────── ──────
+  Prefix-root-suffix structure          YES            YES           ✓
+  # distinct prefixes per root          6.0           4-5            ✓
+  Prefix entropy (bits)                 1.67          1.5-2.0         ✓
+  Suffix entropy (bits)                 1.41          3.0-3.5         ~
+  Prefix suffix-set overlap (Jaccard)   0.60           ~0.85           ✓
+  ∅-prefix vs prefixed suffix JSD       0.205          ~0.3            ✓
+  Onset-as-binyan suffix Jaccard        0.70           ~0.7            ✓
+
+  Saved to hebrew_comparison_results.json
+
+══════════════════════════════════════════════════════════════════════════════════════════
+HEBREW COMPARISON COMPLETE
+══════════════════════════════════════════════════════════════════════════════════════════

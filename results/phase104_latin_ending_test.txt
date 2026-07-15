@@ -223,7 +223,7 @@ TEST D — ENDING SEQUENCE GRAMMAR
     -hy→-od:    20  obs/exp=1.71×  pmi=+0.772
     -hy→-hy:   228  obs/exp=1.70×  pmi=+0.762
 
-  Top 10 VMS avoidances (lowest obs/exp, count≥20):
+  Top 10 VMS avoidances (lowest obs/exp, count≥10):
     -om→-dy:    10  obs/exp=0.38×  pmi=-1.395
     -os→-dy:    28  obs/exp=0.43×  pmi=-1.232
     -ry→-in:    17  obs/exp=0.44×  pmi=-1.189

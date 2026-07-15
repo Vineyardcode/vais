@@ -1,0 +1,1460 @@
+{
+  "total_labels": 402,
+  "unique_roots": 187,
+  "label_exclusive_roots": 92,
+  "overlap_ratio": 0.508,
+  "by_type": {
+    "f": 198,
+    "c": 33,
+    "x": 9,
+    "p": 5,
+    "0": 27,
+    "s": 61,
+    "a": 7,
+    "n": 30,
+    "t": 32
+  },
+  "by_section": {
+    "pharma": 231,
+    "text": 2,
+    "herbal-A": 23,
+    "zodiac": 84,
+    "bio": 62
+  },
+  "top_roots": [
+    [
+      "e",
+      20
+    ],
+    [
+      "ar",
+      20
+    ],
+    [
+      "ol",
+      20
+    ],
+    [
+      "o",
+      20
+    ],
+    [
+      "al",
+      18
+    ],
+    [
+      "l",
+      15
+    ],
+    [
+      "or",
+      13
+    ],
+    [
+      "d",
+      12
+    ],
+    [
+      "ch",
+      11
+    ],
+    [
+      "a",
+      11
+    ],
+    [
+      "r",
+      7
+    ],
+    [
+      "y",
+      7
+    ],
+    [
+      "am",
+      6
+    ],
+    [
+      "s",
+      5
+    ],
+    [
+      "os",
+      4
+    ],
+    [
+      "ed",
+      4
+    ],
+    [
+      "chor",
+      3
+    ],
+    [
+      "eos",
+      3
+    ],
+    [
+      "h",
+      3
+    ],
+    [
+      "air",
+      3
+    ],
+    [
+      "alam",
+      3
+    ],
+    [
+      "aram",
+      3
+    ],
+    [
+      "cho",
+      3
+    ],
+    [
+      "eod",
+      3
+    ],
+    [
+      "aro",
+      3
+    ],
+    [
+      "ols",
+      2
+    ],
+    [
+      "och",
+      2
+    ],
+    [
+      "ral",
+      2
+    ],
+    [
+      "che",
+      2
+    ],
+    [
+      "oro",
+      2
+    ],
+    [
+      "eor",
+      2
+    ],
+    [
+      "an",
+      2
+    ],
+    [
+      "eo",
+      2
+    ],
+    [
+      "arar",
+      2
+    ],
+    [
+      "ys",
+      2
+    ],
+    [
+      "yd",
+      2
+    ],
+    [
+      "alo",
+      2
+    ],
+    [
+      "ech",
+      2
+    ],
+    [
+      "aiino",
+      2
+    ],
+    [
+      "he",
+      2
+    ],
+    [
+      "sh",
+      2
+    ],
+    [
+      "cheo",
+      2
+    ],
+    [
+      "dor",
+      2
+    ],
+    [
+      "ldam",
+      2
+    ],
+    [
+      "eol",
+      2
+    ],
+    [
+      "chosarosh",
+      1
+    ],
+    [
+      "choar",
+      1
+    ],
+    [
+      "raro",
+      1
+    ],
+    [
+      "chals",
+      1
+    ],
+    [
+      "i",
+      1
+    ]
+  ],
+  "coptic_matches": [
+    {
+      "root": "al",
+      "freq": 18,
+      "score": 1.0,
+      "type": "EXACT",
+      "coptic": "al",
+      "meaning": "stone/rock",
+      "domain": "material"
+    },
+    {
+      "root": "he",
+      "freq": 2,
+      "score": 1.0,
+      "type": "EXACT",
+      "coptic": "he",
+      "meaning": "fall/occur",
+      "domain": "action"
+    },
+    {
+      "root": "ar",
+      "freq": 20,
+      "score": 0.9,
+      "type": "SKELETON-EXACT",
+      "coptic": "ro",
+      "meaning": "mouth",
+      "domain": "medical"
+    },
+    {
+      "root": "ol",
+      "freq": 20,
+      "score": 0.9,
+      "type": "SKELETON-EXACT",
+      "coptic": "al",
+      "meaning": "stone/rock",
+      "domain": "material"
+    },
+    {
+      "root": "l",
+      "freq": 15,
+      "score": 0.9,
+      "type": "SKELETON-EXACT",
+      "coptic": "al",
+      "meaning": "stone/rock",
+      "domain": "material"
+    },
+    {
+      "root": "or",
+      "freq": 13,
+      "score": 0.9,
+      "type": "SKELETON-EXACT",
+      "coptic": "ro",
+      "meaning": "mouth",
+      "domain": "medical"
+    },
+    {
+      "root": "ch",
+      "freq": 11,
+      "score": 0.9,
+      "type": "SKELETON-EXACT",
+      "coptic": "ouche",
+      "meaning": "night",
+      "domain": "astronomical"
+    },
+    {
+      "root": "r",
+      "freq": 7,
+      "score": 0.9,
+      "type": "SKELETON-EXACT",
+      "coptic": "ro",
+      "meaning": "mouth",
+      "domain": "medical"
+    },
+    {
+      "root": "am",
+      "freq": 6,
+      "score": 0.9,
+      "type": "SKELETON-EXACT",
+      "coptic": "moou",
+      "meaning": "water",
+      "domain": "element"
+    },
+    {
+      "root": "s",
+      "freq": 5,
+      "score": 0.9,
+      "type": "SKELETON-EXACT",
+      "coptic": "souo",
+      "meaning": "wheat",
+      "domain": "botanical"
+    },
+    {
+      "root": "os",
+      "freq": 4,
+      "score": 0.9,
+      "type": "SKELETON-EXACT",
+      "coptic": "souo",
+      "meaning": "wheat",
+      "domain": "botanical"
+    },
+    {
+      "root": "eos",
+      "freq": 3,
+      "score": 0.9,
+      "type": "SKELETON-EXACT",
+      "coptic": "souo",
+      "meaning": "wheat",
+      "domain": "botanical"
+    },
+    {
+      "root": "h",
+      "freq": 3,
+      "score": 0.9,
+      "type": "SKELETON-EXACT",
+      "coptic": "houo",
+      "meaning": "more/excess",
+      "domain": "medical"
+    },
+    {
+      "root": "air",
+      "freq": 3,
+      "score": 0.9,
+      "type": "SKELETON-EXACT",
+      "coptic": "ro",
+      "meaning": "mouth",
+      "domain": "medical"
+    },
+    {
+      "root": "cho",
+      "freq": 3,
+      "score": 0.9,
+      "type": "SKELETON-EXACT",
+      "coptic": "ouche",
+      "meaning": "night",
+      "domain": "astronomical"
+    },
+    {
+      "root": "aro",
+      "freq": 3,
+      "score": 0.9,
+      "type": "SKELETON-EXACT",
+      "coptic": "ro",
+      "meaning": "mouth",
+      "domain": "medical"
+    },
+    {
+      "root": "ols",
+      "freq": 2,
+      "score": 0.9,
+      "type": "SKELETON-EXACT",
+      "coptic": "las",
+      "meaning": "tongue",
+      "domain": "medical"
+    },
+    {
+      "root": "och",
+      "freq": 2,
+      "score": 0.9,
+      "type": "SKELETON-EXACT",
+      "coptic": "ouche",
+      "meaning": "night",
+      "domain": "astronomical"
+    },
+    {
+      "root": "che",
+      "freq": 2,
+      "score": 0.9,
+      "type": "SKELETON-EXACT",
+      "coptic": "ouche",
+      "meaning": "night",
+      "domain": "astronomical"
+    },
+    {
+      "root": "oro",
+      "freq": 2,
+      "score": 0.9,
+      "type": "SKELETON-EXACT",
+      "coptic": "ro",
+      "meaning": "mouth",
+      "domain": "medical"
+    },
+    {
+      "root": "eor",
+      "freq": 2,
+      "score": 0.9,
+      "type": "SKELETON-EXACT",
+      "coptic": "ro",
+      "meaning": "mouth",
+      "domain": "medical"
+    },
+    {
+      "root": "an",
+      "freq": 2,
+      "score": 0.9,
+      "type": "SKELETON-EXACT",
+      "coptic": "ouoein",
+      "meaning": "light",
+      "domain": "astronomical"
+    },
+    {
+      "root": "arar",
+      "freq": 2,
+      "score": 0.9,
+      "type": "SKELETON-EXACT",
+      "coptic": "rro",
+      "meaning": "grow/sprout",
+      "domain": "botanical"
+    },
+    {
+      "root": "alo",
+      "freq": 2,
+      "score": 0.9,
+      "type": "SKELETON-EXACT",
+      "coptic": "al",
+      "meaning": "stone/rock",
+      "domain": "material"
+    },
+    {
+      "root": "ech",
+      "freq": 2,
+      "score": 0.9,
+      "type": "SKELETON-EXACT",
+      "coptic": "ouche",
+      "meaning": "night",
+      "domain": "astronomical"
+    },
+    {
+      "root": "aiino",
+      "freq": 2,
+      "score": 0.9,
+      "type": "SKELETON-EXACT",
+      "coptic": "ouoein",
+      "meaning": "light",
+      "domain": "astronomical"
+    },
+    {
+      "root": "sh",
+      "freq": 2,
+      "score": 0.9,
+      "type": "SKELETON-EXACT",
+      "coptic": "she",
+      "meaning": "wood/tree",
+      "domain": "botanical"
+    },
+    {
+      "root": "cheo",
+      "freq": 2,
+      "score": 0.9,
+      "type": "SKELETON-EXACT",
+      "coptic": "ouche",
+      "meaning": "night",
+      "domain": "astronomical"
+    },
+    {
+      "root": "eol",
+      "freq": 2,
+      "score": 0.9,
+      "type": "SKELETON-EXACT",
+      "coptic": "al",
+      "meaning": "stone/rock",
+      "domain": "material"
+    },
+    {
+      "root": "raro",
+      "freq": 1,
+      "score": 0.9,
+      "type": "SKELETON-EXACT",
+      "coptic": "rro",
+      "meaning": "grow/sprout",
+      "domain": "botanical"
+    },
+    {
+      "root": "sam",
+      "freq": 1,
+      "score": 0.9,
+      "type": "SKELETON-EXACT",
+      "coptic": "sim",
+      "meaning": "herb/grass",
+      "domain": "botanical"
+    },
+    {
+      "root": "ho",
+      "freq": 1,
+      "score": 0.9,
+      "type": "SKELETON-EXACT",
+      "coptic": "houo",
+      "meaning": "more/excess",
+      "domain": "medical"
+    },
+    {
+      "root": "chos",
+      "freq": 1,
+      "score": 0.9,
+      "type": "SKELETON-EXACT",
+      "coptic": "choeis",
+      "meaning": "lord",
+      "domain": "social"
+    },
+    {
+      "root": "rae",
+      "freq": 1,
+      "score": 0.9,
+      "type": "SKELETON-EXACT",
+      "coptic": "ro",
+      "meaning": "mouth",
+      "domain": "medical"
+    },
+    {
+      "root": "lar",
+      "freq": 1,
+      "score": 0.9,
+      "type": "SKELETON-EXACT",
+      "coptic": "olor",
+      "meaning": "grape cluster",
+      "domain": "botanical"
+    },
+    {
+      "root": "olal",
+      "freq": 1,
+      "score": 0.9,
+      "type": "SKELETON-EXACT",
+      "coptic": "loole",
+      "meaning": "grape",
+      "domain": "botanical"
+    },
+    {
+      "root": "eorai",
+      "freq": 1,
+      "score": 0.9,
+      "type": "SKELETON-EXACT",
+      "coptic": "ro",
+      "meaning": "mouth",
+      "domain": "medical"
+    },
+    {
+      "root": "ach",
+      "freq": 1,
+      "score": 0.9,
+      "type": "SKELETON-EXACT",
+      "coptic": "ouche",
+      "meaning": "night",
+      "domain": "astronomical"
+    },
+    {
+      "root": "eon",
+      "freq": 1,
+      "score": 0.9,
+      "type": "SKELETON-EXACT",
+      "coptic": "ouoein",
+      "meaning": "light",
+      "domain": "astronomical"
+    },
+    {
+      "root": "iil",
+      "freq": 1,
+      "score": 0.9,
+      "type": "SKELETON-EXACT",
+      "coptic": "al",
+      "meaning": "stone/rock",
+      "domain": "material"
+    },
+    {
+      "root": "oail",
+      "freq": 1,
+      "score": 0.9,
+      "type": "SKELETON-EXACT",
+      "coptic": "al",
+      "meaning": "stone/rock",
+      "domain": "material"
+    },
+    {
+      "root": "ios",
+      "freq": 1,
+      "score": 0.9,
+      "type": "SKELETON-EXACT",
+      "coptic": "souo",
+      "meaning": "wheat",
+      "domain": "botanical"
+    },
+    {
+      "root": "on",
+      "freq": 1,
+      "score": 0.9,
+      "type": "SKELETON-EXACT",
+      "coptic": "ouoein",
+      "meaning": "light",
+      "domain": "astronomical"
+    },
+    {
+      "root": "aim",
+      "freq": 1,
+      "score": 0.9,
+      "type": "SKELETON-EXACT",
+      "coptic": "moou",
+      "meaning": "water",
+      "domain": "element"
+    },
+    {
+      "root": "rar",
+      "freq": 1,
+      "score": 0.9,
+      "type": "SKELETON-EXACT",
+      "coptic": "rro",
+      "meaning": "grow/sprout",
+      "domain": "botanical"
+    },
+    {
+      "root": "es",
+      "freq": 1,
+      "score": 0.9,
+      "type": "SKELETON-EXACT",
+      "coptic": "souo",
+      "meaning": "wheat",
+      "domain": "botanical"
+    },
+    {
+      "root": "oal",
+      "freq": 1,
+      "score": 0.9,
+      "type": "SKELETON-EXACT",
+      "coptic": "al",
+      "meaning": "stone/rock",
+      "domain": "material"
+    },
+    {
+      "root": "iin",
+      "freq": 1,
+      "score": 0.9,
+      "type": "SKELETON-EXACT",
+      "coptic": "ouoein",
+      "meaning": "light",
+      "domain": "astronomical"
+    },
+    {
+      "root": "osh",
+      "freq": 1,
+      "score": 0.9,
+      "type": "SKELETON-EXACT",
+      "coptic": "she",
+      "meaning": "wood/tree",
+      "domain": "botanical"
+    },
+    {
+      "root": "aror",
+      "freq": 1,
+      "score": 0.9,
+      "type": "SKELETON-EXACT",
+      "coptic": "rro",
+      "meaning": "grow/sprout",
+      "domain": "botanical"
+    },
+    {
+      "root": "lol",
+      "freq": 1,
+      "score": 0.9,
+      "type": "SKELETON-EXACT",
+      "coptic": "loole",
+      "meaning": "grape",
+      "domain": "botanical"
+    },
+    {
+      "root": "iir",
+      "freq": 1,
+      "score": 0.9,
+      "type": "SKELETON-EXACT",
+      "coptic": "ro",
+      "meaning": "mouth",
+      "domain": "medical"
+    },
+    {
+      "root": "ror",
+      "freq": 1,
+      "score": 0.9,
+      "type": "SKELETON-EXACT",
+      "coptic": "rro",
+      "meaning": "grow/sprout",
+      "domain": "botanical"
+    },
+    {
+      "root": "ora",
+      "freq": 1,
+      "score": 0.9,
+      "type": "SKELETON-EXACT",
+      "coptic": "ro",
+      "meaning": "mouth",
+      "domain": "medical"
+    },
+    {
+      "root": "cheos",
+      "freq": 1,
+      "score": 0.9,
+      "type": "SKELETON-EXACT",
+      "coptic": "choeis",
+      "meaning": "lord",
+      "domain": "social"
+    },
+    {
+      "root": "ches",
+      "freq": 1,
+      "score": 0.9,
+      "type": "SKELETON-EXACT",
+      "coptic": "choeis",
+      "meaning": "lord",
+      "domain": "social"
+    },
+    {
+      "root": "osam",
+      "freq": 1,
+      "score": 0.9,
+      "type": "SKELETON-EXACT",
+      "coptic": "sim",
+      "meaning": "herb/grass",
+      "domain": "botanical"
+    },
+    {
+      "root": "rain",
+      "freq": 1,
+      "score": 0.9,
+      "type": "SKELETON-EXACT",
+      "coptic": "ran",
+      "meaning": "name",
+      "domain": "function"
+    },
+    {
+      "root": "olar",
+      "freq": 1,
+      "score": 0.9,
+      "type": "SKELETON-EXACT",
+      "coptic": "olor",
+      "meaning": "grape cluster",
+      "domain": "botanical"
+    },
+    {
+      "root": "oih",
+      "freq": 1,
+      "score": 0.9,
+      "type": "SKELETON-EXACT",
+      "coptic": "houo",
+      "meaning": "more/excess",
+      "domain": "medical"
+    }
+  ],
+  "pharma_matches": [
+    {
+      "root": "al",
+      "freq": 7,
+      "score": 1.0,
+      "coptic": "al",
+      "meaning": "stone/rock",
+      "domain": "material"
+    },
+    {
+      "root": "he",
+      "freq": 1,
+      "score": 1.0,
+      "coptic": "he",
+      "meaning": "fall/occur",
+      "domain": "action"
+    },
+    {
+      "root": "ar",
+      "freq": 15,
+      "score": 0.9,
+      "coptic": "ro",
+      "meaning": "mouth",
+      "domain": "medical"
+    },
+    {
+      "root": "raro",
+      "freq": 1,
+      "score": 0.9,
+      "coptic": "rro",
+      "meaning": "grow/sprout",
+      "domain": "botanical"
+    },
+    {
+      "root": "sam",
+      "freq": 1,
+      "score": 0.9,
+      "coptic": "sim",
+      "meaning": "herb/grass",
+      "domain": "botanical"
+    },
+    {
+      "root": "am",
+      "freq": 4,
+      "score": 0.9,
+      "coptic": "moou",
+      "meaning": "water",
+      "domain": "element"
+    },
+    {
+      "root": "eos",
+      "freq": 2,
+      "score": 0.9,
+      "coptic": "souo",
+      "meaning": "wheat",
+      "domain": "botanical"
+    },
+    {
+      "root": "ho",
+      "freq": 1,
+      "score": 0.9,
+      "coptic": "houo",
+      "meaning": "more/excess",
+      "domain": "medical"
+    },
+    {
+      "root": "r",
+      "freq": 5,
+      "score": 0.9,
+      "coptic": "ro",
+      "meaning": "mouth",
+      "domain": "medical"
+    },
+    {
+      "root": "ols",
+      "freq": 2,
+      "score": 0.9,
+      "coptic": "las",
+      "meaning": "tongue",
+      "domain": "medical"
+    },
+    {
+      "root": "or",
+      "freq": 7,
+      "score": 0.9,
+      "coptic": "ro",
+      "meaning": "mouth",
+      "domain": "medical"
+    },
+    {
+      "root": "l",
+      "freq": 7,
+      "score": 0.9,
+      "coptic": "al",
+      "meaning": "stone/rock",
+      "domain": "material"
+    },
+    {
+      "root": "och",
+      "freq": 1,
+      "score": 0.9,
+      "coptic": "ouche",
+      "meaning": "night",
+      "domain": "astronomical"
+    },
+    {
+      "root": "ch",
+      "freq": 6,
+      "score": 0.9,
+      "coptic": "ouche",
+      "meaning": "night",
+      "domain": "astronomical"
+    },
+    {
+      "root": "ol",
+      "freq": 13,
+      "score": 0.9,
+      "coptic": "al",
+      "meaning": "stone/rock",
+      "domain": "material"
+    },
+    {
+      "root": "chos",
+      "freq": 1,
+      "score": 0.9,
+      "coptic": "choeis",
+      "meaning": "lord",
+      "domain": "social"
+    },
+    {
+      "root": "rae",
+      "freq": 1,
+      "score": 0.9,
+      "coptic": "ro",
+      "meaning": "mouth",
+      "domain": "medical"
+    },
+    {
+      "root": "lar",
+      "freq": 1,
+      "score": 0.9,
+      "coptic": "olor",
+      "meaning": "grape cluster",
+      "domain": "botanical"
+    },
+    {
+      "root": "ach",
+      "freq": 1,
+      "score": 0.9,
+      "coptic": "ouche",
+      "meaning": "night",
+      "domain": "astronomical"
+    },
+    {
+      "root": "che",
+      "freq": 2,
+      "score": 0.9,
+      "coptic": "ouche",
+      "meaning": "night",
+      "domain": "astronomical"
+    },
+    {
+      "root": "oro",
+      "freq": 2,
+      "score": 0.9,
+      "coptic": "ro",
+      "meaning": "mouth",
+      "domain": "medical"
+    },
+    {
+      "root": "s",
+      "freq": 2,
+      "score": 0.9,
+      "coptic": "souo",
+      "meaning": "wheat",
+      "domain": "botanical"
+    },
+    {
+      "root": "eor",
+      "freq": 1,
+      "score": 0.9,
+      "coptic": "ro",
+      "meaning": "mouth",
+      "domain": "medical"
+    },
+    {
+      "root": "os",
+      "freq": 2,
+      "score": 0.9,
+      "coptic": "souo",
+      "meaning": "wheat",
+      "domain": "botanical"
+    },
+    {
+      "root": "ror",
+      "freq": 1,
+      "score": 0.9,
+      "coptic": "rro",
+      "meaning": "grow/sprout",
+      "domain": "botanical"
+    },
+    {
+      "root": "cheo",
+      "freq": 2,
+      "score": 0.9,
+      "coptic": "ouche",
+      "meaning": "night",
+      "domain": "astronomical"
+    },
+    {
+      "root": "ora",
+      "freq": 1,
+      "score": 0.9,
+      "coptic": "ro",
+      "meaning": "mouth",
+      "domain": "medical"
+    },
+    {
+      "root": "cheos",
+      "freq": 1,
+      "score": 0.9,
+      "coptic": "choeis",
+      "meaning": "lord",
+      "domain": "social"
+    },
+    {
+      "root": "ches",
+      "freq": 1,
+      "score": 0.9,
+      "coptic": "choeis",
+      "meaning": "lord",
+      "domain": "social"
+    },
+    {
+      "root": "an",
+      "freq": 1,
+      "score": 0.9,
+      "coptic": "ouoein",
+      "meaning": "light",
+      "domain": "astronomical"
+    },
+    {
+      "root": "osam",
+      "freq": 1,
+      "score": 0.9,
+      "coptic": "sim",
+      "meaning": "herb/grass",
+      "domain": "botanical"
+    },
+    {
+      "root": "h",
+      "freq": 1,
+      "score": 0.9,
+      "coptic": "houo",
+      "meaning": "more/excess",
+      "domain": "medical"
+    },
+    {
+      "root": "olar",
+      "freq": 1,
+      "score": 0.9,
+      "coptic": "olor",
+      "meaning": "grape cluster",
+      "domain": "botanical"
+    },
+    {
+      "root": "oih",
+      "freq": 1,
+      "score": 0.9,
+      "coptic": "houo",
+      "meaning": "more/excess",
+      "domain": "medical"
+    },
+    {
+      "root": "air",
+      "freq": 1,
+      "score": 0.9,
+      "coptic": "ro",
+      "meaning": "mouth",
+      "domain": "medical"
+    },
+    {
+      "root": "as",
+      "freq": 1,
+      "score": 0.9,
+      "coptic": "souo",
+      "meaning": "wheat",
+      "domain": "botanical"
+    },
+    {
+      "root": "alo",
+      "freq": 1,
+      "score": 0.9,
+      "coptic": "al",
+      "meaning": "stone/rock",
+      "domain": "material"
+    },
+    {
+      "root": "aro",
+      "freq": 2,
+      "score": 0.9,
+      "coptic": "ro",
+      "meaning": "mouth",
+      "domain": "medical"
+    },
+    {
+      "root": "olo",
+      "freq": 1,
+      "score": 0.9,
+      "coptic": "al",
+      "meaning": "stone/rock",
+      "domain": "material"
+    },
+    {
+      "root": "alol",
+      "freq": 1,
+      "score": 0.9,
+      "coptic": "loole",
+      "meaning": "grape",
+      "domain": "botanical"
+    },
+    {
+      "root": "cho",
+      "freq": 1,
+      "score": 0.9,
+      "coptic": "ouche",
+      "meaning": "night",
+      "domain": "astronomical"
+    },
+    {
+      "root": "eol",
+      "freq": 1,
+      "score": 0.9,
+      "coptic": "al",
+      "meaning": "stone/rock",
+      "domain": "material"
+    },
+    {
+      "root": "choia",
+      "freq": 1,
+      "score": 0.9,
+      "coptic": "ouche",
+      "meaning": "night",
+      "domain": "astronomical"
+    },
+    {
+      "root": "aiin",
+      "freq": 1,
+      "score": 0.9,
+      "coptic": "ouoein",
+      "meaning": "light",
+      "domain": "astronomical"
+    },
+    {
+      "root": "lsa",
+      "freq": 1,
+      "score": 0.9,
+      "coptic": "las",
+      "meaning": "tongue",
+      "domain": "medical"
+    },
+    {
+      "root": "aiino",
+      "freq": 1,
+      "score": 0.9,
+      "coptic": "ouoein",
+      "meaning": "light",
+      "domain": "astronomical"
+    },
+    {
+      "root": "ech",
+      "freq": 1,
+      "score": 0.9,
+      "coptic": "ouche",
+      "meaning": "night",
+      "domain": "astronomical"
+    },
+    {
+      "root": "le",
+      "freq": 1,
+      "score": 0.9,
+      "coptic": "al",
+      "meaning": "stone/rock",
+      "domain": "material"
+    },
+    {
+      "root": "lear",
+      "freq": 1,
+      "score": 0.9,
+      "coptic": "olor",
+      "meaning": "grape cluster",
+      "domain": "botanical"
+    },
+    {
+      "root": "chor",
+      "freq": 1,
+      "score": 0.8,
+      "coptic": "hor",
+      "meaning": "face",
+      "domain": "medical"
+    },
+    {
+      "root": "laran",
+      "freq": 1,
+      "score": 0.8,
+      "coptic": "ran",
+      "meaning": "name",
+      "domain": "function"
+    },
+    {
+      "root": "aloiinshe",
+      "freq": 1,
+      "score": 0.8,
+      "coptic": "she",
+      "meaning": "wood/tree",
+      "domain": "botanical"
+    },
+    {
+      "root": "yaran",
+      "freq": 1,
+      "score": 0.8,
+      "coptic": "ran",
+      "meaning": "name",
+      "domain": "function"
+    }
+  ],
+  "label_only_roots": [
+    [
+      "oro",
+      2
+    ],
+    [
+      "dor",
+      2
+    ],
+    [
+      "aie",
+      1
+    ],
+    [
+      "aloih",
+      1
+    ],
+    [
+      "ararchod",
+      1
+    ],
+    [
+      "eorai",
+      1
+    ],
+    [
+      "choaro",
+      1
+    ],
+    [
+      "old",
+      1
+    ],
+    [
+      "iil",
+      1
+    ],
+    [
+      "chosarosh",
+      1
+    ],
+    [
+      "osam",
+      1
+    ],
+    [
+      "aldo",
+      1
+    ],
+    [
+      "chals",
+      1
+    ],
+    [
+      "ralas",
+      1
+    ],
+    [
+      "eon",
+      1
+    ],
+    [
+      "rald",
+      1
+    ],
+    [
+      "odeod",
+      1
+    ],
+    [
+      "choia",
+      1
+    ],
+    [
+      "cheye",
+      1
+    ],
+    [
+      "lolar",
+      1
+    ],
+    [
+      "aarod",
+      1
+    ],
+    [
+      "alyd",
+      1
+    ],
+    [
+      "lesos",
+      1
+    ],
+    [
+      "arche",
+      1
+    ],
+    [
+      "yaran",
+      1
+    ],
+    [
+      "orch",
+      1
+    ],
+    [
+      "aradag",
+      1
+    ],
+    [
+      "sar",
+      1
+    ],
+    [
+      "ardal",
+      1
+    ],
+    [
+      "ydarar",
+      1
+    ],
+    [
+      "yda",
+      1
+    ],
+    [
+      "raro",
+      1
+    ],
+    [
+      "archd",
+      1
+    ],
+    [
+      "lsa",
+      1
+    ],
+    [
+      "dchos",
+      1
+    ],
+    [
+      "alche",
+      1
+    ],
+    [
+      "arolal",
+      1
+    ],
+    [
+      "lear",
+      1
+    ],
+    [
+      "aror",
+      1
+    ],
+    [
+      "arairdl",
+      1
+    ],
+    [
+      "ao",
+      1
+    ],
+    [
+      "roldair",
+      1
+    ],
+    [
+      "ysyd",
+      1
+    ],
+    [
+      "dldlo",
+      1
+    ],
+    [
+      "choar",
+      1
+    ],
+    [
+      "aloiir",
+      1
+    ],
+    [
+      "oral",
+      1
+    ],
+    [
+      "dard",
+      1
+    ],
+    [
+      "dalydar",
+      1
+    ],
+    [
+      "daraiil",
+      1
+    ]
+  ],
+  "pharma_det_distribution": {
+    "∅": 82,
+    "f": 4,
+    "t": 47,
+    "k": 49,
+    "p": 16
+  },
+  "det_by_label_type": {
+    "f": {
+      "∅": 82,
+      "f": 4,
+      "t": 47,
+      "k": 49,
+      "p": 16
+    },
+    "c": {
+      "∅": 7,
+      "k": 16,
+      "p": 3,
+      "t": 6,
+      "f": 1
+    },
+    "x": {
+      "∅": 5,
+      "t": 3,
+      "k": 1
+    },
+    "p": {
+      "t": 2,
+      "k": 1,
+      "∅": 2
+    },
+    "0": {
+      "∅": 17,
+      "f": 1,
+      "t": 5,
+      "p": 2,
+      "k": 2
+    },
+    "s": {
+      "t": 20,
+      "k": 15,
+      "f": 3,
+      "∅": 21,
+      "p": 2
+    },
+    "a": {
+      "t": 2,
+      "∅": 4,
+      "k": 1
+    },
+    "n": {
+      "k": 15,
+      "∅": 9,
+      "t": 6
+    },
+    "t": {
+      "t": 9,
+      "p": 1,
+      "∅": 10,
+      "k": 11,
+      "f": 1
+    }
+  }
+}

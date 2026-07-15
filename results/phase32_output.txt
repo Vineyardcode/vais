@@ -24,11 +24,11 @@ does the binary suffix split disappear?
               ch       558    34%    20%    13%     0%     7%     2%
               |∅ vs ch| diff: 77 pp
 
-    Stem 'ol': deriv      N      ∅      y     dy   aiin     or    edy
+    Stem 'ol': deriv      N      ∅      y     dy   aiin     or     al
               ∅       1756    95%     1%     1%     1%     0%     0%
-              h         31     0%    19%    29%     6%    13%    13%
-              ch        90     0%    31%    17%    13%     7%     6%
-              |∅ vs ch| diff: 165 pp
+              h         31     0%    19%    29%     6%    13%     3%
+              ch        90     0%    31%    17%    13%     7%     8%
+              |∅ vs ch| diff: 167 pp
 
     Stem 'd': deriv      N      y   aiin     ar     al    ain      ∅
               ∅       1188    62%    16%     7%     4%     4%     3%

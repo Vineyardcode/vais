@@ -1,0 +1,5217 @@
+{
+  "folio_summary": {
+    "f70v1": {
+      "sign": "Aries",
+      "month": "April",
+      "nymph_labels": 15,
+      "circular_bands": 2,
+      "total_words": 83
+    },
+    "f70v2": {
+      "sign": "Pisces",
+      "month": "March",
+      "nymph_labels": 29,
+      "circular_bands": 3,
+      "total_words": 127
+    },
+    "f71r": {
+      "sign": "Aries",
+      "month": "April",
+      "nymph_labels": 15,
+      "circular_bands": 3,
+      "total_words": 87
+    },
+    "f71v": {
+      "sign": "Taurus",
+      "month": "May",
+      "nymph_labels": 15,
+      "circular_bands": 3,
+      "total_words": 99
+    },
+    "f72r1": {
+      "sign": "Taurus",
+      "month": "May",
+      "nymph_labels": 15,
+      "circular_bands": 3,
+      "total_words": 102
+    },
+    "f72r2": {
+      "sign": "Gemini",
+      "month": "June",
+      "nymph_labels": 29,
+      "circular_bands": 3,
+      "total_words": 106
+    },
+    "f72r3": {
+      "sign": "Cancer",
+      "month": "July",
+      "nymph_labels": 30,
+      "circular_bands": 4,
+      "total_words": 154
+    },
+    "f72v1": {
+      "sign": "Libra",
+      "month": "October",
+      "nymph_labels": 27,
+      "circular_bands": 3,
+      "total_words": 95
+    },
+    "f72v2": {
+      "sign": "Virgo",
+      "month": "September",
+      "nymph_labels": 29,
+      "circular_bands": 3,
+      "total_words": 102
+    },
+    "f72v3": {
+      "sign": "Leo",
+      "month": "August",
+      "nymph_labels": 29,
+      "circular_bands": 3,
+      "total_words": 111
+    },
+    "f73r": {
+      "sign": "Scorpio",
+      "month": "November",
+      "nymph_labels": 30,
+      "circular_bands": 3,
+      "total_words": 93
+    },
+    "f73v": {
+      "sign": "Sagittarius",
+      "month": "December",
+      "nymph_labels": 29,
+      "circular_bands": 3,
+      "total_words": 94
+    }
+  },
+  "prefix_analysis": {
+    "total_labels": 340,
+    "o_prefix_count": 229,
+    "o_prefix_fraction": 0.6735294117647059,
+    "prefix_distribution": {
+      "o": 164,
+      "y": 25,
+      "d": 5,
+      "ol": 4,
+      "or": 3,
+      "s": 2,
+      "qo": 1
+    }
+  },
+  "root_distribution": {
+    "tal": 12,
+    "ar": 9,
+    "kal": 8,
+    "tar": 5,
+    "kar": 5,
+    "a": 5,
+    "teod": 5,
+    "keod": 5,
+    "al": 4,
+    "k": 4,
+    "keol": 4,
+    "ta": 4,
+    "kee": 4,
+    "am": 3,
+    "t": 3,
+    "kala": 3,
+    "pa": 3,
+    "keed": 3,
+    "pal": 3,
+    "ke": 3,
+    "kol": 2,
+    "tala": 2,
+    "aral": 2,
+    "kealar": 2,
+    "talal": 2,
+    "tald": 2,
+    "taldar": 2,
+    "arar": 2,
+    "karam": 2,
+    "char": 2,
+    "kara": 2,
+    "shar": 2,
+    "tarald": 2,
+    "kalar": 2,
+    "kam": 2,
+    "kald": 2,
+    "tee": 2,
+    "eeoda": 2,
+    "che": 2,
+    "keeol": 2,
+    "cheold": 2,
+    "keeor": 2,
+    "eed": 2,
+    "teed": 2,
+    "ted": 2,
+    "keos": 2,
+    "keeod": 2,
+    "kalal": 1,
+    "teo": 1,
+    "alals": 1
+  },
+  "suffix_distribution": {
+    "y": 106,
+    "iin": 23,
+    "ir": 3,
+    "g": 2,
+    "in": 1
+  },
+  "root_types_in_labels": {
+    "A": [
+      [
+        "tar",
+        0.0
+      ],
+      [
+        "am",
+        0.0
+      ],
+      [
+        "al",
+        0.25
+      ],
+      [
+        "tala",
+        0.0
+      ],
+      [
+        "kealar",
+        0.0
+      ],
+      [
+        "kala",
+        0.0
+      ],
+      [
+        "taldar",
+        0.0
+      ],
+      [
+        "arar",
+        0.0
+      ],
+      [
+        "karam",
+        0.0
+      ],
+      [
+        "char",
+        0.0
+      ],
+      [
+        "ta",
+        0.0
+      ],
+      [
+        "kara",
+        0.0
+      ],
+      [
+        "shar",
+        0.0
+      ],
+      [
+        "a",
+        0.0
+      ],
+      [
+        "kalar",
+        0.0
+      ],
+      [
+        "kam",
+        0.0
+      ],
+      [
+        "pa",
+        0.0
+      ],
+      [
+        "eeoda",
+        0.0
+      ],
+      [
+        "pal",
+        0.0
+      ],
+      [
+        "keos",
+        0.0
+      ]
+    ],
+    "B": [
+      [
+        "t",
+        1.0
+      ],
+      [
+        "k",
+        1.0
+      ],
+      [
+        "tarald",
+        1.0
+      ],
+      [
+        "kee",
+        1.0
+      ],
+      [
+        "kald",
+        1.0
+      ],
+      [
+        "tee",
+        1.0
+      ],
+      [
+        "che",
+        1.0
+      ],
+      [
+        "keed",
+        1.0
+      ],
+      [
+        "cheold",
+        1.0
+      ],
+      [
+        "eed",
+        1.0
+      ],
+      [
+        "teed",
+        1.0
+      ],
+      [
+        "ke",
+        1.0
+      ],
+      [
+        "ted",
+        1.0
+      ],
+      [
+        "keeod",
+        1.0
+      ]
+    ],
+    "M": [
+      [
+        "tal",
+        0.58
+      ],
+      [
+        "kol",
+        0.5
+      ],
+      [
+        "aral",
+        0.5
+      ],
+      [
+        "talal",
+        0.5
+      ],
+      [
+        "kar",
+        0.6
+      ],
+      [
+        "ar",
+        0.44
+      ],
+      [
+        "tald",
+        0.5
+      ],
+      [
+        "keol",
+        0.75
+      ],
+      [
+        "kal",
+        0.5
+      ],
+      [
+        "keeol",
+        0.5
+      ],
+      [
+        "teod",
+        0.6
+      ],
+      [
+        "keod",
+        0.8
+      ],
+      [
+        "keeor",
+        0.5
+      ]
+    ]
+  },
+  "element_jaccard": {
+    "Air-Earth": 0.071,
+    "Air-Fire": 0.092,
+    "Air-Water": 0.093,
+    "Earth-Fire": 0.113,
+    "Earth-Water": 0.126,
+    "Fire-Water": 0.187
+  },
+  "shared_label_count": 34,
+  "unique_label_count": 243,
+  "most_shared": [
+    {
+      "word": "otaly",
+      "count": 6,
+      "signs": [
+        "Aries",
+        "Leo",
+        "Pisces",
+        "Scorpio"
+      ]
+    },
+    {
+      "word": "otal",
+      "count": 5,
+      "signs": [
+        "Aries",
+        "Gemini",
+        "Pisces",
+        "Scorpio"
+      ]
+    },
+    {
+      "word": "oky",
+      "count": 4,
+      "signs": [
+        "Leo",
+        "Pisces",
+        "Sagittarius",
+        "Scorpio"
+      ]
+    },
+    {
+      "word": "okeey",
+      "count": 4,
+      "signs": [
+        "Gemini",
+        "Libra",
+        "Scorpio",
+        "Taurus"
+      ]
+    },
+    {
+      "word": "am",
+      "count": 3,
+      "signs": [
+        "Aries",
+        "Pisces",
+        "Taurus"
+      ]
+    },
+    {
+      "word": "ar",
+      "count": 5,
+      "signs": [
+        "Pisces",
+        "Scorpio",
+        "Taurus"
+      ]
+    },
+    {
+      "word": "okal",
+      "count": 4,
+      "signs": [
+        "Gemini",
+        "Libra",
+        "Sagittarius"
+      ]
+    },
+    {
+      "word": "okeody",
+      "count": 3,
+      "signs": [
+        "Sagittarius",
+        "Scorpio",
+        "Virgo"
+      ]
+    },
+    {
+      "word": "dy",
+      "count": 2,
+      "signs": [
+        "Aries",
+        "Gemini"
+      ]
+    },
+    {
+      "word": "otalaiin",
+      "count": 2,
+      "signs": [
+        "Aries",
+        "Taurus"
+      ]
+    },
+    {
+      "word": "okealar",
+      "count": 2,
+      "signs": [
+        "Aries",
+        "Gemini"
+      ]
+    },
+    {
+      "word": "otaldar",
+      "count": 2,
+      "signs": [
+        "Aries",
+        "Pisces"
+      ]
+    },
+    {
+      "word": "arar",
+      "count": 2,
+      "signs": [
+        "Aries",
+        "Pisces"
+      ]
+    },
+    {
+      "word": "okeoly",
+      "count": 2,
+      "signs": [
+        "Libra",
+        "Pisces"
+      ]
+    },
+    {
+      "word": "okydy",
+      "count": 2,
+      "signs": [
+        "Libra",
+        "Pisces"
+      ]
+    },
+    {
+      "word": "otar",
+      "count": 4,
+      "signs": [
+        "Pisces",
+        "Taurus"
+      ]
+    },
+    {
+      "word": "al",
+      "count": 2,
+      "signs": [
+        "Cancer",
+        "Pisces"
+      ]
+    },
+    {
+      "word": "okaram",
+      "count": 2,
+      "signs": [
+        "Gemini",
+        "Pisces"
+      ]
+    },
+    {
+      "word": "shar",
+      "count": 2,
+      "signs": [
+        "Cancer",
+        "Taurus"
+      ]
+    },
+    {
+      "word": "ary",
+      "count": 3,
+      "signs": [
+        "Gemini",
+        "Taurus"
+      ]
+    }
+  ],
+  "zodiac_vs_star_comparison": {
+    "zodiac_unique_words": 277,
+    "star_unique_words": 292,
+    "shared_count": 38,
+    "shared_words": [
+      "air",
+      "al",
+      "aly",
+      "am",
+      "ar",
+      "araly",
+      "ary",
+      "char",
+      "chdy",
+      "chek",
+      "daiin",
+      "dy",
+      "ochey",
+      "ody",
+      "okal",
+      "okeal",
+      "okeey",
+      "okeod",
+      "okeody",
+      "okeol",
+      "okey",
+      "okody",
+      "okol",
+      "okolar",
+      "okolshy",
+      "oky",
+      "otair",
+      "otalam",
+      "otaldy",
+      "otar",
+      "otcheody",
+      "oteey",
+      "oteos",
+      "otody",
+      "sal",
+      "ykeeody",
+      "ykeody",
+      "yteody"
+    ],
+    "zodiac_only_count": 239,
+    "star_only_count": 254,
+    "jaccard": 0.07156308851224105
+  },
+  "suffix_by_sign": {
+    "Aries": {
+      "y": 8,
+      "iin": 1
+    },
+    "Pisces": {
+      "y": 10,
+      "g": 1,
+      "iin": 1
+    },
+    "Taurus": {
+      "y": 7,
+      "iin": 5,
+      "in": 1
+    },
+    "Gemini": {
+      "y": 8,
+      "ir": 1
+    },
+    "Cancer": {
+      "iin": 9,
+      "y": 8
+    },
+    "Libra": {
+      "y": 11,
+      "ir": 1
+    },
+    "Virgo": {
+      "y": 12,
+      "iin": 2,
+      "ir": 1,
+      "g": 1
+    },
+    "Leo": {
+      "y": 14,
+      "iin": 2
+    },
+    "Scorpio": {
+      "y": 15,
+      "iin": 1
+    },
+    "Sagittarius": {
+      "y": 13,
+      "iin": 2
+    }
+  },
+  "decan_analysis": {
+    "Aries": {
+      "total_labels": 42,
+      "group_sizes": [
+        14,
+        14,
+        14
+      ],
+      "group_root_diversity": [
+        14,
+        14,
+        14
+      ],
+      "group_suffix_dist": [
+        {
+          "y": 4,
+          "iin": 1
+        },
+        {
+          "y": 2
+        },
+        {
+          "y": 2
+        }
+      ],
+      "group_top_roots": [
+        {
+          "opchey": 1,
+          "al": 1,
+          "tala": 1,
+          "teoald": 1,
+          "toloaram": 1
+        },
+        {
+          "teeol": 1,
+          "oalcheg": 1,
+          "talsar": 1,
+          "teoee": 1,
+          "tal": 1
+        },
+        {
+          "araydy": 1,
+          "taldar": 1,
+          "talal": 1,
+          "tal": 1,
+          "ypsharal": 1
+        }
+      ]
+    },
+    "Pisces": {
+      "total_labels": 33,
+      "group_sizes": [
+        11,
+        11,
+        11
+      ],
+      "group_root_diversity": [
+        11,
+        10,
+        10
+      ],
+      "group_suffix_dist": [
+        {
+          "y": 3
+        },
+        {
+          "y": 3
+        },
+        {
+          "y": 4,
+          "g": 1,
+          "iin": 1
+        }
+      ],
+      "group_top_roots": [
+        {
+          "t": 1,
+          "ar": 1,
+          "talar": 1,
+          "kala": 1,
+          "tod": 1
+        },
+        {
+          "tal": 2,
+          "chckhhy": 1,
+          "karam": 1,
+          "teosal": 1,
+          "arar": 1
+        },
+        {
+          "tar": 2,
+          "kees": 1,
+          "talal": 1,
+          "kola": 1,
+          "kar": 1
+        }
+      ]
+    },
+    "Taurus": {
+      "total_labels": 45,
+      "group_sizes": [
+        15,
+        15,
+        15
+      ],
+      "group_root_diversity": [
+        14,
+        12,
+        15
+      ],
+      "group_suffix_dist": [
+        {
+          "iin": 3,
+          "y": 2
+        },
+        {
+          "y": 4,
+          "iin": 2,
+          "in": 1
+        },
+        {
+          "y": 1
+        }
+      ],
+      "group_top_roots": [
+        {
+          "ar": 2,
+          "kolar": 1,
+          "talod": 1,
+          "a": 1,
+          "otchoshy": 1
+        },
+        {
+          "ar": 2,
+          "ta": 2,
+          "tar": 2,
+          "tarald": 1,
+          "kee": 1
+        },
+        {
+          "ys": 1,
+          "ainam": 1,
+          "otainy": 1,
+          "sholshdy": 1,
+          "chol": 1
+        }
+      ]
+    },
+    "Gemini": {
+      "total_labels": 31,
+      "group_sizes": [
+        10,
+        10,
+        11
+      ],
+      "group_root_diversity": [
+        9,
+        10,
+        11
+      ],
+      "group_suffix_dist": [
+        {
+          "y": 4
+        },
+        {
+          "y": 3,
+          "ir": 1
+        },
+        {
+          "y": 1
+        }
+      ],
+      "group_top_roots": [
+        {
+          "kal": 2,
+          "karam": 1,
+          "okairy": 1,
+          "kam": 1,
+          "kealar": 1
+        },
+        {
+          "kald": 1,
+          "ta": 1,
+          "dy": 1,
+          "okaircham": 1,
+          "chosar": 1
+        },
+        {
+          "ainaly": 1,
+          "okyd": 1,
+          "okarcham": 1,
+          "tolam": 1,
+          "tarald": 1
+        }
+      ]
+    },
+    "Cancer": {
+      "total_labels": 39,
+      "group_sizes": [
+        13,
+        13,
+        13
+      ],
+      "group_root_diversity": [
+        13,
+        13,
+        13
+      ],
+      "group_suffix_dist": [
+        {
+          "y": 3,
+          "iin": 2
+        },
+        {
+          "iin": 4,
+          "y": 3
+        },
+        {
+          "iin": 3,
+          "y": 2
+        }
+      ],
+      "group_top_roots": [
+        {
+          "oraiinam": 1,
+          "ytairal": 1,
+          "far": 1,
+          "osarsheeeo": 1,
+          "eeesa": 1
+        },
+        {
+          "toar": 1,
+          "shar": 1,
+          "eeesal": 1,
+          "pa": 1,
+          "alal": 1
+        },
+        {
+          "poee": 1,
+          "ka": 1,
+          "aral": 1,
+          "ara": 1,
+          "a": 1
+        }
+      ]
+    },
+    "Libra": {
+      "total_labels": 27,
+      "group_sizes": [
+        9,
+        9,
+        9
+      ],
+      "group_root_diversity": [
+        8,
+        9,
+        9
+      ],
+      "group_suffix_dist": [
+        {
+          "y": 3
+        },
+        {
+          "y": 2,
+          "ir": 1
+        },
+        {
+          "y": 6
+        }
+      ],
+      "group_top_roots": [
+        {
+          "teod": 2,
+          "oiiny": 1,
+          "keeol": 1,
+          "ee": 1,
+          "dal": 1
+        },
+        {
+          "ypaim": 1,
+          "kal": 1,
+          "tal": 1,
+          "kala": 1,
+          "eeeos": 1
+        },
+        {
+          "keed": 1,
+          "oeeoty": 1,
+          "eeol": 1,
+          "cth": 1,
+          "teol": 1
+        }
+      ]
+    },
+    "Virgo": {
+      "total_labels": 30,
+      "group_sizes": [
+        10,
+        10,
+        10
+      ],
+      "group_root_diversity": [
+        10,
+        10,
+        10
+      ],
+      "group_suffix_dist": [
+        {
+          "y": 4,
+          "ir": 1,
+          "g": 1
+        },
+        {
+          "y": 5
+        },
+        {
+          "y": 3,
+          "iin": 2
+        }
+      ],
+      "group_top_roots": [
+        {
+          "a": 1,
+          "aim": 1,
+          "eed": 1,
+          "shes": 1,
+          "pal": 1
+        },
+        {
+          "sheoeky": 1,
+          "eedal": 1,
+          "teodar": 1,
+          "cheos": 1,
+          "ofchdysd": 1
+        },
+        {
+          "keold": 1,
+          "keeor": 1,
+          "ona": 1,
+          "opaiinam": 1,
+          "cheold": 1
+        }
+      ]
+    },
+    "Leo": {
+      "total_labels": 33,
+      "group_sizes": [
+        11,
+        11,
+        11
+      ],
+      "group_root_diversity": [
+        11,
+        11,
+        10
+      ],
+      "group_suffix_dist": [
+        {
+          "y": 4
+        },
+        {
+          "y": 2,
+          "iin": 2
+        },
+        {
+          "y": 8
+        }
+      ],
+      "group_top_roots": [
+        {
+          "ke": 1,
+          "otcheody": 1,
+          "chcthhy": 1,
+          "okyeeshy": 1,
+          "laly": 1
+        },
+        {
+          "ocfhhy": 1,
+          "kar": 1,
+          "a": 1,
+          "chepy": 1,
+          "eesa": 1
+        },
+        {
+          "tal": 2,
+          "kal": 1,
+          "kald": 1,
+          "okeolyd": 1,
+          "t": 1
+        }
+      ]
+    },
+    "Scorpio": {
+      "total_labels": 30,
+      "group_sizes": [
+        10,
+        10,
+        10
+      ],
+      "group_root_diversity": [
+        9,
+        10,
+        8
+      ],
+      "group_suffix_dist": [
+        {
+          "y": 8
+        },
+        {
+          "y": 2
+        },
+        {
+          "y": 5,
+          "iin": 1
+        }
+      ],
+      "group_top_roots": [
+        {
+          "keed": 2,
+          "oteedyl": 1,
+          "ted": 1,
+          "teeod": 1,
+          "kee": 1
+        },
+        {
+          "teeos": 1,
+          "shekal": 1,
+          "chefy": 1,
+          "oteedyy": 1,
+          "tal": 1
+        },
+        {
+          "kar": 2,
+          "tal": 2,
+          "pa": 1,
+          "keos": 1,
+          "te": 1
+        }
+      ]
+    },
+    "Sagittarius": {
+      "total_labels": 29,
+      "group_sizes": [
+        9,
+        9,
+        11
+      ],
+      "group_root_diversity": [
+        9,
+        9,
+        11
+      ],
+      "group_suffix_dist": [
+        {
+          "y": 6
+        },
+        {
+          "iin": 2,
+          "y": 2
+        },
+        {
+          "y": 5
+        }
+      ],
+      "group_top_roots": [
+        {
+          "eer": 1,
+          "teed": 1,
+          "eeeod": 1,
+          "keor": 1,
+          "k": 1
+        },
+        {
+          "pa": 1,
+          "ke": 1,
+          "fa": 1,
+          "ofcheesy": 1,
+          "keee": 1
+        },
+        {
+          "ke": 1,
+          "keear": 1,
+          "pal": 1,
+          "keol": 1,
+          "ted": 1
+        }
+      ]
+    }
+  },
+  "label_inventory": [
+    {
+      "word": "otalchy",
+      "folio": "f70v1",
+      "sign": "Aries",
+      "month": "April",
+      "element": "Fire",
+      "clock": "10:30",
+      "prefix": "",
+      "root": "otalchy",
+      "suffix": "",
+      "parsed": false
+    },
+    {
+      "word": "tar",
+      "folio": "f70v1",
+      "sign": "Aries",
+      "month": "April",
+      "element": "Fire",
+      "clock": "10:30",
+      "prefix": "",
+      "root": "tar",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "am",
+      "folio": "f70v1",
+      "sign": "Aries",
+      "month": "April",
+      "element": "Fire",
+      "clock": "10:30",
+      "prefix": "",
+      "root": "am",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "dy",
+      "folio": "f70v1",
+      "sign": "Aries",
+      "month": "April",
+      "element": "Fire",
+      "clock": "10:30",
+      "prefix": "",
+      "root": "dy",
+      "suffix": "",
+      "parsed": false
+    },
+    {
+      "word": "opchey",
+      "folio": "f70v1",
+      "sign": "Aries",
+      "month": "April",
+      "element": "Fire",
+      "clock": "00:00",
+      "prefix": "",
+      "root": "opchey",
+      "suffix": "",
+      "parsed": false
+    },
+    {
+      "word": "sal",
+      "folio": "f70v1",
+      "sign": "Aries",
+      "month": "April",
+      "element": "Fire",
+      "clock": "00:00",
+      "prefix": "s",
+      "root": "al",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "otakaizan",
+      "folio": "f70v1",
+      "sign": "Aries",
+      "month": "April",
+      "element": "Fire",
+      "clock": "01:00",
+      "prefix": "",
+      "root": "otakaizan",
+      "suffix": "",
+      "parsed": false
+    },
+    {
+      "word": "okalal",
+      "folio": "f70v1",
+      "sign": "Aries",
+      "month": "April",
+      "element": "Fire",
+      "clock": "02:30",
+      "prefix": "o",
+      "root": "kalal",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "otaly",
+      "folio": "f70v1",
+      "sign": "Aries",
+      "month": "April",
+      "element": "Fire",
+      "clock": "03:30",
+      "prefix": "o",
+      "root": "tal",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "oalcheg",
+      "folio": "f70v1",
+      "sign": "Aries",
+      "month": "April",
+      "element": "Fire",
+      "clock": "04:30",
+      "prefix": "",
+      "root": "oalcheg",
+      "suffix": "",
+      "parsed": false
+    },
+    {
+      "word": "otchodals",
+      "folio": "f70v1",
+      "sign": "Aries",
+      "month": "April",
+      "element": "Fire",
+      "clock": "06:00",
+      "prefix": "",
+      "root": "otchodals",
+      "suffix": "",
+      "parsed": false
+    },
+    {
+      "word": "okolshy",
+      "folio": "f70v1",
+      "sign": "Aries",
+      "month": "April",
+      "element": "Fire",
+      "clock": "07:00",
+      "prefix": "",
+      "root": "okolshy",
+      "suffix": "",
+      "parsed": false
+    },
+    {
+      "word": "otshshdy",
+      "folio": "f70v1",
+      "sign": "Aries",
+      "month": "April",
+      "element": "Fire",
+      "clock": "08:00",
+      "prefix": "",
+      "root": "otshshdy",
+      "suffix": "",
+      "parsed": false
+    },
+    {
+      "word": "otal",
+      "folio": "f70v1",
+      "sign": "Aries",
+      "month": "April",
+      "element": "Fire",
+      "clock": "09:00",
+      "prefix": "o",
+      "root": "tal",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "ypsharal",
+      "folio": "f70v1",
+      "sign": "Aries",
+      "month": "April",
+      "element": "Fire",
+      "clock": "09:00",
+      "prefix": "",
+      "root": "ypsharal",
+      "suffix": "",
+      "parsed": false
+    },
+    {
+      "word": "okoly",
+      "folio": "f70v1",
+      "sign": "Aries",
+      "month": "April",
+      "element": "Fire",
+      "clock": "10:30",
+      "prefix": "o",
+      "root": "kol",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "otalaiin",
+      "folio": "f70v1",
+      "sign": "Aries",
+      "month": "April",
+      "element": "Fire",
+      "clock": "00:00",
+      "prefix": "o",
+      "root": "tala",
+      "suffix": "iin",
+      "parsed": true
+    },
+    {
+      "word": "oteo",
+      "folio": "f70v1",
+      "sign": "Aries",
+      "month": "April",
+      "element": "Fire",
+      "clock": "02:00",
+      "prefix": "o",
+      "root": "teo",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "alals",
+      "folio": "f70v1",
+      "sign": "Aries",
+      "month": "April",
+      "element": "Fire",
+      "clock": "02:00",
+      "prefix": "",
+      "root": "alals",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "araly",
+      "folio": "f70v1",
+      "sign": "Aries",
+      "month": "April",
+      "element": "Fire",
+      "clock": "02:00",
+      "prefix": "",
+      "root": "aral",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "oteoeey",
+      "folio": "f70v1",
+      "sign": "Aries",
+      "month": "April",
+      "element": "Fire",
+      "clock": "05:00",
+      "prefix": "o",
+      "root": "teoee",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "otal",
+      "folio": "f70v1",
+      "sign": "Aries",
+      "month": "April",
+      "element": "Fire",
+      "clock": "05:00",
+      "prefix": "o",
+      "root": "tal",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "okealar",
+      "folio": "f70v1",
+      "sign": "Aries",
+      "month": "April",
+      "element": "Fire",
+      "clock": "05:00",
+      "prefix": "o",
+      "root": "kealar",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "otear",
+      "folio": "f70v1",
+      "sign": "Aries",
+      "month": "April",
+      "element": "Fire",
+      "clock": "08:00",
+      "prefix": "o",
+      "root": "tear",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "araydy",
+      "folio": "f70v1",
+      "sign": "Aries",
+      "month": "April",
+      "element": "Fire",
+      "clock": "08:00",
+      "prefix": "",
+      "root": "araydy",
+      "suffix": "",
+      "parsed": false
+    },
+    {
+      "word": "otalalg",
+      "folio": "f70v2",
+      "sign": "Pisces",
+      "month": "March",
+      "element": "Water",
+      "clock": "09:00",
+      "prefix": "o",
+      "root": "talal",
+      "suffix": "g",
+      "parsed": true
+    },
+    {
+      "word": "ykary",
+      "folio": "f70v2",
+      "sign": "Pisces",
+      "month": "March",
+      "element": "Water",
+      "clock": "10:00",
+      "prefix": "y",
+      "root": "kar",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "oty",
+      "folio": "f70v2",
+      "sign": "Pisces",
+      "month": "March",
+      "element": "Water",
+      "clock": "11:00",
+      "prefix": "o",
+      "root": "t",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "oky",
+      "folio": "f70v2",
+      "sign": "Pisces",
+      "month": "March",
+      "element": "Water",
+      "clock": "11:30",
+      "prefix": "o",
+      "root": "k",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "ody",
+      "folio": "f70v2",
+      "sign": "Pisces",
+      "month": "March",
+      "element": "Water",
+      "clock": "11:30",
+      "prefix": "",
+      "root": "od",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "oty",
+      "folio": "f70v2",
+      "sign": "Pisces",
+      "month": "March",
+      "element": "Water",
+      "clock": "00:00",
+      "prefix": "o",
+      "root": "t",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "ar",
+      "folio": "f70v2",
+      "sign": "Pisces",
+      "month": "March",
+      "element": "Water",
+      "clock": "00:00",
+      "prefix": "",
+      "root": "ar",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "okala",
+      "folio": "f70v2",
+      "sign": "Pisces",
+      "month": "March",
+      "element": "Water",
+      "clock": "00:30",
+      "prefix": "o",
+      "root": "kala",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "otody",
+      "folio": "f70v2",
+      "sign": "Pisces",
+      "month": "March",
+      "element": "Water",
+      "clock": "01:00",
+      "prefix": "o",
+      "root": "tod",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "otald",
+      "folio": "f70v2",
+      "sign": "Pisces",
+      "month": "March",
+      "element": "Water",
+      "clock": "01:30",
+      "prefix": "o",
+      "root": "tald",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "otaldar",
+      "folio": "f70v2",
+      "sign": "Pisces",
+      "month": "March",
+      "element": "Water",
+      "clock": "02:00",
+      "prefix": "o",
+      "root": "taldar",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "okody",
+      "folio": "f70v2",
+      "sign": "Pisces",
+      "month": "March",
+      "element": "Water",
+      "clock": "02:45",
+      "prefix": "o",
+      "root": "kod",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "opysam",
+      "folio": "f70v2",
+      "sign": "Pisces",
+      "month": "March",
+      "element": "Water",
+      "clock": "03:15",
+      "prefix": "",
+      "root": "opysam",
+      "suffix": "",
+      "parsed": false
+    },
+    {
+      "word": "chckhhy",
+      "folio": "f70v2",
+      "sign": "Pisces",
+      "month": "March",
+      "element": "Water",
+      "clock": "04:00",
+      "prefix": "",
+      "root": "chckhhy",
+      "suffix": "",
+      "parsed": false
+    },
+    {
+      "word": "otaly",
+      "folio": "f70v2",
+      "sign": "Pisces",
+      "month": "March",
+      "element": "Water",
+      "clock": "04:30",
+      "prefix": "o",
+      "root": "tal",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "otal",
+      "folio": "f70v2",
+      "sign": "Pisces",
+      "month": "March",
+      "element": "Water",
+      "clock": "05:30",
+      "prefix": "o",
+      "root": "tal",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "arar",
+      "folio": "f70v2",
+      "sign": "Pisces",
+      "month": "March",
+      "element": "Water",
+      "clock": "05:30",
+      "prefix": "",
+      "root": "arar",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "otaldy",
+      "folio": "f70v2",
+      "sign": "Pisces",
+      "month": "March",
+      "element": "Water",
+      "clock": "06:30",
+      "prefix": "o",
+      "root": "tald",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "okeoly",
+      "folio": "f70v2",
+      "sign": "Pisces",
+      "month": "March",
+      "element": "Water",
+      "clock": "07:00",
+      "prefix": "o",
+      "root": "keol",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "okydy",
+      "folio": "f70v2",
+      "sign": "Pisces",
+      "month": "March",
+      "element": "Water",
+      "clock": "08:00",
+      "prefix": "",
+      "root": "okydy",
+      "suffix": "",
+      "parsed": false
+    },
+    {
+      "word": "okees",
+      "folio": "f70v2",
+      "sign": "Pisces",
+      "month": "March",
+      "element": "Water",
+      "clock": "08:30",
+      "prefix": "o",
+      "root": "kees",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "otar",
+      "folio": "f70v2",
+      "sign": "Pisces",
+      "month": "March",
+      "element": "Water",
+      "clock": "10:00",
+      "prefix": "o",
+      "root": "tar",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "am",
+      "folio": "f70v2",
+      "sign": "Pisces",
+      "month": "March",
+      "element": "Water",
+      "clock": "10:00",
+      "prefix": "",
+      "root": "am",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "otar",
+      "folio": "f70v2",
+      "sign": "Pisces",
+      "month": "March",
+      "element": "Water",
+      "clock": "11:00",
+      "prefix": "o",
+      "root": "tar",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "al",
+      "folio": "f70v2",
+      "sign": "Pisces",
+      "month": "March",
+      "element": "Water",
+      "clock": "11:00",
+      "prefix": "",
+      "root": "al",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "otalar",
+      "folio": "f70v2",
+      "sign": "Pisces",
+      "month": "March",
+      "element": "Water",
+      "clock": "00:00",
+      "prefix": "o",
+      "root": "talar",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "otalam",
+      "folio": "f70v2",
+      "sign": "Pisces",
+      "month": "March",
+      "element": "Water",
+      "clock": "01:30",
+      "prefix": "o",
+      "root": "talam",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "dolaram",
+      "folio": "f70v2",
+      "sign": "Pisces",
+      "month": "March",
+      "element": "Water",
+      "clock": "03:00",
+      "prefix": "d",
+      "root": "olaram",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "okaram",
+      "folio": "f70v2",
+      "sign": "Pisces",
+      "month": "March",
+      "element": "Water",
+      "clock": "04:00",
+      "prefix": "o",
+      "root": "karam",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "oteosal",
+      "folio": "f70v2",
+      "sign": "Pisces",
+      "month": "March",
+      "element": "Water",
+      "clock": "05:00",
+      "prefix": "o",
+      "root": "teosal",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "salols",
+      "folio": "f70v2",
+      "sign": "Pisces",
+      "month": "March",
+      "element": "Water",
+      "clock": "06:30",
+      "prefix": "s",
+      "root": "alols",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "okaldal",
+      "folio": "f70v2",
+      "sign": "Pisces",
+      "month": "March",
+      "element": "Water",
+      "clock": "08:00",
+      "prefix": "o",
+      "root": "kaldal",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "ykolaiin",
+      "folio": "f70v2",
+      "sign": "Pisces",
+      "month": "March",
+      "element": "Water",
+      "clock": "09:00",
+      "prefix": "y",
+      "root": "kola",
+      "suffix": "iin",
+      "parsed": true
+    },
+    {
+      "word": "otolal",
+      "folio": "f70v2",
+      "sign": "Pisces",
+      "month": "March",
+      "element": "Water",
+      "clock": null,
+      "prefix": "o",
+      "root": "tolal",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "oteos",
+      "folio": "f71r",
+      "sign": "Aries",
+      "month": "April",
+      "element": "Fire",
+      "clock": "10:00",
+      "prefix": "o",
+      "root": "teos",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "arar",
+      "folio": "f71r",
+      "sign": "Aries",
+      "month": "April",
+      "element": "Fire",
+      "clock": "10:00",
+      "prefix": "",
+      "root": "arar",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "okldam",
+      "folio": "f71r",
+      "sign": "Aries",
+      "month": "April",
+      "element": "Fire",
+      "clock": "11:00",
+      "prefix": "o",
+      "root": "kldam",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "oteoaldy",
+      "folio": "f71r",
+      "sign": "Aries",
+      "month": "April",
+      "element": "Fire",
+      "clock": "00:00",
+      "prefix": "o",
+      "root": "teoald",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "oteolar",
+      "folio": "f71r",
+      "sign": "Aries",
+      "month": "April",
+      "element": "Fire",
+      "clock": "01:00",
+      "prefix": "o",
+      "root": "teolar",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "okeoaly",
+      "folio": "f71r",
+      "sign": "Aries",
+      "month": "April",
+      "element": "Fire",
+      "clock": "02:00",
+      "prefix": "o",
+      "root": "keoal",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "otaleky",
+      "folio": "f71r",
+      "sign": "Aries",
+      "month": "April",
+      "element": "Fire",
+      "clock": "03:00",
+      "prefix": "",
+      "root": "otaleky",
+      "suffix": "",
+      "parsed": false
+    },
+    {
+      "word": "otalsar",
+      "folio": "f71r",
+      "sign": "Aries",
+      "month": "April",
+      "element": "Fire",
+      "clock": "04:30",
+      "prefix": "o",
+      "root": "talsar",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "cheary",
+      "folio": "f71r",
+      "sign": "Aries",
+      "month": "April",
+      "element": "Fire",
+      "clock": "05:30",
+      "prefix": "",
+      "root": "chear",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "oteotey",
+      "folio": "f71r",
+      "sign": "Aries",
+      "month": "April",
+      "element": "Fire",
+      "clock": "07:00",
+      "prefix": "",
+      "root": "oteotey",
+      "suffix": "",
+      "parsed": false
+    },
+    {
+      "word": "rary",
+      "folio": "f71r",
+      "sign": "Aries",
+      "month": "April",
+      "element": "Fire",
+      "clock": "07:00",
+      "prefix": "",
+      "root": "rary",
+      "suffix": "",
+      "parsed": false
+    },
+    {
+      "word": "otalaly",
+      "folio": "f71r",
+      "sign": "Aries",
+      "month": "April",
+      "element": "Fire",
+      "clock": "08:30",
+      "prefix": "o",
+      "root": "talal",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "otolchdy",
+      "folio": "f71r",
+      "sign": "Aries",
+      "month": "April",
+      "element": "Fire",
+      "clock": "11:00",
+      "prefix": "",
+      "root": "otolchdy",
+      "suffix": "",
+      "parsed": false
+    },
+    {
+      "word": "otoloaram",
+      "folio": "f71r",
+      "sign": "Aries",
+      "month": "April",
+      "element": "Fire",
+      "clock": "00:30",
+      "prefix": "o",
+      "root": "toloaram",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "oteeol",
+      "folio": "f71r",
+      "sign": "Aries",
+      "month": "April",
+      "element": "Fire",
+      "clock": "03:30",
+      "prefix": "o",
+      "root": "teeol",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "otolchd",
+      "folio": "f71r",
+      "sign": "Aries",
+      "month": "April",
+      "element": "Fire",
+      "clock": "05:30",
+      "prefix": "",
+      "root": "otolchd",
+      "suffix": "",
+      "parsed": false
+    },
+    {
+      "word": "otaldar",
+      "folio": "f71r",
+      "sign": "Aries",
+      "month": "April",
+      "element": "Fire",
+      "clock": "08:00",
+      "prefix": "o",
+      "root": "taldar",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "char",
+      "folio": "f71v",
+      "sign": "Taurus",
+      "month": "May",
+      "element": "Earth",
+      "clock": "10:00",
+      "prefix": "",
+      "root": "char",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "arom",
+      "folio": "f71v",
+      "sign": "Taurus",
+      "month": "May",
+      "element": "Earth",
+      "clock": "10:00",
+      "prefix": "",
+      "root": "arom",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "chfaly",
+      "folio": "f71v",
+      "sign": "Taurus",
+      "month": "May",
+      "element": "Earth",
+      "clock": "11:00",
+      "prefix": "",
+      "root": "chfaly",
+      "suffix": "",
+      "parsed": false
+    },
+    {
+      "word": "okolar",
+      "folio": "f71v",
+      "sign": "Taurus",
+      "month": "May",
+      "element": "Earth",
+      "clock": "00:00",
+      "prefix": "o",
+      "root": "kolar",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "otchody",
+      "folio": "f71v",
+      "sign": "Taurus",
+      "month": "May",
+      "element": "Earth",
+      "clock": "01:00",
+      "prefix": "",
+      "root": "otchody",
+      "suffix": "",
+      "parsed": false
+    },
+    {
+      "word": "alcphy",
+      "folio": "f71v",
+      "sign": "Taurus",
+      "month": "May",
+      "element": "Earth",
+      "clock": "02:00",
+      "prefix": "",
+      "root": "alcphy",
+      "suffix": "",
+      "parsed": false
+    },
+    {
+      "word": "otaiin",
+      "folio": "f71v",
+      "sign": "Taurus",
+      "month": "May",
+      "element": "Earth",
+      "clock": "03:00",
+      "prefix": "o",
+      "root": "ta",
+      "suffix": "iin",
+      "parsed": true
+    },
+    {
+      "word": "okaraiin",
+      "folio": "f71v",
+      "sign": "Taurus",
+      "month": "May",
+      "element": "Earth",
+      "clock": "04:30",
+      "prefix": "o",
+      "root": "kara",
+      "suffix": "iin",
+      "parsed": true
+    },
+    {
+      "word": "otar",
+      "folio": "f71v",
+      "sign": "Taurus",
+      "month": "May",
+      "element": "Earth",
+      "clock": "05:30",
+      "prefix": "o",
+      "root": "tar",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "ar",
+      "folio": "f71v",
+      "sign": "Taurus",
+      "month": "May",
+      "element": "Earth",
+      "clock": "05:30",
+      "prefix": "",
+      "root": "ar",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "aly",
+      "folio": "f71v",
+      "sign": "Taurus",
+      "month": "May",
+      "element": "Earth",
+      "clock": "05:30",
+      "prefix": "",
+      "root": "al",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "opalar",
+      "folio": "f71v",
+      "sign": "Taurus",
+      "month": "May",
+      "element": "Earth",
+      "clock": "07:00",
+      "prefix": "o",
+      "root": "palar",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "am",
+      "folio": "f71v",
+      "sign": "Taurus",
+      "month": "May",
+      "element": "Earth",
+      "clock": "07:00",
+      "prefix": "",
+      "root": "am",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "dan",
+      "folio": "f71v",
+      "sign": "Taurus",
+      "month": "May",
+      "element": "Earth",
+      "clock": "07:00",
+      "prefix": "d",
+      "root": "an",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "opalor",
+      "folio": "f71v",
+      "sign": "Taurus",
+      "month": "May",
+      "element": "Earth",
+      "clock": "09:00",
+      "prefix": "o",
+      "root": "palor",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "ar",
+      "folio": "f71v",
+      "sign": "Taurus",
+      "month": "May",
+      "element": "Earth",
+      "clock": "09:00",
+      "prefix": "",
+      "root": "ar",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "ofaifom",
+      "folio": "f71v",
+      "sign": "Taurus",
+      "month": "May",
+      "element": "Earth",
+      "clock": "10:00",
+      "prefix": "",
+      "root": "ofaifom",
+      "suffix": "",
+      "parsed": false
+    },
+    {
+      "word": "otalody",
+      "folio": "f71v",
+      "sign": "Taurus",
+      "month": "May",
+      "element": "Earth",
+      "clock": "00:00",
+      "prefix": "o",
+      "root": "talod",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "otalaiin",
+      "folio": "f71v",
+      "sign": "Taurus",
+      "month": "May",
+      "element": "Earth",
+      "clock": "03:00",
+      "prefix": "o",
+      "root": "tala",
+      "suffix": "iin",
+      "parsed": true
+    },
+    {
+      "word": "otar",
+      "folio": "f71v",
+      "sign": "Taurus",
+      "month": "May",
+      "element": "Earth",
+      "clock": "05:30",
+      "prefix": "o",
+      "root": "tar",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "shar",
+      "folio": "f71v",
+      "sign": "Taurus",
+      "month": "May",
+      "element": "Earth",
+      "clock": "05:30",
+      "prefix": "",
+      "root": "shar",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "sholshdy",
+      "folio": "f71v",
+      "sign": "Taurus",
+      "month": "May",
+      "element": "Earth",
+      "clock": "08:30",
+      "prefix": "",
+      "root": "sholshdy",
+      "suffix": "",
+      "parsed": false
+    },
+    {
+      "word": "oshodady",
+      "folio": "f72r1",
+      "sign": "Taurus",
+      "month": "May",
+      "element": "Earth",
+      "clock": "09:30",
+      "prefix": "o",
+      "root": "shodad",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "chdaiirdainy",
+      "folio": "f72r1",
+      "sign": "Taurus",
+      "month": "May",
+      "element": "Earth",
+      "clock": "10:30",
+      "prefix": "",
+      "root": "chdaiirdainy",
+      "suffix": "",
+      "parsed": false
+    },
+    {
+      "word": "oaiin",
+      "folio": "f72r1",
+      "sign": "Taurus",
+      "month": "May",
+      "element": "Earth",
+      "clock": "00:00",
+      "prefix": "o",
+      "root": "a",
+      "suffix": "iin",
+      "parsed": true
+    },
+    {
+      "word": "ar",
+      "folio": "f72r1",
+      "sign": "Taurus",
+      "month": "May",
+      "element": "Earth",
+      "clock": "00:00",
+      "prefix": "",
+      "root": "ar",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "ary",
+      "folio": "f72r1",
+      "sign": "Taurus",
+      "month": "May",
+      "element": "Earth",
+      "clock": "00:00",
+      "prefix": "",
+      "root": "ar",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "okalam",
+      "folio": "f72r1",
+      "sign": "Taurus",
+      "month": "May",
+      "element": "Earth",
+      "clock": "01:00",
+      "prefix": "o",
+      "root": "kalam",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "ytalshdy",
+      "folio": "f72r1",
+      "sign": "Taurus",
+      "month": "May",
+      "element": "Earth",
+      "clock": "02:00",
+      "prefix": "",
+      "root": "ytalshdy",
+      "suffix": "",
+      "parsed": false
+    },
+    {
+      "word": "char",
+      "folio": "f72r1",
+      "sign": "Taurus",
+      "month": "May",
+      "element": "Earth",
+      "clock": "03:00",
+      "prefix": "",
+      "root": "char",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "alif",
+      "folio": "f72r1",
+      "sign": "Taurus",
+      "month": "May",
+      "element": "Earth",
+      "clock": "03:00",
+      "prefix": "",
+      "root": "alif",
+      "suffix": "",
+      "parsed": false
+    },
+    {
+      "word": "otaraldy",
+      "folio": "f72r1",
+      "sign": "Taurus",
+      "month": "May",
+      "element": "Earth",
+      "clock": "03:30",
+      "prefix": "o",
+      "root": "tarald",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "otaiin",
+      "folio": "f72r1",
+      "sign": "Taurus",
+      "month": "May",
+      "element": "Earth",
+      "clock": "05:00",
+      "prefix": "o",
+      "root": "ta",
+      "suffix": "iin",
+      "parsed": true
+    },
+    {
+      "word": "otain",
+      "folio": "f72r1",
+      "sign": "Taurus",
+      "month": "May",
+      "element": "Earth",
+      "clock": "05:00",
+      "prefix": "o",
+      "root": "ta",
+      "suffix": "in",
+      "parsed": true
+    },
+    {
+      "word": "otalef",
+      "folio": "f72r1",
+      "sign": "Taurus",
+      "month": "May",
+      "element": "Earth",
+      "clock": "07:00",
+      "prefix": "",
+      "root": "otalef",
+      "suffix": "",
+      "parsed": false
+    },
+    {
+      "word": "ys",
+      "folio": "f72r1",
+      "sign": "Taurus",
+      "month": "May",
+      "element": "Earth",
+      "clock": "07:00",
+      "prefix": "",
+      "root": "ys",
+      "suffix": "",
+      "parsed": false
+    },
+    {
+      "word": "ainam",
+      "folio": "f72r1",
+      "sign": "Taurus",
+      "month": "May",
+      "element": "Earth",
+      "clock": "07:00",
+      "prefix": "",
+      "root": "ainam",
+      "suffix": "",
+      "parsed": false
+    },
+    {
+      "word": "ochol",
+      "folio": "f72r1",
+      "sign": "Taurus",
+      "month": "May",
+      "element": "Earth",
+      "clock": "08:30",
+      "prefix": "o",
+      "root": "chol",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "sharam",
+      "folio": "f72r1",
+      "sign": "Taurus",
+      "month": "May",
+      "element": "Earth",
+      "clock": "08:30",
+      "prefix": "",
+      "root": "sharam",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "ofaralar",
+      "folio": "f72r1",
+      "sign": "Taurus",
+      "month": "May",
+      "element": "Earth",
+      "clock": "09:00",
+      "prefix": "o",
+      "root": "faralar",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "otchoshy",
+      "folio": "f72r1",
+      "sign": "Taurus",
+      "month": "May",
+      "element": "Earth",
+      "clock": "00:00",
+      "prefix": "",
+      "root": "otchoshy",
+      "suffix": "",
+      "parsed": false
+    },
+    {
+      "word": "otchdal",
+      "folio": "f72r1",
+      "sign": "Taurus",
+      "month": "May",
+      "element": "Earth",
+      "clock": "02:00",
+      "prefix": "",
+      "root": "otchdal",
+      "suffix": "",
+      "parsed": false
+    },
+    {
+      "word": "okeey",
+      "folio": "f72r1",
+      "sign": "Taurus",
+      "month": "May",
+      "element": "Earth",
+      "clock": "04:00",
+      "prefix": "o",
+      "root": "kee",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "ary",
+      "folio": "f72r1",
+      "sign": "Taurus",
+      "month": "May",
+      "element": "Earth",
+      "clock": "04:00",
+      "prefix": "",
+      "root": "ar",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "otainy",
+      "folio": "f72r1",
+      "sign": "Taurus",
+      "month": "May",
+      "element": "Earth",
+      "clock": "07:00",
+      "prefix": "",
+      "root": "otainy",
+      "suffix": "",
+      "parsed": false
+    },
+    {
+      "word": "ofchdamy",
+      "folio": "f72r2",
+      "sign": "Gemini",
+      "month": "June",
+      "element": "Air",
+      "clock": "10:30",
+      "prefix": "",
+      "root": "ofchdamy",
+      "suffix": "",
+      "parsed": false
+    },
+    {
+      "word": "oklairdy",
+      "folio": "f72r2",
+      "sign": "Gemini",
+      "month": "June",
+      "element": "Air",
+      "clock": "11:00",
+      "prefix": "",
+      "root": "oklairdy",
+      "suffix": "",
+      "parsed": false
+    },
+    {
+      "word": "okaram",
+      "folio": "f72r2",
+      "sign": "Gemini",
+      "month": "June",
+      "element": "Air",
+      "clock": "00:00",
+      "prefix": "o",
+      "root": "karam",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "okairy",
+      "folio": "f72r2",
+      "sign": "Gemini",
+      "month": "June",
+      "element": "Air",
+      "clock": "00:30",
+      "prefix": "",
+      "root": "okairy",
+      "suffix": "",
+      "parsed": false
+    },
+    {
+      "word": "okealar",
+      "folio": "f72r2",
+      "sign": "Gemini",
+      "month": "June",
+      "element": "Air",
+      "clock": "01:00",
+      "prefix": "o",
+      "root": "kealar",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "otaraldy",
+      "folio": "f72r2",
+      "sign": "Gemini",
+      "month": "June",
+      "element": "Air",
+      "clock": "10:00",
+      "prefix": "o",
+      "root": "tarald",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "okalar",
+      "folio": "f72r2",
+      "sign": "Gemini",
+      "month": "June",
+      "element": "Air",
+      "clock": "11:00",
+      "prefix": "o",
+      "root": "kalar",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "okal",
+      "folio": "f72r2",
+      "sign": "Gemini",
+      "month": "June",
+      "element": "Air",
+      "clock": "11:45",
+      "prefix": "o",
+      "root": "kal",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "okaly",
+      "folio": "f72r2",
+      "sign": "Gemini",
+      "month": "June",
+      "element": "Air",
+      "clock": "00:15",
+      "prefix": "o",
+      "root": "kal",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "okal",
+      "folio": "f72r2",
+      "sign": "Gemini",
+      "month": "June",
+      "element": "Air",
+      "clock": "01:00",
+      "prefix": "o",
+      "root": "kal",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "okeey",
+      "folio": "f72r2",
+      "sign": "Gemini",
+      "month": "June",
+      "element": "Air",
+      "clock": "02:00",
+      "prefix": "o",
+      "root": "kee",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "ary",
+      "folio": "f72r2",
+      "sign": "Gemini",
+      "month": "June",
+      "element": "Air",
+      "clock": "02:00",
+      "prefix": "",
+      "root": "ar",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "oteeary",
+      "folio": "f72r2",
+      "sign": "Gemini",
+      "month": "June",
+      "element": "Air",
+      "clock": "03:00",
+      "prefix": "o",
+      "root": "teear",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "otair",
+      "folio": "f72r2",
+      "sign": "Gemini",
+      "month": "June",
+      "element": "Air",
+      "clock": "04:00",
+      "prefix": "o",
+      "root": "ta",
+      "suffix": "ir",
+      "parsed": true
+    },
+    {
+      "word": "dy",
+      "folio": "f72r2",
+      "sign": "Gemini",
+      "month": "June",
+      "element": "Air",
+      "clock": "04:00",
+      "prefix": "",
+      "root": "dy",
+      "suffix": "",
+      "parsed": false
+    },
+    {
+      "word": "okaircham",
+      "folio": "f72r2",
+      "sign": "Gemini",
+      "month": "June",
+      "element": "Air",
+      "clock": "05:00",
+      "prefix": "",
+      "root": "okaircham",
+      "suffix": "",
+      "parsed": false
+    },
+    {
+      "word": "okeal",
+      "folio": "f72r2",
+      "sign": "Gemini",
+      "month": "June",
+      "element": "Air",
+      "clock": "06:00",
+      "prefix": "o",
+      "root": "keal",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "otarcr",
+      "folio": "f72r2",
+      "sign": "Gemini",
+      "month": "June",
+      "element": "Air",
+      "clock": "06:30",
+      "prefix": "",
+      "root": "otarcr",
+      "suffix": "",
+      "parsed": false
+    },
+    {
+      "word": "okaly",
+      "folio": "f72r2",
+      "sign": "Gemini",
+      "month": "June",
+      "element": "Air",
+      "clock": "07:30",
+      "prefix": "o",
+      "root": "kal",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "orary",
+      "folio": "f72r2",
+      "sign": "Gemini",
+      "month": "June",
+      "element": "Air",
+      "clock": "08:00",
+      "prefix": "or",
+      "root": "ar",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "okyd",
+      "folio": "f72r2",
+      "sign": "Gemini",
+      "month": "June",
+      "element": "Air",
+      "clock": "09:00",
+      "prefix": "",
+      "root": "okyd",
+      "suffix": "",
+      "parsed": false
+    },
+    {
+      "word": "otolam",
+      "folio": "f72r2",
+      "sign": "Gemini",
+      "month": "June",
+      "element": "Air",
+      "clock": "09:30",
+      "prefix": "o",
+      "root": "tolam",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "otal",
+      "folio": "f72r2",
+      "sign": "Gemini",
+      "month": "June",
+      "element": "Air",
+      "clock": "10:30",
+      "prefix": "o",
+      "root": "tal",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "ralal",
+      "folio": "f72r2",
+      "sign": "Gemini",
+      "month": "June",
+      "element": "Air",
+      "clock": "11:30",
+      "prefix": "",
+      "root": "ralal",
+      "suffix": "",
+      "parsed": false
+    },
+    {
+      "word": "okam",
+      "folio": "f72r2",
+      "sign": "Gemini",
+      "month": "June",
+      "element": "Air",
+      "clock": "00:30",
+      "prefix": "o",
+      "root": "kam",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "otalshy",
+      "folio": "f72r2",
+      "sign": "Gemini",
+      "month": "June",
+      "element": "Air",
+      "clock": "02:00",
+      "prefix": "",
+      "root": "otalshy",
+      "suffix": "",
+      "parsed": false
+    },
+    {
+      "word": "okaldy",
+      "folio": "f72r2",
+      "sign": "Gemini",
+      "month": "June",
+      "element": "Air",
+      "clock": "03:30",
+      "prefix": "o",
+      "root": "kald",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "chosar",
+      "folio": "f72r2",
+      "sign": "Gemini",
+      "month": "June",
+      "element": "Air",
+      "clock": "05:00",
+      "prefix": "",
+      "root": "chosar",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "otam",
+      "folio": "f72r2",
+      "sign": "Gemini",
+      "month": "June",
+      "element": "Air",
+      "clock": "06:30",
+      "prefix": "o",
+      "root": "tam",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "ainaly",
+      "folio": "f72r2",
+      "sign": "Gemini",
+      "month": "June",
+      "element": "Air",
+      "clock": "08:00",
+      "prefix": "",
+      "root": "ainaly",
+      "suffix": "",
+      "parsed": false
+    },
+    {
+      "word": "okarcham",
+      "folio": "f72r2",
+      "sign": "Gemini",
+      "month": "June",
+      "element": "Air",
+      "clock": "09:00",
+      "prefix": "",
+      "root": "okarcham",
+      "suffix": "",
+      "parsed": false
+    },
+    {
+      "word": "olkalaiin",
+      "folio": "f72r3",
+      "sign": "Cancer",
+      "month": "July",
+      "element": "Water",
+      "clock": "10:30",
+      "prefix": "ol",
+      "root": "kala",
+      "suffix": "iin",
+      "parsed": true
+    },
+    {
+      "word": "olalsy",
+      "folio": "f72r3",
+      "sign": "Cancer",
+      "month": "July",
+      "element": "Water",
+      "clock": "11:00",
+      "prefix": "ol",
+      "root": "als",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "oraiinam",
+      "folio": "f72r3",
+      "sign": "Cancer",
+      "month": "July",
+      "element": "Water",
+      "clock": "00:00",
+      "prefix": "",
+      "root": "oraiinam",
+      "suffix": "",
+      "parsed": false
+    },
+    {
+      "word": "osarsheeeo",
+      "folio": "f72r3",
+      "sign": "Cancer",
+      "month": "July",
+      "element": "Water",
+      "clock": "01:00",
+      "prefix": "",
+      "root": "osarsheeeo",
+      "suffix": "",
+      "parsed": false
+    },
+    {
+      "word": "otoaiin",
+      "folio": "f72r3",
+      "sign": "Cancer",
+      "month": "July",
+      "element": "Water",
+      "clock": "02:00",
+      "prefix": "o",
+      "root": "toa",
+      "suffix": "iin",
+      "parsed": true
+    },
+    {
+      "word": "opoiiinoin",
+      "folio": "f72r3",
+      "sign": "Cancer",
+      "month": "July",
+      "element": "Water",
+      "clock": "02:30",
+      "prefix": "",
+      "root": "opoiiinoin",
+      "suffix": "",
+      "parsed": false
+    },
+    {
+      "word": "al",
+      "folio": "f72r3",
+      "sign": "Cancer",
+      "month": "July",
+      "element": "Water",
+      "clock": "02:30",
+      "prefix": "",
+      "root": "al",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "ches",
+      "folio": "f72r3",
+      "sign": "Cancer",
+      "month": "July",
+      "element": "Water",
+      "clock": "02:30",
+      "prefix": "",
+      "root": "ches",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "ypaiin",
+      "folio": "f72r3",
+      "sign": "Cancer",
+      "month": "July",
+      "element": "Water",
+      "clock": "04:00",
+      "prefix": "y",
+      "root": "pa",
+      "suffix": "iin",
+      "parsed": true
+    },
+    {
+      "word": "alaly",
+      "folio": "f72r3",
+      "sign": "Cancer",
+      "month": "July",
+      "element": "Water",
+      "clock": "04:00",
+      "prefix": "",
+      "root": "alal",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "oteey",
+      "folio": "f72r3",
+      "sign": "Cancer",
+      "month": "July",
+      "element": "Water",
+      "clock": "05:00",
+      "prefix": "o",
+      "root": "tee",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "daiin",
+      "folio": "f72r3",
+      "sign": "Cancer",
+      "month": "July",
+      "element": "Water",
+      "clock": "05:00",
+      "prefix": "d",
+      "root": "a",
+      "suffix": "iin",
+      "parsed": true
+    },
+    {
+      "word": "oeeodaiin",
+      "folio": "f72r3",
+      "sign": "Cancer",
+      "month": "July",
+      "element": "Water",
+      "clock": "06:30",
+      "prefix": "o",
+      "root": "eeoda",
+      "suffix": "iin",
+      "parsed": true
+    },
+    {
+      "word": "ofsholdy",
+      "folio": "f72r3",
+      "sign": "Cancer",
+      "month": "July",
+      "element": "Water",
+      "clock": "07:00",
+      "prefix": "",
+      "root": "ofsholdy",
+      "suffix": "",
+      "parsed": false
+    },
+    {
+      "word": "opoeey",
+      "folio": "f72r3",
+      "sign": "Cancer",
+      "month": "July",
+      "element": "Water",
+      "clock": "07:00",
+      "prefix": "o",
+      "root": "poee",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "okaiin",
+      "folio": "f72r3",
+      "sign": "Cancer",
+      "month": "July",
+      "element": "Water",
+      "clock": "07:00",
+      "prefix": "o",
+      "root": "ka",
+      "suffix": "iin",
+      "parsed": true
+    },
+    {
+      "word": "ykolairol",
+      "folio": "f72r3",
+      "sign": "Cancer",
+      "month": "July",
+      "element": "Water",
+      "clock": "10:00",
+      "prefix": "",
+      "root": "ykolairol",
+      "suffix": "",
+      "parsed": false
+    },
+    {
+      "word": "oralkam",
+      "folio": "f72r3",
+      "sign": "Cancer",
+      "month": "July",
+      "element": "Water",
+      "clock": "11:00",
+      "prefix": "",
+      "root": "oralkam",
+      "suffix": "",
+      "parsed": false
+    },
+    {
+      "word": "ytairal",
+      "folio": "f72r3",
+      "sign": "Cancer",
+      "month": "July",
+      "element": "Water",
+      "clock": "00:00",
+      "prefix": "",
+      "root": "ytairal",
+      "suffix": "",
+      "parsed": false
+    },
+    {
+      "word": "oeeesaiin",
+      "folio": "f72r3",
+      "sign": "Cancer",
+      "month": "July",
+      "element": "Water",
+      "clock": "01:00",
+      "prefix": "o",
+      "root": "eeesa",
+      "suffix": "iin",
+      "parsed": true
+    },
+    {
+      "word": "ory",
+      "folio": "f72r3",
+      "sign": "Cancer",
+      "month": "July",
+      "element": "Water",
+      "clock": "01:30",
+      "prefix": "",
+      "root": "or",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "ochey",
+      "folio": "f72r3",
+      "sign": "Cancer",
+      "month": "July",
+      "element": "Water",
+      "clock": "02:30",
+      "prefix": "o",
+      "root": "che",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "fydy",
+      "folio": "f72r3",
+      "sign": "Cancer",
+      "month": "July",
+      "element": "Water",
+      "clock": "02:30",
+      "prefix": "",
+      "root": "fydy",
+      "suffix": "",
+      "parsed": false
+    },
+    {
+      "word": "eeesaly",
+      "folio": "f72r3",
+      "sign": "Cancer",
+      "month": "July",
+      "element": "Water",
+      "clock": "03:30",
+      "prefix": "",
+      "root": "eeesal",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "ykaraiin",
+      "folio": "f72r3",
+      "sign": "Cancer",
+      "month": "July",
+      "element": "Water",
+      "clock": "05:00",
+      "prefix": "y",
+      "root": "kara",
+      "suffix": "iin",
+      "parsed": true
+    },
+    {
+      "word": "airal",
+      "folio": "f72r3",
+      "sign": "Cancer",
+      "month": "July",
+      "element": "Water",
+      "clock": "05:00",
+      "prefix": "",
+      "root": "airal",
+      "suffix": "",
+      "parsed": false
+    },
+    {
+      "word": "okalar",
+      "folio": "f72r3",
+      "sign": "Cancer",
+      "month": "July",
+      "element": "Water",
+      "clock": "06:30",
+      "prefix": "o",
+      "root": "kalar",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "orara",
+      "folio": "f72r3",
+      "sign": "Cancer",
+      "month": "July",
+      "element": "Water",
+      "clock": "08:00",
+      "prefix": "or",
+      "root": "ara",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "olaiin",
+      "folio": "f72r3",
+      "sign": "Cancer",
+      "month": "July",
+      "element": "Water",
+      "clock": "09:00",
+      "prefix": "ol",
+      "root": "a",
+      "suffix": "iin",
+      "parsed": true
+    },
+    {
+      "word": "olaikhy",
+      "folio": "f72r3",
+      "sign": "Cancer",
+      "month": "July",
+      "element": "Water",
+      "clock": "09:00",
+      "prefix": "",
+      "root": "olaikhy",
+      "suffix": "",
+      "parsed": false
+    },
+    {
+      "word": "olfsheoral",
+      "folio": "f72r3",
+      "sign": "Cancer",
+      "month": "July",
+      "element": "Water",
+      "clock": "10:00",
+      "prefix": "",
+      "root": "olfsheoral",
+      "suffix": "",
+      "parsed": false
+    },
+    {
+      "word": "opalal",
+      "folio": "f72r3",
+      "sign": "Cancer",
+      "month": "July",
+      "element": "Water",
+      "clock": "10:30",
+      "prefix": "o",
+      "root": "palal",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "yfary",
+      "folio": "f72r3",
+      "sign": "Cancer",
+      "month": "July",
+      "element": "Water",
+      "clock": "00:00",
+      "prefix": "y",
+      "root": "far",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "oraiiral",
+      "folio": "f72r3",
+      "sign": "Cancer",
+      "month": "July",
+      "element": "Water",
+      "clock": "01:30",
+      "prefix": "",
+      "root": "oraiiral",
+      "suffix": "",
+      "parsed": false
+    },
+    {
+      "word": "ytoar",
+      "folio": "f72r3",
+      "sign": "Cancer",
+      "month": "July",
+      "element": "Water",
+      "clock": "03:00",
+      "prefix": "y",
+      "root": "toar",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "shar",
+      "folio": "f72r3",
+      "sign": "Cancer",
+      "month": "July",
+      "element": "Water",
+      "clock": "03:00",
+      "prefix": "",
+      "root": "shar",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "octho",
+      "folio": "f72r3",
+      "sign": "Cancer",
+      "month": "July",
+      "element": "Water",
+      "clock": "06:00",
+      "prefix": "o",
+      "root": "ctho",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "aral",
+      "folio": "f72r3",
+      "sign": "Cancer",
+      "month": "July",
+      "element": "Water",
+      "clock": "07:30",
+      "prefix": "",
+      "root": "aral",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "oletal",
+      "folio": "f72r3",
+      "sign": "Cancer",
+      "month": "July",
+      "element": "Water",
+      "clock": "09:00",
+      "prefix": "",
+      "root": "oletal",
+      "suffix": "",
+      "parsed": false
+    },
+    {
+      "word": "oeeoty",
+      "folio": "f72v1",
+      "sign": "Libra",
+      "month": "October",
+      "element": "Air",
+      "clock": "08:45",
+      "prefix": "",
+      "root": "oeeoty",
+      "suffix": "",
+      "parsed": false
+    },
+    {
+      "word": "octhy",
+      "folio": "f72v1",
+      "sign": "Libra",
+      "month": "October",
+      "element": "Air",
+      "clock": "09:30",
+      "prefix": "o",
+      "root": "cth",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "oteoly",
+      "folio": "f72v1",
+      "sign": "Libra",
+      "month": "October",
+      "element": "Air",
+      "clock": "10:00",
+      "prefix": "o",
+      "root": "teol",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "okeoly",
+      "folio": "f72v1",
+      "sign": "Libra",
+      "month": "October",
+      "element": "Air",
+      "clock": "10:30",
+      "prefix": "o",
+      "root": "keol",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "oeees",
+      "folio": "f72v1",
+      "sign": "Libra",
+      "month": "October",
+      "element": "Air",
+      "clock": "11:00",
+      "prefix": "o",
+      "root": "eees",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "oees",
+      "folio": "f72v1",
+      "sign": "Libra",
+      "month": "October",
+      "element": "Air",
+      "clock": "01:45",
+      "prefix": "o",
+      "root": "ees",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "okeeoly",
+      "folio": "f72v1",
+      "sign": "Libra",
+      "month": "October",
+      "element": "Air",
+      "clock": "01:00",
+      "prefix": "o",
+      "root": "keeol",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "odal",
+      "folio": "f72v1",
+      "sign": "Libra",
+      "month": "October",
+      "element": "Air",
+      "clock": "01:30",
+      "prefix": "o",
+      "root": "dal",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "aiinod",
+      "folio": "f72v1",
+      "sign": "Libra",
+      "month": "October",
+      "element": "Air",
+      "clock": "02:00",
+      "prefix": "",
+      "root": "aiinod",
+      "suffix": "",
+      "parsed": false
+    },
+    {
+      "word": "oteod",
+      "folio": "f72v1",
+      "sign": "Libra",
+      "month": "October",
+      "element": "Air",
+      "clock": "03:15",
+      "prefix": "o",
+      "root": "teod",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "yteod",
+      "folio": "f72v1",
+      "sign": "Libra",
+      "month": "October",
+      "element": "Air",
+      "clock": "03:45",
+      "prefix": "y",
+      "root": "teod",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "okal",
+      "folio": "f72v1",
+      "sign": "Libra",
+      "month": "October",
+      "element": "Air",
+      "clock": "05:00",
+      "prefix": "o",
+      "root": "kal",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "ytaly",
+      "folio": "f72v1",
+      "sign": "Libra",
+      "month": "October",
+      "element": "Air",
+      "clock": "05:30",
+      "prefix": "y",
+      "root": "tal",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "oeeeos",
+      "folio": "f72v1",
+      "sign": "Libra",
+      "month": "October",
+      "element": "Air",
+      "clock": "06:00",
+      "prefix": "o",
+      "root": "eeeos",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "oteofy",
+      "folio": "f72v1",
+      "sign": "Libra",
+      "month": "October",
+      "element": "Air",
+      "clock": "06:30",
+      "prefix": "",
+      "root": "oteofy",
+      "suffix": "",
+      "parsed": false
+    },
+    {
+      "word": "cheoepy",
+      "folio": "f72v1",
+      "sign": "Libra",
+      "month": "October",
+      "element": "Air",
+      "clock": "07:30",
+      "prefix": "",
+      "root": "cheoepy",
+      "suffix": "",
+      "parsed": false
+    },
+    {
+      "word": "ykeedy",
+      "folio": "f72v1",
+      "sign": "Libra",
+      "month": "October",
+      "element": "Air",
+      "clock": "08:00",
+      "prefix": "y",
+      "root": "keed",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "oeeoly",
+      "folio": "f72v1",
+      "sign": "Libra",
+      "month": "October",
+      "element": "Air",
+      "clock": "08:45",
+      "prefix": "o",
+      "root": "eeol",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "okydy",
+      "folio": "f72v1",
+      "sign": "Libra",
+      "month": "October",
+      "element": "Air",
+      "clock": "10:00",
+      "prefix": "",
+      "root": "okydy",
+      "suffix": "",
+      "parsed": false
+    },
+    {
+      "word": "okeey",
+      "folio": "f72v1",
+      "sign": "Libra",
+      "month": "October",
+      "element": "Air",
+      "clock": "11:30",
+      "prefix": "o",
+      "root": "kee",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "oiiny",
+      "folio": "f72v1",
+      "sign": "Libra",
+      "month": "October",
+      "element": "Air",
+      "clock": "00:00",
+      "prefix": "",
+      "root": "oiiny",
+      "suffix": "",
+      "parsed": false
+    },
+    {
+      "word": "oeey",
+      "folio": "f72v1",
+      "sign": "Libra",
+      "month": "October",
+      "element": "Air",
+      "clock": "01:00",
+      "prefix": "o",
+      "root": "ee",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "okedy",
+      "folio": "f72v1",
+      "sign": "Libra",
+      "month": "October",
+      "element": "Air",
+      "clock": "03:00",
+      "prefix": "o",
+      "root": "ked",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "ypaim",
+      "folio": "f72v1",
+      "sign": "Libra",
+      "month": "October",
+      "element": "Air",
+      "clock": "04:30",
+      "prefix": "",
+      "root": "ypaim",
+      "suffix": "",
+      "parsed": false
+    },
+    {
+      "word": "okalair",
+      "folio": "f72v1",
+      "sign": "Libra",
+      "month": "October",
+      "element": "Air",
+      "clock": "05:30",
+      "prefix": "o",
+      "root": "kala",
+      "suffix": "ir",
+      "parsed": true
+    },
+    {
+      "word": "oeeody",
+      "folio": "f72v1",
+      "sign": "Libra",
+      "month": "October",
+      "element": "Air",
+      "clock": "06:30",
+      "prefix": "o",
+      "root": "eeod",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "okeol",
+      "folio": "f72v1",
+      "sign": "Libra",
+      "month": "October",
+      "element": "Air",
+      "clock": "07:30",
+      "prefix": "o",
+      "root": "keol",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "oeedey",
+      "folio": "f72v2",
+      "sign": "Virgo",
+      "month": "September",
+      "element": "Earth",
+      "clock": "10:00",
+      "prefix": "o",
+      "root": "eede",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "oeeodaiin",
+      "folio": "f72v2",
+      "sign": "Virgo",
+      "month": "September",
+      "element": "Earth",
+      "clock": "11:00",
+      "prefix": "o",
+      "root": "eeoda",
+      "suffix": "iin",
+      "parsed": true
+    },
+    {
+      "word": "okeoram",
+      "folio": "f72v2",
+      "sign": "Virgo",
+      "month": "September",
+      "element": "Earth",
+      "clock": "11:45",
+      "prefix": "o",
+      "root": "keoram",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "air",
+      "folio": "f72v2",
+      "sign": "Virgo",
+      "month": "September",
+      "element": "Earth",
+      "clock": "00:30",
+      "prefix": "",
+      "root": "a",
+      "suffix": "ir",
+      "parsed": true
+    },
+    {
+      "word": "aim",
+      "folio": "f72v2",
+      "sign": "Virgo",
+      "month": "September",
+      "element": "Earth",
+      "clock": "00:30",
+      "prefix": "",
+      "root": "aim",
+      "suffix": "",
+      "parsed": false
+    },
+    {
+      "word": "oshesy",
+      "folio": "f72v2",
+      "sign": "Virgo",
+      "month": "September",
+      "element": "Earth",
+      "clock": "01:00",
+      "prefix": "o",
+      "root": "shes",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "okeary",
+      "folio": "f72v2",
+      "sign": "Virgo",
+      "month": "September",
+      "element": "Earth",
+      "clock": "02:00",
+      "prefix": "o",
+      "root": "kear",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "cheoetey",
+      "folio": "f72v2",
+      "sign": "Virgo",
+      "month": "September",
+      "element": "Earth",
+      "clock": "02:30",
+      "prefix": "",
+      "root": "cheoetey",
+      "suffix": "",
+      "parsed": false
+    },
+    {
+      "word": "cheoldy",
+      "folio": "f72v2",
+      "sign": "Virgo",
+      "month": "September",
+      "element": "Earth",
+      "clock": "03:00",
+      "prefix": "",
+      "root": "cheold",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "sheoeky",
+      "folio": "f72v2",
+      "sign": "Virgo",
+      "month": "September",
+      "element": "Earth",
+      "clock": "04:00",
+      "prefix": "",
+      "root": "sheoeky",
+      "suffix": "",
+      "parsed": false
+    },
+    {
+      "word": "oteodar",
+      "folio": "f72v2",
+      "sign": "Virgo",
+      "month": "September",
+      "element": "Earth",
+      "clock": "04:30",
+      "prefix": "o",
+      "root": "teodar",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "ofchdysd",
+      "folio": "f72v2",
+      "sign": "Virgo",
+      "month": "September",
+      "element": "Earth",
+      "clock": "05:30",
+      "prefix": "",
+      "root": "ofchdysd",
+      "suffix": "",
+      "parsed": false
+    },
+    {
+      "word": "oteoyd",
+      "folio": "f72v2",
+      "sign": "Virgo",
+      "month": "September",
+      "element": "Earth",
+      "clock": "06:00",
+      "prefix": "",
+      "root": "oteoyd",
+      "suffix": "",
+      "parsed": false
+    },
+    {
+      "word": "yteody",
+      "folio": "f72v2",
+      "sign": "Virgo",
+      "month": "September",
+      "element": "Earth",
+      "clock": "06:30",
+      "prefix": "y",
+      "root": "teod",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "okeody",
+      "folio": "f72v2",
+      "sign": "Virgo",
+      "month": "September",
+      "element": "Earth",
+      "clock": "07:00",
+      "prefix": "o",
+      "root": "keod",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "okeoldy",
+      "folio": "f72v2",
+      "sign": "Virgo",
+      "month": "September",
+      "element": "Earth",
+      "clock": "08:00",
+      "prefix": "o",
+      "root": "keold",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "ykeeor",
+      "folio": "f72v2",
+      "sign": "Virgo",
+      "month": "September",
+      "element": "Earth",
+      "clock": "08:30",
+      "prefix": "y",
+      "root": "keeor",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "opaiinam",
+      "folio": "f72v2",
+      "sign": "Virgo",
+      "month": "September",
+      "element": "Earth",
+      "clock": "09:00",
+      "prefix": "",
+      "root": "opaiinam",
+      "suffix": "",
+      "parsed": false
+    },
+    {
+      "word": "cheoldy",
+      "folio": "f72v2",
+      "sign": "Virgo",
+      "month": "September",
+      "element": "Earth",
+      "clock": "09:30",
+      "prefix": "",
+      "root": "cheold",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "ockhol",
+      "folio": "f72v2",
+      "sign": "Virgo",
+      "month": "September",
+      "element": "Earth",
+      "clock": "11:30",
+      "prefix": "o",
+      "root": "ckhol",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "oeedy",
+      "folio": "f72v2",
+      "sign": "Virgo",
+      "month": "September",
+      "element": "Earth",
+      "clock": "00:30",
+      "prefix": "o",
+      "root": "eed",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "opalg",
+      "folio": "f72v2",
+      "sign": "Virgo",
+      "month": "September",
+      "element": "Earth",
+      "clock": "01:00",
+      "prefix": "o",
+      "root": "pal",
+      "suffix": "g",
+      "parsed": true
+    },
+    {
+      "word": "okeeom",
+      "folio": "f72v2",
+      "sign": "Virgo",
+      "month": "September",
+      "element": "Earth",
+      "clock": "02:00",
+      "prefix": "o",
+      "root": "keeom",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "olkar",
+      "folio": "f72v2",
+      "sign": "Virgo",
+      "month": "September",
+      "element": "Earth",
+      "clock": "03:00",
+      "prefix": "ol",
+      "root": "kar",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "oeedaly",
+      "folio": "f72v2",
+      "sign": "Virgo",
+      "month": "September",
+      "element": "Earth",
+      "clock": "04:00",
+      "prefix": "o",
+      "root": "eedal",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "cheosy",
+      "folio": "f72v2",
+      "sign": "Virgo",
+      "month": "September",
+      "element": "Earth",
+      "clock": "05:00",
+      "prefix": "",
+      "root": "cheos",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "ofcheay",
+      "folio": "f72v2",
+      "sign": "Virgo",
+      "month": "September",
+      "element": "Earth",
+      "clock": "06:30",
+      "prefix": "",
+      "root": "ofcheay",
+      "suffix": "",
+      "parsed": false
+    },
+    {
+      "word": "yteedy",
+      "folio": "f72v2",
+      "sign": "Virgo",
+      "month": "September",
+      "element": "Earth",
+      "clock": "07:30",
+      "prefix": "y",
+      "root": "teed",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "onaiin",
+      "folio": "f72v2",
+      "sign": "Virgo",
+      "month": "September",
+      "element": "Earth",
+      "clock": "08:30",
+      "prefix": "",
+      "root": "ona",
+      "suffix": "iin",
+      "parsed": true
+    },
+    {
+      "word": "okeorar",
+      "folio": "f72v2",
+      "sign": "Virgo",
+      "month": "September",
+      "element": "Earth",
+      "clock": "09:30",
+      "prefix": "o",
+      "root": "keorar",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "ocham",
+      "folio": "f72v3",
+      "sign": "Leo",
+      "month": "August",
+      "element": "Fire",
+      "clock": "10:00",
+      "prefix": "o",
+      "root": "cham",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "orchey",
+      "folio": "f72v3",
+      "sign": "Leo",
+      "month": "August",
+      "element": "Fire",
+      "clock": "11:00",
+      "prefix": "or",
+      "root": "che",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "okam",
+      "folio": "f72v3",
+      "sign": "Leo",
+      "month": "August",
+      "element": "Fire",
+      "clock": "11:30",
+      "prefix": "o",
+      "root": "kam",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "okey",
+      "folio": "f72v3",
+      "sign": "Leo",
+      "month": "August",
+      "element": "Fire",
+      "clock": "00:00",
+      "prefix": "o",
+      "root": "ke",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "otcheody",
+      "folio": "f72v3",
+      "sign": "Leo",
+      "month": "August",
+      "element": "Fire",
+      "clock": "00:30",
+      "prefix": "",
+      "root": "otcheody",
+      "suffix": "",
+      "parsed": false
+    },
+    {
+      "word": "okyeeshy",
+      "folio": "f72v3",
+      "sign": "Leo",
+      "month": "August",
+      "element": "Fire",
+      "clock": "01:00",
+      "prefix": "",
+      "root": "okyeeshy",
+      "suffix": "",
+      "parsed": false
+    },
+    {
+      "word": "okaly",
+      "folio": "f72v3",
+      "sign": "Leo",
+      "month": "August",
+      "element": "Fire",
+      "clock": "02:00",
+      "prefix": "o",
+      "root": "kal",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "otoly",
+      "folio": "f72v3",
+      "sign": "Leo",
+      "month": "August",
+      "element": "Fire",
+      "clock": "02:45",
+      "prefix": "o",
+      "root": "tol",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "ofalals",
+      "folio": "f72v3",
+      "sign": "Leo",
+      "month": "August",
+      "element": "Fire",
+      "clock": "03:30",
+      "prefix": "o",
+      "root": "falals",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "sheeos",
+      "folio": "f72v3",
+      "sign": "Leo",
+      "month": "August",
+      "element": "Fire",
+      "clock": "04:00",
+      "prefix": "",
+      "root": "sheeos",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "ocfhhy",
+      "folio": "f72v3",
+      "sign": "Leo",
+      "month": "August",
+      "element": "Fire",
+      "clock": "04:00",
+      "prefix": "",
+      "root": "ocfhhy",
+      "suffix": "",
+      "parsed": false
+    },
+    {
+      "word": "daiin",
+      "folio": "f72v3",
+      "sign": "Leo",
+      "month": "August",
+      "element": "Fire",
+      "clock": "05:00",
+      "prefix": "d",
+      "root": "a",
+      "suffix": "iin",
+      "parsed": true
+    },
+    {
+      "word": "chepy",
+      "folio": "f72v3",
+      "sign": "Leo",
+      "month": "August",
+      "element": "Fire",
+      "clock": "05:00",
+      "prefix": "",
+      "root": "chepy",
+      "suffix": "",
+      "parsed": false
+    },
+    {
+      "word": "oteey",
+      "folio": "f72v3",
+      "sign": "Leo",
+      "month": "August",
+      "element": "Fire",
+      "clock": "06:00",
+      "prefix": "o",
+      "root": "tee",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "deeal",
+      "folio": "f72v3",
+      "sign": "Leo",
+      "month": "August",
+      "element": "Fire",
+      "clock": "06:00",
+      "prefix": "d",
+      "root": "eeal",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "chealpy",
+      "folio": "f72v3",
+      "sign": "Leo",
+      "month": "August",
+      "element": "Fire",
+      "clock": "07:00",
+      "prefix": "",
+      "root": "chealpy",
+      "suffix": "",
+      "parsed": false
+    },
+    {
+      "word": "okeeol",
+      "folio": "f72v3",
+      "sign": "Leo",
+      "month": "August",
+      "element": "Fire",
+      "clock": "07:30",
+      "prefix": "o",
+      "root": "keeol",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "okaly",
+      "folio": "f72v3",
+      "sign": "Leo",
+      "month": "August",
+      "element": "Fire",
+      "clock": "08:30",
+      "prefix": "o",
+      "root": "kal",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "okaldy",
+      "folio": "f72v3",
+      "sign": "Leo",
+      "month": "August",
+      "element": "Fire",
+      "clock": "09:00",
+      "prefix": "o",
+      "root": "kald",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "okeolyd",
+      "folio": "f72v3",
+      "sign": "Leo",
+      "month": "August",
+      "element": "Fire",
+      "clock": "09:30",
+      "prefix": "",
+      "root": "okeolyd",
+      "suffix": "",
+      "parsed": false
+    },
+    {
+      "word": "choleey",
+      "folio": "f72v3",
+      "sign": "Leo",
+      "month": "August",
+      "element": "Fire",
+      "clock": "10:30",
+      "prefix": "",
+      "root": "cholee",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "oky",
+      "folio": "f72v3",
+      "sign": "Leo",
+      "month": "August",
+      "element": "Fire",
+      "clock": "11:30",
+      "prefix": "o",
+      "root": "k",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "chcthhy",
+      "folio": "f72v3",
+      "sign": "Leo",
+      "month": "August",
+      "element": "Fire",
+      "clock": "00:30",
+      "prefix": "",
+      "root": "chcthhy",
+      "suffix": "",
+      "parsed": false
+    },
+    {
+      "word": "laly",
+      "folio": "f72v3",
+      "sign": "Leo",
+      "month": "August",
+      "element": "Fire",
+      "clock": "01:00",
+      "prefix": "",
+      "root": "laly",
+      "suffix": "",
+      "parsed": false
+    },
+    {
+      "word": "oeedy",
+      "folio": "f72v3",
+      "sign": "Leo",
+      "month": "August",
+      "element": "Fire",
+      "clock": "02:00",
+      "prefix": "o",
+      "root": "eed",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "odairan",
+      "folio": "f72v3",
+      "sign": "Leo",
+      "month": "August",
+      "element": "Fire",
+      "clock": "03:00",
+      "prefix": "",
+      "root": "odairan",
+      "suffix": "",
+      "parsed": false
+    },
+    {
+      "word": "okary",
+      "folio": "f72v3",
+      "sign": "Leo",
+      "month": "August",
+      "element": "Fire",
+      "clock": "04:00",
+      "prefix": "o",
+      "root": "kar",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "oeesaiin",
+      "folio": "f72v3",
+      "sign": "Leo",
+      "month": "August",
+      "element": "Fire",
+      "clock": "05:00",
+      "prefix": "o",
+      "root": "eesa",
+      "suffix": "iin",
+      "parsed": true
+    },
+    {
+      "word": "oteesed",
+      "folio": "f72v3",
+      "sign": "Leo",
+      "month": "August",
+      "element": "Fire",
+      "clock": "06:30",
+      "prefix": "o",
+      "root": "teesed",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "opal",
+      "folio": "f72v3",
+      "sign": "Leo",
+      "month": "August",
+      "element": "Fire",
+      "clock": "07:30",
+      "prefix": "o",
+      "root": "pal",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "otaly",
+      "folio": "f72v3",
+      "sign": "Leo",
+      "month": "August",
+      "element": "Fire",
+      "clock": "08:30",
+      "prefix": "o",
+      "root": "tal",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "otaly",
+      "folio": "f72v3",
+      "sign": "Leo",
+      "month": "August",
+      "element": "Fire",
+      "clock": "09:30",
+      "prefix": "o",
+      "root": "tal",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "yty",
+      "folio": "f72v3",
+      "sign": "Leo",
+      "month": "August",
+      "element": "Fire",
+      "clock": "09:30",
+      "prefix": "y",
+      "root": "t",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "otaly",
+      "folio": "f73r",
+      "sign": "Scorpio",
+      "month": "November",
+      "element": "Water",
+      "clock": "11:15",
+      "prefix": "o",
+      "root": "tal",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "chockhy",
+      "folio": "f73r",
+      "sign": "Scorpio",
+      "month": "November",
+      "element": "Water",
+      "clock": "11:45",
+      "prefix": "",
+      "root": "chockhy",
+      "suffix": "",
+      "parsed": false
+    },
+    {
+      "word": "otedy",
+      "folio": "f73r",
+      "sign": "Scorpio",
+      "month": "November",
+      "element": "Water",
+      "clock": "00:30",
+      "prefix": "o",
+      "root": "ted",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "yteeody",
+      "folio": "f73r",
+      "sign": "Scorpio",
+      "month": "November",
+      "element": "Water",
+      "clock": "01:00",
+      "prefix": "y",
+      "root": "teeod",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "otaly",
+      "folio": "f73r",
+      "sign": "Scorpio",
+      "month": "November",
+      "element": "Water",
+      "clock": "11:00",
+      "prefix": "o",
+      "root": "tal",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "okeody",
+      "folio": "f73r",
+      "sign": "Scorpio",
+      "month": "November",
+      "element": "Water",
+      "clock": "11:30",
+      "prefix": "o",
+      "root": "keod",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "oteedyl",
+      "folio": "f73r",
+      "sign": "Scorpio",
+      "month": "November",
+      "element": "Water",
+      "clock": "00:00",
+      "prefix": "",
+      "root": "oteedyl",
+      "suffix": "",
+      "parsed": false
+    },
+    {
+      "word": "ykeedy",
+      "folio": "f73r",
+      "sign": "Scorpio",
+      "month": "November",
+      "element": "Water",
+      "clock": "00:30",
+      "prefix": "y",
+      "root": "keed",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "okeey",
+      "folio": "f73r",
+      "sign": "Scorpio",
+      "month": "November",
+      "element": "Water",
+      "clock": "01:00",
+      "prefix": "o",
+      "root": "kee",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "okeedy",
+      "folio": "f73r",
+      "sign": "Scorpio",
+      "month": "November",
+      "element": "Water",
+      "clock": "02:00",
+      "prefix": "o",
+      "root": "keed",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "ykeeory",
+      "folio": "f73r",
+      "sign": "Scorpio",
+      "month": "November",
+      "element": "Water",
+      "clock": "02:30",
+      "prefix": "y",
+      "root": "keeor",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "oteeosy",
+      "folio": "f73r",
+      "sign": "Scorpio",
+      "month": "November",
+      "element": "Water",
+      "clock": "03:30",
+      "prefix": "o",
+      "root": "teeos",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "shekal",
+      "folio": "f73r",
+      "sign": "Scorpio",
+      "month": "November",
+      "element": "Water",
+      "clock": "04:30",
+      "prefix": "",
+      "root": "shekal",
+      "suffix": "",
+      "parsed": false
+    },
+    {
+      "word": "oteedyy",
+      "folio": "f73r",
+      "sign": "Scorpio",
+      "month": "November",
+      "element": "Water",
+      "clock": "05:30",
+      "prefix": "",
+      "root": "oteedyy",
+      "suffix": "",
+      "parsed": false
+    },
+    {
+      "word": "okedal",
+      "folio": "f73r",
+      "sign": "Scorpio",
+      "month": "November",
+      "element": "Water",
+      "clock": "06:30",
+      "prefix": "o",
+      "root": "kedal",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "chdy",
+      "folio": "f73r",
+      "sign": "Scorpio",
+      "month": "November",
+      "element": "Water",
+      "clock": "07:00",
+      "prefix": "",
+      "root": "chd",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "dalshey",
+      "folio": "f73r",
+      "sign": "Scorpio",
+      "month": "November",
+      "element": "Water",
+      "clock": "08:00",
+      "prefix": "",
+      "root": "dalshey",
+      "suffix": "",
+      "parsed": false
+    },
+    {
+      "word": "opaiin",
+      "folio": "f73r",
+      "sign": "Scorpio",
+      "month": "November",
+      "element": "Water",
+      "clock": "08:45",
+      "prefix": "o",
+      "root": "pa",
+      "suffix": "iin",
+      "parsed": true
+    },
+    {
+      "word": "okeos",
+      "folio": "f73r",
+      "sign": "Scorpio",
+      "month": "November",
+      "element": "Water",
+      "clock": "09:30",
+      "prefix": "o",
+      "root": "keos",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "otey",
+      "folio": "f73r",
+      "sign": "Scorpio",
+      "month": "November",
+      "element": "Water",
+      "clock": "10:00",
+      "prefix": "o",
+      "root": "te",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "okary",
+      "folio": "f73r",
+      "sign": "Scorpio",
+      "month": "November",
+      "element": "Water",
+      "clock": "11:30",
+      "prefix": "o",
+      "root": "kar",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "okeeody",
+      "folio": "f73r",
+      "sign": "Scorpio",
+      "month": "November",
+      "element": "Water",
+      "clock": "01:00",
+      "prefix": "o",
+      "root": "keeod",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "oyteedy",
+      "folio": "f73r",
+      "sign": "Scorpio",
+      "month": "November",
+      "element": "Water",
+      "clock": "02:00",
+      "prefix": "",
+      "root": "oyteedy",
+      "suffix": "",
+      "parsed": false
+    },
+    {
+      "word": "oky",
+      "folio": "f73r",
+      "sign": "Scorpio",
+      "month": "November",
+      "element": "Water",
+      "clock": "03:00",
+      "prefix": "o",
+      "root": "k",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "chefy",
+      "folio": "f73r",
+      "sign": "Scorpio",
+      "month": "November",
+      "element": "Water",
+      "clock": "04:30",
+      "prefix": "",
+      "root": "chefy",
+      "suffix": "",
+      "parsed": false
+    },
+    {
+      "word": "otal",
+      "folio": "f73r",
+      "sign": "Scorpio",
+      "month": "November",
+      "element": "Water",
+      "clock": "06:00",
+      "prefix": "o",
+      "root": "tal",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "chek",
+      "folio": "f73r",
+      "sign": "Scorpio",
+      "month": "November",
+      "element": "Water",
+      "clock": "07:00",
+      "prefix": "",
+      "root": "chek",
+      "suffix": "",
+      "parsed": false
+    },
+    {
+      "word": "ar",
+      "folio": "f73r",
+      "sign": "Scorpio",
+      "month": "November",
+      "element": "Water",
+      "clock": "08:30",
+      "prefix": "",
+      "root": "ar",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "kar",
+      "folio": "f73r",
+      "sign": "Scorpio",
+      "month": "November",
+      "element": "Water",
+      "clock": "09:30",
+      "prefix": "",
+      "root": "kar",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "okeeos",
+      "folio": "f73r",
+      "sign": "Scorpio",
+      "month": "November",
+      "element": "Water",
+      "clock": "10:30",
+      "prefix": "o",
+      "root": "keeos",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "okol",
+      "folio": "f73v",
+      "sign": "Sagittarius",
+      "month": "December",
+      "element": "Fire",
+      "clock": "11:00",
+      "prefix": "o",
+      "root": "kol",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "oteody",
+      "folio": "f73v",
+      "sign": "Sagittarius",
+      "month": "December",
+      "element": "Fire",
+      "clock": "11:45",
+      "prefix": "o",
+      "root": "teod",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "oteedy",
+      "folio": "f73v",
+      "sign": "Sagittarius",
+      "month": "December",
+      "element": "Fire",
+      "clock": "00:30",
+      "prefix": "o",
+      "root": "teed",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "eeeody",
+      "folio": "f73v",
+      "sign": "Sagittarius",
+      "month": "December",
+      "element": "Fire",
+      "clock": "01:00",
+      "prefix": "",
+      "root": "eeeod",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "okeody",
+      "folio": "f73v",
+      "sign": "Sagittarius",
+      "month": "December",
+      "element": "Fire",
+      "clock": "10:00",
+      "prefix": "o",
+      "root": "keod",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "sheol",
+      "folio": "f73v",
+      "sign": "Sagittarius",
+      "month": "December",
+      "element": "Fire",
+      "clock": "10:30",
+      "prefix": "",
+      "root": "sheol",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "odees",
+      "folio": "f73v",
+      "sign": "Sagittarius",
+      "month": "December",
+      "element": "Fire",
+      "clock": "11:30",
+      "prefix": "",
+      "root": "odees",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "eery",
+      "folio": "f73v",
+      "sign": "Sagittarius",
+      "month": "December",
+      "element": "Fire",
+      "clock": "00:00",
+      "prefix": "",
+      "root": "eer",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "okeor",
+      "folio": "f73v",
+      "sign": "Sagittarius",
+      "month": "December",
+      "element": "Fire",
+      "clock": "01:00",
+      "prefix": "o",
+      "root": "keor",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "ofals",
+      "folio": "f73v",
+      "sign": "Sagittarius",
+      "month": "December",
+      "element": "Fire",
+      "clock": "01:30",
+      "prefix": "o",
+      "root": "fals",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "ykeody",
+      "folio": "f73v",
+      "sign": "Sagittarius",
+      "month": "December",
+      "element": "Fire",
+      "clock": "02:00",
+      "prefix": "y",
+      "root": "keod",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "oteody",
+      "folio": "f73v",
+      "sign": "Sagittarius",
+      "month": "December",
+      "element": "Fire",
+      "clock": "03:00",
+      "prefix": "o",
+      "root": "teod",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "ypaiin",
+      "folio": "f73v",
+      "sign": "Sagittarius",
+      "month": "December",
+      "element": "Fire",
+      "clock": "03:30",
+      "prefix": "y",
+      "root": "pa",
+      "suffix": "iin",
+      "parsed": true
+    },
+    {
+      "word": "yfaiin",
+      "folio": "f73v",
+      "sign": "Sagittarius",
+      "month": "December",
+      "element": "Fire",
+      "clock": "04:00",
+      "prefix": "y",
+      "root": "fa",
+      "suffix": "iin",
+      "parsed": true
+    },
+    {
+      "word": "ofcheesy",
+      "folio": "f73v",
+      "sign": "Sagittarius",
+      "month": "December",
+      "element": "Fire",
+      "clock": "05:00",
+      "prefix": "",
+      "root": "ofcheesy",
+      "suffix": "",
+      "parsed": false
+    },
+    {
+      "word": "oraiiny",
+      "folio": "f73v",
+      "sign": "Sagittarius",
+      "month": "December",
+      "element": "Fire",
+      "clock": "06:00",
+      "prefix": "",
+      "root": "oraiiny",
+      "suffix": "",
+      "parsed": false
+    },
+    {
+      "word": "ykeeody",
+      "folio": "f73v",
+      "sign": "Sagittarius",
+      "month": "December",
+      "element": "Fire",
+      "clock": "07:00",
+      "prefix": "y",
+      "root": "keeod",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "okeos",
+      "folio": "f73v",
+      "sign": "Sagittarius",
+      "month": "December",
+      "element": "Fire",
+      "clock": "07:30",
+      "prefix": "o",
+      "root": "keos",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "ykeear",
+      "folio": "f73v",
+      "sign": "Sagittarius",
+      "month": "December",
+      "element": "Fire",
+      "clock": "08:30",
+      "prefix": "y",
+      "root": "keear",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "qokeoly",
+      "folio": "f73v",
+      "sign": "Sagittarius",
+      "month": "December",
+      "element": "Fire",
+      "clock": "09:00",
+      "prefix": "qo",
+      "root": "keol",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "otedy",
+      "folio": "f73v",
+      "sign": "Sagittarius",
+      "month": "December",
+      "element": "Fire",
+      "clock": "09:30",
+      "prefix": "o",
+      "root": "ted",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "eeed",
+      "folio": "f73v",
+      "sign": "Sagittarius",
+      "month": "December",
+      "element": "Fire",
+      "clock": "11:00",
+      "prefix": "",
+      "root": "eeed",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "oky",
+      "folio": "f73v",
+      "sign": "Sagittarius",
+      "month": "December",
+      "element": "Fire",
+      "clock": "01:00",
+      "prefix": "o",
+      "root": "k",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "okal",
+      "folio": "f73v",
+      "sign": "Sagittarius",
+      "month": "December",
+      "element": "Fire",
+      "clock": "02:30",
+      "prefix": "o",
+      "root": "kal",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "ykey",
+      "folio": "f73v",
+      "sign": "Sagittarius",
+      "month": "December",
+      "element": "Fire",
+      "clock": "03:30",
+      "prefix": "y",
+      "root": "ke",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "ykeee",
+      "folio": "f73v",
+      "sign": "Sagittarius",
+      "month": "December",
+      "element": "Fire",
+      "clock": "05:00",
+      "prefix": "y",
+      "root": "keee",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "okeod",
+      "folio": "f73v",
+      "sign": "Sagittarius",
+      "month": "December",
+      "element": "Fire",
+      "clock": "06:00",
+      "prefix": "o",
+      "root": "keod",
+      "suffix": "",
+      "parsed": true
+    },
+    {
+      "word": "ykey",
+      "folio": "f73v",
+      "sign": "Sagittarius",
+      "month": "December",
+      "element": "Fire",
+      "clock": "07:30",
+      "prefix": "y",
+      "root": "ke",
+      "suffix": "y",
+      "parsed": true
+    },
+    {
+      "word": "ypal",
+      "folio": "f73v",
+      "sign": "Sagittarius",
+      "month": "December",
+      "element": "Fire",
+      "clock": "08:30",
+      "prefix": "y",
+      "root": "pal",
+      "suffix": "",
+      "parsed": true
+    }
+  ],
+  "synthesis": {
+    "parse_rate": 0.738,
+    "label_count": 340,
+    "o_prefix_dominance": 0.674,
+    "unique_to_sign_fraction": 0.877,
+    "top_root": "tal",
+    "top_root_count": 12,
+    "zodiac_star_jaccard": 0.07156308851224105,
+    "type_A_roots_in_labels": 20,
+    "type_B_roots_in_labels": 14
+  }
+}

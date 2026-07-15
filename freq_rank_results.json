@@ -1,0 +1,1125 @@
+{
+  "zipf": {
+    "alpha": 1.675187866760804,
+    "r_squared": 0.9094501137526867,
+    "n_roots": 264
+  },
+  "clusters": {
+    "MONO-y": {
+      "count": 38,
+      "total_freq": 8414,
+      "members": [
+        [
+          "ched",
+          818
+        ],
+        [
+          "kee",
+          731
+        ],
+        [
+          "keed",
+          648
+        ],
+        [
+          "shed",
+          613
+        ],
+        [
+          "che",
+          544
+        ],
+        [
+          "ked",
+          543
+        ],
+        [
+          "d",
+          430
+        ],
+        [
+          "she",
+          397
+        ],
+        [
+          "ted",
+          349
+        ],
+        [
+          "t",
+          308
+        ],
+        [
+          "chee",
+          271
+        ],
+        [
+          "tee",
+          264
+        ],
+        [
+          "teed",
+          251
+        ],
+        [
+          "ke",
+          232
+        ],
+        [
+          "shee",
+          218
+        ],
+        [
+          "pched",
+          153
+        ],
+        [
+          "cth",
+          152
+        ],
+        [
+          "tched",
+          130
+        ],
+        [
+          "kched",
+          126
+        ],
+        [
+          "te",
+          123
+        ],
+        [
+          "sheed",
+          122
+        ],
+        [
+          "kche",
+          106
+        ],
+        [
+          "tche",
+          101
+        ],
+        [
+          "keee",
+          99
+        ],
+        [
+          "cheed",
+          92
+        ],
+        [
+          "ckh",
+          83
+        ],
+        [
+          "cthe",
+          69
+        ],
+        [
+          "pche",
+          67
+        ],
+        [
+          "ckhe",
+          61
+        ],
+        [
+          "ee",
+          51
+        ],
+        [
+          "eed",
+          46
+        ],
+        [
+          "kshe",
+          38
+        ],
+        [
+          "fched",
+          35
+        ],
+        [
+          "keeed",
+          33
+        ],
+        [
+          "eee",
+          32
+        ],
+        [
+          "tshed",
+          31
+        ],
+        [
+          "tshe",
+          24
+        ],
+        [
+          "eeed",
+          23
+        ]
+      ]
+    },
+    "POLY-iin+r+l": {
+      "count": 4,
+      "total_freq": 6302,
+      "members": [
+        [
+          "da",
+          2483
+        ],
+        [
+          "a",
+          2327
+        ],
+        [
+          "ta",
+          1370
+        ],
+        [
+          "pa",
+          122
+        ]
+      ]
+    },
+    "POLY-l+r+\u2205": {
+      "count": 6,
+      "total_freq": 4147,
+      "members": [
+        [
+          "o",
+          1837
+        ],
+        [
+          "cho",
+          1062
+        ],
+        [
+          "cheo",
+          592
+        ],
+        [
+          "do",
+          272
+        ],
+        [
+          "kcho",
+          192
+        ],
+        [
+          "tcho",
+          192
+        ]
+      ]
+    },
+    "POLY-iin+in+r": {
+      "count": 1,
+      "total_freq": 2575,
+      "members": [
+        [
+          "ka",
+          2575
+        ]
+      ]
+    },
+    "DOM-y+dy": {
+      "count": 5,
+      "total_freq": 900,
+      "members": [
+        [
+          "kch",
+          310
+        ],
+        [
+          "tch",
+          266
+        ],
+        [
+          "sh",
+          231
+        ],
+        [
+          "ksh",
+          58
+        ],
+        [
+          "tsh",
+          35
+        ]
+      ]
+    },
+    "POLY-l+dy+r": {
+      "count": 2,
+      "total_freq": 777,
+      "members": [
+        [
+          "keo",
+          436
+        ],
+        [
+          "sheo",
+          341
+        ]
+      ]
+    },
+    "POLY-l+r+dy": {
+      "count": 3,
+      "total_freq": 631,
+      "members": [
+        [
+          "to",
+          427
+        ],
+        [
+          "ctho",
+          177
+        ],
+        [
+          "cpho",
+          27
+        ]
+      ]
+    },
+    "POLY-l+\u2205+r": {
+      "count": 2,
+      "total_freq": 615,
+      "members": [
+        [
+          "sho",
+          571
+        ],
+        [
+          "sheeo",
+          44
+        ]
+      ]
+    },
+    "DOM-l+r": {
+      "count": 2,
+      "total_freq": 542,
+      "members": [
+        [
+          "ko",
+          481
+        ],
+        [
+          "ckho",
+          61
+        ]
+      ]
+    },
+    "POLY-y+dy+l": {
+      "count": 1,
+      "total_freq": 524,
+      "members": [
+        [
+          "ch",
+          524
+        ]
+      ]
+    },
+    "POLY-r+l+iin": {
+      "count": 5,
+      "total_freq": 521,
+      "members": [
+        [
+          "cha",
+          297
+        ],
+        [
+          "chda",
+          106
+        ],
+        [
+          "shea",
+          62
+        ],
+        [
+          "shda",
+          33
+        ],
+        [
+          "pcha",
+          23
+        ]
+      ]
+    },
+    "DOM-y+\u2205": {
+      "count": 3,
+      "total_freq": 489,
+      "members": [
+        [
+          "k",
+          423
+        ],
+        [
+          "kshed",
+          36
+        ],
+        [
+          "p",
+          30
+        ]
+      ]
+    },
+    "POLY-iin+r+in": {
+      "count": 1,
+      "total_freq": 460,
+      "members": [
+        [
+          "sa",
+          460
+        ]
+      ]
+    },
+    "POLY-dy+\u2205+l": {
+      "count": 2,
+      "total_freq": 349,
+      "members": [
+        [
+          "keeo",
+          260
+        ],
+        [
+          "teeo",
+          89
+        ]
+      ]
+    },
+    "POLY-dy+l+\u2205": {
+      "count": 2,
+      "total_freq": 263,
+      "members": [
+        [
+          "teo",
+          224
+        ],
+        [
+          "tcheo",
+          39
+        ]
+      ]
+    }
+  },
+  "section_distribution": {
+    "ka": {
+      "sections": {
+        "herbal": 458,
+        "pharma": 45,
+        "astro": 1191,
+        "bio": 643,
+        "text": 232
+      },
+      "entropy": 1.8723186385569295,
+      "chi2": 0.13015844567090518,
+      "specialist": ""
+    },
+    "da": {
+      "sections": {
+        "herbal": 1034,
+        "pharma": 276,
+        "astro": 673,
+        "bio": 274,
+        "text": 213
+      },
+      "entropy": 2.043921892617136,
+      "chi2": 0.1417624789318318,
+      "specialist": ""
+    },
+    "a": {
+      "sections": {
+        "herbal": 385,
+        "pharma": 117,
+        "astro": 1351,
+        "bio": 181,
+        "text": 271
+      },
+      "entropy": 1.7496092209716112,
+      "chi2": 0.2219323348633395,
+      "specialist": "\u2192 astro"
+    },
+    "o": {
+      "sections": {
+        "herbal": 381,
+        "pharma": 146,
+        "astro": 529,
+        "bio": 581,
+        "text": 189
+      },
+      "entropy": 2.141060817987889,
+      "chi2": 0.16924643190087085,
+      "specialist": ""
+    },
+    "ta": {
+      "sections": {
+        "herbal": 232,
+        "pharma": 15,
+        "astro": 750,
+        "bio": 203,
+        "text": 167
+      },
+      "entropy": 1.7592910337555838,
+      "chi2": 0.18680346061419476,
+      "specialist": "\u2192 astro"
+    },
+    "cho": {
+      "sections": {
+        "herbal": 648,
+        "pharma": 123,
+        "astro": 224,
+        "bio": 17,
+        "text": 44
+      },
+      "entropy": 1.5544354176657464,
+      "chi2": 0.6457372553378217,
+      "specialist": "\u2192 herbal"
+    },
+    "ched": {
+      "sections": {
+        "herbal": 84,
+        "pharma": 1,
+        "astro": 338,
+        "bio": 309,
+        "text": 86
+      },
+      "entropy": 1.7480930262135992,
+      "chi2": 0.4341734987817994,
+      "specialist": ""
+    },
+    "kee": {
+      "sections": {
+        "herbal": 79,
+        "pharma": 73,
+        "astro": 411,
+        "bio": 135,
+        "text": 30
+      },
+      "entropy": 1.7850208215948737,
+      "chi2": 0.23124191941562838,
+      "specialist": "\u2192 astro"
+    },
+    "keed": {
+      "sections": {
+        "herbal": 53,
+        "pharma": 1,
+        "astro": 300,
+        "bio": 254,
+        "text": 36
+      },
+      "entropy": 1.585485802662085,
+      "chi2": 0.5163548096240379,
+      "specialist": ""
+    },
+    "shed": {
+      "sections": {
+        "herbal": 54,
+        "pharma": 1,
+        "astro": 172,
+        "bio": 304,
+        "text": 79
+      },
+      "entropy": 1.7210330909183482,
+      "chi2": 0.8573581133404594,
+      "specialist": ""
+    },
+    "cheo": {
+      "sections": {
+        "herbal": 134,
+        "pharma": 131,
+        "astro": 247,
+        "bio": 49,
+        "text": 27
+      },
+      "entropy": 1.9935384512594607,
+      "chi2": 0.4154960508418087,
+      "specialist": ""
+    },
+    "sho": {
+      "sections": {
+        "herbal": 359,
+        "pharma": 31,
+        "astro": 127,
+        "bio": 21,
+        "text": 31
+      },
+      "entropy": 1.534910756106089,
+      "chi2": 0.6045982455868059,
+      "specialist": "\u2192 herbal"
+    },
+    "che": {
+      "sections": {
+        "herbal": 117,
+        "pharma": 39,
+        "astro": 205,
+        "bio": 136,
+        "text": 44
+      },
+      "entropy": 2.0734387506633163,
+      "chi2": 0.05197497374336353,
+      "specialist": ""
+    },
+    "ked": {
+      "sections": {
+        "herbal": 97,
+        "pharma": 1,
+        "astro": 147,
+        "bio": 256,
+        "text": 42
+      },
+      "entropy": 1.7680114962025109,
+      "chi2": 0.6555236957270081,
+      "specialist": ""
+    },
+    "ch": {
+      "sections": {
+        "herbal": 245,
+        "pharma": 18,
+        "astro": 146,
+        "bio": 68,
+        "text": 44
+      },
+      "entropy": 1.8759572303394534,
+      "chi2": 0.17408664701092424,
+      "specialist": ""
+    },
+    "ko": {
+      "sections": {
+        "herbal": 205,
+        "pharma": 88,
+        "astro": 105,
+        "bio": 53,
+        "text": 17
+      },
+      "entropy": 1.973064716460775,
+      "chi2": 0.3801667681894832,
+      "specialist": ""
+    },
+    "sa": {
+      "sections": {
+        "herbal": 100,
+        "pharma": 39,
+        "astro": 175,
+        "bio": 100,
+        "text": 44
+      },
+      "entropy": 2.1133817022853316,
+      "chi2": 0.03246034519535215,
+      "specialist": ""
+    },
+    "keo": {
+      "sections": {
+        "herbal": 94,
+        "pharma": 137,
+        "astro": 145,
+        "bio": 12,
+        "text": 24
+      },
+      "entropy": 1.9031759777676065,
+      "chi2": 1.0260275447669198,
+      "specialist": ""
+    },
+    "d": {
+      "sections": {
+        "herbal": 198,
+        "pharma": 24,
+        "astro": 92,
+        "bio": 85,
+        "text": 26
+      },
+      "entropy": 1.930588111818214,
+      "chi2": 0.1961382726210115,
+      "specialist": ""
+    },
+    "to": {
+      "sections": {
+        "herbal": 191,
+        "pharma": 27,
+        "astro": 126,
+        "bio": 39,
+        "text": 40
+      },
+      "entropy": 1.9259884693538973,
+      "chi2": 0.15288382751044352,
+      "specialist": ""
+    },
+    "k": {
+      "sections": {
+        "herbal": 145,
+        "pharma": 17,
+        "astro": 125,
+        "bio": 107,
+        "text": 25
+      },
+      "entropy": 1.9783480147323547,
+      "chi2": 0.08883413938918601,
+      "specialist": ""
+    },
+    "she": {
+      "sections": {
+        "herbal": 72,
+        "pharma": 23,
+        "astro": 154,
+        "bio": 114,
+        "text": 33
+      },
+      "entropy": 2.0299495671406276,
+      "chi2": 0.115306976423071,
+      "specialist": ""
+    },
+    "ted": {
+      "sections": {
+        "herbal": 60,
+        "pharma": 0,
+        "astro": 117,
+        "bio": 130,
+        "text": 40
+      },
+      "entropy": 1.8541743039478118,
+      "chi2": 0.3615342352004363,
+      "specialist": ""
+    },
+    "sheo": {
+      "sections": {
+        "herbal": 83,
+        "pharma": 62,
+        "astro": 120,
+        "bio": 45,
+        "text": 29
+      },
+      "entropy": 2.1615534141550037,
+      "chi2": 0.20208013063218092,
+      "specialist": ""
+    },
+    "kch": {
+      "sections": {
+        "herbal": 166,
+        "pharma": 4,
+        "astro": 83,
+        "bio": 27,
+        "text": 30
+      },
+      "entropy": 1.7052421509772908,
+      "chi2": 0.34571066395907657,
+      "specialist": "\u2192 herbal"
+    },
+    "t": {
+      "sections": {
+        "herbal": 135,
+        "pharma": 1,
+        "astro": 96,
+        "bio": 53,
+        "text": 20
+      },
+      "entropy": 1.7656657248417371,
+      "chi2": 0.1635941840245009,
+      "specialist": ""
+    },
+    "cha": {
+      "sections": {
+        "herbal": 140,
+        "pharma": 2,
+        "astro": 130,
+        "bio": 15,
+        "text": 9
+      },
+      "entropy": 1.4521829553667462,
+      "chi2": 0.30848554305897374,
+      "specialist": ""
+    },
+    "do": {
+      "sections": {
+        "herbal": 146,
+        "pharma": 41,
+        "astro": 28,
+        "bio": 39,
+        "text": 16
+      },
+      "entropy": 1.8731776654357613,
+      "chi2": 0.5374620799130138,
+      "specialist": "\u2192 herbal"
+    },
+    "chee": {
+      "sections": {
+        "herbal": 45,
+        "pharma": 25,
+        "astro": 136,
+        "bio": 51,
+        "text": 11
+      },
+      "entropy": 1.8876153592178282,
+      "chi2": 0.11885402482890046,
+      "specialist": "\u2192 astro"
+    },
+    "tch": {
+      "sections": {
+        "herbal": 151,
+        "pharma": 4,
+        "astro": 65,
+        "bio": 15,
+        "text": 31
+      },
+      "entropy": 1.6468746609107483,
+      "chi2": 0.46440177366033236,
+      "specialist": "\u2192 herbal"
+    }
+  },
+  "prefix_suffix_matrix": {
+    "\u2205": {
+      "y": 3836,
+      "l": 2987,
+      "r": 2633,
+      "iin": 2013,
+      "\u2205": 869,
+      "dy": 889,
+      "in": 537,
+      "m": 362,
+      "ir": 291,
+      "ly": 224
+    },
+    "o": {
+      "y": 1796,
+      "l": 767,
+      "r": 631,
+      "iin": 551,
+      "\u2205": 308,
+      "dy": 288,
+      "in": 288,
+      "m": 134,
+      "ir": 57,
+      "ly": 71
+    },
+    "qo": {
+      "y": 2115,
+      "l": 638,
+      "r": 481,
+      "iin": 493,
+      "\u2205": 219,
+      "dy": 251,
+      "in": 378,
+      "m": 55,
+      "ir": 37,
+      "ly": 29
+    },
+    "y": {
+      "y": 547,
+      "l": 150,
+      "r": 209,
+      "iin": 162,
+      "\u2205": 109,
+      "dy": 132,
+      "in": 46,
+      "m": 31,
+      "ir": 28,
+      "ly": 22
+    },
+    "l": {
+      "y": 509,
+      "l": 117,
+      "r": 128,
+      "iin": 77,
+      "\u2205": 99,
+      "dy": 56,
+      "in": 46,
+      "m": 25,
+      "ir": 7,
+      "ly": 12
+    },
+    "ol": {
+      "y": 410,
+      "l": 74,
+      "r": 115,
+      "iin": 114,
+      "\u2205": 70,
+      "dy": 42,
+      "in": 55,
+      "m": 33,
+      "ir": 7,
+      "ly": 10
+    },
+    "d": {
+      "y": 204,
+      "l": 59,
+      "r": 64,
+      "iin": 8,
+      "\u2205": 37,
+      "dy": 27,
+      "in": 3,
+      "m": 2,
+      "ir": 2,
+      "ly": 3
+    },
+    "q": {
+      "y": 39,
+      "l": 150,
+      "r": 35,
+      "iin": 7,
+      "\u2205": 55,
+      "dy": 2,
+      "in": 4,
+      "m": 1,
+      "ir": 1,
+      "ly": 7
+    },
+    "r": {
+      "y": 42,
+      "l": 44,
+      "r": 33,
+      "iin": 72,
+      "\u2205": 20,
+      "dy": 5,
+      "in": 24,
+      "m": 13,
+      "ir": 4,
+      "ly": 4
+    },
+    "or": {
+      "y": 23,
+      "l": 24,
+      "r": 16,
+      "iin": 47,
+      "\u2205": 9,
+      "dy": 1,
+      "in": 16,
+      "m": 15,
+      "ir": 3,
+      "ly": 3
+    }
+  },
+  "top_pairs": [
+    {
+      "r1": "ked",
+      "r2": "ted",
+      "obs": 81,
+      "exp": 25.8,
+      "pmi": 1.649
+    },
+    {
+      "r1": "ked",
+      "r2": "keed",
+      "obs": 127,
+      "exp": 48.0,
+      "pmi": 1.404
+    },
+    {
+      "r1": "kch",
+      "r2": "tch",
+      "obs": 38,
+      "exp": 15.3,
+      "pmi": 1.316
+    },
+    {
+      "r1": "ked",
+      "r2": "shed",
+      "obs": 113,
+      "exp": 46.8,
+      "pmi": 1.271
+    },
+    {
+      "r1": "keed",
+      "r2": "ted",
+      "obs": 81,
+      "exp": 33.7,
+      "pmi": 1.265
+    },
+    {
+      "r1": "ched",
+      "r2": "ked",
+      "obs": 139,
+      "exp": 60.3,
+      "pmi": 1.205
+    },
+    {
+      "r1": "shed",
+      "r2": "ted",
+      "obs": 70,
+      "exp": 32.9,
+      "pmi": 1.09
+    },
+    {
+      "r1": "ched",
+      "r2": "keed",
+      "obs": 165,
+      "exp": 78.7,
+      "pmi": 1.069
+    },
+    {
+      "r1": "cheo",
+      "r2": "keo",
+      "obs": 78,
+      "exp": 39.6,
+      "pmi": 0.979
+    },
+    {
+      "r1": "ched",
+      "r2": "ted",
+      "obs": 83,
+      "exp": 42.3,
+      "pmi": 0.971
+    },
+    {
+      "r1": "keo",
+      "r2": "sheo",
+      "obs": 48,
+      "exp": 25.0,
+      "pmi": 0.944
+    },
+    {
+      "r1": "t",
+      "r2": "tch",
+      "obs": 30,
+      "exp": 15.8,
+      "pmi": 0.924
+    },
+    {
+      "r1": "k",
+      "r2": "t",
+      "obs": 47,
+      "exp": 25.1,
+      "pmi": 0.906
+    },
+    {
+      "r1": "keed",
+      "r2": "shed",
+      "obs": 114,
+      "exp": 61.1,
+      "pmi": 0.9
+    },
+    {
+      "r1": "chee",
+      "r2": "kee",
+      "obs": 59,
+      "exp": 33.1,
+      "pmi": 0.834
+    },
+    {
+      "r1": "t",
+      "r2": "to",
+      "obs": 43,
+      "exp": 24.3,
+      "pmi": 0.826
+    },
+    {
+      "r1": "tch",
+      "r2": "to",
+      "obs": 37,
+      "exp": 21.1,
+      "pmi": 0.807
+    },
+    {
+      "r1": "kee",
+      "r2": "keed",
+      "obs": 121,
+      "exp": 69.2,
+      "pmi": 0.807
+    },
+    {
+      "r1": "che",
+      "r2": "kee",
+      "obs": 112,
+      "exp": 64.1,
+      "pmi": 0.804
+    },
+    {
+      "r1": "ched",
+      "r2": "shed",
+      "obs": 132,
+      "exp": 76.7,
+      "pmi": 0.782
+    }
+  ],
+  "label_enriched": [
+    {
+      "root": "fa",
+      "labels": 4,
+      "text": 33,
+      "enrichment": 14.58
+    },
+    {
+      "root": "ko",
+      "labels": 16,
+      "text": 481,
+      "enrichment": 4.0
+    },
+    {
+      "root": "to",
+      "labels": 13,
+      "text": 427,
+      "enrichment": 3.66
+    },
+    {
+      "root": "sa",
+      "labels": 11,
+      "text": 460,
+      "enrichment": 2.88
+    },
+    {
+      "root": "s",
+      "labels": 3,
+      "text": 135,
+      "enrichment": 2.67
+    },
+    {
+      "root": "do",
+      "labels": 6,
+      "text": 272,
+      "enrichment": 2.65
+    },
+    {
+      "root": "ted",
+      "labels": 6,
+      "text": 349,
+      "enrichment": 2.07
+    },
+    {
+      "root": "kch",
+      "labels": 5,
+      "text": 310,
+      "enrichment": 1.94
+    },
+    {
+      "root": "d",
+      "labels": 6,
+      "text": 430,
+      "enrichment": 1.68
+    },
+    {
+      "root": "sh",
+      "labels": 3,
+      "text": 231,
+      "enrichment": 1.56
+    },
+    {
+      "root": "ta",
+      "labels": 17,
+      "text": 1370,
+      "enrichment": 1.49
+    },
+    {
+      "root": "keo",
+      "labels": 5,
+      "text": 436,
+      "enrichment": 1.38
+    },
+    {
+      "root": "tch",
+      "labels": 3,
+      "text": 266,
+      "enrichment": 1.36
+    },
+    {
+      "root": "cha",
+      "labels": 3,
+      "text": 297,
+      "enrichment": 1.21
+    },
+    {
+      "root": "k",
+      "labels": 4,
+      "text": 423,
+      "enrichment": 1.14
+    }
+  ]
+}

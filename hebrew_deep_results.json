@@ -1,0 +1,887 @@
+{
+  "shuffle": {
+    "real": {
+      "avg_fill_rate": 0.42838829705921816,
+      "avg_n_prefixes": 10.054545454545455,
+      "avg_n_suffixes": 8.272727272727273,
+      "n_roots_freq100": 55
+    },
+    "shuffled": {
+      "avg_fill_rate_mean": 0.3565581592027339,
+      "avg_fill_rate_std": 0.010702030630071808,
+      "avg_n_prefixes_mean": 6.041272727272727,
+      "avg_n_suffixes_mean": 7.736854545454546,
+      "n_roots_mean": 55.0
+    },
+    "percentiles": {
+      "fill_rate": 1.0,
+      "n_prefixes": 1.0,
+      "n_suffixes": 0.999,
+      "n_roots": 1.0
+    },
+    "n_iterations": 1000
+  },
+  "skeletons": {
+    "K": {
+      "total_freq": 6681,
+      "n_roots": 21,
+      "n_templates": 21,
+      "templates": {
+        "a": 2597,
+        "CaCaC-CaCaC": 731,
+        "CaCaC-CaCaC-d": 649,
+        "CaCaC-d": 545,
+        "o": 497,
+        "CaCaC-o": 441,
+        "": 427,
+        "eeo": 260,
+        "CaCaC": 232,
+        "CaCaC³": 99,
+        "CaCaC-a": 55,
+        "ees": 41,
+        "eea": 34,
+        "CaCaC³-d": 33,
+        "eeeo": 15,
+        "es": 10,
+        "eees": 9,
+        "eeea": 2,
+        "d-a": 2,
+        "s-a": 1,
+        "s-o": 1
+      }
+    },
+    "CH": {
+      "total_freq": 4726,
+      "n_roots": 23,
+      "n_templates": 23,
+      "templates": {
+        "o": 1071,
+        "CaCaC-d": 819,
+        "CaCaC-o": 595,
+        "CaCaC": 544,
+        "": 527,
+        "a": 300,
+        "CaCaC-CaCaC": 271,
+        "CaCaC-a": 127,
+        "d-a": 106,
+        "CaCaC-CaCaC-d": 92,
+        "eeo": 86,
+        "es": 57,
+        "ees": 47,
+        "s": 32,
+        "d-o": 18,
+        "CaCaC³": 13,
+        "eea": 9,
+        "s-o": 5,
+        "eees": 2,
+        "s-a": 2,
+        "d": 1,
+        "eeea": 1,
+        "eeeo": 1
+      }
+    },
+    "T": {
+      "total_freq": 3570,
+      "n_roots": 20,
+      "n_templates": 20,
+      "templates": {
+        "a": 1387,
+        "o": 440,
+        "CaCaC-d": 355,
+        "": 309,
+        "CaCaC-CaCaC": 265,
+        "CaCaC-CaCaC-d": 252,
+        "CaCaC-o": 225,
+        "CaCaC": 123,
+        "eeo": 89,
+        "CaCaC-a": 27,
+        "ees": 24,
+        "CaCaC³": 17,
+        "CaCaC³-d": 14,
+        "d-a": 11,
+        "eea": 10,
+        "eeeo": 8,
+        "eees": 6,
+        "es": 6,
+        "eeea": 1,
+        "d-o": 1
+      }
+    },
+    "SH": {
+      "total_freq": 2813,
+      "n_roots": 20,
+      "n_templates": 20,
+      "templates": {
+        "CaCaC-d": 614,
+        "o": 572,
+        "CaCaC": 397,
+        "CaCaC-o": 343,
+        "": 234,
+        "CaCaC-CaCaC": 220,
+        "CaCaC-CaCaC-d": 122,
+        "a": 111,
+        "CaCaC-a": 62,
+        "eeo": 44,
+        "d-a": 34,
+        "es": 19,
+        "ees": 14,
+        "CaCaC³": 7,
+        "s": 7,
+        "eea": 5,
+        "d-o": 4,
+        "eees": 2,
+        "d": 1,
+        "s-o": 1
+      }
+    },
+    "KCH": {
+      "total_freq": 857,
+      "n_roots": 12,
+      "n_templates": 12,
+      "templates": {
+        "": 315,
+        "o": 194,
+        "CaCaC-d": 126,
+        "CaCaC": 106,
+        "CaCaC-o": 40,
+        "a": 31,
+        "d-a": 15,
+        "CaCaC-CaCaC": 14,
+        "s": 7,
+        "CaCaC-CaCaC-d": 4,
+        "eeo": 3,
+        "es": 2
+      }
+    },
+    "TCH": {
+      "total_freq": 827,
+      "n_roots": 17,
+      "n_templates": 17,
+      "templates": {
+        "": 269,
+        "o": 194,
+        "CaCaC-d": 130,
+        "CaCaC": 101,
+        "CaCaC-o": 41,
+        "a": 38,
+        "CaCaC-CaCaC": 14,
+        "d-a": 13,
+        "s": 7,
+        "CaCaC-CaCaC-d": 5,
+        "CaCaC-a": 4,
+        "es": 3,
+        "ees": 2,
+        "eea": 2,
+        "d-o": 2,
+        "eeo": 1,
+        "d": 1
+      }
+    },
+    "PCH": {
+      "total_freq": 550,
+      "n_roots": 17,
+      "n_templates": 17,
+      "templates": {
+        "CaCaC-d": 153,
+        "": 105,
+        "o": 72,
+        "CaCaC": 67,
+        "CaCaC-o": 44,
+        "d-a": 25,
+        "a": 23,
+        "CaCaC-CaCaC": 17,
+        "CaCaC-CaCaC-d": 11,
+        "es": 8,
+        "CaCaC-a": 8,
+        "eeo": 6,
+        "s": 4,
+        "d-o": 3,
+        "ees": 2,
+        "eea": 1,
+        "CaCaC³": 1
+      }
+    },
+    "CTH": {
+      "total_freq": 536,
+      "n_roots": 14,
+      "n_templates": 14,
+      "templates": {
+        "o": 177,
+        "": 152,
+        "CaCaC": 70,
+        "a": 49,
+        "CaCaC-o": 37,
+        "CaCaC-d": 19,
+        "CaCaC-CaCaC": 18,
+        "CaCaC-a": 4,
+        "es": 3,
+        "s": 3,
+        "d-a": 1,
+        "eees": 1,
+        "ees": 1,
+        "CaCaC-CaCaC-d": 1
+      }
+    },
+    "CKH": {
+      "total_freq": 289,
+      "n_roots": 13,
+      "n_templates": 13,
+      "templates": {
+        "": 84,
+        "CaCaC": 61,
+        "o": 61,
+        "CaCaC-o": 20,
+        "a": 17,
+        "CaCaC-d": 17,
+        "CaCaC-CaCaC": 16,
+        "CaCaC-a": 4,
+        "s": 3,
+        "eeo": 2,
+        "d-a": 2,
+        "CaCaC³": 1,
+        "CaCaC-CaCaC-d": 1
+      }
+    },
+    "P": {
+      "total_freq": 243,
+      "n_roots": 7,
+      "n_templates": 7,
+      "templates": {
+        "a": 124,
+        "o": 68,
+        "": 30,
+        "d-a": 17,
+        "d": 2,
+        "d-o": 1,
+        "s": 1
+      }
+    },
+    "KSH": {
+      "total_freq": 197,
+      "n_roots": 12,
+      "n_templates": 12,
+      "templates": {
+        "": 60,
+        "CaCaC": 38,
+        "CaCaC-d": 36,
+        "o": 28,
+        "CaCaC-o": 18,
+        "CaCaC-CaCaC": 5,
+        "a": 4,
+        "eeo": 3,
+        "es": 2,
+        "d-a": 1,
+        "d-o": 1,
+        "CaCaC-CaCaC-d": 1
+      }
+    },
+    "TSH": {
+      "total_freq": 151,
+      "n_roots": 14,
+      "n_templates": 14,
+      "templates": {
+        "": 35,
+        "o": 31,
+        "CaCaC-d": 31,
+        "CaCaC": 25,
+        "CaCaC-o": 7,
+        "a": 5,
+        "CaCaC-CaCaC": 3,
+        "es": 3,
+        "d-a": 3,
+        "s": 2,
+        "CaCaC-CaCaC-d": 2,
+        "eeo": 2,
+        "s-a": 1,
+        "d-o": 1
+      }
+    },
+    "FCH": {
+      "total_freq": 138,
+      "n_roots": 13,
+      "n_templates": 13,
+      "templates": {
+        "CaCaC-d": 35,
+        "": 28,
+        "o": 21,
+        "CaCaC-o": 13,
+        "CaCaC": 13,
+        "a": 7,
+        "CaCaC-CaCaC": 7,
+        "d-a": 6,
+        "CaCaC-a": 3,
+        "eeo": 2,
+        "d": 1,
+        "CaCaC-CaCaC-d": 1,
+        "ees": 1
+      }
+    },
+    "CPH": {
+      "total_freq": 112,
+      "n_roots": 12,
+      "n_templates": 12,
+      "templates": {
+        "o": 27,
+        "": 21,
+        "CaCaC": 16,
+        "a": 15,
+        "CaCaC-o": 13,
+        "CaCaC-d": 11,
+        "CaCaC-a": 2,
+        "eeo": 2,
+        "CaCaC-CaCaC": 2,
+        "d-o": 1,
+        "eea": 1,
+        "ees": 1
+      }
+    },
+    "F": {
+      "total_freq": 71,
+      "n_roots": 4,
+      "n_templates": 4,
+      "templates": {
+        "a": 37,
+        "o": 25,
+        "": 8,
+        "eeo": 1
+      }
+    },
+    "PSH": {
+      "total_freq": 49,
+      "n_roots": 10,
+      "n_templates": 10,
+      "templates": {
+        "CaCaC-d": 13,
+        "o": 12,
+        "": 6,
+        "CaCaC-o": 6,
+        "d-a": 5,
+        "es": 2,
+        "CaCaC": 2,
+        "a": 1,
+        "CaCaC-CaCaC-d": 1,
+        "CaCaC-CaCaC": 1
+      }
+    },
+    "CFH": {
+      "total_freq": 33,
+      "n_roots": 7,
+      "n_templates": 7,
+      "templates": {
+        "": 11,
+        "o": 6,
+        "a": 5,
+        "CaCaC-o": 5,
+        "CaCaC": 4,
+        "CaCaC-CaCaC": 1,
+        "s": 1
+      }
+    },
+    "FSH": {
+      "total_freq": 10,
+      "n_roots": 5,
+      "n_templates": 5,
+      "templates": {
+        "o": 3,
+        "": 3,
+        "CaCaC-d": 2,
+        "CaCaC³": 1,
+        "CaCaC": 1
+      }
+    }
+  },
+  "agreement": {
+    "n_pairs": 25311,
+    "real_exact_match": 0.23084824779740035,
+    "real_class_match": 0.2787325668681601,
+    "shuffle_exact_mean": 0.18619003595274783,
+    "shuffle_class_mean": 0.23936256963375607,
+    "z_exact": 20.239473458206742,
+    "z_class": 16.585402737689538,
+    "position_analysis": {
+      "first": {
+        "total": 4123,
+        "top5": [
+          [
+            "y",
+            1198,
+            "29.1%"
+          ],
+          [
+            "r",
+            721,
+            "17.5%"
+          ],
+          [
+            "l",
+            642,
+            "15.6%"
+          ],
+          [
+            "iin",
+            573,
+            "13.9%"
+          ],
+          [
+            "∅",
+            362,
+            "8.8%"
+          ]
+        ]
+      },
+      "middle": {
+        "total": 21061,
+        "top5": [
+          [
+            "y",
+            7249,
+            "34.4%"
+          ],
+          [
+            "l",
+            3732,
+            "17.7%"
+          ],
+          [
+            "r",
+            3084,
+            "14.6%"
+          ],
+          [
+            "iin",
+            2390,
+            "11.3%"
+          ],
+          [
+            "∅",
+            1247,
+            "5.9%"
+          ]
+        ]
+      },
+      "last": {
+        "total": 4123,
+        "top5": [
+          [
+            "y",
+            1089,
+            "26.4%"
+          ],
+          [
+            "iin",
+            538,
+            "13.0%"
+          ],
+          [
+            "l",
+            534,
+            "13.0%"
+          ],
+          [
+            "m",
+            457,
+            "11.1%"
+          ],
+          [
+            "r",
+            449,
+            "10.9%"
+          ]
+        ]
+      }
+    }
+  },
+  "botanical": {
+    "label_null_prefix_rate": 0.27091633466135456,
+    "para_null_prefix_rate": 0.5036109454714106,
+    "label_total": 251,
+    "para_total": 30186,
+    "suffix_comparison": [
+      {
+        "suffix": "y",
+        "label_frac": 0.15139442231075698,
+        "para_frac": 0.32279864838004374,
+        "ratio": 0.4690057503974251,
+        "hebrew_equiv": "adj/-i"
+      },
+      {
+        "suffix": "l",
+        "label_frac": 0.17131474103585656,
+        "para_frac": 0.1672298416484463,
+        "ratio": 1.024426856756808,
+        "hebrew_equiv": "-el/-al"
+      },
+      {
+        "suffix": "r",
+        "label_frac": 0.18725099601593626,
+        "para_frac": 0.14536540117935468,
+        "ratio": 1.2881400560020628,
+        "hebrew_equiv": "-er/-ar"
+      },
+      {
+        "suffix": "iin",
+        "label_frac": 0.035856573705179286,
+        "para_frac": 0.11912807261644472,
+        "ratio": 0.30099180585777024,
+        "hebrew_equiv": "-iin (intensive?)"
+      },
+      {
+        "suffix": "∅",
+        "label_frac": 0.0398406374501992,
+        "para_frac": 0.06085602597230504,
+        "ratio": 0.6546703767401814,
+        "hebrew_equiv": "?"
+      },
+      {
+        "suffix": "dy",
+        "label_frac": 0.08366533864541832,
+        "para_frac": 0.0569469290399523,
+        "ratio": 1.4691808681504348,
+        "hebrew_equiv": "?-di"
+      },
+      {
+        "suffix": "in",
+        "label_frac": 0.03187250996015936,
+        "para_frac": 0.04720731464917512,
+        "ratio": 0.6751604109876284,
+        "hebrew_equiv": "-in"
+      },
+      {
+        "suffix": "m",
+        "label_frac": 0.06374501992031872,
+        "para_frac": 0.022526999271185316,
+        "ratio": 2.8297164284040313,
+        "hebrew_equiv": "-im/-am (plural?)"
+      },
+      {
+        "suffix": "ir",
+        "label_frac": 0.0199203187250996,
+        "para_frac": 0.014675677466375141,
+        "ratio": 1.3573696185910982,
+        "hebrew_equiv": "-ir"
+      },
+      {
+        "suffix": "ly",
+        "label_frac": 0.07569721115537849,
+        "para_frac": 0.012853640760617504,
+        "ratio": 5.889164989526431,
+        "hebrew_equiv": "adj/-li?"
+      },
+      {
+        "suffix": "d",
+        "label_frac": 0.00796812749003984,
+        "para_frac": 0.00771881004439144,
+        "ratio": 1.0322999846109127,
+        "hebrew_equiv": "?"
+      },
+      {
+        "suffix": "ry",
+        "label_frac": 0.09163346613545817,
+        "para_frac": 0.005996157158947857,
+        "ratio": 15.282032092623979,
+        "hebrew_equiv": "adj/-ri?"
+      },
+      {
+        "suffix": "iiin",
+        "label_frac": 0.0,
+        "para_frac": 0.005300470416749486,
+        "ratio": 0.0,
+        "hebrew_equiv": "?"
+      },
+      {
+        "suffix": "iir",
+        "label_frac": 0.00398406374501992,
+        "para_frac": 0.004306632213608958,
+        "ratio": 0.9250996015936254,
+        "hebrew_equiv": "?"
+      },
+      {
+        "suffix": "n",
+        "label_frac": 0.0199203187250996,
+        "para_frac": 0.0030477704896309547,
+        "ratio": 6.536029793868006,
+        "hebrew_equiv": "-on/-an"
+      },
+      {
+        "suffix": "im",
+        "label_frac": 0.00398406374501992,
+        "para_frac": 0.001258861723978003,
+        "ratio": 3.1648144265045084,
+        "hebrew_equiv": "-im (masc plural)"
+      },
+      {
+        "suffix": "il",
+        "label_frac": 0.0,
+        "para_frac": 0.0006956867421983701,
+        "ratio": 0.0,
+        "hebrew_equiv": "-il"
+      },
+      {
+        "suffix": "iry",
+        "label_frac": 0.0,
+        "para_frac": 0.0003644073411515272,
+        "ratio": 0.0,
+        "hebrew_equiv": "?"
+      },
+      {
+        "suffix": "iiny",
+        "label_frac": 0.00398406374501992,
+        "para_frac": 0.0002981514609421586,
+        "ratio": 13.362549800796813,
+        "hebrew_equiv": "?"
+      },
+      {
+        "suffix": "iim",
+        "label_frac": 0.0,
+        "para_frac": 0.0002981514609421586,
+        "ratio": 0.0,
+        "hebrew_equiv": "?"
+      }
+    ],
+    "body_comparison": [
+      {
+        "body": "a",
+        "label_frac": 0.2868525896414343,
+        "para_frac": 0.23279003511561652,
+        "template": "a"
+      },
+      {
+        "body": "o",
+        "label_frac": 0.23107569721115537,
+        "para_frac": 0.1752136752136752,
+        "template": "o"
+      },
+      {
+        "body": "ed",
+        "label_frac": 0.043824701195219126,
+        "para_frac": 0.09640230570463129,
+        "template": "CaCaC-d"
+      },
+      {
+        "body": "da",
+        "label_frac": 0.08366533864541832,
+        "para_frac": 0.09017425296495064,
+        "template": "d-a"
+      },
+      {
+        "body": "∅",
+        "label_frac": 0.099601593625498,
+        "para_frac": 0.08808719273835552,
+        "template": "∅"
+      },
+      {
+        "body": "eo",
+        "label_frac": 0.07171314741035857,
+        "para_frac": 0.0611541774332472,
+        "template": "CaCaC-o"
+      },
+      {
+        "body": "e",
+        "label_frac": 0.00796812749003984,
+        "para_frac": 0.059895315709269197,
+        "template": "CaCaC"
+      },
+      {
+        "body": "ee",
+        "label_frac": 0.01195219123505976,
+        "para_frac": 0.05409792619094945,
+        "template": "CaCaC-CaCaC"
+      },
+      {
+        "body": "eed",
+        "label_frac": 0.00796812749003984,
+        "para_frac": 0.03928973696415557,
+        "template": "CaCaC-CaCaC-d"
+      },
+      {
+        "body": "eeo",
+        "label_frac": 0.00398406374501992,
+        "para_frac": 0.017789703836215465,
+        "template": "eeo"
+      },
+      {
+        "body": "sa",
+        "label_frac": 0.043824701195219126,
+        "para_frac": 0.015371364208573511,
+        "template": "s-a"
+      },
+      {
+        "body": "d",
+        "label_frac": 0.02390438247011952,
+        "para_frac": 0.01444378188564235,
+        "template": "d"
+      },
+      {
+        "body": "do",
+        "label_frac": 0.02390438247011952,
+        "para_frac": 0.010070893791824024,
+        "template": "d-o"
+      },
+      {
+        "body": "ea",
+        "label_frac": 0.00796812749003984,
+        "para_frac": 0.010104021731928708,
+        "template": "CaCaC-a"
+      },
+      {
+        "body": "s",
+        "label_frac": 0.01593625498007968,
+        "para_frac": 0.006658715961041542,
+        "template": "s"
+      }
+    ],
+    "label_unique_prefixes": 18,
+    "para_unique_prefixes": 23,
+    "label_prefix_dist": {
+      "o": 112,
+      "∅": 68,
+      "ol": 16,
+      "y": 15,
+      "or": 7,
+      "dol": 5,
+      "qo": 5,
+      "so": 4,
+      "d": 4,
+      "do": 3
+    },
+    "para_prefix_dist": {
+      "∅": 15202,
+      "o": 5025,
+      "qo": 4791,
+      "y": 1476,
+      "l": 1101,
+      "ol": 947,
+      "d": 415,
+      "q": 306,
+      "r": 272,
+      "or": 166
+    }
+  },
+  "gematria": {
+    "character_range": [
+      6,
+      131
+    ],
+    "significant_char_numbers": [
+      26,
+      32,
+      42,
+      45
+    ],
+    "significant_morph_numbers": [
+      26,
+      10,
+      22,
+      32,
+      42,
+      45,
+      52,
+      137,
+      314
+    ]
+  },
+  "line_sums": {
+    "n_lines": 4590,
+    "mean_line_sum": 272.65424836601306,
+    "std_line_sum": 132.02758698007568,
+    "shuffle_std_mean": 138.30100439280417,
+    "variance_ratio": 0.954639393688634,
+    "modular_analysis": {
+      "10": {
+        "chi2": 5.886710239651417,
+        "df": 9,
+        "top_residues": [
+          [
+            7,
+            478
+          ],
+          [
+            2,
+            477
+          ],
+          [
+            4,
+            475
+          ]
+        ],
+        "expected_uniform": 459.0
+      },
+      "22": {
+        "chi2": 29.94248366013072,
+        "df": 21,
+        "top_residues": [
+          [
+            5,
+            237
+          ],
+          [
+            15,
+            227
+          ],
+          [
+            4,
+            225
+          ]
+        ],
+        "expected_uniform": 208.6
+      },
+      "26": {
+        "chi2": 20.02091503267974,
+        "df": 25,
+        "top_residues": [
+          [
+            19,
+            206
+          ],
+          [
+            14,
+            194
+          ],
+          [
+            2,
+            192
+          ]
+        ],
+        "expected_uniform": 176.5
+      },
+      "42": {
+        "chi2": 31.2078431372549,
+        "df": 41,
+        "top_residues": [
+          [
+            38,
+            134
+          ],
+          [
+            40,
+            126
+          ],
+          [
+            13,
+            123
+          ]
+        ],
+        "expected_uniform": 109.3
+      },
+      "72": {
+        "chi2": 73.68627450980392,
+        "df": 71,
+        "top_residues": [
+          [
+            43,
+            81
+          ],
+          [
+            52,
+            79
+          ],
+          [
+            44,
+            78
+          ]
+        ],
+        "expected_uniform": 63.8
+      }
+    }
+  }
+}

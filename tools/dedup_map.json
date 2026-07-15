@@ -1,0 +1,2710 @@
+{
+ "functions": {
+  "main": {
+   "8c85d26e95b9": [
+    "astro_crossref.py"
+   ],
+   "a3be15c08201": [
+    "astro_label_pipeline.py"
+   ],
+   "0093e71c6e21": [
+    "attack_plan.py"
+   ],
+   "aab198633e78": [
+    "download_folios.py"
+   ],
+   "60ddcefdfbab": [
+    "egyptian_connection.py"
+   ],
+   "839c7220a363": [
+    "hebrew_comparison.py"
+   ],
+   "7756bf3a37a0": [
+    "hebrew_deep_analysis.py"
+   ],
+   "ff27c5b2e167": [
+    "herbal_labels.py"
+   ],
+   "72977afbd427": [
+    "phase103_positional_class_decomposition.py"
+   ],
+   "1502afcae1fd": [
+    "phase104_latin_ending_test.py"
+   ],
+   "a7d5a95d0014": [
+    "phase105_cappelli_retest.py"
+   ],
+   "dbf3bd6e73d0": [
+    "phase106_abbreviation_decode.py"
+   ],
+   "0f1c9aba7a7c": [
+    "phase106b_bench_variants.py"
+   ],
+   "050335d84727": [
+    "phase106c_positional_freq_match.py"
+   ],
+   "83f70eff9d8f": [
+    "phase107_slot_mi_decomposition.py"
+   ],
+   "929b1fce0afb": [
+    "phase23_full_translation.py"
+   ],
+   "30d93eab3684": [
+    "phase24_classifier_semantics.py"
+   ],
+   "b7789eed2043": [
+    "phase25_narrative_translation.py"
+   ],
+   "a49e77ea012a": [
+    "phase26_expansion.py"
+   ],
+   "cef040a7f399": [
+    "phase27_self_audit.py"
+   ],
+   "97268d4e4b98": [
+    "phase28_statistical.py"
+   ],
+   "aae851fb61d6": [
+    "phase29_compounds.py"
+   ],
+   "f4c323bba942": [
+    "phase30_validation.py"
+   ],
+   "c90eb555c7d4": [
+    "phase31_prefix_paradox.py"
+   ],
+   "d29c3f9e4d9c": [
+    "phase32_artifact_test.py"
+   ],
+   "e896bc14a289": [
+    "phase33_cascade_audit.py"
+   ],
+   "5fd47e437f44": [
+    "phase34_model_audit.py"
+   ],
+   "7dcc0185fbf1": [
+    "phase58_cross_script.py"
+   ],
+   "3c26bf8a3ddb": [
+    "phase59_forward_model.py"
+   ],
+   "f918035b3530": [
+    "phase60_positional_verbose.py"
+   ],
+   "db75bfb165ed": [
+    "phase61_word_shape_validation.py"
+   ],
+   "3619f0d8b942": [
+    "phase62_word_anatomy.py"
+   ],
+   "899840e41d88": [
+    "phase63_codicological_coherence.py"
+   ],
+   "e6d6b0c205ea": [
+    "phase65_reverse_engineer_script.py"
+   ],
+   "fd3e40e3f157": [
+    "phase66_glyph_resegmentation.py"
+   ],
+   "2e3079d92ef9": [
+    "phase67_run_length_morphology.py"
+   ],
+   "f273f2a48da3": [
+    "phase68_run_conditioned_transitions.py"
+   ],
+   "5a17609c46ae": [
+    "phase71_paragraph_initials.py"
+   ],
+   "ed71b853c02a": [
+    "phase72_naibbe_calibration.py"
+   ],
+   "f0548ed00957": [
+    "phase73_abbreviation_model.py"
+   ],
+   "ea054f2aba62": [
+    "phase74_paragraph_framing.py"
+   ],
+   "72d475e22767": [
+    "phase75_latin_mapping.py"
+   ],
+   "e0745628ac74": [
+    "phase76_vernacular_mapping.py"
+   ],
+   "4c8339e9fdfa": [
+    "phase77_gallows_ecology.py"
+   ],
+   "f347b4c77c7f": [
+    "phase77b_line_position_gallows.py"
+   ],
+   "8b87c3fcca2b": [
+    "phase78_allograph_test.py"
+   ],
+   "431c1b503b8f": [
+    "phase79_gallows_collapse.py"
+   ],
+   "857403470824": [
+    "phase80_abjad_hypothesis.py"
+   ],
+   "feb905e681bf": [
+    "phase81_german_genre_fingerprint.py"
+   ],
+   "fcf74ddda10f": [
+    "phase82_charm_fingerprint.py"
+   ],
+   "e2ebcaa73250": [
+    "phase82_line1_body_separation.py"
+   ],
+   "7173c334c052": [
+    "phase83_encoding_layer_sweep.py"
+   ],
+   "7f10f77b55ff": [
+    "phase83_subword_segmentation.py"
+   ],
+   "b08947c227d8": [
+    "phase84_mi_meaning_area.py"
+   ],
+   "9818dd75977a": [
+    "phase85_chunk_fingerprint.py"
+   ],
+   "de94011add88": [
+    "phase85_pelling_verbose_cipher.py"
+   ],
+   "7517cff87fbb": [
+    "phase85R_revalidation.py"
+   ],
+   "7eb494d359df": [
+    "phase86_chunk_equivalence.py"
+   ],
+   "2e41c2e967d5": [
+    "phase86R_revalidation.py"
+   ],
+   "a6e2a4d50cf8": [
+    "phase87_gallows_null_test.py"
+   ],
+   "00dfb52acda0": [
+    "phase87_spectral_vc.py"
+   ],
+   "bc90cd78060d": [
+    "phase87R_revalidation.py"
+   ],
+   "c950727dd161": [
+    "phase88_position_identity.py"
+   ],
+   "6f832f812884": [
+    "phase89_context_divergence.py"
+   ],
+   "cba233f615f0": [
+    "phase90_crossword_chunk_mi.py"
+   ],
+   "730272a9abaf": [
+    "phase91_zodiac_galenic_axis.py"
+   ],
+   "31dbc3a255a8": [
+    "phase92_ae_minimal_pairs.py"
+   ],
+   "71cf846d1a0f": [
+    "phase93_currier_slot2_regime.py"
+   ],
+   "ce8d5980f67d": [
+    "phase94_e_extension_morphology.py"
+   ],
+   "a8a7c583fca8": [
+    "phase95_currier_split_fingerprint.py"
+   ],
+   "89ee37759673": [
+    "phase97_slot_grammar_hchar.py"
+   ],
+   "9fb1ed228e18": [
+    "root_lexicon_rosetta.py"
+   ],
+   "649fdc8a87e8": [
+    "sentence_translation.py"
+   ],
+   "66b70c8333a8": [
+    "shorthand_analysis.py"
+   ],
+   "463fd9e13138": [
+    "slot_analysis.py"
+   ]
+  },
+  "decompose_word": {
+   "166e4c3ea354": [
+    "astro_label_pipeline.py"
+   ],
+   "54f89fadcb27": [
+    "phase62_word_anatomy.py"
+   ],
+   "bb6d0aa79481": [
+    "slot_analysis.py"
+   ]
+  },
+  "parse_word": {
+   "3a3b994b7ec5": [
+    "attack_plan.py"
+   ],
+   "d7fbbc897c9a": [
+    "crosssign_network.py",
+    "ring_text_analysis.py"
+   ],
+   "90a9e64cc5ed": [
+    "currier_ab.py",
+    "f66r_analysis.py",
+    "pharma_comparison.py"
+   ],
+   "614eff70cbd0": [
+    "deep_dive.py",
+    "deep_dive_phase1.py"
+   ],
+   "1aec89776539": [
+    "freq_rank_mapping.py"
+   ],
+   "3d3a6f402fc4": [
+    "grammar_extraction.py",
+    "medieval_degrees.py"
+   ],
+   "f2b14fb722b0": [
+    "hebrew_deep_analysis.py",
+    "shorthand_analysis.py"
+   ],
+   "52d1318e2313": [
+    "herbal_crossref.py"
+   ],
+   "4622b3827278": [
+    "ring_decan_mapping.py"
+   ]
+  },
+  "get_root": {
+   "6ace394b5443": [
+    "attack_plan.py",
+    "currier_ab.py",
+    "deep_dive.py",
+    "deep_dive_phase1.py",
+    "f66r_analysis.py",
+    "freq_rank_mapping.py",
+    "hebrew_deep_analysis.py",
+    "herbal_crossref.py",
+    "pharma_comparison.py",
+    "shorthand_analysis.py"
+   ]
+  },
+  "classify_folio": {
+   "9819108404a0": [
+    "attack_plan.py",
+    "freq_rank_mapping.py",
+    "hebrew_deep_analysis.py",
+    "shorthand_analysis.py",
+    "slot_analysis.py"
+   ],
+   "d7f05f7e06b2": [
+    "coptic_probe_expanded.py",
+    "diacritic_audit.py",
+    "egyptian_connection.py",
+    "gallows_semantics.py",
+    "root_lexicon_rosetta.py",
+    "rtl_direction_test.py"
+   ],
+   "3de447f8ac12": [
+    "deep_dive.py",
+    "deep_dive_phase1.py"
+   ],
+   "0b0492eea8c7": [
+    "four_tasks_audit.py",
+    "leo_deepdive.py"
+   ],
+   "0ed2d004451d": [
+    "gallows_test.py"
+   ],
+   "95135bdbe76f": [
+    "herbal_crossref.py"
+   ],
+   "51a1e9b47713": [
+    "herbal_labels.py"
+   ],
+   "6b8922677591": [
+    "phase22_unknown_roots.py",
+    "phase23_full_translation.py",
+    "phase24_classifier_semantics.py",
+    "phase25_narrative_translation.py",
+    "phase26_expansion.py"
+   ]
+  },
+  "entropy": {
+   "202aa9fd9dda": [
+    "attack_plan.py",
+    "slot_analysis.py"
+   ],
+   "13852d32e066": [
+    "phase101_currier_ab_dichotomy.py",
+    "phase102_historical_validation.py",
+    "phase104_latin_ending_test.py",
+    "phase105_cappelli_retest.py",
+    "phase74_paragraph_framing.py"
+   ],
+   "0e3850c68fe6": [
+    "phase103_positional_class_decomposition.py",
+    "phase83_subword_segmentation.py",
+    "phase85_chunk_fingerprint.py",
+    "phase85R_revalidation.py",
+    "phase86_chunk_equivalence.py",
+    "phase86R_revalidation.py",
+    "phase98_generative_chunk_model.py",
+    "phase99_script_typology.py"
+   ],
+   "bcf9f045243d": [
+    "phase107_slot_mi_decomposition.py",
+    "phase79_gallows_collapse.py"
+   ],
+   "17568aff3d9f": [
+    "phase38_bigram_null.py"
+   ],
+   "db3c82bfaf1a": [
+    "phase42_class_system.py",
+    "phase43_attack_classes.py"
+   ],
+   "db5e7b078608": [
+    "phase62_word_anatomy.py"
+   ],
+   "f46adfe46803": [
+    "phase63_codicological_coherence.py"
+   ],
+   "f6e0a572f251": [
+    "phase77_gallows_ecology.py"
+   ]
+  },
+  "gallows_base": {
+   "6e2868794f68": [
+    "coptic_probe_expanded.py",
+    "egyptian_connection.py",
+    "four_tasks_audit.py",
+    "gallows_semantics.py",
+    "herbal_labels.py",
+    "leo_deepdive.py",
+    "root_lexicon_rosetta.py",
+    "sentence_translation.py"
+   ],
+   "a3035c8f1e9c": [
+    "phase19_zodiac_alignment.py",
+    "phase20_template_subtraction.py",
+    "phase21_highest_leverage.py",
+    "phase22_unknown_roots.py",
+    "phase23_full_translation.py",
+    "phase24_classifier_semantics.py",
+    "phase25_narrative_translation.py",
+    "phase26_expansion.py",
+    "phase27_self_audit.py",
+    "phase28_statistical.py",
+    "phase29_compounds.py",
+    "phase30_validation.py",
+    "phase31_prefix_paradox.py",
+    "phase32_artifact_test.py",
+    "phase33_cascade_audit.py",
+    "phase34_model_audit.py",
+    "phase35_prefix_disentangle.py",
+    "phase36_parser_free.py",
+    "phase37_parser_free_analysis.py",
+    "phase38_bigram_null.py"
+   ]
+  },
+  "strip_gallows": {
+   "83c789bb363f": [
+    "coptic_probe_expanded.py",
+    "egyptian_connection.py",
+    "four_tasks_audit.py",
+    "gallows_semantics.py",
+    "herbal_labels.py",
+    "leo_deepdive.py",
+    "root_lexicon_rosetta.py",
+    "sentence_translation.py"
+   ],
+   "ebdab8a7df04": [
+    "gallows_test.py"
+   ],
+   "1d9dcbecc5c1": [
+    "phase104_latin_ending_test.py"
+   ],
+   "9b15948873b1": [
+    "phase19_zodiac_alignment.py",
+    "phase20_template_subtraction.py",
+    "phase21_highest_leverage.py",
+    "phase22_unknown_roots.py",
+    "phase23_full_translation.py",
+    "phase24_classifier_semantics.py",
+    "phase25_narrative_translation.py",
+    "phase26_expansion.py",
+    "phase27_self_audit.py",
+    "phase28_statistical.py",
+    "phase29_compounds.py",
+    "phase30_validation.py",
+    "phase31_prefix_paradox.py",
+    "phase32_artifact_test.py",
+    "phase33_cascade_audit.py",
+    "phase34_model_audit.py",
+    "phase35_prefix_disentangle.py",
+    "phase36_parser_free.py",
+    "phase37_parser_free_analysis.py",
+    "phase38_bigram_null.py"
+   ],
+   "126fc9c1f078": [
+    "phase39_syntax.py",
+    "phase40_supplement.py",
+    "phase40_syntax_attack.py",
+    "phase41_grammar.py",
+    "phase42_class_system.py",
+    "phase43_attack_classes.py",
+    "phase44_word_classes.py",
+    "phase45_word_predictability.py",
+    "phase46_mi_anatomy.py",
+    "phase47_word_network.py",
+    "phase48_cross_validation.py",
+    "phase49_generalization.py",
+    "phase50_synthesis.py",
+    "phase51_attack_synthesis.py",
+    "phase52_discriminators.py",
+    "phase53_cipher_tests.py",
+    "phase54_natlang_vs_cipher.py",
+    "phase55_vc_separation.py",
+    "phase56_syllabary_test.py",
+    "phase57_bax_test.py"
+   ]
+  },
+  "collapse_echains": {
+   "31b7cf8f1189": [
+    "coptic_probe_expanded.py",
+    "four_tasks_audit.py",
+    "herbal_labels.py",
+    "leo_deepdive.py",
+    "root_lexicon_rosetta.py",
+    "sentence_translation.py"
+   ],
+   "e19f9fdeeb58": [
+    "phase104_latin_ending_test.py"
+   ],
+   "763c62c2346a": [
+    "phase19_zodiac_alignment.py",
+    "phase20_template_subtraction.py",
+    "phase21_highest_leverage.py",
+    "phase22_unknown_roots.py",
+    "phase23_full_translation.py",
+    "phase24_classifier_semantics.py",
+    "phase25_narrative_translation.py",
+    "phase26_expansion.py",
+    "phase27_self_audit.py",
+    "phase28_statistical.py",
+    "phase29_compounds.py",
+    "phase30_validation.py",
+    "phase31_prefix_paradox.py",
+    "phase32_artifact_test.py",
+    "phase33_cascade_audit.py",
+    "phase34_model_audit.py",
+    "phase35_prefix_disentangle.py",
+    "phase36_parser_free.py",
+    "phase37_parser_free_analysis.py",
+    "phase38_bigram_null.py"
+   ]
+  },
+  "parse_morphology": {
+   "0e4a0acdec11": [
+    "coptic_probe_expanded.py",
+    "four_tasks_audit.py",
+    "herbal_labels.py",
+    "leo_deepdive.py",
+    "root_lexicon_rosetta.py",
+    "sentence_translation.py"
+   ],
+   "dca5653280bc": [
+    "egyptian_connection.py"
+   ],
+   "d43ef6c37b89": [
+    "phase19_zodiac_alignment.py",
+    "phase20_template_subtraction.py",
+    "phase21_highest_leverage.py",
+    "phase22_unknown_roots.py",
+    "phase23_full_translation.py",
+    "phase24_classifier_semantics.py",
+    "phase25_narrative_translation.py",
+    "phase26_expansion.py",
+    "phase27_self_audit.py",
+    "phase28_statistical.py",
+    "phase29_compounds.py",
+    "phase30_validation.py",
+    "phase31_prefix_paradox.py"
+   ],
+   "e9a3681e67e1": [
+    "phase32_artifact_test.py",
+    "phase33_cascade_audit.py"
+   ]
+  },
+  "full_decompose": {
+   "2f310aaab8a9": [
+    "coptic_probe_expanded.py"
+   ],
+   "448521502595": [
+    "four_tasks_audit.py"
+   ],
+   "6bfde76533a0": [
+    "herbal_labels.py",
+    "root_lexicon_rosetta.py"
+   ],
+   "1660bcc9c43c": [
+    "leo_deepdive.py"
+   ],
+   "0155bb1587f5": [
+    "phase19_zodiac_alignment.py",
+    "phase20_template_subtraction.py",
+    "phase21_highest_leverage.py",
+    "phase22_unknown_roots.py",
+    "phase23_full_translation.py",
+    "phase24_classifier_semantics.py",
+    "phase25_narrative_translation.py",
+    "phase26_expansion.py",
+    "phase27_self_audit.py",
+    "phase28_statistical.py",
+    "phase29_compounds.py",
+    "phase30_validation.py",
+    "phase31_prefix_paradox.py"
+   ],
+   "97ee8d0e3ab9": [
+    "sentence_translation.py"
+   ]
+  },
+  "extract_all_words": {
+   "54291bb63c5f": [
+    "coptic_probe_expanded.py",
+    "leo_deepdive.py",
+    "root_lexicon_rosetta.py"
+   ],
+   "85124e6a3348": [
+    "egyptian_connection.py",
+    "gallows_semantics.py"
+   ],
+   "6f167a21bbc5": [
+    "four_tasks_audit.py"
+   ],
+   "b8c230832f46": [
+    "gallows_test.py"
+   ],
+   "ed271ece272a": [
+    "phase19_zodiac_alignment.py"
+   ],
+   "a2bab72bc5cd": [
+    "phase20_template_subtraction.py"
+   ],
+   "c668dfd1a8ed": [
+    "phase21_highest_leverage.py"
+   ],
+   "f8ae1241ce19": [
+    "phase22_unknown_roots.py"
+   ],
+   "cdccd26800a0": [
+    "phase24_classifier_semantics.py",
+    "phase25_narrative_translation.py",
+    "phase26_expansion.py"
+   ]
+  },
+  "consonantal_skeleton": {
+   "f89cc24777c1": [
+    "coptic_probe_expanded.py",
+    "sentence_translation.py"
+   ],
+   "5ad412a5b5be": [
+    "herbal_labels.py"
+   ]
+  },
+  "lcs_length": {
+   "3d489a595049": [
+    "coptic_probe_expanded.py",
+    "four_tasks_audit.py"
+   ]
+  },
+  "match_score": {
+   "51d3cf0c6af5": [
+    "coptic_probe_expanded.py"
+   ],
+   "041b9757bbfa": [
+    "leo_deepdive.py"
+   ]
+  },
+  "synthesis": {
+   "2778d0eb1178": [
+    "coptic_probe_expanded.py"
+   ],
+   "de30d9544d11": [
+    "diacritic_audit.py"
+   ],
+   "9b505b0fda0b": [
+    "leo_deepdive.py"
+   ],
+   "b623d98e9c04": [
+    "phase77_gallows_ecology.py"
+   ],
+   "b0756d01e516": [
+    "root_lexicon_rosetta.py"
+   ]
+  },
+  "phase7_synthesis": {
+   "893d6b063da4": [
+    "crosssign_network.py"
+   ],
+   "6b249f0b9ea7": [
+    "ring_text_analysis.py"
+   ]
+  },
+  "jsd": {
+   "94fb8c729263": [
+    "currier_ab.py"
+   ],
+   "ae4f5f3a398c": [
+    "phase100_decipherment.py"
+   ],
+   "bc8863e1256e": [
+    "phase101_currier_ab_dichotomy.py"
+   ],
+   "3369dedcd8f6": [
+    "phase102_historical_validation.py"
+   ],
+   "b2631e0a4c67": [
+    "phase43_attack_classes.py"
+   ],
+   "0617da673ea8": [
+    "phase56_syllabary_test.py"
+   ],
+   "3df6e7d0ef14": [
+    "phase77_gallows_ecology.py"
+   ],
+   "d5d1dd21d51e": [
+    "phase78_allograph_test.py"
+   ],
+   "41ad1b22a4d6": [
+    "phase82_line1_body_separation.py"
+   ],
+   "ce5514415ef1": [
+    "phase86_chunk_equivalence.py"
+   ]
+  },
+  "analyze": {
+   "75024aa05177": [
+    "currier_ab.py"
+   ],
+   "1ca02ba27730": [
+    "deep_dive.py"
+   ],
+   "9956889c8781": [
+    "f66r_analysis.py"
+   ],
+   "5e9a7290dd15": [
+    "freq_rank_mapping.py"
+   ],
+   "34bcd192101a": [
+    "pharma_comparison.py"
+   ]
+  },
+  "load_lines": {
+   "b9254a37a323": [
+    "deep_dive_phase1.py"
+   ],
+   "ecfe335b7b1e": [
+    "phase39_syntax.py",
+    "phase40_supplement.py",
+    "phase40_syntax_attack.py",
+    "phase41_grammar.py",
+    "phase42_class_system.py",
+    "phase43_attack_classes.py",
+    "phase44_word_classes.py",
+    "phase45_word_predictability.py",
+    "phase46_mi_anatomy.py",
+    "phase47_word_network.py",
+    "phase48_cross_validation.py",
+    "phase49_generalization.py",
+    "phase50_synthesis.py"
+   ],
+   "8f856f085f74": [
+    "phase51_attack_synthesis.py",
+    "phase52_discriminators.py",
+    "phase53_cipher_tests.py",
+    "phase55_vc_separation.py",
+    "phase56_syllabary_test.py"
+   ],
+   "a397c5b55f83": [
+    "phase57_bax_test.py"
+   ]
+  },
+  "gallows_tier": {
+   "4f468d40f0a5": [
+    "egyptian_connection.py",
+    "gallows_semantics.py"
+   ]
+  },
+  "analysis7_synthesis": {
+   "5d68a660b6af": [
+    "egyptian_connection.py"
+   ],
+   "ecc09c5bd632": [
+    "gallows_semantics.py"
+   ]
+  },
+  "consonant_skeleton": {
+   "3b348a2ece6e": [
+    "four_tasks_audit.py"
+   ],
+   "7684a567bcc7": [
+    "leo_deepdive.py"
+   ],
+   "bdf0e17ed83b": [
+    "phase21_highest_leverage.py"
+   ]
+  },
+  "extract_all_data": {
+   "d46d7ee43df3": [
+    "freq_rank_mapping.py",
+    "shorthand_analysis.py"
+   ]
+  },
+  "test8_synthesis": {
+   "d199c7e51e05": [
+    "gallows_test.py"
+   ],
+   "a8ba9b01634b": [
+    "rtl_direction_test.py"
+   ]
+  },
+  "clean_word": {
+   "42a4ab68b695": [
+    "grammar_extraction.py",
+    "ring_text_analysis.py"
+   ],
+   "42d8ef2285cc": [
+    "phase100_decipherment.py",
+    "phase101_currier_ab_dichotomy.py",
+    "phase102_historical_validation.py",
+    "phase103_positional_class_decomposition.py",
+    "phase74_paragraph_framing.py",
+    "phase75_latin_mapping.py",
+    "phase77_gallows_ecology.py",
+    "phase77b_line_position_gallows.py",
+    "phase78_allograph_test.py",
+    "phase79_gallows_collapse.py",
+    "phase82_line1_body_separation.py",
+    "phase83_subword_segmentation.py",
+    "phase84_mi_meaning_area.py",
+    "phase85_chunk_fingerprint.py",
+    "phase85R_revalidation.py",
+    "phase86_chunk_equivalence.py",
+    "phase86R_revalidation.py",
+    "phase87_gallows_null_test.py",
+    "phase87_spectral_vc.py",
+    "phase87R_revalidation.py",
+    "phase88_position_identity.py",
+    "phase89_context_divergence.py",
+    "phase93_currier_slot2_regime.py",
+    "phase94_e_extension_morphology.py",
+    "phase95_currier_split_fingerprint.py",
+    "phase98_generative_chunk_model.py",
+    "phase99_script_typology.py"
+   ],
+   "8b098b256df0": [
+    "phase80_abjad_hypothesis.py",
+    "phase81_german_genre_fingerprint.py",
+    "phase82_charm_fingerprint.py",
+    "phase83_encoding_layer_sweep.py",
+    "phase85_pelling_verbose_cipher.py"
+   ]
+  },
+  "extract_ring_texts": {
+   "c40b339b2125": [
+    "grammar_extraction.py"
+   ],
+   "9f43a0d1bb95": [
+    "ring_text_analysis.py"
+   ]
+  },
+  "clean_token": {
+   "d4b8f56c189f": [
+    "herbal_crossref.py"
+   ],
+   "9637ba96989a": [
+    "phase19_zodiac_alignment.py",
+    "phase20_template_subtraction.py",
+    "phase21_highest_leverage.py"
+   ]
+  },
+  "phase8_synthesis": {
+   "2084205a1e7c": [
+    "herbal_crossref.py"
+   ],
+   "e27d2292541c": [
+    "innermost_ring_dive.py"
+   ]
+  },
+  "longest_common_subsequence": {
+   "6156d6561695": [
+    "herbal_labels.py",
+    "leo_deepdive.py"
+   ]
+  },
+  "load_corpus": {
+   "ea096b29e798": [
+    "pharma_comparison.py"
+   ],
+   "38ca54462c6e": [
+    "phase106c_positional_freq_match.py"
+   ]
+  },
+  "pr": {
+   "857dc81051a8": [
+    "phase100_decipherment.py",
+    "phase101_currier_ab_dichotomy.py",
+    "phase102_historical_validation.py",
+    "phase103_positional_class_decomposition.py",
+    "phase104_latin_ending_test.py",
+    "phase105_cappelli_retest.py",
+    "phase107_slot_mi_decomposition.py",
+    "phase74_paragraph_framing.py",
+    "phase75_latin_mapping.py",
+    "phase76_vernacular_mapping.py",
+    "phase77_gallows_ecology.py",
+    "phase77b_line_position_gallows.py",
+    "phase78_allograph_test.py",
+    "phase79_gallows_collapse.py",
+    "phase80_abjad_hypothesis.py",
+    "phase81_german_genre_fingerprint.py",
+    "phase82_charm_fingerprint.py",
+    "phase82_line1_body_separation.py",
+    "phase83_encoding_layer_sweep.py",
+    "phase83_subword_segmentation.py",
+    "phase84_mi_meaning_area.py",
+    "phase85_chunk_fingerprint.py",
+    "phase85_pelling_verbose_cipher.py",
+    "phase85R_revalidation.py",
+    "phase86_chunk_equivalence.py",
+    "phase86R_revalidation.py",
+    "phase87_gallows_null_test.py",
+    "phase87_spectral_vc.py",
+    "phase87R_revalidation.py",
+    "phase88_position_identity.py",
+    "phase89_context_divergence.py",
+    "phase90_crossword_chunk_mi.py",
+    "phase91_zodiac_galenic_axis.py",
+    "phase92_ae_minimal_pairs.py",
+    "phase93_currier_slot2_regime.py",
+    "phase94_e_extension_morphology.py",
+    "phase95_currier_split_fingerprint.py",
+    "phase98_generative_chunk_model.py",
+    "phase99_script_typology.py"
+   ],
+   "9c3720538874": [
+    "phase57_bax_test.py",
+    "phase58_cross_script.py",
+    "phase59_forward_model.py",
+    "phase60_positional_verbose.py"
+   ],
+   "cbc8065edb20": [
+    "phase61_word_shape_validation.py"
+   ],
+   "08fdf987441f": [
+    "phase62_word_anatomy.py",
+    "phase63_codicological_coherence.py",
+    "phase64_encoding_tournament.py",
+    "phase65_reverse_engineer_script.py",
+    "phase66_glyph_resegmentation.py",
+    "phase67_run_length_morphology.py",
+    "phase68_run_conditioned_transitions.py",
+    "phase72_naibbe_calibration.py",
+    "phase73_abbreviation_model.py"
+   ],
+   "53208d38183d": [
+    "phase71_paragraph_initials.py"
+   ]
+  },
+  "eva_to_glyphs": {
+   "3f004cce2c98": [
+    "phase100_decipherment.py",
+    "phase101_currier_ab_dichotomy.py",
+    "phase102_historical_validation.py",
+    "phase103_positional_class_decomposition.py",
+    "phase107_slot_mi_decomposition.py",
+    "phase71_paragraph_initials.py",
+    "phase74_paragraph_framing.py",
+    "phase77_gallows_ecology.py",
+    "phase77b_line_position_gallows.py",
+    "phase78_allograph_test.py",
+    "phase79_gallows_collapse.py",
+    "phase80_abjad_hypothesis.py",
+    "phase81_german_genre_fingerprint.py",
+    "phase82_charm_fingerprint.py",
+    "phase82_line1_body_separation.py",
+    "phase83_encoding_layer_sweep.py",
+    "phase83_subword_segmentation.py",
+    "phase84_mi_meaning_area.py",
+    "phase85_chunk_fingerprint.py",
+    "phase85_pelling_verbose_cipher.py",
+    "phase85R_revalidation.py",
+    "phase86_chunk_equivalence.py",
+    "phase86R_revalidation.py",
+    "phase87_gallows_null_test.py",
+    "phase87_spectral_vc.py",
+    "phase87R_revalidation.py",
+    "phase88_position_identity.py",
+    "phase89_context_divergence.py",
+    "phase90_crossword_chunk_mi.py",
+    "phase92_ae_minimal_pairs.py",
+    "phase93_currier_slot2_regime.py",
+    "phase94_e_extension_morphology.py",
+    "phase95_currier_split_fingerprint.py",
+    "phase98_generative_chunk_model.py",
+    "phase99_script_typology.py"
+   ],
+   "f4a5912f5b63": [
+    "phase58_cross_script.py"
+   ],
+   "6abeb65438fa": [
+    "phase59_forward_model.py",
+    "phase60_positional_verbose.py",
+    "phase61_word_shape_validation.py",
+    "phase62_word_anatomy.py",
+    "phase63_codicological_coherence.py",
+    "phase64_encoding_tournament.py",
+    "phase65_reverse_engineer_script.py",
+    "phase66_glyph_resegmentation.py",
+    "phase67_run_length_morphology.py",
+    "phase68_run_conditioned_transitions.py"
+   ],
+   "e9caa5cd1b6c": [
+    "phase96_cluster_hchar.py",
+    "phase97_slot_grammar_hchar.py"
+   ]
+  },
+  "parse_one_chunk": {
+   "a32030dfad49": [
+    "phase100_decipherment.py",
+    "phase101_currier_ab_dichotomy.py",
+    "phase102_historical_validation.py",
+    "phase103_positional_class_decomposition.py",
+    "phase85_chunk_fingerprint.py",
+    "phase85R_revalidation.py",
+    "phase86_chunk_equivalence.py",
+    "phase86R_revalidation.py",
+    "phase88_position_identity.py",
+    "phase89_context_divergence.py",
+    "phase90_crossword_chunk_mi.py",
+    "phase98_generative_chunk_model.py"
+   ],
+   "465d7295eb33": [
+    "phase87_spectral_vc.py",
+    "phase87R_revalidation.py"
+   ],
+   "06ba189a75d6": [
+    "phase92_ae_minimal_pairs.py"
+   ],
+   "ff0ca1e9bcc8": [
+    "phase93_currier_slot2_regime.py"
+   ],
+   "fc8647d9942b": [
+    "phase94_e_extension_morphology.py"
+   ],
+   "3b740b7b4655": [
+    "phase96_cluster_hchar.py"
+   ]
+  },
+  "parse_word_into_chunks": {
+   "e19bf7794244": [
+    "phase100_decipherment.py"
+   ],
+   "fb32497926d9": [
+    "phase101_currier_ab_dichotomy.py",
+    "phase102_historical_validation.py",
+    "phase103_positional_class_decomposition.py",
+    "phase85_chunk_fingerprint.py",
+    "phase86_chunk_equivalence.py",
+    "phase86R_revalidation.py",
+    "phase87_spectral_vc.py",
+    "phase88_position_identity.py",
+    "phase89_context_divergence.py",
+    "phase90_crossword_chunk_mi.py",
+    "phase98_generative_chunk_model.py"
+   ],
+   "31f4789cf906": [
+    "phase85R_revalidation.py"
+   ],
+   "ac512ab24194": [
+    "phase87R_revalidation.py"
+   ],
+   "3a2a22afa6d0": [
+    "phase92_ae_minimal_pairs.py"
+   ],
+   "c41450e37047": [
+    "phase93_currier_slot2_regime.py"
+   ],
+   "2a5bec79730a": [
+    "phase94_e_extension_morphology.py"
+   ],
+   "94d63238dae0": [
+    "phase96_cluster_hchar.py"
+   ]
+  },
+  "chunk_to_str": {
+   "eeee97483140": [
+    "phase100_decipherment.py",
+    "phase101_currier_ab_dichotomy.py",
+    "phase102_historical_validation.py",
+    "phase103_positional_class_decomposition.py",
+    "phase85_chunk_fingerprint.py",
+    "phase85R_revalidation.py",
+    "phase86_chunk_equivalence.py",
+    "phase86R_revalidation.py",
+    "phase87_spectral_vc.py",
+    "phase88_position_identity.py",
+    "phase89_context_divergence.py",
+    "phase90_crossword_chunk_mi.py",
+    "phase92_ae_minimal_pairs.py",
+    "phase98_generative_chunk_model.py"
+   ],
+   "d96851ae9593": [
+    "phase94_e_extension_morphology.py"
+   ],
+   "f2fe3f955ed0": [
+    "phase99_script_typology.py"
+   ]
+  },
+  "extract_words_from_line": {
+   "c5a789693ddf": [
+    "phase100_decipherment.py",
+    "phase101_currier_ab_dichotomy.py",
+    "phase102_historical_validation.py",
+    "phase85_chunk_fingerprint.py",
+    "phase85R_revalidation.py",
+    "phase86_chunk_equivalence.py",
+    "phase86R_revalidation.py",
+    "phase87_gallows_null_test.py",
+    "phase87_spectral_vc.py",
+    "phase88_position_identity.py",
+    "phase89_context_divergence.py",
+    "phase93_currier_slot2_regime.py",
+    "phase95_currier_split_fingerprint.py",
+    "phase98_generative_chunk_model.py",
+    "phase99_script_typology.py"
+   ]
+  },
+  "get_currier_language": {
+   "56b0253a11df": [
+    "phase100_decipherment.py",
+    "phase85_chunk_fingerprint.py",
+    "phase87_spectral_vc.py",
+    "phase98_generative_chunk_model.py"
+   ],
+   "8f6842966d63": [
+    "phase63_codicological_coherence.py"
+   ],
+   "20dbdcf2ec8e": [
+    "phase64_encoding_tournament.py",
+    "phase84_mi_meaning_area.py"
+   ],
+   "968684ec0aef": [
+    "phase68_run_conditioned_transitions.py"
+   ]
+  },
+  "parse_all_folios": {
+   "f3dec3acf612": [
+    "phase100_decipherment.py",
+    "phase98_generative_chunk_model.py"
+   ],
+   "c42ded5191d8": [
+    "phase102_historical_validation.py"
+   ],
+   "42135dd5a601": [
+    "phase77_gallows_ecology.py"
+   ],
+   "3b4e3bf2cccb": [
+    "phase99_script_typology.py"
+   ]
+  },
+  "load_phase86_clusters": {
+   "935370f1ae62": [
+    "phase100_decipherment.py",
+    "phase101_currier_ab_dichotomy.py",
+    "phase102_historical_validation.py",
+    "phase98_generative_chunk_model.py"
+   ]
+  },
+  "assign_rare_chunks_to_clusters": {
+   "b56a9c6b08df": [
+    "phase100_decipherment.py",
+    "phase98_generative_chunk_model.py"
+   ],
+   "183a9703a55d": [
+    "phase101_currier_ab_dichotomy.py"
+   ]
+  },
+  "load_nl_text": {
+   "18ecdb1e0907": [
+    "phase100_decipherment.py"
+   ],
+   "35cc2005333b": [
+    "phase101_currier_ab_dichotomy.py"
+   ],
+   "717c3d2c14e4": [
+    "phase102_historical_validation.py"
+   ],
+   "c8c678acf2a3": [
+    "phase84_mi_meaning_area.py"
+   ]
+  },
+  "load_czech_bible": {
+   "65007c5a92f6": [
+    "phase100_decipherment.py"
+   ],
+   "5b0d089993c9": [
+    "phase104_latin_ending_test.py"
+   ],
+   "f39b451aac75": [
+    "phase105_cappelli_retest.py"
+   ],
+   "5e2bf8f2f5d2": [
+    "phase99_script_typology.py"
+   ]
+  },
+  "load_all_nl_corpora": {
+   "acd8d7c388ab": [
+    "phase100_decipherment.py"
+   ],
+   "0aa4a109c851": [
+    "phase101_currier_ab_dichotomy.py"
+   ]
+  },
+  "apply_mapping": {
+   "0b8c57656ce1": [
+    "phase100_decipherment.py"
+   ],
+   "733b5389083f": [
+    "phase106c_positional_freq_match.py"
+   ]
+  },
+  "run_analysis": {
+   "22719bf6d555": [
+    "phase100_decipherment.py"
+   ],
+   "b656a2120fe8": [
+    "phase101_currier_ab_dichotomy.py"
+   ],
+   "caf5253c7674": [
+    "phase102_historical_validation.py"
+   ],
+   "e802efec0fd9": [
+    "phase98_generative_chunk_model.py"
+   ],
+   "159bcf8f192b": [
+    "phase99_script_typology.py"
+   ]
+  },
+  "get_currier_language_from_header": {
+   "80c60d45e14a": [
+    "phase101_currier_ab_dichotomy.py"
+   ],
+   "c40f03915771": [
+    "phase102_historical_validation.py"
+   ]
+  },
+  "get_section": {
+   "7b5e2caf0ff6": [
+    "phase102_historical_validation.py"
+   ],
+   "33fb04cf8131": [
+    "phase54_natlang_vs_cipher.py",
+    "phase62_word_anatomy.py",
+    "phase63_codicological_coherence.py"
+   ],
+   "604691ec6851": [
+    "phase64_encoding_tournament.py"
+   ]
+  },
+  "slot_pattern": {
+   "e4c485649bf7": [
+    "phase103_positional_class_decomposition.py",
+    "phase86_chunk_equivalence.py"
+   ],
+   "a937e989d8b4": [
+    "phase85_chunk_fingerprint.py"
+   ]
+  },
+  "load_vms_lines": {
+   "8fe11d5c2681": [
+    "phase103_positional_class_decomposition.py",
+    "phase90_crossword_chunk_mi.py"
+   ],
+   "4f2fc99e54c8": [
+    "phase104_latin_ending_test.py"
+   ]
+  },
+  "vms_lines_to_chunk_lines": {
+   "991698441225": [
+    "phase103_positional_class_decomposition.py",
+    "phase90_crossword_chunk_mi.py"
+   ]
+  },
+  "syllabify_word": {
+   "c740ce487b20": [
+    "phase103_positional_class_decomposition.py",
+    "phase85_chunk_fingerprint.py",
+    "phase85R_revalidation.py",
+    "phase86_chunk_equivalence.py",
+    "phase86R_revalidation.py",
+    "phase87_spectral_vc.py",
+    "phase88_position_identity.py",
+    "phase89_context_divergence.py",
+    "phase90_crossword_chunk_mi.py"
+   ]
+  },
+  "load_reference_text": {
+   "409a3551c246": [
+    "phase103_positional_class_decomposition.py",
+    "phase104_latin_ending_test.py",
+    "phase85_chunk_fingerprint.py",
+    "phase85R_revalidation.py",
+    "phase86_chunk_equivalence.py",
+    "phase86R_revalidation.py",
+    "phase87_spectral_vc.py",
+    "phase87R_revalidation.py",
+    "phase88_position_identity.py",
+    "phase89_context_divergence.py",
+    "phase90_crossword_chunk_mi.py"
+   ],
+   "23be6e278d7f": [
+    "phase105_cappelli_retest.py"
+   ],
+   "5f3330b6fd1a": [
+    "phase80_abjad_hypothesis.py"
+   ],
+   "53f07b66fbb7": [
+    "phase81_german_genre_fingerprint.py",
+    "phase82_charm_fingerprint.py",
+    "phase83_encoding_layer_sweep.py",
+    "phase85_pelling_verbose_cipher.py"
+   ],
+   "a3a7ac12c9b7": [
+    "phase99_script_typology.py"
+   ]
+  },
+  "jaccard": {
+   "b6c07e7d2217": [
+    "phase103_positional_class_decomposition.py"
+   ],
+   "9a15cb3ced82": [
+    "phase63_codicological_coherence.py"
+   ]
+  },
+  "mi_from_joint": {
+   "31d4227160de": [
+    "phase104_latin_ending_test.py",
+    "phase105_cappelli_retest.py"
+   ]
+  },
+  "extract_endings": {
+   "bd2532c5b8c8": [
+    "phase104_latin_ending_test.py",
+    "phase105_cappelli_retest.py"
+   ]
+  },
+  "ending_self_agreement": {
+   "d2bc41db340c": [
+    "phase104_latin_ending_test.py",
+    "phase105_cappelli_retest.py"
+   ]
+  },
+  "abbreviate_word": {
+   "84d0aa2d9659": [
+    "phase105_cappelli_retest.py"
+   ],
+   "797c67e7e132": [
+    "phase73_abbreviation_model.py"
+   ]
+  },
+  "abbreviate_text": {
+   "5c91f49bc4d2": [
+    "phase105_cappelli_retest.py",
+    "phase73_abbreviation_model.py"
+   ]
+  },
+  "load_vms_words": {
+   "74ac541aff06": [
+    "phase105_cappelli_retest.py"
+   ],
+   "4761d62dc6c3": [
+    "phase107_slot_mi_decomposition.py"
+   ],
+   "30432bffa1ad": [
+    "phase64_encoding_tournament.py"
+   ],
+   "193ae46467b0": [
+    "phase65_reverse_engineer_script.py",
+    "phase66_glyph_resegmentation.py",
+    "phase67_run_length_morphology.py",
+    "phase72_naibbe_calibration.py"
+   ],
+   "317fe8fb253c": [
+    "phase73_abbreviation_model.py"
+   ],
+   "7890e32265db": [
+    "phase92_ae_minimal_pairs.py"
+   ]
+  },
+  "h_char_ratio": {
+   "f4f6cbebe217": [
+    "phase105_cappelli_retest.py"
+   ],
+   "1a756d26d2e5": [
+    "phase74_paragraph_framing.py"
+   ]
+  },
+  "print_comparison_table": {
+   "b0ba4c1ed8a8": [
+    "phase105_cappelli_retest.py"
+   ],
+   "7410b0da0810": [
+    "phase88_position_identity.py"
+   ]
+  },
+  "extract_words": {
+   "6d1a28febeb4": [
+    "phase106b_bench_variants.py"
+   ],
+   "3b564813bacf": [
+    "phase77b_line_position_gallows.py",
+    "phase78_allograph_test.py",
+    "phase82_line1_body_separation.py",
+    "phase83_subword_segmentation.py",
+    "phase84_mi_meaning_area.py"
+   ],
+   "29b52c324548": [
+    "sentence_translation.py"
+   ],
+   "fc9dd334e4a6": [
+    "slot_analysis.py"
+   ]
+  },
+  "load_czech_corpus": {
+   "38325e1ced73": [
+    "phase106c_positional_freq_match.py"
+   ],
+   "5f7ee790e91e": [
+    "phase107_slot_mi_decomposition.py"
+   ]
+  },
+  "mutual_information": {
+   "2b778651e0ca": [
+    "phase107_slot_mi_decomposition.py"
+   ],
+   "c3fcec4774fe": [
+    "phase62_word_anatomy.py"
+   ],
+   "373d842371f0": [
+    "phase63_codicological_coherence.py"
+   ],
+   "c27f38618810": [
+    "phase79_gallows_collapse.py"
+   ],
+   "852f21f50c9b": [
+    "phase99_script_typology.py"
+   ]
+  },
+  "conditional_entropy": {
+   "8df38d697c2c": [
+    "phase107_slot_mi_decomposition.py"
+   ],
+   "01bd1a18c579": [
+    "phase36_parser_free.py"
+   ],
+   "1bb863b17420": [
+    "phase79_gallows_collapse.py"
+   ],
+   "72a09cf753a7": [
+    "phase85_chunk_fingerprint.py",
+    "phase85R_revalidation.py",
+    "phase86_chunk_equivalence.py",
+    "phase86R_revalidation.py",
+    "phase98_generative_chunk_model.py",
+    "phase99_script_typology.py"
+   ]
+  },
+  "decompose_preserve_echains": {
+   "7fd64b112c8f": [
+    "phase19_zodiac_alignment.py"
+   ],
+   "769bb9253bb5": [
+    "phase20_template_subtraction.py"
+   ]
+  },
+  "extract_zodiac_data": {
+   "51d227171f6a": [
+    "phase19_zodiac_alignment.py"
+   ],
+   "332c10c2f012": [
+    "phase20_template_subtraction.py"
+   ],
+   "703bb178cb5a": [
+    "phase21_highest_leverage.py"
+   ]
+  },
+  "base_sign": {
+   "95f729ff4102": [
+    "phase20_template_subtraction.py",
+    "phase21_highest_leverage.py"
+   ]
+  },
+  "load_folio_lines": {
+   "099411417ebd": [
+    "phase23_full_translation.py"
+   ],
+   "ffa8ef22a0ee": [
+    "phase28_statistical.py",
+    "phase29_compounds.py",
+    "phase30_validation.py",
+    "phase31_prefix_paradox.py",
+    "phase33_cascade_audit.py",
+    "phase34_model_audit.py"
+   ]
+  },
+  "load_all_folios": {
+   "5eee29efa808": [
+    "phase23_full_translation.py"
+   ],
+   "bb5ed8d28e26": [
+    "phase93_currier_slot2_regime.py"
+   ]
+  },
+  "run_unknown_census": {
+   "b5270e180fef": [
+    "phase23_full_translation.py"
+   ],
+   "b77a40187e1e": [
+    "phase25_narrative_translation.py"
+   ]
+  },
+  "smart_gloss": {
+   "f31ed3a78fe9": [
+    "phase24_classifier_semantics.py"
+   ],
+   "94adbc79349f": [
+    "phase25_narrative_translation.py",
+    "phase26_expansion.py"
+   ],
+   "aa33595b4ab6": [
+    "phase27_self_audit.py"
+   ]
+  },
+  "extract_folio_lines": {
+   "fc25da2eda84": [
+    "phase25_narrative_translation.py",
+    "phase26_expansion.py"
+   ],
+   "879472d84e02": [
+    "phase27_self_audit.py"
+   ]
+  },
+  "load_all_tokens": {
+   "8637df0c3893": [
+    "phase27_self_audit.py",
+    "phase28_statistical.py",
+    "phase29_compounds.py",
+    "phase30_validation.py",
+    "phase31_prefix_paradox.py",
+    "phase32_artifact_test.py",
+    "phase33_cascade_audit.py",
+    "phase34_model_audit.py"
+   ],
+   "859f0a705ee2": [
+    "phase35_prefix_disentangle.py"
+   ],
+   "7bde39d21b79": [
+    "phase36_parser_free.py"
+   ],
+   "5dfc540d8a85": [
+    "phase37_parser_free_analysis.py"
+   ],
+   "cde9bef1a387": [
+    "phase38_bigram_null.py"
+   ]
+  },
+  "revised_decompose": {
+   "011fd85628c5": [
+    "phase30_validation.py"
+   ],
+   "b66f36f57e8b": [
+    "phase31_prefix_paradox.py"
+   ]
+  },
+  "run_paradigm_tables": {
+   "f0d537e27a39": [
+    "phase30_validation.py"
+   ],
+   "31dcae8b2c07": [
+    "phase33_cascade_audit.py"
+   ]
+  },
+  "decompose": {
+   "269b4990d723": [
+    "phase33_cascade_audit.py"
+   ],
+   "5ec223d9453b": [
+    "phase34_model_audit.py"
+   ],
+   "c01d22e9c401": [
+    "phase35_prefix_disentangle.py"
+   ]
+  },
+  "compute_mi": {
+   "3f5acb83aeb4": [
+    "phase35_prefix_disentangle.py"
+   ],
+   "b4cde61b5618": [
+    "phase38_bigram_null.py",
+    "phase39_syntax.py",
+    "phase40_supplement.py",
+    "phase40_syntax_attack.py",
+    "phase41_grammar.py",
+    "phase42_class_system.py",
+    "phase43_attack_classes.py"
+   ],
+   "a4fab6a0d60a": [
+    "phase88_position_identity.py"
+   ]
+  },
+  "get_prefix_group": {
+   "9ca0c7cea62c": [
+    "phase36_parser_free.py"
+   ],
+   "4a1f3a35d8a1": [
+    "phase38_bigram_null.py"
+   ]
+  },
+  "get_suffix_group": {
+   "41781a2efc1d": [
+    "phase36_parser_free.py"
+   ],
+   "3205fed9f56a": [
+    "phase38_bigram_null.py"
+   ]
+  },
+  "get_collapsed": {
+   "684b6fd75f01": [
+    "phase37_parser_free_analysis.py",
+    "phase38_bigram_null.py"
+   ],
+   "ba3fcb054654": [
+    "phase39_syntax.py",
+    "phase40_supplement.py",
+    "phase40_syntax_attack.py",
+    "phase41_grammar.py",
+    "phase42_class_system.py",
+    "phase43_attack_classes.py",
+    "phase44_word_classes.py",
+    "phase45_word_predictability.py",
+    "phase46_mi_anatomy.py",
+    "phase47_word_network.py",
+    "phase48_cross_validation.py",
+    "phase49_generalization.py",
+    "phase50_synthesis.py",
+    "phase51_attack_synthesis.py",
+    "phase52_discriminators.py",
+    "phase53_cipher_tests.py",
+    "phase54_natlang_vs_cipher.py",
+    "phase55_vc_separation.py",
+    "phase56_syllabary_test.py",
+    "phase57_bax_test.py"
+   ]
+  },
+  "cramers_v": {
+   "c0c2796862ec": [
+    "phase38_bigram_null.py",
+    "phase39_syntax.py"
+   ]
+  },
+  "cond_entropy": {
+   "8cda04fd7525": [
+    "phase38_bigram_null.py"
+   ],
+   "e80dcedded1a": [
+    "phase43_attack_classes.py"
+   ]
+  },
+  "collapse_e": {
+   "b579c4a99577": [
+    "phase39_syntax.py",
+    "phase40_supplement.py",
+    "phase40_syntax_attack.py",
+    "phase41_grammar.py",
+    "phase42_class_system.py",
+    "phase43_attack_classes.py",
+    "phase44_word_classes.py",
+    "phase45_word_predictability.py",
+    "phase46_mi_anatomy.py",
+    "phase47_word_network.py",
+    "phase48_cross_validation.py",
+    "phase49_generalization.py",
+    "phase50_synthesis.py",
+    "phase51_attack_synthesis.py",
+    "phase52_discriminators.py",
+    "phase53_cipher_tests.py",
+    "phase54_natlang_vs_cipher.py",
+    "phase55_vc_separation.py",
+    "phase56_syllabary_test.py",
+    "phase57_bax_test.py"
+   ]
+  },
+  "get_prefix": {
+   "06b3b15e807a": [
+    "phase39_syntax.py",
+    "phase40_supplement.py",
+    "phase40_syntax_attack.py"
+   ],
+   "9a2161fbfe12": [
+    "phase41_grammar.py",
+    "phase42_class_system.py",
+    "phase43_attack_classes.py",
+    "phase44_word_classes.py"
+   ]
+  },
+  "get_suffix": {
+   "882dd20c7b2e": [
+    "phase39_syntax.py",
+    "phase40_supplement.py",
+    "phase40_syntax_attack.py",
+    "phase41_grammar.py",
+    "phase42_class_system.py",
+    "phase43_attack_classes.py",
+    "phase44_word_classes.py"
+   ],
+   "e02e93da320b": [
+    "phase46_mi_anatomy.py",
+    "phase47_word_network.py",
+    "phase48_cross_validation.py",
+    "phase49_generalization.py",
+    "phase50_synthesis.py",
+    "phase51_attack_synthesis.py"
+   ]
+  },
+  "annotate_lines": {
+   "272ecc5e2b50": [
+    "phase39_syntax.py"
+   ],
+   "ec8a4441100d": [
+    "phase40_supplement.py",
+    "phase40_syntax_attack.py"
+   ],
+   "67b98abe3680": [
+    "phase41_grammar.py"
+   ],
+   "31c3563a04eb": [
+    "phase42_class_system.py"
+   ],
+   "71f3b13d9ddb": [
+    "phase43_attack_classes.py"
+   ],
+   "0699ae64268e": [
+    "phase44_word_classes.py"
+   ]
+  },
+  "cond_mi": {
+   "4b4991630bf8": [
+    "phase40_supplement.py",
+    "phase40_syntax_attack.py",
+    "phase41_grammar.py"
+   ]
+  },
+  "pos_bin": {
+   "db0398259fde": [
+    "phase40_supplement.py",
+    "phase40_syntax_attack.py"
+   ]
+  },
+  "unigram_perplexity": {
+   "99fedb72bd3c": [
+    "phase44_word_classes.py"
+   ],
+   "aa5e8dfdbf97": [
+    "phase48_cross_validation.py"
+   ]
+  },
+  "get_class": {
+   "79ca04a379b4": [
+    "phase46_mi_anatomy.py",
+    "phase47_word_network.py",
+    "phase48_cross_validation.py"
+   ]
+  },
+  "get_gram_prefix": {
+   "9f6ab27f95f4": [
+    "phase47_word_network.py",
+    "phase48_cross_validation.py",
+    "phase49_generalization.py",
+    "phase50_synthesis.py",
+    "phase51_attack_synthesis.py"
+   ]
+  },
+  "compute_H": {
+   "831de354331e": [
+    "phase47_word_network.py",
+    "phase48_cross_validation.py",
+    "phase49_generalization.py",
+    "phase50_synthesis.py",
+    "phase51_attack_synthesis.py",
+    "phase52_discriminators.py",
+    "phase53_cipher_tests.py",
+    "phase54_natlang_vs_cipher.py"
+   ]
+  },
+  "to_glyphs": {
+   "e76ea594dae1": [
+    "phase51_attack_synthesis.py"
+   ],
+   "d7fa4c59aaa2": [
+    "phase55_vc_separation.py"
+   ]
+  },
+  "sukhotins_algorithm": {
+   "5f02a0bed99f": [
+    "phase55_vc_separation.py"
+   ],
+   "0c07658e863a": [
+    "phase56_syllabary_test.py"
+   ]
+  },
+  "alternation_rate": {
+   "8648cab7cf34": [
+    "phase55_vc_separation.py"
+   ],
+   "972612c4ddf0": [
+    "phase56_syllabary_test.py"
+   ]
+  },
+  "compute_positional_profile": {
+   "b7a8b9d1fe06": [
+    "phase57_bax_test.py"
+   ],
+   "51141b20547a": [
+    "phase85_pelling_verbose_cipher.py"
+   ]
+  },
+  "load_vms": {
+   "371ec9ac3321": [
+    "phase58_cross_script.py"
+   ],
+   "2caf0680a34b": [
+    "phase59_forward_model.py",
+    "phase60_positional_verbose.py",
+    "phase61_word_shape_validation.py"
+   ],
+   "af34e5b05bea": [
+    "phase87R_revalidation.py"
+   ]
+  },
+  "vms_char_sequence": {
+   "e63765c55979": [
+    "phase58_cross_script.py",
+    "phase59_forward_model.py",
+    "phase60_positional_verbose.py"
+   ]
+  },
+  "fetch_gutenberg": {
+   "738c52ddcea2": [
+    "phase58_cross_script.py"
+   ],
+   "c02b67d46203": [
+    "phase59_forward_model.py",
+    "phase60_positional_verbose.py",
+    "phase61_word_shape_validation.py",
+    "phase62_word_anatomy.py",
+    "phase64_encoding_tournament.py",
+    "phase65_reverse_engineer_script.py"
+   ],
+   "1c7cef9ea20f": [
+    "phase72_naibbe_calibration.py",
+    "phase73_abbreviation_model.py"
+   ]
+  },
+  "compute_metrics": {
+   "b97947c01d1c": [
+    "phase58_cross_script.py"
+   ],
+   "512019ec0ca2": [
+    "phase59_forward_model.py",
+    "phase60_positional_verbose.py"
+   ]
+  },
+  "sukhotin": {
+   "bf1231867525": [
+    "phase58_cross_script.py",
+    "phase59_forward_model.py",
+    "phase60_positional_verbose.py"
+   ]
+  },
+  "vc_alternation": {
+   "aa55a4f608bc": [
+    "phase58_cross_script.py"
+   ],
+   "3b86de6021b2": [
+    "phase59_forward_model.py",
+    "phase60_positional_verbose.py"
+   ]
+  },
+  "load_italian": {
+   "5220fbd16e53": [
+    "phase59_forward_model.py",
+    "phase60_positional_verbose.py",
+    "phase61_word_shape_validation.py"
+   ],
+   "4f34fb3e1dee": [
+    "phase73_abbreviation_model.py"
+   ]
+  },
+  "encode_simple_subst": {
+   "40c7f56386c1": [
+    "phase59_forward_model.py"
+   ],
+   "f1dc8d1f4a82": [
+    "phase61_word_shape_validation.py"
+   ]
+  },
+  "feature_vec": {
+   "ee8278285513": [
+    "phase59_forward_model.py",
+    "phase60_positional_verbose.py"
+   ]
+  },
+  "z_score_distance": {
+   "dabbe5c61877": [
+    "phase59_forward_model.py",
+    "phase60_positional_verbose.py"
+   ]
+  },
+  "_get_word_zones_3": {
+   "fc6f02b8dd97": [
+    "phase60_positional_verbose.py",
+    "phase61_word_shape_validation.py"
+   ]
+  },
+  "_build_cipher_alphabet": {
+   "003df40ddcb7": [
+    "phase60_positional_verbose.py",
+    "phase61_word_shape_validation.py"
+   ]
+  },
+  "encode_verbose_optimized": {
+   "58f10636bac0": [
+    "phase60_positional_verbose.py"
+   ],
+   "b76f280037ed": [
+    "phase61_word_shape_validation.py"
+   ]
+  },
+  "word_length_distribution": {
+   "f398411127e4": [
+    "phase61_word_shape_validation.py"
+   ],
+   "f62ab1a68c65": [
+    "phase80_abjad_hypothesis.py",
+    "phase81_german_genre_fingerprint.py",
+    "phase82_charm_fingerprint.py"
+   ],
+   "198cc8b7a78b": [
+    "phase88_position_identity.py"
+   ]
+  },
+  "zipf_slope": {
+   "134e7410e718": [
+    "phase61_word_shape_validation.py"
+   ],
+   "2c2731f106bb": [
+    "phase85_chunk_fingerprint.py",
+    "phase86_chunk_equivalence.py",
+    "phase98_generative_chunk_model.py"
+   ]
+  },
+  "load_vms_structured": {
+   "2cdb977463ca": [
+    "phase62_word_anatomy.py"
+   ],
+   "11da7b2a8a4c": [
+    "phase63_codicological_coherence.py"
+   ]
+  },
+  "permutation_test_mi": {
+   "868a665a0be9": [
+    "phase62_word_anatomy.py"
+   ],
+   "5059415755c4": [
+    "phase63_codicological_coherence.py"
+   ]
+  },
+  "adjudicate": {
+   "af9491755b28": [
+    "phase62_word_anatomy.py"
+   ],
+   "9e4cd0baaead": [
+    "phase63_codicological_coherence.py"
+   ],
+   "e2510ff47f31": [
+    "phase65_reverse_engineer_script.py"
+   ],
+   "91a60f92c939": [
+    "phase66_glyph_resegmentation.py"
+   ],
+   "fd71fc63b776": [
+    "phase67_run_length_morphology.py"
+   ],
+   "1fbdf48ac04e": [
+    "phase68_run_conditioned_transitions.py"
+   ]
+  },
+  "load_italian_words": {
+   "0d255d30c699": [
+    "phase64_encoding_tournament.py",
+    "phase65_reverse_engineer_script.py"
+   ],
+   "f81cb495a1fd": [
+    "phase67_run_length_morphology.py"
+   ]
+  },
+  "heaps_exponent": {
+   "0c7d3057cc43": [
+    "phase64_encoding_tournament.py"
+   ],
+   "4e8b0b4e98db": [
+    "phase65_reverse_engineer_script.py",
+    "phase66_glyph_resegmentation.py",
+    "phase67_run_length_morphology.py"
+   ],
+   "3de80891f19d": [
+    "phase72_naibbe_calibration.py",
+    "phase73_abbreviation_model.py"
+   ],
+   "2ece628ea360": [
+    "phase80_abjad_hypothesis.py",
+    "phase81_german_genre_fingerprint.py",
+    "phase87_gallows_null_test.py"
+   ],
+   "eec428f7300f": [
+    "phase82_charm_fingerprint.py",
+    "phase83_encoding_layer_sweep.py",
+    "phase85_pelling_verbose_cipher.py"
+   ],
+   "de784f4b2145": [
+    "phase85_chunk_fingerprint.py",
+    "phase86_chunk_equivalence.py"
+   ],
+   "6acef65a3734": [
+    "phase95_currier_split_fingerprint.py"
+   ],
+   "b57848c07e93": [
+    "phase98_generative_chunk_model.py"
+   ]
+  },
+  "hapax_ratio_at_midpoint": {
+   "936ced24b723": [
+    "phase64_encoding_tournament.py",
+    "phase80_abjad_hypothesis.py",
+    "phase81_german_genre_fingerprint.py",
+    "phase87_gallows_null_test.py",
+    "phase95_currier_split_fingerprint.py"
+   ],
+   "ef95fd4f2096": [
+    "phase65_reverse_engineer_script.py",
+    "phase66_glyph_resegmentation.py"
+   ],
+   "33a77af84aba": [
+    "phase82_charm_fingerprint.py",
+    "phase83_encoding_layer_sweep.py",
+    "phase85_pelling_verbose_cipher.py"
+   ]
+  },
+  "char_bigram_predictability": {
+   "a05a2b48498d": [
+    "phase64_encoding_tournament.py"
+   ],
+   "9758ad9268ba": [
+    "phase65_reverse_engineer_script.py",
+    "phase66_glyph_resegmentation.py",
+    "phase67_run_length_morphology.py"
+   ],
+   "4a92a50df1b6": [
+    "phase80_abjad_hypothesis.py",
+    "phase81_german_genre_fingerprint.py",
+    "phase87_gallows_null_test.py",
+    "phase95_currier_split_fingerprint.py"
+   ],
+   "5d879cf47bfb": [
+    "phase82_charm_fingerprint.py",
+    "phase83_encoding_layer_sweep.py",
+    "phase85_pelling_verbose_cipher.py"
+   ],
+   "38de1243e1ad": [
+    "phase82_line1_body_separation.py"
+   ]
+  },
+  "word_bigram_predictability": {
+   "dd5d47b8eb3f": [
+    "phase64_encoding_tournament.py",
+    "phase80_abjad_hypothesis.py",
+    "phase81_german_genre_fingerprint.py"
+   ],
+   "f52d6509ab39": [
+    "phase65_reverse_engineer_script.py",
+    "phase66_glyph_resegmentation.py"
+   ],
+   "3709b51293ef": [
+    "phase82_charm_fingerprint.py"
+   ]
+  },
+  "mean_word_length": {
+   "12fbe6465021": [
+    "phase64_encoding_tournament.py"
+   ],
+   "3cee5d9b762b": [
+    "phase80_abjad_hypothesis.py",
+    "phase81_german_genre_fingerprint.py",
+    "phase82_charm_fingerprint.py",
+    "phase83_encoding_layer_sweep.py",
+    "phase85_pelling_verbose_cipher.py",
+    "phase87_gallows_null_test.py",
+    "phase95_currier_split_fingerprint.py"
+   ]
+  },
+  "ttr_at_n": {
+   "a828990e2347": [
+    "phase64_encoding_tournament.py",
+    "phase65_reverse_engineer_script.py",
+    "phase66_glyph_resegmentation.py"
+   ],
+   "1d79fe9ab161": [
+    "phase80_abjad_hypothesis.py",
+    "phase81_german_genre_fingerprint.py",
+    "phase82_charm_fingerprint.py",
+    "phase83_encoding_layer_sweep.py",
+    "phase85_pelling_verbose_cipher.py",
+    "phase87_gallows_null_test.py",
+    "phase95_currier_split_fingerprint.py"
+   ]
+  },
+  "zipf_alpha": {
+   "bb3833c9fb49": [
+    "phase64_encoding_tournament.py",
+    "phase80_abjad_hypothesis.py",
+    "phase81_german_genre_fingerprint.py",
+    "phase87_gallows_null_test.py"
+   ],
+   "5e75ee98398b": [
+    "phase65_reverse_engineer_script.py",
+    "phase66_glyph_resegmentation.py"
+   ],
+   "c94a70727def": [
+    "phase72_naibbe_calibration.py",
+    "phase73_abbreviation_model.py"
+   ],
+   "376df2888b56": [
+    "phase79_gallows_collapse.py"
+   ],
+   "e901effbfbd3": [
+    "phase82_charm_fingerprint.py",
+    "phase95_currier_split_fingerprint.py"
+   ]
+  },
+  "compute_fingerprint": {
+   "3be5a2e8c841": [
+    "phase64_encoding_tournament.py"
+   ],
+   "301357c35628": [
+    "phase65_reverse_engineer_script.py"
+   ],
+   "37f97ef9fb71": [
+    "phase66_glyph_resegmentation.py"
+   ],
+   "f64b24f7b7e1": [
+    "phase80_abjad_hypothesis.py"
+   ],
+   "628299192276": [
+    "phase81_german_genre_fingerprint.py",
+    "phase82_charm_fingerprint.py"
+   ],
+   "cf08aa92d586": [
+    "phase82_line1_body_separation.py"
+   ],
+   "e75a66d16da8": [
+    "phase83_encoding_layer_sweep.py",
+    "phase85_pelling_verbose_cipher.py"
+   ],
+   "4298186f664e": [
+    "phase87_gallows_null_test.py",
+    "phase95_currier_split_fingerprint.py"
+   ],
+   "98accb7b462f": [
+    "phase96_cluster_hchar.py"
+   ],
+   "50f657d74eb7": [
+    "phase98_generative_chunk_model.py"
+   ]
+  },
+  "eva_first_glyph": {
+   "3710115ccc85": [
+    "phase71_paragraph_initials.py"
+   ],
+   "525be8aa3620": [
+    "phase74_paragraph_framing.py"
+   ],
+   "f53816c316e4": [
+    "phase75_latin_mapping.py"
+   ]
+  },
+  "eva_first_char": {
+   "032eb3683269": [
+    "phase71_paragraph_initials.py"
+   ],
+   "a5bbd27b0cb9": [
+    "phase74_paragraph_framing.py"
+   ]
+  },
+  "folio_number": {
+   "7a9943881ed4": [
+    "phase71_paragraph_initials.py"
+   ],
+   "b312613dc2e5": [
+    "phase74_paragraph_framing.py",
+    "phase75_latin_mapping.py",
+    "phase77_gallows_ecology.py"
+   ]
+  },
+  "folio_section": {
+   "9b7895eaa14f": [
+    "phase71_paragraph_initials.py",
+    "phase74_paragraph_framing.py",
+    "phase75_latin_mapping.py",
+    "phase77_gallows_ecology.py"
+   ],
+   "d227fff37a09": [
+    "phase77b_line_position_gallows.py",
+    "phase78_allograph_test.py",
+    "phase79_gallows_collapse.py",
+    "phase82_line1_body_separation.py",
+    "phase83_subword_segmentation.py",
+    "phase85_chunk_fingerprint.py"
+   ],
+   "f4b5a4006821": [
+    "phase93_currier_slot2_regime.py"
+   ]
+  },
+  "chi_squared_test": {
+   "f6f173c80ed2": [
+    "phase71_paragraph_initials.py"
+   ],
+   "b07960f880c6": [
+    "phase74_paragraph_framing.py"
+   ]
+  },
+  "hapax_at_mid": {
+   "6e12153c8812": [
+    "phase72_naibbe_calibration.py",
+    "phase73_abbreviation_model.py"
+   ]
+  },
+  "h_ratio_char": {
+   "b98cbf5e9e3c": [
+    "phase72_naibbe_calibration.py",
+    "phase73_abbreviation_model.py"
+   ]
+  },
+  "h_ratio_word": {
+   "6c48d0a734ad": [
+    "phase72_naibbe_calibration.py",
+    "phase73_abbreviation_model.py"
+   ]
+  },
+  "mean_wlen": {
+   "120aeee02962": [
+    "phase72_naibbe_calibration.py",
+    "phase73_abbreviation_model.py"
+   ],
+   "5eb99623b49b": [
+    "phase74_paragraph_framing.py"
+   ]
+  },
+  "ttr_5k": {
+   "452ba8d801f0": [
+    "phase72_naibbe_calibration.py",
+    "phase73_abbreviation_model.py"
+   ]
+  },
+  "strip_diacritics": {
+   "9bb7d70085bd": [
+    "phase72_naibbe_calibration.py",
+    "phase73_abbreviation_model.py"
+   ]
+  },
+  "word_boundary_info": {
+   "d297260cd314": [
+    "phase72_naibbe_calibration.py"
+   ],
+   "0cca0dc19e04": [
+    "phase73_abbreviation_model.py"
+   ]
+  },
+  "download_text": {
+   "2b2955fbf1de": [
+    "phase75_latin_mapping.py",
+    "phase76_vernacular_mapping.py"
+   ]
+  },
+  "strip_gutenberg_boilerplate": {
+   "9a0ffd84aaeb": [
+    "phase75_latin_mapping.py"
+   ],
+   "51f00ad2876e": [
+    "phase76_vernacular_mapping.py"
+   ]
+  },
+  "extract_sentences": {
+   "f7197df7aa6c": [
+    "phase75_latin_mapping.py"
+   ],
+   "0c01f006a55c": [
+    "rtl_direction_test.py"
+   ]
+  },
+  "skeptical_analysis": {
+   "9064346fada0": [
+    "phase75_latin_mapping.py"
+   ],
+   "de280c48dc7a": [
+    "phase76_vernacular_mapping.py"
+   ]
+  },
+  "parse_all_data": {
+   "6dbca2c9dda9": [
+    "phase77b_line_position_gallows.py"
+   ],
+   "d6732945c6f3": [
+    "phase78_allograph_test.py"
+   ],
+   "15983a91571f": [
+    "phase82_line1_body_separation.py"
+   ]
+  },
+  "glyphs_to_word": {
+   "6547e97f132b": [
+    "phase78_allograph_test.py",
+    "phase79_gallows_collapse.py"
+   ]
+  },
+  "parse_all_words": {
+   "c94dc08e4fc8": [
+    "phase79_gallows_collapse.py"
+   ],
+   "211f2beec27c": [
+    "phase83_subword_segmentation.py"
+   ]
+  },
+  "parse_vms_words": {
+   "f7f958e1e60c": [
+    "phase80_abjad_hypothesis.py",
+    "phase81_german_genre_fingerprint.py",
+    "phase82_charm_fingerprint.py",
+    "phase83_encoding_layer_sweep.py",
+    "phase85_pelling_verbose_cipher.py"
+   ]
+  },
+  "index_of_coincidence": {
+   "44314f99e26a": [
+    "phase80_abjad_hypothesis.py",
+    "phase81_german_genre_fingerprint.py",
+    "phase82_charm_fingerprint.py",
+    "phase87_gallows_null_test.py",
+    "phase95_currier_split_fingerprint.py"
+   ]
+  },
+  "wld_distance": {
+   "21bab80e956e": [
+    "phase80_abjad_hypothesis.py",
+    "phase81_german_genre_fingerprint.py",
+    "phase82_charm_fingerprint.py"
+   ]
+  },
+  "fingerprint_distance": {
+   "e55b2662aed6": [
+    "phase80_abjad_hypothesis.py",
+    "phase81_german_genre_fingerprint.py",
+    "phase87_gallows_null_test.py"
+   ],
+   "7801956efa94": [
+    "phase82_charm_fingerprint.py",
+    "phase95_currier_split_fingerprint.py"
+   ],
+   "05bde0747067": [
+    "phase83_encoding_layer_sweep.py"
+   ],
+   "80e473934786": [
+    "phase85_pelling_verbose_cipher.py"
+   ]
+  },
+  "load_bvgs": {
+   "4f2c27ecfb01": [
+    "phase81_german_genre_fingerprint.py",
+    "phase82_charm_fingerprint.py",
+    "phase83_encoding_layer_sweep.py",
+    "phase85_pelling_verbose_cipher.py"
+   ]
+  },
+  "zipf_alpha_fn": {
+   "a2d3ef708212": [
+    "phase83_encoding_layer_sweep.py",
+    "phase85_pelling_verbose_cipher.py"
+   ]
+  },
+  "generate_verbose_cipher": {
+   "198c0bfcbfba": [
+    "phase83_subword_segmentation.py",
+    "phase84_mi_meaning_area.py"
+   ]
+  },
+  "parse_vms": {
+   "121ac35ae552": [
+    "phase85_chunk_fingerprint.py"
+   ],
+   "ebda9d638495": [
+    "phase85R_revalidation.py",
+    "phase86_chunk_equivalence.py",
+    "phase86R_revalidation.py",
+    "phase88_position_identity.py",
+    "phase89_context_divergence.py"
+   ]
+  },
+  "compute_unit_fingerprint": {
+   "06252294e9c8": [
+    "phase85_chunk_fingerprint.py"
+   ],
+   "6b54d8a1212c": [
+    "phase86_chunk_equivalence.py"
+   ]
+  },
+  "positional_concentration": {
+   "e9460b7c80dc": [
+    "phase85_pelling_verbose_cipher.py"
+   ],
+   "f0eed25a83d2": [
+    "phase98_generative_chunk_model.py"
+   ]
+  },
+  "build_transition_matrix": {
+   "67f5a36c1e86": [
+    "phase87_spectral_vc.py"
+   ],
+   "0e62b70e4a8c": [
+    "phase87R_revalidation.py"
+   ]
+  },
+  "jsd_counters": {
+   "f2b378bf3383": [
+    "phase88_position_identity.py",
+    "phase89_context_divergence.py"
+   ]
+  },
+  "pearson_r": {
+   "d34205374ba7": [
+    "phase91_zodiac_galenic_axis.py"
+   ],
+   "38c057be9f2f": [
+    "phase93_currier_slot2_regime.py"
+   ],
+   "fc097a512630": [
+    "phase94_e_extension_morphology.py"
+   ]
+  },
+  "parse_currier_from_header": {
+   "a9e298b1b175": [
+    "phase93_currier_slot2_regime.py",
+    "phase94_e_extension_morphology.py"
+   ]
+  },
+  "compute_hchar": {
+   "de48a4c8be4c": [
+    "phase96_cluster_hchar.py"
+   ],
+   "673c9cc89f53": [
+    "phase97_slot_grammar_hchar.py"
+   ]
+  },
+  "parse_one_chunk_with_slots": {
+   "b6183caa0dea": [
+    "phase97_slot_grammar_hchar.py",
+    "phase99_script_typology.py"
+   ]
+  },
+  "parse_word_full": {
+   "2cffc1f074b5": [
+    "phase97_slot_grammar_hchar.py",
+    "phase99_script_typology.py"
+   ]
+  },
+  "h_ratio_from_tokens": {
+   "dd2fb7e0b583": [
+    "phase98_generative_chunk_model.py",
+    "phase99_script_typology.py"
+   ]
+  }
+ },
+ "constants": {
+  "SLOT_TOKENS": {
+   "v0": [
+    "astro_label_pipeline.py",
+    "slot_analysis.py"
+   ]
+  },
+  "PREFIXES": {
+   "v0": [
+    "astro_label_pipeline.py",
+    "crosssign_network.py",
+    "grammar_extraction.py",
+    "medieval_degrees.py",
+    "ring_decan_mapping.py",
+    "ring_text_analysis.py"
+   ],
+   "v1": [
+    "attack_plan.py",
+    "currier_ab.py",
+    "deep_dive.py",
+    "deep_dive_phase1.py",
+    "f66r_analysis.py",
+    "freq_rank_mapping.py",
+    "hebrew_deep_analysis.py",
+    "herbal_crossref.py",
+    "pharma_comparison.py",
+    "shorthand_analysis.py"
+   ],
+   "v2": [
+    "coptic_probe_expanded.py",
+    "egyptian_connection.py",
+    "four_tasks_audit.py",
+    "herbal_labels.py",
+    "leo_deepdive.py",
+    "phase19_zodiac_alignment.py",
+    "phase20_template_subtraction.py",
+    "phase21_highest_leverage.py",
+    "phase22_unknown_roots.py",
+    "phase23_full_translation.py",
+    "phase24_classifier_semantics.py",
+    "phase25_narrative_translation.py",
+    "phase26_expansion.py",
+    "phase27_self_audit.py",
+    "phase28_statistical.py",
+    "phase29_compounds.py",
+    "phase30_validation.py",
+    "phase31_prefix_paradox.py",
+    "phase32_artifact_test.py",
+    "phase33_cascade_audit.py",
+    "phase34_model_audit.py",
+    "root_lexicon_rosetta.py",
+    "sentence_translation.py"
+   ]
+  },
+  "ROOT_ONSETS": {
+   "v0": [
+    "astro_label_pipeline.py",
+    "crosssign_network.py",
+    "grammar_extraction.py",
+    "medieval_degrees.py",
+    "ring_decan_mapping.py",
+    "ring_text_analysis.py"
+   ],
+   "v1": [
+    "attack_plan.py",
+    "currier_ab.py",
+    "deep_dive.py",
+    "deep_dive_phase1.py",
+    "f66r_analysis.py",
+    "freq_rank_mapping.py",
+    "hebrew_deep_analysis.py",
+    "herbal_crossref.py",
+    "pharma_comparison.py",
+    "shorthand_analysis.py"
+   ]
+  },
+  "ROOT_BODIES": {
+   "v0": [
+    "astro_label_pipeline.py",
+    "crosssign_network.py",
+    "grammar_extraction.py",
+    "medieval_degrees.py",
+    "ring_decan_mapping.py",
+    "ring_text_analysis.py",
+    "rtl_direction_test.py"
+   ],
+   "v1": [
+    "attack_plan.py",
+    "currier_ab.py",
+    "deep_dive.py",
+    "deep_dive_phase1.py",
+    "f66r_analysis.py",
+    "freq_rank_mapping.py",
+    "hebrew_deep_analysis.py",
+    "herbal_crossref.py",
+    "pharma_comparison.py",
+    "shorthand_analysis.py"
+   ]
+  },
+  "SUFFIXES": {
+   "v0": [
+    "astro_label_pipeline.py",
+    "ring_decan_mapping.py"
+   ],
+   "v1": [
+    "attack_plan.py",
+    "currier_ab.py",
+    "deep_dive.py",
+    "deep_dive_phase1.py",
+    "f66r_analysis.py",
+    "freq_rank_mapping.py",
+    "hebrew_deep_analysis.py",
+    "herbal_crossref.py",
+    "pharma_comparison.py",
+    "shorthand_analysis.py"
+   ],
+   "v2": [
+    "coptic_probe_expanded.py",
+    "egyptian_connection.py",
+    "four_tasks_audit.py",
+    "herbal_labels.py",
+    "leo_deepdive.py",
+    "phase19_zodiac_alignment.py",
+    "phase20_template_subtraction.py",
+    "phase21_highest_leverage.py",
+    "phase22_unknown_roots.py",
+    "root_lexicon_rosetta.py",
+    "sentence_translation.py"
+   ],
+   "v3": [
+    "phase23_full_translation.py",
+    "phase24_classifier_semantics.py",
+    "phase25_narrative_translation.py",
+    "phase26_expansion.py",
+    "phase27_self_audit.py",
+    "phase28_statistical.py",
+    "phase29_compounds.py",
+    "phase30_validation.py",
+    "phase31_prefix_paradox.py"
+   ],
+   "v4": [
+    "phase36_parser_free.py",
+    "phase37_parser_free_analysis.py",
+    "phase38_bigram_null.py",
+    "phase39_syntax.py",
+    "phase40_supplement.py",
+    "phase40_syntax_attack.py",
+    "phase41_grammar.py",
+    "phase42_class_system.py",
+    "phase43_attack_classes.py",
+    "phase44_word_classes.py",
+    "phase45_word_predictability.py",
+    "phase46_mi_anatomy.py",
+    "phase47_word_network.py",
+    "phase48_cross_validation.py",
+    "phase49_generalization.py",
+    "phase50_synthesis.py",
+    "phase51_attack_synthesis.py"
+   ]
+  },
+  "SIMPLE_GALLOWS": {
+   "v0": [
+    "coptic_probe_expanded.py",
+    "egyptian_connection.py",
+    "four_tasks_audit.py",
+    "gallows_semantics.py",
+    "gallows_test.py",
+    "herbal_labels.py",
+    "leo_deepdive.py",
+    "phase19_zodiac_alignment.py",
+    "phase20_template_subtraction.py",
+    "phase21_highest_leverage.py",
+    "phase22_unknown_roots.py",
+    "phase23_full_translation.py",
+    "phase24_classifier_semantics.py",
+    "phase25_narrative_translation.py",
+    "phase26_expansion.py",
+    "phase27_self_audit.py",
+    "phase28_statistical.py",
+    "phase29_compounds.py",
+    "phase30_validation.py",
+    "phase31_prefix_paradox.py",
+    "phase32_artifact_test.py",
+    "phase33_cascade_audit.py",
+    "phase34_model_audit.py",
+    "phase35_prefix_disentangle.py",
+    "phase36_parser_free.py",
+    "phase37_parser_free_analysis.py",
+    "phase38_bigram_null.py",
+    "root_lexicon_rosetta.py",
+    "sentence_translation.py"
+   ]
+  },
+  "BENCH_GALLOWS": {
+   "v0": [
+    "coptic_probe_expanded.py",
+    "egyptian_connection.py",
+    "four_tasks_audit.py",
+    "gallows_semantics.py",
+    "gallows_test.py",
+    "herbal_labels.py",
+    "leo_deepdive.py",
+    "phase19_zodiac_alignment.py",
+    "phase20_template_subtraction.py",
+    "phase21_highest_leverage.py",
+    "phase22_unknown_roots.py",
+    "phase23_full_translation.py",
+    "phase24_classifier_semantics.py",
+    "phase25_narrative_translation.py",
+    "phase26_expansion.py",
+    "phase27_self_audit.py",
+    "phase28_statistical.py",
+    "phase29_compounds.py",
+    "phase30_validation.py",
+    "phase31_prefix_paradox.py",
+    "phase32_artifact_test.py",
+    "phase33_cascade_audit.py",
+    "phase34_model_audit.py",
+    "phase35_prefix_disentangle.py",
+    "phase36_parser_free.py",
+    "phase37_parser_free_analysis.py",
+    "phase38_bigram_null.py",
+    "root_lexicon_rosetta.py",
+    "sentence_translation.py"
+   ]
+  },
+  "ALL_GALLOWS": {
+   "v0": [
+    "phase39_syntax.py",
+    "phase40_supplement.py",
+    "phase40_syntax_attack.py",
+    "phase41_grammar.py",
+    "phase42_class_system.py",
+    "phase43_attack_classes.py",
+    "phase44_word_classes.py",
+    "phase45_word_predictability.py",
+    "phase46_mi_anatomy.py",
+    "phase47_word_network.py",
+    "phase48_cross_validation.py",
+    "phase49_generalization.py",
+    "phase50_synthesis.py",
+    "phase51_attack_synthesis.py",
+    "phase52_discriminators.py",
+    "phase53_cipher_tests.py",
+    "phase54_natlang_vs_cipher.py",
+    "phase55_vc_separation.py",
+    "phase56_syllabary_test.py",
+    "phase57_bax_test.py",
+    "phase58_cross_script.py"
+   ]
+  },
+  "SUFFIXES_LIST": {
+   "v0": [
+    "crosssign_network.py",
+    "grammar_extraction.py",
+    "medieval_degrees.py",
+    "ring_text_analysis.py"
+   ]
+  }
+ }
+}

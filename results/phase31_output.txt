@@ -68,11 +68,11 @@ they should prefer different suffixes.
     |∅ vs ch| suffix diff: 143 pct-points
 
   ═══ STEM 'ar' ═══
-  deriv      N      ∅      y     al     ar   aiin     ol    ody     or
+  deriv      N      ∅      y     al     ar   aiin     ol    ody    ain
   ∅       2021    87%     4%     2%     2%     1%     1%     1%     1%
-  ch        12     0%    42%     8%     0%     8%     0%     0%     8%
+  ch        12     0%    42%     8%     0%     8%     0%     0%    17%
   l          7     0%    43%     0%    29%     0%    14%     0%     0%
-    |∅ vs ch| suffix diff: 149 pct-points
+    |∅ vs ch| suffix diff: 157 pct-points
 
   ═══ STEM 'd' ═══
   deriv      N      y   aiin     ar     al      ∅    ain     or     ol
@@ -93,12 +93,12 @@ they should prefer different suffixes.
     |∅ vs ch| suffix diff: 193 pct-points
 
   ═══ STEM 'es' ═══
-  deriv      N      ∅      y     ey     al   aiin    ody    edy     dy
-  ∅        181    83%     9%     2%     2%     1%     1%     1%     1%
+  deriv      N      ∅      y     ey     al    ody   aiin    edy    ain
+  ∅        181    83%     9%     2%     2%     1%     1%     1%     0%
   h         30    97%     0%     3%     0%     0%     0%     0%     0%
   ch        98    94%     5%     1%     0%     0%     0%     0%     0%
   sh         6    67%    33%     0%     0%     0%     0%     0%     0%
-  l         16    75%    12%     6%     0%     0%     0%     0%     0%
+  l         16    75%    12%     6%     0%     0%     0%     0%     6%
     |∅ vs h| suffix diff: 30 pct-points
     |∅ vs ch| suffix diff: 21 pct-points
 

@@ -1,0 +1,376 @@
+Loading folios...
+Loaded 4728 text lines
+
+==========================================================================================
+TEST 1: WORD ORDER — Positional preferences of nouns vs verbs
+==========================================================================================
+
+  If there's syntax, Type A (nouns) and Type B (verbs) should
+  have different positional distributions within lines.
+
+  Type A (noun-like) tokens: 15558
+  Type B (verb-like) tokens: 6515
+
+  MEAN RELATIVE POSITION (0=start, 1=end):
+    Type A: 0.519
+    Type B: 0.505
+    Δ = -0.014  → No significant positional difference
+
+  ABSOLUTE POSITION:
+  Type         First    Middle      Last    First%     Last%
+  ────────  ────────  ────────  ────────  ────────  ────────
+  Type A       2074     10964      2520     13.3%     16.2%
+  Type B        728      4969       818     11.2%     12.6%
+
+  TYPE TRANSITIONS (bigrams):
+  Transition         Count        %   Expected%     O/E
+  ───────────────  ───────  ───────  ──────────  ──────
+    A → A             7637    51.6%       49.7%   1.04×
+    A → B             2686    18.1%       20.8%   0.87×
+    B → A             2673    18.0%       20.8%   0.87×
+    B → B             1817    12.3%        8.7%   1.41×
+
+  CHAIN LENGTHS (consecutive same-type runs):
+    Type A: avg=1.91, max=16, runs≥3: 1910
+    Type B: avg=1.38, max=8, runs≥3: 393
+
+==========================================================================================
+TEST 2: VERB CHAINS — Adjacent Type B (process) words
+==========================================================================================
+
+  Total B→B adjacent pairs: 1817
+  Distinct B→B root pairs: 191
+
+  TOP 20 B→B PAIRS:
+  Root1       Root2        Count  Examples
+  ──────────  ──────────  ──────  ────────────────────────────────────────
+  kee         kee             60  okeey okeey; ykeey okeey
+  keed        keed            56  qokeedy ykeedy; okeedy qokeedy
+  ked         ked             55  qokedy okedy; okedy lkedy
+  keed        ked             41  qokeedy qokedy; qokeedy okedy
+  shed        ked             37  shedy qokedy; shed qokedy
+  ched        ked             35  ychedy qokedy; chedy qokedy
+  ched        ched            35  lchedy chedy; chedy chedy
+  che         kee             34  chey keey; qochey qokeey
+  ched        kee             33  chedy qokeey; chedy qokeey
+  ched        keed            33  chedy okeedy; chedy okeedy
+  shed        keed            33  shedy qokeedy; shedy okeedy
+  keed        ched            33  qokeedy chedy; qokeedy ched
+  ked         ched            32  qokedy lchedy; lkedy chedl
+  ked         keed            28  kedy okeedy; qokedy qokeedy
+  shed        kee             27  olshedy qokeey; shedy okeey
+  keed        kee             27  keedy qokeey; qokeedy qokeey
+  ted         ted             26  qotedy qoted; qotedy ltedy
+  ked         ted             26  qokedy otedy; okedy otedy
+  kee         ched            25  qokeey chedy; qokeey lchedy
+  kee         keed            25  okeey qokeedy; qokeey qokeedy
+
+  LONG VERB CHAINS (3+ consecutive Type B):
+    [8] f81v (bio): yshey qokeey okeey oky ykeey qoky oky lky
+         y+she+y | qo+kee+y | o+kee+y | o+k+y | y+kee+y | qo+k+y | o+k+y | l+k+y
+    [8] f82r (bio): cheey lchedy qokeedy lchedy rchedy qotedy qoty qoty
+         ∅+chee+y | l+ched+y | qo+keed+y | l+ched+y | r+ched+y | qo+ted+y | qo+t+y | qo+t+y
+    [7] f108r (astro): okeey keey lchedy okeey qokedy chedy qokedy
+         o+kee+y | ∅+kee+y | l+ched+y | o+kee+y | qo+ked+y | ∅+ched+y | qo+ked+y
+    [7] f111r (astro): shedy qoky chedy qok shed olchedy qokeedy
+         ∅+shed+y | qo+k+y | ∅+ched+y | qo+k+∅ | ∅+shed+∅ | ol+ched+y | qo+keed+y
+    [7] f84r (bio): otchy olshedy qokedy shedy okedy olchey schey
+         o+tch+y | ol+shed+y | qo+ked+y | ∅+shed+y | o+ked+y | ol+che+y | s+che+y
+    [6] f103v (astro): shey ykeey okeey lshey oty okedy
+         ∅+she+y | y+kee+y | o+kee+y | l+she+y | o+t+y | o+ked+y
+    [6] f108r (astro): okeey qokeey qokeedy qokeey chedy qokeey
+         o+kee+y | qo+kee+y | qo+keed+y | qo+kee+y | ∅+ched+y | qo+kee+y
+    [6] f108v (astro): chedy lchedy qokeedy chey qokeey qokeedy
+         ∅+ched+y | l+ched+y | qo+keed+y | ∅+che+y | qo+kee+y | qo+keed+y
+    [6] f108v (astro): qokeedy qokeedy chey qokeedy qokedy lkedy
+         qo+keed+y | qo+keed+y | ∅+che+y | qo+keed+y | qo+ked+y | l+ked+y
+    [6] f116r (astro): cheey lkeey olkeey lchey qoky lshedy
+         ∅+chee+y | l+kee+y | ol+kee+y | l+che+y | qo+k+y | l+shed+y
+    [6] f43r (herbal): okeedy otedy shedy oty yty dy
+         o+keed+y | o+ted+y | ∅+shed+y | o+t+y | y+t+y | ∅+d+y
+    [6] f75r (bio): qokeedy qokeedy qokedy qokedy qokeedy ldy
+         qo+keed+y | qo+keed+y | qo+ked+y | qo+ked+y | qo+keed+y | l+d+y
+    [6] f76r (text): chey qokeey lchedy chey ky chey
+         ∅+che+y | qo+kee+y | l+ched+y | ∅+che+y | ∅+k+y | ∅+che+y
+    [6] f84r (bio): chedy qokeey otedy dytedy okeedy olshed
+         ∅+ched+y | qo+kee+y | o+ted+y | dy+ted+y | o+keed+y | ol+shed+∅
+    [6] f84v (bio): qokedy okedy qokeedy okeedy shedy qoky
+         qo+ked+y | o+ked+y | qo+keed+y | o+keed+y | ∅+shed+y | qo+k+y
+
+==========================================================================================
+TEST 3: THE q- ANOMALY — Why q- loves suffix -l
+==========================================================================================
+
+  Total q- words: 306
+  Distinct q- words: 56
+
+  TOP q- WORDS:
+    qol              count= 145  root=o        suf=l      ...dal [qol] chol...; ...dal [qol] chol...
+    qo               count=  50  root=o        suf=∅      ...cheol [qo] qokeey...; ...okey [qo] ain...
+    qor              count=  20  root=o        suf=r      ...oteed [qor] aiin...; ...cheey [qor] cheo...
+    qoy              count=   9  root=o        suf=y      ...chey [qoy] shey...; ...dy [qoy] $...
+    qoly             count=   7  root=o        suf=ly     ...ol [qoly] dar...; ...olsheey [qoly] $...
+    qoiiin           count=   4  root=o        suf=iiin   ...aiir [qoiiin] okeedy...; ...shaiin [qoiiin] okain...
+    qkar             count=   3  root=ka       suf=r      ...chol [qkar] $...; ...chol [qkar] $...
+    qoiin            count=   3  root=o        suf=iin    ...olched [qoiin] ychedy...; ...qoain [qoiin] olcheedy...
+    qeeey            count=   3  root=eee      suf=y      ...chey [qeeey] lor...; ...otedy [qeeey] chey...
+    qckhy            count=   3  root=ckh      suf=y      ...oedy [qckhy] cheam...; ...sheol [qckhy] olaiin...
+    qeey             count=   3  root=ee       suf=y      ...raiin [qeey] qokey...; ...qoteedy [qeey] rair...
+    qy               count=   3  root=         suf=y      ...qolsheedy [qy] ycheedy...; ...ytain [qy] kaiin...
+    qar              count=   3  root=a        suf=r      ...da [qar] olkal...; ...qoeedy [qar] aiin...
+    qkain            count=   2  root=ka       suf=in     ...^ [qkain] shey...; ...sheeain [qkain] okeey...
+    qcthy            count=   2  root=cth      suf=y      ...oair [qcthy] al...; ...rchey [qcthy] rchey...
+
+  q- ROOT × SUFFIX:
+    q+o+l: 145
+    q+o+∅: 50
+    q+o+r: 20
+    q+o+y: 9
+    q+o+ly: 7
+    q+o+iiin: 4
+    q+ka+r: 3
+    q+o+iin: 3
+    q+eee+y: 3
+    q+ckh+y: 3
+    q+ee+y: 3
+    q++y: 3
+    q+a+r: 3
+    q+ka+in: 2
+    q+cth+y: 2
+
+  COMPARISON: q- vs qo- suffix distributions:
+    Suffix        q-      q-%       qo-     qo-%    Ratio
+  ────────  ────────  ───────  ────────  ───────  ───────
+         y        39    12.7%      2115    44.1%     0.3×
+         l       150    49.0%       638    13.3%     3.7×
+         r        35    11.4%       481    10.0%     1.1×
+       iin         7     2.3%       493    10.3%     0.2×
+        in         4     1.3%       378     7.9%     0.2×
+         ∅        55    18.0%       219     4.6%     3.9×
+        dy         2     0.7%       251     5.2%     0.1×
+         m         1     0.3%        55     1.1%     0.3×
+         d         0     0.0%        53     1.1%     0.0×
+        ir         1     0.3%        37     0.8%     0.4×
+
+==========================================================================================
+TEST 4: SUFFIX ALTERNATION — Same root, different suffixes in one line
+==========================================================================================
+
+  Lines with repeated root: 3988
+    Same suffix (repetition): 1654 (41.5%)
+    Different suffix (alternation): 2334 (58.5%)
+
+  TYPE A roots:
+    Alternation: 2140  Same: 748  Alt rate: 74.1%
+  TYPE B roots:
+    Alternation: 74  Same: 711  Alt rate: 9.4%
+
+  TOP SUFFIX TRANSITIONS (within alternation events):
+      From        To   Count
+  ────────  ────────  ──────
+         r         l     256
+         l         r     239
+       iin         r     188
+       iin         l     183
+         r       iin     169
+       iin        in     121
+         l       iin     113
+        in       iin      91
+        in         r      73
+         r        in      71
+       iin         m      66
+         r         m      57
+         ∅         l      52
+        in         l      51
+         l        ly      43
+         l        dy      42
+       iin        ir      39
+         l         m      39
+        ir       iin      37
+        ir         r      37
+
+  EXAMPLES — Type A suffix alternation:
+    keo      in f100r: qokeody, qokeol
+             suffixes: dy → l
+    cho      in f100r: chor, chol
+             suffixes: r → l
+    sho      in f100r: shol, shol, sho
+             suffixes: l → l → ∅
+    a        in f100r: yaiin, al
+             suffixes: iin → l
+    o        in f100v_101r: or, ol, ol, or, oiiin
+             suffixes: r → l → l → r → iiin
+    sheo     in f100v_101r: sheol, sheody, sheor, sheo
+             suffixes: l → dy → r → ∅
+    to       in f100v_101r: qotoiir, otol
+             suffixes: iir → l
+    ko       in f100v_101r: okor, okol
+             suffixes: r → l
+    da       in f100v_101r: daiin, daiin, ydar, daiin, daiin
+             suffixes: iin → iin → r → iin → iin
+    cheo     in f100v_101r: cheol, cheo
+             suffixes: l → ∅
+
+==========================================================================================
+TEST 5: THE daiin QUESTION — Fixed lexeme or compositional?
+==========================================================================================
+
+  'daiin' (∅+da+iin) occurrences: 899
+  Other da-words: 1584
+
+  Mean position: daiin=0.518, other-da=0.579, Δ=-0.061
+
+  WHAT PRECEDES daiin:
+    ∅+cho+l                         40
+    ∅+da+iin                        17
+    ∅+ched+y                        15
+    qo+k+y                          13
+    ∅+sho+l                         12
+    ∅+ch+y                          12
+    qo+kee+y                        11
+    ∅+o+l                           11
+    ∅+cth+y                         11
+    ∅+cho+r                         11
+
+  WHAT PRECEDES other da-words:
+    ∅+da+iin                        68
+    ∅+a+iin                         26
+    ∅+cho+l                         26
+    ∅+o+l                           23
+    qo+ka+l                         22
+    ∅+ched+y                        22
+    ∅+a+l                           20
+    qo+ked+y                        18
+    ∅+che+y                         18
+    ∅+shed+y                        17
+
+  WHAT FOLLOWS daiin:
+    ∅+da+l                          17
+    ∅+da+iin                        17
+    ∅+che+y                         15
+    ∅+o+l                           13
+    ∅+ched+y                        12
+    ∅+da+in                         12
+    ∅+cth+y                         12
+    ∅+cho+l                         11
+    ∅+da+r                          11
+    ∅+o+r                           10
+
+  WHAT FOLLOWS other da-words:
+    ∅+da+iin                        28
+    ∅+a+r                           27
+    ∅+ched+y                        27
+    ∅+o+l                           26
+    ∅+che+y                         25
+    ∅+o+r                           24
+    ∅+shed+y                        24
+    ∅+a+l                           24
+    ∅+a+iin                         23
+    ∅+she+y                         21
+
+  ALL *aiin WORDS (any prefix + root ending in 'a' + suffix 'iin'):
+    daiin            count=  899  = ∅+da+iin
+    aiin             count=  565  = ∅+a+iin
+    qokaiin          count=  284  = qo+ka+iin
+    okaiin           count=  222  = o+ka+iin
+    otaiin           count=  169  = o+ta+iin
+    saiin            count=  134  = ∅+sa+iin
+    qotaiin          count=   91  = qo+ta+iin
+    kaiin            count=   87  = ∅+ka+iin
+    odaiin           count=   71  = o+da+iin
+    raiin            count=   68  = r+a+iin
+    ykaiin           count=   62  = y+ka+iin
+    olaiin           count=   57  = ol+a+iin
+    ytaiin           count=   54  = y+ta+iin
+    qodaiin          count=   53  = qo+da+iin
+    lkaiin           count=   51  = l+ka+iin
+
+==========================================================================================
+TEST 6: ADJACENCY BIGRAMS — Frame-to-frame transitions
+==========================================================================================
+
+  This reveals the actual 'sentence grammar' — what construction
+  follows what construction, independent of which root fills the slot.
+
+  Total frame bigrams: 25458
+
+  TOP 25 FRAME BIGRAMS:
+  Frame 1               Frame 2                Count       %
+  ────────────────────  ────────────────────  ──────  ──────
+  ∅+_+l                 ∅+_+y                    480    1.9%
+  ∅+_+y                 qo+_+y                   453    1.8%
+  ∅+_+y                 ∅+_+y                    400    1.6%
+  ∅+_+l                 ∅+_+l                    391    1.5%
+  ∅+_+r                 ∅+_+y                    326    1.3%
+  qo+_+y                qo+_+y                   322    1.3%
+  ∅+_+r                 ∅+_+r                    309    1.2%
+  ∅+_+r                 ∅+_+l                    276    1.1%
+  ∅+_+r                 ∅+_+iin                  265    1.0%
+  ∅+_+l                 ∅+_+r                    244    1.0%
+  ∅+_+y                 ∅+_+l                    237    0.9%
+  ∅+_+l                 ∅+_+iin                  232    0.9%
+  ∅+_+iin               ∅+_+y                    217    0.9%
+  qo+_+y                ∅+_+y                    216    0.8%
+  ∅+_+y                 ∅+_+r                    207    0.8%
+  ∅+_+iin               ∅+_+l                    204    0.8%
+  o+_+y                 qo+_+y                   193    0.8%
+  o+_+y                 ∅+_+y                    187    0.7%
+  ∅+_+y                 ∅+_+iin                  180    0.7%
+  ∅+_+y                 o+_+y                    178    0.7%
+  qo+_+y                o+_+y                    158    0.6%
+  ∅+_+iin               ∅+_+r                    148    0.6%
+  o+_+y                 o+_+y                    143    0.6%
+  qo+_+y                ∅+_+l                    143    0.6%
+  ∅+_+iin               o+_+y                    136    0.5%
+
+  TOP 20 FRAME TRIGRAMS:
+  Frame 1          Frame 2          Frame 3           Count
+  ───────────────  ───────────────  ───────────────  ──────
+  ∅+_+y            qo+_+y           qo+_+y               72
+  qo+_+y           qo+_+y           qo+_+y               68
+  ∅+_+l            ∅+_+y            qo+_+y               66
+  ∅+_+y            ∅+_+y            ∅+_+y                63
+  ∅+_+y            ∅+_+l            ∅+_+y                62
+  ∅+_+l            ∅+_+l            ∅+_+l                56
+  ∅+_+l            ∅+_+l            ∅+_+y                55
+  ∅+_+y            qo+_+y           ∅+_+y                43
+  ∅+_+y            qo+_+y           o+_+y                42
+  ∅+_+y            qo+_+y           ∅+_+l                41
+  ∅+_+l            ∅+_+y            ∅+_+y                40
+  qo+_+y           ∅+_+y            qo+_+y               39
+  ∅+_+r            ∅+_+r            ∅+_+r                38
+  ∅+_+r            ∅+_+l            ∅+_+y                35
+  ∅+_+l            ∅+_+l            ∅+_+r                34
+  ∅+_+r            ∅+_+r            ∅+_+y                33
+  ∅+_+r            ∅+_+y            ∅+_+y                33
+  ∅+_+r            ∅+_+r            ∅+_+iin              33
+  ∅+_+l            ∅+_+y            ∅+_+l                32
+  ∅+_+r            ∅+_+l            ∅+_+l                32
+
+  LINE-INITIAL FRAMES (first word of line):
+    ∅+_+r: 452 (9.6%)
+    ∅+_+l: 388 (8.2%)
+    ∅+_+iin: 381 (8.1%)
+    ∅+_+y: 331 (7.0%)
+    qo+_+y: 272 (5.8%)
+    o+_+y: 235 (5.0%)
+    y+_+y: 194 (4.1%)
+    ∅+_+∅: 153 (3.2%)
+    ∅+_+in: 125 (2.6%)
+    d+_+y: 116 (2.5%)
+
+  LINE-FINAL FRAMES:
+    ∅+_+y: 511 (10.8%)
+    ∅+_+iin: 380 (8.0%)
+    ∅+_+l: 348 (7.4%)
+    ∅+_+r: 319 (6.7%)
+    ∅+_+m: 244 (5.2%)
+    o+_+y: 238 (5.0%)
+    qo+_+y: 192 (4.1%)
+    ∅+_+dy: 141 (3.0%)
+    ∅+_+ly: 117 (2.5%)
+    o+_+l: 115 (2.4%)
+
+==========================================================================================
+DEEP DIVE COMPLETE
+==========================================================================================

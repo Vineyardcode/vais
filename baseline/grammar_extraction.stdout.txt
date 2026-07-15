@@ -1,0 +1,574 @@
+Extracted 36 ring text sentences
+
+========================================================================
+PHASE 1: WORD-CLASS TAGGING
+========================================================================
+
+Total words classified: 964
+
+  Word class distribution:
+    BARE         652  ( 67.6%)
+    FUNC         144  ( 14.9%)
+    O-CONT       106  ( 11.0%)
+    FUNC?         27  (  2.8%)
+    PART          11  (  1.1%)
+    Y-CONT         8  (  0.8%)
+    S-CONT         7  (  0.7%)
+    D-CONT         6  (  0.6%)
+    Q-CONT         3  (  0.3%)
+
+  Suffix class distribution:
+    ∅            640  ( 66.4%)
+    -Y            91  (  9.4%)
+    -IIN          58  (  6.0%)
+    -l            38  (  3.9%)
+    -r            37  (  3.8%)
+    -L            31  (  3.2%)
+    -R            22  (  2.3%)
+    -AIIN         20  (  2.1%)
+    -S            14  (  1.5%)
+    -ly            9  (  0.9%)
+    -M/N           3  (  0.3%)
+    -ry            1  (  0.1%)
+
+  Coarse classes (for templates):
+    B (Bare content   )   652  ( 67.6%)
+    F (Function       )   182  ( 18.9%)
+    O (o-Content      )   106  ( 11.0%)
+    P (Other-prefix   )    21  (  2.2%)
+    Q (q-Content      )     3  (  0.3%)
+
+========================================================================
+PHASE 2: POSITIONAL GRAMMAR
+========================================================================
+
+  Mean normalized position (0.0=start, 1.0=end):
+    B  mean=0.496  median=0.488  Q1=0.227  Q3=0.762  n=652
+    F  mean=0.523  median=0.538  Q1=0.292  Q3=0.750  n=182
+    O  mean=0.473  median=0.500  Q1=0.214  Q3=0.710  n=106
+    P  mean=0.577  median=0.619  Q1=0.273  Q3=0.905  n=21
+    Q  mean=0.462  median=0.238  Q1=0.147  Q3=1.000  n=3
+
+  First word class distribution (position 0):
+    B   29  ( 80.6%)
+    O    5  ( 13.9%)
+    F    1  (  2.8%)
+    P    1  (  2.8%)
+
+  Last word class distribution (final position):
+    B   26  ( 72.2%)
+    F    6  ( 16.7%)
+    O    2  (  5.6%)
+    Q    1  (  2.8%)
+    P    1  (  2.8%)
+
+  Second word class distribution (position 1):
+    B   21  ( 58.3%)
+    F    8  ( 22.2%)
+    O    5  ( 13.9%)
+    P    2  (  5.6%)
+
+========================================================================
+PHASE 3: WORD-CLASS TRANSITION MATRIX
+========================================================================
+
+  Transition counts (row → col)  [total pairs: 928]
+            B      F      O      P      Q
+  B  432/  69% 106/  17%  75/  12%  12/   2%   1/   0%
+  F  112/  64%  44/  25%  16/   9%   3/   2%   1/   1%
+  O   62/  60%  29/  28%   8/   8%   4/   4%   1/   1%
+  P   16/  80%   2/  10%   2/  10%   0/   0%   0/   0%
+  Q    1/  50%   0/   0%   0/   0%   1/  50%   0/   0%
+
+  Top 15 bigram transitions:
+    B → B    432  ( 46.6%)
+    F → B    112  ( 12.1%)
+    B → F    106  ( 11.4%)
+    B → O     75  (  8.1%)
+    O → B     62  (  6.7%)
+    F → F     44  (  4.7%)
+    O → F     29  (  3.1%)
+    F → O     16  (  1.7%)
+    P → B     16  (  1.7%)
+    B → P     12  (  1.3%)
+    O → O      8  (  0.9%)
+    O → P      4  (  0.4%)
+    F → P      3  (  0.3%)
+    P → O      2  (  0.2%)
+    P → F      2  (  0.2%)
+
+  Rare/absent transitions (expected but count ≤ 1):
+
+========================================================================
+PHASE 4: FUNCTION WORD CONTEXT WINDOWS
+========================================================================
+
+  ── aiin ── (n=25, mean_pos=0.60, final=3)
+    Left context (word):  oteos(4)  r(3)  ar(2)  cho(1)  oar(1)  s(1)  
+    Right context (word): cholkal(1)  daim(1)  oekeeey(1)  otokeoar(1)  shoekey(1)  oteoshar(1)  
+    Left class:  B(12)  F(10)  O(3)  
+    Right class: B(20)  O(2)  P(1)  F(1)  ⟨E⟩(1)  
+
+  ── al ── (n=23, mean_pos=0.52, final=0)
+    Left context (word):  dal(2)  ar(2)  otar(2)  oteeoal(1)  otaiin(1)  otol(1)  
+    Right context (word): oteey(2)  o(2)  s(1)  sheeos(1)  otaiin(1)  teodaiin(1)  
+    Left class:  B(9)  F(8)  O(6)  
+    Right class: B(13)  F(7)  O(3)  
+
+  ── ar ── (n=23, mean_pos=0.55, final=2)
+    Left context (word):  s(2)  to(1)  oteeeor(1)  otaiin(1)  qoteeal(1)  or(1)  
+    Right context (word): al(2)  aly(2)  aiin(2)  oly(1)  alody(1)  oteey(1)  
+    Left class:  B(9)  F(7)  O(6)  P(1)  
+    Right class: B(14)  F(5)  O(2)  ⟨E⟩(1)  P(1)  
+
+  ── s ── (n=10, mean_pos=0.57, final=0)
+    Left context (word):  ochy(1)  al(1)  cho(1)  chy(1)  qoeeeo(1)  okee(1)  
+    Right context (word): air(2)  ar(2)  otecheo(1)  olar(1)  aiin(1)  ckhal(1)  
+    Left class:  B(6)  F(3)  O(1)  
+    Right class: F(5)  B(4)  O(1)  
+
+  ── daiin ── (n=10, mean_pos=0.42, final=0)
+    Left context (word):  sheo(1)  ⟨START⟩(1)  shchey(1)  lkchol(1)  ateey(1)  okeo(1)  
+    Right context (word): oteedy(1)  okey(1)  chalaly(1)  okeeees(1)  oteokeey(1)  okeey(1)  
+    Left class:  B(9)  ⟨S⟩(1)  
+    Right class: B(7)  O(3)  
+
+  ── dal ── (n=7, mean_pos=0.63, final=2)
+    Left context (word):  okeeo(1)  opotey(1)  otecheo(1)  oteoal(1)  oteokeey(1)  otaly(1)  
+    Right context (word): al(2)  cheody(1)  ⟨END⟩(1)  aildy(1)  okaly(1)  cheesy(1)  
+    Left class:  B(7)  
+    Right class: B(4)  F(2)  ⟨E⟩(1)  
+
+  ── am ── (n=6, mean_pos=0.39, final=1)
+    Left context (word):  air(2)  otar(1)  oteeor(1)  ar(1)  oteeos(1)  
+    Right context (word): aral(1)  sheal(1)  olaiin(1)  ⟨END⟩(1)  shey(1)  chopchedy(1)  
+    Left class:  F(3)  B(2)  O(1)  
+    Right class: B(3)  O(1)  ⟨E⟩(1)  F(1)  
+
+  ── dar ── (n=7, mean_pos=0.51, final=0)
+    Left context (word):  okeo(2)  okcheo(1)  okchor(1)  adal(1)  taly(1)  oteey(1)  
+    Right context (word): otey(1)  oty(1)  oteey(1)  ar(1)  okeeas(1)  otchey(1)  
+    Left class:  B(7)  
+    Right class: B(3)  O(2)  F(2)  
+
+  ── y ── (n=9, mean_pos=0.61, final=1)
+    Left context (word):  al(1)  olaiin(1)  ykeolol(1)  chotar(1)  chdar(1)  ykeedy(1)  
+    Right context (word): chho(1)  ⟨END⟩(1)  air(1)  tal(1)  s(1)  okechdy(1)  
+    Left class:  B(6)  F(1)  O(1)  P(1)  
+    Right class: B(6)  F(2)  ⟨E⟩(1)  
+
+  ── or ── (n=3, mean_pos=0.55, final=0)
+    Left context (word):  otokeoar(1)  keor(1)  chlyiintee(1)  
+    Right context (word): ar(1)  arol(1)  oteey(1)  
+    Left class:  B(3)  
+    Right class: B(2)  F(1)  
+
+  ── ol ── (n=2, mean_pos=0.20, final=0)
+    Left context (word):  chokaly(1)  cheol(1)  
+    Right context (word): cheol(1)  aiin(1)  
+    Left class:  B(2)  
+    Right class: B(1)  F(1)  
+
+  ── dy ── (n=5, mean_pos=0.63, final=0)
+    Left context (word):  chol(1)  teey(1)  chedy(1)  opchey(1)  okey(1)  
+    Right context (word): otees(1)  otchy(1)  shes(1)  toly(1)  okecholy(1)  
+    Left class:  B(4)  O(1)  
+    Right class: B(5)  
+
+  ── r ── (n=4, mean_pos=0.52, final=0)
+    Left context (word):  d(1)  oteo(1)  oekeeo(1)  ototeey(1)  
+    Right context (word): aiin(3)  chlyiintee(1)  
+    Left class:  B(3)  F(1)  
+    Right class: F(3)  B(1)  
+
+========================================================================
+PHASE 5: CLAUSE SEGMENTATION
+========================================================================
+
+  Total clauses (comma-split): 142
+  Mean clause length: 6.8 words
+  Median: 5
+  Range: 1-42
+
+  Clause length distribution:
+     1 words: ████████████████████████████ (28)
+     2 words: ███████████ (11)
+     3 words: █████████████ (13)
+     4 words: ██████████ (10)
+     5 words: ████████████████ (16)
+     6 words: █████████ (9)
+     7 words: ████████ (8)
+     8 words: ███████ (7)
+     9 words: ██████ (6)
+    10 words: █ (1)
+    11 words: ████ (4)
+    12 words: ███████ (7)
+    13 words: ██████ (6)
+    14 words: ███ (3)
+    15 words: ██ (2)
+    16+: 11
+
+  Clause-initial word class:
+    B  70  (49.3%)
+    F  60  (42.3%)
+    O  9  (6.3%)
+    P  2  (1.4%)
+    Q  1  (0.7%)
+
+  Clause-final word class:
+    B  79  (55.6%)
+    F  41  (28.9%)
+    O  18  (12.7%)
+    P  3  (2.1%)
+    Q  1  (0.7%)
+
+  Most common clause templates (coarse class sequences):
+    [F]  ×16
+    [B]  ×8
+    [B F]  ×4
+    [B B B B B]  ×4
+    [B B F]  ×3
+    [B B]  ×2
+    [F B B B B B]  ×2
+    [B F B]  ×2
+    [B B B B F]  ×2
+    [F B B]  ×2
+    [B B B]  ×2
+    [O]  ×2
+    [F B]  ×2
+    [F B B B]  ×2
+
+========================================================================
+PHASE 6: SENTENCE-LEVEL TEMPLATES
+========================================================================
+
+  3-gram class sequences (≥3 occurrences):
+    B B B  ×294
+    F B B  ×71
+    B F B  ×67
+    B B F  ×63
+    B B O  ×46
+    B O B  ×42
+    O B B  ×40
+    B F F  ×25
+    F F B  ×24
+    F B F  ×22
+    B O F  ×22
+    O F B  ×20
+    F B O  ×15
+    F F F  ×13
+    O B F  ×11
+    F O B  ×10
+    B P B  ×10
+    P B B  ×9
+    B B P  ×9
+    B F O  ×8
+    O B O  ×8
+    B O O  ×6
+    O F F  ×6
+    F F O  ×6
+    O O B  ×5
+    O O F  ×3
+    O P B  ×3
+    P B F  ×3
+    F O F  ×3
+
+  4-gram class sequences (≥3 occurrences):
+    B B B B  ×200
+    F B B B  ×48
+    B B B F  ×44
+    B B F B  ×43
+    B F B B  ×42
+    B B B O  ×32
+    O B B B  ×26
+    B O B B  ×25
+    B B O B  ×21
+    B B O F  ×17
+    B O F B  ×16
+    B F F B  ×15
+    O F B B  ×15
+    F F B B  ×14
+    B B F F  ×14
+    B F B F  ×12
+    F B F B  ×12
+    F B O B  ×11
+    B F B O  ×10
+    F B B F  ×10
+    F O B B  ×8
+    B O B F  ×8
+    B F F F  ×8
+    F F F B  ×8
+    F F B F  ×8
+    B B P B  ×8
+    O B B F  ×7
+    F B B O  ×7
+    O B O B  ×7
+    P B B B  ×6
+    O B F B  ×6
+    F B F F  ×6
+    B O B O  ×6
+    B F O B  ×5
+    B O F F  ×5
+    B B O O  ×4
+    O B F F  ×4
+    B P B B  ×4
+    O B B O  ×4
+    B B B P  ×4
+    B O O F  ×3
+    O F B O  ×3
+    F O F B  ×3
+    B O O B  ×3
+    O O B B  ×3
+    F B F O  ×3
+    F F F F  ×3
+    F F O B  ×3
+    F B B P  ×3
+
+  5-gram class sequences (≥3 occurrences):
+    B B B B B  ×130
+    F B B B B  ×33
+    B B B B F  ×32
+    B B F B B  ×31
+    B B B F B  ×30
+    B F B B B  ×28
+    B B B B O  ×23
+    O B B B B  ×19
+    B B B O B  ×15
+    B O B B B  ×15
+    O F B B B  ×13
+    B B B F F  ×11
+    B B O F B  ×11
+    B B O B B  ×11
+    B O F B B  ×11
+    B B B O F  ×10
+    B B F F B  ×9
+    B F F B B  ×8
+    F B O B B  ×8
+    F F B B B  ×7
+    B F B B F  ×7
+    B F B F B  ×7
+    F B B B O  ×7
+    F B B F B  ×7
+    B F F F B  ×6
+    B F B O B  ×6
+    F B F B B  ×6
+    O B B B F  ×6
+    F B B B F  ×5
+    B F O B B  ×5
+    F O B B B  ×5
+    B B F B O  ×5
+    B O B B F  ×5
+    B B F B F  ×5
+    B F F B F  ×5
+    B B F F F  ×5
+    B O B O B  ×5
+    B B O F F  ×5
+    F F F B B  ×5
+    B B O B F  ×4
+    P B B B B  ×4
+    B O B F B  ×4
+    O B B F B  ×4
+    F B F F B  ×4
+    B O B B O  ×4
+    F B B O B  ×4
+    B B O B O  ×4
+    B F B B O  ×4
+    F F B F B  ×4
+    B B B B P  ×4
+    B B B O O  ×3
+    B O B F F  ×3
+    F F F B F  ×3
+    F B O B F  ×3
+    O B F B B  ×3
+    B B P B B  ×3
+    B O F B O  ×3
+    O F B O B  ×3
+    F O F B B  ×3
+    O B B O F  ×3
+    B F B F F  ×3
+    O B F B F  ×3
+    F B F B O  ×3
+    O B O B B  ×3
+    F B B O F  ×3
+    B B B P B  ×3
+    F B B P B  ×3
+
+  Exact word n-grams (n=2, ≥3 occurrences):
+    'oteos aiin'  ×4
+    'r aiin'  ×3
+
+  Exact word n-grams (n=3, ≥2 occurrences):
+
+========================================================================
+PHASE 7: SUFFIX AGREEMENT PATTERNS
+========================================================================
+
+  Adjacent content-word pairs: 615
+  Suffix agreement: 15 (2.4%)
+  Suffix disagreement: 600
+  Expected agreement by chance: 58.7%
+  Observed/Expected ratio: 0.04×
+  → SUFFIX ANTI-AGREEMENT (adjacent words tend to have DIFFERENT suffixes)
+
+  Top suffix-pair transitions (content → content):
+    ∅        → ∅         353  (57.4%)
+    -Y       → ∅          49  ( 8.0%)
+    ∅        → -Y         47  ( 7.6%)
+    ∅        → -L         20  ( 3.3%)
+    ∅        → -R         17  ( 2.8%)
+    -L       → ∅          16  ( 2.6%)
+    ∅        → -AIIN      15  ( 2.4%)
+    -AIIN    → ∅          11  ( 1.8%)
+    -Y       → -Y         10  ( 1.6%) ←AGREE
+    -IIN     → ∅           8  ( 1.3%)
+    -R       → ∅           8  ( 1.3%)
+    ∅        → -S          6  ( 1.0%)
+    -S       → ∅           6  ( 1.0%)
+    -ly      → ∅           5  ( 0.8%)
+    ∅        → -IIN        4  ( 0.7%)
+
+  Agreement at distance 2 (skip-1):
+    Pairs: 586, agreement: 11 (1.9%)  ratio=0.03×
+
+========================================================================
+PHASE 8: SENTENCE STRUCTURE TYPOLOGY
+========================================================================
+
+  Sentences by opening class:
+    Opens with B: 29 sentences  avg func%=18.9%  signs={'Aries': 4, 'Pisces': 2, 'Taurus': 6, 'Gemini': 3, 'Cancer': 4, 'Libra': 2, 'Virgo': 1, 'Leo': 2, 'Scorpio': 2, 'Sagittarius': 3}
+    Opens with F: 1 sentences  avg func%=21.7%  signs={'Aries': 1}
+    Opens with O: 5 sentences  avg func%=16.8%  signs={'Pisces': 1, 'Libra': 1, 'Virgo': 2, 'Scorpio': 1}
+    Opens with P: 1 sentences  avg func%=5.0%  signs={'Leo': 1}
+
+  Structure by ring position:
+    Outer (n=12): avg_len=39  func%=18.2  o%=9.5
+      Openers: {'oteos': 2, 'dalalody': 1, 'okcheo': 1, 'olkeeody': 1, 'osheo': 1}
+      Closers: {'sheal': 1, 'oteeam': 1, 'choly': 1, 'okaikaly': 1, 'okaiin': 1}
+    Middle (n=12): avg_len=28  func%=19.7  o%=13.2
+      Openers: {'oteey': 2, 'daiin': 1, 'daiiamdy': 1, 'oteody': 1, 'chal': 1}
+      Closers: {'dal': 1, 'alos': 1, 'o': 1, 'sheeor': 1, 'qokar': 1}
+    Inner (n=11): avg_len=14  func%=16.5  o%=10.3
+      Openers: {'otal': 1, 'oteeol': 1, 'okeey': 1, 'okeeols': 1, 'otoar': 1}
+      Closers: {'daim': 1, 'okeol': 1, 'kal': 1, 'chckhy': 1, 'y': 1}
+    Innermost (n=1): avg_len=9  func%=22.2  o%=22.2
+      Openers: {'okeos': 1}
+      Closers: {'koly': 1}
+
+  FULLY TAGGED SHORTEST SENTENCES:
+
+    f73r.33 (Scorpio ring2, 7w):
+    osaiin[O-IIN] chedain[B∅] oteey[B∅] chedaly[B∅] okechs[B∅] chepcheesaly[B∅] oteodal[B∅]
+
+    f72r3.34 (Cancer ring3, 9w):
+    okeos[B∅] aiin[F-IIN] olaiin[O-IIN] oraiin[O-IIN] octheolarl[B∅] okeeody[B∅] oteos[B∅] aiin[F-IIN] koly[B∅]
+
+    f71r.18 (Aries ring2, 10w):
+    oteeol[B∅] otal[O-L] chs[B-S] char[B-R] cheky[B∅] chotshy[B∅] okeeody[B∅] oteey[B∅] chekea[B∅] okeol[B∅]
+
+    f71v.18 (Taurus ring2, 11w):
+    okeey[B∅] okeosar[B∅] otaiin[O-AIIN] chkeeal[B∅] okal[O-L] cheekaiin[B∅] okaiin[O-AIIN] okchor[B∅] dar[F-r] oteey[B∅] kal[B-L]
+
+    f72v1.33 (Libra ring2, 11w):
+    otalal[B∅] dalal[B∅] ykeols[B∅] oteo[B∅] r[F∅] aiin[F-IIN] yotoam[B∅] oteey[B∅] saiin[P-IIN] oteeos[B∅] am[F∅]
+
+    f73v.33 (Sagittarius ring2, 11w):
+    otedchor[B∅] alar[B∅] olkcho[B∅] otolam[B∅] o[F∅] kees[B∅] char[B-R] y[F∅] ytaly[B∅] alaly[B∅] otaram[B∅]
+
+========================================================================
+PHASE 9: COMPARATIVE SYNTAX ANALYSIS
+========================================================================
+
+  Test 1: o-prefix content words and right neighbors
+    o-CONT → B  62  (59.6%)
+    o-CONT → F  29  (27.9%)
+    o-CONT → O  8  (7.7%)
+    o-CONT → P  4  (3.8%)
+    o-CONT → Q  1  (1.0%)
+
+  Test 2: Function word neighborhoods
+    Left_of_F → F → Right_of_F:
+    B → F → B   ×67
+    B → F → F   ×25
+    F → F → B   ×24
+    O → F → B   ×20
+    F → F → F   ×13
+    B → F → O   ×8
+    O → F → F   ×6
+    F → F → O   ×6
+    B → F → ⟨E⟩   ×4
+    B → F → P   ×2
+    O → F → ⟨E⟩   ×2
+    ⟨S⟩ → F → O   ×1
+
+  Test 3: First content word in each sentence
+    BARE        29  (80.6%)
+    O-CONT      6  (16.7%)
+    S-CONT      1  (2.8%)
+
+  Test 4: Sentence-final word suffix classes
+    ∅           27  (75.0%)
+    -L          2  (5.6%)
+    -l          1  (2.8%)
+    -AIIN       1  (2.8%)
+    -R          1  (2.8%)
+    -IIN        1  (2.8%)
+    -r          1  (2.8%)
+    -ry         1  (2.8%)
+    -ly         1  (2.8%)
+
+  Test 5: Content↔Function alternation rate
+    Alternations: 269 (29.0%)
+    Non-alternations: 659 (71.0%)
+    Expected if random: 30.6%
+    → Near random levels
+
+========================================================================
+PHASE 10: GRAMMATICAL MODEL SYNTHESIS
+========================================================================
+
+  Corpus: 36 sentences, 964 words
+  Function words: 182 (18.9%)
+  o-content: 106 (11.0%)
+  Bare content: 652 (67.6%)
+  Other-prefixed: 24 (2.5%)
+
+  ALL SENTENCE CLASS SEQUENCES:
+    Arir0 (38w): B B B B B O O F F B B B F F B B B B B B F O B B B B F B B B B O B F F B P B
+    Arir1 (23w): F O B B B B O P B B B B B B B B O B F F F B F
+    Pisr0 (42w): B F O B B B B F B B B F B B B B B B B B F B B B B B F B O B F B B F O B B P B B B B
+    Pisr1 (32w): B O F B O B B F B F B B B B B O F B F B B B B B O B B B F P B B
+    Pisr2 (22w): O P B F B O F B F F B F F O F B B B B B F B
+    Arir0 (38w): B B O O F B B B B O B B O F B B B B B F F F B F F F O F B B B O F B B B B B
+    Arir1 (25w): B B B B B B B F B B B B B B B B F B B F B O B B F
+    Arir2 (10w): B O B B B B B B B B
+    Taur0 (37w): B B B B B F B F F B B F B B B O F B B B O O B B B F F B B B B B B F B B B
+    Taur1 (30w): B B F B B F B F O B B F B B B B B O B B F B B B O F B B O B
+    Taur2 (11w): B B O B O B O B F B B
+    Taur0 (42w): B B B B B F B B O B B B B O O B B F P B B B B B B B O F F O O B F B F F B F B F B O
+    Taur1 (27w): B P O B B B O B O B B B B O B O F B B B F B B O F F Q
+    Taur2 (13w): B B B B B B F B F B O B B
+    Gemr0 (41w): B F B F B B B B B B B B B B F F F B F O F B B B F B B O F F F F F F B B B B P B B
+    Gemr1 (26w): B B B B F B F F B F B O O B F B B B O F B B B B B F
+    Gemr2 (15w): B F B O B B B F B B F B O O F
+    Canr0 (47w): B B B B B B B B F B O B B B B B F B B B O F B B F F F B B O B O B B F B O B B B B B B B B B B
+    Canr1 (41w): B O F B B B B F F B B F F B O B B O F B B B B B B B B B B B B B F B B B B B F B B
+    Canr2 (26w): B B B B B B F B B O F F O B O B B B B B F B B B B B
+    Canr3 ( 9w): B F O O B B B F B
+    Libr0 (41w): B B O F B B B B B B B B B B B B P B F B B B O B B F F F O B B B B B O B B B B P B
+    Libr1 (22w): O F O B B B B B B B F B B P B O B B B B O B
+    Libr2 (11w): B B B B F F B B P B F
+    Virr0 (37w): O B O B O B P B B B F F B F B B B B O B B B B O B B B B B B B B B F F B B
+    Virr1 (28w): B O B B B B B O F F F B B B B B B O B F F B B O B B O F
+    Virr2 (12w): O B B B F F F B B B B B
+    Leor0 (40w): P B B B B B B B B B B B B B B O B B B B P F B O B B B B B B B B B B F B B B B B
+    Leor1 (32w): B F B F B B B B B F B B B B O B B O B F B F O B B P B O F B B B
+    Leor2 (12w): B F B B B B B B B B B B
+    Scor0 (34w): B B B B B F F B B P B B F B B B B B B F B B F B B F B B B B B B B B
+    Scor1 (25w): B F F O B F F F B B B B B B O F B O B F B F B F B
+    Scor2 ( 7w): O B B B B B B
+    Sagr0 (35w): B B B B O Q P O B B B F B B B B F F B F B B B F B B B B B O P B B B O
+    Sagr1 (22w): B B B B B Q B B B B B B O F B O B F O P F P
+    Sagr2 (11w): B B B B F B B F B B B
+
+
+Results saved to grammar_results.json

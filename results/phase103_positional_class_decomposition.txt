@@ -128,7 +128,7 @@ Step 4: Slot grammar baseline — how much is forced by structure?
     C11: o.d.y, ch.o.d.y, o.i.i.n, sh.o.d.y, o.i.i.i.n
     C20: q
     C22: q.o.k, q.o.t, q.o, q.o.l, q.o.p
-    C23: q.o.d, e.e.e.o.d, e.o.i, a.o.d, q.o.i
+    C23: q.o.d, e.e.e.o.d, a.o.d, q.o.i, q.o.i.i
 
 Step 5: Position-conditioned transition matrices...
 

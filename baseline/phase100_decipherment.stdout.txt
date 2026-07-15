@@ -1,0 +1,169 @@
+========================================================================
+PHASE 100 — TARGETED DECIPHERMENT WITH 25-CLASS ALPHABET
+========================================================================
+
+────────────────────────────────────────────────────────────────────────
+STEP 1: Collapse VMS to 25-class alphabet
+────────────────────────────────────────────────────────────────────────
+
+  VMS words collapsed: 40,309
+  VMS class vocabulary: 25 classes
+  Classes used: C0, C1, C10, C11, C12, C13, C14, C15, C16, C17, C18, C19, C2, C20, C21, C22, C23, C24, C3, C4, C5, C6, C7, C8, C9
+
+  Class frequency ranking:
+    C0: 0.2085
+    C3: 0.1891
+    C1: 0.1849
+    C5: 0.0926
+    C2: 0.0794
+    C4: 0.0737
+    C9: 0.0636
+    C10: 0.0497
+    C7: 0.0136
+    C6: 0.0118
+    C8: 0.0064
+    C13: 0.0060
+    C18: 0.0039
+    C11: 0.0025
+    C21: 0.0022
+    C12: 0.0020
+    C14: 0.0016
+    C22: 0.0016
+    C15: 0.0015
+    C20: 0.0014
+    C24: 0.0012
+    C16: 0.0011
+    C17: 0.0010
+    C19: 0.0006
+    C23: 0.0004
+
+  Word length distribution (in classes):
+    len=1: 0.2689
+    len=2: 0.5582
+    len=3: 0.1386
+    len=4: 0.0269
+    len=5: 0.0052
+    len=6: 0.0022
+    len=7: 0.0000
+    len=8: 0.0000
+    len=9: 0.0000
+    len=10: 0.0000
+
+────────────────────────────────────────────────────────────────────────
+STEP 2: NL reference corpora — letter-level statistics
+────────────────────────────────────────────────────────────────────────
+
+  Latin: 210,003 words, 27 effective letters, 41,871 unique forms
+    Top 10: i=0.115 e=0.114 a=0.087 t=0.077 u=0.076 s=0.072 r=0.063 n=0.062 o=0.057 m=0.053
+
+  Czech: 599,760 words, 38 effective letters, 40,419 unique forms
+    Top 10: o=0.080 e=0.080 a=0.069 i=0.054 n=0.053 t=0.051 s=0.049 l=0.046 v=0.044 d=0.039
+
+  German: 39,728 words, 30 effective letters, 9,292 unique forms
+    Top 10: e=0.153 n=0.095 i=0.081 t=0.066 r=0.063 s=0.062 h=0.057 a=0.052 d=0.047 u=0.040
+
+  Italian: 24,367 words, 28 effective letters, 4,719 unique forms
+    Top 10: e=0.127 i=0.104 a=0.104 o=0.099 l=0.069 t=0.067 n=0.062 r=0.058 c=0.051 s=0.045
+
+  French: 13,873 words, 24 effective letters, 1,894 unique forms
+    Top 10: e=0.179 s=0.089 a=0.070 u=0.068 r=0.066 l=0.060 t=0.060 n=0.059 i=0.058 o=0.058
+
+  English: 43,936 words, 28 effective letters, 6,423 unique forms
+    Top 10: e=0.130 a=0.079 t=0.075 o=0.073 n=0.069 s=0.067 r=0.066 i=0.061 d=0.045 h=0.043
+
+────────────────────────────────────────────────────────────────────────
+STEP 3: Structural distribution comparison (no mapping needed)
+────────────────────────────────────────────────────────────────────────
+
+  Language       WL JSD    VMS H     NL H  H ratio  VMS α   NL α  α ratio
+  ──────────── ──────── ──────── ──────── ──────── ────── ────── ────────
+  Czech          0.4112    3.169    4.724    0.671     25     38     0.66
+  English        0.3288    3.169    4.263    0.743     25     28     0.89
+  French         0.4245    3.169    4.039    0.785     25     24     1.04
+  German         0.4905    3.169    4.209    0.753     25     30     0.83
+  Italian        0.3473    3.169    4.033    0.786     25     28     0.89
+  Latin          0.4938    3.169    4.068    0.779     25     27     0.93
+
+────────────────────────────────────────────────────────────────────────
+STEP 4: Substitution cipher optimization per language
+────────────────────────────────────────────────────────────────────────
+
+  ── Czech ──
+    Frequency-rank mapping bigram LL: -9.4352
+    Hill-climb optimized bigram LL: -9.1393 (improvement: +0.2959)
+    Dictionary hits (all): 12,004 / 40,309 = 0.2978
+       Len     Hits    Total     Rate
+         1     7084    10838   0.6536
+         2     4334    22499   0.1926
+         3      570     5587   0.1020
+         4       16     1085   0.0147
+         5        0      211   0.0000
+         6        0       89   0.0000
+    Len-3 examples: den←cfhoaiin, dny←otairin, den←otoaiin
+    Len-4 examples: dole←qotchytor, dílo←chckhyoltchedy, díle←qockhyykol
+    Positional JSD: initial=0.4768 medial=0.2664 final=0.4688
+
+  ── English ──
+    Frequency-rank mapping bigram LL: -8.7040
+    Hill-climb optimized bigram LL: -7.5682 (improvement: +1.1358)
+    Dictionary hits (all): 21,588 / 40,309 = 0.5356
+       Len     Hits    Total     Rate
+         1    10838    10838   1.0000
+         2    10225    22499   0.4545
+         3      486     5587   0.0870
+         4       39     1085   0.0359
+         5        0      211   0.0000
+         6        0       89   0.0000
+    Len-3 examples: the←cphesaiin, tre←cphodal, tre←okodar
+    Len-4 examples: thre←okeeordaiin, thre←chekedydaiin, isle←olkeedam
+    Positional JSD: initial=0.3475 medial=0.1625 final=0.3991
+
+  ── French ──
+    Frequency-rank mapping bigram LL: -8.9767
+    Hill-climb optimized bigram LL: -8.2333 (improvement: +0.7434)
+    Dictionary hits (all): 1,016 / 40,309 = 0.0252
+       Len     Hits    Total     Rate
+         1      133    10838   0.0123
+         2      746    22499   0.0332
+         3      136     5587   0.0243
+         4        1     1085   0.0009
+         5        0      211   0.0000
+         6        0       89   0.0000
+    Len-3 examples: ont←oydar, ont←oldain, pot←sorain
+    Len-4 examples: pate←rchealcham
+    Positional JSD: initial=0.5435 medial=0.1873 final=0.3793
+
+  ── German ──
+    Frequency-rank mapping bigram LL: -8.4419
+    Hill-climb optimized bigram LL: -7.6909 (improvement: +0.7511)
+    Dictionary hits (all): 29,153 / 40,309 = 0.7232
+       Len     Hits    Total     Rate
+         1    10732    10838   0.9902
+         2    17673    22499   0.7855
+         3      740     5587   0.1325
+         4        6     1085   0.0055
+         5        2      211   0.0095
+         6        0       89   0.0000
+    Len-3 examples: enn←daraiin, hen←oydar, ihn←cfhoaiin
+    Len-4 examples: hans←olkaly, sein←dydchepain, sann←dykaran
+    Len-5 examples: ihnen←cphoaldar, senis←chodydainotchy
+    Positional JSD: initial=0.3643 medial=0.1608 final=0.3537
+
+  ── Italian ──
+    Frequency-rank mapping bigram LL: -8.6465
+    Hill-climb optimized bigram LL: -8.6353 (improvement: +0.0112)
+    Dictionary hits (all): 22,636 / 40,309 = 0.5616
+       Len     Hits    Total     Rate
+         1    10722    10838   0.9893
+         2    11242    22499   0.4997
+         3      646     5587   0.1156
+         4       25     1085   0.0230
+         5        1      211   0.0047
+         6        0       89   0.0000
+    Len-3 examples: dee←daraiin, dei←shodary, ivi←shydksheey
+    Len-4 examples: indi←chykydchy, dino←dchykey, none←keeyfar
+    Len-5 examples: dello←odallseeey
+    Positional JSD: initial=0.3416 medial=0.2126 final=0.1825
+
+  ── Latin ──
+    Frequency-rank mapping bigram LL: -8.2100

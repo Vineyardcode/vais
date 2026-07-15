@@ -1,0 +1,622 @@
+{
+  "total_tokens": 39433,
+  "total_types": 7905,
+  "collision_groups": 1080,
+  "top_collisions": [
+    {
+      "stripped": "daiin",
+      "originals": [
+        "daiin",
+        "dkaiin",
+        "kchdaiin",
+        "pchdaiin",
+        "pdaiin",
+        "pshdaiin",
+        "tchdaiin",
+        "tdaiin"
+      ],
+      "freq": 915
+    },
+    {
+      "stripped": "ol",
+      "originals": [
+        "cfhol",
+        "ckhol",
+        "cphol",
+        "cthol",
+        "fchol",
+        "fol",
+        "kchol",
+        "kol",
+        "kshol",
+        "ol",
+        "olk",
+        "otchl",
+        "otl",
+        "pchol",
+        "pol",
+        "pshol",
+        "tchol",
+        "tol",
+        "tshol"
+      ],
+      "freq": 874
+    },
+    {
+      "stripped": "aiin",
+      "originals": [
+        "aiin",
+        "cfhaiin",
+        "ckhaiin",
+        "cphaiin",
+        "cthaiin",
+        "fchaiin",
+        "kaiin",
+        "kchaiin",
+        "kshaiin",
+        "paiin",
+        "pchaiin",
+        "taiin",
+        "tchaiin",
+        "tchkaiin",
+        "tshaiin"
+      ],
+      "freq": 744
+    },
+    {
+      "stripped": "or",
+      "originals": [
+        "ckhor",
+        "cphor",
+        "cthor",
+        "fchor",
+        "for",
+        "fshor",
+        "kchor",
+        "kor",
+        "kshor",
+        "ofchr",
+        "okr",
+        "or",
+        "otchr",
+        "pchor",
+        "por",
+        "tchor",
+        "tor",
+        "tshor"
+      ],
+      "freq": 630
+    },
+    {
+      "stripped": "chey",
+      "originals": [
+        "chcfhey",
+        "chckhey",
+        "chcphey",
+        "chcthey",
+        "checfhy",
+        "checkhy",
+        "checthy",
+        "chefchy",
+        "chefy",
+        "chekchy",
+        "cheky",
+        "chepchy",
+        "chepy",
+        "chetchy",
+        "chety",
+        "chey",
+        "chkey",
+        "chpchey",
+        "chtchey",
+        "chtey"
+      ],
+      "freq": 621
+    },
+    {
+      "stripped": "ar",
+      "originals": [
+        "ar",
+        "cfhar",
+        "ckhar",
+        "cphar",
+        "cthar",
+        "far",
+        "kar",
+        "kchar",
+        "kshar",
+        "par",
+        "pchar",
+        "pshar",
+        "tar",
+        "tchar",
+        "tshar"
+      ],
+      "freq": 598
+    },
+    {
+      "stripped": "chedy",
+      "originals": [
+        "chckhedy",
+        "chcphedy",
+        "chcthedy",
+        "checkhdy",
+        "checthdy",
+        "chedky",
+        "chedy",
+        "chefchdy",
+        "chekchdy",
+        "chepchdy",
+        "chetchdy",
+        "chetdy",
+        "chkedy",
+        "chpchedy",
+        "chtedy"
+      ],
+      "freq": 567
+    },
+    {
+      "stripped": "qoedy",
+      "originals": [
+        "qockhedy",
+        "qocthedy",
+        "qoedy",
+        "qofchedy",
+        "qokchedy",
+        "qokedy",
+        "qokshedy",
+        "qopchedy",
+        "qopshedy",
+        "qotchedy",
+        "qotedy",
+        "qotshedy"
+      ],
+      "freq": 516
+    },
+    {
+      "stripped": "shedy",
+      "originals": [
+        "shcfhedy",
+        "shckhedy",
+        "shcthedy",
+        "sheckhdy",
+        "shedy",
+        "shefchdy",
+        "shepchdy",
+        "shetshdy",
+        "shkchedy"
+      ],
+      "freq": 473
+    },
+    {
+      "stripped": "chy",
+      "originals": [
+        "chcfhy",
+        "chckhy",
+        "chcphy",
+        "chcthy",
+        "chkchy",
+        "chkshy",
+        "chky",
+        "chpchy",
+        "chpy",
+        "chtchy",
+        "chtshy",
+        "chty",
+        "chy",
+        "chyt",
+        "pchchy"
+      ],
+      "freq": 468
+    },
+    {
+      "stripped": "qoy",
+      "originals": [
+        "qkoy",
+        "qockhy",
+        "qocphy",
+        "qocthy",
+        "qofshy",
+        "qofy",
+        "qokchy",
+        "qokshy",
+        "qoky",
+        "qopchcfhy",
+        "qopchy",
+        "qopy",
+        "qotchy",
+        "qotshy",
+        "qoty",
+        "qoy"
+      ],
+      "freq": 461
+    },
+    {
+      "stripped": "oaiin",
+      "originals": [
+        "cfhoaiin",
+        "cphoaiin",
+        "cthoaiin",
+        "koaiin",
+        "kokaiin",
+        "oaiin",
+        "ofaiin",
+        "okaiin",
+        "okchaiin",
+        "opaiin",
+        "opchaiin",
+        "otaiin",
+        "otchaiin",
+        "otshaiin",
+        "poaiin",
+        "toaiin",
+        "topaiin"
+      ],
+      "freq": 458
+    },
+    {
+      "stripped": "oedy",
+      "originals": [
+        "ockhedy",
+        "ocphedy",
+        "octhedy",
+        "oedy",
+        "oekchdy",
+        "ofchedy",
+        "okchedy",
+        "okedy",
+        "okshedy",
+        "opchedy",
+        "opshedy",
+        "otchedy",
+        "otedy",
+        "otkchedy",
+        "otshedy",
+        "tchokedy"
+      ],
+      "freq": 454
+    },
+    {
+      "stripped": "chol",
+      "originals": [
+        "chcfhol",
+        "chckhol",
+        "chcphol",
+        "chcthol",
+        "chfchol",
+        "chkchol",
+        "chkol",
+        "chol",
+        "cholp",
+        "chpchol",
+        "chtchol",
+        "chtol"
+      ],
+      "freq": 437
+    },
+    {
+      "stripped": "qoeedy",
+      "originals": [
+        "qockheedy",
+        "qoeedy",
+        "qoekedy",
+        "qokcheedy",
+        "qokeedy",
+        "qoksheedy",
+        "qopcheedy",
+        "qotcheedy",
+        "qoteedy"
+      ],
+      "freq": 423
+    },
+    {
+      "stripped": "shey",
+      "originals": [
+        "shckhefy",
+        "shckhey",
+        "shcthey",
+        "sheckhy",
+        "shecphy",
+        "shecthy",
+        "shekchy",
+        "sheky",
+        "shepchy",
+        "shepy",
+        "shetchy",
+        "shety",
+        "shey",
+        "sheyk"
+      ],
+      "freq": 421
+    },
+    {
+      "stripped": "oy",
+      "originals": [
+        "ckhockhy",
+        "ckhocthy",
+        "ckhoy",
+        "cphocthy",
+        "cphoy",
+        "fchoky",
+        "fchoy",
+        "kchokchy",
+        "kchoy",
+        "kotchy",
+        "kshoy",
+        "ockhy",
+        "ocphy",
+        "octhy",
+        "ofchy",
+        "ofy",
+        "okchy",
+        "okshy",
+        "oky",
+        "opchy",
+        "opy",
+        "otchy",
+        "otshy",
+        "oty",
+        "oy",
+        "pchocthy",
+        "pchotchy",
+        "tchoky",
+        "tockhy",
+        "tocthy",
+        "toky",
+        "totchy",
+        "toy",
+        "tshoky"
+      ],
+      "freq": 419
+    },
+    {
+      "stripped": "qoaiin",
+      "originals": [
+        "qoaiin",
+        "qofaiin",
+        "qokaiin",
+        "qokchaiin",
+        "qopaiin",
+        "qopchaiin",
+        "qotaiin",
+        "qotchaiin"
+      ],
+      "freq": 413
+    },
+    {
+      "stripped": "qoeey",
+      "originals": [
+        "qockheey",
+        "qocpheeckhy",
+        "qoeeckhy",
+        "qoeey",
+        "qoetchey",
+        "qofcheepy",
+        "qokcheey",
+        "qokeey",
+        "qopcheey",
+        "qotcheey",
+        "qotchkeey",
+        "qoteey"
+      ],
+      "freq": 399
+    },
+    {
+      "stripped": "oar",
+      "originals": [
+        "cphoar",
+        "foar",
+        "kchoar",
+        "oar",
+        "ofar",
+        "ofchar",
+        "ofchtar",
+        "okar",
+        "okchar",
+        "opar",
+        "opchar",
+        "otar",
+        "otchar",
+        "pchofar",
+        "poar",
+        "pokar",
+        "tchoar",
+        "toar",
+        "tokar",
+        "topar",
+        "tshoar"
+      ],
+      "freq": 378
+    },
+    {
+      "stripped": "dar",
+      "originals": [
+        "dar",
+        "dkar",
+        "fchdar",
+        "kchdar",
+        "pchdar",
+        "pdar",
+        "pshdar",
+        "tshdar"
+      ],
+      "freq": 377
+    },
+    {
+      "stripped": "dy",
+      "originals": [
+        "cfhdy",
+        "ckhdy",
+        "cthdy",
+        "dckhy",
+        "dcthy",
+        "dkshy",
+        "dky",
+        "dpchy",
+        "dpy",
+        "dy",
+        "fchdy",
+        "kchdpy",
+        "kchdy",
+        "kshdy",
+        "pchdy",
+        "pchtchdy",
+        "pshdy",
+        "tchdy",
+        "tshdy"
+      ],
+      "freq": 372
+    },
+    {
+      "stripped": "oeey",
+      "originals": [
+        "ockheey",
+        "octheey",
+        "oeecthy",
+        "oeey",
+        "oekey",
+        "okcheey",
+        "okeey",
+        "opcheeky",
+        "opcheey",
+        "otcheey",
+        "oteey",
+        "otsheey",
+        "pokeey",
+        "tocpheey"
+      ],
+      "freq": 372
+    },
+    {
+      "stripped": "qoain",
+      "originals": [
+        "qoain",
+        "qofain",
+        "qokain",
+        "qokchain",
+        "qotain",
+        "qotchain"
+      ],
+      "freq": 359
+    },
+    {
+      "stripped": "al",
+      "originals": [
+        "al",
+        "ckhal",
+        "cphal",
+        "cthal",
+        "kal",
+        "kchal",
+        "pal",
+        "pchal",
+        "tal",
+        "tchal"
+      ],
+      "freq": 352
+    },
+    {
+      "stripped": "oal",
+      "originals": [
+        "cphoal",
+        "oal",
+        "ocphal",
+        "octhal",
+        "ofal",
+        "okal",
+        "okchal",
+        "okshal",
+        "opal",
+        "opchal",
+        "otal",
+        "otchal",
+        "otshal"
+      ],
+      "freq": 341
+    },
+    {
+      "stripped": "y",
+      "originals": [
+        "cfhy",
+        "ckhy",
+        "cphy",
+        "cthy",
+        "fchcfhy",
+        "fshy",
+        "kchky",
+        "kchy",
+        "kshy",
+        "ky",
+        "pchy",
+        "pshy",
+        "py",
+        "tcfhy",
+        "tchcthy",
+        "tchty",
+        "tchy",
+        "tshy",
+        "ty",
+        "yf",
+        "yk",
+        "yksh",
+        "ypch",
+        "yt",
+        "ytch"
+      ],
+      "freq": 317
+    },
+    {
+      "stripped": "oey",
+      "originals": [
+        "koey",
+        "ockhey",
+        "ocphey",
+        "octhey",
+        "oeckhy",
+        "oekshy",
+        "oeky",
+        "ofchey",
+        "okchey",
+        "okey",
+        "okshey",
+        "opchepy",
+        "opchety",
+        "opchey",
+        "opshey",
+        "otchey",
+        "otey",
+        "otshey",
+        "tchotchey",
+        "tchotshey",
+        "tocthey"
+      ],
+      "freq": 282
+    },
+    {
+      "stripped": "qoar",
+      "originals": [
+        "qoar",
+        "qokar",
+        "qokchar",
+        "qopar",
+        "qopchar",
+        "qotar",
+        "qotchar"
+      ],
+      "freq": 282
+    },
+    {
+      "stripped": "qoal",
+      "originals": [
+        "qoal",
+        "qockhal",
+        "qofchal",
+        "qokal",
+        "qokchal",
+        "qopal",
+        "qotal"
+      ],
+      "freq": 281
+    }
+  ]
+}

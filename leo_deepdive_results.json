@@ -1,0 +1,2730 @@
+{
+  "decomposed": [
+    {
+      "original": "soees",
+      "stripped": "soees",
+      "collapsed": "soes",
+      "prefix": "so",
+      "root": "es",
+      "suffix": "-",
+      "gallows": [],
+      "determinative": "-",
+      "word": "soees",
+      "locus": "f72v3.1,@Cc",
+      "locus_type": "ring",
+      "nymph_num": "1",
+      "clock": "09:00"
+    },
+    {
+      "original": "otchs",
+      "stripped": "os",
+      "collapsed": "os",
+      "prefix": "-",
+      "root": "os",
+      "suffix": "-",
+      "gallows": [
+        "t"
+      ],
+      "determinative": "t",
+      "word": "otchs",
+      "locus": "f72v3.1,@Cc",
+      "locus_type": "ring",
+      "nymph_num": "1",
+      "clock": "09:00"
+    },
+    {
+      "original": "otedar",
+      "stripped": "oedar",
+      "collapsed": "oedar",
+      "prefix": "o",
+      "root": "ed",
+      "suffix": "ar",
+      "gallows": [
+        "t"
+      ],
+      "determinative": "t",
+      "word": "otedar",
+      "locus": "f72v3.1,@Cc",
+      "locus_type": "ring",
+      "nymph_num": "1",
+      "clock": "09:00"
+    },
+    {
+      "original": "oteody",
+      "stripped": "oeody",
+      "collapsed": "oeody",
+      "prefix": "o",
+      "root": "e",
+      "suffix": "ody",
+      "gallows": [
+        "t"
+      ],
+      "determinative": "t",
+      "word": "oteody",
+      "locus": "f72v3.1,@Cc",
+      "locus_type": "ring",
+      "nymph_num": "1",
+      "clock": "09:00"
+    },
+    {
+      "original": "oteodal",
+      "stripped": "oeodal",
+      "collapsed": "oeodal",
+      "prefix": "o",
+      "root": "eod",
+      "suffix": "al",
+      "gallows": [
+        "t"
+      ],
+      "determinative": "t",
+      "word": "oteodal",
+      "locus": "f72v3.1,@Cc",
+      "locus_type": "ring",
+      "nymph_num": "1",
+      "clock": "09:00"
+    },
+    {
+      "original": "oteos",
+      "stripped": "oeos",
+      "collapsed": "oeos",
+      "prefix": "o",
+      "root": "eos",
+      "suffix": "-",
+      "gallows": [
+        "t"
+      ],
+      "determinative": "t",
+      "word": "oteos",
+      "locus": "f72v3.1,@Cc",
+      "locus_type": "ring",
+      "nymph_num": "1",
+      "clock": "09:00"
+    },
+    {
+      "original": "oteody",
+      "stripped": "oeody",
+      "collapsed": "oeody",
+      "prefix": "o",
+      "root": "e",
+      "suffix": "ody",
+      "gallows": [
+        "t"
+      ],
+      "determinative": "t",
+      "word": "oteody",
+      "locus": "f72v3.1,@Cc",
+      "locus_type": "ring",
+      "nymph_num": "1",
+      "clock": "09:00"
+    },
+    {
+      "original": "sheokeey",
+      "stripped": "sheoeey",
+      "collapsed": "sheoey",
+      "prefix": "s",
+      "root": "heo",
+      "suffix": "ey",
+      "gallows": [
+        "k"
+      ],
+      "determinative": "k",
+      "word": "sheokeey",
+      "locus": "f72v3.1,@Cc",
+      "locus_type": "ring",
+      "nymph_num": "1",
+      "clock": "09:00"
+    },
+    {
+      "original": "sheody",
+      "stripped": "sheody",
+      "collapsed": "sheody",
+      "prefix": "s",
+      "root": "he",
+      "suffix": "ody",
+      "gallows": [],
+      "determinative": "-",
+      "word": "sheody",
+      "locus": "f72v3.1,@Cc",
+      "locus_type": "ring",
+      "nymph_num": "1",
+      "clock": "09:00"
+    },
+    {
+      "original": "shedykeal",
+      "stripped": "shedyeal",
+      "collapsed": "shedyeal",
+      "prefix": "s",
+      "root": "hedye",
+      "suffix": "al",
+      "gallows": [
+        "k"
+      ],
+      "determinative": "k",
+      "word": "shedykeal",
+      "locus": "f72v3.1,@Cc",
+      "locus_type": "ring",
+      "nymph_num": "1",
+      "clock": "09:00"
+    },
+    {
+      "original": "ckhodys",
+      "stripped": "odys",
+      "collapsed": "odys",
+      "prefix": "o",
+      "root": "dys",
+      "suffix": "-",
+      "gallows": [
+        "k"
+      ],
+      "determinative": "k",
+      "word": "ckhodys",
+      "locus": "f72v3.1,@Cc",
+      "locus_type": "ring",
+      "nymph_num": "1",
+      "clock": "09:00"
+    },
+    {
+      "original": "okoleeolar",
+      "stripped": "ooleeolar",
+      "collapsed": "ooleolar",
+      "prefix": "o",
+      "root": "oleol",
+      "suffix": "ar",
+      "gallows": [
+        "k"
+      ],
+      "determinative": "k",
+      "word": "okoleeolar",
+      "locus": "f72v3.1,@Cc",
+      "locus_type": "ring",
+      "nymph_num": "1",
+      "clock": "09:00"
+    },
+    {
+      "original": "okeey",
+      "stripped": "oeey",
+      "collapsed": "oey",
+      "prefix": "o",
+      "root": "e",
+      "suffix": "y",
+      "gallows": [
+        "k"
+      ],
+      "determinative": "k",
+      "word": "okeey",
+      "locus": "f72v3.1,@Cc",
+      "locus_type": "ring",
+      "nymph_num": "1",
+      "clock": "09:00"
+    },
+    {
+      "original": "shedy",
+      "stripped": "shedy",
+      "collapsed": "shedy",
+      "prefix": "s",
+      "root": "h",
+      "suffix": "edy",
+      "gallows": [],
+      "determinative": "-",
+      "word": "shedy",
+      "locus": "f72v3.1,@Cc",
+      "locus_type": "ring",
+      "nymph_num": "1",
+      "clock": "09:00"
+    },
+    {
+      "original": "otey",
+      "stripped": "oey",
+      "collapsed": "oey",
+      "prefix": "o",
+      "root": "e",
+      "suffix": "y",
+      "gallows": [
+        "t"
+      ],
+      "determinative": "t",
+      "word": "otey",
+      "locus": "f72v3.1,@Cc",
+      "locus_type": "ring",
+      "nymph_num": "1",
+      "clock": "09:00"
+    },
+    {
+      "original": "sho",
+      "stripped": "sho",
+      "collapsed": "sho",
+      "prefix": "s",
+      "root": "ho",
+      "suffix": "-",
+      "gallows": [],
+      "determinative": "-",
+      "word": "sho",
+      "locus": "f72v3.1,@Cc",
+      "locus_type": "ring",
+      "nymph_num": "1",
+      "clock": "09:00"
+    },
+    {
+      "original": "shol",
+      "stripped": "shol",
+      "collapsed": "shol",
+      "prefix": "s",
+      "root": "h",
+      "suffix": "ol",
+      "gallows": [],
+      "determinative": "-",
+      "word": "shol",
+      "locus": "f72v3.1,@Cc",
+      "locus_type": "ring",
+      "nymph_num": "1",
+      "clock": "09:00"
+    },
+    {
+      "original": "teody",
+      "stripped": "eody",
+      "collapsed": "eody",
+      "prefix": "-",
+      "root": "e",
+      "suffix": "ody",
+      "gallows": [
+        "t"
+      ],
+      "determinative": "t",
+      "word": "teody",
+      "locus": "f72v3.1,@Cc",
+      "locus_type": "ring",
+      "nymph_num": "1",
+      "clock": "09:00"
+    },
+    {
+      "original": "okolshey",
+      "stripped": "oolshey",
+      "collapsed": "oolshey",
+      "prefix": "o",
+      "root": "olsh",
+      "suffix": "ey",
+      "gallows": [
+        "k"
+      ],
+      "determinative": "k",
+      "word": "okolshey",
+      "locus": "f72v3.1,@Cc",
+      "locus_type": "ring",
+      "nymph_num": "1",
+      "clock": "09:00"
+    },
+    {
+      "original": "okechdy",
+      "stripped": "oechdy",
+      "collapsed": "oechdy",
+      "prefix": "o",
+      "root": "ech",
+      "suffix": "dy",
+      "gallows": [
+        "k"
+      ],
+      "determinative": "k",
+      "word": "okechdy",
+      "locus": "f72v3.1,@Cc",
+      "locus_type": "ring",
+      "nymph_num": "1",
+      "clock": "09:00"
+    },
+    {
+      "original": "olaiin",
+      "stripped": "olaiin",
+      "collapsed": "olaiin",
+      "prefix": "o",
+      "root": "l",
+      "suffix": "aiin",
+      "gallows": [],
+      "determinative": "-",
+      "word": "olaiin",
+      "locus": "f72v3.1,@Cc",
+      "locus_type": "ring",
+      "nymph_num": "1",
+      "clock": "09:00"
+    },
+    {
+      "original": "shokeedy",
+      "stripped": "shoeedy",
+      "collapsed": "shoedy",
+      "prefix": "s",
+      "root": "ho",
+      "suffix": "edy",
+      "gallows": [
+        "k"
+      ],
+      "determinative": "k",
+      "word": "shokeedy",
+      "locus": "f72v3.1,@Cc",
+      "locus_type": "ring",
+      "nymph_num": "1",
+      "clock": "09:00"
+    },
+    {
+      "original": "chol",
+      "stripped": "chol",
+      "collapsed": "chol",
+      "prefix": "-",
+      "root": "ch",
+      "suffix": "ol",
+      "gallows": [],
+      "determinative": "-",
+      "word": "chol",
+      "locus": "f72v3.1,@Cc",
+      "locus_type": "ring",
+      "nymph_num": "1",
+      "clock": "09:00"
+    },
+    {
+      "original": "choepchey",
+      "stripped": "choeey",
+      "collapsed": "choey",
+      "prefix": "-",
+      "root": "cho",
+      "suffix": "ey",
+      "gallows": [
+        "p"
+      ],
+      "determinative": "p",
+      "word": "choepchey",
+      "locus": "f72v3.1,@Cc",
+      "locus_type": "ring",
+      "nymph_num": "1",
+      "clock": "09:00"
+    },
+    {
+      "original": "teey",
+      "stripped": "eey",
+      "collapsed": "ey",
+      "prefix": "-",
+      "root": "e",
+      "suffix": "y",
+      "gallows": [
+        "t"
+      ],
+      "determinative": "t",
+      "word": "teey",
+      "locus": "f72v3.1,@Cc",
+      "locus_type": "ring",
+      "nymph_num": "1",
+      "clock": "09:00"
+    },
+    {
+      "original": "teody",
+      "stripped": "eody",
+      "collapsed": "eody",
+      "prefix": "-",
+      "root": "e",
+      "suffix": "ody",
+      "gallows": [
+        "t"
+      ],
+      "determinative": "t",
+      "word": "teody",
+      "locus": "f72v3.1,@Cc",
+      "locus_type": "ring",
+      "nymph_num": "1",
+      "clock": "09:00"
+    },
+    {
+      "original": "ches",
+      "stripped": "ches",
+      "collapsed": "ches",
+      "prefix": "-",
+      "root": "ches",
+      "suffix": "-",
+      "gallows": [],
+      "determinative": "-",
+      "word": "ches",
+      "locus": "f72v3.1,@Cc",
+      "locus_type": "ring",
+      "nymph_num": "1",
+      "clock": "09:00"
+    },
+    {
+      "original": "okechedy",
+      "stripped": "oechedy",
+      "collapsed": "oechedy",
+      "prefix": "o",
+      "root": "ech",
+      "suffix": "edy",
+      "gallows": [
+        "k"
+      ],
+      "determinative": "k",
+      "word": "okechedy",
+      "locus": "f72v3.1,@Cc",
+      "locus_type": "ring",
+      "nymph_num": "1",
+      "clock": "09:00"
+    },
+    {
+      "original": "otechol",
+      "stripped": "oechol",
+      "collapsed": "oechol",
+      "prefix": "o",
+      "root": "ech",
+      "suffix": "ol",
+      "gallows": [
+        "t"
+      ],
+      "determinative": "t",
+      "word": "otechol",
+      "locus": "f72v3.1,@Cc",
+      "locus_type": "ring",
+      "nymph_num": "1",
+      "clock": "09:00"
+    },
+    {
+      "original": "cheor",
+      "stripped": "cheor",
+      "collapsed": "cheor",
+      "prefix": "-",
+      "root": "che",
+      "suffix": "or",
+      "gallows": [],
+      "determinative": "-",
+      "word": "cheor",
+      "locus": "f72v3.1,@Cc",
+      "locus_type": "ring",
+      "nymph_num": "1",
+      "clock": "09:00"
+    },
+    {
+      "original": "cheey",
+      "stripped": "cheey",
+      "collapsed": "chey",
+      "prefix": "-",
+      "root": "ch",
+      "suffix": "ey",
+      "gallows": [],
+      "determinative": "-",
+      "word": "cheey",
+      "locus": "f72v3.1,@Cc",
+      "locus_type": "ring",
+      "nymph_num": "1",
+      "clock": "09:00"
+    },
+    {
+      "original": "daiin",
+      "stripped": "daiin",
+      "collapsed": "daiin",
+      "prefix": "d",
+      "root": "a",
+      "suffix": "iin",
+      "gallows": [],
+      "determinative": "-",
+      "word": "daiin",
+      "locus": "f72v3.1,@Cc",
+      "locus_type": "ring",
+      "nymph_num": "1",
+      "clock": "09:00"
+    },
+    {
+      "original": "oyteeedar",
+      "stripped": "oyeeedar",
+      "collapsed": "oyedar",
+      "prefix": "o",
+      "root": "yed",
+      "suffix": "ar",
+      "gallows": [
+        "t"
+      ],
+      "determinative": "t",
+      "word": "oyteeedar",
+      "locus": "f72v3.1,@Cc",
+      "locus_type": "ring",
+      "nymph_num": "1",
+      "clock": "09:00"
+    },
+    {
+      "original": "shecthy",
+      "stripped": "shey",
+      "collapsed": "shey",
+      "prefix": "s",
+      "root": "h",
+      "suffix": "ey",
+      "gallows": [
+        "t"
+      ],
+      "determinative": "t",
+      "word": "shecthy",
+      "locus": "f72v3.1,@Cc",
+      "locus_type": "ring",
+      "nymph_num": "1",
+      "clock": "09:00"
+    },
+    {
+      "original": "otycheedy",
+      "stripped": "oycheedy",
+      "collapsed": "oychedy",
+      "prefix": "o",
+      "root": "ych",
+      "suffix": "edy",
+      "gallows": [
+        "t"
+      ],
+      "determinative": "t",
+      "word": "otycheedy",
+      "locus": "f72v3.1,@Cc",
+      "locus_type": "ring",
+      "nymph_num": "1",
+      "clock": "09:00"
+    },
+    {
+      "original": "oteeoly",
+      "stripped": "oeeoly",
+      "collapsed": "oeoly",
+      "prefix": "o",
+      "root": "eol",
+      "suffix": "y",
+      "gallows": [
+        "t"
+      ],
+      "determinative": "t",
+      "word": "oteeoly",
+      "locus": "f72v3.1,@Cc",
+      "locus_type": "ring",
+      "nymph_num": "1",
+      "clock": "09:00"
+    },
+    {
+      "original": "chokary",
+      "stripped": "choary",
+      "collapsed": "choary",
+      "prefix": "-",
+      "root": "choar",
+      "suffix": "y",
+      "gallows": [
+        "k"
+      ],
+      "determinative": "k",
+      "word": "chokary",
+      "locus": "f72v3.1,@Cc",
+      "locus_type": "ring",
+      "nymph_num": "1",
+      "clock": "09:00"
+    },
+    {
+      "original": "ocham",
+      "stripped": "ocham",
+      "collapsed": "ocham",
+      "prefix": "o",
+      "root": "cham",
+      "suffix": "-",
+      "gallows": [],
+      "determinative": "-",
+      "word": "ocham",
+      "locus": "f72v3.2,@Lz",
+      "locus_type": "nymph",
+      "nymph_num": "2",
+      "clock": "10:00"
+    },
+    {
+      "original": "orchey",
+      "stripped": "orchey",
+      "collapsed": "orchey",
+      "prefix": "o",
+      "root": "rch",
+      "suffix": "ey",
+      "gallows": [],
+      "determinative": "-",
+      "word": "orchey",
+      "locus": "f72v3.3,&Lz",
+      "locus_type": "nymph",
+      "nymph_num": "3",
+      "clock": "11:00"
+    },
+    {
+      "original": "okam",
+      "stripped": "oam",
+      "collapsed": "oam",
+      "prefix": "o",
+      "root": "am",
+      "suffix": "-",
+      "gallows": [
+        "k"
+      ],
+      "determinative": "k",
+      "word": "okam",
+      "locus": "f72v3.4,&Lz",
+      "locus_type": "nymph",
+      "nymph_num": "4",
+      "clock": "11:30"
+    },
+    {
+      "original": "okey",
+      "stripped": "oey",
+      "collapsed": "oey",
+      "prefix": "o",
+      "root": "e",
+      "suffix": "y",
+      "gallows": [
+        "k"
+      ],
+      "determinative": "k",
+      "word": "okey",
+      "locus": "f72v3.5,&Lz",
+      "locus_type": "nymph",
+      "nymph_num": "5",
+      "clock": "00:00"
+    },
+    {
+      "original": "otcheody",
+      "stripped": "oeody",
+      "collapsed": "oeody",
+      "prefix": "o",
+      "root": "e",
+      "suffix": "ody",
+      "gallows": [
+        "t"
+      ],
+      "determinative": "t",
+      "word": "otcheody",
+      "locus": "f72v3.6,&Lz",
+      "locus_type": "nymph",
+      "nymph_num": "6",
+      "clock": "00:30"
+    },
+    {
+      "original": "okyeeshy",
+      "stripped": "oyeeshy",
+      "collapsed": "oyeshy",
+      "prefix": "o",
+      "root": "yesh",
+      "suffix": "y",
+      "gallows": [
+        "k"
+      ],
+      "determinative": "k",
+      "word": "okyeeshy",
+      "locus": "f72v3.7,&Lz",
+      "locus_type": "nymph",
+      "nymph_num": "7",
+      "clock": "01:00"
+    },
+    {
+      "original": "cyofaiin",
+      "stripped": "cyoaiin",
+      "collapsed": "cyoaiin",
+      "prefix": "-",
+      "root": "cyo",
+      "suffix": "aiin",
+      "gallows": [
+        "f"
+      ],
+      "determinative": "f",
+      "word": "cyofaiin",
+      "locus": "f72v3.8,&Lz",
+      "locus_type": "nymph",
+      "nymph_num": "8",
+      "clock": "01:30"
+    },
+    {
+      "original": "okaly",
+      "stripped": "oaly",
+      "collapsed": "oaly",
+      "prefix": "o",
+      "root": "al",
+      "suffix": "y",
+      "gallows": [
+        "k"
+      ],
+      "determinative": "k",
+      "word": "okaly",
+      "locus": "f72v3.9,&Lz",
+      "locus_type": "nymph",
+      "nymph_num": "9",
+      "clock": "02:00"
+    },
+    {
+      "original": "otoly",
+      "stripped": "ooly",
+      "collapsed": "ooly",
+      "prefix": "o",
+      "root": "ol",
+      "suffix": "y",
+      "gallows": [
+        "t"
+      ],
+      "determinative": "t",
+      "word": "otoly",
+      "locus": "f72v3.10,&Lz",
+      "locus_type": "nymph",
+      "nymph_num": "10",
+      "clock": "02:45"
+    },
+    {
+      "original": "ofalals",
+      "stripped": "oalals",
+      "collapsed": "oalals",
+      "prefix": "o",
+      "root": "alals",
+      "suffix": "-",
+      "gallows": [
+        "f"
+      ],
+      "determinative": "f",
+      "word": "ofalals",
+      "locus": "f72v3.11,&Lz",
+      "locus_type": "nymph",
+      "nymph_num": "11",
+      "clock": "03:30"
+    },
+    {
+      "original": "sheeos",
+      "stripped": "sheeos",
+      "collapsed": "sheos",
+      "prefix": "s",
+      "root": "heos",
+      "suffix": "-",
+      "gallows": [],
+      "determinative": "-",
+      "word": "sheeos",
+      "locus": "f72v3.12,&Lz",
+      "locus_type": "nymph",
+      "nymph_num": "12",
+      "clock": "04:00"
+    },
+    {
+      "original": "ocfhhy",
+      "stripped": "ohy",
+      "collapsed": "ohy",
+      "prefix": "o",
+      "root": "h",
+      "suffix": "y",
+      "gallows": [
+        "f"
+      ],
+      "determinative": "f",
+      "word": "ocfhhy",
+      "locus": "f72v3.12,&Lz",
+      "locus_type": "nymph",
+      "nymph_num": "12",
+      "clock": "04:00"
+    },
+    {
+      "original": "daiin",
+      "stripped": "daiin",
+      "collapsed": "daiin",
+      "prefix": "d",
+      "root": "a",
+      "suffix": "iin",
+      "gallows": [],
+      "determinative": "-",
+      "word": "daiin",
+      "locus": "f72v3.13,&Lz",
+      "locus_type": "nymph",
+      "nymph_num": "13",
+      "clock": "05:00"
+    },
+    {
+      "original": "chepy",
+      "stripped": "chey",
+      "collapsed": "chey",
+      "prefix": "-",
+      "root": "ch",
+      "suffix": "ey",
+      "gallows": [
+        "p"
+      ],
+      "determinative": "p",
+      "word": "chepy",
+      "locus": "f72v3.13,&Lz",
+      "locus_type": "nymph",
+      "nymph_num": "13",
+      "clock": "05:00"
+    },
+    {
+      "original": "oteey",
+      "stripped": "oeey",
+      "collapsed": "oey",
+      "prefix": "o",
+      "root": "e",
+      "suffix": "y",
+      "gallows": [
+        "t"
+      ],
+      "determinative": "t",
+      "word": "oteey",
+      "locus": "f72v3.14,&Lz",
+      "locus_type": "nymph",
+      "nymph_num": "14",
+      "clock": "06:00"
+    },
+    {
+      "original": "deeal",
+      "stripped": "deeal",
+      "collapsed": "deal",
+      "prefix": "d",
+      "root": "e",
+      "suffix": "al",
+      "gallows": [],
+      "determinative": "-",
+      "word": "deeal",
+      "locus": "f72v3.14,&Lz",
+      "locus_type": "nymph",
+      "nymph_num": "14",
+      "clock": "06:00"
+    },
+    {
+      "original": "chealpy",
+      "stripped": "chealy",
+      "collapsed": "chealy",
+      "prefix": "-",
+      "root": "cheal",
+      "suffix": "y",
+      "gallows": [
+        "p"
+      ],
+      "determinative": "p",
+      "word": "chealpy",
+      "locus": "f72v3.15,&Lz",
+      "locus_type": "nymph",
+      "nymph_num": "15",
+      "clock": "07:00"
+    },
+    {
+      "original": "okeeol",
+      "stripped": "oeeol",
+      "collapsed": "oeol",
+      "prefix": "o",
+      "root": "e",
+      "suffix": "ol",
+      "gallows": [
+        "k"
+      ],
+      "determinative": "k",
+      "word": "okeeol",
+      "locus": "f72v3.16,&Lz",
+      "locus_type": "nymph",
+      "nymph_num": "16",
+      "clock": "07:30"
+    },
+    {
+      "original": "okaly",
+      "stripped": "oaly",
+      "collapsed": "oaly",
+      "prefix": "o",
+      "root": "al",
+      "suffix": "y",
+      "gallows": [
+        "k"
+      ],
+      "determinative": "k",
+      "word": "okaly",
+      "locus": "f72v3.17,&Lz",
+      "locus_type": "nymph",
+      "nymph_num": "17",
+      "clock": "08:30"
+    },
+    {
+      "original": "okaldy",
+      "stripped": "oaldy",
+      "collapsed": "oaldy",
+      "prefix": "o",
+      "root": "al",
+      "suffix": "dy",
+      "gallows": [
+        "k"
+      ],
+      "determinative": "k",
+      "word": "okaldy",
+      "locus": "f72v3.18,&Lz",
+      "locus_type": "nymph",
+      "nymph_num": "18",
+      "clock": "09:00"
+    },
+    {
+      "original": "okeolyd",
+      "stripped": "oeolyd",
+      "collapsed": "oeolyd",
+      "prefix": "o",
+      "root": "eolyd",
+      "suffix": "-",
+      "gallows": [
+        "k"
+      ],
+      "determinative": "k",
+      "word": "okeolyd",
+      "locus": "f72v3.19,&Lz",
+      "locus_type": "nymph",
+      "nymph_num": "19",
+      "clock": "09:30"
+    },
+    {
+      "original": "ototeey",
+      "stripped": "ooeey",
+      "collapsed": "ooey",
+      "prefix": "o",
+      "root": "o",
+      "suffix": "ey",
+      "gallows": [
+        "t",
+        "t"
+      ],
+      "determinative": "t",
+      "word": "ototeey",
+      "locus": "f72v3.20,@Cc",
+      "locus_type": "ring",
+      "nymph_num": "20",
+      "clock": "09:00"
+    },
+    {
+      "original": "chlyiintee",
+      "stripped": "chlyiinee",
+      "collapsed": "chlyiine",
+      "prefix": "-",
+      "root": "chlyiine",
+      "suffix": "-",
+      "gallows": [
+        "t"
+      ],
+      "determinative": "t",
+      "word": "chlyiintee",
+      "locus": "f72v3.20,@Cc",
+      "locus_type": "ring",
+      "nymph_num": "20",
+      "clock": "09:00"
+    },
+    {
+      "original": "or",
+      "stripped": "or",
+      "collapsed": "or",
+      "prefix": "-",
+      "root": "or",
+      "suffix": "-",
+      "gallows": [],
+      "determinative": "-",
+      "word": "or",
+      "locus": "f72v3.20,@Cc",
+      "locus_type": "ring",
+      "nymph_num": "20",
+      "clock": "09:00"
+    },
+    {
+      "original": "oteey",
+      "stripped": "oeey",
+      "collapsed": "oey",
+      "prefix": "o",
+      "root": "e",
+      "suffix": "y",
+      "gallows": [
+        "t"
+      ],
+      "determinative": "t",
+      "word": "oteey",
+      "locus": "f72v3.20,@Cc",
+      "locus_type": "ring",
+      "nymph_num": "20",
+      "clock": "09:00"
+    },
+    {
+      "original": "oteeody",
+      "stripped": "oeeody",
+      "collapsed": "oeody",
+      "prefix": "o",
+      "root": "e",
+      "suffix": "ody",
+      "gallows": [
+        "t"
+      ],
+      "determinative": "t",
+      "word": "oteeody",
+      "locus": "f72v3.20,@Cc",
+      "locus_type": "ring",
+      "nymph_num": "20",
+      "clock": "09:00"
+    },
+    {
+      "original": "cheokey",
+      "stripped": "cheoey",
+      "collapsed": "cheoey",
+      "prefix": "-",
+      "root": "cheo",
+      "suffix": "ey",
+      "gallows": [
+        "k"
+      ],
+      "determinative": "k",
+      "word": "cheokey",
+      "locus": "f72v3.20,@Cc",
+      "locus_type": "ring",
+      "nymph_num": "20",
+      "clock": "09:00"
+    },
+    {
+      "original": "okeoekol",
+      "stripped": "oeoeol",
+      "collapsed": "oeoeol",
+      "prefix": "o",
+      "root": "eoe",
+      "suffix": "ol",
+      "gallows": [
+        "k",
+        "k"
+      ],
+      "determinative": "k",
+      "word": "okeoekol",
+      "locus": "f72v3.20,@Cc",
+      "locus_type": "ring",
+      "nymph_num": "20",
+      "clock": "09:00"
+    },
+    {
+      "original": "oteor",
+      "stripped": "oeor",
+      "collapsed": "oeor",
+      "prefix": "o",
+      "root": "e",
+      "suffix": "or",
+      "gallows": [
+        "t"
+      ],
+      "determinative": "t",
+      "word": "oteor",
+      "locus": "f72v3.20,@Cc",
+      "locus_type": "ring",
+      "nymph_num": "20",
+      "clock": "09:00"
+    },
+    {
+      "original": "aiin",
+      "stripped": "aiin",
+      "collapsed": "aiin",
+      "prefix": "-",
+      "root": "a",
+      "suffix": "iin",
+      "gallows": [],
+      "determinative": "-",
+      "word": "aiin",
+      "locus": "f72v3.20,@Cc",
+      "locus_type": "ring",
+      "nymph_num": "20",
+      "clock": "09:00"
+    },
+    {
+      "original": "yoleeedy",
+      "stripped": "yoleeedy",
+      "collapsed": "yoledy",
+      "prefix": "y",
+      "root": "ol",
+      "suffix": "edy",
+      "gallows": [],
+      "determinative": "-",
+      "word": "yoleeedy",
+      "locus": "f72v3.20,@Cc",
+      "locus_type": "ring",
+      "nymph_num": "20",
+      "clock": "09:00"
+    },
+    {
+      "original": "okeos",
+      "stripped": "oeos",
+      "collapsed": "oeos",
+      "prefix": "o",
+      "root": "eos",
+      "suffix": "-",
+      "gallows": [
+        "k"
+      ],
+      "determinative": "k",
+      "word": "okeos",
+      "locus": "f72v3.20,@Cc",
+      "locus_type": "ring",
+      "nymph_num": "20",
+      "clock": "09:00"
+    },
+    {
+      "original": "alyshy",
+      "stripped": "alyshy",
+      "collapsed": "alyshy",
+      "prefix": "-",
+      "root": "alysh",
+      "suffix": "y",
+      "gallows": [],
+      "determinative": "-",
+      "word": "alyshy",
+      "locus": "f72v3.20,@Cc",
+      "locus_type": "ring",
+      "nymph_num": "20",
+      "clock": "09:00"
+    },
+    {
+      "original": "okeey",
+      "stripped": "oeey",
+      "collapsed": "oey",
+      "prefix": "o",
+      "root": "e",
+      "suffix": "y",
+      "gallows": [
+        "k"
+      ],
+      "determinative": "k",
+      "word": "okeey",
+      "locus": "f72v3.20,@Cc",
+      "locus_type": "ring",
+      "nymph_num": "20",
+      "clock": "09:00"
+    },
+    {
+      "original": "okeeey",
+      "stripped": "oeeey",
+      "collapsed": "oey",
+      "prefix": "o",
+      "root": "e",
+      "suffix": "y",
+      "gallows": [
+        "k"
+      ],
+      "determinative": "k",
+      "word": "okeeey",
+      "locus": "f72v3.20,@Cc",
+      "locus_type": "ring",
+      "nymph_num": "20",
+      "clock": "09:00"
+    },
+    {
+      "original": "okeedaly",
+      "stripped": "oeedaly",
+      "collapsed": "oedaly",
+      "prefix": "o",
+      "root": "edal",
+      "suffix": "y",
+      "gallows": [
+        "k"
+      ],
+      "determinative": "k",
+      "word": "okeedaly",
+      "locus": "f72v3.20,@Cc",
+      "locus_type": "ring",
+      "nymph_num": "20",
+      "clock": "09:00"
+    },
+    {
+      "original": "cholainy",
+      "stripped": "cholainy",
+      "collapsed": "cholainy",
+      "prefix": "-",
+      "root": "cholain",
+      "suffix": "y",
+      "gallows": [],
+      "determinative": "-",
+      "word": "cholainy",
+      "locus": "f72v3.20,@Cc",
+      "locus_type": "ring",
+      "nymph_num": "20",
+      "clock": "09:00"
+    },
+    {
+      "original": "okedy",
+      "stripped": "oedy",
+      "collapsed": "oedy",
+      "prefix": "o",
+      "root": "e",
+      "suffix": "dy",
+      "gallows": [
+        "k"
+      ],
+      "determinative": "k",
+      "word": "okedy",
+      "locus": "f72v3.20,@Cc",
+      "locus_type": "ring",
+      "nymph_num": "20",
+      "clock": "09:00"
+    },
+    {
+      "original": "chees",
+      "stripped": "chees",
+      "collapsed": "ches",
+      "prefix": "-",
+      "root": "ches",
+      "suffix": "-",
+      "gallows": [],
+      "determinative": "-",
+      "word": "chees",
+      "locus": "f72v3.20,@Cc",
+      "locus_type": "ring",
+      "nymph_num": "20",
+      "clock": "09:00"
+    },
+    {
+      "original": "okeeol",
+      "stripped": "oeeol",
+      "collapsed": "oeol",
+      "prefix": "o",
+      "root": "e",
+      "suffix": "ol",
+      "gallows": [
+        "k"
+      ],
+      "determinative": "k",
+      "word": "okeeol",
+      "locus": "f72v3.20,@Cc",
+      "locus_type": "ring",
+      "nymph_num": "20",
+      "clock": "09:00"
+    },
+    {
+      "original": "chey",
+      "stripped": "chey",
+      "collapsed": "chey",
+      "prefix": "-",
+      "root": "ch",
+      "suffix": "ey",
+      "gallows": [],
+      "determinative": "-",
+      "word": "chey",
+      "locus": "f72v3.20,@Cc",
+      "locus_type": "ring",
+      "nymph_num": "20",
+      "clock": "09:00"
+    },
+    {
+      "original": "otey",
+      "stripped": "oey",
+      "collapsed": "oey",
+      "prefix": "o",
+      "root": "e",
+      "suffix": "y",
+      "gallows": [
+        "t"
+      ],
+      "determinative": "t",
+      "word": "otey",
+      "locus": "f72v3.20,@Cc",
+      "locus_type": "ring",
+      "nymph_num": "20",
+      "clock": "09:00"
+    },
+    {
+      "original": "oldy",
+      "stripped": "oldy",
+      "collapsed": "oldy",
+      "prefix": "o",
+      "root": "l",
+      "suffix": "dy",
+      "gallows": [],
+      "determinative": "-",
+      "word": "oldy",
+      "locus": "f72v3.20,@Cc",
+      "locus_type": "ring",
+      "nymph_num": "20",
+      "clock": "09:00"
+    },
+    {
+      "original": "chdy",
+      "stripped": "chdy",
+      "collapsed": "chdy",
+      "prefix": "-",
+      "root": "ch",
+      "suffix": "dy",
+      "gallows": [],
+      "determinative": "-",
+      "word": "chdy",
+      "locus": "f72v3.20,@Cc",
+      "locus_type": "ring",
+      "nymph_num": "20",
+      "clock": "09:00"
+    },
+    {
+      "original": "del",
+      "stripped": "del",
+      "collapsed": "del",
+      "prefix": "d",
+      "root": "el",
+      "suffix": "-",
+      "gallows": [],
+      "determinative": "-",
+      "word": "del",
+      "locus": "f72v3.20,@Cc",
+      "locus_type": "ring",
+      "nymph_num": "20",
+      "clock": "09:00"
+    },
+    {
+      "original": "okeeoloky",
+      "stripped": "oeeoloy",
+      "collapsed": "oeoloy",
+      "prefix": "o",
+      "root": "eolo",
+      "suffix": "y",
+      "gallows": [
+        "k",
+        "k"
+      ],
+      "determinative": "k",
+      "word": "okeeoloky",
+      "locus": "f72v3.20,@Cc",
+      "locus_type": "ring",
+      "nymph_num": "20",
+      "clock": "09:00"
+    },
+    {
+      "original": "oty",
+      "stripped": "oy",
+      "collapsed": "oy",
+      "prefix": "-",
+      "root": "o",
+      "suffix": "y",
+      "gallows": [
+        "t"
+      ],
+      "determinative": "t",
+      "word": "oty",
+      "locus": "f72v3.20,@Cc",
+      "locus_type": "ring",
+      "nymph_num": "20",
+      "clock": "09:00"
+    },
+    {
+      "original": "aiin",
+      "stripped": "aiin",
+      "collapsed": "aiin",
+      "prefix": "-",
+      "root": "a",
+      "suffix": "iin",
+      "gallows": [],
+      "determinative": "-",
+      "word": "aiin",
+      "locus": "f72v3.20,@Cc",
+      "locus_type": "ring",
+      "nymph_num": "20",
+      "clock": "09:00"
+    },
+    {
+      "original": "chas",
+      "stripped": "chas",
+      "collapsed": "chas",
+      "prefix": "-",
+      "root": "chas",
+      "suffix": "-",
+      "gallows": [],
+      "determinative": "-",
+      "word": "chas",
+      "locus": "f72v3.20,@Cc",
+      "locus_type": "ring",
+      "nymph_num": "20",
+      "clock": "09:00"
+    },
+    {
+      "original": "oteey",
+      "stripped": "oeey",
+      "collapsed": "oey",
+      "prefix": "o",
+      "root": "e",
+      "suffix": "y",
+      "gallows": [
+        "t"
+      ],
+      "determinative": "t",
+      "word": "oteey",
+      "locus": "f72v3.20,@Cc",
+      "locus_type": "ring",
+      "nymph_num": "20",
+      "clock": "09:00"
+    },
+    {
+      "original": "choleey",
+      "stripped": "choleey",
+      "collapsed": "choley",
+      "prefix": "-",
+      "root": "chol",
+      "suffix": "ey",
+      "gallows": [],
+      "determinative": "-",
+      "word": "choleey",
+      "locus": "f72v3.21,@Lz",
+      "locus_type": "nymph",
+      "nymph_num": "21",
+      "clock": "10:30"
+    },
+    {
+      "original": "oky",
+      "stripped": "oy",
+      "collapsed": "oy",
+      "prefix": "-",
+      "root": "o",
+      "suffix": "y",
+      "gallows": [
+        "k"
+      ],
+      "determinative": "k",
+      "word": "oky",
+      "locus": "f72v3.22,&Lz",
+      "locus_type": "nymph",
+      "nymph_num": "22",
+      "clock": "11:30"
+    },
+    {
+      "original": "chcthhy",
+      "stripped": "chhy",
+      "collapsed": "chhy",
+      "prefix": "-",
+      "root": "chh",
+      "suffix": "y",
+      "gallows": [
+        "t"
+      ],
+      "determinative": "t",
+      "word": "chcthhy",
+      "locus": "f72v3.23,&Lz",
+      "locus_type": "nymph",
+      "nymph_num": "23",
+      "clock": "00:30"
+    },
+    {
+      "original": "laly",
+      "stripped": "laly",
+      "collapsed": "laly",
+      "prefix": "-",
+      "root": "lal",
+      "suffix": "y",
+      "gallows": [],
+      "determinative": "-",
+      "word": "laly",
+      "locus": "f72v3.24,&Lz",
+      "locus_type": "nymph",
+      "nymph_num": "24",
+      "clock": "01:00"
+    },
+    {
+      "original": "oeedy",
+      "stripped": "oeedy",
+      "collapsed": "oedy",
+      "prefix": "o",
+      "root": "e",
+      "suffix": "dy",
+      "gallows": [],
+      "determinative": "-",
+      "word": "oeedy",
+      "locus": "f72v3.25,&Lz",
+      "locus_type": "nymph",
+      "nymph_num": "25",
+      "clock": "02:00"
+    },
+    {
+      "original": "odairan",
+      "stripped": "odairan",
+      "collapsed": "odairan",
+      "prefix": "o",
+      "root": "dairan",
+      "suffix": "-",
+      "gallows": [],
+      "determinative": "-",
+      "word": "odairan",
+      "locus": "f72v3.26,&Lz",
+      "locus_type": "nymph",
+      "nymph_num": "26",
+      "clock": "03:00"
+    },
+    {
+      "original": "okary",
+      "stripped": "oary",
+      "collapsed": "oary",
+      "prefix": "o",
+      "root": "ar",
+      "suffix": "y",
+      "gallows": [
+        "k"
+      ],
+      "determinative": "k",
+      "word": "okary",
+      "locus": "f72v3.27,&Lz",
+      "locus_type": "nymph",
+      "nymph_num": "27",
+      "clock": "04:00"
+    },
+    {
+      "original": "oeesaiin",
+      "stripped": "oeesaiin",
+      "collapsed": "oesaiin",
+      "prefix": "o",
+      "root": "es",
+      "suffix": "aiin",
+      "gallows": [],
+      "determinative": "-",
+      "word": "oeesaiin",
+      "locus": "f72v3.28,&Lz",
+      "locus_type": "nymph",
+      "nymph_num": "28",
+      "clock": "05:00"
+    },
+    {
+      "original": "oteesed",
+      "stripped": "oeesed",
+      "collapsed": "oesed",
+      "prefix": "o",
+      "root": "esed",
+      "suffix": "-",
+      "gallows": [
+        "t"
+      ],
+      "determinative": "t",
+      "word": "oteesed",
+      "locus": "f72v3.29,&Lz",
+      "locus_type": "nymph",
+      "nymph_num": "29",
+      "clock": "06:30"
+    },
+    {
+      "original": "opal",
+      "stripped": "oal",
+      "collapsed": "oal",
+      "prefix": "o",
+      "root": "al",
+      "suffix": "-",
+      "gallows": [
+        "p"
+      ],
+      "determinative": "p",
+      "word": "opal",
+      "locus": "f72v3.30,&Lz",
+      "locus_type": "nymph",
+      "nymph_num": "30",
+      "clock": "07:30"
+    },
+    {
+      "original": "otaly",
+      "stripped": "oaly",
+      "collapsed": "oaly",
+      "prefix": "o",
+      "root": "al",
+      "suffix": "y",
+      "gallows": [
+        "t"
+      ],
+      "determinative": "t",
+      "word": "otaly",
+      "locus": "f72v3.31,&Lz",
+      "locus_type": "nymph",
+      "nymph_num": "31",
+      "clock": "08:30"
+    },
+    {
+      "original": "otaly",
+      "stripped": "oaly",
+      "collapsed": "oaly",
+      "prefix": "o",
+      "root": "al",
+      "suffix": "y",
+      "gallows": [
+        "t"
+      ],
+      "determinative": "t",
+      "word": "otaly",
+      "locus": "f72v3.32,&Lz",
+      "locus_type": "nymph",
+      "nymph_num": "32",
+      "clock": "09:30"
+    },
+    {
+      "original": "yty",
+      "stripped": "yy",
+      "collapsed": "yy",
+      "prefix": "-",
+      "root": "y",
+      "suffix": "y",
+      "gallows": [
+        "t"
+      ],
+      "determinative": "t",
+      "word": "yty",
+      "locus": "f72v3.32,&Lz",
+      "locus_type": "nymph",
+      "nymph_num": "32",
+      "clock": "09:30"
+    },
+    {
+      "original": "okesees",
+      "stripped": "oesees",
+      "collapsed": "oeses",
+      "prefix": "o",
+      "root": "eses",
+      "suffix": "-",
+      "gallows": [
+        "k"
+      ],
+      "determinative": "k",
+      "word": "okesees",
+      "locus": "f72v3.33,@Cc",
+      "locus_type": "ring",
+      "nymph_num": "33",
+      "clock": "08:45"
+    },
+    {
+      "original": "ar",
+      "stripped": "ar",
+      "collapsed": "ar",
+      "prefix": "-",
+      "root": "ar",
+      "suffix": "-",
+      "gallows": [],
+      "determinative": "-",
+      "word": "ar",
+      "locus": "f72v3.33,@Cc",
+      "locus_type": "ring",
+      "nymph_num": "33",
+      "clock": "08:45"
+    },
+    {
+      "original": "chkeeol",
+      "stripped": "cheeol",
+      "collapsed": "cheol",
+      "prefix": "-",
+      "root": "che",
+      "suffix": "ol",
+      "gallows": [
+        "k"
+      ],
+      "determinative": "k",
+      "word": "chkeeol",
+      "locus": "f72v3.33,@Cc",
+      "locus_type": "ring",
+      "nymph_num": "33",
+      "clock": "08:45"
+    },
+    {
+      "original": "okeolaiin",
+      "stripped": "oeolaiin",
+      "collapsed": "oeolaiin",
+      "prefix": "o",
+      "root": "eol",
+      "suffix": "aiin",
+      "gallows": [
+        "k"
+      ],
+      "determinative": "k",
+      "word": "okeolaiin",
+      "locus": "f72v3.33,@Cc",
+      "locus_type": "ring",
+      "nymph_num": "33",
+      "clock": "08:45"
+    },
+    {
+      "original": "chalal",
+      "stripped": "chalal",
+      "collapsed": "chalal",
+      "prefix": "-",
+      "root": "chal",
+      "suffix": "al",
+      "gallows": [],
+      "determinative": "-",
+      "word": "chalal",
+      "locus": "f72v3.33,@Cc",
+      "locus_type": "ring",
+      "nymph_num": "33",
+      "clock": "08:45"
+    },
+    {
+      "original": "ykeeodarar",
+      "stripped": "yeeodarar",
+      "collapsed": "yeodarar",
+      "prefix": "y",
+      "root": "eodar",
+      "suffix": "ar",
+      "gallows": [
+        "k"
+      ],
+      "determinative": "k",
+      "word": "ykeeodarar",
+      "locus": "f72v3.33,@Cc",
+      "locus_type": "ring",
+      "nymph_num": "33",
+      "clock": "08:45"
+    },
+    {
+      "original": "oleeody",
+      "stripped": "oleeody",
+      "collapsed": "oleody",
+      "prefix": "o",
+      "root": "le",
+      "suffix": "ody",
+      "gallows": [],
+      "determinative": "-",
+      "word": "oleeody",
+      "locus": "f72v3.33,@Cc",
+      "locus_type": "ring",
+      "nymph_num": "33",
+      "clock": "08:45"
+    },
+    {
+      "original": "shedy",
+      "stripped": "shedy",
+      "collapsed": "shedy",
+      "prefix": "s",
+      "root": "h",
+      "suffix": "edy",
+      "gallows": [],
+      "determinative": "-",
+      "word": "shedy",
+      "locus": "f72v3.33,@Cc",
+      "locus_type": "ring",
+      "nymph_num": "33",
+      "clock": "08:45"
+    },
+    {
+      "original": "solar",
+      "stripped": "solar",
+      "collapsed": "solar",
+      "prefix": "so",
+      "root": "l",
+      "suffix": "ar",
+      "gallows": [],
+      "determinative": "-",
+      "word": "solar",
+      "locus": "f72v3.33,@Cc",
+      "locus_type": "ring",
+      "nymph_num": "33",
+      "clock": "08:45"
+    },
+    {
+      "original": "aldy",
+      "stripped": "aldy",
+      "collapsed": "aldy",
+      "prefix": "-",
+      "root": "al",
+      "suffix": "dy",
+      "gallows": [],
+      "determinative": "-",
+      "word": "aldy",
+      "locus": "f72v3.33,@Cc",
+      "locus_type": "ring",
+      "nymph_num": "33",
+      "clock": "08:45"
+    },
+    {
+      "original": "oteor",
+      "stripped": "oeor",
+      "collapsed": "oeor",
+      "prefix": "o",
+      "root": "e",
+      "suffix": "or",
+      "gallows": [
+        "t"
+      ],
+      "determinative": "t",
+      "word": "oteor",
+      "locus": "f72v3.33,@Cc",
+      "locus_type": "ring",
+      "nymph_num": "33",
+      "clock": "08:45"
+    },
+    {
+      "original": "cheor",
+      "stripped": "cheor",
+      "collapsed": "cheor",
+      "prefix": "-",
+      "root": "che",
+      "suffix": "or",
+      "gallows": [],
+      "determinative": "-",
+      "word": "cheor",
+      "locus": "f72v3.33,@Cc",
+      "locus_type": "ring",
+      "nymph_num": "33",
+      "clock": "08:45"
+    }
+  ],
+  "matches": [
+    {
+      "root": "al",
+      "known": "leo",
+      "lang": "Latin",
+      "meaning": "lion",
+      "score": 1.0,
+      "type": "CONSONANT-EXACT",
+      "category": "leo_names",
+      "loci": "nymph, ring"
+    },
+    {
+      "root": "am",
+      "known": "mui",
+      "lang": "Coptic",
+      "meaning": "lion — ⲙⲟⲩⲓ",
+      "score": 1.0,
+      "type": "CONSONANT-EXACT",
+      "category": "leo_names",
+      "loci": "nymph"
+    },
+    {
+      "root": "ar",
+      "known": "ero",
+      "lang": "Coptic",
+      "meaning": "king — ⲉⲣⲟ",
+      "score": 1.0,
+      "type": "CONSONANT-EXACT",
+      "category": "qualities",
+      "loci": "nymph, ring"
+    },
+    {
+      "root": "chas",
+      "known": "choeis",
+      "lang": "Coptic",
+      "meaning": "lord — ϫⲟⲉⲓⲥ",
+      "score": 1.0,
+      "type": "CONSONANT-EXACT",
+      "category": "qualities",
+      "loci": "ring"
+    },
+    {
+      "root": "ches",
+      "known": "choeis",
+      "lang": "Coptic",
+      "meaning": "lord — ϫⲟⲉⲓⲥ",
+      "score": 1.0,
+      "type": "CONSONANT-EXACT",
+      "category": "qualities",
+      "loci": "ring"
+    },
+    {
+      "root": "el",
+      "known": "leo",
+      "lang": "Latin",
+      "meaning": "lion",
+      "score": 1.0,
+      "type": "CONSONANT-EXACT",
+      "category": "leo_names",
+      "loci": "ring"
+    },
+    {
+      "root": "eol",
+      "known": "leo",
+      "lang": "Latin",
+      "meaning": "lion",
+      "score": 1.0,
+      "type": "CONSONANT-EXACT",
+      "category": "leo_names",
+      "loci": "ring"
+    },
+    {
+      "root": "eolo",
+      "known": "leo",
+      "lang": "Latin",
+      "meaning": "lion",
+      "score": 1.0,
+      "type": "CONSONANT-EXACT",
+      "category": "leo_names",
+      "loci": "ring"
+    },
+    {
+      "root": "eos",
+      "known": "siou",
+      "lang": "Coptic",
+      "meaning": "star — ⲥⲓⲟⲩ",
+      "score": 1.0,
+      "type": "CONSONANT-EXACT",
+      "category": "astronomical",
+      "loci": "ring"
+    },
+    {
+      "root": "es",
+      "known": "siou",
+      "lang": "Coptic",
+      "meaning": "star — ⲥⲓⲟⲩ",
+      "score": 1.0,
+      "type": "CONSONANT-EXACT",
+      "category": "astronomical",
+      "loci": "nymph, ring"
+    },
+    {
+      "root": "esed",
+      "known": "asad",
+      "lang": "Arabic",
+      "meaning": "lion — أسد",
+      "score": 1.0,
+      "type": "CONSONANT-EXACT",
+      "category": "leo_names",
+      "loci": "nymph"
+    },
+    {
+      "root": "h",
+      "known": "hoou",
+      "lang": "Coptic",
+      "meaning": "day — ϩⲟⲟⲩ",
+      "score": 1.0,
+      "type": "CONSONANT-EXACT",
+      "category": "astronomical",
+      "loci": "nymph, ring"
+    },
+    {
+      "root": "he",
+      "known": "hoou",
+      "lang": "Coptic",
+      "meaning": "day — ϩⲟⲟⲩ",
+      "score": 1.0,
+      "type": "CONSONANT-EXACT",
+      "category": "astronomical",
+      "loci": "ring"
+    },
+    {
+      "root": "heo",
+      "known": "hoou",
+      "lang": "Coptic",
+      "meaning": "day — ϩⲟⲟⲩ",
+      "score": 1.0,
+      "type": "CONSONANT-EXACT",
+      "category": "astronomical",
+      "loci": "ring"
+    },
+    {
+      "root": "ho",
+      "known": "hoou",
+      "lang": "Coptic",
+      "meaning": "day — ϩⲟⲟⲩ",
+      "score": 1.0,
+      "type": "CONSONANT-EXACT",
+      "category": "astronomical",
+      "loci": "ring"
+    },
+    {
+      "root": "l",
+      "known": "leo",
+      "lang": "Latin",
+      "meaning": "lion",
+      "score": 1.0,
+      "type": "CONSONANT-EXACT",
+      "category": "leo_names",
+      "loci": "ring"
+    },
+    {
+      "root": "le",
+      "known": "leo",
+      "lang": "Latin",
+      "meaning": "lion",
+      "score": 1.0,
+      "type": "CONSONANT-EXACT",
+      "category": "leo_names",
+      "loci": "ring"
+    },
+    {
+      "root": "ol",
+      "known": "leo",
+      "lang": "Latin",
+      "meaning": "lion",
+      "score": 1.0,
+      "type": "CONSONANT-EXACT",
+      "category": "leo_names",
+      "loci": "nymph, ring"
+    },
+    {
+      "root": "or",
+      "known": "ero",
+      "lang": "Coptic",
+      "meaning": "king — ⲉⲣⲟ",
+      "score": 1.0,
+      "type": "CONSONANT-EXACT",
+      "category": "qualities",
+      "loci": "ring"
+    },
+    {
+      "root": "os",
+      "known": "siou",
+      "lang": "Coptic",
+      "meaning": "star — ⲥⲓⲟⲩ",
+      "score": 1.0,
+      "type": "CONSONANT-EXACT",
+      "category": "astronomical",
+      "loci": "ring"
+    },
+    {
+      "root": "oleol",
+      "known": "leo",
+      "lang": "Latin",
+      "meaning": "lion",
+      "score": 0.85,
+      "type": "CONTAINS",
+      "category": "leo_names",
+      "loci": "ring"
+    },
+    {
+      "root": "yesh",
+      "known": "esh",
+      "lang": "Hebrew",
+      "meaning": "fire — אש",
+      "score": 0.85,
+      "type": "CONTAINS",
+      "category": "elemental",
+      "loci": "nymph"
+    },
+    {
+      "root": "cho",
+      "known": "choeis",
+      "lang": "Coptic",
+      "meaning": "lord — ϫⲟⲉⲓⲥ",
+      "score": 0.75,
+      "type": "WITHIN",
+      "category": "qualities",
+      "loci": "ring"
+    },
+    {
+      "root": "alals",
+      "known": "helios",
+      "lang": "Greek",
+      "meaning": "sun — ἥλιος",
+      "score": 0.67,
+      "type": "CONSONANT",
+      "category": "solar",
+      "loci": "nymph"
+    },
+    {
+      "root": "ar",
+      "known": "nar",
+      "lang": "Arabic",
+      "meaning": "fire — نار",
+      "score": 0.67,
+      "type": "LCS",
+      "category": "elemental",
+      "loci": "nymph, ring"
+    },
+    {
+      "root": "ch",
+      "known": "choeis",
+      "lang": "Coptic",
+      "meaning": "lord — ϫⲟⲉⲓⲥ",
+      "score": 0.67,
+      "type": "CONSONANT",
+      "category": "qualities",
+      "loci": "nymph, ring"
+    },
+    {
+      "root": "chal",
+      "known": "zuhal",
+      "lang": "Arabic",
+      "meaning": "Saturn — زحل",
+      "score": 0.67,
+      "type": "CONSONANT",
+      "category": "leo_decans",
+      "loci": "ring"
+    },
+    {
+      "root": "chal",
+      "known": "helios",
+      "lang": "Greek",
+      "meaning": "sun — ἥλιος",
+      "score": 0.67,
+      "type": "CONSONANT",
+      "category": "solar",
+      "loci": "ring"
+    },
+    {
+      "root": "chal",
+      "known": "choeis",
+      "lang": "Coptic",
+      "meaning": "lord — ϫⲟⲉⲓⲥ",
+      "score": 0.67,
+      "type": "CONSONANT",
+      "category": "qualities",
+      "loci": "ring"
+    },
+    {
+      "root": "cham",
+      "known": "hom",
+      "lang": "Hebrew",
+      "meaning": "hot/warm — חם",
+      "score": 0.67,
+      "type": "CONSONANT",
+      "category": "elemental",
+      "loci": "nymph"
+    },
+    {
+      "root": "cham",
+      "known": "hmom",
+      "lang": "Coptic",
+      "meaning": "hot — ϩⲙⲟⲙ",
+      "score": 0.67,
+      "type": "CONSONANT",
+      "category": "elemental",
+      "loci": "nymph"
+    },
+    {
+      "root": "cham",
+      "known": "choeis",
+      "lang": "Coptic",
+      "meaning": "lord — ϫⲟⲉⲓⲥ",
+      "score": 0.67,
+      "type": "CONSONANT",
+      "category": "qualities",
+      "loci": "nymph"
+    },
+    {
+      "root": "chas",
+      "known": "helios",
+      "lang": "Greek",
+      "meaning": "sun — ἥλιος",
+      "score": 0.67,
+      "type": "CONSONANT",
+      "category": "solar",
+      "loci": "ring"
+    },
+    {
+      "root": "che",
+      "known": "rhe",
+      "lang": "Coptic",
+      "meaning": "sun — ⲣⲏ",
+      "score": 0.67,
+      "type": "LCS",
+      "category": "solar",
+      "loci": "ring"
+    },
+    {
+      "root": "che",
+      "known": "choeis",
+      "lang": "Coptic",
+      "meaning": "lord — ϫⲟⲉⲓⲥ",
+      "score": 0.67,
+      "type": "CONSONANT",
+      "category": "qualities",
+      "loci": "ring"
+    },
+    {
+      "root": "cheal",
+      "known": "zuhal",
+      "lang": "Arabic",
+      "meaning": "Saturn — زحل",
+      "score": 0.67,
+      "type": "CONSONANT",
+      "category": "leo_decans",
+      "loci": "nymph"
+    },
+    {
+      "root": "cheal",
+      "known": "helios",
+      "lang": "Greek",
+      "meaning": "sun — ἥλιος",
+      "score": 0.67,
+      "type": "CONSONANT",
+      "category": "solar",
+      "loci": "nymph"
+    },
+    {
+      "root": "cheal",
+      "known": "choeis",
+      "lang": "Coptic",
+      "meaning": "lord — ϫⲟⲉⲓⲥ",
+      "score": 0.67,
+      "type": "CONSONANT",
+      "category": "qualities",
+      "loci": "nymph"
+    },
+    {
+      "root": "cheo",
+      "known": "choeis",
+      "lang": "Coptic",
+      "meaning": "lord — ϫⲟⲉⲓⲥ",
+      "score": 0.67,
+      "type": "CONSONANT",
+      "category": "qualities",
+      "loci": "ring"
+    },
+    {
+      "root": "ches",
+      "known": "helios",
+      "lang": "Greek",
+      "meaning": "sun — ἥλιος",
+      "score": 0.67,
+      "type": "CONSONANT",
+      "category": "solar",
+      "loci": "ring"
+    },
+    {
+      "root": "chh",
+      "known": "choeis",
+      "lang": "Coptic",
+      "meaning": "lord — ϫⲟⲉⲓⲥ",
+      "score": 0.67,
+      "type": "CONSONANT",
+      "category": "qualities",
+      "loci": "nymph"
+    },
+    {
+      "root": "cho",
+      "known": "cor",
+      "lang": "Latin",
+      "meaning": "heart",
+      "score": 0.67,
+      "type": "LCS",
+      "category": "body_parts",
+      "loci": "ring"
+    },
+    {
+      "root": "cho",
+      "known": "hom",
+      "lang": "Hebrew",
+      "meaning": "hot/warm — חם",
+      "score": 0.67,
+      "type": "LCS",
+      "category": "elemental",
+      "loci": "ring"
+    },
+    {
+      "root": "choar",
+      "known": "zahr",
+      "lang": "Arabic",
+      "meaning": "back — ظهر",
+      "score": 0.67,
+      "type": "CONSONANT",
+      "category": "body_parts",
+      "loci": "ring"
+    },
+    {
+      "root": "choar",
+      "known": "cor",
+      "lang": "Latin",
+      "meaning": "heart",
+      "score": 0.67,
+      "type": "CONSONANT",
+      "category": "body_parts",
+      "loci": "ring"
+    },
+    {
+      "root": "choar",
+      "known": "harara",
+      "lang": "Arabic",
+      "meaning": "heat — حرارة",
+      "score": 0.67,
+      "type": "CONSONANT",
+      "category": "elemental",
+      "loci": "ring"
+    },
+    {
+      "root": "choar",
+      "known": "choeis",
+      "lang": "Coptic",
+      "meaning": "lord — ϫⲟⲉⲓⲥ",
+      "score": 0.67,
+      "type": "CONSONANT",
+      "category": "qualities",
+      "loci": "ring"
+    },
+    {
+      "root": "chol",
+      "known": "zuhal",
+      "lang": "Arabic",
+      "meaning": "Saturn — زحل",
+      "score": 0.67,
+      "type": "CONSONANT",
+      "category": "leo_decans",
+      "loci": "nymph"
+    },
+    {
+      "root": "chol",
+      "known": "helios",
+      "lang": "Greek",
+      "meaning": "sun — ἥλιος",
+      "score": 0.67,
+      "type": "CONSONANT",
+      "category": "solar",
+      "loci": "nymph"
+    },
+    {
+      "root": "chol",
+      "known": "choeis",
+      "lang": "Coptic",
+      "meaning": "lord — ϫⲟⲉⲓⲥ",
+      "score": 0.67,
+      "type": "CONSONANT",
+      "category": "qualities",
+      "loci": "nymph"
+    },
+    {
+      "root": "cyo",
+      "known": "cor",
+      "lang": "Latin",
+      "meaning": "heart",
+      "score": 0.67,
+      "type": "LCS",
+      "category": "body_parts",
+      "loci": "nymph"
+    },
+    {
+      "root": "dairan",
+      "known": "sadr",
+      "lang": "Arabic",
+      "meaning": "chest/breast — صدر",
+      "score": 0.67,
+      "type": "CONSONANT",
+      "category": "body_parts",
+      "loci": "nymph"
+    },
+    {
+      "root": "dairan",
+      "known": "daraja",
+      "lang": "Arabic",
+      "meaning": "degree — درجة",
+      "score": 0.67,
+      "type": "CONSONANT",
+      "category": "astronomical",
+      "loci": "nymph"
+    },
+    {
+      "root": "ech",
+      "known": "esh",
+      "lang": "Hebrew",
+      "meaning": "fire — אש",
+      "score": 0.67,
+      "type": "LCS",
+      "category": "elemental",
+      "loci": "ring"
+    },
+    {
+      "root": "ech",
+      "known": "choeis",
+      "lang": "Coptic",
+      "meaning": "lord — ϫⲟⲉⲓⲥ",
+      "score": 0.67,
+      "type": "CONSONANT",
+      "category": "qualities",
+      "loci": "ring"
+    },
+    {
+      "root": "eod",
+      "known": "leo",
+      "lang": "Latin",
+      "meaning": "lion",
+      "score": 0.67,
+      "type": "LCS",
+      "category": "leo_names",
+      "loci": "ring"
+    },
+    {
+      "root": "eod",
+      "known": "ero",
+      "lang": "Coptic",
+      "meaning": "king — ⲉⲣⲟ",
+      "score": 0.67,
+      "type": "LCS",
+      "category": "qualities",
+      "loci": "ring"
+    },
+    {
+      "root": "eodar",
+      "known": "sadr",
+      "lang": "Arabic",
+      "meaning": "chest/breast — صدر",
+      "score": 0.67,
+      "type": "CONSONANT",
+      "category": "body_parts",
+      "loci": "ring"
+    },
+    {
+      "root": "eodar",
+      "known": "daraja",
+      "lang": "Arabic",
+      "meaning": "degree — درجة",
+      "score": 0.67,
+      "type": "CONSONANT",
+      "category": "astronomical",
+      "loci": "ring"
+    },
+    {
+      "root": "eoe",
+      "known": "leo",
+      "lang": "Latin",
+      "meaning": "lion",
+      "score": 0.67,
+      "type": "LCS",
+      "category": "leo_names",
+      "loci": "ring"
+    },
+    {
+      "root": "eoe",
+      "known": "ero",
+      "lang": "Coptic",
+      "meaning": "king — ⲉⲣⲟ",
+      "score": 0.67,
+      "type": "LCS",
+      "category": "qualities",
+      "loci": "ring"
+    },
+    {
+      "root": "eol",
+      "known": "sol",
+      "lang": "Latin",
+      "meaning": "sun",
+      "score": 0.67,
+      "type": "LCS",
+      "category": "solar",
+      "loci": "ring"
+    },
+    {
+      "root": "eol",
+      "known": "ero",
+      "lang": "Coptic",
+      "meaning": "king — ⲉⲣⲟ",
+      "score": 0.67,
+      "type": "LCS",
+      "category": "qualities",
+      "loci": "ring"
+    },
+    {
+      "root": "eos",
+      "known": "leo",
+      "lang": "Latin",
+      "meaning": "lion",
+      "score": 0.67,
+      "type": "LCS",
+      "category": "leo_names",
+      "loci": "ring"
+    },
+    {
+      "root": "eos",
+      "known": "esh",
+      "lang": "Hebrew",
+      "meaning": "fire — אש",
+      "score": 0.67,
+      "type": "LCS",
+      "category": "elemental",
+      "loci": "ring"
+    },
+    {
+      "root": "eos",
+      "known": "ero",
+      "lang": "Coptic",
+      "meaning": "king — ⲉⲣⲟ",
+      "score": 0.67,
+      "type": "LCS",
+      "category": "qualities",
+      "loci": "ring"
+    },
+    {
+      "root": "es",
+      "known": "esh",
+      "lang": "Hebrew",
+      "meaning": "fire — אש",
+      "score": 0.67,
+      "type": "LCS",
+      "category": "elemental",
+      "loci": "nymph, ring"
+    },
+    {
+      "root": "esed",
+      "known": "sadr",
+      "lang": "Arabic",
+      "meaning": "chest/breast — صدر",
+      "score": 0.67,
+      "type": "CONSONANT",
+      "category": "body_parts",
+      "loci": "nymph"
+    },
+    {
+      "root": "he",
+      "known": "rhe",
+      "lang": "Coptic",
+      "meaning": "sun — ⲣⲏ",
+      "score": 0.67,
+      "type": "LCS",
+      "category": "solar",
+      "loci": "ring"
+    },
+    {
+      "root": "heo",
+      "known": "leo",
+      "lang": "Latin",
+      "meaning": "lion",
+      "score": 0.67,
+      "type": "LCS",
+      "category": "leo_names",
+      "loci": "ring"
+    },
+    {
+      "root": "heo",
+      "known": "rhe",
+      "lang": "Coptic",
+      "meaning": "sun — ⲣⲏ",
+      "score": 0.67,
+      "type": "LCS",
+      "category": "solar",
+      "loci": "ring"
+    },
+    {
+      "root": "heo",
+      "known": "hom",
+      "lang": "Hebrew",
+      "meaning": "hot/warm — חם",
+      "score": 0.67,
+      "type": "LCS",
+      "category": "elemental",
+      "loci": "ring"
+    },
+    {
+      "root": "heo",
+      "known": "ero",
+      "lang": "Coptic",
+      "meaning": "king — ⲉⲣⲟ",
+      "score": 0.67,
+      "type": "LCS",
+      "category": "qualities",
+      "loci": "ring"
+    },
+    {
+      "root": "heos",
+      "known": "helios",
+      "lang": "Greek",
+      "meaning": "sun — ἥλιος",
+      "score": 0.67,
+      "type": "CONSONANT",
+      "category": "solar",
+      "loci": "nymph"
+    },
+    {
+      "root": "heos",
+      "known": "choeis",
+      "lang": "Coptic",
+      "meaning": "lord — ϫⲟⲉⲓⲥ",
+      "score": 0.67,
+      "type": "CONSONANT",
+      "category": "qualities",
+      "loci": "nymph"
+    },
+    {
+      "root": "ho",
+      "known": "hom",
+      "lang": "Hebrew",
+      "meaning": "hot/warm — חם",
+      "score": 0.67,
+      "type": "LCS",
+      "category": "elemental",
+      "loci": "ring"
+    },
+    {
+      "root": "le",
+      "known": "lev",
+      "lang": "Hebrew",
+      "meaning": "heart — לב",
+      "score": 0.67,
+      "type": "LCS",
+      "category": "body_parts",
+      "loci": "ring"
+    },
+    {
+      "root": "ol",
+      "known": "sol",
+      "lang": "Latin",
+      "meaning": "sun",
+      "score": 0.67,
+      "type": "LCS",
+      "category": "solar",
+      "loci": "nymph, ring"
+    },
+    {
+      "root": "olsh",
+      "known": "laith",
+      "lang": "Arabic",
+      "meaning": "lion (poetic) — ليث",
+      "score": 0.67,
+      "type": "CONSONANT",
+      "category": "leo_names",
+      "loci": "ring"
+    },
+    {
+      "root": "olsh",
+      "known": "helios",
+      "lang": "Greek",
+      "meaning": "sun — ἥλιος",
+      "score": 0.67,
+      "type": "CONSONANT",
+      "category": "solar",
+      "loci": "ring"
+    },
+    {
+      "root": "olsh",
+      "known": "esh",
+      "lang": "Hebrew",
+      "meaning": "fire — אש",
+      "score": 0.67,
+      "type": "CONSONANT",
+      "category": "elemental",
+      "loci": "ring"
+    },
+    {
+      "root": "or",
+      "known": "cor",
+      "lang": "Latin",
+      "meaning": "heart",
+      "score": 0.67,
+      "type": "LCS",
+      "category": "body_parts",
+      "loci": "ring"
+    },
+    {
+      "root": "rch",
+      "known": "arieh",
+      "lang": "Hebrew",
+      "meaning": "lion — אריה",
+      "score": 0.67,
+      "type": "CONSONANT",
+      "category": "leo_names",
+      "loci": "nymph"
+    },
+    {
+      "root": "rch",
+      "known": "rhe",
+      "lang": "Coptic",
+      "meaning": "sun — ⲣⲏ",
+      "score": 0.67,
+      "type": "CONSONANT",
+      "category": "solar",
+      "loci": "nymph"
+    },
+    {
+      "root": "rch",
+      "known": "choeis",
+      "lang": "Coptic",
+      "meaning": "lord — ϫⲟⲉⲓⲥ",
+      "score": 0.67,
+      "type": "CONSONANT",
+      "category": "qualities",
+      "loci": "nymph"
+    },
+    {
+      "root": "ych",
+      "known": "choeis",
+      "lang": "Coptic",
+      "meaning": "lord — ϫⲟⲉⲓⲥ",
+      "score": 0.67,
+      "type": "CONSONANT",
+      "category": "qualities",
+      "loci": "ring"
+    },
+    {
+      "root": "cham",
+      "known": "shams",
+      "lang": "Arabic",
+      "meaning": "sun — شمس",
+      "score": 0.6,
+      "type": "LCS",
+      "category": "solar",
+      "loci": "nymph"
+    },
+    {
+      "root": "chas",
+      "known": "shams",
+      "lang": "Arabic",
+      "meaning": "sun — شمس",
+      "score": 0.6,
+      "type": "LCS",
+      "category": "solar",
+      "loci": "ring"
+    },
+    {
+      "root": "oleol",
+      "known": "leon",
+      "lang": "Greek",
+      "meaning": "lion — λέων",
+      "score": 0.6,
+      "type": "LCS",
+      "category": "leo_names",
+      "loci": "ring"
+    }
+  ],
+  "summary": {
+    "total_words": 112,
+    "nymph_labels": 34,
+    "ring_words": 78,
+    "unique_roots": 58,
+    "anchor": "esed = asad (lion)"
+  }
+}

@@ -1,0 +1,453 @@
+{
+ "phase38_bigram_null": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 173.09,
+  "stdout_bytes": 7118,
+  "results_files_touched": []
+ },
+ "astro_crossref": {
+  "status": "error",
+  "returncode": 1,
+  "duration_s": 0.12,
+  "stdout_bytes": 0,
+  "results_files_touched": []
+ },
+ "astro_label_pipeline": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.13,
+  "stdout_bytes": 14055,
+  "results_files_touched": []
+ },
+ "attack_plan": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.64,
+  "stdout_bytes": 43837,
+  "results_files_touched": []
+ },
+ "coptic_probe_expanded": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 148.17,
+  "stdout_bytes": 43755,
+  "results_files_touched": []
+ },
+ "crosssign_network": {
+  "status": "error",
+  "returncode": 1,
+  "duration_s": 0.12,
+  "stdout_bytes": 137,
+  "results_files_touched": []
+ },
+ "currier_ab": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.68,
+  "stdout_bytes": 12368,
+  "results_files_touched": []
+ },
+ "deep_dive": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.82,
+  "stdout_bytes": 15898,
+  "results_files_touched": []
+ },
+ "deep_dive_phase1": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.95,
+  "stdout_bytes": 17320,
+  "results_files_touched": []
+ },
+ "diacritic_audit": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.18,
+  "stdout_bytes": 10341,
+  "results_files_touched": []
+ },
+ "download_folios": {
+  "status": "skipped",
+  "reason": "pure downloader (network, ~1GB)"
+ },
+ "download_latin": {
+  "status": "skipped",
+  "reason": "pure downloader (network)"
+ },
+ "egyptian_connection": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.64,
+  "stdout_bytes": 26365,
+  "results_files_touched": []
+ },
+ "f66r_analysis": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 1.73,
+  "stdout_bytes": 13326,
+  "results_files_touched": []
+ },
+ "four_tasks_audit": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 34.64,
+  "stdout_bytes": 30588,
+  "results_files_touched": [
+   "four_tasks_audit.json"
+  ]
+ },
+ "freq_rank_mapping": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 1.76,
+  "stdout_bytes": 22714,
+  "results_files_touched": []
+ },
+ "gallows_semantics": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 1.02,
+  "stdout_bytes": 35488,
+  "results_files_touched": []
+ },
+ "gallows_test": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 37.8,
+  "stdout_bytes": 12094,
+  "results_files_touched": []
+ },
+ "grammar_extraction": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.14,
+  "stdout_bytes": 19154,
+  "results_files_touched": []
+ },
+ "hebrew_comparison": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.12,
+  "stdout_bytes": 13899,
+  "results_files_touched": []
+ },
+ "hebrew_deep_analysis": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 57.66,
+  "stdout_bytes": 19542,
+  "results_files_touched": []
+ },
+ "herbal_crossref": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.69,
+  "stdout_bytes": 17759,
+  "results_files_touched": []
+ },
+ "herbal_labels": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.38,
+  "stdout_bytes": 19700,
+  "results_files_touched": []
+ },
+ "innermost_ring_dive": {
+  "status": "error",
+  "returncode": 1,
+  "duration_s": 0.09,
+  "stdout_bytes": 0,
+  "results_files_touched": []
+ },
+ "leo_deepdive": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.6,
+  "stdout_bytes": 32719,
+  "results_files_touched": []
+ },
+ "medieval_degrees": {
+  "status": "error",
+  "returncode": 1,
+  "duration_s": 0.1,
+  "stdout_bytes": 134,
+  "results_files_touched": []
+ },
+ "pharma_comparison": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.75,
+  "stdout_bytes": 10461,
+  "results_files_touched": []
+ },
+ "phase100_decipherment": {
+  "status": "timeout",
+  "returncode": null,
+  "duration_s": 900.05,
+  "stdout_bytes": 6853,
+  "results_files_touched": []
+ },
+ "phase101_currier_ab_dichotomy": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 423.64,
+  "stdout_bytes": 14909,
+  "results_files_touched": [
+   "phase101_currier_ab_dichotomy.json",
+   "phase101_currier_ab_dichotomy.txt"
+  ]
+ },
+ "phase102_historical_validation": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 2.88,
+  "stdout_bytes": 18242,
+  "results_files_touched": [
+   "phase102_historical_validation.json",
+   "phase102_historical_validation.txt"
+  ]
+ },
+ "phase103_positional_class_decomposition": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 61.85,
+  "stdout_bytes": 12573,
+  "results_files_touched": [
+   "phase103_positional_class_decomposition.json",
+   "phase103_positional_class_decomposition.txt"
+  ]
+ },
+ "phase104_latin_ending_test": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 8.93,
+  "stdout_bytes": 14402,
+  "results_files_touched": [
+   "phase104_latin_ending_test.json",
+   "phase104_latin_ending_test.txt"
+  ]
+ },
+ "phase105_cappelli_retest": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 59.95,
+  "stdout_bytes": 14344,
+  "results_files_touched": [
+   "phase105_cappelli_retest.json",
+   "phase105_cappelli_retest.txt"
+  ]
+ },
+ "phase106_abbreviation_decode": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.14,
+  "stdout_bytes": 16963,
+  "results_files_touched": [
+   "phase106_abbreviation_decode.txt"
+  ]
+ },
+ "phase106b_bench_variants": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.19,
+  "stdout_bytes": 14623,
+  "results_files_touched": [
+   "phase106b_bench_variants.txt"
+  ]
+ },
+ "phase106c_positional_freq_match": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 4.47,
+  "stdout_bytes": 2426,
+  "results_files_touched": [
+   "phase106c_positional_frequency_match.txt"
+  ]
+ },
+ "phase107_slot_mi_decomposition": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 186.26,
+  "stdout_bytes": 9474,
+  "results_files_touched": [
+   "phase107_slot_mi_decomposition.txt"
+  ]
+ },
+ "phase19_zodiac_alignment": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 1.07,
+  "stdout_bytes": 27690,
+  "results_files_touched": [
+   "phase19_results.json"
+  ]
+ },
+ "phase20_template_subtraction": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.63,
+  "stdout_bytes": 17462,
+  "results_files_touched": [
+   "phase20_results.json"
+  ]
+ },
+ "phase21_highest_leverage": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.63,
+  "stdout_bytes": 18759,
+  "results_files_touched": [
+   "phase21_results.json"
+  ]
+ },
+ "phase22_unknown_roots": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.74,
+  "stdout_bytes": 39679,
+  "results_files_touched": [
+   "phase22_results.json"
+  ]
+ },
+ "phase23_full_translation": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.43,
+  "stdout_bytes": 48733,
+  "results_files_touched": [
+   "phase23_results.json"
+  ]
+ },
+ "phase24_classifier_semantics": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 1.05,
+  "stdout_bytes": 45170,
+  "results_files_touched": [
+   "phase24_results.json"
+  ]
+ },
+ "phase25_narrative_translation": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 4.6,
+  "stdout_bytes": 75628,
+  "results_files_touched": [
+   "phase25_results.json"
+  ]
+ },
+ "phase26_expansion": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 2.43,
+  "stdout_bytes": 36269,
+  "results_files_touched": [
+   "phase26_results.json"
+  ]
+ },
+ "phase27_self_audit": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 10.4,
+  "stdout_bytes": 26026,
+  "results_files_touched": [
+   "phase27_output.txt",
+   "phase27_results.json"
+  ]
+ },
+ "phase28_statistical": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 20.49,
+  "stdout_bytes": 24536,
+  "results_files_touched": [
+   "phase28_output.txt",
+   "phase28_results.json"
+  ]
+ },
+ "phase29_compounds": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 2.24,
+  "stdout_bytes": 21859,
+  "results_files_touched": [
+   "phase29_output.txt",
+   "phase29_results.json"
+  ]
+ },
+ "phase30_validation": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 10.46,
+  "stdout_bytes": 12170,
+  "results_files_touched": [
+   "phase30_output.txt",
+   "phase30_results.json"
+  ]
+ },
+ "phase31_prefix_paradox": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 2.23,
+  "stdout_bytes": 15778,
+  "results_files_touched": [
+   "phase31_output.txt",
+   "phase31_results.json"
+  ]
+ },
+ "phase32_artifact_test": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 2.32,
+  "stdout_bytes": 11567,
+  "results_files_touched": [
+   "phase32_output.txt",
+   "phase32_results.json"
+  ]
+ },
+ "phase33_cascade_audit": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 6.27,
+  "stdout_bytes": 11483,
+  "results_files_touched": [
+   "phase33_output.txt",
+   "phase33_results.json"
+  ]
+ },
+ "phase34_model_audit": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 2.77,
+  "stdout_bytes": 12770,
+  "results_files_touched": [
+   "phase34_output.txt",
+   "phase34_results.json"
+  ]
+ },
+ "phase35_prefix_disentangle": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 1.29,
+  "stdout_bytes": 9156,
+  "results_files_touched": []
+ },
+ "phase36_parser_free": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 3.58,
+  "stdout_bytes": 9927,
+  "results_files_touched": []
+ },
+ "phase37_parser_free_analysis": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.86,
+  "stdout_bytes": 14715,
+  "results_files_touched": []
+ }
+}

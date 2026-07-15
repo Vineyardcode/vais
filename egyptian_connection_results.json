@@ -1,0 +1,1029 @@
+{
+  "analysis1": {
+    "prefix_profiles": {
+      "o": {
+        "total": 6767,
+        "dominant": "k",
+        "dominant_pct": 47.2,
+        "profile": {
+          "t": 2774,
+          "k": 3191,
+          "f": 160,
+          "p": 642
+        }
+      },
+      "∅": {
+        "total": 6420,
+        "dominant": "k",
+        "dominant_pct": 51.5,
+        "profile": {
+          "t": 2241,
+          "k": 3304,
+          "f": 205,
+          "p": 670
+        }
+      },
+      "qo": {
+        "total": 4383,
+        "dominant": "k",
+        "dominant_pct": 71.2,
+        "profile": {
+          "t": 1039,
+          "k": 3120,
+          "f": 46,
+          "p": 178
+        }
+      },
+      "y": {
+        "total": 1406,
+        "dominant": "k",
+        "dominant_pct": 49.1,
+        "profile": {
+          "t": 572,
+          "k": 691,
+          "f": 29,
+          "p": 114
+        }
+      },
+      "s": {
+        "total": 856,
+        "dominant": "k",
+        "dominant_pct": 63.1,
+        "profile": {
+          "t": 235,
+          "k": 540,
+          "f": 40,
+          "p": 41
+        }
+      },
+      "q": {
+        "total": 612,
+        "dominant": "k",
+        "dominant_pct": 58.5,
+        "profile": {
+          "t": 212,
+          "k": 358,
+          "f": 4,
+          "p": 38
+        }
+      },
+      "d": {
+        "total": 264,
+        "dominant": "k",
+        "dominant_pct": 42.0,
+        "profile": {
+          "t": 85,
+          "k": 111,
+          "f": 14,
+          "p": 54
+        }
+      },
+      "so": {
+        "total": 61,
+        "dominant": "k",
+        "dominant_pct": 62.3,
+        "profile": {
+          "t": 16,
+          "k": 38,
+          "f": 4,
+          "p": 3
+        }
+      },
+      "do": {
+        "total": 31,
+        "dominant": "k",
+        "dominant_pct": 64.5,
+        "profile": {
+          "t": 9,
+          "k": 20,
+          "f": 1,
+          "p": 1
+        }
+      }
+    },
+    "pmi": {
+      "o+t": 0.247,
+      "o+k": -0.214,
+      "o+f": -0.032,
+      "o+p": 0.181,
+      "∅+t": 0.015,
+      "∅+k": -0.087,
+      "∅+f": 0.401,
+      "∅+p": 0.318,
+      "qo+t": -0.543,
+      "qo+k": 0.381,
+      "qo+f": -1.204,
+      "qo+p": -1.043,
+      "y+t": 0.236,
+      "y+k": -0.154,
+      "y+f": -0.23,
+      "y+p": -0.046,
+      "s+t": -0.331,
+      "s+k": 0.206,
+      "s+f": 0.95,
+      "s+p": -0.805,
+      "q+t": 0.004,
+      "q+k": 0.097,
+      "q+p": -0.431,
+      "d+t": -0.101,
+      "d+k": -0.379,
+      "d+f": 1.133,
+      "d+p": 1.289,
+      "so+t": -0.397,
+      "so+k": 0.188,
+      "do+t": -0.25,
+      "do+k": 0.239
+    },
+    "specificity": {
+      "o": {
+        "entropy": 1.489,
+        "specificity": 0.256,
+        "max_pct": 47.2
+      },
+      "∅": {
+        "entropy": 1.522,
+        "specificity": 0.239,
+        "max_pct": 51.5
+      },
+      "qo": {
+        "entropy": 1.098,
+        "specificity": 0.451,
+        "max_pct": 71.2
+      },
+      "y": {
+        "entropy": 1.441,
+        "specificity": 0.28,
+        "max_pct": 49.1
+      },
+      "s": {
+        "entropy": 1.348,
+        "specificity": 0.326,
+        "max_pct": 63.1
+      },
+      "q": {
+        "entropy": 1.279,
+        "specificity": 0.361,
+        "max_pct": 58.5
+      },
+      "d": {
+        "entropy": 1.745,
+        "specificity": 0.128,
+        "max_pct": 42.0
+      },
+      "so": {
+        "entropy": 1.403,
+        "specificity": 0.298,
+        "max_pct": 62.3
+      },
+      "do": {
+        "entropy": 1.246,
+        "specificity": 0.377,
+        "max_pct": 64.5
+      }
+    }
+  },
+  "analysis2": {
+    "freq_bins": {
+      "1-5": {
+        "count": 4152,
+        "avg_forms": 1.16,
+        "avg_gallows_types": 0.66
+      },
+      "6-20": {
+        "count": 412,
+        "avg_forms": 3.02,
+        "avg_gallows_types": 1.67
+      },
+      "21-50": {
+        "count": 130,
+        "avg_forms": 4.94,
+        "avg_gallows_types": 2.29
+      },
+      "51-100": {
+        "count": 49,
+        "avg_forms": 7.2,
+        "avg_gallows_types": 2.98
+      },
+      "101-200": {
+        "count": 32,
+        "avg_forms": 8.38,
+        "avg_gallows_types": 3.16
+      },
+      "201-500": {
+        "count": 36,
+        "avg_forms": 14.28,
+        "avg_gallows_types": 3.69
+      },
+      "501+": {
+        "count": 8,
+        "avg_forms": 15.25,
+        "avg_gallows_types": 3.88
+      }
+    },
+    "logogram_candidates": {
+      "sol": {
+        "freq": 70,
+        "forms": 1,
+        "gallows_types": 0,
+        "diversity_ratio": 0.16,
+        "assessment": "LOGOGRAM"
+      },
+      "raiin": {
+        "freq": 68,
+        "forms": 1,
+        "gallows_types": 0,
+        "diversity_ratio": 0.16,
+        "assessment": "LOGOGRAM"
+      },
+      "chedaiin": {
+        "freq": 41,
+        "forms": 1,
+        "gallows_types": 0,
+        "diversity_ratio": 0.19,
+        "assessment": "LOGOGRAM"
+      },
+      "chees": {
+        "freq": 40,
+        "forms": 1,
+        "gallows_types": 0,
+        "diversity_ratio": 0.19,
+        "assessment": "LOGOGRAM"
+      },
+      "lshedy": {
+        "freq": 40,
+        "forms": 1,
+        "gallows_types": 0,
+        "diversity_ratio": 0.19,
+        "assessment": "LOGOGRAM"
+      },
+      "dshedy": {
+        "freq": 37,
+        "forms": 1,
+        "gallows_types": 0,
+        "diversity_ratio": 0.19,
+        "assessment": "LOGOGRAM"
+      },
+      "chedar": {
+        "freq": 35,
+        "forms": 1,
+        "gallows_types": 0,
+        "diversity_ratio": 0.19,
+        "assessment": "LOGOGRAM"
+      },
+      "sair": {
+        "freq": 34,
+        "forms": 1,
+        "gallows_types": 0,
+        "diversity_ratio": 0.2,
+        "assessment": "LOGOGRAM"
+      },
+      "lchedy": {
+        "freq": 117,
+        "forms": 2,
+        "gallows_types": 1,
+        "diversity_ratio": 0.29,
+        "assessment": "LOGOGRAM"
+      },
+      "sar": {
+        "freq": 87,
+        "forms": 2,
+        "gallows_types": 1,
+        "diversity_ratio": 0.31,
+        "assessment": "LOGOGRAM"
+      },
+      "sain": {
+        "freq": 68,
+        "forms": 2,
+        "gallows_types": 1,
+        "diversity_ratio": 0.33,
+        "assessment": "LOGOGRAM"
+      },
+      "sor": {
+        "freq": 54,
+        "forms": 2,
+        "gallows_types": 1,
+        "diversity_ratio": 0.35,
+        "assessment": "LOGOGRAM"
+      },
+      "lchey": {
+        "freq": 53,
+        "forms": 2,
+        "gallows_types": 1,
+        "diversity_ratio": 0.35,
+        "assessment": "LOGOGRAM"
+      },
+      "chodaiin": {
+        "freq": 51,
+        "forms": 2,
+        "gallows_types": 1,
+        "diversity_ratio": 0.35,
+        "assessment": "LOGOGRAM"
+      },
+      "sheor": {
+        "freq": 49,
+        "forms": 2,
+        "gallows_types": 1,
+        "diversity_ratio": 0.36,
+        "assessment": "LOGOGRAM"
+      },
+      "ches": {
+        "freq": 46,
+        "forms": 2,
+        "gallows_types": 1,
+        "diversity_ratio": 0.36,
+        "assessment": "LOGOGRAM"
+      },
+      "chl": {
+        "freq": 32,
+        "forms": 2,
+        "gallows_types": 1,
+        "diversity_ratio": 0.4,
+        "assessment": "LOGOGRAM"
+      },
+      "dchedy": {
+        "freq": 32,
+        "forms": 2,
+        "gallows_types": 1,
+        "diversity_ratio": 0.4,
+        "assessment": "LOGOGRAM"
+      },
+      "saiin": {
+        "freq": 139,
+        "forms": 3,
+        "gallows_types": 2,
+        "diversity_ratio": 0.42,
+        "assessment": "LOGOGRAM"
+      },
+      "dam": {
+        "freq": 101,
+        "forms": 3,
+        "gallows_types": 2,
+        "diversity_ratio": 0.45,
+        "assessment": "LOGOGRAM"
+      },
+      "yeedy": {
+        "freq": 67,
+        "forms": 3,
+        "gallows_types": 3,
+        "diversity_ratio": 0.49,
+        "assessment": "MIXED"
+      },
+      "dain": {
+        "freq": 230,
+        "forms": 4,
+        "gallows_types": 2,
+        "diversity_ratio": 0.51,
+        "assessment": "LOGOGRAM"
+      },
+      "shol": {
+        "freq": 197,
+        "forms": 4,
+        "gallows_types": 2,
+        "diversity_ratio": 0.52,
+        "assessment": "LOGOGRAM"
+      },
+      "lor": {
+        "freq": 45,
+        "forms": 3,
+        "gallows_types": 1,
+        "diversity_ratio": 0.55,
+        "assessment": "LOGOGRAM"
+      },
+      "leey": {
+        "freq": 42,
+        "forms": 3,
+        "gallows_types": 2,
+        "diversity_ratio": 0.56,
+        "assessment": "LOGOGRAM"
+      }
+    },
+    "correlation_r": 0.701
+  },
+  "analysis3": {
+    "skeleton_comparisons": {
+      "qoEdy": {
+        "variants": [
+          "qoedy",
+          "qoeedy"
+        ],
+        "avg_cosine": 0.99,
+        "verdict": "EQUIVALENT"
+      },
+      "oEy": {
+        "variants": [
+          "oeey",
+          "oey",
+          "oeeey"
+        ],
+        "avg_cosine": 0.899,
+        "verdict": "SIMILAR"
+      },
+      "oEdy": {
+        "variants": [
+          "oedy",
+          "oeedy",
+          "oeeedy"
+        ],
+        "avg_cosine": 0.846,
+        "verdict": "DIFFERENT"
+      },
+      "qoEy": {
+        "variants": [
+          "qoeey",
+          "qoey",
+          "qoeeey"
+        ],
+        "avg_cosine": 0.989,
+        "verdict": "EQUIVALENT"
+      },
+      "Ey": {
+        "variants": [
+          "ey",
+          "eey",
+          "eeey"
+        ],
+        "avg_cosine": 0.884,
+        "verdict": "SIMILAR"
+      },
+      "chEy": {
+        "variants": [
+          "chey",
+          "cheey",
+          "cheeey"
+        ],
+        "avg_cosine": 0.99,
+        "verdict": "EQUIVALENT"
+      },
+      "Edy": {
+        "variants": [
+          "edy",
+          "eedy",
+          "eeedy"
+        ],
+        "avg_cosine": 0.858,
+        "verdict": "SIMILAR"
+      },
+      "shEy": {
+        "variants": [
+          "shey",
+          "sheey",
+          "sheeey"
+        ],
+        "avg_cosine": 0.995,
+        "verdict": "EQUIVALENT"
+      },
+      "yEy": {
+        "variants": [
+          "yeey",
+          "yey",
+          "yeeey"
+        ],
+        "avg_cosine": 0.933,
+        "verdict": "SIMILAR"
+      },
+      "yEdy": {
+        "variants": [
+          "yedy",
+          "yeedy"
+        ],
+        "avg_cosine": 0.956,
+        "verdict": "EQUIVALENT"
+      },
+      "oEol": {
+        "variants": [
+          "oeol",
+          "oeeol"
+        ],
+        "avg_cosine": 0.999,
+        "verdict": "EQUIVALENT"
+      },
+      "oEody": {
+        "variants": [
+          "oeody",
+          "oeeody"
+        ],
+        "avg_cosine": 0.956,
+        "verdict": "EQUIVALENT"
+      },
+      "Eol": {
+        "variants": [
+          "eol",
+          "eeol"
+        ],
+        "avg_cosine": 0.811,
+        "verdict": "DIFFERENT"
+      },
+      "lEdy": {
+        "variants": [
+          "ledy",
+          "leedy"
+        ],
+        "avg_cosine": 0.993,
+        "verdict": "EQUIVALENT"
+      },
+      "Eody": {
+        "variants": [
+          "eody",
+          "eeody"
+        ],
+        "avg_cosine": 0.986,
+        "verdict": "EQUIVALENT"
+      },
+      "olEdy": {
+        "variants": [
+          "oleedy",
+          "oledy"
+        ],
+        "avg_cosine": 0.973,
+        "verdict": "EQUIVALENT"
+      },
+      "olEy": {
+        "variants": [
+          "oleey",
+          "oley",
+          "oleeey"
+        ],
+        "avg_cosine": 0.977,
+        "verdict": "EQUIVALENT"
+      },
+      "qoEol": {
+        "variants": [
+          "qoeol",
+          "qoeeol"
+        ],
+        "avg_cosine": 0.989,
+        "verdict": "EQUIVALENT"
+      },
+      "qoEody": {
+        "variants": [
+          "qoeody",
+          "qoeeody"
+        ],
+        "avg_cosine": 0.993,
+        "verdict": "EQUIVALENT"
+      },
+      "oEo": {
+        "variants": [
+          "oeo",
+          "oeeo"
+        ],
+        "avg_cosine": 0.962,
+        "verdict": "EQUIVALENT"
+      },
+      "choEy": {
+        "variants": [
+          "choey",
+          "choeey"
+        ],
+        "avg_cosine": 0.984,
+        "verdict": "EQUIVALENT"
+      },
+      "lEy": {
+        "variants": [
+          "leey",
+          "ley"
+        ],
+        "avg_cosine": 0.999,
+        "verdict": "EQUIVALENT"
+      },
+      "yEody": {
+        "variants": [
+          "yeody",
+          "yeeody"
+        ],
+        "avg_cosine": 0.996,
+        "verdict": "EQUIVALENT"
+      },
+      "Eo": {
+        "variants": [
+          "eo",
+          "eeo"
+        ],
+        "avg_cosine": 0.839,
+        "verdict": "DIFFERENT"
+      },
+      "chEdy": {
+        "variants": [
+          "chedy",
+          "cheedy"
+        ],
+        "avg_cosine": 0.957,
+        "verdict": "EQUIVALENT"
+      },
+      "oEos": {
+        "variants": [
+          "oeos",
+          "oeeos"
+        ],
+        "avg_cosine": 1.0,
+        "verdict": "EQUIVALENT"
+      },
+      "oEor": {
+        "variants": [
+          "oeor",
+          "oeeor"
+        ],
+        "avg_cosine": 0.973,
+        "verdict": "EQUIVALENT"
+      },
+      "oEs": {
+        "variants": [
+          "oees",
+          "oes"
+        ],
+        "avg_cosine": 0.884,
+        "verdict": "SIMILAR"
+      },
+      "qoEo": {
+        "variants": [
+          "qoeo",
+          "qoeeo"
+        ],
+        "avg_cosine": 0.948,
+        "verdict": "SIMILAR"
+      },
+      "Eor": {
+        "variants": [
+          "eor",
+          "eeor"
+        ],
+        "avg_cosine": 0.835,
+        "verdict": "DIFFERENT"
+      }
+    },
+    "overall_cosine": 0.94,
+    "high_sim_pct": 68.8
+  },
+  "analysis4": {
+    "cooccurrence": {
+      "herbal-A": {
+        "f+k": {
+          "count": 106,
+          "pct": 7.0
+        },
+        "f+p": {
+          "count": 88,
+          "pct": 5.8
+        },
+        "f+t": {
+          "count": 98,
+          "pct": 6.4
+        },
+        "k+p": {
+          "count": 177,
+          "pct": 11.6
+        },
+        "k+t": {
+          "count": 825,
+          "pct": 54.2
+        },
+        "p+t": {
+          "count": 202,
+          "pct": 13.3
+        }
+      },
+      "herbal-B": {
+        "f+k": {
+          "count": 20,
+          "pct": 9.6
+        },
+        "f+p": {
+          "count": 9,
+          "pct": 4.3
+        },
+        "f+t": {
+          "count": 22,
+          "pct": 10.5
+        },
+        "k+p": {
+          "count": 27,
+          "pct": 12.9
+        },
+        "k+t": {
+          "count": 134,
+          "pct": 64.1
+        },
+        "p+t": {
+          "count": 33,
+          "pct": 15.8
+        }
+      },
+      "pharma": {
+        "f+k": {
+          "count": 26,
+          "pct": 5.8
+        },
+        "f+p": {
+          "count": 21,
+          "pct": 4.7
+        },
+        "f+t": {
+          "count": 26,
+          "pct": 5.8
+        },
+        "k+p": {
+          "count": 39,
+          "pct": 8.7
+        },
+        "k+t": {
+          "count": 162,
+          "pct": 36.3
+        },
+        "p+t": {
+          "count": 39,
+          "pct": 8.7
+        }
+      },
+      "bio": {
+        "f+k": {
+          "count": 28,
+          "pct": 3.3
+        },
+        "f+p": {
+          "count": 20,
+          "pct": 2.4
+        },
+        "f+t": {
+          "count": 24,
+          "pct": 2.8
+        },
+        "k+p": {
+          "count": 113,
+          "pct": 13.4
+        },
+        "k+t": {
+          "count": 470,
+          "pct": 55.6
+        },
+        "p+t": {
+          "count": 87,
+          "pct": 10.3
+        }
+      },
+      "cosmo": {
+        "f+k": {
+          "count": 36,
+          "pct": 9.8
+        },
+        "f+p": {
+          "count": 44,
+          "pct": 12.0
+        },
+        "f+t": {
+          "count": 40,
+          "pct": 10.9
+        },
+        "k+p": {
+          "count": 80,
+          "pct": 21.9
+        },
+        "k+t": {
+          "count": 246,
+          "pct": 67.2
+        },
+        "p+t": {
+          "count": 82,
+          "pct": 22.4
+        }
+      },
+      "text": {
+        "f+k": {
+          "count": 81,
+          "pct": 7.6
+        },
+        "f+p": {
+          "count": 71,
+          "pct": 6.7
+        },
+        "f+t": {
+          "count": 69,
+          "pct": 6.5
+        },
+        "k+p": {
+          "count": 265,
+          "pct": 24.9
+        },
+        "k+t": {
+          "count": 754,
+          "pct": 70.7
+        },
+        "p+t": {
+          "count": 245,
+          "pct": 23.0
+        }
+      },
+      "zodiac": {
+        "f+k": {
+          "count": 7,
+          "pct": 1.2
+        },
+        "f+p": {
+          "count": 6,
+          "pct": 1.0
+        },
+        "f+t": {
+          "count": 7,
+          "pct": 1.2
+        },
+        "k+p": {
+          "count": 42,
+          "pct": 7.1
+        },
+        "k+t": {
+          "count": 117,
+          "pct": 19.7
+        },
+        "p+t": {
+          "count": 41,
+          "pct": 6.9
+        }
+      }
+    },
+    "completeness": {
+      "herbal-A": {
+        "all_4": 39,
+        "three": 163,
+        "two": 773,
+        "one": 546,
+        "total": 1521,
+        "pct_complete": 2.6
+      },
+      "herbal-B": {
+        "all_4": 5,
+        "three": 36,
+        "two": 107,
+        "one": 61,
+        "total": 209,
+        "pct_complete": 2.4
+      },
+      "pharma": {
+        "all_4": 17,
+        "three": 25,
+        "two": 136,
+        "one": 268,
+        "total": 446,
+        "pct_complete": 3.8
+      },
+      "bio": {
+        "all_4": 12,
+        "three": 84,
+        "two": 418,
+        "one": 332,
+        "total": 846,
+        "pct_complete": 1.4
+      },
+      "cosmo": {
+        "all_4": 20,
+        "three": 70,
+        "two": 198,
+        "one": 78,
+        "total": 366,
+        "pct_complete": 5.5
+      },
+      "text": {
+        "all_4": 51,
+        "three": 207,
+        "two": 558,
+        "one": 250,
+        "total": 1066,
+        "pct_complete": 4.8
+      },
+      "zodiac": {
+        "all_4": 5,
+        "three": 32,
+        "two": 94,
+        "one": 464,
+        "total": 595,
+        "pct_complete": 0.8
+      }
+    }
+  },
+  "analysis5": {
+    "fill_rate": 68.3,
+    "grid_dims": {
+      "prefixes": 9,
+      "suffixes": 15
+    },
+    "prefix_gallows": {
+      "o": {
+        "t": "2774",
+        "k": "3191",
+        "f": "160",
+        "p": "642"
+      },
+      "∅": {
+        "t": "2241",
+        "k": "3304",
+        "f": "205",
+        "p": "670"
+      },
+      "qo": {
+        "t": "1039",
+        "k": "3120",
+        "f": "46",
+        "p": "178"
+      },
+      "y": {
+        "t": "572",
+        "k": "691",
+        "f": "29",
+        "p": "114"
+      },
+      "s": {
+        "t": "235",
+        "k": "540",
+        "f": "40",
+        "p": "41"
+      },
+      "q": {
+        "t": "212",
+        "k": "358",
+        "f": "4",
+        "p": "38"
+      },
+      "d": {
+        "t": "85",
+        "k": "111",
+        "f": "14",
+        "p": "54"
+      },
+      "so": {
+        "t": "16",
+        "k": "38",
+        "f": "4",
+        "p": "3"
+      },
+      "do": {
+        "t": "9",
+        "k": "20",
+        "f": "1",
+        "p": "1"
+      }
+    },
+    "chi_square": 879.1,
+    "dependent": true
+  },
+  "analysis6": {
+    "entropy_by_section": {
+      "herbal-A": {
+        "mean": 1.357,
+        "min": 0.855,
+        "max": 1.888,
+        "n_folios": 117
+      },
+      "herbal-B": {
+        "mean": 1.405,
+        "min": 1.173,
+        "max": 1.54,
+        "n_folios": 12
+      },
+      "pharma": {
+        "mean": 1.293,
+        "min": 0.789,
+        "max": 1.649,
+        "n_folios": 11
+      },
+      "bio": {
+        "mean": 1.203,
+        "min": 0.977,
+        "max": 1.521,
+        "n_folios": 20
+      },
+      "cosmo": {
+        "mean": 1.605,
+        "min": 1.552,
+        "max": 1.677,
+        "n_folios": 3
+      },
+      "text": {
+        "mean": 1.394,
+        "min": 1.038,
+        "max": 1.67,
+        "n_folios": 23
+      },
+      "zodiac": {
+        "mean": 1.333,
+        "min": 1.0,
+        "max": 1.628,
+        "n_folios": 12
+      }
+    },
+    "mean_intra_cos": 0.961,
+    "mean_inter_cos": 0.927
+  },
+  "analysis7": {
+    "scorecard": {
+      "P1_phonetic_complement": "CONFIRMED",
+      "P2_logogram": "CONFIRMED",
+      "P3_vowel_equivalence": "CONFIRMED",
+      "P4_hermetic": "QUALITATIVE",
+      "P5_classification_grid": "CONFIRMED",
+      "P6_folio_consistency": "CONFIRMED"
+    },
+    "totals": {
+      "confirmed": 5,
+      "partial": 0,
+      "rejected": 0
+    }
+  }
+}

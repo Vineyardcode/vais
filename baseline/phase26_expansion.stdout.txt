@@ -1,0 +1,690 @@
+PHASE 26: VOCABULARY EXPANSION & CROSS-SECTION VALIDATION
+============================================================================
+Loaded 39564 word tokens
+
+============================================================================
+PHASE 26a: COVERAGE UPDATE WITH NEW ROOTS
+============================================================================
+
+  Total tokens: 39564
+  Known roots:  29366 (74.2%)
+  Vocabulary:   33 confirmed + 7 compounds = 40 total
+
+  Per-section coverage:
+    bio           5686/6770  (84.0%)
+    cosmo         2844/3644  (78.0%)
+    herbal-A      7828/11035 (70.9%)
+    herbal-B      1063/1499  (70.9%)
+    pharma        2158/3106  (69.5%)
+    text          7942/10561 (75.2%)
+    zodiac        1845/2949  (62.6%)
+
+  New roots added this phase: cheos, ches, hed
+  Tokens covered by new roots: 256
+
+============================================================================
+PHASE 26b: CRACKING ROOT 'air' (449 tokens)
+============================================================================
+
+  Total 'air'-root tokens: 449
+
+  Sections: {'text': 171, 'herbal-A': 110, 'zodiac': 60, 'cosmo': 48, 'pharma': 36, 'bio': 18, 'herbal-B': 6}
+
+  Prefixes: {'d': 155, 'o': 65, 's': 40, 'qo': 33, 'y': 21, 'q': 1, 'so': 1, 'do': 1}
+
+  Suffixes: {'al': 13, 'ody': 11, 'y': 9, 'ol': 7, 'ar': 7, 'in': 4, 'or': 2, 'ain': 1}
+
+  Determinatives: {'k': 69, 't': 56, 'p': 23, 'f': 5}
+
+  Top word forms:
+    dair                  126  pfx=d   sfx=      det=
+    air                    86  pfx=    sfx=      det=
+    sair                   34  pfx=s   sfx=      det=
+    otair                  29  pfx=o   sfx=      det=t
+    qokair                 21  pfx=qo  sfx=      det=k
+    okair                  19  pfx=o   sfx=      det=k
+    tair                   13  pfx=    sfx=      det=t
+    kair                   12  pfx=    sfx=      det=k
+    ykair                   8  pfx=y   sfx=      det=k
+    pchdair                 6  pfx=d   sfx=      det=p
+    dairal                  6  pfx=d   sfx=al    det=
+    ytair                   6  pfx=y   sfx=      det=t
+    qotair                  5  pfx=qo  sfx=      det=t
+    opair                   4  pfx=o   sfx=      det=p
+    airol                   4  pfx=    sfx=ol    det=
+
+  Left collocates (known roots):
+    e          (this/that           ): 112
+    a          (great-one           ): 89
+    ch         (do/make             ): 84
+    ar         (king/great          ): 55
+    al         (stone               ): 48
+    h          (happen/occur        ): 47
+    or         (king/great          ): 37
+    ol         (carry/bear          ): 37
+    d          (matter/thing        ): 33
+    l          (remedy/thing        ): 29
+
+  Right collocates (known roots):
+    e          (this/that           ): 110
+    a          (great-one           ): 106
+    ch         (do/make             ): 103
+    al         (stone               ): 88
+    ar         (king/great          ): 70
+    h          (happen/occur        ): 48
+    ol         (carry/bear          ): 34
+    d          (matter/thing        ): 32
+    l          (remedy/thing        ): 27
+    che        (make-this           ): 26
+
+  Context examples (10 from each major section):
+    f100v.15,+P0 (pharma):
+      ...[verbal] king/great | do/make (of) | **of ?air?** | carry/bear | make-this (nom) | which/that-which [substance/bodily] carry/bear (of)...
+    f101r.4,+P0 (pharma):
+      ...[substance/bodily] do/make (nom) | of [celestial/astral] ?ae? (prescr.) | the this-substance/bodily (nom) | **of ?air? (pl)** | the this-substance/bodily  | the this-substance/bodily  | of ?air? (pl)...
+    f101r.4,+P0 (pharma):
+      ...of ?air? (pl) | the this-substance/bodily  | the this-substance/bodily  | **of ?air? (pl)** | ...
+    f101v.25,+P0 (pharma):
+      ...of great-one (pl) | **of ?air?** | [adjectival] this-celestial/astral (nom) | do/make -er | which/that-which [substance/bodily] carry/bear...
+    f101v.25,+P0 (pharma):
+      ...[celestial/astral] ?eo? | the remedy-making -er | of great-one (pl) | **of ?air?** | [adjectival] this-celestial/astral (nom) | do/make -er | which/that-which [substance/bodily] carry/bear...
+    f103v.8,+P0 (text):
+      ...[verbal] great-one (pl) | [verbal] happen/occur (of) | the ?lsh? (of) | **of ?air?** | [substance/bodily] ?cheo? in/at(place) | the this-substance/bodily ...
+    f104r.2,+P0 (text):
+      ...?cheod? -er/doer | great-one (pl) | do/make (of) | **[celestial/astral] ?air?** | ?os? | great-one (pl) | [celestial/astral] do/make (descr.)...
+    f104r.5,+P0 (text):
+      ...[discourse/topic] ?chedaih?  | stone | ?lod? | **of [discourse/topic] ?air?** | the [discourse/topic] matter/thing  | which ?od?...
+    f104r.10,+P0 (text):
+      ...[substance/bodily] ?cheoca?  | the [celestial/astral] ?yd? | ?os? | **?air?** | [verbal] happen/occur  | which [substance/bodily] ?od? | the this-celestial/astral (prescr.)...
+    f104r.11,+P0 (text):
+      ...the [celestial/astral] ?odch?  | [substance/bodily] ?le? (prescr.) | **which/that-which [substance/bodily] ?air?** | the [celestial/astral] carry/bear  | [verbal] ?hod? -er/doer | do/make (of)...
+    f10r.7,+P0 (herbal-A):
+      ...of great-one (pl) | [celestial/astral] ?? | of great-one (pl) | **of ?air?** | water...
+    f11r.6,+P0 (herbal-A):
+      ...the [celestial/astral] carry/bear | do/make rulers(pl) | [adjectival] [substance/bodily] king/great | **of ?air?** | do/make (prescr.) | [celestial/astral] ?y? | of great-one (pl)...
+    f13v.1,@P0 (herbal-A):
+      ... | **the [substance/bodily] ?air?** | [celestial/astral] substance (pl) | [celestial/astral] ?o?  | [substance/bodily] ?od?...
+    f14v.8,+P0 (herbal-A):
+      ...the [substance/bodily] ?o?  | of great-one (pl) | of carry/bear | **of ?air?** | of water...
+    f16r.3,+P0 (herbal-A):
+      ...which ?o?  | the [substance/bodily] ?i? (pl) | [substance/bodily] substance  | **[adjectival] [substance/bodily] ?air?** | ...
+    f67r1.4,+P0 (zodiac):
+      ...?cheod? rulers(pl) | [substance/bodily] do/make (of) | king/great | **?air?** | king/great | do/make (of) | of ?air?...
+    f67r1.4,+P0 (zodiac):
+      ...?air? | king/great | do/make (of) | **of ?air?** | this-celestial/astral ...
+    f67r1.5,@Cc (zodiac):
+      ... | **it-[verbs] ?air? (nom)** | [verbal] happen/occur  | [substance/bodily] ?choe? (prescr.) | [adjectival] [substance/bodily] this-matter in/at(place)...
+    f67r1.6,+Cc (zodiac):
+      ... | **of ?air?** | stone | make-this (nom) | of stone...
+    f67r1.6,+Cc (zodiac):
+      ...the [celestial/astral] ?od? rulers(pl) | [celestial/astral] ?chej?  | the [celestial/astral] king/great | **of ?air?** | king/great | prepare-this -er/doer | the this-substance/bodily ...
+    f75r.11,+P0 (bio):
+      ...which/that-which this-substance/bodily  | **which/that-which [substance/bodily] ?air?** | the remedy/thing  | which/that-which this-substance/bodily  | matter/thing ...
+    f76v.28,+P0 (bio):
+      ...[verbal] [substance/bodily] happen/occur (of) | ?cheolch? (of) | which/that-which this-substance/bodily  | **[verbal] ?air?** | [verbal] [substance/bodily] happen/occur (of) | this-substance/bodily  | remedy-making (descr.)...
+    f76v.31,+P0 (bio):
+      ... | **[verbal] ?air?** | [verbal] [substance/bodily] ?heai? (pl) | [verbal] [celestial/astral] ?hes? | ?ai? (pl)...
+    f77v.26,+P0 (bio):
+      ... | **of ?air? (nom)** | [verbal] happen/occur (descr.) | ?rch?  | [verbal] fall/occur -er...
+    f79r.17,+P0 (bio):
+      ...[verbal] happen/occur  | ?lsh? (of) | ?ls? | **?air?** | king/great | king/great -er | the celestial/astral-noble (pl)...
+    f85r1.1,@P0 (cosmo):
+      ...of it-happens (descr.) | it-[verbs] this/that  | of [botanical/plant] ?cheo? (of) | **[verbal] ?air?** | [verbal] happen/occur (descr.) | it-[verbs] ?dair? | [verbal] happen/occur (of)...
+    f85r1.1,@P0 (cosmo):
+      ...of it-happens (descr.) | it-[verbs] this/that  | of [botanical/plant] ?cheo? (of) | **[verbal] ?air?** | [verbal] happen/occur (descr.) | it-[verbs] ?dair? | [verbal] happen/occur (of)...
+    f85r1.9,+P0 (cosmo):
+      ...[celestial/astral] this-matter | remedy-making (of) | which/that-which [substance/bodily] ?esh?  | **of ?air?** | [verbal] pour/descend -er/doer | [verbal] fall/occur (nom) | ?qo?...
+    f85r1.9,+P0 (cosmo):
+      ...[celestial/astral] this-matter | remedy-making (of) | which/that-which [substance/bodily] ?esh?  | **of ?air?** | [verbal] pour/descend -er/doer | [verbal] fall/occur (nom) | ?qo?...
+    f85r1.10,+P0 (cosmo):
+      ... | **of ?air?** | [celestial/astral] substance rulers(pl) | ?cheod? | [substance/bodily] ?cheol? (descr.)...
+    f87v.14,+P0 (herbal-B):
+      ...[verbal] ?an? | ?ain?  | this-substance/bodily (nom) | **of ?air?** | the ?ld? | great-one (pl) | [celestial/astral] ?aolg?...
+    f90r1.3,+P0 (herbal-B):
+      ...the [substance/bodily] king/great | [adjectival] [substance/bodily] ?orsh?  | [substance/bodily] ?lal?  | **of ?air?** | [verbal] [substance/bodily] ?hea? | [verbal] king/great  | the [substance/bodily] king/great...
+    f93v.3,+P0 (herbal-B):
+      ...[celestial/astral] ?o?  | of great-one (pl) | the [celestial/astral] stone | **of ?air?** | the [substance/bodily] carry/bear...
+    f94r.2,+P0 (herbal-B):
+      ...the substance/bodily-noble (pl) | the matter/thing -er | the [substance/bodily] stone | **the [substance/bodily] ?air?** | [substance/bodily] ?o?  | of ?aiir? | which/that-which [celestial/astral] king/great...
+    f94r.3,+P0 (herbal-B):
+      ...which [substance/bodily] ?o?  | the [celestial/astral] ?o?  | which/that-which [substance/bodily] ?olch? (of) | **which/that-which [substance/bodily] ?air?** | the [discourse/topic] king/great ...
+
+  CANDIDATE IDENTIFICATIONS:
+    Arabic ayr: wild donkey / male animal
+    Arabic ayr/ir: phallus / virility
+    Coptic eire/ire: to do/make
+    Arabic nayr/nar: fire (with n-loss)
+    Coptic hire: road/way
+
+  GRAMMATICAL PROFILE:
+    d- (genitive) = 34.5% → NOUN
+    s- (verbal)   = 8.9% → mixed
+    o- (article)  = 14.5% → nominal reference
+    qo- (rel.)    = 7.3% → relative clause
+
+  COMPARISON TO KNOWN ROOTS:
+    al     (stone         ): d=21% s=4% o=26%
+    am     (water         ): d=24% s=3% o=25%
+    ar     (king/great    ): d=20% s=6% o=21%
+    h      (happen/occur  ): d=0% s=98% o=0%
+    he     (fall/occur    ): d=0% s=99% o=1%
+    ch     (do/make       ): d=5% s=1% o=2%
+    l      (remedy/thing  ): d=1% s=0% o=52%
+
+============================================================================
+PHASE 26c: CRACKING NEXT 5 UNKNOWN ROOTS
+============================================================================
+
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ROOT 'eo' — 302 tokens
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Sections: {'text': 110, 'zodiac': 67, 'herbal-A': 50, 'pharma': 44, 'herbal-B': 15, 'cosmo': 12, 'bio': 4}
+  Prefixes: {'o': 112, 'qo': 65, 'y': 22, 'd': 3, 'q': 3}
+  Suffixes: {'y': 33, 'ey': 27, 'ar': 6, 'al': 4, 'ol': 3}
+  Determinatives: {'k': 157, 't': 104, 'p': 23, 'f': 4}
+  Top forms: okeeo(20), okeo(18), qokeeo(18), oteo(17), keeo(11)
+  Left collocates: this/that(124), do/make(44), great-one(44), stone(28), carry/bear(24)
+  Right collocates: this/that(145), great-one(78), do/make(52), stone(40), king/great(40)
+  Grammar: d=1% s=0% o=37% → NOUN
+  e→a shift: 'eo' → 'ao'
+  Candidates:
+    Coptic eio: to wash / be clean
+    Coptic io: donkey
+    Arabic aw: or / and
+  Context examples:
+    f100r.14,+P0 (pharma): ...?r? rulers(pl) | the [celestial/astral] stone | **[adjectival] [substance/bodily] ?eo?** | ...
+    f101r.1,@P0 (pharma): ...[discourse/topic] substance (of) | [substance/bodily] do/make (of) | **[celestial/astral] ?eo? ** | [substance/bodily] ?y?  | do/make (of)...
+    f101v.20,+P0 (pharma): ...do/make (of) | which [substance/bodily] ?yeod? | **the ?eo?** | substance  | the this-substance/bodily (prescr.)...
+    f101v.20,+P0 (pharma): ...do/make (of) | which [substance/bodily] ?yeod? | **the ?eo?** | substance  | the this-substance/bodily (prescr.)...
+    f101v.21,+P0 (pharma): ...which/that-which this/that  | this-celestial/astral  | **[celestial/astral] ?eo? ** | of great-one (pl) | of ?y? ...
+
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ROOT 'lsh' — 180 tokens
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Sections: {'bio': 107, 'text': 46, 'herbal-A': 12, 'cosmo': 8, 'pharma': 4, 'herbal-B': 2, 'zodiac': 1}
+  Prefixes: {'o': 69, 'qo': 10, 'so': 6, 'do': 6, 'd': 1}
+  Suffixes: {'edy': 86, 'ey': 56, 'y': 19, 'dy': 9, 'or': 3}
+  Determinatives: {'p': 8, 't': 8, 'k': 5, 'f': 1}
+  Top forms: lshedy(40), olshedy(25), lshey(16), olshey(13), olsheey(7)
+  Left collocates: this/that(80), great-one(47), do/make(40), happen/occur(36), carry/bear(21)
+  Right collocates: this/that(91), great-one(44), happen/occur(35), do/make(32), remedy/thing(32)
+  Grammar: d=1% s=0% o=38% → NOUN
+  Candidates:
+    l+sh: remedy + it-happens = remedy-happening?
+    Coptic lash: to multiply / increase
+    Arabic lashsh: unclear
+  COMPOUND? l(remedy/thing) + sh(it-happens)
+  Context examples:
+    f100r.22,@P0 (pharma): ... | **the [botanical/plant] ?lsh? (prescr.)** | ?chold? rulers(pl) | [botanical/plant] ?od?...
+    f101r.10,+P0 (pharma): ...[verbal] ?ha? | the ?lche? (nom) | **the [substance/bodily] ?lsh? (of)** | the [substance/bodily] ?eol?  | the ?i? (pl)...
+    f103r.7,+P0 (text): ...do/make (of) | [verbal] ?hs? | **the ?lsh? (descr.)** | which/that-which this-substance/bodily  | the this-substance/bodily (prescr.)...
+    f103r.39,+P0 (text): ...[adjectival] this-substance/bodily  | which/that-which this-substance/bodily  | **?lsh? (of)** | which/that-which [celestial/astral] stone | [verbal] happen/occur (descr.)...
+    f103r.48,+P0 (text): ...the [discourse/topic] ?lar? -er/doer | **?lsh? (descr.)** | which/that-which [celestial/astral] carry/bear rulers(pl) | which/that-which this-substance/bodily ...
+
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ROOT 'eod' — 174 tokens
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Sections: {'zodiac': 50, 'text': 37, 'herbal-A': 35, 'cosmo': 18, 'herbal-B': 18, 'pharma': 16}
+  Prefixes: {'o': 63, 'qo': 24, 'y': 18, 'd': 2, 's': 1}
+  Suffixes: {'ar': 43, 'aiin': 40, 'al': 28, 'ain': 11, 'ol': 2}
+  Determinatives: {'k': 78, 't': 71, 'p': 15, 'f': 1}
+  Top forms: qokeod(8), oteodaiin(8), okeod(7), oteodar(7), pcheodar(6)
+  Left collocates: this/that(65), do/make(30), great-one(22), carry/bear(21), happen/occur(17)
+  Right collocates: this/that(62), great-one(42), do/make(33), king/great(21), happen/occur(18)
+  Grammar: d=1% s=1% o=36% → NOUN
+  e→a shift: 'eod' → 'aod'
+  Candidates:
+    e+od: this + ?od? = demonstrative compound
+    Coptic eiot/iot: father
+    Arabic udd: stick/branch
+  Context examples:
+    f100r.13,+P0 (pharma): ...which/that-which this-substance/bodily  | the this-celestial/astral  | **[adjectival] [substance/bodily] ?eod? rulers(obl)** | ?roraryd? rulers(pl) | of great-one (pl)...
+    f101r.5,+P0 (pharma): ...carry/bear | do/make (of) | **the [celestial/astral] ?eod?** | [verbal] fall/occur (nom) | the this-substance/bodily (nom)...
+    f101v.22,+P0 (pharma): ...carry/bear | great-one (pl) | **the [substance/bodily] ?eod?** | [adjectival] [substance/bodily] happen/occur (of) | of great-one (pl)...
+    f101v.22,+P0 (pharma): ...carry/bear | great-one (pl) | **the [substance/bodily] ?eod?** | [adjectival] [substance/bodily] happen/occur (of) | of great-one (pl)...
+    f102r1.3,@P0 (pharma): ...?loi? (pl) | the this-celestial/astral -er | **[discourse/topic] ?eod? -er/doer** | [verbal] ?hold? rulers(pl)...
+
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ROOT 'od' — 152 tokens
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Sections: {'herbal-A': 68, 'text': 28, 'cosmo': 18, 'pharma': 14, 'herbal-B': 14, 'zodiac': 9, 'bio': 1}
+  Prefixes: {'o': 43, 'qo': 28, 'q': 25, 'y': 17, 'd': 2}
+  Suffixes: {'aiin': 25, 'ar': 14, 'al': 7, 'ain': 3, 'ey': 2}
+  Determinatives: {'k': 58, 't': 57, 'p': 11, 'f': 5}
+  Top forms: qod(8), otodaiin(8), qokod(8), od(7), qokchd(6)
+  Left collocates: do/make(49), this/that(48), great-one(29), matter/thing(18), king/great(18)
+  Right collocates: this/that(37), great-one(29), do/make(25), matter/thing(19), carry/bear(15)
+  Grammar: d=1% s=0% o=28% → NOUN
+  Candidates:
+    Coptic oute/ote: to pour/press out
+    Arabic ud: stick / aloe-wood
+    Arabic oud: aloe-wood (oud perfume)
+  Context examples:
+    f100r.22,@P0 (pharma): ...the [botanical/plant] ?lsh? (prescr.) | ?chold? rulers(pl) | **[botanical/plant] ?od?** | [adjectival] make-this (nom) | [discourse/topic] carry/bear...
+    f100v.18,+P0 (pharma): ...make-this -er | the ?dai?  | **[substance/bodily] ?od?** | it-happens | substance-matter...
+    f102r1.6,+P0 (pharma): ...[adjectival] this-substance/bodily (nom) | the remedy/thing  | **the [substance/bodily] ?od? rulers(pl)** | ...
+    f102v2.21,+P0 (pharma): ...[adjectival] do/make (of) | **?od?** | this/that  | the this-substance/bodily -er...
+    f103r.25,+P0 (text): ...prepare-this in/at(place) | the this-substance/bodily  | **which/that-which ?od? rulers(obl)** | the substance/bodily-noble (pl) | the this-celestial/astral ...
+
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ROOT 'ai' — 120 tokens
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Sections: {'text': 36, 'herbal-A': 30, 'cosmo': 24, 'bio': 13, 'pharma': 7, 'zodiac': 7, 'herbal-B': 3}
+  Prefixes: {'d': 25, 'o': 12, 'qo': 5, 's': 4, 'y': 1}
+  Suffixes: {'iin': 97, 'y': 12, 'dy': 2, 'ar': 1}
+  Determinatives: {'k': 23, 't': 10, 'p': 2, 'f': 1}
+  Top forms: aiiin(55), daiiin(22), okaiiin(7), kaiiin(5), qokaiiin(2)
+  Left collocates: great-one(39), king/great(36), do/make(35), this/that(34), king/great(26)
+  Right collocates: this/that(39), great-one(31), king/great(21), do/make(17), happen/occur(14)
+  Grammar: d=21% s=3% o=10% → NOUN
+  Candidates:
+    Coptic ai: house (variant of hi/ei)
+    Arabic ay: which / what
+    Coptic hai: manner/way
+  Context examples:
+    f100r.24,+P0 (pharma): ...[verbal] happen/occur (of) | ?cholshe? (prescr.) | **[verbal] ?ai?** | make-this (nom) | ?r? rulers(pl)...
+    f101v.24,+P0 (pharma): ...[substance/bodily] ?eo? | make-this (nom) | **of ?ai? (pl)** | of this/that -er | do/make (descr.)...
+    f101v.24,+P0 (pharma): ...[substance/bodily] ?eo? | make-this (nom) | **of ?ai? (pl)** | of this/that -er | do/make (descr.)...
+    f102v2.26,@Lf (pharma): ... | **[substance/bodily] ?ai? ** | ...
+    f102v2.33,+P0 (pharma): ...stone | ?chos? | **?ai? (pl)** | [substance/bodily] ?y? | the [substance/bodily] king/great rulers(pl)...
+
+============================================================================
+PHASE 26d: ZODIAC RING RE-TRANSLATION
+============================================================================
+
+  ============================================================
+  f73r
+  ============================================================
+
+  *f73r.1,@Lz [1/1=100%]
+    VOY: otaly
+    ENG: the [celestial/astral] stone 
+
+  *f73r.2,&Lz [1/1=100%]
+    VOY: chockhy
+    ENG: [substance/bodily] substance 
+
+  *f73r.3,&Lz [1/1=100%]
+    VOY: otedy
+    ENG: the this-celestial/astral 
+
+  *f73r.4,&Lz [1/1=100%]
+    VOY: yteeody
+    ENG: [adjectival] this-celestial/astral (prescr.)
+
+   f73r.5,@Cc [21/33=64%]
+    VOY: ypolcheey salchedal chepchey daraly oteos air ar oteosdal chotoey soteees alshey ohes al chees cheoly choteey cheteey cheteeeos aiin chetchody chedar ar cheteey otecos ar airalor shetee yteey cheody ykeydam oteos alar alcheky
+    ENG: [adjectival] [discourse/topic] ?olch? (of), [verbal] ?alched? in/at(place), [discourse/topic] do/make (of), of ?aral? , the [celestial/astral] star, ?air?, king/great, the [celestial/astral] ?eosd? in/at(place), [celestial/astral] ?choo? (of), it-[verbs] [celestial/astral] star, ?alsh? (of), the ?hes?, stone, lord/master, ?cheol? , [celestial/astral] substance (of), [celestial/astral] do/make (of), [celestial/astral] chaos/prima-materia, great-one (pl), [celestial/astral] make-this (prescr.), prepare-this -er/doer, king/great, [celestial/astral] do/make (of), the [celestial/astral] ?ecos?, king/great, ?airal? -er, [verbal] [celestial/astral] fall/occur, [adjectival] this-celestial/astral , make-this (prescr.), [adjectival] [substance/bodily] ?eydam?, the [celestial/astral] star, stone -er/doer, [substance/bodily] stone-working/alchemy (of)
+
+  *f73r.6,@Lz [1/1=100%]
+    VOY: otaly
+    ENG: the [celestial/astral] stone 
+
+  *f73r.7,&Lz [1/1=100%]
+    VOY: okeody
+    ENG: the this-substance/bodily (prescr.)
+
+   f73r.8,&Lz [0/1=0%]
+    VOY: oteedyl
+    ENG: the [celestial/astral] ?edyl?
+
+  *f73r.9,&Lz [1/1=100%]
+    VOY: ykeedy
+    ENG: [adjectival] this-substance/bodily 
+
+  *f73r.10,&Lz [1/1=100%]
+    VOY: okeey
+    ENG: the this-substance/bodily 
+
+  *f73r.11,&Lz [1/1=100%]
+    VOY: okeedy
+    ENG: the this-substance/bodily 
+
+   f73r.12,&Lz [0/1=0%]
+    VOY: ykeeory
+    ENG: [adjectival] [substance/bodily] ?eor? 
+
+  *f73r.13,&Lz [1/1=100%]
+    VOY: oteeosy
+    ENG: the [celestial/astral] star 
+
+  *f73r.14,&Lz [1/1=100%]
+    VOY: shekal
+    ENG: [verbal] [substance/bodily] fall/occur in/at(place)
+
+   f73r.15,&Lz [0/1=0%]
+    VOY: oteedyy
+    ENG: the [celestial/astral] ?edy? 
+
+  *f73r.16,&Lz [1/1=100%]
+    VOY: okedal
+    ENG: the [substance/bodily] this-matter in/at(place)
+
+  *f73r.17,&Lz [1/1=100%]
+    VOY: chdy
+    ENG: do/make 
+
+   f73r.18,&Lz [0/1=0%]
+    VOY: dalshey
+    ENG: of ?alsh? (of)
+
+  *f73r.19,&Lz [1/1=100%]
+    VOY: opaiin
+    ENG: the discourse/topic-noble (pl)
+
+  *f73r.20,&Lz [1/1=100%]
+    VOY: okeos
+    ENG: the [substance/bodily] star
+
+  *f73r.21,&Lz [1/1=100%]
+    VOY: otey
+    ENG: the this-celestial/astral 
+
+   f73r.22,@Cc [16/23=70%]
+    VOY: oteey dar al opaiin olalaiin air am chopchedy chdar oram otareees olteey okees otar chey oteas ochor oparchey daiin qocheey cheey dal cheesy
+    ENG: the this-celestial/astral , of king/great, stone, the discourse/topic-noble (pl), the ?lal? rulers(pl), ?air?, water, [discourse/topic] substance (descr.), ?chd? -er/doer, the ?ram?, the [celestial/astral] ?ares?, the [celestial/astral] remedy/thing (of), the [substance/bodily] star, the [celestial/astral] king/great, do/make (of), the [celestial/astral] ?eas?, the do/make -er, the [discourse/topic] ?arch? (of), of great-one (pl), which/that-which do/make (of), do/make (of), of stone, lord/master 
+
+  *f73r.23,@Lz [1/1=100%]
+    VOY: okary
+    ENG: the [substance/bodily] king/great 
+
+  *f73r.24,&Lz [1/1=100%]
+    VOY: okeeody
+    ENG: the this-substance/bodily (prescr.)
+
+   f73r.25,&Lz [0/1=0%]
+    VOY: oyteedy
+    ENG: the [celestial/astral] ?y? (descr.)
+
+   f73r.26,&Lz [0/1=0%]
+    VOY: oky
+    ENG: [substance/bodily] ?o? 
+
+  *f73r.27,&Lz [1/1=100%]
+    VOY: chefy
+    ENG: [botanical/plant] do/make (of)
+
+  *f73r.28,&Lz [1/1=100%]
+    VOY: otal
+    ENG: the [celestial/astral] stone
+
+  *f73r.29,&Lz [1/1=100%]
+    VOY: chek
+    ENG: [substance/bodily] make-this
+
+  *f73r.30,&Lz [1/1=100%]
+    VOY: ar
+    ENG: king/great
+
+  *f73r.31,&Lz [1/1=100%]
+    VOY: kar
+    ENG: [substance/bodily] king/great
+
+  *f73r.32,&Lz [1/1=100%]
+    VOY: okeeos
+    ENG: the [substance/bodily] star
+
+   f73r.33,@Cc [2/7=29%]
+    VOY: osaiin chedain oteey chedaly okechs chepcheesaly oteodal
+    ENG: the ?s? rulers(pl), prepare-this rulers(obl), the this-celestial/astral , ?chedal? , the [substance/bodily] ?echs?, [discourse/topic] ?chesal? , the [celestial/astral] ?eod? in/at(place)
+
+
+  ============================================================
+  f73v
+  ============================================================
+
+  *f73v.1,@Lz [1/1=100%]
+    VOY: okol
+    ENG: the [substance/bodily] carry/bear
+
+  *f73v.2,&Lz [1/1=100%]
+    VOY: oteody
+    ENG: the this-celestial/astral (prescr.)
+
+  *f73v.3,&Lz [1/1=100%]
+    VOY: oteedy
+    ENG: the this-celestial/astral 
+
+  *f73v.4,&Lz [1/1=100%]
+    VOY: eeeody
+    ENG: this/that (prescr.)
+
+   f73v.5,@Cc [23/34=68%]
+    VOY: otoar ykeody okodeey qopchey opaiin qoteedy dpy otedy shedy qokeody cheor al okegal oteody shedy otesalod air chy ykeesaly keoly dys opchey dy toly chfaikchy ytedar eeey qokeey oty yteedy choldy qokalaiin ykaipy orary
+    ENG: the [celestial/astral] ?o? -er/doer, [adjectival] this-substance/bodily (prescr.), the [substance/bodily] ?od? (of), which/that-which this-discourse/topic , the discourse/topic-noble (pl), which/that-which this-celestial/astral , [discourse/topic] matter/thing , the this-celestial/astral , [verbal] happen/occur (descr.), which/that-which this-substance/bodily (prescr.), make-this -er, stone, the [substance/bodily] ?eg? in/at(place), the this-celestial/astral (prescr.), [verbal] happen/occur (descr.), the [celestial/astral] ?esalod?, ?air?, do/make , [adjectival] [substance/bodily] ?esal? , [substance/bodily] ?eol? , of ?ys?, the this-discourse/topic , matter/thing , the [celestial/astral] remedy/thing , [substance/bodily] ?chai? , [adjectival] [celestial/astral] this-matter -er/doer, this/that , which/that-which this-substance/bodily , [celestial/astral] ?o? , [adjectival] this-celestial/astral , celestial-body , which/that-which [substance/bodily] stone rulers(pl), [adjectival] [substance/bodily] ?ai? , the king 
+
+  *f73v.6,@Lz [1/1=100%]
+    VOY: okeody
+    ENG: the this-substance/bodily (prescr.)
+
+  *f73v.7,&Lz [1/1=100%]
+    VOY: sheol
+    ENG: [verbal] fall/occur (nom)
+
+   f73v.8,&Lz [0/1=0%]
+    VOY: odees
+    ENG: the ?des?
+
+   f73v.9,&Lz [0/1=0%]
+    VOY: eery
+    ENG: ?er? 
+
+  *f73v.10,&Lz [1/1=100%]
+    VOY: okeor
+    ENG: the this-substance/bodily -er
+
+   f73v.11,&Lz [0/1=0%]
+    VOY: ofals
+    ENG: the [botanical/plant] ?als?
+
+  *f73v.12,&Lz [1/1=100%]
+    VOY: ykeody
+    ENG: [adjectival] this-substance/bodily (prescr.)
+
+  *f73v.13,&Lz [1/1=100%]
+    VOY: oteody
+    ENG: the this-celestial/astral (prescr.)
+
+  *f73v.14,&Lz [1/1=100%]
+    VOY: ypaiin
+    ENG: [adjectival] discourse/topic-noble (pl)
+
+  *f73v.15,&Lz [1/1=100%]
+    VOY: yfaiin
+    ENG: [adjectival] botanical/plant-noble (pl)
+
+  *f73v.16,&Lz [1/1=100%]
+    VOY: ofcheesy
+    ENG: the [botanical/plant] star 
+
+   f73v.17,&Lz [0/1=0%]
+    VOY: oraiiny
+    ENG: the ?raiin? 
+
+  *f73v.18,&Lz [1/1=100%]
+    VOY: ykeeody
+    ENG: [adjectival] this-substance/bodily (prescr.)
+
+  *f73v.19,&Lz [1/1=100%]
+    VOY: okeos
+    ENG: the [substance/bodily] star
+
+  *f73v.20,&Lz [1/1=100%]
+    VOY: ykeear
+    ENG: [adjectival] this-substance/bodily -er/doer
+
+   f73v.21,&Lz [0/1=0%]
+    VOY: qokeoly
+    ENG: which/that-which [substance/bodily] ?eol? 
+
+   f73v.22,@Cc [14/22=64%]
+    VOY: oteotos alshy oteolain chokeedam otody qoty shedy chdy tchol oteody cheytey choty okey dy okecholy otey chodaiin chey okeedy saly ar daly
+    ENG: the [celestial/astral] ?eoos?, ?alsh? , the [celestial/astral] ?eol? rulers(obl), [substance/bodily] ?choedam?, the [celestial/astral] ?o? , which [celestial/astral] ?o? , [verbal] happen/occur (descr.), do/make , [celestial/astral] carry/bear, the this-celestial/astral (prescr.), [celestial/astral] ?chey? (of), [celestial/astral] substance , the this-substance/bodily , matter/thing , the [substance/bodily] ?echol? , the this-celestial/astral , substance-matter rulers(pl), do/make (of), the this-substance/bodily , [verbal] stone , king/great, of stone 
+
+  *f73v.23,@Lz [1/1=100%]
+    VOY: otedy
+    ENG: the this-celestial/astral 
+
+  *f73v.24,&Lz [1/1=100%]
+    VOY: eeed
+    ENG: this-matter
+
+   f73v.25,&Lz [0/1=0%]
+    VOY: oky
+    ENG: [substance/bodily] ?o? 
+
+  *f73v.27,&Lz [1/1=100%]
+    VOY: okal
+    ENG: the [substance/bodily] stone
+
+  *f73v.28,&Lz [1/1=100%]
+    VOY: ykey
+    ENG: [adjectival] this-substance/bodily 
+
+   f73v.29,&Lz [0/1=0%]
+    VOY: ykeee
+    ENG: [substance/bodily] ?ye?
+
+   f73v.30,&Lz [0/1=0%]
+    VOY: okeod
+    ENG: the [substance/bodily] ?eod?
+
+  *f73v.31,&Lz [1/1=100%]
+    VOY: ykey
+    ENG: [adjectival] this-substance/bodily 
+
+  *f73v.32,&Lz [1/1=100%]
+    VOY: ypal
+    ENG: [adjectival] [discourse/topic] stone
+
+   f73v.33,@Cc [4/9=44%]
+    VOY: otedchor alar olkcho otolam kees char ytaly alaly otaram
+    ENG: the [celestial/astral] ?edch? -er, stone -er/doer, the [substance/bodily] ?lo?, the [celestial/astral] ?olam?, [substance/bodily] star, do/make -er/doer, [adjectival] [celestial/astral] stone , ?alal? , the [celestial/astral] ?aram?
+
+
+  ZODIAC OVERALL: 125/187 = 66.8%
+
+============================================================================
+PHASE 26e: HERBAL SECTION DEEP DIVE
+============================================================================
+
+  Herbal tokens: 12534
+  Bio tokens:    6770
+
+  Herbal coverage: 8891/12534 = 70.9%
+  Bio coverage:    5686/6770 = 84.0%
+
+  Unknown roots in herbal: 771
+  Unknown roots in bio: 314
+  Herbal-only unknown roots: 627
+
+  Top unknown roots in HERBAL (all):
+    air        herbal: 116  bio:  18
+    od         herbal:  82  bio:   1
+    eo         herbal:  65  bio:   4 (→ao)
+    eod        herbal:  53  bio:   0 [HERBAL-ONLY] (→aod)
+    cheo       herbal:  53  bio:   5 (→chao)
+    qo         herbal:  51  bio:  23
+    os         herbal:  48  bio:   1
+    oo         herbal:  47  bio:   0 [HERBAL-ONLY]
+    om         herbal:  41  bio:   0 [HERBAL-ONLY]
+    heo        herbal:  35  bio:   2 (→hao)
+    aiir       herbal:  34  bio:   1
+    ai         herbal:  33  bio:  13
+    an         herbal:  33  bio:   8
+    ld         herbal:  32  bio:   7
+    hod        herbal:  29  bio:   0 [HERBAL-ONLY]
+
+  Top HERBAL-ONLY unknown roots:
+    eod          53 tokens → aod
+    oo           47 tokens
+    om           41 tokens
+    hod          29 tokens
+    chos         27 tokens
+    yd           19 tokens
+    cheod        18 tokens → chaod
+    sho          16 tokens
+    yo           15 tokens
+    do           14 tokens
+    chom         14 tokens
+    co           13 tokens
+    choe         13 tokens → choa
+    heod         12 tokens → haod
+    aim          12 tokens
+
+  Determinative distribution:
+  Det     Herbal      %      Bio      %
+    k       3184  25.4%     2236  33.0%
+    t       2562  20.4%      978  14.4%
+    f        216   1.7%       38   0.6%
+    p        489   3.9%      194   2.9%
+
+  Largest herbal folios: [('f58r', 368), ('f58v', 365), ('f66r', 313)]
+
+  ============================================================
+  f58r — HERBAL TRANSLATION
+  ============================================================
+
+   f58r.1,@P0 [6/8=75%]
+    VOY: kor cholfy shofchy otoralchy chofchol sholy otaly dal
+    ENG: [substance/bodily] king/great, [botanical/plant] celestial-body , [verbal] [botanical/plant] face/aspect , the [celestial/astral] ?oralch? , [botanical/plant] substance (nom), [verbal] ?hol? , the [celestial/astral] stone , of stone
+
+   f58r.2,+P0 [5/9=56%]
+    VOY: dshodal or ckhy olchear char tal ytal ytar olchokal
+    ENG: of ?shod? in/at(place), king/great, [substance/bodily] ?y?, the ?lche? -er/doer, do/make -er/doer, [celestial/astral] stone, [adjectival] [celestial/astral] stone, [adjectival] [celestial/astral] king/great, the [substance/bodily] ?lcho? in/at(place)
+
+   f58r.3,+P0 [4/7=57%]
+    VOY: ykechod dalaldam ytam choty otchy otaly shoty
+    ENG: [adjectival] [substance/bodily] ?echod?, of ?alaldam?, [adjectival] [celestial/astral] water, [celestial/astral] substance , [celestial/astral] ?o? , the [celestial/astral] stone , [verbal] [celestial/astral] face/aspect 
+
+   f58r.4,+P0 [4/9=44%]
+    VOY: dshor sholar aiin shalom shaly dalchy oteom dal sholala
+    ENG: of it-happens -er, [verbal] ?hol? -er/doer, great-one (pl), [verbal] ?halom?, [verbal] ?hal? , of stone-working/alchemy , the [celestial/astral] ?eom?, of stone, [verbal] ?holala?
+
+   f58r.5,+P0 [12/13=92%]
+    VOY: qor dchair am otar otar char ar al char ar ary ytalar cham
+    ENG: which king/great, of ?chair?, water, the [celestial/astral] king/great, the [celestial/astral] king/great, do/make -er/doer, king/great, stone, do/make -er/doer, king/great, king/great , [adjectival] [celestial/astral] stone -er/doer, hot/warm
+
+   f58r.6,+P0 [5/8=62%]
+    VOY: torchey otaiin chary oteor otal dalchor ykeey choltam
+    ENG: the [celestial/astral] ?rch? (of), the celestial/astral-noble (pl), ?char? , the this-celestial/astral -er, the [celestial/astral] stone, of stone-working/alchemy -er, [adjectival] this-substance/bodily , [celestial/astral] ?cholam?
+
+   f58r.7,+P0 [5/9=56%]
+    VOY: saiin cholkeey dal shom sholteol ytalody otey cheoly tchy
+    ENG: [verbal] great-one (pl), [substance/bodily] celestial-body (of), of stone, [verbal] ?hom?, [verbal] [celestial/astral] ?hole? (nom), [adjectival] [celestial/astral] stone (prescr.), the this-celestial/astral , ?cheol? , [celestial/astral] ?y?
+
+   f58r.8,+P0 [5/10=50%]
+    VOY: toleeshal oleeam dalor chy oteodchy yteochy otey kal dy alam
+    ENG: the [celestial/astral] ?lesh? in/at(place), the ?leam?, of stone -er, do/make , the [celestial/astral] ?eodch? , [adjectival] [celestial/astral] ?eoch? , the this-celestial/astral , [substance/bodily] stone, matter/thing , ?alam?
+
+   f58r.9,+P0 [5/9=56%]
+    VOY: sholaiin cheey yteodaiin qoar aiin arary sheey daiin alam
+    ENG: [verbal] ?hol? rulers(pl), do/make (of), [adjectival] [celestial/astral] ?eod? rulers(pl), which/that-which king/great, great-one (pl), ?arar? , [verbal] happen/occur (of), of great-one (pl), ?alam?
+
+   f58r.10,+P0 [9/12=75%]
+    VOY: tal ar am shar chepchey otar aldy otal cheam qokaiin ote sy
+    ENG: [celestial/astral] stone, king/great, water, [verbal] happen/occur -er/doer, [discourse/topic] do/make (of), the [celestial/astral] king/great, stone , the [celestial/astral] stone, ?cheam?, which/that-which substance/bodily-noble (pl), [celestial/astral] ?oe?, ?s? 
+
+   f58r.11,+P0 [2/7=29%]
+    VOY: qocphody qokalam chairal qoctaiin otalal dalor orar
+    ENG: which/that-which [discourse/topic] ?o? , which/that-which [substance/bodily] ?alam?, ?chair? in/at(place), which/that-which [celestial/astral] ?c? rulers(pl), the [celestial/astral] stone in/at(place), of stone -er, the ?r? -er/doer
+
+   f58r.12,+P0 [6/9=67%]
+    VOY: shoar ar choldal otalchal dal choldy okalys airaldy shar
+    ENG: [verbal] face/aspect -er/doer, king/great, ?chold? in/at(place), the [celestial/astral] stone-working/alchemy in/at(place), of stone, celestial-body , the [substance/bodily] ?alys?, ?airal? , [verbal] happen/occur -er/doer
+
+   f58r.13,+P0 [9/10=90%]
+    VOY: ytar sheear cheoldy ykeol cheal cheody chal chaiin ol oly
+    ENG: [adjectival] [celestial/astral] king/great, [verbal] fall/occur -er/doer, ?cheol? , [adjectival] this-substance/bodily (nom), make-this in/at(place), make-this (prescr.), do/make in/at(place), do/make rulers(pl), carry/bear, the remedy/thing 
+
+   f58r.14,+P0 [7/9=78%]
+    VOY: sharam okair chekaiin ytchaly dalchal ykal okalal oly chal
+    ENG: [verbal] ?haram?, the [substance/bodily] ?air?, [substance/bodily] make-this rulers(pl), [adjectival] [celestial/astral] stone , of stone-working/alchemy in/at(place), [adjectival] [substance/bodily] stone, the [substance/bodily] stone in/at(place), the remedy/thing , do/make in/at(place)
+
+   f58r.15,+P0 [3/6=50%]
+    VOY: daiir shal qopaim cholaly dy shedy
+    ENG: of ?aiir?, [verbal] happen/occur in/at(place), which/that-which [discourse/topic] ?aim?, ?cholal? , matter/thing , [verbal] happen/occur (descr.)
+
+  f58r coverage (first 15 lines): 87/135 = 64.4%
+
+  Results saved to results/phase26_results.json

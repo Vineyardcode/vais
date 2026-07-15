@@ -1,0 +1,852 @@
+{
+  "grid_shape": {
+    "voynich": {
+      "n_prefixes": 11.513513513513514,
+      "n_suffixes": 9.0,
+      "prefix_entropy": 1.6651260159893984,
+      "suffix_entropy": 1.408410417127116,
+      "fill_rate": 0.4086026249389421,
+      "prefix_suffix_ratio": 1.2792792792792793,
+      "entropy_ratio": 1.1822732889081669
+    },
+    "distances": [
+      [
+        "Arabic (Semitic)",
+        1.048290227679856
+      ],
+      [
+        "Hebrew (Semitic)",
+        1.065248558466728
+      ],
+      [
+        "Enochian (Kelley)",
+        1.2758828848311963
+      ],
+      [
+        "Turkish (agglut.)",
+        1.8108577977833213
+      ],
+      [
+        "Latin (fusional)",
+        1.816563317122192
+      ]
+    ]
+  },
+  "person_markers": {
+    "n_roots_analyzed": 37,
+    "avg_significant_prefixes": 6.0,
+    "median_significant_prefixes": 6,
+    "avg_prefix_entropy": 1.6651260159893984,
+    "avg_suffix_entropy": 1.408410417127116,
+    "prefix_counts_hist": {
+      "6": 12,
+      "5": 9,
+      "7": 9,
+      "4": 4,
+      "8": 2,
+      "10": 1
+    }
+  },
+  "cooccurrence": [
+    {
+      "root": "ka",
+      "freq": 2575,
+      "null_pfx_frac": 0.10174757281553398,
+      "jsd_null_vs_prefixed": 0.16923892338883798,
+      "top5_suffix_overlap": 0.8,
+      "null_top5": [
+        "iin",
+        "r",
+        "in",
+        "l",
+        "ir"
+      ],
+      "nonnull_top5": [
+        "iin",
+        "in",
+        "r",
+        "l",
+        "m"
+      ]
+    },
+    {
+      "root": "da",
+      "freq": 2483,
+      "null_pfx_frac": 0.8525976641159887,
+      "jsd_null_vs_prefixed": 0.14593333424290755,
+      "top5_suffix_overlap": 0.8,
+      "null_top5": [
+        "iin",
+        "r",
+        "l",
+        "in",
+        "ir"
+      ],
+      "nonnull_top5": [
+        "iin",
+        "r",
+        "in",
+        "l",
+        "m"
+      ]
+    },
+    {
+      "root": "a",
+      "freq": 2327,
+      "null_pfx_frac": 0.7481736140954018,
+      "jsd_null_vs_prefixed": 0.22104577344773668,
+      "top5_suffix_overlap": 1.0,
+      "null_top5": [
+        "iin",
+        "r",
+        "l",
+        "in",
+        "m"
+      ],
+      "nonnull_top5": [
+        "iin",
+        "in",
+        "r",
+        "l",
+        "m"
+      ]
+    },
+    {
+      "root": "o",
+      "freq": 1837,
+      "null_pfx_frac": 0.6924333151878062,
+      "jsd_null_vs_prefixed": 0.324147838590941,
+      "top5_suffix_overlap": 0.8,
+      "null_top5": [
+        "l",
+        "r",
+        "ly",
+        "dy",
+        "iin"
+      ],
+      "nonnull_top5": [
+        "l",
+        "r",
+        "∅",
+        "iin",
+        "ly"
+      ]
+    },
+    {
+      "root": "ta",
+      "freq": 1370,
+      "null_pfx_frac": 0.12262773722627737,
+      "jsd_null_vs_prefixed": 0.22648198079921722,
+      "top5_suffix_overlap": 0.8,
+      "null_top5": [
+        "iin",
+        "r",
+        "l",
+        "ir",
+        "in"
+      ],
+      "nonnull_top5": [
+        "iin",
+        "r",
+        "l",
+        "in",
+        "m"
+      ]
+    },
+    {
+      "root": "cho",
+      "freq": 1062,
+      "null_pfx_frac": 0.8493408662900188,
+      "jsd_null_vs_prefixed": 0.2232578658343887,
+      "top5_suffix_overlap": 0.8,
+      "null_top5": [
+        "l",
+        "r",
+        "dy",
+        "∅",
+        "ly"
+      ],
+      "nonnull_top5": [
+        "r",
+        "l",
+        "∅",
+        "dy",
+        "d"
+      ]
+    },
+    {
+      "root": "ched",
+      "freq": 818,
+      "null_pfx_frac": 0.6735941320293398,
+      "jsd_null_vs_prefixed": 0.07146922909125031,
+      "top5_suffix_overlap": 0.4,
+      "null_top5": [
+        "y",
+        "∅",
+        "l"
+      ],
+      "nonnull_top5": [
+        "y",
+        "∅",
+        "r"
+      ]
+    },
+    {
+      "root": "kee",
+      "freq": 731,
+      "null_pfx_frac": 0.07934336525307797,
+      "jsd_null_vs_prefixed": 0.11971310657484747,
+      "top5_suffix_overlap": 0.6,
+      "null_top5": [
+        "y",
+        "l",
+        "m"
+      ],
+      "nonnull_top5": [
+        "y",
+        "∅",
+        "l",
+        "m",
+        "ly"
+      ]
+    },
+    {
+      "root": "keed",
+      "freq": 648,
+      "null_pfx_frac": 0.10339506172839506,
+      "jsd_null_vs_prefixed": 0.03214130112884103,
+      "top5_suffix_overlap": 0.4,
+      "null_top5": [
+        "y",
+        "∅"
+      ],
+      "nonnull_top5": [
+        "y",
+        "∅"
+      ]
+    },
+    {
+      "root": "shed",
+      "freq": 613,
+      "null_pfx_frac": 0.7716150081566069,
+      "jsd_null_vs_prefixed": 0.03819406349261697,
+      "top5_suffix_overlap": 0.4,
+      "null_top5": [
+        "y",
+        "∅"
+      ],
+      "nonnull_top5": [
+        "y",
+        "∅"
+      ]
+    },
+    {
+      "root": "cheo",
+      "freq": 592,
+      "null_pfx_frac": 0.8074324324324325,
+      "jsd_null_vs_prefixed": 0.18888105117940163,
+      "top5_suffix_overlap": 0.8,
+      "null_top5": [
+        "l",
+        "dy",
+        "r",
+        "∅",
+        "m"
+      ],
+      "nonnull_top5": [
+        "l",
+        "∅",
+        "r",
+        "dy",
+        "d"
+      ]
+    },
+    {
+      "root": "sho",
+      "freq": 571,
+      "null_pfx_frac": 0.9019264448336253,
+      "jsd_null_vs_prefixed": 0.2873233114796459,
+      "top5_suffix_overlap": 0.8,
+      "null_top5": [
+        "l",
+        "∅",
+        "r",
+        "dy",
+        "d"
+      ],
+      "nonnull_top5": [
+        "r",
+        "∅",
+        "l",
+        "dy",
+        "iin"
+      ]
+    },
+    {
+      "root": "che",
+      "freq": 544,
+      "null_pfx_frac": 0.6948529411764706,
+      "jsd_null_vs_prefixed": 0.08934376457044958,
+      "top5_suffix_overlap": 0.2,
+      "null_top5": [
+        "y",
+        "∅",
+        "r",
+        "ry"
+      ],
+      "nonnull_top5": [
+        "y"
+      ]
+    },
+    {
+      "root": "ked",
+      "freq": 543,
+      "null_pfx_frac": 0.09023941068139964,
+      "jsd_null_vs_prefixed": 0.03231324291418851,
+      "top5_suffix_overlap": 0.4,
+      "null_top5": [
+        "y",
+        "∅"
+      ],
+      "nonnull_top5": [
+        "y",
+        "∅",
+        "l"
+      ]
+    },
+    {
+      "root": "ch",
+      "freq": 524,
+      "null_pfx_frac": 0.7480916030534351,
+      "jsd_null_vs_prefixed": 0.10715141235722424,
+      "top5_suffix_overlap": 1.0,
+      "null_top5": [
+        "y",
+        "dy",
+        "l",
+        "∅",
+        "r"
+      ],
+      "nonnull_top5": [
+        "y",
+        "dy",
+        "l",
+        "∅",
+        "r"
+      ]
+    },
+    {
+      "root": "ko",
+      "freq": 481,
+      "null_pfx_frac": 0.19126819126819128,
+      "jsd_null_vs_prefixed": 0.17794678642619344,
+      "top5_suffix_overlap": 1.0,
+      "null_top5": [
+        "l",
+        "r",
+        "dy",
+        "iin",
+        "∅"
+      ],
+      "nonnull_top5": [
+        "l",
+        "r",
+        "dy",
+        "iin",
+        "∅"
+      ]
+    },
+    {
+      "root": "sa",
+      "freq": 460,
+      "null_pfx_frac": 0.9173913043478261,
+      "jsd_null_vs_prefixed": 0.27770562090824347,
+      "top5_suffix_overlap": 1.0,
+      "null_top5": [
+        "iin",
+        "r",
+        "in",
+        "l",
+        "ir"
+      ],
+      "nonnull_top5": [
+        "iin",
+        "in",
+        "r",
+        "l",
+        "ir"
+      ]
+    },
+    {
+      "root": "keo",
+      "freq": 436,
+      "null_pfx_frac": 0.1536697247706422,
+      "jsd_null_vs_prefixed": 0.20222045117123005,
+      "top5_suffix_overlap": 0.8,
+      "null_top5": [
+        "dy",
+        "l",
+        "∅",
+        "r",
+        "y"
+      ],
+      "nonnull_top5": [
+        "l",
+        "dy",
+        "r",
+        "∅",
+        "d"
+      ]
+    },
+    {
+      "root": "d",
+      "freq": 430,
+      "null_pfx_frac": 0.727906976744186,
+      "jsd_null_vs_prefixed": 0.3235504127287317,
+      "top5_suffix_overlap": 0.4,
+      "null_top5": [
+        "y",
+        "l",
+        "dy",
+        "iiin",
+        "m"
+      ],
+      "nonnull_top5": [
+        "y",
+        "∅",
+        "l",
+        "r"
+      ]
+    },
+    {
+      "root": "to",
+      "freq": 427,
+      "null_pfx_frac": 0.22950819672131148,
+      "jsd_null_vs_prefixed": 0.13496596192608523,
+      "top5_suffix_overlap": 0.8,
+      "null_top5": [
+        "l",
+        "r",
+        "dy",
+        "y",
+        "∅"
+      ],
+      "nonnull_top5": [
+        "l",
+        "r",
+        "dy",
+        "∅",
+        "ly"
+      ]
+    }
+  ],
+  "prefix_geometry": [
+    {
+      "root": "ka",
+      "top_prefixes": [
+        "qo",
+        "o",
+        "∅",
+        "y"
+      ],
+      "avg_jaccard": 0.6138888888888889
+    },
+    {
+      "root": "da",
+      "top_prefixes": [
+        "∅",
+        "o",
+        "qo",
+        "y"
+      ],
+      "avg_jaccard": 0.49267676767676766
+    },
+    {
+      "root": "a",
+      "top_prefixes": [
+        "∅",
+        "r",
+        "ol",
+        "or"
+      ],
+      "avg_jaccard": 0.6304945054945055
+    },
+    {
+      "root": "o",
+      "top_prefixes": [
+        "∅",
+        "q",
+        "l",
+        "ol"
+      ],
+      "avg_jaccard": 0.5228681993387876
+    },
+    {
+      "root": "ta",
+      "top_prefixes": [
+        "o",
+        "qo",
+        "∅",
+        "y"
+      ],
+      "avg_jaccard": 0.5536062378167641
+    },
+    {
+      "root": "cho",
+      "top_prefixes": [
+        "∅",
+        "d",
+        "y",
+        "l"
+      ],
+      "avg_jaccard": 0.650974025974026
+    },
+    {
+      "root": "ched",
+      "top_prefixes": [
+        "∅",
+        "l",
+        "ol",
+        "d"
+      ],
+      "avg_jaccard": 0.6944444444444443
+    },
+    {
+      "root": "kee",
+      "top_prefixes": [
+        "qo",
+        "o",
+        "y",
+        "∅"
+      ],
+      "avg_jaccard": 0.36944444444444446
+    },
+    {
+      "root": "keed",
+      "top_prefixes": [
+        "qo",
+        "o",
+        "∅",
+        "ol"
+      ],
+      "avg_jaccard": 0.75
+    },
+    {
+      "root": "shed",
+      "top_prefixes": [
+        "∅",
+        "l",
+        "d",
+        "ol"
+      ],
+      "avg_jaccard": 0.75
+    },
+    {
+      "root": "cheo",
+      "top_prefixes": [
+        "∅",
+        "y",
+        "d",
+        "l"
+      ],
+      "avg_jaccard": 0.7777777777777778
+    },
+    {
+      "root": "sho",
+      "top_prefixes": [
+        "∅",
+        "d",
+        "y",
+        "l"
+      ],
+      "avg_jaccard": 0.454978354978355
+    },
+    {
+      "root": "che",
+      "top_prefixes": [
+        "∅",
+        "l",
+        "ol",
+        "y"
+      ],
+      "avg_jaccard": 0.625
+    },
+    {
+      "root": "ked",
+      "top_prefixes": [
+        "qo",
+        "o",
+        "∅",
+        "l"
+      ],
+      "avg_jaccard": 0.8333333333333334
+    },
+    {
+      "root": "ch",
+      "top_prefixes": [
+        "∅",
+        "d",
+        "l",
+        "ol"
+      ],
+      "avg_jaccard": 0.4185185185185185
+    },
+    {
+      "root": "ko",
+      "top_prefixes": [
+        "qo",
+        "o",
+        "∅",
+        "y"
+      ],
+      "avg_jaccard": 0.6674501424501424
+    },
+    {
+      "root": "sa",
+      "top_prefixes": [
+        "∅",
+        "o",
+        "y",
+        "ol"
+      ],
+      "avg_jaccard": 0.32982456140350874
+    },
+    {
+      "root": "keo",
+      "top_prefixes": [
+        "o",
+        "qo",
+        "∅",
+        "y"
+      ],
+      "avg_jaccard": 0.7037037037037037
+    },
+    {
+      "root": "d",
+      "top_prefixes": [
+        "∅",
+        "ol",
+        "l",
+        "qo"
+      ],
+      "avg_jaccard": 0.5625
+    },
+    {
+      "root": "to",
+      "top_prefixes": [
+        "o",
+        "qo",
+        "∅",
+        "y"
+      ],
+      "avg_jaccard": 0.7320707070707071
+    }
+  ],
+  "binyan": [
+    {
+      "body": "a",
+      "onsets": [
+        "k",
+        "t",
+        "ch",
+        "p",
+        "sh"
+      ],
+      "full_roots": [
+        "ka",
+        "ta",
+        "cha",
+        "pa",
+        "sha"
+      ],
+      "freqs": [
+        2575,
+        1370,
+        297,
+        122,
+        111
+      ],
+      "prefix_jaccard": 0.6047619047619047,
+      "suffix_jaccard": 0.8666666666666666
+    },
+    {
+      "body": "o",
+      "onsets": [
+        "ch",
+        "sh",
+        "k",
+        "t",
+        "kch",
+        "tch",
+        "cth"
+      ],
+      "full_roots": [
+        "cho",
+        "sho",
+        "ko",
+        "to",
+        "kcho",
+        "tcho",
+        "ctho"
+      ],
+      "freqs": [
+        1062,
+        571,
+        481,
+        427,
+        192,
+        192,
+        177
+      ],
+      "prefix_jaccard": 0.6462585034013605,
+      "suffix_jaccard": 0.7301587301587301
+    },
+    {
+      "body": "ed",
+      "onsets": [
+        "ch",
+        "sh",
+        "k",
+        "t",
+        "pch",
+        "tch",
+        "kch"
+      ],
+      "full_roots": [
+        "ched",
+        "shed",
+        "ked",
+        "ted",
+        "pched",
+        "tched",
+        "kched"
+      ],
+      "freqs": [
+        818,
+        613,
+        543,
+        349,
+        153,
+        130,
+        126
+      ],
+      "prefix_jaccard": 0.6167800453514739,
+      "suffix_jaccard": 0.7134920634920634
+    },
+    {
+      "body": "eo",
+      "onsets": [
+        "ch",
+        "k",
+        "sh",
+        "t"
+      ],
+      "full_roots": [
+        "cheo",
+        "keo",
+        "sheo",
+        "teo"
+      ],
+      "freqs": [
+        592,
+        436,
+        341,
+        224
+      ],
+      "prefix_jaccard": 0.5634920634920635,
+      "suffix_jaccard": 0.8333333333333334
+    },
+    {
+      "body": "e",
+      "onsets": [
+        "ch",
+        "sh",
+        "k",
+        "t",
+        "kch",
+        "tch"
+      ],
+      "full_roots": [
+        "che",
+        "she",
+        "ke",
+        "te",
+        "kche",
+        "tche"
+      ],
+      "freqs": [
+        544,
+        397,
+        232,
+        123,
+        106,
+        101
+      ],
+      "prefix_jaccard": 0.5222222222222223,
+      "suffix_jaccard": 0.45555555555555555
+    },
+    {
+      "body": "ee",
+      "onsets": [
+        "k",
+        "ch",
+        "t",
+        "sh"
+      ],
+      "full_roots": [
+        "kee",
+        "chee",
+        "tee",
+        "shee"
+      ],
+      "freqs": [
+        731,
+        271,
+        264,
+        218
+      ],
+      "prefix_jaccard": 0.6190476190476191,
+      "suffix_jaccard": 0.38055555555555554
+    },
+    {
+      "body": "eed",
+      "onsets": [
+        "k",
+        "t",
+        "sh"
+      ],
+      "full_roots": [
+        "keed",
+        "teed",
+        "sheed"
+      ],
+      "freqs": [
+        648,
+        251,
+        122
+      ],
+      "prefix_jaccard": 0.4484126984126984,
+      "suffix_jaccard": 0.7777777777777777
+    },
+    {
+      "body": "ch",
+      "onsets": [
+        "k",
+        "t",
+        "p"
+      ],
+      "full_roots": [
+        "kch",
+        "tch",
+        "pch"
+      ],
+      "freqs": [
+        310,
+        266,
+        104
+      ],
+      "prefix_jaccard": 0.7777777777777777,
+      "suffix_jaccard": 0.8666666666666667
+    }
+  ]
+}
