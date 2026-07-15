@@ -108,7 +108,7 @@ Can abbreviation systems reproduce the VMS statistical signature?
   [LATIN] done (819 total)
 
   Total experiments: 819
-  Elapsed: 162.8s
+  Elapsed: 206.2s
 
 5. RESULTS ANALYSIS
 ═══════════════════════════════════════════════════════════════════════════
@@ -273,4 +273,4 @@ Can abbreviation systems reproduce the VMS statistical signature?
   f) The abbreviation model preserves word boundaries — but VMS word
      boundaries are non-informative, which abbreviation cannot explain.
 
-Total runtime: 162.8s
+Total runtime: 206.3s

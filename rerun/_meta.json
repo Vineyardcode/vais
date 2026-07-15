@@ -79,13 +79,6 @@
   "stdout_bytes": 12368,
   "results_files_touched": []
  },
- "deep_dive": {
-  "status": "ok",
-  "returncode": 0,
-  "duration_s": 1.23,
-  "stdout_bytes": 15898,
-  "results_files_touched": []
- },
  "deep_dive_phase1": {
   "status": "ok",
   "returncode": 0,
@@ -145,25 +138,11 @@
   "stdout_bytes": 12391,
   "results_files_touched": []
  },
- "grammar_extraction": {
-  "status": "ok",
-  "returncode": 0,
-  "duration_s": 0.15,
-  "stdout_bytes": 19961,
-  "results_files_touched": []
- },
  "hebrew_deep_analysis": {
   "status": "ok",
   "returncode": 0,
   "duration_s": 53.14,
   "stdout_bytes": 19542,
-  "results_files_touched": []
- },
- "herbal_crossref": {
-  "status": "ok",
-  "returncode": 0,
-  "duration_s": 1.24,
-  "stdout_bytes": 17764,
   "results_files_touched": []
  },
  "herbal_labels": {
@@ -173,25 +152,11 @@
   "stdout_bytes": 19706,
   "results_files_touched": []
  },
- "innermost_ring_dive": {
-  "status": "ok",
-  "returncode": 0,
-  "duration_s": 0.11,
-  "stdout_bytes": 26217,
-  "results_files_touched": []
- },
  "leo_deepdive": {
   "status": "ok",
   "returncode": 0,
   "duration_s": 1.09,
   "stdout_bytes": 32719,
-  "results_files_touched": []
- },
- "medieval_degrees": {
-  "status": "ok",
-  "returncode": 0,
-  "duration_s": 0.15,
-  "stdout_bytes": 15615,
   "results_files_touched": []
  },
  "pharma_comparison": {
@@ -323,92 +288,6 @@
   "stdout_bytes": 39679,
   "results_files_touched": [
    "phase22_results.json"
-  ]
- },
- "phase23_full_translation": {
-  "status": "ok",
-  "returncode": 0,
-  "duration_s": 0.71,
-  "stdout_bytes": 48737,
-  "results_files_touched": [
-   "phase23_results.json"
-  ]
- },
- "phase24_classifier_semantics": {
-  "status": "ok",
-  "returncode": 0,
-  "duration_s": 1.51,
-  "stdout_bytes": 45170,
-  "results_files_touched": [
-   "phase24_results.json"
-  ]
- },
- "phase25_narrative_translation": {
-  "status": "ok",
-  "returncode": 0,
-  "duration_s": 4.63,
-  "stdout_bytes": 75607,
-  "results_files_touched": [
-   "phase25_results.json"
-  ]
- },
- "phase26_expansion": {
-  "status": "ok",
-  "returncode": 0,
-  "duration_s": 2.92,
-  "stdout_bytes": 36262,
-  "results_files_touched": [
-   "phase26_results.json"
-  ]
- },
- "phase27_self_audit": {
-  "status": "ok",
-  "returncode": 0,
-  "duration_s": 11.97,
-  "stdout_bytes": 26024,
-  "results_files_touched": [
-   "phase27_output.txt",
-   "phase27_results.json"
-  ]
- },
- "phase28_statistical": {
-  "status": "ok",
-  "returncode": 0,
-  "duration_s": 21.37,
-  "stdout_bytes": 24614,
-  "results_files_touched": [
-   "phase28_output.txt",
-   "phase28_results.json"
-  ]
- },
- "phase29_compounds": {
-  "status": "ok",
-  "returncode": 0,
-  "duration_s": 2.72,
-  "stdout_bytes": 21798,
-  "results_files_touched": [
-   "phase29_output.txt",
-   "phase29_results.json"
-  ]
- },
- "phase30_validation": {
-  "status": "ok",
-  "returncode": 0,
-  "duration_s": 10.56,
-  "stdout_bytes": 12170,
-  "results_files_touched": [
-   "phase30_output.txt",
-   "phase30_results.json"
-  ]
- },
- "phase31_prefix_paradox": {
-  "status": "ok",
-  "returncode": 0,
-  "duration_s": 2.56,
-  "stdout_bytes": 15778,
-  "results_files_touched": [
-   "phase31_output.txt",
-   "phase31_results.json"
   ]
  },
  "phase32_artifact_test": {
@@ -886,16 +765,6 @@
    "phase85_pelling_verbose.txt"
   ]
  },
- "phase86_chunk_equivalence": {
-  "status": "ok",
-  "returncode": 0,
-  "duration_s": 48.36,
-  "stdout_bytes": 13380,
-  "results_files_touched": [
-   "phase86_chunk_equivalence.json",
-   "phase86_chunk_equivalence.txt"
-  ]
- },
  "phase86R_revalidation": {
   "status": "ok",
   "returncode": 0,
@@ -1093,5 +962,196 @@
   "duration_s": 1.09,
   "stdout_bytes": 18430,
   "results_files_touched": []
+ },
+ "phase100_decipherment": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 2204.23,
+  "stdout_bytes": 13989,
+  "results_files_touched": [
+   "phase100_decipherment.json",
+   "phase100_decipherment.txt",
+   "phase101_currier_ab_dichotomy.json",
+   "phase101_currier_ab_dichotomy.txt",
+   "phase103_positional_class_decomposition.json",
+   "phase103_positional_class_decomposition.txt",
+   "phase19_results.json",
+   "phase23_results.json",
+   "phase24_results.json",
+   "phase25_results.json",
+   "phase26_results.json",
+   "phase27_output.txt",
+   "phase27_results.json",
+   "phase28_output.txt",
+   "phase28_results.json",
+   "phase29_output.txt",
+   "phase29_results.json",
+   "phase30_output.txt",
+   "phase30_results.json",
+   "phase31_output.txt",
+   "phase31_results.json",
+   "phase32_output.txt",
+   "phase32_results.json",
+   "phase60_output.json",
+   "phase61_output.json",
+   "phase63_output.json",
+   "phase63_output.txt",
+   "phase67_output.json",
+   "phase67_output.txt",
+   "phase68_output.json",
+   "phase68_output.txt",
+   "phase72_naibbe_calibration.txt",
+   "phase72_naibbe_raw.json",
+   "phase73_abbreviation_model.txt",
+   "phase73_abbreviation_raw.json",
+   "phase75_latin_mapping.json",
+   "phase75_latin_mapping.txt",
+   "phase79_gallows_collapse.txt",
+   "phase83_subword_segmentation.txt",
+   "phase84_mi_meaning_area.json",
+   "phase84_mi_meaning_area.txt",
+   "phase85_chunk_fingerprint.json",
+   "phase85_chunk_fingerprint.txt",
+   "phase86_chunk_equivalence.json",
+   "phase86_chunk_equivalence.txt",
+   "phase87_gallows_null_test.txt",
+   "phase89_context_divergence.json",
+   "phase89_context_divergence.txt",
+   "phase92_ae_minimal_pairs.json",
+   "phase92_ae_minimal_pairs.txt",
+   "phase94_e_extension.json",
+   "phase94_e_extension.txt"
+  ]
+ },
+ "phase23_full_translation": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.95,
+  "stdout_bytes": 48737,
+  "results_files_touched": [
+   "phase23_results.json"
+  ]
+ },
+ "phase24_classifier_semantics": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 1.35,
+  "stdout_bytes": 45170,
+  "results_files_touched": [
+   "phase24_results.json"
+  ]
+ },
+ "phase25_narrative_translation": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 4.88,
+  "stdout_bytes": 75628,
+  "results_files_touched": [
+   "phase25_results.json"
+  ]
+ },
+ "phase26_expansion": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 2.82,
+  "stdout_bytes": 36262,
+  "results_files_touched": [
+   "phase26_results.json"
+  ]
+ },
+ "phase27_self_audit": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 11.83,
+  "stdout_bytes": 26026,
+  "results_files_touched": [
+   "phase27_output.txt",
+   "phase27_results.json"
+  ]
+ },
+ "phase28_statistical": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 21.23,
+  "stdout_bytes": 24536,
+  "results_files_touched": [
+   "phase28_output.txt",
+   "phase28_results.json"
+  ]
+ },
+ "phase29_compounds": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 2.64,
+  "stdout_bytes": 21859,
+  "results_files_touched": [
+   "phase29_output.txt",
+   "phase29_results.json"
+  ]
+ },
+ "phase30_validation": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 11.7,
+  "stdout_bytes": 12170,
+  "results_files_touched": [
+   "phase30_output.txt",
+   "phase30_results.json"
+  ]
+ },
+ "phase31_prefix_paradox": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 3.1,
+  "stdout_bytes": 15778,
+  "results_files_touched": [
+   "phase31_output.txt",
+   "phase31_results.json"
+  ]
+ },
+ "deep_dive": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 1.7,
+  "stdout_bytes": 15898,
+  "results_files_touched": []
+ },
+ "grammar_extraction": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.3,
+  "stdout_bytes": 19961,
+  "results_files_touched": []
+ },
+ "herbal_crossref": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 1.6,
+  "stdout_bytes": 17764,
+  "results_files_touched": []
+ },
+ "innermost_ring_dive": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.26,
+  "stdout_bytes": 26217,
+  "results_files_touched": []
+ },
+ "medieval_degrees": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.21,
+  "stdout_bytes": 15615,
+  "results_files_touched": []
+ },
+ "phase86_chunk_equivalence": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 96.76,
+  "stdout_bytes": 13380,
+  "results_files_touched": [
+   "phase86_chunk_equivalence.json",
+   "phase86_chunk_equivalence.txt"
+  ]
  }
 }

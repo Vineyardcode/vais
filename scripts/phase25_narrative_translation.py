@@ -25,7 +25,20 @@ This phase:
 import re, json, sys, io, math
 from pathlib import Path
 from collections import Counter, defaultdict
-from common import classify_folio_v2 as classify_folio, collapse_echains, full_decompose, gallows_base, strip_gallows
+from common import classify_folio_v2 as classify_folio, collapse_echains, gallows_base, strip_gallows
+
+# full_decompose restored as a LOCAL def: this script family uses a
+# variant SUFFIXES list (no 'sy', different order), so it must bind to
+# the local parse_morphology, not the common one.
+def full_decompose(word):
+    stripped, gals = strip_gallows(word)
+    collapsed = collapse_echains(stripped)
+    pfx, root, sfx = parse_morphology(collapsed)
+    bases = [gallows_base(g) for g in gals]
+    return dict(original=word, stripped=stripped, collapsed=collapsed,
+                prefix=pfx or "", root=root, suffix=sfx or "",
+                gallows=bases, determinative=bases[0] if bases else "")
+
 
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
 

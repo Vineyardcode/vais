@@ -30,54 +30,54 @@
   "dist_comparison": {
     "Latin": {
       "wl_jsd": 0.4938472885326065,
-      "vms_unigram_h": 3.1722188834649474,
+      "vms_unigram_h": 3.1738169344237273,
       "nl_unigram_h": 4.068038659400976,
-      "entropy_ratio": 0.7797907416966535,
+      "entropy_ratio": 0.7801835725157724,
       "vms_alphabet_size": 25,
       "nl_alphabet_size": 27,
       "size_ratio": 0.9259259259259259
     },
     "Czech": {
       "wl_jsd": 0.4111502049329736,
-      "vms_unigram_h": 3.1722188834649474,
+      "vms_unigram_h": 3.1738169344237273,
       "nl_unigram_h": 4.723785505539537,
-      "entropy_ratio": 0.6715416861635477,
+      "entropy_ratio": 0.6718799849615998,
       "vms_alphabet_size": 25,
       "nl_alphabet_size": 38,
       "size_ratio": 0.6578947368421053
     },
     "German": {
       "wl_jsd": 0.4905026842845177,
-      "vms_unigram_h": 3.1722188834649474,
+      "vms_unigram_h": 3.1738169344237273,
       "nl_unigram_h": 4.209359409864593,
-      "entropy_ratio": 0.7536108406497395,
+      "entropy_ratio": 0.7539904829665811,
       "vms_alphabet_size": 25,
       "nl_alphabet_size": 30,
       "size_ratio": 0.8333333333333334
     },
     "Italian": {
       "wl_jsd": 0.3473253508009488,
-      "vms_unigram_h": 3.1722188834649474,
+      "vms_unigram_h": 3.1738169344237273,
       "nl_unigram_h": 4.032987563380646,
-      "entropy_ratio": 0.7865679805880283,
+      "entropy_ratio": 0.7869642255388658,
       "vms_alphabet_size": 25,
       "nl_alphabet_size": 28,
       "size_ratio": 0.8928571428571429
     },
     "French": {
       "wl_jsd": 0.42454566465853705,
-      "vms_unigram_h": 3.1722188834649474,
+      "vms_unigram_h": 3.1738169344237273,
       "nl_unigram_h": 4.038951005510042,
-      "entropy_ratio": 0.7854066264080262,
+      "entropy_ratio": 0.785802286309966,
       "vms_alphabet_size": 25,
       "nl_alphabet_size": 24,
       "size_ratio": 1.0416666666666667
     },
     "English": {
       "wl_jsd": 0.328828059888597,
-      "vms_unigram_h": 3.1722188834649474,
+      "vms_unigram_h": 3.1738169344237273,
       "nl_unigram_h": 4.263487399626266,
-      "entropy_ratio": 0.7440432177055388,
+      "entropy_ratio": 0.7444180401944994,
       "vms_alphabet_size": 25,
       "nl_alphabet_size": 28,
       "size_ratio": 0.8928571428571429
@@ -88,84 +88,84 @@
       "null_mean_rate": 0.008729202524383247,
       "null_std_rate": 0.013250009905031118,
       "null_max_rate": 0.09437751004016064,
-      "opt_rate_3plus": 0.0840504876649455,
-      "opt_hits_3plus": 586,
-      "z_score": 5.684621044091616
+      "opt_rate_3plus": 0.028112449799196786,
+      "opt_hits_3plus": 196,
+      "z_score": 1.4628854931990345
     },
     "English": {
       "null_mean_rate": 0.013770223752151462,
       "null_std_rate": 0.015269524976829473,
       "null_max_rate": 0.08663224325874928,
-      "opt_rate_3plus": 0.060671256454388985,
-      "opt_hits_3plus": 423,
-      "z_score": 3.071544974280918
+      "opt_rate_3plus": 0.052925989672977625,
+      "opt_hits_3plus": 369,
+      "z_score": 2.5643080567498027
     },
     "French": {
       "null_mean_rate": 0.005733218588640275,
       "null_std_rate": 0.010006022628399445,
       "null_max_rate": 0.07888697647733792,
-      "opt_rate_3plus": 0.019650028686173264,
-      "opt_hits_3plus": 137,
-      "z_score": 1.3908433564835052
+      "opt_rate_3plus": 0.021514629948364887,
+      "opt_hits_3plus": 150,
+      "z_score": 1.5771912522897216
     },
     "German": {
       "null_mean_rate": 0.01685083189902467,
       "null_std_rate": 0.01983584566750303,
       "null_max_rate": 0.13482501434308664,
-      "opt_rate_3plus": 0.10728628800917958,
-      "opt_hits_3plus": 748,
-      "z_score": 4.559193372749158
+      "opt_rate_3plus": 0.12994836488812392,
+      "opt_hits_3plus": 906,
+      "z_score": 5.701674377028774
     },
     "Italian": {
       "null_mean_rate": 0.006835628227194492,
       "null_std_rate": 0.01160069080547119,
       "null_max_rate": 0.07530120481927711,
-      "opt_rate_3plus": 0.0963855421686747,
-      "opt_hits_3plus": 672,
-      "z_score": 7.71936046250333
+      "opt_rate_3plus": 0.09825014343086633,
+      "opt_hits_3plus": 685,
+      "z_score": 7.880092378684755
     },
     "Latin": {
       "null_mean_rate": 0.02454417670682731,
       "null_std_rate": 0.024587423942654427,
       "null_max_rate": 0.13625932300631097,
-      "opt_rate_3plus": 0.17283419391853128,
-      "opt_hits_3plus": 1205,
-      "z_score": 6.031132726940517
+      "opt_rate_3plus": 0.1874641422834194,
+      "opt_hits_3plus": 1307,
+      "z_score": 6.626150261067303
     }
   },
   "cv_results": {
     "Czech": {
-      "train_rate": 0.03602305475504323,
-      "test_rate": 0.030985915492957747,
-      "test_hits": 44,
+      "train_rate": 0.15147694524495678,
+      "test_rate": 0.14507042253521127,
+      "test_hits": 206,
       "test_total": 1420
     },
     "English": {
-      "train_rate": 0.03998559077809798,
-      "test_rate": 0.03732394366197183,
-      "test_hits": 53,
+      "train_rate": 0.1359870317002882,
+      "test_rate": 0.13943661971830987,
+      "test_hits": 198,
       "test_total": 1420
     },
     "French": {
-      "train_rate": 0.029358789625360232,
-      "test_rate": 0.021830985915492956,
-      "test_hits": 31,
+      "train_rate": 0.04394812680115274,
+      "test_rate": 0.04014084507042254,
+      "test_hits": 57,
       "test_total": 1420
     },
     "German": {
-      "train_rate": 0.058717579250720464,
-      "test_rate": 0.05985915492957746,
-      "test_hits": 85,
+      "train_rate": 0.05997838616714697,
+      "test_rate": 0.059154929577464786,
+      "test_hits": 84,
       "test_total": 1420
     },
     "Italian": {
-      "train_rate": 0.11203170028818443,
-      "test_rate": 0.10422535211267606,
-      "test_hits": 148,
+      "train_rate": 0.011887608069164265,
+      "test_rate": 0.011971830985915493,
+      "test_hits": 17,
       "test_total": 1420
     },
     "Latin": {
-      "train_rate": 0.17363112391930835,
+      "train_rate": 0.174171469740634,
       "test_rate": 0.16690140845070423,
       "test_hits": 237,
       "test_total": 1420
@@ -173,104 +173,104 @@
   },
   "decipherment_summary": {
     "Czech": {
-      "freq_ll": -9.435270538363374,
-      "best_ll": -9.13928124605724,
-      "total_hits": 12003,
+      "freq_ll": -9.44423342688092,
+      "best_ll": -9.203476114355505,
+      "total_hits": 21387,
       "total_words": 40309,
-      "hit_rate": 0.2977746905157657,
+      "hit_rate": 0.5305762980971991,
       "positional_jsd": {
-        "initial": 0.47604381935044576,
-        "medial": 0.26641427390022965,
-        "final": 0.47139766723030174
+        "initial": 0.43387101749147294,
+        "medial": 0.23917883131067252,
+        "final": 0.4409379569093351
       }
     },
     "English": {
-      "freq_ll": -8.70417827098103,
-      "best_ll": -7.8071872564170395,
-      "total_hits": 20987,
+      "freq_ll": -8.706460648009855,
+      "best_ll": -8.401448467293479,
+      "total_hits": 13890,
       "total_words": 40309,
-      "hit_rate": 0.5206529559155524,
+      "hit_rate": 0.3445880572576844,
       "positional_jsd": {
-        "initial": 0.272496144316619,
-        "medial": 0.18158544971412927,
-        "final": 0.41841864975352394
+        "initial": 0.4456539446306462,
+        "medial": 0.21684944675867526,
+        "final": 0.3136946600482462
       }
     },
     "French": {
-      "freq_ll": -8.976808131781485,
-      "best_ll": -8.233118095718813,
-      "total_hits": 1084,
+      "freq_ll": -8.976074066218917,
+      "best_ll": -8.508299152106247,
+      "total_hits": 7004,
       "total_words": 40309,
-      "hit_rate": 0.02689225731226277,
+      "hit_rate": 0.1737577216006351,
       "positional_jsd": {
-        "initial": 0.5410734984934886,
-        "medial": 0.18725695496182176,
-        "final": 0.37988988230257276
+        "initial": 0.4716856401336851,
+        "medial": 0.2433311292414373,
+        "final": 0.3828885313924649
       }
     },
     "German": {
-      "freq_ll": -8.442168256077071,
-      "best_ll": -7.6910895662397465,
-      "total_hits": 29086,
+      "freq_ll": -8.429409735033559,
+      "best_ll": -7.993631341782938,
+      "total_hits": 26338,
       "total_words": 40309,
-      "hit_rate": 0.7215758267384456,
+      "hit_rate": 0.6534024659505321,
       "positional_jsd": {
-        "initial": 0.3648518743626442,
-        "medial": 0.16078130575587796,
-        "final": 0.35517380566965895
+        "initial": 0.39916481033477524,
+        "medial": 0.215328269600515,
+        "final": 0.294632715657469
       }
     },
     "Italian": {
-      "freq_ll": -8.646684163725453,
-      "best_ll": -8.635516016818762,
-      "total_hits": 22568,
+      "freq_ll": -8.651882270813545,
+      "best_ll": -8.1649324475046,
+      "total_hits": 21050,
       "total_words": 40309,
-      "hit_rate": 0.5598749658885113,
+      "hit_rate": 0.5222158823091617,
       "positional_jsd": {
-        "initial": 0.3407367578542102,
-        "medial": 0.2125960052240633,
-        "final": 0.18586138065044205
+        "initial": 0.3706982224747163,
+        "medial": 0.18972320145346877,
+        "final": 0.30098693201036886
       }
     },
     "Latin": {
-      "freq_ll": -8.21012848221159,
-      "best_ll": -8.065396749845101,
-      "total_hits": 31245,
+      "freq_ll": -8.188465128002301,
+      "best_ll": -7.923158940364032,
+      "total_hits": 27145,
       "total_words": 40309,
-      "hit_rate": 0.775137066163884,
+      "hit_rate": 0.6734228088020046,
       "positional_jsd": {
-        "initial": 0.32815330440165147,
-        "medial": 0.16948132395810417,
-        "final": 0.425878846558275
+        "initial": 0.31300768582126115,
+        "medial": 0.18303878461016715,
+        "final": 0.4300674813177936
       }
     }
   },
   "best_language": "Italian",
   "best_mapping": {
-    "C0": "i",
-    "C3": "e",
-    "C1": "u",
-    "C5": "c",
-    "C2": "o",
-    "C4": "d",
-    "C9": "n",
-    "C10": "l",
-    "C7": "r",
-    "C6": "s",
+    "C0": "a",
+    "C3": "i",
+    "C1": "s",
+    "C5": "o",
+    "C2": "t",
+    "C4": "l",
+    "C9": "r",
+    "C10": "v",
+    "C7": "m",
+    "C6": "p",
     "C8": "q",
-    "C13": "t",
-    "C18": "a",
-    "C11": "b",
-    "C21": "v",
-    "C12": "\u00e0",
-    "C14": "f",
-    "C22": "\u00e8",
-    "C15": "m",
-    "C20": "z",
-    "C24": "x",
-    "C16": "g",
-    "C17": "p",
-    "C19": "h",
-    "C23": "\u00ec"
+    "C13": "z",
+    "C18": "d",
+    "C11": "g",
+    "C15": "\u00e8",
+    "C21": "b",
+    "C12": "u",
+    "C14": "x",
+    "C22": "f",
+    "C20": "h",
+    "C24": "n",
+    "C16": "\u00e0",
+    "C17": "e",
+    "C19": "\u00ec",
+    "C23": "c"
   }
 }

@@ -79,40 +79,52 @@ def process(path, apply=False):
             if r is not None:
                 local_consts[node.targets[0].id] = r
 
-    removals = []  # (node, export)
+    # Fixpoint removal set: a function is removable only if every local
+    # dependency is either hash-identical to core's bare-name version or is
+    # itself in the removal set for that same export. A dep that merely
+    # hash-maps to the export but got guard-rejected must block extraction
+    # (otherwise the extracted caller would silently bind to core's dep while
+    # the script's own variant differs — see phase23-31 full_decompose bug).
+    candidates = {}
     for name, node in local_funcs.items():
         h = alpha_hash(node)
         export = hash_map.get((name, h))
-        if not export or export not in core_funcs:
-            continue
-        # dependency guard: core body refs must resolve identically in script
-        deps = external_names(core_funcs[export])
-        rename = DEP_RENAME.get(export, {})
-        inv_rename = {v: k for k, v in rename.items()}
-        ok = True
-        for d in deps:
-            if hasattr(builtins, d) or d in CORE_IMPORTS:
-                continue
-            script_name = inv_rename.get(d, d)
-            if d in core_funcs:
-                if script_name in local_funcs:
-                    if alpha_hash(local_funcs[script_name]) != core_func_hash[d]:
-                        # local dep will ALSO be replaced only if it maps to same
-                        # export; check hash_map
-                        exp2 = hash_map.get((script_name, alpha_hash(local_funcs[script_name])))
-                        if exp2 != d:
+        if export and export in core_funcs:
+            candidates[name] = (node, export)
+
+    changed = True
+    while changed:
+        changed = False
+        for name in list(candidates):
+            node, export = candidates[name]
+            deps = external_names(core_funcs[export])
+            rename = DEP_RENAME.get(export, {})
+            inv_rename = {v: k for k, v in rename.items()}
+            ok = True
+            for d in deps:
+                if hasattr(builtins, d) or d in CORE_IMPORTS:
+                    continue
+                script_name = inv_rename.get(d, d)
+                if d in core_funcs:
+                    if script_name in local_funcs:
+                        same_hash = alpha_hash(local_funcs[script_name]) == core_func_hash[d]
+                        in_removals = (script_name in candidates
+                                       and candidates[script_name][1] == d)
+                        if not (same_hash or in_removals):
                             ok = False
                             break
-                # if script doesn't define it, core's version is used: fine
-            elif d in core_consts:
-                if script_name in local_consts and local_consts[script_name] != core_consts[d]:
+                elif d in core_consts:
+                    if script_name in local_consts and local_consts[script_name] != core_consts[d]:
+                        ok = False
+                        break
+                else:
                     ok = False
                     break
-            else:
-                ok = False
-                break
-        if ok:
-            removals.append((node, export, name))
+            if not ok:
+                del candidates[name]
+                changed = True
+
+    removals = [(node, export, name) for name, (node, export) in candidates.items()]
 
     if not removals:
         return None

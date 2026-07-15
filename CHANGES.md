@@ -132,3 +132,45 @@ the rerun diff):
 - `medieval_degrees.py`: dead first-attempt boundary loop removed.
 - `pharma_comparison.py`: unused `a_total`, dead `import random`/`seed(42)`
   removed (the "sampling" is a deterministic window; comment now says so).
+
+### Phase 2 — verification against baseline (rerun + baseline-prime)
+
+Method: full rerun of all 129 tests with the refactored code under
+`PYTHONHASHSEED=0` (`rerun/`), diffed against `baseline/`. Because the
+baseline ran with randomized hashing, any stdout that differed was
+adjudicated by also running the **pre-refactor original** of that script
+under the same fixed hash seed ("baseline-prime") and comparing
+rewritten-vs-original under identical conditions.
+
+Ledger (129 tests):
+- **73** byte-identical to the baseline outright.
+- **49** differed from baseline but are **byte-identical to their
+  pre-refactor originals** under equal hash seed — the baseline diffs were
+  pure set/dict iteration-order noise (tie re-ordering in ranked tables).
+- **2** (`phase72_naibbe_calibration`, `phase73_abbreviation_model`) differ
+  only in printed wall-clock "elapsed" text inside progress lines.
+- **4** differ because of the documented intentional fixes:
+  `grammar_extraction` (parser-loop fix; parse rate and morphology tables
+  improve), `medieval_degrees` (same fix), `phase86_chunk_equivalence`
+  (Step 10 NL cross-check now actually executes), `innermost_ring_dive`
+  (consumes `grammar_results.json`, downstream of the grammar fix).
+- **1** (`phase100_decipherment`) baseline-prime adjudication in progress
+  (39-minute runtime); its diff pattern (shifted class-score values) is
+  consistent with iteration-order sensitivity inside its greedy mapping
+  search — to be confirmed and recorded below.
+
+### Rewriter regressions found & fixed during verification
+1. **Import placement**: in 4 scripts with mid-file top-level imports
+   (`phase44/47/50/51`), the `from common import …` line landed after the
+   first use. Fixed the rewriter to insert before the first removed def;
+   repaired the 4 scripts; re-verified ok.
+2. **Dependency-guard hole**: `full_decompose` was extracted from the
+   phase23–31 family even though their local `parse_morphology` binds a
+   *variant* `SUFFIXES` list (no `'sy'`, different order — first-match
+   semantics make order significant). The extracted copy silently bound to
+   `common`'s list, shifting decomposition counts (~0.1%). Fixed by
+   restoring a **local** `full_decompose` in those 9 scripts (with a comment
+   explaining why) and hardening the rewriter guard to a fixpoint rule: a
+   function is only extracted if every locally-defined dependency is itself
+   extracted or hash-identical. All 9 re-verified byte-identical to their
+   originals. This incident is exactly why the verification loop exists.

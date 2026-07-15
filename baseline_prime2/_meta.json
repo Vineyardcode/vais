@@ -1,0 +1,21 @@
+{
+ "phase23_full_translation": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.42,
+  "stdout_bytes": 48737,
+  "results_files_touched": [
+   "phase23_results.json"
+  ]
+ },
+ "phase28_statistical": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 21.47,
+  "stdout_bytes": 24536,
+  "results_files_touched": [
+   "phase28_output.txt",
+   "phase28_results.json"
+  ]
+ }
+}

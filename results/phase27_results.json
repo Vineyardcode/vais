@@ -1,12 +1,12 @@
 {
   "27a": {
-    "short_pct": 90.71787837219937,
+    "short_pct": 90.71101724744808,
     "long_coverage": 6.548387096774194,
-    "total_coverage": 70.54838709677419
+    "total_coverage": 70.49627791563276
   },
   "27b": {
-    "pass": 18,
-    "fail": 4
+    "pass": 17,
+    "fail": 5
   },
   "27c": {
     "pass": 3,

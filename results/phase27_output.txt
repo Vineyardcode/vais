@@ -55,39 +55,39 @@ If most 'coverage' comes from these, we may just be absorbing noise.
 
   TOKEN DISTRIBUTION:
     Total tokens:     40300
-    Short-root match: 25792 (64.0%)
+    Short-root match: 25771 (63.9%)
     Long-root match:  2639 (6.5%)
-    Unknown:          11869 (29.5%)
-    Overall coverage: 28431 (70.5%)
+    Unknown:          11890 (29.5%)
+    Overall coverage: 28410 (70.5%)
 
   OF KNOWN TOKENS:
-    From short roots: 25792 (90.7% of known)
+    From short roots: 25771 (90.7% of known)
     From long roots:  2639 (9.3% of known)
 
   *** WARNING: 91% of coverage from short roots!
   *** This means most 'coverage' may be noise absorption, not real meaning.
 
   TOP 20 ROOTS BY TOKEN COUNT:
-    'e       ' (this/that           ):  5296 tokens (13.1%)  [SHORT]
-    'a       ' (great-one           ):  3956 tokens ( 9.8%)  [SHORT]
-    'ch      ' (do/make             ):  3635 tokens ( 9.0%)  [SHORT]
+    'e       ' (this/that           ):  5279 tokens (13.1%)  [SHORT]
+    'a       ' (great-one           ):  3953 tokens ( 9.8%)  [SHORT]
+    'ch      ' (do/make             ):  3628 tokens ( 9.0%)  [SHORT]
     'ar      ' (king/great          ):  2021 tokens ( 5.0%)  [SHORT]
-    'h       ' (happen/occur        ):  2004 tokens ( 5.0%)  [SHORT]
-    'ol      ' (carry/bear          ):  1758 tokens ( 4.4%)  [SHORT]
-    'al      ' (stone               ):  1731 tokens ( 4.3%)  [SHORT]
-    'l       ' (remedy/thing        ):  1355 tokens ( 3.4%)  [SHORT]
+    'h       ' (happen/occur        ):  2003 tokens ( 5.0%)  [SHORT]
+    'ol      ' (carry/bear          ):  1756 tokens ( 4.4%)  [SHORT]
+    'al      ' (stone               ):  1728 tokens ( 4.3%)  [SHORT]
+    'l       ' (remedy/thing        ):  1351 tokens ( 3.4%)  [SHORT]
     'd       ' (matter/thing        ):  1188 tokens ( 2.9%)  [SHORT]
     'or      ' (king/great          ):  1036 tokens ( 2.6%)  [SHORT]
-    'che     ' (make-this           ):   711 tokens ( 1.8%)  [long ]
-    'cho     ' (substance           ):   560 tokens ( 1.4%)  [long ]
-    'lch     ' (remedy-making       ):   423 tokens ( 1.0%)  [long ]
+    'che     ' (make-this           ):   706 tokens ( 1.8%)  [long ]
+    'cho     ' (substance           ):   558 tokens ( 1.4%)  [long ]
+    'lch     ' (remedy-making       ):   422 tokens ( 1.0%)  [long ]
     'he      ' (fall/occur          ):   410 tokens ( 1.0%)  [SHORT]
     'am      ' (water               ):   396 tokens ( 1.0%)  [SHORT]
     'ed      ' (this-matter         ):   341 tokens ( 0.8%)  [SHORT]
-    'ho      ' (face/aspect         ):   263 tokens ( 0.7%)  [SHORT]
+    'ho      ' (face/aspect         ):   262 tokens ( 0.7%)  [SHORT]
     'sh      ' (it-happens          ):   209 tokens ( 0.5%)  [SHORT]
     'ched    ' (prepare-this        ):   195 tokens ( 0.5%)  [long ]
-    'es      ' (star                ):   164 tokens ( 0.4%)  [SHORT]
+    'es      ' (star                ):   181 tokens ( 0.4%)  [SHORT]
 
   COVERAGE WITH ONLY LONG ROOTS (3+ chars):
     2639/40300 = 6.5%
@@ -105,29 +105,29 @@ prefix distributions than verb-roots. Specifically:
 
   NOUN roots (N≥20):
   root        total     d%    o%    s%    y%   qo%  bare%  VERDICT
-  a            3956   27.5  18.3   5.1   4.0  19.8   25.3  PASS
+  a            3953   27.5  18.3   5.1   4.0  19.8   25.3  PASS
   ar           2021   19.8  21.2   5.3   4.5  14.1   35.1  PASS
-  al           1731   20.7  26.1   4.1   3.1  18.1   27.8  PASS
-  l            1355    2.7  51.2   2.4   0.2   3.8   39.8  PASS
+  al           1728   20.7  26.1   4.1   3.1  18.1   27.8  PASS
+  l            1351    2.7  51.1   2.3   0.2   3.8   39.9  PASS
   d            1188    1.3  37.8   1.9   7.0  21.4   30.6  PASS
   or           1036    6.5  13.6   4.8   4.8  12.3   58.0  PASS
-  cho           560    2.1   1.6   0.4   1.8   0.5   93.6  PASS
+  cho           558    2.2   1.6   0.4   1.8   0.5   93.5  PASS
   am            396   23.7  25.3   3.8   4.8  11.4   31.1  PASS
-  ho            263    0.0   0.0  98.5   0.0   0.0    1.5  FAIL
-  es            164    1.2  48.2   4.9   6.1  17.7   22.0  PASS
-  eos           124    0.8  55.6   0.8   9.7  12.9   20.2  PASS
-  ches           93    1.1   1.1   2.2   4.3   0.0   91.4  PASS
+  ho            262    0.0   0.0  98.5   0.0   0.0    1.5  FAIL
+  es            181    2.2  46.4   4.4   6.6  18.2   22.1  PASS
+  eos           126    0.8  56.3   0.8   9.5  12.7   19.8  PASS
+  ches           98    1.0   1.0   3.1   4.1   0.0   90.8  FAIL
   chol           90    3.3   2.2   0.0   0.0   0.0   94.4  PASS
-  cheos          62    9.7   1.6   1.6   3.2   0.0   83.9  PASS
-  she            34   50.0  17.6   0.0  32.4   0.0    0.0  PASS
+  cheos          63    9.5   1.6   1.6   3.2   0.0   84.1  PASS
+  she            32   53.1  15.6   0.0  31.2   0.0    0.0  PASS
   ro             29    6.9  27.6   0.0   0.0   0.0   65.5  PASS
-  → 15/16 pass (94%)
+  → 14/16 pass (88%)
 
   VERB roots (N≥20):
   root        total     d%    o%    s%    y%   qo%  bare%  VERDICT
-  ch           3635    4.5   1.8   0.9   2.9   0.5   89.2  FAIL
-  h            2004    0.0   0.3  95.7   0.6   0.7    2.7  PASS
-  ol           1758    6.4  15.9   3.8   3.3  22.4   48.2  FAIL
+  ch           3628    4.5   1.8   0.9   2.9   0.5   89.3  FAIL
+  h            2003    0.0   0.3  95.7   0.6   0.7    2.7  PASS
+  ol           1756    6.4  15.8   3.8   3.3  22.4   48.3  FAIL
   he            410    0.0   0.5  99.0   0.0   0.0    0.5  PASS
   hed            86    0.0   0.0 100.0   0.0   0.0    0.0  PASS
   → 3/5 pass (60%)
@@ -139,10 +139,10 @@ prefix distributions than verb-roots. Specifically:
 
   DEMONSTRATIVE roots (N≥20):
   root        total     d%    o%    s%    y%   qo%  bare%  VERDICT
-  e            5296    0.8  33.5   0.6   8.1  36.9   20.1  n/a
+  e            5279    0.8  33.5   0.6   8.1  36.9   20.1  n/a
 
-  OVERALL GRAMMAR CONSISTENCY: 18/22 roots pass (82%)
-  ** NOTE: 4 root(s) have inconsistent grammar. Investigate.
+  OVERALL GRAMMAR CONSISTENCY: 17/22 roots pass (77%)
+  ** NOTE: 5 root(s) have inconsistent grammar. Investigate.
 
 ============================================================================
 PHASE 27c: SECTION SPECIFICITY TEST
@@ -153,28 +153,28 @@ in their predicted sections. We check roots with domain claims.
 
   Root     Meaning              Predicted  Actual top In pred  Total  Match
   esed     lion                 zodiac     unknown        0       1  FAIL (enrich=0.00x)
-  she      tree/plant           herbal-A   text           7      34  FAIL (enrich=0.82x)
-  al       stone                pharma     text          48    1731  FAIL (enrich=0.71x)
+  she      tree/plant           herbal-A   text           7      32  FAIL (enrich=0.87x)
+  al       stone                pharma     text          46    1728  FAIL (enrich=0.68x)
   am       water                bio        text          28     396  FAIL (enrich=0.48x)
-  eos      star                 zodiac     text           0     124  FAIL (enrich=0.00x)
-  es       star                 zodiac     text           0     164  FAIL (enrich=0.00x)
+  eos      star                 zodiac     text           0     126  FAIL (enrich=0.00x)
+  es       star                 zodiac     text           0     181  FAIL (enrich=0.00x)
   chol     celestial-body       cosmo      text           2      90  PASS (enrich=1.02x)
   yed      hand                 bio        herbal-A       0       5  FAIL (enrich=0.00x)
   hed      pour/descend         bio        text          17      86  PASS (enrich=1.34x)
-  cheos    chaos/prima-materia  cosmo      text           2      62  PASS (enrich=1.48x)
+  cheos    chaos/prima-materia  cosmo      text           2      63  PASS (enrich=1.46x)
 
   SECTION SPECIFICITY: 3/10 predictions pass
   *** ALARM: Most domain predictions FAIL. Meanings may be wrong.
 
   DETAILED SECTION DISTRIBUTIONS (normalized by section size):
-    she     : bio=2(0.4x), cosmo=2(2.7x), herbal-A=7(0.8x), pharma=3(2.3x), text=19(1.1x)
-    al      : bio=327(1.3x), cosmo=34(0.9x), herbal-A=254(0.6x), pharma=48(0.7x), text=1021(1.2x)
+    she     : bio=2(0.4x), cosmo=2(2.9x), herbal-A=7(0.9x), pharma=3(2.4x), text=18(1.1x)
+    al      : bio=327(1.3x), cosmo=34(0.9x), herbal-A=254(0.6x), pharma=46(0.7x), text=1020(1.2x)
     am      : bio=28(0.5x), cosmo=24(2.8x), herbal-A=108(1.1x), pharma=15(1.0x), text=215(1.1x)
-    eos     : cosmo=8(3.0x), herbal-A=24(0.8x), pharma=7(1.4x), text=68(1.1x)
-    es      : bio=10(0.4x), cosmo=5(1.4x), herbal-A=40(1.0x), pharma=4(0.6x), text=89(1.1x)
+    eos     : cosmo=8(2.9x), herbal-A=24(0.8x), pharma=7(1.4x), text=69(1.1x)
+    es      : bio=10(0.4x), cosmo=5(1.3x), herbal-A=43(0.9x), pharma=5(0.7x), text=101(1.1x)
     chol    : bio=3(0.2x), cosmo=2(1.0x), herbal-A=32(1.4x), pharma=3(0.9x), text=48(1.1x)
     hed     : bio=17(1.3x), cosmo=2(1.1x), herbal-A=10(0.5x), text=57(1.3x)
-    cheos   : cosmo=2(1.5x), herbal-A=20(1.3x), pharma=7(2.9x), text=31(1.0x)
+    cheos   : cosmo=2(1.5x), herbal-A=20(1.3x), pharma=7(2.8x), text=31(1.0x)
 
 ============================================================================
 PHASE 27d: TRANSLATION COHERENCE TEST
@@ -312,7 +312,7 @@ grammatical regularity as confirmed roots?
   Determinatives: {'k': 67, 't': 56, 'p': 23, 'f': 5}
   Sections: {'text': 313, 'herbal-A': 68, 'bio': 18, 'unknown': 14, 'cosmo': 14, 'pharma': 9}
   NOUN TEST (d%+o% >= s%, s%<30%): PASS (d+o=49.3%, s=9.4%)
-  Comparison to known nouns: avg d=11.1%, o=21.8%, s=8.5%
+  Comparison to known nouns: avg d=11.3%, o=21.6%, s=8.5%
   This root:                      d=34.2%, o=15.1%, s=9.4%
 
   === ROOT: 'eod' — claimed: father/patriarch ===
@@ -324,7 +324,7 @@ grammatical regularity as confirmed roots?
   Determinatives: {'k': 76, 't': 65, 'p': 15, 'f': 1}
   Sections: {'text': 95, 'herbal-A': 43, 'unknown': 16, 'pharma': 9, 'cosmo': 4}
   NOUN TEST (d%+o% >= s%, s%<30%): PASS (d+o=37.7%, s=0.0%)
-  Comparison to known nouns: avg d=11.1%, o=21.8%, s=8.5%
+  Comparison to known nouns: avg d=11.3%, o=21.6%, s=8.5%
   This root:                      d=1.2%, o=36.5%, s=0.0%
 
   === ROOT: 'od' — claimed: aloe-wood ===
@@ -336,7 +336,7 @@ grammatical regularity as confirmed roots?
   Determinatives: {'t': 51, 'k': 48, 'p': 10, 'f': 4}
   Sections: {'herbal-A': 59, 'text': 58, 'pharma': 5, 'cosmo': 5, 'unknown': 2, 'bio': 1}
   NOUN TEST (d%+o% >= s%, s%<30%): PASS (d+o=29.2%, s=0.8%)
-  Comparison to known nouns: avg d=11.1%, o=21.8%, s=8.5%
+  Comparison to known nouns: avg d=11.3%, o=21.6%, s=8.5%
   This root:                      d=0.8%, o=28.5%, s=0.8%
 
   === ROOT: 'lsh' — claimed: remedy-occurrence ===
@@ -390,8 +390,8 @@ that would FAIL if the claim is wrong.
   RESULT: 4/30 roots have >50% s-prefix:
     hed       : 100% s-prefix (N=86, claimed=verb)
     he        : 99% s-prefix (N=410, claimed=verb)
-    ho        : 98% s-prefix (N=263, claimed=noun)
-    h         : 96% s-prefix (N=2004, claimed=verb)
+    ho        : 98% s-prefix (N=262, claimed=noun)
+    h         : 96% s-prefix (N=2003, claimed=verb)
   Small subset? True (4/30)
   All claimed verbs? False
   VERDICT: SUPPORTED
@@ -404,12 +404,12 @@ that would FAIL if the claim is wrong.
       asad: {} (N=0)
       'asad' not found as separate root — vowel shift absorbed into 'esed'
     ches vs chas: lord → chas
-      ches: {'text': 51, 'herbal-A': 18, 'bio': 16} (N=93)
+      ches: {'text': 54, 'herbal-A': 19, 'bio': 16} (N=98)
       chas: {'text': 1, 'unknown': 1} (N=2)
       Both variants found — can compare distributions
     es vs as: star → ?as
-      es: {'text': 89, 'herbal-A': 40, 'unknown': 16} (N=164)
-      as: {'text': 20, 'bio': 6, 'herbal-A': 4} (N=31)
+      es: {'text': 101, 'herbal-A': 43, 'unknown': 17} (N=181)
+      as: {'text': 21, 'bio': 7, 'herbal-A': 5} (N=34)
       Both variants found — can compare distributions
   VERDICT: Vowel shift is a HYPOTHESIS, not proven from distributional data alone.
   The e→a mapping is inspired by known Arabic orthographic patterns,
@@ -469,7 +469,7 @@ PHASE 27: OVERALL VERDICT
 
   Short-root coverage percentage: 90.7% of known tokens
   Honest (long-root) coverage: 6.5%
-  Grammar consistency: 18/22 roots pass POS tests
+  Grammar consistency: 17/22 roots pass POS tests
   Section specificity: 3/10 domain predictions hold
 
   WHAT IS SOLID:

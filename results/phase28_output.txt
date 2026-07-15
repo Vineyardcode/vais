@@ -34,73 +34,73 @@ Phase 27 found POS mismatches. We reclassify based on prefix distributions.
 Rule: if s% > 50% → verb. If d%+o% > s% and s%<20% → noun. Else → ambiguous.
 
   Root            N     d%     o%     s%     y%  bare%  DATA-POS   NOTES
-  e            5296    0.8   33.5    0.6    8.1   20.1  NOUN       short 
-  a            3956   27.5   18.3    5.1    4.0   25.3  NOUN       short 
-  ch           3635    4.5    1.8    0.9    2.9   89.2  BARE       short 
+  e            5279    0.8   33.5    0.6    8.1   20.1  NOUN       short 
+  a            3953   27.5   18.3    5.1    4.0   25.3  NOUN       short 
+  ch           3628    4.5    1.8    0.9    2.9   89.3  BARE       short 
   ar           2021   19.8   21.2    5.3    4.5   35.1  NOUN       short 
-  h            2004    0.0    0.3   95.7    0.6    2.7  VERB       short 
-  ol           1758    6.4   15.9    3.8    3.3   48.2  NOUN       short 
-  al           1731   20.7   26.1    4.1    3.1   27.8  NOUN       short 
-  l            1355    2.7   51.2    2.4    0.2   39.8  NOUN       short 
+  h            2003    0.0    0.3   95.7    0.6    2.7  VERB       short 
+  ol           1756    6.4   15.8    3.8    3.3   48.3  NOUN       short 
+  al           1728   20.7   26.1    4.1    3.1   27.8  NOUN       short 
+  l            1351    2.7   51.1    2.3    0.2   39.9  NOUN       short 
   d            1188    1.3   37.8    1.9    7.0   30.6  NOUN       short 
-  o            1177    0.5    9.3    0.5    4.5   42.5  NOUN       short 
+  o            1175    0.5    9.2    0.5    4.5   42.6  NOUN       short 
   or           1036    6.5   13.6    4.8    4.8   58.0  NOUN       short 
-  che           711    2.7    0.6    1.1    4.5   90.7  BARE       
-  cho           560    2.1    1.6    0.4    1.8   93.6  BARE       
+  che           706    2.7    0.6    1.0    4.5   90.8  BARE       
+  cho           558    2.2    1.6    0.4    1.8   93.5  BARE       
   y             523    8.4    6.1    2.5    0.2   80.7  NOUN       short 
   air           436   34.2   15.1    9.4    4.4   29.4  NOUN       
-  lch           423    1.7   31.4    2.4    0.2   57.0  NOUN       
+  lch           422    1.7   31.3    2.4    0.2   57.1  NOUN       
   he            410    0.0    0.5   99.0    0.0    0.5  VERB       short 
   am            396   23.7   25.3    3.8    4.8   31.1  NOUN       short 
-  r             354    2.5   41.0    5.4    0.3   48.9  NOUN       short 
+  r             352    2.6   40.9    5.4    0.3   48.9  NOUN       short 
   ed            341    1.5   31.1    0.6    4.1   29.3  NOUN       short 
-  eo            305    1.0   36.7    0.7    5.2   32.8  NOUN       short 
-  cheo          264    5.3    0.0    0.8    9.8   83.7  NOUN       
-  ho            263    0.0    0.0   98.5    0.0    1.5  VERB       short 
+  eo            303    1.0   36.3    0.7    5.3   33.0  NOUN       short 
+  cheo          263    5.3    0.0    0.8    9.9   83.7  NOUN       
+  ho            262    0.0    0.0   98.5    0.0    1.5  VERB       short 
   sh            209   44.5   11.5    9.1   21.5   11.0  NOUN       short 
   ched          195    2.6    1.5    0.5    5.1   89.7  BARE       
+  es            181    2.2   46.4    4.4    6.6   22.1  NOUN       short 
   lsh           180    3.9   37.8    3.3    0.0   49.4  NOUN       
   i             171    9.4   40.9   16.4    0.0   28.1  NOUN       short 
   eod           167    1.2   36.5    0.0    9.0   37.7  NOUN       
-  es            164    1.2   48.2    4.9    6.1   22.0  NOUN       short 
   ih            152    1.3    4.6    0.7    0.0   93.4  BARE       short 
   od            130    0.8   28.5    0.8   12.3   23.8  NOUN       short 
-  eos           124    0.8   55.6    0.8    9.7   20.2  NOUN       
+  eos           126    0.8   56.3    0.8    9.5   19.8  NOUN       
   la            119    0.0    0.0    0.0    0.0  100.0  BARE       short 
   ech           117    1.7   35.9    0.0    6.0   22.2  NOUN       
   ai            116   20.7   10.3    2.6    0.9   62.1  NOUN       short 
   heo           115    0.0    0.0  100.0    0.0    0.0  VERB       
   qo            115    0.0    6.1    0.0    1.7   91.3  BARE       short 
   chd           112    6.2    0.0    0.0    0.9   92.9  BARE       
+  ches           98    1.0    1.0    3.1    4.1   90.8  BARE       
   chod           96    3.1    0.0    1.0    1.0   93.8  BARE       
-  ches           93    1.1    1.1    2.2    4.3   91.4  BARE       
-  os             91    0.0   13.2    8.8    4.4   60.4  NOUN       short 
+  os             93    0.0   15.1    8.6    4.3   59.1  NOUN       short 
   aiir           91   29.7   17.6    3.3    3.3   41.8  NOUN       
   chol           90    3.3    2.2    0.0    0.0   94.4  BARE       
   lb             90    0.0    0.0    0.0    0.0  100.0  BARE       short 
   hed            86    0.0    0.0  100.0    0.0    0.0  VERB       
   oo             80    1.2    1.2    0.0    0.0   53.8  NOUN       short 
   lo             78    3.8   30.8    1.3    0.0   60.3  NOUN       short 
-  c              72    2.8    6.9    0.0    0.0   83.3  NOUN       short 
+  c              71    2.8    7.0    0.0    0.0   84.5  NOUN       short 
   alch           71   31.0   16.9    7.0    0.0   35.2  NOUN       
   s              68    4.4   29.4    2.9    7.4   42.6  NOUN       short 
-  le             67    0.0   52.2    0.0    0.0   47.8  NOUN       short 
-  cheos          62    9.7    1.6    1.6    3.2   83.9  NOUN       
-  rch            61    3.3   31.1    3.3    0.0   59.0  NOUN       
+  le             65    0.0   53.8    0.0    0.0   46.2  NOUN       short 
+  cheos          63    9.5    1.6    1.6    3.2   84.1  NOUN       
+  rch            60    3.3   31.7    3.3    0.0   58.3  NOUN       
   ld             60    3.3   61.7    1.7    0.0   31.7  NOUN       short 
   q              60    0.0    1.7    0.0    1.7   96.7  BARE       short 
+  chos           59    5.1    3.4    1.7    5.1   84.7  NOUN       
   an             59   30.5   20.3    5.1    1.7   22.0  NOUN       short 
-  chos           57    5.3    3.5    1.8    5.3   84.2  NOUN       
+  ls             58    5.2   60.3    6.9    0.0   24.1  NOUN       short 
   z              57    0.0    0.0    0.0    0.0  100.0  BARE       short 
   cheod          56    3.6    1.8    0.0    8.9   85.7  BARE       
-  ls             54    5.6   59.3    5.6    0.0   25.9  NOUN       short 
   eol            52    1.9   55.8    0.0    7.7   25.0  NOUN       
   hod            51    0.0    0.0   96.1    0.0    3.9  VERB       
   om             49   12.2   10.2    0.0    2.0   65.3  NOUN       short 
   b              46    0.0    0.0    0.0    0.0   97.8  BARE       short 
                  46    0.0    0.0    0.0    0.0  100.0  BARE       short 
   ald            44   15.9   38.6    6.8    2.3   31.8  NOUN       
-  lche           41    0.0   46.3    2.4    0.0   43.9  NOUN       
+  lche           40    0.0   45.0    2.5    0.0   45.0  NOUN       
   chl            39    0.0    0.0    0.0    2.6   97.4  BARE       
   yo             38   21.1    5.3    0.0    0.0   52.6  NOUN       short 
   alsh           38   34.2   26.3    5.3    2.6   23.7  NOUN       
@@ -109,34 +109,33 @@ Rule: if s% > 50% → verb. If d%+o% > s% and s%<20% → noun. Else → ambiguou
   esh            36    5.6   27.8    0.0   19.4   25.0  NOUN       
   hd             36    0.0    0.0  100.0    0.0    0.0  VERB       short 
   aram           35   28.6   28.6    2.9    0.0   34.3  NOUN       
-  she            34   50.0   17.6    0.0   32.4    0.0  NOUN       
+  chs            34    2.9    2.9    0.0    2.9   91.2  BARE       
+  as             34   17.6   14.7    0.0    0.0   47.1  NOUN       short 
   aim            34   32.4   11.8    5.9   11.8   32.4  NOUN       
   alam           33   21.2   24.2    0.0    0.0   51.5  NOUN       
+  she            32   53.1   15.6    0.0   31.2    0.0  NOUN       
   yd             32   28.1   40.6    0.0    9.4   12.5  NOUN       short 
   hol            31    0.0    0.0   93.5    0.0    6.5  VERB       
-  as             31   12.9   16.1    0.0    0.0   48.4  NOUN       short 
   hes            30    0.0    0.0  100.0    0.0    0.0  VERB       
   led            30    3.3   46.7    0.0    0.0   50.0  NOUN       
   cheol          29    3.4    0.0    0.0    6.9   89.7  BARE       
   ro             29    6.9   27.6    0.0    0.0   65.5  NOUN       short 
   dl             28    7.1   14.3    0.0    3.6   75.0  NOUN       short 
   heod           27    0.0    0.0  100.0    0.0    0.0  VERB       
-  chs            27    3.7    0.0    0.0    0.0   96.3  BARE       
   chy            27   14.8    0.0    0.0    3.7   81.5  NOUN       
   cham           27    0.0    3.7    0.0    3.7   92.6  BARE       
   w              27    0.0    0.0    0.0    0.0  100.0  BARE       short 
   is             26    0.0    0.0    0.0    0.0   96.2  BARE       short 
   chh            26    3.8    0.0    0.0    0.0   96.2  BARE       
+  als            25   36.0   24.0    4.0    4.0   24.0  NOUN       
   ail            25    8.0   20.0   12.0    4.0   44.0  NOUN       
   rsh            24    0.0   41.7    4.2    0.0   50.0  NOUN       
   chal           24    0.0    0.0    0.0    0.0  100.0  BARE       
   ram            23    0.0   52.2    0.0    0.0   47.8  NOUN       
   aiin           23   39.1   13.0    4.3    4.3   34.8  NOUN       
-  alo            22   22.7   22.7    9.1    0.0   45.5  NOUN       
-  als            22   36.4   22.7    4.5    4.5   22.7  NOUN       
   x              22    0.0    4.5    0.0    0.0   95.5  BARE       short 
-  choe           21    0.0    0.0    0.0    0.0  100.0  BARE       
   sho            21   42.9    9.5   14.3   28.6    0.0  NOUN       
+  alo            21   23.8   19.0    9.5    0.0   47.6  NOUN       
   aii            21   57.1    4.8   14.3    0.0   14.3  NOUN       
   lshe           21    4.8   42.9    9.5    0.0   38.1  NOUN       
   dair           21    0.0   42.9    9.5   33.3    0.0  NOUN       
@@ -150,7 +149,7 @@ Rule: if s% > 50% → verb. If d%+o% > s% and s%<20% → noun. Else → ambiguou
 
   POS distribution (N≥20 roots):
     NOUN: 74 roots
-    BARE: 29 roots
+    BARE: 28 roots
     VERB: 10 roots
 
   CRITICAL RECLASSIFICATIONS:
@@ -205,27 +204,27 @@ atomic word/formula that we're wrongly decomposing?
   POSITIONAL ANALYSIS (where does qokedy[-like] appear in lines?):
   Position (0=start, 9=end):
    Pos    qo+e   other   qo+e%  other%   ratio
-     0     234    6610   14.7%   17.2%   0.85x
+     0     232    6612   14.6%   17.2%   0.85x
      1     226    3452   14.2%    9.0%   1.58x
      2     276    3983   17.4%   10.4%   1.67x
      3     244    3359   15.4%    8.8%   1.75x
      4     202    3188   12.7%    8.3%   1.53x
      5     241    4331   15.2%   11.3%   1.34x
-     6     203    4033   12.8%   10.5%   1.22x
+     6     201    4035   12.7%   10.5%   1.20x
      7     182    3444   11.5%    9.0%   1.28x
      8     126    4185    7.9%   10.9%   0.73x
      9      20    1761    1.3%    4.6%   0.27x
 
   CONSECUTIVE qo+e PATTERNS:
-  Times qo+e followed by another qo+e: 259/1892 = 13.7%
+  Times qo+e followed by another qo+e: 258/1889 = 13.7%
   Expected if random (given 3.9% frequency): 3.9%
   Ratio observed/expected: 3.47x
 
-  UNIQUE WORD FORMS in qo+e family: 160
+  UNIQUE WORD FORMS in qo+e family: 157
   If this were a single formulaic word, we'd expect ~few forms.
   Many distinct forms suggest real morphological variation.
-  Suffix variety: {'dy': 946, 'y': 711, 'ol': 98, 'ody': 87, 'or': 54, 'ar': 27, 'al': 13, 'aiin': 10, 'ain': 4, 'sy': 4}
-  Det variety: {'k': 1389, 't': 379, '': 98, 'p': 71, 'f': 17}
+  Suffix variety: {'dy': 946, 'y': 711, 'ol': 98, 'ody': 87, 'or': 54, 'ar': 27, 'al': 13, 'aiin': 10, 'ain': 4}
+  Det variety: {'k': 1389, 't': 377, '': 98, 'p': 69, 'f': 17}
 
 ============================================================================
 PHASE 28d: LONG-ROOT CENSUS (3+ chars only)
@@ -238,26 +237,27 @@ that are less likely to match by accident. Listing ALL roots with
   UNKNOWN LONG ROOTS (3+ chars, N≥10):
   Root             N  Top section   Top pfx  Top sfx     d%    o%    s%
   air            436  text                d     bare   34.2  15.1   9.4
-  cheo           264  text             bare     bare    5.3   0.0   0.8
+  cheo           263  text             bare     bare    5.3   0.0   0.8
   lsh            180  bio              bare      edy    3.9  37.8   3.3
   eod            167  text             bare       ar    1.2  36.5   0.0
   ech            117  text                o        y    1.7  35.9   0.0
   heo            115  text                s     bare    0.0   0.0 100.0
   chd            112  text             bare       ar    6.2   0.0   0.0
   aiir            91  text             bare     bare   29.7  17.6   3.3
-  rch             61  text             bare       ey    3.3  31.1   3.3
-  chos            57  text             bare     bare    5.3   3.5   1.8
+  rch             60  text             bare       ey    3.3  31.7   3.3
+  chos            59  text             bare     bare    5.1   3.4   1.7
   cheod           56  text             bare     aiin    3.6   1.8   0.0
   eol             52  text                o        y    1.9  55.8   0.0
   hod             51  herbal-A            s     aiin    0.0   0.0  96.1
   ald             44  text                o     aiin   15.9  38.6   6.8
-  lche            41  text                o       ol    0.0  46.3   2.4
+  lche            40  text                o       ol    0.0  45.0   2.5
   chl             39  text             bare     bare    0.0   0.0   0.0
   alsh            38  text                d       dy   34.2  26.3   5.3
   chor            37  herbal-A         bare        y    2.7   2.7   5.4
   lam             37  text                o     bare    0.0  62.2   5.4
   esh             36  text                o        y    5.6  27.8   0.0
   aram            35  text             bare     bare   28.6  28.6   2.9
+  chs             34  text             bare     bare    2.9   2.9   0.0
   aim             34  text                d     bare   32.4  11.8   5.9
   alam            33  text             bare     bare   21.2  24.2   0.0
   hol             31  text                s       dy    0.0   0.0  93.5
@@ -265,18 +265,16 @@ that are less likely to match by accident. Listing ALL roots with
   led             30  text             bare     bare    3.3  46.7   0.0
   cheol           29  text             bare       dy    3.4   0.0   0.0
   heod            27  text                s     bare    0.0   0.0 100.0
-  chs             27  text             bare     bare    3.7   0.0   0.0
   chy             27  herbal-A         bare        y   14.8   0.0   0.0
   chh             26  text             bare        y    3.8   0.0   0.0
+  als             25  text                d     bare   36.0  24.0   4.0
   ail             25  text             bare     bare    8.0  20.0  12.0
   rsh             24  bio              bare      edy    0.0  41.7   4.2
   chal            24  text             bare        y    0.0   0.0   0.0
   ram             23  text                o     bare    0.0  52.2   0.0
   aiin            23  text                d        y   39.1  13.0   4.3
-  alo             22  text             bare     bare   22.7  22.7   9.1
-  als             22  text                d     bare   36.4  22.7   4.5
-  choe            21  text             bare       ol    0.0   0.0   0.0
   sho             21  herbal-A            d     bare   42.9   9.5  14.3
+  alo             21  text             bare     bare   23.8  19.0   9.5
   aii             21  herbal-A            d       dy   57.1   4.8  14.3
   lshe            21  text                o       ol    4.8  42.9   9.5
   dair            21  text                o     bare    0.0  42.9   9.5
@@ -284,6 +282,7 @@ that are less likely to match by accident. Listing ALL roots with
   iir             20  text               do     bare   40.0  40.0   5.0
   arch            20  text             bare        y   25.0  30.0   5.0
   lchd            19  text                o     bare   10.5  47.4   5.3
+  choe            19  herbal-A         bare       ol    0.0   0.0   0.0
   aih             19  text             bare        y    0.0   5.3   5.3
   lol             19  bio              bare        y    0.0  26.3   0.0
   heos            19  text                s     bare    0.0   0.0 100.0
@@ -295,10 +294,10 @@ that are less likely to match by accident. Listing ALL roots with
   eam             16  text                o     bare    0.0  50.0   0.0
   olch            16  text                o       ey    0.0  56.2   0.0
   dam             16  text                o     bare    0.0  62.5   0.0
+  hos             16  herbal-A            s     bare    0.0   0.0 100.0
   lech            16  text                o        y    0.0  50.0   0.0
-  lal             16  text                o        y    0.0  56.2   0.0
   lcho            15  text             bare     bare    0.0  40.0   6.7
-  hos             15  herbal-A            s     bare    0.0   0.0 100.0
+  lal             15  text                o        y    0.0  53.3   0.0
   choo            14  herbal-A         bare     bare    0.0   0.0   0.0
   dch             14  herbal-A            o       ey    0.0  57.1  14.3
   aro             14  text                d     bare   35.7  28.6   0.0
@@ -315,35 +314,35 @@ that are less likely to match by accident. Listing ALL roots with
   rair            12  text                o     bare    8.3  50.0   8.3
   cha             12  text             bare       dy    8.3   8.3   0.0
   chan            12  herbal-A         bare     bare    0.0   0.0   0.0
-  hey             11  text                s        y    0.0   0.0 100.0
   eoch            11  text                o        y    0.0  45.5   0.0
   aiino           11  herbal-A            d     bare   54.5  18.2   9.1
   rol             11  text                o        y    0.0  45.5   0.0
   chdam           11  herbal-A         bare     bare    0.0   0.0   0.0
   aral            11  text             bare        y   27.3  27.3   0.0
+  asr             11  herbal-A            y     bare   18.2  18.2  18.2
 
-  Total unknown long-root tokens: 3236
-  Total long-root tokens (known+unknown): 9299
+  Total unknown long-root tokens: 3242
+  Total long-root tokens (known+unknown): 9319
   Unknown long roots as % of corpus: 8.0%
 
   KNOWN LONG ROOTS (for comparison):
   Root             N  Top section 
-  che            711  text        
-  cho            560  herbal-A    
-  lch            423  text        
+  che            706  text        
+  cho            558  herbal-A    
+  lch            422  text        
   ched           195  text        
-  eos            124  text        
+  eos            126  text        
+  ches            98  text        
   chod            96  text        
-  ches            93  text        
   chol            90  text        
   hed             86  text        
   alch            71  text        
-  cheos           62  text        
-  she             34  text        
+  cheos           63  text        
+  she             32  text        
   cham            27  text        
   sheo            18  text        
+  les             16  text        
   rar             15  text        
-  les             14  text        
 
 ============================================================================
 PHASE 28e: BIGRAM STRUCTURE TEST — IS THIS REAL LANGUAGE?
@@ -352,7 +351,7 @@ PHASE 28e: BIGRAM STRUCTURE TEST — IS THIS REAL LANGUAGE?
 QUESTION: Do word-pairs show directional preferences (A→B more
 common than B→A)? Real language has syntax; random sequences don't.
 
-  Total bigram types: 16610
+  Total bigram types: 16641
   Total bigram tokens: 34609
 
   TOP 20 MOST DIRECTIONAL BIGRAMS (A→B vs B→A):
@@ -378,7 +377,7 @@ common than B→A)? Real language has syntax; random sequences don't.
   bare:p:c                       → bare:f:b                           13     0    13.0x
   bare:p:d                       → bare:f:b                           13     0    13.0x
 
-  DIRECTIONALITY SCORE: 279/738 frequent bigrams show >2x asymmetry (38%)
+  DIRECTIONALITY SCORE: 277/738 frequent bigrams show >2x asymmetry (38%)
   In natural language, expect 50-80%.
   In random text, expect ~0%.
   In a cipher of natural language, expect similar to natural.
