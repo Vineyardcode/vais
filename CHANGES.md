@@ -210,3 +210,18 @@ Ledger (129 tests):
 - **Error surfacing**: unknown parameter → HTTP 400 with the name; poisoned
   parameter value → run status `error` with the full Python traceback shown
   in the output pane; forced 2-second timeout → status `timeout`.
+
+### Final verification ledger entry
+- `phase100_decipherment`: adjudicated **byte-identical** to the pre-refactor
+  original under `PYTHONHASHSEED=0` (the first adjudication attempt was
+  invalid — the original's run timed out at 2700s while competing with
+  concurrent sweeps; the uncontended re-run completed in ~39 min and matches
+  exactly). Its baseline diff was hash-seed iteration-order noise like the
+  other 49.
+
+**Verification complete: 129/129 tests accounted for.**
+73 identical to baseline outright · 50 proven identical to pre-refactor
+originals under fixed hash seed · 2 differ only in printed wall-clock text ·
+4 differ exactly as the documented bug fixes intend.
+Scratch evidence dirs (`rerun/`, `baseline_prime/`, `.bp_scripts/`) are
+gitignored but left on disk for audit; `baseline/` (golden) is committed.
