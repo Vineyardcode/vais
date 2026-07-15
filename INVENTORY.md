@@ -49,15 +49,15 @@ Data inputs: `folios/*.txt` (IVTFF EVA transcriptions, 201 folios), `data/latin_
 | phase20_template_subtraction | 724 | 0.63 | ok | 10 | phase20_results.json |
 | phase21_highest_leverage | 861 | 0.63 | ok | 7 | phase21_results.json |
 | phase22_unknown_roots | 701 | 0.74 | ok | 8 | phase22_results.json |
-| phase23_full_translation | 620 | 0.43 | ok | 10 | phase23_results.json |
-| phase24_classifier_semantics | 734 | 1.05 | ok | 10 | phase24_results.json |
-| phase25_narrative_translation | 786 | 4.6 | ok | 12 | phase25_results.json |
-| phase26_expansion | 711 | 2.43 | ok | 13 | phase26_results.json |
-| phase27_self_audit | 1021 | 10.4 | ok | 13 | phase27_output.txt, phase27_results.json |
-| phase28_statistical | 636 | 20.49 | ok | 6 | phase28_output.txt, phase28_results.json |
-| phase29_compounds | 602 | 2.24 | ok | 6 | phase29_output.txt, phase29_results.json |
-| phase30_validation | 835 | 10.46 | ok | 7 | phase30_output.txt, phase30_results.json |
-| phase31_prefix_paradox | 636 | 2.23 | ok | 8 | phase31_output.txt, phase31_results.json |
+| phase23_full_translation | 633 | 0.43 | ok | 10 | phase23_results.json |
+| phase24_classifier_semantics | 747 | 1.05 | ok | 10 | phase24_results.json |
+| phase25_narrative_translation | 799 | 4.6 | ok | 12 | phase25_results.json |
+| phase26_expansion | 724 | 2.43 | ok | 13 | phase26_results.json |
+| phase27_self_audit | 1034 | 10.4 | ok | 13 | phase27_output.txt, phase27_results.json |
+| phase28_statistical | 649 | 20.49 | ok | 6 | phase28_output.txt, phase28_results.json |
+| phase29_compounds | 615 | 2.24 | ok | 6 | phase29_output.txt, phase29_results.json |
+| phase30_validation | 848 | 10.46 | ok | 7 | phase30_output.txt, phase30_results.json |
+| phase31_prefix_paradox | 649 | 2.23 | ok | 8 | phase31_output.txt, phase31_results.json |
 | phase32_artifact_test | 672 | 2.32 | ok | 9 | phase32_output.txt, phase32_results.json |
 | phase33_cascade_audit | 831 | 6.27 | ok | 9 | phase33_output.txt, phase33_results.json |
 | phase34_model_audit | 703 | 2.77 | ok | 7 | phase34_output.txt, phase34_results.json |
@@ -578,7 +578,7 @@ Data inputs: `folios/*.txt` (IVTFF EVA transcriptions, 201 folios), `data/latin_
 ### phase23_full_translation
 *Phase 23 — Full-Passage Translation with 28 Confirmed Roots*
 
-- **file**: `scripts/phase23_full_translation.py` (620 lines)
+- **file**: `scripts/phase23_full_translation.py` (633 lines)
 - **runtime**: 0.43s (baseline status: ok)
 - **writes**: results/phase23_results.json
 - **parameters** (10): `SIMPLE_GALLOWS=["t", "k", "f", "p"]`, `BENCH_GALLOWS=["cth", "ckh", "cph", "cfh"]`, `COMPOUND_GCH=["tch", "kch", "pch", "fch"]`, `COMPOUND_GSH=["tsh", "ksh", "psh", "fsh"]`, `PREFIXES=<json>`, `SUFFIXES=<json>`, `CONFIRMED_VOCAB=<json>`, `PREFIX_GLOSS=<json>`, `SUFFIX_GLOSS=<json>`, `DET_GLOSS=<json>`
@@ -586,7 +586,7 @@ Data inputs: `folios/*.txt` (IVTFF EVA transcriptions, 201 folios), `data/latin_
 ### phase24_classifier_semantics
 *Phase 24 — Classifier Semantics & Compound Root Resolution*
 
-- **file**: `scripts/phase24_classifier_semantics.py` (734 lines)
+- **file**: `scripts/phase24_classifier_semantics.py` (747 lines)
 - **runtime**: 1.05s (baseline status: ok)
 - **writes**: results/phase24_results.json
 - **parameters** (10): `SIMPLE_GALLOWS=["t", "k", "f", "p"]`, `BENCH_GALLOWS=["cth", "ckh", "cph", "cfh"]`, `COMPOUND_GCH=["tch", "kch", "pch", "fch"]`, `COMPOUND_GSH=["tsh", "ksh", "psh", "fsh"]`, `PREFIXES=<json>`, `SUFFIXES=<json>`, `CONFIRMED_VOCAB=<json>`, `DET_MEANING=<json>`, `PREFIX_MEANING=<json>`, `SUFFIX_MEANING=<json>`
@@ -594,7 +594,7 @@ Data inputs: `folios/*.txt` (IVTFF EVA transcriptions, 201 folios), `data/latin_
 ### phase25_narrative_translation
 *Phase 25 — Narrative Reconstruction & Remaining Root Resolution*
 
-- **file**: `scripts/phase25_narrative_translation.py` (786 lines)
+- **file**: `scripts/phase25_narrative_translation.py` (799 lines)
 - **runtime**: 4.6s (baseline status: ok)
 - **writes**: results/phase25_results.json
 - **parameters** (12): `SIMPLE_GALLOWS=["t", "k", "f", "p"]`, `BENCH_GALLOWS=["cth", "ckh", "cph", "cfh"]`, `COMPOUND_GCH=["tch", "kch", "pch", "fch"]`, `COMPOUND_GSH=["tsh", "ksh", "psh", "fsh"]`, `PREFIXES=<json>`, `SUFFIXES=<json>`, `CONFIRMED_VOCAB=<json>`, `COMPOUND_VOCAB=<json>`, `ALL_ROOTS={}`, `DET_MEANING=<json>`, `PREFIX_MEANING=<json>`, `SUFFIX_MEANING=<json>`
@@ -602,7 +602,7 @@ Data inputs: `folios/*.txt` (IVTFF EVA transcriptions, 201 folios), `data/latin_
 ### phase26_expansion
 *Phase 26 — Vocabulary Expansion & Cross-Section Validation*
 
-- **file**: `scripts/phase26_expansion.py` (711 lines)
+- **file**: `scripts/phase26_expansion.py` (724 lines)
 - **runtime**: 2.43s (baseline status: ok)
 - **writes**: results/phase26_results.json
 - **parameters** (13): `SIMPLE_GALLOWS=["t", "k", "f", "p"]`, `BENCH_GALLOWS=["cth", "ckh", "cph", "cfh"]`, `COMPOUND_GCH=["tch", "kch", "pch", "fch"]`, `COMPOUND_GSH=["tsh", "ksh", "psh", "fsh"]`, `PREFIXES=<json>`, `SUFFIXES=<json>`, `CONFIRMED_VOCAB=<json>`, `COMPOUND_VOCAB=<json>`, `ALL_ROOTS={}`, `DET_MEANING=<json>`, `PREFIX_MEANING=<json>`, `SUFFIX_MEANING=<json>`, `COPTIC_CANDIDATES=<json>`
@@ -610,7 +610,7 @@ Data inputs: `folios/*.txt` (IVTFF EVA transcriptions, 201 folios), `data/latin_
 ### phase27_self_audit
 *Phase 27 — Rigorous Self-Audit & Falsification*
 
-- **file**: `scripts/phase27_self_audit.py` (1021 lines)
+- **file**: `scripts/phase27_self_audit.py` (1034 lines)
 - **runtime**: 10.4s (baseline status: ok)
 - **writes**: results/phase27_output.txt, results/phase27_results.json
 - **parameters** (13): `SIMPLE_GALLOWS=["t", "k", "f", "p"]`, `BENCH_GALLOWS=["cth", "ckh", "cph", "cfh"]`, `COMPOUND_GCH=["tch", "kch", "pch", "fch"]`, `COMPOUND_GSH=["tsh", "ksh", "psh", "fsh"]`, `PREFIXES=<json>`, `SUFFIXES=<json>`, `CONFIRMED_VOCAB=<json>`, `COMPOUND_VOCAB=<json>`, `ALL_ROOTS={}`, `DET_MEANING=<json>`, `PREFIX_MEANING=<json>`, `SUFFIX_MEANING=<json>`, `ROOT_POS=<json>`
@@ -618,7 +618,7 @@ Data inputs: `folios/*.txt` (IVTFF EVA transcriptions, 201 folios), `data/latin_
 ### phase28_statistical
 *Phase 28 — Statistical Significance, POS Fix, & Long-Root Focus*
 
-- **file**: `scripts/phase28_statistical.py` (636 lines)
+- **file**: `scripts/phase28_statistical.py` (649 lines)
 - **runtime**: 20.49s (baseline status: ok)
 - **writes**: results/phase28_output.txt, results/phase28_results.json
 - **parameters** (6): `SIMPLE_GALLOWS=["t", "k", "f", "p"]`, `BENCH_GALLOWS=["cth", "ckh", "cph", "cfh"]`, `COMPOUND_GCH=["tch", "kch", "pch", "fch"]`, `COMPOUND_GSH=["tsh", "ksh", "psh", "fsh"]`, `PREFIXES=<json>`, `SUFFIXES=<json>`
@@ -626,7 +626,7 @@ Data inputs: `folios/*.txt` (IVTFF EVA transcriptions, 201 folios), `data/latin_
 ### phase29_compounds
 *Phase 29 — Compound Decomposition, h-Verbal Pattern & BARE Class*
 
-- **file**: `scripts/phase29_compounds.py` (602 lines)
+- **file**: `scripts/phase29_compounds.py` (615 lines)
 - **runtime**: 2.24s (baseline status: ok)
 - **writes**: results/phase29_output.txt, results/phase29_results.json
 - **parameters** (6): `SIMPLE_GALLOWS=["t", "k", "f", "p"]`, `BENCH_GALLOWS=["cth", "ckh", "cph", "cfh"]`, `COMPOUND_GCH=["tch", "kch", "pch", "fch"]`, `COMPOUND_GSH=["tsh", "ksh", "psh", "fsh"]`, `PREFIXES=<json>`, `SUFFIXES=<json>`
@@ -634,7 +634,7 @@ Data inputs: `folios/*.txt` (IVTFF EVA transcriptions, 201 folios), `data/latin_
 ### phase30_validation
 *Phase 30 — Skeptical Re-Validation & Revised Model Test*
 
-- **file**: `scripts/phase30_validation.py` (835 lines)
+- **file**: `scripts/phase30_validation.py` (848 lines)
 - **runtime**: 10.46s (baseline status: ok)
 - **writes**: results/phase30_output.txt, results/phase30_results.json
 - **parameters** (7): `SIMPLE_GALLOWS=["t", "k", "f", "p"]`, `BENCH_GALLOWS=["cth", "ckh", "cph", "cfh"]`, `COMPOUND_GCH=["tch", "kch", "pch", "fch"]`, `COMPOUND_GSH=["tsh", "ksh", "psh", "fsh"]`, `PREFIXES=<json>`, `SUFFIXES=<json>`, `DERIV_PREFIXES=["ch", "sh", "lch", "lsh", "l", "h"]`
@@ -642,7 +642,7 @@ Data inputs: `folios/*.txt` (IVTFF EVA transcriptions, 201 folios), `data/latin_
 ### phase31_prefix_paradox
 *Phase 31 — The Derivational Prefix Paradox*
 
-- **file**: `scripts/phase31_prefix_paradox.py` (636 lines)
+- **file**: `scripts/phase31_prefix_paradox.py` (649 lines)
 - **runtime**: 2.23s (baseline status: ok)
 - **writes**: results/phase31_output.txt, results/phase31_results.json
 - **parameters** (8): `SIMPLE_GALLOWS=["t", "k", "f", "p"]`, `BENCH_GALLOWS=["cth", "ckh", "cph", "cfh"]`, `COMPOUND_GCH=["tch", "kch", "pch", "fch"]`, `COMPOUND_GSH=["tsh", "ksh", "psh", "fsh"]`, `PREFIXES=<json>`, `SUFFIXES=<json>`, `DERIV_PREFIXES_ORDER=["lch", "lsh", "ch", "sh", "l", "h"]`, `CORE_STEMS=<json>`

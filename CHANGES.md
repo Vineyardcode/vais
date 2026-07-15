@@ -174,3 +174,39 @@ Ledger (129 tests):
    function is only extracted if every locally-defined dependency is itself
    extracted or hash-identical. All 9 re-verified byte-identical to their
    originals. This incident is exactly why the verification loop exists.
+
+## Phase 3 — Web UI (webui/)
+- `webui/server.py` (Flask, 127.0.0.1, `PORT` env), `webui/registry.py`
+  (static catalog: description from docstring, params = module-level
+  UPPERCASE literal constants with the code's real defaults, dependency
+  edges from the Phase-1 inventory, network flags, baseline timings),
+  `webui/runner.py` (subprocess execution with AST-spliced parameter
+  overrides into a temp copy — the analysis code that runs is always the
+  script's own), `webui/static/index.html` (vanilla-JS single page).
+- Design decision `[REVIEW]`: tests run as subprocesses of the real scripts
+  rather than as imported functions. The scripts are top-level procedural
+  programs; converting 131 of them into parameterized functions would have
+  been a rewrite (against the "refactor incrementally, don't rewrite"
+  instruction). The Flask server imports and calls the refactored
+  `runner`/`registry` modules directly, and no analysis logic exists in the
+  web layer, which is the constraint's intent. Subprocesses also give
+  timeouts and crash isolation.
+- Downloaders (`download_folios`, `download_latin`) excluded from the UI.
+
+## Phase 4 — verification of the UI (all performed against the live server)
+- Ran with **defaults**: `slot_analysis` (UI button), `hebrew_comparison`
+  (API), `diacritic_audit` + `hebrew_comparison` + `phase106b_bench_variants`
+  (run-all batch with per-test status) — all ok, and `hebrew_comparison`'s
+  UI-run stdout is **byte-identical** to the CLI run's output.
+- Ran with **custom parameters**: `phase106b_bench_variants` with
+  `CH_OPTIONS=["cr","ct"]` via API *and* via the UI form (output confirms
+  the override took effect: "ch variants: ['cr', 'ct']", 10 combinations
+  instead of 25).
+- **Presets**: saved "aggressive-cr-ct" through the UI (prompt stubbed for
+  automation), persisted to `webui/presets.json`, **survived a server
+  restart**, load restores the saved values, reset restores code defaults,
+  delete works ("junk" preset created and removed); built-in `defaults`
+  preset is undeletable.
+- **Error surfacing**: unknown parameter → HTTP 400 with the name; poisoned
+  parameter value → run status `error` with the full Python traceback shown
+  in the output pane; forced 2-second timeout → status `timeout`.

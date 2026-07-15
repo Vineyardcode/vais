@@ -1,0 +1,10 @@
+{
+ "phase106b_bench_variants": {
+  "aggressive-cr-ct": {
+   "CH_OPTIONS": [
+    "cr",
+    "ct"
+   ]
+  }
+ }
+}
