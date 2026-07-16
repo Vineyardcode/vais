@@ -1,7 +1,7 @@
 Voynich Manuscript — Astronomical Cross-Reference Analysis
 ======================================================================
 ======================================================================
-PHASE 1: Structural hypothesis — what do the ~30 nymphs represent?
+Structural hypothesis — what do the ~30 nymphs represent?
 ======================================================================
 
   Sign            Nymphs  Ptolemy Stars   Ratio
@@ -28,7 +28,7 @@ PHASE 1: Structural hypothesis — what do the ~30 nymphs represent?
      or DAYS (~30 per calendar month)
 
 ======================================================================
-PHASE 2: Decan ruler correlation — do planetary rulers shape labels?
+Decan ruler correlation — do planetary rulers shape labels?
 ======================================================================
 
   Suffix distribution by decan planetary ruler:
@@ -70,7 +70,7 @@ PHASE 2: Decan ruler correlation — do planetary rulers shape labels?
     Saturn: Leo D1 ↔ Sagittarius D3: shared={'ke'}
 
 ======================================================================
-PHASE 3: Phonetic comparison — labels vs medieval star names
+Phonetic comparison — labels vs medieval star names
 ======================================================================
 
   Consonant skeleton matches (Voynich root → star name):
@@ -107,7 +107,7 @@ PHASE 3: Phonetic comparison — labels vs medieval star names
     Possible: kar↔Karkinos (Cancer)? kr matches
 
 ======================================================================
-PHASE 4: Behenian star positions — do they match nymph positions?
+Behenian star positions — do they match nymph positions?
 ======================================================================
 
   Behenian stars falling in Voynich zodiac signs:
@@ -145,7 +145,7 @@ PHASE 4: Behenian star positions — do they match nymph positions?
     Fomalhaut          →  Pisces 21°
 
 ======================================================================
-PHASE 5: The o- prefix — article, classifier, or something else?
+The o- prefix — article, classifier, or something else?
 ======================================================================
 
   Total labels: 340
@@ -192,7 +192,7 @@ PHASE 5: The o- prefix — article, classifier, or something else?
   - Non-o labels ('ar', 'am', 'al', 'dy') may be qualifiers/adjectives
 
 ======================================================================
-PHASE 6: Cancer anomaly — why does Cancer differ in suffix usage?
+Cancer anomaly — why does Cancer differ in suffix usage?
 ======================================================================
 
   Suffix ratio by sign (−y vs −iin):
@@ -221,7 +221,7 @@ PHASE 6: Cancer anomaly — why does Cancer differ in suffix usage?
     - This could indicate -iin marks Moon-ruled or nocturnal decans
 
 ======================================================================
-PHASE 7: Degree marker test — morphological shifts at decan boundaries
+Degree marker test — morphological shifts at decan boundaries
 ======================================================================
 
   Aggregate suffix distribution by decan position (all signs combined):
@@ -237,7 +237,7 @@ PHASE 7: Degree marker test — morphological shifts at decan boundaries
     Decan 3: 0.962 average (10 signs)
 
 ======================================================================
-PHASE 8: COMPREHENSIVE SYNTHESIS
+COMPREHENSIVE SYNTHESIS
 ======================================================================
 
   ┌─────────────────────────────────────────────────────────────────┐

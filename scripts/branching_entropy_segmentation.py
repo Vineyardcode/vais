@@ -46,7 +46,8 @@ APPROACH — Harris (1955) Branching Entropy:
   - Analyze the group inventory: count, frequency, positional profiles
   - Compare to letter frequencies of European languages
   - Cross-validate across VMS sections
-  - Validate on a KNOWN verbose cipher (forward_process_models/60 model)
+  - Validate on a KNOWN verbose cipher (the forward_process_models /
+    positional_verbose_cipher model)
 
 SKEPTICISM NOTES:
   - The I-M-F positional grammar will create "fake" entropy spikes at

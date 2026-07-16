@@ -7,7 +7,7 @@ word_shape_validation revealed that VMS positional entropy DROPS toward word-fin
 positions (3.63→2.79), while the verbose cipher does the OPPOSITE.
 The ~4 characters {y, n, l, r} dominate finals (~87%).
 
-This phase asks: what ROLE do word-final characters play?
+This test asks: what ROLE do word-final characters play?
 
 Three competing hypotheses:
   A. Terminators — content-free end-of-unit markers
@@ -906,7 +906,7 @@ def main():
 
   3. EVA transcription artifacts. The glyph segmentation (ch, sh, etc.)
      affects what counts as "first" and "last." We use EVA compound
-     glyphs as atomic units, consistent with Phases 58-61.
+     glyphs as atomic units, consistent with the encoding-model tests.
 
   4. Zone boundaries are arbitrary. A 1-char first + 1-char last
      decomposition may miss multi-character prefixes/suffixes. But
@@ -927,7 +927,7 @@ def main():
     # OUTPUT
     # ═══════════════════════════════════════════════════════════════════
     output = {
-        'phase': 62,
+        'test': 'word_functional_anatomy',
         'title': 'Functional Anatomy of the VMS Word',
         'vms_results': vms_results,
         'ita_results': ita_results if have_italian else None,

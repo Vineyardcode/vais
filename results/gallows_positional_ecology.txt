@@ -1,5 +1,5 @@
 ══════════════════════════════════════════════════════════════════════
-PHASE 77: Gallows Positional Ecology
+gallows_positional_ecology: Gallows Positional Ecology
 ══════════════════════════════════════════════════════════════════════
 
 Question: Do paragraph-initial gallows function DIFFERENTLY from
@@ -297,7 +297,7 @@ we should see MANY different word forms all starting with the same gallows.
          English (Forme of Cury) |            take  31.0% |           ~0.26
 
 ══════════════════════════════════════════════════════════════════════
-PHASE 77 SYNTHESIS
+gallows_positional_ecology SYNTHESIS
 ══════════════════════════════════════════════════════════════════════
 
   1. SUCCESSOR DIVERGENCE:

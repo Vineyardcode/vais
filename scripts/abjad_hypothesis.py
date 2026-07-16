@@ -6,20 +6,21 @@ Abjad/Consonantal Hypothesis: Vowel-Stripping Fingerprint Test
 
 MOTIVATION: Three independent analyses converge on 13 functional VMS letters:
   (a) Hebrew consonantal alphabet reduced to 13 after removing homophones
-  (b) Voynich Talk video: positional variant collapse → ~13 functional glyphs
+  (b) Koen Gheuens' video "The alphabet is smaller than you think"
+      (YouTube, Voynich Talk): positional variant collapse → ~13 functional glyphs
   (c) forward_process_models: verbose positional cipher with 13 underlying characters
       is the ONLY model reproducing VMS h_char anomaly (0.641)
 
 If VMS uses a consonantal/abjad writing system (consonants only, vowels
 omitted like Hebrew/Arabic), then 13 letters is perfectly adequate.
-The Voynich Talk video's conclusion that "13 is a disaster for European
+That video's conclusion that "13 is a disaster for European
 languages" becomes "13 is normal for an abjad."
 
 Lisa Fagin Davis notes: no punctuation, no majuscule/minuscule,
 extremely low word-level entropy (Bowern & Lindemann). All consistent
 with a consonantal system.
 
-THIS PHASE TESTS: If we strip vowels from known natural languages,
+THE TEST: if we strip vowels from known natural languages,
 do the resulting statistical fingerprints match VMS more closely?
 
 TESTS:

@@ -16,7 +16,7 @@ But mi_distance_curve also identified CONVERGENCE from two directions:
               vowels; his verbose cipher + abbreviation hypothesis is the most
               historically plausible model proposed.
 
-This phase implements the TWO-LAYER model:
+This test implements the TWO-LAYER model:
 
   LAYER 1 — ABBREVIATION: Truncate words to first N characters (N=3..6),
             simulating medieval scribal abbreviation/truncation.

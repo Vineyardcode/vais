@@ -10,12 +10,12 @@ gallows determinatives), attempt multi-line translation of:
   - A complete ZODIAC ring (f72v Pisces, already partially done)
 
 Sub-analyses:
-  23a) WORD-BY-WORD GLOSS — decompose + translate every word
-  23b) PHRASE ASSEMBLY — compose glossed words into readable phrases
-  23c) COVERAGE STATISTICS — what % of roots translated per line/section
-  23d) INTERNAL COHERENCE — do bio glosses reference body/conditions?
+  A) WORD-BY-WORD GLOSS — decompose + translate every word
+  B) PHRASE ASSEMBLY — compose glossed words into readable phrases
+  C) COVERAGE STATISTICS — what % of roots translated per line/section
+  D) INTERNAL COHERENCE — do bio glosses reference body/conditions?
        Do herbal glosses reference plants/preparations?
-  23e) CROSS-SECTION COMPARISON — run on all sections, compare meaning clusters
+  E) CROSS-SECTION COMPARISON — run on all sections, compare meaning clusters
 """
 
 import re, json, sys, io
@@ -624,7 +624,7 @@ def main():
     results_dir = Path("results")
     results_dir.mkdir(exist_ok=True)
     results_dir.joinpath("root_lexicon_translation_results.json").write_text(
-        json.dumps({"phase": 23, "vocab_size": len(CONFIRMED_VOCAB)}, indent=2),
+        json.dumps({"test": "root_lexicon_translation", "vocab_size": len(CONFIRMED_VOCAB)}, indent=2),
         encoding="utf-8"
     )
     print(f"\n  Results saved to results/root_lexicon_translation_results.json")

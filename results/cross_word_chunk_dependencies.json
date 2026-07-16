@@ -1,5 +1,5 @@
 {
-  "phase": 90,
+  "test": "cross_word_chunk_dependencies",
   "question": "Cross-word chunk MI: does glyph-level anomaly persist?",
   "vms_cross_mi": 0.7819821708645343,
   "vms_cross_nmi": 0.147258117537692,

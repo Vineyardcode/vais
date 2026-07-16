@@ -25,7 +25,7 @@ from collections import Counter, defaultdict
 from itertools import groupby
 from common import result_path
 
-# ── Load ring_decan_results from previous Phase ─────────────────────────
+# ── Load ring_decan_results from ring_decan_mapping ─────────────────────────
 
 RESULTS_FILE = result_path("ring_decan_results.json")
 
@@ -271,7 +271,7 @@ def get_decan_ruler(sign, degree):
 
 
 # ══════════════════════════════════════════════════════════════════════════
-#  ANALYSIS PHASES
+#  ANALYSIS STEPS
 # ══════════════════════════════════════════════════════════════════════════
 
 def annotate_nymphs(data):

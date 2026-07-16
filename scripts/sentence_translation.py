@@ -8,7 +8,7 @@ Coptic sentence structure (VSO).
 
 Strategy:
 1. Decompose every word on f72v3 (3 ring texts + 32 nymph labels)
-2. Apply CONFIRMED DICTIONARY built from Phases 15-16
+2. Apply CONFIRMED DICTIONARY built from root_lexicon_rosetta and the Coptic probes
 3. Apply phonetic correspondence rules for unknown roots
 4. Interpret gallows determinatives, prefixes, and suffixes
 5. Render word-by-word interlinear translation with confidence scores
@@ -23,7 +23,7 @@ from collections import Counter, defaultdict
 from common import collapse_echains, gallows_base_v2 as gallows_base, parse_morphology, strip_gallows
 
 # ═══════════════════════════════════════════════════════════════════════
-# MORPHOLOGICAL PIPELINE (from Phases 10-15)
+# MORPHOLOGICAL PIPELINE (shared with the structural analyses)
 # ═══════════════════════════════════════════════════════════════════════
 
 SIMPLE_GALLOWS = ["t", "k", "f", "p"]
@@ -100,7 +100,7 @@ def full_decompose(word):
     }
 
 # ═══════════════════════════════════════════════════════════════════════
-# CONFIRMED DICTIONARY — all verified mappings from Phases 15-16
+# CONFIRMED DICTIONARY — all verified mappings from root_lexicon_rosetta and the Coptic probes
 # ═══════════════════════════════════════════════════════════════════════
 
 # Format: voynich_root → (meaning, source_language, confidence, notes)
@@ -139,7 +139,7 @@ CONFIRMED_DICT = {
     "esh":   ("fire",             "Hebrew",  0.90, "אש — elemental"),
     "am":    ("water/lion",       "Coptic",  0.80, "ⲙⲟⲟⲩ(water) or ⲙⲟⲩⲓ(lion)"),
 
-    # ── Astronomical (Phases 15-16) ────────────────────────────────
+    # ── Astronomical mappings ────────────────────────────────
     "eos":   ("star",             "Coptic",  0.85, "≈ⲥⲓⲟⲩ (siou)"),
     "es":    ("star(short)",      "Coptic",  0.80, "≈ⲥⲓⲟⲩ abbreviated"),
     "ar":    ("king/great",       "Coptic",  0.75, "≈ⲉⲣⲟ (ero), or Arabic"),
@@ -766,7 +766,7 @@ def main():
 
     # ── Save results ──────────────────────────────────────────────
     output = {
-        "phase": "17-sentence-translation",
+        "test": "sentence_translation",
         "folios": {},
     }
     for name, res in all_folios.items():

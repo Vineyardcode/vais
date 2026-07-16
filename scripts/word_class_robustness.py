@@ -12,7 +12,7 @@ two_class_section_grammar found:
 
 ALL of these must be attacked:
 
-  43a) SECTION GRAMMAR: MARGINALS OR RULES?
+  A) SECTION GRAMMAR: MARGINALS OR RULES?
        two_class_section_grammar's part-b null shuffled random subsets, preserving GLOBAL marginals.
        If a section has different prefix/suffix frequencies (vocabulary), its
        transition matrix will differ even without different conditional rules.
@@ -21,22 +21,22 @@ ALL of these must be attacked:
        conditionals). If section LR is still large → marginals explain it.
        If LR drops → genuine conditional rules.
 
-  43b) PREDICTIVE ASYMMETRY: PERMUTATION TEST
+  B) PREDICTIVE ASYMMETRY: PERMUTATION TEST
        0.089 bits of L→R advantage is untested. Two controls:
        1) Reverse all lines: if asymmetry flips sign → genuine direction.
        2) Shuffle word order within lines: asymmetry should → ~0.
 
-  43c) OPTIMAL CLASS COUNT
+  C) OPTIMAL CLASS COUNT
        Binary captures 35.7%, three captures 80.1%. Is three the elbow?
        Hierarchical clustering of suffix profiles into k=2,3,4,5,6,7,8
        classes. Plot MI captured vs k.
 
-  43d) SYNERGY BOOTSTRAP
+  D) SYNERGY BOOTSTRAP
        "chdy qoain" has synergy=2.63 but only 38 examples. Bootstrap
        1000 resamples of word pairs, compute synergy CI for each bigram.
        Is the CI above 1.0?
 
-  43e) TOP SECTION DISCRIMINATORS
+  E) TOP SECTION DISCRIMINATORS
        For the transitions that contribute most to section LR, show the
        actual conditional probabilities per section. Are they different
        conditionals (rules) or just different marginals?
@@ -127,7 +127,7 @@ print(f"  {len(pairs)} adjacent pairs")
 # ══════════════════════════════════════════════════════════════════
 
 print("\n" + "=" * 70)
-print("43a: SECTION GRAMMAR — MARGINALS vs RULES")
+print("A: SECTION GRAMMAR — MARGINALS vs RULES")
 print("    two_class_section_grammar part b found z=49-92, but the null preserved GLOBAL marginals.")
 print("    Now: shuffle within section → preserves section marginals,")
 print("    destroys conditionals. If LR drops to near null → marginals did it.")
@@ -223,7 +223,7 @@ for sec in major_sections:
 # ══════════════════════════════════════════════════════════════════
 
 print("\n" + "=" * 70)
-print("43b: PREDICTIVE ASYMMETRY PERMUTATION TEST")
+print("B: PREDICTIVE ASYMMETRY PERMUTATION TEST")
 print("    forward H(class_j|class_i)=5.230 < backward 5.319")
 print("    Asymmetry = −0.089. Is this real?")
 print("    Test 1: Reverse lines → asymmetry should flip sign")
@@ -327,7 +327,7 @@ print(f"    Shuffled null: {np.mean(sp_shuf):.4f}±{np.std(sp_shuf):.4f}, z={z_s
 # ══════════════════════════════════════════════════════════════════
 
 print("\n" + "=" * 70)
-print("43c: OPTIMAL CLASS COUNT")
+print("C: OPTIMAL CLASS COUNT")
 print("    Binary A/B captures 35.7%, three A/M/B captures 80.1%.")
 print("    What about 4, 5, 6, 7, 8 classes?")
 print("    Hierarchical clustering of suffix → following-prefix profiles.")
@@ -451,7 +451,7 @@ for k_from, k_to, drop in drops[:5]:
 # ══════════════════════════════════════════════════════════════════
 
 print("\n" + "=" * 70)
-print("43d: SYNERGY BOOTSTRAP")
+print("D: SYNERGY BOOTSTRAP")
 print("    Bootstrap CIs for synergy values.")
 print("    Is 'chdy qoain' (synergy=2.63, N=38) robust?")
 print("=" * 70)
@@ -660,7 +660,7 @@ for word_i_str, word_j_str in test_bigrams:
 # ══════════════════════════════════════════════════════════════════
 
 print("\n" + "=" * 70)
-print("43e: TOP SECTION DISCRIMINATORS")
+print("E: TOP SECTION DISCRIMINATORS")
 print("    Which sfx→pfx transitions contribute most to section differences?")
 print("    Show conditionals P(pfx_j|sfx_i) per section for top transitions.")
 print("=" * 70)

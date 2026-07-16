@@ -2,8 +2,8 @@
 """
 Supplement — fixes two methodological flaws in syntax_artifact_attack.
 
-FIX 1 (40b-fix): POSITION CONTROL
-  Original 40b assigned shuffled words their ORIGINAL positions,
+FIX 1: POSITION CONTROL
+  The original position-control test assigned shuffled words their ORIGINAL positions,
   creating sparse cells and inflated null MI. 
   
   Correct approach: stratify pairs by (pos_pair × section), then
@@ -11,8 +11,8 @@ FIX 1 (40b-fix): POSITION CONTROL
   and prefix_j within its (pos_j, sec) stratum. This preserves
   positional distributions while destroying pair-level correlations.
 
-FIX 2 (40a-fix): BOUNDARY CHARACTER OVER-CONTROL
-  Original 40a conditioned on (last_char_i, first_char_j).
+FIX 2: BOUNDARY CHARACTER OVER-CONTROL
+  The original boundary-character test conditioned on (last_char_i, first_char_j).
   But first_char_j nearly determines pfx_j — conditioning on it
   is conditioning on a proxy for the OUTCOME. That's like testing
   whether education predicts income after controlling for salary.

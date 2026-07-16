@@ -898,7 +898,7 @@ def main():
 
     # ── Save results ─────────────────────────────────────────────────
     results = {
-        'phase': 93,
+        'test': 'currier_slot2_regime',
         'n_folios_A': n_a,
         'n_folios_B': n_b,
         'min_words_threshold': MIN_WORDS,

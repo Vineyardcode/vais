@@ -1,5 +1,5 @@
 ============================================================================
-PHASE 87R — CRITICAL REVALIDATION
+spectral_vc_revalidation — CRITICAL REVALIDATION
 ============================================================================
 
   VMS: 40309 words with chunks, 38893 words with 2+ glyphs
@@ -8,7 +8,7 @@ PHASE 87R — CRITICAL REVALIDATION
 ISSUE 1: PURITY METRIC WAS RECALL-ONLY
 ────────────────────────────────────────────────────────────────────────────
 
-  Phase 87 reported 'purity' as fraction of KNOWN vowels captured
+  spectral_vowel_consonant reported 'purity' as fraction of KNOWN vowels captured
   by the small group. This is RECALL, not precision or F1.
   Latin 'purity' = 83% masked the fact that the 'V-group' was 58%
   consonants. Corrected analysis uses F1 = 2·P·R/(P+R).
@@ -195,10 +195,10 @@ ISSUE 7: WHAT DOES THE VMS CHUNK EIGENVECTOR ACTUALLY REPRESENT?
   and the C-group to fill consonant slots (S1,S5) more.
 
 ============================================================================
-PHASE 87R — REVALIDATION SYNTHESIS
+spectral_vc_revalidation — REVALIDATION SYNTHESIS
 ============================================================================
 
-  BUGS FOUND IN PHASE 87:
+  BUGS FOUND IN 
   1. Purity metric was recall-only (masked 42% precision in Latin)
   2. Null model 1 (row-permuted) tested sparsity, not structure → RETRACTED
   3. Stability check had sign-flip bug (fixed: actual stability 96-100%)
@@ -236,13 +236,13 @@ PHASE 87R — REVALIDATION SYNTHESIS
   However, the EIGENVALUE STRUCTURE comparison is informative:
   - VMS chunks behave like NL characters (gap in range, negative λ2)
   - VMS glyphs do NOT (gap 0.975, near-zero λ2)
-  This independently confirms Phase 85/86: chunks are the right unit.
+  This independently confirms chunk_fingerprint/86: chunks are the right unit.
 
   AMENDED VERDICT:
-  Phase 87 result: INCONCLUSIVE (confirmed — not upgraded or downgraded)
-  Phase 87R adds:  Eigenvalue structure comparison supports chunks as
+  spectral_vowel_consonant result: INCONCLUSIVE (confirmed — not upgraded or downgraded)
+  spectral_vc_revalidation adds:  Eigenvalue structure comparison supports chunks as
                    character-level units (gap and λ2 sign match NL).
                    The spectral V/C test itself is too weak to use.
 
   CONFIDENCE IMPACT: NONE
-  All confidences remain unchanged from Phase 86.
+  All confidences remain unchanged from chunk_equivalence_classes.

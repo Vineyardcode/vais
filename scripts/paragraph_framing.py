@@ -5,7 +5,7 @@ Paragraph Framing Analysis: Do Paragraphs Have Consistent
 
 ═══════════════════════════════════════════════════════════════════════
 
-USER OBSERVATION: Many paragraphs from f103r onwards start with a single
+OBSERVATION: many paragraphs from f103r onwards start with a single
 letter (gallows). Could they also END with specific letters, creating
 "framed" codeblocks that each need to be read differently?
 

@@ -15,15 +15,15 @@ KEY TEST TARGET: f2r, identified as centaurea (Edith Sherwood) from
 the botanical drawing. Labels "ytoail" and "ios.an.on".
 
 Tests:
-  57a) APPLY MAPPING TO f2r — convert all words to Vogt phonetics,
+  A) APPLY MAPPING TO f2r — convert all words to Vogt phonetics,
        compute edit distance to centaurea cognates in multiple languages
-  57b) V/C CONSISTENCY — do Vogt's vowels/consonants match the
-       positional profiles we established in Phases 36-56?
-  57c) ALTERNATION PLAUSIBILITY — does applying the mapping and
+  B) V/C CONSISTENCY — do Vogt's vowels/consonants match the
+       positional profiles established across the morphology and hypothesis-testing analyses?
+  C) ALTERNATION PLAUSIBILITY — does applying the mapping and
        removing non-phonetic markers improve V/C alternation?
-  57d) DEGREES OF FREEDOM — with 20 chars → ~12 sounds, how many
+  D) DEGREES OF FREEDOM — with 20 chars → ~12 sounds, how many
        random mappings produce equally good plant-name "matches"?
-  57e) CORPUS-WIDE COHERENCE — apply mapping to full corpus, check
+  E) CORPUS-WIDE COHERENCE — apply mapping to full corpus, check
        phonotactic self-consistency
 
 Sources:
@@ -301,7 +301,7 @@ pr("=" * 72)
 
 # ── 57a: APPLY MAPPING TO f2r ──
 pr("\n" + "─" * 72)
-pr("57a) APPLYING VOGT MAPPING TO f2r")
+pr("A) APPLYING VOGT MAPPING TO f2r")
 pr("─" * 72)
 
 f2r_words = load_words_from_folio("f2r.txt")
@@ -353,7 +353,7 @@ pr(f"  Values < 0.3 might indicate genuine cognates; > 0.5 is likely coincidence
 
 # ── 57b: V/C CONSISTENCY CHECK ──
 pr("\n" + "─" * 72)
-pr("57b) V/C CONSISTENCY — DO VOGT'S ASSIGNMENTS MATCH POSITIONAL PROFILES?")
+pr("B) V/C CONSISTENCY — DO VOGT'S ASSIGNMENTS MATCH POSITIONAL PROFILES?")
 pr("─" * 72)
 
 all_words = load_all_words()
@@ -421,7 +421,7 @@ if vogt_v_starts and vogt_c_starts:
 
 # ── 57c: ALTERNATION PLAUSIBILITY ──
 pr("\n" + "─" * 72)
-pr("57c) ALTERNATION — DOES MAPPING IMPROVE V/C ALTERNATION?")
+pr("C) ALTERNATION — DOES MAPPING IMPROVE V/C ALTERNATION?")
 pr("─" * 72)
 
 # Raw EVA alternation (using Sukhotin's from vowel_consonant_separation: o,a,e,y classified as V)
@@ -466,7 +466,7 @@ pr(f"  A perfect CV syllabary shows alternation ≈ 1.0")
 
 # ── 57d: DEGREES OF FREEDOM — RANDOM MAPPING COMPARISON ──
 pr("\n" + "─" * 72)
-pr("57d) DEGREES OF FREEDOM — HOW SPECIAL IS THE VOGT MAPPING?")
+pr("D) DEGREES OF FREEDOM — HOW SPECIAL IS THE VOGT MAPPING?")
 pr("─" * 72)
 
 # The key question: with 20+ EVA chars mapped to ~12 phonetic values,
@@ -539,7 +539,7 @@ pr(f"    This massive space means coincidental matches are EXPECTED")
 
 # ── 57e: CORPUS-WIDE COHERENCE ──
 pr("\n" + "─" * 72)
-pr("57e) CORPUS-WIDE COHERENCE — INTERNAL CONSISTENCY OF VOGT MAPPING")
+pr("E) CORPUS-WIDE COHERENCE — INTERNAL CONSISTENCY OF VOGT MAPPING")
 pr("─" * 72)
 
 # Apply Vogt mapping to entire corpus
@@ -626,24 +626,24 @@ pr("=" * 72)
 pr("""
 RESULTS SUMMARY:
 
-57a) CENTAUREA MATCH ON f2r:
+A) CENTAUREA MATCH ON f2r:
     The Vogt mapping applied to f2r words does NOT produce a clear
     phonetic match with any centaurea cognate. The labels "ytoail"
     and "iosanon" map to phonetic strings that are distant from all
     tested centaurea forms in multiple languages.
 
-57b) V/C CONSISTENCY:
+B) V/C CONSISTENCY:
     Vogt's vowel assignments {o,a,e} and consonant assignments
     span multiple SVD character groups, suggesting the mapping does
     NOT respect the manuscript's own internal character classes.
     The positional profiles show some V/C differentiation but less
     clean separation than expected for a natural phonetic system.
 
-57c) ALTERNATION:
+C) ALTERNATION:
     The V/C alternation rate under Vogt's mapping can be compared
     to the raw EVA rate and to natural language expectations.
 
-57d) DEGREES OF FREEDOM:
+D) DEGREES OF FREEDOM:
     The massive mapping space (10^N possible assignments) means
     that finding plant-name "matches" by adjusting character-sound
     pairs is almost guaranteed. The key question is whether the
@@ -651,7 +651,7 @@ RESULTS SUMMARY:
     if not, the entire approach falls to the multiple comparisons
     problem.
 
-57e) CORPUS-WIDE:
+E) CORPUS-WIDE:
     Applying the mapping corpus-wide produces a phoneme distribution
     and bigram structure that can be compared to natural languages.
 

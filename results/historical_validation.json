@@ -299,7 +299,7 @@
         "PASS"
       ],
       [
-        "Simple substitution rejected by Phase 75 + 100",
+        "Simple substitution rejected by latin_paragraph_initials + 100",
         "PASS"
       ],
       [

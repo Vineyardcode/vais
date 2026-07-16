@@ -1,0 +1,412 @@
+compound_decomposition: COMPOUND DECOMPOSITION, h-VERBAL & BARE CLASS
+============================================================================
+Loaded 40300 word tokens
+
+============================================================================
+h- VERBAL PREFIX HYPOTHESIS
+============================================================================
+
+ALL 10 roots with s%>50% start with h: h, he, ho, hed, heo,
+hod, hol, hes, heod, heos. This is remarkable.
+
+HYPOTHESIS: h- is the TRUE verbal marker. The s- prefix just
+co-occurs because s+h = 'verbal + verb-stem'. The root is what
+follows h-, not including h- itself.
+
+  h-root       N     s%  Remainder  Rem-N Rem-s%  Rem exists? 
+  h         2003    96%  (bare)        0     0%  h IS the prefix
+  he         410    99%  e          5279     1%  YES (5279)
+  ho         262    98%  o          1175     1%  YES (1175)
+  hed         86   100%  ed          341     1%  YES (341)
+  heo        115   100%  eo          303     1%  YES (303)
+  hod         51    96%  od          130     1%  YES (130)
+  hol         31    94%  ol         1756     4%  YES (1756)
+  hes         30   100%  es          181     4%  YES (181)
+  heod        27   100%  eod         167     0%  YES (167)
+  heos        19   100%  eos         126     1%  YES (126)
+
+  RESULT: 9/9 h-verbal roots have independent remainders
+
+  REMAINDER BEHAVIOR (when occurring without h-prefix):
+  Remainder     N     d%     o%     s%  bare%  POS     
+  e         5279    0.8   33.5    0.6   20.1  NOUN
+  o         1175    0.5    9.2    0.5   42.6  NOUN
+  ed         341    1.5   31.1    0.6   29.3  NOUN
+  eo         303    1.0   36.3    0.7   33.0  NOUN
+  od         130    0.8   28.5    0.8   23.8  NOUN
+  ol        1756    6.4   15.8    3.8   48.3  NOUN
+  es         181    2.2   46.4    4.4   22.1  NOUN
+  eod        167    1.2   36.5    0.0   37.7  NOUN
+  eos        126    0.8   56.3    0.8   19.8  NOUN
+
+  s-PREFIX DISTRIBUTION ACROSS ALL ROOTS:
+  s-prefix with h-initial roots: 3344 (76.6%)
+  s-prefix with non-h roots:     1022 (23.4%)
+  → s- is mostly with h-roots but appears elsewhere too.
+  → h- is verbal but s- may also independently mark verbal mood.
+
+  h-ROOT PREFIX DIVERSITY (are h-roots ONLY used with s-?):
+  h     (N= 2003): bare=54(3%), s=1916(96%), o=7(0%), qo=7(0%), q=7(0%), y=12(1%)
+  he    (N=  410): bare=2(0%), s=406(99%), o=2(0%)
+  ho    (N=  262): bare=4(2%), s=258(98%)
+
+============================================================================
+SYSTEMATIC COMPOUND DECOMPOSITION
+============================================================================
+
+For each unknown long root, try ALL possible splits into two
+shorter parts. Score by whether both parts exist as roots.
+
+  Testing 92 unknown long roots for compound structure...
+
+  Root             N  Split                Part1-N Part2-N  Score
+  cheo           263  che✓+o              706    1175   1412
+  ech            117  e✓+ch✓            5279    3628  14512
+  heo            115  he✓+o              410    1175    820
+  chd            112  ch✓+d✓            3628    1188   4752
+  aiir            91  a✓+iir             3953      20     40
+  rch             60  r +ch✓             352    3628    704
+  chos            59  ch✓+os             3628      93    186
+  cheod           56  ch✓+eod✓            3628     167    668
+  eol             52  e✓+ol✓            5279    1756   7024
+  hod             51  ho✓+d✓             262    1188   1048
+  ald             44  al✓+d✓            1728    1188   4752
+  lche            40  l✓+che✓            1351     706   2824
+  chl             39  ch✓+l✓            3628    1351   5404
+  alsh            38  al✓+sh✓            1728     209    836
+  chor            37  ch✓+or✓            3628    1036   4144
+  lam             37  l✓+am✓            1351     396   1584
+  esh             36  e✓+sh✓            5279     209    836
+  aram            35  ar✓+am✓            2021     396   1584
+  chs             34  ch✓+s             3628      68    136
+  aim             34  ai +m              116      15     15
+  alam            33  al✓+am✓            1728     396   1584
+  hol             31  h✓+ol✓            2003    1756   7024
+  hes             30  h✓+es✓            2003     181    724
+  led             30  l✓+ed✓            1351     341   1364
+  cheol           29  che✓+ol✓             706    1756   2824
+  heod            27  h✓+eod✓            2003     167    668
+  chy             27  ch✓+y             3628     523   1046
+  chh             26  ch✓+h✓            3628    2003   8012
+  als             25  al✓+s             1728      68    136
+  ail             25  ai +l✓             116    1351    232
+  rsh             24  r +sh✓             352     209    418
+  chal            24  ch✓+al✓            3628    1728   6912
+  ram             23  r +am✓             352     396    704
+  aiin            23  ai +in              116      18     18
+  sho             21  sh✓+o              209    1175    418
+  alo             21  al✓+o             1728    1175   2350
+  aii             21  ai +i              116     171    116
+  lshe            21  lsh✓+e✓             180    5279    720
+  dair            21  d✓+air✓            1188     436   1744
+  ych             21  y +ch✓             523    3628   1046
+  arch            20  ar✓+ch✓            2021    3628   8084
+  lchd            19  lch✓+d✓             422    1188   1688
+  choe            19  cho✓+e✓             558    5279   2232
+  aih             19  a✓+ih             3953     152    304
+  lol             19  l✓+ol✓            1351    1756   5404
+  heos            19  h✓+eos✓            2003     126    504
+  sheo            18  sh✓+eo              209     303    418
+  lair            18  l✓+air✓            1351     436   1744
+  edam            18  ed✓+am✓             341     396   1364
+  lched           17  lch✓+ed✓             422     341   1364
+  heol            17  he✓+ol✓             410    1756   1640
+  chom            17  ch✓+om             3628      49     98
+  eam             16  e✓+am✓            5279     396   1584
+  olch            16  ol✓+ch✓            1756    3628   7024
+  dam             16  d✓+am✓            1188     396   1584
+  hos             16  h✓+os             2003      93    186
+  lech            16  l✓+ech             1351     117    234
+  lcho            15  l✓+cho✓            1351     558   2232
+  lal             15  l✓+al✓            1351    1728   5404
+  rar             15  r +ar✓             352    2021    704
+  choo            14  cho✓+o              558    1175   1116
+  dch             14  d✓+ch✓            1188    3628   4752
+  aro             14  ar✓+o             2021    1175   2350
+  edair           14  ed✓+air✓             341     436   1364
+  leo             14  l✓+eo             1351     303    606
+  chey            14  che✓+y              706     523   1046
+  eom             14  e✓+om             5279      49     98
+  ral             13  r +al✓             352    1728    704
+  cheam           13  che✓+am✓             706     396   1584
+  dai             12  d✓+ai             1188     116    232
+  ldam            12  ld +am✓              60     396    120
+  char            12  ch✓+ar✓            3628    2021   8084
+  eal             12  e✓+al✓            5279    1728   6912
+  rair            12  r +air✓             352     436    704
+  cha             12  ch✓+a✓            3628    3953  14512
+  chan            12  ch✓+an             3628      59    118
+  eoch            11  eo +ch✓             303    3628    606
+  aiino           11  aiin +o               23    1175     23
+  rol             11  r +ol✓             352    1756    704
+  chdam           11  chd +am✓             112     396    224
+  aral            11  ar✓+al✓            2021    1728   6912
+  asr             11  as +r               34     352     34
+  ols             10  ol✓+s             1756      68    136
+  airam           10  air✓+am✓             436     396   1584
+  lesh            10  le +sh✓              65     209    130
+  hey             10  he✓+y              410     523    820
+  hor             10  h✓+or✓            2003    1036   4144
+  lshed           10  lsh✓+ed✓             180     341    720
+  cheom           10  che✓+om              706      49     98
+  alom            10  al✓+om             1728      49     98
+  chyd            10  ch✓+yd             3628      32     64
+
+  RESULTS:
+    Decomposable: 91/92 (99%)
+    Atomic (no split): 1/92 (1%)
+
+  TOP ATOMIC (non-decomposable) LONG ROOTS:
+    iir         :    20 tokens — genuinely unknown
+
+============================================================================
+BARE CLASS ANALYSIS — WHAT FOLLOWS BARE ROOTS?
+============================================================================
+
+28 roots are >85% bare (no prefix). These may be bound morphemes
+that combine with what follows. We map what immediately follows.
+
+  === ch (N=3628) ===
+    FOLLOWING ROOTS (top 8): {'e': 480, 'a': 427, 'ch': 326, 'ar': 186, 'al': 166, 'ol': 158, 'd': 124, 'l': 122}
+    PRECEDING ROOTS (top 8): {'a': 494, 'e': 367, 'ch': 326, 'ol': 245, 'al': 158, 'ar': 151, 'or': 142, 'h': 105}
+    Top-1 following root: 13%, Top-3: 34%
+
+  === cho (N=558) ===
+    FOLLOWING ROOTS (top 8): {'ch': 83, 'e': 42, 'a': 39, 'o': 28, 'cho': 27, 'al': 25, 'ol': 21, 'ar': 19}
+    PRECEDING ROOTS (top 8): {'e': 62, 'a': 50, 'ch': 48, 'cho': 27, 'ol': 27, 'd': 17, 'o': 16, 'ar': 15}
+    Top-1 following root: 15%, Top-3: 29%
+
+  === la (N=119) ===
+    FOLLOWING ROOTS (top 8): {'xc': 5, 'xo': 2, 'xv': 1, 'xs': 1}
+    PRECEDING ROOTS (top 8): {'ih': 97, 'i': 20, 'is': 2}
+    Top-1 following root: 4%, Top-3: 7%
+
+  === lb (N=90) ===
+    FOLLOWING ROOTS (top 8): {'cx': 6, 'c': 2, 'xo': 1, 'xs': 1}
+    PRECEDING ROOTS (top 8): {'ih': 34, 'is': 23, 'ib': 19, 'i': 8, 'ic': 6}
+    Top-1 following root: 7%, Top-3: 10%
+
+  === ih (N=152) ===
+    FOLLOWING ROOTS (top 8): {'la': 97, 'lb': 34, 'a': 4, 'e': 3, 'air': 2, 'lch': 1, 'x': 1, 'ch': 1}
+    PRECEDING ROOTS (top 8): {'z': 23, 'y': 22, 'a': 19, 'b': 16, 'c': 14, 'w': 14, 'x': 14, 'd': 12}
+    Top-1 following root: 64%, Top-3: 89%
+    → ih is strongly bound to 'la' — likely a compound prefix
+
+  === che (N=706) ===
+    FOLLOWING ROOTS (top 8): {'e': 100, 'ch': 74, 'a': 66, 'ol': 33, 'h': 32, 'al': 28, 'ar': 27, 'l': 21}
+    PRECEDING ROOTS (top 8): {'a': 96, 'e': 90, 'ol': 55, 'ch': 47, 'al': 36, 'ar': 35, 'or': 26, 'che': 21}
+    Top-1 following root: 14%, Top-3: 34%
+
+  === ched (N=195) ===
+    FOLLOWING ROOTS (top 8): {'e': 35, 'ch': 26, 'a': 17, 'ar': 10, 'h': 9, 'l': 7, 'al': 6, 'ol': 6}
+    PRECEDING ROOTS (top 8): {'e': 38, 'a': 31, 'ch': 17, 'ol': 10, 'ar': 8, 'l': 7, 'al': 6, 'che': 5}
+    Top-1 following root: 18%, Top-3: 40%
+
+  === chol (N=90) ===
+    FOLLOWING ROOTS (top 8): {'al': 7, 'ar': 6, 'ch': 6, 'e': 5, 'd': 4, 'l': 4, 'a': 4, 'ol': 3}
+    PRECEDING ROOTS (top 8): {'a': 16, 'e': 12, 'ch': 11, 'cho': 4, 'l': 4, 'ol': 3, 'al': 3, 'h': 2}
+    Top-1 following root: 8%, Top-3: 21%
+
+  === chod (N=96) ===
+    FOLLOWING ROOTS (top 8): {'e': 8, 'ch': 8, 'a': 8, 'h': 5, 'cho': 5, 'al': 4, 'ol': 4, 'o': 4}
+    PRECEDING ROOTS (top 8): {'e': 9, 'or': 8, 'al': 6, 'ch': 6, 'd': 5, 'a': 5, 'h': 4, 'ol': 4}
+    Top-1 following root: 8%, Top-3: 25%
+
+  === ches (N=98) ===
+    FOLLOWING ROOTS (top 8): {'a': 15, 'e': 11, 'ar': 7, 'ol': 6, 'al': 6, 'h': 5, 'or': 5, 'os': 3}
+    PRECEDING ROOTS (top 8): {'a': 16, 'e': 10, 'ch': 8, 'al': 8, 'ol': 6, 'or': 5, 'h': 4, 'o': 4}
+    Top-1 following root: 15%, Top-3: 34%
+
+  === cham (N=27) ===
+    FOLLOWING ROOTS (top 8): {'ch': 2, 'cho': 1, 'ol': 1, 'han': 1, 'e': 1, 'alche': 1, 'aiir': 1}
+    PRECEDING ROOTS (top 8): {'ch': 4, 'ar': 3, 'e': 3, 'al': 3, 'am': 2, 'a': 2, 'an': 1, 'lychals': 1}
+    Top-1 following root: 7%, Top-3: 15%
+
+
+============================================================================
+REVISED MORPHOLOGICAL MODEL
+============================================================================
+
+Based on the root-lexicon audit findings, propose a revised parse model.
+
+  ch-INITIAL ROOTS (N≥10): 31
+  Root             N  After ch-  After-N
+  ch            3628  (bare)           0
+  che            706  e             5279
+  cho            558  o             1175
+  cheo           263  eo             303
+  ched           195  ed             341
+  chd            112  d             1188
+  ches            98  es             181
+  chod            96  od             130
+  chol            90  ol            1756
+  cheos           63  eos            126
+  chos            59  os              93
+  cheod           56  eod            167
+  chl             39  l             1351
+  chor            37  or            1036
+  chs             34  s               68
+  cheol           29  eol             52
+  chy             27  y              523
+  cham            27  am             396
+  chh             26  h             2003
+  chal            24  al            1728
+  choe            19  oe              20
+  chom            17  om              49
+  choo            14  oo              80
+  chey            14  ey              20
+  cheam           13  eam             16
+  char            12  ar            2021
+  cha             12  a             3953
+  chan            12  an              59
+  chdam           11  dam             16
+  cheom           10  eom             14
+  chyd            10  yd              32
+
+  h-INITIAL ROOTS (non-ch, N≥10): 16
+  Root             N  After h-   After-N
+  h             2003  (bare)           0
+  he             410  e             5279
+  ho             262  o             1175
+  heo            115  eo             303
+  hed             86  ed             341
+  hod             51  od             130
+  hd              36  d             1188
+  hol             31  ol            1756
+  hes             30  es             181
+  heod            27  eod            167
+  heos            19  eos            126
+  heol            17  eol             52
+  hos             16  os              93
+  hh              11  h             2003
+  hey             10  ey              20
+  hor             10  or            1036
+
+  ══════════════════════════════════════════════════
+  PROPOSED REVISED MORPHOLOGICAL MODEL
+  ══════════════════════════════════════════════════
+
+  OLD MODEL:
+    WORD = [prefix] + [gallows] + ROOT + [suffix]
+    prefix ∈ {qo, q, so, do, o, d, s, y}
+    gallows ∈ {k, t, f, p} (classifiers)
+    ROOT = semantic kernel
+
+  REVISED MODEL:
+    WORD = [GRAM-PREFIX] + [GALLOWS-DET] + [DERIV-PREFIX] + STEM + [SUFFIX]
+    GRAM-PREFIX ∈ {qo, q, o, d, y}  (grammatical: relative, article, genitive, adj)
+    GALLOWS-DET ∈ {k, t, f, p}       (classifier determinative)
+    DERIV-PREFIX ∈ {ch-, h-, sh-, l-} (derivational prefixes)
+      ch- = nominalizer/agent  (ch+e='make-this', ch+o='substance')
+      h-  = verbalizer          (h+e='fall', h+o='face/turn', h+ed='pour')
+      sh- = causative?           (sh+e='tree/plant', sh+eo='dry')
+      l-  = instrumental?        (l+ch='remedy-making', l+sh='remedy-occur')
+    STEM = core lexical root (e, o, ed, eo, od, ol, al, am, ar, es...)
+    SUFFIX = inflectional marker
+
+  KEY INSIGHT: What we've been calling separate roots (ch, che, cho,
+  chol, he, ho, hed, she, sheo, lch) may actually be DERIVATIONAL
+  PREFIX + STEM combinations, not atomic roots.
+
+  RE-PARSE EXAMPLES under revised model:
+  qokeedy          OLD: [qo]+[k]+e+[dy]                     NEW: [qo]+[k]+e+[dy]
+  shedy            OLD: [s]+[∅]+h+[edy]                     NEW: [s]+[∅]+h+[edy]
+  otedy            OLD: [o]+[t]+e+[dy]                      NEW: [o]+[t]+e+[dy]
+  chedy            OLD: [∅]+[∅]+ch+[edy]                    NEW: [∅]+[∅]+ch+[edy]
+  qokchedy         OLD: [qo]+[k]+e+[dy]                     NEW: [qo]+[k]+e+[dy]
+  dam              OLD: [d]+[∅]+am+[∅]                      NEW: [d]+[∅]+am+[∅]
+  otar             OLD: [o]+[t]+ar+[∅]                      NEW: [o]+[t]+ar+[∅]
+  olkedy           OLD: [o]+[k]+l+[edy]                     NEW: [o]+[k]+l+[edy]
+  sokol            OLD: [so]+[k]+ol+[∅]                     NEW: [so]+[k]+ol+[∅]
+  shedair          OLD: [s]+[∅]+hedair+[∅]                  NEW: [s]+[∅]+h-edair+[∅]
+  dshedy           OLD: [d]+[∅]+sh+[edy]                    NEW: [d]+[∅]+sh+[edy]
+  qokain           OLD: [qo]+[k]+a+[in]                     NEW: [qo]+[k]+a+[in]
+  schedy           OLD: [s]+[∅]+ch+[edy]                    NEW: [s]+[∅]+ch+[edy]
+  dalchedy         OLD: [d]+[∅]+alch+[edy]                  NEW: [d]+[∅]+alch+[edy]
+
+============================================================================
+CHI-SQUARED SECTION CLUSTERING
+============================================================================
+
+For every root with N≥20, test whether its section distribution
+is significantly non-random (chi-squared goodness of fit).
+
+  Root             N        χ²         p  Peak section  Enrich
+  e             5279     326.0    <0.001* bio            1.32x
+  a             3953      77.8    <0.001* cosmo          1.14x
+  ch            3628     192.5    <0.001* herbal-A       1.28x
+  ar            2021     120.0    <0.001* text           1.23x
+  h             2003     231.1    <0.001* bio            1.76x
+  ol            1756     255.9    <0.001* pharma         1.79x
+  al            1728     148.6    <0.001* bio            1.28x
+  l             1351     317.9    <0.001* bio            1.76x
+  d             1188      90.1    <0.001* herbal-A       1.42x
+  o             1175     194.4    <0.001* herbal-A       1.69x
+  or            1036     167.8    <0.001* herbal-A       1.62x
+  che            706      97.8    <0.001* pharma         2.60x
+  cho            558     206.4    <0.001* herbal-A       1.93x
+  y              523     364.8    <0.001* herbal-A       2.41x
+  air            436     101.1    <0.001* cosmo          1.47x
+  lch            422     284.5    <0.001* bio            2.75x
+  he             410      29.4    <0.001* pharma         1.99x
+  am             396      54.3    <0.001* cosmo          2.78x
+  r              352      46.3    <0.001* bio            1.43x
+  ed             341      68.9    <0.001* text           1.41x
+  eo             303      65.0    <0.001* pharma         1.43x
+  cheo           263      84.4    <0.001* pharma         2.23x
+  ho             262     124.1    <0.001* herbal-A       2.12x
+  sh             209      21.4    <0.001* bio            1.53x
+  ched           195      62.4    <0.001* text           1.54x
+  es             181      21.5    <0.001* unknown        2.00x
+  lsh            180     194.0    <0.001* bio            3.39x
+  i              171      88.9    <0.001* unknown        3.87x
+  eod            167      36.0    <0.001* unknown        2.04x
+  ih             152    2047.8    <0.001* unknown       17.54x
+  od             130      43.6    <0.001* herbal-A       1.81x
+  eos            126      56.8    <0.001* unknown        3.05x
+  la             119    1944.4    <0.001* unknown       19.18x
+  ech            117      29.0    <0.001* text           1.49x
+  ai             116       5.9     >0.05  text           1.20x
+  heo            115      29.5    <0.001* pharma         2.66x
+  qo             115      14.2     <0.05* herbal-A       1.49x
+  chd            112      17.4     <0.01* cosmo          1.64x
+  ches            98       4.6     >0.05  pharma         1.30x
+  chod            96      30.9    <0.001* herbal-A       1.70x
+  os              93      25.2    <0.001* cosmo          1.97x
+  aiir            91      26.8    <0.001* cosmo          2.52x
+  chol            90      13.4     <0.05* herbal-A       1.42x
+  lb              90    1319.3    <0.001* unknown       18.25x
+  hed             86      20.0     <0.01* text           1.34x
+  oo              80      37.9    <0.001* cosmo          2.29x
+  lo              78       9.0     >0.05  bio            1.22x
+  c               71     303.8    <0.001* unknown       10.22x
+  alch            71       8.2     >0.05  bio            1.62x
+  s               68       4.7     >0.05  pharma         1.88x
+  le              65      22.4    <0.001* text           1.56x
+  cheos           63      19.0     <0.01* pharma         2.84x
+  rch             60      21.0    <0.001* bio            2.37x
+  ld              60      30.3    <0.001* pharma         3.83x
+  q               60     763.1    <0.001* unknown       17.07x
+  chos            59      18.8     <0.01* pharma         1.73x
+  an              59      11.1     <0.05* herbal-A       1.62x
+  ls              58      10.6     >0.05  cosmo          2.37x
+  z               57     343.4    <0.001* unknown       11.98x
+  cheod           56      14.4     <0.05* pharma         2.28x
+
+  SUMMARY: 54/112 roots show significant section clustering at p<0.05
+  Expected by chance (5%): 6
+  → Significantly more roots cluster than expected by chance.
+  → Root-section associations are REAL, even if we can't name them.
+  Bonferroni-surviving (p<0.001): 56/112
+
+============================================================================
+compound_decomposition: KEY TAKEAWAYS
+============================================================================
+
+  1. h- verbal prefix hypothesis: see 29a results
+  2. Compound decomposition: see 29b split table
+  3. BARE class: see 29c following-root patterns
+  4. Revised model: prefix + det + deriv-prefix + stem + suffix
+  5. Chi-squared: see 29e section clustering significance
+
+  Results saved to results/compound_decomposition_results.json

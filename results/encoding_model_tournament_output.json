@@ -1,0 +1,139 @@
+{
+  "fingerprints": {
+    "VMS": {
+      "label": "VMS",
+      "n_tokens": 36259,
+      "n_types": 6415,
+      "heaps_beta": 0.7532634259656353,
+      "hapax_ratio_mid": 0.6554723363131191,
+      "char_bigram_pred": 0.6407101855957688,
+      "word_bigram_pred": 0.4448009648834097,
+      "mean_word_len": 4.935216084282523,
+      "ttr_5000": 0.342,
+      "zipf_alpha": 0.9415080134769475
+    },
+    "Italian (raw)": {
+      "label": "Italian (raw)",
+      "n_tokens": 50000,
+      "n_types": 8196,
+      "heaps_beta": 0.7514616696707476,
+      "hapax_ratio_mid": 0.6390298928369994,
+      "char_bigram_pred": 0.8392755662448659,
+      "word_bigram_pred": 0.4638832226986712,
+      "mean_word_len": 3.9302,
+      "ttr_5000": 0.3374,
+      "zipf_alpha": 1.0207414967343764
+    },
+    "Simple subst.": {
+      "label": "Simple subst.",
+      "n_tokens": 50000,
+      "n_types": 8196,
+      "heaps_beta": 0.7514616696707476,
+      "hapax_ratio_mid": 0.6390298928369994,
+      "char_bigram_pred": 0.8392755662448659,
+      "word_bigram_pred": 0.4638832226986712,
+      "mean_word_len": 3.9302,
+      "ttr_5000": 0.3374,
+      "zipf_alpha": 1.0207414967343764
+    },
+    "Homophonic (fan=3)": {
+      "label": "Homophonic (fan=3)",
+      "n_tokens": 50000,
+      "n_types": 25779,
+      "heaps_beta": 0.9031803943743123,
+      "hapax_ratio_mid": 0.8929725073576915,
+      "char_bigram_pred": 0.7403974316228277,
+      "word_bigram_pred": 0.20607746147656006,
+      "mean_word_len": 7.8604,
+      "ttr_5000": 0.664,
+      "zipf_alpha": 0.8388968605890655
+    },
+    "Syllabic": {
+      "label": "Syllabic",
+      "n_tokens": 91231,
+      "n_types": 1219,
+      "heaps_beta": 0.4292055439032184,
+      "hapax_ratio_mid": 0.25249500998003993,
+      "char_bigram_pred": 0.8392755662448659,
+      "word_bigram_pred": 0.704391290513179,
+      "mean_word_len": 2.1539827470925452,
+      "ttr_5000": 0.097,
+      "zipf_alpha": 1.303308256109031
+    },
+    "Verbose (letter\u2192word)": {
+      "label": "Verbose (letter\u2192word)",
+      "n_tokens": 196510,
+      "n_types": 35,
+      "heaps_beta": 0.07665168557433694,
+      "hapax_ratio_mid": 0.0,
+      "char_bigram_pred": 0.6782338390478294,
+      "word_bigram_pred": 0.8392755662448659,
+      "mean_word_len": 3.0,
+      "ttr_5000": 0.006,
+      "zipf_alpha": 2.530653260928347
+    },
+    "Anagram": {
+      "label": "Anagram",
+      "n_tokens": 50000,
+      "n_types": 21827,
+      "heaps_beta": 0.8929005092067477,
+      "hapax_ratio_mid": 0.8945770430969048,
+      "char_bigram_pred": 0.9745717970989602,
+      "word_bigram_pred": 0.3027244325907013,
+      "mean_word_len": 3.9302,
+      "ttr_5000": 0.5606,
+      "zipf_alpha": 1.1275258523780147
+    },
+    "Null (VMS-matched)": {
+      "label": "Null (VMS-matched)",
+      "n_tokens": 36000,
+      "n_types": 30399,
+      "heaps_beta": 0.9694606904499321,
+      "hapax_ratio_mid": 0.952402163538021,
+      "char_bigram_pred": 0.9994009517849022,
+      "word_bigram_pred": 0.04271529822977827,
+      "mean_word_len": 4.939527777777778,
+      "ttr_5000": 0.9186,
+      "zipf_alpha": 0.7832045831575082
+    }
+  },
+  "distances": {
+    "Italian (raw)": 1.7768295200867867,
+    "Simple subst.": 1.7768295200867867,
+    "Homophonic (fan=3)": 2.7025959480625876,
+    "Syllabic": 3.349279801232306,
+    "Verbose (letter\u2192word)": 5.012378631328221,
+    "Anagram": 3.166819822225389,
+    "Null (VMS-matched)": 4.1909070679253
+  },
+  "ranking": [
+    [
+      "Italian (raw)",
+      1.7768295200867867
+    ],
+    [
+      "Simple subst.",
+      1.7768295200867867
+    ],
+    [
+      "Homophonic (fan=3)",
+      2.7025959480625876
+    ],
+    [
+      "Anagram",
+      3.166819822225389
+    ],
+    [
+      "Syllabic",
+      3.349279801232306
+    ],
+    [
+      "Null (VMS-matched)",
+      4.1909070679253
+    ],
+    [
+      "Verbose (letter\u2192word)",
+      5.012378631328221
+    ]
+  ]
+}

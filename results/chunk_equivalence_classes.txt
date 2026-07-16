@@ -1,5 +1,5 @@
 ============================================================================
-PHASE 86 — CHUNK EQUIVALENCE CLASS DISCOVERY
+chunk_equivalence_classes — CHUNK EQUIVALENCE CLASS DISCOVERY
 ============================================================================
 
   Can 523 VMS chunk types be clustered into a smaller set of

@@ -10,16 +10,16 @@ semantically opaque because:
 2. Top unknown roots (lch, ed, che) are likely compound forms
 
 Sub-analyses:
-  24a) CLASSIFIER-TO-MEANING MAP — For each gallows class (k,t,f,p),
+  A) CLASSIFIER-TO-MEANING MAP — For each gallows class (k,t,f,p),
        profile what CONTENT words they classify. Does k+e = "this substance",
        t+e = "this celestial influence", f+e = "this plant"?
-  24b) COMPOUND ROOT RESOLUTION — Test whether lch = l+ch, ed = e+d,
+  B) COMPOUND ROOT RESOLUTION — Test whether lch = l+ch, ed = e+d,
        che = ch+e by comparing their distributions to the components
-  24c) DAIIN CONTEXT ANALYSIS — At 1,049x, daiin is the most frequent
+  C) DAIIN CONTEXT ANALYSIS — At 1,049x, daiin is the most frequent
        word form. Validate d(of)+a(great-one)+iin(pl) by checking context
-  24d) CONNECTED PROSE TRANSLATION — Use the highest-coverage bio lines
+  D) CONNECTED PROSE TRANSLATION — Use the highest-coverage bio lines
        to attempt paragraph-level coherent English for f78r
-  24e) PREDICTIVE MODEL — Given the grammar and vocabulary, predict what
+  E) PREDICTIVE MODEL — Given the grammar and vocabulary, predict what
        a bio paragraph SHOULD say based on medieval medical texts
 """
 
@@ -335,7 +335,7 @@ def run_compound_resolution(all_words):
 
 def run_daiin_analysis(all_words):
     print("\n" + "="*76)
-    print("DAIIN CONTEXT ANALYSIS (most frequent word: 1,049x)")
+    print("DAIIN CONTEXT ANALYSIS (most frequent word: 1,X)")
     print("="*76)
 
     # Find all daiin occurrences and their neighbors
@@ -739,7 +739,7 @@ def main():
 
     Path("results").mkdir(exist_ok=True)
     Path("results/gallows_classifier_semantics_results.json").write_text(
-        json.dumps({"phase": 24}, indent=2), encoding="utf-8"
+        json.dumps({"test": "gallows_classifier_semantics"}, indent=2), encoding="utf-8"
     )
     print(f"\n  Results saved to results/gallows_classifier_semantics_results.json")
 

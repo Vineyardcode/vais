@@ -1,5 +1,5 @@
 ================================================================================
-PHASE 106 — ABBREVIATION DECODE ATTEMPT ON FOLIO 1r
+f1r_abbreviation_decode — ABBREVIATION DECODE ATTEMPT ON FOLIO 1r
 ================================================================================
 
 Method: Apply JKP paleographic identifications (thread 2394)

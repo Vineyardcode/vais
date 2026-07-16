@@ -8,24 +8,24 @@ compound_model_validation established:
   - BUT derivational prefixes DON'T change section distribution
   - So what DO ch-, h-, sh-, l- actually change?
 
-This phase tests EVERY other axis of variation:
+This test probes EVERY other axis of variation:
 
-  31a) SUFFIX SELECTION — Do different deriv prefixes prefer different suffixes?
+  A) SUFFIX SELECTION — Do different deriv prefixes prefer different suffixes?
        (If ch+e prefers -dy and h+e prefers -in, that's inflectional marking)
 
-  31b) LINE POSITION — Do deriv forms prefer line-initial, medial, or final?
+  B) LINE POSITION — Do deriv forms prefer line-initial, medial, or final?
        (If h-forms cluster at verbs-first position, that's syntactic)
 
-  31c) GALLOWS CO-OCCURRENCE — Does deriv prefix interact with determinative?
+  C) GALLOWS CO-OCCURRENCE — Does deriv prefix interact with determinative?
        (If ch+k+e ≠ ch+t+e in frequency, the prefix-det pairing matters)
 
-  31d) BARE PREFIX INVESTIGATION — ch(4068), h(2042), sh(394) appearing
+  D) BARE PREFIX INVESTIGATION — ch(4068), h(2042), sh(394) appearing
        alone. What are they? Test: position, section, suffix patterns.
 
-  31e) EXPANDED STEM SET — Test air, an, om, oo, i, ai as additional stems.
+  E) EXPANDED STEM SET — Test air, an, om, oo, i, ai as additional stems.
        Do they fill paradigm slots like the core 19?
 
-  31f) INFLECTION vs DERIVATION TEST — If this is inflection, forms of the
+  F) INFLECTION vs DERIVATION TEST — If this is inflection, forms of the
        same stem should occur on the SAME LINE (different cases of same word).
        If derivation, they should occur on DIFFERENT lines (different words).
 """

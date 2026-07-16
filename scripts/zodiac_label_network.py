@@ -10,7 +10,7 @@ Questions:
   4. Can we identify label "families" that span the zodiac in regular patterns?
   5. Do degree-position pairs (e.g., "degree 10 in any sign") share roots?
 
-This builds on all prior phases: label extraction (pipeline), cross-reference
+This builds on all prior analyses: label extraction (pipeline), cross-reference
 (astro_crossref), ring mapping (ring_decan), and medieval degrees.
 """
 
@@ -124,7 +124,7 @@ def aspect_type(s1, s2):
 
 
 # ══════════════════════════════════════════════════════════════════════════
-#  ANALYSIS PHASES
+#  ANALYSIS STEPS
 # ══════════════════════════════════════════════════════════════════════════
 
 def prepare_data(data):

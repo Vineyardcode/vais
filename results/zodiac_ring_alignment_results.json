@@ -1,0 +1,39 @@
+{
+  "zodiac_signs_found": [
+    "Aries-dark",
+    "Pisces",
+    "Aries-light",
+    "Taurus-light",
+    "Taurus-dark",
+    "Gemini",
+    "Cancer",
+    "Libra",
+    "Virgo",
+    "Leo",
+    "Scorpio",
+    "Sagittarius"
+  ],
+  "ring_words_per_sign": {
+    "Aries-dark": 58,
+    "Pisces": 93,
+    "Aries-light": 69,
+    "Taurus-light": 77,
+    "Taurus-dark": 79,
+    "Gemini": 74,
+    "Cancer": 116,
+    "Libra": 68,
+    "Virgo": 72,
+    "Leo": 79,
+    "Scorpio": 63,
+    "Sagittarius": 65
+  },
+  "shared_roots_all_signs": [
+    "ch",
+    "e",
+    "a",
+    "al",
+    "ar"
+  ],
+  "vocabulary_expansion_pct": 12.5,
+  "e_root_split_count": 4
+}

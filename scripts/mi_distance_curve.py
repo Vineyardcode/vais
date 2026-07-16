@@ -31,7 +31,8 @@ MOTIVATION:
     - VMS Currier B: shows SMALL positive TMA
 
   THE KEY EXPERIMENT FOR US:
-    Does our verbose cipher (forward_process_models/60 model) PRESERVE or DESTROY
+    Does our verbose cipher (the forward_process_models /
+    positional_verbose_cipher model) PRESERVE or DESTROY
     the text-meaning-area when applied to real meaningful text?
 
     If verbose cipher on real NL text → positive TMA:
@@ -39,7 +40,7 @@ MOTIVATION:
     If verbose cipher on real NL text → TMA ≈ 0:
       → Cipher destroys meaning signal → model is incomplete
 
-  This is a NOVEL discriminator that no prior phase has tested.
+  This is a NOVEL discriminator that no prior test has probed.
 
 APPROACH:
   1. Compute MI(d) for d=1..150 on: VMS (full, A, B), verbose cipher

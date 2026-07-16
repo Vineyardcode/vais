@@ -4,7 +4,7 @@ Rigorous Self-Audit & Falsification
 ===============================================
 
 Before adding more vocabulary, we MUST audit existing claims for
-hallucination and overfitting. The user (rightly) asks: are we
+hallucination and overfitting. The obvious skeptical question: are we
 making real discoveries or pattern-matching noise?
 
 Key concerns:
@@ -16,22 +16,22 @@ Key concerns:
   4) Do provisional roots pass the same tests as "confirmed" roots?
 
 Sub-analyses:
-  27a) SHORT-ROOT COVERAGE AUDIT — What % of coverage comes from
+  A) SHORT-ROOT COVERAGE AUDIT — What % of coverage comes from
        1-2 char roots vs 3+ char roots? If >80% is short roots,
        our "coverage" is largely noise absorption.
-  27b) GRAMMATICAL CONSISTENCY CHECK — For each root claimed as noun
+  B) GRAMMATICAL CONSISTENCY CHECK — For each root claimed as noun
        or verb, verify prefix distributions match. Do claimed nouns
        take d-/o- prefixes? Do claimed verbs take s- prefixes?
-  27c) SECTION SPECIFICITY TEST — Do roots with claimed domain meanings
+  C) SECTION SPECIFICITY TEST — Do roots with claimed domain meanings
        actually appear more in their predicted section? (e.g., "tree"
        in herbal, "lion" in zodiac, "star" in zodiac/cosmo)
-  27d) TRANSLATION COHERENCE — Take 20 high-coverage lines, translate
+  D) TRANSLATION COHERENCE — Take 20 high-coverage lines, translate
        them, and HONESTLY rate: does this read as connected prose, or
        as random word associations?
-  27e) PROVISIONAL ROOT AUDIT — Run air/eod/od/lsh through the SAME
+  E) PROVISIONAL ROOT AUDIT — Run air/eod/od/lsh through the SAME
        grammatical and distributional tests. Show side-by-side with
        confirmed roots.
-  27f) FALSIFICATION ATTEMPTS — For our 5 strongest claims, generate
+  F) FALSIFICATION ATTEMPTS — For our 5 strongest claims, generate
        specific predictions and check if they hold.
 """
 

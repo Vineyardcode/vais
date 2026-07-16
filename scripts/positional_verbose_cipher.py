@@ -703,10 +703,10 @@ def main():
     vms_vec = feature_vec(vms_m)
 
     # ═══════════════════════════════════════════════════════════════════
-    # 60a) FIXED ENCODING SCHEMES
+    # A) FIXED ENCODING SCHEMES
     # ═══════════════════════════════════════════════════════════════════
     pr("=" * 72)
-    pr("60a) POSITIONAL-VARIANT ENCODING SCHEMES")
+    pr("A) POSITIONAL-VARIANT ENCODING SCHEMES")
     pr("=" * 72)
     pr()
 
@@ -766,10 +766,10 @@ def main():
         pr()
 
     # ═══════════════════════════════════════════════════════════════════
-    # 60b) PARAMETER GRID SEARCH
+    # B) PARAMETER GRID SEARCH
     # ═══════════════════════════════════════════════════════════════════
     pr("=" * 72)
-    pr("60b) GRID SEARCH: OPTIMIZING FOR VMS FINGERPRINT")
+    pr("B) GRID SEARCH: OPTIMIZING FOR VMS FINGERPRINT")
     pr("=" * 72)
     pr()
 
@@ -840,10 +840,10 @@ def main():
     pr()
 
     # ═══════════════════════════════════════════════════════════════════
-    # 60c) BEST MODEL — DETAILED ANALYSIS
+    # C) BEST MODEL — DETAILED ANALYSIS
     # ═══════════════════════════════════════════════════════════════════
     pr("=" * 72)
-    pr("60c) BEST MODEL — DETAILED FINGERPRINT COMPARISON")
+    pr("C) BEST MODEL — DETAILED FINGERPRINT COMPARISON")
     pr("=" * 72)
     pr()
 
@@ -915,10 +915,10 @@ def main():
     pr()
 
     # ═══════════════════════════════════════════════════════════════════
-    # 60d) RANKING ALL SCHEMES
+    # D) RANKING ALL SCHEMES
     # ═══════════════════════════════════════════════════════════════════
     pr("=" * 72)
-    pr("60d) COMPLETE RANKING")
+    pr("D) COMPLETE RANKING")
     pr("=" * 72)
     pr()
 
@@ -941,10 +941,10 @@ def main():
     pr()
 
     # ═══════════════════════════════════════════════════════════════════
-    # 60e) DOES POSITION-VARIANT BEAT NATURAL LANGUAGE?
+    # E) DOES POSITION-VARIANT BEAT NATURAL LANGUAGE?
     # ═══════════════════════════════════════════════════════════════════
     pr("=" * 72)
-    pr("60e) DOES POSITION-VARIANT CIPHER BEAT NEAREST NL?")
+    pr("E) DOES POSITION-VARIANT CIPHER BEAT NEAREST NL?")
     pr("=" * 72)
     pr()
 
@@ -971,10 +971,10 @@ def main():
     pr()
 
     # ═══════════════════════════════════════════════════════════════════
-    # 60f) CRITICAL SYNTHESIS
+    # F) CRITICAL SYNTHESIS
     # ═══════════════════════════════════════════════════════════════════
     pr("=" * 72)
-    pr("60f) CRITICAL SYNTHESIS")
+    pr("F) CRITICAL SYNTHESIS")
     pr("=" * 72)
     pr()
 

@@ -1,0 +1,49 @@
+{
+  "test": "misbinding_coherence_test",
+  "title": "Codicological Coherence \u2014 Misbinding Hypothesis",
+  "bigram_mi": {
+    "within_mi": 0.17544631864587007,
+    "cross_mi": 0.2751961526181345,
+    "within_nmi": 0.07009963008470238,
+    "cross_nmi": 0.10838840853905002,
+    "bot_within_mi": 0.15715633307714694,
+    "bot_cross_mi": 0.38238873998602796
+  },
+  "clustering": {
+    "agreement_rate": 0.6868686868686869,
+    "botanical_agreement": 0.8
+  },
+  "language_profiles": {
+    "mean_len_a": 4.414655744963471,
+    "mean_len_b": 4.4497828596558735,
+    "vocab_jaccard": 0.23320342946219796,
+    "mi_final_lang": 0.006438808994007136,
+    "z_final_lang": 41.025496185269496
+  },
+  "sensitivity": {
+    "baseline_mi": 0.04742052336309578,
+    "baseline_z": 136.01678769459988,
+    "perturbation_results": [
+      {
+        "frac": 0.1,
+        "mi": 0.0459239386632037,
+        "retention": 0.9684401479833356
+      },
+      {
+        "frac": 0.2,
+        "mi": 0.04410037021552677,
+        "retention": 0.9299848902521209
+      },
+      {
+        "frac": 0.3,
+        "mi": 0.04288049594111786,
+        "retention": 0.9042602843664286
+      },
+      {
+        "frac": 0.5,
+        "mi": 0.04039255144129629,
+        "retention": 0.8517947204423119
+      }
+    ]
+  }
+}

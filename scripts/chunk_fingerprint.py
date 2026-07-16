@@ -6,7 +6,7 @@ Chunk-Level Statistical Fingerprint
 
 MOTIVATION:
 
-  84 phases of analysis have produced a PARADOX:
+  The analyses so far have produced a PARADOX:
     - Character level: h_char = 0.641 (cipher-like, far below NL ~0.83)
     - Word level: Zipf, hapax, Heaps, TMA all match natural language
 

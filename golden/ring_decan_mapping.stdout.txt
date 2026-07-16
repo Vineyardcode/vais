@@ -1,5 +1,5 @@
 ======================================================================
-PHASE 1: Ring-to-Decan Mapping
+Ring-to-Decan Mapping
 ======================================================================
 
   Sign           Total Rings  Ring sizes           Ring names
@@ -64,7 +64,7 @@ PHASE 1: Ring-to-Decan Mapping
     30     3     2 inner    09:00    oletal
 
 ======================================================================
-PHASE 2: Positional Test — shared labels at consistent positions?
+Positional Test — shared labels at consistent positions?
 ======================================================================
 
   Labels appearing in 2+ zodiac signs: 37
@@ -284,7 +284,7 @@ PHASE 2: Positional Test — shared labels at consistent positions?
       Virgo          deg 30: okeorar                   root=keorar
 
 ======================================================================
-PHASE 3: Behenian Star Anchor Test
+Behenian Star Anchor Test
 ======================================================================
 
   Testing whether labels at Behenian star degree positions are 'special'
@@ -319,7 +319,7 @@ PHASE 3: Behenian Star Anchor Test
     Roots at Behenian positions: {'tala': 1, 'kal': 1, 'tam': 1, 'eeoda': 1, 'kala': 1, 'oralkam': 1, 'kald': 1, 'oeeoty': 1, 'od?dy': 2, 'kar': 1, 'keee': 1, 'teod': 1, 'tar': 2}
 
 ======================================================================
-PHASE 4: Cross-Sign Degree Alignment
+Cross-Sign Degree Alignment
 ======================================================================
 
   Do the same degree positions across signs share features?
@@ -366,7 +366,7 @@ PHASE 4: Cross-Sign Degree Alignment
        3                9.9 tal(4), kar(4), pal(3) 7 roots at 2+ positions
 
 ======================================================================
-PHASE 5: SYNTHESIS — Ring-to-Decan Mapping Conclusions
+SYNTHESIS — Ring-to-Decan Mapping Conclusions
 ======================================================================
 
   ┌─────────────────────────────────────────────────────────────────────┐

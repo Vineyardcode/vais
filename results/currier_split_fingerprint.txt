@@ -1,5 +1,5 @@
 ========================================================================
-  PHASE 95 — CURRIER A/B INDEPENDENT FINGERPRINT ANALYSIS
+  currier_split_fingerprint — CURRIER A/B INDEPENDENT FINGERPRINT ANALYSIS
 ========================================================================
   Question: Is VMS_TARGET a valid monolithic baseline, or are
   we averaging two different systems?
@@ -192,5 +192,5 @@
      Future experiments should test against A and B targets separately.
 
   4. IMPLICATIONS FOR PRIOR RESULTS:
-     Phase 83 best match (distance 0.1277) was against whole-corpus target.
+     encoding_layer_sweep best match (distance 0.1277) was against whole-corpus target.
      → Should recompute against section-specific targets.

@@ -1,5 +1,5 @@
 ===========================================================================
-PHASE 71: PARAGRAPH-INITIAL LETTER ANALYSIS
+paragraph_initial_analysis: PARAGRAPH-INITIAL LETTER ANALYSIS
 Skeptical revalidation of paragraph-start patterns
 ===========================================================================
 

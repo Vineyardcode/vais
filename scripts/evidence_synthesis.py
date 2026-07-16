@@ -3,23 +3,23 @@
 GRAND SYNTHESIS: WHAT IS VOYNICHESE?
 =================================================
 
-49 phases of statistical analysis. Time to ask: what kind of system
+A full battery of statistical analyses behind us. Time to ask: what kind of system
 produces these exact statistical properties?
 
-This phase:
-  50a) GENERATIVE MODEL — Build the simplest model that reproduces
+This test:
+  A) GENERATIVE MODEL — Build the simplest model that reproduces
        the observed statistics. How well does it match?
 
-  50b) TYPOLOGICAL PROFILE — Measure properties that distinguish
+  B) TYPOLOGICAL PROFILE — Measure properties that distinguish
        language types (alphabetic, syllabary, logographic, constructed).
 
-  50c) ENTROPY RATE — What is the true character-level entropy of VMS
+  C) ENTROPY RATE — What is the true character-level entropy of VMS
        and how does it compare to known scripts?
 
-  50d) INFORMATION DENSITY — How many bits per word? Per line?
+  D) INFORMATION DENSITY — How many bits per word? Per line?
        Does VMS carry information at natural-language rates?
 
-  50e) THE VOYNICH FINGERPRINT — A compact statistical fingerprint
+  E) THE VOYNICH FINGERPRINT — A compact statistical fingerprint
        of the manuscript that can be compared against any hypothesis.
 """
 
@@ -69,7 +69,7 @@ print(f"  {len(lines)} lines, {N} tokens, {V} types")
 # ══════════════════════════════════════════════════════════════════
 
 print("\n" + "=" * 70)
-print("50a: GENERATIVE MODEL")
+print("A: GENERATIVE MODEL")
 print("    Build the simplest model that reproduces observed statistics")
 print("=" * 70)
 
@@ -279,7 +279,7 @@ print(f"  {'Zipf exponent':>25} {zipf_real:>12.3f} {zipf_gen:>12.3f}")
 # ══════════════════════════════════════════════════════════════════
 
 print("\n" + "=" * 70)
-print("50b: TYPOLOGICAL PROFILE")
+print("B: TYPOLOGICAL PROFILE")
 print("    Properties that distinguish language/script types")
 print("=" * 70)
 
@@ -395,7 +395,7 @@ for (c1, c2), n_bi in char_bi_ctx.items():
 # ══════════════════════════════════════════════════════════════════
 
 print("\n" + "=" * 70)
-print("50c: ENTROPY RATE")
+print("C: ENTROPY RATE")
 print("    True information rate of VMS vs known scripts")
 print("=" * 70)
 
@@ -440,7 +440,7 @@ print(f"  {'Constructed':>20} {'var':>8} {'var':>8} {'close':>8} {'var':>10} {'v
 # ══════════════════════════════════════════════════════════════════
 
 print("\n" + "=" * 70)
-print("50d: INFORMATION DENSITY")
+print("D: INFORMATION DENSITY")
 print("    How much information does VMS actually encode?")
 print("=" * 70)
 
@@ -494,7 +494,7 @@ for section in sorted(set(line['section'] for line in lines)):
 # ══════════════════════════════════════════════════════════════════
 
 print("\n" + "=" * 70)
-print("50e: THE VOYNICH FINGERPRINT")
+print("E: THE VOYNICH FINGERPRINT")
 print("    A compact statistical profile of the manuscript")
 print("=" * 70)
 
@@ -561,7 +561,7 @@ print("  3. Whether the morphology encodes MEANING or is decorative")
 print("  4. Whether the content is natural text, a cipher, or a code")
 print("  5. Specific word translations")
 print()
-print("  WHAT 49 PHASES HAVE ESTABLISHED:")
+print("  WHAT THE SUITE HAS ESTABLISHED:")
 print("  ──────────────────────────────────")
 print("  1. The writing system has genuine morphological structure (not random)")
 print("  2. The structure is CONSISTENT with a natural agglutinative language")

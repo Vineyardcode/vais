@@ -5,7 +5,7 @@ Historical Validation
 ═══════════════════════════════════════════════════════════════════════
 
 OBJECTIVE:
-  Test whether 101 phases of statistical findings are JOINTLY
+  Test whether the suite's statistical findings are JOINTLY
   COMPATIBLE with the manuscript's known historical constraints:
     - C14 radiocarbon: vellum 1404–1438
     - Parallel hatching: illustration date ~1440–1480
@@ -882,7 +882,7 @@ def run_analysis():
         },
     }
 
-    # Evidence from 101 phases
+    # Evidence from the whole suite
     evidence = [
         ('chunk_alphabet_decipherment: Simple substitution fails',
          {'Simple substitution': -2, 'Verbose cipher': +1,
@@ -1024,7 +1024,7 @@ def run_analysis():
     # STEP 8: CUMULATIVE EVIDENCE SUMMARY
     # ───────────────────────────────────────────────────────────────────
     pr("─" * 72)
-    pr("STEP 8: Cumulative evidence summary — what do 102 phases tell us?")
+    pr("STEP 8: Cumulative evidence summary — what does the full suite tell us?")
     pr("─" * 72)
     pr()
 
@@ -1089,7 +1089,7 @@ def run_analysis():
         pr(f"  • {q}")
     pr()
 
-    pr("  MOST PARSIMONIOUS SCENARIO (from 102 phases):")
+    pr("  MOST PARSIMONIOUS SCENARIO (from the full suite):")
     pr("    The VMS is a PHARMACEUTICAL/HERBAL COMPENDIUM written in")
     pr("    Northern Italy around 1440–1480, encoding Italian or Latin")
     pr("    through a complex notation system (verbose cipher, abbreviation")
@@ -1108,7 +1108,7 @@ def run_analysis():
     pr("    2. Genre fingerprinting is unreliable — recipe texts scored WORSE than")
     pr("       non-recipe in vernacular_paragraph_initials's TTR test. The 'pharmaceutical' conclusion")
     pr("       rests more on illustrations than on statistical text analysis.")
-    pr("    3. No phase has produced READABLE TEXT. All 'fit' measures are")
+    pr("    3. No analysis has produced READABLE TEXT. All 'fit' measures are")
     pr("       distributional, not semantic. Without decipherment, the language")
     pr("       identification remains circumstantial.")
     pr("    4. The Bayesian matrix is qualitative. Assigning numeric weights")

@@ -10,7 +10,7 @@ closest to the zodiac sign center. Previous analysis found they have:
 
 This script performs word-by-word analysis of all 12 inner/innermost rings.
 
-Phases:
+Steps:
   1. Complete inventory — every word cataloged with morphology
   2. Cross-ring comparison — what words/roots repeat across inner rings?
   3. Structural template extraction — what's the sentence skeleton?
@@ -105,7 +105,7 @@ def extract_nymph_labels():
 
 
 # ══════════════════════════════════════════════════════════════════════════
-# PHASES
+# STEPS
 # ══════════════════════════════════════════════════════════════════════════
 
 def part1_complete_inventory(inner):

@@ -1,0 +1,218 @@
+========================================================================
+  currier_slot2_regime — Currier A/B as SLOT2 Regime
+========================================================================
+
+STEP 1 — Load folios and parse Currier language from headers
+------------------------------------------------------------
+  Total folio files loaded: 201
+  Currier A: 107 files
+  Currier B: 78 files
+  Unassigned: 16 files
+  Unassigned folios: f65r, f65v, f67r, f67v, f68r, f68v, f69r, f69v_70r, f70v_part, f71r, f71v_72r, f72v_part, f73r, f73v, f85v_86r_foldout, f116v
+
+STEP 2 — Compute LOOP slot features per folio
+------------------------------------------------------------
+  Folios with ≥30 words and Currier label: 185
+    Currier A: 107
+    Currier B: 78
+
+  Sample SLOT2 a-fractions:
+  Folio                 Currier  Section  Words    S2a%    S2e%    S2q%
+  ──────────────────── ──────── ──────── ────── ─────── ─────── ───────
+  f58v                        A   herbal    375   34.3%   12.5%    9.6%
+  f58r                        A   herbal    378   34.2%   10.3%    3.6%
+  f55v                        B   herbal     94   32.5%   11.5%    4.2%
+  f33r                        B   herbal     74   31.4%   14.6%    5.1%
+  f107r                       B   recipe    487   30.3%   16.6%    6.7%
+  f54v                        A   herbal     93   29.9%    9.8%    8.5%
+  f40r                        B   herbal     93   29.7%   10.4%    4.4%
+  f55r                        B   herbal    124   29.5%    8.0%    4.9%
+  ...
+  f53r                        A   herbal     57    9.0%    6.3%    8.1%
+  f44r                        A   herbal     74    8.1%    9.5%    9.5%
+  f49r                        A   herbal    113    7.9%   14.7%    8.4%
+  f11v                        A   herbal     45    7.8%    4.4%    6.7%
+  f56r                        A   herbal    101    7.8%   12.8%    3.3%
+  f96r                        A   pharma     78    6.6%   23.0%    3.9%
+  f13r                        A   herbal     74    6.3%    2.1%    5.6%
+  f27v                        A   herbal     54    3.5%    8.0%    0.9%
+
+STEP 3 — Feature-by-feature Currier A vs B separation
+------------------------------------------------------------
+  Feature                  Mean A   Mean B  Cohen d  Accuracy
+  ────────────────────── ──────── ──────── ──────── ─────────
+  s2_empty_frac            0.6851   0.4821   +2.389     90.8%
+  s5_empty_frac            0.2389   0.1579   +1.790     84.9%
+  s2_e_frac                0.1089   0.2284   -1.570     80.0%
+  s5_gallows_frac          0.0502   0.0219   +1.273     77.8%
+  gallows_per_word         0.0984   0.0424   +1.249     77.8%
+  s5_y_frac                0.1267   0.1997   -1.416     77.3%
+  s5_k_frac                0.1007   0.1540   -1.429     76.2%
+  s1_empty_frac            0.6456   0.7334   -1.193     74.1%
+  s1_ch_frac               0.1992   0.1378   +1.013     73.5%
+  mean_word_len            4.2930   4.6058   -0.810     73.5%
+  s2_a_frac                0.1545   0.2063   -0.939     71.9%
+  s2_q_frac                0.0515   0.0833   -0.974     70.8%
+  s5_s_frac                0.0457   0.0317   +0.578     67.6%
+  s1_y_frac                0.0886   0.0669   +0.630     63.2%
+  s1_sh_frac               0.0666   0.0619   +0.150     60.5%
+  s5_r_frac                0.1059   0.0969   +0.231     60.0%
+  s5_l_frac                0.1229   0.1353   -0.249     59.5%
+  mean_chunks_per_word     1.9502   1.9381   +0.081     58.4%
+  s5_n_frac                0.0908   0.0839   +0.168     57.8%
+
+STEP 4 — Permutation tests on top 5 features
+------------------------------------------------------------
+  s2_empty_frac          acc=90.8%  perm-p=0.0000  (SIGNIFICANT)
+  s5_empty_frac          acc=84.9%  perm-p=0.0000  (SIGNIFICANT)
+  s2_e_frac              acc=80.0%  perm-p=0.0000  (SIGNIFICANT)
+  s5_gallows_frac        acc=77.8%  perm-p=0.0000  (SIGNIFICANT)
+  gallows_per_word       acc=77.8%  perm-p=0.0000  (SIGNIFICANT)
+
+STEP 5 — SLOT2 a-fraction distribution: Currier A vs B
+------------------------------------------------------------
+  SLOT2 a-fraction distribution (text histogram):
+           Bin    A folios    B folios
+     0-   5%      1 █                  0 
+     5-  10%     11 ███████████        1 █
+    10-  15%     48 ████████████████████████████████████████████████   12 ████████████
+    15-  20%     26 ██████████████████████████   26 ██████████████████████████
+    20-  25%     14 ██████████████    17 █████████████████
+    25-  30%      5 █████             19 ███████████████████
+    30-  35%      2 ██                 3 ███
+    35-  40%      0                    0 
+    40-  45%      0                    0 
+    45-  50%      0                    0 
+
+  Currier A: mean=15.4%, sd=5.5%, range=[3.5%, 34.3%]
+  Currier B: mean=20.6%, sd=5.5%, range=[9.1%, 32.5%]
+  B folios above A median (14.6%): 67/78
+  A folios below B median (20.1%): 86/107
+
+STEP 6 — Bimodality: Is SLOT2 a-frac bimodal or gradient?
+------------------------------------------------------------
+  Largest gap in sorted s2_a_frac: 2.80% (between position 0 and 1)
+  Values around gap: ...3.5%, 3.5% | 6.3%, 6.6%...
+  Below gap: Counter({'A': 1})
+  Above gap: Counter({'A': 106, 'B': 78})
+  Between-group gap: 5.18%
+  Within-group pooled SD: 5.48%
+  Separation ratio (gap/SD): 0.94
+    (>2 = clear separation, 1-2 = overlap, <1 = mixed)
+
+STEP 7 — Section confound: Does section predict SLOT2 a-frac
+         independently of Currier label?
+------------------------------------------------------------
+  Section       Currier    N  Mean s2a%       SD
+  ──────────── ──────── ──── ────────── ────────
+  balneo              B   20      15.8%     2.7%
+  cosmo               B    3      24.4%     1.7%
+  herbal              A   88      15.6%     5.8%
+  herbal              B   28      20.8%     6.0%
+  pharma              A   19      14.6%     3.8%
+  pharma              B    4      26.8%     2.4%
+  recipe              B   23      23.0%     4.0%
+
+  WITHIN HERBAL SECTION (controls for topic):
+    A: n=88, mean s2a=15.6%
+    B: n=28, mean s2a=20.8%
+    Cohen's d = -0.887, threshold accuracy = 78.4%
+
+STEP 8 — After removing SLOT2: Can other features still classify A/B?
+------------------------------------------------------------
+  Features used (excluding SLOT2): 15
+    s1_ch_frac, s1_sh_frac, s1_y_frac, s1_empty_frac, s5_y_frac, s5_l_frac, s5_r_frac, s5_s_frac, s5_n_frac, s5_k_frac, s5_gallows_frac, s5_empty_frac, mean_word_len, mean_chunks_per_word, gallows_per_word
+
+  Feature                  Mean A   Mean B  Cohen d  Accuracy
+  ────────────────────── ──────── ──────── ──────── ─────────
+  s5_empty_frac            0.2389   0.1579   +1.790     84.9%
+  s5_gallows_frac          0.0502   0.0219   +1.273     77.8%
+  gallows_per_word         0.0984   0.0424   +1.249     77.8%
+  s5_y_frac                0.1267   0.1997   -1.416     77.3%
+  s5_k_frac                0.1007   0.1540   -1.429     76.2%
+  s1_empty_frac            0.6456   0.7334   -1.193     74.1%
+  s1_ch_frac               0.1992   0.1378   +1.013     73.5%
+  mean_word_len            4.2930   4.6058   -0.810     73.5%
+  s5_s_frac                0.0457   0.0317   +0.578     67.6%
+  s1_y_frac                0.0886   0.0669   +0.630     63.2%
+  s1_sh_frac               0.0666   0.0619   +0.150     60.5%
+  s5_r_frac                0.1059   0.0969   +0.231     60.0%
+  s5_l_frac                0.1229   0.1353   -0.249     59.5%
+  mean_chunks_per_word     1.9502   1.9381   +0.081     58.4%
+  s5_n_frac                0.0908   0.0839   +0.168     57.8%
+
+  Best SLOT2 feature:     s2_empty_frac          accuracy=90.8%
+  Best non-SLOT2 feature: s5_empty_frac          accuracy=84.9%
+  Accuracy drop from removing SLOT2: +5.9pp
+
+  VERDICT: NON-SLOT2 features ALSO separate A/B well.
+  → SLOT2 is ONE component but NOT the sole mechanism.
+
+STEP 9 — Folio-order gradient: Does SLOT2 a-frac track folio order?
+------------------------------------------------------------
+  r(folio_number, s2_a_frac) = 0.2854
+  (positive = later folios have MORE 'a' in SLOT2)
+
+     Folio  Cur    S2a%  Plot
+  ──────── ──── ───────  ────────────────────────────────────────
+  f    1    A   22.0%  |AAAAAAAAAAAAAAAAAAAAAA
+  f    1    A   12.3%  |AAAAAAAAAAAA
+  f    2    A   22.0%  |AAAAAAAAAAAAAAAAAAAAA
+  f    2    A   13.1%  |AAAAAAAAAAAAA
+  f    3    A   16.1%  |AAAAAAAAAAAAAAAA
+  f    3    A   20.3%  |AAAAAAAAAAAAAAAAAAAA
+  f    4    A   18.0%  |AAAAAAAAAAAAAAAAAA
+  f    4    A   11.4%  |AAAAAAAAAAA
+  f    5    A   12.6%  |AAAAAAAAAAAA
+  f    5    A   16.3%  |AAAAAAAAAAAAAAAA
+       ...
+  f  111    B   28.2%  |BBBBBBBBBBBBBBBBBBBBBBBBBBBB
+  f  112    B   21.1%  |BBBBBBBBBBBBBBBBBBBBB
+  f  112    B   25.6%  |BBBBBBBBBBBBBBBBBBBBBBBBB
+  f  113    B   22.1%  |BBBBBBBBBBBBBBBBBBBBBB
+  f  113    B   26.9%  |BBBBBBBBBBBBBBBBBBBBBBBBBB
+  f  114    B   27.1%  |BBBBBBBBBBBBBBBBBBBBBBBBBBB
+  f  114    B   22.2%  |BBBBBBBBBBBBBBBBBBBBBB
+  f  115    B   17.6%  |BBBBBBBBBBBBBBBBB
+  f  115    B   16.5%  |BBBBBBBBBBBBBBBB
+  f  116    B   24.1%  |BBBBBBBBBBBBBBBBBBBBBBBB
+
+STEP 10 — Feature cross-correlation (top 6): Is SLOT2 redundant
+          with other features, or independent?
+------------------------------------------------------------
+  Features: s2_empty_frac, s5_empty_frac, s2_e_frac, s5_gallows_frac, gallows_per_word, s5_y_frac
+
+                          s2_empt  s5_empt  s2_e_fr  s5_gall  gallows  s5_y_fr
+  s2_empty_frac            +1.000   +0.648   -0.849   +0.397   +0.387   -0.467
+  s5_empty_frac            +0.648   +1.000   -0.495   +0.306   +0.308   -0.431
+  s2_e_frac                -0.849   -0.495   +1.000   -0.260   -0.245   +0.613
+  s5_gallows_frac          +0.397   +0.306   -0.260   +1.000   +0.989   -0.371
+  gallows_per_word         +0.387   +0.308   -0.245   +0.989   +1.000   -0.360
+  s5_y_frac                -0.467   -0.431   +0.613   -0.371   -0.360   +1.000
+
+========================================================================
+  SYNTHESIS & VERDICT
+========================================================================
+
+  KEY FINDINGS:
+  1. Best SLOT2 feature for A/B classification:
+     s2_empty_frac: accuracy=90.8%, |d|=2.39, perm-p=0.0000
+  2. Best non-SLOT2 feature: s5_empty_frac: accuracy=84.9%
+  3. Separation ratio (gap/SD): 0.94
+  4. Residual test: MULTI_FEATURE
+  5. r(folio_order, s2_a_frac) = 0.2854
+
+  VERDICT: SLOT2_CONTRIBUTES
+  SLOT2 is a significant but not dominant component of Currier A/B.
+  Multiple grammatical features differ between A and B.
+
+  SKEPTICISM NOTES:
+  - Classification accuracy is measured with OPTIMAL threshold (best-case).
+    Real out-of-sample accuracy would be lower.
+  - Currier labels from the 1970s are not ground truth; some are disputed.
+  - If SLOT2 and section correlate, the 'A/B = SLOT2' story may really be
+    'A/B = section = topic = vocabulary', which is less interesting.
+  - SLOT2 was DESIGNED to accommodate both 'a' and 'e'. High variation
+    in SLOT2 content across sections is EXPECTED by the grammar's design.
+
+  Results saved to C:\projects\vais\results\currier_slot2_regime_currier_slot2.json

@@ -4,13 +4,14 @@ Line-1 / Body Separation: Does the VMS Contain Two Encoding Subsystems?
 
 ═══════════════════════════════════════════════════════════════════════
 
-MOTIVATION (from Koen's "Alphabet is smaller than you think" video + our data):
+MOTIVATION (from Koen Gheuens' video "The alphabet is smaller than
+you think" — YouTube, Voynich Talk — plus our own data):
 
   1. The video argues that after removing first-line-only, line-end-only,
      and rare glyphs, VMS has ~13 functional letters — too few for any
      European alphabet (minimum ~18 for Latin).
 
-  2. gallows_positional_ecology/77b showed {p,f} gallows are 12-15× enriched on paragraph
+  2. gallows_positional_ecology and gallows_line_position_split showed {p,f} gallows are 12-15× enriched on paragraph
      line 1 (the ENTIRE line, not just word 1). This is a different
      subsystem.
 

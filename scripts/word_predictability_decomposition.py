@@ -9,20 +9,20 @@ manuscript is notorious for excessive word repetition. How much of
 the 40.6% is just words repeating themselves?
 
 Sub-analyses:
-  45a) REPETITION CONTRIBUTION — What fraction of word bigram MI is
+  A) REPETITION CONTRIBUTION — What fraction of word bigram MI is
        from self-repetition (w_i = w_{i+1})? Remove repeated pairs,
        recompute perplexity.
 
-  45b) TOP WORD BIGRAMS — List the most over-represented word pairs.
+  B) TOP WORD BIGRAMS — List the most over-represented word pairs.
        Are they collocations or repetitions?
 
-  45c) ZIPF'S LAW — Does the word frequency distribution follow Zipf?
+  C) ZIPF'S LAW — Does the word frequency distribution follow Zipf?
        What's the exponent?
 
-  45d) VOCABULARY GROWTH — Heaps' law: types vs tokens. Compare to
+  D) VOCABULARY GROWTH — Heaps' law: types vs tokens. Compare to
        natural language expectations.
 
-  45e) WORD ENTROPY vs NATURAL LANGUAGE — Compare H(word) and
+  E) WORD ENTROPY vs NATURAL LANGUAGE — Compare H(word) and
        H(word|prev_word) to typical natural language values.
 """
 
@@ -68,7 +68,7 @@ print(f"  {vocab_size} word types (collapsed)")
 # ══════════════════════════════════════════════════════════════════
 
 print("\n" + "=" * 70)
-print("45a: REPETITION CONTRIBUTION")
+print("A: REPETITION CONTRIBUTION")
 print("    How much of word bigram predictability is self-repetition?")
 print("=" * 70)
 
@@ -163,7 +163,7 @@ print(f"    Voynich / English ratio: ~{self_rate / 0.75:.0f}x")
 # ══════════════════════════════════════════════════════════════════
 
 print("\n" + "=" * 70)
-print("45b: TOP WORD BIGRAMS")
+print("B: TOP WORD BIGRAMS")
 print("    Most over-represented word pairs (obs/expected ratio)")
 print("=" * 70)
 
@@ -209,7 +209,7 @@ for w1, w2, cnt, exp, ratio, is_self in ratios_oe[:30]:
 # ══════════════════════════════════════════════════════════════════
 
 print("\n" + "=" * 70)
-print("45c: ZIPF'S LAW")
+print("C: ZIPF'S LAW")
 print("    Does word frequency follow Zipf's law?")
 print("=" * 70)
 
@@ -249,7 +249,7 @@ print(f"  Context: English prose hapax ≈ 40-50% of types")
 # ══════════════════════════════════════════════════════════════════
 
 print("\n" + "=" * 70)
-print("45d: VOCABULARY GROWTH (HEAPS' LAW)")
+print("D: VOCABULARY GROWTH (HEAPS' LAW)")
 print("    Types vs tokens. V(N) = K * N^beta")
 print("=" * 70)
 
@@ -287,7 +287,7 @@ for n, v in growth:
 # ══════════════════════════════════════════════════════════════════
 
 print("\n" + "=" * 70)
-print("45e: WORD ENTROPY AND INFORMATION DENSITY")
+print("E: WORD ENTROPY AND INFORMATION DENSITY")
 print("    How does Voynich compare to natural language?")
 print("=" * 70)
 

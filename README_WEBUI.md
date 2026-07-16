@@ -87,7 +87,7 @@ Refresh the reference after intentional changes with
 
 `data/gutenberg_cache/` (~16 MB, committed) holds every Project Gutenberg
 text the network tests use; `common.fetch_gutenberg` reads the cache first,
-so phases 58-65 and 72-73 run fully offline. Re-populate with
+so the Gutenberg-dependent tests run fully offline. Re-populate with
 `python tools/prefetch_gutenberg.py`.
 
 ## Result-file convention

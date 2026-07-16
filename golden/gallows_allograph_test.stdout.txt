@@ -1,0 +1,313 @@
+========================================================================
+gallows_allograph_test — THE ALLOGRAPH HYPOTHESIS: ARE p≡t AND f≡k?
+========================================================================
+
+Parsed 300 paragraphs
+L1 words (excl W1): 2170
+L2+ words: 33967
+L1 unique types: 1169
+L2+ unique types: 6571
+
+========================================================================
+TEST A: SUBSTITUTION TEST
+========================================================================
+
+For each L1 word containing a target glyph, substitute it and
+check if the result appears in L2+ vocabulary.
+
+L1 words with 'p' glyph: 289
+L1 words with 'f' glyph: 122
+L2+ words with 't' glyph: 5052
+L2+ words with 'k' glyph: 9132
+
+H1 (allograph) predictions:
+  p→t on L1 words: 176/289 = 60.9% match L2+ vocab
+  f→k on L1 words: 75/122 = 61.5% match L2+ vocab
+
+Controls (should be lower if H1 correct):
+  p→k on L1 words: 178/289 = 61.6% match L2+ vocab
+  p→f on L1 words: 89/289 = 30.8% match L2+ vocab
+  f→t on L1 words: 66/122 = 54.1% match L2+ vocab
+  f→p on L1 words: 51/122 = 41.8% match L2+ vocab
+
+Reverse direction (L2+ → L1 vocab):
+  t→p on L2+ words: 1662/5052 = 32.9% match L1 vocab
+  k→f on L2+ words: 1330/9132 = 14.6% match L1 vocab
+
+H3 (prefix/marker) predictions:
+  Strip p from L1 p-words → L2+ match: 184/289 = 63.7%
+  Strip f from L1 f-words → L2+ match: 78/122 = 63.9%
+
+  Control: strip t from L2+ t-words → L2+ match: 345/500 = 69.0%
+  Control: strip k from L2+ k-words → L2+ match: 340/500 = 68.0%
+
+Example p→t matches (L1 word → L2+ word):
+  ypchol               → ytchol               (L2+ freq: 3)
+  pchor                → tchor                (L2+ freq: 20)
+  qopal                → qotal                (L2+ freq: 59)
+  chopchy              → chotchy              (L2+ freq: 7)
+  pshod                → tshod                (L2+ freq: 2)
+  shopchey             → shotchey             (L2+ freq: 2)
+  qopchy               → qotchy               (L2+ freq: 57)
+  pcheey               → tcheey               (L2+ freq: 7)
+  opy                  → oty                  (L2+ freq: 90)
+  pchodol              → tchodol              (L2+ freq: 1)
+  ypch                 → ytch                 (L2+ freq: 1)
+  pcheey               → tcheey               (L2+ freq: 7)
+  opchy                → otchy                (L2+ freq: 35)
+  qopchy               → qotchy               (L2+ freq: 57)
+  opchor               → otchor               (L2+ freq: 12)
+  dypchy               → dytchy               (L2+ freq: 2)
+  chopol               → chotol               (L2+ freq: 6)
+  ypchor               → ytchor               (L2+ freq: 8)
+  qopchey              → qotchey              (L2+ freq: 20)
+  opchy                → otchy                (L2+ freq: 35)
+
+Example f→k matches (L1 word → L2+ word):
+  fchoy                → kchoy                (L2+ freq: 1)
+  qofol                → qokol                (L2+ freq: 99)
+  chofchy              → chokchy              (L2+ freq: 11)
+  qofshey              → qokshey              (L2+ freq: 13)
+  fcholy               → kcholy               (L2+ freq: 1)
+  ofchar               → okchar               (L2+ freq: 4)
+  yfchy                → ykchy                (L2+ freq: 16)
+  qofchor              → qokchor              (L2+ freq: 9)
+  chof                 → chok                 (L2+ freq: 4)
+  fcheody              → kcheody              (L2+ freq: 5)
+  qofchedy             → qokchedy             (L2+ freq: 38)
+  yfoldy               → ykoldy               (L2+ freq: 2)
+  qofody               → qokody               (L2+ freq: 8)
+  lfchdy               → lkchdy               (L2+ freq: 5)
+  chefchy              → chekchy              (L2+ freq: 3)
+  ofchor               → okchor               (L2+ freq: 16)
+  fshy                 → kshy                 (L2+ freq: 7)
+  ofy                  → oky                  (L2+ freq: 79)
+  ofchy                → okchy                (L2+ freq: 21)
+  chefaiin             → chekaiin             (L2+ freq: 8)
+
+========================================================================
+TEST B: CONTEXT DISTRIBUTION (Successor & Predecessor JSD)
+========================================================================
+
+If p≡t, then the glyph AFTER p should have the same distribution
+as the glyph AFTER t. Low JSD = similar contexts = allograph support.
+
+SUCCESSOR JSD (lower = more similar contexts):
+  H1 predictions (should be LOW):
+    JSD(p_L1_succ, t_L2_succ) = 0.2410  [p≡t test]
+    JSD(f_L1_succ, k_L2_succ) = 0.3559  [f≡k test]
+
+  Controls (should be HIGHER if H1 correct):
+    JSD(p_L1_succ, k_L2_succ) = 0.3593  [p≡k? no]
+    JSD(f_L1_succ, t_L2_succ) = 0.2316  [f≡t? no]
+
+  Same-glyph baselines:
+    JSD(p_L1_succ, p_L2_succ) = 0.0152  [p=p across lines]
+    JSD(t_L1_succ, t_L2_succ) = 0.0325  [t=t across lines]
+    JSD(f_L1_succ, f_L2_succ) = 0.0339  [f=f across lines]
+    JSD(k_L1_succ, k_L2_succ) = 0.0339  [k=k across lines]
+
+PREDECESSOR JSD:
+  H1 predictions (should be LOW):
+    JSD(p_L1_pred, t_L2_pred) = 0.0333  [p≡t test]
+    JSD(f_L1_pred, k_L2_pred) = 0.0334  [f≡k test]
+
+  Same-glyph baselines:
+    JSD(p_L1_pred, p_L2_pred) = 0.0178  [p=p across lines]
+    JSD(k_L1_pred, k_L2_pred) = 0.0234  [k=k across lines]
+
+Top successors (for interpretation):
+  p on L1     : ch:58.51%, a:13.48%, o:10.99%, y:8.87%, sh:4.61%, d:2.84%, e:0.71%
+  t on L2+    : a:31.13%, e:27.84%, ch:17.49%, o:11.44%, y:8.41%, sh:3.03%, d:0.28%, l:0.22%
+  f on L1     : ch:46.28%, o:19.83%, a:14.05%, y:11.57%, sh:7.44%, d:0.83%
+  k on L2+    : e:39.26%, a:33.14%, ch:10.48%, y:7.36%, o:6.82%, sh:2.26%, l:0.35%, i:0.12%
+
+========================================================================
+TEST C: DELETION TEST — What remains after stripping gallows?
+========================================================================
+
+If p/f are PREFIXED markers on L1, stripping them should leave
+coherent residues. If they're integral to the word, residues
+should be nonsensical fragment.
+
+Position of 'p' glyph within L1 p-words:
+  first: 34/292 = 11.6%
+  middle: 248/292 = 84.9%
+  last: 10/292 = 3.4%
+
+Position of 'f' glyph within L1 f-words:
+  first: 26/122 = 21.3%
+  middle: 95/122 = 77.9%
+  last: 1/122 = 0.8%
+
+Residue analysis (strip first p/f glyph only):
+p-residues matching L2+ vocab: 98/195 types = 50.3%
+f-residues matching L2+ vocab: 50/89 types = 56.2%
+
+Top 15 p-residues:
+  'ochedy' (×11) — ✓ L2+
+  'qochedy' (×7) — ✓ L2+
+  'ochey' (×6) — ✓ L2+
+  'qoy' (×6) — ✓ L2+
+  'qochy' (×5) — ✓ L2+
+  'oy' (×5) — ✓ L2+
+  'ochy' (×5) — ✓ L2+
+  'ychey' (×5) — ✓ L2+
+  'ochdy' (×5) — ✓ L2+
+  'ychedy' (×4) — ✓ L2+
+  'yar' (×4) — ✓ L2+
+  'oaiin' (×4) — ✓ L2+
+  'chochy' (×3) — ✓ L2+
+  'ychdy' (×3) — ✓ L2+
+  'qool' (×3) — ✓ L2+
+
+Top 15 f-residues:
+  'oaiin' (×4) — ✓ L2+
+  'cheey' (×4) — ✓ L2+
+  'qool' (×3) — ✓ L2+
+  'oy' (×3) — ✓ L2+
+  'olchedy' (×3) — ✓ L2+
+  'ol' (×3) — ✓ L2+
+  'olchey' (×3) — ✓ L2+
+  'ychey' (×2) — ✓ L2+
+  'choly' (×2) — ✓ L2+
+  'ochar' (×2) — ✗ NOT in L2+
+  'chechy' (×2) — ✓ L2+
+  'qoair' (×2) — ✓ L2+
+  'dcheoey' (×2) — ✗ NOT in L2+
+  'lchy' (×2) — ✓ L2+
+  'yshey' (×2) — ✓ L2+
+
+========================================================================
+TEST D: SLOT POSITION — Where do gallows appear in words?
+========================================================================
+
+If p≡t (allographs), they should appear at the SAME positions
+within words. Normalized position = glyph_index / word_length.
+
+Mean normalized position (0=word-start, 1=word-end):
+  p on L1     : mean=0.319, std=0.220, n=292
+  t on L2+    : mean=0.295, std=0.203, n=5094
+  t on L1     : mean=0.321, std=0.184, n=321
+  p on L2+    : mean=0.198, std=0.221, n=985
+  f on L1     : mean=0.319, std=0.230, n=122
+  k on L2+    : mean=0.331, std=0.191, n=9221
+  k on L1     : mean=0.354, std=0.224, n=326
+
+Position distribution (5 bins: 0-0.2, 0.2-0.4, ..., 0.8-1.0):
+  p_L1  : 20% | 52% | 17% | 8% | 4%
+  t_L2  : 23% | 48% | 21% | 7% | 1%
+  f_L1  : 26% | 34% | 28% | 10% | 2%
+  k_L2  : 16% | 43% | 32% | 7% | 1%
+
+========================================================================
+TEST E: SEMANTIC DOMAIN — Gallows section distribution on L2+ ONLY
+========================================================================
+
+gallows_semantics found t=celestial, k=generic, f=botanical, p=process.
+But if p/f are concentrated on L1 and L1 has different content,
+the semantic assignments might be positional artifacts.
+Retesting using ONLY L2+ gallows occurrences.
+
+L2+ section enrichment (observed/expected ratio):
+  p: herbal=0.50, recipe=1.61, balneo=0.74, cosmo=1.70, astro=0.48
+  t: herbal=0.94, recipe=1.04, balneo=0.82, cosmo=1.49, astro=0.86
+  k: herbal=0.92, recipe=1.10, balneo=1.10, cosmo=0.83, astro=0.81
+  f: herbal=1.10, recipe=1.08, balneo=0.54, cosmo=1.29, astro=0.79
+
+L1 section enrichment (for comparison):
+  p: herbal=1.04, recipe=0.95, balneo=1.02, cosmo=1.01, astro=0.59
+  t: herbal=0.93, recipe=1.68, balneo=0.94, cosmo=0.70, astro=1.01
+  k: herbal=0.75, recipe=1.30, balneo=1.93, cosmo=1.03, astro=1.05
+  f: herbal=1.19, recipe=0.51, balneo=0.67, cosmo=1.28, astro=0.16
+
+========================================================================
+TEST F: WORD-PAIR MATCHING — Nearest L2+ neighbor for L1 p-words
+========================================================================
+
+For each L1 word with p, find its closest L2+ word by glyph edit
+distance. Is the match typically a t-for-p substitution?
+
+Matching top 50 L1 p-words against 2000 common L2+ words:
+
+  opchedy            → best: opchedy            (dist=0) 
+  qopchedy           → best: qopchedy           (dist=0) 
+  opchey             → best: opchey             (dist=0) 
+  qopy               → best: qoky               (dist=1) 
+  qopchy             → best: qopchy             (dist=0) 
+  opy                → best: opy                (dist=0) 
+  opchy              → best: opchy              (dist=0) 
+  ypchey             → best: ypchey             (dist=0) 
+  opchdy             → best: opchdy             (dist=0) 
+  ypchedy            → best: ypchedy            (dist=0) 
+  ypar               → best: ypar               (dist=0) 
+  opaiin             → best: opaiin             (dist=0) 
+  chopchy            → best: chokchy            (dist=1) 
+  ypchdy             → best: ypchdy             (dist=0) 
+  qopol              → best: qopol              (dist=0) 
+  olpchey            → best: opchey             (dist=1) 
+  ypchol             → best: ychol              (dist=1) 
+  pchor              → best: pchor              (dist=0) 
+  pcheey             → best: cheey              (dist=1) 
+  opydaiin           → best: opdaiin            (dist=1) 
+  opchor             → best: opchor             (dist=0) 
+  ypchor             → best: ypchor             (dist=0) 
+  qopchey            → best: qopchey            (dist=0) 
+  opydy              → best: opchdy             (dist=1) 
+  opchol             → best: opchol             (dist=0) 
+  chepchy            → best: chepy              (dist=1) 
+  ypair              → best: ykair              (dist=1) 
+  qopchol            → best: qopchol            (dist=0) 
+  epaiin             → best: paiin              (dist=1) 
+  cheop              → best: cheol              (dist=1) 
+
+Edit distance ≤ 1: 30/30
+Of those, p→t substitution: 0/30
+
+Matching top L1 f-words against L2+ vocabulary:
+
+  ofaiin             → best: okaiin             (dist=1) [f→k MATCH]
+  fcheey             → best: cheey              (dist=1) 
+  qofol              → best: qokol              (dist=1) [f→k MATCH]
+  ofy                → best: oty                (dist=1) 
+  olfchedy           → best: olchedy            (dist=1) 
+  fol                → best: ol                 (dist=1) 
+  olfchey            → best: olchey             (dist=1) 
+  ofchar             → best: ofar               (dist=1) 
+  chefchy            → best: chetchy            (dist=1) 
+  qofair             → best: qokair             (dist=1) [f→k MATCH]
+  dchefoey           → best: dcheey             (dist=2) 
+  lfchy              → best: lchy               (dist=1) 
+  fyshey             → best: yshey              (dist=1) 
+  sfal               → best: sal                (dist=1) 
+  ofcheol            → best: olcheol            (dist=1) 
+  qofoiin            → best: qokoiin            (dist=1) [f→k MATCH]
+  qofchdaiin         → best: qodaiin            (dist=2) 
+  shoyfar            → best: ofar               (dist=2) 
+  alfshed            → best: alshey             (dist=2) 
+  qofaiin            → best: qokaiin            (dist=1) [f→k MATCH]
+
+Edit distance ≤ 1: 16/20
+Of those, f→k substitution: 5/16
+
+========================================================================
+gallows_allograph_test SYNTHESIS
+========================================================================
+
+Hypothesis scoreboard:
+
+  H1 (ALLOGRAPH: p≡t, f≡k):
+    Test A (substitution): reported above
+    Test B (context JSD): reported above
+    Test D (slot position): reported above
+    Test F (nearest neighbor): reported above
+
+  H2 (INDEPENDENT SYMBOLS):
+    Test E (semantic retest): reported above
+
+  H3 (PREFIX/MARKER added to words):
+    Test A (deletion): reported above
+    Test C (position within word): reported above
+
+
+Results saved to C:\projects\vais\results\gallows_allograph_test.txt

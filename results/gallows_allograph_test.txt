@@ -1,5 +1,5 @@
 ========================================================================
-PHASE 78 — THE ALLOGRAPH HYPOTHESIS: ARE p≡t AND f≡k?
+gallows_allograph_test — THE ALLOGRAPH HYPOTHESIS: ARE p≡t AND f≡k?
 ========================================================================
 
 Parsed 300 paragraphs
@@ -204,7 +204,7 @@ Position distribution (5 bins: 0-0.2, 0.2-0.4, ..., 0.8-1.0):
 TEST E: SEMANTIC DOMAIN — Gallows section distribution on L2+ ONLY
 ========================================================================
 
-Phase 13 found t=celestial, k=generic, f=botanical, p=process.
+gallows_semantics found t=celestial, k=generic, f=botanical, p=process.
 But if p/f are concentrated on L1 and L1 has different content,
 the semantic assignments might be positional artifacts.
 Retesting using ONLY L2+ gallows occurrences.
@@ -291,7 +291,7 @@ Edit distance ≤ 1: 16/20
 Of those, f→k substitution: 5/16
 
 ========================================================================
-PHASE 78 SYNTHESIS
+gallows_allograph_test SYNTHESIS
 ========================================================================
 
 Hypothesis scoreboard:

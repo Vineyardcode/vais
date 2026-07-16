@@ -1,8 +1,8 @@
 ============================================================================
-PHASE 90 — CROSS-WORD CHUNK DEPENDENCIES
+cross_word_chunk_dependencies — CROSS-WORD CHUNK DEPENDENCIES
 ============================================================================
 
-  Does the glyph-level cross-word MI anomaly (Phase 62: NMI=0.080,
+  Does the glyph-level cross-word MI anomaly (word_functional_anatomy: NMI=0.080,
   z=313, 1.8× Italian) persist at the chunk level?
 
   KEY CONFOUND: F-chunks and I-chunks draw from different inventories.
@@ -182,7 +182,7 @@ STEP 8: SKEPTICAL AUDIT
 
   1. INVENTORY CONFOUND
      F-chunks and I-chunks draw from largely disjoint types
-     (Phase 88: J(I,F)=0.241). Even random pairing of words
+     (position_identity_decomposition: J(I,F)=0.241). Even random pairing of words
      produces MI > 0 if the marginal F/I distributions are
      non-uniform. The null model (word shuffle) controls this:
      null MI = 0.5659, observed MI = 0.7820.
@@ -250,7 +250,7 @@ STEP 9: SYNTHESIS & VERDICT
     → VMS word boundaries attenuate dependencies MORE than NL.
     → Strong word-boundary effect — consistent with NL-like syntax.
 
-  REVISED CONFIDENCES (Phase 90):
+  REVISED CONFIDENCES (cross_word_chunk_dependencies):
   - Natural language: 87% → 89% (UP — strong word-boundary effect)
   - Positional verbose cipher: 50% → 45% (DOWN)
   - All others unchanged

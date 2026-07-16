@@ -3,7 +3,7 @@
 IS THE MORPHOLOGICAL MODEL REAL OR A PARSING ARTIFACT?
 ==================================================================
 
-Phases 32-35 caught TWO major greedy-parsing bugs (suffix vowel-stealing,
+The suffix-artifact audits caught TWO major greedy-parsing bugs (suffix vowel-stealing,
 gram prefix 's' shadowing deriv 'sh'). The pattern is clear: sequential
 left-to-right stripping creates artifacts whenever one morpheme is a prefix
 of another.
@@ -14,25 +14,25 @@ killed 's'/'sh'. How much of the model is real vs parsing accident?
 
 morphology_artifact_test tests this with PARSER-FREE methods:
 
-  36a) RAW WORD PREFIX TEST (no parsing)
+  A) RAW WORD PREFIX TEST (no parsing)
        Do raw words starting with 'ch', 'sh', 'qo', etc. show different
        suffix endings and line positions? If yes, the patterns are real
        regardless of parsing.
 
-  36b) RAW WORD SUFFIX TEST (no parsing)
+  B) RAW WORD SUFFIX TEST (no parsing)
        Do raw words ending in '-dy', '-y', '-aiin', etc. show different
        prefix distributions? If yes, the suffixes are real.
 
-  36c) THE 'o' AND 'd' PROBLEM
+  C) THE 'o' AND 'd' PROBLEM
        'o' is the biggest gram prefix (6737 tokens under old model)
        AND a core stem. If we DON'T strip 'o' as prefix, what happens?
        Same for 'd'.
 
-  36d) PARSE ORDER SENSITIVITY
+  D) PARSE ORDER SENSITIVITY
        Run 3 different parse orders. If the model is real, the core
        findings should be stable. If not, they're parse-order artifacts.
 
-  36e) MINIMAL PARSER — SUFFIXES ONLY
+  E) MINIMAL PARSER — SUFFIXES ONLY
        Strip gallows + e-chains + suffixes. Nothing else. Does the
        resulting "root" inventory still show structure?
 """
@@ -148,7 +148,7 @@ for t in tokens:
 # ══════════════════════════════════════════════════════════════════
 
 print("=" * 70)
-print("36a: RAW PREFIX TEST — DO WORD-STARTS PREDICT WORD-ENDS?")
+print("A: RAW PREFIX TEST — DO WORD-STARTS PREDICT WORD-ENDS?")
 print("=" * 70)
 print()
 print("If 'ch', 'sh', etc. are real prefixes, raw words starting with them")
@@ -290,7 +290,7 @@ print(f"  (V > 0.1 = moderate association, V > 0.3 = strong)")
 # ══════════════════════════════════════════════════════════════════
 
 print("\n" + "=" * 70)
-print("36b: RAW SUFFIX TEST — DO WORD-ENDS PREDICT WORD-STARTS?")
+print("B: RAW SUFFIX TEST — DO WORD-ENDS PREDICT WORD-STARTS?")
 print("=" * 70)
 print()
 
@@ -329,7 +329,7 @@ for sfx in SUFFIXES + ['∅']:
 # ══════════════════════════════════════════════════════════════════
 
 print("\n" + "=" * 70)
-print("36c: IS 'o' A REAL GRAM PREFIX OR JUST A STEM-INITIAL LETTER?")
+print("C: IS 'o' A REAL GRAM PREFIX OR JUST A STEM-INITIAL LETTER?")
 print("=" * 70)
 
 # Parse with o and d removed from gram list
@@ -413,7 +413,7 @@ if std_deriv_ct == nood_deriv_ct:
 # ══════════════════════════════════════════════════════════════════
 
 print("\n" + "=" * 70)
-print("36d: PARSE ORDER SENSITIVITY — DOES ORDER MATTER?")
+print("D: PARSE ORDER SENSITIVITY — DOES ORDER MATTER?")
 print("=" * 70)
 
 orders = {
@@ -491,7 +491,7 @@ for order_code in ['gsd', 'dsg', 'sdg']:
 # ══════════════════════════════════════════════════════════════════
 
 print("\n" + "=" * 70)
-print("36e: MINIMAL PARSER — STRIP ONLY GALLOWS + E-CHAINS + SUFFIXES")
+print("E: MINIMAL PARSER — STRIP ONLY GALLOWS + E-CHAINS + SUFFIXES")
 print("=" * 70)
 
 # This is the maximally skeptical model: no prefixes at all
@@ -546,7 +546,7 @@ for root, ct in root_counter.most_common(20):
 # ══════════════════════════════════════════════════════════════════
 
 print("\n" + "=" * 70)
-print("36f: PARSED vs RAW — HOW MUCH STRUCTURE COMES FROM PARSING?")
+print("F: PARSED vs RAW — HOW MUCH STRUCTURE COMES FROM PARSING?")
 print("=" * 70)
 
 # Compare: entropy of suffix choice given PARSED prefix vs RAW prefix

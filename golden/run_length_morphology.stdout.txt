@@ -1,0 +1,309 @@
+╔════════════════════════════════════════════════════════════════════╗
+║  run_length_morphology: Run-Length Morphology & Word Slot Grammar            ║
+╚════════════════════════════════════════════════════════════════════╝
+
+Loading VMS...
+  36259 words, 160710 glyphs, 32 glyph types, 6415 word types
+
+Loading Italian reference...
+  No Italian reference found — Italian comparisons will be skipped
+
+══════════════════════════════════════════════════════════════════════
+TEST A: FORMAL SLOT GRAMMAR
+══════════════════════════════════════════════════════════════════════
+
+  Words conforming to I*M+F* template: 23929/36259 (66.0%)
+
+  Top 20 word templates:
+         Template   Count     Pct              Example
+  -------------------------------------------------------
+             IMMF    3184    8.8%                sheey ✓
+              IMF    2683    7.4%                cthey ✓
+             MMMF    2592    7.1%                 otal ✓
+            MMMMF    2558    7.1%                oteey ✓
+               MF    2218    6.1%                   al ✓
+            IMMMF    2153    5.9%               shodol ✓
+              MMF    1863    5.1%                  dal ✓
+           IMMMMF    1758    4.8%               qokeey ✓
+          IMMMMMF    1293    3.6%              qokeody ✓
+           MMMMMF    1097    3.0%               okeeol ✓
+                F     998    2.8%                    s ✗
+            FMMMF     668    1.8%                raiin ✗
+              FMF     536    1.5%                  sor ✗
+             FMMF     443    1.2%                 sain ✗
+           FMMMMF     434    1.2%               ykeeam ✗
+             MIMF     410    1.1%                kchol ✗
+               IF     400    1.1%                  shy ✗
+            MIMMF     367    1.0%               dsheor ✗
+            MMIMF     354    1.0%               okchol ✗
+           IMMIMF     347    1.0%              qokchey ✗
+
+  Violation types (in non-conforming words):
+    F before M: 7059
+    I not at start: 4180
+    no medial: 1704
+    unknown glyph: 92
+
+  Transition matrix between positional classes:
+      →        I        M        F        ?
+  ----------------------------------------
+      I     1.2%    90.5%     8.2%     0.0%  (n=20828)
+      M     4.3%    58.8%    36.8%     0.0%  (n=94909)
+      F    18.0%    70.4%    11.6%     0.1%  (n=8668)
+      ?     0.0%    76.1%    21.7%     2.2%  (n=46)
+
+══════════════════════════════════════════════════════════════════════
+TEST B: RUN-LENGTH DISTRIBUTIONS FOR i AND e
+══════════════════════════════════════════════════════════════════════
+
+  VMS glyph i: 6752 runs total
+    Length    Count      Pct      Cum                            Bar
+  ------------------------------------------------------------
+         1     2338    34.6%    34.6% █████████████
+         2     4237    62.8%    97.4% █████████████████████████
+         3      176     2.6%   100.0% █
+         4        1     0.0%   100.0% 
+  Mean run length: 1.680 ± 0.520
+  Geometric fit (p=0.595):
+    k=1: expected 0.595, actual 0.346, ratio 0.58x
+    k=2: expected 0.241, actual 0.628, ratio 2.60x
+    k=3: expected 0.098, actual 0.026, ratio 0.27x
+    k=4: expected 0.039, actual 0.000, ratio 0.00x
+
+  VMS glyph e: 14217 runs total
+    Length    Count      Pct      Cum                            Bar
+  ------------------------------------------------------------
+         1     9605    67.6%    67.6% ███████████████████████████
+         2     4217    29.7%    97.2% ███████████
+         3      387     2.7%    99.9% █
+         4        8     0.1%   100.0% 
+  Mean run length: 1.353 ± 0.535
+  Geometric fit (p=0.739):
+    k=1: expected 0.739, actual 0.676, ratio 0.91x
+    k=2: expected 0.193, actual 0.297, ratio 1.54x
+    k=3: expected 0.050, actual 0.027, ratio 0.54x
+    k=4: expected 0.013, actual 0.001, ratio 0.04x
+
+
+══════════════════════════════════════════════════════════════════════
+TEST C: CONTEXT INDEPENDENCE — Are i-runs interchangeable?
+══════════════════════════════════════════════════════════════════════
+
+  Skeleton words with multiple i-run length variants:
+              Skeleton                                 Variants   Total
+  ---------------------------------------------------------------------------
+                  da_n                 i×1=196, i×2=807, i×3=20    1023
+                   a_n                 i×1=110, i×2=554, i×3=54     718
+                qoka_n                  i×1=282, i×2=281, i×3=1     564
+                 oka_n                  i×1=134, i×2=215, i×3=6     355
+                 ota_n                  i×1=101, i×2=158, i×3=1     260
+                  sa_n                   i×1=59, i×2=124, i×3=1     184
+                qota_n                    i×1=62, i×2=87, i×3=1     150
+                  da_r                          i×1=112, i×2=25     137
+                  ka_n                    i×1=45, i×2=85, i×3=5     135
+                   a_r                           i×1=83, i×2=29     112
+                 oda_n                    i×1=16, i×2=66, i×3=7      89
+                  ra_n                    i×1=20, i×2=65, i×3=1      86
+                 lka_n                    i×1=33, i×2=49, i×3=3      85
+                 ola_n                    i×1=13, i×2=58, i×3=1      72
+                 yka_n                           i×1=13, i×2=58      71
+
+  Total skeleton families with ≥2 run-length variants: 38
+
+  Context divergence test (do i×1 and i×2 appear in same contexts?):
+
+              Skeleton       Runs      JSD     n1     n2      Verdict
+  ----------------------------------------------------------------------
+                   a_n    i×1/i×2    0.497    110    554        mixed
+                qoka_n    i×1/i×2    0.562    282    281        mixed
+                  ka_n    i×1/i×2    0.567     45     85        mixed
+                  da_n    i×1/i×2    0.620    196    807     DIFF ctx
+                qota_n    i×1/i×2    0.628     62     87     DIFF ctx
+                 oka_n    i×1/i×2    0.656    134    215     DIFF ctx
+                 ota_n    i×1/i×2    0.686    101    158     DIFF ctx
+                   o_n    i×1/i×2    0.724      9     36     DIFF ctx
+                  ra_n    i×1/i×2    0.759     20     65     DIFF ctx
+                 lka_n    i×1/i×2    0.784     33     49     DIFF ctx
+                   a_r    i×1/i×2    0.850     83     29     DIFF ctx
+                olka_n    i×1/i×2    0.863     31     33     DIFF ctx
+                  oa_n    i×1/i×2    0.875     11     22     DIFF ctx
+                  ta_n    i×1/i×2    0.875      9     47     DIFF ctx
+                 ola_n    i×1/i×2    0.879     13     58     DIFF ctx
+                  sa_n    i×1/i×2    0.887     59    124     DIFF ctx
+                 cha_n    i×1/i×2    0.901     18     46     DIFF ctx
+                 oda_n    i×1/i×2    0.902     16     66     DIFF ctx
+                  da_r    i×1/i×2    0.911    112     25     DIFF ctx
+               cheda_n    i×1/i×2    0.916     20     40     DIFF ctx
+
+  Mean JSD across all skeleton families: 0.828
+  (< 0.2 = highly interchangeable = numeric/quantitative)
+  (> 0.5 = distinct words = morphemic)
+
+  Same test for e-runs:
+              Skeleton       Runs      JSD     n1     n2      Verdict
+  ----------------------------------------------------------------------
+                qok_dy    e×1/e×2    0.515    271    303        mixed
+                  ch_y    e×1/e×2    0.540    355    188        mixed
+                 sh_dy    e×1/e×2    0.556    440     87        mixed
+                 qok_y    e×1/e×2    0.562    108    309        mixed
+                 ch_dy    e×1/e×2    0.591    509     58        mixed
+                  k_dy    e×1/e×2    0.604     47     60     DIFF ctx
+                qot_dy    e×1/e×2    0.611     91     76     DIFF ctx
+                   _dy    e×2/e×3    0.664      5      7     DIFF ctx
+                  sh_y    e×1/e×2    0.673    276    156     DIFF ctx
+                 sh_ty    e×1/e×2    0.684     10      9     DIFF ctx
+                 ot_dy    e×1/e×2    0.690    163     99     DIFF ctx
+                   t_y    e×1/e×2    0.703     16     20     DIFF ctx
+                  k_or    e×1/e×2    0.713      8      6     DIFF ctx
+                  ok_y    e×1/e×2    0.732     61    170     DIFF ctx
+                 ok_dy    e×1/e×2    0.734    108    103     DIFF ctx
+
+  Mean JSD for e-run variants: 0.877
+
+══════════════════════════════════════════════════════════════════════
+TEST D: SKELETON WORD RECOMPUTE — Collapse runs, measure impact
+══════════════════════════════════════════════════════════════════════
+
+  Baseline: H(c|p)/H(c) = 0.6407, Heaps β = 0.7533, 32 glyph types
+
+  Collapse i-runs to single i:
+    H(c|p)/H(c) = 0.6426 (Δ = +0.0019)
+    Heaps β = 0.7481, glyph types = 32, word types = 6206
+
+  Collapse e-runs to single e:
+    H(c|p)/H(c) = 0.6317 (Δ = -0.0091)
+    Heaps β = 0.7493, glyph types = 32, word types = 5873
+
+  Collapse both i+e runs:
+    H(c|p)/H(c) = 0.6331 (Δ = -0.0076)
+    Heaps β = 0.7437, glyph types = 32, word types = 5663
+
+  Replace i-runs with run token:
+    H(c|p)/H(c) = 0.6457 (Δ = +0.0050)
+    Heaps β = 0.7533, glyph types = 35, word types = 6415
+
+  Replace e-runs with run token:
+    H(c|p)/H(c) = 0.6363 (Δ = -0.0044)
+    Heaps β = 0.7533, glyph types = 35, word types = 6415
+
+  Replace both with run tokens:
+    H(c|p)/H(c) = 0.6410 (Δ = +0.0003)
+    Heaps β = 0.7533, glyph types = 38, word types = 6415
+
+  SUMMARY:
+                             Strategy  H ratio        Δ     Gap%  Glyphs   Words
+  ---------------------------------------------------------------------------
+                         EVA baseline   0.6407        —       0%      32    6415
+          Collapse i-runs to single i   0.6426  +0.0019     1.0%      32    6206
+          Collapse e-runs to single e   0.6317  -0.0091    -4.6%      32    5873
+               Collapse both i+e runs   0.6331  -0.0076    -3.8%      32    5663
+        Replace i-runs with run token   0.6457  +0.0050     2.5%      35    6415
+        Replace e-runs with run token   0.6363  -0.0044    -2.2%      35    6415
+         Replace both with run tokens   0.6410  +0.0003     0.1%      38    6415
+                    Italian reference   0.8390        —     100%      35       —
+
+══════════════════════════════════════════════════════════════════════
+TEST E: RUN-LENGTH × FREQUENCY — Are longer runs rarer?
+══════════════════════════════════════════════════════════════════════
+
+  Words containing i-runs, grouped by run length:
+   Run len   Types   Tokens  Mean freq  Median freq  Max freq
+  ------------------------------------------------------------
+         1     533     2330        4.4          1.0       282
+         2     565     4237        7.5          1.0       807
+         3      56      176        3.1          1.0        54
+         4       1        1        1.0          1.0         1
+
+  Words containing e-runs, grouped by run length:
+   Run len   Types   Tokens  Mean freq  Median freq  Max freq
+  ------------------------------------------------------------
+         1    2007     9208        4.6          1.0       509
+         2     854     4093        4.8          1.0       309
+         3     170      380        2.2          1.0        30
+         4       7        8        1.1          1.0         2
+
+  Correlation(i-run length, log word frequency): r = 0.1599
+  (positive = longer runs more frequent; negative = longer runs rarer)
+
+
+══════════════════════════════════════════════════════════════════════
+TEST F: ANTI-ALTERNATION DECOMPOSITION
+══════════════════════════════════════════════════════════════════════
+
+  Total character bigrams: 160709
+  Total self-transitions: 10744 (6.7%)
+
+     Glyph  Self→Self  % of all self  % of own bi
+  --------------------------------------------------
+         e       5017          46.7%        26.1%
+         i       4592          42.7%        40.5%
+         y        590           5.5%         3.6%
+         l        225           2.1%         2.3%
+         o        181           1.7%         0.8%
+         d         52           0.5%         0.4%
+         s         34           0.3%         1.4%
+         r         27           0.3%         0.4%
+        ch         12           0.1%         0.1%
+         a          6           0.1%         0.0%
+        sh          3           0.0%         0.1%
+         f          2           0.0%         0.6%
+         k          1           0.0%         0.0%
+         q          1           0.0%         0.0%
+         t          1           0.0%         0.0%
+
+  H(c|prev)/H(c) with self-transitions surgically removed:
+    Baseline: 0.6407
+    Without i→i (collapse ii): 0.6426 (Δ = +0.0019)
+    Without e→e (collapse ee): 0.6316 (Δ = -0.0091)
+    Without either (collapse both): 0.6331 (Δ = -0.0076)
+
+    Gap closure from collapsing i+e runs: -3.9% of gap to Italian
+
+══════════════════════════════════════════════════════════════════════
+ADJUDICATION
+══════════════════════════════════════════════════════════════════════
+
+  1. SLOT GRAMMAR: 66.0% of VMS words conform to I*M+F* template.
+     → Moderate structure, consistent with NL.
+
+  2. RUN-LENGTH CONTEXT INDEPENDENCE:
+     Mean JSD for i-run variants: 0.828
+     → i-runs are CONTEXT-DEPENDENT: each length is a different
+       word. Supports MORPHEMIC hypothesis.
+     Mean JSD for e-run variants: 0.877
+
+  3. SKELETON RECOMPUTE:
+     Collapsing both i+e runs: H ratio → 0.6331 (Δ = -0.0076)
+     Gap closure: -3.8%
+
+  4. ANTI-ALTERNATION DECOMPOSITION:
+     Collapsing i+e self-transitions closes -4.0% of the H-ratio gap
+     → Self-repetition is a minor contributor
+
+  HYPOTHESIS SCORING:
+
+  H1 (MORPHEMIC — each run length = different word):
+     SUPPORTED — contexts differ significantly by run length
+
+  H2 (NUMERIC — runs encode quantity):
+     WEAKENED — contexts too different
+
+  H3 (VOWEL LENGTH — runs mark prosodic features):
+     Requires peaked distribution at 1-2 and consonant context
+     dependence. Pending fuller analysis.
+
+  H4 (PADDING/FILLER — runs are noise):
+     Collapsing reduces word types from 6415 to 5663
+     → Moderate vocabulary reduction
+
+  REVISED CONFIDENCES (run_length_morphology):
+    - NL in unknown script: 80% (unchanged)
+    - Script has built-in phonotactic rules: 95% (unchanged)
+    - Simple substitution cipher: <5% (unchanged)
+    - i/e runs are functionally significant: NEW finding
+    - The H-ratio anomaly is primarily CAUSED by i/e self-
+      repetition and positional constraints
+    - Hoax/random: <3% (unchanged)
+
+Saved to C:\projects\vais\results\run_length_morphology_output.txt
+Saved to C:\projects\vais\results\run_length_morphology_output.json

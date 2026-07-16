@@ -1,5 +1,5 @@
 ========================================================================
-PHASE 101 — RESOLVE THE CURRIER A/B DICHOTOMY
+currier_dichotomy_resolution — RESOLVE THE CURRIER A/B DICHOTOMY
 ========================================================================
 
 ────────────────────────────────────────────────────────────────────────
@@ -49,10 +49,10 @@ STEP 1: Corrected Currier A/B corpus split
     Net shift: 10604 words moved to B
 
 ────────────────────────────────────────────────────────────────────────
-STEP 2: Build class sequences using Phase 86 clusters
+STEP 2: Build class sequences using chunk_equivalence_classes clusters
 ────────────────────────────────────────────────────────────────────────
 
-  Phase 86 clusters loaded: 206 chunk→class mappings
+  chunk_equivalence_classes clusters loaded: 206 chunk→class mappings
   After rare-chunk extension: 523 mappings
 
   all: 40309 words → 78526 class tokens
@@ -305,7 +305,7 @@ STEP 12: Synthesis and conclusions
     The hardcoded get_currier_language() function in 8+ prior scripts
     disagrees with the authoritative $L= folio tags on 79 folios.
     This is a ~39% error rate.
-    ALL prior A/B results (Phases 3, 63, 68, 98) are contaminated.
+    ALL prior A/B results (currier_register_comparison, misbinding_coherence_test, run_conditioned_transitions, generative_chunk_model) are contaminated.
 
   FINDING 2: DISTRIBUTIONAL DIVERGENCE
     Class unigram JSD = 0.018418

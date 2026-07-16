@@ -1,0 +1,3665 @@
+{
+  "test": "sentence_translation",
+  "folios": {
+    "Leo-f72v3": {
+      "folio": "f72v3",
+      "sections": [
+        {
+          "line_id": "f72v3.1",
+          "label_type": "@Cc",
+          "text": "soees,otchs.otedar.oteody.oteodal.oteos.oteokchd?.oteody.sheokeey.sheody.shedykeal.ckhodys.okoleeolar.okeey.shedy.otey,sho.shol.teody.okolshey.ykeed?y.y.okechdy.olaiin.shokeedy.chol.choepchey.teey,teody.ches.okechedy.otechol.cheor.cheey.daiin.oyteeedar.???.shecthy.otycheedy.oteeoly.chokary",
+          "word_count": 41,
+          "translations": [
+            {
+              "word": "soees",
+              "root": "es",
+              "meaning": "star(short)",
+              "confidence": 0.8,
+              "method": "DICT(Coptic)"
+            },
+            {
+              "word": "otchs",
+              "root": "os",
+              "meaning": "star",
+              "confidence": 0.8,
+              "method": "FUZZY-COPTIC(astro)"
+            },
+            {
+              "word": "otedar",
+              "root": "ed",
+              "meaning": "[☉CELESTIAL|O+article?|ROOT:ed|CELESTIAL/agent]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            },
+            {
+              "word": "oteody",
+              "root": "e",
+              "meaning": "[☉CELESTIAL|O+article?|ROOT:e|BIO/organic]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            },
+            {
+              "word": "oteodal",
+              "root": "eod",
+              "meaning": "[☉CELESTIAL|O+article?|ROOT:eod|NOM/zodiac]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            },
+            {
+              "word": "oteos",
+              "root": "eos",
+              "meaning": "star",
+              "confidence": 0.85,
+              "method": "DICT(Coptic)"
+            },
+            {
+              "word": "oteokchd?",
+              "root": "eod",
+              "meaning": "[◆GENERIC|O+article?|ROOT:eod]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            },
+            {
+              "word": "oteody",
+              "root": "e",
+              "meaning": "[☉CELESTIAL|O+article?|ROOT:e|BIO/organic]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            },
+            {
+              "word": "sheokeey",
+              "root": "heo",
+              "meaning": "moon",
+              "confidence": 0.8,
+              "method": "FUZZY-COPTIC(astro)"
+            },
+            {
+              "word": "sheody",
+              "root": "he",
+              "meaning": "fall/occur",
+              "confidence": 1.0,
+              "method": "DICT(Coptic)"
+            },
+            {
+              "word": "shedykeal",
+              "root": "hedye",
+              "meaning": "[◆GENERIC|S+botanical|ROOT:hedye|NOM/zodiac]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            },
+            {
+              "word": "ckhodys",
+              "root": "dys",
+              "meaning": "[◆GENERIC|O+article?|ROOT:dys]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            },
+            {
+              "word": "okoleeolar",
+              "root": "oleol",
+              "meaning": "[◆GENERIC|O+article?|ROOT:oleol|CELESTIAL/agent]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            },
+            {
+              "word": "okeey",
+              "root": "e",
+              "meaning": "[◆GENERIC|O+article?|ROOT:e|ADJ/descriptor]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            },
+            {
+              "word": "shedy",
+              "root": "h",
+              "meaning": "moon",
+              "confidence": 0.8,
+              "method": "FUZZY-COPTIC(astro)"
+            },
+            {
+              "word": "otey",
+              "root": "e",
+              "meaning": "[☉CELESTIAL|O+article?|ROOT:e|ADJ/descriptor]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            },
+            {
+              "word": "sho",
+              "root": "ho",
+              "meaning": "moon",
+              "confidence": 0.8,
+              "method": "FUZZY-COPTIC(astro)"
+            },
+            {
+              "word": "shol",
+              "root": "h",
+              "meaning": "moon",
+              "confidence": 0.8,
+              "method": "FUZZY-COPTIC(astro)"
+            },
+            {
+              "word": "teody",
+              "root": "e",
+              "meaning": "[☉CELESTIAL|ROOT:e|BIO/organic]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            },
+            {
+              "word": "okolshey",
+              "root": "olsh",
+              "meaning": "tongue",
+              "confidence": 0.8,
+              "method": "FUZZY-COPTIC(body)"
+            },
+            {
+              "word": "ykeed?y",
+              "root": "e",
+              "meaning": "[◆GENERIC|Y+modifier|ROOT:e|BIO/organic]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            },
+            {
+              "word": "y",
+              "root": "y",
+              "meaning": "[ROOT:y]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            },
+            {
+              "word": "okechdy",
+              "root": "ech",
+              "meaning": "say/speak",
+              "confidence": 0.8,
+              "method": "FUZZY-COPTIC(action)"
+            },
+            {
+              "word": "olaiin",
+              "root": "l",
+              "meaning": "stone",
+              "confidence": 0.8,
+              "method": "FUZZY-COPTIC(astro)"
+            },
+            {
+              "word": "shokeedy",
+              "root": "ho",
+              "meaning": "moon",
+              "confidence": 0.8,
+              "method": "FUZZY-COPTIC(astro)"
+            },
+            {
+              "word": "chol",
+              "root": "ch",
+              "meaning": "say/speak",
+              "confidence": 0.8,
+              "method": "FUZZY-COPTIC(action)"
+            },
+            {
+              "word": "choepchey",
+              "root": "cho",
+              "meaning": "hundred/put",
+              "confidence": 0.6,
+              "method": "DICT(Coptic)"
+            },
+            {
+              "word": "teey",
+              "root": "e",
+              "meaning": "[☉CELESTIAL|ROOT:e|ADJ/descriptor]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            },
+            {
+              "word": "teody",
+              "root": "e",
+              "meaning": "[☉CELESTIAL|ROOT:e|BIO/organic]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            },
+            {
+              "word": "ches",
+              "root": "ches",
+              "meaning": "lord",
+              "confidence": 0.8,
+              "method": "FUZZY-COPTIC(element)"
+            },
+            {
+              "word": "okechedy",
+              "root": "ech",
+              "meaning": "say/speak",
+              "confidence": 0.8,
+              "method": "FUZZY-COPTIC(action)"
+            },
+            {
+              "word": "otechol",
+              "root": "ech",
+              "meaning": "say/speak",
+              "confidence": 0.8,
+              "method": "FUZZY-COPTIC(action)"
+            },
+            {
+              "word": "cheor",
+              "root": "che",
+              "meaning": "fall/place",
+              "confidence": 0.8,
+              "method": "DICT(Coptic)"
+            },
+            {
+              "word": "cheey",
+              "root": "ch",
+              "meaning": "say/speak",
+              "confidence": 0.8,
+              "method": "FUZZY-COPTIC(action)"
+            },
+            {
+              "word": "daiin",
+              "root": "a",
+              "meaning": "[D+process|ROOT:a|SUFFIX.iin]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            },
+            {
+              "word": "oyteeedar",
+              "root": "yed",
+              "meaning": "[☉CELESTIAL|O+article?|ROOT:yed|CELESTIAL/agent]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            },
+            {
+              "word": "???",
+              "root": "",
+              "meaning": "???",
+              "confidence": 0,
+              "method": "unparseable"
+            },
+            {
+              "word": "shecthy",
+              "root": "h",
+              "meaning": "moon",
+              "confidence": 0.8,
+              "method": "FUZZY-COPTIC(astro)"
+            },
+            {
+              "word": "otycheedy",
+              "root": "ych",
+              "meaning": "[☉CELESTIAL|O+article?|ROOT:ych|BIO/organic]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            },
+            {
+              "word": "oteeoly",
+              "root": "eol",
+              "meaning": "stone",
+              "confidence": 0.8,
+              "method": "FUZZY-COPTIC(astro)"
+            },
+            {
+              "word": "chokary",
+              "root": "choar",
+              "meaning": "[◆GENERIC|ROOT:choar|ADJ/descriptor]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            }
+          ]
+        },
+        {
+          "line_id": "f72v3.2",
+          "label_type": "@Lz",
+          "text": "ocham",
+          "word_count": 1,
+          "translations": [
+            {
+              "word": "ocham",
+              "root": "cham",
+              "meaning": "hot/warm",
+              "confidence": 0.9,
+              "method": "DICT(Coptic)"
+            }
+          ]
+        },
+        {
+          "line_id": "f72v3.3",
+          "label_type": "&Lz",
+          "text": "orchey",
+          "word_count": 1,
+          "translations": [
+            {
+              "word": "orchey",
+              "root": "rch",
+              "meaning": "[O+article?|ROOT:rch|ADJ/descriptor]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            }
+          ]
+        },
+        {
+          "line_id": "f72v3.4",
+          "label_type": "&Lz",
+          "text": "okam",
+          "word_count": 1,
+          "translations": [
+            {
+              "word": "okam",
+              "root": "am",
+              "meaning": "water/lion",
+              "confidence": 0.8,
+              "method": "DICT(Coptic)"
+            }
+          ]
+        },
+        {
+          "line_id": "f72v3.5",
+          "label_type": "&Lz",
+          "text": "okey",
+          "word_count": 1,
+          "translations": [
+            {
+              "word": "okey",
+              "root": "e",
+              "meaning": "[◆GENERIC|O+article?|ROOT:e|ADJ/descriptor]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            }
+          ]
+        },
+        {
+          "line_id": "f72v3.6",
+          "label_type": "&Lz",
+          "text": "otcheody",
+          "word_count": 1,
+          "translations": [
+            {
+              "word": "otcheody",
+              "root": "e",
+              "meaning": "[☉CELESTIAL|O+article?|ROOT:e|BIO/organic]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            }
+          ]
+        },
+        {
+          "line_id": "f72v3.7",
+          "label_type": "&Lz",
+          "text": "okyeeshy",
+          "word_count": 1,
+          "translations": [
+            {
+              "word": "okyeeshy",
+              "root": "yesh",
+              "meaning": "[◆GENERIC|O+article?|ROOT:yesh|ADJ/descriptor]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            }
+          ]
+        },
+        {
+          "line_id": "f72v3.8",
+          "label_type": "&Lz",
+          "text": "[{c'y}:??]ofaiin",
+          "word_count": 1,
+          "translations": [
+            {
+              "word": "[{c'y}:??]ofaiin",
+              "root": "a",
+              "meaning": "[🌿BOTANICAL|O+article?|ROOT:a|SUFFIX.iin]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            }
+          ]
+        },
+        {
+          "line_id": "f72v3.9",
+          "label_type": "&Lz",
+          "text": "okaly",
+          "word_count": 1,
+          "translations": [
+            {
+              "word": "okaly",
+              "root": "al",
+              "meaning": "stone/rock",
+              "confidence": 1.0,
+              "method": "DICT(Coptic)"
+            }
+          ]
+        },
+        {
+          "line_id": "f72v3.10",
+          "label_type": "&Lz",
+          "text": "ot[o:a]ly",
+          "word_count": 1,
+          "translations": [
+            {
+              "word": "ot[o:a]ly",
+              "root": "l",
+              "meaning": "stone",
+              "confidence": 0.8,
+              "method": "FUZZY-COPTIC(astro)"
+            }
+          ]
+        },
+        {
+          "line_id": "f72v3.11",
+          "label_type": "&Lz",
+          "text": "ofalals",
+          "word_count": 1,
+          "translations": [
+            {
+              "word": "ofalals",
+              "root": "alals",
+              "meaning": "[🌿BOTANICAL|O+article?|ROOT:alals]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            }
+          ]
+        },
+        {
+          "line_id": "f72v3.12",
+          "label_type": "&Lz",
+          "text": "sheeos.o{cfhh}y",
+          "word_count": 2,
+          "translations": [
+            {
+              "word": "sheeos",
+              "root": "heos",
+              "meaning": "[S+botanical|ROOT:heos]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            },
+            {
+              "word": "o{cfhh}y",
+              "root": "o",
+              "meaning": "[ROOT:o|ADJ/descriptor]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            }
+          ]
+        },
+        {
+          "line_id": "f72v3.13",
+          "label_type": "&Lz",
+          "text": "daiin,chepy",
+          "word_count": 2,
+          "translations": [
+            {
+              "word": "daiin",
+              "root": "a",
+              "meaning": "[D+process|ROOT:a|SUFFIX.iin]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            },
+            {
+              "word": "chepy",
+              "root": "ch",
+              "meaning": "say/speak",
+              "confidence": 0.8,
+              "method": "FUZZY-COPTIC(action)"
+            }
+          ]
+        },
+        {
+          "line_id": "f72v3.14",
+          "label_type": "&Lz",
+          "text": "oteey.deeal",
+          "word_count": 2,
+          "translations": [
+            {
+              "word": "oteey",
+              "root": "e",
+              "meaning": "[☉CELESTIAL|O+article?|ROOT:e|ADJ/descriptor]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            },
+            {
+              "word": "deeal",
+              "root": "e",
+              "meaning": "[D+process|ROOT:e|NOM/zodiac]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            }
+          ]
+        },
+        {
+          "line_id": "f72v3.15",
+          "label_type": "&Lz",
+          "text": "chealpy",
+          "word_count": 1,
+          "translations": [
+            {
+              "word": "chealpy",
+              "root": "cheal",
+              "meaning": "[⚗PROCESS|ROOT:cheal|ADJ/descriptor]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            }
+          ]
+        },
+        {
+          "line_id": "f72v3.16",
+          "label_type": "&Lz",
+          "text": "okeeol",
+          "word_count": 1,
+          "translations": [
+            {
+              "word": "okeeol",
+              "root": "e",
+              "meaning": "[◆GENERIC|O+article?|ROOT:e|PHARMA/liquid]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            }
+          ]
+        },
+        {
+          "line_id": "f72v3.17",
+          "label_type": "&Lz",
+          "text": "okaly",
+          "word_count": 1,
+          "translations": [
+            {
+              "word": "okaly",
+              "root": "al",
+              "meaning": "stone/rock",
+              "confidence": 1.0,
+              "method": "DICT(Coptic)"
+            }
+          ]
+        },
+        {
+          "line_id": "f72v3.18",
+          "label_type": "&Lz",
+          "text": "okaldy",
+          "word_count": 1,
+          "translations": [
+            {
+              "word": "okaldy",
+              "root": "al",
+              "meaning": "stone/rock",
+              "confidence": 1.0,
+              "method": "DICT(Coptic)"
+            }
+          ]
+        },
+        {
+          "line_id": "f72v3.19",
+          "label_type": "&Lz",
+          "text": "okeolyd",
+          "word_count": 1,
+          "translations": [
+            {
+              "word": "okeolyd",
+              "root": "eolyd",
+              "meaning": "[◆GENERIC|O+article?|ROOT:eolyd]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            }
+          ]
+        },
+        {
+          "line_id": "f72v3.20",
+          "label_type": "@Cc",
+          "text": "ototeey.r.chlyiintee.or.oteey.oteeody.cheokey.okeoekol.oteor.aiin.yoleeedy.okeos,alyshy.okeey.okeeey.okeedaly.cholainy.okedy.chees,y.okeeol.chey.otey.oldy.chdy,del.okeeoloky.oty.aiin.chas.oteey.okea???",
+          "word_count": 31,
+          "translations": [
+            {
+              "word": "ototeey",
+              "root": "o",
+              "meaning": "[☉CELESTIAL|O+article?|ROOT:o|ADJ/descriptor]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            },
+            {
+              "word": "r",
+              "root": "r",
+              "meaning": "sun",
+              "confidence": 0.8,
+              "method": "FUZZY-COPTIC(astro)"
+            },
+            {
+              "word": "chlyiintee",
+              "root": "chlyiine",
+              "meaning": "[☉CELESTIAL|ROOT:chlyiine]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            },
+            {
+              "word": "or",
+              "root": "or",
+              "meaning": "king/great",
+              "confidence": 0.7,
+              "method": "DICT(Coptic)"
+            },
+            {
+              "word": "oteey",
+              "root": "e",
+              "meaning": "[☉CELESTIAL|O+article?|ROOT:e|ADJ/descriptor]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            },
+            {
+              "word": "oteeody",
+              "root": "e",
+              "meaning": "[☉CELESTIAL|O+article?|ROOT:e|BIO/organic]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            },
+            {
+              "word": "cheokey",
+              "root": "cheo",
+              "meaning": "say/speak",
+              "confidence": 0.8,
+              "method": "FUZZY-COPTIC(action)"
+            },
+            {
+              "word": "okeoekol",
+              "root": "eoe",
+              "meaning": "[◆GENERIC|O+article?|ROOT:eoe|PHARMA/liquid]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            },
+            {
+              "word": "oteor",
+              "root": "e",
+              "meaning": "[☉CELESTIAL|O+article?|ROOT:e|PHARMA/agent]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            },
+            {
+              "word": "aiin",
+              "root": "a",
+              "meaning": "[ROOT:a|SUFFIX.iin]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            },
+            {
+              "word": "yoleeedy",
+              "root": "ol",
+              "meaning": "carry/lift",
+              "confidence": 0.7,
+              "method": "DICT(Coptic)"
+            },
+            {
+              "word": "okeos",
+              "root": "eos",
+              "meaning": "star",
+              "confidence": 0.85,
+              "method": "DICT(Coptic)"
+            },
+            {
+              "word": "alyshy",
+              "root": "alysh",
+              "meaning": "[ROOT:alysh|ADJ/descriptor]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            },
+            {
+              "word": "okeey",
+              "root": "e",
+              "meaning": "[◆GENERIC|O+article?|ROOT:e|ADJ/descriptor]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            },
+            {
+              "word": "okeeey",
+              "root": "e",
+              "meaning": "[◆GENERIC|O+article?|ROOT:e|ADJ/descriptor]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            },
+            {
+              "word": "okeedaly",
+              "root": "edal",
+              "meaning": "[◆GENERIC|O+article?|ROOT:edal|ADJ/descriptor]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            },
+            {
+              "word": "cholainy",
+              "root": "cholain",
+              "meaning": "[ROOT:cholain|ADJ/descriptor]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            },
+            {
+              "word": "okedy",
+              "root": "e",
+              "meaning": "[◆GENERIC|O+article?|ROOT:e|BIO/organic]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            },
+            {
+              "word": "cheesy",
+              "root": "che",
+              "meaning": "fall/place",
+              "confidence": 0.8,
+              "method": "DICT(Coptic)"
+            },
+            {
+              "word": "okeeol",
+              "root": "e",
+              "meaning": "[◆GENERIC|O+article?|ROOT:e|PHARMA/liquid]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            },
+            {
+              "word": "chey",
+              "root": "ch",
+              "meaning": "say/speak",
+              "confidence": 0.8,
+              "method": "FUZZY-COPTIC(action)"
+            },
+            {
+              "word": "otey",
+              "root": "e",
+              "meaning": "[☉CELESTIAL|O+article?|ROOT:e|ADJ/descriptor]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            },
+            {
+              "word": "oldy",
+              "root": "l",
+              "meaning": "stone",
+              "confidence": 0.8,
+              "method": "FUZZY-COPTIC(astro)"
+            },
+            {
+              "word": "chdy",
+              "root": "ch",
+              "meaning": "say/speak",
+              "confidence": 0.8,
+              "method": "FUZZY-COPTIC(action)"
+            },
+            {
+              "word": "del",
+              "root": "el",
+              "meaning": "stone",
+              "confidence": 0.9,
+              "method": "FUZZY-COPTIC(astro)"
+            },
+            {
+              "word": "okeeoloky",
+              "root": "eolo",
+              "meaning": "stone",
+              "confidence": 0.8,
+              "method": "FUZZY-COPTIC(astro)"
+            },
+            {
+              "word": "oty",
+              "root": "o",
+              "meaning": "[☉CELESTIAL|ROOT:o|ADJ/descriptor]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            },
+            {
+              "word": "aiin",
+              "root": "a",
+              "meaning": "[ROOT:a|SUFFIX.iin]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            },
+            {
+              "word": "chas",
+              "root": "chas",
+              "meaning": "lord/master",
+              "confidence": 0.85,
+              "method": "DICT(Coptic)"
+            },
+            {
+              "word": "oteey",
+              "root": "e",
+              "meaning": "[☉CELESTIAL|O+article?|ROOT:e|ADJ/descriptor]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            },
+            {
+              "word": "okea???",
+              "root": "ea",
+              "meaning": "[◆GENERIC|O+article?|ROOT:ea]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            }
+          ]
+        },
+        {
+          "line_id": "f72v3.21",
+          "label_type": "@Lz",
+          "text": "choleey",
+          "word_count": 1,
+          "translations": [
+            {
+              "word": "choleey",
+              "root": "chol",
+              "meaning": "celestial body",
+              "confidence": 0.7,
+              "method": "DICT(Coptic)"
+            }
+          ]
+        },
+        {
+          "line_id": "f72v3.22",
+          "label_type": "&Lz",
+          "text": "oky",
+          "word_count": 1,
+          "translations": [
+            {
+              "word": "oky",
+              "root": "o",
+              "meaning": "[◆GENERIC|ROOT:o|ADJ/descriptor]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            }
+          ]
+        },
+        {
+          "line_id": "f72v3.23",
+          "label_type": "&Lz",
+          "text": "ch{cthh}y",
+          "word_count": 1,
+          "translations": [
+            {
+              "word": "ch{cthh}y",
+              "root": "ch",
+              "meaning": "say/speak",
+              "confidence": 0.8,
+              "method": "FUZZY-COPTIC(action)"
+            }
+          ]
+        },
+        {
+          "line_id": "f72v3.24",
+          "label_type": "&Lz",
+          "text": "laly",
+          "word_count": 1,
+          "translations": [
+            {
+              "word": "laly",
+              "root": "lal",
+              "meaning": "[ROOT:lal|ADJ/descriptor]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            }
+          ]
+        },
+        {
+          "line_id": "f72v3.25",
+          "label_type": "&Lz",
+          "text": "oeedy",
+          "word_count": 1,
+          "translations": [
+            {
+              "word": "oeedy",
+              "root": "e",
+              "meaning": "[O+article?|ROOT:e|BIO/organic]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            }
+          ]
+        },
+        {
+          "line_id": "f72v3.26",
+          "label_type": "&Lz",
+          "text": "odairan",
+          "word_count": 1,
+          "translations": [
+            {
+              "word": "odairan",
+              "root": "dairan",
+              "meaning": "[O+article?|ROOT:dairan]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            }
+          ]
+        },
+        {
+          "line_id": "f72v3.27",
+          "label_type": "&Lz",
+          "text": "okary",
+          "word_count": 1,
+          "translations": [
+            {
+              "word": "okary",
+              "root": "ar",
+              "meaning": "king/great",
+              "confidence": 0.75,
+              "method": "DICT(Coptic)"
+            }
+          ]
+        },
+        {
+          "line_id": "f72v3.28",
+          "label_type": "&Lz",
+          "text": "oeesaiin",
+          "word_count": 1,
+          "translations": [
+            {
+              "word": "oeesaiin",
+              "root": "es",
+              "meaning": "star(short)",
+              "confidence": 0.8,
+              "method": "DICT(Coptic)"
+            }
+          ]
+        },
+        {
+          "line_id": "f72v3.29",
+          "label_type": "&Lz",
+          "text": "oteesed",
+          "word_count": 1,
+          "translations": [
+            {
+              "word": "oteesed",
+              "root": "esed",
+              "meaning": "lion/asad",
+              "confidence": 1.0,
+              "method": "DICT(Arabic)"
+            }
+          ]
+        },
+        {
+          "line_id": "f72v3.30",
+          "label_type": "&Lz",
+          "text": "opal",
+          "word_count": 1,
+          "translations": [
+            {
+              "word": "opal",
+              "root": "al",
+              "meaning": "stone/rock",
+              "confidence": 1.0,
+              "method": "DICT(Coptic)"
+            }
+          ]
+        },
+        {
+          "line_id": "f72v3.31",
+          "label_type": "&Lz",
+          "text": "otaly",
+          "word_count": 1,
+          "translations": [
+            {
+              "word": "otaly",
+              "root": "al",
+              "meaning": "stone/rock",
+              "confidence": 1.0,
+              "method": "DICT(Coptic)"
+            }
+          ]
+        },
+        {
+          "line_id": "f72v3.32",
+          "label_type": "&Lz",
+          "text": "otaly,yty",
+          "word_count": 2,
+          "translations": [
+            {
+              "word": "otaly",
+              "root": "al",
+              "meaning": "stone/rock",
+              "confidence": 1.0,
+              "method": "DICT(Coptic)"
+            },
+            {
+              "word": "yty",
+              "root": "y",
+              "meaning": "[☉CELESTIAL|ROOT:y|ADJ/descriptor]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            }
+          ]
+        },
+        {
+          "line_id": "f72v3.33",
+          "label_type": "@Cc",
+          "text": "okesee[s:r],ar,chkeeol.okeolaiin.chalal.ykeeodarar.oleeody,shedy.solar.aldy.oteor.cheor",
+          "word_count": 12,
+          "translations": [
+            {
+              "word": "okesee[s:r]",
+              "root": "ese",
+              "meaning": "star",
+              "confidence": 0.8,
+              "method": "FUZZY-COPTIC(astro)"
+            },
+            {
+              "word": "ar",
+              "root": "ar",
+              "meaning": "king/great",
+              "confidence": 0.75,
+              "method": "DICT(Coptic)"
+            },
+            {
+              "word": "chkeeol",
+              "root": "che",
+              "meaning": "fall/place",
+              "confidence": 0.8,
+              "method": "DICT(Coptic)"
+            },
+            {
+              "word": "okeolaiin",
+              "root": "eol",
+              "meaning": "stone",
+              "confidence": 0.8,
+              "method": "FUZZY-COPTIC(astro)"
+            },
+            {
+              "word": "chalal",
+              "root": "chal",
+              "meaning": "[ROOT:chal|NOM/zodiac]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            },
+            {
+              "word": "ykeeodarar",
+              "root": "eodar",
+              "meaning": "[◆GENERIC|Y+modifier|ROOT:eodar|CELESTIAL/agent]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            },
+            {
+              "word": "oleeody",
+              "root": "le",
+              "meaning": "stone",
+              "confidence": 0.8,
+              "method": "FUZZY-COPTIC(astro)"
+            },
+            {
+              "word": "shedy",
+              "root": "h",
+              "meaning": "moon",
+              "confidence": 0.8,
+              "method": "FUZZY-COPTIC(astro)"
+            },
+            {
+              "word": "solar",
+              "root": "l",
+              "meaning": "stone",
+              "confidence": 0.8,
+              "method": "FUZZY-COPTIC(astro)"
+            },
+            {
+              "word": "aldy",
+              "root": "al",
+              "meaning": "stone/rock",
+              "confidence": 1.0,
+              "method": "DICT(Coptic)"
+            },
+            {
+              "word": "oteor",
+              "root": "e",
+              "meaning": "[☉CELESTIAL|O+article?|ROOT:e|PHARMA/agent]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            },
+            {
+              "word": "cheor",
+              "root": "che",
+              "meaning": "fall/place",
+              "confidence": 0.8,
+              "method": "DICT(Coptic)"
+            }
+          ]
+        }
+      ],
+      "stats": {
+        "all": {
+          "total_words": 118,
+          "by_confidence": {
+            "GOOD (0.7-0.9)": 45,
+            "UNKNOWN (0.0)": 61,
+            "HIGH (≥0.9)": 11,
+            "MEDIUM (0.5-0.7)": 1
+          },
+          "by_method": {
+            "DICT(Coptic)": 25,
+            "FUZZY-COPTIC(astro)": 19,
+            "STRUCTURAL-ONLY": 60,
+            "FUZZY-COPTIC(body)": 1,
+            "FUZZY-COPTIC(action)": 10,
+            "FUZZY-COPTIC(element)": 1,
+            "unparseable": 1,
+            "DICT(Arabic)": 1
+          },
+          "by_determinative": {
+            "t": 31,
+            "k": 36,
+            "p": 4,
+            "f": 2
+          },
+          "by_suffix": {
+            "ar": 5,
+            "ody": 8,
+            "al": 4,
+            "ey": 11,
+            "y": 30,
+            "edy": 6,
+            "ol": 7,
+            "dy": 8,
+            "aiin": 3,
+            "or": 4,
+            "iin": 5,
+            "sy": 1
+          },
+          "high_conf_meanings": [
+            "star(short)",
+            "star",
+            "star",
+            "moon",
+            "fall/occur",
+            "moon",
+            "moon",
+            "moon",
+            "tongue",
+            "say/speak",
+            "stone",
+            "moon",
+            "say/speak",
+            "lord",
+            "say/speak",
+            "say/speak",
+            "fall/place",
+            "say/speak",
+            "moon",
+            "stone",
+            "hot/warm",
+            "water/lion",
+            "stone/rock",
+            "stone",
+            "say/speak",
+            "stone/rock",
+            "stone/rock",
+            "sun",
+            "king/great",
+            "say/speak",
+            "carry/lift",
+            "star",
+            "fall/place",
+            "say/speak",
+            "stone",
+            "say/speak",
+            "stone",
+            "stone",
+            "lord/master",
+            "celestial body",
+            "say/speak",
+            "king/great",
+            "star(short)",
+            "lion/asad",
+            "stone/rock",
+            "stone/rock",
+            "stone/rock",
+            "star",
+            "king/great",
+            "fall/place",
+            "stone",
+            "stone",
+            "moon",
+            "stone",
+            "stone/rock",
+            "fall/place"
+          ],
+          "translation_rate": 0.4830508474576271
+        },
+        "rings": {
+          "total_words": 84,
+          "by_confidence": {
+            "GOOD (0.7-0.9)": 38,
+            "UNKNOWN (0.0)": 42,
+            "HIGH (≥0.9)": 3,
+            "MEDIUM (0.5-0.7)": 1
+          },
+          "by_method": {
+            "DICT(Coptic)": 14,
+            "FUZZY-COPTIC(astro)": 18,
+            "STRUCTURAL-ONLY": 41,
+            "FUZZY-COPTIC(body)": 1,
+            "FUZZY-COPTIC(action)": 8,
+            "FUZZY-COPTIC(element)": 1,
+            "unparseable": 1
+          },
+          "by_determinative": {
+            "t": 24,
+            "k": 26,
+            "p": 1
+          },
+          "by_suffix": {
+            "ar": 5,
+            "ody": 7,
+            "al": 3,
+            "ey": 8,
+            "y": 15,
+            "edy": 6,
+            "ol": 6,
+            "dy": 6,
+            "aiin": 2,
+            "or": 4,
+            "iin": 3,
+            "sy": 1
+          },
+          "high_conf_meanings": [
+            "star(short)",
+            "star",
+            "star",
+            "moon",
+            "fall/occur",
+            "moon",
+            "moon",
+            "moon",
+            "tongue",
+            "say/speak",
+            "stone",
+            "moon",
+            "say/speak",
+            "lord",
+            "say/speak",
+            "say/speak",
+            "fall/place",
+            "say/speak",
+            "moon",
+            "stone",
+            "sun",
+            "king/great",
+            "say/speak",
+            "carry/lift",
+            "star",
+            "fall/place",
+            "say/speak",
+            "stone",
+            "say/speak",
+            "stone",
+            "stone",
+            "lord/master",
+            "star",
+            "king/great",
+            "fall/place",
+            "stone",
+            "stone",
+            "moon",
+            "stone",
+            "stone/rock",
+            "fall/place"
+          ],
+          "translation_rate": 0.5
+        },
+        "nymphs": {
+          "total_words": 34,
+          "by_confidence": {
+            "HIGH (≥0.9)": 8,
+            "UNKNOWN (0.0)": 19,
+            "GOOD (0.7-0.9)": 7
+          },
+          "by_method": {
+            "DICT(Coptic)": 11,
+            "STRUCTURAL-ONLY": 19,
+            "FUZZY-COPTIC(astro)": 1,
+            "FUZZY-COPTIC(action)": 2,
+            "DICT(Arabic)": 1
+          },
+          "by_determinative": {
+            "k": 10,
+            "t": 7,
+            "f": 2,
+            "p": 3
+          },
+          "by_suffix": {
+            "ey": 3,
+            "y": 15,
+            "ody": 1,
+            "iin": 2,
+            "al": 1,
+            "ol": 1,
+            "dy": 2,
+            "aiin": 1
+          },
+          "high_conf_meanings": [
+            "hot/warm",
+            "water/lion",
+            "stone/rock",
+            "stone",
+            "say/speak",
+            "stone/rock",
+            "stone/rock",
+            "celestial body",
+            "say/speak",
+            "king/great",
+            "star(short)",
+            "lion/asad",
+            "stone/rock",
+            "stone/rock",
+            "stone/rock"
+          ],
+          "translation_rate": 0.4411764705882353
+        }
+      }
+    },
+    "Leo-f72v1": {
+      "folio": "f72v1",
+      "sections": [
+        {
+          "line_id": "f72v1.1",
+          "label_type": "@Cc",
+          "text": "oteos.alar.otar.air.chpaly.oteody.okchesal.otear.alshey.oleealy.sh?tey.oteos.alal.dals,alchol.ytolaiin.ydaiin.chotar.y,tal.oto.shoty.otey.okchedaly.chdar,y.s,ar,otedy.otorar.shedy.opsheytey.opairaly.choshydy.otar.cheedy.otaraiin.cheeky.okolar.ychey.otechety",
+          "word_count": 37,
+          "translations": [
+            {
+              "word": "oteos",
+              "root": "eos",
+              "meaning": "star",
+              "confidence": 0.85,
+              "method": "DICT(Coptic)"
+            },
+            {
+              "word": "alar",
+              "root": "al",
+              "meaning": "stone/rock",
+              "confidence": 1.0,
+              "method": "DICT(Coptic)"
+            },
+            {
+              "word": "otar",
+              "root": "ar",
+              "meaning": "king/great",
+              "confidence": 0.75,
+              "method": "DICT(Coptic)"
+            },
+            {
+              "word": "air",
+              "root": "air",
+              "meaning": "sun",
+              "confidence": 0.8,
+              "method": "FUZZY-COPTIC(astro)"
+            },
+            {
+              "word": "chpaly",
+              "root": "chal",
+              "meaning": "[⚗PROCESS|ROOT:chal|ADJ/descriptor]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            },
+            {
+              "word": "oteody",
+              "root": "e",
+              "meaning": "[☉CELESTIAL|O+article?|ROOT:e|BIO/organic]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            },
+            {
+              "word": "okchesal",
+              "root": "es",
+              "meaning": "star(short)",
+              "confidence": 0.8,
+              "method": "DICT(Coptic)"
+            },
+            {
+              "word": "otear",
+              "root": "e",
+              "meaning": "[☉CELESTIAL|O+article?|ROOT:e|CELESTIAL/agent]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            },
+            {
+              "word": "alshey",
+              "root": "alsh",
+              "meaning": "tongue",
+              "confidence": 0.8,
+              "method": "FUZZY-COPTIC(body)"
+            },
+            {
+              "word": "oleealy",
+              "root": "leal",
+              "meaning": "[O+article?|ROOT:leal|ADJ/descriptor]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            },
+            {
+              "word": "sh?tey",
+              "root": "h",
+              "meaning": "moon",
+              "confidence": 0.8,
+              "method": "FUZZY-COPTIC(astro)"
+            },
+            {
+              "word": "oteos",
+              "root": "eos",
+              "meaning": "star",
+              "confidence": 0.85,
+              "method": "DICT(Coptic)"
+            },
+            {
+              "word": "alal",
+              "root": "al",
+              "meaning": "stone/rock",
+              "confidence": 1.0,
+              "method": "DICT(Coptic)"
+            },
+            {
+              "word": "dals",
+              "root": "als",
+              "meaning": "tongue",
+              "confidence": 0.8,
+              "method": "FUZZY-COPTIC(body)"
+            },
+            {
+              "word": "alchol",
+              "root": "alch",
+              "meaning": "[ROOT:alch|PHARMA/liquid]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            },
+            {
+              "word": "ytolaiin",
+              "root": "ol",
+              "meaning": "carry/lift",
+              "confidence": 0.7,
+              "method": "DICT(Coptic)"
+            },
+            {
+              "word": "ydaiin",
+              "root": "d",
+              "meaning": "[Y+modifier|ROOT:d|SUFFIX.aiin]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            },
+            {
+              "word": "chotar",
+              "root": "cho",
+              "meaning": "hundred/put",
+              "confidence": 0.6,
+              "method": "DICT(Coptic)"
+            },
+            {
+              "word": "ytal",
+              "root": "al",
+              "meaning": "stone/rock",
+              "confidence": 1.0,
+              "method": "DICT(Coptic)"
+            },
+            {
+              "word": "oto",
+              "root": "oo",
+              "meaning": "[☉CELESTIAL|ROOT:oo]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            },
+            {
+              "word": "shoty",
+              "root": "ho",
+              "meaning": "moon",
+              "confidence": 0.8,
+              "method": "FUZZY-COPTIC(astro)"
+            },
+            {
+              "word": "otey",
+              "root": "e",
+              "meaning": "[☉CELESTIAL|O+article?|ROOT:e|ADJ/descriptor]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            },
+            {
+              "word": "okchedaly",
+              "root": "edal",
+              "meaning": "[◆GENERIC|O+article?|ROOT:edal|ADJ/descriptor]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            },
+            {
+              "word": "chdary",
+              "root": "chdar",
+              "meaning": "[ROOT:chdar|ADJ/descriptor]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            },
+            {
+              "word": "sarotedy",
+              "root": "aro",
+              "meaning": "sun",
+              "confidence": 0.8,
+              "method": "FUZZY-COPTIC(astro)"
+            },
+            {
+              "word": "otorar",
+              "root": "or",
+              "meaning": "king/great",
+              "confidence": 0.7,
+              "method": "DICT(Coptic)"
+            },
+            {
+              "word": "shedy",
+              "root": "h",
+              "meaning": "moon",
+              "confidence": 0.8,
+              "method": "FUZZY-COPTIC(astro)"
+            },
+            {
+              "word": "opsheytey",
+              "root": "ey",
+              "meaning": "[⚗PROCESS|O+article?|ROOT:ey|ADJ/descriptor]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            },
+            {
+              "word": "opairaly",
+              "root": "airal",
+              "meaning": "[⚗PROCESS|O+article?|ROOT:airal|ADJ/descriptor]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            },
+            {
+              "word": "choshydy",
+              "root": "choshy",
+              "meaning": "lord",
+              "confidence": 0.56,
+              "method": "FUZZY-COPTIC(element)"
+            },
+            {
+              "word": "otar",
+              "root": "ar",
+              "meaning": "king/great",
+              "confidence": 0.75,
+              "method": "DICT(Coptic)"
+            },
+            {
+              "word": "cheedy",
+              "root": "ch",
+              "meaning": "say/speak",
+              "confidence": 0.8,
+              "method": "FUZZY-COPTIC(action)"
+            },
+            {
+              "word": "otaraiin",
+              "root": "ar",
+              "meaning": "king/great",
+              "confidence": 0.75,
+              "method": "DICT(Coptic)"
+            },
+            {
+              "word": "cheeky",
+              "root": "ch",
+              "meaning": "say/speak",
+              "confidence": 0.8,
+              "method": "FUZZY-COPTIC(action)"
+            },
+            {
+              "word": "okolar",
+              "root": "ol",
+              "meaning": "carry/lift",
+              "confidence": 0.7,
+              "method": "DICT(Coptic)"
+            },
+            {
+              "word": "ychey",
+              "root": "ch",
+              "meaning": "say/speak",
+              "confidence": 0.8,
+              "method": "FUZZY-COPTIC(action)"
+            },
+            {
+              "word": "otechety",
+              "root": "ech",
+              "meaning": "say/speak",
+              "confidence": 0.8,
+              "method": "FUZZY-COPTIC(action)"
+            }
+          ]
+        },
+        {
+          "line_id": "f72v1.2",
+          "label_type": "@Lz",
+          "text": "oeeoty",
+          "word_count": 1,
+          "translations": [
+            {
+              "word": "oeeoty",
+              "root": "eo",
+              "meaning": "[☉CELESTIAL|O+article?|ROOT:eo|ADJ/descriptor]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            }
+          ]
+        },
+        {
+          "line_id": "f72v1.3",
+          "label_type": "&Lz",
+          "text": "octhy",
+          "word_count": 1,
+          "translations": [
+            {
+              "word": "octhy",
+              "root": "o",
+              "meaning": "[☉CELESTIAL|ROOT:o|ADJ/descriptor]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            }
+          ]
+        },
+        {
+          "line_id": "f72v1.4",
+          "label_type": "&Lz",
+          "text": "oteoly",
+          "word_count": 1,
+          "translations": [
+            {
+              "word": "oteoly",
+              "root": "eol",
+              "meaning": "stone",
+              "confidence": 0.8,
+              "method": "FUZZY-COPTIC(astro)"
+            }
+          ]
+        },
+        {
+          "line_id": "f72v1.5",
+          "label_type": "&Lz",
+          "text": "okeoly",
+          "word_count": 1,
+          "translations": [
+            {
+              "word": "okeoly",
+              "root": "eol",
+              "meaning": "stone",
+              "confidence": 0.8,
+              "method": "FUZZY-COPTIC(astro)"
+            }
+          ]
+        },
+        {
+          "line_id": "f72v1.6",
+          "label_type": "&Lz",
+          "text": "oeees",
+          "word_count": 1,
+          "translations": [
+            {
+              "word": "oeees",
+              "root": "es",
+              "meaning": "star(short)",
+              "confidence": 0.8,
+              "method": "DICT(Coptic)"
+            }
+          ]
+        },
+        {
+          "line_id": "f72v1.7",
+          "label_type": "&Lz",
+          "text": "o{cfh'h}y",
+          "word_count": 1,
+          "translations": [
+            {
+              "word": "o{cfh'h}y",
+              "root": "o",
+              "meaning": "[ROOT:o|ADJ/descriptor]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            }
+          ]
+        },
+        {
+          "line_id": "f72v1.8",
+          "label_type": "&Lz",
+          "text": "oees",
+          "word_count": 1,
+          "translations": [
+            {
+              "word": "oees",
+              "root": "es",
+              "meaning": "star(short)",
+              "confidence": 0.8,
+              "method": "DICT(Coptic)"
+            }
+          ]
+        },
+        {
+          "line_id": "f72v1.9",
+          "label_type": "&Lz",
+          "text": "okeeoly",
+          "word_count": 1,
+          "translations": [
+            {
+              "word": "okeeoly",
+              "root": "eol",
+              "meaning": "stone",
+              "confidence": 0.8,
+              "method": "FUZZY-COPTIC(astro)"
+            }
+          ]
+        },
+        {
+          "line_id": "f72v1.10",
+          "label_type": "&Lz",
+          "text": "odal",
+          "word_count": 1,
+          "translations": [
+            {
+              "word": "odal",
+              "root": "d",
+              "meaning": "[O+article?|ROOT:d|NOM/zodiac]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            }
+          ]
+        },
+        {
+          "line_id": "f72v1.11",
+          "label_type": "&Lz",
+          "text": "aiinod",
+          "word_count": 1,
+          "translations": [
+            {
+              "word": "aiinod",
+              "root": "aiinod",
+              "meaning": "[ROOT:aiinod]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            }
+          ]
+        },
+        {
+          "line_id": "f72v1.12",
+          "label_type": "&Lz",
+          "text": "od[?:ch]dy",
+          "word_count": 1,
+          "translations": [
+            {
+              "word": "od[?:ch]dy",
+              "root": "d",
+              "meaning": "[O+article?|ROOT:d|BIO/organic]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            }
+          ]
+        },
+        {
+          "line_id": "f72v1.13",
+          "label_type": "&Lz",
+          "text": "oteod",
+          "word_count": 1,
+          "translations": [
+            {
+              "word": "oteod",
+              "root": "eod",
+              "meaning": "[☉CELESTIAL|O+article?|ROOT:eod]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            }
+          ]
+        },
+        {
+          "line_id": "f72v1.14",
+          "label_type": "&Lz",
+          "text": "yteod",
+          "word_count": 1,
+          "translations": [
+            {
+              "word": "yteod",
+              "root": "eod",
+              "meaning": "[☉CELESTIAL|Y+modifier|ROOT:eod]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            }
+          ]
+        },
+        {
+          "line_id": "f72v1.15",
+          "label_type": "&Lz",
+          "text": "ok[?:ch]ody",
+          "word_count": 1,
+          "translations": [
+            {
+              "word": "ok[?:ch]ody",
+              "root": "o",
+              "meaning": "[◆GENERIC|O+article?|ROOT:o|BIO/organic]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            }
+          ]
+        },
+        {
+          "line_id": "f72v1.16",
+          "label_type": "&Lz",
+          "text": "okal",
+          "word_count": 1,
+          "translations": [
+            {
+              "word": "okal",
+              "root": "al",
+              "meaning": "stone/rock",
+              "confidence": 1.0,
+              "method": "DICT(Coptic)"
+            }
+          ]
+        },
+        {
+          "line_id": "f72v1.17",
+          "label_type": "&Lz",
+          "text": "ytaly",
+          "word_count": 1,
+          "translations": [
+            {
+              "word": "ytaly",
+              "root": "al",
+              "meaning": "stone/rock",
+              "confidence": 1.0,
+              "method": "DICT(Coptic)"
+            }
+          ]
+        },
+        {
+          "line_id": "f72v1.18",
+          "label_type": "&Lz",
+          "text": "oeeeos",
+          "word_count": 1,
+          "translations": [
+            {
+              "word": "oeeeos",
+              "root": "eos",
+              "meaning": "star",
+              "confidence": 0.85,
+              "method": "DICT(Coptic)"
+            }
+          ]
+        },
+        {
+          "line_id": "f72v1.19",
+          "label_type": "&Lz",
+          "text": "oteofy",
+          "word_count": 1,
+          "translations": [
+            {
+              "word": "oteofy",
+              "root": "eo",
+              "meaning": "[☉CELESTIAL|O+article?|ROOT:eo|ADJ/descriptor]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            }
+          ]
+        },
+        {
+          "line_id": "f72v1.20",
+          "label_type": "&Lz",
+          "text": "cheoepy",
+          "word_count": 1,
+          "translations": [
+            {
+              "word": "cheoepy",
+              "root": "cheo",
+              "meaning": "say/speak",
+              "confidence": 0.8,
+              "method": "FUZZY-COPTIC(action)"
+            }
+          ]
+        },
+        {
+          "line_id": "f72v1.21",
+          "label_type": "&Lz",
+          "text": "ykeedy",
+          "word_count": 1,
+          "translations": [
+            {
+              "word": "ykeedy",
+              "root": "e",
+              "meaning": "[◆GENERIC|Y+modifier|ROOT:e|BIO/organic]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            }
+          ]
+        },
+        {
+          "line_id": "f72v1.22",
+          "label_type": "@Cc",
+          "text": "otar,ar.otol,topar.oteolaiin.ofa[r:s]al.otshedy.ofalar.alshdy.chpar,aiin.okaly.oka?<!hole>.yaly.opcheolfy.opar.cheo{ck}ey.otolopaiin.shaldy.chepchy.otey.tea[n:r]",
+          "word_count": 22,
+          "translations": [
+            {
+              "word": "otar",
+              "root": "ar",
+              "meaning": "king/great",
+              "confidence": 0.75,
+              "method": "DICT(Coptic)"
+            },
+            {
+              "word": "ar",
+              "root": "ar",
+              "meaning": "king/great",
+              "confidence": 0.75,
+              "method": "DICT(Coptic)"
+            },
+            {
+              "word": "otol",
+              "root": "ol",
+              "meaning": "carry/lift",
+              "confidence": 0.7,
+              "method": "DICT(Coptic)"
+            },
+            {
+              "word": "topar",
+              "root": "ar",
+              "meaning": "king/great",
+              "confidence": 0.75,
+              "method": "DICT(Coptic)"
+            },
+            {
+              "word": "oteolaiin",
+              "root": "eol",
+              "meaning": "stone",
+              "confidence": 0.8,
+              "method": "FUZZY-COPTIC(astro)"
+            },
+            {
+              "word": "ofa[r:s]al",
+              "root": "a",
+              "meaning": "[🌿BOTANICAL|O+article?|ROOT:a|NOM/zodiac]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            },
+            {
+              "word": "otshedy",
+              "root": "e",
+              "meaning": "[☉CELESTIAL|O+article?|ROOT:e|BIO/organic]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            },
+            {
+              "word": "ofalar",
+              "root": "al",
+              "meaning": "stone/rock",
+              "confidence": 1.0,
+              "method": "DICT(Coptic)"
+            },
+            {
+              "word": "alshdy",
+              "root": "alsh",
+              "meaning": "tongue",
+              "confidence": 0.8,
+              "method": "FUZZY-COPTIC(body)"
+            },
+            {
+              "word": "chpar",
+              "root": "ch",
+              "meaning": "say/speak",
+              "confidence": 0.8,
+              "method": "FUZZY-COPTIC(action)"
+            },
+            {
+              "word": "aiin",
+              "root": "a",
+              "meaning": "[ROOT:a|SUFFIX.iin]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            },
+            {
+              "word": "okaly",
+              "root": "al",
+              "meaning": "stone/rock",
+              "confidence": 1.0,
+              "method": "DICT(Coptic)"
+            },
+            {
+              "word": "oka?",
+              "root": "oa",
+              "meaning": "one",
+              "confidence": 0.85,
+              "method": "DICT(Coptic)"
+            },
+            {
+              "word": "yaly",
+              "root": "al",
+              "meaning": "stone/rock",
+              "confidence": 1.0,
+              "method": "DICT(Coptic)"
+            },
+            {
+              "word": "opcheolfy",
+              "root": "eol",
+              "meaning": "stone",
+              "confidence": 0.8,
+              "method": "FUZZY-COPTIC(astro)"
+            },
+            {
+              "word": "opar",
+              "root": "ar",
+              "meaning": "king/great",
+              "confidence": 0.75,
+              "method": "DICT(Coptic)"
+            },
+            {
+              "word": "cheo{ck}ey",
+              "root": "cheo",
+              "meaning": "say/speak",
+              "confidence": 0.8,
+              "method": "FUZZY-COPTIC(action)"
+            },
+            {
+              "word": "otolopaiin",
+              "root": "olo",
+              "meaning": "stone",
+              "confidence": 0.8,
+              "method": "FUZZY-COPTIC(astro)"
+            },
+            {
+              "word": "shaldy",
+              "root": "hal",
+              "meaning": "[S+botanical|ROOT:hal|BIO/organic]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            },
+            {
+              "word": "chepchy",
+              "root": "ch",
+              "meaning": "say/speak",
+              "confidence": 0.8,
+              "method": "FUZZY-COPTIC(action)"
+            },
+            {
+              "word": "otey",
+              "root": "e",
+              "meaning": "[☉CELESTIAL|O+article?|ROOT:e|ADJ/descriptor]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            },
+            {
+              "word": "tea[n:r]",
+              "root": "ea",
+              "meaning": "[☉CELESTIAL|ROOT:ea]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            }
+          ]
+        },
+        {
+          "line_id": "f72v1.23",
+          "label_type": "@Lz",
+          "text": "oeeoly",
+          "word_count": 1,
+          "translations": [
+            {
+              "word": "oeeoly",
+              "root": "eol",
+              "meaning": "stone",
+              "confidence": 0.8,
+              "method": "FUZZY-COPTIC(astro)"
+            }
+          ]
+        },
+        {
+          "line_id": "f72v1.24",
+          "label_type": "&Lz",
+          "text": "okydy",
+          "word_count": 1,
+          "translations": [
+            {
+              "word": "okydy",
+              "root": "y",
+              "meaning": "[◆GENERIC|O+article?|ROOT:y|BIO/organic]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            }
+          ]
+        },
+        {
+          "line_id": "f72v1.25",
+          "label_type": "&Lz",
+          "text": "okeey",
+          "word_count": 1,
+          "translations": [
+            {
+              "word": "okeey",
+              "root": "e",
+              "meaning": "[◆GENERIC|O+article?|ROOT:e|ADJ/descriptor]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            }
+          ]
+        },
+        {
+          "line_id": "f72v1.26",
+          "label_type": "&Lz",
+          "text": "oiiny",
+          "word_count": 1,
+          "translations": [
+            {
+              "word": "oiiny",
+              "root": "iin",
+              "meaning": "light",
+              "confidence": 0.8,
+              "method": "FUZZY-COPTIC(astro)"
+            }
+          ]
+        },
+        {
+          "line_id": "f72v1.27",
+          "label_type": "&Lz",
+          "text": "oeey",
+          "word_count": 1,
+          "translations": [
+            {
+              "word": "oeey",
+              "root": "e",
+              "meaning": "[O+article?|ROOT:e|ADJ/descriptor]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            }
+          ]
+        },
+        {
+          "line_id": "f72v1.28",
+          "label_type": "&Lz",
+          "text": "okedy",
+          "word_count": 1,
+          "translations": [
+            {
+              "word": "okedy",
+              "root": "e",
+              "meaning": "[◆GENERIC|O+article?|ROOT:e|BIO/organic]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            }
+          ]
+        },
+        {
+          "line_id": "f72v1.29",
+          "label_type": "&Lz",
+          "text": "ypaim",
+          "word_count": 1,
+          "translations": [
+            {
+              "word": "ypaim",
+              "root": "aim",
+              "meaning": "water",
+              "confidence": 0.8,
+              "method": "FUZZY-COPTIC(element)"
+            }
+          ]
+        },
+        {
+          "line_id": "f72v1.30",
+          "label_type": "&Lz",
+          "text": "okalair",
+          "word_count": 1,
+          "translations": [
+            {
+              "word": "okalair",
+              "root": "alair",
+              "meaning": "[◆GENERIC|O+article?|ROOT:alair]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            }
+          ]
+        },
+        {
+          "line_id": "f72v1.31",
+          "label_type": "&Lz",
+          "text": "oeeody",
+          "word_count": 1,
+          "translations": [
+            {
+              "word": "oeeody",
+              "root": "e",
+              "meaning": "[O+article?|ROOT:e|BIO/organic]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            }
+          ]
+        },
+        {
+          "line_id": "f72v1.32",
+          "label_type": "&Lz",
+          "text": "okeol",
+          "word_count": 1,
+          "translations": [
+            {
+              "word": "okeol",
+              "root": "e",
+              "meaning": "[◆GENERIC|O+article?|ROOT:e|PHARMA/liquid]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            }
+          ]
+        },
+        {
+          "line_id": "f72v1.33",
+          "label_type": "@Cc",
+          "text": "otalal.dalal.ykeols.oteo,r,aiin.yotoam.oteey.saiin.oteeos,am",
+          "word_count": 9,
+          "translations": [
+            {
+              "word": "otalal",
+              "root": "al",
+              "meaning": "stone/rock",
+              "confidence": 1.0,
+              "method": "DICT(Coptic)"
+            },
+            {
+              "word": "dalal",
+              "root": "al",
+              "meaning": "stone/rock",
+              "confidence": 1.0,
+              "method": "DICT(Coptic)"
+            },
+            {
+              "word": "ykeols",
+              "root": "eols",
+              "meaning": "tongue",
+              "confidence": 0.8,
+              "method": "FUZZY-COPTIC(body)"
+            },
+            {
+              "word": "oteoraiin",
+              "root": "eor",
+              "meaning": "sun",
+              "confidence": 0.8,
+              "method": "FUZZY-COPTIC(astro)"
+            },
+            {
+              "word": "yotoam",
+              "root": "ooam",
+              "meaning": "water",
+              "confidence": 0.8,
+              "method": "FUZZY-COPTIC(element)"
+            },
+            {
+              "word": "oteey",
+              "root": "e",
+              "meaning": "[☉CELESTIAL|O+article?|ROOT:e|ADJ/descriptor]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            },
+            {
+              "word": "saiin",
+              "root": "a",
+              "meaning": "[S+botanical|ROOT:a|SUFFIX.iin]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            },
+            {
+              "word": "oteeos",
+              "root": "eos",
+              "meaning": "star",
+              "confidence": 0.85,
+              "method": "DICT(Coptic)"
+            },
+            {
+              "word": "am",
+              "root": "am",
+              "meaning": "water/lion",
+              "confidence": 0.8,
+              "method": "DICT(Coptic)"
+            }
+          ]
+        }
+      ],
+      "stats": {
+        "all": {
+          "total_words": 98,
+          "by_confidence": {
+            "GOOD (0.7-0.9)": 48,
+            "HIGH (≥0.9)": 10,
+            "UNKNOWN (0.0)": 38,
+            "MEDIUM (0.5-0.7)": 2
+          },
+          "by_method": {
+            "DICT(Coptic)": 31,
+            "FUZZY-COPTIC(astro)": 14,
+            "STRUCTURAL-ONLY": 38,
+            "FUZZY-COPTIC(body)": 4,
+            "FUZZY-COPTIC(element)": 3,
+            "FUZZY-COPTIC(action)": 8
+          },
+          "by_determinative": {
+            "t": 37,
+            "p": 9,
+            "k": 17,
+            "f": 2
+          },
+          "by_suffix": {
+            "ar": 7,
+            "y": 24,
+            "ody": 2,
+            "al": 6,
+            "ey": 9,
+            "ol": 2,
+            "aiin": 6,
+            "edy": 3,
+            "dy": 9,
+            "iin": 2
+          },
+          "high_conf_meanings": [
+            "star",
+            "stone/rock",
+            "king/great",
+            "sun",
+            "star(short)",
+            "tongue",
+            "moon",
+            "star",
+            "stone/rock",
+            "tongue",
+            "carry/lift",
+            "stone/rock",
+            "moon",
+            "sun",
+            "king/great",
+            "moon",
+            "king/great",
+            "say/speak",
+            "king/great",
+            "say/speak",
+            "carry/lift",
+            "say/speak",
+            "say/speak",
+            "stone",
+            "stone",
+            "star(short)",
+            "star(short)",
+            "stone",
+            "stone/rock",
+            "stone/rock",
+            "star",
+            "say/speak",
+            "king/great",
+            "king/great",
+            "carry/lift",
+            "king/great",
+            "stone",
+            "stone/rock",
+            "tongue",
+            "say/speak",
+            "stone/rock",
+            "one",
+            "stone/rock",
+            "stone",
+            "king/great",
+            "say/speak",
+            "stone",
+            "say/speak",
+            "stone",
+            "light",
+            "water",
+            "stone/rock",
+            "stone/rock",
+            "tongue",
+            "sun",
+            "water",
+            "star",
+            "water/lion"
+          ],
+          "translation_rate": 0.6122448979591837
+        },
+        "rings": {
+          "total_words": 68,
+          "by_confidence": {
+            "GOOD (0.7-0.9)": 38,
+            "HIGH (≥0.9)": 8,
+            "UNKNOWN (0.0)": 20,
+            "MEDIUM (0.5-0.7)": 2
+          },
+          "by_method": {
+            "DICT(Coptic)": 26,
+            "FUZZY-COPTIC(astro)": 9,
+            "STRUCTURAL-ONLY": 20,
+            "FUZZY-COPTIC(body)": 4,
+            "FUZZY-COPTIC(element)": 2,
+            "FUZZY-COPTIC(action)": 7
+          },
+          "by_determinative": {
+            "t": 30,
+            "p": 7,
+            "k": 7,
+            "f": 2
+          },
+          "by_suffix": {
+            "ar": 7,
+            "y": 12,
+            "ody": 1,
+            "al": 5,
+            "ey": 8,
+            "ol": 1,
+            "aiin": 6,
+            "edy": 3,
+            "dy": 4,
+            "iin": 2
+          },
+          "high_conf_meanings": [
+            "star",
+            "stone/rock",
+            "king/great",
+            "sun",
+            "star(short)",
+            "tongue",
+            "moon",
+            "star",
+            "stone/rock",
+            "tongue",
+            "carry/lift",
+            "stone/rock",
+            "moon",
+            "sun",
+            "king/great",
+            "moon",
+            "king/great",
+            "say/speak",
+            "king/great",
+            "say/speak",
+            "carry/lift",
+            "say/speak",
+            "say/speak",
+            "king/great",
+            "king/great",
+            "carry/lift",
+            "king/great",
+            "stone",
+            "stone/rock",
+            "tongue",
+            "say/speak",
+            "stone/rock",
+            "one",
+            "stone/rock",
+            "stone",
+            "king/great",
+            "say/speak",
+            "stone",
+            "say/speak",
+            "stone/rock",
+            "stone/rock",
+            "tongue",
+            "sun",
+            "water",
+            "star",
+            "water/lion"
+          ],
+          "translation_rate": 0.7058823529411765
+        },
+        "nymphs": {
+          "total_words": 30,
+          "by_confidence": {
+            "UNKNOWN (0.0)": 18,
+            "GOOD (0.7-0.9)": 10,
+            "HIGH (≥0.9)": 2
+          },
+          "by_method": {
+            "STRUCTURAL-ONLY": 18,
+            "FUZZY-COPTIC(astro)": 5,
+            "DICT(Coptic)": 5,
+            "FUZZY-COPTIC(action)": 1,
+            "FUZZY-COPTIC(element)": 1
+          },
+          "by_determinative": {
+            "t": 7,
+            "k": 10,
+            "p": 2
+          },
+          "by_suffix": {
+            "y": 12,
+            "al": 1,
+            "dy": 5,
+            "ey": 1,
+            "ody": 1,
+            "ol": 1
+          },
+          "high_conf_meanings": [
+            "stone",
+            "stone",
+            "star(short)",
+            "star(short)",
+            "stone",
+            "stone/rock",
+            "stone/rock",
+            "star",
+            "say/speak",
+            "stone",
+            "light",
+            "water"
+          ],
+          "translation_rate": 0.4
+        }
+      }
+    },
+    "Scorpio-f73r": {
+      "folio": "f73r",
+      "sections": [
+        {
+          "line_id": "f73r.1",
+          "label_type": "@Lz",
+          "text": "otaly",
+          "word_count": 1,
+          "translations": [
+            {
+              "word": "otaly",
+              "root": "al",
+              "meaning": "stone/rock",
+              "confidence": 1.0,
+              "method": "DICT(Coptic)"
+            }
+          ]
+        },
+        {
+          "line_id": "f73r.2",
+          "label_type": "&Lz",
+          "text": "chockhy",
+          "word_count": 1,
+          "translations": [
+            {
+              "word": "chockhy",
+              "root": "cho",
+              "meaning": "hundred/put",
+              "confidence": 0.6,
+              "method": "DICT(Coptic)"
+            }
+          ]
+        },
+        {
+          "line_id": "f73r.3",
+          "label_type": "&Lz",
+          "text": "otedy",
+          "word_count": 1,
+          "translations": [
+            {
+              "word": "otedy",
+              "root": "e",
+              "meaning": "[☉CELESTIAL|O+article?|ROOT:e|BIO/organic]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            }
+          ]
+        },
+        {
+          "line_id": "f73r.4",
+          "label_type": "&Lz",
+          "text": "yteeody",
+          "word_count": 1,
+          "translations": [
+            {
+              "word": "yteeody",
+              "root": "e",
+              "meaning": "[☉CELESTIAL|Y+modifier|ROOT:e|BIO/organic]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            }
+          ]
+        },
+        {
+          "line_id": "f73r.5",
+          "label_type": "@Cc",
+          "text": "ypolcheey.salchedal.chepchey.daraly.oteos,air,ar.oteosdal.chot[oe:ee]y.soteees,alshey.[{oh}:ch]es.al,chees.che[o:a]ly.jeiii?.choteey.cheteey.cheteeeos,aiin.chetchody.chedar.ar.cheteey.ote{co}s,ar.airalor.shetee.yteey.cheody.ykeydam.oteos.alar.alcheky",
+          "word_count": 34,
+          "translations": [
+            {
+              "word": "ypolcheey",
+              "root": "olch",
+              "meaning": "[⚗PROCESS|Y+modifier|ROOT:olch|ADJ/descriptor]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            },
+            {
+              "word": "salchedal",
+              "root": "alched",
+              "meaning": "[S+botanical|ROOT:alched|NOM/zodiac]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            },
+            {
+              "word": "chepchey",
+              "root": "ch",
+              "meaning": "say/speak",
+              "confidence": 0.8,
+              "method": "FUZZY-COPTIC(action)"
+            },
+            {
+              "word": "daraly",
+              "root": "aral",
+              "meaning": "[D+process|ROOT:aral|ADJ/descriptor]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            },
+            {
+              "word": "oteos",
+              "root": "eos",
+              "meaning": "star",
+              "confidence": 0.85,
+              "method": "DICT(Coptic)"
+            },
+            {
+              "word": "air",
+              "root": "air",
+              "meaning": "sun",
+              "confidence": 0.8,
+              "method": "FUZZY-COPTIC(astro)"
+            },
+            {
+              "word": "ar",
+              "root": "ar",
+              "meaning": "king/great",
+              "confidence": 0.75,
+              "method": "DICT(Coptic)"
+            },
+            {
+              "word": "oteosdal",
+              "root": "eosd",
+              "meaning": "[☉CELESTIAL|O+article?|ROOT:eosd|NOM/zodiac]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            },
+            {
+              "word": "chot[oe:ee]y",
+              "root": "cho",
+              "meaning": "hundred/put",
+              "confidence": 0.6,
+              "method": "DICT(Coptic)"
+            },
+            {
+              "word": "soteees",
+              "root": "es",
+              "meaning": "star(short)",
+              "confidence": 0.8,
+              "method": "DICT(Coptic)"
+            },
+            {
+              "word": "alshey",
+              "root": "alsh",
+              "meaning": "tongue",
+              "confidence": 0.8,
+              "method": "FUZZY-COPTIC(body)"
+            },
+            {
+              "word": "[{oh}:ch]es",
+              "root": "es",
+              "meaning": "star(short)",
+              "confidence": 0.8,
+              "method": "DICT(Coptic)"
+            },
+            {
+              "word": "al",
+              "root": "al",
+              "meaning": "stone/rock",
+              "confidence": 1.0,
+              "method": "DICT(Coptic)"
+            },
+            {
+              "word": "chees",
+              "root": "ches",
+              "meaning": "lord",
+              "confidence": 0.8,
+              "method": "FUZZY-COPTIC(element)"
+            },
+            {
+              "word": "che[o:a]ly",
+              "root": "chel",
+              "meaning": "[ROOT:chel|ADJ/descriptor]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            },
+            {
+              "word": "jeiii?",
+              "root": "jeiii",
+              "meaning": "say/speak",
+              "confidence": 0.8,
+              "method": "FUZZY-COPTIC(action)"
+            },
+            {
+              "word": "choteey",
+              "root": "cho",
+              "meaning": "hundred/put",
+              "confidence": 0.6,
+              "method": "DICT(Coptic)"
+            },
+            {
+              "word": "cheteey",
+              "root": "ch",
+              "meaning": "say/speak",
+              "confidence": 0.8,
+              "method": "FUZZY-COPTIC(action)"
+            },
+            {
+              "word": "cheteeeos",
+              "root": "cheos",
+              "meaning": "lord",
+              "confidence": 0.8,
+              "method": "FUZZY-COPTIC(element)"
+            },
+            {
+              "word": "aiin",
+              "root": "a",
+              "meaning": "[ROOT:a|SUFFIX.iin]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            },
+            {
+              "word": "chetchody",
+              "root": "che",
+              "meaning": "fall/place",
+              "confidence": 0.8,
+              "method": "DICT(Coptic)"
+            },
+            {
+              "word": "chedar",
+              "root": "ched",
+              "meaning": "[ROOT:ched|CELESTIAL/agent]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            },
+            {
+              "word": "ar",
+              "root": "ar",
+              "meaning": "king/great",
+              "confidence": 0.75,
+              "method": "DICT(Coptic)"
+            },
+            {
+              "word": "cheteey",
+              "root": "ch",
+              "meaning": "say/speak",
+              "confidence": 0.8,
+              "method": "FUZZY-COPTIC(action)"
+            },
+            {
+              "word": "ote{co}s",
+              "root": "es",
+              "meaning": "star(short)",
+              "confidence": 0.8,
+              "method": "DICT(Coptic)"
+            },
+            {
+              "word": "ar",
+              "root": "ar",
+              "meaning": "king/great",
+              "confidence": 0.75,
+              "method": "DICT(Coptic)"
+            },
+            {
+              "word": "airalor",
+              "root": "airal",
+              "meaning": "[ROOT:airal|PHARMA/agent]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            },
+            {
+              "word": "shetee",
+              "root": "he",
+              "meaning": "fall/occur",
+              "confidence": 1.0,
+              "method": "DICT(Coptic)"
+            },
+            {
+              "word": "yteey",
+              "root": "e",
+              "meaning": "[☉CELESTIAL|Y+modifier|ROOT:e|ADJ/descriptor]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            },
+            {
+              "word": "cheody",
+              "root": "che",
+              "meaning": "fall/place",
+              "confidence": 0.8,
+              "method": "DICT(Coptic)"
+            },
+            {
+              "word": "ykeydam",
+              "root": "eydam",
+              "meaning": "[◆GENERIC|Y+modifier|ROOT:eydam]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            },
+            {
+              "word": "oteos",
+              "root": "eos",
+              "meaning": "star",
+              "confidence": 0.85,
+              "method": "DICT(Coptic)"
+            },
+            {
+              "word": "alar",
+              "root": "al",
+              "meaning": "stone/rock",
+              "confidence": 1.0,
+              "method": "DICT(Coptic)"
+            },
+            {
+              "word": "alcheky",
+              "root": "alch",
+              "meaning": "[◆GENERIC|ROOT:alch|ADJ/descriptor]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            }
+          ]
+        },
+        {
+          "line_id": "f73r.6",
+          "label_type": "@Lz",
+          "text": "otaly",
+          "word_count": 1,
+          "translations": [
+            {
+              "word": "otaly",
+              "root": "al",
+              "meaning": "stone/rock",
+              "confidence": 1.0,
+              "method": "DICT(Coptic)"
+            }
+          ]
+        },
+        {
+          "line_id": "f73r.7",
+          "label_type": "&Lz",
+          "text": "okeody",
+          "word_count": 1,
+          "translations": [
+            {
+              "word": "okeody",
+              "root": "e",
+              "meaning": "[◆GENERIC|O+article?|ROOT:e|BIO/organic]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            }
+          ]
+        },
+        {
+          "line_id": "f73r.8",
+          "label_type": "&Lz",
+          "text": "oteedyl",
+          "word_count": 1,
+          "translations": [
+            {
+              "word": "oteedyl",
+              "root": "edyl",
+              "meaning": "[☉CELESTIAL|O+article?|ROOT:edyl]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            }
+          ]
+        },
+        {
+          "line_id": "f73r.9",
+          "label_type": "&Lz",
+          "text": "[y:o]keedy",
+          "word_count": 1,
+          "translations": [
+            {
+              "word": "[y:o]keedy",
+              "root": "e",
+              "meaning": "[◆GENERIC|ROOT:e|BIO/organic]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            }
+          ]
+        },
+        {
+          "line_id": "f73r.10",
+          "label_type": "&Lz",
+          "text": "okeey",
+          "word_count": 1,
+          "translations": [
+            {
+              "word": "okeey",
+              "root": "e",
+              "meaning": "[◆GENERIC|O+article?|ROOT:e|ADJ/descriptor]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            }
+          ]
+        },
+        {
+          "line_id": "f73r.11",
+          "label_type": "&Lz",
+          "text": "okeedy",
+          "word_count": 1,
+          "translations": [
+            {
+              "word": "okeedy",
+              "root": "e",
+              "meaning": "[◆GENERIC|O+article?|ROOT:e|BIO/organic]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            }
+          ]
+        },
+        {
+          "line_id": "f73r.12",
+          "label_type": "&Lz",
+          "text": "ykeeory",
+          "word_count": 1,
+          "translations": [
+            {
+              "word": "ykeeory",
+              "root": "eor",
+              "meaning": "sun",
+              "confidence": 0.8,
+              "method": "FUZZY-COPTIC(astro)"
+            }
+          ]
+        },
+        {
+          "line_id": "f73r.13",
+          "label_type": "&Lz",
+          "text": "oteeosy",
+          "word_count": 1,
+          "translations": [
+            {
+              "word": "oteeosy",
+              "root": "eo",
+              "meaning": "[☉CELESTIAL|O+article?|ROOT:eo|CLASS/type]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            }
+          ]
+        },
+        {
+          "line_id": "f73r.14",
+          "label_type": "&Lz",
+          "text": "shekal",
+          "word_count": 1,
+          "translations": [
+            {
+              "word": "shekal",
+              "root": "he",
+              "meaning": "fall/occur",
+              "confidence": 1.0,
+              "method": "DICT(Coptic)"
+            }
+          ]
+        },
+        {
+          "line_id": "f73r.15",
+          "label_type": "&Lz",
+          "text": "oteedyy",
+          "word_count": 1,
+          "translations": [
+            {
+              "word": "oteedyy",
+              "root": "edy",
+              "meaning": "[☉CELESTIAL|O+article?|ROOT:edy|ADJ/descriptor]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            }
+          ]
+        },
+        {
+          "line_id": "f73r.16",
+          "label_type": "&Lz",
+          "text": "oked[a:o]l",
+          "word_count": 1,
+          "translations": [
+            {
+              "word": "oked[a:o]l",
+              "root": "edl",
+              "meaning": "[◆GENERIC|O+article?|ROOT:edl]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            }
+          ]
+        },
+        {
+          "line_id": "f73r.17",
+          "label_type": "&Lz",
+          "text": "chdy",
+          "word_count": 1,
+          "translations": [
+            {
+              "word": "chdy",
+              "root": "ch",
+              "meaning": "say/speak",
+              "confidence": 0.8,
+              "method": "FUZZY-COPTIC(action)"
+            }
+          ]
+        },
+        {
+          "line_id": "f73r.18",
+          "label_type": "&Lz",
+          "text": "dalshey",
+          "word_count": 1,
+          "translations": [
+            {
+              "word": "dalshey",
+              "root": "alsh",
+              "meaning": "tongue",
+              "confidence": 0.8,
+              "method": "FUZZY-COPTIC(body)"
+            }
+          ]
+        },
+        {
+          "line_id": "f73r.19",
+          "label_type": "&Lz",
+          "text": "opaiin",
+          "word_count": 1,
+          "translations": [
+            {
+              "word": "opaiin",
+              "root": "a",
+              "meaning": "[⚗PROCESS|O+article?|ROOT:a|SUFFIX.iin]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            }
+          ]
+        },
+        {
+          "line_id": "f73r.20",
+          "label_type": "&Lz",
+          "text": "okeos",
+          "word_count": 1,
+          "translations": [
+            {
+              "word": "okeos",
+              "root": "eos",
+              "meaning": "star",
+              "confidence": 0.85,
+              "method": "DICT(Coptic)"
+            }
+          ]
+        },
+        {
+          "line_id": "f73r.21",
+          "label_type": "&Lz",
+          "text": "otey",
+          "word_count": 1,
+          "translations": [
+            {
+              "word": "otey",
+              "root": "e",
+              "meaning": "[☉CELESTIAL|O+article?|ROOT:e|ADJ/descriptor]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            }
+          ]
+        },
+        {
+          "line_id": "f73r.22",
+          "label_type": "@Cc",
+          "text": "oteey.dar.al.opaiin.olalaiin.s.air,am.chopchedy.chdar.oram.otareees.olteey.okees.otar,chey.oteas,ochor.oparchey.daiin.qocheey.s,cheey.dal.cheesy",
+          "word_count": 24,
+          "translations": [
+            {
+              "word": "oteey",
+              "root": "e",
+              "meaning": "[☉CELESTIAL|O+article?|ROOT:e|ADJ/descriptor]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            },
+            {
+              "word": "dar",
+              "root": "ar",
+              "meaning": "king/great",
+              "confidence": 0.75,
+              "method": "DICT(Coptic)"
+            },
+            {
+              "word": "al",
+              "root": "al",
+              "meaning": "stone/rock",
+              "confidence": 1.0,
+              "method": "DICT(Coptic)"
+            },
+            {
+              "word": "opaiin",
+              "root": "a",
+              "meaning": "[⚗PROCESS|O+article?|ROOT:a|SUFFIX.iin]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            },
+            {
+              "word": "olalaiin",
+              "root": "lal",
+              "meaning": "[O+article?|ROOT:lal|SUFFIX.aiin]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            },
+            {
+              "word": "s",
+              "root": "s",
+              "meaning": "star",
+              "confidence": 0.8,
+              "method": "FUZZY-COPTIC(astro)"
+            },
+            {
+              "word": "air",
+              "root": "air",
+              "meaning": "sun",
+              "confidence": 0.8,
+              "method": "FUZZY-COPTIC(astro)"
+            },
+            {
+              "word": "am",
+              "root": "am",
+              "meaning": "water/lion",
+              "confidence": 0.8,
+              "method": "DICT(Coptic)"
+            },
+            {
+              "word": "chopchedy",
+              "root": "cho",
+              "meaning": "hundred/put",
+              "confidence": 0.6,
+              "method": "DICT(Coptic)"
+            },
+            {
+              "word": "chdar",
+              "root": "chd",
+              "meaning": "[ROOT:chd|CELESTIAL/agent]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            },
+            {
+              "word": "oram",
+              "root": "ram",
+              "meaning": "[O+article?|ROOT:ram]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            },
+            {
+              "word": "otareees",
+              "root": "ares",
+              "meaning": "south",
+              "confidence": 0.8,
+              "method": "FUZZY-COPTIC(astro)"
+            },
+            {
+              "word": "olteey",
+              "root": "l",
+              "meaning": "stone",
+              "confidence": 0.8,
+              "method": "FUZZY-COPTIC(astro)"
+            },
+            {
+              "word": "okees",
+              "root": "es",
+              "meaning": "star(short)",
+              "confidence": 0.8,
+              "method": "DICT(Coptic)"
+            },
+            {
+              "word": "otar",
+              "root": "ar",
+              "meaning": "king/great",
+              "confidence": 0.75,
+              "method": "DICT(Coptic)"
+            },
+            {
+              "word": "chey",
+              "root": "ch",
+              "meaning": "say/speak",
+              "confidence": 0.8,
+              "method": "FUZZY-COPTIC(action)"
+            },
+            {
+              "word": "oteas",
+              "root": "eas",
+              "meaning": "star",
+              "confidence": 0.8,
+              "method": "FUZZY-COPTIC(astro)"
+            },
+            {
+              "word": "ochor",
+              "root": "ch",
+              "meaning": "say/speak",
+              "confidence": 0.8,
+              "method": "FUZZY-COPTIC(action)"
+            },
+            {
+              "word": "oparchey",
+              "root": "arch",
+              "meaning": "[⚗PROCESS|O+article?|ROOT:arch|ADJ/descriptor]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            },
+            {
+              "word": "daiin",
+              "root": "a",
+              "meaning": "[D+process|ROOT:a|SUFFIX.iin]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            },
+            {
+              "word": "qocheey",
+              "root": "ch",
+              "meaning": "say/speak",
+              "confidence": 0.8,
+              "method": "FUZZY-COPTIC(action)"
+            },
+            {
+              "word": "scheey",
+              "root": "ch",
+              "meaning": "say/speak",
+              "confidence": 0.8,
+              "method": "FUZZY-COPTIC(action)"
+            },
+            {
+              "word": "dal",
+              "root": "al",
+              "meaning": "stone/rock",
+              "confidence": 1.0,
+              "method": "DICT(Coptic)"
+            },
+            {
+              "word": "cheesy",
+              "root": "che",
+              "meaning": "fall/place",
+              "confidence": 0.8,
+              "method": "DICT(Coptic)"
+            }
+          ]
+        },
+        {
+          "line_id": "f73r.23",
+          "label_type": "@Lz",
+          "text": "okary",
+          "word_count": 1,
+          "translations": [
+            {
+              "word": "okary",
+              "root": "ar",
+              "meaning": "king/great",
+              "confidence": 0.75,
+              "method": "DICT(Coptic)"
+            }
+          ]
+        },
+        {
+          "line_id": "f73r.24",
+          "label_type": "&Lz",
+          "text": "okeeody",
+          "word_count": 1,
+          "translations": [
+            {
+              "word": "okeeody",
+              "root": "e",
+              "meaning": "[◆GENERIC|O+article?|ROOT:e|BIO/organic]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            }
+          ]
+        },
+        {
+          "line_id": "f73r.25",
+          "label_type": "&Lz",
+          "text": "oyteedy",
+          "word_count": 1,
+          "translations": [
+            {
+              "word": "oyteedy",
+              "root": "y",
+              "meaning": "[☉CELESTIAL|O+article?|ROOT:y|BIO/organic]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            }
+          ]
+        },
+        {
+          "line_id": "f73r.26",
+          "label_type": "&Lz",
+          "text": "oky",
+          "word_count": 1,
+          "translations": [
+            {
+              "word": "oky",
+              "root": "o",
+              "meaning": "[◆GENERIC|ROOT:o|ADJ/descriptor]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            }
+          ]
+        },
+        {
+          "line_id": "f73r.27",
+          "label_type": "&Lz",
+          "text": "chefy",
+          "word_count": 1,
+          "translations": [
+            {
+              "word": "chefy",
+              "root": "ch",
+              "meaning": "say/speak",
+              "confidence": 0.8,
+              "method": "FUZZY-COPTIC(action)"
+            }
+          ]
+        },
+        {
+          "line_id": "f73r.28",
+          "label_type": "&Lz",
+          "text": "otal",
+          "word_count": 1,
+          "translations": [
+            {
+              "word": "otal",
+              "root": "al",
+              "meaning": "stone/rock",
+              "confidence": 1.0,
+              "method": "DICT(Coptic)"
+            }
+          ]
+        },
+        {
+          "line_id": "f73r.29",
+          "label_type": "&Lz",
+          "text": "chek",
+          "word_count": 1,
+          "translations": [
+            {
+              "word": "chek",
+              "root": "che",
+              "meaning": "fall/place",
+              "confidence": 0.8,
+              "method": "DICT(Coptic)"
+            }
+          ]
+        },
+        {
+          "line_id": "f73r.30",
+          "label_type": "&Lz",
+          "text": "ar",
+          "word_count": 1,
+          "translations": [
+            {
+              "word": "ar",
+              "root": "ar",
+              "meaning": "king/great",
+              "confidence": 0.75,
+              "method": "DICT(Coptic)"
+            }
+          ]
+        },
+        {
+          "line_id": "f73r.31",
+          "label_type": "&Lz",
+          "text": "kar",
+          "word_count": 1,
+          "translations": [
+            {
+              "word": "kar",
+              "root": "ar",
+              "meaning": "king/great",
+              "confidence": 0.75,
+              "method": "DICT(Coptic)"
+            }
+          ]
+        },
+        {
+          "line_id": "f73r.32",
+          "label_type": "&Lz",
+          "text": "okeeos",
+          "word_count": 1,
+          "translations": [
+            {
+              "word": "okeeos",
+              "root": "eos",
+              "meaning": "star",
+              "confidence": 0.85,
+              "method": "DICT(Coptic)"
+            }
+          ]
+        },
+        {
+          "line_id": "f73r.33",
+          "label_type": "@Cc",
+          "text": "osaiin.chedain.oteey.chedaly.okechs.chepcheesaly.oteodal",
+          "word_count": 7,
+          "translations": [
+            {
+              "word": "osaiin",
+              "root": "s",
+              "meaning": "star",
+              "confidence": 0.8,
+              "method": "FUZZY-COPTIC(astro)"
+            },
+            {
+              "word": "chedain",
+              "root": "ched",
+              "meaning": "[ROOT:ched|SUFFIX.ain]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            },
+            {
+              "word": "oteey",
+              "root": "e",
+              "meaning": "[☉CELESTIAL|O+article?|ROOT:e|ADJ/descriptor]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            },
+            {
+              "word": "chedaly",
+              "root": "chedal",
+              "meaning": "[ROOT:chedal|ADJ/descriptor]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            },
+            {
+              "word": "okechs",
+              "root": "echs",
+              "meaning": "lord",
+              "confidence": 0.8,
+              "method": "FUZZY-COPTIC(element)"
+            },
+            {
+              "word": "chepcheesaly",
+              "root": "chesal",
+              "meaning": "lord",
+              "confidence": 0.56,
+              "method": "FUZZY-COPTIC(element)"
+            },
+            {
+              "word": "oteodal",
+              "root": "eod",
+              "meaning": "[☉CELESTIAL|O+article?|ROOT:eod|NOM/zodiac]",
+              "confidence": 0.0,
+              "method": "STRUCTURAL-ONLY"
+            }
+          ]
+        }
+      ],
+      "stats": {
+        "all": {
+          "total_words": 95,
+          "by_confidence": {
+            "HIGH (≥0.9)": 9,
+            "MEDIUM (0.5-0.7)": 5,
+            "UNKNOWN (0.0)": 37,
+            "GOOD (0.7-0.9)": 44
+          },
+          "by_method": {
+            "DICT(Coptic)": 34,
+            "STRUCTURAL-ONLY": 37,
+            "FUZZY-COPTIC(action)": 10,
+            "FUZZY-COPTIC(astro)": 8,
+            "FUZZY-COPTIC(body)": 2,
+            "FUZZY-COPTIC(element)": 4
+          },
+          "by_determinative": {
+            "t": 30,
+            "k": 19,
+            "p": 7,
+            "f": 1
+          },
+          "by_suffix": {
+            "y": 17,
+            "dy": 4,
+            "ody": 5,
+            "ey": 14,
+            "al": 4,
+            "iin": 4,
+            "ar": 3,
+            "or": 2,
+            "sy": 2,
+            "aiin": 2,
+            "edy": 2,
+            "ain": 1
+          },
+          "high_conf_meanings": [
+            "stone/rock",
+            "say/speak",
+            "star",
+            "sun",
+            "king/great",
+            "star(short)",
+            "tongue",
+            "star(short)",
+            "stone/rock",
+            "lord",
+            "say/speak",
+            "say/speak",
+            "lord",
+            "fall/place",
+            "king/great",
+            "say/speak",
+            "star(short)",
+            "king/great",
+            "fall/occur",
+            "fall/place",
+            "star",
+            "stone/rock",
+            "stone/rock",
+            "sun",
+            "fall/occur",
+            "say/speak",
+            "tongue",
+            "star",
+            "king/great",
+            "stone/rock",
+            "star",
+            "sun",
+            "water/lion",
+            "south",
+            "stone",
+            "star(short)",
+            "king/great",
+            "say/speak",
+            "star",
+            "say/speak",
+            "say/speak",
+            "say/speak",
+            "stone/rock",
+            "fall/place",
+            "king/great",
+            "say/speak",
+            "stone/rock",
+            "fall/place",
+            "king/great",
+            "king/great",
+            "star",
+            "star",
+            "lord"
+          ],
+          "translation_rate": 0.6105263157894737
+        },
+        "rings": {
+          "total_words": 65,
+          "by_confidence": {
+            "UNKNOWN (0.0)": 22,
+            "GOOD (0.7-0.9)": 34,
+            "MEDIUM (0.5-0.7)": 4,
+            "HIGH (≥0.9)": 5
+          },
+          "by_method": {
+            "STRUCTURAL-ONLY": 22,
+            "FUZZY-COPTIC(action)": 8,
+            "DICT(Coptic)": 23,
+            "FUZZY-COPTIC(astro)": 7,
+            "FUZZY-COPTIC(body)": 1,
+            "FUZZY-COPTIC(element)": 4
+          },
+          "by_determinative": {
+            "p": 6,
+            "t": 20,
+            "k": 4
+          },
+          "by_suffix": {
+            "ey": 12,
+            "al": 3,
+            "y": 8,
+            "iin": 3,
+            "ody": 2,
+            "ar": 3,
+            "or": 2,
+            "aiin": 2,
+            "edy": 1,
+            "sy": 1,
+            "ain": 1
+          },
+          "high_conf_meanings": [
+            "say/speak",
+            "star",
+            "sun",
+            "king/great",
+            "star(short)",
+            "tongue",
+            "star(short)",
+            "stone/rock",
+            "lord",
+            "say/speak",
+            "say/speak",
+            "lord",
+            "fall/place",
+            "king/great",
+            "say/speak",
+            "star(short)",
+            "king/great",
+            "fall/occur",
+            "fall/place",
+            "star",
+            "stone/rock",
+            "king/great",
+            "stone/rock",
+            "star",
+            "sun",
+            "water/lion",
+            "south",
+            "stone",
+            "star(short)",
+            "king/great",
+            "say/speak",
+            "star",
+            "say/speak",
+            "say/speak",
+            "say/speak",
+            "stone/rock",
+            "fall/place",
+            "star",
+            "lord"
+          ],
+          "translation_rate": 0.6615384615384615
+        },
+        "nymphs": {
+          "total_words": 30,
+          "by_confidence": {
+            "HIGH (≥0.9)": 4,
+            "MEDIUM (0.5-0.7)": 1,
+            "UNKNOWN (0.0)": 15,
+            "GOOD (0.7-0.9)": 10
+          },
+          "by_method": {
+            "DICT(Coptic)": 11,
+            "STRUCTURAL-ONLY": 15,
+            "FUZZY-COPTIC(astro)": 1,
+            "FUZZY-COPTIC(action)": 2,
+            "FUZZY-COPTIC(body)": 1
+          },
+          "by_determinative": {
+            "t": 10,
+            "k": 15,
+            "p": 1,
+            "f": 1
+          },
+          "by_suffix": {
+            "y": 9,
+            "dy": 4,
+            "ody": 3,
+            "sy": 1,
+            "al": 1,
+            "ey": 2,
+            "iin": 1,
+            "edy": 1
+          },
+          "high_conf_meanings": [
+            "stone/rock",
+            "stone/rock",
+            "sun",
+            "fall/occur",
+            "say/speak",
+            "tongue",
+            "star",
+            "king/great",
+            "say/speak",
+            "stone/rock",
+            "fall/place",
+            "king/great",
+            "king/great",
+            "star"
+          ],
+          "translation_rate": 0.5
+        }
+      }
+    }
+  }
+}

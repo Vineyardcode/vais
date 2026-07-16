@@ -1175,7 +1175,7 @@ def main():
     
     # Save JSON
     json_data = {
-        'phase': 63,
+        'test': 'misbinding_coherence_test',
         'title': 'Codicological Coherence — Misbinding Hypothesis',
         'bigram_mi': bigram_data,
         'clustering': cluster_data,

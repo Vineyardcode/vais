@@ -1,0 +1,75 @@
+{
+  "obligatory_pairs": [
+    [
+      [
+        "i",
+        "n"
+      ],
+      0.5159241288045876,
+      5848
+    ]
+  ],
+  "positional_glyphs": {
+    "initial": [
+      "sh",
+      "q"
+    ],
+    "medial": [
+      "e",
+      "ckh",
+      "t",
+      "k",
+      "a",
+      "i",
+      "p"
+    ],
+    "final": [
+      "y",
+      "r",
+      "n",
+      "m",
+      "g"
+    ]
+  },
+  "fingerprints": {
+    "EVA standard": {
+      "label": "EVA standard",
+      "n_tokens": 36259,
+      "n_types": 6415,
+      "n_glyph_types": 32,
+      "heaps_beta": 0.7532634259656353,
+      "hapax_ratio_mid": 0.6554723363131191,
+      "char_bigram_pred": 0.6407101855957688,
+      "word_bigram_pred": 0.4448009648834097,
+      "mean_word_len": 4.935216084282523,
+      "ttr_5000": 0.342,
+      "zipf_alpha": 0.9415080134769475
+    },
+    "Tier 1+2 (all)": {
+      "label": "Tier 1+2",
+      "n_tokens": 36259,
+      "n_types": 6415,
+      "n_glyph_types": 33,
+      "heaps_beta": 0.7532634259656353,
+      "hapax_ratio_mid": 0.6554723363131191,
+      "char_bigram_pred": 0.65964597446678,
+      "word_bigram_pred": 0.4448009648834097,
+      "mean_word_len": 4.935216084282523,
+      "ttr_5000": 0.342,
+      "zipf_alpha": 0.9415080134769475
+    },
+    "qo merged only": {
+      "label": "qo merged",
+      "n_tokens": 36259,
+      "n_types": 6415,
+      "n_glyph_types": 33,
+      "heaps_beta": 0.7532634259656353,
+      "hapax_ratio_mid": 0.6554723363131191,
+      "char_bigram_pred": 0.6493223589643814,
+      "word_bigram_pred": 0.4448009648834097,
+      "mean_word_len": 4.935216084282523,
+      "ttr_5000": 0.342,
+      "zipf_alpha": 0.9415080134769475
+    }
+  }
+}

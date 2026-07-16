@@ -586,7 +586,7 @@ def main():
     pr("  abbreviation_shorthand_model tested h_char (valid failure) but NEVER tested ending metrics.")
     pr("  latin_inflection_ending_test found VMS endings are 14-20σ from Latin on paradigm fill & NMI.")
     pr("  Cappelli marks are many-to-one → should REDUCE NMI and INCREASE fill.")
-    pr("  This phase asks: does abbreviation explain the latin_inflection_ending_test anomalies?")
+    pr("  This test asks: does abbreviation explain the latin_inflection_ending_test anomalies?")
     pr()
 
     # ── Load VMS ─────────────────────────────────────────────────────
@@ -897,7 +897,7 @@ def main():
     pr()
     pr("WHAT ABBREVIATION DOES NOT EXPLAIN:")
     pr("  - abbreviation_shorthand_model showed h_char remains ~0.85 (VMS needs 0.64).")
-    pr("  - This phase measures whether abbreviation even moves h_char.")
+    pr("  - This test measures whether abbreviation even moves h_char.")
     pr()
     pr("CONTROLS:")
     pr("  - Vernacular languages show whether the effect is Latin-specific.")

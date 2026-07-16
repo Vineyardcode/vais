@@ -9,20 +9,20 @@ QUESTION:
   or spread across positions (NL character-like)?
 
 MOTIVATION:
-  86 established LOOP chunks as functional characters
+  chunk_equivalence_classes established LOOP chunks as functional characters
   (~25 equivalence classes, h_ratio=0.849 matching NL char 0.849).
   chunk_equivalence_classes found distributional clusters are POSITIONAL BINS
   (cluster 0 = final-leaning, cluster 1 = initial-leaning).
-  spectral_vowel_consonant/87R confirmed position dominates bigram structure
+  spectral_vowel_consonant and its revalidation confirmed position dominates bigram structure
   (59% of chunk bigrams are I→F from 2-chunk words).
   positional_verbose_cipher modeled position-variant cipher at glyph level
   (best fit: 3-zone, ~20% char overlap, distance 3.94 from VMS).
 
-  NONE of these phases directly measured:
+  NONE of those tests directly measured:
   "How much do chunk inventories OVERLAP across positions,
    and how does this compare to NL characters?"
 
-  This phase bridges the gap.
+  This test bridges the gap.
 
 APPROACH:
   1. Label each chunk token by word-position (I=initial, M=medial, F=final)
@@ -1006,7 +1006,7 @@ def main():
     pr(f"  Results saved to {txt_path.relative_to(PROJECT_DIR)}")
 
     json_data = {
-        'phase': 88,
+        'test': 'position_identity_decomposition',
         'question': "Position × Identity decomposition: cipher or NL?",
         'vms_metrics_2p': {k: v for k, v in vms_flat.items()},
         'vms_metrics_3p': {k: v for k, v in vms_flat3.items()},

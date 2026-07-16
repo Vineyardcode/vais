@@ -1,5 +1,5 @@
 ============================================================================
-PHASE 84 — MI(d) TEXT-MEANING-AREA ANALYSIS
+mi_distance_curve — MI(d) TEXT-MEANING-AREA ANALYSIS
 ============================================================================
 
   Does the VMS carry word-order meaning, or is it purely generated?

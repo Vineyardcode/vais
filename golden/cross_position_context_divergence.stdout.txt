@@ -1,0 +1,414 @@
+============================================================================
+cross_position_context_divergence — CROSS-POSITION CONTEXT DIVERGENCE
+============================================================================
+
+  For VMS chunks appearing at multiple word-positions (I, M, F),
+  do they function as the SAME or DIFFERENT linguistic units?
+
+  KEY CONFOUND: Successor of I-chunk is at M, successor of M-chunk
+  is at later-M or F. Different inventories → JSD > 0 is EXPECTED
+  even for identical units. NL baselines are the PRIMARY control.
+
+────────────────────────────────────────────────────────────────────────────
+STEP 1: PARSE CORPORA
+────────────────────────────────────────────────────────────────────────────
+
+  VMS: 40351 words total
+  VMS ≥3-chunk words: 6972 (17.3%)
+  VMS tokens in ≥3-chunk words: 22690
+
+  Latin-Caesar: 44864 words, 38893 with ≥3 chars (86.7%), 17939 with ≥3 syls (40.0%)
+  Latin-Vulgate: 25908 words, 21217 with ≥3 chars (81.9%), 6612 with ≥3 syls (25.5%)
+  Latin-Apicius: 29267 words, 21912 with ≥3 chars (74.9%), 8157 with ≥3 syls (27.9%)
+  Italian-Cucina: 24367 words, 17574 with ≥3 chars (72.1%), 6680 with ≥3 syls (27.4%)
+  French-Viandier: 13873 words, 10764 with ≥3 chars (77.6%), 1973 with ≥3 syls (14.2%)
+  English-Cury: 43936 words, 32403 with ≥3 chars (73.8%), 5495 with ≥3 syls (12.5%)
+  German-Faust: 30959 words, 28111 with ≥3 chars (90.8%), 3894 with ≥3 syls (12.6%)
+  German-BvgS: 9814 words, 8552 with ≥3 chars (87.1%), 1365 with ≥3 syls (13.9%)
+
+────────────────────────────────────────────────────────────────────────────
+STEP 2: VMS CONTEXT DIVERGENCE (≥3-chunk words)
+────────────────────────────────────────────────────────────────────────────
+
+  2a. SUCCESSOR JSD — I-position vs M-position
+      Shared types with ≥5 successors at both I and M: 64
+      Mean JSD  = 0.6525
+      Median JSD = 0.6233
+      Weighted JSD = 0.5134
+
+      Per-type detail (sorted by JSD, desc):
+        Type                   JSD    n@I    n@M  Top1@I            Top1@M            Same?
+        ──────────────────  ──────  ─────  ─────  ────────────────  ────────────────  ─────
+        ch                  1.0000      8     16  ch.o.t            sh.y                 no
+        y.p                 1.0000     16      5  ch.d              ch.e.d.y             no
+        ch.ckh              1.0000      8     12  y.o.cth           y                    no
+        ch.e.o.k            1.0000      5     10  e                 y                    no
+        ch.s                1.0000      5     37  k                 y                    no
+        ch.cth              1.0000      5     12  y.k               y                    no
+        o.ckh               1.0000      5      8  d                 y                    no
+        sh.o.r              1.0000      5      5  y.d               o                    no
+        ch.o.t              0.9122      7     17  a.l               ch.y                 no
+        ch.a.l              0.8820     15     13  k                 y                    no
+        ckh                 0.8791     20      6  o                 y                    no
+        ch.e.t              0.8748     11     11  a.l               y                    no
+        o.cth               0.8727      6     10  e                 y                    no
+        sh.o.k              0.8438      8      5  y.d               e.o.d.y              no
+        o.f                 0.8407     28      7  a.r               ch.e.y               no
+        sh.y                0.7977      8      6  t                 d                    no
+        ch.e.k              0.7949      9     19  e                 y                    no
+        sh.o.l              0.7818     23     18  k                 d.y                  no
+        ch.o.k              0.7739     22     29  a.l               ch.y                 no
+        ch.e.d.y            0.7622     13      7  t                 k                    no
+        y                   0.7565     74     66  ch.e              sh.e.y               no
+        y.t                 0.7480     85     45  a.l               a.m                  no
+        p                   0.7458    360     67  o.l               ch.e.d.y             no
+        o.s                 0.7085      5     29  a.r               y                    no
+        q.o.k               0.6916    254     30  a.l               e.d.y                no
+        ch.k                0.6900     21     15  a.l               y                    no
+        ch.o.r              0.6861     10     28  d                 y                    no
+        ch.e.o              0.6743      7     14  e.k               ch.y                 no
+        ch.o                0.6735     21     23  e.k               ch.o.r               no
+        q.o.t               0.6676    129      5  e.d               o.r                  no
+        f                   0.6642     59     54  o.l               ch.y                 no
+        l                   0.6353    698     56  k                 s                    no
+        t                   0.6114    350    206  o.l               e.d.y                no
+        ch.d.y              0.5999     11     14  k                 q.o.k                no
+        y.d                 0.5977      6     60  a.r               a.i.i.n              no
+        ch.d                0.5880     14    111  a.l               a.r                  no
+        o.y                 0.5876     11      8  t                 d.y                  no
+        ch.t                0.5740     10     13  a.l               y                    no
+        r                   0.5692    101     17  a.r               y                    no
+        o.d                 0.5632     19    189  a.l               a.i.i.n              no
+        y.k                 0.5623    130     43  e.e               ch.y                 no
+        o                   0.5426    138    278  e.k               a.i.i.n              no
+        k                   0.5332    316   1309  o.l               a.i.i.n              no
+        ch.e.o.l            0.5329     16     17  k                 y                    no
+        sh.d                0.5275      6     20  a.l               a.l                 YES
+        o.p                 0.5273    124     17  a.l               a.l                 YES
+        sh.e.d              0.5252      5     18  a.l               a.r                  no
+        ch.o.l              0.4946     60     48  k                 y                    no
+        o.k                 0.4900    480    134  a.l               y                    no
+        ch.e.y              0.4791     15      9  k                 t                    no
+        a.i.r               0.4740      7    102  a.l               y                    no
+        cth                 0.4725     68     17  o.l               y                    no
+        a.l                 0.4701     96    872  k                 y                    no
+        o.t                 0.4675    548    101  a.l               y                    no
+        a.r                 0.4371     46    501  a.r               y                    no
+        o.r                 0.4367     62    214  a.r               y                    no
+        o.l                 0.4320    639    612  k                 k                   YES
+        ch.e.d              0.4067      5    110  a.l               a.r                  no
+        d.y                 0.3988     84     46  t                 d                    no
+        ch.o.d              0.3857     11     62  a.l               a.i.i.n              no
+        s                   0.3665    376    110  o.l               y                    no
+        ch.y                0.2864     37     46  k                 d                    no
+        d                   0.2417    691    372  a.l               a.i.i.n              no
+        ch.e                0.2243     21     57  a.l               a.r                  no
+
+  2b. PREDECESSOR JSD — M-position vs F-position
+      Shared types with ≥5 predecessors at both M and F: 69
+      Mean JSD  = 0.6117
+      Median JSD = 0.5824
+      Weighted JSD = 0.4961
+
+      Per-type detail (sorted by JSD, desc):
+        Type                   JSD    n@M    n@F  Top1@M            Top1@F            Same?
+        ──────────────────  ──────  ─────  ─────  ────────────────  ────────────────  ─────
+        e.e.o.d.y           1.0000      7     15  y.k               k                    no
+        sh.e.o              1.0000      6      5  y                 o                    no
+        ch.a.r              1.0000      7      9  o                 a.l                  no
+        ch.e.d              0.9181    110      6  p                 a.l                  no
+        a.s                 0.8727     24     14  d                 e.e                  no
+        sh.o.r              0.8697      5     11  sh.e.f            y                    no
+        e                   0.8584    310     14  o.k               a.r                  no
+        a.y                 0.8571      7      7  d                 r                    no
+        sh.o.l              0.8469     18     16  d                 o.l                  no
+        y.d                 0.8408     60      7  p                 ch.o.k               no
+        ch.a.l              0.8253     13     10  o.t               a.l                  no
+        sh.e.d              0.8070     18     10  t                 a.r                  no
+        o.m                 0.8059      5     33  d                 a.l                  no
+        e.y                 0.7837     31    147  o.k               k                    no
+        a.i.i.r             0.7791     10     20  d                 o.d                  no
+        ch                  0.7622     16      8  e                 ch                   no
+        ch.s                0.7506     37     15  d                 a.l                  no
+        ch.e.y              0.7476      9    119  p                 o.l                  no
+        e.o                 0.7314     33     12  o.t               k                    no
+        ch.e.s              0.7204     11      6  y.p               o.l                  no
+        o.s                 0.7109     29     23  p                 a.l                  no
+        e.e.o.r             0.7107      5     14  o.k               k                    no
+        ch.o.d              0.6915     62      6  p                 y.o.k                no
+        sh.y                0.6894      6     91  y                 e                    no
+        o.y                 0.6876      8      5  s                 o.t                  no
+        e.d                 0.6823    181     10  o.t               k                    no
+        o.d.y               0.6733     19     60  o.k               a.l                  no
+        a                   0.6683     27     42  d                 e.e                  no
+        sh                  0.6646      7      9  o.t               o                    no
+        o.d                 0.6395    189     21  o.t               a.l                  no
+        a.n                 0.6258      9     28  d                 a.r                  no
+        l                   0.5964     56     26  l                 k                    no
+        e.s                 0.5945     23     14  k                 e.e.e                no
+        e.e.o               0.5843     12     10  o.t               k                    no
+        ch.d                0.5824    111     13  p                 o.l                  no
+        e.e.e.s             0.5760      6     11  o                 o                   YES
+        r                   0.5713     17     11  o.l               a.l                  no
+        e.e.d               0.5625    109      7  k                 k                   YES
+        ch.o                0.5533     23     19  k                 d                    no
+        ch.e.o.l            0.5323     17     10  p                 a.l                  no
+        a.i.s               0.5282      6      5  d                 a.r                  no
+        e.o.r               0.5201      9     13  o.k               k                    no
+        e.e.d.y             0.5142     11    166  o.k               k                    no
+        o                   0.5138    278     97  s                 a.r                  no
+        y                   0.5131     66   1025  o.t               a.l                  no
+        ch.o.l              0.5115     48     41  p                 y                    no
+        ch.d.y              0.5057     14    104  k                 k                   YES
+        ch.y                0.5050     46    258  d                 e                    no
+        e.e                 0.5004    131      6  k                 o                    no
+        a.i.i.n             0.4975     89    679  d                 k                    no
+        ch.e.o              0.4875     14     10  y                 o.l                  no
+        ch.e.d.y            0.4774      7    130  k                 k                   YES
+        e.e.s               0.4699     31     25  o                 o                   YES
+        o.l                 0.4616    612    183  p                 a.l                  no
+        a.i.r               0.4587    102     79  d                 k                    no
+        o.r                 0.4428    214    179  s                 a.l                  no
+        e.o.l               0.4164     58     30  o.k               k                    no
+        a.i.n               0.4109     45    325  d                 k                    no
+        e.e.e.y             0.4075      5     36  k                 k                   YES
+        e.e.o.l             0.4003     24     13  k                 k                   YES
+        ch.o.r              0.4001     28     46  o.p               o                    no
+        a.l                 0.3926    872    425  d                 k                    no
+        a.m                 0.3899     31    252  d                 a.r                  no
+        e.e.y               0.3849     22    206  o.t               k                    no
+        d.y                 0.3638     46    251  o.l               a.l                  no
+        d                   0.3608    372     56  o.l               a.l                  no
+        a.r                 0.3544    501    690  d                 k                    no
+        e.d.y               0.3240     20    127  k                 k                   YES
+        s                   0.3176    110     92  o.l               a.l                  no
+
+  2c. CONDITIONAL MI: I(successor; position | chunk type)
+      Shared types: 64
+      Weighted CMI = 0.3466 bits
+      Unweighted CMI = 0.5155 bits
+
+      I(predecessor; position | chunk type):
+      Shared types: 69
+      Weighted CMI = 0.3014 bits
+      Unweighted CMI = 0.4488 bits
+
+  2d. TOP-K SUCCESSOR CONCORDANCE (I vs M)
+      Top-1 same: 3/64 (4.7%)
+      Top-3 overlap: 35/64 (54.7%)
+
+      TOP-K PREDECESSOR CONCORDANCE (M vs F)
+      Top-1 same: 8/69 (11.6%)
+      Top-3 overlap: 32/69 (46.4%)
+
+────────────────────────────────────────────────────────────────────────────
+STEP 3: NL CHARACTER + SYLLABLE BASELINES
+────────────────────────────────────────────────────────────────────────────
+
+  NL CHARACTER baselines (successor JSD, I vs M, ≥3-char words):
+    System                    n_shared      Mean    Median  Weighted   Top1%
+    ────────────────────────  ────────  ────────  ────────  ────────  ──────
+    VMS chunks                      64    0.6525    0.6233    0.5134    4.7%
+    English-Cury-char               28    0.2923    0.2712    0.2861   21.4%
+    French-Viandier-char            20    0.3388    0.3221    0.3466   25.0%
+    German-BvgS-char                24    0.4377    0.3591    0.4260   25.0%
+    German-Faust-char               27    0.3491    0.3178    0.3499   40.7%
+    Italian-Cucina-char             22    0.2480    0.2096    0.2413   13.6%
+    Latin-Apicius-char              23    0.2833    0.2232    0.2760   13.0%
+    Latin-Caesar-char               21    0.3001    0.3304    0.3264   23.8%
+    Latin-Vulgate-char              22    0.2470    0.2422    0.2844   31.8%
+
+  NL SYLLABLE baselines (successor JSD, I vs M, ≥3-syl words):
+    System                    n_shared      Mean    Median  Weighted   Top1%
+    ────────────────────────  ────────  ────────  ────────  ────────  ──────
+    VMS chunks                      64    0.6525    0.6233    0.5134    4.7%
+    English-Cury-syl                68    0.9397    1.0000    0.9338    0.0%
+    French-Viandier-syl             15    0.9949    1.0000    0.9966    0.0%
+    German-BvgS-syl                 12    0.9110    0.9646    0.9218    8.3%
+    German-Faust-syl                44    0.9735    1.0000    0.9652    0.0%
+    Italian-Cucina-syl              63    0.9064    0.9281    0.8744    1.6%
+    Latin-Apicius-syl               66    0.9415    0.9820    0.9240    1.5%
+    Latin-Caesar-syl                67    0.8836    0.9116    0.8884    3.0%
+    Latin-Vulgate-syl               59    0.8984    0.9208    0.8748    1.7%
+
+────────────────────────────────────────────────────────────────────────────
+STEP 4: Z-SCORE COMPARISON — VMS vs NL BASELINES
+────────────────────────────────────────────────────────────────────────────
+
+  SUCCESSOR JSD (I vs M):
+    VMS mean JSD:       0.6525
+    NL char mean±std:   0.3120 ± 0.0587  z = +5.80
+    NL syl mean±std:    0.9311 ± 0.0360  z = -7.73
+
+    VMS weighted JSD:   0.5134
+    NL char mean±std:   0.3171 ± 0.0540  z = +3.64
+    NL syl mean±std:    0.9224 ± 0.0406  z = -10.07
+
+  PREDECESSOR JSD (M vs F):
+    VMS mean JSD:       0.6117
+    NL char mean±std:   0.3479 ± 0.0747  z = +3.53
+    NL syl mean±std:    0.8855 ± 0.0680  z = -4.03
+
+    VMS weighted JSD:   0.4961
+    NL char mean±std:   0.2704 ± 0.0380  z = +5.94
+    NL syl mean±std:    0.8854 ± 0.0617  z = -6.31
+
+  CONDITIONAL MI (successor):
+    VMS weighted CMI:     0.3466 bits
+    NL char mean±std:     0.1636 ± 0.0369  z = +4.96
+    NL syl mean±std:      0.6520 ± 0.0201  z = -15.20
+
+  TOP-1 SUCCESSOR CONCORDANCE:
+    VMS top-1 match:      4.7%
+    NL char mean±std:     24.3% ± 8.5%  z = -2.31
+    NL syl mean±std:      2.0% ± 2.6%  z = +1.03
+
+────────────────────────────────────────────────────────────────────────────
+STEP 5: PERMUTATION NULL MODEL
+────────────────────────────────────────────────────────────────────────────
+
+  For each shared type, pool successors from both positions,
+  randomly re-split into same-sized groups, recompute JSD.
+  This tests: is observed JSD above SAMPLING NOISE?
+  (Does NOT control for inventory confound — NL baseline does that.)
+
+  Successor JSD null model (100 trials):
+    Observed mean JSD:  0.6525
+    Null mean ± std:    0.4214 ± 0.0096
+    z = +23.97
+
+  Predecessor JSD null model (100 trials):
+    Observed mean JSD:  0.6117
+    Null mean ± std:    0.4074 ± 0.0109
+    z = +18.80
+
+────────────────────────────────────────────────────────────────────────────
+STEP 6: ROBUSTNESS — REPEAT WITH ≥2-CHUNK WORDS
+────────────────────────────────────────────────────────────────────────────
+
+  Using ≥2-chunk words expands data but limits comparison to I vs M
+  (only possible when M exists, i.e. ≥3-chunk subwords within
+  the ≥2 set are the only ones with M). For ≥2-chunk words,
+  we can compare I-successors vs F-predecessors using 2-chunk words,
+  but this mixes successor/predecessor directions (unfair).
+  Instead, we just report what fraction of 2-chunk words have
+  shared chunks at I vs F using word-companion co-occurrence.
+
+  With ≥2-chunk words:
+    Successor I vs M shared types: 99
+    Successor JSD mean = 0.4329
+    Predecessor M vs F shared types: 87
+    Predecessor JSD mean = 0.4596
+
+────────────────────────────────────────────────────────────────────────────
+STEP 7: SKEPTICAL AUDIT
+────────────────────────────────────────────────────────────────────────────
+
+  1. DATA SPARSITY
+     ≥3-chunk words: only 6972 (17.3%)
+     VMS shared types for successor analysis: 64
+     VMS shared types for predecessor analysis: 69
+     Types with <20 tokens at either position: 40/64
+     CAVEAT: Sparse data → high JSD from sampling noise, not real signal.
+     The permutation null controls for this. If z is low, sparsity
+     may explain the observed JSD.
+
+  2. POSITION-INVENTORY CONFOUND (the central issue)
+     Successor of I-chunk is at M position.
+     Successor of M-chunk may be at later M or at F position.
+     These successor POSITIONS have different type inventories.
+     Therefore JSD > 0 is EXPECTED even for identical units.
+     CONTROL: NL characters experience the same confound.
+     If VMS JSD ≈ NL char JSD → no homograph evidence.
+     If VMS JSD >> NL char JSD → genuine homograph signal.
+     If VMS JSD ≈ NL syl JSD → consistent with NL sub-word units.
+
+  3. LOOP GRAMMAR SLOT STRUCTURE
+     The LOOP grammar defines slot1={ch,sh,y}, slot2={e,q,a}, etc.
+     Chunks at I vs M may have different internal structure
+     (more I-chunks start with q-, more M-chunks start with e-)
+     which creates implicit context constraints independent of
+     the chunk's linguistic identity. This is a PARTIAL confound:
+     grammar-derived context patterns may inflate JSD even if chunks
+     are genuinely the same unit at different positions.
+
+  4. NL SYLLABIFICATION QUALITY
+     The syllabifier is rule-based (~87% accuracy from chunk_fingerprint).
+     Errors create spurious syllable types, inflating type count
+     but likely REDUCING measured JSD (errors are position-random).
+     This makes the NL syllable baseline conservative.
+
+  5. WORD-LENGTH COMPOSITION
+     In ≥3-chunk words, most are 3-chunk (80% of this subset).
+     In 3-chunk words: I has 1 token, M has 1, F has 1.
+     M-position is always position 2 (of 3), never deeper.
+     In NL ≥3-char words, words are typically 4-8 chars with
+     multiple M positions. This asymmetry may affect JSD.
+
+  6. MULTIPLE TESTING
+     We compute 4 main metrics (suc JSD, pre JSD, CMI, concordance)
+     × 2 comparisons (vs char, vs syl) = 8 hypothesis tests.
+     With Bonferroni correction: significance requires |z| > 2.73
+     (not 1.96) at the α=0.05 level.
+
+────────────────────────────────────────────────────────────────────────────
+STEP 8: SYNTHESIS & VERDICT
+────────────────────────────────────────────────────────────────────────────
+
+  CROSS-POSITION CONTEXT DIVERGENCE — SUMMARY TABLE
+
+    Metric                             VMS   NL-char μ   z(char)    NL-syl μ    z(syl)
+    ────────────────────────────  ────────  ──────────  ────────  ──────────  ────────
+    Suc JSD mean (I vs M)           0.6525      0.3120     +5.80      0.9311     -7.73
+    Suc JSD weighted                0.5134      0.3171     +3.64      0.9224    -10.07
+    Pre JSD mean (M vs F)           0.6117      0.3479     +3.53      0.8855     -4.03
+    Pre JSD weighted                0.4961      0.2704     +5.94      0.8854     -6.31
+    CMI (successor)                 0.3466      0.1636     +4.96      0.6520    -15.20
+    Top-1 suc concordance           0.0469      0.2431     -2.31      0.0201     +1.03
+
+  DIRECTIONAL EVIDENCE (Bonferroni-corrected |z| > 2.73):
+    vs NL characters:  5 CIPHER, 0 NL, 1 ambiguous  (total 6 tests)
+    vs NL syllables:   0 CIPHER, 5 NL, 1 ambiguous  (total 6 tests)
+
+  INTERPRETATION:
+
+    Summary of z-score directions:
+      Suc JSD mean              vs char:    +5.80 (CIPHER   )  vs syl:    -7.73 (NL)
+      Suc JSD weighted          vs char:    +3.64 (CIPHER   )  vs syl:   -10.07 (NL)
+      Pre JSD mean              vs char:    +3.53 (CIPHER   )  vs syl:    -4.03 (NL)
+      Pre JSD weighted          vs char:    +5.94 (CIPHER   )  vs syl:    -6.31 (NL)
+      CMI (successor)           vs char:    +4.96 (CIPHER   )  vs syl:   -15.20 (NL)
+      Top-1 concordance         vs char:    -2.31 (ambiguous)  vs syl:    +1.03 (ambiguous)
+
+  ══════════════════════════════════════════════════════════
+  VERDICT
+  ══════════════════════════════════════════════════════════
+
+  Mean z-score vs NL characters: +3.59
+  Mean z-score vs NL syllables:  -7.05
+
+  ★ VMS shared chunks show MORE context divergence than NL characters
+    but LESS divergence than NL syllables.
+    → VMS falls BETWEEN chars and syllables (55% from char toward syl)
+    → Consistent with NL sub-word units having moderate positional
+      constraints (phonotactics / morpho-phonology)
+    → The excess over NL characters is EXPECTED from VMS's lower
+      inventory overlap (J=0.24 vs NL char J=0.80): different position
+      inventories mechanically inflate context JSD.
+    → Does NOT support homography beyond what the inventory confound
+      predicts. Cipher confidence should NOT increase.
+
+  Permutation null (successor): z = +23.97
+    → Observed JSD is significantly above sampling noise.
+
+  REVISED CONFIDENCES (cross_position_context_divergence):
+  - Natural language: 87% → 87% (unchanged — result is NL-consistent)
+  - Chunks = functional characters: 85% → 85% (unchanged)
+  - True alphabet ≈ 25: 70% → 70% (unchanged)
+  - h_char anomaly resolved: 75% → 75% (unchanged)
+  - Positional verbose cipher: 55% → 50% (DOWN — context divergence
+    of shared chunks is within NL sub-word range, not anomalous)
+  - Hoax/random: <1% (unchanged)
+
+  Results saved to C:\projects\vais\results\cross_position_context_divergence.txt
+  JSON saved to C:\projects\vais\results\cross_position_context_divergence.json

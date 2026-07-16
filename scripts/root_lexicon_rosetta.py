@@ -2,14 +2,14 @@
 """
 Root Lexicon & Zodiac Rosetta Stone
 
-Now that we've decoded the STRUCTURE of the writing system (Phases 10-14):
+Now that we've decoded the STRUCTURE of the writing system (the preceding structural analyses):
   - Gallows = determinatives (t=celestial, k=generic, f=botanical, p=process)
   - Prefixes = phonetic complements (qo+k, d+p, s+f)
   - E-chains = non-structural vowel filler
   - Suffixes = grammatical morphemes
   - Core roots = ~3,000-3,500 consonantal skeletons
 
-This phase attempts to decode CONTENT by:
+This test attempts to decode CONTENT by:
   1. Building the complete consonantal root lexicon
   2. Decomposing zodiac nymph labels using the full framework
   3. Cross-referencing against zodiac terminology in:

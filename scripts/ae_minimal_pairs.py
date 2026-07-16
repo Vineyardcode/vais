@@ -11,7 +11,7 @@ QUESTION:
   word types per sign)?
 
 WHY THIS IS THE HIGHEST-LEVERAGE QUESTION:
-  zodiac_galenic_axis found the strongest section-level glyph pattern in 91 phases.
+  zodiac_galenic_axis found the strongest section-level glyph pattern anywhere in the suite.
   The answer to this question either:
   (A) Locks in NL: different vocabulary per topic = natural language
   (B) Opens an encoding hypothesis: systematic a↔e substitution in
@@ -987,7 +987,7 @@ def main():
     pr(f"  Results saved to {out_txt}")
 
     json_data = {
-        'phase': 92,
+        'test': 'ae_minimal_pairs',
         'question': 'Is zodiac a/e inverse caused by substitution or vocabulary stratification?',
         'corpus_ae_pairs': len(ae_pairs),
         'zodiac_ae_pairs': len(zodiac_ae_pairs),

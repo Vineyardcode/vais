@@ -17,21 +17,21 @@ is present, the parser steals the stem vowel into the suffix.
 THIS COULD ENTIRELY EXPLAIN THE BINARY SPLIT.
 
 Tests:
-  32a) ALTERNATIVE PARSE — Re-parse everything with shortened suffix
+  A) ALTERNATIVE PARSE — Re-parse everything with shortened suffix
        list (remove -edy, -ody, -eedy, -ey; keep only -dy, -y, -aiin,
        etc.). Does the binary split disappear?
 
-  32b) VOWEL-BOUNDARY TEST — Do suffixes -edy, -ody etc. ONLY appear
+  B) VOWEL-BOUNDARY TEST — Do suffixes -edy, -ody etc. ONLY appear
        after consonant-final roots? If so, the 'e' belongs to the root.
 
-  32c) RAW WORD FORM ANALYSIS — Skip the parser entirely. Classify
+  C) RAW WORD FORM ANALYSIS — Skip the parser entirely. Classify
        raw words by surface patterns. Do ch-words and bare-words
        actually have different endings AT THE STRING LEVEL?
 
-  32d) WHICH SUFFIX LIST IS CORRECT? — Test both suffix lists against
+  D) WHICH SUFFIX LIST IS CORRECT? — Test both suffix lists against
        the full corpus and compare coverage, ambiguity, and regularity.
 
-  32e) IF THE SPLIT SURVIVES — re-test line position, gallows interaction,
+  E) IF THE SPLIT SURVIVES — re-test line position, gallows interaction,
        and co-occurrence under the corrected parser to see what's real.
 """
 

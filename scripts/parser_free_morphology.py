@@ -6,36 +6,36 @@ PARSER-FREE MORPHOLOGICAL ANALYSIS
 morphology_artifact_test proved: the morphological SYSTEM is real (MI=0.19 bits) but
 specific stem assignments are unreliable (44% change with parse order).
 
-This phase works ONLY with stable, parser-free features:
+This test works ONLY with stable, parser-free features:
   - Raw word starts (after gallows strip + e-collapse)
   - Raw word ends
   - Line position
   - Section distribution
 
 Core questions:
-  37a) ARE PREFIXES MEANINGFUL OR PHONOTACTIC?
+  A) ARE PREFIXES MEANINGFUL OR PHONOTACTIC?
        Does adding 'ch' to word-base X change section/position?
        Compare che+dy vs e+dy, che+y vs e+y, etc.
        If ch- is just a sound pattern with no meaning, section dists
        should be identical. If it carries meaning, they should differ.
 
-  37b) THE DAIIN/AIIN COMPLEX
+  B) THE DAIIN/AIIN COMPLEX
        daiin=807, aiin=554. Is daiin = d+aiin, or a single lexeme?
        Compare distributional profile of daiin to other d-prefix words.
        If daiin behaves like d+X, its section/position should match
        d+[other] words. If it's a unique lexeme, it won't.
 
-  37c) WHAT DO THE EDGES ACTUALLY ENCODE?
+  C) WHAT DO THE EDGES ACTUALLY ENCODE?
        Section distribution by prefix: does ch- mean "herbal"?
        Line position by suffix: does -aiin mean "line-medial"?
        Find which edge features carry section/position information.
 
-  37d) RAW WORD CLUSTERING
+  D) RAW WORD CLUSTERING
        Group the top N most common collapsed word forms.
        Compute pairwise distributional similarity (section + position
        profiles). Do natural clusters form?
 
-  37e) ARE SUFFIXES INFLECTIONAL OR DERIVATIONAL?
+  E) ARE SUFFIXES INFLECTIONAL OR DERIVATIONAL?
        If inflectional: same base + different suffix → same section dist.
        If derivational: same base + different suffix → different section.
        Test with matched pairs: chedy/chey, shedy/shey, qoedy/qoey, etc.
@@ -154,7 +154,7 @@ print(f"  {len(by_collapsed)} distinct collapsed forms\n")
 # ══════════════════════════════════════════════════════════════════
 
 print("=" * 70)
-print("37a: ARE PREFIXES MEANINGFUL?")
+print("A: ARE PREFIXES MEANINGFUL?")
 print("    Test: does adding a prefix change section/position distribution?")
 print("=" * 70)
 
@@ -258,7 +258,7 @@ for pfx in sorted(pfx_agg.keys()):
 # ══════════════════════════════════════════════════════════════════
 
 print("\n" + "=" * 70)
-print("37b: THE DAIIN/AIIN COMPLEX — IS daiin = d + aiin?")
+print("B: THE DAIIN/AIIN COMPLEX — IS daiin = d + aiin?")
 print("=" * 70)
 
 # All collapsed forms ending in 'aiin'
@@ -325,7 +325,7 @@ if daiin_toks:
 # ══════════════════════════════════════════════════════════════════
 
 print("\n" + "=" * 70)
-print("37c: WHAT DO EDGES ENCODE? (Section + position by raw prefix/suffix)")
+print("C: WHAT DO EDGES ENCODE? (Section + position by raw prefix/suffix)")
 print("=" * 70)
 
 # Section enrichment by raw prefix (parser-free)
@@ -399,7 +399,7 @@ for sfx in SUFFIXES + ['∅']:
 # ══════════════════════════════════════════════════════════════════
 
 print("\n" + "=" * 70)
-print("37d: RAW WORD CLUSTERING (top collapsed forms)")
+print("D: RAW WORD CLUSTERING (top collapsed forms)")
 print("=" * 70)
 
 # For top N collapsed forms, build feature vector: section(8) + position(5)
@@ -508,7 +508,7 @@ for c_idx in range(K):
 # ══════════════════════════════════════════════════════════════════
 
 print("\n" + "=" * 70)
-print("37e: ARE SUFFIXES INFLECTIONAL OR DERIVATIONAL?")
+print("E: ARE SUFFIXES INFLECTIONAL OR DERIVATIONAL?")
 print("    Inflectional → same base + diff suffix = same section dist")
 print("    Derivational → same base + diff suffix = different sections")
 print("=" * 70)

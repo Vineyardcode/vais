@@ -1,8 +1,8 @@
 ============================================================================
-PHASE 85R — CRITICAL REVALIDATION OF CHUNK FINGERPRINT
+chunk_fingerprint_revalidation — CRITICAL REVALIDATION OF CHUNK FINGERPRINT
 ============================================================================
 
-  Phase 85 concluded 'SUPPORTED' but the KEY test (h_ratio in NL
+  chunk_fingerprint concluded 'SUPPORTED' but the KEY test (h_ratio in NL
   syllable range) FAILED badly: VMS chunk h_ratio = 0.8176 vs
   NL syllable h_ratio = 0.50 ± 0.056 (z = +5.64).
 
@@ -15,7 +15,7 @@ PHASE 85R — CRITICAL REVALIDATION OF CHUNK FINGERPRINT
 REVALIDATION 1: h_ratio COMPUTED WITHOUT WORD BOUNDARY MARKERS
 ────────────────────────────────────────────────────────────────────────────
 
-  Phase 85 included <sp> markers in char streams, which inflates
+  chunk_fingerprint included <sp> markers in char streams, which inflates
   regularity. Recompute all h_ratios on WITHIN-TEXT streams only.
 
   VMS levels (no boundary markers):
@@ -148,7 +148,7 @@ REVALIDATION 6: CHUNK FREQUENCY DISTRIBUTION SHAPE
 REVALIDATION 7: CANONICAL h_char RECONCILIATION
 ────────────────────────────────────────────────────────────────────────────
 
-  Prior phases report h_char = 0.641. Our Phase 85 computed 0.5915
+  Earlier analyses report h_char = 0.641. Our chunk_fingerprint computed 0.5915
   (with <sp> markers). Recompute to reconcile.
 
   Method A (no boundaries):  h_char = 0.6530
@@ -159,11 +159,11 @@ REVALIDATION 7: CANONICAL h_char RECONCILIATION
   Method C (within-word only): h_char = 0.5810
     H(char) = 3.8637, H(char|prev) = 2.2449
 
-  Canonical Phase 82 value: 0.641 (likely method C or similar)
+  Previously reported value: 0.641 (likely method C or similar)
   Our Method C gives:       0.5810
 
 ============================================================================
-CORRECTED VERDICT — PHASE 85
+CORRECTED VERDICT — chunk_fingerprint
 ============================================================================
 
   1. CHUNK h_ratio = 0.8176

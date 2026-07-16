@@ -5,7 +5,7 @@ SLOT2 e-Extension: Productive Morphology or Slot Independence?
 ═══════════════════════════════════════════════════════════════════════
 
 QUESTION:
-  Petrasti (Voynich Ninja thread-5216, Aug 2026) observed that many
+  Petrasti (Voynich Ninja thread-5216) observed that many
   VMS words come in pairs: a "base" form with no front vowel and an
   "extended" form with 'e' inserted before 'o':
     chor → cheor    daiin → deaiin    kor → keor    cho → cheo
@@ -32,8 +32,8 @@ QUESTION:
     - No positional or Currier distribution differences
 
 WHY THIS IS NOT DIMINISHING RETURNS:
-  - Phases 91-93 measured SLOT2 at the MACRO level (per-folio averages).
-  - This phase works at the MICRO level: individual word pairs.
+  - The SLOT2 regime tests measured SLOT2 at the MACRO level (per-folio averages).
+  - This test works at the MICRO level: individual word pairs.
   - The answer directly discriminates NL morphology from cipher.
   - Petrasti's claim is independently motivated (different researcher,
     different method, same structural observation).
@@ -840,7 +840,7 @@ def main():
 
     # Save results
     results = {
-        'phase': 94,
+        'test': 'e_extension_morphology',
         'n_base_words': len(base_words),
         'n_with_e_partner': n_with_e,
         'n_with_a_partner': n_with_a,

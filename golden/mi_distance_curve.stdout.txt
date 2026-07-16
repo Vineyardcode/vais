@@ -1,0 +1,294 @@
+============================================================================
+mi_distance_curve — MI(d) TEXT-MEANING-AREA ANALYSIS
+============================================================================
+
+  Does the VMS carry word-order meaning, or is it purely generated?
+  Does our verbose cipher PRESERVE or DESTROY text meaning area?
+  Based on quimqu's MI(d) concept (Voynich Ninja thread-5380).
+
+────────────────────────────────────────────────────────────────────────────
+Step 1: Parse VMS corpus
+────────────────────────────────────────────────────────────────────────────
+  VMS all:       36,706 words
+  VMS Currier A: 22,251 words
+  VMS Currier B: 14,455 words
+    all → 166,386 glyphs in stream
+    A → 101,522 glyphs in stream
+    B → 64,864 glyphs in stream
+
+────────────────────────────────────────────────────────────────────────────
+Step 2: Load natural language reference texts
+────────────────────────────────────────────────────────────────────────────
+  Latin-Caesar        : 44,864 words, 275,246 chars
+  Latin-Vulgate       : 25,807 words, 133,199 chars
+  Italian-Cucina      : 27,484 words, 126,726 chars
+  German-Medical      : 9,814 words, 43,062 chars
+  German-Faust        : 34,013 words, 163,243 chars
+  French-Viandier     : 16,955 words, 81,562 chars
+  English-Cury        : 47,226 words, 195,896 chars
+
+────────────────────────────────────────────────────────────────────────────
+Step 3: Generate verbose cipher from NL source texts
+────────────────────────────────────────────────────────────────────────────
+  VCipher-Italian     : 27,465 cipher words, 183,096 cipher chars
+  VCipher-Latin       : 44,837 cipher words, 397,868 cipher chars
+  VCipher-German      : 10,183 cipher words, 57,440 cipher chars
+
+────────────────────────────────────────────────────────────────────────────
+Step 4: Prepare char-shuffled control (sanity check)
+────────────────────────────────────────────────────────────────────────────
+  VMS char-shuffled: 203,091 tokens (should give MI ≈ 0)
+
+────────────────────────────────────────────────────────────────────────────
+Step 5: Compute MI(d) profiles (d=1..150, 10 word-shuffles)
+────────────────────────────────────────────────────────────────────────────
+
+  Computing MI(d) for VMS-Full...
+    Raw profile: MI(1)=1.604319, MI(10)=0.014275, MI(50)=0.005509
+    Shuffled:    MI(1)=1.604320, MI(10)=0.007710, MI(50)=0.002700
+    TMA[20-80]=0.122559  GA[1-10]=0.221135
+
+  Computing MI(d) for VMS-CurrierA...
+    Raw profile: MI(1)=1.592873, MI(10)=0.016573, MI(50)=0.007048
+    Shuffled:    MI(1)=1.592879, MI(10)=0.009698, MI(50)=0.004330
+    TMA[20-80]=0.134547  GA[1-10]=0.220953
+
+  Computing MI(d) for VMS-CurrierB...
+    Raw profile: MI(1)=1.635727, MI(10)=0.018138, MI(50)=0.009167
+    Shuffled:    MI(1)=1.635733, MI(10)=0.011390, MI(50)=0.005924
+    TMA[20-80]=0.128391  GA[1-10]=0.234110
+
+  Computing MI(d) for Latin-Caesar...
+    Raw profile: MI(1)=0.712579, MI(10)=0.002822, MI(50)=0.001091
+    Shuffled:    MI(1)=0.712587, MI(10)=0.001900, MI(50)=0.001092
+    TMA[20-80]=0.001751  GA[1-10]=0.017064
+
+  Computing MI(d) for Latin-Vulgate...
+    Raw profile: MI(1)=0.708061, MI(10)=0.005301, MI(50)=0.002662
+    Shuffled:    MI(1)=0.708029, MI(10)=0.002901, MI(50)=0.002626
+    TMA[20-80]=0.011797  GA[1-10]=0.029458
+
+  Computing MI(d) for Italian-Cucina...
+    Raw profile: MI(1)=0.755850, MI(10)=0.014285, MI(50)=0.006570
+    Shuffled:    MI(1)=0.755830, MI(10)=0.005188, MI(50)=0.004558
+    TMA[20-80]=0.121450  GA[1-10]=0.106673
+
+  Computing MI(d) for German-Medical...
+    Raw profile: MI(1)=0.884498, MI(10)=0.020978, MI(50)=0.012057
+    Shuffled:    MI(1)=0.884462, MI(10)=0.012255, MI(50)=0.011685
+    TMA[20-80]=0.031062  GA[1-10]=0.138860
+
+  Computing MI(d) for German-Faust...
+    Raw profile: MI(1)=0.861164, MI(10)=0.010557, MI(50)=0.004195
+    Shuffled:    MI(1)=0.861154, MI(10)=0.006023, MI(50)=0.003296
+    TMA[20-80]=0.062802  GA[1-10]=0.067443
+
+  Computing MI(d) for French-Viandier...
+    Raw profile: MI(1)=0.863202, MI(10)=0.026061, MI(50)=0.008433
+    Shuffled:    MI(1)=0.863203, MI(10)=0.007389, MI(50)=0.005915
+    TMA[20-80]=0.143988  GA[1-10]=0.211241
+
+  Computing MI(d) for English-Cury...
+    Raw profile: MI(1)=0.720162, MI(10)=0.009389, MI(50)=0.003447
+    Shuffled:    MI(1)=0.720163, MI(10)=0.002402, MI(50)=0.002238
+    TMA[20-80]=0.075862  GA[1-10]=0.140082
+
+  Computing MI(d) for VCipher-Italian...
+    Raw profile: MI(1)=1.839049, MI(10)=0.024207, MI(50)=0.003095
+    Shuffled:    MI(1)=1.839041, MI(10)=0.013934, MI(50)=0.002361
+    TMA[20-80]=0.051077  GA[1-10]=0.109116
+
+  Computing MI(d) for VCipher-Latin...
+    Raw profile: MI(1)=1.773243, MI(10)=0.010318, MI(50)=0.000834
+    Shuffled:    MI(1)=1.773241, MI(10)=0.007763, MI(50)=0.000870
+    TMA[20-80]=0.002462  GA[1-10]=0.022177
+
+  Computing MI(d) for VCipher-German...
+    Raw profile: MI(1)=1.728580, MI(10)=0.026846, MI(50)=0.005689
+    Shuffled:    MI(1)=1.728562, MI(10)=0.011921, MI(50)=0.005546
+    TMA[20-80]=0.030053  GA[1-10]=0.180540
+
+  Computing MI(d) for VMS-CharShuffle...
+    Raw profile: MI(1)=0.002680, MI(10)=0.002425, MI(50)=0.002722
+
+
+────────────────────────────────────────────────────────────────────────────
+Step 6: Summary — Text Meaning Area (TMA) comparison
+────────────────────────────────────────────────────────────────────────────
+
+  TMA = ∫(MI_raw - MI_shuffled) for d ∈ [20, 80]
+  Positive TMA → word order carries meaning
+  TMA ≈ 0      → text is generative (no word-order structure)
+
+  Text                      Words   Tokens    MI(1)   MI(50)  MI(100)        TMA   GA[1-10]
+  ────────────────────── ──────── ──────── ──────── ──────── ──────── ────────── ──────────
+  English-Cury             47,226  195,896   0.7202   0.0034   0.0032     0.0759     0.1401
+  French-Viandier          16,955   81,562   0.8632   0.0084   0.0077     0.1440     0.2112
+  German-Faust             34,013  163,243   0.8612   0.0042   0.0043     0.0628     0.0674
+  German-Medical            9,814   43,062   0.8845   0.0121   0.0109     0.0311     0.1389
+  Italian-Cucina           27,484  126,726   0.7558   0.0066   0.0061     0.1215     0.1067
+  Latin-Caesar             44,864  275,246   0.7126   0.0011   0.0012     0.0018     0.0171
+  Latin-Vulgate            25,807  133,199   0.7081   0.0027   0.0027     0.0118     0.0295
+  VCipher-German           10,183   57,440   1.7286   0.0057   0.0061     0.0301     0.1805
+  VCipher-Italian          27,465  183,096   1.8390   0.0031   0.0029     0.0511     0.1091
+  VCipher-Latin            44,837  397,868   1.7732   0.0008   0.0009     0.0025     0.0222
+  VMS-Full                 36,706  166,386   1.6043   0.0055   0.0042     0.1226     0.2211
+  VMS-CurrierA             22,251  101,522   1.5929   0.0070   0.0059     0.1345     0.2210
+  VMS-CurrierB             14,455   64,864   1.6357   0.0092   0.0083     0.1284     0.2341
+  VMS-CharShuffle               1  203,091   0.0027   0.0027   0.0027     0.0000     0.0000
+
+────────────────────────────────────────────────────────────────────────────
+Step 6b: MI(d) at selected distances
+────────────────────────────────────────────────────────────────────────────
+
+  Text                          d=1       d=2       d=5      d=10      d=20      d=50      d=80     d=100     d=150
+  ────────────────────── ──────────────────────────────────────────────────────────────────────────────────────────
+  English-Cury              0.72016   0.25291   0.03418   0.00939   0.00462   0.00345   0.00293   0.00320   0.00324
+  French-Viandier           0.86320   0.40969   0.09642   0.02606   0.01013   0.00843   0.00774   0.00775   0.00732
+  German-Faust              0.86116   0.37131   0.04909   0.01056   0.00460   0.00419   0.00418   0.00428   0.00426
+  German-Medical            0.88450   0.45321   0.07388   0.02098   0.01252   0.01206   0.01161   0.01089   0.01345
+  Italian-Cucina            0.75585   0.27501   0.04607   0.01429   0.00706   0.00657   0.00580   0.00607   0.00607
+  Latin-Caesar              0.71258   0.30157   0.02997   0.00282   0.00113   0.00109   0.00112   0.00117   0.00119
+  Latin-Vulgate             0.70806   0.30918   0.03248   0.00530   0.00295   0.00266   0.00265   0.00273   0.00261
+  VCipher-German            1.72858   0.74932   0.16106   0.02685   0.00814   0.00569   0.00591   0.00614   0.00569
+  VCipher-Italian           1.83905   0.80676   0.16062   0.02421   0.00435   0.00310   0.00298   0.00288   0.00290
+  VCipher-Latin             1.77324   0.73613   0.10707   0.01032   0.00125   0.00083   0.00079   0.00087   0.00087
+  VMS-Full                  1.60432   0.79631   0.13114   0.01428   0.00510   0.00551   0.00435   0.00420   0.00454
+  VMS-CurrierA              1.59287   0.78813   0.12958   0.01657   0.00682   0.00705   0.00583   0.00588   0.00658
+  VMS-CurrierB              1.63573   0.82870   0.14664   0.01814   0.00845   0.00917   0.00863   0.00833   0.00789
+  VMS-CharShuffle           0.00268   0.00272   0.00275   0.00243   0.00269   0.00272   0.00268   0.00265   0.00275
+
+  Word-shuffled MI(d):
+  Text                          d=1       d=2       d=5      d=10      d=20      d=50      d=80     d=100     d=150
+  ────────────────────── ──────────────────────────────────────────────────────────────────────────────────────────
+  English-Cury              0.72016   0.23687   0.01661   0.00240   0.00224   0.00224   0.00225   0.00226   0.00225
+  French-Viandier           0.86320   0.39170   0.06410   0.00739   0.00585   0.00592   0.00580   0.00582   0.00581
+  German-Faust              0.86115   0.36219   0.03739   0.00602   0.00331   0.00330   0.00340   0.00339   0.00334
+  German-Medical            0.88446   0.43408   0.05041   0.01226   0.01111   0.01169   0.01160   0.01125   0.01154
+  Italian-Cucina            0.75583   0.26327   0.03048   0.00519   0.00449   0.00456   0.00458   0.00451   0.00460
+  Latin-Caesar              0.71259   0.29786   0.02650   0.00190   0.00109   0.00109   0.00113   0.00113   0.00112
+  Latin-Vulgate             0.70803   0.30910   0.02702   0.00290   0.00265   0.00263   0.00261   0.00261   0.00261
+  VCipher-German            1.72856   0.74545   0.13182   0.01192   0.00587   0.00555   0.00584   0.00592   0.00579
+  VCipher-Italian           1.83904   0.80494   0.14526   0.01393   0.00246   0.00236   0.00235   0.00228   0.00228
+  VCipher-Latin             1.77324   0.73446   0.10298   0.00776   0.00094   0.00087   0.00087   0.00087   0.00088
+  VMS-Full                  1.60432   0.77535   0.09588   0.00771   0.00269   0.00270   0.00264   0.00263   0.00270
+  VMS-CurrierA              1.59288   0.76659   0.09469   0.00970   0.00431   0.00433   0.00419   0.00414   0.00418
+  VMS-CurrierB              1.63573   0.80713   0.10866   0.01139   0.00619   0.00592   0.00603   0.00616   0.00591
+  VMS-CharShuffle           0.00000   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+
+  Gap (raw − shuffled):
+  Text                          d=1       d=2       d=5      d=10      d=20      d=50      d=80     d=100     d=150
+  ────────────────────── ──────────────────────────────────────────────────────────────────────────────────────────
+  English-Cury             -0.00000   0.01605   0.01757   0.00699   0.00238   0.00121   0.00068   0.00094   0.00098
+  French-Viandier          -0.00000   0.01799   0.03231   0.01867   0.00428   0.00252   0.00194   0.00192   0.00151
+  German-Faust              0.00001   0.00913   0.01169   0.00453   0.00129   0.00090   0.00078   0.00089   0.00093
+  German-Medical            0.00004   0.01913   0.02347   0.00872   0.00141   0.00037   0.00001  -0.00036   0.00191
+  Italian-Cucina            0.00002   0.01173   0.01559   0.00910   0.00257   0.00201   0.00121   0.00156   0.00148
+  Latin-Caesar             -0.00001   0.00372   0.00347   0.00092   0.00005  -0.00000  -0.00001   0.00005   0.00007
+  Latin-Vulgate             0.00003   0.00008   0.00546   0.00240   0.00030   0.00004   0.00004   0.00012  -0.00001
+  VCipher-German            0.00002   0.00387   0.02924   0.01492   0.00227   0.00014   0.00007   0.00022  -0.00010
+  VCipher-Italian           0.00001   0.00183   0.01535   0.01027   0.00188   0.00073   0.00064   0.00059   0.00062
+  VCipher-Latin             0.00000   0.00167   0.00409   0.00256   0.00031  -0.00004  -0.00008   0.00000  -0.00000
+  VMS-Full                 -0.00000   0.02096   0.03526   0.00656   0.00240   0.00281   0.00171   0.00157   0.00185
+  VMS-CurrierA             -0.00001   0.02154   0.03489   0.00688   0.00250   0.00272   0.00164   0.00174   0.00239
+  VMS-CurrierB             -0.00001   0.02157   0.03798   0.00675   0.00227   0.00324   0.00261   0.00217   0.00197
+  VMS-CharShuffle           0.00268   0.00272   0.00275   0.00243   0.00269   0.00272   0.00268   0.00265   0.00275
+
+────────────────────────────────────────────────────────────────────────────
+Step 7: TMA sensitivity to integration range
+────────────────────────────────────────────────────────────────────────────
+
+  Text                         [10-50]       [20-80]      [30-100]      [40-120]       [20-60]
+  ────────────────────────────────────────────────────────────────────────────────────────────
+  English-Cury                  0.0852        0.0759        0.0739        0.0770        0.0565
+  French-Viandier               0.1835        0.1440        0.1403        0.1532        0.1055
+  German-Faust                  0.0613        0.0628        0.0673        0.0739        0.0431
+  German-Medical                0.0700        0.0311        0.0235        0.0231        0.0299
+  Italian-Cucina                0.1223        0.1215        0.1263        0.1376        0.0875
+  Latin-Caesar                  0.0053        0.0018        0.0010        0.0009        0.0011
+  Latin-Vulgate                 0.0154        0.0118        0.0109        0.0114        0.0075
+  VCipher-German                0.0807        0.0301        0.0191        0.0134        0.0213
+  VCipher-Italian               0.0836        0.0511        0.0498        0.0536        0.0377
+  VCipher-Latin                 0.0126        0.0025        0.0011        0.0011        0.0022
+  VMS-Full                      0.1055        0.1226        0.1311        0.1456        0.0864
+  VMS-CurrierA                  0.1120        0.1345        0.1459        0.1649        0.0918
+  VMS-CurrierB                  0.1106        0.1284        0.1405        0.1559        0.0936
+  VMS-CharShuffle               0.1099        0.1636        0.1891        0.2153        0.1096
+
+────────────────────────────────────────────────────────────────────────────
+Step 8: Currier A vs B — detailed comparison
+────────────────────────────────────────────────────────────────────────────
+
+  Currier A: 22,251 words, TMA=0.1345, GA=0.2210
+  Currier B: 14,455 words, TMA=0.1284, GA=0.2341
+
+  TMA ratio (B/A): 0.95
+
+  quimqu found: A looks generative (TMA ≈ 0), B has small positive TMA.
+  If confirmed: A and B may encode differently (or A is less meaningful).
+
+────────────────────────────────────────────────────────────────────────────
+Step 9: Does verbose cipher preserve text-meaning-area?
+────────────────────────────────────────────────────────────────────────────
+
+  Italian-Cucina → VCipher-Italian:
+    Source TMA:  0.1215
+    Cipher TMA:  0.0511
+    Preservation: 42.1%
+
+  Latin-Caesar → VCipher-Latin:
+    Source TMA:  0.0018
+    Cipher TMA:  0.0025
+    Preservation: 140.6%
+
+  German-Medical → VCipher-German:
+    Source TMA:  0.0311
+    Cipher TMA:  0.0301
+    Preservation: 96.8%
+
+  INTERPRETATION:
+  • If cipher TMA ≈ source TMA: cipher preserves word-order info
+  • If cipher TMA ≈ 0: cipher destroys word-order info
+  • Compare cipher TMA to VMS TMA for compatibility
+
+────────────────────────────────────────────────────────────────────────────
+Step 10: SYNTHESIS
+────────────────────────────────────────────────────────────────────────────
+
+  Average NL TMA:        0.0641
+  Average cipher TMA:    0.0279
+  VMS full TMA:          0.1226
+  VMS Currier A TMA:     0.1345
+  VMS Currier B TMA:     0.1284
+
+  CLASSIFICATION:
+    VMS Full          : TMA/NL = 1.91 → MEANINGFUL (NL-like word-order structure)
+    VMS Currier A     : TMA/NL = 2.10 → MEANINGFUL (NL-like word-order structure)
+    VMS Currier B     : TMA/NL = 2.00 → MEANINGFUL (NL-like word-order structure)
+
+    Verbose cipher    : TMA/NL = 0.43
+      → Cipher PRESERVES word-order structure
+
+  KEY QUESTION ANSWERS:
+
+  Q1. Does VMS carry word-order meaning?
+      → YES: VMS TMA (0.1226) shows word-order structure
+
+  Q2. Does verbose cipher preserve word-order meaning?
+      → YES: Cipher TMA (0.0279) retains substantial structure
+
+  Q3. Currier A vs B difference?
+      → NOT CONFIRMED: A (0.1345) ≈ B (0.1284)
+
+  Q4. Is VMS TMA compatible with verbose cipher on NL?
+      → MISMATCH: VMS (0.1226) vs cipher (0.0279)
+
+────────────────────────────────────────────────────────────────────────────
+Saving results...
+────────────────────────────────────────────────────────────────────────────
+  Text results: C:\projects\vais\results\mi_distance_curve.txt
+  JSON results: C:\projects\vais\results\mi_distance_curve.json
+
+============================================================================
+mi_distance_curve COMPLETE
+============================================================================

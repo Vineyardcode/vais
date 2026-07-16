@@ -30,23 +30,23 @@ THREATS TO THE SYNTAX CLAIM:
    does the signal survive?
 
 Sub-analyses:
-  40a) BOUNDARY CHARACTER CONTROL
+  A) BOUNDARY CHARACTER CONTROL
        Compute MI(pfx_i, pfx_{i+1}) after controlling for boundary
        characters (last char of word i, first char of word i+1).
        If syntax MI → 0 after control → it's phonotactic.
 
-  40b) FINE-GRAINED POSITION CONTROL
+  B) FINE-GRAINED POSITION CONTROL
        Use 10 and 20 position bins. Does syntax survive?
 
-  40c) SUFFIX RUNS vs AGREEMENT
+  C) SUFFIX RUNS vs AGREEMENT
        Exclude same-suffix pairs. Does cross-suffix prediction exist?
        This separates "runs" from "agreement."
 
-  40d) LINE-EDGE EXCLUSION
+  D) LINE-EDGE EXCLUSION
        Exclude first and last word of each line. Does syntax survive
        for line-interior words only?
 
-  40e) SECTION-SPECIFIC SYNTAX
+  E) SECTION-SPECIFIC SYNTAX
        Compute syntax MI per section. If concentrated in one section,
        it may be content-specific, not structural.
 """
@@ -130,7 +130,7 @@ print(f"  {len(lines)} lines, {total_words} word tokens")
 # ══════════════════════════════════════════════════════════════════
 
 print("\n" + "=" * 70)
-print("40a: BOUNDARY CHARACTER CONTROL")
+print("A: BOUNDARY CHARACTER CONTROL")
 print("    Is 'syntax' just character phonotactics across word gaps?")
 print("=" * 70)
 
@@ -239,7 +239,7 @@ else:
 # ══════════════════════════════════════════════════════════════════
 
 print("\n" + "=" * 70)
-print("40b: FINE-GRAINED POSITION CONTROL")
+print("B: FINE-GRAINED POSITION CONTROL")
 print("    Does syntax survive with 10 and 20 position bins?")
 print("=" * 70)
 
@@ -292,7 +292,7 @@ for n_bins in [5, 10, 20]:
 # ══════════════════════════════════════════════════════════════════
 
 print("\n" + "=" * 70)
-print("40c: SUFFIX RUNS vs CROSS-SUFFIX AGREEMENT")
+print("C: SUFFIX RUNS vs CROSS-SUFFIX AGREEMENT")
 print("    Does prefix→prefix MI survive when we EXCLUDE same-suffix pairs?")
 print("=" * 70)
 
@@ -364,7 +364,7 @@ print(f"    (Tests whether suffix sequencing is structured beyond same-suffix ru
 # ══════════════════════════════════════════════════════════════════
 
 print("\n" + "=" * 70)
-print("40d: LINE-EDGE EXCLUSION")
+print("D: LINE-EDGE EXCLUSION")
 print("    Does syntax survive for interior words only?")
 print("=" * 70)
 
@@ -440,7 +440,7 @@ else:
 # ══════════════════════════════════════════════════════════════════
 
 print("\n" + "=" * 70)
-print("40e: SECTION-SPECIFIC SYNTAX")
+print("E: SECTION-SPECIFIC SYNTAX")
 print("    Is syntax uniform across sections?")
 print("=" * 70)
 

@@ -1072,7 +1072,7 @@ def main():
         vms_res['pre_summary']['n'] < 5):
         pr("  ⚠ WARNING: Very few shared types qualified for analysis.")
         pr("    Results are statistically weak regardless of z-scores.")
-        pr("    This phase should be interpreted with extreme caution.")
+        pr("    This test should be interpreted with extreme caution.")
         pr()
 
     # Null model summary
@@ -1116,7 +1116,7 @@ def main():
 
     # JSON output
     json_data = {
-        'phase': 89,
+        'test': 'cross_position_context_divergence',
         'question': 'Cross-position context divergence: same unit or homographs?',
         'min_context': MIN_CONTEXT,
         'min_units': MIN_UNITS,

@@ -1,4 +1,4 @@
-"""Shared analysis helpers extracted verbatim from the phase scripts.
+"""Shared analysis helpers extracted verbatim from the test scripts.
 
 Every function below is a byte-for-byte copy (modulo the attribution
 comment) of the dominant variant found across scripts/, selected by
@@ -73,8 +73,9 @@ MAX_CHUNKS = 6
 SIMPLE_GALLOWS = ["t", "k", "f", "p"]
 
 
-# Declared variant of MORPH_SUFFIXES used by the root_lexicon_translation-31 translation-era
-# family: no 'sy', and 'eedy' is tried before 'edy'/'ody'. Order is
+# Declared variant of MORPH_SUFFIXES used by the root-lexicon translation-era
+# family (root_lexicon_translation .. derivational_prefix_paradox): no 'sy',
+# and 'eedy' is tried before 'edy'/'ody'. Order is
 # significant (parse_morphology takes the first endswith match), so these
 # two lists produce different decompositions BY DESIGN. The scripts keep a
 # local literal copy so the web UI exposes it as a tunable parameter; this
@@ -114,8 +115,8 @@ def result_path(name):
     """Canonical location for inter-script result files: results/<name>.
 
     All scripts read AND write their result JSONs through this helper, so
-    producers and consumers can never drift apart again (pre-refactor, the
-    pre-phase-19 scripts used the project root while later scripts and the
+    producers and consumers can never drift apart again (pre-refactor,
+    the earliest scripts used the project root while later scripts and the
     committed snapshots used results/).
     """
     RESULTS_DIR.mkdir(exist_ok=True)

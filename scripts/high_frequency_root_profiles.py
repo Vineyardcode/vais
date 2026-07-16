@@ -8,21 +8,21 @@ in nearly every passage but remain unidentified. Solving even one would
 boost translation rates 10-15%.
 
 Strategy:
-  22a) DISTRIBUTIONAL SEMANTICS — For each unknown root, profile:
+  A) DISTRIBUTIONAL SEMANTICS — For each unknown root, profile:
        - Which determinatives it takes (t=celestial, k=substance, f=plant, p=disc)
        - Which prefixes/suffixes it attracts
        - What it collocates with (left/right neighbors)
        - Which sections it's enriched in
        → Cross-reference against Coptic monosyllabic words to narrow candidates
 
-  22b) YED=HAND CORPUS-WIDE VALIDATION — Does 'yed' cluster in anatomical/bio
+  B) YED=HAND CORPUS-WIDE VALIDATION — Does 'yed' cluster in anatomical/bio
        passages? What words contain it? This tests the e→a Arabic rule.
 
-  22c) ROOT PAIR DISTRIBUTIONAL CONTRAST — Compare roots that appear in
+  C) ROOT PAIR DISTRIBUTIONAL CONTRAST — Compare roots that appear in
        complementary distribution (e.g., h vs he, al vs ol) to determine
        if they're related or distinct.
 
-  22d) REGISTER CLASSIFIER — Use verb suffix ratios to auto-classify every
+  D) REGISTER CLASSIFIER — Use verb suffix ratios to auto-classify every
        folio into bio/herbal/zodiac/narrative register and check accuracy.
 """
 
@@ -696,5 +696,5 @@ if __name__ == "__main__":
 
     Path("results").mkdir(exist_ok=True)
     Path("results/high_frequency_root_profiles_results.json").write_text(
-        json.dumps({"phase":22}, indent=2), encoding="utf-8")
+        json.dumps({"test": "high_frequency_root_profiles"}, indent=2), encoding="utf-8")
     print(f"\n  Results saved to results/high_frequency_root_profiles_results.json")

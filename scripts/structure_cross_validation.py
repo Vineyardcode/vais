@@ -5,22 +5,22 @@ CROSS-VALIDATION AND STRUCTURAL TESTS
 
 word_transition_network revealed a two-level grammar: feature-level (suffix→prefix,
 asymmetric, 20% of info) and word-level (symmetric, word-specific, 80%).
-This phase stress-tests these findings.
+This test stress-tests these findings.
 
 Sub-analyses:
-  48a) SUFFIX→PREFIX TRANSITION MATRIX — Full 11×8 matrix. How
+  A) SUFFIX→PREFIX TRANSITION MATRIX — Full 11×8 matrix. How
        concentrated is the morphological syntax?
 
-  48b) CROSS-VALIDATION — Train on even lines, test on odd. Does the
+  B) CROSS-VALIDATION — Train on even lines, test on odd. Does the
        word MI generalize or is it overfitting?
 
-  48c) FIRST-CHAR / LAST-CHAR MI — Raw character-level test at word
+  C) FIRST-CHAR / LAST-CHAR MI — Raw character-level test at word
        boundaries. No parsing needed.
 
-  48d) REMOVING THE -dy→qo PIPELINE — How much syntax remains if we
+  D) REMOVING THE -dy→qo PIPELINE — How much syntax remains if we
        exclude -dy→qo transitions?
 
-  48e) WORD MI WITHIN SUFFIX STRATA — Among word pairs sharing the
+  E) WORD MI WITHIN SUFFIX STRATA — Among word pairs sharing the
        same suffix transition, is there still word-specific MI?
 """
 
@@ -89,7 +89,7 @@ print(f"  {len(lines)} lines, {N} tokens, {len(word_counts)} types")
 # ══════════════════════════════════════════════════════════════════
 
 print("\n" + "=" * 70)
-print("48a: SUFFIX→GRAM PREFIX TRANSITION MATRIX")
+print("A: SUFFIX→GRAM PREFIX TRANSITION MATRIX")
 print("    Full morphological syntax map")
 print("=" * 70)
 
@@ -176,7 +176,7 @@ for sfx, gp, c, exp, oe in oe_pairs[:15]:
 # ══════════════════════════════════════════════════════════════════
 
 print("\n" + "=" * 70)
-print("48b: CROSS-VALIDATION OF WORD BIGRAM MI")
+print("B: CROSS-VALIDATION OF WORD BIGRAM MI")
 print("    Train on even lines, test on odd. Does MI generalize?")
 print("=" * 70)
 
@@ -289,7 +289,7 @@ print(f"    Overfitting: {pp_within - (pp_reduction_eo + pp_reduction_oe)/2:.1f}
 # ══════════════════════════════════════════════════════════════════
 
 print("\n" + "=" * 70)
-print("48c: FIRST-CHAR / LAST-CHAR MI")
+print("C: FIRST-CHAR / LAST-CHAR MI")
 print("    Raw character-level syntax at word boundaries")
 print("=" * 70)
 
@@ -382,7 +382,7 @@ for lc, fc, c, exp, oe in char_oe[:10]:
 # ══════════════════════════════════════════════════════════════════
 
 print("\n" + "=" * 70)
-print("48d: REMOVING THE -dy→qo PIPELINE")
+print("D: REMOVING THE -dy→qo PIPELINE")
 print("    How much syntax remains without the dominant pattern?")
 print("=" * 70)
 
@@ -515,7 +515,7 @@ for label, exclude_sfx, exclude_gpfx in [('-dy only', 'dy', None), ('qo only', N
 # ══════════════════════════════════════════════════════════════════
 
 print("\n" + "=" * 70)
-print("48e: WORD MI WITHIN SUFFIX STRATA")
+print("E: WORD MI WITHIN SUFFIX STRATA")
 print("    Within same suffix transition, is there word-specific MI?")
 print("=" * 70)
 

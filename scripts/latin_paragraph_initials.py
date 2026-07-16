@@ -8,7 +8,7 @@ Latin Paragraph-Initial Letter Mapping:
 BACKGROUND: paragraph_framing confirmed that ~81% of VMS paragraphs start with
 one of 4 gallows characters (p=44.9%, t=22.2%, k=10.3%, f=4.0%).
 
-CRITICAL INSIGHT (from user): The EVA transliteration labels (p, t, k, f)
+CRITICAL INSIGHT: The EVA transliteration labels (p, t, k, f)
 are ARBITRARY. These glyphs could represent ANY four Latin letters. The
 question is: do ANY 4 Latin letters, in a medical/herbal text context,
 appear as paragraph-initial letters at similar frequencies?
@@ -803,7 +803,7 @@ def skeptical_analysis(all_results, vocab_results):
     pr(f"  a) Paragraph-TYPE markers (herbal=p, recipe=t, instruction=k, note=f)")
     pr(f"  b) Abbreviated words (not single letters)")
     pr(f"  c) Coptic-style structural markers")
-    pr(f"  d) Simple letter substitutions (what this phase tests)")
+    pr(f"  d) Simple letter substitutions (what this test tests)")
     pr(f"  e) Section-specific cipher elements")
 
     # Q5: Information content

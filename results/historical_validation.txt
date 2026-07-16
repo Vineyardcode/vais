@@ -1,5 +1,5 @@
 ========================================================================
-PHASE 102 — HISTORICAL VALIDATION
+historical_validation — HISTORICAL VALIDATION
 ========================================================================
 
 ────────────────────────────────────────────────────────────────────────
@@ -244,7 +244,7 @@ STEP 7: Fatal contradiction scan
 
   Logical consistency checks:
     [PASS] C14 rules out pre-1400 creation
-    [PASS] Simple substitution rejected by Phase 75 + 100
+    [PASS] Simple substitution rejected by latin_paragraph_initials + 100
     [PASS] Meaningless/hoax rejected by NL-like statistics
     [PASS] Italian provenance consistent with best-fit language
     [PASS] Genre (pharmaceutical) consistent with illustrations
@@ -259,7 +259,7 @@ STEP 7: Fatal contradiction scan
   Overall: 5/5 consistency checks pass
 
 ────────────────────────────────────────────────────────────────────────
-STEP 8: Cumulative evidence summary — what do 102 phases tell us?
+STEP 8: Cumulative evidence summary — what does the full suite tell us?
 ────────────────────────────────────────────────────────────────────────
 
   ESTABLISHED FACTS (confidence ≥ 95%):
@@ -268,7 +268,7 @@ STEP 8: Cumulative evidence summary — what do 102 phases tell us?
   [  98%] VMS chunks are functional sub-word units
           Evidence: LOOP grammar parses 99.8%, 25-class equivalence, slot-based MI
   [  99%] Simple substitution cipher is ruled out
-          Evidence: Phase 75 gallows, Phase 100 decipherment failure
+          Evidence: latin_paragraph_initials gallows, chunk_alphabet_decipherment decipherment failure
   [  97%] Hoax/meaningless is ruled out
           Evidence: NL-like statistics + LOOP grammar + cross-word MI
   [  99%] Currier A/B is statistically real
@@ -280,19 +280,19 @@ STEP 8: Cumulative evidence summary — what do 102 phases tell us?
 
   PROBABLE FINDINGS (confidence 70–95%):
   [  80%] Substrate language is Italian or Latin
-          Evidence: Phase 100/101 NL fit; Italian provenance; Phase 76 coverage
+          Evidence: chunk_alphabet_decipherment/101 NL fit; Italian provenance; vernacular_paragraph_initials coverage
   [  80%] Content is pharmaceutical/herbal
-          Evidence: Phase 4 features; genre scores 7/10; Widemann context; illustrations
+          Evidence: historical_pharma_comparison features; genre scores 7/10; Widemann context; illustrations
   [  80%] A/B is register variation within one system
-          Evidence: Phase 101: shared grammar, different vocabulary
+          Evidence: currier_dichotomy_resolution: shared grammar, different vocabulary
   [  75%] Encoding uses complex/verbose cipher or constructed script
-          Evidence: Phase 75 gallows, Phase 85 Pelling, Phase 99 typology
+          Evidence: latin_paragraph_initials gallows, chunk_fingerprint Pelling, script_typology_comparison typology
   [  75%] Creation date: 1440–1480
           Evidence: C14 vellum 1404–1438 + parallel hatching analysis
   [  85%] A/B partly confounded with manuscript section
-          Evidence: Phase 101: within-section JSD ≈ between-section JSD
+          Evidence: currier_dichotomy_resolution: within-section JSD ≈ between-section JSD
   [  70%] VMS chunks resemble abugida sub-units
-          Evidence: Phase 99: closest typological category, but only on h_ratio
+          Evidence: script_typology_comparison: closest typological category, but only on h_ratio
 
   OPEN QUESTIONS:
   • What specific encoding maps the substrate language to Voynichese?
@@ -303,7 +303,7 @@ STEP 8: Cumulative evidence summary — what do 102 phases tell us?
   • What explains the 'o problem' (o appears in nearly every word)?
   • Do gallows encode word-level structure (imperatives/markers) or phonemes?
 
-  MOST PARSIMONIOUS SCENARIO (from 102 phases):
+  MOST PARSIMONIOUS SCENARIO (from the full suite):
     The VMS is a PHARMACEUTICAL/HERBAL COMPENDIUM written in
     Northern Italy around 1440–1480, encoding Italian or Latin
     through a complex notation system (verbose cipher, abbreviation
@@ -319,15 +319,15 @@ STEP 8: Cumulative evidence summary — what do 102 phases tell us?
     1. 'Italian/Latin best fit' may be a corpus artifact — our Italian
        corpus is small (24K words), and Latin corpora are from wrong era.
     2. Genre fingerprinting is unreliable — recipe texts scored WORSE than
-       non-recipe in Phase 76's TTR test. The 'pharmaceutical' conclusion
+       non-recipe in vernacular_paragraph_initials's TTR test. The 'pharmaceutical' conclusion
        rests more on illustrations than on statistical text analysis.
-    3. No phase has produced READABLE TEXT. All 'fit' measures are
+    3. No analysis has produced READABLE TEXT. All 'fit' measures are
        distributional, not semantic. Without decipherment, the language
        identification remains circumstantial.
     4. The Bayesian matrix is qualitative. Assigning numeric weights
        to historical evidence is inherently subjective. Different weight
        schemes could change the ranking.
-    5. Run-to-run instability (Phase 100) means stochastic methods
+    5. Run-to-run instability (chunk_alphabet_decipherment) means stochastic methods
        produce unreliable rankings. Only cross-validated, stable results
        should be trusted.
 

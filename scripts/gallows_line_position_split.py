@@ -4,7 +4,7 @@ Line-Position Gallows: The {p,f} vs {t,k} Split
 
 ═══════════════════════════════════════════════════════════════════════
 
-DISCOVERY: User observation → quantitative confirmation.
+DISCOVERY: a reader's observation → quantitative confirmation.
 
 The gallows character 'p' appears almost exclusively on the FIRST LINE
 of paragraphs. This turns out to be true for 'f' as well, but NOT for

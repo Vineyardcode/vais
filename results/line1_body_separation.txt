@@ -1,5 +1,5 @@
 ============================================================================
-PHASE 82 — LINE-1 / BODY SEPARATION: TWO ENCODING SUBSYSTEMS?
+line1_body_separation — LINE-1 / BODY SEPARATION: TWO ENCODING SUBSYSTEMS?
 ============================================================================
 
   Does paragraph line 1 use a different encoding system from
@@ -316,5 +316,5 @@ STEP 10: SYNTHESIS AND CRITICAL ASSESSMENT
      TOPIC differences (first lines = section headers?) rather than
      encoding differences.
   5. Body text alone retains the positional slot grammar (I-M-F)
-     established in Phase 66-67 — that structure is intrinsic.
+     established in glyph_resegmentation-67 — that structure is intrinsic.
 

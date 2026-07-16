@@ -8,26 +8,26 @@ synthesis_stress_test asks: IS THE SYNTHESIS WRONG?
 
 Five skeptical attacks on our own conclusions:
 
-  51a) IS MORPHOLOGICAL MI JUST CHARACTER MI?
+  A) IS MORPHOLOGICAL MI JUST CHARACTER MI?
        Suffix→prefix MI (z=116.7) might be entirely explained by
        last_char→first_char transitions. If so, "morphological grammar"
        is a fancy name for character patterns.
 
-  51b) IS LOW H(char|prev) A TRANSCRIPTION ARTIFACT?
+  B) IS LOW H(char|prev) A TRANSCRIPTION ARTIFACT?
        EVA compound glyphs (ch, sh, etc.) might artificially lower
        character entropy. Recompute at the GLYPH level.
 
-  51c) CAN WE ACTUALLY EXCLUDE CONSTRUCTED LANGUAGE?
+  C) CAN WE ACTUALLY EXCLUDE CONSTRUCTED LANGUAGE?
        Sparse word bigrams happen with ANY 3K vocabulary in 35K tokens.
        Generate text from known constructed-language-like models and 
        compare sparsity.
 
-  51d) THE COMPOSITIONALITY TEST
+  D) THE COMPOSITIONALITY TEST
        If words = prefix+stem+suffix, we should be able to predict
        NOVEL words from seen parts. Can we? Or is the vocabulary
        a closed lexicon that just LOOKS morphological?
 
-  51e) COMPARISON TO TABLE/ALGORITHM-GENERATED TEXT
+  E) COMPARISON TO TABLE/ALGORITHM-GENERATED TEXT
        Rugg (2004) proposed VMS was made with a Cardan grille.
        Generate grille-like text and compare statistics.
 """
@@ -70,7 +70,7 @@ print(f"  {len(raw_lines)} lines, {N} tokens, {V} types")
 # ══════════════════════════════════════════════════════════════════
 
 print("\n" + "=" * 70)
-print("51a: IS MORPHOLOGICAL MI JUST CHARACTER MI?")
+print("A: IS MORPHOLOGICAL MI JUST CHARACTER MI?")
 print("    Does suffix→prefix MI survive after controlling for")
 print("    last_char→first_char?")
 print("=" * 70)
@@ -227,7 +227,7 @@ for fc in sorted(gpfx_by_firstchar.keys()):
 # ══════════════════════════════════════════════════════════════════
 
 print("\n" + "=" * 70)
-print("51b: IS LOW H(char|prev) A TRANSCRIPTION ARTIFACT?")
+print("B: IS LOW H(char|prev) A TRANSCRIPTION ARTIFACT?")
 print("    EVA compound glyphs may inflate character count and")
 print("    deflate conditional entropy")
 print("=" * 70)
@@ -355,7 +355,7 @@ print(f"  * English values are literature estimates")
 # ══════════════════════════════════════════════════════════════════
 
 print("\n" + "=" * 70)
-print("51c: CAN WE EXCLUDE CONSTRUCTED LANGUAGE?")
+print("C: CAN WE EXCLUDE CONSTRUCTED LANGUAGE?")
 print("    Is sparse word bigram just a corpus size effect?")
 print("=" * 70)
 
@@ -494,7 +494,7 @@ print(f"  claim may be wrong.")
 # ══════════════════════════════════════════════════════════════════
 
 print("\n" + "=" * 70)
-print("51d: THE COMPOSITIONALITY TEST")
+print("D: THE COMPOSITIONALITY TEST")
 print("    If words = pfx+stem+sfx, novel combinations should exist")
 print("=" * 70)
 
@@ -639,7 +639,7 @@ if shuf_fills:
 # ══════════════════════════════════════════════════════════════════
 
 print("\n" + "=" * 70)
-print("51e: CARDAN GRILLE / TABLE-GENERATED TEXT")
+print("E: CARDAN GRILLE / TABLE-GENERATED TEXT")
 print("    Does table-based generation produce VMS-like statistics?")
 print("=" * 70)
 

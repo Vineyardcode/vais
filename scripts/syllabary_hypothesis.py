@@ -11,33 +11,33 @@ SKEPTICAL QUESTION: Does the degenerate Sukhotin result actually
 tell us anything? Or is it trivially explained by the VMS character
 frequency distribution?
 
-This phase ATTACKS the syllabary interpretation before accepting it.
+This test ATTACKS the syllabary interpretation before accepting it.
 
-  56a) NULL MODEL TEST
+  A) NULL MODEL TEST
        Generate random text from VMS bigram/unigram models.
        Run Sukhotin's on it. If random text ALSO produces degenerate
        V/C, then vowel_consonant_separation told us NOTHING new.
 
-  56b) SVD OF TRANSITION MATRIX
+  B) SVD OF TRANSITION MATRIX
        A true CV syllabary has a transition matrix with rank-2
        structure (factorizable into C and V components).
        Test: how many significant singular values does the VMS
        transition matrix have? Compare to random and to a
        simulated syllabary.
 
-  56c) CHARACTER DISTRIBUTIONAL CLUSTERING
+  C) CHARACTER DISTRIBUTIONAL CLUSTERING
        In a syllabary, characters sharing a consonant (ka, ki, ku)
        have similar distributional profiles. Cluster VMS characters
        by their bigram contexts and see if the clusters show
        internal structure (pairs, triads, etc.)
 
-  56d) KNOWN SYLLABARY CALIBRATION
+  D) KNOWN SYLLABARY CALIBRATION
        Simulate a known CV syllabary (5C × 4V = 20 symbols, close
        to VMS's 22) with realistic text. Run ALL our tests on it
        to verify our methods can detect syllabary structure when
        it exists. Then compare VMS results.
 
-  56e) ENTROPY REDUCTION UNDER GROUPING
+  E) ENTROPY REDUCTION UNDER GROUPING
        If characters share hidden components, grouping by component
        should reduce transition entropy more than random groupings.
        Test: group chars into k groups (k=3..6), measure transition
@@ -138,7 +138,7 @@ word_lengths = Counter(len(w) for w in all_collapsed)
 # 56a: NULL MODEL — DOES RANDOM TEXT ALSO PRODUCE DEGENERATE SUKHOTIN?
 # ============================================================
 print("=" * 65)
-print("56a: NULL MODEL TEST — Is degenerate Sukhotin trivially expected?")
+print("A: NULL MODEL TEST — Is degenerate Sukhotin trivially expected?")
 print("=" * 65)
 
 def generate_bigram_words(n_words, trans_prob, chars, char_freq, word_lengths):
@@ -264,7 +264,7 @@ else:
 # 56b: SVD OF TRANSITION MATRIX — Is there CV grid structure?
 # ============================================================
 print("\n" + "=" * 65)
-print("56b: SVD OF TRANSITION MATRIX — Low-rank (CV grid) structure?")
+print("B: SVD OF TRANSITION MATRIX — Low-rank (CV grid) structure?")
 print("=" * 65)
 
 # Build normalized transition matrix
@@ -346,7 +346,7 @@ else:
 # 56c: DISTRIBUTIONAL CLUSTERING
 # ============================================================
 print("\n" + "=" * 65)
-print("56c: CHARACTER DISTRIBUTIONAL CLUSTERING")
+print("C: CHARACTER DISTRIBUTIONAL CLUSTERING")
 print("=" * 65)
 
 # Build right-context and left-context vectors for each common character
@@ -464,7 +464,7 @@ for d, a, b in pairs[:5]:
 # 56d: SIMULATED SYLLABARY CALIBRATION
 # ============================================================
 print("\n" + "=" * 65)
-print("56d: SIMULATED SYLLABARY CALIBRATION")
+print("D: SIMULATED SYLLABARY CALIBRATION")
 print("=" * 65)
 
 # Create a synthetic CV syllabary text: 5 consonants × 4 vowels = 20 symbols
@@ -600,7 +600,7 @@ print(f"  Sukhotin incorrectly labelled as V: {set(alpha_vowels) - set(alpha_V)}
 # 56e: ENTROPY REDUCTION UNDER CHARACTER GROUPING
 # ============================================================
 print("\n" + "=" * 65)
-print("56e: ENTROPY REDUCTION UNDER CHARACTER GROUPING")
+print("E: ENTROPY REDUCTION UNDER CHARACTER GROUPING")
 print("=" * 65)
 
 # If characters share hidden components (like C or V in a syllabary),

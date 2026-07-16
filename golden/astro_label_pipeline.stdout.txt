@@ -1,5 +1,5 @@
 ======================================================================
-PHASE 1: Extracting labels from zodiac folios
+Extracting labels from zodiac folios
 ======================================================================
 
   Total locus entries extracted: 328
@@ -22,7 +22,7 @@ PHASE 1: Extracting labels from zodiac folios
     f73v      Sagittarius  ( December)  labels=29  circ_text=3  total_words= 94
 
 ======================================================================
-PHASE 2: Extracting labels from non-zodiac astro folios
+Extracting labels from non-zodiac astro folios
 ======================================================================
   Non-zodiac astro pages: 6
   Star/sector/radial labels: 209
@@ -34,7 +34,7 @@ PHASE 2: Extracting labels from non-zodiac astro folios
     f69v_70r         stars= 0  sectors= 0  radials=43
 
 ======================================================================
-PHASE 3: Morphological analysis of zodiac nymph labels
+Morphological analysis of zodiac nymph labels
 ======================================================================
 
   Total nymph/star label words: 340
@@ -86,7 +86,7 @@ PHASE 3: Morphological analysis of zodiac nymph labels
     Mixed:              13 roots
 
 ======================================================================
-PHASE 4: Cross-zodiac root analysis
+Cross-zodiac root analysis
 ======================================================================
 
   Root repertoire per zodiac sign:
@@ -115,7 +115,7 @@ PHASE 4: Cross-zodiac root analysis
     Fixed    ↔ Mutable   shared=24  jaccard=0.218
 
 ======================================================================
-PHASE 5: Label uniqueness analysis
+Label uniqueness analysis
 ======================================================================
 
   Labels unique to one sign: 243
@@ -140,7 +140,7 @@ PHASE 5: Label uniqueness analysis
     okydy             2×  in 2 signs  UNPARSED              [Libra, Pisces]
 
 ======================================================================
-PHASE 6: Zodiac nymph labels vs non-zodiac star labels
+Zodiac nymph labels vs non-zodiac star labels
 ======================================================================
 
   Zodiac nymph unique words: 277
@@ -150,7 +150,7 @@ PHASE 6: Zodiac nymph labels vs non-zodiac star labels
   Shared words: air, al, aly, am, ar, araly, ary, char, chdy, chek, daiin, dy, ochey, ody, okal, okeal, okeey, okeod, okeody, okeol
 
 ======================================================================
-PHASE 7: Suffix consistency across zodiac signs
+Suffix consistency across zodiac signs
 ======================================================================
 
   Top suffixes per sign:
@@ -166,7 +166,7 @@ PHASE 7: Suffix consistency across zodiac signs
     Sagittarius   n=15  y(13), iin(2)
 
 ======================================================================
-PHASE 8: Clock position correlation (decan/degree test)
+Clock position correlation (decan/degree test)
 ======================================================================
 
   Unique clock positions: 32
@@ -184,7 +184,7 @@ PHASE 8: Clock position correlation (decan/degree test)
     05:30   n=10  roots: tal(2), tar(2), arar(1)
 
 ======================================================================
-PHASE 9: Decan grouping test (thirds of nymph sequences)
+Decan grouping test (thirds of nymph sequences)
 ======================================================================
 
   Pisces (33 labels, groups: [11, 11, 11]):
@@ -238,7 +238,7 @@ PHASE 9: Decan grouping test (thirds of nymph sequences)
     Group 3: roots=[ke(1), keear(1), pal(1)]  suffixes=[y(5)]
 
 ======================================================================
-PHASE 10: Complete label inventory for semantic assignment
+Complete label inventory for semantic assignment
 ======================================================================
 
   Total label inventory entries: 340

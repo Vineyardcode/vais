@@ -5,7 +5,7 @@ Do VMS Word-Final Chunks Encode Latin Inflectional Endings?
 ═══════════════════════════════════════════════════════════════════════
 
 QUESTION:
-  VMS words have inflectional suffixes (Phases 31/33/37/62).  Do these
+  VMS words have inflectional suffixes (per the morphology audits).  Do these
   correspond to Latin grammatical case endings (-us, -um, -em, -ae, etc.)?
 
 APPROACH — Five falsifiable tests:

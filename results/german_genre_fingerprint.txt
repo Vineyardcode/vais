@@ -1,5 +1,5 @@
 ============================================================================
-PHASE 81 — MEDIEVAL GERMAN GENRE-MATCHED FINGERPRINT TEST
+german_genre_fingerprint — MEDIEVAL GERMAN GENRE-MATCHED FINGERPRINT TEST
 ============================================================================
 
   Testing whether medieval German recipe text produces the closest
@@ -219,7 +219,7 @@ STEP 8: h_char ANOMALY — DOES ANY CORPUS APPROACH 0.641?
 ────────────────────────────────────────────────────────────────────────────
 
   VMS h_char (H(c|prev)/H(c)) = 0.641 — the signature anomaly.
-  No natural language or encoding model has reproduced this (Phase 59).
+  No natural language or encoding model has reproduced this (forward_process_models).
   All natural languages cluster around 0.82-0.90.
 
   German Faust          h_char=0.8248  deviation=28.7%
@@ -233,7 +233,7 @@ STEP 8: h_char ANOMALY — DOES ANY CORPUS APPROACH 0.641?
 
   NOTE: This confirms that h_char anomaly remains unexplained.
   Even the closest match is ~25-40% away from VMS value.
-  Phase 81 tests RELATIVE closeness, not identity.
+  german_genre_fingerprint tests RELATIVE closeness, not identity.
 
 ────────────────────────────────────────────────────────────────────────────
 STEP 9: SYNTHESIS AND CRITICAL ASSESSMENT

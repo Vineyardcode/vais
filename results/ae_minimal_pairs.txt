@@ -1,5 +1,5 @@
 ============================================================================
-PHASE 92 — a↔e MINIMAL PAIR & SUBSTITUTION ANALYSIS
+ae_minimal_pairs — a↔e MINIMAL PAIR & SUBSTITUTION ANALYSIS
 ============================================================================
 
   QUESTION: Is the zodiac a/e inverse (r = -0.99) caused by
@@ -167,7 +167,7 @@ STEP 6: PER-SIGN SLOT2 a-FRACTION
 
   For each sign, what fraction of SLOT2 fillers contain 'a'
   (vs 'e' or 'q')? If substitution, this should track the
-  a% pattern from Phase 91.
+  a% pattern from zodiac_galenic_axis.
 
   Sign            S2 total   S2 a   S2 e   S2 q   a-frac   e-frac
   ──────────────  ────────  ─────  ─────  ─────  ───────  ───────
@@ -185,7 +185,7 @@ STEP 6: PER-SIGN SLOT2 a-FRACTION
   r(SLOT2-a-frac, SLOT2-e-frac) across signs: -0.9994
 
   → The a/e shift is ENTIRELY at SLOT2.
-    This means the glyph-level pattern from Phase 91 is
+    This means the glyph-level pattern from zodiac_galenic_axis is
     a SLOT2-specific phenomenon — 'a' and 'e' are being
     chosen differently at the front-vowel position across signs.
 
@@ -246,7 +246,7 @@ STEP 9: SYNTHESIS & VERDICT
     — A constructed vocabulary with SLOT2 as a design axis
     — Morphological variation (prefixes/suffixes carrying 'a' vs 'e')
 
-  REVISED CONFIDENCES (Phase 92):
+  REVISED CONFIDENCES (ae_minimal_pairs):
   - Natural language: 89% → 91% (UP — vocabulary stratification
     is normal in topical NL text)
   - Systematic a/e axis: 80% → 80% (pattern is real but linguistic)

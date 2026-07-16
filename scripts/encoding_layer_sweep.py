@@ -5,11 +5,12 @@ ENCODING LAYER PARAMETER SWEEP
 
 STRATEGIC RATIONALE:
 
-94 phases have established ONE central unsolved anomaly:
+The suite has established ONE central unsolved anomaly:
   h_char_ratio (H(c|prev)/H(c)) = 0.641 for VMS
   vs 0.82-0.90 for ALL tested natural languages.
 
-Phases 59-61 tested encoding transformations on Italian (Dante) only,
+forward_process_models, positional_verbose_cipher and word_shape_validation
+tested encoding transformations on Italian (Dante) only,
 finding that a positional verbose cipher gets close on h_char but fails
 on word shape (anti-correlated positional entropy). script_reverse_engineering showed BPE
 merging fails. encoding_model_tournament's tournament tested 7 models on Italian only.
@@ -33,8 +34,8 @@ ENCODING FAMILY (5 transformations, each with 1-3 parameters):
   E1: NULL (identity) — baseline, no encoding.
 
   E2: VOWEL EXPANSION — Each vowel expands to a deterministic 2-char
-      sequence. Parameter: expansion_prob (0.3 to 1.0). This is the
-      forward_process_models/60 mechanism that matched h_char.
+      sequence. Parameter: expansion_prob (0.3 to 1.0). This is the mechanism from
+      forward_process_models / positional_verbose_cipher that matched h_char.
       At p=1.0: all vowels expand. At p=0.5: half do.
 
   E3: POSITIONAL SUBSTITUTION — Characters map to different output
@@ -56,12 +57,13 @@ METRIC BATTERY (6 metrics from german_genre_fingerprint):
   h_char_ratio, heaps_beta, hapax_ratio_mid, mean_word_len,
   zipf_alpha, ttr_5000.
 
-VMS TARGET: same VMS_TARGET dict from german_genre_fingerprint/82.
+VMS TARGET: same VMS_TARGET dict as german_genre_fingerprint and
+charm_incantation_fingerprint.
 
 PREDICTIONS (pre-registered skepticism):
 
   P1: Combined E4 (vowel expansion + positional) on Italian or German
-      will achieve the closest overall distance. forward_process_models-60 showed
+      will achieve the closest overall distance. forward_process_models and positional_verbose_cipher showed
       this works on Italian; we test if it works BETTER on German.
       SKEPTIC: word_shape_validation showed positional entropy is anti-correlated.
 

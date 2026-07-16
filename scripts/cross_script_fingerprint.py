@@ -59,7 +59,7 @@ def pr(s=''):
     _print(s)
     sys.stdout.flush()
 
-# ─── VMS loading (reuse from earlier phases) ───────────────────────────
+# ─── VMS loading (shared with earlier tests) ───────────────────────────
 
 FOLIO_DIR = Path("folios")
 
@@ -614,7 +614,7 @@ def main():
 
     # ── Display comparison table ──
     pr("=" * 70)
-    pr("58a) FINGERPRINT COMPARISON TABLE")
+    pr("A) FINGERPRINT COMPARISON TABLE")
     pr("=" * 70)
     pr()
 
@@ -646,7 +646,7 @@ def main():
 
     # ── Compute distances ──
     pr("=" * 70)
-    pr("58b) EUCLIDEAN DISTANCE FROM VMS (normalized features)")
+    pr("B) EUCLIDEAN DISTANCE FROM VMS (normalized features)")
     pr("=" * 70)
     pr()
 
@@ -685,7 +685,7 @@ def main():
 
     # ── PCA ──
     pr("=" * 70)
-    pr("58c) PCA — FIRST 3 COMPONENTS")
+    pr("C) PCA — FIRST 3 COMPONENTS")
     pr("=" * 70)
     pr()
 
@@ -725,7 +725,7 @@ def main():
 
     # ── Nearest neighbors analysis ──
     pr("=" * 70)
-    pr("58d) NEAREST NEIGHBOR CLASSIFICATION")
+    pr("D) NEAREST NEIGHBOR CLASSIFICATION")
     pr("=" * 70)
     pr()
     pr("Question: Do VMS's nearest neighbors tend to be natural languages,")
@@ -758,7 +758,7 @@ def main():
 
     # ── Feature-by-feature analysis ──
     pr("=" * 70)
-    pr("58e) WHERE VMS IS ANOMALOUS (feature-level z-scores vs natural languages)")
+    pr("E) WHERE VMS IS ANOMALOUS (feature-level z-scores vs natural languages)")
     pr("=" * 70)
     pr()
 
@@ -782,7 +782,7 @@ def main():
 
     # ── Sample size caveat ──
     pr("=" * 70)
-    pr("58f) SAMPLE SIZE CAVEATS")
+    pr("F) SAMPLE SIZE CAVEATS")
     pr("=" * 70)
     pr()
     pr("Corpus sizes used:")

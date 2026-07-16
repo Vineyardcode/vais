@@ -1,5 +1,5 @@
 ===========================================================================
-PHASE 73: MEDIEVAL ABBREVIATION/SHORTHAND MODEL vs VMS FINGERPRINT
+abbreviation_shorthand_model: MEDIEVAL ABBREVIATION/SHORTHAND MODEL vs VMS FINGERPRINT
 Can abbreviation systems reproduce the VMS statistical signature?
 ===========================================================================
 
@@ -108,7 +108,7 @@ Can abbreviation systems reproduce the VMS statistical signature?
   [LATIN] done (819 total)
 
   Total experiments: 819
-  Elapsed: 219.0s
+  Elapsed: 353.9s
 
 5. RESULTS ANALYSIS
 ═══════════════════════════════════════════════════════════════════════════
@@ -123,9 +123,9 @@ Can abbreviation systems reproduce the VMS statistical signature?
   L2 < 1.0: 630/819 (76.9%)
   L2 < 2.0: 630/819 (76.9%)
 
-  Phase 64/72 reference distances:
-    Italian (Phase 64 best raw):   1.777
-    Naibbe best (Phase 72):        0.3412
+  encoding_model_tournament/72 reference distances:
+    Italian (encoding_model_tournament best raw):   1.777
+    Naibbe best (naibbe_cipher_calibration):        0.3412
     Naibbe variable mean:          1.0387
 
 5b. L2 DISTRIBUTION BY MODEL TYPE
@@ -239,8 +239,8 @@ Can abbreviation systems reproduce the VMS statistical signature?
                       abbrev_raw  0.2632  0.7543  0.7282  0.8460  0.4456  4.9638  0.4046  1.0722 -0.2573
                           abbrev  0.2936  0.7481  0.7290  0.8752  0.4562  5.0056  0.3960  1.0747 -0.1398
                         syllabic  2.1582  0.6870  0.5131  0.9938  0.4948  2.8168  0.2256  0.8732 -0.3826
-          Naibbe best (Phase 72)   0.341  0.7029  0.4952  0.6187  0.3646  4.8456  0.3676  0.6720  -0.308
-          Italian raw (Phase 64)   1.777  0.7515  0.6390  0.8393  0.4639  3.9302  0.3374  1.0207        
+  Naibbe best (naibbe_cipher_calibration)   0.341  0.7029  0.4952  0.6187  0.3646  4.8456  0.3676  0.6720  -0.308
+  Italian raw (encoding_model_tournament)   1.777  0.7515  0.6390  0.8393  0.4639  3.9302  0.3374  1.0207        
 
 8. SKEPTICAL SELF-ASSESSMENT
 ═══════════════════════════════════════════════════════════════════════════
@@ -273,4 +273,4 @@ Can abbreviation systems reproduce the VMS statistical signature?
   f) The abbreviation model preserves word boundaries — but VMS word
      boundaries are non-informative, which abbreviation cannot explain.
 
-Total runtime: 219.0s
+Total runtime: 353.9s

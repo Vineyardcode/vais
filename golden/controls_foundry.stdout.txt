@@ -1,0 +1,15 @@
+========================================================================
+controls_foundry — CONTROLS FOUNDRY (seed=108)
+========================================================================
+  latin_plain         38,003 tokens   8,932 types  4,755 lines
+  italian_plain       38,006 tokens   6,964 types  4,778 lines
+  latin_subst         38,003 tokens   8,932 types  4,755 lines
+  latin_verbose       38,003 tokens   8,932 types  4,755 lines
+  latin_abjad         37,540 tokens   6,042 types  4,755 lines
+  vms_word_shuffle    39,645 tokens   7,297 types  4,634 lines
+  vms_char_shuffle    39,645 tokens  33,352 types  4,634 lines
+  grille_table        38,004 tokens     903 types  4,734 lines
+  self_citation       38,002 tokens   9,065 types  2,648 lines
+
+  Written to data/controls/ + manifest to results/.
+  Deterministic: rerunning reproduces byte-identical corpora.

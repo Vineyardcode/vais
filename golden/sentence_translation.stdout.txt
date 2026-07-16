@@ -1,6 +1,6 @@
 
 ################################################################################
-#  PHASE 17: SENTENCE-LEVEL TRANSLATION — F72V3
+#  SENTENCE-LEVEL TRANSLATION — F72V3
 ################################################################################
 
 ================================================================================
@@ -756,7 +756,7 @@ cheor                ∅-che-or                       fall/place                
 ********************************************************************************
 
 ################################################################################
-#  PHASE 17: SENTENCE-LEVEL TRANSLATION — F72V1
+#  SENTENCE-LEVEL TRANSLATION — F72V1
 ################################################################################
 
 ================================================================================
@@ -1478,7 +1478,7 @@ am                   ∅-am-∅                         water/lion              
 ********************************************************************************
 
 ################################################################################
-#  PHASE 17: SENTENCE-LEVEL TRANSLATION — F73R
+#  SENTENCE-LEVEL TRANSLATION — F73R
 ################################################################################
 
 ================================================================================
@@ -2271,11 +2271,11 @@ oteodal              [t]o-eod-al                    [☉CELESTIAL|O+article?|R  
     Voynich d → Arabic d  (stable)
 
   Structural confirmation:
-    t-gallows = celestial determinative (Phase 10-13 confirmed)
+    t-gallows = celestial determinative (13 confirmed)
     o-prefix = article/demonstrative (standard)
     No suffix = bare noun (label form)
 
   This is the Rosetta Stone moment for the Voynich manuscript.
 
 
-  Results saved to results\phase17_sentence_translation.json
+  Results saved to results\sentence_translation_sentence_translation.json

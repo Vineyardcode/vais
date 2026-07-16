@@ -669,7 +669,7 @@ def main():
     ]
 
     pr("=" * 70)
-    pr("59a) ENCODING SCHEME RESULTS")
+    pr("A) ENCODING SCHEME RESULTS")
     pr("=" * 70)
     pr()
 
@@ -698,7 +698,7 @@ def main():
 
     # ── Comparison table ──
     pr("=" * 70)
-    pr("59b) DISTANCE RANKING (z-score normalized)")
+    pr("B) DISTANCE RANKING (z-score normalized)")
     pr("=" * 70)
     pr()
 
@@ -728,7 +728,7 @@ def main():
 
     # ── Feature-by-feature analysis of best match ──
     pr("=" * 70)
-    pr("59c) FEATURE-BY-FEATURE: BEST ENCODING vs VMS")
+    pr("C) FEATURE-BY-FEATURE: BEST ENCODING vs VMS")
     pr("=" * 70)
     pr()
 
@@ -749,7 +749,7 @@ def main():
 
     # ── Critical assessment ──
     pr("=" * 70)
-    pr("59d) CRITICAL ASSESSMENT")
+    pr("D) CRITICAL ASSESSMENT")
     pr("=" * 70)
     pr()
 
@@ -791,7 +791,7 @@ def main():
 
     # ── Does ANY scheme land in the VMS zone? ──
     pr("=" * 70)
-    pr("59e) SYNTHESIS")
+    pr("E) SYNTHESIS")
     pr("=" * 70)
     pr()
 

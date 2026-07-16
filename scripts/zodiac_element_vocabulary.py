@@ -5,16 +5,16 @@ Highest-Leverage Attacks
 
 Three integrated analyses:
 
-  21a) WATER-SIGN VOCABULARY CRACK — The 37 Water-exclusive residual roots
+  A) WATER-SIGN VOCABULARY CRACK — The 37 Water-exclusive residual roots
        matched against expanded Coptic/Arabic aquatic, lunar, body-part,
        and cold-wet terminology. Also test Fire-exclusive roots against
        hot-dry vocabulary.
 
-  21b) VERB CONJUGATION PARADIGM — Map -ey vs -edy vs -ody vs -ol on
+  B) VERB CONJUGATION PARADIGM — Map -ey vs -edy vs -ody vs -ol on
        s-prefix verbs. Do they encode tense/aspect/person? Test by
        section, position, and collocational frame.
 
-  21c) BIO-SECTION TRANSLATION — Apply the full grammar model
+  C) BIO-SECTION TRANSLATION — Apply the full grammar model
        (p-opener, s-verb, qokeedy relative, gallows determinatives,
        confirmed vocabulary) to translate a bio-section paragraph
        where qokeedy is enriched 2×.
@@ -850,7 +850,7 @@ if __name__ == "__main__":
 
     # Save results
     results = {
-        "phase": 21,
+        "test": "zodiac_element_vocabulary",
         "analyses": ["element_vocab_crack","verb_paradigm",
                       "bio_translation","fixed_cross_test"],
     }

@@ -9,12 +9,12 @@ narrative_reconstruction reached 73.6% corpus-wide coverage with 37 roots. Ident
   - `ches` confirmed as variant of `chas` (lord/master)
   - `air` = largest unknown (449 tokens), needs cracking
 
-This phase:
-  26a) ADD NEW ROOTS — Integrate cheos, hed, ches→chas, and re-run coverage
-  26b) CRACK `air` — Deep distributional analysis against Arabic/Coptic
-  26c) CRACK NEXT 5 UNKNOWNS — eo(302), lsh(180), eod(174), od(152), ai(120)
-  26d) ZODIAC RE-TRANSLATION — Apply expanded vocabulary to zodiac rings
-  26e) HERBAL DEEP DIVE — Profile what makes herbal sections harder and
+This test:
+  A) ADD NEW ROOTS — Integrate cheos, hed, ches→chas, and re-run coverage
+  B) CRACK `air` — Deep distributional analysis against Arabic/Coptic
+  C) CRACK NEXT 5 UNKNOWNS — eo(302), lsh(180), eod(174), od(152), ai(120)
+  D) ZODIAC RE-TRANSLATION — Apply expanded vocabulary to zodiac rings
+  E) HERBAL DEEP DIVE — Profile what makes herbal sections harder and
        identify the herbal-specific unknown roots
 """
 
@@ -297,7 +297,7 @@ def run_coverage_update(all_words):
     new_roots = {'cheos', 'hed', 'ches'}
     new_count = sum(1 for w in all_words
                     if full_decompose(w['word'])['root'] in new_roots)
-    print(f"\n  New roots added this phase: {', '.join(new_roots)}")
+    print(f"\n  New roots added by this test: {', '.join(new_roots)}")
     print(f"  Tokens covered by new roots: {new_count}")
 
 
@@ -710,7 +710,7 @@ def main():
 
     Path("results").mkdir(exist_ok=True)
     results = {
-        "phase": 26,
+        "test": "root_lexicon_expansion",
         "vocabulary_size": len(ALL_ROOTS),
         "confirmed_roots": len(CONFIRMED_VOCAB),
         "compounds": len(COMPOUND_VOCAB),

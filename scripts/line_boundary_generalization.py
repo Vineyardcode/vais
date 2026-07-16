@@ -7,17 +7,17 @@ structure_cross_validation showed word-level bigrams don't generalize. Does the
 morphological grammar generalize? Are lines syntactic units?
 
 Sub-analyses:
-  49a) CROSS-VALIDATED MORPHOLOGICAL MI — Does suffix→prefix MI
+  A) CROSS-VALIDATED MORPHOLOGICAL MI — Does suffix→prefix MI
        survive on held-out data?
 
-  49b) CROSS-VALIDATED CHARACTER MI — Does last_char→first_char MI
+  B) CROSS-VALIDATED CHARACTER MI — Does last_char→first_char MI
        generalize?
 
-  49c) LINE BOUNDARY TEST — Within-line vs cross-line transitions.
+  C) LINE BOUNDARY TEST — Within-line vs cross-line transitions.
 
-  49d) JACKKNIFE STABILITY — Do key z-scores survive leave-k-out?
+  D) JACKKNIFE STABILITY — Do key z-scores survive leave-k-out?
 
-  49e) THE qo-WORD NETWORK — Among -dy→qo transitions, is the
+  E) THE qo-WORD NETWORK — Among -dy→qo transitions, is the
        specific qo-word predicted by the predecessor?
 """
 
@@ -64,7 +64,7 @@ print(f"  {len(lines)} lines, {N} tokens, {len(word_counts)} types")
 # ══════════════════════════════════════════════════════════════════
 
 print("\n" + "=" * 70)
-print("49a: CROSS-VALIDATED MORPHOLOGICAL MI")
+print("A: CROSS-VALIDATED MORPHOLOGICAL MI")
 print("    Does suffix→prefix MI survive on held-out data?")
 print("=" * 70)
 
@@ -191,7 +191,7 @@ print(f"  z-score: {z_morph:.1f}")
 # ══════════════════════════════════════════════════════════════════
 
 print("\n" + "=" * 70)
-print("49b: CROSS-VALIDATED CHARACTER MI")
+print("B: CROSS-VALIDATED CHARACTER MI")
 print("    Does last_char→first_char MI generalize?")
 print("=" * 70)
 
@@ -278,7 +278,7 @@ print(f"  Retention:                    {mi_char_xval/full_char_mi*100:.1f}%")
 # ══════════════════════════════════════════════════════════════════
 
 print("\n" + "=" * 70)
-print("49c: LINE BOUNDARY TEST")
+print("C: LINE BOUNDARY TEST")
 print("    Within-line vs cross-line transitions")
 print("=" * 70)
 
@@ -404,7 +404,7 @@ print(f"  Cross/within ratio:         {cross_char_mi/within_char_mi:.3f}")
 # ══════════════════════════════════════════════════════════════════
 
 print("\n" + "=" * 70)
-print("49d: JACKKNIFE STABILITY")
+print("D: JACKKNIFE STABILITY")
 print("    Do key findings survive leave-10%-out?")
 print("=" * 70)
 
@@ -472,7 +472,7 @@ print(f"    All > 0? {all(a > 0 for a in jack_lr_asym)} (L→R in all samples)")
 # ══════════════════════════════════════════════════════════════════
 
 print("\n" + "=" * 70)
-print("49e: THE qo-WORD NETWORK")
+print("E: THE qo-WORD NETWORK")
 print("    Among -dy→qo transitions, is qo-word predicted by predecessor?")
 print("=" * 70)
 

@@ -10,8 +10,8 @@ OBJECTIVE:
     (b) Registers/topics within one system, or
     (c) Scribal variation (same content, different hand habits)
 
-  CRITICAL FIX: All prior phases (98, 100, ...) used a hardcoded
-  get_currier_language() function with ~42% error rate.  This phase
+  CRITICAL FIX: All prior analyses (generative_chunk_model, chunk_alphabet_decipherment, ...) used a hardcoded
+  get_currier_language() function with ~42% error rate.  This test
   parses the authoritative $L= tag from the IVTFF folio headers.
 
 METHOD:
@@ -130,7 +130,7 @@ def get_currier_language_from_header(filepath):
 
 
 def get_currier_language_hardcoded(folio_num):
-    """The BROKEN hardcoded function from prior phases. Kept for comparison."""
+    """The BROKEN hardcoded function from prior analyses. Kept for comparison."""
     lang_b = set()
     for f in [26,27,28,29,31,34,35,38,39,42,43,46,47,49,50,53,54]:
         lang_b.add(f)
@@ -1248,7 +1248,7 @@ def run_analysis():
     pr(f"    The hardcoded get_currier_language() function in 8+ prior scripts")
     pr(f"    disagrees with the authoritative $L= folio tags on {len(disagreements)} folios.")
     pr(f"    This is a ~{len(disagreements)/len(folio_data)*100:.0f}% error rate.")
-    pr(f"    ALL prior A/B results (Phases 3, 63, 68, 98) are contaminated.")
+    pr(f"    ALL prior A/B results (currier_register_comparison, misbinding_coherence_test, run_conditioned_transitions, generative_chunk_model) are contaminated.")
     pr()
 
     pr("  FINDING 2: DISTRIBUTIONAL DIVERGENCE")

@@ -1,0 +1,9 @@
+{
+  "test": "zodiac_element_vocabulary",
+  "analyses": [
+    "element_vocab_crack",
+    "verb_paradigm",
+    "bio_translation",
+    "fixed_cross_test"
+  ]
+}

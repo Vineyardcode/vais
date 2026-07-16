@@ -1,0 +1,18 @@
+============================================================================
+space_free_segmentation — SEGMENTATION-AGNOSTIC MODELING (does BPE rediscover spaces?)
+============================================================================
+merges=200  random baseline: 20 trials, seed 111
+
+  corpus                      F1  rand-F1   excess
+  P1_latin_plain           0.390    0.222    0.168
+  P2_italian_plain         0.464    0.312    0.152
+  P4_latin_verbose         0.373    0.094    0.279
+  N2_vms_char_shuffle      0.278    0.276    0.002
+  N3_grille                0.132    0.243   -0.111
+  VMS_full                 0.685    0.231    0.454
+
+  ADJUDICATION (pre-registered):
+    instrument OK (P1 0.168 >> N2 0.002).
+    A2 SURVIVES: VMS excess F1 0.454 > shuffle bar 0.052 — spaces are recoverable from character statistics; word tokenization carries real signal (strength relative to Latin: 270%).
+
+  -> results/space_free_segmentation.json

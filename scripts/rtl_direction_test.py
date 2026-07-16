@@ -14,8 +14,8 @@ rather than the assumed left-to-right. If the script is RTL:
 Also tests boustrophedon (alternating direction) and checks if
 paragraph markers (<%>, <$>) align with either direction hypothesis.
 
-Connected to: Hebrew-like constructed morphology findings (4),
-gallows-as-determinative, and the user's observation that
+Connected to: the Hebrew-like constructed morphology findings,
+gallows-as-determinative, and the observation that
 medieval alchemists drew on Egyptian/Hermetic traditions (which include
 RTL Semitic scripts).
 """

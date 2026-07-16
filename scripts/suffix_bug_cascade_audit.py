@@ -8,17 +8,17 @@ But the suffix list feeds into EVERYTHING downstream:
   suffix parsing → root → deriv prefix identification → paradigm tables
                         → co-occurrence analysis → function word counts
 
-This phase audits the ENTIRE cascade under the corrected (SHORT) suffix
+This test audits the ENTIRE cascade under the corrected (SHORT) suffix
 list to determine which prior findings survive and which were corrupted.
 
 Tests:
-  33a) RECLASSIFICATION COUNT — How many tokens change deriv prefix?
+  A) RECLASSIFICATION COUNT — How many tokens change deriv prefix?
        Were "bare prefix function words" (ch=3628) actually deriv prefixes?
-  33b) PARADIGM TABLES — Rebuild under corrected parser. Still 6.2/7 fill?
-  33c) SAME-STEM CO-OCCURRENCE — Re-test inflection signal
-  33d) -ODY RESOLUTION — Is -ody real or stem vowel + dy?
-  33e) STEM 'O' INVESTIGATION — Why does it show real derivational effects?
-  33f) VALIDATED GRAMMAR SKETCH — Using only surviving findings
+  B) PARADIGM TABLES — Rebuild under corrected parser. Still 6.2/7 fill?
+  C) SAME-STEM CO-OCCURRENCE — Re-test inflection signal
+  D) -ODY RESOLUTION — Is -ody real or stem vowel + dy?
+  E) STEM 'O' INVESTIGATION — Why does it show real derivational effects?
+  F) VALIDATED GRAMMAR SKETCH — Using only surviving findings
 """
 
 import re, json, sys, io, math, random

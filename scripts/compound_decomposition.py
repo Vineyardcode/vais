@@ -8,22 +8,22 @@ root_significance_tests revealed three critical structural patterns:
   2) 28 roots are >85% bare — compound-initial bound morphemes
   3) Many "unknown" long roots decompose into shorter known parts
 
-This phase tests:
-  29a) h- VERBAL PREFIX HYPOTHESIS — Is 'h' a verbal prefix rather than
+This test covers:
+  A) h- VERBAL PREFIX HYPOTHESIS — Is 'h' a verbal prefix rather than
        root 'happen/occur'? Test: strip h- and see if remaining part
        is an independent root. If h+e, h+o, h+ed, h+eo, h+od, h+ol,
        h+es, h+eod, h+eos all independently exist as roots, then h-
        is a productive verbal prefix.
-  29b) SYSTEMATIC COMPOUND DECOMPOSITION — For all long unknown roots,
+  B) SYSTEMATIC COMPOUND DECOMPOSITION — For all long unknown roots,
        test every possible split into 2 shorter known parts. Score by
        whether both parts exist as independent roots.
-  29c) BARE CLASS ANALYSIS — What follows bare roots? If ch is always
+  C) BARE CLASS ANALYSIS — What follows bare roots? If ch is always
        followed by specific patterns, it's a bound morpheme. Map the
        collocational structure.
-  29d) REVISED MORPHOLOGICAL MODEL — Based on findings, propose an
+  D) REVISED MORPHOLOGICAL MODEL — Based on findings, propose an
        updated parse: perhaps h- is verbal, ch- is nominal-compound,
        and the morphology is prefix + h/ch + root + gallows + suffix.
-  29e) CHI-SQUARED SECTION CLUSTERING — For every root with N≥20,
+  E) CHI-SQUARED SECTION CLUSTERING — For every root with N≥20,
        test whether its section distribution is significantly non-random.
 """
 
@@ -365,7 +365,7 @@ def run_revised_model(tokens):
     print("REVISED MORPHOLOGICAL MODEL")
     print("=" * 76)
     print()
-    print("Based on Phases 27-29 findings, propose a revised parse model.")
+    print("Based on the root-lexicon audit findings, propose a revised parse model.")
     print()
 
     root_counts = Counter()

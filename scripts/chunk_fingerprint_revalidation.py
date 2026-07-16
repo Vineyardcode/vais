@@ -463,7 +463,7 @@ def main():
     pr("REVALIDATION 7: CANONICAL h_char RECONCILIATION")
     pr("─" * 76)
     pr()
-    pr("  Prior phases report h_char = 0.641. Our chunk_fingerprint computed 0.5915")
+    pr("  Earlier analyses report h_char = 0.641. Our chunk_fingerprint computed 0.5915")
     pr("  (with <sp> markers). Recompute to reconcile.")
     pr()
 

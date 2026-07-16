@@ -3,7 +3,7 @@
 ARE THE REMAINING MODEL ASSUMPTIONS VALID?
 ======================================================
 
-Phases 32-33 caught a suffix artifact that corrupted 4+ findings.
+suffix_split_artifact_test and suffix_bug_cascade_audit caught a suffix artifact that corrupted 4+ findings.
 The same class of bug could exist in OTHER parts of the pipeline:
 
   1. GRAM PREFIX 's' steals from deriv prefix 'sh' (2700 tokens!)
@@ -12,17 +12,17 @@ The same class of bug could exist in OTHER parts of the pipeline:
   4. STEM 'e' at 24.7% may be parsing residue, not a real morpheme
 
 Tests:
-  34a) GRAM PREFIX ARTIFACT — Is 's' a real gram prefix or just half of 'sh'?
+  A) GRAM PREFIX ARTIFACT — Is 's' a real gram prefix or just half of 'sh'?
        Test: do gram prefix 's' tokens WITHOUT deriv 'h' behave differently
        from 'sh' tokens? If 's' is only meaningful before 'h', it's not real.
-  34b) ALL GRAM PREFIX VALIDATION — For each gram prefix, check if it has
+  B) ALL GRAM PREFIX VALIDATION — For each gram prefix, check if it has
        independent distributional evidence or is always paired with a
        deriv prefix
-  34c) E-CHAIN COLLAPSE — What info does ee→e destroy? Are 'ee' and 'e'
+  C) E-CHAIN COLLAPSE — What info does ee→e destroy? Are 'ee' and 'e'
        distributed the same way? Test without collapsing.
-  34d) IS STEM 'E' REAL? — Is there evidence that 'e' is a meaningful
+  D) IS STEM 'E' REAL? — Is there evidence that 'e' is a meaningful
        morpheme vs. the minimum residue after stripping?
-  34e) SUFFIX FUNCTIONAL GROUPINGS — Do the 10 validated suffixes cluster
+  E) SUFFIX FUNCTIONAL GROUPINGS — Do the 10 validated suffixes cluster
        naturally by distribution?
 """
 

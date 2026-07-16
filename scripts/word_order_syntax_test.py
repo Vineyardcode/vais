@@ -3,7 +3,7 @@
 INTER-WORD STRUCTURE: IS THERE SYNTAX?
 ===================================================
 
-Phases 32-38 established that INTRA-word morphological structure is real
+The morphology audits established that INTRA-word morphological structure is real
 (z=119.7 vs bigrams). Now: do ADJACENT words interact?
 
 The critical skeptical challenge: morphological features correlate with
@@ -12,7 +12,7 @@ and section. Any apparent "syntax" could be just co-occurrence within
 the same positional/sectional context.
 
 Sub-analyses:
-  39a) WORD-ORDER MI: Does word order matter?
+  A) WORD-ORDER MI: Does word order matter?
        Observed MI(pfx_i, pfx_{i+1}) vs:
        - Null 1: shuffle word ORDER within each line (destroys syntax,
          preserves line composition)
@@ -21,22 +21,22 @@ Sub-analyses:
        If obs >> null1 → word order matters (syntax)
        If obs ≈ null1 >> null2 → co-occurrence but not order
 
-  39b) MORPHOLOGICAL AGREEMENT
+  B) MORPHOLOGICAL AGREEMENT
        Do adjacent words share prefix or suffix more than expected?
        After controlling for position: compare obs agreement to a
        positionally-matched null (shuffle words within position bins).
 
-  39c) DISTANCE DECAY
+  C) DISTANCE DECAY
        Does the dependency between word_i and word_{i+k} decay with k?
        In real language: rapid decay (syntax is local).
        In positional confound: slow decay or no decay.
 
-  39d) THE sh→qo PATTERN: REAL OR POSITIONAL?
+  D) THE sh→qo PATTERN: REAL OR POSITIONAL?
        sh- is line-initial (mean=0.424), qo- follows.
        Within the same position bin, does sh→qo still hold?
        Test: restrict to mid-line pairs (position 0.3-0.7), compare.
 
-  39e) VOYNICH vs WORD-SHUFFLED TEXT
+  E) VOYNICH vs WORD-SHUFFLED TEXT
        Complete comparison: Voynich bigram MI vs null where words
        are shuffled within position×section bins.
        If MI survives → genuine syntactic ordering.
@@ -146,7 +146,7 @@ print(f"  {len(lines)} lines, {total_words} word tokens")
 # ══════════════════════════════════════════════════════════════════
 
 print("\n" + "=" * 70)
-print("39a: WORD-ORDER MI — Does word order matter?")
+print("A: WORD-ORDER MI — Does word order matter?")
 print("=" * 70)
 
 # Observed bigram MI at prefix and suffix level
@@ -275,7 +275,7 @@ else:
 # ══════════════════════════════════════════════════════════════════
 
 print("\n" + "=" * 70)
-print("39b: MORPHOLOGICAL AGREEMENT")
+print("B: MORPHOLOGICAL AGREEMENT")
 print("    Do adjacent words share prefix/suffix more than expected?")
 print("=" * 70)
 
@@ -358,7 +358,7 @@ else:
 # ══════════════════════════════════════════════════════════════════
 
 print("\n" + "=" * 70)
-print("39c: DISTANCE DECAY")
+print("C: DISTANCE DECAY")
 print("    Does MI decay with word distance? (syntax = fast decay)")
 print("=" * 70)
 
@@ -424,7 +424,7 @@ for gap in [1, 2, 3, 4, 5, 6]:
 # ══════════════════════════════════════════════════════════════════
 
 print("\n" + "=" * 70)
-print("39d: THE sh→qo PATTERN — REAL OR POSITIONAL?")
+print("D: THE sh→qo PATTERN — REAL OR POSITIONAL?")
 print("=" * 70)
 
 # sh- is line-initial (mean=0.424). Does sh→qo persist mid-line?
@@ -485,7 +485,7 @@ for pfx in sorted(sh_next, key=sh_next.get, reverse=True):
 # ══════════════════════════════════════════════════════════════════
 
 print("\n" + "=" * 70)
-print("39e: COMPREHENSIVE SYNTAX TEST")
+print("E: COMPREHENSIVE SYNTAX TEST")
 print("    Position×Section controlled word-order MI")
 print("=" * 70)
 
@@ -595,24 +595,24 @@ print("word_order_syntax_test SYNTHESIS")
 print("=" * 70)
 
 print(f"""
-  WORD-ORDER TEST (39a):
+  WORD-ORDER TEST (A):
     MI(pfx→pfx): obs={obs_pfx_mi:.4f}, null1={n1_pfx_m:.4f}, z={z_pfx_1:.1f}
     MI(sfx→sfx): obs={obs_sfx_mi:.4f}, null1={n1_sfx_m:.4f}, z={z_sfx_1:.1f}
     If z > 3: word ORDER within lines carries information
 
-  AGREEMENT (39b):
+  AGREEMENT (B):
     Prefix agreement: obs={100*pfx_agree:.2f}%, null={100*np_m:.2f}%, z={z_pa:.1f}
     Suffix agreement: obs={100*sfx_agree:.2f}%, null={100*ns_m:.2f}%, z={z_sa:.1f}
 
-  DISTANCE DECAY (39c):
+  DISTANCE DECAY (C):
     See table above. Syntax → fast decay. Confound → slow decay.
 
-  sh→qo (39d):
+  sh→qo (D):
     All: {100*transition_rate(all_pfx_bg, 'sh', 'qo')[0]:.1f}%
     Mid-line: {100*transition_rate(mid_pfx_bg, 'sh', 'qo')[0]:.1f}%
     If mid-line rate drops → positional artifact
 
-  COMPREHENSIVE (39e):
+  COMPREHENSIVE (E):
     Observed MI={obs_class_mi:.4f}, Pos×Sec null={nc_m:.4f}±{nc_s:.4f}
     z={z_class:.1f}
     {verdict_e}

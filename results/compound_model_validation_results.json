@@ -1,0 +1,27 @@
+{
+  "null_model": {
+    "actual_pct": 99.08256880733946,
+    "random_pct": 21.6954128440367,
+    "z_score": 20.60549477852154
+  },
+  "blend_test": {
+    "avg_real": 0.9362860608402315,
+    "avg_null": 0.7746277580032741
+  },
+  "h_permutation": {
+    "p_value": 0.0,
+    "n_verbal": 10,
+    "n_verbal_h": 10
+  },
+  "construct_chains": {
+    "self_repeat_ratio": 1.556337406849167,
+    "aba_ratio": 1.4909506214370227
+  },
+  "reparse": {
+    "clean_parse_pct": 64.82382133995037,
+    "unknown_decomposable_pct": 10.701185101580135
+  },
+  "paradigm": {
+    "avg_fill": 6.157894736842105
+  }
+}

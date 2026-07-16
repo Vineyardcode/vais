@@ -8,26 +8,26 @@ morphology_model_audit discovered that gram prefix 's' completely shadows deriv 
   - 97.6% of deriv='h' tokens have gpfx='s' (2700/2766)
   - The 's' parser steals the first char of 'sh' before deriv can see it
 
-This phase tests definitively whether 's' is a real morpheme or a parser artifact.
+This test determines definitively whether 's' is a real morpheme or a parser artifact.
 
 Tests:
-  35a) REPARSE WITHOUT 's' AS GRAM PREFIX
+  A) REPARSE WITHOUT 's' AS GRAM PREFIX
        Remove 's' from gram prefix list, reparse entire corpus.
        How many tokens now have deriv='sh'? How many genuine h-only?
 
-  35b) RESIDUAL 's' TOKENS — WHAT HAPPENS?
+  B) RESIDUAL 's' TOKENS — WHAT HAPPENS?
        The 1,444 s+non-h tokens: are these real 's'-prefix words, or do
        they also reparse meaningfully without 's'?
 
-  35c) h-VERBAL PREFIX TEST ON CORRECTED COUNTS
+  C) h-VERBAL PREFIX TEST ON CORRECTED COUNTS
        With the s→sh correction, rerun the permutation test.
        Only ~66 tokens may have pure h-prefix. Is that enough evidence?
 
-  35d) sh- AS UNIFIED MORPHEME
+  D) sh- AS UNIFIED MORPHEME
        With full sh-token set (~3000), test: line position, section dist,
        suffix preferences. Compare to the 258 tokens suffix_bug_cascade_audit identified.
 
-  35e) MUTUAL INFORMATION: ARE GRAM AND DERIV ONE SLOT?
+  E) MUTUAL INFORMATION: ARE GRAM AND DERIV ONE SLOT?
        Compute MI(gram_prefix, deriv_prefix). If MI is very high, the
        two-slot model is wrong — they're one combined prefix slot.
 """
@@ -160,7 +160,7 @@ print("Done.\n")
 # ══════════════════════════════════════════════════════════════════
 
 print("=" * 70)
-print("35a: REPARSE WITHOUT 's' AS GRAM PREFIX")
+print("A: REPARSE WITHOUT 's' AS GRAM PREFIX")
 print("=" * 70)
 
 # How many tokens change?
@@ -230,7 +230,7 @@ print(f"  Gram prefixes: {dict(sh_gpfx.most_common())}")
 # ══════════════════════════════════════════════════════════════════
 
 print("\n" + "=" * 70)
-print("35b: RESIDUAL 's' ANALYSIS — ARE THE s+non-h TOKENS GENUINE?")
+print("B: RESIDUAL 's' ANALYSIS — ARE THE s+non-h TOKENS GENUINE?")
 print("=" * 70)
 
 # Under NO-S model, what happened to old s+non-h tokens?
@@ -299,7 +299,7 @@ if len(s_other_orig) > 50:
 # ══════════════════════════════════════════════════════════════════
 
 print("\n" + "=" * 70)
-print("35c: h-VERBAL PREFIX TEST ON CORRECTED DATA")
+print("C: h-VERBAL PREFIX TEST ON CORRECTED DATA")
 print("=" * 70)
 
 # Under NO-S model: how many stems have h- prefix?
@@ -431,7 +431,7 @@ if sh_count_nos > 20 and len(sh_stems_nos) > 3:
 # ══════════════════════════════════════════════════════════════════
 
 print("\n" + "=" * 70)
-print("35d: sh- AS UNIFIED MORPHEME (NO-S MODEL)")
+print("D: sh- AS UNIFIED MORPHEME (NO-S MODEL)")
 print("=" * 70)
 
 sh_all = [t for t in tokens if t['nos_deriv'] == 'sh']
@@ -483,7 +483,7 @@ print(f"    Net gain:              {len(sh_all) - len(sh_orig)}")
 # ══════════════════════════════════════════════════════════════════
 
 print("\n" + "=" * 70)
-print("35e: MUTUAL INFORMATION — GRAM × DERIV PREFIX")
+print("E: MUTUAL INFORMATION — GRAM × DERIV PREFIX")
 print("=" * 70)
 
 # Under ORIGINAL parser
@@ -565,7 +565,7 @@ print(f"  → If chi2 >> df, gram and deriv are NOT independent")
 # ══════════════════════════════════════════════════════════════════
 
 print("\n" + "=" * 70)
-print("35f: COMBINED PREFIX MODEL — SINGLE SLOT ALTERNATIVE")
+print("F: COMBINED PREFIX MODEL — SINGLE SLOT ALTERNATIVE")
 print("=" * 70)
 
 # Instead of gram_prefix + deriv_prefix, what if there's ONE prefix?
@@ -611,7 +611,7 @@ for dp, ct in o_deriv.most_common():
 # ══════════════════════════════════════════════════════════════════
 
 print("\n" + "=" * 70)
-print("35g: sh_prefix_disentangle SUMMARY")
+print("G: sh_prefix_disentangle SUMMARY")
 print("=" * 70)
 
 print(f"""

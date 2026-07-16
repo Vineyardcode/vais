@@ -10,17 +10,17 @@ root_lexicon_self_audit self-audit found critical problems:
   4) qokedy pattern dominates f78r — need to understand why
   5) esed (1 token), yed (5 tokens) too weak to keep
 
-This phase:
-  28a) PERMUTATION TEST — Shuffle section labels, re-run section
+This test:
+  A) PERMUTATION TEST — Shuffle section labels, re-run section
        enrichment. Are our gallows distributions better than random?
-  28b) RECLASSIFY POS — Fix ho→verb, ch→noun, ol→noun based on data.
+  B) RECLASSIFY POS — Fix ho→verb, ch→noun, ol→noun based on data.
        Demote esed, yed to "speculative".
-  28c) QOKEDY INVESTIGATION — This pattern appears 100s of times. Is
+  C) QOKEDY INVESTIGATION — This pattern appears 100s of times. Is
        our decomposition (qo+k+e+dy) correct, or is qokedy itself a
        word/formula? Compare it as atomic vs decomposed.
-  28d) LONG-ROOT CENSUS — Focus ONLY on 3+ char roots. What are the
+  D) LONG-ROOT CENSUS — Focus ONLY on 3+ char roots. What are the
        most frequent unexplained long roots? These are the real targets.
-  28e) BIGRAM STRUCTURE — Do word sequences show real syntactic patterns
+  E) BIGRAM STRUCTURE — Do word sequences show real syntactic patterns
        (e.g., "A B" always in that order), or is order random? This
        tests whether we're looking at real language vs cipher/random.
 """

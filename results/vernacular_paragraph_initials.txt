@@ -1,5 +1,5 @@
 ══════════════════════════════════════════════════════════════════════
-PHASE 76: Vernacular Paragraph-Initial Mapping
+vernacular_paragraph_initials: Vernacular Paragraph-Initial Mapping
 ══════════════════════════════════════════════════════════════════════
 
 Target VMS distributions:
@@ -427,7 +427,7 @@ SKEPTICAL ANALYSIS
    The Forme of Cury: 1.618 bits (VMS: 1.575)
 
 ══════════════════════════════════════════════════════════════════════
-PHASE 76 SUMMARY
+vernacular_paragraph_initials SUMMARY
 ══════════════════════════════════════════════════════════════════════
 
   Highest top-4 coverage: 86.1% (Il libro della cucina del sec. XIV)

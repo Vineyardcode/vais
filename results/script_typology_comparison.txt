@@ -1,5 +1,5 @@
 ========================================================================
-PHASE 99 — SCRIPT TYPOLOGY COMPARISON
+script_typology_comparison — SCRIPT TYPOLOGY COMPARISON
 ========================================================================
 
 ────────────────────────────────────────────────────────────────────────
@@ -202,4 +202,4 @@ STEP 10: Summary and Verdict
     featural_alphabetic_syllabary      : mean=5.376, min=5.376
     NL_syllable                        : mean=5.627, min=5.299
 
-  Results saved to C:\projects\voynich_slop\results\phase99_script_typology.json
+  Results saved to C:\projects\vais\results\script_typology_comparison.json

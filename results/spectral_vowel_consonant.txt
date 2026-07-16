@@ -1,5 +1,5 @@
 ============================================================================
-PHASE 87 — VOWEL-CONSONANT SPECTRAL SEPARATION
+spectral_vowel_consonant — VOWEL-CONSONANT SPECTRAL SEPARATION
 ============================================================================
 
   Does the VMS chunk-to-chunk transition matrix reveal a vowel/
@@ -227,7 +227,7 @@ STEP 7: STABILITY — DOES SPLIT CHANGE WITH TOP-N?
 STEP 8: CONFOUND CHECK — IS THE SPLIT JUST WORD-POSITION?
 ────────────────────────────────────────────────────────────────────────────
 
-  Phase 86 showed chunks cluster mainly by word position (I/M/F).
+  chunk_equivalence_classes showed chunks cluster mainly by word position (I/M/F).
   The spectral split could just be separating initial from final
   chunks, not V from C. Test: compute position profiles of each group.
 

@@ -8,23 +8,23 @@ constraints explain the observed prefix↔suffix association (MI=0.19 bits)?
 If yes, the "morphological system" collapses to phonotactics.
 
 Sub-analyses:
-  38a) BIGRAM NULL MODEL
+  A) BIGRAM NULL MODEL
        Fit character bigrams from collapsed Voynich words.
        Generate synthetic words from bigram model, matching length dist.
        Compute MI(prefix_group, suffix_group) on synthetic data.
        If synthetic MI ≈ observed MI → morphology is just phonotactics.
 
-  38b) MI BY WORD LENGTH
+  B) MI BY WORD LENGTH
        If prefix↔suffix MI comes from adjacent characters, it should
        decay for long words where prefix and suffix are far apart.
        If MI persists for long words → genuine long-range structure.
 
-  38c) ch- VS sh-: ALLOMORPHS OR DISTINCT?
+  C) ch- VS sh-: ALLOMORPHS OR DISTINCT?
        parser_free_morphology showed ch- is "phonotactic." Does ch- differ from sh-
        in ANY measurable way? Suffix selection, section, position?
        If indistinguishable → allomorphs. If different → distinct.
 
-  38d) INFORMATION DECOMPOSITION
+  D) INFORMATION DECOMPOSITION
        How much of section/position can be predicted from word edges?
        MI(section, prefix), MI(section, suffix), MI(section, both)
        MI(position, prefix), MI(position, suffix)
@@ -189,7 +189,7 @@ print(f"  Observed Cramér's V = {obs_v:.4f}")
 # ══════════════════════════════════════════════════════════════════
 
 print("\n" + "="*70)
-print("38a: BIGRAM NULL MODEL")
+print("A: BIGRAM NULL MODEL")
 print("    Can character bigrams explain prefix↔suffix MI?")
 print("="*70)
 
@@ -348,7 +348,7 @@ for p in ['ch','sh','qo','o','d','y','l','NONE']:
 # ══════════════════════════════════════════════════════════════════
 
 print("\n" + "="*70)
-print("38b: MI BY WORD LENGTH")
+print("B: MI BY WORD LENGTH")
 print("    Does prefix↔suffix MI persist for long words?")
 print("="*70)
 
@@ -394,7 +394,7 @@ print(f"  If z drops for long words → structure is driven by character adjacen
 # ══════════════════════════════════════════════════════════════════
 
 print("\n" + "="*70)
-print("38c: ch- VS sh- — ALLOMORPHS OR DISTINCT?")
+print("C: ch- VS sh- — ALLOMORPHS OR DISTINCT?")
 print("    If ch- is phonotactic (parser_free_morphology), does it differ from sh-?")
 print("="*70)
 
@@ -490,7 +490,7 @@ print(f"    Section × ch/sh: V = {v_ch_sh_sec:.4f}")
 # ══════════════════════════════════════════════════════════════════
 
 print("\n" + "="*70)
-print("38d: INFORMATION DECOMPOSITION")
+print("D: INFORMATION DECOMPOSITION")
 print("    What do word edges actually encode?")
 print("="*70)
 

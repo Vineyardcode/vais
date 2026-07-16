@@ -16,23 +16,23 @@ parser_free_word_classes attacks from a new angle: do WORDS (not parsed features
 naturally cluster into groups that match the class system?
 
 Sub-analyses:
-  44a) DISTRIBUTIONAL WORD CLUSTERING — For frequent words, compute
+  A) DISTRIBUTIONAL WORD CLUSTERING — For frequent words, compute
        context vectors (what words appear before and after). SVD + k-means.
        Do natural clusters emerge? How many?
 
-  44b) CLUSTER vs MORPHOLOGICAL CLASS — Do distributional clusters
+  B) CLUSTER vs MORPHOLOGICAL CLASS — Do distributional clusters
        match the parsed suffix classes (A/M/B)? If yes → classes are
        real word-level properties. If no → classes are parser artifacts.
 
-  44c) LINE CLASS SEQUENCE — What are the most common class sequences
+  C) LINE CLASS SEQUENCE — What are the most common class sequences
        within lines? Is there a dominant pattern (e.g., B-A-B-A or
        A-B-A)? How much of within-line structure is explained by class?
 
-  44d) CLASS BIGRAM PERPLEXITY — Build bigram language models at
+  D) CLASS BIGRAM PERPLEXITY — Build bigram language models at
        different granularities (unigram, 3-class, 11-suffix, word).
        How much does each reduce uncertainty?
 
-  44e) LINE POSITION × CLASS — Which classes appear where in the line?
+  E) LINE POSITION × CLASS — Which classes appear where in the line?
        Is Class A (dy/y) concentrated in certain positions? Is Class M
        (X/ar/in) line-final?
 """
@@ -93,7 +93,7 @@ print(f"  {len(word_counts)} word types")
 # ══════════════════════════════════════════════════════════════════
 
 print("\n" + "=" * 70)
-print("44a: DISTRIBUTIONAL WORD CLUSTERING")
+print("A: DISTRIBUTIONAL WORD CLUSTERING")
 print("    Cluster words by what appears before/after them.")
 print("    No parsing — purely distributional.")
 print("=" * 70)
@@ -232,7 +232,7 @@ for cl in range(3):
 # ══════════════════════════════════════════════════════════════════
 
 print("\n" + "=" * 70)
-print("44b: DISTRIBUTIONAL CLUSTER vs MORPHOLOGICAL CLASS")
+print("B: DISTRIBUTIONAL CLUSTER vs MORPHOLOGICAL CLASS")
 print("    Do distributional clusters match parsed suffix classes?")
 print("=" * 70)
 
@@ -300,7 +300,7 @@ print(f"  z(NMI) = {z_nmi:.1f}")
 # ══════════════════════════════════════════════════════════════════
 
 print("\n" + "=" * 70)
-print("44c: LINE CLASS SEQUENCE PATTERNS")
+print("C: LINE CLASS SEQUENCE PATTERNS")
 print("    What are the most common class (A/M/B) patterns within lines?")
 print("=" * 70)
 
@@ -362,7 +362,7 @@ for c1 in ['A', 'M', 'B']:
 # ══════════════════════════════════════════════════════════════════
 
 print("\n" + "=" * 70)
-print("44d: CLASS BIGRAM PERPLEXITY")
+print("D: CLASS BIGRAM PERPLEXITY")
 print("    How much does class/suffix/word context reduce uncertainty?")
 print("=" * 70)
 
@@ -468,7 +468,7 @@ print(f"  {'word type':<25} {pp_word_line:.2f}")
 # ══════════════════════════════════════════════════════════════════
 
 print("\n" + "=" * 70)
-print("44e: LINE POSITION × CLASS")
+print("E: LINE POSITION × CLASS")
 print("    Which classes appear at line-initial, -medial, and -final?")
 print("=" * 70)
 

@@ -1,5 +1,5 @@
 ================================================================================
-PHASE 107 — INTRA-CHUNK SLOT MUTUAL INFORMATION DECOMPOSITION
+chunk_slot_mutual_information — INTRA-CHUNK SLOT MUTUAL INFORMATION DECOMPOSITION
 ================================================================================
 
 Purpose: Localize WHERE the anomalous h_char residual (+0.26)
@@ -166,7 +166,7 @@ E. BODY ISOLATION: ENTROPY OF BODY vs CODA vs FULL
   coda_s5                   64356     1.9849     0.6430
 
   NL reference range: h_char ≈ 0.82-0.88, h_ratio ≈ 0.82-0.88
-  VMS full h_char (Phase 97): 0.6560
+  VMS full h_char (slot_grammar_entropy_model): 0.6560
 
   Δh_char (body S1234 vs full): -0.2478
   Δh_char (inner S234 vs full): -0.6858
@@ -189,7 +189,7 @@ F. BODY-CODA MUTUAL INFORMATION
   Fraction of coda entropy explained by body: 42.7%
 
 ================================================================================
-PHASE 107 — VERDICT
+chunk_slot_mutual_information — VERDICT
 ================================================================================
 
   1. DOMINANT ANOMALOUS INTERACTION:

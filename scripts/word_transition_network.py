@@ -5,23 +5,23 @@ WORD TRANSITION NETWORK
 
 mutual_information_anatomy showed MI is distributed across 3,896+ pair types (genuine
 grammar, not fixed phrases), strictly local (gap 1 only), and mostly
-word-specific (class model adds ~0%). This phase maps the word-level
+word-specific (class model adds ~0%). This test maps the word-level
 syntax.
 
 Sub-analyses:
-  47a) SUCCESSOR ENTROPY — Which words have the most/least constrained
+  A) SUCCESSOR ENTROPY — Which words have the most/least constrained
        successors? Find the grammatical "bottleneck" words.
 
-  47b) SUFFIX→WORD TRANSITIONS — Does knowing the previous suffix help
+  B) SUFFIX→WORD TRANSITIONS — Does knowing the previous suffix help
        predict the specific next word (not just next class)?
 
-  47c) COLLOCATION CLUSTERS — Build PMI network of high-affinity word
+  C) COLLOCATION CLUSTERS — Build PMI network of high-affinity word
        pairs. What clusters emerge?
 
-  47d) SECTION VOCABULARY MI — How much word-level MI is from section-
+  D) SECTION VOCABULARY MI — How much word-level MI is from section-
        specific vocabulary vs genuine within-section syntax?
 
-  47e) WORD TRANSITION ASYMMETRY — Compare P(w2|w1) vs P(w1|w2). Is
+  E) WORD TRANSITION ASYMMETRY — Compare P(w2|w1) vs P(w1|w2). Is
        the head-initial structure visible at word level?
 """
 
@@ -85,7 +85,7 @@ total_bigrams = sum(all_bigrams.values())
 # ══════════════════════════════════════════════════════════════════
 
 print("\n" + "=" * 70)
-print("47a: SUCCESSOR ENTROPY PER WORD")
+print("A: SUCCESSOR ENTROPY PER WORD")
 print("    Which words have most/least constrained successors?")
 print("=" * 70)
 
@@ -158,7 +158,7 @@ print(f"  Corr(log(freq), H(succ)) = {corr:.3f}")
 # ══════════════════════════════════════════════════════════════════
 
 print("\n" + "=" * 70)
-print("47b: SUFFIX→WORD TRANSITIONS")
+print("B: SUFFIX→WORD TRANSITIONS")
 print("    Does previous suffix help predict specific next word?")
 print("=" * 70)
 
@@ -261,7 +261,7 @@ for sfx in ['X'] + SUFFIXES:
 # ══════════════════════════════════════════════════════════════════
 
 print("\n" + "=" * 70)
-print("47c: COLLOCATION CLUSTERS")
+print("C: COLLOCATION CLUSTERS")
 print("    PMI network of high-affinity word pairs")
 print("=" * 70)
 
@@ -339,7 +339,7 @@ for i, comp in enumerate(components[:5]):
 # ══════════════════════════════════════════════════════════════════
 
 print("\n" + "=" * 70)
-print("47d: SECTION VOCABULARY MI")
+print("D: SECTION VOCABULARY MI")
 print("    How much word MI is from section-specific vocabulary?")
 print("=" * 70)
 
@@ -496,7 +496,7 @@ print(f"  Total excess over global:             {actual_mi - gs_mean:.4f}")
 # ══════════════════════════════════════════════════════════════════
 
 print("\n" + "=" * 70)
-print("47e: WORD TRANSITION ASYMMETRY")
+print("E: WORD TRANSITION ASYMMETRY")
 print("    Compare P(w2|w1) vs P(w1|w2) — head-initial at word level?")
 print("=" * 70)
 

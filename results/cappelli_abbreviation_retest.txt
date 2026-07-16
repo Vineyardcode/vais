@@ -1,12 +1,12 @@
 ================================================================================
-Phase 105 — Re-testing Cappelli Abbreviation Marks vs VMS Suffixes
+cappelli_abbreviation_retest — Re-testing Cappelli Abbreviation Marks vs VMS Suffixes
 ================================================================================
 
-Critical revalidation of Phase 73's methodology:
-  Phase 73 tested h_char (valid failure) but NEVER tested ending metrics.
-  Phase 104 found VMS endings are 14-20σ from Latin on paradigm fill & NMI.
+Critical revalidation of abbreviation_shorthand_model's methodology:
+  abbreviation_shorthand_model tested h_char (valid failure) but NEVER tested ending metrics.
+  latin_inflection_ending_test found VMS endings are 14-20σ from Latin on paradigm fill & NMI.
   Cappelli marks are many-to-one → should REDUCE NMI and INCREASE fill.
-  This phase asks: does abbreviation explain the Phase 104 anomalies?
+  This test asks: does abbreviation explain the latin_inflection_ending_test anomalies?
 
 Loading VMS...
   VMS: 40300 words
@@ -220,7 +220,7 @@ Cappelli mark distribution (all Latin, d=1.0):
           Total mark-ended words:  65310 ( 37.2% of all words)
              Distinct mark types:      8
 
-VMS parser suffix distribution (Phase 104):
+VMS parser suffix distribution (latin_inflection_ending_test):
   (Using last-1 character distribution as proxy)
         -y:  15867 ( 39.4%)
         -n:   6465 ( 16.0%)
@@ -246,8 +246,8 @@ WHAT ABBREVIATION EXPLAINS:
   - Focus on: H(ending), paradigm fill, NMI, h_char
 
 WHAT ABBREVIATION DOES NOT EXPLAIN:
-  - Phase 73 showed h_char remains ~0.85 (VMS needs 0.64).
-  - This phase measures whether abbreviation even moves h_char.
+  - abbreviation_shorthand_model showed h_char remains ~0.85 (VMS needs 0.64).
+  - This test measures whether abbreviation even moves h_char.
 
 CONTROLS:
   - Vernacular languages show whether the effect is Latin-specific.

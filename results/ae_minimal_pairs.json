@@ -1,5 +1,5 @@
 {
-  "phase": 92,
+  "test": "ae_minimal_pairs",
   "question": "Is zodiac a/e inverse caused by substitution or vocabulary stratification?",
   "corpus_ae_pairs": 101,
   "zodiac_ae_pairs": 0,

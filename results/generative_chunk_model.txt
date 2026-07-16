@@ -1,5 +1,5 @@
 ========================================================================
-PHASE 98 — GENERATIVE CHUNK MODEL
+generative_chunk_model — GENERATIVE CHUNK MODEL
 ========================================================================
 
 ────────────────────────────────────────────────────────────────────────
@@ -110,10 +110,10 @@ STEP 6: Statistical comparison (z-scores: synthetic vs VMS)
   mean_chunks_per_word         1.9481   1.9474     0.20   1.9460     0.73      N/A      N/A      N/A      N/A
 
 ────────────────────────────────────────────────────────────────────────
-STEP 7: Collapse to 25 equivalence classes (Phase 86)
+STEP 7: Collapse to 25 equivalence classes (chunk_equivalence_classes)
 ────────────────────────────────────────────────────────────────────────
 
-  Phase 86 mapped: 206 / 523 chunk types
+  chunk_equivalence_classes mapped: 206 / 523 chunk types
   After extension: 523 / 523 chunk types mapped
   Number of equivalence classes used: 25
 
@@ -174,4 +174,4 @@ STEP 10: Summary and Verdict
     trigram chunk h_ratio: 0.8002 vs VMS 0.8176 (captures 97.9% of VMS value)
     Bigram glyph h_char: 0.6695 vs VMS 0.6530
 
-  Results saved to C:\projects\voynich_slop\results\phase98_generative_chunk_model.json
+  Results saved to C:\projects\vais\results\generative_chunk_model.json

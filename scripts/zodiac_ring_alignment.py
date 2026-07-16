@@ -490,7 +490,7 @@ def run_19b(all_words):
 # 19c  COLLOCATIONAL GRAMMAR
 # ══════════════════════════════════════════════════════════════════
 
-# Confirmed translations (from Phases 16-17)
+# Confirmed translations (from the Coptic probes and sentence_translation)
 CONFIRMED_VOCAB = {
     "esed":  ("lion/Leo", "Arabic", 1.00),
     "she":   ("tree/plant", "Coptic", 1.00),

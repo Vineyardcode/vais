@@ -15,7 +15,7 @@ Tests whether these marks:
   - Appear at specific word positions (onset? coda?)
   - Form patterns that suggest grammatical or semantic function
 
-Connected to: user observation of small marks above letters in f78r,
+Connected to: an observation of small marks above letters in f78r,
 the earlier gallows-as-determinative finding, Hebrew niqqud analogy.
 """
 

@@ -7,17 +7,17 @@ gallows_classifier_semantics proved that gallows determinatives ARE the content 
 Mandarin classifiers), with root 'e' as grammatical glue.  Six 100%-coverage
 f78r lines now produce intelligible medical-astrological sequences.
 
-This phase:
-  25a) UNKNOWN ROOT CENSUS — Profile every remaining unknown root by frequency,
+This test:
+  A) UNKNOWN ROOT CENSUS — Profile every remaining unknown root by frequency,
        section, collocates, and morphological context to crack more roots
-  25b) HO VALIDATION — Test whether 'ho'=face/front (Coptic) holds: does
+  B) HO VALIDATION — Test whether 'ho'=face/front (Coptic) holds: does
        it co-occur with body-part roots in bio sections?
-  25c) ALCH VALIDATION — Does 'alch' appear with substance/preparation
+  C) ALCH VALIDATION — Does 'alch' appear with substance/preparation
        words? Confirm the alchemy connection
-  25d) COHERENT PARAGRAPH TRANSLATION — Take f78r lines 1-15 and produce
+  D) COHERENT PARAGRAPH TRANSLATION — Take f78r lines 1-15 and produce
        a connected English paragraph using classifier semantics + medical
        template, also translate f76r best passage
-  25e) FULL VOCABULARY TABLE — Compile all cracked roots, compounds,
+  E) FULL VOCABULARY TABLE — Compile all cracked roots, compounds,
        and grammatical morphemes into a single reference table
 
 """
@@ -785,7 +785,7 @@ def main():
 
     Path("results").mkdir(exist_ok=True)
     results = {
-        "phase": 25,
+        "test": "narrative_reconstruction",
         "total_confirmed_roots": len(CONFIRMED_VOCAB),
         "total_compound_roots": len(COMPOUND_VOCAB),
         "total_vocabulary": len(ALL_ROOTS),

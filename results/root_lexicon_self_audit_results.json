@@ -1,0 +1,142 @@
+{
+  "27a": {
+    "short_pct": 90.71101724744808,
+    "long_coverage": 6.548387096774194,
+    "total_coverage": 70.49627791563276
+  },
+  "27b": {
+    "pass": 17,
+    "fail": 5
+  },
+  "27c": {
+    "pass": 3,
+    "fail": 7
+  },
+  "27d": {
+    "avg_coverage": 87.96992481203007,
+    "translations": [
+      {
+        "line": "f78r",
+        "coverage": 20.0,
+        "unknowns": 4,
+        "total": 5
+      },
+      {
+        "line": "f78r.1,@Lt",
+        "coverage": 0.0,
+        "unknowns": 1,
+        "total": 1
+      },
+      {
+        "line": "f78r.2,@Lt",
+        "coverage": 100.0,
+        "unknowns": 0,
+        "total": 1
+      },
+      {
+        "line": "f78r.3,@P0",
+        "coverage": 85.71428571428571,
+        "unknowns": 1,
+        "total": 7
+      },
+      {
+        "line": "f78r.4,+P0",
+        "coverage": 100.0,
+        "unknowns": 0,
+        "total": 7
+      },
+      {
+        "line": "f78r.5,+P0",
+        "coverage": 100.0,
+        "unknowns": 0,
+        "total": 7
+      },
+      {
+        "line": "f78r.6,+P0",
+        "coverage": 100.0,
+        "unknowns": 0,
+        "total": 9
+      },
+      {
+        "line": "f78r.7,+P0",
+        "coverage": 100.0,
+        "unknowns": 0,
+        "total": 8
+      },
+      {
+        "line": "f78r.8,+P0",
+        "coverage": 87.5,
+        "unknowns": 1,
+        "total": 8
+      },
+      {
+        "line": "f78r.9,+P0",
+        "coverage": 87.5,
+        "unknowns": 1,
+        "total": 8
+      },
+      {
+        "line": "f78r.10,+P0",
+        "coverage": 87.5,
+        "unknowns": 1,
+        "total": 8
+      },
+      {
+        "line": "f78r.11,+P0",
+        "coverage": 87.5,
+        "unknowns": 1,
+        "total": 8
+      },
+      {
+        "line": "f78r.12,+P0",
+        "coverage": 87.5,
+        "unknowns": 1,
+        "total": 8
+      },
+      {
+        "line": "f78r.13,+P0",
+        "coverage": 90.0,
+        "unknowns": 1,
+        "total": 10
+      },
+      {
+        "line": "f78r.14,+P0",
+        "coverage": 88.88888888888889,
+        "unknowns": 1,
+        "total": 9
+      },
+      {
+        "line": "f78r.15,+P0",
+        "coverage": 100.0,
+        "unknowns": 0,
+        "total": 8
+      },
+      {
+        "line": "f78r.16,+P0",
+        "coverage": 83.33333333333334,
+        "unknowns": 1,
+        "total": 6
+      },
+      {
+        "line": "f78r.17,+P0",
+        "coverage": 80.0,
+        "unknowns": 1,
+        "total": 5
+      },
+      {
+        "line": "f78r.18,+P0",
+        "coverage": 100.0,
+        "unknowns": 0,
+        "total": 5
+      },
+      {
+        "line": "f78r.19,+P0",
+        "coverage": 80.0,
+        "unknowns": 1,
+        "total": 5
+      }
+    ]
+  },
+  "27e": {},
+  "27f": {}
+}

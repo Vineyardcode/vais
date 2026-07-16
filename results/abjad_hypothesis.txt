@@ -1,5 +1,5 @@
 ========================================================================
-PHASE 80 — ABJAD/CONSONANTAL HYPOTHESIS: VOWEL-STRIPPING TEST
+abjad_hypothesis — ABJAD/CONSONANTAL HYPOTHESIS: VOWEL-STRIPPING TEST
 ========================================================================
 
 ────────────────────────────────────────────────────────────────────────
@@ -105,7 +105,7 @@ STEP 5: ALPHABET SIZE — DOES STRIPPING HIT ~13?
 ────────────────────────────────────────────────────────────────────────
 
   VMS (EVA glyphs): 35 distinct glyphs
-  VMS (after Phase 67 functional collapse): ~13 functional units
+  VMS (after run_length_morphology functional collapse): ~13 functional units
 
   Latin (Caesar): 23 → 18 (lost 5 vowel chars)
   Latin (Vulgate): 26 → 19 (lost 7 vowel chars)
@@ -156,7 +156,7 @@ STEP 6: WORD LENGTH DISTRIBUTION — SHAPE COMPARISON
 STEP 7: CONSONANT CLUSTERING — ANTI-ALTERNATION TEST
 ────────────────────────────────────────────────────────────────────────
 
-  VMS shows extreme anti-alternation (z = -54.7 from Phase 55).
+  VMS shows extreme anti-alternation (z = -54.7 from vowel_consonant_separation).
   Does vowel stripping increase consonant clustering?
 
   VMS alternation score: 0.9325
@@ -173,7 +173,7 @@ STEP 8: THE CRITICAL h_char TEST — DOES STRIPPING HIT 0.641?
 ────────────────────────────────────────────────────────────────────────
 
   VMS h_char ratio (H(c|prev)/H(c)) = 0.641
-  This is the signature anomaly no encoding model reproduces (Phase 59).
+  This is the signature anomaly no encoding model reproduces (forward_process_models).
   Natural language is typically 0.55-0.70.
   The question: does vowel stripping push h_char TOWARD 0.641?
 

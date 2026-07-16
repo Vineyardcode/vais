@@ -1,5 +1,5 @@
 ========================================================================
-PHASE 100 — TARGETED DECIPHERMENT WITH 25-CLASS ALPHABET
+chunk_alphabet_decipherment — TARGETED DECIPHERMENT WITH 25-CLASS ALPHABET
 ========================================================================
 
 ────────────────────────────────────────────────────────────────────────
@@ -346,4 +346,4 @@ STEP 9: Critical assessment
      being recoverable as a simple substitution cipher.
 
 
-  Results saved to C:\projects\voynich_slop\results\phase100_decipherment.json
+  Results saved to C:\projects\vais\results\chunk_alphabet_decipherment.json

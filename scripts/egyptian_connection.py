@@ -9,7 +9,7 @@ with four mapped domains:
   f = botanical/plant
   p = process/transformation
 
-This phase tests whether the ENTIRE Voynich writing system follows
+This test examines whether the ENTIRE Voynich writing system follows
 Egyptian hieroglyphic structural principles — not just determinatives,
 but also phonetic complements, logograms, and consonantal roots.
 

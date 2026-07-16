@@ -1,5 +1,5 @@
 {
-  "phase": 88,
+  "test": "position_identity_decomposition",
   "question": "Position \u00d7 Identity decomposition: cipher or NL?",
   "vms_metrics_2p": {
     "mean_pci": 0.8035836907912831,
@@ -78,7 +78,7 @@
     "z_jif": -46.48151107657991,
     "z_nmi": 838.6580338119213
   },
-  "phase60_reconciliation": {
+  "positional_verbose_cipher_reconciliation": {
     "predicted_jaccard": 0.273,
     "observed_jif": 0.24102564102564103,
     "nl_char_jif_mean": 0.757057453416149

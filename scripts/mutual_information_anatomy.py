@@ -4,23 +4,23 @@ ANATOMY OF ANOMALOUS PREDICTABILITY
 ===============================================
 
 word_predictability_decomposition found MI/H = 0.377, ~50% higher than English (~0.2-0.3).
-This phase dissects the anomaly.
+This test dissects the anomaly.
 
 Sub-analyses:
-  46a) MI CONCENTRATION — How is MI distributed across word pairs?
+  A) MI CONCENTRATION — How is MI distributed across word pairs?
        Cumulative MI curve. Is it 50 pairs or 5,000?
 
-  46b) POSITION 1 DEEP DIVE — What words appear at position 1
+  B) POSITION 1 DEEP DIVE — What words appear at position 1
        (second word of line)? Is there a function-word bottleneck?
 
-  46c) VOCABULARY-CONTROLLED MI — Is the high MI/H ratio just because
+  C) VOCABULARY-CONTROLLED MI — Is the high MI/H ratio just because
        the VMS has a small effective vocabulary? Compare MI/H at
        matched effective vocabulary sizes using UNK mapping.
 
-  46d) WORD-LEVEL DISTANCE DECAY — MI(word_i, word_{i+k}) for k=1..5.
+  D) WORD-LEVEL DISTANCE DECAY — MI(word_i, word_{i+k}) for k=1..5.
        Does word-level predictability extend beyond adjacent pairs?
 
-  46e) GENERATIVE MODEL COMPARISON — Generate text from unigram,
+  E) GENERATIVE MODEL COMPARISON — Generate text from unigram,
        class bigram, and word bigram models. Compare MI/H to actual VMS.
 """
 
@@ -111,7 +111,7 @@ print(f"  H(word) = {H_uni:.3f}, H(word|prev) = {H_cond:.3f}, MI = {MI:.3f}, MI/
 # ══════════════════════════════════════════════════════════════════
 
 print("\n" + "=" * 70)
-print("46a: MI CONCENTRATION")
+print("A: MI CONCENTRATION")
 print("    How is MI distributed across word pairs?")
 print("=" * 70)
 
@@ -184,7 +184,7 @@ print(f"  Negative/positive ratio: {abs(neg_mi)/pos_mi:.3f}")
 # ══════════════════════════════════════════════════════════════════
 
 print("\n" + "=" * 70)
-print("46b: POSITION 1 DEEP DIVE")
+print("B: POSITION 1 DEEP DIVE")
 print("    What words appear at position 1 (second word of line)?")
 print("=" * 70)
 
@@ -271,7 +271,7 @@ if pos1_only:
 # ══════════════════════════════════════════════════════════════════
 
 print("\n" + "=" * 70)
-print("46c: VOCABULARY-CONTROLLED MI")
+print("C: VOCABULARY-CONTROLLED MI")
 print("    Is high MI/H just from small vocabulary?")
 print("=" * 70)
 
@@ -364,7 +364,7 @@ print(f"  z-score vs global:   {(MI/H_uni - np.mean(global_mi_h)) / np.std(globa
 # ══════════════════════════════════════════════════════════════════
 
 print("\n" + "=" * 70)
-print("46d: WORD-LEVEL DISTANCE DECAY")
+print("D: WORD-LEVEL DISTANCE DECAY")
 print("    MI(word_i, word_{i+k}) for k=1..5")
 print("=" * 70)
 
@@ -408,7 +408,7 @@ for gap in range(1, 6):
 # ══════════════════════════════════════════════════════════════════
 
 print("\n" + "=" * 70)
-print("46e: GENERATIVE MODEL COMPARISON")
+print("E: GENERATIVE MODEL COMPARISON")
 print("    Generate text from models, compare MI/H")
 print("=" * 70)
 

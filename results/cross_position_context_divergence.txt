@@ -1,5 +1,5 @@
 ============================================================================
-PHASE 89 — CROSS-POSITION CONTEXT DIVERGENCE
+cross_position_context_divergence — CROSS-POSITION CONTEXT DIVERGENCE
 ============================================================================
 
   For VMS chunks appearing at multiple word-positions (I, M, F),
@@ -333,7 +333,7 @@ STEP 7: SKEPTICAL AUDIT
      are genuinely the same unit at different positions.
 
   4. NL SYLLABIFICATION QUALITY
-     The syllabifier is rule-based (~87% accuracy from Phase 85).
+     The syllabifier is rule-based (~87% accuracy from chunk_fingerprint).
      Errors create spurious syllable types, inflating type count
      but likely REDUCING measured JSD (errors are position-random).
      This makes the NL syllable baseline conservative.
@@ -401,7 +401,7 @@ STEP 8: SYNTHESIS & VERDICT
   Permutation null (successor): z = +23.97
     → Observed JSD is significantly above sampling noise.
 
-  REVISED CONFIDENCES (Phase 89):
+  REVISED CONFIDENCES (cross_position_context_divergence):
   - Natural language: 87% → 87% (unchanged — result is NL-consistent)
   - Chunks = functional characters: 85% → 85% (unchanged)
   - True alphabet ≈ 25: 70% → 70% (unchanged)

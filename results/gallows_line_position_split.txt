@@ -1,5 +1,5 @@
 ══════════════════════════════════════════════════════════════════════
-PHASE 77b: Line-Position Gallows — The {p,f} vs {t,k} Split
+gallows_line_position_split: Line-Position Gallows — The {p,f} vs {t,k} Split
 ══════════════════════════════════════════════════════════════════════
 
 Origin: User observation that 'p' appears almost exclusively
@@ -180,7 +180,7 @@ occurrences plain glyphs, or do they appear within digraphs/compounds?
 TEST G: COMPOUND GALLOWS {cph, cfh, cth, ckh} LINE DISTRIBUTION
 ══════════════════════════════════════════════════════════════════════
 
-Phase 77 found compound gallows are excluded from paragraph starts.
+gallows_positional_ecology found compound gallows are excluded from paragraph starts.
 Do they show any line-position preference? If {p,f} are first-line-only,
 are their compound versions {cph, cfh} also first-line-only?
 
@@ -191,7 +191,7 @@ are their compound versions {cph, cfh} also first-line-only?
        ckh |           32    0.31% |          405    0.72% |     0.4x
 
 ══════════════════════════════════════════════════════════════════════
-PHASE 77b SYNTHESIS: THE {p,f} vs {t,k} SPLIT
+gallows_line_position_split SYNTHESIS: THE {p,f} vs {t,k} SPLIT
 ══════════════════════════════════════════════════════════════════════
   'p': L1=3.1%, L2+=0.2%, ratio=12.7x → FIRST-LINE CLASS
   'f': L1=1.3%, L2+=0.1%, ratio=15.4x → FIRST-LINE CLASS

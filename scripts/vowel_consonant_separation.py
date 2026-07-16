@@ -3,31 +3,31 @@
 VOWEL-CONSONANT SEPARATION & PHONOLOGICAL INFERENCE
 ================================================================
 
-This is the first DECIPHERMENT-oriented phase. Instead of profiling
+This is the first DECIPHERMENT-oriented test. Instead of profiling
 statistics, we EXPLOIT them.
 
 Approach:
-  55a) SUKHOTIN'S ALGORITHM
+  A) SUKHOTIN'S ALGORITHM
        The classic unsupervised V/C separator. Works by iterating:
        most-contacted character = vowel, remove, repeat.
        Also: spectral method (eigenvector of contact matrix).
 
-  55b) CROSS-VALIDATION
+  B) CROSS-VALIDATION
        Train V/C on half the data, test alternation prediction on other half.
        If V/C is real, it should generalize. If not, it's noise.
 
-  55c) PHONOLOGICAL INFERENCE FROM BETWEEN-WORD TRANSITIONS
+  C) PHONOLOGICAL INFERENCE FROM BETWEEN-WORD TRANSITIONS
        Using V/C labels: is the last→first char pattern:
        - Sandhi (V→V avoided, C→C avoided)?
        - Vowel harmony (V→V preferred)?
        - Liaison (C→V preferred)?
        Each makes different predictions about language family.
 
-  55d) LANGUAGE FINGERPRINT MATCHING
+  D) LANGUAGE FINGERPRINT MATCHING
        Compute V/C ratio, mean syllable length (as V-runs / C-runs),
        consonant cluster frequency, and compare to known language families.
 
-  55e) SYLLABARY TEST
+  E) SYLLABARY TEST
        If each EVA character is already a syllable (CV or V), then:
        - V/C separation should FAIL (no alternation pattern)
        - OR produce a degenerate split (everything = "vowel")
@@ -150,7 +150,7 @@ def sukhotins_algorithm(words, char_list=None):
 # 55a: V/C SEPARATION — BOTH EVA AND GLYPH LEVELS
 # ============================================================
 print("=" * 65)
-print("55a: SUKHOTIN'S ALGORITHM — V/C SEPARATION")
+print("A: SUKHOTIN'S ALGORITHM — V/C SEPARATION")
 print("=" * 65)
 
 # --- EVA level ---
@@ -280,7 +280,7 @@ for c, val in ev_sorted:
 # 55b: CROSS-VALIDATION OF V/C CLASSIFICATION
 # ============================================================
 print("\n" + "=" * 65)
-print("55b: CROSS-VALIDATION OF V/C ALTERNATION")
+print("B: CROSS-VALIDATION OF V/C ALTERNATION")
 print("=" * 65)
 
 # Train V/C on first half, test alternation prediction on second half
@@ -351,7 +351,7 @@ else:
 # 55c: PHONOLOGICAL INFERENCE FROM BETWEEN-WORD TRANSITIONS
 # ============================================================
 print("\n" + "=" * 65)
-print("55c: BETWEEN-WORD V/C TRANSITION ANALYSIS")
+print("C: BETWEEN-WORD V/C TRANSITION ANALYSIS")
 print("=" * 65)
 
 # Classify between-word transitions using V/C labels
@@ -434,7 +434,7 @@ else:
 # 55d: LANGUAGE FINGERPRINT WITH V/C STATISTICS
 # ============================================================
 print("\n" + "=" * 65)
-print("55d: LANGUAGE FINGERPRINT MATCHING")
+print("D: LANGUAGE FINGERPRINT MATCHING")
 print("=" * 65)
 
 # Compute VMS syllable structure statistics
@@ -517,7 +517,7 @@ print(f"  Arabic:   MODERATE — IC closer, abjad possibility, but V/C ratio dif
 # 55e: SYLLABARY TEST
 # ============================================================
 print("\n" + "=" * 65)
-print("55e: SYLLABARY HYPOTHESIS TEST")
+print("E: SYLLABARY HYPOTHESIS TEST")
 print("=" * 65)
 
 # If each character is a syllable (CV or V), then:

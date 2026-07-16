@@ -277,7 +277,7 @@ SYNTHESIS: DIACRITICAL MARKS IN THE VOYNICH MANUSCRIPT
   1. Marks are RARE: 19.8‰ overall
   2. Most {} glyphs (466 total) are gallows variants —
      visual modifications of the four basic gallows shapes
-  3. This connects to Phase 10: if gallows are determinatives,
+  3. This connects to if gallows are determinatives,
      then {} variants = SUB-CATEGORIES within the gallows system
   4. @NNN; codes are the true 'diacritics' — marks that modify
      individual letters but can't be expressed in standard EVA

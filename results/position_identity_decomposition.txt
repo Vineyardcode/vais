@@ -1,5 +1,5 @@
 ============================================================================
-PHASE 88 — POSITION × IDENTITY DECOMPOSITION
+position_identity_decomposition — POSITION × IDENTITY DECOMPOSITION
 ============================================================================
 
   Do VMS chunks form ONE alphabet used at all word positions
@@ -230,26 +230,26 @@ STEP 6: NULL MODEL — WITHIN-WORD CHUNK SHUFFLE (50 trials)
     coupling is genuine and strong.
 
 ────────────────────────────────────────────────────────────────────────────
-STEP 7: PHASE 60 RECONCILIATION — PREDICTED vs OBSERVED OVERLAP
+STEP 7: positional_verbose_cipher RECONCILIATION — PREDICTED vs OBSERVED OVERLAP
 ────────────────────────────────────────────────────────────────────────────
 
-  Phase 60 best model: 3-zone positional cipher
+  positional_verbose_cipher best model: 3-zone positional cipher
     Consonants: 4 shared + 3 unique/zone = 13 consonant symbols
     Vowels:     2 shared + 5 unique/zone = 17 vowel symbols
     Total:      6 shared + 24 zone-unique = 30 symbols
     Predicted Jaccard: |shared|/|total| = 6/30 = 0.200
     (between any two zones: |6|/|6+8+8| = 6/22 = 0.273)
 
-  Phase 88 observed:
+  position_identity_decomposition observed:
     J(I,F) for VMS chunks (≥2-unit):  0.241
     J_mean for VMS chunks (≥2-unit):  0.344
     J(I,F) for VMS chunks (≥3-unit):  0.255
     J_mean for VMS chunks (≥3-unit):  0.324
 
     NL character J(I,F) mean:         0.757
-    Phase 60 cipher prediction:       0.273
+    positional_verbose_cipher cipher prediction:       0.273
 
-    → VMS J(I,F) is CLOSER to Phase 60 cipher prediction
+    → VMS J(I,F) is CLOSER to positional_verbose_cipher cipher prediction
       than to NL character baseline.
     Interpolation: -7% toward NL, 107% toward cipher
 
@@ -288,7 +288,7 @@ STEP 8: SKEPTICAL AUDIT — WHAT COULD INVALIDATE THESE RESULTS?
      position-dependent rules. Slot structure is fixed.
 
   4. SYLLABLE COMPARISON FAIRNESS
-     NL syllabification is approximate (~87% accuracy per Phase 85).
+     NL syllabification is approximate (~87% accuracy per chunk_fingerprint).
      Syllable type counts are high (1000-5000), closer to VMS chunks
      (523). The syllable comparison is arguably fairer than the
      character comparison for type-count matching.
@@ -336,7 +336,7 @@ STEP 9: SYNTHESIS & VERDICT
 
   Score: 7 metrics favor CIPHER, 0 favor NL, 0 ambiguous
 
-  PHASE 60 RECONCILIATION:
+  positional_verbose_cipher RECONCILIATION:
     Observed J(I,F):         0.241
     Cipher prediction:       0.273
     NL character mean:       0.757
@@ -356,7 +356,7 @@ STEP 9: SYNTHESIS & VERDICT
 
   Verdict code: POSITIONAL_ENCODING_SUPPORTED
 
-  REVISED CONFIDENCES (Phase 88):
+  REVISED CONFIDENCES (position_identity_decomposition):
   - Positional verbose cipher: 45% → UP (evidence supports)
   - Natural language: 87% (unchanged)
   - Chunks = functional characters: 85% (unchanged)

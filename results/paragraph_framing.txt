@@ -1,5 +1,5 @@
 ===========================================================================
-PHASE 74: PARAGRAPH FRAMING ANALYSIS
+paragraph_framing: PARAGRAPH FRAMING ANALYSIS
 Do paragraphs have consistent start/end markers defining code blocks?
 ===========================================================================
 
@@ -510,7 +510,7 @@ Frame type distribution (initial → final):
 
   WHAT WE FOUND:
     1. Paragraph-initial glyphs are STRONGLY concentrated on gallows (p,t,k,f)
-       — confirmed from Phase 71.
+       — confirmed from paragraph_initial_analysis.
     2. Paragraph-final glyphs: [to be filled by results]
     3. Initial × final correlation: [to be filled by results]
     4. Internal statistics difference: [to be filled by results]
@@ -530,6 +530,6 @@ Frame type distribution (initial → final):
          visible in the manuscript as indentation/gaps.
     d) Could different initial glyphs just be different WORDS that happen
        to start with gallows, carrying different semantic content?
-       → Phase 71 showed 451 words appear ONLY paragraph-initially.
+       → paragraph_initial_analysis showed 451 words appear ONLY paragraph-initially.
          These might be heading/title words.
 

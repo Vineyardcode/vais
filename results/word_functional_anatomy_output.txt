@@ -1,0 +1,248 @@
+======================================================================
+word_functional_anatomy: Functional Anatomy of the VMS Word
+======================================================================
+
+QUESTION: What role do word-final characters play?
+  A. Terminators — content-free end markers
+  B. Grammatical morphemes — small inflectional set
+  C. Content characters — constrained but information-bearing
+
+Loading VMS with full provenance...
+  36259 words loaded
+  Sections: {'text': 10092, 'herbal': 8314, 'bio': 6520, 'pharma': 4086, 'cosmo2': 3392, 'cosmo': 2028, 'astro': 1827}
+
+  Final character distribution (words ≥ 2 glyphs):
+       y: 14211 (40.7%)
+       n:  5894 (16.9%)
+       l:  5519 (15.8%)
+       r:  5457 (15.6%)
+       o:  1027 (2.9%)
+       s:   926 (2.7%)
+       m:   916 (2.6%)
+       d:   487 (1.4%)
+
+Fetching Italian source text...
+  50000 Italian words loaded
+
+======================================================================
+ANALYSIS 1: Zone-level MI with context variables
+======================================================================
+
+  VMS: 36259 words, 36259 with first, 31768 with middle, 34905 with last
+  H(first)=3.388, H(middle)=8.024, H(last)=2.440
+
+  MI(zone; section) — topical information:
+      first: MI=0.1083 bits  NMI=0.0421  z=+294.1  (null=0.0034±0.0004)
+     middle: MI=0.5832 bits  NMI=0.2276  z=+136.8  (null=0.2876±0.0022)
+       last: MI=0.0436 bits  NMI=0.0179  z=+127.8  (null=0.0030±0.0003)
+
+  MI(zone; line_position) — syntactic position:
+      first: MI=0.0770 bits  NMI=0.0335  z=+249.0  (null=0.0028±0.0003)
+     middle: MI=0.3941 bits  NMI=0.1715  z=+75.6  (null=0.2472±0.0019)
+       last: MI=0.0489 bits  NMI=0.0213  z=+158.4  (null=0.0024±0.0003)
+
+  MI(zone; next_word_initial) — forward grammar:
+      first: MI=0.0879 bits  NMI=0.0263  z=+113.7  (null=0.0121±0.0007)
+     middle: MI=0.6285 bits  NMI=0.1913  z=+57.7  (null=0.4374±0.0033)
+       last: MI=0.1885 bits  NMI=0.0796  z=+313.2  (null=0.0090±0.0006)
+
+  MI(zone; prev_word_final) — backward grammar:
+      first: MI=0.2061 bits  NMI=0.0849  z=+307.8  (null=0.0097±0.0006)
+     middle: MI=0.4694 bits  NMI=0.1995  z=+57.1  (null=0.3007±0.0030)
+       last: MI=0.0257 bits  NMI=0.0107  z=+35.1  (null=0.0067±0.0005)
+
+  MI(zone; stem) — how much does zone tell you about word core?
+      first: MI=1.9170 bits  NMI=0.5756  z=+441.1  (null=0.5589±0.0031)
+       last: MI=1.6587 bits  NMI=0.6797  z=+400.9  (null=0.4636±0.0030)
+
+  --- Italian comparison ---
+
+  Italian: 50000 words, 50000 with first, 33358 with middle, 43853 with last
+  H(first)=4.072, H(middle)=9.220, H(last)=3.148
+
+  MI(zone; section) — topical information:
+      first: MI=0.0028 bits  NMI=0.0012  z=+7.2  (null=0.0014±0.0002)
+     middle: MI=0.4488 bits  NMI=0.1933  z=+16.2  (null=0.4121±0.0023)
+       last: MI=0.0029 bits  NMI=0.0012  z=+5.1  (null=0.0017±0.0002)
+
+  MI(zone; line_position) — syntactic position:
+      first: MI=0.0012 bits  NMI=0.0005  z=-1.4  (null=0.0014±0.0002)
+     middle: MI=0.4043 bits  NMI=0.1797  z=+1.5  (null=0.4010±0.0022)
+       last: MI=0.0016 bits  NMI=0.0007  z=-0.4  (null=0.0017±0.0002)
+
+  MI(zone; next_word_initial) — forward grammar:
+      first: MI=0.0659 bits  NMI=0.0162  z=+113.7  (null=0.0090±0.0005)
+     middle: MI=1.1683 bits  NMI=0.2903  z=+52.5  (null=0.9936±0.0033)
+       last: MI=0.1390 bits  NMI=0.0442  z=+231.5  (null=0.0097±0.0006)
+
+  MI(zone; prev_word_final) — backward grammar:
+      first: MI=0.1667 bits  NMI=0.0517  z=+312.0  (null=0.0088±0.0005)
+     middle: MI=1.0174 bits  NMI=0.3154  z=+66.9  (null=0.7605±0.0038)
+       last: MI=0.0977 bits  NMI=0.0310  z=+151.3  (null=0.0094±0.0006)
+
+  MI(zone; stem) — how much does zone tell you about word core?
+      first: MI=3.2081 bits  NMI=0.7958  z=+835.0  (null=0.9582±0.0027)
+       last: MI=2.2651 bits  NMI=0.7195  z=+524.6  (null=0.6586±0.0031)
+
+======================================================================
+ANALYSIS 2: Per-character topical information
+======================================================================
+
+  Per-character MI with section (top 20 chars):
+    Char    Freq        MI       NMI       z  Role
+       o   23350  0.00446  0.00451  +66.8  middle(61%) ***
+       e   19232  0.03260  0.03409  +486.0  middle(99%) ***
+       y   16478  0.00957  0.00971  +146.9  last(86%) ***
+       a   13704  0.01462  0.01549  +219.4  middle(84%) ***
+       d   12069  0.00491  0.00542  +72.2  middle(68%) ***
+       i   11344  0.00644  0.00930  +93.4  middle(100%) ***
+      ch   10098  0.00854  0.01013  +126.3  first(57%) ***
+       l    9805  0.00772  0.00939  +102.0  last(56%) ***
+       k    9450  0.00650  0.00788  +89.4  middle(87%) ***
+       r    7008  0.00615  0.00884  +86.4  last(78%) ***
+       n    5967  0.00660  0.01023  +96.1  last(99%) ***
+       t    5575  0.00769  0.01248  +113.4  middle(83%) ***
+       q    5464  0.02236  0.03658  +322.0  first(99%) ***
+      sh    4314  0.00258  0.00492  +34.0  first(74%) ***
+       s    2355  0.00572  0.01673  +78.0  first(50%) ***
+       p    1065  0.00246  0.01295  +33.9  middle(77%) ***
+       m     958  0.00271  0.01547  +37.7  last(96%) ***
+     ckh     829  0.00254  0.01619  +35.4  middle(79%) ***
+     cth     828  0.00616  0.03923  +90.6  first(52%) ***
+       f     360  0.00146  0.01821  +20.1  middle(69%) ***
+
+======================================================================
+ANALYSIS 3: Position-resolved information curves
+======================================================================
+
+  Per-position MI curves (positions 0–7):
+   Pos       N    H(c)    MI_sec   z_sec   MI_lpos  z_lpos
+     0   36259   3.388   0.10828  +309.6   0.07705  +235.5
+     1   34905   3.349   0.06496  +173.6   0.06450  +179.5
+     2   31768   3.634   0.07893  +205.5   0.04012  +107.3
+     3   25726   3.466   0.07033  +148.0   0.03734  +79.2
+     4   17505   3.323   0.07491  +110.1   0.03911  +55.4
+     5    9350   3.099   0.08230  +58.8   0.04598  +35.2
+     6    3739   2.790   0.11908  +34.6   0.04877  +11.1
+     7    1008   3.007   0.15561   +9.0   0.11823   +6.8
+
+  --- Italian comparison ---
+
+  Per-position MI curves (positions 0–7):
+   Pos       N    H(c)    MI_sec   z_sec   MI_lpos  z_lpos
+     0   50000   4.072   0.00280   +6.7   0.00116   -1.3
+     1   43853   3.513   0.00416   +7.8   0.00212   -0.5
+     2   33358   3.983   0.00298   +1.3   0.00212   -1.4
+     3   24563   4.018   0.00522   +3.2   0.00366   -0.4
+     4   19672   3.700   0.00764   +5.1   0.00468   -0.1
+     5   11691   3.782   0.01316   +6.8   0.00913   +1.9
+     6    6921   3.612   0.01795   +3.7   0.01244   -0.1
+     7    3625   3.433   0.02910   +2.6   0.02053   -0.5
+
+======================================================================
+ANALYSIS 4: Final character distribution across sections
+======================================================================
+
+  Final character × section distribution (VMS):
+     Section       y       n       l       r       o       s   Total
+       astro   37.3%   10.6%   16.8%   19.7%    2.6%    5.5%    1644
+         bio   53.7%   14.4%   18.1%    9.4%    0.6%    1.2%    6347
+       cosmo   40.5%    8.2%   18.2%   16.0%    4.3%    7.3%    1952
+      cosmo2   37.3%   19.9%   11.5%   22.7%    1.1%    2.0%    3334
+      herbal   36.0%   17.4%   15.5%   17.4%    4.6%    2.6%    7903
+      pharma   32.3%   15.4%   21.2%   17.5%    3.8%    4.0%    3925
+        text   41.2%   20.4%   13.3%   14.3%    3.2%    1.9%    9800
+
+  Chi-squared independence test (final char × section):
+  χ²=1690.8, df=30
+  χ²/df=56.4 — STRONG section dependence
+
+  --- Italian comparison ---
+
+  Final character × section distribution (Italian):
+     Section       e       a       o       i       n       r   Total
+       sec_A   20.4%   17.9%   18.2%   17.8%    6.5%    5.3%    8778
+       sec_B   20.1%   20.2%   17.9%   16.3%    6.9%    5.6%    8774
+       sec_C   18.7%   19.1%   18.2%   16.3%    7.5%    5.8%    8715
+       sec_D   18.9%   18.8%   18.8%   16.6%    6.6%    5.5%    8792
+       sec_E   20.0%   18.8%   17.8%   17.2%    6.6%    6.3%    8794
+
+  Chi-squared independence test (final char × section):
+  χ²=51.5, df=20
+  χ²/df=2.6 — moderate section dependence
+
+======================================================================
+HYPOTHESIS ADJUDICATION
+======================================================================
+
+  1. Topical information by zone:
+     First:  NMI=0.0421  z=+294.1
+     Middle: NMI=0.2276  z=+136.8
+     Last:   NMI=0.0179  z=+127.8
+
+  2. Inter-word grammar by zone:
+     First  → next_init:  NMI=0.0263  z=+113.7
+     Last   → next_init:  NMI=0.0796  z=+313.2
+     First  ← prev_final: NMI=0.0849  z=+307.8
+     Last   ← prev_final: NMI=0.0107  z=+35.1
+
+  3. Zone↔stem coupling:
+     First ↔ rest:  NMI=0.5756  z=+441.1
+     Last  ↔ rest:  NMI=0.6797  z=+400.9
+
+  4. Line position sensitivity:
+     First:  NMI=0.0335  z=+249.0
+     Last:   NMI=0.0213  z=+158.4
+
+  SCORING:
+
+  Final/First topical NMI ratio:
+    VMS:     0.424
+    Italian: 1.025
+
+  Evidence chain:
+    • Final has strong topical MI (z=127.8) → content +2
+    • Final→next_init strong (z=313.2) → grammar +3
+    • Final↔stem coupled (NMI=0.6797) → content +2
+    • Final sensitive to line position (z=158.4) → grammar +2
+    • VMS final carries intermediate topic info → grammar +1
+
+  HYPOTHESIS SCORES:
+    Terminator (content-free markers):  0
+    Grammar (inflectional morphemes):   6
+    Content (constrained but semantic):  4
+
+  VERDICT: GRAMMAR — lean (margin=2)
+
+======================================================================
+SKEPTICAL CAVEATS
+======================================================================
+
+  1. Section labels are APPROXIMATE. The folio→section mapping is a rough
+     community consensus, not ground truth. MI with section is a lower
+     bound on topical information (finer-grained topics would show more).
+
+  2. MI bias. In small samples, MI is positively biased. Our permutation
+     z-scores correct for this, but the RAW MI values should not be
+     compared across different sample sizes without normalization (NMI).
+
+  3. EVA transcription artifacts. The glyph segmentation (ch, sh, etc.)
+     affects what counts as "first" and "last." We use EVA compound
+     glyphs as atomic units, consistent with the encoding-model tests.
+
+  4. Zone boundaries are arbitrary. A 1-char first + 1-char last
+     decomposition may miss multi-character prefixes/suffixes. But
+     synthesis_stress_test showed 95.6% of morphological MI is single-character,
+     so 1-char zones capture the dominant signal.
+
+  5. Italian comparison is weak. Pseudo-sections (sequential chunks)
+     don't have the topical coherence of VMS's illustrated sections.
+     Italian MI values are LOWER BOUNDS on what a real section
+     structure would produce.
+
+  6. The hypothesis test is NOT exhaustive. "Terminator," "grammar,"
+     and "content" are simplified categories. Real writing systems
+     often have characters serving multiple roles simultaneously.
+
+
+Results saved to C:\projects\vais\results\word_functional_anatomy_output.json

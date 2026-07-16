@@ -19,24 +19,24 @@ This looks like a genuine word-class system. But we MUST test:
    carry more syntactic weight?
 
 Sub-analyses:
-  42a) TWO-CLASS MODEL — Binarize suffixes into A/B. How much MI is
+  A) TWO-CLASS MODEL — Binarize suffixes into A/B. How much MI is
        captured? Compare to the full 11-value suffix model.
 
-  42b) SECTION-SPECIFIC GRAMMAR — Train transition matrices on each
+  B) SECTION-SPECIFIC GRAMMAR — Train transition matrices on each
        section separately. Test whether a section's own matrix predicts
        its data better than the global matrix (log-likelihood ratio).
        If NOT → universal grammar. If YES → section-specific rules.
 
-  42c) "chol daiin" SYNERGY — Test whether (ch,ol)→(d,aiin) exceeds
+  C) "chol daiin" SYNERGY — Test whether (ch,ol)→(d,aiin) exceeds
        (ch→d)×(ol→aiin). More generally: for top class bigrams, how
        much is the combined-class ratio above the product of independent
        prefix and suffix ratios?
 
-  42d) POSITIONAL INFORMATION PROFILE — Entropy of prefix and suffix
+  D) POSITIONAL INFORMATION PROFILE — Entropy of prefix and suffix
        at each position within the line. Do certain positions (first,
        last, penultimate) carry more or less variety?
 
-  42e) PREDICTIVE ASYMMETRY — Does left context predict right context
+  E) PREDICTIVE ASYMMETRY — Does left context predict right context
        better than right predicts left? In natural language, word order
        is directional. If MI(word_i→word_{i+1}) ≈ MI(word_{i+1}→word_i)
        then ordering is symmetric (not clearly directional).
@@ -103,7 +103,7 @@ print(f"  {len(lines)} lines, {total_words} word tokens")
 # ══════════════════════════════════════════════════════════════════
 
 print("\n" + "=" * 70)
-print("42a: TWO-CLASS SUFFIX MODEL")
+print("A: TWO-CLASS SUFFIX MODEL")
 print("    CLASS A (attract qo): dy, y, X")
 print("    CLASS B (attract sh/ch): aiin, ain, iin, in, ar, or, al, ol")
 print("    How much of the sfx→pfx MI does this binary capture?")
@@ -187,7 +187,7 @@ for p in ['qo','sh','ch','o','d','X','y','l']:
 # ══════════════════════════════════════════════════════════════════
 
 print("\n" + "=" * 70)
-print("42b: SECTION-SPECIFIC GRAMMAR")
+print("B: SECTION-SPECIFIC GRAMMAR")
 print("    Does each section have its own transition probabilities,")
 print("    or is one global matrix sufficient?")
 print("=" * 70)
@@ -286,7 +286,7 @@ for sec in sections_to_test:
 # ══════════════════════════════════════════════════════════════════
 
 print("\n" + "=" * 70)
-print("42c: SYNERGY TEST — Does (pfx,sfx) class predict better than")
+print("C: SYNERGY TEST — Does (pfx,sfx) class predict better than")
 print("    independent prefix × suffix for specific bigrams?")
 print("=" * 70)
 
@@ -373,7 +373,7 @@ print(f"  Synergy < 0.7: combined class is LESS likely than parts predict (anti-
 # ══════════════════════════════════════════════════════════════════
 
 print("\n" + "=" * 70)
-print("42d: POSITIONAL INFORMATION PROFILE")
+print("D: POSITIONAL INFORMATION PROFILE")
 print("    Entropy of prefix/suffix at each absolute position.")
 print("    Does position 0 (line-initial) or position -1 (line-final)")
 print("    carry more or less variety than interior positions?")
@@ -425,7 +425,7 @@ for pos in range(7):
 # ══════════════════════════════════════════════════════════════════
 
 print("\n" + "=" * 70)
-print("42e: PREDICTIVE ASYMMETRY")
+print("E: PREDICTIVE ASYMMETRY")
 print("    Is MI(word_i→word_{i+1}) symmetric, or does one direction")
 print("    carry more information? In natural language, left-to-right")
 print("    and right-to-left prediction differ (head-directionality).")

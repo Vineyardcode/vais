@@ -1,5 +1,5 @@
 ============================================================================
-PHASE 86R — CRITICAL REVALIDATION OF CHUNK EQUIVALENCE CLASSES
+chunk_equivalence_revalidation — CRITICAL REVALIDATION OF CHUNK EQUIVALENCE CLASSES
 ============================================================================
 
   VMS: 40351 words, 78526 chunks, 523 types
@@ -155,7 +155,7 @@ R5: INTERPRETATION — WHAT DOES h_ratio ≈ 0.85 AT k≈25 MEAN?
 R6: ROBUSTNESS — SINGLE-LINKAGE vs AVERAGE-LINKAGE
 ────────────────────────────────────────────────────────────────────────────
 
-  Phase 86 used average-linkage. Test if results change with
+  chunk_equivalence_classes used average-linkage. Test if results change with
   single-linkage (tends to produce long chains) to check robustness.
 
   single-linkage k=20: h_ratio=0.9936, types=21
@@ -163,7 +163,7 @@ R6: ROBUSTNESS — SINGLE-LINKAGE vs AVERAGE-LINKAGE
   single-linkage k=30: h_ratio=0.9830, types=31
 
 ============================================================================
-CORRECTED VERDICT — PHASE 86
+CORRECTED VERDICT — chunk_equivalence_classes
 ============================================================================
 
   FINDINGS:

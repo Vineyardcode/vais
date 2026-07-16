@@ -1024,7 +1024,7 @@ def main():
     pr(f"    including medieval German charms.")
     pr()
 
-    pr("  NEXT PHASE RECOMMENDATIONS:")
+    pr("  FOLLOW-UP RECOMMENDATIONS:")
     pr(f"    1. Test VOCABULARY RICHNESS as the key variable:")
     pr(f"       use texts with known high/low TTR and measure")
     pr(f"       if TTR-matched corpora cluster at similar distance.")

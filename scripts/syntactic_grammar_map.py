@@ -18,22 +18,22 @@ Key questions:
    the prefix ordering survive?
 
 Sub-analyses:
-  41a) INTERACTION TEST — Is syntax more than pfx + sfx independently?
+  A) INTERACTION TEST — Is syntax more than pfx + sfx independently?
        MI(class_i; class_j) vs MI(pfx_i; pfx_j) + MI(sfx_i; sfx_j)
        If class MI > sum: genuine prefix×suffix interaction (word classes)
        If class MI ≈ sum: no word classes, just independent channels
 
-  41b) TRIGRAM TEST — Does 3-word structure exist beyond bigrams?
+  B) TRIGRAM TEST — Does 3-word structure exist beyond bigrams?
        MI(pfx_i; pfx_{i+2} | pfx_{i+1}) — conditional on the middle word,
        does the first word help predict the third?
 
-  41c) CROSS-LINE SYNTAX — deeper test with proper controls
+  C) CROSS-LINE SYNTAX — deeper test with proper controls
        Do lines chain, or is each line an independent utterance?
 
-  41d) sh→qo DECOMPOSITION — Remove sh→qo; what's left?
+  D) sh→qo DECOMPOSITION — Remove sh→qo; what's left?
        How much of the total prefix MI depends on this one pattern?
 
-  41e) SUFFIX ORDERING GRAMMAR — Beyond runs
+  E) SUFFIX ORDERING GRAMMAR — Beyond runs
        Which different-suffix transitions are enriched? Is there a
        suffix "harmony" or "complement" system?
 """
@@ -103,7 +103,7 @@ print(f"  {len(lines)} lines, {total_words} word tokens")
 # ══════════════════════════════════════════════════════════════════
 
 print("\n" + "=" * 70)
-print("41a: INTERACTION TEST")
+print("A: INTERACTION TEST")
 print("    Is syntax more than independent prefix + suffix channels?")
 print("    If MI(class→class) > MI(pfx→pfx) + MI(sfx→sfx),")
 print("    there are genuine word classes (prefix×suffix combinations)")
@@ -205,7 +205,7 @@ else:
 # ══════════════════════════════════════════════════════════════════
 
 print("\n" + "=" * 70)
-print("41b: TRIGRAM TEST — Does 3-word structure exist beyond bigrams?")
+print("B: TRIGRAM TEST — Does 3-word structure exist beyond bigrams?")
 print("    MI(pfx_i; pfx_{i+2} | pfx_{i+1}): does knowing the first word's")
 print("    prefix help predict the third, BEYOND what the middle tells you?")
 print("=" * 70)
@@ -282,7 +282,7 @@ else:
 # ══════════════════════════════════════════════════════════════════
 
 print("\n" + "=" * 70)
-print("41c: CROSS-LINE SYNTAX")
+print("C: CROSS-LINE SYNTAX")
 print("    Do lines chain together, or is each an independent utterance?")
 print("=" * 70)
 
@@ -358,7 +358,7 @@ for sec in sorted(set(cross_secs)):
 # ══════════════════════════════════════════════════════════════════
 
 print("\n" + "=" * 70)
-print("41d: sh→qo DECOMPOSITION")
+print("D: sh→qo DECOMPOSITION")
 print("    How much prefix MI depends on the sh→qo transition?")
 print("    If we remove all sh→qo pairs, what fraction of MI remains?")
 print("=" * 70)
@@ -439,7 +439,7 @@ else:
 # ══════════════════════════════════════════════════════════════════
 
 print("\n" + "=" * 70)
-print("41e: SUFFIX ORDERING GRAMMAR")
+print("E: SUFFIX ORDERING GRAMMAR")
 print("    Mapping suffix→suffix transitions for DIFFERENT-suffix pairs.")
 print("    What are the 'grammatical rules' of suffix sequencing?")
 print("=" * 70)

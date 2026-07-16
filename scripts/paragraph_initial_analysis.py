@@ -3,7 +3,7 @@
 Paragraph-Initial Letter Analysis & Star Marker Correlation
 ═══════════════════════════════════════════════════════════════════════
 
-USER OBSERVATION: Many paragraphs seem to start with the same letter/glyph.
+OBSERVATION: many paragraphs seem to start with the same letter/glyph.
 In f103r (recipe section), paragraphs are marked with different star types
 (dark, light, dotted) and many start with similar-looking characters.
 

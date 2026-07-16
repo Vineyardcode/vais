@@ -1,5 +1,5 @@
 ============================================================================
-PHASE 85 — CHUNK-LEVEL STATISTICAL FINGERPRINT
+chunk_fingerprint — CHUNK-LEVEL STATISTICAL FINGERPRINT
 ============================================================================
 
   Are VMS chunks (Mauro's LOOP grammar) statistically

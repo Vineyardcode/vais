@@ -1,7 +1,7 @@
 Voynich Manuscript — Ring Text (@Cc) Extraction & Analysis
 ======================================================================
 ======================================================================
-PHASE 1: Ring Text Global Profile
+Ring Text Global Profile
 ======================================================================
 
   Total ring text lines:   36
@@ -59,7 +59,7 @@ PHASE 1: Ring Text Global Profile
   shedy                    6     0.6%        shed         y
 
 ======================================================================
-PHASE 2: Ring Text vs Nymph Label Morphology
+Ring Text vs Nymph Label Morphology
 ======================================================================
 
   Parse rate:
@@ -133,7 +133,7 @@ PHASE 2: Ring Text vs Nymph Label Morphology
     ol                   freq=  4  prefix=∅  suffix=∅
 
 ======================================================================
-PHASE 3: Ring Text Register — Language A or B?
+Ring Text Register — Language A or B?
 ======================================================================
 
   Type A (substance) roots: 108 (11.2%)
@@ -155,7 +155,7 @@ PHASE 3: Ring Text Register — Language A or B?
     ol-/l- prefix words: 14/968 (1.4%)
 
 ======================================================================
-PHASE 4: Formulaic Patterns — repeated sequences across rings
+Formulaic Patterns — repeated sequences across rings
 ======================================================================
 
   Repeated bigrams (appearing 3+ times):
@@ -260,7 +260,7 @@ PHASE 4: Formulaic Patterns — repeated sequences across rings
   f73v.33      Sagittarius    inner    ytaly alaly otaram
 
 ======================================================================
-PHASE 5: Do ring texts encode decan-specific information?
+Do ring texts encode decan-specific information?
 ======================================================================
 
   Vocabulary profile by ring position:
@@ -306,7 +306,7 @@ PHASE 5: Do ring texts encode decan-specific information?
     Pisces        : mean J=0.085 across 3 rings (3 pairs)
 
 ======================================================================
-PHASE 6: Ring Text ↔ Label Root Family Cross-Reference
+Ring Text ↔ Label Root Family Cross-Reference
 ======================================================================
 
   Root family presence in ring texts vs labels:
@@ -358,7 +358,7 @@ PHASE 6: Ring Text ↔ Label Root Family Cross-Reference
     otees                freq=  4 signs=3  [o+tees+]
 
 ======================================================================
-PHASE 7: RING TEXT ANALYSIS SYNTHESIS
+RING TEXT ANALYSIS SYNTHESIS
 ======================================================================
 
   ┌──────────────────────────────────────────────────────────────────────┐

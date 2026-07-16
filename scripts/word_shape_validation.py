@@ -3,11 +3,12 @@
 WORD-SHAPE VALIDATION: IS THE 10-FEATURE MATCH REAL OR SUPERFICIAL?
 ================================================================================
 
-Phases 58-60 matched VMS on 9/10 global summary statistics using a
+cross_script_fingerprint, forward_process_models and positional_verbose_cipher
+matched VMS on 9/10 global summary statistics using a
 position-variant verbose cipher. But summary statistics can match by
 coincidence while the actual micro-structure is completely different.
 
-THIS PHASE TESTS WHETHER THE CIPHER PRODUCES VMS-LIKE WORD SHAPES.
+THE TEST: DOES THE CIPHER PRODUCE VMS-LIKE WORD SHAPES?
 
 If the cipher matches VMS at the word-shape level, the model gains
 significant credibility. If not, the 10-feature match is superficial.
@@ -473,10 +474,10 @@ def main():
     }
 
     # ═══════════════════════════════════════════════════════════════════
-    # 61a) WORD-LENGTH DISTRIBUTION
+    # A) WORD-LENGTH DISTRIBUTION
     # ═══════════════════════════════════════════════════════════════════
     pr("=" * 72)
-    pr("61a) WORD-LENGTH DISTRIBUTION")
+    pr("A) WORD-LENGTH DISTRIBUTION")
     pr("=" * 72)
     pr()
 
@@ -508,10 +509,10 @@ def main():
     pr()
 
     # ═══════════════════════════════════════════════════════════════════
-    # 61b) CHARACTER BIGRAM ANALYSIS
+    # B) CHARACTER BIGRAM ANALYSIS
     # ═══════════════════════════════════════════════════════════════════
     pr("=" * 72)
-    pr("61b) CHARACTER BIGRAM ANALYSIS")
+    pr("B) CHARACTER BIGRAM ANALYSIS")
     pr("=" * 72)
     pr()
 
@@ -545,10 +546,10 @@ def main():
     pr()
 
     # ═══════════════════════════════════════════════════════════════════
-    # 61c) POSITION-SPECIFIC ENTROPY CURVE
+    # C) POSITION-SPECIFIC ENTROPY CURVE
     # ═══════════════════════════════════════════════════════════════════
     pr("=" * 72)
-    pr("61c) POSITIONAL ENTROPY CURVE")
+    pr("C) POSITIONAL ENTROPY CURVE")
     pr("=" * 72)
     pr()
 
@@ -581,10 +582,10 @@ def main():
     pr()
 
     # ═══════════════════════════════════════════════════════════════════
-    # 61d) WORD-SHAPE REPETITION & STEREOTYPY
+    # D) WORD-SHAPE REPETITION & STEREOTYPY
     # ═══════════════════════════════════════════════════════════════════
     pr("=" * 72)
-    pr("61d) WORD-SHAPE REPETITION & STEREOTYPY")
+    pr("D) WORD-SHAPE REPETITION & STEREOTYPY")
     pr("=" * 72)
     pr()
 
@@ -611,10 +612,10 @@ def main():
     pr()
 
     # ═══════════════════════════════════════════════════════════════════
-    # 61e) INITIAL/FINAL CHARACTER CONCENTRATION
+    # E) INITIAL/FINAL CHARACTER CONCENTRATION
     # ═══════════════════════════════════════════════════════════════════
     pr("=" * 72)
-    pr("61e) INITIAL / FINAL CHARACTER CONCENTRATION")
+    pr("E) INITIAL / FINAL CHARACTER CONCENTRATION")
     pr("=" * 72)
     pr()
 
@@ -630,10 +631,10 @@ def main():
         pr()
 
     # ═══════════════════════════════════════════════════════════════════
-    # 61f) CROSS-WORD-BOUNDARY ANALYSIS
+    # F) CROSS-WORD-BOUNDARY ANALYSIS
     # ═══════════════════════════════════════════════════════════════════
     pr("=" * 72)
-    pr("61f) CROSS-WORD-BOUNDARY BIGRAMS")
+    pr("F) CROSS-WORD-BOUNDARY BIGRAMS")
     pr("=" * 72)
     pr()
 
@@ -651,10 +652,10 @@ def main():
     pr()
 
     # ═══════════════════════════════════════════════════════════════════
-    # 61g) ZIPF CURVE
+    # G) ZIPF CURVE
     # ═══════════════════════════════════════════════════════════════════
     pr("=" * 72)
-    pr("61g) ZIPF RANK-FREQUENCY CURVE")
+    pr("G) ZIPF RANK-FREQUENCY CURVE")
     pr("=" * 72)
     pr()
 
@@ -667,10 +668,10 @@ def main():
     pr()
 
     # ═══════════════════════════════════════════════════════════════════
-    # 61h) COMPOSITE SCORECARD
+    # H) COMPOSITE SCORECARD
     # ═══════════════════════════════════════════════════════════════════
     pr("=" * 72)
-    pr("61h) COMPOSITE WORD-SHAPE SCORECARD")
+    pr("H) COMPOSITE WORD-SHAPE SCORECARD")
     pr("=" * 72)
     pr()
 
@@ -755,10 +756,10 @@ def main():
     pr()
 
     # ═══════════════════════════════════════════════════════════════════
-    # 61i) CRITICAL ASSESSMENT
+    # I) CRITICAL ASSESSMENT
     # ═══════════════════════════════════════════════════════════════════
     pr("=" * 72)
-    pr("61i) CRITICAL ASSESSMENT")
+    pr("I) CRITICAL ASSESSMENT")
     pr("=" * 72)
     pr()
 

@@ -10,29 +10,29 @@ bursty). Two hypotheses remain:
 
 cipher_identification_tests applies classic cryptanalysis tests:
 
-  53a) VERBOSE CIPHER EXCLUSION VIA MI
+  A) VERBOSE CIPHER EXCLUSION VIA MI
        If VMS words encode plaintext characters, word-word MI should
        be >= character bigram MI of the plaintext (~1.5 bits for European).
        We know VMS word MI ≈ 0.2-0.3 bits. Is this incompatible?
 
-  53b) KAPPA TEST (INDEX OF COINCIDENCE)
+  B) KAPPA TEST (INDEX OF COINCIDENCE)
        Polyalphabetic ciphers lower IC below monalphabetic. Test IC at
        different periods to detect cycling. Also compare VMS IC to
        known language ranges.
 
-  53c) HOMOPHONE DETECTION
+  C) HOMOPHONE DETECTION
        If some VMS characters are homophones (multiple chars → same
        plaintext char), characters with similar successor/predecessor
        distributions could be merged. Find candidate merges and test
        if merging reduces cross-validated char entropy.
 
-  53d) WORD-INTERNAL STRUCTURE TEST
+  D) WORD-INTERNAL STRUCTURE TEST
        Generate random "words" from VMS character bigram model. Compare
        their positional entropy profile to real VMS words. If character
        bigrams fully explain word structure, profiles should match.
        If VMS has ADDITIONAL constraints, real words will differ.
 
-  53e) WORD BOUNDARY INFORMATION
+  E) WORD BOUNDARY INFORMATION
        In natural language, word boundaries carry information (word
        segmentation helps predict text). In a cipher, boundaries may
        be artifacts. Test: does knowing word boundaries reduce character
@@ -73,7 +73,7 @@ print(f"  {N} tokens, {n_types} types, {len(raw_lines)} lines\n")
 # 53a: VERBOSE CIPHER EXCLUSION VIA MI
 # ============================================================
 print("=" * 65)
-print("53a: VERBOSE CIPHER EXCLUSION VIA MI")
+print("A: VERBOSE CIPHER EXCLUSION VIA MI")
 print("=" * 65)
 
 # Compute observed word-level MI (within lines)
@@ -150,7 +150,7 @@ print(f"  VERDICT: {'CONSISTENT — MI in plausible range' if 0.1 < mi_genuine <
 # 53b: KAPPA TEST (INDEX OF COINCIDENCE)
 # ============================================================
 print("\n" + "=" * 65)
-print("53b: KAPPA TEST (INDEX OF COINCIDENCE)")
+print("B: KAPPA TEST (INDEX OF COINCIDENCE)")
 print("=" * 65)
 
 # Concatenate all characters within lines
@@ -211,7 +211,7 @@ print(f"  period, that would indicate polyalphabetic cipher.")
 # 53c: HOMOPHONE DETECTION
 # ============================================================
 print("\n" + "=" * 65)
-print("53c: HOMOPHONE DETECTION")
+print("C: HOMOPHONE DETECTION")
 print("=" * 65)
 
 # For each character, compute its successor and predecessor distributions
@@ -327,7 +327,7 @@ for (c1, c2), jsd in sorted_pairs[:5]:
 # 53d: WORD-INTERNAL STRUCTURE TEST
 # ============================================================
 print("\n" + "=" * 65)
-print("53d: WORD-INTERNAL STRUCTURE TEST")
+print("D: WORD-INTERNAL STRUCTURE TEST")
 print("=" * 65)
 
 # Build character bigram model from the corpus
@@ -432,7 +432,7 @@ print(f"  {'DIFFERENT' if chi2 > 20 else 'SIMILAR'} length distributions")
 # 53e: WORD BOUNDARY INFORMATION
 # ============================================================
 print("\n" + "=" * 65)
-print("53e: WORD BOUNDARY INFORMATION")
+print("E: WORD BOUNDARY INFORMATION")
 print("=" * 65)
 
 # Test: does knowing word boundaries help predict characters?

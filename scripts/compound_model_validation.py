@@ -3,34 +3,34 @@
 Skeptical Re-Validation & Revised Model Test
 ========================================================
 
-compound_decomposition made bold claims. This phase STRESS-TESTS them:
+compound_decomposition made bold claims. This test STRESS-TESTS them:
 
-  30a) NULL MODEL FOR COMPOUND DECOMPOSITION
+  A) NULL MODEL FOR COMPOUND DECOMPOSITION
        With ~15 stems of 1-3 chars using only {a,e,o,d,l,r,s,m,i},
        what fraction of RANDOM strings also decompose? If it's also
        ~99%, our compound_decomposition "finding" is an artifact of short stems.
 
-  30b) SPECIFICITY TEST: DO COMPOUNDS PRESERVE PART DISTRIBUTIONS?
+  B) SPECIFICITY TEST: DO COMPOUNDS PRESERVE PART DISTRIBUTIONS?
        If cheo = che+o is real, then cheo's section distribution should
        resemble a BLEND of che's and o's distributions. If not, it's
        just a string match, not a real compound.
 
-  30c) h- PREFIX PERMUTATION TEST
+  C) h- PREFIX PERMUTATION TEST
        Shuffle h- prefix assignment across all roots. How often do
        we get 10/10 "verbs" starting with the same letter by chance?
 
-  30d) SEMITIC CONSTRUCT-CHAIN TEST (smikhut murkevet)
+  D) SEMITIC CONSTRUCT-CHAIN TEST (smikhut murkevet)
        In Hebrew, repeated NOUN+NOUN construct chains add formality.
        Test: do we see N+N+N chains? Are some roots used in
        "stacking" patterns more than others? Is there positional
        regularity (X always first, Y always second)?
 
-  30e) FULL CORPUS RE-PARSE UNDER REVISED MODEL
+  E) FULL CORPUS RE-PARSE UNDER REVISED MODEL
        Parse every token into 5-slot model:
        GRAM-PREFIX + DET + DERIV-PREFIX + STEM + SUFFIX
        Measure: what % parse cleanly? What's left over?
 
-  30f) PARADIGM TABLE CONSTRUCTION
+  F) PARADIGM TABLE CONSTRUCTION
        For each stem, list all attested DERIV-PREFIX + STEM combos
        and check for paradigmatic regularity (like verb conjugations).
 """
@@ -56,7 +56,7 @@ def full_decompose(word):
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
 
 # ══════════════════════════════════════════════════════════════════
-# MORPHOLOGICAL PIPELINE (same as prior phases)
+# MORPHOLOGICAL PIPELINE (same as prior tests)
 # ══════════════════════════════════════════════════════════════════
 
 SIMPLE_GALLOWS = ["t","k","f","p"]

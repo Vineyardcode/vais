@@ -140,7 +140,7 @@ TEST 5: CROSS-FOLIO — Where do these exact words appear elsewhere?
 TEST 6: CONSTRAINT TABLE — What do we know about each morpheme?
 ==========================================================================================
 
-  Combining Phase 1 evidence (root type, suffix class, section preference)
+  Combining freq_rank_mapping evidence (root type, suffix class, section preference)
   with f66r-specific evidence to constrain possible meanings.
 
    1. rary          = r+a+ry

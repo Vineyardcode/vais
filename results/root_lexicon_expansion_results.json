@@ -1,0 +1,6 @@
+{
+  "test": "root_lexicon_expansion",
+  "vocabulary_size": 40,
+  "confirmed_roots": 33,
+  "compounds": 7
+}

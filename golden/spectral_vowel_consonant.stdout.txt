@@ -1,0 +1,318 @@
+============================================================================
+spectral_vowel_consonant — VOWEL-CONSONANT SPECTRAL SEPARATION
+============================================================================
+
+  Does the VMS chunk-to-chunk transition matrix reveal a vowel/
+  consonant split? This tests a specifically LINGUISTIC prediction:
+  if chunks encode alphabetic characters, the 2nd eigenvector of
+  the bigram matrix should separate V-like from C-like chunks.
+
+────────────────────────────────────────────────────────────────────────────
+STEP 1: PARSE VMS & BUILD CHUNK BIGRAM MATRIX
+────────────────────────────────────────────────────────────────────────────
+
+  Total words: 40309
+  Words with ≥2 chunks: 29471 (73.1%)
+  Matrix size: 50 × 50
+  Within-word bigrams used: 25408
+  Matrix density: 1198/2500 = 47.9%
+
+────────────────────────────────────────────────────────────────────────────
+STEP 2: VMS CHUNK SPECTRAL ANALYSIS
+────────────────────────────────────────────────────────────────────────────
+
+  Eigenvalues (top 5): 1.0000, -0.5300, -0.1808, -0.1808, 0.1145
+  Spectral gap (λ1 − |λ2|): 0.4700
+  |λ2|: 0.5300
+
+  V/C split: 21 small / 29 large (42% / 58%)
+  Alternation rate: 74.8%
+
+  2nd eigenvector ranking (V/C separator):
+                   Chunk   v2 score         Group
+    ────────────────────  ─────────  ────────────
+                       k    -0.4416   V-candidate
+                       t    -0.3576   V-candidate
+                       y    -0.3131   V-candidate
+                       d    -0.2494   V-candidate
+                       s    -0.2275   V-candidate
+                     d.y    -0.1763   V-candidate
+                       l    -0.1714   V-candidate
+                       r    -0.0970   V-candidate
+                     y.k    -0.0818   V-candidate
+                     o.k    -0.0741   V-candidate
+                     o.t    -0.0712   V-candidate
+                     y.t    -0.0707   V-candidate
+                   q.o.k    -0.0617   V-candidate
+                     cth    -0.0446   V-candidate
+                       p    -0.0438   V-candidate
+                   o.d.y    -0.0362   V-candidate
+                     a.m    -0.0137   V-candidate
+                     o.p    -0.0131   V-candidate
+                       o    -0.0084   V-candidate
+                    sh.y    -0.0005   V-candidate
+                     q.o    -0.0001   V-candidate
+                   q.o.t    +0.0001   C-candidate
+                  sh.o.l    +0.0014   C-candidate
+                     o.r    +0.0076   C-candidate
+                     o.d    +0.0117   C-candidate
+                    ch.d    +0.0226   C-candidate
+                    ch.o    +0.0262   C-candidate
+                sh.e.d.y    +0.0434   C-candidate
+                       e    +0.0441   C-candidate
+                  ch.d.y    +0.0500   C-candidate
+                   e.o.l    +0.0554   C-candidate
+                  ch.e.d    +0.0578   C-candidate
+                ch.e.o.l    +0.0598   C-candidate
+                    ch.y    +0.0680   C-candidate
+                     e.y    +0.0740   C-candidate
+                   a.i.r    +0.0749   C-candidate
+                ch.e.e.y    +0.0805   C-candidate
+                  sh.e.y    +0.0814   C-candidate
+                  ch.o.l    +0.0862   C-candidate
+                     a.l    +0.0869   C-candidate
+                  ch.o.r    +0.0884   C-candidate
+                  ch.e.y    +0.1191   C-candidate
+                ch.e.d.y    +0.1399   C-candidate
+                   e.d.y    +0.1408   C-candidate
+                 e.e.d.y    +0.1456   C-candidate
+                     o.l    +0.1517   C-candidate
+                   a.i.n    +0.1555   C-candidate
+                   e.e.y    +0.1642   C-candidate
+                     a.r    +0.1808   C-candidate
+                 a.i.i.n    +0.3356   C-candidate
+
+────────────────────────────────────────────────────────────────────────────
+STEP 3: NL CHARACTER BASELINES — DO REAL ALPHABETS SHOW V/C SPLIT?
+────────────────────────────────────────────────────────────────────────────
+
+  Latin-Caesar:
+    Symbols: 22, Bigrams: 230381
+    Spectral gap: 0.4611, |λ2|: 0.5389
+    V/C split: 9 / 13 (41% / 59%)
+    V/C purity: 100%
+    Alternation rate: 75.2%
+    Small (V-candidate): ['a', 'e', 'f', 'i', 'o', 'p', 'q', 'u', 'y']
+
+  Italian-Cucina:
+    Symbols: 28, Bigrams: 86778
+    Spectral gap: 0.4385, |λ2|: 0.5615
+    V/C split: 11 / 17 (39% / 61%)
+    V/C purity: 100%
+    Alternation rate: 73.2%
+    Small (V-candidate): ['a', 'd', 'e', 'h', 'i', 'o', 'q', 'u', 'à', 'ì', 'ò']
+
+  English-Cury:
+    Symbols: 29, Bigrams: 137455
+    Spectral gap: 0.5465, |λ2|: 0.4535
+    V/C split: 11 / 18 (38% / 62%)
+    V/C purity: 67%
+    Alternation rate: 36.4%
+    Small (V-candidate): ['c', 'f', 'h', 'i', 'o', 'p', 'q', 't', 'v', 'x', 'z']
+
+  French-Viandier:
+    Symbols: 24, Bigrams: 52217
+    Spectral gap: 0.6366, |λ2|: 0.3634
+    V/C split: 11 / 13 (46% / 54%)
+    V/C purity: 67%
+    Alternation rate: 58.2%
+    Small (V-candidate): ['h', 'i', 'm', 'n', 'q', 'r', 's', 'u', 'v', 'z', 'é']
+
+  Summary:
+                Text     Gap    |λ2|   V-ratio   Purity   Alt%
+  ──────────────────  ──────  ──────  ────────  ───────  ─────
+        Latin-Caesar  0.4611  0.5389      0.41     100%   75.2
+      Italian-Cucina  0.4385  0.5615      0.39     100%   73.2
+        English-Cury  0.5465  0.4535      0.38      67%   36.4
+     French-Viandier  0.6366  0.3634      0.46      67%   58.2
+          VMS chunks  0.4700  0.5300      0.42      N/A   74.8
+
+────────────────────────────────────────────────────────────────────────────
+STEP 4: NL SYLLABLE CONTROL — SYLLABLES SHOULD NOT SPLIT CLEANLY
+────────────────────────────────────────────────────────────────────────────
+
+  If the method is valid, NL syllable bigrams should NOT produce
+  a clean V/C split — syllables already contain both V and C.
+
+  Latin-Caesar syllables:
+    Symbols: 50, Bigrams: 12754
+    Spectral gap: 0.3596, |λ2|: 0.4218
+    Split: 15 / 35 (30% / 70%)
+    Alternation: 36.7%
+
+  Italian-Cucina syllables:
+    Symbols: 50, Bigrams: 7703
+    Spectral gap: 0.7554, |λ2|: 0.2446
+    Split: 21 / 29 (42% / 58%)
+    Alternation: 51.6%
+
+  English-Cury syllables:
+    Symbols: 50, Bigrams: 7145
+    Spectral gap: 0.6373, |λ2|: 0.3627
+    Split: 16 / 34 (32% / 68%)
+    Alternation: 48.2%
+
+  French-Viandier syllables:
+    Symbols: 50, Bigrams: 2530
+    Spectral gap: 0.0000, |λ2|: 0.8660
+    Split: 3 / 47 (6% / 94%)
+    Alternation: 12.8%
+
+
+────────────────────────────────────────────────────────────────────────────
+STEP 5: NULL MODELS — IS THE VMS SPECTRAL GAP SIGNIFICANT?
+────────────────────────────────────────────────────────────────────────────
+
+  NULL 1: Row-permuted matrix (destroys row identity, keeps marginals)
+    VMS gap: 0.4700
+    Null gap: 0.7234 ± 0.1398
+    z-score: -1.81
+    VMS alternation: 74.8%
+    Null alternation: 56.8% ± 11.0%
+    z-score: 1.64
+
+  NULL 2: Within-word chunk shuffle (destroys ordering, keeps word composition)
+    VMS gap: 0.4700
+    Null gap: 0.2885 ± 0.0027
+    z-score: 68.05
+    VMS alternation: 74.8%
+    Null alternation: 80.2% ± 0.1%
+    z-score: -41.00
+
+────────────────────────────────────────────────────────────────────────────
+STEP 6: CURRIER A vs B — SAME V/C ASSIGNMENT?
+────────────────────────────────────────────────────────────────────────────
+
+  If the V/C split is linguistic, the same chunks should be
+  classified as V/C in both Currier sublanguages.
+
+  Currier A:
+    Symbols: 50, Bigrams: 16042
+    Spectral gap: 0.5373
+    V-candidate: ['a.l', 'a.m', 'd', 'd.y', 'k', 'l', 'o.t', 'p', 'q.o.k', 'q.o.t', 's', 't', 'y', 'y.k', 'y.t']
+    Alternation: 65.0%
+
+  Currier B:
+    Symbols: 50, Bigrams: 9382
+    Spectral gap: 0.3849
+    V-candidate: ['d', 'd.y', 'k', 'l', 'o', 'o.k', 'o.t', 'p', 'q.o.k', 'q.o.l', 'r', 's', 't', 'y', 'y.k']
+    Alternation: 79.2%
+
+  A vs B comparison (same sign):
+    A V-candidates: 21 chunks
+    B V-candidates: 21 chunks
+    Overlap: 16 chunks
+    Jaccard similarity: 0.615
+    Shared V-candidates: ['cth', 'd', 'd.y', 'k', 'l', 'o.d.y', 'o.p', 'o.t', 'p', 'q.o.k', 'r', 's', 't', 'y', 'y.k', 'y.t']
+
+────────────────────────────────────────────────────────────────────────────
+STEP 7: STABILITY — DOES SPLIT CHANGE WITH TOP-N?
+────────────────────────────────────────────────────────────────────────────
+
+  Top- 30: gap=0.3880, |λ2|=0.6120, V-ratio=0.50, alt=76.6%
+  Top- 40: gap=0.4117, |λ2|=0.5883, V-ratio=0.45, alt=77.2%
+  Top- 50: gap=0.4700, |λ2|=0.5300, V-ratio=0.42, alt=74.8%
+  Top- 60: gap=0.4868, |λ2|=0.5132, V-ratio=0.43, alt=73.2%
+  Top- 80: gap=0.5145, |λ2|=0.4855, V-ratio=0.35, alt=72.5%
+  Top-100: gap=0.5259, |λ2|=0.4689, V-ratio=0.34, alt=73.6%
+
+  Stability between consecutive top-N values (sign-aware):
+    Top-30 → Top-40: 29/30 retained (same sign)
+    Top-40 → Top-50: 40/40 retained (same sign)
+    Top-50 → Top-60: 49/50 retained (same sign)
+    Top-60 → Top-80: 59/60 retained (same sign)
+    Top-80 → Top-100: 77/80 retained (same sign)
+
+────────────────────────────────────────────────────────────────────────────
+STEP 8: CONFOUND CHECK — IS THE SPLIT JUST WORD-POSITION?
+────────────────────────────────────────────────────────────────────────────
+
+  chunk_equivalence_classes showed chunks cluster mainly by word position (I/M/F).
+  The spectral split could just be separating initial from final
+  chunks, not V from C. Test: compute position profiles of each group.
+
+  V-candidate position profile: I=66.7% M=9.7% F=17.2% S=6.4%
+  C-candidate position profile: I=12.0% M=10.5% F=60.1% S=17.4%
+
+  ⚠ WARNING: Both groups have strong positional bias (>60%)
+    → The spectral split may be POSITIONAL, not V/C
+
+  V-candidate chunks — individual position profiles:
+                   Chunk   Count   Init%    Med%    Fin%   Sing%
+    ────────────────────  ──────  ──────  ──────  ──────  ──────
+                       d    3792   86.2%    9.8%    2.1%    1.8%
+                       y    3741    8.2%    1.8%   81.0%    9.0%
+                   q.o.k    3280   98.6%    0.9%    0.0%    0.5%
+                     o.k    2664   94.7%    5.0%    0.0%    0.3%
+                       k    2658   49.8%   49.2%    0.3%    0.7%
+                     o.t    2650   95.6%    3.8%    0.0%    0.6%
+                       s    1635   62.6%    6.7%   10.2%   20.5%
+                       l    1618   81.1%    3.5%    3.6%   11.8%
+                       t    1316   83.0%   15.7%    0.2%    1.1%
+                       o    1124   32.7%   24.7%   24.4%   18.1%
+                     d.y     851   12.3%    5.4%   53.3%   28.9%
+                     a.m     832    1.4%    3.7%   82.7%   12.1%
+                     y.k     674   92.3%    6.4%    0.1%    1.2%
+                       p     657   88.4%   10.2%    0.3%    1.1%
+                     y.t     606   92.1%    7.4%    0.0%    0.5%
+                       r     593   62.7%    2.9%    5.9%   28.5%
+                     cth     503   96.2%    3.4%    0.0%    0.4%
+                     o.p     405   95.3%    4.2%    0.0%    0.5%
+                   o.d.y     329    1.8%    5.8%   76.3%   16.1%
+                     q.o     323   81.7%    0.6%    0.9%   16.7%
+                    sh.y     309    4.2%    1.9%   60.8%   33.0%
+
+────────────────────────────────────────────────────────────────────────────
+STEP 9: INTERNAL STRUCTURE — SLOT PATTERN OF V vs C GROUPS
+────────────────────────────────────────────────────────────────────────────
+
+  If the V/C split is real, V-chunks might preferentially fill
+  the VOWEL slots (S2: e/q/a, S3: o, S4: i/d) while C-chunks
+  fill CONSONANT slots (S1: ch/sh/y, S5: k/l/r/s/t/...).
+
+  Slot fill rates:
+  Slot   V-group   C-group     Slot type
+  ────  ────────  ────────  ────────────
+    S1     19.0%     48.3%     consonant
+    S2     14.3%     65.5%       front-V
+    S3     33.3%     34.5%        core-V
+    S4     14.3%     37.9%      back-V/d
+    S5     81.0%     82.8%     consonant
+
+  Mean vowel-slot fill:     V-group=20.6%, C-group=46.0%
+  Mean consonant-slot fill: V-group=50.0%, C-group=65.5%
+  ✗ No clear vowel-slot vs consonant-slot differentiation
+
+============================================================================
+SYNTHESIS & VERDICT
+============================================================================
+
+  1. SPECTRAL GAP
+     VMS:         0.4700
+     NL chars:    0.5207 ± 0.0781
+     z-score:     -0.65
+     vs null-1:   z = -1.81
+     vs null-2:   z = 68.05
+
+  2. V/C RATIO (expected ~0.15-0.25)
+     VMS:         0.42
+     NL chars:    0.41 ± 0.03
+     z-score:     +0.34
+
+  3. ALTERNATION RATE (expected ~60-80%)
+     VMS:         74.8%
+     NL chars:    60.8% ± 15.5%
+     z-score:     +0.91
+
+  4. POSITIONAL CONFOUND: YES
+  5. SLOT CONSISTENCY: NO
+
+  6. NL SYLLABLE GAPS (control): ['0.3596', '0.7554', '0.6373', '0.0000']
+     NL syllables should have WEAKER gaps than NL characters.
+     NL syl gap mean: 0.4381 vs NL char gap mean: 0.5207
+
+  VERDICT:
+  ✗ NOT SUPPORTED: No significant spectral gap detected.
+    VMS chunks do not show V/C alternation structure.
+
+  Saved to results/spectral_vowel_consonant.txt/.json

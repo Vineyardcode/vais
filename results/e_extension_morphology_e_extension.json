@@ -1,0 +1,21 @@
+{
+  "test": "e_extension_morphology",
+  "n_base_words": 4151,
+  "n_with_e_partner": 377,
+  "n_with_a_partner": 6,
+  "pairing_rate_e": 9.08,
+  "total_e_pairs": 380,
+  "total_a_pairs": 6,
+  "freq_base_gt_ext": 201,
+  "freq_ext_gt_base": 78,
+  "freq_equal": 98,
+  "median_log2_ratio": 0.415,
+  "slot2_insertion_hits": 380,
+  "random_insertion_avg": 144.1,
+  "ext_b_enrichment": 0.768,
+  "base_a_enrichment": 1.797,
+  "folio_cooccur_observed": 91,
+  "folio_cooccur_expected": 53.6,
+  "morphology_score": 5,
+  "verdict": "PRODUCTIVE_MORPHOLOGY"
+}

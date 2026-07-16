@@ -9,7 +9,7 @@ with 78 shared templates. If gallows are informationally redundant
 (predictable from context), then the VMS vocabulary is massively
 inflated by decorative variation.
 
-This phase answers:
+This test answers:
 1. How predictable are gallows from context? (mutual information)
 2. How much does vocabulary compress when gallows collapse?
 3. Does the compressed text look MORE like natural language?

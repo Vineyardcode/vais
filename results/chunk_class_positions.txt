@@ -1,5 +1,5 @@
 ========================================================================
-Phase 103 — Positional Decomposition of the 25-Class Chunk Alphabet
+chunk_class_positions — Positional Decomposition of the 25-Class Chunk Alphabet
 ========================================================================
 
 Step 1: Loading VMS corpus and parsing into chunks...
@@ -10,7 +10,7 @@ Step 1: Loading VMS corpus and parsing into chunks...
   Unique chunk types: 565
   Frequent (≥20): 216
 
-Step 2: Building 25 equivalence classes (Phase 86 reproduction)...
+Step 2: Building 25 equivalence classes (chunk_equivalence_classes reproduction)...
   Classes: 25
 
   Class membership:
@@ -251,4 +251,4 @@ Q5: Which language best matches VMS positional profile?
     Best: French-Viandier (L1 = 0.6194)
     → WEAK match — no language profile closely matches VMS
 
-Results saved to C:\projects\voynich_slop\results\phase103_positional_class_decomposition.json
+Results saved to C:\projects\vais\results\chunk_class_positions.json

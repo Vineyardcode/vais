@@ -4,7 +4,7 @@ Encoding Model Tournament: Generative Discrimination
 ════════════════════════════════════════════════════════════════
 
 PREMISE:
-63 phases of characterization. Time to DISCRIMINATE between models.
+Characterization is done. Time to DISCRIMINATE between models.
 Instead of describing VMS, we generate synthetic texts under each
 encoding hypothesis applied to Italian (Dante), compute a battery of
 statistics on each, and score them against VMS.
@@ -351,7 +351,7 @@ def words_to_chars(words):
     return chars
 
 # ═══════════════════════════════════════════════════════════════════════
-# VOCABULARY GROWTH ANALYSIS (unique to this phase)
+# VOCABULARY GROWTH ANALYSIS (unique to this test)
 # ═══════════════════════════════════════════════════════════════════════
 
 def analyze_vocab_growth(vms_words, italian_words, models_data):
@@ -699,7 +699,7 @@ def run_tournament():
         pr(f'    Best match is {best}. Further analysis needed.')
 
     pr()
-    pr('  CRITICAL CONSTRAINTS from this phase:')
+    pr('  CRITICAL CONSTRAINTS from this test:')
 
     # Check if VMS is clearly separated from null model
     null_dist = distances.get('Null (VMS-matched)', 999)

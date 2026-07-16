@@ -3,7 +3,7 @@ Extracting all folios...
 Loading ring text data...
 
 ========================================================================
-PHASE 1: SECTION PROFILES
+SECTION PROFILES
 ========================================================================
 
   herbal-A:
@@ -49,7 +49,7 @@ PHASE 1: SECTION PROFILES
     Top 10: {'aiin': 207, 'chedy': 198, 'qokeey': 159, 'ar': 146, 'al': 137, 'qokeedy': 136, 'chey': 125, 'daiin': 120, 'qokaiin': 120, 'shedy': 116}
 
 ========================================================================
-PHASE 2: ROOT FAMILY DISTRIBUTION COMPARISON
+ROOT FAMILY DISTRIBUTION COMPARISON
 ========================================================================
 
   Family        herbal-A      herbal-B        pharma           bio          text     ring-text
@@ -80,7 +80,7 @@ PHASE 2: ROOT FAMILY DISTRIBUTION COMPARISON
     ∅         herbalA= 28.5%  ring= 35.0%  ratio=1.23×
 
 ========================================================================
-PHASE 3: VOCABULARY OVERLAP (RING TEXT vs SECTIONS)
+VOCABULARY OVERLAP (RING TEXT vs SECTIONS)
 ========================================================================
 
   Ring text unique words: 563
@@ -129,7 +129,7 @@ PHASE 3: VOCABULARY OVERLAP (RING TEXT vs SECTIONS)
     Top examples: oteos(12) s(10) o(9) y(9) oteeos(5) r(4) oteodal(3) choteey(3) alar(3) oteotey(3) okeos(3) oteodar(3) chas(2) chedaiin(2) cheky(2) 
 
 ========================================================================
-PHASE 4: FUNCTION WORDS IN HERBAL CONTEXT
+FUNCTION WORDS IN HERBAL CONTEXT
 ========================================================================
 
   Word          Ring     HerbA     HerbB    Pharma     Bio    Text
@@ -161,7 +161,7 @@ PHASE 4: FUNCTION WORDS IN HERBAL CONTEXT
     text           1156 /   8124  (14.2%)
 
 ========================================================================
-PHASE 5: MORPHOLOGICAL PROFILE COMPARISON
+MORPHOLOGICAL PROFILE COMPARISON
 ========================================================================
 
   PREFIX DISTRIBUTION:
@@ -183,7 +183,7 @@ PHASE 5: MORPHOLOGICAL PROFILE COMPARISON
   ∅              15.4%        7.6%        6.9%        6.7%        2.8%        6.4%
 
 ========================================================================
-PHASE 6: BRIDGE VOCABULARY (RING ↔ HERBAL-A)
+BRIDGE VOCABULARY (RING ↔ HERBAL-A)
 ========================================================================
 
   Total bridge words: 179
@@ -240,7 +240,7 @@ PHASE 6: BRIDGE VOCABULARY (RING ↔ HERBAL-A)
     otey              in 9 folios: {'f58r': 3, 'f16r': 1, 'f29v': 1, 'f34r': 1, 'f43r': 1, 'f43v': 1, 'f53r': 1, 'f57v': 1}
 
 ========================================================================
-PHASE 7: RING TEXT ROOT → HERBAL CONTEXT MAPPING
+RING TEXT ROOT → HERBAL CONTEXT MAPPING
 ========================================================================
 
   Top 20 ring text roots → herbal-A distribution:
@@ -278,7 +278,7 @@ PHASE 7: RING TEXT ROOT → HERBAL CONTEXT MAPPING
     pcho       [pc-  ]  herbA=  31  in  27 folios
 
 ========================================================================
-PHASE 8: CROSS-REFERENCE SYNTHESIS
+CROSS-REFERENCE SYNTHESIS
 ========================================================================
 
   Ring text vocabulary: 563 types, 964 tokens

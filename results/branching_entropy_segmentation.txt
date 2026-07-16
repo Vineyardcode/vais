@@ -1,5 +1,5 @@
 ============================================================================
-PHASE 83 — SUB-WORD GLYPH-GROUP SEGMENTATION VIA BRANCHING ENTROPY
+branching_entropy_segmentation — SUB-WORD GLYPH-GROUP SEGMENTATION VIA BRANCHING ENTROPY
 ============================================================================
 
   Do VMS words contain repeating cipher-group units?
@@ -207,10 +207,10 @@ STEP 7: CROSS-VALIDATION — ARE GROUPS CONSISTENT ACROSS SECTIONS?
       recipe (10580 words): H = [3.272 1.836 1.923 1.645 1.410 1.116]
 
 ────────────────────────────────────────────────────────────────────────────
-STEP 8: VALIDATION — KNOWN VERBOSE CIPHER (Phase 60 model)
+STEP 8: VALIDATION — KNOWN VERBOSE CIPHER (positional_verbose_cipher model)
 ────────────────────────────────────────────────────────────────────────────
 
-  Generate a verbose cipher from Italian text using the Phase 60 model.
+  Generate a verbose cipher from Italian text using the positional_verbose_cipher model.
   Then apply the SAME branching entropy analysis.
   If our method works, it should detect group boundaries at the
   cipher-unit level, with ~13-30 unique groups.

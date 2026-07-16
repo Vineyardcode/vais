@@ -1,0 +1,670 @@
+{
+  "test": "word_functional_anatomy",
+  "title": "Functional Anatomy of the VMS Word",
+  "vms_results": {
+    "name": "VMS",
+    "n_words": 36259,
+    "n_first": 36259,
+    "n_middle": 31768,
+    "n_last": 34905,
+    "H_first": 3.388,
+    "H_middle": 8.0242,
+    "H_last": 2.4403,
+    "zone_mi": {
+      "first_section": {
+        "MI": 0.10828,
+        "NMI": 0.04213,
+        "z": 294.1,
+        "null_mean": 0.0034,
+        "null_std": 0.00036,
+        "H_zone": 3.388,
+        "H_section": 2.5704
+      },
+      "middle_section": {
+        "MI": 0.58322,
+        "NMI": 0.22763,
+        "z": 136.81,
+        "null_mean": 0.28761,
+        "null_std": 0.00216,
+        "H_zone": 8.0242,
+        "H_section": 2.5622
+      },
+      "last_section": {
+        "MI": 0.04357,
+        "NMI": 0.01786,
+        "z": 127.8,
+        "null_mean": 0.00301,
+        "null_std": 0.00032,
+        "H_zone": 2.4403,
+        "H_section": 2.5653
+      },
+      "first_linepos": {
+        "MI": 0.07705,
+        "NMI": 0.03349,
+        "z": 248.98,
+        "null_mean": 0.00282,
+        "null_std": 0.0003
+      },
+      "middle_linepos": {
+        "MI": 0.39414,
+        "NMI": 0.17152,
+        "z": 75.6,
+        "null_mean": 0.24718,
+        "null_std": 0.00194
+      },
+      "last_linepos": {
+        "MI": 0.04887,
+        "NMI": 0.02129,
+        "z": 158.42,
+        "null_mean": 0.00244,
+        "null_std": 0.00029
+      },
+      "first_next_init": {
+        "MI": 0.08788,
+        "NMI": 0.02626,
+        "z": 113.7,
+        "null_mean": 0.01208,
+        "null_std": 0.00067
+      },
+      "middle_next_init": {
+        "MI": 0.62852,
+        "NMI": 0.19127,
+        "z": 57.73,
+        "null_mean": 0.43738,
+        "null_std": 0.00331
+      },
+      "last_next_init": {
+        "MI": 0.18852,
+        "NMI": 0.07961,
+        "z": 313.2,
+        "null_mean": 0.009,
+        "null_std": 0.00057
+      },
+      "first_prev_final": {
+        "MI": 0.20612,
+        "NMI": 0.08487,
+        "z": 307.76,
+        "null_mean": 0.0097,
+        "null_std": 0.00064
+      },
+      "middle_prev_final": {
+        "MI": 0.46936,
+        "NMI": 0.19951,
+        "z": 57.14,
+        "null_mean": 0.3007,
+        "null_std": 0.00295
+      },
+      "last_prev_final": {
+        "MI": 0.02568,
+        "NMI": 0.01075,
+        "z": 35.07,
+        "null_mean": 0.00668,
+        "null_std": 0.00054
+      },
+      "first_stem": {
+        "MI": 1.91697,
+        "NMI": 0.57555,
+        "z": 441.12,
+        "null_mean": 0.55887,
+        "null_std": 0.00308
+      },
+      "last_stem": {
+        "MI": 1.65865,
+        "NMI": 0.67968,
+        "z": 400.87,
+        "null_mean": 0.46355,
+        "null_std": 0.00298
+      }
+    }
+  },
+  "ita_results": {
+    "name": "Italian",
+    "n_words": 50000,
+    "n_first": 50000,
+    "n_middle": 33358,
+    "n_last": 43853,
+    "H_first": 4.0719,
+    "H_middle": 9.2201,
+    "H_last": 3.1482,
+    "zone_mi": {
+      "first_section": {
+        "MI": 0.0028,
+        "NMI": 0.00121,
+        "z": 7.2,
+        "null_mean": 0.00143,
+        "null_std": 0.00019,
+        "H_zone": 4.0719,
+        "H_section": 2.3219
+      },
+      "middle_section": {
+        "MI": 0.44881,
+        "NMI": 0.1933,
+        "z": 16.16,
+        "null_mean": 0.41211,
+        "null_std": 0.00227,
+        "H_zone": 9.2201,
+        "H_section": 2.3218
+      },
+      "last_section": {
+        "MI": 0.00289,
+        "NMI": 0.00124,
+        "z": 5.1,
+        "null_mean": 0.0017,
+        "null_std": 0.00023,
+        "H_zone": 3.1482,
+        "H_section": 2.3219
+      },
+      "first_linepos": {
+        "MI": 0.00116,
+        "NMI": 0.00051,
+        "z": -1.39,
+        "null_mean": 0.00145,
+        "null_std": 0.00021
+      },
+      "middle_linepos": {
+        "MI": 0.40428,
+        "NMI": 0.17969,
+        "z": 1.48,
+        "null_mean": 0.40097,
+        "null_std": 0.00224
+      },
+      "last_linepos": {
+        "MI": 0.00162,
+        "NMI": 0.00072,
+        "z": -0.41,
+        "null_mean": 0.00171,
+        "null_std": 0.00023
+      },
+      "first_next_init": {
+        "MI": 0.06591,
+        "NMI": 0.01619,
+        "z": 113.75,
+        "null_mean": 0.00903,
+        "null_std": 0.0005
+      },
+      "middle_next_init": {
+        "MI": 1.16829,
+        "NMI": 0.29032,
+        "z": 52.46,
+        "null_mean": 0.99363,
+        "null_std": 0.00333
+      },
+      "last_next_init": {
+        "MI": 0.13904,
+        "NMI": 0.04418,
+        "z": 231.49,
+        "null_mean": 0.0097,
+        "null_std": 0.00056
+      },
+      "first_prev_final": {
+        "MI": 0.16675,
+        "NMI": 0.05171,
+        "z": 311.97,
+        "null_mean": 0.0088,
+        "null_std": 0.00051
+      },
+      "middle_prev_final": {
+        "MI": 1.01742,
+        "NMI": 0.31539,
+        "z": 66.89,
+        "null_mean": 0.76051,
+        "null_std": 0.00384
+      },
+      "last_prev_final": {
+        "MI": 0.0977,
+        "NMI": 0.031,
+        "z": 151.3,
+        "null_mean": 0.00935,
+        "null_std": 0.00058
+      },
+      "first_stem": {
+        "MI": 3.2081,
+        "NMI": 0.79576,
+        "z": 835.04,
+        "null_mean": 0.95816,
+        "null_std": 0.00269
+      },
+      "last_stem": {
+        "MI": 2.26509,
+        "NMI": 0.71949,
+        "z": 524.57,
+        "null_mean": 0.65863,
+        "null_std": 0.00306
+      }
+    }
+  },
+  "vms_char_mi": {
+    "o": {
+      "freq": 23350,
+      "MI": 0.00446,
+      "NMI": 0.004513,
+      "z": 66.77,
+      "dominant_position": "middle(61%)"
+    },
+    "e": {
+      "freq": 19232,
+      "MI": 0.032601,
+      "NMI": 0.034091,
+      "z": 485.95,
+      "dominant_position": "middle(99%)"
+    },
+    "y": {
+      "freq": 16478,
+      "MI": 0.009569,
+      "NMI": 0.009708,
+      "z": 146.89,
+      "dominant_position": "last(86%)"
+    },
+    "a": {
+      "freq": 13704,
+      "MI": 0.014622,
+      "NMI": 0.015488,
+      "z": 219.44,
+      "dominant_position": "middle(84%)"
+    },
+    "d": {
+      "freq": 12069,
+      "MI": 0.004914,
+      "NMI": 0.005423,
+      "z": 72.17,
+      "dominant_position": "middle(68%)"
+    },
+    "i": {
+      "freq": 11344,
+      "MI": 0.006443,
+      "NMI": 0.009296,
+      "z": 93.41,
+      "dominant_position": "middle(100%)"
+    },
+    "ch": {
+      "freq": 10098,
+      "MI": 0.008539,
+      "NMI": 0.010131,
+      "z": 126.27,
+      "dominant_position": "first(57%)"
+    },
+    "l": {
+      "freq": 9805,
+      "MI": 0.007715,
+      "NMI": 0.009386,
+      "z": 102.02,
+      "dominant_position": "last(56%)"
+    },
+    "k": {
+      "freq": 9450,
+      "MI": 0.0065,
+      "NMI": 0.007878,
+      "z": 89.4,
+      "dominant_position": "middle(87%)"
+    },
+    "r": {
+      "freq": 7008,
+      "MI": 0.006147,
+      "NMI": 0.008843,
+      "z": 86.43,
+      "dominant_position": "last(78%)"
+    },
+    "n": {
+      "freq": 5967,
+      "MI": 0.0066,
+      "NMI": 0.01023,
+      "z": 96.11,
+      "dominant_position": "last(99%)"
+    },
+    "t": {
+      "freq": 5575,
+      "MI": 0.007694,
+      "NMI": 0.012478,
+      "z": 113.43,
+      "dominant_position": "middle(83%)"
+    },
+    "q": {
+      "freq": 5464,
+      "MI": 0.022365,
+      "NMI": 0.036578,
+      "z": 322.01,
+      "dominant_position": "first(99%)"
+    },
+    "sh": {
+      "freq": 4314,
+      "MI": 0.002575,
+      "NMI": 0.004919,
+      "z": 34.01,
+      "dominant_position": "first(74%)"
+    },
+    "s": {
+      "freq": 2355,
+      "MI": 0.005716,
+      "NMI": 0.016729,
+      "z": 77.96,
+      "dominant_position": "first(50%)"
+    },
+    "p": {
+      "freq": 1065,
+      "MI": 0.002464,
+      "NMI": 0.012953,
+      "z": 33.92,
+      "dominant_position": "middle(77%)"
+    },
+    "m": {
+      "freq": 958,
+      "MI": 0.002714,
+      "NMI": 0.015474,
+      "z": 37.75,
+      "dominant_position": "last(96%)"
+    },
+    "ckh": {
+      "freq": 829,
+      "MI": 0.002541,
+      "NMI": 0.01619,
+      "z": 35.38,
+      "dominant_position": "middle(79%)"
+    },
+    "cth": {
+      "freq": 828,
+      "MI": 0.006163,
+      "NMI": 0.039233,
+      "z": 90.57,
+      "dominant_position": "first(52%)"
+    },
+    "f": {
+      "freq": 360,
+      "MI": 0.00146,
+      "NMI": 0.018214,
+      "z": 20.15,
+      "dominant_position": "middle(69%)"
+    }
+  },
+  "vms_pos_curve": {
+    "0": {
+      "n": 36259,
+      "H_char": 3.388,
+      "MI_section": 0.108281,
+      "z_section": 309.62,
+      "NMI_section": 0.042125,
+      "MI_linepos": 0.077049,
+      "z_linepos": 235.46,
+      "NMI_linepos": 0.033495
+    },
+    "1": {
+      "n": 34905,
+      "H_char": 3.349,
+      "MI_section": 0.064962,
+      "z_section": 173.6,
+      "NMI_section": 0.025323,
+      "MI_linepos": 0.0645,
+      "z_linepos": 179.53,
+      "NMI_linepos": 0.028097
+    },
+    "2": {
+      "n": 31768,
+      "H_char": 3.6336,
+      "MI_section": 0.078932,
+      "z_section": 205.54,
+      "NMI_section": 0.030807,
+      "MI_linepos": 0.040125,
+      "z_linepos": 107.31,
+      "NMI_linepos": 0.017462
+    },
+    "3": {
+      "n": 25726,
+      "H_char": 3.4663,
+      "MI_section": 0.070334,
+      "z_section": 148.0,
+      "NMI_section": 0.027459,
+      "MI_linepos": 0.03734,
+      "z_linepos": 79.19,
+      "NMI_linepos": 0.016202
+    },
+    "4": {
+      "n": 17505,
+      "H_char": 3.3233,
+      "MI_section": 0.074907,
+      "z_section": 110.05,
+      "NMI_section": 0.029368,
+      "MI_linepos": 0.039114,
+      "z_linepos": 55.43,
+      "NMI_linepos": 0.016906
+    },
+    "5": {
+      "n": 9350,
+      "H_char": 3.0991,
+      "MI_section": 0.082298,
+      "z_section": 58.76,
+      "NMI_section": 0.032585,
+      "MI_linepos": 0.04598,
+      "z_linepos": 35.18,
+      "NMI_linepos": 0.019913
+    },
+    "6": {
+      "n": 3739,
+      "H_char": 2.7897,
+      "MI_section": 0.119076,
+      "z_section": 34.61,
+      "NMI_section": 0.047161,
+      "MI_linepos": 0.048774,
+      "z_linepos": 11.15,
+      "NMI_linepos": 0.02083
+    },
+    "7": {
+      "n": 1008,
+      "H_char": 3.0073,
+      "MI_section": 0.155611,
+      "z_section": 8.97,
+      "NMI_section": 0.060919,
+      "MI_linepos": 0.118227,
+      "z_linepos": 6.84,
+      "NMI_linepos": 0.048724
+    }
+  },
+  "ita_pos_curve": {
+    "0": {
+      "n": 50000,
+      "H_char": 4.0719,
+      "MI_section": 0.002801,
+      "z_section": 6.71,
+      "NMI_section": 0.001207,
+      "MI_linepos": 0.001158,
+      "z_linepos": -1.31,
+      "NMI_linepos": 0.000515
+    },
+    "1": {
+      "n": 43853,
+      "H_char": 3.5131,
+      "MI_section": 0.004157,
+      "z_section": 7.78,
+      "NMI_section": 0.00179,
+      "MI_linepos": 0.002117,
+      "z_linepos": -0.51,
+      "NMI_linepos": 0.000941
+    },
+    "2": {
+      "n": 33358,
+      "H_char": 3.9826,
+      "MI_section": 0.002982,
+      "z_section": 1.31,
+      "NMI_section": 0.001284,
+      "MI_linepos": 0.002118,
+      "z_linepos": -1.36,
+      "NMI_linepos": 0.000941
+    },
+    "3": {
+      "n": 24563,
+      "H_char": 4.0184,
+      "MI_section": 0.00522,
+      "z_section": 3.18,
+      "NMI_section": 0.002248,
+      "MI_linepos": 0.003663,
+      "z_linepos": -0.39,
+      "NMI_linepos": 0.001627
+    },
+    "4": {
+      "n": 19672,
+      "H_char": 3.7005,
+      "MI_section": 0.007645,
+      "z_section": 5.13,
+      "NMI_section": 0.003293,
+      "MI_linepos": 0.004679,
+      "z_linepos": -0.07,
+      "NMI_linepos": 0.002077
+    },
+    "5": {
+      "n": 11691,
+      "H_char": 3.7816,
+      "MI_section": 0.013164,
+      "z_section": 6.76,
+      "NMI_section": 0.00567,
+      "MI_linepos": 0.009127,
+      "z_linepos": 1.95,
+      "NMI_linepos": 0.00404
+    },
+    "6": {
+      "n": 6921,
+      "H_char": 3.6122,
+      "MI_section": 0.017951,
+      "z_section": 3.67,
+      "NMI_section": 0.007733,
+      "MI_linepos": 0.012436,
+      "z_linepos": -0.06,
+      "NMI_linepos": 0.005493
+    },
+    "7": {
+      "n": 3625,
+      "H_char": 3.4331,
+      "MI_section": 0.029101,
+      "z_section": 2.59,
+      "NMI_section": 0.012542,
+      "MI_linepos": 0.020528,
+      "z_linepos": -0.5,
+      "NMI_linepos": 0.009062
+    }
+  },
+  "vms_final_dist": {
+    "chi2": 1690.84,
+    "df": 30,
+    "chi2_per_df": 56.36,
+    "table": {
+      "astro": {
+        "y": 0.3735,
+        "n": 0.1058,
+        "l": 0.1685,
+        "r": 0.1971,
+        "o": 0.0255,
+        "s": 0.0547
+      },
+      "bio": {
+        "y": 0.5368,
+        "n": 0.1443,
+        "l": 0.181,
+        "r": 0.0939,
+        "o": 0.006,
+        "s": 0.012
+      },
+      "cosmo": {
+        "y": 0.4047,
+        "n": 0.0825,
+        "l": 0.1819,
+        "r": 0.1603,
+        "o": 0.043,
+        "s": 0.0727
+      },
+      "cosmo2": {
+        "y": 0.3731,
+        "n": 0.1992,
+        "l": 0.1146,
+        "r": 0.2268,
+        "o": 0.0108,
+        "s": 0.0204
+      },
+      "herbal": {
+        "y": 0.3602,
+        "n": 0.1741,
+        "l": 0.1546,
+        "r": 0.1745,
+        "o": 0.0456,
+        "s": 0.0258
+      },
+      "pharma": {
+        "y": 0.3233,
+        "n": 0.1539,
+        "l": 0.2117,
+        "r": 0.1748,
+        "o": 0.038,
+        "s": 0.04
+      },
+      "text": {
+        "y": 0.4122,
+        "n": 0.204,
+        "l": 0.133,
+        "r": 0.1432,
+        "o": 0.0324,
+        "s": 0.0193
+      }
+    }
+  },
+  "ita_final_dist": {
+    "chi2": 51.5,
+    "df": 20,
+    "chi2_per_df": 2.58,
+    "table": {
+      "sec_A": {
+        "e": 0.2039,
+        "a": 0.1785,
+        "o": 0.1824,
+        "i": 0.1778,
+        "n": 0.0652,
+        "r": 0.0531
+      },
+      "sec_B": {
+        "e": 0.2013,
+        "a": 0.2018,
+        "o": 0.1786,
+        "i": 0.1634,
+        "n": 0.0694,
+        "r": 0.0555
+      },
+      "sec_C": {
+        "e": 0.1868,
+        "a": 0.1907,
+        "o": 0.1821,
+        "i": 0.1628,
+        "n": 0.0746,
+        "r": 0.0576
+      },
+      "sec_D": {
+        "e": 0.1893,
+        "a": 0.188,
+        "o": 0.1884,
+        "i": 0.1664,
+        "n": 0.0657,
+        "r": 0.0547
+      },
+      "sec_E": {
+        "e": 0.1999,
+        "a": 0.1876,
+        "o": 0.1777,
+        "i": 0.1717,
+        "n": 0.0663,
+        "r": 0.0627
+      }
+    }
+  },
+  "verdict": {
+    "scores": {
+      "terminator": 0,
+      "grammar": 6,
+      "content": 4
+    },
+    "winner": "grammar",
+    "margin": 2,
+    "evidence": [
+      "Final has strong topical MI (z=127.8) \u2192 content +2",
+      "Final\u2192next_init strong (z=313.2) \u2192 grammar +3",
+      "Final\u2194stem coupled (NMI=0.6797) \u2192 content +2",
+      "Final sensitive to line position (z=158.4) \u2192 grammar +2",
+      "VMS final carries intermediate topic info \u2192 grammar +1"
+    ],
+    "vms_ratio": 0.4239,
+    "ita_ratio": 1.0248
+  }
+}

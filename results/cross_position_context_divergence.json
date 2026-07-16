@@ -1,5 +1,5 @@
 {
-  "phase": 89,
+  "test": "cross_position_context_divergence",
   "question": "Cross-position context divergence: same unit or homographs?",
   "min_context": 5,
   "min_units": 3,

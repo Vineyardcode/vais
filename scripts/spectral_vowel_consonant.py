@@ -6,7 +6,7 @@ Vowel-Consonant Spectral Separation
 
 MOTIVATION:
 
-  86 phases have established that VMS chunks are functional characters
+  Prior analyses have established that VMS chunks are functional characters
   (~25 equivalence classes) with genuine distributional structure.
   But all evidence so far is STATISTICAL — matching distributions,
   h_ratios, Zipf slopes. None of it tests a specifically LINGUISTIC

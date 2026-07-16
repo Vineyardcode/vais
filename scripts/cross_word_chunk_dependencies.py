@@ -10,7 +10,7 @@ QUESTION:
   Italian) persist, strengthen, or vanish at the chunk level?
 
 MOTIVATION:
-  Phases 85-89 thoroughly characterized WITHIN-word chunk structure.
+  The chunk-structure tests thoroughly characterized WITHIN-word chunk structure.
   We now know:
   - Chunks behave like NL syllables (entropy, positional concentration)
   - Shared chunks are NOT homographs (cross_position_context_divergence)
@@ -980,7 +980,7 @@ def main():
 
     # JSON
     json_data = {
-        'phase': 90,
+        'test': 'cross_word_chunk_dependencies',
         'question': 'Cross-word chunk MI: does glyph-level anomaly persist?',
         'vms_cross_mi': mi_cross_vms['mi'],
         'vms_cross_nmi': mi_cross_vms['nmi'],

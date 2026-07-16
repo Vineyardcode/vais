@@ -1031,7 +1031,7 @@ def main():
     pr(f"  Results saved to {out_txt}")
 
     json_data = {
-        'phase': 91,
+        'test': 'zodiac_galenic_axis',
         'claim': 'EVA a/e encode inverse Galenic treatment axes in zodiac labels',
         'n_signs': len(sorted_signs),
         'n_labels': total_labels,

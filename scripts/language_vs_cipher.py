@@ -11,28 +11,28 @@ Key insight: in natural language, within-word and between-word character
 transitions come from the SAME phonological system. In a cipher, they
 come from DIFFERENT processes (encoding rules vs. plaintext transitions).
 
-  54a) WITHIN-WORD vs BETWEEN-WORD TRANSITION MATRICES
+  A) WITHIN-WORD vs BETWEEN-WORD TRANSITION MATRICES
        Compare the full C×C character transition matrices for transitions
        occurring WITHIN words vs BETWEEN words (last char → first char).
        High correlation → same process → natural language.
        Low correlation → different processes → cipher.
 
-  54b) CROSS-PREDICTION TEST
+  B) CROSS-PREDICTION TEST
        Train char bigram on within-word transitions only, evaluate on
        between-word transitions (and vice versa). If same process,
        cross-prediction should be nearly as good as self-prediction.
 
-  54c) WORD LENGTH AUTOCORRELATION
+  C) WORD LENGTH AUTOCORRELATION
        In natural language, short function words alternate with long
        content words → length correlation > 0. In syllable cipher,
        word length is encoding artifact → correlation ≈ 0.
 
-  54d) HAPAX CLUSTERING
+  D) HAPAX CLUSTERING
        Natural language hapaxes are topic-specific → concentrated in
        certain sections. Cipher hapaxes are encoding accidents →
        uniformly distributed.
 
-  54e) CONDITIONAL WORD-LENGTH ENTROPY
+  E) CONDITIONAL WORD-LENGTH ENTROPY
        H(length_i+1 | length_i). In natural language, word length
        carries grammatical information → conditional H should be lower
        than marginal H. In cipher, length is about encoding → no gain.
@@ -110,7 +110,7 @@ print(f"  {N} tokens, {len(vocab)} types, {len(raw_lines)} lines\n")
 # 54a: WITHIN-WORD vs BETWEEN-WORD TRANSITION MATRICES
 # ============================================================
 print("=" * 65)
-print("54a: WITHIN-WORD vs BETWEEN-WORD TRANSITION MATRICES")
+print("A: WITHIN-WORD vs BETWEEN-WORD TRANSITION MATRICES")
 print("=" * 65)
 
 # Build within-word and between-word transition matrices
@@ -225,7 +225,7 @@ if valid_rows:
 # 54b: CROSS-PREDICTION TEST
 # ============================================================
 print("\n" + "=" * 65)
-print("54b: CROSS-PREDICTION TEST")
+print("B: CROSS-PREDICTION TEST")
 print("=" * 65)
 
 # Split data
@@ -333,7 +333,7 @@ print(f"    Large penalty (>1.0): Different processes (cipher)")
 # 54c: WORD LENGTH AUTOCORRELATION
 # ============================================================
 print("\n" + "=" * 65)
-print("54c: WORD LENGTH AUTOCORRELATION")
+print("C: WORD LENGTH AUTOCORRELATION")
 print("=" * 65)
 
 # Compute adjacent word length correlation within lines
@@ -401,7 +401,7 @@ print(f"  MI = {MI_len_word:.4f} bits ({100*MI_len_word/H_word:.2f}% of H)")
 # 54d: HAPAX CLUSTERING
 # ============================================================
 print("\n" + "=" * 65)
-print("54d: HAPAX CLUSTERING")
+print("D: HAPAX CLUSTERING")
 print("=" * 65)
 
 # Identify hapaxes and their folio/section locations
@@ -464,7 +464,7 @@ if len(hapax_line_positions) > 10:
 # 54e: CONDITIONAL WORD-LENGTH ENTROPY
 # ============================================================
 print("\n" + "=" * 65)
-print("54e: CONDITIONAL WORD-LENGTH ENTROPY")
+print("E: CONDITIONAL WORD-LENGTH ENTROPY")
 print("=" * 65)
 
 # H(length_i+1 | length_i) vs H(length)

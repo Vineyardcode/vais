@@ -1,0 +1,151 @@
+{
+  "test": "zodiac_galenic_axis",
+  "claim": "EVA a/e encode inverse Galenic treatment axes in zodiac labels",
+  "n_signs": 10,
+  "n_labels": 299,
+  "n_glyphs": 1946,
+  "r_ae": -0.9904256749866194,
+  "p_perm_two_tailed": 0.0,
+  "r_ordinal_a": -0.4113215126286391,
+  "r_ordinal_e": 0.3736856830548971,
+  "r_ring_text_ae": -0.7270797911889364,
+  "extreme_neg_pairs": 2,
+  "extreme_pos_pairs": 3,
+  "ae_rank_of_pairs": 1,
+  "total_glyph_pairs": 190,
+  "slot2_artifact": false,
+  "ring_ae_similar": false,
+  "merged_signs": {
+    "Aries": {
+      "ordinal": 1,
+      "n_labels": 30,
+      "total_glyphs": 254,
+      "a_pct": 17.322834645669293,
+      "e_pct": 7.086614173228346
+    },
+    "Taurus": {
+      "ordinal": 2,
+      "n_labels": 30,
+      "total_glyphs": 243,
+      "a_pct": 20.16460905349794,
+      "e_pct": 1.2345679012345678
+    },
+    "Gemini": {
+      "ordinal": 3,
+      "n_labels": 29,
+      "total_glyphs": 172,
+      "a_pct": 20.930232558139537,
+      "e_pct": 3.488372093023256
+    },
+    "Cancer": {
+      "ordinal": 4,
+      "n_labels": 30,
+      "total_glyphs": 247,
+      "a_pct": 17.004048582995953,
+      "e_pct": 7.6923076923076925
+    },
+    "Leo": {
+      "ordinal": 5,
+      "n_labels": 30,
+      "total_glyphs": 183,
+      "a_pct": 10.382513661202186,
+      "e_pct": 13.66120218579235
+    },
+    "Virgo": {
+      "ordinal": 6,
+      "n_labels": 30,
+      "total_glyphs": 196,
+      "a_pct": 7.653061224489796,
+      "e_pct": 16.836734693877553
+    },
+    "Libra": {
+      "ordinal": 7,
+      "n_labels": 30,
+      "total_glyphs": 157,
+      "a_pct": 4.45859872611465,
+      "e_pct": 19.745222929936304
+    },
+    "Scorpio": {
+      "ordinal": 8,
+      "n_labels": 30,
+      "total_glyphs": 164,
+      "a_pct": 6.097560975609756,
+      "e_pct": 18.902439024390244
+    },
+    "Sagittarius": {
+      "ordinal": 9,
+      "n_labels": 30,
+      "total_glyphs": 158,
+      "a_pct": 5.063291139240507,
+      "e_pct": 20.88607594936709
+    },
+    "Pisces": {
+      "ordinal": 12,
+      "n_labels": 30,
+      "total_glyphs": 172,
+      "a_pct": 19.767441860465116,
+      "e_pct": 2.3255813953488373
+    }
+  },
+  "nonzodiac_a_pct": 7.679295136173844,
+  "nonzodiac_e_pct": 10.448768072612422,
+  "zodiac_labels_a_pct": 13.566289825282631,
+  "zodiac_labels_e_pct": 10.431654676258994,
+  "null_r_mean": 0.0006624838087332596,
+  "null_r_std": 0.3352485874868114,
+  "null_r_5pct": -0.5523239767308744,
+  "null_r_95pct": 0.5584735060124918,
+  "top_negative_pairs": [
+    [
+      "a",
+      "e",
+      -0.9904256749866194
+    ],
+    [
+      "a",
+      "y",
+      -0.902993543318033
+    ],
+    [
+      "e",
+      "r",
+      -0.8894700290924824
+    ],
+    [
+      "r",
+      "y",
+      -0.8864720264397095
+    ],
+    [
+      "d",
+      "l",
+      -0.7751810867422659
+    ],
+    [
+      "a",
+      "d",
+      -0.7736487914462236
+    ],
+    [
+      "e",
+      "l",
+      -0.7676741530855618
+    ],
+    [
+      "e",
+      "m",
+      -0.7604449517278998
+    ],
+    [
+      "f",
+      "t",
+      -0.7191125746119912
+    ],
+    [
+      "d",
+      "r",
+      -0.6852240480401803
+    ]
+  ],
+  "verdict": "INVERSE_REAL_GALENIC_UNCONFIRMED"
+}

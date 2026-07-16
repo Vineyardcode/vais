@@ -3,7 +3,7 @@
 Corrected Four-Task Audit
 ================================================
 
-Redo of the four tasks the previous agent botched:
+Corrected redo of four earlier analyses whose first versions were flawed:
 
   1. COPTIC ASTROLOGICAL EXPANSION — Use *actual* Coptic/Egyptian astro terms:
      Egyptian decan names (from Dendera, Esna temple ceilings, Ptolemaic texts),
@@ -33,7 +33,7 @@ from collections import Counter, defaultdict
 from common import collapse_echains, gallows_base_v2 as gallows_base, parse_morphology, strip_gallows, classify_folio
 
 # ═══════════════════════════════════════════════���══════════════════════════
-# MORPHOLOGICAL PIPELINE (standard from previous phases)
+# MORPHOLOGICAL PIPELINE (standard shared pipeline)
 # ══════════════════════════════════════════════════════════════════════════
 
 SIMPLE_GALLOWS = ["t", "k", "f", "p"]

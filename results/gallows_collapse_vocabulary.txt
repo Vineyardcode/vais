@@ -1,5 +1,5 @@
 ========================================================================
-PHASE 79 — GALLOWS COLLAPSE: REVEALING THE TRUE VOCABULARY
+gallows_collapse_vocabulary — GALLOWS COLLAPSE: REVEALING THE TRUE VOCABULARY
 ========================================================================
 
 Total word tokens: 40351
@@ -133,7 +133,7 @@ H(gallows | pred + succ + line + section) = 1.1328 bits
   significant independent information.
 
 ========================================================================
-PHASE 79 — SYNTHESIS
+gallows_collapse_vocabulary — SYNTHESIS
 ========================================================================
 
 Original vocabulary: 8212 types / 40351 tokens

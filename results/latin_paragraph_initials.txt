@@ -1,5 +1,5 @@
 ══════════════════════════════════════════════════════════════════════
-PHASE 75 — LATIN PARAGRAPH-INITIAL LETTER MAPPING
+latin_paragraph_initials — LATIN PARAGRAPH-INITIAL LETTER MAPPING
 Can VMS gallows be mapped to Latin letters?
 ══════════════════════════════════════════════════════════════════════
 
@@ -541,7 +541,7 @@ SKEPTICAL ANALYSIS
   a) Paragraph-TYPE markers (herbal=p, recipe=t, instruction=k, note=f)
   b) Abbreviated words (not single letters)
   c) Coptic-style structural markers
-  d) Simple letter substitutions (what this phase tests)
+  d) Simple letter substitutions (what this test tests)
   e) Section-specific cipher elements
 
 5. INFORMATION CONTENT CHECK
@@ -553,7 +553,7 @@ SKEPTICAL ANALYSIS
   equiprobable options (not 4 equal → not 4 random letters)
 
 ══════════════════════════════════════════════════════════════════════
-PHASE 75 SUMMARY
+latin_paragraph_initials SUMMARY
 ══════════════════════════════════════════════════════════════════════
 
 Unique 4-letter sets from best mappings: 7
@@ -585,4 +585,4 @@ KEY FINDINGS:
    different genres of Latin text.
 
 
-JSON results → C:\projects\voynich_slop\results\phase75_latin_mapping.json
+JSON results → C:\projects\vais\results\latin_paragraph_initials.json
