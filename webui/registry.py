@@ -23,33 +23,33 @@ EXCLUDE = {"download_folios.py", "download_latin.py"}
 
 # Scripts that hit the network for reference corpora (flagged in UI).
 NETWORK = {
-    "phase58_cross_script", "phase59_forward_model", "phase60_positional_verbose",
-    "phase61_word_shape_validation", "phase62_word_anatomy",
-    "phase64_encoding_tournament", "phase65_reverse_engineer_script",
-    "phase72_naibbe_calibration", "phase73_abbreviation_model",
-    "phase75_latin_mapping", "phase76_vernacular_mapping",
+    "cross_script_fingerprint", "forward_process_models", "positional_verbose_cipher",
+    "word_shape_validation", "word_functional_anatomy",
+    "encoding_model_tournament", "script_reverse_engineering",
+    "naibbe_cipher_calibration", "abbreviation_shorthand_model",
+    "latin_paragraph_initials", "vernacular_paragraph_initials",
 }
 
 # Dependency edges: consumer -> [producer scripts]. Audit-verified against
 # actual result-file reads in the code (AUDIT.md A2): hebrew_deep_analysis
-# does NOT read attack_plan output (comment only); f66r_analysis and
-# phase86R_revalidation were missing.
+# does NOT read morphology_full_survey output (comment only); f66r_analysis and
+# chunk_equivalence_revalidation were missing.
 DEPENDS = {
     "astro_crossref": ["astro_label_pipeline"],
-    "crosssign_network": ["ring_decan_mapping"],
-    "medieval_degrees": ["ring_decan_mapping"],
-    "four_tasks_audit": ["ring_decan_mapping"],
-    "innermost_ring_dive": ["grammar_extraction", "ring_text_analysis"],
-    "herbal_crossref": ["grammar_extraction"],
-    "hebrew_comparison": ["attack_plan"],
-    "f66r_analysis": ["attack_plan", "freq_rank_mapping"],
-    "phase59_forward_model": ["phase58_cross_script"],
-    "phase60_positional_verbose": ["phase58_cross_script"],
-    "phase86R_revalidation": ["phase86_chunk_equivalence"],
-    "phase100_decipherment": ["phase86_chunk_equivalence"],
-    "phase101_currier_ab_dichotomy": ["phase86_chunk_equivalence"],
-    "phase102_historical_validation": ["phase86_chunk_equivalence"],
-    "phase98_generative_chunk_model": ["phase86_chunk_equivalence"],
+    "zodiac_label_network": ["ring_decan_mapping"],
+    "zodiac_degree_semantics": ["ring_decan_mapping"],
+    "claims_correction_audit": ["ring_decan_mapping"],
+    "inner_ring_inventory": ["ring_grammar_extraction", "ring_text_analysis"],
+    "herbal_crossref": ["ring_grammar_extraction"],
+    "hebrew_comparison": ["morphology_full_survey"],
+    "f66r_analysis": ["morphology_full_survey", "freq_rank_mapping"],
+    "forward_process_models": ["cross_script_fingerprint"],
+    "positional_verbose_cipher": ["cross_script_fingerprint"],
+    "chunk_equivalence_revalidation": ["chunk_equivalence_classes"],
+    "chunk_alphabet_decipherment": ["chunk_equivalence_classes"],
+    "currier_dichotomy_resolution": ["chunk_equivalence_classes"],
+    "historical_validation": ["chunk_equivalence_classes"],
+    "generative_chunk_model": ["chunk_equivalence_classes"],
 }
 
 # Param names that are infrastructure, not analysis knobs.

@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
-VOYNICH MANUSCRIPT — HEBREW DEEP ANALYSIS
+HEBREW DEEP ANALYSIS
 ==========================================
-Phase 2 of the Hebrew hypothesis investigation.
+Second stage of the Hebrew hypothesis investigation (follows hebrew_comparison).
 
 Tests:
   1. SHUFFLE CONTROL — Is paradigm structure real or decorative?
@@ -22,7 +22,7 @@ from itertools import combinations
 from common import classify_folio_v3 as classify_folio, get_root, result_path
 
 # ═══════════════════════════════════════════════════════════════════════════
-# PARSER (reused from attack_plan.py)
+# PARSER (reused from morphology_full_survey.py)
 # ═══════════════════════════════════════════════════════════════════════════
 
 PREFIXES = [

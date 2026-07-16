@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Voynich Manuscript — Diacritical Mark Audit (Phase 12)
+Diacritical Mark Audit
 
 The IVTFF transcription encodes three types of extra-alphabetic marks:
 
@@ -16,7 +16,7 @@ Tests whether these marks:
   - Form patterns that suggest grammatical or semantic function
 
 Connected to: user observation of small marks above letters in f78r,
-Phase 10 gallows-as-determinative finding, Hebrew niqqud analogy.
+the earlier gallows-as-determinative finding, Hebrew niqqud analogy.
 """
 
 import re
@@ -489,7 +489,7 @@ def synthesis(at_marks, curly_marks, plume_marks, section_words):
     print(f"  1. Marks are RARE: {1000*total_marks/total_words:.1f}‰ overall")
     print(f"  2. Most {{}} glyphs ({len(curly_marks)} total) are gallows variants —")
     print(f"     visual modifications of the four basic gallows shapes")
-    print(f"  3. This connects to Phase 10: if gallows are determinatives,")
+    print(f"  3. This connects to if gallows are determinatives,")
     print(f"     then {{}} variants = SUB-CATEGORIES within the gallows system")
     print(f"  4. @NNN; codes are the true 'diacritics' — marks that modify")
     print(f"     individual letters but can't be expressed in standard EVA")

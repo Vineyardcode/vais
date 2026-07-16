@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-Voynich Manuscript — Egyptian Connection Deep-Dive (Phase 14)
+Egyptian Connection Deep-Dive
 
-The Voynich gallows have been confirmed as semantic determinatives (Phase 10)
-with four mapped domains (Phase 13):
+The Voynich gallows have been confirmed as semantic determinatives
+with four mapped domains:
   t = celestial/astronomical
   k = generic/default
   f = botanical/plant
@@ -65,7 +65,7 @@ def gallows_tier(g):
 
 # ── Morphological parser ─────────────────────────────────────────────────
 
-# True prefixes (from Phase 11 corrections)
+# True prefixes (from the corrected prefix inventory)
 PREFIXES = ['qo', 'q', 'so', 'do', 'o', 'd', 's', 'y']
 # True suffixes
 SUFFIXES = ['aiin', 'ain', 'iin', 'in', 'ar', 'or', 'al', 'ol',

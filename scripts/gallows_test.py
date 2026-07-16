@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Voynich Manuscript — Gallows Character Hypothesis Test
+Gallows Character Hypothesis Test
 
 Tests whether gallows characters (EVA: t, k, f, p and bench variants
 cth, ckh, cph, cfh) function as structural markers/dividers rather than
@@ -516,7 +516,7 @@ def test7_stripped_parse_rate(all_data):
     print("TEST 7: STRIPPED WORD PARSEABILITY")
     print("=" * 72)
 
-    # Simple parser (from grammar_extraction.py)
+    # Simple parser (from ring_grammar_extraction.py)
     PREFIXES = ["qo", "q", "do", "dy", "so", "sy", "ol", "or", "o", "y", "d", "s"]
     ROOT_ONSETS_NONGALLOWS = ["sch", "sh", "ch", "eee", "ee", "e", "da", "sa", "a", "o"]
     ROOT_BODIES = ["eee", "ee", "e", "da", "sa", "do", "so", "a", "o", "d", "s", "l", "r", "n", "m"]

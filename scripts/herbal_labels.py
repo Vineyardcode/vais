@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
-Voynich Manuscript — Herbal & Pharma Label Extraction (Phase 16c)
+Herbal & Pharma Label Extraction
 
-Phase 15's herbal label probe returned 0 results because it searched only
+root_lexicon_rosetta's herbal label probe returned 0 results because it searched only
 for @Lz (zodiac nymph) format. The actual label locus codes are:
 
   @Lf = 229 labels (pharma container labels, f99-f102)
@@ -72,7 +72,7 @@ def full_decompose(word):
 
 
 # ══════════════════════════════════════════════════════════════════════════
-# COPTIC VOCABULARY (from coptic_probe_expanded.py — top matches)
+# COPTIC VOCABULARY (from coptic_dictionary_probe.py — top matches)
 # ══════════════════════════════════════════════════════════════════════════
 
 COPTIC_VOCAB = {

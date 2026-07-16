@@ -166,7 +166,7 @@ ENOCHIAN = {
 
 
 def load_voynich_paradigms(filepath):
-    """Load paradigm tables from attack_plan_results.json"""
+    """Load paradigm tables from morphology_full_survey_results.json"""
     with open(filepath, 'r', encoding='utf-8') as f:
         data = json.load(f)
     return data['paradigm_tables']
@@ -519,9 +519,9 @@ def main():
     print("=" * 90)
 
     # Load data
-    results_path = result_path('attack_plan_results.json')
+    results_path = result_path('morphology_full_survey_results.json')
     if not os.path.exists(results_path):
-        print(f"ERROR: {results_path} not found. Run attack_plan.py first.")
+        print(f"ERROR: {results_path} not found. Run morphology_full_survey.py first.")
         sys.exit(1)
 
     paradigms = load_voynich_paradigms(results_path)

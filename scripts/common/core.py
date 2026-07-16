@@ -73,7 +73,7 @@ MAX_CHUNKS = 6
 SIMPLE_GALLOWS = ["t", "k", "f", "p"]
 
 
-# Declared variant of MORPH_SUFFIXES used by the phase23-31 translation-era
+# Declared variant of MORPH_SUFFIXES used by the root_lexicon_translation-31 translation-era
 # family: no 'sy', and 'eedy' is tried before 'edy'/'ody'. Order is
 # significant (parse_morphology takes the first endswith match), so these
 # two lists produce different decompositions BY DESIGN. The scripts keep a
@@ -105,7 +105,7 @@ def parse_morphology(stripped_word):
     return prefix, w, suffix
 
 
-# ── get_collapsed: phase39 statistical family (20 scripts) — composed of
+# ── get_collapsed: word_order_syntax_test statistical family (20 scripts) — composed of
 #    strip_gallows_v2 (string-returning) + collapse_e
 def get_collapsed(w): return collapse_e(strip_gallows_v2(w))
 
@@ -171,7 +171,7 @@ def chunk_to_str(chunk):
 # ─────────────────────────────────────────────────────────────────────────
 
 def classify_folio_header_section(header_lines):
-    """Header-comment taxonomy, section only (deep_dive family)."""
+    """Header-comment taxonomy, section only (root_type_grammar family)."""
     text = "\n".join(header_lines).lower()
     if "herbal" in text:
         return "herbal"
@@ -783,8 +783,8 @@ def load_lines_v2():
                 lines.append(words)
     return lines
 
-def load_phase86_clusters():
-    json_path = RESULTS_DIR / 'phase86_chunk_equivalence.json'
+def load_chunk_equivalence_clusters():
+    json_path = RESULTS_DIR / 'chunk_equivalence_classes.json'
     with open(json_path, 'r', encoding='utf-8') as f:
         data = json.load(f)
     chunk_to_class = {}

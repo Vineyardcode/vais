@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Voynich Manuscript — Herbal Cross-Reference Analysis
+Herbal Cross-Reference Analysis
 
 The ring text grammar extraction revealed that ch-/sh- root families are
 3× enriched in zodiac ring texts vs labels, and that tal-/kal- families
@@ -31,7 +31,7 @@ SECTION_MAP = {}
 
 
 
-# ── Parser (from currier_ab.py — fuller version) ────────────────────────
+# ── Parser (from currier_register_comparison.py — fuller version) ────────────────────────
 
 PREFIXES = [
     "qol", "qor", "sol", "sor", "dol", "dor", "dyl", "dyr",
@@ -231,10 +231,10 @@ def extract_ring_text_data():
 # PHASES
 # ══════════════════════════════════════════════════════════════════════════
 
-def phase1_section_profiles(section_data, section_words):
+def part1_section_profiles(section_data, section_words):
     """Profile each section's basic statistics."""
     print("=" * 72)
-    print("PHASE 1: SECTION PROFILES")
+    print("SECTION PROFILES")
     print("=" * 72)
 
     for section in ["herbal-A", "herbal-B", "pharma", "zodiac", "bio", "cosmo", "text"]:
@@ -251,10 +251,10 @@ def phase1_section_profiles(section_data, section_words):
         print(f"    Top 10: {dict(words.most_common(10))}")
 
 
-def phase2_root_family_comparison(section_data, ring_families):
+def part2_root_family_comparison(section_data, ring_families):
     """Compare root family distributions across sections and ring texts."""
     print("\n" + "=" * 72)
-    print("PHASE 2: ROOT FAMILY DISTRIBUTION COMPARISON")
+    print("ROOT FAMILY DISTRIBUTION COMPARISON")
     print("=" * 72)
 
     # Compute family distributions per section
@@ -324,10 +324,10 @@ def phase2_root_family_comparison(section_data, ring_families):
                       f"  ratio={ratio:.2f}×{marker}")
 
 
-def phase3_vocabulary_overlap(section_words, ring_words):
+def part3_vocabulary_overlap(section_words, ring_words):
     """Jaccard overlap between ring text vocabulary and each section."""
     print("\n" + "=" * 72)
-    print("PHASE 3: VOCABULARY OVERLAP (RING TEXT vs SECTIONS)")
+    print("VOCABULARY OVERLAP (RING TEXT vs SECTIONS)")
     print("=" * 72)
 
     ring_vocab = set(ring_words.keys())
@@ -376,10 +376,10 @@ def phase3_vocabulary_overlap(section_words, ring_words):
     print()
 
 
-def phase4_function_words_in_herbal(section_words, ring_words):
+def part4_function_words_in_herbal(section_words, ring_words):
     """Do ring text function words appear in herbal prose?"""
     print("\n" + "=" * 72)
-    print("PHASE 4: FUNCTION WORDS IN HERBAL CONTEXT")
+    print("FUNCTION WORDS IN HERBAL CONTEXT")
     print("=" * 72)
 
     func_words = ["aiin", "ar", "al", "s", "daiin", "dal", "am", "dar",
@@ -413,10 +413,10 @@ def phase4_function_words_in_herbal(section_words, ring_words):
             print(f"    {section:12s}  {func_count:5d} / {total:6d}  ({pct:.1f}%)")
 
 
-def phase5_prefix_suffix_comparison(section_data, ring_parsed):
+def part5_prefix_suffix_comparison(section_data, ring_parsed):
     """Compare morphological profiles across sections and ring texts."""
     print("\n" + "=" * 72)
-    print("PHASE 5: MORPHOLOGICAL PROFILE COMPARISON")
+    print("MORPHOLOGICAL PROFILE COMPARISON")
     print("=" * 72)
 
     # Prefix distribution per section
@@ -525,11 +525,11 @@ def phase5_prefix_suffix_comparison(section_data, ring_parsed):
         print(row)
 
 
-def phase6_bridge_vocabulary(section_data, section_words, ring_words):
+def part6_bridge_vocabulary(section_data, section_words, ring_words):
     """Find words that appear in BOTH ring texts AND herbal-A, ranked by
     informativeness (not just function words)."""
     print("\n" + "=" * 72)
-    print("PHASE 6: BRIDGE VOCABULARY (RING ↔ HERBAL-A)")
+    print("BRIDGE VOCABULARY (RING ↔ HERBAL-A)")
     print("=" * 72)
 
     herbA_words = section_words.get("herbal-A", Counter())
@@ -585,11 +585,11 @@ def phase6_bridge_vocabulary(section_data, section_words, ring_words):
     return bridge_scores
 
 
-def phase7_root_mapping(section_data, ring_parsed):
+def part7_root_mapping(section_data, ring_parsed):
     """Map specific ring text roots to their herbal page contexts to test
     whether ring roots describe botanical properties."""
     print("\n" + "=" * 72)
-    print("PHASE 7: RING TEXT ROOT → HERBAL CONTEXT MAPPING")
+    print("RING TEXT ROOT → HERBAL CONTEXT MAPPING")
     print("=" * 72)
 
     # Get the most common roots in ring texts
@@ -628,10 +628,10 @@ def phase7_root_mapping(section_data, ring_parsed):
         print(f"    {root:10s} [{fam:5s}]  herbA={count:4d}  in {n_folios:3d} folios")
 
 
-def phase8_synthesis(section_data, section_words, ring_words, ring_families, ring_parsed):
+def part8_synthesis(section_data, section_words, ring_words, ring_families, ring_parsed):
     """Synthesize cross-reference findings."""
     print("\n" + "=" * 72)
-    print("PHASE 8: CROSS-REFERENCE SYNTHESIS")
+    print("CROSS-REFERENCE SYNTHESIS")
     print("=" * 72)
 
     herbA_words = section_words.get("herbal-A", Counter())
@@ -728,14 +728,14 @@ if __name__ == "__main__":
     print("Loading ring text data...\n")
     ring_words, ring_roots, ring_families, ring_parsed = extract_ring_text_data()
 
-    phase1_section_profiles(section_data, section_words)
-    phase2_root_family_comparison(section_data, ring_families)
-    phase3_vocabulary_overlap(section_words, ring_words)
-    phase4_function_words_in_herbal(section_words, ring_words)
-    phase5_prefix_suffix_comparison(section_data, ring_parsed)
-    bridge_scores = phase6_bridge_vocabulary(section_data, section_words, ring_words)
-    phase7_root_mapping(section_data, ring_parsed)
-    phase8_synthesis(section_data, section_words, ring_words, ring_families, ring_parsed)
+    part1_section_profiles(section_data, section_words)
+    part2_root_family_comparison(section_data, ring_families)
+    part3_vocabulary_overlap(section_words, ring_words)
+    part4_function_words_in_herbal(section_words, ring_words)
+    part5_prefix_suffix_comparison(section_data, ring_parsed)
+    bridge_scores = part6_bridge_vocabulary(section_data, section_words, ring_words)
+    part7_root_mapping(section_data, ring_parsed)
+    part8_synthesis(section_data, section_words, ring_words, ring_families, ring_parsed)
 
     # Save results
     results = {

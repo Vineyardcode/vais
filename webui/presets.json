@@ -1,5 +1,5 @@
 {
- "phase106b_bench_variants": {
+ "f1r_bench_substitution_variants": {
   "aggressive-cr-ct": {
    "CH_OPTIONS": [
     "cr",

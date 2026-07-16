@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Voynich Manuscript — Astronomical Cross-Reference Analysis
+Astronomical Cross-Reference Analysis
 
 Cross-references our extracted zodiac nymph labels against:
 1. Ptolemy's Almagest star catalog (star counts per zodiac constellation)
@@ -216,7 +216,7 @@ BEHENIAN_STARS = [
 #  ANALYSIS PHASES
 # ══════════════════════════════════════════════════════════════════════════
 
-def phase_1_structural_hypothesis():
+def part_1_structural_hypothesis():
     """
     Test: do nymphs represent STARS in the constellation, DEGREES of the 
     zodiac sign, or DAYS of the calendar month?
@@ -226,7 +226,7 @@ def phase_1_structural_hypothesis():
     If nymphs=days: nymph count should be ~30-31
     """
     print("=" * 70)
-    print("PHASE 1: Structural hypothesis — what do the ~30 nymphs represent?")
+    print("Structural hypothesis — what do the ~30 nymphs represent?")
     print("=" * 70)
     
     nymph_counts = get_nymph_counts()
@@ -277,7 +277,7 @@ def phase_1_structural_hypothesis():
     return corr, nymph_counts
 
 
-def phase_2_decan_morphology():
+def part_2_decan_morphology():
     """
     Test: do the 3 groups of ~10 labels per sign show morphological patterns
     that correlate with decan planetary rulers?
@@ -287,7 +287,7 @@ def phase_2_decan_morphology():
     - e.g., Aries decan 1 (Mars) and Scorpio decan 1 (Mars) should share roots
     """
     print("\n" + "=" * 70)
-    print("PHASE 2: Decan ruler correlation — do planetary rulers shape labels?")
+    print("Decan ruler correlation — do planetary rulers shape labels?")
     print("=" * 70)
     
     decan_data = PIPELINE.get("decan_analysis", {})
@@ -361,7 +361,7 @@ def phase_2_decan_morphology():
                         print(f"    {ruler}: {keys[i][0]} D{keys[i][1]+1} ↔ {keys[j][0]} D{keys[j][1]+1}: shared={shared}")
 
 
-def phase_3_star_name_phonetics():
+def part_3_star_name_phonetics():
     """
     Test: do any Voynich label roots phonetically match known medieval star names?
     
@@ -370,7 +370,7 @@ def phase_3_star_name_phonetics():
     - Look for matches or near-matches
     """
     print("\n" + "=" * 70)
-    print("PHASE 3: Phonetic comparison — labels vs medieval star names")
+    print("Phonetic comparison — labels vs medieval star names")
     print("=" * 70)
     
     def consonant_skeleton(word):
@@ -460,7 +460,7 @@ def phase_3_star_name_phonetics():
     return matches, near_matches
 
 
-def phase_4_behenian_timing():
+def part_4_behenian_timing():
     """
     Test: do Behenian fixed stars fall in zodiac positions that correspond
     to specific nymph positions?
@@ -470,7 +470,7 @@ def phase_4_behenian_timing():
     in Cancer. That nymph's label might be morphologically distinct.
     """
     print("\n" + "=" * 70)
-    print("PHASE 4: Behenian star positions — do they match nymph positions?")
+    print("Behenian star positions — do they match nymph positions?")
     print("=" * 70)
     
     print(f"\n  Behenian stars falling in Voynich zodiac signs:")
@@ -515,7 +515,7 @@ def phase_4_behenian_timing():
         print(f"    {bs['name']:<18} →  {adj_sign} {adj_degree}°")
 
 
-def phase_5_o_prefix_article():
+def part_5_o_prefix_article():
     """
     Test the hypothesis that 'o-' is a definite article or classifier.
     
@@ -533,7 +533,7 @@ def phase_5_o_prefix_article():
     astronomical tradition underlying the Almagest.
     """
     print("\n" + "=" * 70)
-    print("PHASE 5: The o- prefix — article, classifier, or something else?")
+    print("The o- prefix — article, classifier, or something else?")
     print("=" * 70)
     
     prefix_data = PIPELINE.get("prefix_analysis", {})
@@ -573,7 +573,7 @@ def phase_5_o_prefix_article():
     print(f"  - Non-o labels ('ar', 'am', 'al', 'dy') may be qualifiers/adjectives")
 
 
-def phase_6_cancer_anomaly():
+def part_6_cancer_anomaly():
     """
     Cancer is the only sign where -iin rivals -y in labels.
     Test whether this correlates with something specific about Cancer.
@@ -587,7 +587,7 @@ def phase_6_cancer_anomaly():
     - In the Almagest, Cancer has the fewest constellation stars
     """
     print("\n" + "=" * 70)
-    print("PHASE 6: Cancer anomaly — why does Cancer differ in suffix usage?")
+    print("Cancer anomaly — why does Cancer differ in suffix usage?")
     print("=" * 70)
     
     suffix_by_sign = PIPELINE.get("suffix_by_sign", {})
@@ -643,7 +643,7 @@ def phase_6_cancer_anomaly():
     print(f"    - This could indicate -iin marks Moon-ruled or nocturnal decans")
 
 
-def phase_7_degree_marker_test():
+def part_7_degree_marker_test():
     """
     If each nymph = 1 degree, test whether label morphology changes 
     systematically around 10/20 degree boundaries (decan transitions).
@@ -651,7 +651,7 @@ def phase_7_degree_marker_test():
     Use clock positions as proxy for degree positions.
     """
     print("\n" + "=" * 70)
-    print("PHASE 7: Degree marker test — morphological shifts at decan boundaries")
+    print("Degree marker test — morphological shifts at decan boundaries")
     print("=" * 70)
     
     # Group labels by their position within the ~30 per sign
@@ -701,12 +701,12 @@ def phase_7_degree_marker_test():
             print(f"    {label}: {avg:.3f} average ({len(ratios)} signs)")
 
 
-def phase_8_comprehensive_synthesis():
+def part_8_comprehensive_synthesis():
     """
     Bring all findings together into a coherent interpretation.
     """
     print("\n" + "=" * 70)
-    print("PHASE 8: COMPREHENSIVE SYNTHESIS")
+    print("COMPREHENSIVE SYNTHESIS")
     print("=" * 70)
     
     print("""
@@ -789,17 +789,17 @@ def main():
     
     results = {}
     
-    corr, nymph_counts = phase_1_structural_hypothesis()
+    corr, nymph_counts = part_1_structural_hypothesis()
     results["nymph_ptolemy_correlation"] = corr
     results["nymph_counts"] = nymph_counts
     
-    phase_2_decan_morphology()
-    phase_3_star_name_phonetics()
-    phase_4_behenian_timing()
-    phase_5_o_prefix_article()
-    phase_6_cancer_anomaly()
-    phase_7_degree_marker_test()
-    phase_8_comprehensive_synthesis()
+    part_2_decan_morphology()
+    part_3_star_name_phonetics()
+    part_4_behenian_timing()
+    part_5_o_prefix_article()
+    part_6_cancer_anomaly()
+    part_7_degree_marker_test()
+    part_8_comprehensive_synthesis()
     
     # Save results
     out_path = result_path("astro_crossref_results.json")

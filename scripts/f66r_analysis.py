@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-VOYNICH MANUSCRIPT — PHASE 2: f66r FOCUSED DECIPHERMENT
+f66r FOCUSED DECIPHERMENT
 =========================================================
 f66r is our Rosetta fragment: a word list (15 entries), a character column
 (33 single characters), and body text — all on the same page.
@@ -228,7 +228,7 @@ def analyze():
 
         # Look up root frequency from paradigm tables
         try:
-            pt = json.load(open(result_path("attack_plan_results.json")))["paradigm_tables"]
+            pt = json.load(open(result_path("morphology_full_survey_results.json")))["paradigm_tables"]
             rf = pt.get(root, {}).get("freq", 0)
         except:
             rf = 0
@@ -454,7 +454,7 @@ def analyze():
 
     # Check root frequency ordering
     try:
-        pt = json.load(open(result_path("attack_plan_results.json")))["paradigm_tables"]
+        pt = json.load(open(result_path("morphology_full_survey_results.json")))["paradigm_tables"]
         root_freqs = [pt.get(r, {}).get("freq", 0) for _, _, _, r, _ in clean_entries]
         print(f"  Root frequency sequence: {root_freqs}")
         # Is it sorted?
@@ -501,13 +501,13 @@ def analyze():
     print("TEST 6: CONSTRAINT TABLE — What do we know about each morpheme?")
     print("=" * 90)
     print()
-    print("  Combining Phase 1 evidence (root type, suffix class, section preference)")
+    print("  Combining freq_rank_mapping evidence (root type, suffix class, section preference)")
     print("  with f66r-specific evidence to constrain possible meanings.")
     print()
 
     # Load earlier data
     try:
-        pt = json.load(open(result_path("attack_plan_results.json")))["paradigm_tables"]
+        pt = json.load(open(result_path("morphology_full_survey_results.json")))["paradigm_tables"]
         fr = json.load(open(result_path("freq_rank_results.json")))
     except:
         pt = {}
@@ -538,7 +538,7 @@ def analyze():
             "∅": "bare/citation form",
         }.get(s, f"suffix '{s}'")
 
-        # Prefix meaning from Phase 1
+        # Prefix meaning from freq_rank_mapping
         pfx_meaning = {
             "∅": "unprefixed (basic form)",
             "qo": "most common prefix — possibly definite/specific",

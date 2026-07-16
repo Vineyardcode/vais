@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Voynich Manuscript — RTL Reading Direction Hypothesis Test
+RTL Reading Direction Hypothesis Test
 
 Tests whether Voynichese text reads RIGHT-TO-LEFT (like Hebrew/Arabic)
 rather than the assumed left-to-right. If the script is RTL:
@@ -14,8 +14,8 @@ rather than the assumed left-to-right. If the script is RTL:
 Also tests boustrophedon (alternating direction) and checks if
 paragraph markers (<%>, <$>) align with either direction hypothesis.
 
-Connected to: Hebrew-like constructed morphology findings (Phase 3-4),
-gallows-as-determinative (Phase 10), and the user's observation that
+Connected to: Hebrew-like constructed morphology findings (4),
+gallows-as-determinative, and the user's observation that
 medieval alchemists drew on Egyptian/Hermetic traditions (which include
 RTL Semitic scripts).
 """

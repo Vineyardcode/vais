@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-VOYNICH MANUSCRIPT — FREQUENCY-RANK MAPPING (Phase 1)
+FREQUENCY-RANK MAPPING
 ======================================================
 If Voynichese is a pharmaceutical notation system where:
   prefix = operation/preparation type

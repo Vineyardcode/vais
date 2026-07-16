@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Voynich Manuscript — Root Lexicon & Zodiac Rosetta Stone (Phase 15)
+Root Lexicon & Zodiac Rosetta Stone
 
 Now that we've decoded the STRUCTURE of the writing system (Phases 10-14):
   - Gallows = determinatives (t=celestial, k=generic, f=botanical, p=process)

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Voynich Manuscript — Astronomical Label-Illustration Extraction Pipeline
+Astronomical Label-Illustration Extraction Pipeline
 
 Extracts all labels from zodiac/astronomical folios, cross-references them
 with known anchors (zodiac signs, month names in Latin script, star positions),
@@ -401,7 +401,7 @@ def prefix_o_analysis(all_parsed, zodiac_map):
 def root_type_classification(all_parsed):
     """
     Classify each label root as Type A (substance) or Type B (process) 
-    using the bimodal y-fraction criterion from Phase 1.
+    using the bimodal y-fraction criterion from astro_crossref.
     Labels in zodiac sections should overwhelmingly be Type A (substance).
     """
     root_y_frac = defaultdict(lambda: {"y_count": 0, "total": 0})
@@ -548,7 +548,7 @@ def main():
     # 1. EXTRACT all labels from zodiac folios
     # ──────────────────────────────────────────────────────────────────────
     print("=" * 70)
-    print("PHASE 1: Extracting labels from zodiac folios")
+    print("Extracting labels from zodiac folios")
     print("=" * 70)
     
     all_zodiac_labels = []
@@ -610,7 +610,7 @@ def main():
     # 2. EXTRACT labels from non-zodiac astro folios
     # ──────────────────────────────────────────────────────────────────────
     print("\n" + "=" * 70)
-    print("PHASE 2: Extracting labels from non-zodiac astro folios")
+    print("Extracting labels from non-zodiac astro folios")
     print("=" * 70)
     
     all_star_labels = []
@@ -642,7 +642,7 @@ def main():
     # 3. MORPHOLOGICAL ANALYSIS of zodiac labels
     # ──────────────────────────────────────────────────────────────────────
     print("\n" + "=" * 70)
-    print("PHASE 3: Morphological analysis of zodiac nymph labels")
+    print("Morphological analysis of zodiac nymph labels")
     print("=" * 70)
     
     parsed_by_folio, all_parsed = analyze_labels_morphologically(labels_by_folio)
@@ -709,7 +709,7 @@ def main():
     # 4. CROSS-ZODIAC ROOT ANALYSIS
     # ──────────────────────────────────────────────────────────────────────
     print("\n" + "=" * 70)
-    print("PHASE 4: Cross-zodiac root analysis")
+    print("Cross-zodiac root analysis")
     print("=" * 70)
     
     sign_roots, element_roots, modality_roots = cross_zodiac_root_analysis(
@@ -754,7 +754,7 @@ def main():
     # 5. UNIQUE vs SHARED LABELS
     # ──────────────────────────────────────────────────────────────────────
     print("\n" + "=" * 70)
-    print("PHASE 5: Label uniqueness analysis")
+    print("Label uniqueness analysis")
     print("=" * 70)
     
     unique_to_sign, shared_words, word_counts = find_label_hapax_and_shared(
@@ -783,7 +783,7 @@ def main():
     # 6. ZODIAC vs NON-ZODIAC STAR LABEL COMPARISON
     # ──────────────────────────────────────────────────────────────────────
     print("\n" + "=" * 70)
-    print("PHASE 6: Zodiac nymph labels vs non-zodiac star labels")
+    print("Zodiac nymph labels vs non-zodiac star labels")
     print("=" * 70)
     
     comparison = compare_zodiac_vs_nonzodiac_stars(nymph_labels, all_star_labels)
@@ -800,7 +800,7 @@ def main():
     # 7. SUFFIX PATTERNS ACROSS SIGNS
     # ──────────────────────────────────────────────────────────────────────
     print("\n" + "=" * 70)
-    print("PHASE 7: Suffix consistency across zodiac signs")
+    print("Suffix consistency across zodiac signs")
     print("=" * 70)
     
     sign_sfx = suffix_distribution_across_signs(all_parsed, ZODIAC_MAP)
@@ -820,7 +820,7 @@ def main():
     # 8. CLOCK POSITION CORRELATION
     # ──────────────────────────────────────────────────────────────────────
     print("\n" + "=" * 70)
-    print("PHASE 8: Clock position correlation (decan/degree test)")
+    print("Clock position correlation (decan/degree test)")
     print("=" * 70)
     
     clock_roots, clock_pfx, clock_sfx = clock_position_analysis(all_parsed, ZODIAC_MAP)
@@ -837,7 +837,7 @@ def main():
     # 9. DECAN PATTERN TEST
     # ──────────────────────────────────────────────────────────────────────
     print("\n" + "=" * 70)
-    print("PHASE 9: Decan grouping test (thirds of nymph sequences)")
+    print("Decan grouping test (thirds of nymph sequences)")
     print("=" * 70)
     
     decan = find_decan_patterns(all_parsed, ZODIAC_MAP)
@@ -861,7 +861,7 @@ def main():
     # 10. COMPLETE LABEL INVENTORY
     # ──────────────────────────────────────────────────────────────────────
     print("\n" + "=" * 70)
-    print("PHASE 10: Complete label inventory for semantic assignment")
+    print("Complete label inventory for semantic assignment")
     print("=" * 70)
     
     # Build the master table: every nymph label with its zodiac context

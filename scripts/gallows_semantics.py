@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
-Voynich Manuscript — Gallows-Stripped Semantic Clustering (Phase 13)
+Gallows-Stripped Semantic Clustering
 
-Now that we know gallows are determinatives (Phase 10), strip them from
+Now that we know gallows are determinatives, strip them from
 every word and analyze the REAL vocabulary (~4,795 stripped forms).
 
 Key questions:
@@ -375,7 +375,7 @@ def analysis3_gallows_semantics(all_data, root_gallows, root_total, root_bare):
 
 def analysis4_bench_vs_simple(all_data):
     """Compare what bench gallows modify vs what simple gallows modify.
-    Phase 10 showed bench concentrate in herbal/pharma — do they also
+    Earlier analysis showed benches concentrate in herbal/pharma — do they also
     modify different ROOT types?"""
     print("\n" + "=" * 72)
     print("ANALYSIS 4: BENCH vs SIMPLE GALLOWS — ROOT DIFFERENCES")

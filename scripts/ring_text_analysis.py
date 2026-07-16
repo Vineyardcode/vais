@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Voynich Manuscript — Ring Text (@Cc) Extraction & Analysis
+Ring Text (@Cc) Extraction & Analysis
 
 The zodiac pages contain circular ring texts written in the bands between
 nymph rings. These are continuous prose (7-40 words), distinct from the
@@ -211,11 +211,11 @@ def extract_label_words():
 #  ANALYSIS PHASES
 # ══════════════════════════════════════════════════════════════════════════
 
-# ── PHASE 1: Global Profile ──────────────────────────────────────────────
+# ── Global Profile ──────────────────────────────────────────────
 
-def phase1_profile(ring_texts):
+def part1_profile(ring_texts):
     print("=" * 70)
-    print("PHASE 1: Ring Text Global Profile")
+    print("Ring Text Global Profile")
     print("=" * 70)
 
     total_words = sum(rt["word_count"] for rt in ring_texts)
@@ -267,11 +267,11 @@ def phase1_profile(ring_texts):
     return all_words, word_freq
 
 
-# ── PHASE 2: Morphological Comparison ─────────────────────────────────────
+# ── Morphological Comparison ─────────────────────────────────────
 
-def phase2_morphology(ring_texts, all_ring_words, label_words):
+def part2_morphology(ring_texts, all_ring_words, label_words):
     print("\n" + "=" * 70)
-    print("PHASE 2: Ring Text vs Nymph Label Morphology")
+    print("Ring Text vs Nymph Label Morphology")
     print("=" * 70)
 
     # Parse all ring text words
@@ -366,11 +366,11 @@ def phase2_morphology(ring_texts, all_ring_words, label_words):
     return ring_parsed, label_parsed
 
 
-# ── PHASE 3: Register Identification ─────────────────────────────────────
+# ── Register Identification ─────────────────────────────────────
 
-def phase3_register(ring_parsed, ring_texts):
+def part3_register(ring_parsed, ring_texts):
     print("\n" + "=" * 70)
-    print("PHASE 3: Ring Text Register — Language A or B?")
+    print("Ring Text Register — Language A or B?")
     print("=" * 70)
 
     # Type A roots (substance, ≤30% -y) vs Type B (process, ≥80% -y)
@@ -432,11 +432,11 @@ def phase3_register(ring_parsed, ring_texts):
     print(f"    ol-/l- prefix words: {l_roots}/{total} ({l_roots/total:.1%})")
 
 
-# ── PHASE 4: Formulaic Patterns ──────────────────────────────────────────
+# ── Formulaic Patterns ──────────────────────────────────────────
 
-def phase4_formulaic(ring_texts):
+def part4_formulaic(ring_texts):
     print("\n" + "=" * 70)
-    print("PHASE 4: Formulaic Patterns — repeated sequences across rings")
+    print("Formulaic Patterns — repeated sequences across rings")
     print("=" * 70)
 
     # Look for bigrams and trigrams that repeat
@@ -501,11 +501,11 @@ def phase4_formulaic(ring_texts):
         print(f"  {rt['folio_line']:<12} {rt['sign']:<14} {rt['ring_name']:<8} {closing}")
 
 
-# ── PHASE 5: Ring-Decan Correlation ──────────────────────────────────────
+# ── Ring-Decan Correlation ──────────────────────────────────────
 
-def phase5_ring_decan(ring_texts, ring_parsed):
+def part5_ring_decan(ring_texts, ring_parsed):
     print("\n" + "=" * 70)
-    print("PHASE 5: Do ring texts encode decan-specific information?")
+    print("Do ring texts encode decan-specific information?")
     print("=" * 70)
 
     # Each zodiac sign has 3 decans. Ring texts come in 2-4 per sign.
@@ -583,14 +583,14 @@ def phase5_ring_decan(ring_texts, ring_parsed):
               f"({len(jaccards)} pairs)")
 
 
-# ── PHASE 6: Cross-Reference with Label Root Families ─────────────────────
+# ── Cross-Reference with Label Root Families ─────────────────────
 
-def phase6_crossref(ring_texts, label_parsed, ring_parsed):
+def part6_crossref(ring_texts, label_parsed, ring_parsed):
     print("\n" + "=" * 70)
-    print("PHASE 6: Ring Text ↔ Label Root Family Cross-Reference")
+    print("Ring Text ↔ Label Root Family Cross-Reference")
     print("=" * 70)
 
-    # The big root families from crosssign_network: ke-, te-, ch-, tal-, kal-
+    # The big root families from zodiac_label_network: ke-, te-, ch-, tal-, kal-
     families = {
         "ke-": lambda r: r.startswith("ke") and len(r) > 2,
         "te-": lambda r: r.startswith("te") and len(r) > 2,
@@ -649,11 +649,11 @@ def phase6_crossref(ring_texts, label_parsed, ring_parsed):
         print(f"    {w:<20} freq={freq:>3} signs={n_signs}  [{pf}+{root}+{sf}]")
 
 
-# ── PHASE 7: Synthesis ───────────────────────────────────────────────────
+# ── Synthesis ───────────────────────────────────────────────────
 
-def phase7_synthesis(ring_texts, ring_parsed, label_parsed, all_ring_words):
+def part7_synthesis(ring_texts, ring_parsed, label_parsed, all_ring_words):
     print("\n" + "=" * 70)
-    print("PHASE 7: RING TEXT ANALYSIS SYNTHESIS")
+    print("RING TEXT ANALYSIS SYNTHESIS")
     print("=" * 70)
 
     total_ring = len(all_ring_words)
@@ -727,13 +727,13 @@ if __name__ == "__main__":
 
     ring_texts = extract_ring_texts()
     label_words = extract_label_words()
-    all_ring_words, word_freq = phase1_profile(ring_texts)
-    ring_parsed, label_parsed = phase2_morphology(ring_texts, all_ring_words, label_words)
-    phase3_register(ring_parsed, ring_texts)
-    phase4_formulaic(ring_texts)
-    phase5_ring_decan(ring_texts, ring_parsed)
-    phase6_crossref(ring_texts, label_parsed, ring_parsed)
-    phase7_synthesis(ring_texts, ring_parsed, label_parsed, all_ring_words)
+    all_ring_words, word_freq = part1_profile(ring_texts)
+    ring_parsed, label_parsed = part2_morphology(ring_texts, all_ring_words, label_words)
+    part3_register(ring_parsed, ring_texts)
+    part4_formulaic(ring_texts)
+    part5_ring_decan(ring_texts, ring_parsed)
+    part6_crossref(ring_texts, label_parsed, ring_parsed)
+    part7_synthesis(ring_texts, ring_parsed, label_parsed, all_ring_words)
 
     # Save results
     results = {

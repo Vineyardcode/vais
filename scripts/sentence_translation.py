@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Voynich Manuscript — Phase 17: Sentence-Level Translation Attempt
+Sentence-Level Translation Attempt
 
 The Champollion moment: attempt to read CONNECTED TEXT on the Leo folio (f72v3)
 using all confirmed vocabulary mappings, phonetic rules, suffix grammar, and
@@ -112,7 +112,7 @@ CONFIRMED_DICT = {
     "esed":  ("lion/asad",        "Arabic",  1.00, "anchor: esed→asad, e→a vowel shift"),
     "sed":   ("lion/asad",        "Arabic",  0.90, "stripped variant of esed"),
 
-    # ── Coptic exact matches (Phase 16b, 19 hits) ──────────────────
+    # ── Coptic exact matches (coptic_dictionary_probe, 19 hits) ──────────────────
     "al":    ("stone/rock",       "Coptic",  1.00, "ⲁⲗ — freq 1792 in MS"),
     "she":   ("wood/tree",        "Coptic",  1.00, "ϣⲉ — botanical"),
     "ro":    ("mouth",            "Coptic",  1.00, "ⲣⲟ — anatomy"),
@@ -126,13 +126,13 @@ CONFIRMED_DICT = {
     "sō":    ("drink",            "Coptic",  0.80, "ⲥⲱ — action"),
     "nif":   ("breath/wind",      "Coptic",  0.90, "ⲛⲓϥ — astronomical"),
 
-    # ── Near-exact Coptic (Phase 16b, 8 hits) ──────────────────────
+    # ── Near-exact Coptic (coptic_dictionary_probe, 8 hits) ──────────────────────
     "eso":   ("ram/sheep",        "Coptic",  0.85, "≈ⲉⲥⲟⲩ (esou)"),
     "oa":    ("one",              "Coptic",  0.85, "≈ⲟⲩⲁ (oua)"),
     "hoo":   ("more/excess",      "Coptic",  0.80, "≈ϩⲟⲩⲟ (houo)"),
     "mos":   ("walk/go",          "Coptic",  0.75, "≈ⲙⲟⲟϣⲉ (mooše)"),
 
-    # ── Leo-specific high-confidence (Phase 16a) ───────────────────
+    # ── Leo-specific high-confidence ───────────────────
     "cham":  ("hot/warm",         "Coptic",  0.90, "≈ϩⲙⲟⲙ (hmom), ch→h rule"),
     "chas":  ("lord/master",      "Coptic",  0.85, "≈ϫⲟⲉⲓⲥ (choeis), ch→ϫ"),
     "cher":  ("king",             "Coptic",  0.75, "≈ⲉⲣⲟ (ero)"),
@@ -561,7 +561,7 @@ def compute_stats(translations):
 def process_folio(folio_id, folios_dir="folios"):
     """Process an entire folio section: parse, translate, render."""
     print(f"\n{'#'*80}")
-    print(f"#  PHASE 17: SENTENCE-LEVEL TRANSLATION — {folio_id.upper()}")
+    print(f"#  SENTENCE-LEVEL TRANSLATION — {folio_id.upper()}")
     print(f"{'#'*80}")
 
     lines = load_folio_section(folio_id, folios_dir)
@@ -757,7 +757,7 @@ def main():
     Voynich d → Arabic d  (stable)
 
   Structural confirmation:
-    t-gallows = celestial determinative (Phase 10-13 confirmed)
+    t-gallows = celestial determinative (13 confirmed)
     o-prefix = article/demonstrative (standard)
     No suffix = bare noun (label form)
 
@@ -773,7 +773,7 @@ def main():
         if res:
             output["folios"][name] = res
 
-    out_path = Path("results") / "phase17_sentence_translation.json"
+    out_path = Path("results") / "sentence_translation_sentence_translation.json"
     with open(out_path, 'w', encoding='utf-8') as f:
         json.dump(output, f, indent=2, ensure_ascii=False, default=str)
     print(f"\n  Results saved to {out_path}")

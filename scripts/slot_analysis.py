@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Voynich Manuscript — Slot-Based Morphological Analysis
+Slot-Based Morphological Analysis
 
 Based on the Zattera glyph-slot system, this decomposes every Voynich word
 into its positional slot components (prefix / root / body / suffix / terminal)

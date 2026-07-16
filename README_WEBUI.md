@@ -48,8 +48,8 @@ binds 127.0.0.1 — it is a local tool, not a deployment.
 ## Notes and caveats
 
 - Long tests: baseline runtimes are listed per test (see `INVENTORY.md`);
-  the slowest (`phase100_decipherment`, `phase101_currier_ab_dichotomy`,
-  `phase62_word_anatomy`, `phase72_naibbe_calibration`) run for minutes.
+  the slowest (`chunk_alphabet_decipherment`, `currier_dichotomy_resolution`,
+  `word_functional_anatomy`, `naibbe_cipher_calibration`) run for minutes.
 - Dependency-ordered tests: a test with a `needs X` badge reads a JSON that
   script X writes. Run X first (or use its committed output if present).
 - `download_folios.py` / `download_latin.py` are data downloaders, not
@@ -96,6 +96,6 @@ All inter-script result JSONs live in `results/` via `common.result_path()`;
 producers and consumers can no longer drift apart (the pre-refactor root-level
 snapshots are preserved in `attic/root_result_snapshots/`).
 
-Known benign case: `phase72_naibbe_calibration` and `phase73_abbreviation_model`
+Known benign case: `naibbe_cipher_calibration` and `abbreviation_shorthand_model`
 print wall-clock "Elapsed:" lines, so their golden badge will report a few
 differing lines on every run — the click-through diff shows only the timings.

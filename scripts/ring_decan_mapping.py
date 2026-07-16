@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """
-Voynich Manuscript — Ring-to-Decan Mapping & Positional Analysis
+Ring-to-Decan Mapping & Positional Analysis
 
-Phase 1: Parse all zodiac folios, extract ring structure, assign degree numbers
-Phase 2: Test whether shared labels (otaly, otal, etc.) appear at consistent positions
-Phase 3: Check labels at Behenian star positions
+Parse all zodiac folios, extract ring structure, assign degree numbers
+Test whether shared labels (otaly, otal, etc.) appear at consistent positions
+Check labels at Behenian star positions
 
 Prerequisite findings:
   - Each nymph = 1 degree (all signs have ~30 nymphs)
@@ -258,12 +258,12 @@ def clean_label(raw_label):
 
 
 # ══════════════════════════════════════════════════════════════════════════
-#  PHASE 1: Ring-to-Decan Mapping
+#  Ring-to-Decan Mapping
 # ══════════════════════════════════════════════════════════════════════════
 
-def phase1_ring_mapping():
+def part1_ring_mapping():
     print("=" * 70)
-    print("PHASE 1: Ring-to-Decan Mapping")
+    print("Ring-to-Decan Mapping")
     print("=" * 70)
     
     all_signs = {}
@@ -343,12 +343,12 @@ def phase1_ring_mapping():
 
 
 # ══════════════════════════════════════════════════════════════════════════
-#  PHASE 2: Positional Test — do shared labels appear at consistent degrees?
+#  Positional Test — do shared labels appear at consistent degrees?
 # ══════════════════════════════════════════════════════════════════════════
 
-def phase2_positional_test(all_signs):
+def part2_positional_test(all_signs):
     print("\n" + "=" * 70)
-    print("PHASE 2: Positional Test — shared labels at consistent positions?")
+    print("Positional Test — shared labels at consistent positions?")
     print("=" * 70)
     
     # Build label → list of (sign, degree, decan, decan_degree)
@@ -466,12 +466,12 @@ def phase2_positional_test(all_signs):
 
 
 # ══════════════════════════════════════════════════════════════════════════
-#  PHASE 3: Behenian Star Anchor Test
+#  Behenian Star Anchor Test
 # ══════════════════════════════════════════════════════════════════════════
 
-def phase3_behenian_test(all_signs):
+def part3_behenian_test(all_signs):
     print("\n" + "=" * 70)
-    print("PHASE 3: Behenian Star Anchor Test")
+    print("Behenian Star Anchor Test")
     print("=" * 70)
     
     print(f"\n  Testing whether labels at Behenian star degree positions are 'special'")
@@ -570,14 +570,14 @@ def phase3_behenian_test(all_signs):
 
 
 # ══════════════════════════════════════════════════════════════════════════
-#  PHASE 4: Cross-sign degree alignment
+#  Cross-sign degree alignment
 # ══════════════════════════════════════════════════════════════════════════
 
-def phase4_degree_alignment(all_signs):
+def part4_degree_alignment(all_signs):
     """Test whether the same degree position across different signs
     shares morphological features (same root, same suffix, etc.)."""
     print("\n" + "=" * 70)
-    print("PHASE 4: Cross-Sign Degree Alignment")
+    print("Cross-Sign Degree Alignment")
     print("=" * 70)
     
     print(f"\n  Do the same degree positions across signs share features?")
@@ -658,12 +658,12 @@ def phase4_degree_alignment(all_signs):
 
 
 # ══════════════════════════════════════════════════════════════════════════
-#  PHASE 5: SYNTHESIS
+#  SYNTHESIS
 # ══════════════════════════════════════════════════════════════════════════
 
-def phase5_synthesis(all_signs, shared_sorted, behenian_labels):
+def part5_synthesis(all_signs, shared_sorted, behenian_labels):
     print("\n" + "=" * 70)
-    print("PHASE 5: SYNTHESIS — Ring-to-Decan Mapping Conclusions")
+    print("SYNTHESIS — Ring-to-Decan Mapping Conclusions")
     print("=" * 70)
     
     # Check ring-decan alignment 
@@ -718,11 +718,11 @@ def phase5_synthesis(all_signs, shared_sorted, behenian_labels):
 # ══════════════════════════════════════════════════════════════════════════
 
 if __name__ == "__main__":
-    all_signs = phase1_ring_mapping()
-    shared_sorted = phase2_positional_test(all_signs)
-    behenian_labels = phase3_behenian_test(all_signs)
-    phase4_degree_alignment(all_signs)
-    phase5_synthesis(all_signs, shared_sorted, behenian_labels)
+    all_signs = part1_ring_mapping()
+    shared_sorted = part2_positional_test(all_signs)
+    behenian_labels = part3_behenian_test(all_signs)
+    part4_degree_alignment(all_signs)
+    part5_synthesis(all_signs, shared_sorted, behenian_labels)
     
     # Save full data
     output = {}

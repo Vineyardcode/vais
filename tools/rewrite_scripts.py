@@ -84,7 +84,7 @@ def process(path, apply=False):
     # itself in the removal set for that same export. A dep that merely
     # hash-maps to the export but got guard-rejected must block extraction
     # (otherwise the extracted caller would silently bind to core's dep while
-    # the script's own variant differs — see phase23-31 full_decompose bug).
+    # the script's own variant differs — see root_lexicon_translation-31 full_decompose bug).
     candidates = {}
     for name, node in local_funcs.items():
         h = alpha_hash(node)
