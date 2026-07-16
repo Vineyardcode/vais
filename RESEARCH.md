@@ -543,6 +543,54 @@ future work and the parameters are UI-exposed for exactly that.
 10. Raw-scan glyph clustering (S2) is the only strategy that fully
     escapes A1; queued on data acquisition.
 
+### Phase 4b — Verbose cipher inversion, rungs 1-2 (2026-07-16)
+
+The three converging verbose-cipher signals earned an actual inversion
+attempt (`verbose_cipher_inversion`): strict 1:1 group→letter model,
+6 language models (Latin/Italian × plain/abjad/abbrev4), holdout
+scoring, planted-table replay verified byte-identical before grading.
+
+**Rung 1 (blind segmentation): KILLED by its positive control.**
+Frequency-only BPE recovered 13% of the planted P4 inventory; the KNOWN
+cipher decoded worse than grille gibberish (−0.78 vs −0.63 bits/sym).
+Diagnosis: cross-boundary glyph pairs are as frequent as within-group
+pairs — verbose-group boundaries are invisible to frequency statistics.
+(The scoring side validated perfectly: plain Latin came back at +0.001
+bits/sym, indistinguishable from native.)
+
+**Rung 2 (EM with LM feedback, still strict 1:1): ALSO KILLED — but
+instructively.** At prototype budget (4 EM iterations, 6 proposals):
+
+| corpus | best LM | holdout gap (bits/sym) |
+|---|---|---|
+| P4 planted cipher | latin/abjad | +0.115 — recovery **48%** (kill: <50%), mapping 48% |
+| N4 self-citation | latin/abjad | +0.082 (noise floor) |
+| N3 grille | latin/abjad | −0.127 |
+| VMS full / A / B | — | not interpretable (kill fired) |
+
+Three lessons, all logged as constraints:
+1. **LM feedback works directionally**: inventory recovery jumped 13% →
+   48% and mapping accuracy 0% → 48% with only 4 EM iterations. The
+   kill missed by 2 points; the pre-registered threshold stands and the
+   next escalation is **compute** (more EM iterations, restarts,
+   proposals — the approved overnight sweep), NOT model freedom.
+2. **The noise floor rises with model power.** Rung 2's extra freedom
+   lifted the best negative from −0.63 to +0.08 bits/sym — meaningless
+   text "decodes" better as the machinery gets stronger. Any future
+   rung must beat the noise floor measured at ITS OWN rung.
+3. **Overfitting red flag observed in the wild**: Currier A (the small
+   corpus) scored +0.21 — "better than native Latin" — which is
+   impossible as a decode and is the free-mapping memorization artifact
+   the holdout was designed to expose. It survived because same-corpus
+   holdout lines share vocabulary; the overnight run should hold out
+   whole FOLIOS, not lines.
+
+Vocabulary discipline: nothing here says the manuscript is or is not a
+verbose cipher. It says the strict inverter cannot yet crack even a
+KNOWN verbose cipher at this budget — so it has nothing to say about
+the manuscript. The instrument, its ladder, and both corpses are
+permanent (`verbose_cipher_inversion`, UI-parameterized).
+
 ### The scoreboard the field inherits
 
 A century of theories now has a quantitative bar: **reproduce

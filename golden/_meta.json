@@ -1175,5 +1175,14 @@
   "results_files_touched": [
    "zodiac_ring_alignment_results.json"
   ]
+ },
+ "verbose_cipher_inversion": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 700.0,
+  "stdout_bytes": 3200,
+  "results_files_touched": [
+   "verbose_cipher_inversion.json"
+  ]
  }
 }

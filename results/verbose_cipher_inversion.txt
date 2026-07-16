@@ -1,0 +1,43 @@
+============================================================================
+VERBOSE CIPHER INVERSION — strict prototype (rung 1 of the ladder)
+============================================================================
+seed=112 target_groups=24 restarts=12 holdout=0.2
+  LM latin/plain    alphabet=24 native holdout=3.308 bits/sym
+  LM latin/abjad    alphabet=18 native holdout=3.111 bits/sym
+  LM latin/abbrev4  alphabet=24 native holdout=3.300 bits/sym
+  LM italian/plain    alphabet=26 native holdout=3.127 bits/sym
+  LM italian/abjad    alphabet=21 native holdout=2.880 bits/sym
+  LM italian/abbrev4  alphabet=26 native holdout=3.129 bits/sym
+
+  planted P4 table replayed and VERIFIED (23 groups)
+
+  P4_latin_verbose: segmenter recovered 13% of the planted group inventory
+  P4_latin_verbose   best LM latin/abjad     holdout gap -0.780 bits/sym  (0 = native text; more negative = less language-like)
+  P1_latin_plain     best LM latin/plain     holdout gap +0.001 bits/sym  (0 = native text; more negative = less language-like)
+  N2_char_shuffle    best LM latin/abjad     holdout gap -1.390 bits/sym  (0 = native text; more negative = less language-like)
+  N3_grille          best LM latin/abjad     holdout gap -0.626 bits/sym  (0 = native text; more negative = less language-like)
+  N4_self_citation   best LM latin/abjad     holdout gap -0.761 bits/sym  (0 = native text; more negative = less language-like)
+  VMS_full           best LM latin/abbrev4   holdout gap -0.233 bits/sym  (0 = native text; more negative = less language-like)
+  VMS_currier_A      best LM latin/plain     holdout gap -0.110 bits/sym  (0 = native text; more negative = less language-like)
+  VMS_currier_B      best LM latin/abbrev4   holdout gap -0.292 bits/sym  (0 = native text; more negative = less language-like)
+
+  ADJUDICATION (pre-registered):
+    P4 inventory recovery: 13% (kill < 50%)
+    P4 mapping accuracy on latin/plain: 0%
+    P4 best gap -0.780 vs noise floor -0.626 (best negative)
+    RUNG 1 KILLED: blind segmentation cannot invert a known verbose cipher. Escalating to rung 2 (EM with LM feedback) per the pre-registered ladder.
+  RUNG2 P4_latin_verbose   best LM latin/abjad     holdout gap +0.115  [recovery 48%, mapping 48% on latin/plain]
+  RUNG2 P1_latin_plain     best LM latin/abbrev4   holdout gap -0.426
+  RUNG2 N2_char_shuffle    best LM latin/abjad     holdout gap -0.254
+  RUNG2 N3_grille          best LM latin/abjad     holdout gap -0.127
+  RUNG2 N4_self_citation   best LM latin/abjad     holdout gap +0.082
+  RUNG2 VMS_full           best LM latin/plain     holdout gap -0.229
+  RUNG2 VMS_currier_A      best LM latin/abbrev4   holdout gap +0.208
+  RUNG2 VMS_currier_B      best LM latin/abbrev4   holdout gap +0.109
+
+  RUNG 2 ADJUDICATION (pre-registered):
+    P4 inventory recovery: 48% (kill < 50%), mapping accuracy: 48%
+    P4 best gap +0.115 (latin/abjad) vs noise floor +0.082
+    RUNG 2 ALSO KILLED at prototype budget: EM cannot invert the known cipher clearly better than noise. VMS rows NOT interpretable; next honest escalation is compute (overnight sweep), not model freedom.
+
+  -> results/verbose_cipher_inversion.json
