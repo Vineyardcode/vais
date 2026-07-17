@@ -1,7 +1,9 @@
 {
  "N1": {
-  "status": "error",
+  "status": "completed",
   "date": "2026-07-17",
-  "error": "RunFailed: experiment exited rc=1 \u2014 see the child output above in the log"
+  "verdict": "INSTRUMENT KILLED (pre-registered)",
+  "suggestive": false,
+  "summary": "INSTRUMENT KILLED (pre-registered); P4 recovery 39%, margin -0.150 (need >= +0.100)"
  }
 }
