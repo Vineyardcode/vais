@@ -1193,5 +1193,14 @@
   "results_files_touched": [
    "line_as_record_structures.json"
   ]
+ },
+ "line_as_record_per_hand": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 54.79,
+  "stdout_bytes": 901,
+  "results_files_touched": [
+   "line_as_record_per_hand.json"
+  ]
  }
 }

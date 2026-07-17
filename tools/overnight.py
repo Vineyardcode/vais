@@ -53,6 +53,11 @@ QUEUE (order = run order; N3 promoted ahead of N2 by direction
       information vs the N1 word-shuffle artifact baseline; instrument
       gate on the P-REC synthetic-records positive control. Gates
       pre-registered in the script docstring.
+  N3b Line-as-record RUNG 2 (per-hand), scripts/line_as_record_per_hand
+      .py: registered follow-up to N3's post-hoc Currier-B observation,
+      made strictly harder (per-hand null batteries, 10-split medians,
+      empirical p vs 20 nulls + 0.05 effect floor). Full provenance
+      disclosure in the script docstring.
   N2  Cross-transliteration invariance (portfolio S9) — NOT READY:
       needs external transliteration files (Currier, v101, GC) plus
       scripts/cross_transliteration_invariance.py with pre-registered
@@ -511,6 +516,109 @@ def adjudicate_n3(item, expected_params, run_started):
 
 
 # ────────────────────────────────────────────────────────────────────
+# N3b adjudication — pre-registered, mechanical, JSON-only
+# ────────────────────────────────────────────────────────────────────
+def adjudicate_n3b(item, expected_params, run_started):
+    """Pre-registered outcomes (line_as_record_per_hand.py docstring):
+    gate = P-REC median >= gate_prec_min AND P1 median <= gate_p1_max;
+    a hand PASSES iff it beats ALL its null medians AND its margin over
+    the null median >= effect_floor. Outcomes: gate_failed /
+    killed_split_luck / B_only / A_only / both. The runner re-derives
+    everything and refuses on any mismatch with the script's record."""
+    jpath = RESULTS / item['result_json']
+    if not jpath.exists():
+        raise AdjudicationError(f'{jpath.name} was not written by the run')
+    if jpath.stat().st_mtime < run_started:
+        raise AdjudicationError(f'{jpath.name} predates this run — stale')
+    data = json.loads(jpath.read_text(encoding='utf-8'))
+    p, r = data['params'], data['results']
+    prec = r['PREC_records']['median_gain']
+    p1 = r['P1_latin_plain']['median_gain']
+    gate_ok = prec >= p['gate_prec_min'] and p1 <= p['gate_p1_max']
+    passes = {}
+    for hand in ('A', 'B'):
+        row = r[f'VMS_currier_{hand}']
+        ok = (row['beats_all_nulls']
+              and row['margin_over_null_median'] >= p['effect_floor'])
+        if ok != row['pass']:
+            raise AdjudicationError(f'hand {hand}: runner derives '
+                                    f'pass={ok}, script recorded '
+                                    f'{row["pass"]}')
+        passes[hand] = ok
+    if not gate_ok:
+        key = 'gate_failed'
+    elif not passes['A'] and not passes['B']:
+        key = 'killed_split_luck'
+    elif passes['B'] and not passes['A']:
+        key = 'B_only'
+    elif passes['A'] and not passes['B']:
+        key = 'A_only'
+    else:
+        key = 'both'
+    if data.get('verdict') != key:
+        raise AdjudicationError(f'runner derives {key!r} but the script '
+                                f'recorded {data.get("verdict")!r}')
+    suggestive = key in ('B_only', 'A_only', 'both')
+
+    md = []
+    md.append('**Pre-registered outcomes** (line_as_record_per_hand.py '
+              'docstring, full post-hoc provenance disclosed there): a '
+              'hand passes only if its 10-split median interior gain beats '
+              f'ALL {p["n_nulls"]} of its own null-shuffle medians '
+              f'(empirical p ~ {1/(p["n_nulls"]+1):.3f}) AND clears the '
+              f'{p["effect_floor"]} bits/token effect floor over the null '
+              'median — strictly harder than the rung-1 observation that '
+              'motivated this rung.')
+    md.append('')
+    md.append('| corpus | median gain (bits/token) | null max | '
+              'null median | margin | pass |')
+    md.append('|---|---|---|---|---|---|')
+    for cname in ('PREC_records', 'P1_latin_plain'):
+        md.append(f'| {cname} | {r[cname]["median_gain"]:+.4f} | — | — | '
+                  '— | gate |')
+    for hand in ('A', 'B'):
+        row = r[f'VMS_currier_{hand}']
+        md.append(f'| VMS_currier_{hand} | {row["median_gain"]:+.4f} | '
+                  f'{row["null_max"]:+.4f} | {row["null_median"]:+.4f} | '
+                  f'{row["margin_over_null_median"]:+.4f} | '
+                  f'{"**PASS**" if row["pass"] else "fail"} |')
+    md.append('')
+    md.append(f'Instrument gate: P-REC {prec:+.4f}, P1 {p1:+.4f} → '
+              f'{"PASS" if gate_ok else "**FAIL**"}.')
+    verdict_text = {
+        'gate_failed': 'INSTRUMENT GATE FAILED — no interpretation.',
+        'killed_split_luck':
+            'KILLED (pre-registered): neither hand survives the per-hand '
+            'null battery — the rung-1 Currier-B observation was split '
+            'luck / baseline mismatch.',
+        'B_only':
+            'B ONLY — consistent with line-level field structure in '
+            'Currier B (SUGGESTIVE, quarantined; the first registered '
+            'test of the rung-1 observation). NOT a decode; no field is '
+            'named or read.',
+        'A_only':
+            'A ONLY — contrary to the motivating pattern; SUGGESTIVE '
+            'with extra suspicion (the motivating observation failed to '
+            'replicate while its complement fired).',
+        'both':
+            'BOTH hands pass — consistent with per-hand field structure '
+            '(SUGGESTIVE, quarantined). NOT a decode.',
+    }[key]
+    md.append('')
+    md.append(f'**VERDICT: {verdict_text}**')
+    verdict = ('S7 rung 2: ' + key.upper()) if suggestive else (
+        'INSTRUMENT GATE FAILED (S7 rung 2)' if key == 'gate_failed'
+        else 'KILLED (S7 rung 2, split luck)')
+    b = r['VMS_currier_B']
+    summary = (f'{key}; B margin {b["margin_over_null_median"]:+.4f} '
+               f'(floor {p["effect_floor"]}), A margin '
+               f'{r["VMS_currier_A"]["margin_over_null_median"]:+.4f}')
+    return {'verdict': verdict, 'suggestive': suggestive,
+            'md': '\n'.join(md), 'summary': summary,
+            'params': p, 'json_name': jpath.name}
+
+
+# ────────────────────────────────────────────────────────────────────
 # queue
 # ────────────────────────────────────────────────────────────────────
 N1_PROFILE = {'EM_OUTER': 32, 'EM_PROPOSALS': 48, 'EM_RESTARTS': 16,
@@ -558,6 +666,21 @@ QUEUE = [
         'adjudicate': adjudicate_n3,
         'research_heading': 'Portfolio S7 — line-as-record structures, '
                             'first instrumented run',
+        'not_ready': None,
+    },
+    {
+        'id': 'N3b',
+        'title': 'Line-as-record rung 2 (portfolio S7): per-hand '
+                 'adjudication with per-hand null batteries',
+        'stem': 'line_as_record_per_hand',
+        'overrides': {},
+        'smoke_overrides': {},
+        'timeout_s': 3600,
+        'smoke_timeout_s': 1800,
+        'result_json': 'line_as_record_per_hand.json',
+        'adjudicate': adjudicate_n3b,
+        'research_heading': 'Portfolio S7, rung 2 — per-hand '
+                            'line-as-record adjudication',
         'not_ready': None,
     },
     {
