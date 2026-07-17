@@ -337,11 +337,17 @@ def adjudicate_n1(item, expected_params, run_started):
     md.append('')
     md.append('Rung-2 holdout gaps (folio-level holdout, this budget):')
     md.append('')
-    md.append('| corpus | best LM | gap (bits/sym) | gap − floor |')
-    md.append('|---|---|---|---|')
+    md.append('| corpus | best LM | gap (bits/sym) | gap − floor | '
+              'holdout words excluded |')
+    md.append('|---|---|---|---|---|')
     for cname, row in r2['results'].items():
+        e = row.get(row['best_lm'], {})
+        excl = e.get('excluded_words')
+        excl_s = f'{excl:.1%}' if isinstance(excl, (int, float)) else 'n/a'
+        if e.get('degenerate'):
+            excl_s += ' — DEGENERATE ROW'
         md.append(f'| {cname} | {row["best_lm"]} | {row["best_gap"]:+.3f} | '
-                  f'{row["best_gap"] - floor:+.3f} |')
+                  f'{row["best_gap"] - floor:+.3f} | {excl_s} |')
     r1p4 = r1['results']['P4_latin_verbose']
     md.append('')
     md.append(f'Rung 1 for the record: P4 segmenter inventory recovery '

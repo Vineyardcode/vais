@@ -52,6 +52,17 @@ positional variants remain excluded):
     — the 700 s in the old golden meta was a contended capture — so the
     smaller profile would have finished in well under an hour, against
     an approved overnight window of hours.)
+    INCIDENT LOG (2026-07-17, before the first completed rung-3 run):
+    the first max-strength launch crashed 24 min in, exposing a latent
+    rung-2 objective bug that only fires at high proposal counts: ll_of
+    scored an EMPTY count table 0.0 = "perfect", so proposals that made
+    every training word unparseable were accepted as improvements until
+    the inventory collapsed (and an empty HOLDOUT would have faked
+    gap = +native ~ +3.3 — a catastrophic false positive). Fixed before
+    any completed rung-3 run: empty tables now score -1e9, total
+    collapse returns an explicit degenerate row (gap_bits = -999,
+    'degenerate': true). Model, criteria, and budgets unchanged;
+    default-budget goldens verified byte-identical after the fix.
     Kill criteria unchanged: P4 planted-inventory recovery >= 50% AND
     P4's holdout gap beats the same-rung noise floor (best of N2/N3/N4)
     by >= 0.1 bits/sym; otherwise no VMS row is interpreted. Homophones
@@ -330,7 +341,15 @@ def ll_of(C, assign, logp, floor):
         pb = assign.get(b, ' ') if b != ' ' else ' '
         s += c * logp.get((pa, pb), floor)
         n += c
-    return s / max(n, 1)
+    if n == 0:
+        # An empty count table used to score 0.0 = "perfect" (all real
+        # averages are negative), so EM proposals that made EVERY word
+        # unparseable were accepted as improvements until the inventory
+        # collapsed (observed at the rung-3 budget, 2026-07-17) — and an
+        # empty HOLDOUT table would have faked gap = +native. Empty is
+        # the worst possible score, not the best.
+        return -1e9
+    return s / n
 
 
 def hill_climb(C, types, letters, logp, floor, rng):
@@ -484,6 +503,7 @@ def em_invert(lines, idx, cut, lm, seed):
     try:
         assign = dict(zip(S, letters))
         best_ll = -1e18
+        degenerate = False
         for it in range(EM_OUTER):
             C_tr, _ = segment_all(train_lines, S, assign)
             assign, ll = hill_climb(C_tr, S, letters, logp, floor, rng)
@@ -492,6 +512,14 @@ def em_invert(lines, idx, cut, lm, seed):
             for (a, b), c in C_tr.items():
                 if b != ' ':
                     usage[b] += c
+            if not usage:
+                # total training-coverage collapse: no train word parses
+                # under the current inventory. Unreachable now that ll_of
+                # rejects empty tables, but the 2026-07-17 crash proved
+                # this corner exists — stop and flag rather than min()
+                # over an empty candidate set.
+                degenerate = True
+                break
             outsiders = [g for g in multi if g not in assign][:EM_PROPOSALS]
             for u in outsiders:
                 worst = min((g for g in S if len(g) == 1 or usage[g] > 0),
@@ -507,6 +535,15 @@ def em_invert(lines, idx, cut, lm, seed):
                 break
             best_ll = ll
         C_ho, excl_ho = segment_all(hold_lines, S, assign)
+        if degenerate or not C_ho:
+            # no scoreable holdout content: report an explicit degenerate
+            # row (sentinel gap far below any real value) instead of
+            # letting an empty table score as a perfect decode
+            return {'gap_bits': -999.0, 'holdout_bits': None,
+                    'native_bits': round(native, 4),
+                    'excluded_words': round(excl_ho, 4),
+                    'degenerate': True,
+                    'inventory': sorted(S, key=len)}, assign
         ho_ll = ll_of(C_ho, assign, logp, floor)
         return {'gap_bits': round(native - (-ho_ll), 4),
                 'holdout_bits': round(-ho_ll, 4),
