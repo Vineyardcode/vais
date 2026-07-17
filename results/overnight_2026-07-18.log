@@ -27,3 +27,30 @@
 [00:44:36] report -> C:\projects\vais\results\overnight_2026-07-18_report.md
 [00:44:36] RESEARCH.md: section appended (working tree; committed only to the overnight branch)
 [00:44:36] committing results to branch overnight/2026-07-18 ...
+[00:44:36] committed 2633751a6b15 on overnight/2026-07-18 (main untouched)
+[00:44:36] done, exit 0
+[01:50:40] ====================================================================
+[01:50:40] overnight runner start 2026-07-18 01:50:40  smoke=False PYTHONHASHSEED=0
+[01:50:40] code at 2ab15e6 (dirty tree), python 3.13.3
+[01:50:40] queue item N3b: Line-as-record rung 2 (portfolio S7): per-hand adjudication with per-hand null batteries
+[01:50:40] profile: {}  timeout=3600s
+  | ============================================================================
+  | LINE-AS-RECORD, RUNG 2 (S7) — per-hand adjudication
+  | ============================================================================
+  | seed=114 splits=10 nulls/hand=20 effect_floor=0.05 gates: P-REC>=0.3, P1<=0.05 (all statistics = median over splits)
+  |   PREC_records     median interior +0.7471 bits/token (4600 lines)
+  |   P1_latin_plain   median interior -0.0039 bits/token (4755 lines)
+  |   gate: PASS
+  |   Currier A: median +0.0113  null max -0.0132  null median -0.0187  margin +0.0301 -> fail
+  |   Currier B: median +0.0513  null max -0.0043  null median -0.0067  margin +0.0580 -> PASS
+  | 
+  |   ADJUDICATION (pre-registered):
+  |     B ONLY: consistent with line-level field structure in Currier B (SUGGESTIVE, quarantined; first registered test of the rung-1 observation). NOT a decode.
+  | 
+  |   -> results/line_as_record_per_hand.json
+[01:52:14] experiment finished rc=0 in 94s (0.03h)
+[01:52:14] adjudication: B_only; B margin +0.0580 (floor 0.05), A margin +0.0301
+[01:52:14] SUGGESTIVE finding — quarantined, flagged at the top of the report, awaiting human review
+[01:52:14] report -> C:\projects\vais\results\overnight_2026-07-18_report.md
+[01:52:14] RESEARCH.md: section appended (working tree; committed only to the overnight branch)
+[01:52:14] committing results to branch overnight/2026-07-18 ...

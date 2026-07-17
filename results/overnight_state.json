@@ -19,5 +19,12 @@
   "verdict": "INSTRUMENT KILLED (S7 v1)",
   "suggestive": false,
   "summary": "killed_line_length_artifact; P-REC +0.719, VMS_full margin +0.0329 (need >= 0.05)"
+ },
+ "N3b": {
+  "status": "completed",
+  "date": "2026-07-18",
+  "verdict": "S7 rung 2: B_ONLY",
+  "suggestive": true,
+  "summary": "B_only; B margin +0.0580 (floor 0.05), A margin +0.0301"
  }
 }

@@ -703,3 +703,26 @@ Instrument gate: P-REC +0.7189, P1 -0.0033 → PASS.
 Observation for the record (NO claim, not adjudicated here): Currier B alone clears the margin (+0.0768) while A shows none (-0.0055) — consistent with the "B is the more systematized register" thread. A per-hand adjudication would need its own pre-registration in a future rung.
 
 The corpse is logged with the same prominence as a positive would be, per charter rule 5.
+
+---
+
+### Portfolio S7, rung 2 — per-hand line-as-record adjudication (2026-07-18)
+
+[AUTOMATED — written by tools/overnight.py; run committed to branch overnight/2026-07-18; awaiting human review before promotion to any evidence tier.]
+
+Configuration (pre-registered in the script docstring): script defaults. Runtime 0.03 h at PYTHONHASHSEED=0. Holdout: whole folios (VMS) / 24-line pseudo-folio blocks (controls).
+
+**SUGGESTIVE — awaiting human review (quarantined; never merged automatically):**
+
+**Pre-registered outcomes** (line_as_record_per_hand.py docstring, full post-hoc provenance disclosed there): a hand passes only if its 10-split median interior gain beats ALL 20 of its own null-shuffle medians (empirical p ~ 0.048) AND clears the 0.05 bits/token effect floor over the null median — strictly harder than the rung-1 observation that motivated this rung.
+
+| corpus | median gain (bits/token) | null max | null median | margin | pass |
+|---|---|---|---|---|---|
+| PREC_records | +0.7471 | — | — | — | gate |
+| P1_latin_plain | -0.0039 | — | — | — | gate |
+| VMS_currier_A | +0.0113 | -0.0132 | -0.0187 | +0.0301 | fail |
+| VMS_currier_B | +0.0513 | -0.0043 | -0.0067 | +0.0580 | **PASS** |
+
+Instrument gate: P-REC +0.7471, P1 -0.0039 → PASS.
+
+**VERDICT: B ONLY — consistent with line-level field structure in Currier B (SUGGESTIVE, quarantined; the first registered test of the rung-1 observation). NOT a decode; no field is named or read.**
