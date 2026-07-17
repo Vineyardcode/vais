@@ -1,0 +1,56 @@
+[11:45:30] ====================================================================
+[11:45:30] overnight runner start 2026-07-17 11:45:30  smoke=False PYTHONHASHSEED=0
+[11:45:31] code at eacc1b1 (dirty tree), python 3.13.3
+[11:45:31] queue item N1: Max-strength verbose cipher inversion (rung 3: folio-level holdout, pre-registered budget)
+[11:45:31] profile: {'EM_OUTER': 32, 'EM_PROPOSALS': 48, 'EM_RESTARTS': 16, 'RESTARTS': 64, 'TOP_LMS_RUNG2': 3}  timeout=43200s
+[11:45:31] spliced overrides {'EM_OUTER': 32, 'EM_PROPOSALS': 48, 'EM_RESTARTS': 16, 'RESTARTS': 64, 'TOP_LMS_RUNG2': 3} -> _overnight_verbose_cipher_inversion.py
+  | ============================================================================
+  | VERBOSE CIPHER INVERSION — strict 1:1 ladder (folio-level holdout)
+  | ============================================================================
+  | seed=112 target_groups=24 restarts=64 holdout=0.2 (whole folios; controls: pseudo-folios of 24 lines)
+  | EM budget: outer=32 proposals=48 em_restarts=16 top_lms_rung2=3
+  |   LM latin/plain    alphabet=24 native holdout=3.308 bits/sym
+  |   LM latin/abjad    alphabet=18 native holdout=3.111 bits/sym
+  |   LM latin/abbrev4  alphabet=24 native holdout=3.300 bits/sym
+  |   LM italian/plain    alphabet=26 native holdout=3.127 bits/sym
+  |   LM italian/abjad    alphabet=21 native holdout=2.880 bits/sym
+  |   LM italian/abbrev4  alphabet=26 native holdout=3.129 bits/sym
+  | 
+  |   planted P4 table replayed and VERIFIED (23 groups)
+  | 
+  |   P4_latin_verbose: segmenter recovered 13% of the planted group inventory
+  |   P4_latin_verbose   best LM latin/abjad     holdout gap -0.773 bits/sym  (0 = native text; more negative = less language-like)
+  |   P1_latin_plain     best LM latin/plain     holdout gap +0.010 bits/sym  (0 = native text; more negative = less language-like)
+  |   N2_char_shuffle    best LM latin/abjad     holdout gap -1.407 bits/sym  (0 = native text; more negative = less language-like)
+  |   N3_grille          best LM latin/abjad     holdout gap -0.660 bits/sym  (0 = native text; more negative = less language-like)
+  |   N4_self_citation   best LM latin/abjad     holdout gap -0.772 bits/sym  (0 = native text; more negative = less language-like)
+  |   VMS_full           best LM latin/abbrev4   holdout gap -0.258 bits/sym  (0 = native text; more negative = less language-like)
+  |   VMS_currier_A      best LM latin/abbrev4   holdout gap -0.108 bits/sym  (0 = native text; more negative = less language-like)
+  |   VMS_currier_B      best LM latin/plain     holdout gap -0.183 bits/sym  (0 = native text; more negative = less language-like)
+  | 
+  |   ADJUDICATION (pre-registered):
+  |     P4 inventory recovery: 13% (kill < 50%)
+  |     P4 mapping accuracy on latin/plain: 0%
+  |     P4 best gap -0.773 vs noise floor -0.660 (best negative)
+  |     RUNG 1 KILLED: blind segmentation cannot invert a known verbose cipher. Escalating to rung 2 (EM with LM feedback) per the pre-registered ladder.
+  | Traceback (most recent call last):
+  |   File "C:\projects\vais\scripts\_overnight_verbose_cipher_inversion.py", line 775, in <module>
+  |     main()
+  |     ~~~~^^
+  |   File "C:\projects\vais\scripts\_overnight_verbose_cipher_inversion.py", line 707, in main
+  |     entry, assign = em_invert(lines, idx, cut, lm, SEED + 29)
+  |                     ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\projects\vais\scripts\_overnight_verbose_cipher_inversion.py", line 497, in em_invert
+  |     worst = min((g for g in S if len(g) == 1 or usage[g] > 0),
+  |                 key=lambda g: usage[g])
+  | ValueError: min() iterable argument is empty
+[12:09:00] experiment finished rc=1 in 1410s (0.39h)
+[12:09:00] FAILURE:
+Traceback (most recent call last):
+  File "C:\projects\vais\tools\overnight.py", line 566, in main
+    raise RunFailed(f'experiment {"timed out" if timed_out else f"exited rc={rc}"}'
+                    ' — see the child output above in the log')
+RunFailed: experiment exited rc=1 — see the child output above in the log
+
+[12:09:00] report -> C:\projects\vais\results\overnight_2026-07-17_report.md
+[12:09:00] committing results to branch overnight/2026-07-17 ...
