@@ -5,5 +5,12 @@
   "verdict": "INSTRUMENT KILLED (pre-registered)",
   "suggestive": false,
   "summary": "INSTRUMENT KILLED (pre-registered); P4 recovery 39%, margin -0.150 (need >= +0.100)"
+ },
+ "N1b": {
+  "status": "completed",
+  "date": "2026-07-17",
+  "verdict": "INSTRUMENT PASSED",
+  "suggestive": false,
+  "summary": "INSTRUMENT PASSED; P4 recovery 65%, margin +0.350 (need >= +0.100)"
  }
 }
