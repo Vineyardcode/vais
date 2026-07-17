@@ -24,6 +24,35 @@ positional variants remain excluded):
     (b) mapping hill-climb on the new segmentation, (c) inventory
     propose-and-test (swap low-usage groups for high-cohesion pool
     candidates). The same P4/noise-floor adjudication applies.
+    OUTCOME (2026-07-16, logged): ALSO KILLED at prototype budget
+    (EM_OUTER=4, EM_PROPOSALS=6, EM_RESTARTS=4): P4 recovery 48% (kill
+    < 50%), P4 gap +0.115 vs noise floor +0.082 (margin < 0.1). The kill
+    missed by 2 points, so the pre-registered escalation is COMPUTE, not
+    model freedom. Red flag observed: Currier A scored +0.21 — "better
+    than native Latin" — impossible as a decode; the free mapping
+    memorized shared vocabulary between train and holdout LINES.
+  RUNG 3 — max strength: identical strict 1:1 model and rung-1/2
+    machinery, escalated on compute only, plus ONE structural fix:
+    FOLIO-LEVEL holdout replaces line-level at every rung. Justification
+    (logged 2026-07-17, before the run): same-corpus holdout lines share
+    vocabulary with training lines, which is exactly the leak behind the
+    rung-2 Currier A artifact; holding out whole folios (real folios for
+    the VMS; contiguous PSEUDO_FOLIO_LINES-line pseudo-folios for the
+    controls, which have no folio structure) closes it. The noise floor
+    is re-measured at this rung under the same holdout, per the rung-2
+    lesson that the floor rises with model power.
+    OVERNIGHT (max-strength) PROFILE — pre-registered 2026-07-17, run as
+    queue item N1 by tools/overnight.py, which splices these values over
+    the prototype defaults below (the defaults stay small so the web UI
+    and golden-reference path remain fast):
+      EM_OUTER=16, EM_PROPOSALS=24, EM_RESTARTS=8, RESTARTS=32.
+    Kill criteria unchanged: P4 planted-inventory recovery >= 50% AND
+    P4's holdout gap beats the same-rung noise floor (best of N2/N3/N4)
+    by >= 0.1 bits/sym; otherwise no VMS row is interpreted. Homophones
+    and positional variants stay excluded unless P4 passes at strict
+    settings first and the justification is logged HERE before
+    escalating. Even then, a passing VMS row is only ever "consistent
+    with a verbose cipher", never "decoded".
 
 STRICT MODEL (rung 1 reference; rung 2 reuses 2-3):
   1. SEGMENTATION (unsupervised, blind to any plaintext): BPE-style
@@ -36,9 +65,10 @@ STRICT MODEL (rung 1 reference; rung 2 reuses 2-3):
      types are excluded and the exclusion rate reported. Mapping found by
      hill-climbing bigram log-likelihood under the candidate language
      model, RESTARTS random restarts, greedy pair swaps to convergence.
-  3. SCORING: mapping optimized on TRAIN lines (1-HOLDOUT_FRAC), scored
-     on HELD-OUT lines never seen by the optimizer. Metric = holdout gap:
-     decoded bits/symbol minus the language's own native holdout
+  3. SCORING: mapping optimized on TRAIN folios (1-HOLDOUT_FRAC of
+     lines, held out in whole-folio units — see holdout_split), scored
+     on HELD-OUT folios never seen by the optimizer. Metric = holdout
+     gap: decoded bits/symbol minus the language's own native holdout
      bits/symbol under the same LM. 0 = indistinguishable from real text.
 
 CANDIDATE PLAINTEXTS: Latin (Caesar) and Italian (Dante), each in three
@@ -78,7 +108,8 @@ from collections import Counter
 from common import fetch_gutenberg, result_path
 from common.core import DATA_DIR, FOLIO_DIR, ivtff_clean_words, load_reference_text
 
-sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8',
+                              errors='replace', line_buffering=True)
 
 SEED = 112
 TARGET_GROUPS = 24        # segment types allowed to cover COVERAGE_TARGET
@@ -86,6 +117,8 @@ COVERAGE_TARGET = 0.95
 MAX_MERGES = 400
 RESTARTS = 12
 HOLDOUT_FRAC = 0.2
+PSEUDO_FOLIO_LINES = 24   # control corpora lack folios; hold out blocks of
+                          # this many contiguous lines (VMS mean: 23.2)
 MIN_LINE_WORDS = 2
 LANGS = ['latin', 'italian']
 VARIANTS = ['plain', 'abjad', 'abbrev4']
@@ -110,7 +143,9 @@ def load_control(name):
 
 
 def load_vms_by_currier():
-    full, a, b = [], [], []
+    """Returns {'full'|'A'|'B': (lines, folio_ids)} — folio ids run
+    parallel to lines so holdout_split can hold out whole folios."""
+    out = {'full': ([], []), 'A': ([], []), 'B': ([], [])}
     for fpath in sorted(FOLIO_DIR.glob('*.txt')):
         text = fpath.read_text(encoding='utf-8', errors='replace')
         m = re.search(r'\$L=([AB])', text)
@@ -122,9 +157,40 @@ def load_vms_by_currier():
             words = ivtff_clean_words(line[line.index('>') + 1:].strip())
             if len(words) < MIN_LINE_WORDS:
                 continue
-            full.append(words)
-            (a if lang == 'A' else b if lang == 'B' else []).append(words)
-    return full, a, b
+            for key in (('full', lang) if lang in ('A', 'B') else ('full',)):
+                out[key][0].append(words)
+                out[key][1].append(fpath.stem)
+    return out
+
+
+def holdout_split(lines, folios, rng):
+    """Folio-level holdout (rung-3 structural fix). Whole folios (VMS) or
+    contiguous PSEUDO_FOLIO_LINES-line pseudo-folios (controls, folios=None)
+    are held out until HOLDOUT_FRAC of the lines is reached. Returns
+    (idx, cut): idx[:cut] = train line indices, idx[cut:] = holdout.
+
+    Rationale: line-level holdout shares vocabulary between train and
+    holdout lines of the same corpus, which let a free 21-symbol mapping
+    memorize its way to +0.21 bits/sym on Currier A at rung 2 ("better
+    than native Latin" — impossible as a decode). Held-out FOLIOS share
+    far less local vocabulary, so generalization is tested for real."""
+    if folios is None:
+        folios = [i // PSEUDO_FOLIO_LINES for i in range(len(lines))]
+    groups = {}
+    for i, f in enumerate(folios):
+        groups.setdefault(f, []).append(i)
+    keys = sorted(groups)
+    rng.shuffle(keys)
+    target = HOLDOUT_FRAC * len(lines)
+    held, n_held = set(), 0
+    for k in keys:
+        if n_held >= target:
+            break
+        held.add(k)
+        n_held += len(groups[k])
+    train = [i for k in sorted(groups) if k not in held for i in groups[k]]
+    hold = [i for k in sorted(groups) if k in held for i in groups[k]]
+    return train + hold, len(train)
 
 
 def language_corpus(lang):
@@ -505,10 +571,13 @@ def replay_planted_table():
 def main():
     rng = random.Random(SEED)
     print('=' * 76)
-    print('VERBOSE CIPHER INVERSION — strict prototype (rung 1 of the ladder)')
+    print('VERBOSE CIPHER INVERSION — strict 1:1 ladder (folio-level holdout)')
     print('=' * 76)
     print(f'seed={SEED} target_groups={TARGET_GROUPS} restarts={RESTARTS} '
-          f'holdout={HOLDOUT_FRAC}')
+          f'holdout={HOLDOUT_FRAC} (whole folios; controls: pseudo-folios '
+          f'of {PSEUDO_FOLIO_LINES} lines)')
+    print(f'EM budget: outer={EM_OUTER} proposals={EM_PROPOSALS} '
+          f'em_restarts={EM_RESTARTS} top_lms_rung2={TOP_LMS_RUNG2}')
 
     # language models
     lms = {}
@@ -530,27 +599,26 @@ def main():
     print(f'\n  planted P4 table replayed and VERIFIED '
           f'({len(planted_groups)} groups)')
 
-    vms_full, vms_a, vms_b = load_vms_by_currier()
+    vms = load_vms_by_currier()
     corpora = [
-        ('P4_latin_verbose', load_control('latin_verbose')),
-        ('P1_latin_plain', load_control('latin_plain')),
-        ('N2_char_shuffle', load_control('vms_char_shuffle')),
-        ('N3_grille', load_control('grille_table')),
-        ('N4_self_citation', load_control('self_citation')),
-        ('VMS_full', vms_full),
-        ('VMS_currier_A', vms_a),
-        ('VMS_currier_B', vms_b),
+        ('P4_latin_verbose', load_control('latin_verbose'), None),
+        ('P1_latin_plain', load_control('latin_plain'), None),
+        ('N2_char_shuffle', load_control('vms_char_shuffle'), None),
+        ('N3_grille', load_control('grille_table'), None),
+        ('N4_self_citation', load_control('self_citation'), None),
+        ('VMS_full',) + vms['full'],
+        ('VMS_currier_A',) + vms['A'],
+        ('VMS_currier_B',) + vms['B'],
     ]
 
+    # holdout split on whole FOLIOS (charter rule 3; rung-3 structural fix)
+    # — computed once per corpus and shared by both rungs.
+    splits = {cname: holdout_split(lines, folios, random.Random(SEED + 7))
+              for cname, lines, folios in corpora}
+
     results = {}
-    for cname, lines in corpora:
-        # holdout split on LINES (charter rule 3)
-        lrng = random.Random(SEED + 7)
-        idx = list(range(len(lines)))
-        lrng.shuffle(idx)
-        cut = int(len(lines) * (1 - HOLDOUT_FRAC))
-        train_l = [lines[i] for i in idx[:cut]]
-        hold_l = [lines[i] for i in idx[cut:]]
+    for cname, lines, folios in corpora:
+        idx, cut = splits[cname]
 
         seg_all = learn_segmentation(lines, TARGET_GROUPS, COVERAGE_TARGET,
                                      MAX_MERGES)
@@ -558,7 +626,8 @@ def main():
         seg_hold = [seg_all[i] for i in idx[cut:]]
         type_freq = Counter(t for line in seg_all for w in line for t in w)
 
-        row = {'n_lines': len(lines), 'n_types': len(type_freq)}
+        row = {'n_lines': len(lines), 'n_types': len(type_freq),
+               'n_holdout_lines': len(idx) - cut}
         # inventory recovery grading (positive control only)
         if cname == 'P4_latin_verbose':
             top = {t for t, _ in type_freq.most_common(TARGET_GROUPS)}
@@ -606,7 +675,7 @@ def main():
     print(f'    P4 mapping accuracy on latin/plain: {acc:.0%}')
     print(f'    P4 best gap {p4["best_gap"]:+.3f} vs noise floor '
           f'{neg_best:+.3f} (best negative)')
-    instrument_ok = rec >= 0.5 and p4['best_gap'] > neg_best + 0.1
+    instrument_ok = rec >= 0.5 and p4['best_gap'] - neg_best >= 0.1
     if not instrument_ok:
         print('    RUNG 1 KILLED: blind segmentation cannot invert a known '
               'verbose cipher. Escalating to rung 2 (EM with LM feedback) '
@@ -617,11 +686,8 @@ def main():
     # ── RUNG 2: EM with language-model feedback ─────────────────────
     results2 = {}
     lm_items = list(lms.items())
-    for cname, lines in corpora:
-        lrng = random.Random(SEED + 7)
-        idx = list(range(len(lines)))
-        lrng.shuffle(idx)
-        cut = int(len(lines) * (1 - HOLDOUT_FRAC))
+    for cname, lines, folios in corpora:
+        idx, cut = splits[cname]        # same folio-level split as rung 1
         # P4 gets all LMs (it must FIND latin/plain); others: top rung-1 LMs
         if cname == 'P4_latin_verbose':
             todo = lm_items
@@ -665,18 +731,19 @@ def main():
           f'mapping accuracy: {acc2:.0%}')
     print(f'    P4 best gap {p4b["best_gap"]:+.3f} '
           f'({p4b["best_lm"]}) vs noise floor {neg2:+.3f}')
-    ok2 = rec2 >= 0.5 and p4b['best_gap'] > neg2 + 0.1
+    ok2 = rec2 >= 0.5 and p4b['best_gap'] - neg2 >= 0.1
     if not ok2:
-        print('    RUNG 2 ALSO KILLED at prototype budget: EM cannot invert '
-              'the known cipher clearly better than noise. VMS rows NOT '
-              'interpretable; next honest escalation is compute (overnight '
-              'sweep), not model freedom.')
+        print('    RUNG 2 KILLED at this budget (see EM budget line above): '
+              'EM cannot invert the known cipher clearly better than noise. '
+              'VMS rows NOT interpretable; the pre-registered escalation '
+              'policy (docstring ladder) is compute first, never model '
+              'freedom.')
     else:
         print('    rung 2 instrument OK.')
         for v in ('VMS_full', 'VMS_currier_A', 'VMS_currier_B'):
             g = results2[v]['best_gap']
             verdict = ('above the noise floor -> CONSISTENT WITH a verbose '
-                       'cipher (NOT a decode)' if g > neg2 + 0.1 else
+                       'cipher (NOT a decode)' if g - neg2 >= 0.1 else
                        'within the noise floor -> nothing beyond free-mapping '
                        'noise at this rung')
             print(f'    {v}: best gap {g:+.3f} ({results2[v]["best_lm"]}) — '
@@ -686,7 +753,12 @@ def main():
               encoding='utf-8') as fh:
         json.dump({'params': {'seed': SEED, 'target_groups': TARGET_GROUPS,
                               'restarts': RESTARTS, 'em_outer': EM_OUTER,
-                              'holdout_frac': HOLDOUT_FRAC},
+                              'em_proposals': EM_PROPOSALS,
+                              'em_restarts': EM_RESTARTS,
+                              'top_lms_rung2': TOP_LMS_RUNG2,
+                              'holdout_frac': HOLDOUT_FRAC,
+                              'holdout_unit': 'folio',
+                              'pseudo_folio_lines': PSEUDO_FOLIO_LINES},
                    'rung1': {'noise_floor': neg_best, 'results': results},
                    'rung2': {'noise_floor': neg2, 'results': results2}},
                   fh, indent=1)

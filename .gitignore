@@ -1,7 +1,9 @@
 __pycache__/
 *.pyc
 scripts/_webui_*.py
+scripts/_overnight_*.py
 rerun/
 .bp_scripts/
 baseline_prime/
 rerun2/
+.claude/settings.local.json
