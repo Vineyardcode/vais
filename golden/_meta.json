@@ -1179,7 +1179,7 @@
  "verbose_cipher_inversion": {
   "status": "ok",
   "returncode": 0,
-  "duration_s": 98.81,
+  "duration_s": 88.37,
   "stdout_bytes": 3352,
   "results_files_touched": [
    "verbose_cipher_inversion.json"

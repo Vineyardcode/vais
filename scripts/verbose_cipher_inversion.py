@@ -63,6 +63,16 @@ positional variants remain excluded):
     collapse returns an explicit degenerate row (gap_bits = -999,
     'degenerate': true). Model, criteria, and budgets unchanged;
     default-budget goldens verified byte-identical after the fix.
+    INCIDENT #2 (same day, second launch): crash at the same min() via a
+    different hole — the per-iteration usage snapshot goes stale as S
+    mutates across 48 accepted proposals, so the swap-candidate filter
+    can empty out while usage is non-empty. Fixed with an explicit
+    fallback to all of S (fires only where the old code crashed; goldens
+    again verified byte-identical). Numbers from the aborted second run
+    already confirm the ll_of fix works: P1 rung-2 scores +0.012
+    (~native, sane) and the rung-3 noise floor is visibly high (N2
+    char-shuffle +0.384) — the pre-registered margin criterion exists
+    for exactly this.
     Kill criteria unchanged: P4 planted-inventory recovery >= 50% AND
     P4's holdout gap beats the same-rung noise floor (best of N2/N3/N4)
     by >= 0.1 bits/sym; otherwise no VMS row is interpreted. Homophones
@@ -522,8 +532,14 @@ def em_invert(lines, idx, cut, lm, seed):
                 break
             outsiders = [g for g in multi if g not in assign][:EM_PROPOSALS]
             for u in outsiders:
-                worst = min((g for g in S if len(g) == 1 or usage[g] > 0),
-                            key=lambda g: usage[g])
+                # usage is a per-outer-iteration snapshot, but S mutates
+                # with each accepted proposal; at high EM_PROPOSALS the
+                # eligibility filter (singles, or snapshot-used) can go
+                # empty while S is fine (2026-07-17 crash #2). Fall back
+                # to all of S: a stale-usage-0 member is a legitimate
+                # swap-out candidate.
+                cand = [g for g in S if len(g) == 1 or usage[g] > 0]
+                worst = min(cand or S, key=lambda g: usage[g])
                 S2 = [u if g == worst else g for g in S]
                 assign2 = dict(assign)
                 assign2[u] = assign2.pop(worst)
