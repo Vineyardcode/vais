@@ -39,9 +39,10 @@ CONTRACT
 
 QUEUE
   N1  Max-strength verbose cipher inversion (rung 3): folio-level
-      holdout + the pre-registered budget EM_OUTER=16, EM_PROPOSALS=24,
-      EM_RESTARTS=8, RESTARTS=32, spliced over the prototype defaults of
-      scripts/verbose_cipher_inversion.py (see its docstring ladder).
+      holdout + the pre-registered budget EM_OUTER=32, EM_PROPOSALS=48,
+      EM_RESTARTS=16, RESTARTS=64, TOP_LMS_RUNG2=3, spliced over the
+      prototype defaults of scripts/verbose_cipher_inversion.py (see its
+      docstring ladder for the registration history).
   N2  Cross-transliteration invariance (portfolio S9) — NOT READY:
       needs external transliteration files (Currier, v101, GC) plus
       scripts/cross_transliteration_invariance.py with pre-registered
@@ -399,8 +400,8 @@ def adjudicate_n1(item, expected_params, run_started):
 # ────────────────────────────────────────────────────────────────────
 # queue
 # ────────────────────────────────────────────────────────────────────
-N1_PROFILE = {'EM_OUTER': 16, 'EM_PROPOSALS': 24, 'EM_RESTARTS': 8,
-              'RESTARTS': 32}
+N1_PROFILE = {'EM_OUTER': 32, 'EM_PROPOSALS': 48, 'EM_RESTARTS': 16,
+              'RESTARTS': 64, 'TOP_LMS_RUNG2': 3}
 N1_SMOKE = {'EM_OUTER': 1, 'EM_PROPOSALS': 1, 'EM_RESTARTS': 1,
             'RESTARTS': 2, 'TOP_LMS_RUNG2': 1}
 

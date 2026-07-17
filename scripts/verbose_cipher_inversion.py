@@ -45,7 +45,13 @@ positional variants remain excluded):
     queue item N1 by tools/overnight.py, which splices these values over
     the prototype defaults below (the defaults stay small so the web UI
     and golden-reference path remain fast):
-      EM_OUTER=16, EM_PROPOSALS=24, EM_RESTARTS=8, RESTARTS=32.
+      EM_OUTER=32, EM_PROPOSALS=48, EM_RESTARTS=16, RESTARTS=64,
+      TOP_LMS_RUNG2=3.
+    (Raised from an initial 16/24/8/32 registration BEFORE any run at
+    that budget: the default-budget run measures 93 s on an idle machine
+    — the 700 s in the old golden meta was a contended capture — so the
+    smaller profile would have finished in well under an hour, against
+    an approved overnight window of hours.)
     Kill criteria unchanged: P4 planted-inventory recovery >= 50% AND
     P4's holdout gap beats the same-rung noise floor (best of N2/N3/N4)
     by >= 0.1 bits/sym; otherwise no VMS row is interpreted. Homophones

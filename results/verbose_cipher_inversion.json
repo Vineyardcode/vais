@@ -4,363 +4,440 @@
   "target_groups": 24,
   "restarts": 12,
   "em_outer": 4,
-  "holdout_frac": 0.2
+  "em_proposals": 6,
+  "em_restarts": 4,
+  "top_lms_rung2": 2,
+  "holdout_frac": 0.2,
+  "holdout_unit": "folio",
+  "pseudo_folio_lines": 24
  },
  "rung1": {
-  "noise_floor": -0.6257,
+  "noise_floor": -0.6605,
   "results": {
    "P4_latin_verbose": {
     "n_lines": 4755,
     "n_types": 15,
+    "n_holdout_lines": 960,
     "inventory_recovery": 0.13043478260869565,
     "latin/plain": {
-     "gap_bits": -0.9302,
-     "holdout_bits": 4.2381,
+     "gap_bits": -0.9299,
+     "holdout_bits": 4.2378,
      "native_bits": 3.3079,
      "excluded_words": 0.0,
      "mapping_accuracy": 0.0
     },
     "latin/abjad": {
-     "gap_bits": -0.7797,
-     "holdout_bits": 3.8906,
+     "gap_bits": -0.7731,
+     "holdout_bits": 3.8841,
      "native_bits": 3.111,
      "excluded_words": 0.0
     },
     "latin/abbrev4": {
-     "gap_bits": -1.002,
-     "holdout_bits": 4.3021,
+     "gap_bits": -1.0153,
+     "holdout_bits": 4.3154,
      "native_bits": 3.3001,
      "excluded_words": 0.0
     },
     "italian/plain": {
-     "gap_bits": -1.7969,
-     "holdout_bits": 4.9242,
+     "gap_bits": -1.9579,
+     "holdout_bits": 5.0852,
      "native_bits": 3.1273,
      "excluded_words": 0.0
     },
     "italian/abjad": {
-     "gap_bits": -1.5481,
-     "holdout_bits": 4.4284,
+     "gap_bits": -1.5598,
+     "holdout_bits": 4.4402,
      "native_bits": 2.8804,
      "excluded_words": 0.0
     },
     "italian/abbrev4": {
-     "gap_bits": -1.7079,
-     "holdout_bits": 4.8367,
+     "gap_bits": -1.71,
+     "holdout_bits": 4.8388,
      "native_bits": 3.1288,
      "excluded_words": 0.0
     },
     "best_lm": "latin/abjad",
-    "best_gap": -0.7797
+    "best_gap": -0.7731
    },
    "P1_latin_plain": {
     "n_lines": 4755,
     "n_types": 23,
+    "n_holdout_lines": 960,
     "latin/plain": {
-     "gap_bits": 0.0013,
-     "holdout_bits": 3.3066,
+     "gap_bits": 0.01,
+     "holdout_bits": 3.2979,
      "native_bits": 3.3079,
      "excluded_words": 0.0
     },
     "latin/abjad": {
-     "gap_bits": -0.9843,
-     "holdout_bits": 4.0953,
+     "gap_bits": -0.9679,
+     "holdout_bits": 4.0789,
      "native_bits": 3.111,
-     "excluded_words": 0.1916
+     "excluded_words": 0.1867
     },
     "latin/abbrev4": {
-     "gap_bits": -0.2504,
-     "holdout_bits": 3.5505,
+     "gap_bits": -0.2378,
+     "holdout_bits": 3.5378,
      "native_bits": 3.3001,
      "excluded_words": 0.0
     },
     "italian/plain": {
-     "gap_bits": -0.9337,
-     "holdout_bits": 4.061,
+     "gap_bits": -0.9229,
+     "holdout_bits": 4.0502,
      "native_bits": 3.1273,
      "excluded_words": 0.0
     },
     "italian/abjad": {
-     "gap_bits": -1.829,
-     "holdout_bits": 4.7093,
+     "gap_bits": -1.8135,
+     "holdout_bits": 4.6938,
      "native_bits": 2.8804,
-     "excluded_words": 0.0343
+     "excluded_words": 0.0334
     },
     "italian/abbrev4": {
-     "gap_bits": -0.8975,
-     "holdout_bits": 4.0263,
+     "gap_bits": -0.8859,
+     "holdout_bits": 4.0147,
      "native_bits": 3.1288,
      "excluded_words": 0.0
     },
     "best_lm": "latin/plain",
-    "best_gap": 0.0013
+    "best_gap": 0.01
    },
    "N2_char_shuffle": {
     "n_lines": 4634,
     "n_types": 25,
+    "n_holdout_lines": 936,
     "latin/plain": {
-     "gap_bits": -1.8538,
-     "holdout_bits": 5.1618,
+     "gap_bits": -1.8494,
+     "holdout_bits": 5.1573,
      "native_bits": 3.3079,
      "excluded_words": 0.0004
     },
     "latin/abjad": {
-     "gap_bits": -1.3898,
-     "holdout_bits": 4.5008,
+     "gap_bits": -1.4067,
+     "holdout_bits": 4.5176,
      "native_bits": 3.111,
-     "excluded_words": 0.0174
+     "excluded_words": 0.016
     },
     "latin/abbrev4": {
-     "gap_bits": -1.7048,
-     "holdout_bits": 5.0049,
+     "gap_bits": -1.6935,
+     "holdout_bits": 4.9936,
      "native_bits": 3.3001,
      "excluded_words": 0.0004
     },
     "italian/plain": {
-     "gap_bits": -2.232,
-     "holdout_bits": 5.3593,
+     "gap_bits": -2.2252,
+     "holdout_bits": 5.3525,
      "native_bits": 3.1273,
      "excluded_words": 0.0
     },
     "italian/abjad": {
-     "gap_bits": -1.8295,
-     "holdout_bits": 4.7099,
+     "gap_bits": -1.8196,
+     "holdout_bits": 4.7,
      "native_bits": 2.8804,
-     "excluded_words": 0.0009
+     "excluded_words": 0.0006
     },
     "italian/abbrev4": {
-     "gap_bits": -2.1156,
-     "holdout_bits": 5.2444,
+     "gap_bits": -2.1007,
+     "holdout_bits": 5.2295,
      "native_bits": 3.1288,
      "excluded_words": 0.0
     },
     "best_lm": "latin/abjad",
-    "best_gap": -1.3898
+    "best_gap": -1.4067
    },
    "N3_grille": {
     "n_lines": 4734,
     "n_types": 16,
+    "n_holdout_lines": 960,
     "latin/plain": {
-     "gap_bits": -0.9413,
-     "holdout_bits": 4.2492,
+     "gap_bits": -0.9387,
+     "holdout_bits": 4.2466,
      "native_bits": 3.3079,
      "excluded_words": 0.0
     },
     "latin/abjad": {
-     "gap_bits": -0.6257,
-     "holdout_bits": 3.7367,
+     "gap_bits": -0.6605,
+     "holdout_bits": 3.7714,
      "native_bits": 3.111,
      "excluded_words": 0.0
     },
     "latin/abbrev4": {
-     "gap_bits": -1.2163,
-     "holdout_bits": 4.5164,
+     "gap_bits": -1.2156,
+     "holdout_bits": 4.5157,
      "native_bits": 3.3001,
      "excluded_words": 0.0
     },
     "italian/plain": {
-     "gap_bits": -1.708,
-     "holdout_bits": 4.8353,
+     "gap_bits": -1.7391,
+     "holdout_bits": 4.8665,
      "native_bits": 3.1273,
      "excluded_words": 0.0
     },
     "italian/abjad": {
-     "gap_bits": -1.1647,
-     "holdout_bits": 4.045,
+     "gap_bits": -1.1763,
+     "holdout_bits": 4.0566,
      "native_bits": 2.8804,
      "excluded_words": 0.0
     },
     "italian/abbrev4": {
-     "gap_bits": -1.7183,
-     "holdout_bits": 4.8471,
+     "gap_bits": -1.7372,
+     "holdout_bits": 4.866,
      "native_bits": 3.1288,
      "excluded_words": 0.0
     },
     "best_lm": "latin/abjad",
-    "best_gap": -0.6257
+    "best_gap": -0.6605
    },
    "N4_self_citation": {
     "n_lines": 2648,
     "n_types": 25,
+    "n_holdout_lines": 536,
     "latin/plain": {
-     "gap_bits": -0.9457,
-     "holdout_bits": 4.2536,
+     "gap_bits": -0.9376,
+     "holdout_bits": 4.2455,
      "native_bits": 3.3079,
-     "excluded_words": 0.0327
+     "excluded_words": 0.0343
     },
     "latin/abjad": {
-     "gap_bits": -0.7614,
-     "holdout_bits": 3.8724,
+     "gap_bits": -0.7813,
+     "holdout_bits": 3.8923,
      "native_bits": 3.111,
-     "excluded_words": 0.1874
+     "excluded_words": 0.1931
     },
     "latin/abbrev4": {
-     "gap_bits": -0.9852,
-     "holdout_bits": 4.2853,
+     "gap_bits": -0.958,
+     "holdout_bits": 4.2581,
      "native_bits": 3.3001,
-     "excluded_words": 0.0327
+     "excluded_words": 0.0343
     },
     "italian/plain": {
-     "gap_bits": -1.3871,
-     "holdout_bits": 4.5144,
+     "gap_bits": -1.3603,
+     "holdout_bits": 4.4876,
      "native_bits": 3.1273,
      "excluded_words": 0.0
     },
     "italian/abjad": {
-     "gap_bits": -1.2918,
-     "holdout_bits": 4.1722,
+     "gap_bits": -1.306,
+     "holdout_bits": 4.1863,
      "native_bits": 2.8804,
-     "excluded_words": 0.1056
+     "excluded_words": 0.1081
     },
     "italian/abbrev4": {
-     "gap_bits": -1.391,
-     "holdout_bits": 4.5198,
+     "gap_bits": -1.3724,
+     "holdout_bits": 4.5012,
      "native_bits": 3.1288,
      "excluded_words": 0.0
     },
     "best_lm": "latin/abjad",
-    "best_gap": -0.7614
+    "best_gap": -0.7813
    },
    "VMS_full": {
     "n_lines": 4634,
     "n_types": 25,
+    "n_holdout_lines": 938,
     "latin/plain": {
-     "gap_bits": -0.2957,
-     "holdout_bits": 3.6036,
+     "gap_bits": -0.2989,
+     "holdout_bits": 3.6068,
      "native_bits": 3.3079,
-     "excluded_words": 0.0004
+     "excluded_words": 0.0001
     },
     "latin/abjad": {
-     "gap_bits": -0.4977,
-     "holdout_bits": 3.6087,
+     "gap_bits": -0.5705,
+     "holdout_bits": 3.6815,
      "native_bits": 3.111,
-     "excluded_words": 0.0176
+     "excluded_words": 0.0196
     },
     "latin/abbrev4": {
-     "gap_bits": -0.2334,
-     "holdout_bits": 3.5334,
+     "gap_bits": -0.2583,
+     "holdout_bits": 3.5584,
      "native_bits": 3.3001,
-     "excluded_words": 0.0004
+     "excluded_words": 0.0001
     },
     "italian/plain": {
-     "gap_bits": -0.4982,
-     "holdout_bits": 3.6255,
+     "gap_bits": -0.5438,
+     "holdout_bits": 3.6711,
      "native_bits": 3.1273,
      "excluded_words": 0.0
     },
     "italian/abjad": {
-     "gap_bits": -0.9465,
-     "holdout_bits": 3.8268,
+     "gap_bits": -0.8422,
+     "holdout_bits": 3.7226,
      "native_bits": 2.8804,
-     "excluded_words": 0.0009
+     "excluded_words": 0.0007
     },
     "italian/abbrev4": {
-     "gap_bits": -0.5317,
-     "holdout_bits": 3.6605,
+     "gap_bits": -0.5537,
+     "holdout_bits": 3.6825,
      "native_bits": 3.1288,
      "excluded_words": 0.0
     },
     "best_lm": "latin/abbrev4",
-    "best_gap": -0.2334
+    "best_gap": -0.2583
    },
    "VMS_currier_A": {
     "n_lines": 1619,
     "n_types": 24,
+    "n_holdout_lines": 355,
     "latin/plain": {
-     "gap_bits": -0.1101,
-     "holdout_bits": 3.418,
+     "gap_bits": -0.1497,
+     "holdout_bits": 3.4576,
      "native_bits": 3.3079,
      "excluded_words": 0.0
     },
     "latin/abjad": {
-     "gap_bits": -0.4647,
-     "holdout_bits": 3.5757,
+     "gap_bits": -0.5058,
+     "holdout_bits": 3.6168,
      "native_bits": 3.111,
-     "excluded_words": 0.0217
+     "excluded_words": 0.0213
     },
     "latin/abbrev4": {
-     "gap_bits": -0.2015,
-     "holdout_bits": 3.5016,
+     "gap_bits": -0.2297,
+     "holdout_bits": 3.5298,
      "native_bits": 3.3001,
      "excluded_words": 0.0
     },
     "italian/plain": {
-     "gap_bits": -0.4585,
-     "holdout_bits": 3.5858,
+     "gap_bits": -0.4813,
+     "holdout_bits": 3.6086,
      "native_bits": 3.1273,
      "excluded_words": 0.0
     },
     "italian/abjad": {
-     "gap_bits": -0.741,
-     "holdout_bits": 3.6213,
+     "gap_bits": -0.7185,
+     "holdout_bits": 3.5989,
      "native_bits": 2.8804,
-     "excluded_words": 0.0013
+     "excluded_words": 0.0007
     },
     "italian/abbrev4": {
-     "gap_bits": -0.413,
-     "holdout_bits": 3.5418,
+     "gap_bits": -0.4964,
+     "holdout_bits": 3.6252,
      "native_bits": 3.1288,
      "excluded_words": 0.0
     },
     "best_lm": "latin/plain",
-    "best_gap": -0.1101
+    "best_gap": -0.1497
    },
    "VMS_currier_B": {
     "n_lines": 2674,
     "n_types": 24,
+    "n_holdout_lines": 547,
     "latin/plain": {
-     "gap_bits": -0.3081,
-     "holdout_bits": 3.616,
+     "gap_bits": -0.2522,
+     "holdout_bits": 3.5602,
      "native_bits": 3.3079,
-     "excluded_words": 0.0002
+     "excluded_words": 0.0
     },
     "latin/abjad": {
-     "gap_bits": -0.5429,
-     "holdout_bits": 3.6538,
+     "gap_bits": -0.512,
+     "holdout_bits": 3.623,
      "native_bits": 3.111,
-     "excluded_words": 0.017
+     "excluded_words": 0.0111
     },
     "latin/abbrev4": {
-     "gap_bits": -0.2916,
-     "holdout_bits": 3.5917,
+     "gap_bits": -0.3021,
+     "holdout_bits": 3.6021,
      "native_bits": 3.3001,
-     "excluded_words": 0.0002
+     "excluded_words": 0.0
     },
     "italian/plain": {
-     "gap_bits": -0.53,
-     "holdout_bits": 3.6573,
+     "gap_bits": -0.4732,
+     "holdout_bits": 3.6006,
      "native_bits": 3.1273,
      "excluded_words": 0.0
     },
     "italian/abjad": {
-     "gap_bits": -0.8844,
-     "holdout_bits": 3.7647,
+     "gap_bits": -0.8738,
+     "holdout_bits": 3.7542,
      "native_bits": 2.8804,
-     "excluded_words": 0.0004
+     "excluded_words": 0.0006
     },
     "italian/abbrev4": {
-     "gap_bits": -0.5239,
-     "holdout_bits": 3.6527,
+     "gap_bits": -0.4998,
+     "holdout_bits": 3.6286,
      "native_bits": 3.1288,
      "excluded_words": 0.0
     },
-    "best_lm": "latin/abbrev4",
-    "best_gap": -0.2916
+    "best_lm": "latin/plain",
+    "best_gap": -0.2522
    }
   }
  },
  "rung2": {
-  "noise_floor": 0.0821,
+  "noise_floor": 0.1337,
   "results": {
    "P4_latin_verbose": {
     "latin/plain": {
-     "gap_bits": -0.0333,
-     "holdout_bits": 3.3413,
+     "gap_bits": -0.0197,
+     "holdout_bits": 3.3276,
      "native_bits": 3.3079,
-     "excluded_words": 0.5795,
+     "excluded_words": 0.6571,
      "inventory": [
+      "o",
       "s",
       "a",
+      "d",
+      "qo",
+      "dy",
+      "ot",
+      "ai",
+      "ii",
+      "or",
+      "sh",
+      "rs",
+      "al",
+      "do",
+      "hed",
+      "heq",
+      "che",
+      "iin",
+      "qot",
+      "aii",
+      "she",
+      "heqo",
+      "aiin"
+     ],
+     "inventory_recovery": 0.5217,
+     "mapping_accuracy": 0.4783
+    },
+    "latin/abjad": {
+     "gap_bits": 0.0975,
+     "holdout_bits": 3.0135,
+     "native_bits": 3.111,
+     "excluded_words": 0.9029,
+     "inventory": [
+      "s",
+      "e",
+      "a",
+      "he",
+      "ch",
+      "sh",
+      "qo",
+      "dy",
+      "ai",
+      "ii",
+      "che",
+      "iin",
+      "hed",
+      "qot",
+      "aii",
+      "she",
+      "aiin"
+     ],
+     "inventory_recovery": 0.2609
+    },
+    "latin/abbrev4": {
+     "gap_bits": -0.3902,
+     "holdout_bits": 3.6903,
+     "native_bits": 3.3001,
+     "excluded_words": 0.6153,
+     "inventory": [
+      "o",
+      "s",
+      "e",
+      "a",
+      "d",
+      "he",
+      "ch",
       "ol",
       "qo",
       "dy",
@@ -369,11 +446,39 @@
       "ii",
       "or",
       "sh",
+      "che",
+      "iin",
+      "qot",
+      "aii",
+      "she",
+      "aiin",
+      "ched",
+      "heqo"
+     ],
+     "inventory_recovery": 0.4783
+    },
+    "italian/plain": {
+     "gap_bits": -0.8419,
+     "holdout_bits": 3.9692,
+     "native_bits": 3.1273,
+     "excluded_words": 0.4855,
+     "inventory": [
+      "o",
+      "s",
+      "e",
+      "a",
+      "he",
+      "qo",
+      "dy",
+      "ot",
+      "ai",
+      "ii",
+      "or",
+      "ol",
       "do",
       "al",
-      "he",
-      "che",
       "heq",
+      "che",
       "iin",
       "qot",
       "aii",
@@ -381,113 +486,20 @@
       "hed",
       "heqo",
       "aiin",
-      "ched"
-     ],
-     "inventory_recovery": 0.4783,
-     "mapping_accuracy": 0.4783
-    },
-    "latin/abjad": {
-     "gap_bits": 0.1146,
-     "holdout_bits": 2.9964,
-     "native_bits": 3.111,
-     "excluded_words": 0.9146,
-     "inventory": [
-      "s",
-      "a",
-      "he",
-      "ch",
-      "qo",
-      "dy",
-      "in",
-      "sh",
-      "ai",
-      "ii",
-      "che",
-      "she",
-      "iin",
-      "qot",
-      "aii",
-      "hed",
-      "aiin"
-     ],
-     "inventory_recovery": 0.2609
-    },
-    "latin/abbrev4": {
-     "gap_bits": -0.1677,
-     "holdout_bits": 3.4678,
-     "native_bits": 3.3001,
-     "excluded_words": 0.7384,
-     "inventory": [
-      "o",
-      "s",
-      "a",
-      "he",
-      "in",
-      "qo",
-      "dy",
-      "ot",
-      "ai",
-      "ii",
-      "or",
-      "do",
-      "sh",
-      "che",
-      "heq",
-      "iin",
-      "qot",
-      "aii",
-      "she",
-      "hed",
-      "aiin",
       "ched",
-      "heqo"
+      "eqot"
      ],
-     "inventory_recovery": 0.4348
-    },
-    "italian/plain": {
-     "gap_bits": -0.6355,
-     "holdout_bits": 3.7628,
-     "native_bits": 3.1273,
-     "excluded_words": 0.5856,
-     "inventory": [
-      "o",
-      "s",
-      "a",
-      "he",
-      "sh",
-      "qo",
-      "dy",
-      "ot",
-      "ai",
-      "ii",
-      "or",
-      "do",
-      "in",
-      "al",
-      "rs",
-      "hed",
-      "che",
-      "qot",
-      "aii",
-      "she",
-      "heq",
-      "hea",
-      "eqot",
-      "aiin",
-      "ched"
-     ],
-     "inventory_recovery": 0.4783
+     "inventory_recovery": 0.5217
     },
     "italian/abjad": {
-     "gap_bits": -0.3675,
-     "holdout_bits": 3.2479,
+     "gap_bits": -0.3628,
+     "holdout_bits": 3.2431,
      "native_bits": 2.8804,
-     "excluded_words": 0.8888,
+     "excluded_words": 0.8727,
      "inventory": [
       "o",
       "s",
       "e",
-      "h",
       "a",
       "i",
       "he",
@@ -503,53 +515,54 @@
       "qot",
       "aii",
       "she",
+      "hed",
       "aiin"
      ],
      "inventory_recovery": 0.3478
     },
     "italian/abbrev4": {
-     "gap_bits": -0.5666,
-     "holdout_bits": 3.6954,
+     "gap_bits": -0.6843,
+     "holdout_bits": 3.8131,
      "native_bits": 3.1288,
-     "excluded_words": 0.6549,
+     "excluded_words": 0.5576,
      "inventory": [
+      "o",
       "s",
       "e",
       "a",
+      "t",
       "he",
+      "ch",
+      "in",
       "qo",
       "dy",
+      "ot",
       "ai",
       "ii",
       "or",
-      "do",
       "sh",
+      "do",
       "al",
-      "ch",
-      "qok",
       "che",
       "iin",
-      "hea",
       "qot",
       "aii",
       "she",
-      "heq",
       "hed",
-      "ched",
       "aiin",
       "heqo"
      ],
-     "inventory_recovery": 0.4348
+     "inventory_recovery": 0.4783
     },
     "best_lm": "latin/abjad",
-    "best_gap": 0.1146
+    "best_gap": 0.0975
    },
    "P1_latin_plain": {
     "latin/plain": {
-     "gap_bits": -0.4338,
-     "holdout_bits": 3.7418,
+     "gap_bits": -0.4621,
+     "holdout_bits": 3.7701,
      "native_bits": 3.3079,
-     "excluded_words": 0.7824,
+     "excluded_words": 0.7917,
      "inventory": [
       "e",
       "i",
@@ -562,25 +575,25 @@
       "um",
       "er",
       "nt",
-      "di",
-      "ll",
+      "tu",
       "re",
+      "co",
       "in",
       "is",
-      "bu",
       "at",
       "li",
       "us",
+      "que",
       "bus",
       "con",
       "ibus"
      ]
     },
     "latin/abbrev4": {
-     "gap_bits": -0.4262,
-     "holdout_bits": 3.7263,
+     "gap_bits": -0.3583,
+     "holdout_bits": 3.6584,
      "native_bits": 3.3001,
-     "excluded_words": 0.7901,
+     "excluded_words": 0.7886,
      "inventory": [
       "e",
       "i",
@@ -593,29 +606,29 @@
       "um",
       "er",
       "nt",
-      "co",
+      "ib",
       "re",
-      "on",
+      "tu",
       "in",
       "is",
-      "ll",
       "at",
       "li",
+      "ll",
       "us",
       "que",
-      "con",
-      "ibus"
+      "ibu",
+      "con"
      ]
     },
     "best_lm": "latin/abbrev4",
-    "best_gap": -0.4262
+    "best_gap": -0.3583
    },
    "N2_char_shuffle": {
     "latin/abjad": {
-     "gap_bits": -0.2539,
-     "holdout_bits": 3.3649,
+     "gap_bits": -0.3043,
+     "holdout_bits": 3.4152,
      "native_bits": 3.111,
-     "excluded_words": 0.8834,
+     "excluded_words": 0.8812,
      "inventory": [
       "o",
       "e",
@@ -628,19 +641,19 @@
       "ii",
       "ai",
       "ch",
-      "ma",
-      "mr",
-      "ia",
+      "qq",
       "pr",
-      "aii",
+      "ia",
+      "am",
+      "ain",
       "ina"
      ]
     },
     "latin/abbrev4": {
-     "gap_bits": -0.8821,
-     "holdout_bits": 4.1822,
+     "gap_bits": -0.8622,
+     "holdout_bits": 4.1623,
      "native_bits": 3.3001,
-     "excluded_words": 0.8346,
+     "excluded_words": 0.8349,
      "inventory": [
       "o",
       "e",
@@ -654,28 +667,28 @@
       "ii",
       "ai",
       "ch",
-      "ma",
       "ia",
       "am",
       "qq",
       "sp",
-      "eee",
       "eeq",
-      "ina",
-      "oni",
+      "eee",
+      "cch",
       "ain",
+      "iai",
+      "iin",
       "aii"
      ]
     },
     "best_lm": "latin/abjad",
-    "best_gap": -0.2539
+    "best_gap": -0.3043
    },
    "N3_grille": {
     "latin/abjad": {
-     "gap_bits": -0.1266,
-     "holdout_bits": 3.2376,
+     "gap_bits": -0.1231,
+     "holdout_bits": 3.2341,
      "native_bits": 3.111,
-     "excluded_words": 0.7718,
+     "excluded_words": 0.7972,
      "inventory": [
       "o",
       "e",
@@ -686,21 +699,21 @@
       "ey",
       "ch",
       "al",
-      "ar",
       "ee",
       "ol",
-      "pc",
+      "ho",
       "he",
+      "pc",
       "pch",
-      "iin",
-      "rar"
+      "rar",
+      "eoep"
      ]
     },
     "latin/plain": {
-     "gap_bits": -0.6391,
-     "holdout_bits": 3.9471,
+     "gap_bits": -0.6053,
+     "holdout_bits": 3.9132,
      "native_bits": 3.3079,
-     "excluded_words": 0.652,
+     "excluded_words": 0.6598,
      "inventory": [
       "o",
       "e",
@@ -718,24 +731,24 @@
       "dy",
       "ee",
       "ol",
-      "he",
+      "ho",
       "pc",
+      "hin",
       "eey",
       "pch",
       "oep",
-      "arar",
-      "eoep"
+      "iin"
      ]
     },
     "best_lm": "latin/abjad",
-    "best_gap": -0.1266
+    "best_gap": -0.1231
    },
    "N4_self_citation": {
     "latin/abjad": {
-     "gap_bits": 0.0821,
-     "holdout_bits": 3.0289,
+     "gap_bits": 0.1337,
+     "holdout_bits": 2.9773,
      "native_bits": 3.111,
-     "excluded_words": 0.8827,
+     "excluded_words": 0.8732,
      "inventory": [
       "o",
       "h",
@@ -751,16 +764,16 @@
       "ke",
       "eo",
       "dy",
-      "aii",
-      "cho",
-      "iin"
+      "ai",
+      "hol",
+      "cho"
      ]
     },
     "latin/plain": {
-     "gap_bits": -0.6574,
-     "holdout_bits": 3.9653,
+     "gap_bits": -0.46,
+     "holdout_bits": 3.7679,
      "native_bits": 3.3079,
-     "excluded_words": 0.7497,
+     "excluded_words": 0.7358,
      "inventory": [
       "o",
       "h",
@@ -770,32 +783,63 @@
       "l",
       "s",
       "ch",
+      "in",
       "ee",
       "ol",
-      "ho",
+      "ii",
       "ke",
       "eo",
-      "in",
+      "dy",
       "ai",
       "qo",
       "sh",
       "or",
-      "che",
+      "he",
       "iin",
       "cho",
-      "aii",
-      "ody"
+      "aii"
      ]
     },
     "best_lm": "latin/abjad",
-    "best_gap": 0.0821
+    "best_gap": 0.1337
    },
    "VMS_full": {
     "latin/abbrev4": {
-     "gap_bits": -0.246,
-     "holdout_bits": 3.5461,
+     "gap_bits": -0.2073,
+     "holdout_bits": 3.5073,
      "native_bits": 3.3001,
-     "excluded_words": 0.6147,
+     "excluded_words": 0.654,
+     "inventory": [
+      "o",
+      "e",
+      "y",
+      "a",
+      "d",
+      "ch",
+      "in",
+      "ee",
+      "he",
+      "dy",
+      "qo",
+      "ii",
+      "sh",
+      "ok",
+      "ol",
+      "ed",
+      "da",
+      "iin",
+      "aii",
+      "che",
+      "edy",
+      "qok",
+      "aiin"
+     ]
+    },
+    "latin/plain": {
+     "gap_bits": -0.3221,
+     "holdout_bits": 3.6301,
+     "native_bits": 3.3079,
+     "excluded_words": 0.6539,
      "inventory": [
       "o",
       "e",
@@ -822,46 +866,15 @@
       "aiin"
      ]
     },
-    "latin/plain": {
-     "gap_bits": -0.2294,
-     "holdout_bits": 3.5374,
-     "native_bits": 3.3079,
-     "excluded_words": 0.589,
-     "inventory": [
-      "o",
-      "e",
-      "y",
-      "a",
-      "d",
-      "ch",
-      "in",
-      "ke",
-      "he",
-      "dy",
-      "qo",
-      "ai",
-      "sh",
-      "ok",
-      "ol",
-      "ee",
-      "da",
-      "iin",
-      "aii",
-      "che",
-      "edy",
-      "qok",
-      "aiin"
-     ]
-    },
-    "best_lm": "latin/plain",
-    "best_gap": -0.2294
+    "best_lm": "latin/abbrev4",
+    "best_gap": -0.2073
    },
    "VMS_currier_A": {
     "latin/plain": {
-     "gap_bits": 0.0264,
-     "holdout_bits": 3.2815,
+     "gap_bits": -0.0193,
+     "holdout_bits": 3.3272,
      "native_bits": 3.3079,
-     "excluded_words": 0.7037,
+     "excluded_words": 0.7071,
      "inventory": [
       "o",
       "y",
@@ -870,6 +883,37 @@
       "ch",
       "in",
       "ai",
+      "ol",
+      "da",
+      "ii",
+      "ho",
+      "he",
+      "sh",
+      "qo",
+      "or",
+      "ey",
+      "ee",
+      "iin",
+      "aii",
+      "cho",
+      "dai",
+      "aiin",
+      "daii"
+     ]
+    },
+    "latin/abbrev4": {
+     "gap_bits": 0.304,
+     "holdout_bits": 2.9961,
+     "native_bits": 3.3001,
+     "excluded_words": 0.7071,
+     "inventory": [
+      "o",
+      "y",
+      "e",
+      "i",
+      "a",
+      "ch",
+      "in",
       "ol",
       "da",
       "ii",
@@ -879,55 +923,24 @@
       "qo",
       "or",
       "ee",
-      "ey",
       "iin",
+      "che",
       "aii",
       "cho",
       "dai",
-      "che",
-      "aiin"
-     ]
-    },
-    "latin/abbrev4": {
-     "gap_bits": 0.2083,
-     "holdout_bits": 3.0918,
-     "native_bits": 3.3001,
-     "excluded_words": 0.7037,
-     "inventory": [
-      "o",
-      "y",
-      "e",
-      "a",
-      "ch",
-      "in",
-      "ai",
-      "ol",
-      "da",
-      "ii",
-      "ho",
-      "he",
-      "sh",
-      "qo",
-      "or",
-      "ey",
-      "iin",
-      "aii",
-      "cho",
-      "dai",
-      "che",
       "aiin",
       "daii"
      ]
     },
     "best_lm": "latin/abbrev4",
-    "best_gap": 0.2083
+    "best_gap": 0.304
    },
    "VMS_currier_B": {
-    "latin/abbrev4": {
-     "gap_bits": 0.1093,
-     "holdout_bits": 3.1908,
-     "native_bits": 3.3001,
-     "excluded_words": 0.6832,
+    "latin/plain": {
+     "gap_bits": -0.078,
+     "holdout_bits": 3.3859,
+     "native_bits": 3.3079,
+     "excluded_words": 0.6389,
      "inventory": [
       "e",
       "o",
@@ -944,21 +957,21 @@
       "ok",
       "sh",
       "ii",
+      "ot",
       "edy",
       "che",
       "iin",
-      "hed",
       "qok",
+      "hed",
       "she",
-      "aiin",
-      "hedy"
+      "aiin"
      ]
     },
-    "latin/plain": {
-     "gap_bits": -0.161,
-     "holdout_bits": 3.4689,
-     "native_bits": 3.3079,
-     "excluded_words": 0.6404,
+    "latin/abbrev4": {
+     "gap_bits": 0.0907,
+     "holdout_bits": 3.2094,
+     "native_bits": 3.3001,
+     "excluded_words": 0.6746,
      "inventory": [
       "e",
       "o",
@@ -974,19 +987,19 @@
       "ed",
       "ok",
       "sh",
-      "ot",
       "edy",
       "che",
       "iin",
       "aii",
       "qok",
       "hed",
+      "she",
       "aiin",
       "hedy"
      ]
     },
     "best_lm": "latin/abbrev4",
-    "best_gap": 0.1093
+    "best_gap": 0.0907
    }
   }
  }
