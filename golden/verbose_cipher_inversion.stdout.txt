@@ -2,7 +2,7 @@
 VERBOSE CIPHER INVERSION — strict 1:1 ladder (folio-level holdout)
 ============================================================================
 seed=112 target_groups=24 restarts=12 holdout=0.2 (whole folios; controls: pseudo-folios of 24 lines)
-EM budget: outer=4 proposals=6 em_restarts=4 top_lms_rung2=2
+EM budget: outer=4 proposals=6 em_restarts=4 top_lms_rung2=2 objective=coverage-penalized (rung 3b)
   LM latin/plain    alphabet=24 native holdout=3.308 bits/sym
   LM latin/abjad    alphabet=18 native holdout=3.111 bits/sym
   LM latin/abbrev4  alphabet=24 native holdout=3.300 bits/sym
@@ -27,18 +27,18 @@ EM budget: outer=4 proposals=6 em_restarts=4 top_lms_rung2=2
     P4 mapping accuracy on latin/plain: 0%
     P4 best gap -0.773 vs noise floor -0.660 (best negative)
     RUNG 1 KILLED: blind segmentation cannot invert a known verbose cipher. Escalating to rung 2 (EM with LM feedback) per the pre-registered ladder.
-  RUNG2 P4_latin_verbose   best LM latin/abjad     holdout gap +0.098  [recovery 52%, mapping 48% on latin/plain]
-  RUNG2 P1_latin_plain     best LM latin/abbrev4   holdout gap -0.358
-  RUNG2 N2_char_shuffle    best LM latin/abjad     holdout gap -0.304
-  RUNG2 N3_grille          best LM latin/abjad     holdout gap -0.123
-  RUNG2 N4_self_citation   best LM latin/abjad     holdout gap +0.134
-  RUNG2 VMS_full           best LM latin/abbrev4   holdout gap -0.207
-  RUNG2 VMS_currier_A      best LM latin/abbrev4   holdout gap +0.304
-  RUNG2 VMS_currier_B      best LM latin/abbrev4   holdout gap +0.091
+  RUNG2 P4_latin_verbose   best LM latin/plain     holdout gap -0.886  [recovery 52%, mapping 48% on latin/plain]
+  RUNG2 P1_latin_plain     best LM latin/plain     holdout gap -1.181
+  RUNG2 N2_char_shuffle    best LM latin/abjad     holdout gap -0.997
+  RUNG2 N3_grille          best LM latin/abjad     holdout gap -0.914
+  RUNG2 N4_self_citation   best LM latin/abjad     holdout gap -0.962
+  RUNG2 VMS_full           best LM latin/abbrev4   holdout gap -1.012
+  RUNG2 VMS_currier_A      best LM latin/abbrev4   holdout gap -0.933
+  RUNG2 VMS_currier_B      best LM latin/abbrev4   holdout gap -0.940
 
   RUNG 2 ADJUDICATION (pre-registered):
     P4 inventory recovery: 52% (kill < 50%), mapping accuracy: 48%
-    P4 best gap +0.098 (latin/abjad) vs noise floor +0.134
+    P4 best gap -0.886 (latin/plain) vs noise floor -0.914
     RUNG 2 KILLED at this budget (see EM budget line above): EM cannot invert the known cipher clearly better than noise. VMS rows NOT interpretable; the pre-registered escalation policy (docstring ladder) is compute first, never model freedom.
 
   -> results/verbose_cipher_inversion.json

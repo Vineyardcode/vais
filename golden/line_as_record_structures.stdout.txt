@@ -1,0 +1,19 @@
+============================================================================
+LINE-AS-RECORD STRUCTURES (S7) — positional field information
+============================================================================
+seed=113 min_line=5 holdout=0.2 (whole folios; controls: 24-line blocks) alpha=0.5
+gates: P-REC interior >= 0.3, P1 interior <= 0.05, kill margin (VMS - N1) < 0.05
+  PREC_records     interior +0.7189 bits/token (  2350 tok)   edge +1.6007 (  3744 tok)
+  P1_latin_plain   interior -0.0033 bits/token (  3866 tok)   edge -0.0063 (  3840 tok)
+  N1_word_shuffle  interior -0.0083 bits/token (  4578 tok)   edge -0.0060 (  3168 tok)
+  N3_grille        interior -0.0042 bits/token (  3828 tok)   edge -0.0050 (  3840 tok)
+  VMS_full         interior +0.0246 bits/token (  4889 tok)   edge +0.3598 (  3244 tok)
+  VMS_currier_A    interior -0.0138 bits/token (  1070 tok)   edge +0.2869 (  1072 tok)
+  VMS_currier_B    interior +0.0685 bits/token (  3092 tok)   edge +0.4379 (  2084 tok)
+
+  ADJUDICATION (pre-registered):
+    gate: P-REC +0.7189 (need >= 0.3) and P1 -0.0033 (need <= 0.05) -> PASS
+    N1 artifact baseline: -0.0083; VMS margins over N1: VMS_full +0.0329, VMS_currier_A -0.0055, VMS_currier_B +0.0768
+    KILL: VMS_full margin +0.0329 < 0.05 — interior positional structure is a line-length artifact at this instrument.
+
+  -> results/line_as_record_structures.json

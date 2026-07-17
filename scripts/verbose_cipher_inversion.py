@@ -73,6 +73,29 @@ positional variants remain excluded):
     (~native, sane) and the rung-3 noise floor is visibly high (N2
     char-shuffle +0.384) — the pre-registered margin criterion exists
     for exactly this.
+    RUNG 3 OUTCOME (2026-07-17, completed run, 1.76 h): KILLED on BOTH
+    criteria — P4 recovery 39% (< 50%) and P4 gap +0.856 vs noise floor
+    +1.007 (N3 grille), margin -0.150. Autopsy: the per-symbol objective
+    and metric are exploitable by coverage shrinkage — the best-scoring
+    rows excluded 65-99.6% of holdout words, so table gibberish outscored
+    the KNOWN cipher. An instrument kill, not a hypothesis kill.
+  RUNG 3b — coverage-penalized objective (registered 2026-07-17, after
+    rung 3's kill and BEFORE any rung-3b run; approved direction: "fix
+    the inverter's objective and rerun it — tonight's kill was an
+    instrument kill, not a hypothesis kill"). Change, rung-2 machinery
+    only (rung 1 stays untouched as the historical reference rung):
+    every unparseable word is charged the LM floor for len(word)+1
+    transitions in BOTH the EM acceptance objective AND the reported
+    holdout bits/sym (pen_ll), so exclusion can never raise a score;
+    at full coverage the metric is identical to the old one. Kill
+    criteria and thresholds UNCHANGED: P4 recovery >= 50% AND P4 gap
+    beats the same-rung noise floor by >= 0.1 bits/sym, with the floor
+    measured under the same penalized metric. Overnight profile
+    unchanged (EM_OUTER=32, EM_PROPOSALS=48, EM_RESTARTS=16,
+    RESTARTS=64, TOP_LMS_RUNG2=3), run as queue item N1b by
+    tools/overnight.py. Prototype-budget rung-2 outputs change by
+    design; goldens re-captured at this registration (rung-1 output
+    verified unchanged).
     Kill criteria unchanged: P4 planted-inventory recovery >= 50% AND
     P4's holdout gap beats the same-rung noise floor (best of N2/N3/N4)
     by >= 0.1 bits/sym; otherwise no VMS row is interpreted. Homophones
@@ -362,6 +385,25 @@ def ll_of(C, assign, logp, floor):
     return s / n
 
 
+def pen_ll(C, assign, logp, floor, n_pen):
+    """Rung-3b objective/metric: ll_of plus a floor-cost charge for
+    every unparseable word (n_pen = total of len(word)+1 over them, the
+    transition count a single-glyph parse would have produced). Since
+    floor is the global minimum logp, shrinking coverage can never raise
+    this score; at full coverage (n_pen=0) it equals ll_of exactly."""
+    s = n = 0
+    for (a, b), c in C.items():
+        pa = assign.get(a, ' ') if a != ' ' else ' '
+        pb = assign.get(b, ' ') if b != ' ' else ' '
+        s += c * logp.get((pa, pb), floor)
+        n += c
+    s += n_pen * floor
+    n += n_pen
+    if n == 0:
+        return -1e9
+    return s / n
+
+
 def hill_climb(C, types, letters, logp, floor, rng):
     """Greedy pair-swap ascent with delta evaluation: a swap of the
     letters assigned to t1,t2 only changes C-entries touching t1 or t2."""
@@ -490,7 +532,7 @@ def em_invert(lines, idx, cut, lm, seed):
         for v in gbf.values():
             v.sort(key=len, reverse=True)
         C = Counter()
-        excl = tot = 0
+        excl = tot = pen = 0
         for line in ws_lines:
             prev = ' '
             for w in line:
@@ -498,6 +540,7 @@ def em_invert(lines, idx, cut, lm, seed):
                 r = viterbi_segment(w, gbf, assign_, logp, floor, prev)
                 if r is None:
                     excl += 1
+                    pen += len(w) + 1   # rung 3b: floor-charged transitions
                     prev = ' '
                     continue
                 for g in r[1]:
@@ -505,7 +548,7 @@ def em_invert(lines, idx, cut, lm, seed):
                     prev = g
                 C[(prev, ' ')] += 1
                 prev = ' '
-        return C, excl / max(tot, 1)
+        return C, excl / max(tot, 1), pen
 
     global RESTARTS
     saved_restarts = RESTARTS
@@ -515,8 +558,12 @@ def em_invert(lines, idx, cut, lm, seed):
         best_ll = -1e18
         degenerate = False
         for it in range(EM_OUTER):
-            C_tr, _ = segment_all(train_lines, S, assign)
-            assign, ll = hill_climb(C_tr, S, letters, logp, floor, rng)
+            C_tr, _, U_tr = segment_all(train_lines, S, assign)
+            # hill_climb ranks assignments by unpenalized ll — valid, the
+            # penalty is constant w.r.t. the assignment; acceptance below
+            # compares SEGMENTATIONS, so it must use the penalized form
+            assign, _ = hill_climb(C_tr, S, letters, logp, floor, rng)
+            ll = pen_ll(C_tr, assign, logp, floor, U_tr)
             # inventory proposals: swap lowest-usage member for best outsider
             usage = Counter()
             for (a, b), c in C_tr.items():
@@ -543,24 +590,24 @@ def em_invert(lines, idx, cut, lm, seed):
                 S2 = [u if g == worst else g for g in S]
                 assign2 = dict(assign)
                 assign2[u] = assign2.pop(worst)
-                C2, _ = segment_all(train_lines, S2, assign2)
-                assign2, ll2 = hill_climb(C2, S2, letters, logp, floor, rng)
+                C2, _, U2 = segment_all(train_lines, S2, assign2)
+                assign2, _ = hill_climb(C2, S2, letters, logp, floor, rng)
+                ll2 = pen_ll(C2, assign2, logp, floor, U2)
                 if ll2 > ll + 1e-9:
                     S, assign, ll, C_tr = S2, assign2, ll2, C2
             if ll <= best_ll + 1e-9:
                 break
             best_ll = ll
-        C_ho, excl_ho = segment_all(hold_lines, S, assign)
-        if degenerate or not C_ho:
-            # no scoreable holdout content: report an explicit degenerate
-            # row (sentinel gap far below any real value) instead of
-            # letting an empty table score as a perfect decode
+        C_ho, excl_ho, U_ho = segment_all(hold_lines, S, assign)
+        if degenerate or (not C_ho and not U_ho):
+            # no scoreable holdout content at all: report an explicit
+            # degenerate row (sentinel gap far below any real value)
             return {'gap_bits': -999.0, 'holdout_bits': None,
                     'native_bits': round(native, 4),
                     'excluded_words': round(excl_ho, 4),
                     'degenerate': True,
                     'inventory': sorted(S, key=len)}, assign
-        ho_ll = ll_of(C_ho, assign, logp, floor)
+        ho_ll = pen_ll(C_ho, assign, logp, floor, U_ho)
         return {'gap_bits': round(native - (-ho_ll), 4),
                 'holdout_bits': round(-ho_ll, 4),
                 'native_bits': round(native, 4),
@@ -636,7 +683,8 @@ def main():
           f'holdout={HOLDOUT_FRAC} (whole folios; controls: pseudo-folios '
           f'of {PSEUDO_FOLIO_LINES} lines)')
     print(f'EM budget: outer={EM_OUTER} proposals={EM_PROPOSALS} '
-          f'em_restarts={EM_RESTARTS} top_lms_rung2={TOP_LMS_RUNG2}')
+          f'em_restarts={EM_RESTARTS} top_lms_rung2={TOP_LMS_RUNG2} '
+          f'objective=coverage-penalized (rung 3b)')
 
     # language models
     lms = {}
@@ -817,7 +865,8 @@ def main():
                               'top_lms_rung2': TOP_LMS_RUNG2,
                               'holdout_frac': HOLDOUT_FRAC,
                               'holdout_unit': 'folio',
-                              'pseudo_folio_lines': PSEUDO_FOLIO_LINES},
+                              'pseudo_folio_lines': PSEUDO_FOLIO_LINES,
+                              'objective': 'coverage_penalized'},
                    'rung1': {'noise_floor': neg_best, 'results': results},
                    'rung2': {'noise_floor': neg2, 'results': results2}},
                   fh, indent=1)

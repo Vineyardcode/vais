@@ -1,0 +1,121 @@
+{
+ "params": {
+  "seed": 113,
+  "min_line_words": 5,
+  "holdout_frac": 0.2,
+  "holdout_unit": "folio",
+  "pseudo_folio_lines": 24,
+  "alpha": 0.5,
+  "gate_prec_min": 0.3,
+  "gate_p1_max": 0.05,
+  "kill_margin": 0.05
+ },
+ "results": {
+  "PREC_records": {
+   "n_lines": 4600,
+   "n_train_lines": 3664,
+   "n_hold_lines": 936,
+   "interior_gain": 0.7189,
+   "interior_tokens": 2350,
+   "edge_gain": 1.6007,
+   "edge_tokens": 3744,
+   "per_feature_interior": {
+    "len": -0.0014,
+    "first": 0.7064,
+    "last": 0.0032,
+    "gallows": 0.0107
+   }
+  },
+  "P1_latin_plain": {
+   "n_lines": 4755,
+   "n_train_lines": 3795,
+   "n_hold_lines": 960,
+   "interior_gain": -0.0033,
+   "interior_tokens": 3866,
+   "edge_gain": -0.0063,
+   "edge_tokens": 3840,
+   "per_feature_interior": {
+    "len": -0.0001,
+    "first": -0.0012,
+    "last": -0.0017,
+    "gallows": -0.0003
+   }
+  },
+  "N1_word_shuffle": {
+   "n_lines": 3956,
+   "n_train_lines": 3164,
+   "n_hold_lines": 792,
+   "interior_gain": -0.0083,
+   "interior_tokens": 4578,
+   "edge_gain": -0.006,
+   "edge_tokens": 3168,
+   "per_feature_interior": {
+    "len": -0.0011,
+    "first": -0.002,
+    "last": -0.0049,
+    "gallows": -0.0003
+   }
+  },
+  "N3_grille": {
+   "n_lines": 4734,
+   "n_train_lines": 3774,
+   "n_hold_lines": 960,
+   "interior_gain": -0.0042,
+   "interior_tokens": 3828,
+   "edge_gain": -0.005,
+   "edge_tokens": 3840,
+   "per_feature_interior": {
+    "len": -0.0005,
+    "first": -0.0015,
+    "last": -0.0018,
+    "gallows": -0.0004
+   }
+  },
+  "VMS_full": {
+   "n_lines": 3956,
+   "n_train_lines": 3145,
+   "n_hold_lines": 811,
+   "interior_gain": 0.0246,
+   "interior_tokens": 4889,
+   "edge_gain": 0.3598,
+   "edge_tokens": 3244,
+   "per_feature_interior": {
+    "len": 0.0017,
+    "first": 0.0124,
+    "last": 0.0104,
+    "gallows": 0.0002
+   }
+  },
+  "VMS_currier_A": {
+   "n_lines": 1310,
+   "n_train_lines": 1042,
+   "n_hold_lines": 268,
+   "interior_gain": -0.0138,
+   "interior_tokens": 1070,
+   "edge_gain": 0.2869,
+   "edge_tokens": 1072,
+   "per_feature_interior": {
+    "len": 0.0039,
+    "first": -0.0103,
+    "last": -0.007,
+    "gallows": -0.0005
+   }
+  },
+  "VMS_currier_B": {
+   "n_lines": 2522,
+   "n_train_lines": 2001,
+   "n_hold_lines": 521,
+   "interior_gain": 0.0685,
+   "interior_tokens": 3092,
+   "edge_gain": 0.4379,
+   "edge_tokens": 2084,
+   "per_feature_interior": {
+    "len": 0.003,
+    "first": 0.0378,
+    "last": 0.022,
+    "gallows": 0.0057
+   }
+  }
+ },
+ "verdict": "killed_line_length_artifact"
+}

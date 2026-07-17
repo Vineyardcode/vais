@@ -1179,10 +1179,19 @@
  "verbose_cipher_inversion": {
   "status": "ok",
   "returncode": 0,
-  "duration_s": 88.37,
-  "stdout_bytes": 3352,
+  "duration_s": 130.18,
+  "stdout_bytes": 3391,
   "results_files_touched": [
    "verbose_cipher_inversion.json"
+  ]
+ },
+ "line_as_record_structures": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 1.82,
+  "stdout_bytes": 1408,
+  "results_files_touched": [
+   "line_as_record_structures.json"
   ]
  }
 }

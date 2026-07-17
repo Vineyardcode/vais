@@ -37,20 +37,26 @@ CONTRACT
   merging is a human decision). A kill is a valid result and is logged
   in RESEARCH.md with equal prominence.
 
-QUEUE
-  N1  Max-strength verbose cipher inversion (rung 3): folio-level
-      holdout + the pre-registered budget EM_OUTER=32, EM_PROPOSALS=48,
-      EM_RESTARTS=16, RESTARTS=64, TOP_LMS_RUNG2=3, spliced over the
-      prototype defaults of scripts/verbose_cipher_inversion.py (see its
-      docstring ladder for the registration history).
+QUEUE (order = run order; N3 promoted ahead of N2 by direction
+2026-07-17: "put the line-as-record test next in the queue")
+  N1  [SUPERSEDED, completed 2026-07-17: INSTRUMENT KILLED] rung-3
+      max-strength verbose cipher inversion. The script now carries the
+      rung-3b objective, so N1 as registered can no longer be re-run;
+      use N1b.
+  N1b Rung 3b: same instrument with the coverage-penalized objective
+      (registered in the script docstring after rung 3's
+      exclusion-exploit autopsy, before any 3b run). Same budget:
+      EM_OUTER=32, EM_PROPOSALS=48, EM_RESTARTS=16, RESTARTS=64,
+      TOP_LMS_RUNG2=3. Same kill criteria.
+  N3  Line-as-record structures (portfolio S7),
+      scripts/line_as_record_structures.py: interior positional-field
+      information vs the N1 word-shuffle artifact baseline; instrument
+      gate on the P-REC synthetic-records positive control. Gates
+      pre-registered in the script docstring.
   N2  Cross-transliteration invariance (portfolio S9) — NOT READY:
       needs external transliteration files (Currier, v101, GC) plus
       scripts/cross_transliteration_invariance.py with pre-registered
       criteria in its docstring and an adjudicator registered here.
-  N3  Line-as-record structures (portfolio S7) — NOT READY: needs
-      scripts/line_as_record_structures.py (pre-registered kill per
-      RESEARCH.md S7: field structure matched by the N1 word-shuffle
-      control = line-length artifact) and an adjudicator here.
 
 Adding an item = write the experiment script (controls first, kill
 criteria in the docstring), then fill in the queue entry's 'stem',
@@ -297,6 +303,10 @@ def adjudicate_n1(item, expected_params, run_started):
     if params.get('holdout_unit') != 'folio':
         raise AdjudicationError('results JSON is not from the folio-holdout '
                                 'instrument (rung 3)')
+    if item.get('objective') and params.get('objective') != item['objective']:
+        raise AdjudicationError(
+            f'results JSON objective={params.get("objective")!r}, item '
+            f'requires {item["objective"]!r} — code/queue mismatch')
 
     r1, r2 = data['rung1'], data['rung2']
     p4 = r2['results']['P4_latin_verbose']
@@ -404,6 +414,103 @@ def adjudicate_n1(item, expected_params, run_started):
 
 
 # ────────────────────────────────────────────────────────────────────
+# N3 adjudication — pre-registered, mechanical, JSON-only
+# ────────────────────────────────────────────────────────────────────
+def adjudicate_n3(item, expected_params, run_started):
+    """Pre-registered gates (line_as_record_structures.py docstring):
+    instrument gate = P-REC interior gain >= gate_prec_min AND P1
+    interior gain <= gate_p1_max; kill if VMS_full - N1 < kill_margin;
+    positive (quarantined SUGGESTIVE) only if all three VMS rows beat
+    N1 by >= kill_margin (F8 concordance); otherwise discordant = no
+    claim. The runner re-derives the verdict and refuses to proceed if
+    it disagrees with the script's own."""
+    jpath = RESULTS / item['result_json']
+    if not jpath.exists():
+        raise AdjudicationError(f'{jpath.name} was not written by the run')
+    if jpath.stat().st_mtime < run_started:
+        raise AdjudicationError(f'{jpath.name} predates this run — stale')
+    data = json.loads(jpath.read_text(encoding='utf-8'))
+    p, r = data['params'], data['results']
+    prec = r['PREC_records']['interior_gain']
+    p1 = r['P1_latin_plain']['interior_gain']
+    n1 = r['N1_word_shuffle']['interior_gain']
+    gate_ok = prec >= p['gate_prec_min'] and p1 <= p['gate_p1_max']
+    vms_rows = ('VMS_full', 'VMS_currier_A', 'VMS_currier_B')
+    margins = {v: round(r[v]['interior_gain'] - n1, 4) for v in vms_rows}
+    if not gate_ok:
+        key = 'instrument_gate_failed'
+    elif margins['VMS_full'] < p['kill_margin']:
+        key = 'killed_line_length_artifact'
+    elif all(m >= p['kill_margin'] for m in margins.values()):
+        key = 'consistent_with_records'
+    else:
+        key = 'discordant_hands'
+    if data.get('verdict') != key:
+        raise AdjudicationError(f'runner derives {key!r} but the script '
+                                f'recorded {data.get("verdict")!r}')
+    suggestive = key == 'consistent_with_records'
+
+    md = []
+    md.append('**Pre-registered gates** (line_as_record_structures.py '
+              f'docstring): instrument gate P-REC >= {p["gate_prec_min"]} '
+              f'and P1 <= {p["gate_p1_max"]} interior bits/token; kill if '
+              f'VMS_full − N1 < {p["kill_margin"]}; positive only if all '
+              'three VMS rows clear the margin (F8 concordance). Headline '
+              'is INTERIOR gain — the line edges are the already-'
+              'established anomaly.')
+    md.append('')
+    md.append('| corpus | interior gain (bits/token) | edge gain | '
+              'margin over N1 |')
+    md.append('|---|---|---|---|')
+    for cname, row in r.items():
+        marg = (f'{row["interior_gain"] - n1:+.4f}'
+                if cname in vms_rows else '—')
+        md.append(f'| {cname} | {row["interior_gain"]:+.4f} | '
+                  f'{row["edge_gain"]:+.4f} | {marg} |')
+    md.append('')
+    md.append(f'Instrument gate: P-REC {prec:+.4f}, P1 {p1:+.4f} → '
+              f'{"PASS" if gate_ok else "**FAIL**"}.')
+    verdict_text = {
+        'instrument_gate_failed':
+            'INSTRUMENT GATE FAILED — no VMS interpretation.',
+        'killed_line_length_artifact':
+            'KILLED (pre-registered): VMS_full interior margin '
+            f'{margins["VMS_full"]:+.4f} < {p["kill_margin"]} — interior '
+            'positional structure is not distinguishable from a '
+            'line-length artifact at this instrument. The moat stays at '
+            'the line EDGES.',
+        'consistent_with_records':
+            'POSITIVE (quarantined SUGGESTIVE): all three VMS rows beat '
+            'the N1 artifact baseline — consistent with line-level field '
+            'structure. NOT a decode; no field is named or read.',
+        'discordant_hands':
+            'DISCORDANT HANDS — VMS_full clears the margin but Currier '
+            'A/B disagree; no claim (discordance is data, F8).',
+    }[key]
+    md.append('')
+    md.append(f'**VERDICT: {verdict_text}**')
+    if key == 'killed_line_length_artifact' and margins.get(
+            'VMS_currier_B', 0) >= p['kill_margin'] > margins.get(
+            'VMS_currier_A', 0):
+        md.append('')
+        md.append('Observation for the record (NO claim, not adjudicated '
+                  f'here): Currier B alone clears the margin '
+                  f'({margins["VMS_currier_B"]:+.4f}) while A shows none '
+                  f'({margins["VMS_currier_A"]:+.4f}) — consistent with '
+                  'the "B is the more systematized register" thread. A '
+                  'per-hand adjudication would need its own '
+                  'pre-registration in a future rung.')
+    verdict = ('INSTRUMENT KILLED (S7 v1)' if key in
+               ('instrument_gate_failed', 'killed_line_length_artifact')
+               else 'S7 v1: ' + key.upper())
+    summary = (f'{key}; P-REC {prec:+.3f}, VMS_full margin '
+               f'{margins["VMS_full"]:+.4f} (need >= {p["kill_margin"]})')
+    return {'verdict': verdict, 'suggestive': suggestive,
+            'md': '\n'.join(md), 'summary': summary,
+            'params': p, 'json_name': jpath.name}
+
+
+# ────────────────────────────────────────────────────────────────────
 # queue
 # ────────────────────────────────────────────────────────────────────
 N1_PROFILE = {'EM_OUTER': 32, 'EM_PROPOSALS': 48, 'EM_RESTARTS': 16,
@@ -414,8 +521,18 @@ N1_SMOKE = {'EM_OUTER': 1, 'EM_PROPOSALS': 1, 'EM_RESTARTS': 1,
 QUEUE = [
     {
         'id': 'N1',
-        'title': 'Max-strength verbose cipher inversion (rung 3: '
-                 'folio-level holdout, pre-registered budget)',
+        'title': 'Max-strength verbose cipher inversion (rung 3) '
+                 '[SUPERSEDED by N1b]',
+        'stem': 'verbose_cipher_inversion',
+        'not_ready': 'completed 2026-07-17 (INSTRUMENT KILLED) and '
+                     'superseded: the script now carries the rung-3b '
+                     'coverage-penalized objective, so the rung-3 '
+                     'configuration no longer exists to re-run. Use N1b.',
+    },
+    {
+        'id': 'N1b',
+        'title': 'Verbose cipher inversion, rung 3b: coverage-penalized '
+                 'objective, max-strength budget',
         'stem': 'verbose_cipher_inversion',
         'overrides': N1_PROFILE,
         'smoke_overrides': N1_SMOKE,
@@ -423,6 +540,24 @@ QUEUE = [
         'smoke_timeout_s': 1800,
         'result_json': 'verbose_cipher_inversion.json',
         'adjudicate': adjudicate_n1,
+        'objective': 'coverage_penalized',
+        'research_heading': 'Phase 4d — Verbose cipher inversion, rung 3b: '
+                            'coverage-penalized objective',
+        'not_ready': None,
+    },
+    {
+        'id': 'N3',
+        'title': 'Line-as-record structures (portfolio S7): interior '
+                 'positional-field information',
+        'stem': 'line_as_record_structures',
+        'overrides': {},
+        'smoke_overrides': {},
+        'timeout_s': 1800,
+        'smoke_timeout_s': 900,
+        'result_json': 'line_as_record_structures.json',
+        'adjudicate': adjudicate_n3,
+        'research_heading': 'Portfolio S7 — line-as-record structures, '
+                            'first instrumented run',
         'not_ready': None,
     },
     {
@@ -434,15 +569,6 @@ QUEUE = [
                      'scripts/cross_transliteration_invariance.py with '
                      'pre-registered criteria + an adjudicator in this file',
     },
-    {
-        'id': 'N3',
-        'title': 'Line-as-record structures (portfolio S7)',
-        'stem': 'line_as_record_structures',
-        'not_ready': 'needs scripts/line_as_record_structures.py (kill '
-                     'criterion per RESEARCH.md S7: field structure matched '
-                     'by the N1 word-shuffle control = line-length artifact) '
-                     '+ an adjudicator in this file',
-    },
 ]
 
 
@@ -453,9 +579,16 @@ def pick_item(state, wanted):
                 return it
         raise NotReady(f'unknown queue item {wanted!r} — queue is '
                        f'{[q["id"] for q in QUEUE]}')
+    blocked = []
     for it in QUEUE:
-        if state.get(it['id'], {}).get('status') != 'completed':
-            return it
+        if state.get(it['id'], {}).get('status') == 'completed':
+            continue
+        if it.get('not_ready'):
+            blocked.append(f'{it["id"]}: {it["not_ready"]}')
+            continue
+        return it
+    if blocked:
+        raise NotReady('every open item is blocked — ' + ' | '.join(blocked))
     return None
 
 
@@ -578,9 +711,9 @@ def main():
         section.append(adj['md'])
 
         research_section = None
-        if item['id'] == 'N1':
-            research_section = build_n1_research_section(
-                date, adj, overrides, dur, branch, smoke)
+        if item.get('research_heading'):
+            research_section = build_research_section(
+                item, date, adj, overrides, dur, branch, smoke)
             if smoke:
                 section.append('')
                 section.append('---')
@@ -622,19 +755,18 @@ def main():
         finalize(1)
 
 
-def build_n1_research_section(date, adj, overrides, dur, branch, smoke):
+def build_research_section(item, date, adj, overrides, dur, branch, smoke):
     killed = adj['verdict'].startswith('INSTRUMENT KILLED')
-    head = ('### Phase 4c — Verbose cipher inversion, rung 3: max strength '
-            f'+ folio-level holdout ({date})')
+    head = f'### {item["research_heading"]} ({date})'
     tag = ('[AUTOMATED — written by tools/overnight.py'
            + (', smoke rehearsal' if smoke else '')
            + f'; run committed to branch {branch}; awaiting human review '
              'before promotion to any evidence tier.]')
     body = [head, '', tag, '',
-            f'Budget (pre-registered in the script docstring): {overrides}. '
+            f'Configuration (pre-registered in the script docstring): '
+            f'{overrides if overrides else "script defaults"}. '
             f'Runtime {dur/3600:.2f} h at PYTHONHASHSEED=0. Holdout: whole '
-            'folios (VMS) / 24-line pseudo-folios (controls), closing the '
-            'rung-2 Currier-A memorization leak.', '']
+            'folios (VMS) / 24-line pseudo-folio blocks (controls).', '']
     if adj['suggestive']:
         body.append('**SUGGESTIVE — awaiting human review (quarantined; '
                     'never merged automatically):**')
