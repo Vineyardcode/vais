@@ -1202,5 +1202,14 @@
   "results_files_touched": [
    "line_as_record_per_hand.json"
   ]
+ },
+ "line_as_record_ordinal": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 74.94,
+  "stdout_bytes": 1409,
+  "results_files_touched": [
+   "line_as_record_ordinal.json"
+  ]
  }
 }

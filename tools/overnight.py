@@ -58,6 +58,11 @@ QUEUE (order = run order; N3 promoted ahead of N2 by direction
       made strictly harder (per-hand null batteries, 10-split medians,
       empirical p vs 20 nulls + 0.05 effect floor). Full provenance
       disclosure in the script docstring.
+  N3c Line-as-record RUNG 3 (composition vs ordinal),
+      scripts/line_as_record_ordinal.py: Phase-7-informed separation of
+      the B signal into composition / length-ordinal / glyph-ordinal
+      readings (folio-nulls, line-nulls, glyph-only test, P-JUST
+      justification reference, per-folio read-outs).
   N2  Cross-transliteration invariance (portfolio S9) — NOT READY:
       needs external transliteration files (Currier, v101, GC) plus
       scripts/cross_transliteration_invariance.py with pre-registered
@@ -619,6 +624,133 @@ def adjudicate_n3b(item, expected_params, run_started):
 
 
 # ────────────────────────────────────────────────────────────────────
+# N3c adjudication — pre-registered, mechanical, JSON-only
+# ────────────────────────────────────────────────────────────────────
+def adjudicate_n3c(item, expected_params, run_started):
+    """Pre-registered ladder (line_as_record_ordinal.py docstring),
+    Currier B only (A observational): T1 total vs folio-nulls, T2 total
+    vs line-nulls (floor effect_floor), T3 glyph component vs
+    line-nulls (floor glyph_floor); each = beats ALL nulls AND margin
+    over the null median >= floor. Outcome keys per the docstring. The
+    runner re-derives every test from the stored null arrays and
+    refuses on any mismatch with the script's record."""
+    import statistics as _st
+    jpath = RESULTS / item['result_json']
+    if not jpath.exists():
+        raise AdjudicationError(f'{jpath.name} was not written by the run')
+    if jpath.stat().st_mtime < run_started:
+        raise AdjudicationError(f'{jpath.name} predates this run — stale')
+    data = json.loads(jpath.read_text(encoding='utf-8'))
+    p, r = data['params'], data['results']
+    gate_ok = (r['PREC_records']['total'] >= p['gate_prec_min']
+               and r['P1_latin_plain']['total'] <= p['gate_p1_max'])
+
+    def rederive(row, nulls_key, component, floor):
+        vals = row[nulls_key][component]
+        real = row['real'][component]
+        return (real > max(vals)
+                and real - _st.median(vals) >= floor)
+
+    b = r['VMS_currier_B']
+    t1 = rederive(b, 'folio_nulls', 'total', p['effect_floor'])
+    t2 = rederive(b, 'line_nulls', 'total', p['effect_floor'])
+    t3 = rederive(b, 'line_nulls', 'glyph', p['glyph_floor'])
+    for name, mine, stored in (('t1', t1, b['t1_composition']['pass']),
+                               ('t2', t2, b['t2_ordinal']['pass']),
+                               ('t3', t3, b['t3_glyph']['pass'])):
+        if mine != stored:
+            raise AdjudicationError(f'{name}: runner derives {mine}, '
+                                    f'script recorded {stored}')
+    if not gate_ok:
+        key = 'gate_failed'
+    elif not t1 and not t2:
+        key = 'compositional_artifact'
+    elif not t1 and t2:
+        key = 'inconsistent_nulls'
+    elif t1 and not t2:
+        key = 'line_composition_not_order'
+    elif not t3:
+        key = 'length_ordering_only'
+    else:
+        key = 'ordinal_glyph_structure'
+    if data.get('verdict') != key:
+        raise AdjudicationError(f'runner derives {key!r} but the script '
+                                f'recorded {data.get("verdict")!r}')
+    suggestive = key in ('ordinal_glyph_structure',
+                         'line_composition_not_order')
+
+    md = []
+    md.append('**Pre-registered ladder** (line_as_record_ordinal.py '
+              'docstring; Currier B adjudicated, A observational): T1 '
+              'composition (folio-nulls), T2 ordinal (line-nulls), T3 '
+              'glyph-only (line-nulls); each = beat ALL '
+              f'{p["n_nulls"]} nulls AND clear the floor '
+              f'({p["effect_floor"]} total / {p["glyph_floor"]} glyph). '
+              'P-JUST (width-broken Latin) is the justification '
+              'reference, not a gate.')
+    md.append('')
+    md.append('| corpus | total (bits/token) | glyph | len |')
+    md.append('|---|---|---|---|')
+    for cname in ('PREC_records', 'P1_latin_plain', 'PJUST_justified'):
+        row = r[cname]
+        md.append(f'| {cname} | {row["total"]:+.4f} | {row["glyph"]:+.4f} '
+                  f'| {row["len"]:+.4f} |')
+    for hand in ('A', 'B'):
+        row = r[f'VMS_currier_{hand}']['real']
+        md.append(f'| VMS_currier_{hand} | {row["total"]:+.4f} | '
+                  f'{row["glyph"]:+.4f} | {row["len"]:+.4f} |')
+    md.append('')
+    md.append('| B test | margin | null max | verdict |')
+    md.append('|---|---|---|---|')
+    for tname, t in (('T1 composition', b['t1_composition']),
+                     ('T2 ordinal', b['t2_ordinal']),
+                     ('T3 glyph-only', b['t3_glyph'])):
+        md.append(f'| {tname} | {t["margin"]:+.4f} | {t["null_max"]:+.4f} '
+                  f'| {"**PASS**" if t["pass"] else "fail"} |')
+    verdict_text = {
+        'gate_failed': 'INSTRUMENT GATE FAILED — no interpretation.',
+        'compositional_artifact':
+            'KILLED: the rung-2 signal was composition, not order.',
+        'inconsistent_nulls':
+            'INCONSISTENT NULLS — no claim; instrument investigation '
+            'required.',
+        'line_composition_not_order':
+            'LINE COMPOSITION, NOT ORDER — word-to-line assignment '
+            'non-random, intra-line order adds nothing (read against '
+            'P-JUST). SUGGESTIVE (weak), quarantined.',
+        'length_ordering_only':
+            'LENGTH ORDERING ONLY — consistent with scribal space '
+            'management (LAAFU/Stolfi); the field reading is killed.',
+        'ordinal_glyph_structure':
+            'ORDINAL GLYPH STRUCTURE — Currier B\'s intra-line word '
+            'order carries glyph-identity signal beyond composition and '
+            'beyond length-based space management: consistent with '
+            'field-like vocabulary ordering. SUGGESTIVE, quarantined, '
+            'NOT a decode; no field is named or read.',
+    }[key]
+    md.append('')
+    md.append(f'**VERDICT: {verdict_text}**')
+    a = r['VMS_currier_A']
+    md.append('')
+    md.append(f'Observation (A, not adjudicated): total '
+              f'{a["real"]["total"]:+.4f} (glyph {a["real"]["glyph"]:+.4f}) '
+              '— same glyph-dominated shape at ~1/5 the strength, above '
+              'all its nulls but under the floors: the hand gradient '
+              'persists at rung 3.')
+    verdict = ('S7 rung 3: ' + key.upper()) if suggestive else (
+        'INSTRUMENT GATE FAILED (S7 rung 3)' if key == 'gate_failed'
+        else f'S7 rung 3: {key.upper()}')
+    summary = (f'{key}; B t1 {b["t1_composition"]["margin"]:+.4f} '
+               f't2 {b["t2_ordinal"]["margin"]:+.4f} '
+               f't3 {b["t3_glyph"]["margin"]:+.4f}; '
+               f'P-JUST ref {r["PJUST_justified"]["total"]:+.4f} '
+               '(len-dominated)')
+    return {'verdict': verdict, 'suggestive': suggestive,
+            'md': '\n'.join(md), 'summary': summary,
+            'params': p, 'json_name': jpath.name}
+
+
+# ────────────────────────────────────────────────────────────────────
 # queue
 # ────────────────────────────────────────────────────────────────────
 N1_PROFILE = {'EM_OUTER': 32, 'EM_PROPOSALS': 48, 'EM_RESTARTS': 16,
@@ -681,6 +813,21 @@ QUEUE = [
         'adjudicate': adjudicate_n3b,
         'research_heading': 'Portfolio S7, rung 2 — per-hand '
                             'line-as-record adjudication',
+        'not_ready': None,
+    },
+    {
+        'id': 'N3c',
+        'title': 'Line-as-record rung 3 (portfolio S7): composition vs '
+                 'ordinal structure in Currier B',
+        'stem': 'line_as_record_ordinal',
+        'overrides': {},
+        'smoke_overrides': {},
+        'timeout_s': 3600,
+        'smoke_timeout_s': 1800,
+        'result_json': 'line_as_record_ordinal.json',
+        'adjudicate': adjudicate_n3c,
+        'research_heading': 'Portfolio S7, rung 3 — composition vs '
+                            'ordinal structure (Currier B)',
         'not_ready': None,
     },
     {
