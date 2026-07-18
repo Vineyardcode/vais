@@ -61,5 +61,12 @@
   "verdict": "S7 rung 4: CHARACTERIZED",
   "suggestive": true,
   "summary": "characterized; T-PARA p=0.0050, bins +0.082/+0.038/+0.030, top first-glyph q"
+ },
+ "N3e": {
+  "status": "completed",
+  "date": "2026-07-19",
+  "verdict": "S7 rung 5: SECTION_GENERAL",
+  "suggestive": true,
+  "summary": "section_general; bio p=0.005 (margin +0.0306), recipes p=0.005 (margin +0.0702), other_B p=0.005 (margin +0.0663)"
  }
 }

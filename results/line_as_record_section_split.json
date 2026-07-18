@@ -1,0 +1,58 @@
+{
+ "params": {
+  "seed": 115,
+  "r_splits": 10,
+  "n_nulls": 200,
+  "min_lines": 500,
+  "min_line_words": 5,
+  "holdout_frac": 0.2,
+  "alpha": 0.5,
+  "criterion": "beat_all_nulls",
+  "taxonomy": "folio-number: bio f75-84, recipes f103-116, other_B rest",
+  "rung3_json": "line_as_record_ordinal.json"
+ },
+ "headline": {
+  "total": 0.0513,
+  "rung3_recorded": 0.0513,
+  "verified": true
+ },
+ "rows": {
+  "bio": {
+   "usable": true,
+   "n_lines": 739,
+   "n_folios": 20,
+   "median_gain": 0.0106,
+   "null_max": -0.0052,
+   "null_median": -0.02,
+   "margin_observational": 0.0306,
+   "n_nulls_ge_real": 0,
+   "p_empirical": 0.005,
+   "pass": true
+  },
+  "recipes": {
+   "usable": true,
+   "n_lines": 1039,
+   "n_folios": 23,
+   "median_gain": 0.0584,
+   "null_max": -0.0036,
+   "null_median": -0.0118,
+   "margin_observational": 0.0702,
+   "n_nulls_ge_real": 0,
+   "p_empirical": 0.005,
+   "pass": true
+  },
+  "other_B": {
+   "usable": true,
+   "n_lines": 744,
+   "n_folios": 34,
+   "median_gain": 0.0478,
+   "null_max": -0.0077,
+   "null_median": -0.0185,
+   "margin_observational": 0.0663,
+   "n_nulls_ge_real": 0,
+   "p_empirical": 0.005,
+   "pass": true
+  }
+ },
+ "verdict": "section_general"
+}

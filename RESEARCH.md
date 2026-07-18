@@ -979,3 +979,23 @@ T-PARA: 131 paragraph-initial lines excluded → 2391 kept; real +0.0519 vs null
 | d | 226 | -0.0000 | 0.941/1.203/0.839 |
 
 **VERDICT: CHARACTERIZED — the signal survives the paragraph control (the last registered structural threat); the tables above are the program's description of the Currier-B ordinal signal. SUGGESTIVE supporting detail for the quarantined finding; NOT a decode; no value is a translation.**
+
+---
+
+### Portfolio S7, rung 5 — within-section replication (Currier B) (2026-07-19)
+
+[AUTOMATED — written by tools/overnight.py; run committed to branch overnight/2026-07-19; awaiting human review before promotion to any evidence tier.]
+
+Configuration (pre-registered in the script docstring): script defaults. Runtime 0.06 h at PYTHONHASHSEED=0. Holdout: whole folios (VMS) / 24-line pseudo-folio blocks (controls).
+
+**SUGGESTIVE — awaiting human review (quarantined; never merged automatically):**
+
+**Pre-registered outcomes** (script docstring; human-directed section-confound test): per usable section PASS iff the real median beats ALL 200 within-line-shuffle nulls (p < 0.0050); taxonomy: folio-number: bio f75-84, recipes f103-116, other_B rest. Pooled rung-3 headline reproduced (gate).
+
+| section | lines / folios | real gain | null max | nulls ≥ real | p | verdict |
+|---|---|---|---|---|---|---|
+| bio | 739 / 20 | +0.0106 | -0.0052 | 0 | 0.0050 | **PASS** |
+| recipes | 1039 / 23 | +0.0584 | -0.0036 | 0 | 0.0050 | **PASS** |
+| other_B | 744 / 34 | +0.0478 | -0.0077 | 0 | 0.0050 | **PASS** |
+
+**VERDICT: SECTION-GENERAL — the ordinal signal replicates within every usable B section independently; the section-confound objection is dismissed. SUGGESTIVE supporting detail for the quarantined finding; not a decode.**

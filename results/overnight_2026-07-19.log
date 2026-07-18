@@ -25,3 +25,29 @@
 [00:20:54] report -> C:\projects\vais\results\overnight_2026-07-19_report.md
 [00:20:54] RESEARCH.md: section appended (working tree; committed only to the overnight branch)
 [00:20:54] committing results to branch overnight/2026-07-19 ...
+[00:20:54] committed b4c3726da153 on overnight/2026-07-19 (main untouched)
+[00:20:54] done, exit 0
+[01:53:52] ====================================================================
+[01:53:52] overnight runner start 2026-07-19 01:53:52  smoke=False PYTHONHASHSEED=0
+[01:53:52] code at cc79f85 (dirty tree), python 3.13.3
+[01:53:52] queue item N3e: Line-as-record rung 5 (portfolio S7): within-section replication (bio / recipes / other_B)
+[01:53:52] profile: {}  timeout=3600s
+  | ============================================================================
+  | LINE-AS-RECORD, RUNG 5 (S7) — within-section replication (N3e)
+  | ============================================================================
+  | seed=115 (inherited from rung 3) splits=10 nulls=200 criterion=beat-all (p=0.0050) min_lines=500
+  |   gate: pooled headline +0.0513 == rung-3 record  VERIFIED
+  |   bio       739 lines / 20 folios: real +0.0106  null max -0.0052  nulls>=real 0  p=0.0050 -> PASS
+  |   recipes  1039 lines / 23 folios: real +0.0584  null max -0.0036  nulls>=real 0  p=0.0050 -> PASS
+  |   other_B   744 lines / 34 folios: real +0.0478  null max -0.0077  nulls>=real 0  p=0.0050 -> PASS
+  | 
+  |   ADJUDICATION (pre-registered):
+  |     SECTION-GENERAL: the ordinal signal replicates within every usable section (['bio', 'other_B', 'recipes']) at p < 0.005 — the section-confound objection is dismissed.
+  | 
+  |   -> results/line_as_record_section_split.json
+[01:57:39] experiment finished rc=0 in 227s (0.06h)
+[01:57:39] adjudication: section_general; bio p=0.005 (margin +0.0306), recipes p=0.005 (margin +0.0702), other_B p=0.005 (margin +0.0663)
+[01:57:39] SUGGESTIVE finding — quarantined, flagged at the top of the report, awaiting human review
+[01:57:39] report -> C:\projects\vais\results\overnight_2026-07-19_report.md
+[01:57:39] RESEARCH.md: section appended (working tree; committed only to the overnight branch)
+[01:57:39] committing results to branch overnight/2026-07-19 ...
