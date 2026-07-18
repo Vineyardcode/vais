@@ -887,3 +887,23 @@ Part 1: flagged transliteration-sensitive features: {'mean_wlen': ['GC'], 'line_
 **VERDICT: PARTIAL — the signal passes in some readings and misses in others; sensitive to reading choices. Investigation required before any promotion of the rung-3 finding.**
 
 Observation for the investigation (no claim): every usable transliteration beats ALL its nulls (empirical p bar 5/5); the misses are effect-floor misses only — whether a fixed bits/token floor mechanically penalizes finer-grained alphabets (GC: 162 symbols, miss by 0.0013) is the registered question for the follow-up.
+
+---
+
+### Portfolio S9, follow-up — sensitivity-normalized effect floors (2026-07-18)
+
+[AUTOMATED — written by tools/overnight.py; run committed to branch overnight/2026-07-18; awaiting human review before promotion to any evidence tier.]
+
+Configuration (pre-registered in the script docstring): script defaults. Runtime 0.04 h at PYTHONHASHSEED=0. Holdout: whole folios (VMS) / 24-line pseudo-folio blocks (controls).
+
+**Pre-registered outcomes** (script docstring; written with full disclosure AFTER N2's PARTIAL): floors scale by MEASURED sensitivity rho (planted sort implant, ZL anchor, symmetric — floors may rise), battery values inherited from N2's exact seed streams and cross-checked.
+
+| reading | margin | implant response | rho | normalized floor | verdict (was, fixed 0.05) |
+|---|---|---|---|---|---|
+| ZL | +0.0501 | +0.5806 | 1.0000 | 0.0500 | PASS (PASS) |
+| CD | +0.0326 | +0.6490 | 1.1178 | 0.0559 | fail (fail) |
+| GC | +0.0487 | +0.6488 | 1.1175 | 0.0559 | fail (fail) |
+| FG | +0.0534 | +0.6812 | 1.1733 | 0.0587 | fail (PASS) |
+| IT | +0.0529 | +0.5632 | 0.9700 | 0.0485 | PASS (PASS) |
+
+**VERDICT: REFERENCE FLIP — symmetric normalization flipped a previously-passing reading by RAISING its floor: the normalized-floor instrument is not consistent enough to re-adjudicate at these margins. No claim; N2 PARTIAL unchanged. The registered question IS answered: measured sensitivities refute the "finer alphabets are mechanically penalized" hypothesis (GC rho > 1).**

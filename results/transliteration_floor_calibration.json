@@ -1,0 +1,93 @@
+{
+ "params": {
+  "seed": 116,
+  "r_splits": 10,
+  "n_nulls": 20,
+  "floor_base": 0.05,
+  "min_b_lines": 500,
+  "min_line_words": 5,
+  "holdout_frac": 0.2,
+  "alpha": 0.5,
+  "anchor": "ZL",
+  "implant": "sort_by_first_last",
+  "features": [
+   "len",
+   "first",
+   "last"
+  ],
+  "n2_json": "cross_transliteration_invariance.json"
+ },
+ "rows": {
+  "ZL": {
+   "usable": true,
+   "n_B_lines": 2522,
+   "median_gain": 0.0442,
+   "null_median": -0.0059,
+   "null_max": -0.0031,
+   "margin": 0.0501,
+   "implant_response": 0.5806,
+   "rho": 1.0,
+   "floor_normalized": 0.05,
+   "beats_all": true,
+   "pass_normalized": true,
+   "pass_n2_fixed": true
+  },
+  "CD": {
+   "usable": true,
+   "n_B_lines": 991,
+   "median_gain": 0.0094,
+   "null_median": -0.0232,
+   "null_max": -0.0115,
+   "margin": 0.0326,
+   "implant_response": 0.649,
+   "rho": 1.1178,
+   "floor_normalized": 0.0559,
+   "beats_all": true,
+   "pass_normalized": false,
+   "pass_n2_fixed": false
+  },
+  "GC": {
+   "usable": true,
+   "n_B_lines": 2365,
+   "median_gain": 0.0372,
+   "null_median": -0.0115,
+   "null_max": -0.0088,
+   "margin": 0.0487,
+   "implant_response": 0.6488,
+   "rho": 1.1175,
+   "floor_normalized": 0.0559,
+   "beats_all": true,
+   "pass_normalized": false,
+   "pass_n2_fixed": false
+  },
+  "FG": {
+   "usable": true,
+   "n_B_lines": 2259,
+   "median_gain": 0.0475,
+   "null_median": -0.0059,
+   "null_max": -0.0027,
+   "margin": 0.0534,
+   "implant_response": 0.6812,
+   "rho": 1.1733,
+   "floor_normalized": 0.0587,
+   "beats_all": true,
+   "pass_normalized": false,
+   "pass_n2_fixed": true
+  },
+  "IT": {
+   "usable": true,
+   "n_B_lines": 2329,
+   "median_gain": 0.0475,
+   "null_median": -0.0054,
+   "null_max": -0.0032,
+   "margin": 0.0529,
+   "implant_response": 0.5632,
+   "rho": 0.97,
+   "floor_normalized": 0.0485,
+   "beats_all": true,
+   "pass_normalized": true,
+   "pass_n2_fixed": true
+  }
+ },
+ "verdict": "reference_flip"
+}

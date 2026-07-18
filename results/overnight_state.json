@@ -40,5 +40,12 @@
   "verdict": "S9: PARTIAL",
   "suggestive": false,
   "summary": "partial; pass ['ZL', 'FG', 'IT'], fail ['CD', 'GC'], flagged features ['line_final_jsd', 'line_init_jsd', 'mean_wlen']"
+ },
+ "N2b": {
+  "status": "completed",
+  "date": "2026-07-18",
+  "verdict": "S9 follow-up: REFERENCE_FLIP",
+  "suggestive": false,
+  "summary": "reference_flip; rho: ZL 1.00, CD 1.12, GC 1.12, FG 1.17, IT 0.97"
  }
 }
