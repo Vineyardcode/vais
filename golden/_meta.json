@@ -1247,5 +1247,14 @@
   "results_files_touched": [
    "line_as_record_characterization.json"
   ]
+ },
+ "line_as_record_section_split": {
+  "status": "timeout",
+  "returncode": null,
+  "duration_s": 5285.98,
+  "stdout_bytes": 936,
+  "results_files_touched": [
+   "line_as_record_section_split.json"
+  ]
  }
 }

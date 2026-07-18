@@ -1129,6 +1129,91 @@ def adjudicate_n3d(item, expected_params, run_started):
 
 
 # ────────────────────────────────────────────────────────────────────
+# N3e adjudication — pre-registered, mechanical, JSON-only
+# ────────────────────────────────────────────────────────────────────
+def adjudicate_n3e(item, expected_params, run_started):
+    """Pre-registered outcomes (line_as_record_section_split.py
+    docstring): gate = pooled rung-3 headline reproduced; per usable
+    section (bio / recipes / other_B), PASS iff the real median beats
+    ALL n_nulls within-line-shuffle nulls (p < 0.005). Outcomes:
+    section_general / section_specific / pooling_artifact. Re-derived
+    from the JSON; refuses on mismatch."""
+    jpath = RESULTS / item['result_json']
+    if not jpath.exists():
+        raise AdjudicationError(f'{jpath.name} was not written by the run')
+    if jpath.stat().st_mtime < run_started:
+        raise AdjudicationError(f'{jpath.name} predates this run — stale')
+    data = json.loads(jpath.read_text(encoding='utf-8'))
+    p, rows = data['params'], data['rows']
+    if not data.get('headline', {}).get('verified'):
+        raise AdjudicationError('pooled rung-3 headline was not verified')
+    usable = {s: r for s, r in rows.items() if r.get('usable')}
+    for s, r in usable.items():
+        mine = r['n_nulls_ge_real'] == 0
+        if mine != r['pass']:
+            raise AdjudicationError(f'{s}: runner derives {mine}, script '
+                                    f'recorded {r["pass"]}')
+    passed = sorted(s for s, r in usable.items() if r['pass'])
+    failed = sorted(s for s, r in usable.items() if not r['pass'])
+    if usable and not failed:
+        key = 'section_general'
+    elif passed:
+        key = 'section_specific'
+    else:
+        key = 'pooling_artifact'
+    if data.get('verdict') != key:
+        raise AdjudicationError(f'runner derives {key!r} but the script '
+                                f'recorded {data.get("verdict")!r}')
+    suggestive = key in ('section_general', 'section_specific')
+
+    md = []
+    md.append('**Pre-registered outcomes** (script docstring; '
+              'human-directed section-confound test): per usable section '
+              f'PASS iff the real median beats ALL {p["n_nulls"]} '
+              'within-line-shuffle nulls (p < '
+              f'{1 / (p["n_nulls"] + 1):.4f}); taxonomy: '
+              f'{p["taxonomy"]}. Pooled rung-3 headline reproduced '
+              '(gate).')
+    md.append('')
+    md.append('| section | lines / folios | real gain | null max | '
+              'nulls ≥ real | p | verdict |')
+    md.append('|---|---|---|---|---|---|---|')
+    for s, r in rows.items():
+        if not r.get('usable'):
+            md.append(f'| {s} | {r["n_lines"]} | — | — | — | — | '
+                      'unusable |')
+            continue
+        md.append(f'| {s} | {r["n_lines"]} / {r["n_folios"]} | '
+                  f'{r["median_gain"]:+.4f} | {r["null_max"]:+.4f} | '
+                  f'{r["n_nulls_ge_real"]} | {r["p_empirical"]:.4f} | '
+                  f'{"**PASS**" if r["pass"] else "fail"} |')
+    verdict_text = {
+        'section_general':
+            'SECTION-GENERAL — the ordinal signal replicates within '
+            'every usable B section independently; the section-confound '
+            'objection is dismissed. SUGGESTIVE supporting detail for '
+            'the quarantined finding; not a decode.',
+        'section_specific':
+            f'SECTION-SPECIFIC — replicates in {passed}, fails in '
+            f'{failed}; the finding\'s scope narrows to the passing '
+            'sections. SUGGESTIVE (scoped), quarantined.',
+        'pooling_artifact':
+            'POOLING ARTIFACT / UNRESOLVED — no section replicates the '
+            'signal alone; the rung-3 finding is demoted to unresolved '
+            'and promotion is blocked.',
+    }[key]
+    md.append('')
+    md.append(f'**VERDICT: {verdict_text}**')
+    summary = (f'{key}; ' + ', '.join(
+        f'{s} p={r["p_empirical"]:.3f}'
+        + (f' (margin {r["margin_observational"]:+.4f})')
+        for s, r in usable.items()))
+    return {'verdict': f'S7 rung 5: {key.upper()}',
+            'suggestive': suggestive, 'md': '\n'.join(md),
+            'summary': summary, 'params': p, 'json_name': jpath.name}
+
+
+# ────────────────────────────────────────────────────────────────────
 # queue
 # ────────────────────────────────────────────────────────────────────
 N1_PROFILE = {'EM_OUTER': 32, 'EM_PROPOSALS': 48, 'EM_RESTARTS': 16,
@@ -1251,6 +1336,21 @@ QUEUE = [
         'adjudicate': adjudicate_n3d,
         'research_heading': 'Portfolio S7, rung 4 — paragraph control and '
                             'characterization (Currier B)',
+        'not_ready': None,
+    },
+    {
+        'id': 'N3e',
+        'title': 'Line-as-record rung 5 (portfolio S7): within-section '
+                 'replication (bio / recipes / other_B)',
+        'stem': 'line_as_record_section_split',
+        'overrides': {},
+        'smoke_overrides': {},
+        'timeout_s': 3600,
+        'smoke_timeout_s': 1800,
+        'result_json': 'line_as_record_section_split.json',
+        'adjudicate': adjudicate_n3e,
+        'research_heading': 'Portfolio S7, rung 5 — within-section '
+                            'replication (Currier B)',
         'not_ready': None,
     },
     {

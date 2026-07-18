@@ -1,0 +1,13 @@
+============================================================================
+LINE-AS-RECORD, RUNG 5 (S7) — within-section replication (N3e)
+============================================================================
+seed=115 (inherited from rung 3) splits=10 nulls=200 criterion=beat-all (p=0.0050) min_lines=500
+  gate: pooled headline +0.0513 == rung-3 record  VERIFIED
+  bio       739 lines / 20 folios: real +0.0106  null max -0.0052  nulls>=real 0  p=0.0050 -> PASS
+  recipes  1039 lines / 23 folios: real +0.0584  null max -0.0036  nulls>=real 0  p=0.0050 -> PASS
+  other_B   744 lines / 34 folios: real +0.0478  null max -0.0077  nulls>=real 0  p=0.0050 -> PASS
+
+  ADJUDICATION (pre-registered):
+    SECTION-GENERAL: the ordinal signal replicates within every usable section (['bio', 'other_B', 'recipes']) at p < 0.005 — the section-confound objection is dismissed.
+
+  -> results/line_as_record_section_split.json

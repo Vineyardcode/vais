@@ -49,6 +49,8 @@ DEPENDS = {
     "chunk_alphabet_decipherment": ["chunk_equivalence_classes"],
     "transliteration_floor_calibration": ["cross_transliteration_invariance"],
     "transliteration_significance": ["cross_transliteration_invariance"],
+    "line_as_record_characterization": ["line_as_record_ordinal"],
+    "line_as_record_section_split": ["line_as_record_ordinal"],
     "currier_dichotomy_resolution": ["chunk_equivalence_classes"],
     "historical_validation": ["chunk_equivalence_classes"],
     "generative_chunk_model": ["chunk_equivalence_classes"],
