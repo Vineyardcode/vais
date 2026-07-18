@@ -1,0 +1,27 @@
+[00:17:09] ====================================================================
+[00:17:09] overnight runner start 2026-07-19 00:17:09  smoke=False PYTHONHASHSEED=0
+[00:17:09] code at 2b18344 (dirty tree), python 3.13.3
+[00:17:09] queue item N3d: Line-as-record rung 4 (portfolio S7): paragraph control + characterization of the Currier-B ordinal signal
+[00:17:09] profile: {}  timeout=3600s
+  | ============================================================================
+  | LINE-AS-RECORD, RUNG 4 (S7) — characterization (N3d)
+  | ============================================================================
+  | seed=115 (inherited from rung 3) splits=10 para-nulls=200 (beat-all, p=0.0050) min_support=200 top_n=8
+  |   B corpus: 2522 lines, 131 paragraph-initial
+  |   gate: headline +0.0513 == rung-3 record  VERIFIED
+  |   T-PARA: para-initial excluded -> 2391 lines; real +0.0519  null max -0.0017  nulls>=real 0  p=0.0050 -> PASS
+  |   D1 per-bin: m1 +0.0816  m2 +0.0381  m3 +0.0299
+  |   D2 per-feature: len +0.0018  first +0.0296  last +0.0174  gallows +0.0024
+  |   D3 first: q(+0.0352)  c(+0.0281)  o(+0.0200)  d(-0.0151)  y(-0.0101)  t(-0.0095)  s(-0.0075)  a(-0.0067)
+  |   D3 last: y(+0.0191)  r(+0.0086)  l(+0.0082)  n(-0.0039)  o(-0.0032)  s(-0.0005)  d(-0.0000)
+  | 
+  |   ADJUDICATION (pre-registered):
+  |     CHARACTERIZED: the signal survives excluding paragraph-initial lines (p < 0.005) — the last registered structural threat is dismissed; the decomposition above is the program's description of the Currier-B ordinal signal. SUGGESTIVE (supporting detail for the quarantined finding); NOT a decode; no value is a translation.
+  | 
+  |   -> results/line_as_record_characterization.json
+[00:20:54] experiment finished rc=0 in 225s (0.06h)
+[00:20:54] adjudication: characterized; T-PARA p=0.0050, bins +0.082/+0.038/+0.030, top first-glyph q
+[00:20:54] SUGGESTIVE finding — quarantined, flagged at the top of the report, awaiting human review
+[00:20:54] report -> C:\projects\vais\results\overnight_2026-07-19_report.md
+[00:20:54] RESEARCH.md: section appended (working tree; committed only to the overnight branch)
+[00:20:54] committing results to branch overnight/2026-07-19 ...

@@ -1,0 +1,65 @@
+{
+ "N1": {
+  "status": "completed",
+  "date": "2026-07-17",
+  "verdict": "INSTRUMENT KILLED (pre-registered)",
+  "suggestive": false,
+  "summary": "INSTRUMENT KILLED (pre-registered); P4 recovery 39%, margin -0.150 (need >= +0.100)"
+ },
+ "N1b": {
+  "status": "completed",
+  "date": "2026-07-17",
+  "verdict": "INSTRUMENT PASSED",
+  "suggestive": false,
+  "summary": "INSTRUMENT PASSED; P4 recovery 65%, margin +0.350 (need >= +0.100)"
+ },
+ "N3": {
+  "status": "completed",
+  "date": "2026-07-18",
+  "verdict": "INSTRUMENT KILLED (S7 v1)",
+  "suggestive": false,
+  "summary": "killed_line_length_artifact; P-REC +0.719, VMS_full margin +0.0329 (need >= 0.05)"
+ },
+ "N3b": {
+  "status": "completed",
+  "date": "2026-07-18",
+  "verdict": "S7 rung 2: B_ONLY",
+  "suggestive": true,
+  "summary": "B_only; B margin +0.0580 (floor 0.05), A margin +0.0301"
+ },
+ "N3c": {
+  "status": "completed",
+  "date": "2026-07-18",
+  "verdict": "S7 rung 3: ORDINAL_GLYPH_STRUCTURE",
+  "suggestive": true,
+  "summary": "ordinal_glyph_structure; B t1 +0.0571 t2 +0.0577 t3 +0.0571; P-JUST ref +0.0133 (len-dominated)"
+ },
+ "N2": {
+  "status": "completed",
+  "date": "2026-07-18",
+  "verdict": "S9: PARTIAL",
+  "suggestive": false,
+  "summary": "partial; pass ['ZL', 'FG', 'IT'], fail ['CD', 'GC'], flagged features ['line_final_jsd', 'line_init_jsd', 'mean_wlen']"
+ },
+ "N2b": {
+  "status": "completed",
+  "date": "2026-07-18",
+  "verdict": "S9 follow-up: REFERENCE_FLIP",
+  "suggestive": false,
+  "summary": "reference_flip; rho: ZL 1.00, CD 1.12, GC 1.12, FG 1.17, IT 0.97"
+ },
+ "N2c": {
+  "status": "completed",
+  "date": "2026-07-18",
+  "verdict": "S9 significance: ROBUST_SIGNIFICANCE",
+  "suggestive": true,
+  "summary": "robust_significance; ZL p=0.005, CD p=0.005, GC p=0.005, FG p=0.005, IT p=0.005"
+ },
+ "N3d": {
+  "status": "completed",
+  "date": "2026-07-19",
+  "verdict": "S7 rung 4: CHARACTERIZED",
+  "suggestive": true,
+  "summary": "characterized; T-PARA p=0.0050, bins +0.082/+0.038/+0.030, top first-glyph q"
+ }
+}
