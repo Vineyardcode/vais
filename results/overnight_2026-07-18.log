@@ -89,3 +89,41 @@
 [17:25:26] report -> C:\projects\vais\results\overnight_2026-07-18_report.md
 [17:25:26] RESEARCH.md: section appended (working tree; committed only to the overnight branch)
 [17:25:26] committing results to branch overnight/2026-07-18 ...
+[17:25:27] committed 6fa974725955 on overnight/2026-07-18 (main untouched)
+[17:25:27] done, exit 0
+[17:36:57] ====================================================================
+[17:36:57] overnight runner start 2026-07-18 17:36:57  smoke=False PYTHONHASHSEED=0
+[17:36:57] code at 8e38162 (dirty tree), python 3.13.3
+[17:36:57] queue item N2: Cross-transliteration invariance audit (portfolio S9): A1 fingerprint spread + S7-B ordinal invariance
+[17:36:57] profile: {}  timeout=3600s
+  | ============================================================================
+  | CROSS-TRANSLITERATION INVARIANCE (S9) — A1 audit
+  | ============================================================================
+  | seed=116 splits=10 nulls=20 floor=0.05 rel_dev_flag=0.2 min_B_lines=500 features=('len', 'first', 'last')
+  |   ZL: 3956 lines, 37520 tokens, alphabet 25  h2r 0.543  init_jsd 0.169  final_jsd 0.092
+  |   CD: 1845 lines, 14971 tokens, alphabet 35  h2r 0.609  init_jsd 0.141  final_jsd 0.069
+  |   GC: 3770 lines, 37408 tokens, alphabet 162  h2r 0.629  init_jsd 0.215  final_jsd 0.089
+  |   FG: 3501 lines, 31450 tokens, alphabet 23  h2r 0.603  init_jsd 0.176  final_jsd 0.089
+  |   IT: 3718 lines, 34870 tokens, alphabet 22  h2r 0.548  init_jsd 0.173  final_jsd 0.090
+  | 
+  |   PART 1: 3/6 headline features flagged transliteration-sensitive (>20% vs ZL):
+  |     mean_wlen: flagged in ['GC'] (devs {'CD': 0.1722, 'GC': 0.2191, 'FG': 0.1347, 'IT': 0.0181})
+  |     line_init_jsd: flagged in ['GC'] (devs {'CD': 0.1612, 'GC': 0.2762, 'FG': 0.0451, 'IT': 0.0285})
+  |     line_final_jsd: flagged in ['CD'] (devs {'CD': 0.2522, 'GC': 0.0262, 'FG': 0.024, 'IT': 0.0207})
+  | 
+  |   PART 2: S7-B ordinal battery (reduced features), per transliteration:
+  |     ZL: B +0.0442 (null max -0.0031, margin +0.0501) -> PASS   [2522 B-lines]
+  |     CD: B +0.0094 (null max -0.0115, margin +0.0326) -> fail   [991 B-lines]
+  |     GC: B +0.0372 (null max -0.0088, margin +0.0487) -> fail   [2365 B-lines]
+  |     FG: B +0.0475 (null max -0.0027, margin +0.0534) -> PASS   [2259 B-lines]
+  |     IT: B +0.0475 (null max -0.0032, margin +0.0529) -> PASS   [2329 B-lines]
+  | 
+  |   ADJUDICATION (pre-registered):
+  |     PARTIAL: passes in ['FG', 'IT'], fails in ['CD', 'GC'] — the finding is sensitive to reading choices; investigation required before any promotion.
+  | 
+  |   -> results/cross_transliteration_invariance.json
+[17:38:11] experiment finished rc=0 in 73s (0.02h)
+[17:38:11] adjudication: partial; pass ['ZL', 'FG', 'IT'], fail ['CD', 'GC'], flagged features ['line_final_jsd', 'line_init_jsd', 'mean_wlen']
+[17:38:11] report -> C:\projects\vais\results\overnight_2026-07-18_report.md
+[17:38:11] RESEARCH.md: section appended (working tree; committed only to the overnight branch)
+[17:38:11] committing results to branch overnight/2026-07-18 ...

@@ -863,3 +863,27 @@ Configuration (pre-registered in the script docstring): script defaults. Runtime
 **VERDICT: ORDINAL GLYPH STRUCTURE — Currier B's intra-line word order carries glyph-identity signal beyond composition and beyond length-based space management: consistent with field-like vocabulary ordering. SUGGESTIVE, quarantined, NOT a decode; no field is named or read.**
 
 Observation (A, not adjudicated): total +0.0100 (glyph +0.0085) — same glyph-dominated shape at ~1/5 the strength, above all its nulls but under the floors: the hand gradient persists at rung 3.
+
+---
+
+### Portfolio S9 — cross-transliteration invariance audit (A1) (2026-07-18)
+
+[AUTOMATED — written by tools/overnight.py; run committed to branch overnight/2026-07-18; awaiting human review before promotion to any evidence tier.]
+
+Configuration (pre-registered in the script docstring): script defaults. Runtime 0.02 h at PYTHONHASHSEED=0. Holdout: whole folios (VMS) / 24-line pseudo-folio blocks (controls).
+
+**Pre-registered outcomes** (script docstring): gate = ZL passes the S7-B ordinal battery with alphabet-agnostic features; then robust / partial / artifact_suspect over usable alternatives (usable = >= 500 B-lines). Part 1 flags fingerprint features deviating > 20% from ZL.
+
+| transliteration | B-lines | median gain | null max | margin | battery |
+|---|---|---|---|---|---|
+| ZL | 2522 | +0.0442 | -0.0031 | +0.0501 | **PASS** |
+| CD | 991 | +0.0094 | -0.0115 | +0.0326 | fail |
+| GC | 2365 | +0.0372 | -0.0088 | +0.0487 | fail |
+| FG | 2259 | +0.0475 | -0.0027 | +0.0534 | **PASS** |
+| IT | 2329 | +0.0475 | -0.0032 | +0.0529 | **PASS** |
+
+Part 1: flagged transliteration-sensitive features: {'mean_wlen': ['GC'], 'line_init_jsd': ['GC'], 'line_final_jsd': ['CD']}.
+
+**VERDICT: PARTIAL — the signal passes in some readings and misses in others; sensitive to reading choices. Investigation required before any promotion of the rung-3 finding.**
+
+Observation for the investigation (no claim): every usable transliteration beats ALL its nulls (empirical p bar 5/5); the misses are effect-floor misses only — whether a fixed bits/token floor mechanically penalizes finer-grained alphabets (GC: 162 symbols, miss by 0.0013) is the registered question for the follow-up.

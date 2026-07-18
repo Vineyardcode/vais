@@ -33,5 +33,12 @@
   "verdict": "S7 rung 3: ORDINAL_GLYPH_STRUCTURE",
   "suggestive": true,
   "summary": "ordinal_glyph_structure; B t1 +0.0571 t2 +0.0577 t3 +0.0571; P-JUST ref +0.0133 (len-dominated)"
+ },
+ "N2": {
+  "status": "completed",
+  "date": "2026-07-18",
+  "verdict": "S9: PARTIAL",
+  "suggestive": false,
+  "summary": "partial; pass ['ZL', 'FG', 'IT'], fail ['CD', 'GC'], flagged features ['line_final_jsd', 'line_init_jsd', 'mean_wlen']"
  }
 }
