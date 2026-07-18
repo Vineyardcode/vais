@@ -819,6 +819,101 @@ def adjudicate_n2b(item, expected_params, run_started):
 
 
 # ────────────────────────────────────────────────────────────────────
+# N2c adjudication — pre-registered, mechanical, JSON-only
+# ────────────────────────────────────────────────────────────────────
+def adjudicate_n2c(item, expected_params, run_started):
+    """Pre-registered outcomes (transliteration_significance.py
+    docstring; criteria change — significance-only, 200 nulls, no
+    effect floor — human-approved 2026-07-18): per reading PASS iff the
+    real median gain beats ALL n_nulls null medians (p = 1/(n+1) <
+    0.005). Ladder: reference_not_significant / robust_significance /
+    partial_significance / artifact_suspect_significance. Re-derived
+    from the JSON; refuses on mismatch."""
+    jpath = RESULTS / item['result_json']
+    if not jpath.exists():
+        raise AdjudicationError(f'{jpath.name} was not written by the run')
+    if jpath.stat().st_mtime < run_started:
+        raise AdjudicationError(f'{jpath.name} predates this run — stale')
+    data = json.loads(jpath.read_text(encoding='utf-8'))
+    p, rows = data['params'], data['rows']
+    usable = {t: r for t, r in rows.items() if r.get('usable')}
+    for t, r in usable.items():
+        mine = r['n_nulls_ge_real'] == 0
+        if mine != r['pass']:
+            raise AdjudicationError(f'{t}: runner derives {mine}, script '
+                                    f'recorded {r["pass"]}')
+        if r['pass'] and r['median_gain'] <= r['null_max']:
+            raise AdjudicationError(f'{t}: pass recorded but real <= '
+                                    'null max')
+    zl_ok = usable['ZL']['pass']
+    alts = {t: r for t, r in usable.items() if t != 'ZL'}
+    alt_pass = sorted(t for t, r in alts.items() if r['pass'])
+    alt_fail = sorted(t for t, r in alts.items() if not r['pass'])
+    if not zl_ok:
+        key = 'reference_not_significant'
+    elif alts and not alt_fail:
+        key = 'robust_significance'
+    elif alt_pass:
+        key = 'partial_significance'
+    else:
+        key = 'artifact_suspect_significance'
+    if data.get('verdict') != key:
+        raise AdjudicationError(f'runner derives {key!r} but the script '
+                                f'recorded {data.get("verdict")!r}')
+    suggestive = key == 'robust_significance'
+
+    md = []
+    md.append('**Pre-registered criterion** (script docstring; '
+              'significance-only criteria change human-approved '
+              '2026-07-18): per reading, PASS iff the real 10-split '
+              f'median interior gain beats ALL {p["n_nulls"]} '
+              'within-line-shuffle null medians — empirical p = '
+              f'{1 / (p["n_nulls"] + 1):.4f}. No effect floor; margins '
+              'are observational. Null stream is a strict superset of '
+              'N2\'s (first 20 identical, cross-checked), splits '
+              'identical to N2 (cross-checked).')
+    md.append('')
+    md.append('| reading | B-lines | real gain | null max (of '
+              f'{p["n_nulls"]}) | nulls ≥ real | p | verdict |')
+    md.append('|---|---|---|---|---|---|---|')
+    for t, r in rows.items():
+        if not r.get('usable'):
+            md.append(f'| {t} | {r["n_B_lines"]} | — | — | — | — | '
+                      'unusable |')
+            continue
+        md.append(f'| {t} | {r["n_B_lines"]} | {r["median_gain"]:+.4f} | '
+                  f'{r["null_max"]:+.4f} | {r["n_nulls_ge_real"]} | '
+                  f'{r["p_empirical"]:.4f} | '
+                  f'{"**PASS**" if r["pass"] else "fail"} |')
+    verdict_text = {
+        'reference_not_significant':
+            'REFERENCE NOT SIGNIFICANT — ZL fails at p < 0.005 with '
+            'reduced features; the cross-reading support argument '
+            'collapses. No claim about alternates.',
+        'robust_significance':
+            'ROBUST AT SIGNIFICANCE — the S7-B ordinal signal is '
+            'significant at p < 0.005 in every usable independent '
+            'reading. The cross-reading objection to the quarantined '
+            'rung-3 finding is resolved in favor of robustness. The '
+            'finding remains SUGGESTIVE, quarantined, and is not a '
+            'decode.',
+        'partial_significance':
+            'PARTIAL AT SIGNIFICANCE — the PARTIAL verdict stands at '
+            'significance level; failing readings named above.',
+        'artifact_suspect_significance':
+            'ARTIFACT-SUSPECT — significant only in ZL; demoted until '
+            'shown otherwise.',
+    }[key]
+    md.append('')
+    md.append(f'**VERDICT: {verdict_text}**')
+    summary = (f'{key}; ' + ', '.join(
+        f'{t} p={r["p_empirical"]:.3f}' for t, r in usable.items()))
+    return {'verdict': f'S9 significance: {key.upper()}',
+            'suggestive': suggestive, 'md': '\n'.join(md),
+            'summary': summary, 'params': p, 'json_name': jpath.name}
+
+
+# ────────────────────────────────────────────────────────────────────
 # N3c adjudication — pre-registered, mechanical, JSON-only
 # ────────────────────────────────────────────────────────────────────
 def adjudicate_n3c(item, expected_params, run_started):
@@ -1023,6 +1118,21 @@ QUEUE = [
         'adjudicate': adjudicate_n2b,
         'research_heading': 'Portfolio S9, follow-up — sensitivity-'
                             'normalized effect floors',
+        'not_ready': None,
+    },
+    {
+        'id': 'N2c',
+        'title': 'S9 follow-up 2: significance-only cross-reading battery '
+                 '(200 nulls, no effect floor)',
+        'stem': 'transliteration_significance',
+        'overrides': {},
+        'smoke_overrides': {},
+        'timeout_s': 7200,
+        'smoke_timeout_s': 3600,
+        'result_json': 'transliteration_significance.json',
+        'adjudicate': adjudicate_n2c,
+        'research_heading': 'Portfolio S9, follow-up 2 — significance-only '
+                            'cross-reading battery',
         'not_ready': None,
     },
     {

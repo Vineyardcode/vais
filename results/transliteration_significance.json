@@ -1,0 +1,76 @@
+{
+ "params": {
+  "seed": 116,
+  "r_splits": 10,
+  "n_nulls": 200,
+  "min_b_lines": 500,
+  "min_line_words": 5,
+  "holdout_frac": 0.2,
+  "alpha": 0.5,
+  "criterion": "beat_all_nulls",
+  "features": [
+   "len",
+   "first",
+   "last"
+  ],
+  "n2_json": "cross_transliteration_invariance.json"
+ },
+ "rows": {
+  "ZL": {
+   "usable": true,
+   "n_B_lines": 2522,
+   "median_gain": 0.0442,
+   "null_max": -0.002,
+   "null_median": -0.0053,
+   "margin_observational": 0.0495,
+   "n_nulls_ge_real": 0,
+   "p_empirical": 0.005,
+   "pass": true
+  },
+  "CD": {
+   "usable": true,
+   "n_B_lines": 991,
+   "median_gain": 0.0094,
+   "null_max": -0.0084,
+   "null_median": -0.0231,
+   "margin_observational": 0.0325,
+   "n_nulls_ge_real": 0,
+   "p_empirical": 0.005,
+   "pass": true
+  },
+  "GC": {
+   "usable": true,
+   "n_B_lines": 2365,
+   "median_gain": 0.0372,
+   "null_max": -0.0068,
+   "null_median": -0.0121,
+   "margin_observational": 0.0493,
+   "n_nulls_ge_real": 0,
+   "p_empirical": 0.005,
+   "pass": true
+  },
+  "FG": {
+   "usable": true,
+   "n_B_lines": 2259,
+   "median_gain": 0.0475,
+   "null_max": -0.002,
+   "null_median": -0.006,
+   "margin_observational": 0.0535,
+   "n_nulls_ge_real": 0,
+   "p_empirical": 0.005,
+   "pass": true
+  },
+  "IT": {
+   "usable": true,
+   "n_B_lines": 2329,
+   "median_gain": 0.0475,
+   "null_max": -0.0012,
+   "null_median": -0.0057,
+   "margin_observational": 0.0532,
+   "n_nulls_ge_real": 0,
+   "p_empirical": 0.005,
+   "pass": true
+  }
+ },
+ "verdict": "robust_significance"
+}

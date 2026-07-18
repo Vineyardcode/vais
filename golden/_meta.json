@@ -1229,5 +1229,14 @@
   "results_files_touched": [
    "transliteration_floor_calibration.json"
   ]
+ },
+ "transliteration_significance": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 3477.83,
+  "stdout_bytes": 1155,
+  "results_files_touched": [
+   "transliteration_significance.json"
+  ]
  }
 }
