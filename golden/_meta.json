@@ -1220,5 +1220,14 @@
   "results_files_touched": [
    "cross_transliteration_invariance.json"
   ]
+ },
+ "transliteration_floor_calibration": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 137.1,
+  "stdout_bytes": 1224,
+  "results_files_touched": [
+   "transliteration_floor_calibration.json"
+  ]
  }
 }

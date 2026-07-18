@@ -47,6 +47,7 @@ DEPENDS = {
     "positional_verbose_cipher": ["cross_script_fingerprint"],
     "chunk_equivalence_revalidation": ["chunk_equivalence_classes"],
     "chunk_alphabet_decipherment": ["chunk_equivalence_classes"],
+    "transliteration_floor_calibration": ["cross_transliteration_invariance"],
     "currier_dichotomy_resolution": ["chunk_equivalence_classes"],
     "historical_validation": ["chunk_equivalence_classes"],
     "generative_chunk_model": ["chunk_equivalence_classes"],

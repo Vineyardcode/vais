@@ -732,6 +732,93 @@ def adjudicate_n2(item, expected_params, run_started):
 
 
 # ────────────────────────────────────────────────────────────────────
+# N2b adjudication — pre-registered, mechanical, JSON-only
+# ────────────────────────────────────────────────────────────────────
+def adjudicate_n2b(item, expected_params, run_started):
+    """Pre-registered outcomes (transliteration_floor_calibration.py
+    docstring): reference_flip / floor_artifact_robust / partial_stands
+    over sensitivity-normalized floors (floor_R = floor_base x rho_R,
+    rho measured from a planted sort implant, anchored at ZL,
+    symmetric). Re-derived from the JSON; refuses on mismatch."""
+    jpath = RESULTS / item['result_json']
+    if not jpath.exists():
+        raise AdjudicationError(f'{jpath.name} was not written by the run')
+    if jpath.stat().st_mtime < run_started:
+        raise AdjudicationError(f'{jpath.name} predates this run — stale')
+    data = json.loads(jpath.read_text(encoding='utf-8'))
+    p, rows = data['params'], data['rows']
+    usable = {t: r for t, r in rows.items() if r.get('usable')}
+    for t, r in usable.items():
+        floor = round(p['floor_base'] * r['rho'], 4)
+        if abs(floor - r['floor_normalized']) > 1e-9:
+            raise AdjudicationError(f'{t}: floor mismatch')
+        mine = r['beats_all'] and r['margin'] >= floor
+        if mine != r['pass_normalized']:
+            raise AdjudicationError(f'{t}: runner derives {mine}, script '
+                                    f'recorded {r["pass_normalized"]}')
+    zl_ok = usable['ZL']['pass_normalized']
+    raised_flips = sorted(t for t, r in usable.items()
+                          if r['pass_n2_fixed'] and not r['pass_normalized']
+                          and r['floor_normalized'] > p['floor_base'])
+    fails = sorted(t for t, r in usable.items()
+                   if not r['pass_normalized'])
+    if not zl_ok or raised_flips:
+        key = 'reference_flip'
+    elif not fails:
+        key = 'floor_artifact_robust'
+    else:
+        key = 'partial_stands'
+    if data.get('verdict') != key:
+        raise AdjudicationError(f'runner derives {key!r} but the script '
+                                f'recorded {data.get("verdict")!r}')
+    suggestive = key == 'floor_artifact_robust'
+
+    md = []
+    md.append('**Pre-registered outcomes** (script docstring; written '
+              'with full disclosure AFTER N2\'s PARTIAL): floors scale by '
+              'MEASURED sensitivity rho (planted sort implant, ZL anchor, '
+              'symmetric — floors may rise), battery values inherited '
+              'from N2\'s exact seed streams and cross-checked.')
+    md.append('')
+    md.append('| reading | margin | implant response | rho | normalized '
+              'floor | verdict (was, fixed 0.05) |')
+    md.append('|---|---|---|---|---|---|')
+    for t, r in rows.items():
+        if not r.get('usable'):
+            md.append(f'| {t} | — | — | — | — | unusable |')
+            continue
+        md.append(f'| {t} | {r["margin"]:+.4f} | '
+                  f'{r["implant_response"]:+.4f} | {r["rho"]:.4f} | '
+                  f'{r["floor_normalized"]:.4f} | '
+                  f'{"PASS" if r["pass_normalized"] else "fail"} '
+                  f'({"PASS" if r["pass_n2_fixed"] else "fail"}) |')
+    verdict_text = {
+        'reference_flip':
+            'REFERENCE FLIP — symmetric normalization flipped a '
+            'previously-passing reading by RAISING its floor: the '
+            'normalized-floor instrument is not consistent enough to '
+            're-adjudicate at these margins. No claim; N2 PARTIAL '
+            'unchanged. The registered question IS answered: measured '
+            'sensitivities refute the "finer alphabets are mechanically '
+            'penalized" hypothesis (GC rho > 1).',
+        'floor_artifact_robust':
+            'FLOOR ARTIFACT CONFIRMED — S9 upgrades to ROBUST (removes '
+            'one named objection to the quarantined rung-3 finding; '
+            'upgrades nothing else).',
+        'partial_stands':
+            'PARTIAL STANDS — sensitivity does not explain the misses; '
+            'N2\'s verdict is unchanged, now on content grounds.',
+    }[key]
+    md.append('')
+    md.append(f'**VERDICT: {verdict_text}**')
+    summary = (f'{key}; rho: ' + ', '.join(
+        f'{t} {r["rho"]:.2f}' for t, r in usable.items()))
+    return {'verdict': f'S9 follow-up: {key.upper()}',
+            'suggestive': suggestive, 'md': '\n'.join(md),
+            'summary': summary, 'params': p, 'json_name': jpath.name}
+
+
+# ────────────────────────────────────────────────────────────────────
 # N3c adjudication — pre-registered, mechanical, JSON-only
 # ────────────────────────────────────────────────────────────────────
 def adjudicate_n3c(item, expected_params, run_started):
@@ -921,6 +1008,21 @@ QUEUE = [
         'adjudicate': adjudicate_n3b,
         'research_heading': 'Portfolio S7, rung 2 — per-hand '
                             'line-as-record adjudication',
+        'not_ready': None,
+    },
+    {
+        'id': 'N2b',
+        'title': 'S9 follow-up: sensitivity-normalized effect floors '
+                 '(floor-scaling hypothesis test)',
+        'stem': 'transliteration_floor_calibration',
+        'overrides': {},
+        'smoke_overrides': {},
+        'timeout_s': 3600,
+        'smoke_timeout_s': 1800,
+        'result_json': 'transliteration_floor_calibration.json',
+        'adjudicate': adjudicate_n2b,
+        'research_heading': 'Portfolio S9, follow-up — sensitivity-'
+                            'normalized effect floors',
         'not_ready': None,
     },
     {

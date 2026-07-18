@@ -1,0 +1,19 @@
+============================================================================
+S9 FOLLOW-UP (N2b) — sensitivity-normalized effect floors
+============================================================================
+seed=116 (inherited from N2; battery values cross-checked) floor_base=0.05 anchor=ZL
+  ZL: margin +0.0501  implant response +0.5806  [2522 B-lines]
+  CD: margin +0.0326  implant response +0.6490  [991 B-lines]
+  GC: margin +0.0487  implant response +0.6488  [2365 B-lines]
+  FG: margin +0.0534  implant response +0.6812  [2259 B-lines]
+  IT: margin +0.0529  implant response +0.5632  [2329 B-lines]
+  ZL: rho 1.0000 -> floor 0.0500  margin +0.0501 -> PASS (was PASS at fixed 0.05)
+  CD: rho 1.1178 -> floor 0.0559  margin +0.0326 -> fail (was fail at fixed 0.05)
+  GC: rho 1.1175 -> floor 0.0559  margin +0.0487 -> fail (was fail at fixed 0.05)
+  FG: rho 1.1733 -> floor 0.0587  margin +0.0534 -> fail (was PASS at fixed 0.05)
+  IT: rho 0.9700 -> floor 0.0485  margin +0.0529 -> PASS (was PASS at fixed 0.05)
+
+  ADJUDICATION (pre-registered):
+    REFERENCE FLIP (ZL ok=True, raised-floor flips: ['FG']): instrument inconsistency; no claim.
+
+  -> results/transliteration_floor_calibration.json
