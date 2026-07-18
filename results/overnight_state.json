@@ -47,5 +47,12 @@
   "verdict": "S9 follow-up: REFERENCE_FLIP",
   "suggestive": false,
   "summary": "reference_flip; rho: ZL 1.00, CD 1.12, GC 1.12, FG 1.17, IT 0.97"
+ },
+ "N2c": {
+  "status": "completed",
+  "date": "2026-07-18",
+  "verdict": "S9 significance: ROBUST_SIGNIFICANCE",
+  "suggestive": true,
+  "summary": "robust_significance; ZL p=0.005, CD p=0.005, GC p=0.005, FG p=0.005, IT p=0.005"
  }
 }

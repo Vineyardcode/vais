@@ -158,3 +158,30 @@
 [20:28:24] report -> C:\projects\vais\results\overnight_2026-07-18_report.md
 [20:28:24] RESEARCH.md: section appended (working tree; committed only to the overnight branch)
 [20:28:24] committing results to branch overnight/2026-07-18 ...
+[20:28:25] committed 3211e0dcbd47 on overnight/2026-07-18 (main untouched)
+[20:28:25] done, exit 0
+[22:48:21] ====================================================================
+[22:48:21] overnight runner start 2026-07-18 22:48:21  smoke=False PYTHONHASHSEED=0
+[22:48:21] code at 1b39145 (dirty tree), python 3.13.3
+[22:48:21] queue item N2c: S9 follow-up 2: significance-only cross-reading battery (200 nulls, no effect floor)
+[22:48:21] profile: {}  timeout=7200s
+  | ============================================================================
+  | S9 FOLLOW-UP 2 (N2c) — significance-only battery, 200 nulls
+  | ============================================================================
+  | seed=116 (inherited from N2; superset null stream) splits=10 nulls=200 criterion=beat-all (p=0.0050); NO effect floor (human-approved criteria change 2026-07-18)
+  |   ZL: real +0.0442  null max -0.0020  nulls>=real 0  p=0.0050 -> PASS   [2522 B-lines]
+  |   CD: real +0.0094  null max -0.0084  nulls>=real 0  p=0.0050 -> PASS   [991 B-lines]
+  |   GC: real +0.0372  null max -0.0068  nulls>=real 0  p=0.0050 -> PASS   [2365 B-lines]
+  |   FG: real +0.0475  null max -0.0020  nulls>=real 0  p=0.0050 -> PASS   [2259 B-lines]
+  |   IT: real +0.0475  null max -0.0012  nulls>=real 0  p=0.0050 -> PASS   [2329 B-lines]
+  | 
+  |   ADJUDICATION (pre-registered):
+  |     ROBUST AT SIGNIFICANCE: all usable readings pass at p < 0.005 (['ZL', 'CD', 'FG', 'GC', 'IT']). The cross-reading objection to the quarantined rung-3 finding is resolved in favor of robustness. Still SUGGESTIVE, still quarantined, not a decode.
+  | 
+  |   -> results/transliteration_significance.json
+[23:36:49] experiment finished rc=0 in 2908s (0.81h)
+[23:36:49] adjudication: robust_significance; ZL p=0.005, CD p=0.005, GC p=0.005, FG p=0.005, IT p=0.005
+[23:36:49] SUGGESTIVE finding — quarantined, flagged at the top of the report, awaiting human review
+[23:36:49] report -> C:\projects\vais\results\overnight_2026-07-18_report.md
+[23:36:49] RESEARCH.md: section appended (working tree; committed only to the overnight branch)
+[23:36:49] committing results to branch overnight/2026-07-18 ...

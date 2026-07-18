@@ -121,3 +121,22 @@ Observation for the investigation (no claim): every usable transliteration beats
 | IT | +0.0529 | +0.5632 | 0.9700 | 0.0485 | PASS (PASS) |
 
 **VERDICT: REFERENCE FLIP — symmetric normalization flipped a previously-passing reading by RAISING its floor: the normalized-floor instrument is not consistent enough to re-adjudicate at these margins. No claim; N2 PARTIAL unchanged. The registered question IS answered: measured sensitivities refute the "finer alphabets are mechanically penalized" hypothesis (GC rho > 1).**
+
+## Run 2026-07-18 22:48:21 — N2c
+**S9 follow-up 2: significance-only cross-reading battery (200 nulls, no effect floor)**
+- script: `scripts/transliteration_significance.py`
+- profile: `{}`
+- log: `overnight_2026-07-18.log`; results JSON: `transliteration_significance.json`; branch: `overnight/2026-07-18`
+- runtime: 2908s (0.81 h), exit code 0
+
+**Pre-registered criterion** (script docstring; significance-only criteria change human-approved 2026-07-18): per reading, PASS iff the real 10-split median interior gain beats ALL 200 within-line-shuffle null medians — empirical p = 0.0050. No effect floor; margins are observational. Null stream is a strict superset of N2's (first 20 identical, cross-checked), splits identical to N2 (cross-checked).
+
+| reading | B-lines | real gain | null max (of 200) | nulls ≥ real | p | verdict |
+|---|---|---|---|---|---|---|
+| ZL | 2522 | +0.0442 | -0.0020 | 0 | 0.0050 | **PASS** |
+| CD | 991 | +0.0094 | -0.0084 | 0 | 0.0050 | **PASS** |
+| GC | 2365 | +0.0372 | -0.0068 | 0 | 0.0050 | **PASS** |
+| FG | 2259 | +0.0475 | -0.0020 | 0 | 0.0050 | **PASS** |
+| IT | 2329 | +0.0475 | -0.0012 | 0 | 0.0050 | **PASS** |
+
+**VERDICT: ROBUST AT SIGNIFICANCE — the S7-B ordinal signal is significant at p < 0.005 in every usable independent reading. The cross-reading objection to the quarantined rung-3 finding is resolved in favor of robustness. The finding remains SUGGESTIVE, quarantined, and is not a decode.**
