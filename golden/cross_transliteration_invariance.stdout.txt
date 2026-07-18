@@ -1,0 +1,26 @@
+============================================================================
+CROSS-TRANSLITERATION INVARIANCE (S9) — A1 audit
+============================================================================
+seed=116 splits=10 nulls=20 floor=0.05 rel_dev_flag=0.2 min_B_lines=500 features=('len', 'first', 'last')
+  ZL: 3956 lines, 37520 tokens, alphabet 25  h2r 0.543  init_jsd 0.169  final_jsd 0.092
+  CD: 1845 lines, 14971 tokens, alphabet 35  h2r 0.609  init_jsd 0.141  final_jsd 0.069
+  GC: 3770 lines, 37408 tokens, alphabet 162  h2r 0.629  init_jsd 0.215  final_jsd 0.089
+  FG: 3501 lines, 31450 tokens, alphabet 23  h2r 0.603  init_jsd 0.176  final_jsd 0.089
+  IT: 3718 lines, 34870 tokens, alphabet 22  h2r 0.548  init_jsd 0.173  final_jsd 0.090
+
+  PART 1: 3/6 headline features flagged transliteration-sensitive (>20% vs ZL):
+    mean_wlen: flagged in ['GC'] (devs {'CD': 0.1722, 'GC': 0.2191, 'FG': 0.1347, 'IT': 0.0181})
+    line_init_jsd: flagged in ['GC'] (devs {'CD': 0.1612, 'GC': 0.2762, 'FG': 0.0451, 'IT': 0.0285})
+    line_final_jsd: flagged in ['CD'] (devs {'CD': 0.2522, 'GC': 0.0262, 'FG': 0.024, 'IT': 0.0207})
+
+  PART 2: S7-B ordinal battery (reduced features), per transliteration:
+    ZL: B +0.0442 (null max -0.0031, margin +0.0501) -> PASS   [2522 B-lines]
+    CD: B +0.0094 (null max -0.0115, margin +0.0326) -> fail   [991 B-lines]
+    GC: B +0.0372 (null max -0.0088, margin +0.0487) -> fail   [2365 B-lines]
+    FG: B +0.0475 (null max -0.0027, margin +0.0534) -> PASS   [2259 B-lines]
+    IT: B +0.0475 (null max -0.0032, margin +0.0529) -> PASS   [2329 B-lines]
+
+  ADJUDICATION (pre-registered):
+    PARTIAL: passes in ['FG', 'IT'], fails in ['CD', 'GC'] — the finding is sensitive to reading choices; investigation required before any promotion.
+
+  -> results/cross_transliteration_invariance.json

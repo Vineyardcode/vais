@@ -1211,5 +1211,14 @@
   "results_files_touched": [
    "line_as_record_ordinal.json"
   ]
+ },
+ "cross_transliteration_invariance": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 73.55,
+  "stdout_bytes": 1855,
+  "results_files_touched": [
+   "cross_transliteration_invariance.json"
+  ]
  }
 }

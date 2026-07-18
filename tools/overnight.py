@@ -63,10 +63,12 @@ QUEUE (order = run order; N3 promoted ahead of N2 by direction
       the B signal into composition / length-ordinal / glyph-ordinal
       readings (folio-nulls, line-nulls, glyph-only test, P-JUST
       justification reference, per-folio read-outs).
-  N2  Cross-transliteration invariance (portfolio S9) — NOT READY:
-      needs external transliteration files (Currier, v101, GC) plus
-      scripts/cross_transliteration_invariance.py with pre-registered
-      criteria in its docstring and an adjudicator registered here.
+  N2  Cross-transliteration invariance (portfolio S9),
+      scripts/cross_transliteration_invariance.py: A1 audit over CD /
+      GC(v101) / FSG / IT files (data/translit/, voynich.nu) —
+      fingerprint spread report + the S7-B ordinal battery per reading
+      with alphabet-agnostic features; robust / partial /
+      artifact_suspect ladder pre-registered in the docstring.
 
 Adding an item = write the experiment script (controls first, kill
 criteria in the docstring), then fill in the queue entry's 'stem',
@@ -624,6 +626,112 @@ def adjudicate_n3b(item, expected_params, run_started):
 
 
 # ────────────────────────────────────────────────────────────────────
+# N2 adjudication — pre-registered, mechanical, JSON-only
+# ────────────────────────────────────────────────────────────────────
+def adjudicate_n2(item, expected_params, run_started):
+    """Pre-registered outcomes (cross_transliteration_invariance.py
+    docstring): part-2 ladder = gate (ZL passes with reduced features),
+    then robust / partial / artifact_suspect over the usable
+    alternative transliterations; part 1 is a report-out of
+    transliteration-sensitive fingerprint features. Re-derived from the
+    JSON; refuses on mismatch."""
+    import statistics as _st  # noqa: F401  (parity with sibling adjudicators)
+    jpath = RESULTS / item['result_json']
+    if not jpath.exists():
+        raise AdjudicationError(f'{jpath.name} was not written by the run')
+    if jpath.stat().st_mtime < run_started:
+        raise AdjudicationError(f'{jpath.name} predates this run — stale')
+    data = json.loads(jpath.read_text(encoding='utf-8'))
+    p, part2 = data['params'], data['part2']
+
+    def derived_pass(row):
+        b = row['B']
+        return (b['median_gain'] > b['null_max']
+                and b['margin'] >= p['effect_floor'])
+
+    for tag, row in part2.items():
+        if row['usable'] and derived_pass(row) != row['B']['pass']:
+            raise AdjudicationError(f'{tag}: runner derives '
+                                    f'{derived_pass(row)}, script recorded '
+                                    f'{row["B"]["pass"]}')
+    zl_pass = part2['ZL'].get('B', {}).get('pass', False)
+    alts = {t: r for t, r in part2.items() if t != 'ZL' and r['usable']}
+    alt_pass = sorted(t for t, r in alts.items() if r['B']['pass'])
+    alt_fail = sorted(t for t, r in alts.items() if not r['B']['pass'])
+    if not zl_pass:
+        key = 'gate_failed'
+    elif alts and not alt_fail:
+        key = 'robust'
+    elif alt_pass:
+        key = 'partial'
+    else:
+        key = 'artifact_suspect'
+    if data.get('verdict') != key:
+        raise AdjudicationError(f'runner derives {key!r} but the script '
+                                f'recorded {data.get("verdict")!r}')
+    suggestive = key == 'robust'
+
+    md = []
+    md.append('**Pre-registered outcomes** (script docstring): gate = ZL '
+              'passes the S7-B ordinal battery with alphabet-agnostic '
+              'features; then robust / partial / artifact_suspect over '
+              'usable alternatives (usable = >= '
+              f'{p["min_b_lines"]} B-lines). Part 1 flags fingerprint '
+              f'features deviating > {p["rel_dev_flag"]:.0%} from ZL.')
+    md.append('')
+    md.append('| transliteration | B-lines | median gain | null max | '
+              'margin | battery |')
+    md.append('|---|---|---|---|---|---|')
+    for tag, row in part2.items():
+        if row['usable']:
+            b = row['B']
+            md.append(f'| {tag} | {row["n_B_lines"]} | '
+                      f'{b["median_gain"]:+.4f} | {b["null_max"]:+.4f} | '
+                      f'{b["margin"]:+.4f} | '
+                      f'{"**PASS**" if b["pass"] else "fail"} |')
+        else:
+            md.append(f'| {tag} | {row["n_B_lines"]} | — | — | — | '
+                      'unusable |')
+    flagged = {k: v['flagged'] for k, v in data['sensitivity'].items()
+               if v['flagged']}
+    md.append('')
+    md.append(f'Part 1: flagged transliteration-sensitive features: '
+              f'{flagged if flagged else "none"}.')
+    verdict_text = {
+        'gate_failed':
+            'GATE FAILED — ZL does not pass with reduced features; the '
+            'gallows feature was load-bearing; audit inconclusive.',
+        'robust':
+            'ROBUST — the S7-B ordinal signal passes in every usable '
+            'alternative reading; one named objection to the quarantined '
+            'rung-3 finding is removed (the finding itself remains '
+            'SUGGESTIVE and quarantined).',
+        'partial':
+            'PARTIAL — the signal passes in some readings and misses in '
+            'others; sensitive to reading choices. Investigation required '
+            'before any promotion of the rung-3 finding.',
+        'artifact_suspect':
+            'ARTIFACT-SUSPECT — ZL passes but every usable alternative '
+            'fails: the rung-3 finding is DEMOTED to artifact-suspect.',
+    }[key]
+    md.append('')
+    md.append(f'**VERDICT: {verdict_text}**')
+    if key == 'partial':
+        md.append('')
+        md.append('Observation for the investigation (no claim): every '
+                  'usable transliteration beats ALL its nulls (empirical '
+                  'p bar 5/5); the misses are effect-floor misses only — '
+                  'whether a fixed bits/token floor mechanically penalizes '
+                  'finer-grained alphabets (GC: 162 symbols, miss by '
+                  '0.0013) is the registered question for the follow-up.')
+    summary = (f'{key}; pass {["ZL"] + alt_pass}, fail {alt_fail}, '
+               f'flagged features {sorted(flagged) if flagged else "none"}')
+    return {'verdict': f'S9: {key.upper()}', 'suggestive': suggestive,
+            'md': '\n'.join(md), 'summary': summary,
+            'params': p, 'json_name': jpath.name}
+
+
+# ────────────────────────────────────────────────────────────────────
 # N3c adjudication — pre-registered, mechanical, JSON-only
 # ────────────────────────────────────────────────────────────────────
 def adjudicate_n3c(item, expected_params, run_started):
@@ -832,12 +940,18 @@ QUEUE = [
     },
     {
         'id': 'N2',
-        'title': 'Cross-transliteration invariance audit (portfolio S9)',
+        'title': 'Cross-transliteration invariance audit (portfolio S9): '
+                 'A1 fingerprint spread + S7-B ordinal invariance',
         'stem': 'cross_transliteration_invariance',
-        'not_ready': 'needs external transliteration files (Currier, v101, '
-                     'GC — data acquisition) and '
-                     'scripts/cross_transliteration_invariance.py with '
-                     'pre-registered criteria + an adjudicator in this file',
+        'overrides': {},
+        'smoke_overrides': {},
+        'timeout_s': 3600,
+        'smoke_timeout_s': 1800,
+        'result_json': 'cross_transliteration_invariance.json',
+        'adjudicate': adjudicate_n2,
+        'research_heading': 'Portfolio S9 — cross-transliteration '
+                            'invariance audit (A1)',
+        'not_ready': None,
     },
 ]
 
