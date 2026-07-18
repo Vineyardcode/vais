@@ -52,3 +52,30 @@ Observation for the record (NO claim, not adjudicated here): Currier B alone cle
 Instrument gate: P-REC +0.7471, P1 -0.0039 → PASS.
 
 **VERDICT: B ONLY — consistent with line-level field structure in Currier B (SUGGESTIVE, quarantined; the first registered test of the rung-1 observation). NOT a decode; no field is named or read.**
+
+## Run 2026-07-18 17:23:49 — N3c
+**Line-as-record rung 3 (portfolio S7): composition vs ordinal structure in Currier B**
+- script: `scripts/line_as_record_ordinal.py`
+- profile: `{}`
+- log: `overnight_2026-07-18.log`; results JSON: `line_as_record_ordinal.json`; branch: `overnight/2026-07-18`
+- runtime: 97s (0.03 h), exit code 0
+
+**Pre-registered ladder** (line_as_record_ordinal.py docstring; Currier B adjudicated, A observational): T1 composition (folio-nulls), T2 ordinal (line-nulls), T3 glyph-only (line-nulls); each = beat ALL 20 nulls AND clear the floor (0.05 total / 0.025 glyph). P-JUST (width-broken Latin) is the justification reference, not a gate.
+
+| corpus | total (bits/token) | glyph | len |
+|---|---|---|---|
+| PREC_records | +0.7288 | +0.7215 | +0.0068 |
+| P1_latin_plain | -0.0045 | -0.0043 | +0.0004 |
+| PJUST_justified | +0.0133 | +0.0039 | +0.0099 |
+| VMS_currier_A | +0.0100 | +0.0085 | -0.0016 |
+| VMS_currier_B | +0.0513 | +0.0524 | +0.0018 |
+
+| B test | margin | null max | verdict |
+|---|---|---|---|
+| T1 composition | +0.0571 | -0.0041 | **PASS** |
+| T2 ordinal | +0.0577 | -0.0032 | **PASS** |
+| T3 glyph-only | +0.0571 | -0.0019 | **PASS** |
+
+**VERDICT: ORDINAL GLYPH STRUCTURE — Currier B's intra-line word order carries glyph-identity signal beyond composition and beyond length-based space management: consistent with field-like vocabulary ordering. SUGGESTIVE, quarantined, NOT a decode; no field is named or read.**
+
+Observation (A, not adjudicated): total +0.0100 (glyph +0.0085) — same glyph-dominated shape at ~1/5 the strength, above all its nulls but under the floors: the hand gradient persists at rung 3.

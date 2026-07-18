@@ -726,3 +726,140 @@ Configuration (pre-registered in the script docstring): script defaults. Runtime
 Instrument gate: P-REC +0.7471, P1 -0.0039 → PASS.
 
 **VERDICT: B ONLY — consistent with line-level field structure in Currier B (SUGGESTIVE, quarantined; the first registered test of the rung-1 observation). NOT a decode; no field is named or read.**
+
+---
+
+## Phase 7 — External-findings intake (2026-07-18, human-directed)
+
+Four sources supplied for review plus a self-directed voynich.ninja
+sweep, assessed for incorporation BEFORE the next test is built. Each
+item states what it changes in this program.
+
+### 7.1 Parisel 2026a — "A Quantitative Confirmation of the Currier
+Language Distinction" (arXiv:2604.25979)
+
+Beta-binomial mixture over character-pair substitution across 185
+folios recovers A/B unsupervised (89% label agreement; 195/197 folios
+classified); a two-state switch (vowel selection after specific
+digraphs; "template identity" = 92% of switching variance) is claimed
+to underlie the contrast — i.e., A/B as one system with a discrete
+switch, not two languages.
+
+**Bearing on us:** directly engages A6/S10 and converges with our S7
+rung-2 observation that the positional-field signal is GRADED across
+hands (B passes, A stably above its nulls but sub-floor) — both
+consistent with "one mechanism at different intensities" rather than
+two systems. **Charter caveat:** no negative-control battery is
+reported; mixture models find clusters eagerly (F3). **Incorporations:**
+(a) S7 rung 3 should emit PER-FOLIO interior gains so positional
+strength can be correlated against per-folio switch intensity — if the
+two findings track each other, they describe one regime; (b) implement
+the beta-binomial substitution instrument in VAIS and run it on the
+control battery (does it "discover two languages" in N4 self-citation?)
+— an adjudication the field lacks, cheap, high value either way.
+
+### 7.2 Parisel 2026b — "Layered Positional and Directional
+Constraints" (arXiv:2604.19762)
+
+Claims a directional dissociation (RTL-optimized word-internal
+sequences vs LTR-optimized word-boundary transitions; 80.6%
+end-class→start-class rate) absent in 4 comparison languages; reports
+that a parametric slot generator AND a Cardan grille each fail at least
+one of 4 registered signatures across full parameter ranges.
+
+**Bearing on us:** their generator-vs-signatures test is a narrower
+sibling of our S3 forgery tournament and reaches the same verdict
+(nobody forges it). **Incorporations:** (a) add the directional-
+dissociation statistics to the fingerprint as versioned new features
+(F5: score models on features they were not designed for); (b) the
+Zattera-style slot generator becomes a calibrated S3 tournament entrant
+— see 7.4.
+
+### 7.3 LAAFU prior art (voynich.ninja threads 4869, 5021) — REQUIRED
+READING for S7; two competing mundane models now bound rung 3
+
+Community-established points: (a) Stolfi's justification model —
+scribes fitting words to line width produce longer line-initial and
+shorter line-final words as pure formatting fallout; empirically
+confirmed there (line-final words ~1 character shorter); (b) natural-
+language control texts can show false LAAFU (Vogt: Tom Sawyer); (c)
+paragraph-initial lines obey different rules than ordinary lines
+(Zandbergen).
+
+**Bearing on us:** these are the two live ALTERNATIVE explanations for
+the S7 rung-2 Currier-B signal, and they are ORDINAL — a within-line
+shuffle null does NOT dismiss space management, because space
+management is itself an ordering mechanism. **Binding consequences for
+the rung-3 registration:** (a) composition-preserving nulls
+(within-folio AND within-line shuffles) to kill the section/lexicon
+confound; (b) PER-FEATURE breakdown — if B's interior signal lives in
+the length feature alone, justification is the parsimonious reading;
+field-vocabulary structure requires glyph-identity features to carry
+signal independently; (c) a P-JUST control: natural-language text
+line-broken by a width-fitting algorithm, measuring how much interior
+gain pure justification produces in this instrument; (d) future rungs
+should separate paragraph-initial lines.
+
+### 7.4 Zattera slot-machine update (thread 5715) and Layfield & Davis
+singulions + Timm's critique (threads 5911, 5896)
+
+Thread 5715: switchable-template slot grammar, F1 0.214→0.242, token
+coverage 0.549→0.662; community debate mirrors our S5 MDL position
+(coverage/precision/complexity must be traded explicitly — Stolfi).
+**Incorporation:** a calibrated slot-machine generator (with switchable
+templates) as an S3 tournament entrant, scored on the FULL fingerprint
+— the line-effects moat is precisely what word-grammar generators
+cannot see, and neither the F1 debate nor 7.2 tests it.
+
+Threads 5911/5896: Layfield & Davis's singulion/binding work supports
+A7's demotion of current page order (helpful codicological cover for
+our folio-level holdout, which depends only on the folio as a physical
+unit, not on binding order). Their LSA-based RESEQUENCING claim is an
+uncontrolled S11: Timm's critique (no permutation nulls; production
+proximity vs textual continuity) is our charter's F3/F6 stated
+independently. **Incorporation:** S11, when prototyped, adjudicates
+their resequencing claim under our controls — it now has an external
+claim to test, raising its priority within the portfolio.
+
+### Intake verdict — revised next-step ranking
+
+1. S7 rung 3 REDESIGNED before registration (was: composition nulls
+   only): within-folio + within-line nulls, P-JUST justification
+   control, per-feature and per-folio read-outs (7.1a + 7.3).
+2. Beta-binomial A/B-switch instrument under the control battery
+   (7.1b) — cheap, adjudicates an external claim, informs whether
+   "hand" or "switch intensity" is the right conditioning variable for
+   every per-hand analysis we run (F8's definition is at stake).
+3. Fingerprint vNext with directional features + slot-machine
+   tournament entrant (7.2, 7.4) — extends S3 without new DOF.
+4. S11 with controls, adjudicating the resequencing claim (7.4).
+
+---
+
+### Portfolio S7, rung 3 — composition vs ordinal structure (Currier B) (2026-07-18)
+
+[AUTOMATED — written by tools/overnight.py; run committed to branch overnight/2026-07-18; awaiting human review before promotion to any evidence tier.]
+
+Configuration (pre-registered in the script docstring): script defaults. Runtime 0.03 h at PYTHONHASHSEED=0. Holdout: whole folios (VMS) / 24-line pseudo-folio blocks (controls).
+
+**SUGGESTIVE — awaiting human review (quarantined; never merged automatically):**
+
+**Pre-registered ladder** (line_as_record_ordinal.py docstring; Currier B adjudicated, A observational): T1 composition (folio-nulls), T2 ordinal (line-nulls), T3 glyph-only (line-nulls); each = beat ALL 20 nulls AND clear the floor (0.05 total / 0.025 glyph). P-JUST (width-broken Latin) is the justification reference, not a gate.
+
+| corpus | total (bits/token) | glyph | len |
+|---|---|---|---|
+| PREC_records | +0.7288 | +0.7215 | +0.0068 |
+| P1_latin_plain | -0.0045 | -0.0043 | +0.0004 |
+| PJUST_justified | +0.0133 | +0.0039 | +0.0099 |
+| VMS_currier_A | +0.0100 | +0.0085 | -0.0016 |
+| VMS_currier_B | +0.0513 | +0.0524 | +0.0018 |
+
+| B test | margin | null max | verdict |
+|---|---|---|---|
+| T1 composition | +0.0571 | -0.0041 | **PASS** |
+| T2 ordinal | +0.0577 | -0.0032 | **PASS** |
+| T3 glyph-only | +0.0571 | -0.0019 | **PASS** |
+
+**VERDICT: ORDINAL GLYPH STRUCTURE — Currier B's intra-line word order carries glyph-identity signal beyond composition and beyond length-based space management: consistent with field-like vocabulary ordering. SUGGESTIVE, quarantined, NOT a decode; no field is named or read.**
+
+Observation (A, not adjudicated): total +0.0100 (glyph +0.0085) — same glyph-dominated shape at ~1/5 the strength, above all its nulls but under the floors: the hand gradient persists at rung 3.
