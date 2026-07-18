@@ -1041,6 +1041,94 @@ def adjudicate_n3c(item, expected_params, run_started):
 
 
 # ────────────────────────────────────────────────────────────────────
+# N3d adjudication — pre-registered, mechanical, JSON-only
+# ────────────────────────────────────────────────────────────────────
+def adjudicate_n3d(item, expected_params, run_started):
+    """Pre-registered outcomes (line_as_record_characterization.py
+    docstring): gate = rung-3 headline reproduced exactly; T-PARA
+    (adjudicated) = paragraph-initial lines excluded, PASS iff real
+    beats ALL n_nulls_para nulls (p < 0.005); decomposition is
+    descriptive only. Outcomes: characterized / paragraph_confound.
+    Re-derived from the JSON; refuses on mismatch."""
+    jpath = RESULTS / item['result_json']
+    if not jpath.exists():
+        raise AdjudicationError(f'{jpath.name} was not written by the run')
+    if jpath.stat().st_mtime < run_started:
+        raise AdjudicationError(f'{jpath.name} predates this run — stale')
+    data = json.loads(jpath.read_text(encoding='utf-8'))
+    p = data['params']
+    if not data.get('headline', {}).get('verified'):
+        raise AdjudicationError('rung-3 headline was not verified')
+    t = data['t_para']
+    mine = t['n_nulls_ge_real'] == 0
+    if mine != t['pass']:
+        raise AdjudicationError(f'T-PARA: runner derives {mine}, script '
+                                f'recorded {t["pass"]}')
+    key = 'characterized' if t['pass'] else 'paragraph_confound'
+    if data.get('verdict') != key:
+        raise AdjudicationError(f'runner derives {key!r} but the script '
+                                f'recorded {data.get("verdict")!r}')
+    suggestive = key == 'characterized'
+
+    d = data['decomposition']
+    md = []
+    md.append('**Pre-registered structure** (script docstring): gate = '
+              'rung-3 headline reproduced (verified); T-PARA = '
+              'paragraph-initial lines excluded, significance-only '
+              f'battery ({p["n_nulls_para"]} nulls, p < '
+              f'{1 / (p["n_nulls_para"] + 1):.4f}); decomposition is '
+              'descriptive only and adjudicates nothing.')
+    md.append('')
+    md.append(f'T-PARA: {t["n_lines_excluded"]} paragraph-initial lines '
+              f'excluded → {t["n_lines_kept"]} kept; real '
+              f'{t["median_gain"]:+.4f} vs null max {t["null_max"]:+.4f} '
+              f'(nulls ≥ real: {t["n_nulls_ge_real"]}, p = '
+              f'{t["p_empirical"]:.4f}) → '
+              f'{"**PASS**" if t["pass"] else "**fail**"}.')
+    md.append('')
+    md.append('| interior bin | gain (bits/token) |')
+    md.append('|---|---|')
+    for b, v in d['per_bin'].items():
+        md.append(f'| {b} | {v:+.4f} |')
+    md.append('')
+    md.append('| feature | gain |')
+    md.append('|---|---|')
+    for f, v in d['per_feature'].items():
+        md.append(f'| {f} | {v:+.4f} |')
+    for f in ('first', 'last'):
+        md.append('')
+        md.append(f'| {f} glyph | support | contribution | skew m1/m2/m3 |')
+        md.append('|---|---|---|---|')
+        for r in d['categories'][f]:
+            sk = r['bin_skew']
+            md.append(f'| {r["value"]} | {r["support"]} | '
+                      f'{r["contribution"]:+.4f} | {sk["m1"]}/{sk["m2"]}/'
+                      f'{sk["m3"]} |')
+    verdict_text = {
+        'characterized':
+            'CHARACTERIZED — the signal survives the paragraph control '
+            '(the last registered structural threat); the tables above '
+            'are the program\'s description of the Currier-B ordinal '
+            'signal. SUGGESTIVE supporting detail for the quarantined '
+            'finding; NOT a decode; no value is a translation.',
+        'paragraph_confound':
+            'PARAGRAPH CONFOUND — the signal is carried by '
+            'paragraph-initial lines; the rung-3 finding is DEMOTED and '
+            'the decomposition is not interpreted.',
+    }[key]
+    md.append('')
+    md.append(f'**VERDICT: {verdict_text}**')
+    summary = (f'{key}; T-PARA p={t["p_empirical"]:.4f}, bins '
+               + '/'.join(f'{v:+.3f}' for v in d['per_bin'].values())
+               + ', top first-glyph '
+               + (d['categories']['first'][0]['value']
+                  if d['categories']['first'] else '—'))
+    return {'verdict': f'S7 rung 4: {key.upper()}',
+            'suggestive': suggestive, 'md': '\n'.join(md),
+            'summary': summary, 'params': p, 'json_name': jpath.name}
+
+
+# ────────────────────────────────────────────────────────────────────
 # queue
 # ────────────────────────────────────────────────────────────────────
 N1_PROFILE = {'EM_OUTER': 32, 'EM_PROPOSALS': 48, 'EM_RESTARTS': 16,
@@ -1148,6 +1236,21 @@ QUEUE = [
         'adjudicate': adjudicate_n3c,
         'research_heading': 'Portfolio S7, rung 3 — composition vs '
                             'ordinal structure (Currier B)',
+        'not_ready': None,
+    },
+    {
+        'id': 'N3d',
+        'title': 'Line-as-record rung 4 (portfolio S7): paragraph control '
+                 '+ characterization of the Currier-B ordinal signal',
+        'stem': 'line_as_record_characterization',
+        'overrides': {},
+        'smoke_overrides': {},
+        'timeout_s': 3600,
+        'smoke_timeout_s': 1800,
+        'result_json': 'line_as_record_characterization.json',
+        'adjudicate': adjudicate_n3d,
+        'research_heading': 'Portfolio S7, rung 4 — paragraph control and '
+                            'characterization (Currier B)',
         'not_ready': None,
     },
     {
