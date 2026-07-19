@@ -1214,6 +1214,92 @@ def adjudicate_n3e(item, expected_params, run_started):
 
 
 # ────────────────────────────────────────────────────────────────────
+# N4 adjudication — pre-registered, mechanical, JSON-only
+# ────────────────────────────────────────────────────────────────────
+def adjudicate_n4(item, expected_params, run_started):
+    """Pre-registered rule (line_class_family_test.py docstring): gate =
+    family centroids separate (min pairwise dist > gate_sep x max split
+    RMS); B assigned to nearest family centroid only if d1 <
+    margin_ratio x d2, else none_of_the_above (F4 arm). Re-derived from
+    the JSON; refuses on mismatch."""
+    import math as _m
+    jpath = RESULTS / item['result_json']
+    if not jpath.exists():
+        raise AdjudicationError(f'{jpath.name} was not written by the run')
+    if jpath.stat().st_mtime < run_started:
+        raise AdjudicationError(f'{jpath.name} predates this run — stale')
+    data = json.loads(jpath.read_text(encoding='utf-8'))
+    p, prof = data['params'], data['profiles']
+    cent = {'family_language': 'P1_language',
+            'family_records': 'PREC_records',
+            'family_positional': 'PNUM_positional',
+            'family_hoax': 'N4_hoax'}
+
+    def dist(a, b):
+        return _m.sqrt((prof[a]['r_pos'] - prof[b]['r_pos']) ** 2
+                       + (prof[a]['r_bi'] - prof[b]['r_bi']) ** 2)
+
+    names = list(cent.values())
+    min_sep = min(dist(a, b) for i, a in enumerate(names)
+                  for b in names[i + 1:])
+    max_rms = max(prof[v]['split_rms'] for v in names)
+    gate_ok = min_sep > p['gate_sep'] * max_rms
+    if gate_ok != data['gate']['pass']:
+        raise AdjudicationError('gate re-derivation mismatch')
+    dists = sorted((dist('VMS_currier_B', v), k) for k, v in cent.items())
+    d1, fam1 = dists[0]
+    d2, fam2 = dists[1]
+    if not gate_ok:
+        key = 'gate_failed'
+    elif d1 < p['margin_ratio'] * d2:
+        key = fam1
+    else:
+        key = 'none_of_the_above'
+    if data.get('verdict') != key:
+        raise AdjudicationError(f'runner derives {key!r} but the script '
+                                f'recorded {data.get("verdict")!r}')
+    suggestive = key.startswith('family_')
+
+    md = []
+    md.append('**Pre-registered rule** (script docstring): nearest family '
+              f'centroid with margin (d1 < {p["margin_ratio"]} x d2) and '
+              'an explicit none-of-the-above arm (F4); gate = centroids '
+              f'separate (> {p["gate_sep"]} x max split RMS). Profiles = '
+              'normalized position-driven vs neighbor-driven class-'
+              'sequence information, folio holdout, 10-split medians.')
+    md.append('')
+    md.append('| corpus | r_pos | r_bi | split RMS | lines |')
+    md.append('|---|---|---|---|---|')
+    for name, row in prof.items():
+        md.append(f'| {name} | {row["r_pos"]:+.4f} | {row["r_bi"]:+.4f} | '
+                  f'{row["split_rms"]:.4f} | {row["n_lines"]} |')
+    md.append('')
+    md.append(f'Gate: min centroid separation {min_sep:.4f} vs required '
+              f'{p["gate_sep"] * max_rms:.4f} → '
+              f'{"PASS" if gate_ok else "**FAIL**"}. B distances: '
+              + ', '.join(f'{k} {d:.4f}' for d, k in dists) + '.')
+    md.append('')
+    if key.startswith('family_'):
+        md.append(f'**VERDICT: {key.upper()}** — B\'s line-class ordering '
+                  f'profile is nearest the {key[7:]} reference with clear '
+                  'margin. A family-level reading only: nothing is '
+                  'decoded, and the S7 positional finding stands as the '
+                  'residual that separates B from the pure family '
+                  'centroid (real prose shows r_pos ~ 0; B does not).')
+    elif key == 'none_of_the_above':
+        md.append('**VERDICT: NONE OF THE ABOVE** — B matches no '
+                  'calibrated family clearly (the F4 arm).')
+    else:
+        md.append('**VERDICT: GATE FAILED** — no reading.')
+    summary = (f'{key}; B (r_pos {prof["VMS_currier_B"]["r_pos"]:+.4f}, '
+               f'r_bi {prof["VMS_currier_B"]["r_bi"]:+.4f}), nearest '
+               f'{fam1} d={d1:.4f}, second {fam2} d={d2:.4f}')
+    return {'verdict': f'S5/S6 family test: {key.upper()}',
+            'suggestive': suggestive, 'md': '\n'.join(md),
+            'summary': summary, 'params': p, 'json_name': jpath.name}
+
+
+# ────────────────────────────────────────────────────────────────────
 # queue
 # ────────────────────────────────────────────────────────────────────
 N1_PROFILE = {'EM_OUTER': 32, 'EM_PROPOSALS': 48, 'EM_RESTARTS': 16,
@@ -1351,6 +1437,21 @@ QUEUE = [
         'adjudicate': adjudicate_n3e,
         'research_heading': 'Portfolio S7, rung 5 — within-section '
                             'replication (Currier B)',
+        'not_ready': None,
+    },
+    {
+        'id': 'N4',
+        'title': 'S5/S6 line-class family test: which calibrated process '
+                 'orders Currier B\'s lines?',
+        'stem': 'line_class_family_test',
+        'overrides': {},
+        'smoke_overrides': {},
+        'timeout_s': 3600,
+        'smoke_timeout_s': 1800,
+        'result_json': 'line_class_family_test.json',
+        'adjudicate': adjudicate_n4,
+        'research_heading': 'Portfolio S5/S6 — line-class sequence family '
+                            'classification (Currier B)',
         'not_ready': None,
     },
     {
