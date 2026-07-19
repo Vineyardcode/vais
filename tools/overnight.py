@@ -1726,6 +1726,87 @@ def adjudicate_n6d(item, expected_params, run_started):
 
 
 # ────────────────────────────────────────────────────────────────────
+# N6e adjudication — pre-registered, mechanical, JSON-only
+# ────────────────────────────────────────────────────────────────────
+def adjudicate_n6e(item, expected_params, run_started):
+    """Pre-registered outcomes (line_discipline_transfer.py docstring):
+    G1e (Currier-A-measured table placing B) vs the N6 bars
+    (cross-checked in the script): not_transferable / partial_bind /
+    discipline_transfers. Re-derived from the JSON; refuses on
+    mismatch."""
+    jpath = RESULTS / item['result_json']
+    if not jpath.exists():
+        raise AdjudicationError(f'{jpath.name} was not written by the run')
+    if jpath.stat().st_mtime < run_started:
+        raise AdjudicationError(f'{jpath.name} predates this run — stale')
+    data = json.loads(jpath.read_text(encoding='utf-8'))
+    r = data['results']
+    d = r['G1e']['dist']
+    line_ok = d['line'] <= r['bar']['line']
+    unfit_ok = d['unfitted'] <= r['bar']['unfitted']
+    if not line_ok:
+        key = 'not_transferable'
+    elif not unfit_ok:
+        key = 'partial_bind'
+    else:
+        key = 'discipline_transfers'
+    if data.get('verdict') != key:
+        raise AdjudicationError(f'runner derives {key!r} but the script '
+                                f'recorded {data.get("verdict")!r}')
+    suggestive = key == 'discipline_transfers'
+
+    md = []
+    md.append('**Pre-registered outcomes** (script docstring; blind WITH '
+              'RESPECT TO B — the table is measured on Currier A only '
+              f'({r["n_a_lines"]} lines), B contributes its lexicon and '
+              f'the single knob, fitted LAMBDA={r["lambda"]} vs B\'s own '
+              f'{r["lambda_b_own"]}).')
+    md.append('')
+    md.append(f'| entrant | D_line (bar {r["bar"]["line"]}) | '
+              f'D_unfitted (bar {r["bar"]["unfitted"]}) |')
+    md.append('|---|---|---|')
+    md.append(f'| G1 B-table (N6) | {r["n6_g1_dist"]["line"]} | '
+              f'{r["n6_g1_dist"]["unfitted"]} |')
+    md.append(f'| G1e A-table | {d["line"]} | {d["unfitted"]} |')
+    md.append('')
+    md.append('Per-axis transfer (Spearman, A-table vs B-table rank-3 '
+              'axes): '
+              + ', '.join(f'{k} {v:+.3f}'
+                          for k, v in r['axis_transfer'].items()) + '.')
+    verdict_text = {
+        'not_transferable':
+            'NOT TRANSFERABLE — the A-measured table does not close B\'s '
+            'line group at any knob setting. The per-axis profile '
+            'localizes the failure: the edge axis (+0.92) and interior '
+            'gradient (+0.83) ARE manuscript-wide (shared shape, '
+            'strength-scaled — the switch picture holds for them); the '
+            'pre-final-zone axis ANTI-transfers (−0.46) and is '
+            'B-specific. The hand difference is intensity on two shared '
+            'rules PLUS one qualitatively B-own rule. Corpse logged.',
+        'partial_bind':
+            'PARTIAL (BIND) — line group closes under the A-table but '
+            'the unfitted order-texture breaks.',
+        'discipline_transfers':
+            'DISCIPLINE TRANSFERS — a table measured exclusively on '
+            'Currier A closes B\'s full line texture; the discipline is '
+            'a manuscript-wide system with a hand strength difference. '
+            'SUGGESTIVE, quarantined; not a decode.',
+    }[key]
+    md.append('')
+    md.append(f'**VERDICT: {verdict_text}**')
+    summary = (f'{key}; G1e D_line {d["line"]} vs bar {r["bar"]["line"]} '
+               f'(B-table {r["n6_g1_dist"]["line"]}); transfer axis1 '
+               f'{r["axis_transfer"]["axis1"]:+.2f} axis2 '
+               f'{r["axis_transfer"]["axis2"]:+.2f} axis3 '
+               f'{r["axis_transfer"]["axis3"]:+.2f}; lambda '
+               f'{r["lambda"]} vs {r["lambda_b_own"]}')
+    return {'verdict': f'S3 rung 3: {key.upper()}',
+            'suggestive': suggestive, 'md': '\n'.join(md),
+            'summary': summary, 'params': data['params'],
+            'json_name': jpath.name}
+
+
+# ────────────────────────────────────────────────────────────────────
 # queue
 # ────────────────────────────────────────────────────────────────────
 N1_PROFILE = {'EM_OUTER': 32, 'EM_PROPOSALS': 48, 'EM_RESTARTS': 16,
@@ -1969,6 +2050,21 @@ QUEUE = [
         'adjudicate': adjudicate_n6d,
         'research_heading': 'Portfolio S3, rung 2d — rank-3 discipline '
                             'test (Currier B)',
+        'not_ready': None,
+    },
+    {
+        'id': 'N6e',
+        'title': 'S3 rung 3: cross-hand blind test — does an A-measured '
+                 'table place B\'s lines?',
+        'stem': 'line_discipline_transfer',
+        'overrides': {},
+        'smoke_overrides': {},
+        'timeout_s': 3600,
+        'smoke_timeout_s': 1800,
+        'result_json': 'line_discipline_transfer.json',
+        'adjudicate': adjudicate_n6e,
+        'research_heading': 'Portfolio S3, rung 3 — cross-hand blind '
+                            'table test (A → B)',
         'not_ready': None,
     },
     {
