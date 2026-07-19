@@ -1283,5 +1283,14 @@
   "results_files_touched": [
    "line_discipline_tournament.json"
   ]
+ },
+ "line_discipline_compression": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 57.01,
+  "stdout_bytes": 1239,
+  "results_files_touched": [
+   "line_discipline_compression.json"
+  ]
  }
 }

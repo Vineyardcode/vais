@@ -1,0 +1,17 @@
+============================================================================
+LINE-DISCIPLINE COMPRESSION (S3 rung 2b) — one-axis test (N6b)
+============================================================================
+seed=120 (inherited from N6; cross-checked) lambda_grid=0.25..4.0
+  B features reproduce the N6 record  VERIFIED
+  bars reproduce N6 (line 7.489, unfitted 4.092)  VERIFIED
+  rank-1 variance share of centered log-table: 85.7%
+  class axis A (low -> high): a -0.994  ch -0.783  sh -0.416  l -0.385  o -0.339  k -0.332  # -0.247  q -0.141  d +0.387  y +0.533  t +0.672  s +0.760  p +1.285
+  position profile V: p1 +2.114  p2 -0.627  m1 -0.360  m2 -0.332  m3 -0.144  pL-1 -0.275  pL -0.376
+  LAMBDA (compressed table) fitted on interior gain: 2.0 (|err| 0.0002) — FROZEN
+  G1b (rank-1 table)  D_line 9.529  D_unfitted 2.0  (N6 full-table G1: 6.645 / 1.98)
+  observational axis correlations (Spearman): log_class_freq -0.648  mean_word_len +0.165  gallows_initial +0.593
+
+  ADJUDICATION (pre-registered):
+    NOT COMPRESSIBLE: the rank-1 table does not close the line group — the discipline needs more than one axis. Corpse logged with the per-feature residuals.
+
+  -> results/line_discipline_compression.json

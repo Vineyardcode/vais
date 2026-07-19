@@ -1475,6 +1475,87 @@ def adjudicate_n6(item, expected_params, run_started):
 
 
 # ────────────────────────────────────────────────────────────────────
+# N6b adjudication — pre-registered, mechanical, JSON-only
+# ────────────────────────────────────────────────────────────────────
+def adjudicate_n6b(item, expected_params, run_started):
+    """Pre-registered outcomes (line_discipline_compression.py
+    docstring): G1b (rank-1 table) vs the N6 bars (cross-checked in the
+    script): not_compressible / partial_bind / one_axis_sufficient.
+    Re-derived from the JSON; refuses on mismatch."""
+    jpath = RESULTS / item['result_json']
+    if not jpath.exists():
+        raise AdjudicationError(f'{jpath.name} was not written by the run')
+    if jpath.stat().st_mtime < run_started:
+        raise AdjudicationError(f'{jpath.name} predates this run — stale')
+    data = json.loads(jpath.read_text(encoding='utf-8'))
+    r = data['results']
+    d = r['G1b']['dist']
+    line_ok = d['line'] <= r['bar']['line']
+    unfit_ok = d['unfitted'] <= r['bar']['unfitted']
+    if not line_ok:
+        key = 'not_compressible'
+    elif not unfit_ok:
+        key = 'partial_bind'
+    else:
+        key = 'one_axis_sufficient'
+    if data.get('verdict') != key:
+        raise AdjudicationError(f'runner derives {key!r} but the script '
+                                f'recorded {data.get("verdict")!r}')
+    suggestive = key == 'one_axis_sufficient'
+
+    md = []
+    md.append('**Pre-registered outcomes** (script docstring): rank-1 '
+              'SVD compression of the N6 discipline table (deterministic, '
+              'no search), same bars and machinery as N6 (all '
+              'cross-checked at runtime), one re-fitted knob '
+              f'(LAMBDA={r["lambda"]}). Rank-1 variance share: '
+              f'{r["var_share"]:.1%}.')
+    md.append('')
+    md.append(f'| entrant | D_line (bar {r["bar"]["line"]}) | '
+              f'D_unfitted (bar {r["bar"]["unfitted"]}) |')
+    md.append('|---|---|---|')
+    md.append(f'| G1 full table (N6) | {r["n6_g1_dist"]["line"]} | '
+              f'{r["n6_g1_dist"]["unfitted"]} |')
+    md.append(f'| G1b rank-1 table | {d["line"]} | {d["unfitted"]} |')
+    md.append('')
+    md.append('Class axis A (low → high): '
+              + ', '.join(f'{c} {a:+.3f}' for c, a in
+                          sorted(r['axis'].items(),
+                                 key=lambda kv: kv[1])) + '.')
+    md.append('Position profile V: '
+              + ', '.join(f'{b} {v:+.3f}'
+                          for b, v in r['profile'].items()) + '.')
+    md.append('Observational axis correlations (declared predictors): '
+              + ', '.join(f'{k} {v:+.3f}'
+                          for k, v in r['axis_correlations'].items())
+              + '.')
+    verdict_text = {
+        'not_compressible':
+            'NOT COMPRESSIBLE — one latent axis does not reproduce the '
+            'line texture (the dominant axis is the EDGE/paragraph axis; '
+            'the interior ordering is a second, independent dimension). '
+            'The discipline is at least rank-2; corpse logged with '
+            'coordinates.',
+        'partial_bind':
+            'PARTIAL (BIND) — line group closes under rank-1 but the '
+            'unfitted order-texture breaks.',
+        'one_axis_sufficient':
+            'ONE AXIS SUFFICIENT — the discipline reduces to one class '
+            'score axis, one position profile, and one knob. '
+            'SUGGESTIVE, quarantined; not a decode.',
+    }[key]
+    md.append('')
+    md.append(f'**VERDICT: {verdict_text}**')
+    summary = (f'{key}; G1b D_line {d["line"]} vs bar '
+               f'{r["bar"]["line"]} (full table {r["n6_g1_dist"]["line"]}), '
+               f'var_share {r["var_share"]:.1%}')
+    return {'verdict': f'S3 rung 2b: {key.upper()}',
+            'suggestive': suggestive, 'md': '\n'.join(md),
+            'summary': summary, 'params': data['params'],
+            'json_name': jpath.name}
+
+
+# ────────────────────────────────────────────────────────────────────
 # queue
 # ────────────────────────────────────────────────────────────────────
 N1_PROFILE = {'EM_OUTER': 32, 'EM_PROPOSALS': 48, 'EM_RESTARTS': 16,
@@ -1673,6 +1754,21 @@ QUEUE = [
         'adjudicate': adjudicate_n6,
         'research_heading': 'Portfolio S3, rung 2 — line-discipline '
                             'reduction tournament (Currier B)',
+        'not_ready': None,
+    },
+    {
+        'id': 'N6b',
+        'title': 'S3 rung 2b: table-compression test — is the discipline '
+                 'one latent axis?',
+        'stem': 'line_discipline_compression',
+        'overrides': {},
+        'smoke_overrides': {},
+        'timeout_s': 3600,
+        'smoke_timeout_s': 1800,
+        'result_json': 'line_discipline_compression.json',
+        'adjudicate': adjudicate_n6b,
+        'research_heading': 'Portfolio S3, rung 2b — discipline-table '
+                            'compression (Currier B)',
         'not_ready': None,
     },
     {
