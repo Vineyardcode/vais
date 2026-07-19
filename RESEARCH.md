@@ -519,6 +519,23 @@ future work and the parameters are UI-exposed for exactly that.
    Scope: our implementation family; a published-parameter replication
    is the obvious next test.
 
+*(Entries 11-13 added 2026-07-19 after the Phase 8 review sign-off;
+numbering continues across tiers. Full evidence chains: Phase 8.)*
+
+11. **The manuscript does not behave as a strict 1:1 verbose cipher
+    over Latin or Italian** (N1b, 2026-07-18): the inverter, validated
+    for the first time on the planted control (P4 recovery 65%, margin
+    +0.350 over the noise floor under the coverage-penalized metric,
+    folio holdout, six LMs), scores every VMS row within the
+    free-mapping noise floor (full −0.880 / A −0.842 / B −0.895 vs
+    floor −0.862). Scope: the strict 1:1 configuration only;
+    homophonic/positional variants remain untested by registration.
+12. **Pooled interior line structure is a line-length artifact**
+    (S7 v1, 2026-07-18): pooled-VMS interior positional gain exceeds
+    the N1 word-shuffle artifact baseline by only +0.033 (< the 0.05
+    registered margin) with the instrument gate validated (P-REC
+    +0.719). Interior structure emerges only per-hand — see entry 13.
+
 ### SUGGESTIVE (real signal, one instrument, or thin margins)
 
 5. **The verbose-cipher profile keeps matching.** P4 is the only
@@ -534,6 +551,21 @@ future work and the parameters are UI-exposed for exactly that.
    before promotion.
 7. **Currier B is harder to forge than A** (every phase109 entrant is
    further from B), consistent with B as the more systematized register.
+
+13. **The intra-line ordinal residue** (S7 ladder + S9 arc + S7-R,
+    2026-07-17..19, accepted at Phase 8 review): within Currier-B
+    lines (and, weaker, A), word-initial glyph class predicts interior
+    line position — front-loaded, glyph-carried (q-/sh-/c-/o-initial
+    early, r-initial late; length uninvolved), ~0.05 bits/token in B —
+    robust against composition, layout, paragraph, section, and
+    transliteration objections (p < 0.005 in five independent readings
+    and in every B section), replicated by a methodologically disjoint
+    re-implementation, and NOT a record template or positional
+    notation at calibrated strength (family profile: language-like
+    plus a positional component genuine prose lacks). The seven
+    standing weaknesses of Phase 8 §8.7 — above all the same-author
+    caveat — attach to this entry verbatim. Consistent-with only;
+    nothing is decoded.
 
 ### SPECULATIVE (hypotheses worth compute, no claims)
 
@@ -599,3 +631,672 @@ lines, while holding TTR ≈ 0.36, adjacency ≈ 0.027, and h2_ratio ≈
 0.546.** Every mechanism we calibrated fails at least one. The
 instruments (phase108-111), controls, and kill criteria are permanent
 VAIS modules with UI-exposed parameters; the tournament is open.
+
+---
+
+### Phase 4c — Verbose cipher inversion, rung 3: max strength + folio-level holdout (2026-07-17)
+
+[AUTOMATED — written by tools/overnight.py; run committed to branch overnight/2026-07-17; awaiting human review before promotion to any evidence tier.]
+
+Budget (pre-registered in the script docstring): {'EM_OUTER': 32, 'EM_PROPOSALS': 48, 'EM_RESTARTS': 16, 'RESTARTS': 64, 'TOP_LMS_RUNG2': 3}. Runtime 1.76 h at PYTHONHASHSEED=0. Holdout: whole folios (VMS) / 24-line pseudo-folios (controls), closing the rung-2 Currier-A memorization leak.
+
+**Pre-registered criteria** (verbose_cipher_inversion.py docstring; RESEARCH.md Phase 4b): instrument passes only if BOTH hold — P4 planted-inventory recovery >= 50% AND P4 best holdout gap beats the same-rung noise floor by >= 0.1 bits/sym. VMS rows are interpreted only if the instrument passes, and only as "consistent with", never "decoded".
+
+| pre-registered check | threshold | actual | verdict |
+|---|---|---|---|
+| P4 inventory recovery (rung 2, latin/plain LM) | >= 50% | 39% (mapping accuracy 26%) | **FAIL** |
+| P4 gap − noise floor (rung 2) | >= +0.100 bits/sym | -0.150 (gap +0.856 via latin/abbrev4, floor +1.007) | **FAIL** |
+
+Rung-2 holdout gaps (folio-level holdout, this budget):
+
+| corpus | best LM | gap (bits/sym) | gap − floor | holdout words excluded |
+|---|---|---|---|---|
+| P4_latin_verbose | latin/abbrev4 | +0.856 | -0.150 | 99.2% |
+| P1_latin_plain | latin/abbrev4 | +0.012 | -0.995 | 80.6% |
+| N2_char_shuffle | italian/abjad | +0.384 | -0.622 | 99.0% |
+| N3_grille | latin/abjad | +1.007 | +0.000 | 99.6% |
+| N4_self_citation | latin/abjad | +0.301 | -0.705 | 88.4% |
+| VMS_full | latin/abbrev4 | -0.201 | -1.208 | 65.5% |
+| VMS_currier_A | latin/abbrev4 | +0.369 | -0.638 | 70.8% |
+| VMS_currier_B | latin/abbrev4 | +0.166 | -0.841 | 68.8% |
+
+Rung 1 for the record: P4 segmenter inventory recovery 13%, best gap -0.773 vs rung-1 noise floor -0.660.
+
+**VERDICT: INSTRUMENT KILLED (pre-registered).** At this budget, with the folio-holdout memorization leak closed, the strict 1:1 inverter still cannot invert a KNOWN verbose cipher clearly above what a free mapping extracts from meaningless text. Per the pre-registered protocol the VMS rows below are NOT interpretable (shown for the record only):
+
+- VMS_full: best gap -0.201 (latin/abbrev4) — not interpretable, instrument killed
+- VMS_currier_A: best gap +0.369 (latin/abbrev4) — not interpretable, instrument killed
+- VMS_currier_B: best gap +0.166 (latin/abbrev4) — not interpretable, instrument killed
+
+The compute rungs of the ladder are now exhausted. The next rung would relax model strictness (homophones / positional variants), which per the pre-registration requires a human-logged justification in the script docstring BEFORE any run — not an overnight decision.
+
+The corpse is logged with the same prominence as a positive would be, per charter rule 5.
+
+---
+
+### Phase 4d — Verbose cipher inversion, rung 3b: coverage-penalized objective (2026-07-17)
+
+[AUTOMATED — written by tools/overnight.py; run committed to branch overnight/2026-07-17; awaiting human review before promotion to any evidence tier.]
+
+Configuration (pre-registered in the script docstring): {'EM_OUTER': 32, 'EM_PROPOSALS': 48, 'EM_RESTARTS': 16, 'RESTARTS': 64, 'TOP_LMS_RUNG2': 3}. Runtime 1.59 h at PYTHONHASHSEED=0. Holdout: whole folios (VMS) / 24-line pseudo-folio blocks (controls).
+
+**Pre-registered criteria** (verbose_cipher_inversion.py docstring; RESEARCH.md Phase 4b): instrument passes only if BOTH hold — P4 planted-inventory recovery >= 50% AND P4 best holdout gap beats the same-rung noise floor by >= 0.1 bits/sym. VMS rows are interpreted only if the instrument passes, and only as "consistent with", never "decoded".
+
+| pre-registered check | threshold | actual | verdict |
+|---|---|---|---|
+| P4 inventory recovery (rung 2, latin/plain LM) | >= 50% | 65% (mapping accuracy 57%) | PASS |
+| P4 gap − noise floor (rung 2) | >= +0.100 bits/sym | +0.350 (gap -0.512 via latin/plain, floor -0.862) | PASS |
+
+Rung-2 holdout gaps (folio-level holdout, this budget):
+
+| corpus | best LM | gap (bits/sym) | gap − floor | holdout words excluded |
+|---|---|---|---|---|
+| P4_latin_verbose | latin/plain | -0.512 | +0.350 | 12.9% |
+| P1_latin_plain | latin/abbrev4 | -1.129 | -0.266 | 74.4% |
+| N2_char_shuffle | latin/abjad | -0.994 | -0.131 | 87.8% |
+| N3_grille | latin/abjad | -0.862 | +0.000 | 70.3% |
+| N4_self_citation | latin/abjad | -0.922 | -0.060 | 78.3% |
+| VMS_full | latin/abbrev4 | -0.880 | -0.018 | 43.8% |
+| VMS_currier_A | latin/plain | -0.842 | +0.020 | 48.3% |
+| VMS_currier_B | latin/abbrev4 | -0.895 | -0.033 | 49.4% |
+
+Rung 1 for the record: P4 segmenter inventory recovery 13%, best gap -0.773 vs rung-1 noise floor -0.660.
+
+**VERDICT: INSTRUMENT PASSED** — the known cipher was inverted above the noise floor at this rung. VMS rows, read under the pre-registered vocabulary:
+
+- VMS_full: best gap -0.880 (latin/abbrev4) — within the noise floor: nothing beyond free-mapping noise at this rung (a clean negative for the strict 1:1 verbose-cipher family under these 6 LMs).
+- VMS_currier_A: best gap -0.842 (latin/plain) — within the noise floor: nothing beyond free-mapping noise at this rung (a clean negative for the strict 1:1 verbose-cipher family under these 6 LMs).
+- VMS_currier_B: best gap -0.895 (latin/abbrev4) — within the noise floor: nothing beyond free-mapping noise at this rung (a clean negative for the strict 1:1 verbose-cipher family under these 6 LMs).
+
+---
+
+### Portfolio S7 — line-as-record structures, first instrumented run (2026-07-18)
+
+[AUTOMATED — written by tools/overnight.py; run committed to branch overnight/2026-07-18; awaiting human review before promotion to any evidence tier.]
+
+Configuration (pre-registered in the script docstring): script defaults. Runtime 0.00 h at PYTHONHASHSEED=0. Holdout: whole folios (VMS) / 24-line pseudo-folio blocks (controls).
+
+**Pre-registered gates** (line_as_record_structures.py docstring): instrument gate P-REC >= 0.3 and P1 <= 0.05 interior bits/token; kill if VMS_full − N1 < 0.05; positive only if all three VMS rows clear the margin (F8 concordance). Headline is INTERIOR gain — the line edges are the already-established anomaly.
+
+| corpus | interior gain (bits/token) | edge gain | margin over N1 |
+|---|---|---|---|
+| PREC_records | +0.7189 | +1.6007 | — |
+| P1_latin_plain | -0.0033 | -0.0063 | — |
+| N1_word_shuffle | -0.0083 | -0.0060 | — |
+| N3_grille | -0.0042 | -0.0050 | — |
+| VMS_full | +0.0246 | +0.3598 | +0.0329 |
+| VMS_currier_A | -0.0138 | +0.2869 | -0.0055 |
+| VMS_currier_B | +0.0685 | +0.4379 | +0.0768 |
+
+Instrument gate: P-REC +0.7189, P1 -0.0033 → PASS.
+
+**VERDICT: KILLED (pre-registered): VMS_full interior margin +0.0329 < 0.05 — interior positional structure is not distinguishable from a line-length artifact at this instrument. The moat stays at the line EDGES.**
+
+Observation for the record (NO claim, not adjudicated here): Currier B alone clears the margin (+0.0768) while A shows none (-0.0055) — consistent with the "B is the more systematized register" thread. A per-hand adjudication would need its own pre-registration in a future rung.
+
+The corpse is logged with the same prominence as a positive would be, per charter rule 5.
+
+---
+
+### Portfolio S7, rung 2 — per-hand line-as-record adjudication (2026-07-18)
+
+[AUTOMATED — written by tools/overnight.py; run committed to branch overnight/2026-07-18; awaiting human review before promotion to any evidence tier.]
+
+Configuration (pre-registered in the script docstring): script defaults. Runtime 0.03 h at PYTHONHASHSEED=0. Holdout: whole folios (VMS) / 24-line pseudo-folio blocks (controls).
+
+**SUGGESTIVE — awaiting human review (quarantined; never merged automatically):**
+
+**Pre-registered outcomes** (line_as_record_per_hand.py docstring, full post-hoc provenance disclosed there): a hand passes only if its 10-split median interior gain beats ALL 20 of its own null-shuffle medians (empirical p ~ 0.048) AND clears the 0.05 bits/token effect floor over the null median — strictly harder than the rung-1 observation that motivated this rung.
+
+| corpus | median gain (bits/token) | null max | null median | margin | pass |
+|---|---|---|---|---|---|
+| PREC_records | +0.7471 | — | — | — | gate |
+| P1_latin_plain | -0.0039 | — | — | — | gate |
+| VMS_currier_A | +0.0113 | -0.0132 | -0.0187 | +0.0301 | fail |
+| VMS_currier_B | +0.0513 | -0.0043 | -0.0067 | +0.0580 | **PASS** |
+
+Instrument gate: P-REC +0.7471, P1 -0.0039 → PASS.
+
+**VERDICT: B ONLY — consistent with line-level field structure in Currier B (SUGGESTIVE, quarantined; the first registered test of the rung-1 observation). NOT a decode; no field is named or read.**
+
+---
+
+## Phase 7 — External-findings intake (2026-07-18, human-directed)
+
+Four sources supplied for review plus a self-directed voynich.ninja
+sweep, assessed for incorporation BEFORE the next test is built. Each
+item states what it changes in this program.
+
+### 7.1 Parisel 2026a — "A Quantitative Confirmation of the Currier
+Language Distinction" (arXiv:2604.25979)
+
+Beta-binomial mixture over character-pair substitution across 185
+folios recovers A/B unsupervised (89% label agreement; 195/197 folios
+classified); a two-state switch (vowel selection after specific
+digraphs; "template identity" = 92% of switching variance) is claimed
+to underlie the contrast — i.e., A/B as one system with a discrete
+switch, not two languages.
+
+**Bearing on us:** directly engages A6/S10 and converges with our S7
+rung-2 observation that the positional-field signal is GRADED across
+hands (B passes, A stably above its nulls but sub-floor) — both
+consistent with "one mechanism at different intensities" rather than
+two systems. **Charter caveat:** no negative-control battery is
+reported; mixture models find clusters eagerly (F3). **Incorporations:**
+(a) S7 rung 3 should emit PER-FOLIO interior gains so positional
+strength can be correlated against per-folio switch intensity — if the
+two findings track each other, they describe one regime; (b) implement
+the beta-binomial substitution instrument in VAIS and run it on the
+control battery (does it "discover two languages" in N4 self-citation?)
+— an adjudication the field lacks, cheap, high value either way.
+
+### 7.2 Parisel 2026b — "Layered Positional and Directional
+Constraints" (arXiv:2604.19762)
+
+Claims a directional dissociation (RTL-optimized word-internal
+sequences vs LTR-optimized word-boundary transitions; 80.6%
+end-class→start-class rate) absent in 4 comparison languages; reports
+that a parametric slot generator AND a Cardan grille each fail at least
+one of 4 registered signatures across full parameter ranges.
+
+**Bearing on us:** their generator-vs-signatures test is a narrower
+sibling of our S3 forgery tournament and reaches the same verdict
+(nobody forges it). **Incorporations:** (a) add the directional-
+dissociation statistics to the fingerprint as versioned new features
+(F5: score models on features they were not designed for); (b) the
+Zattera-style slot generator becomes a calibrated S3 tournament entrant
+— see 7.4.
+
+### 7.3 LAAFU prior art (voynich.ninja threads 4869, 5021) — REQUIRED
+READING for S7; two competing mundane models now bound rung 3
+
+Community-established points: (a) Stolfi's justification model —
+scribes fitting words to line width produce longer line-initial and
+shorter line-final words as pure formatting fallout; empirically
+confirmed there (line-final words ~1 character shorter); (b) natural-
+language control texts can show false LAAFU (Vogt: Tom Sawyer); (c)
+paragraph-initial lines obey different rules than ordinary lines
+(Zandbergen).
+
+**Bearing on us:** these are the two live ALTERNATIVE explanations for
+the S7 rung-2 Currier-B signal, and they are ORDINAL — a within-line
+shuffle null does NOT dismiss space management, because space
+management is itself an ordering mechanism. **Binding consequences for
+the rung-3 registration:** (a) composition-preserving nulls
+(within-folio AND within-line shuffles) to kill the section/lexicon
+confound; (b) PER-FEATURE breakdown — if B's interior signal lives in
+the length feature alone, justification is the parsimonious reading;
+field-vocabulary structure requires glyph-identity features to carry
+signal independently; (c) a P-JUST control: natural-language text
+line-broken by a width-fitting algorithm, measuring how much interior
+gain pure justification produces in this instrument; (d) future rungs
+should separate paragraph-initial lines.
+
+### 7.4 Zattera slot-machine update (thread 5715) and Layfield & Davis
+singulions + Timm's critique (threads 5911, 5896)
+
+Thread 5715: switchable-template slot grammar, F1 0.214→0.242, token
+coverage 0.549→0.662; community debate mirrors our S5 MDL position
+(coverage/precision/complexity must be traded explicitly — Stolfi).
+**Incorporation:** a calibrated slot-machine generator (with switchable
+templates) as an S3 tournament entrant, scored on the FULL fingerprint
+— the line-effects moat is precisely what word-grammar generators
+cannot see, and neither the F1 debate nor 7.2 tests it.
+
+Threads 5911/5896: Layfield & Davis's singulion/binding work supports
+A7's demotion of current page order (helpful codicological cover for
+our folio-level holdout, which depends only on the folio as a physical
+unit, not on binding order). Their LSA-based RESEQUENCING claim is an
+uncontrolled S11: Timm's critique (no permutation nulls; production
+proximity vs textual continuity) is our charter's F3/F6 stated
+independently. **Incorporation:** S11, when prototyped, adjudicates
+their resequencing claim under our controls — it now has an external
+claim to test, raising its priority within the portfolio.
+
+### Intake verdict — revised next-step ranking
+
+1. S7 rung 3 REDESIGNED before registration (was: composition nulls
+   only): within-folio + within-line nulls, P-JUST justification
+   control, per-feature and per-folio read-outs (7.1a + 7.3).
+2. Beta-binomial A/B-switch instrument under the control battery
+   (7.1b) — cheap, adjudicates an external claim, informs whether
+   "hand" or "switch intensity" is the right conditioning variable for
+   every per-hand analysis we run (F8's definition is at stake).
+3. Fingerprint vNext with directional features + slot-machine
+   tournament entrant (7.2, 7.4) — extends S3 without new DOF.
+4. S11 with controls, adjudicating the resequencing claim (7.4).
+
+---
+
+### Portfolio S7, rung 3 — composition vs ordinal structure (Currier B) (2026-07-18)
+
+[AUTOMATED — written by tools/overnight.py; run committed to branch overnight/2026-07-18; awaiting human review before promotion to any evidence tier.]
+
+Configuration (pre-registered in the script docstring): script defaults. Runtime 0.03 h at PYTHONHASHSEED=0. Holdout: whole folios (VMS) / 24-line pseudo-folio blocks (controls).
+
+**SUGGESTIVE — awaiting human review (quarantined; never merged automatically):**
+
+**Pre-registered ladder** (line_as_record_ordinal.py docstring; Currier B adjudicated, A observational): T1 composition (folio-nulls), T2 ordinal (line-nulls), T3 glyph-only (line-nulls); each = beat ALL 20 nulls AND clear the floor (0.05 total / 0.025 glyph). P-JUST (width-broken Latin) is the justification reference, not a gate.
+
+| corpus | total (bits/token) | glyph | len |
+|---|---|---|---|
+| PREC_records | +0.7288 | +0.7215 | +0.0068 |
+| P1_latin_plain | -0.0045 | -0.0043 | +0.0004 |
+| PJUST_justified | +0.0133 | +0.0039 | +0.0099 |
+| VMS_currier_A | +0.0100 | +0.0085 | -0.0016 |
+| VMS_currier_B | +0.0513 | +0.0524 | +0.0018 |
+
+| B test | margin | null max | verdict |
+|---|---|---|---|
+| T1 composition | +0.0571 | -0.0041 | **PASS** |
+| T2 ordinal | +0.0577 | -0.0032 | **PASS** |
+| T3 glyph-only | +0.0571 | -0.0019 | **PASS** |
+
+**VERDICT: ORDINAL GLYPH STRUCTURE — Currier B's intra-line word order carries glyph-identity signal beyond composition and beyond length-based space management: consistent with field-like vocabulary ordering. SUGGESTIVE, quarantined, NOT a decode; no field is named or read.**
+
+Observation (A, not adjudicated): total +0.0100 (glyph +0.0085) — same glyph-dominated shape at ~1/5 the strength, above all its nulls but under the floors: the hand gradient persists at rung 3.
+
+---
+
+### Portfolio S9 — cross-transliteration invariance audit (A1) (2026-07-18)
+
+[AUTOMATED — written by tools/overnight.py; run committed to branch overnight/2026-07-18; awaiting human review before promotion to any evidence tier.]
+
+Configuration (pre-registered in the script docstring): script defaults. Runtime 0.02 h at PYTHONHASHSEED=0. Holdout: whole folios (VMS) / 24-line pseudo-folio blocks (controls).
+
+**Pre-registered outcomes** (script docstring): gate = ZL passes the S7-B ordinal battery with alphabet-agnostic features; then robust / partial / artifact_suspect over usable alternatives (usable = >= 500 B-lines). Part 1 flags fingerprint features deviating > 20% from ZL.
+
+| transliteration | B-lines | median gain | null max | margin | battery |
+|---|---|---|---|---|---|
+| ZL | 2522 | +0.0442 | -0.0031 | +0.0501 | **PASS** |
+| CD | 991 | +0.0094 | -0.0115 | +0.0326 | fail |
+| GC | 2365 | +0.0372 | -0.0088 | +0.0487 | fail |
+| FG | 2259 | +0.0475 | -0.0027 | +0.0534 | **PASS** |
+| IT | 2329 | +0.0475 | -0.0032 | +0.0529 | **PASS** |
+
+Part 1: flagged transliteration-sensitive features: {'mean_wlen': ['GC'], 'line_init_jsd': ['GC'], 'line_final_jsd': ['CD']}.
+
+**VERDICT: PARTIAL — the signal passes in some readings and misses in others; sensitive to reading choices. Investigation required before any promotion of the rung-3 finding.**
+
+Observation for the investigation (no claim): every usable transliteration beats ALL its nulls (empirical p bar 5/5); the misses are effect-floor misses only — whether a fixed bits/token floor mechanically penalizes finer-grained alphabets (GC: 162 symbols, miss by 0.0013) is the registered question for the follow-up.
+
+---
+
+### Portfolio S9, follow-up — sensitivity-normalized effect floors (2026-07-18)
+
+[AUTOMATED — written by tools/overnight.py; run committed to branch overnight/2026-07-18; awaiting human review before promotion to any evidence tier.]
+
+Configuration (pre-registered in the script docstring): script defaults. Runtime 0.04 h at PYTHONHASHSEED=0. Holdout: whole folios (VMS) / 24-line pseudo-folio blocks (controls).
+
+**Pre-registered outcomes** (script docstring; written with full disclosure AFTER N2's PARTIAL): floors scale by MEASURED sensitivity rho (planted sort implant, ZL anchor, symmetric — floors may rise), battery values inherited from N2's exact seed streams and cross-checked.
+
+| reading | margin | implant response | rho | normalized floor | verdict (was, fixed 0.05) |
+|---|---|---|---|---|---|
+| ZL | +0.0501 | +0.5806 | 1.0000 | 0.0500 | PASS (PASS) |
+| CD | +0.0326 | +0.6490 | 1.1178 | 0.0559 | fail (fail) |
+| GC | +0.0487 | +0.6488 | 1.1175 | 0.0559 | fail (fail) |
+| FG | +0.0534 | +0.6812 | 1.1733 | 0.0587 | fail (PASS) |
+| IT | +0.0529 | +0.5632 | 0.9700 | 0.0485 | PASS (PASS) |
+
+**VERDICT: REFERENCE FLIP — symmetric normalization flipped a previously-passing reading by RAISING its floor: the normalized-floor instrument is not consistent enough to re-adjudicate at these margins. No claim; N2 PARTIAL unchanged. The registered question IS answered: measured sensitivities refute the "finer alphabets are mechanically penalized" hypothesis (GC rho > 1).**
+
+---
+
+### Portfolio S9, follow-up 2 — significance-only cross-reading battery (2026-07-18)
+
+[AUTOMATED — written by tools/overnight.py; run committed to branch overnight/2026-07-18; awaiting human review before promotion to any evidence tier.]
+
+Configuration (pre-registered in the script docstring): script defaults. Runtime 0.81 h at PYTHONHASHSEED=0. Holdout: whole folios (VMS) / 24-line pseudo-folio blocks (controls).
+
+**SUGGESTIVE — awaiting human review (quarantined; never merged automatically):**
+
+**Pre-registered criterion** (script docstring; significance-only criteria change human-approved 2026-07-18): per reading, PASS iff the real 10-split median interior gain beats ALL 200 within-line-shuffle null medians — empirical p = 0.0050. No effect floor; margins are observational. Null stream is a strict superset of N2's (first 20 identical, cross-checked), splits identical to N2 (cross-checked).
+
+| reading | B-lines | real gain | null max (of 200) | nulls ≥ real | p | verdict |
+|---|---|---|---|---|---|---|
+| ZL | 2522 | +0.0442 | -0.0020 | 0 | 0.0050 | **PASS** |
+| CD | 991 | +0.0094 | -0.0084 | 0 | 0.0050 | **PASS** |
+| GC | 2365 | +0.0372 | -0.0068 | 0 | 0.0050 | **PASS** |
+| FG | 2259 | +0.0475 | -0.0020 | 0 | 0.0050 | **PASS** |
+| IT | 2329 | +0.0475 | -0.0012 | 0 | 0.0050 | **PASS** |
+
+**VERDICT: ROBUST AT SIGNIFICANCE — the S7-B ordinal signal is significant at p < 0.005 in every usable independent reading. The cross-reading objection to the quarantined rung-3 finding is resolved in favor of robustness. The finding remains SUGGESTIVE, quarantined, and is not a decode.**
+
+---
+
+### Portfolio S7, rung 4 — paragraph control and characterization (Currier B) (2026-07-19)
+
+[AUTOMATED — written by tools/overnight.py; run committed to branch overnight/2026-07-19; awaiting human review before promotion to any evidence tier.]
+
+Configuration (pre-registered in the script docstring): script defaults. Runtime 0.06 h at PYTHONHASHSEED=0. Holdout: whole folios (VMS) / 24-line pseudo-folio blocks (controls).
+
+**SUGGESTIVE — awaiting human review (quarantined; never merged automatically):**
+
+**Pre-registered structure** (script docstring): gate = rung-3 headline reproduced (verified); T-PARA = paragraph-initial lines excluded, significance-only battery (200 nulls, p < 0.0050); decomposition is descriptive only and adjudicates nothing.
+
+T-PARA: 131 paragraph-initial lines excluded → 2391 kept; real +0.0519 vs null max -0.0017 (nulls ≥ real: 0, p = 0.0050) → **PASS**.
+
+| interior bin | gain (bits/token) |
+|---|---|
+| m1 | +0.0816 |
+| m2 | +0.0381 |
+| m3 | +0.0299 |
+
+| feature | gain |
+|---|---|
+| len | +0.0018 |
+| first | +0.0296 |
+| last | +0.0174 |
+| gallows | +0.0024 |
+
+| first glyph | support | contribution | skew m1/m2/m3 |
+|---|---|---|---|
+| q | 2908 | +0.0352 | 1.109/0.972/0.877 |
+| c | 2413 | +0.0281 | 1.009/1.019/0.963 |
+| o | 3529 | +0.0200 | 0.937/1.004/1.086 |
+| d | 764 | -0.0151 | 0.918/1.001/1.117 |
+| y | 516 | -0.0101 | 1.021/1.001/0.969 |
+| t | 258 | -0.0095 | 0.873/0.972/1.216 |
+| s | 1545 | -0.0075 | 1.096/1.056/0.793 |
+| a | 877 | -0.0067 | 0.849/0.975/1.248 |
+
+| last glyph | support | contribution | skew m1/m2/m3 |
+|---|---|---|---|
+| y | 6615 | +0.0191 | 1.039/1.005/0.936 |
+| r | 2195 | +0.0086 | 0.885/0.968/1.205 |
+| l | 2100 | +0.0082 | 0.986/1.025/0.99 |
+| n | 2469 | -0.0039 | 1.008/0.998/0.992 |
+| o | 294 | -0.0032 | 0.93/0.976/1.129 |
+| s | 354 | -0.0005 | 1.016/0.879/1.123 |
+| d | 226 | -0.0000 | 0.941/1.203/0.839 |
+
+**VERDICT: CHARACTERIZED — the signal survives the paragraph control (the last registered structural threat); the tables above are the program's description of the Currier-B ordinal signal. SUGGESTIVE supporting detail for the quarantined finding; NOT a decode; no value is a translation.**
+
+---
+
+### Portfolio S7, rung 5 — within-section replication (Currier B) (2026-07-19)
+
+[AUTOMATED — written by tools/overnight.py; run committed to branch overnight/2026-07-19; awaiting human review before promotion to any evidence tier.]
+
+Configuration (pre-registered in the script docstring): script defaults. Runtime 0.06 h at PYTHONHASHSEED=0. Holdout: whole folios (VMS) / 24-line pseudo-folio blocks (controls).
+
+**SUGGESTIVE — awaiting human review (quarantined; never merged automatically):**
+
+**Pre-registered outcomes** (script docstring; human-directed section-confound test): per usable section PASS iff the real median beats ALL 200 within-line-shuffle nulls (p < 0.0050); taxonomy: folio-number: bio f75-84, recipes f103-116, other_B rest. Pooled rung-3 headline reproduced (gate).
+
+| section | lines / folios | real gain | null max | nulls ≥ real | p | verdict |
+|---|---|---|---|---|---|---|
+| bio | 739 / 20 | +0.0106 | -0.0052 | 0 | 0.0050 | **PASS** |
+| recipes | 1039 / 23 | +0.0584 | -0.0036 | 0 | 0.0050 | **PASS** |
+| other_B | 744 / 34 | +0.0478 | -0.0077 | 0 | 0.0050 | **PASS** |
+
+**VERDICT: SECTION-GENERAL — the ordinal signal replicates within every usable B section independently; the section-confound objection is dismissed. SUGGESTIVE supporting detail for the quarantined finding; not a decode.**
+
+---
+
+### Portfolio S5/S6 — line-class sequence family classification (Currier B) (2026-07-19)
+
+[AUTOMATED — written by tools/overnight.py; run committed to branch overnight/2026-07-19; awaiting human review before promotion to any evidence tier.]
+
+Configuration (pre-registered in the script docstring): script defaults. Runtime 0.00 h at PYTHONHASHSEED=0. Holdout: whole folios (VMS) / 24-line pseudo-folio blocks (controls).
+
+**SUGGESTIVE — awaiting human review (quarantined; never merged automatically):**
+
+**Pre-registered rule** (script docstring): nearest family centroid with margin (d1 < 0.5 x d2) and an explicit none-of-the-above arm (F4); gate = centroids separate (> 2.0 x max split RMS). Profiles = normalized position-driven vs neighbor-driven class-sequence information, folio holdout, 10-split medians.
+
+| corpus | r_pos | r_bi | split RMS | lines |
+|---|---|---|---|---|
+| P1_language | -0.0005 | +0.0013 | 0.0005 | 4755 |
+| PREC_records | +0.3388 | +0.3217 | 0.0030 | 4600 |
+| PNUM_positional | +0.3168 | +0.4636 | 0.0057 | 4600 |
+| N4_hoax | +0.0427 | +0.2180 | 0.0050 | 2572 |
+| N1_shuffle_ref | -0.0005 | -0.0010 | 0.0005 | 3956 |
+| VMS_currier_B | +0.0354 | +0.0407 | 0.0048 | 2522 |
+| VMS_currier_A | +0.0253 | +0.0256 | 0.0044 | 1310 |
+
+Gate: min centroid separation 0.1436 vs required 0.0114 → PASS. B distances: family_language 0.0533, family_hoax 0.1775, family_records 0.4135, family_positional 0.5080.
+
+**VERDICT: FAMILY_LANGUAGE** — B's line-class ordering profile is nearest the language reference with clear margin. A family-level reading only: nothing is decoded, and the S7 positional finding stands as the residual that separates B from the pure family centroid (real prose shows r_pos ~ 0; B does not).
+
+---
+
+### Portfolio S7-R — independent re-implementation (rank-based) (2026-07-19)
+
+[AUTOMATED — written by tools/overnight.py; run committed to branch overnight/2026-07-19; awaiting human review before promotion to any evidence tier.]
+
+Configuration (pre-registered in the script docstring): script defaults. Runtime 0.02 h at PYTHONHASHSEED=0. Holdout: whole folios (VMS) / 24-line pseudo-folio blocks (controls).
+
+**SUGGESTIVE — awaiting human review (quarantined; never merged automatically):**
+
+**Pre-registered ladder** (script docstring; answers PHASE8_DRAFT §8.7-1 at IMPLEMENTATION level — same-author caveat disclosed): rank statistic T = weighted between-class variance of mean interior rank, first-EVA-glyph classes, no bins / smoothing / holdout; inference by 1000 within-line permutations.
+
+| corpus | T | perms ≥ T | p | lines |
+|---|---|---|---|---|
+| PREC_records | 0.029613 | 0 | 0.0010 | 4600 |
+| P1_latin | 0.000106 | 132 | 0.1329 | 4755 |
+| N1_shuffle | 0.000042 | 643 | 0.6434 | 3956 |
+| VMS_currier_B | 0.000599 | 0 | 0.0010 | 2522 |
+| VMS_currier_A | 0.001013 | 0 | 0.0010 | 1310 |
+
+**VERDICT: REPLICATED — the intra-line class-ordering signal survives a methodologically disjoint instrument (B p < 0.005; and observationally, hand A also rejects under this more sensitive statistic). The shared-implementation-DNA objection is answered; author-level independence remains open and travels with the finding.**
+
+B class mean interior ranks (early → late): sh 0.457, q 0.474, k 0.481, l 0.497, ch 0.498, y 0.500, o 0.518, d 0.522, t 0.530, s 0.531, a 0.536, r 0.561 — coherent with the rung-4 characterization (q-early), and the EVA-parsed sh class emerges as the earliest carrier.
+
+---
+
+## Phase 8 — The Currier-B systematization layer: consolidated evidence review (accepted 2026-07-19)
+
+> Reviewed and ACCEPTED by the operator on 2026-07-19 ("merge the
+> overnight branches and promote the ledger entries per §8.8").
+> Dispositions applied: Phase 5 ledger entries 11-13; overnight
+> record branches merged to main. The same-author caveat (§8.7-1)
+> remains open and travels with ledger entry 13. Drafted by the
+> session agent; original draft preserved at attic/PHASE8_DRAFT.md.
+
+---
+
+### 8.1 The claim under review
+
+Stated in the program's registered vocabulary, at maximum precision and
+minimum romance:
+
+> In Currier B, the words within a line are ordered: word-initial
+> glyph class predicts interior line position (front-loaded — strongest
+> in the early interior), at small absolute magnitude (~0.05 bits/token)
+> but with high statistical robustness. The ordering is not explained by
+> folio/section composition, line content, scribal space management,
+> paragraph-initial behavior, or the choice of transliteration. It is
+> not a record template or positional notation at calibrated strength;
+> its overall class-ordering profile is language-like, PLUS a positional
+> component that genuine prose measurably lacks. It intensifies from
+> hand A to hand B and from bio to recipes.
+
+Nothing here is a decode. No field, meaning, or plaintext is named.
+
+### 8.2 The evidence chain (all runs adjudicated by pre-registered criteria)
+
+| item | instrument | verdict | key numbers |
+|---|---|---|---|
+| N1 | verbose inversion, rung 3 (max compute) | KILLED | P4 recovery 39% (<50%); margin −0.150; autopsy: 65–99.6% holdout exclusion — objective exploitable |
+| N1b | rung 3b (coverage-penalized objective) | INSTRUMENT PASSED; VMS negative | P4 recovery 65%, margin +0.350; VMS full/A/B −0.880/−0.842/−0.895 vs floor −0.862 → within noise |
+| N3 | S7 v1 (pooled line-as-record) | KILLED (pooled) | gate P-REC +0.719/P1 −0.003; VMS_full margin +0.033 (<0.05); B +0.077 / A −0.006 noted post hoc |
+| N3b | S7 rung 2 (per-hand, harder test) | B_ONLY | B +0.0513 > all 20 per-hand nulls, margin +0.058; A +0.011 above nulls, below floor |
+| N3c | S7 rung 3 (composition vs ordinal) | ORDINAL_GLYPH_STRUCTURE | folio-nulls +0.0571, line-nulls +0.0577, glyph-only +0.0571; B glyph +0.0524 / len +0.0018; P-JUST reference +0.0133 (len-dominated: +0.0099/+0.0039) |
+| N2 | S9 (5 transliterations, fixed floor) | PARTIAL | pass ZL +0.0501 / FG +0.0534 / IT +0.0529; fail GC +0.0487 (−0.0013), CD +0.0326; all 5 beat all 20 nulls |
+| N2b | S9 floor calibration (implant ρ) | REFERENCE_FLIP | ρ: ZL 1.00, CD 1.12, GC 1.12, FG 1.17, IT 0.97 — floor-scaling hypothesis REFUTED; FG raised-floor flip → no re-adjudication |
+| N2c | S9 significance-only (200 nulls) | ROBUST_SIGNIFICANCE | 5/5 readings beat all 200 nulls (p<0.005 each); all 1,000 null medians negative |
+| N3d | S7 rung 4 (paragraph control + characterization) | CHARACTERIZED | para-initial excluded → +0.0519, beats 200 nulls; bins m1 +0.0816 > m2 +0.0381 > m3 +0.0299; carriers: first-glyph q +0.0352, c +0.0281, o +0.0200; finals -y +0.0191, -r, -l; indifferent: d/y/t/s/a-initial |
+| N3e | S7 rung 5 (within-section) | SECTION_GENERAL | recipes +0.0584, other_B +0.0478, bio +0.0106 — each beats all 200 of its own nulls |
+| N4 | S5/S6 family classifier | FAMILY_LANGUAGE | B (r_pos +0.0354, r_bi +0.0407): nearest language d 0.053 ≪ hoax 0.178, records 0.414, positional 0.508; gate sep 0.144 vs required 0.023 |
+| N5 | S7-R independent re-implementation (rank statistic, no bins/smoothing/holdout, EVA-glyph classes) | REPLICATED | B p=0.0010 (0/1000 perms); gate clean (P-REC 0.001, P1 0.133, N1 0.643); observationally A also rejects (p=0.0010); class mean-ranks corroborate rung 4 (sh 0.457, q 0.474 earliest; r 0.561 latest) |
+
+Registration hygiene of note: rung 2's test was made strictly harder
+than the observation that motivated it; the N2b normalization was
+symmetric and measured (and self-invalidated as registered); N2c's
+criteria change was explicitly human-approved before registration; N4
+carried an explicit none-of-the-above arm (F4).
+
+### 8.3 What was killed along the way (equal prominence, per charter)
+
+1. **The strict 1:1 verbose-cipher reading of the manuscript** —
+   tested for the first time by a validated instrument (N1b) and
+   negative: all three VMS rows sit within the free-mapping noise
+   floor while the planted control clears it by 3.5× the margin.
+2. **The rung-3 inverter objective** — exploitable by coverage
+   shrinkage; produced a false "grille beats known cipher" ordering
+   before the fix. Two crashes and one near-catastrophic scoring
+   artifact are logged in the instrument docstring.
+3. **The pooled line-as-record reading** — line-length artifact at
+   pooled level (S7 v1).
+4. **The space-management explanation of B's ordering** — P-JUST
+   reproduces the LAAFU-predicted signature (small, length-dominated);
+   B's signature is its mirror image (glyph-dominated, no length).
+5. **The floor-scaling excuse for GC/CD** — refuted by measurement
+   (ρ > 1: those readings are *more* sensitive to planted order).
+6. **The record-template and positional-notation readings of B's
+   ordering** — dead at family level: calibrated versions produce
+   ~10× B's ordering strength with clearly different profiles.
+
+### 8.4 Objections raised and their dispositions
+
+| objection | test | outcome |
+|---|---|---|
+| holdout memorization | folio-level holdout, all instruments | controlled by design (rung-2 lesson) |
+| post-hoc selection | rung 2: per-hand nulls, multi-split, harder than the motivating observation | survived |
+| section/folio composition | within-folio shuffles ×20 | dismissed (+0.0571) |
+| line content selection | within-line shuffles ×20…×200 | dismissed (+0.0577; later p<0.005 at 200) |
+| scribal justification | P-JUST control + feature decomposition | opposite signature |
+| transliteration artifact (A1) | 5 readings, 200 nulls each | robust (p<0.005 ×5) |
+| paragraph-initial regime | exclusion of all 131 marked lines | dismissed (signal rises) |
+| section confound / pooling | per-section batteries | replicates in all three strata |
+| "it's records/numbers" (over-reading) | S5/S6 family classifier | rejected at calibrated strength |
+
+### 8.5 The residue, quantitatively
+
+What survives every test is small, specific, and consistent:
+
+- **Magnitude**: ~0.05 bits/token of interior positional information in
+  B (recipes +0.058 > other_B +0.048 > bio +0.011; hand A ~+0.010).
+- **Shape**: front-loaded (early interior m1 carries 2.7× the late
+  interior); carried by word-initial glyph identity (first +0.0296,
+  last +0.0174, length +0.0018, gallows +0.0024).
+- **Carriers**: q-, c-, o-initial word classes (positive contributors),
+  -y/-r/-l finals; d-/y-/t-/s-/a-initial classes positionally
+  indifferent.
+- **Family profile**: language-like ordering magnitudes (r_pos +0.035,
+  r_bi +0.041) — but genuine prose has r_pos ≈ 0.000, so the positional
+  component itself is the anomaly, not the overall profile.
+- **Gradients**: A ≈ ⅕ of B; bio ≪ recipes. Both echo the phase-101
+  A/B separability result and Parisel 2026a's "switch intensity"
+  picture (Phase 7.1).
+
+### 8.6 Convergence with prior and external results
+
+- **Phase 109 (forgery tournament)**: line-boundary effects are the
+  universally unreproduced feature ("the moat"). The B residue is the
+  first registered structure found *inside* lines beyond the moat.
+- **N1b**: the manuscript is not a strict verbose cipher, yet the
+  verbose-cipher *profile* (h2_ratio, boundary excess) still matches on
+  independent features — consistent with "language-like substrate +
+  added systematization" rather than plain language or pure cipher.
+- **Parisel 2026a (arXiv:2604.25979)**: A/B as a graded switch of one
+  system, 92% template variance — externally derived, matching both
+  gradients here. (Caveat: no negative-control battery reported there;
+  our replication of that instrument under our battery remains open —
+  Phase 7.1b.)
+- **LAAFU prior art**: the community's justification model was
+  confirmed as a real mechanism (P-JUST) — and shown to be the wrong
+  explanation for this particular signal.
+
+### 8.7 Weaknesses a skeptical reader should attack first
+
+Listed in the order I would attack them:
+
+1. **Shared instrument DNA.** Every S7-family rung uses the same
+   feature set, position bins, Laplace smoothing, and holdout scheme.
+   The null batteries randomize the *data*, never the *instrument
+   design*. A design artifact that correlates with real line structure
+   would replicate across all rungs and all readings. Mitigation
+   evidence: the P-REC/P-JUST/P-NUM controls behave as designed and
+   P1/N1 sit at zero — but an independent re-implementation (different
+   bins, different estimator, ideally different author) is the real
+   test.
+   **[UPDATED 2026-07-19, N5]: the implementation half of this
+   objection is now answered — a methodologically disjoint instrument
+   (rank statistic, no bins/smoothing/holdout, EVA-glyph classes,
+   fresh seeds) replicates B at p = 0.001 with a clean gate, and its
+   class mean-ranks independently corroborate the rung-4
+   characterization. The AUTHOR half remains open: both
+   implementations were written by the same agent, and this caveat
+   travels with the finding until a third party re-derives it.
+   New observational fact from N5: hand A also rejects (p = 0.001)
+   under the more sensitive statistic — the gradient reading of §8.5
+   should say "both hands, B stronger", not "B-only".]**
+2. **Reading non-independence.** The five transliterations are not
+   fully independent: later transcribers consulted earlier ones, and
+   all share reading conventions (line order, uncertain-space policy).
+   Cross-reading robustness excludes idiosyncratic error, not shared
+   convention. Fully escaping this requires S2 (raw-scan clustering).
+3. **Sequential testing on fixed data.** There is no fresh manuscript.
+   The ladder grew sequentially on the same corpus; each registration
+   was harder than the last, but a principled global multiplicity
+   correction across the whole ladder is not computable. The honest
+   statement is "p < 0.005 per registered test", never a joint p.
+4. **Small absolute effects.** 0.05 bits/token against feature
+   entropies of ~9 bits/token is a ~0.5% effect. Robust ≠ large;
+   large ≠ meaningful; the program has only established robust.
+5. **The N2c criteria change.** Dropping the effect floor was disclosed
+   and human-approved, but it followed two unfavorable-floor results.
+   A reviewer should re-derive N2/N2b/N2c from the JSONs and decide
+   whether the sequence reads as calibration or as bar-lowering. (The
+   margins and ρ table are all committed; the re-derivation is
+   mechanical.)
+6. **Paragraph marking is interpretive.** T-PARA trusts ZL's locus
+   markers; paragraph identification is itself a transcriber judgment.
+7. **Section taxonomy is coarse.** The folio-number taxonomy assigns
+   combined-folio files imperfectly; the within-section replication is
+   robust to this only insofar as misassignment is noise, not bias.
+
+### 8.8 Dispositions (accepted and applied 2026-07-19)
+
+1. **Promote to the SUGGESTIVE tier of the Phase 5 ledger** (from
+   raw quarantine): the residue statement of §8.1, with §8.7 attached
+   verbatim. It has survived more registered attack than anything else
+   in that tier.
+2. **Keep at instrument level** (no ledger entry): the family
+   assignment (N4) and the characterization tables (N3d) — they
+   describe the finding; they are not independent findings.
+3. **Record as ESTABLISHED** (they are clean negatives with validated
+   instruments): (a) the strict 1:1 verbose-cipher negative (N1b);
+   (b) the S7 pooled kill as a line-length artifact result (N3).
+4. **Registered next steps, in value order**: (i) independent
+   re-implementation of the S7 measurement (attacks §8.7-1); (ii) the
+   Parisel-instrument control-battery replication (Phase 7.1b, attacks
+   the switch-covariate story); (iii) a generative model of the
+   residue entered into the phase-109 tournament — the only path the
+   charter allows toward anything stronger than "consistent with";
+   (iv) S2 raw-scan feasibility (attacks §8.7-2, the last A1 escape).
+5. **Merge decision** for branches overnight/2026-07-{17,18,19} and
+   the RESEARCH.md appends: recommend merging the *records* (logs,
+   reports, JSONs) after review; the ledger promotions above are a
+   separate, explicit edit.
+
+### 8.9 Artifact index
+
+- Reports: `results/overnight_2026-07-17_report.md` (N1, N1b),
+  `results/overnight_2026-07-18_report.md` (N3, N3b, N3c, N2, N2b,
+  N2c), `results/overnight_2026-07-19_report.md` (N3d, N3e, N4).
+- Branches / verdict commits: `overnight/2026-07-17` → b1451f7 (N1),
+  818dce0 (N1b); `overnight/2026-07-18` → 2633751 (N3), 17783ad (N3b),
+  6fa9747 (N3c), 7b0d66d (N2), 3211e0d (N2b), 5930e79 (N2c);
+  `overnight/2026-07-19` → b4c3726 (N3d), f441011 (N3e), 6402ce8 (N4).
+- Instruments (main, PYTHONHASHSEED=0 goldens committed):
+  `verbose_cipher_inversion.py`, `line_as_record_structures.py`,
+  `line_as_record_per_hand.py`, `line_as_record_ordinal.py`,
+  `line_as_record_characterization.py`, `line_as_record_section_split.py`,
+  `cross_transliteration_invariance.py`,
+  `transliteration_floor_calibration.py`,
+  `transliteration_significance.py`, `line_class_family_test.py`;
+  runner `tools/overnight.py`; state `results/overnight_state.json`.
+- External data: `data/translit/{CD,GC,FG,IT}2a-n.txt` (voynich.nu,
+  fetched 2026-07-18, committed for offline reproducibility).
