@@ -661,7 +661,16 @@ def load_folio_lines():
                 lines.append((lid, section, words))
     return lines
 
-def load_folio_lines_ivtff(comma_break=True, min_word_len=1):
+def ivtff_locus_type(lid):
+    """IVTFF locus type letter from a locus id like 'f75r.1,@P0' ->
+    'P' (paragraph), 'L' (label), 'C' (circle), 'R' (radial), ... or
+    None when the tag carries no type code."""
+    m = re.search(r',[@+*=]?([A-Za-z])', lid)
+    return m.group(1).upper() if m else None
+
+
+def load_folio_lines_ivtff(comma_break=True, min_word_len=1,
+                           locus_types=None):
     """IVTFF-aware replacement for load_folio_lines. Same return shape:
     list of (line_id, section, [words]).
 
@@ -686,6 +695,11 @@ def load_folio_lines_ivtff(comma_break=True, min_word_len=1):
       knob is part of the assumption audit.
     - min_word_len: default 1 keeps genuine single-glyph words (the legacy
       loaders' len>=2 filter dropped ~5.6% of real tokens).
+    - locus_types: None (default) keeps every locus (legacy behavior).
+      A collection like {'P'} restricts to those IVTFF locus types
+      (P paragraph, L label, C circle, R radial, ...) — added 2026-07-19
+      after the Part-D hapax audit showed label/ring loci are hapax-
+      enriched and layout-clustered (see hapax_locus_readjudication).
     """
     lines = []
     section_map = {
@@ -708,6 +722,9 @@ def load_folio_lines_ivtff(comma_break=True, min_word_len=1):
             if not m:
                 continue
             lid = m.group(1)
+            if locus_types is not None and \
+                    ivtff_locus_type(lid) not in locus_types:
+                continue
             rest = line[m.end():].strip()
             if not rest:
                 continue

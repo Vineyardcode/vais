@@ -592,7 +592,7 @@
  "language_vs_cipher": {
   "status": "ok",
   "returncode": 0,
-  "duration_s": 50.41,
+  "duration_s": 43.47,
   "stdout_bytes": 5300,
   "results_files_touched": []
  },
@@ -1318,6 +1318,15 @@
   "stdout_bytes": 1037,
   "results_files_touched": [
    "line_discipline_transfer.json"
+  ]
+ },
+ "hapax_locus_readjudication": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.69,
+  "stdout_bytes": 1062,
+  "results_files_touched": [
+   "hapax_locus_readjudication.json"
   ]
  }
 }

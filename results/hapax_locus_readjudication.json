@@ -1,0 +1,47 @@
+{
+ "params": {
+  "seed": 121,
+  "chi2_threshold": 15.0,
+  "b_clustered": 0.1,
+  "b_uniform": 0.05,
+  "min_line_words": 2
+ },
+ "golden_ref": {
+  "chi2": 216.1,
+  "burstiness": 0.591
+ },
+ "gate_ok": true,
+ "rows": {
+  "all": {
+   "n_lines": 4508,
+   "n_tokens": 35747,
+   "n_types": 3319,
+   "n_hapax": 1918,
+   "chi2": 216.1,
+   "chi_class": "CONCENTRATED",
+   "burstiness": 0.591,
+   "b_class": "CLUSTERED"
+  },
+  "P_only": {
+   "n_lines": 4281,
+   "n_tokens": 33309,
+   "n_types": 3051,
+   "n_hapax": 1752,
+   "chi2": 131.4,
+   "chi_class": "CONCENTRATED",
+   "burstiness": 0.581,
+   "b_class": "CLUSTERED"
+  },
+  "nonP_only": {
+   "n_lines": 227,
+   "n_tokens": 2438,
+   "n_types": 713,
+   "n_hapax": 444,
+   "chi2": 43.0,
+   "chi_class": "CONCENTRATED",
+   "burstiness": 0.324,
+   "b_class": "CLUSTERED"
+  }
+ },
+ "verdict": "verdict_survives"
+}

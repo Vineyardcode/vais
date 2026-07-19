@@ -1807,6 +1807,78 @@ def adjudicate_n6e(item, expected_params, run_started):
 
 
 # ────────────────────────────────────────────────────────────────────
+# N7 adjudication — pre-registered, mechanical, JSON-only
+# ────────────────────────────────────────────────────────────────────
+def adjudicate_n7(item, expected_params, run_started):
+    """Pre-registered outcomes (hapax_locus_readjudication.py
+    docstring): gate = all-loci replication reproduces the committed
+    language_vs_cipher golden; then Part D's own thresholds on the
+    P-only corpus: verdict_survives / verdict_softened. Re-derived from
+    the JSON; refuses on mismatch."""
+    jpath = RESULTS / item['result_json']
+    if not jpath.exists():
+        raise AdjudicationError(f'{jpath.name} was not written by the run')
+    if jpath.stat().st_mtime < run_started:
+        raise AdjudicationError(f'{jpath.name} predates this run — stale')
+    data = json.loads(jpath.read_text(encoding='utf-8'))
+    rows, p = data['rows'], data['params']
+    a, po = rows['all'], rows['P_only']
+    gate_ok = data['gate_ok'] and \
+        abs(a['chi2'] - data['golden_ref']['chi2']) <= 0.1
+    if not gate_ok:
+        key = 'gate_failed'
+    else:
+        chi_ok = (po['chi_class'] == 'CONCENTRATED'
+                  if a['chi_class'] == 'CONCENTRATED' else True)
+        order = {'UNIFORM': 0, 'MILD': 1, 'CLUSTERED': 2}
+        b_ok = order[po['b_class']] >= order[a['b_class']]
+        key = 'verdict_survives' if (chi_ok and b_ok) else \
+            'verdict_softened'
+    if data.get('verdict') != key:
+        raise AdjudicationError(f'runner derives {key!r} but the script '
+                                f'recorded {data.get("verdict")!r}')
+
+    md = []
+    md.append('**Pre-registered outcomes** (script docstring): Part D of '
+              'language_vs_cipher replicated faithfully (gate = golden '
+              'reproduction) and re-adjudicated by its OWN original '
+              f'thresholds (chi2 > {p["chi2_threshold"]}; B classes) on '
+              'a paragraph-only corpus. Same rules, cleaned data.')
+    md.append('')
+    md.append('| policy | lines | tokens | hapaxes | chi2 (class) | '
+              'B (class) |')
+    md.append('|---|---|---|---|---|---|')
+    for name, r in rows.items():
+        md.append(f'| {name} | {r["n_lines"]} | {r["n_tokens"]} | '
+                  f'{r["n_hapax"]} | {r["chi2"]} ({r["chi_class"]}) | '
+                  f'{r["burstiness"]:+.3f} ({r["b_class"]}) |')
+    verdict_text = {
+        'gate_failed': 'GATE FAILED — replication does not reproduce '
+                       'the committed golden; no reading.',
+        'verdict_survives':
+            'VERDICT SURVIVES — the hapax-clustering evidence is a '
+            'property of the running text: decontamination removes '
+            f'~{100 * (a["chi2"] - po["chi2"]) / a["chi2"]:.0f}% of the '
+            'chi2 statistic (the measured layout-artifact share) but '
+            'every original classification holds. The contamination '
+            'asterisk on Part D is removed by test.',
+        'verdict_softened':
+            'VERDICT SOFTENED — decontamination breaks an original '
+            'classification; Part D\'s language-favoring evidence was '
+            'partly layout artifact and is demoted to conditional-on-'
+            'corpus-scope.',
+    }[key]
+    md.append('')
+    md.append(f'**VERDICT: {verdict_text}**')
+    summary = (f'{key}; chi2 {a["chi2"]} -> {po["chi2"]} (threshold '
+               f'{p["chi2_threshold"]}), B {a["burstiness"]:+.3f} -> '
+               f'{po["burstiness"]:+.3f}')
+    return {'verdict': f'N7 Part-D re-adjudication: {key.upper()}',
+            'suggestive': False, 'md': '\n'.join(md),
+            'summary': summary, 'params': p, 'json_name': jpath.name}
+
+
+# ────────────────────────────────────────────────────────────────────
 # queue
 # ────────────────────────────────────────────────────────────────────
 N1_PROFILE = {'EM_OUTER': 32, 'EM_PROPOSALS': 48, 'EM_RESTARTS': 16,
@@ -2065,6 +2137,21 @@ QUEUE = [
         'adjudicate': adjudicate_n6e,
         'research_heading': 'Portfolio S3, rung 3 — cross-hand blind '
                             'table test (A → B)',
+        'not_ready': None,
+    },
+    {
+        'id': 'N7',
+        'title': 'Part-D hapax re-adjudication: does language_vs_cipher\'s '
+                 'hapax clustering survive a paragraph-only corpus?',
+        'stem': 'hapax_locus_readjudication',
+        'overrides': {},
+        'smoke_overrides': {},
+        'timeout_s': 1800,
+        'smoke_timeout_s': 900,
+        'result_json': 'hapax_locus_readjudication.json',
+        'adjudicate': adjudicate_n7,
+        'research_heading': 'Legacy-test audit — language_vs_cipher '
+                            'Part D under locus decontamination',
         'not_ready': None,
     },
     {

@@ -55,6 +55,13 @@ ALL_GALLOWS = ['cth','ckh','cph','cfh','tch','kch','pch','fch',
 
 FOLIO_DIR = Path("folios")
 
+# Locus-type filter (2026-07-19, after the Part-D hapax audit): [] keeps
+# every locus (the test's original behavior — includes ring/label/radial
+# material, which is hapax-enriched and layout-clustered); ['P'] restricts
+# to continuous paragraph text. See hapax_locus_readjudication for the
+# registered re-adjudication of Part D under both settings.
+LOCUS_TYPES = []
+
 def load_lines_with_folios():
     """Load lines with folio provenance for section analysis."""
     lines = []
@@ -65,6 +72,10 @@ def load_lines_with_folios():
             line = line.strip()
             if line.startswith('#'): continue
             m = re.match(r'<([^>]+)>', line)
+            if LOCUS_TYPES and m:
+                tm = re.search(r',[@+*=]?([A-Za-z])', m.group(1))
+                if not tm or tm.group(1).upper() not in LOCUS_TYPES:
+                    continue
             rest = line[m.end():].strip() if m else line
             if not rest: continue
             words = [w.strip() for w in re.split(r'[.\s,;]+', rest)
