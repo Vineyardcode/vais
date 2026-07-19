@@ -1,7 +1,7 @@
 # VAIS — Voynich Analysis Interactive Suite
 
 A self-contained, reproducible laboratory for statistical analysis of the
-**Voynich manuscript** (Beinecke MS 408): 133 runnable tests covering
+**Voynich manuscript** (Beinecke MS 408): 144 runnable tests covering
 morphology, entropy, cipher hypotheses, hoax models, and codicology, plus a
 local web UI that lets you run any test with your own parameters — no code
 changes required.
@@ -14,7 +14,7 @@ controls, and honest reporting — instead of eyeballing a transcription.
 
 ## What it does
 
-- **133 tests**, each an independent script in `scripts/` with a clear name
+- **144 tests**, each an independent script in `scripts/` with a clear name
   and a docstring stating exactly what it tests. The full catalog is in
   [INVENTORY.md](INVENTORY.md). Highlights:
   - *Morphology & grammar*: slot grammar, prefix/suffix paradigms, word
@@ -69,10 +69,10 @@ python webui/server.py          # set PORT=xxxx first if 5000 is taken
 
 Open `http://localhost:5000`. From there you can:
 
-- **Browse and filter** all 133 tests, each with its description.
+- **Browse and filter** all 144 tests, each with its description.
 - **Run any test** and read its full output in the browser.
-- **Customize parameters**: 123 of the tests expose their tunable
-  constants (744 parameters suite-wide — thresholds, seeds, suffix lists,
+- **Customize parameters**: 134 of the tests expose their tunable
+  constants (876 parameters suite-wide — thresholds, seeds, suffix lists,
   beam widths...) as form fields with the code's real defaults. Overrides
   are spliced into a temporary copy; the scripts themselves are never
   modified.
@@ -112,7 +112,7 @@ before trusting what it says about the manuscript.
 
 | path | contents |
 |---|---|
-| `scripts/` | the 133 tests + `common/` (shared loaders, statistics, fingerprint) |
+| `scripts/` | the 144 tests + `common/` (shared loaders, statistics, fingerprint) |
 | `webui/` | Flask server, test registry, runner |
 | `folios/` | EVA transliteration, one file per folio (ZL, IVTFF v3b) |
 | `data/` | reference corpora, control battery, Gutenberg cache |
