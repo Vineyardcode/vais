@@ -1274,5 +1274,14 @@
   "results_files_touched": [
    "line_ordinal_rank_test.json"
   ]
+ },
+ "line_discipline_tournament": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 187.94,
+  "stdout_bytes": 1076,
+  "results_files_touched": [
+   "line_discipline_tournament.json"
+  ]
  }
 }

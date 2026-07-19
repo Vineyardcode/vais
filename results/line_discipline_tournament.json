@@ -1,0 +1,136 @@
+{
+ "params": {
+  "seed": 120,
+  "s7_seed": 115,
+  "n4_seed": 118,
+  "n_gen_seeds": 5,
+  "n_repl": 8,
+  "lambda_grid": [
+   0.25,
+   0.5,
+   0.75,
+   1.0,
+   1.25,
+   1.5,
+   1.75,
+   2.0,
+   2.25,
+   2.5,
+   2.75,
+   3.0,
+   3.25,
+   3.5,
+   3.75,
+   4.0
+  ],
+  "class_k": 12,
+  "s_floor": 0.0001,
+  "min_line_words": 5,
+  "holdout_frac": 0.2,
+  "alpha": 0.5,
+  "line_group": [
+   "line_init_jsd",
+   "line_final_jsd",
+   "interior_gain",
+   "r_pos",
+   "r_bi"
+  ],
+  "unfitted_group": [
+   "h2_ratio",
+   "adj_dup",
+   "adj_near"
+  ],
+  "rung3_json": "line_as_record_ordinal.json"
+ },
+ "results": {
+  "B": {
+   "line_init_jsd": 0.2128,
+   "line_final_jsd": 0.1063,
+   "interior_gain": 0.0513,
+   "r_pos": 0.0406,
+   "r_bi": 0.0496,
+   "h2_ratio": 0.5141,
+   "adj_dup": 0.009,
+   "adj_near": 0.0341,
+   "ttr_5000": 0.355,
+   "zipf_alpha": 0.9843,
+   "mean_wlen": 5.0635
+  },
+  "bar": {
+   "line": 7.489,
+   "unfitted": 4.092
+  },
+  "lambda": 1.25,
+  "noise_scale": {
+   "line_init_jsd": 0.006153606666013028,
+   "line_final_jsd": 0.00539467329872718,
+   "interior_gain": 0.007914612672140059,
+   "r_pos": 0.002127461809292944,
+   "r_bi": 0.0017507141400011613,
+   "h2_ratio": 0.0013860352628991869,
+   "adj_dup": 0.00020463381929681116,
+   "adj_near": 0.0006981001002721606,
+   "ttr_5000": 0.007766554899052736,
+   "zipf_alpha": 0.007490233224005802,
+   "mean_wlen": 0.0148359308353065
+  },
+  "G0_ablation": {
+   "features": {
+    "line_init_jsd": 0.0017,
+    "line_final_jsd": 0.0015,
+    "interior_gain": -0.006,
+    "r_pos": -0.0007,
+    "r_bi": 0.0016,
+    "h2_ratio": 0.5141,
+    "adj_dup": 0.0092,
+    "adj_near": 0.0309,
+    "ttr_5000": 0.3551,
+    "zipf_alpha": 0.9843,
+    "mean_wlen": 5.0635
+   },
+   "dist": {
+    "line": 21.56,
+    "unfitted": 1.854
+   }
+  },
+  "G1_discipline": {
+   "features": {
+    "line_init_jsd": 0.2008,
+    "line_final_jsd": 0.0017,
+    "interior_gain": 0.0425,
+    "r_pos": 0.0387,
+    "r_bi": 0.0323,
+    "h2_ratio": 0.5141,
+    "adj_dup": 0.0096,
+    "adj_near": 0.032,
+    "ttr_5000": 0.3552,
+    "zipf_alpha": 0.9843,
+    "mean_wlen": 5.0635
+   },
+   "dist": {
+    "line": 6.645,
+    "unfitted": 1.98
+   }
+  },
+  "G2_verbose_ref": {
+   "features": {
+    "line_init_jsd": 0.2838,
+    "line_final_jsd": 0.0014,
+    "interior_gain": 0.0569,
+    "r_pos": 0.0598,
+    "r_bi": 0.0446,
+    "h2_ratio": 0.5327,
+    "adj_dup": 0.0024,
+    "adj_near": 0.0002,
+    "ttr_5000": 0.4205,
+    "zipf_alpha": 0.8075,
+    "mean_wlen": 14.3895
+   },
+   "dist": {
+    "line": 8.714,
+    "unfitted": 31.411
+   }
+  }
+ },
+ "verdict": "line_texture_reducible"
+}

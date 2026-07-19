@@ -1384,6 +1384,97 @@ def adjudicate_n5(item, expected_params, run_started):
 
 
 # ────────────────────────────────────────────────────────────────────
+# N6 adjudication — pre-registered, mechanical, JSON-only
+# ────────────────────────────────────────────────────────────────────
+def adjudicate_n6(item, expected_params, run_started):
+    """Pre-registered outcomes (line_discipline_tournament.py
+    docstring): gate = G0 ablation FAILS the line group (D_line > bar);
+    then G1 vs the phase-109 contiguous-halves bars: closes neither /
+    line only / both -> discipline_insufficient / partial_forgery_bind
+    / line_texture_reducible. Re-derived from the JSON; refuses on
+    mismatch."""
+    jpath = RESULTS / item['result_json']
+    if not jpath.exists():
+        raise AdjudicationError(f'{jpath.name} was not written by the run')
+    if jpath.stat().st_mtime < run_started:
+        raise AdjudicationError(f'{jpath.name} predates this run — stale')
+    data = json.loads(jpath.read_text(encoding='utf-8'))
+    r = data['results']
+    bar_line, bar_unfit = r['bar']['line'], r['bar']['unfitted']
+    g0 = r['G0_ablation']['dist']
+    g1 = r['G1_discipline']['dist']
+    g0_fails = g0['line'] > bar_line
+    g1_line = g1['line'] <= bar_line
+    g1_unfit = g1['unfitted'] <= bar_unfit
+    if not g0_fails:
+        key = 'gate_failed'
+    elif not g1_line:
+        key = 'discipline_insufficient'
+    elif not g1_unfit:
+        key = 'partial_forgery_bind'
+    else:
+        key = 'line_texture_reducible'
+    if data.get('verdict') != key:
+        raise AdjudicationError(f'runner derives {key!r} but the script '
+                                f'recorded {data.get("verdict")!r}')
+    suggestive = key == 'line_texture_reducible'
+
+    md = []
+    md.append('**Pre-registered outcomes** (script docstring; a '
+              'DIAGNOSTIC REDUCTION TEST, not a blind generator — the '
+              'class-position table is measured from B, plus ONE '
+              f'strength knob fitted on one feature, frozen at '
+              f'LAMBDA={data["results"]["lambda"]}). Bars are the '
+              'phase-109 contiguous-halves convention.')
+    md.append('')
+    md.append('| entrant | D_line (bar '
+              f'{bar_line}) | D_unfitted (bar {bar_unfit}) |')
+    md.append('|---|---|---|')
+    for name in ('G0_ablation', 'G1_discipline', 'G2_verbose_ref'):
+        d = r[name]['dist']
+        md.append(f'| {name} | {d["line"]} | {d["unfitted"]} |')
+    md.append('')
+    md.append('| feature | B | G0 | G1 |')
+    md.append('|---|---|---|---|')
+    for k in (data['params']['line_group']
+              + data['params']['unfitted_group']):
+        md.append(f'| {k} | {r["B"][k]} | '
+                  f'{r["G0_ablation"]["features"][k]} | '
+                  f'{r["G1_discipline"]["features"][k]} |')
+    verdict_text = {
+        'gate_failed':
+            'GATE FAILED — the ablation already closes the line group; '
+            'no reading.',
+        'discipline_insufficient':
+            'DISCIPLINE INSUFFICIENT — the moat is not reducible to '
+            'lexicon + table + knob at this budget; corpse logged with '
+            'coordinates.',
+        'partial_forgery_bind':
+            'PARTIAL FORGERY (BIND) — the line group closes but the '
+            'unfitted order-texture breaks; a new bind theorem.',
+        'line_texture_reducible':
+            'LINE TEXTURE REDUCIBLE — Currier B\'s full line texture '
+            '(edge effects AND interior ordinal residue) is '
+            'statistically forgeable from its lexicon plus one measured '
+            'class-position table and one strength knob, without '
+            'breaking the unfitted order-sensitive features. '
+            'SUGGESTIVE, quarantined. Scope: a mechanism-family claim '
+            'about statistics — the phase-109 moat is reduced, not '
+            'decoded; blind generation of the table is the registered '
+            'future rung.',
+    }[key]
+    md.append('')
+    md.append(f'**VERDICT: {verdict_text}**')
+    summary = (f'{key}; G1 D_line {g1["line"]} (bar {bar_line}), '
+               f'D_unfit {g1["unfitted"]} (bar {bar_unfit}), '
+               f'lambda {data["results"]["lambda"]}')
+    return {'verdict': f'S3 rung 2: {key.upper()}',
+            'suggestive': suggestive, 'md': '\n'.join(md),
+            'summary': summary, 'params': data['params'],
+            'json_name': jpath.name}
+
+
+# ────────────────────────────────────────────────────────────────────
 # queue
 # ────────────────────────────────────────────────────────────────────
 N1_PROFILE = {'EM_OUTER': 32, 'EM_PROPOSALS': 48, 'EM_RESTARTS': 16,
@@ -1567,6 +1658,21 @@ QUEUE = [
         'adjudicate': adjudicate_n5,
         'research_heading': 'Portfolio S7-R — independent '
                             're-implementation (rank-based)',
+        'not_ready': None,
+    },
+    {
+        'id': 'N6',
+        'title': 'S3 rung 2: line-discipline tournament — is B\'s line '
+                 'texture reducible to lexicon + table + one knob?',
+        'stem': 'line_discipline_tournament',
+        'overrides': {},
+        'smoke_overrides': {},
+        'timeout_s': 3600,
+        'smoke_timeout_s': 1800,
+        'result_json': 'line_discipline_tournament.json',
+        'adjudicate': adjudicate_n6,
+        'research_heading': 'Portfolio S3, rung 2 — line-discipline '
+                            'reduction tournament (Currier B)',
         'not_ready': None,
     },
     {

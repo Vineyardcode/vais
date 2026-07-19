@@ -1,0 +1,16 @@
+============================================================================
+LINE-DISCIPLINE TOURNAMENT (S3 rung 2) — reduction test (N6)
+============================================================================
+seed=120 gen_seeds=5 repl=8 lambda_grid=0.25..4.0 bar=contiguous-halves (phase-109 convention)
+  B features reproduce the rung-3 record (interior_gain +0.0513)  VERIFIED
+  bar (contiguous halves): line 7.489  unfitted 4.092
+  LAMBDA fitted on interior gain only: 1.25 (|err| 0.0066) — FROZEN
+  G0_ablation    D_line   21.56  D_unfitted   1.854
+  G1_discipline  D_line   6.645  D_unfitted    1.98
+  G2_verbose_ref (observational) D_line 8.714  D_unfitted 31.411
+
+  ADJUDICATION (pre-registered):
+    gate: G0 D_line 21.56 must exceed bar 7.489 -> PASS
+    LINE TEXTURE REDUCIBLE: G1 closes BOTH groups — Currier B's line texture is statistically forgeable from its lexicon plus one measured class-position table and one strength knob. SUGGESTIVE, quarantined; a mechanism-family claim, NOT a decode.
+
+  -> results/line_discipline_tournament.json
