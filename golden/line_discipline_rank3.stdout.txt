@@ -1,0 +1,19 @@
+============================================================================
+LINE-DISCIPLINE RANK-3 TEST (S3 rung 2d) — three-axis test (N6d)
+============================================================================
+seed=120 (inherited; cross-checked vs N6/N6b/N6c)
+  B features reproduce the N6 record  VERIFIED
+  bars reproduce N6 (line 7.489, unfitted 4.092)  VERIFIED
+  rank-3 variance share of centered log-table: 98.4%
+  axis1 (low -> high): p -1.285  s -0.760  t -0.672  y -0.533  d -0.387  q +0.141  # +0.247  k +0.332  o +0.339  l +0.385  sh +0.416  ch +0.783  a +0.994
+  axis2 (low -> high): sh -0.868  q -0.372  k -0.214  ch -0.205  p -0.183  t -0.145  y -0.132  o +0.097  l +0.293  s +0.299  a +0.366  d +0.478  # +0.585
+  axis3 (low -> high): y -0.340  s -0.306  sh -0.285  l -0.217  d -0.169  # +0.061  q +0.068  k +0.073  o +0.079  ch +0.158  t +0.215  a +0.230  p +0.436
+  profile3: p1 -0.092  p2 -0.248  m1 -0.169  m2 -0.147  m3 +0.618  pL-1 +0.334  pL -0.295
+  LAMBDA (rank-3 table) fitted on interior gain: 1.5 (|err| 0.0023) — FROZEN
+  G1d (rank-3)  D_line 6.882  D_unfitted 2.115  (full 6.645; rank-1 9.529; rank-2 8.12)
+  observational correlations: axis2_vs_n5_mean_ranks +0.800  axis3_vs_n5_mean_ranks +0.309  axis1_vs_log_class_freq +0.648  axis2_vs_log_class_freq -0.220  axis3_vs_log_class_freq -0.088  axis1_vs_gallows_initial -0.593  axis2_vs_gallows_initial -0.577  axis3_vs_gallows_initial +0.033
+
+  ADJUDICATION (pre-registered):
+    THREE AXES SUFFICIENT: the rank-3 table closes BOTH groups — Currier B's line discipline compresses to three axes plus one strength knob (~55 numbers vs the 91-cell table). SUGGESTIVE, quarantined; axis 3's interpretation is reported above for the record.
+
+  -> results/line_discipline_rank3.json

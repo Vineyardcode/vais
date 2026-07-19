@@ -1301,5 +1301,14 @@
   "results_files_touched": [
    "line_discipline_rank2.json"
   ]
+ },
+ "line_discipline_rank3": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 97.32,
+  "stdout_bytes": 1785,
+  "results_files_touched": [
+   "line_discipline_rank3.json"
+  ]
  }
 }
