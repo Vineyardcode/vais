@@ -234,3 +234,33 @@
 [17:51:35] report -> C:\projects\vais\results\overnight_2026-07-19_report.md
 [17:51:35] RESEARCH.md: section appended (working tree; committed only to the overnight branch)
 [17:51:35] committing results to branch overnight/2026-07-19 ...
+[17:51:35] committed 692be5f577d1 on overnight/2026-07-19 (main untouched)
+[17:51:35] done, exit 0
+[18:18:17] ====================================================================
+[18:18:17] overnight runner start 2026-07-19 18:18:17  smoke=False PYTHONHASHSEED=0
+[18:18:18] code at 12cea1a (dirty tree), python 3.13.3
+[18:18:18] queue item N6c: S3 rung 2c: rank-2 test — do two axes complete the discipline?
+[18:18:18] profile: {}  timeout=3600s
+  | ============================================================================
+  | LINE-DISCIPLINE RANK-2 TEST (S3 rung 2c) — two-axis test (N6c)
+  | ============================================================================
+  | seed=120 (inherited; cross-checked vs N6/N6b)
+  |   B features reproduce the N6 record  VERIFIED
+  |   bars reproduce N6 (line 7.489, unfitted 4.092)  VERIFIED
+  |   rank-2 variance share of centered log-table: 96.9%
+  |   axis1 (edge, low -> high): p -1.285  s -0.760  t -0.672  y -0.533  d -0.387  q +0.141  # +0.247  k +0.332  o +0.339  l +0.385  sh +0.416  ch +0.783  a +0.994
+  |   axis2 (interior, low -> high): sh -0.868  q -0.372  k -0.214  ch -0.205  p -0.183  t -0.145  y -0.132  o +0.097  l +0.293  s +0.299  a +0.366  d +0.478  # +0.585
+  |   profile2: p1 -0.075  p2 -0.710  m1 -0.370  m2 -0.138  m3 +0.025  pL-1 +0.149  pL +1.118
+  |   LAMBDA (rank-2 table) fitted on interior gain: 1.75 (|err| 0.0056) — FROZEN
+  |   G1c (rank-2)  D_line 8.12  D_unfitted 2.421  (N6 full 6.645; N6b rank-1 9.529)
+  |   observational correlations: axis2_vs_n5_mean_ranks +0.800  axis1_vs_log_class_freq +0.648  axis2_vs_log_class_freq -0.220  axis1_vs_gallows_initial -0.593  axis2_vs_gallows_initial -0.577
+  | 
+  |   ADJUDICATION (pre-registered):
+  |     STILL NOT COMPRESSIBLE: two axes do not close the line group — the discipline is more than two-dimensional.
+  | 
+  |   -> results/line_discipline_rank2.json
+[18:19:16] experiment finished rc=0 in 59s (0.02h)
+[18:19:16] adjudication: still_not_compressible; G1c D_line 8.12 vs bar 7.489 (rank-1 9.529, full 6.645), var2 97.0%, axis2~N5 ρ +0.80
+[18:19:16] report -> C:\projects\vais\results\overnight_2026-07-19_report.md
+[18:19:16] RESEARCH.md: section appended (working tree; committed only to the overnight branch)
+[18:19:16] committing results to branch overnight/2026-07-19 ...

@@ -1391,3 +1391,24 @@ Position profile V: p1 +2.114, p2 -0.627, m1 -0.360, m2 -0.332, m3 -0.144, pL-1 
 Observational axis correlations (declared predictors): log_class_freq -0.648, mean_word_len +0.165, gallows_initial +0.593.
 
 **VERDICT: NOT COMPRESSIBLE — one latent axis does not reproduce the line texture (the dominant axis is the EDGE/paragraph axis; the interior ordering is a second, independent dimension). The discipline is at least rank-2; corpse logged with coordinates.**
+
+---
+
+### Portfolio S3, rung 2c — rank-2 discipline test (Currier B) (2026-07-19)
+
+[AUTOMATED — written by tools/overnight.py; run committed to branch overnight/2026-07-19; awaiting human review before promotion to any evidence tier.]
+
+Configuration (pre-registered in the script docstring): script defaults. Runtime 0.02 h at PYTHONHASHSEED=0. Holdout: whole folios (VMS) / 24-line pseudo-folio blocks (controls).
+
+**Pre-registered outcomes** (script docstring): rank-2 SVD reconstruction (deterministic; declared sign convention), N6 machinery/bars cross-checked, one re-fitted knob (LAMBDA=1.75). Rank-2 variance share: 97.0%.
+
+| entrant | D_line (bar 7.489) | D_unfitted (bar 4.092) |
+|---|---|---|
+| G1 full table (N6) | 6.645 | 1.98 |
+| G1b rank-1 (N6b) | 9.529 | 2.0 |
+| G1c rank-2 | 8.12 | 2.421 |
+
+Axis 2 (interior, low → high): sh -0.868, q -0.372, k -0.214, ch -0.205, p -0.183, t -0.145, y -0.132, o +0.097, l +0.293, s +0.299, a +0.366, d +0.478, # +0.585.
+Observational correlations: axis2_vs_n5_mean_ranks +0.800, axis1_vs_log_class_freq +0.648, axis2_vs_log_class_freq -0.220, axis1_vs_gallows_initial -0.593, axis2_vs_gallows_initial -0.577.
+
+**VERDICT: STILL NOT COMPRESSIBLE — two axes (96.9% of the table) do not close the line group at the tournament bar; the discipline carries tournament-relevant structure beyond rank 2. Note the convergence ladder (rank-1 → rank-2 → full) and that axis 2 independently reproduces the N5 interior ordering (ρ = +0.80).**
