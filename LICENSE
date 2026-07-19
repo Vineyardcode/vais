@@ -1,3 +1,9 @@
+This code is free for anyone to use. Anyone may use, copy, modify, and
+redistribute the code and documentation in this repository, for any
+purpose, commercial or not, free of charge — under the MIT License below.
+(Third-party research data redistributed here keeps its own provenance
+terms: see CREDITS.md.)
+
 MIT License
 
 Copyright (c) 2026 Vineyardcode (VAIS — Voynich Analysis Interactive Suite)
@@ -19,17 +25,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
-────────────────────────────────────────────────────────────────────────────
-Scope note
-
-The MIT license above covers the code and documentation authored in this
-repository (scripts/, webui/, tools/, sanity_checks/, the markdown
-documents, and the generated site in docs/).
-
-It does NOT cover the third-party data redistributed for research
-reproducibility — the manuscript transliterations (folios/,
-data/translit/), folio images (folios/*.png), and cached reference texts
-(data/gutenberg_cache/, data/latin_texts/) — which retain the terms and
-provenance of their original sources. See CREDITS.md for full attribution
-and contact information for corrections or removal requests.

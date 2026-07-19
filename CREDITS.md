@@ -52,9 +52,18 @@ community. Citations and discussion are in [RESEARCH.md](RESEARCH.md);
 critiques there concern published claims and methods, in the ordinary
 course of scholarly discourse.
 
-## Software
+## Software and license scope
 
 The in-browser runner uses **Pyodide** (Mozilla Public License 2.0,
 loaded from its public CDN, not redistributed here), **NumPy**, and
-**Flask**. The code in this repository is MIT-licensed — see
-[LICENSE](LICENSE), including its scope note for the data listed above.
+**Flask**.
+
+Everything authored in this repository — `scripts/`, `webui/`, `tools/`,
+`sanity_checks/`, the markdown documents, and the generated site in
+`docs/` — is MIT-licensed and free for anyone to use, for any purpose
+(see [LICENSE](LICENSE)). The MIT grant does **not** cover the
+third-party research data redistributed for reproducibility — the
+transliterations (`folios/*.txt`, `data/translit/`), folio images
+(`folios/*.png`), and cached reference texts (`data/gutenberg_cache/`,
+`data/latin_texts/`) — which retain the terms and provenance of their
+original sources, as attributed above.
