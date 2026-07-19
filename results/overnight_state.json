@@ -110,5 +110,12 @@
   "verdict": "S3 rung 2c: STILL_NOT_COMPRESSIBLE",
   "suggestive": false,
   "summary": "still_not_compressible; G1c D_line 8.12 vs bar 7.489 (rank-1 9.529, full 6.645), var2 97.0%, axis2~N5 \u03c1 +0.80"
+ },
+ "N6d": {
+  "status": "completed",
+  "date": "2026-07-19",
+  "verdict": "S3 rung 2d: THREE_AXES_SUFFICIENT",
+  "suggestive": true,
+  "summary": "three_axes_sufficient; G1d D_line 6.882 vs bar 7.489 (ladder: rank-1 9.529, rank-2 8.12, full 6.645), var3 98.4%"
  }
 }

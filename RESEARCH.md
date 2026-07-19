@@ -1412,3 +1412,28 @@ Axis 2 (interior, low → high): sh -0.868, q -0.372, k -0.214, ch -0.205, p -0.
 Observational correlations: axis2_vs_n5_mean_ranks +0.800, axis1_vs_log_class_freq +0.648, axis2_vs_log_class_freq -0.220, axis1_vs_gallows_initial -0.593, axis2_vs_gallows_initial -0.577.
 
 **VERDICT: STILL NOT COMPRESSIBLE — two axes (96.9% of the table) do not close the line group at the tournament bar; the discipline carries tournament-relevant structure beyond rank 2. Note the convergence ladder (rank-1 → rank-2 → full) and that axis 2 independently reproduces the N5 interior ordering (ρ = +0.80).**
+
+---
+
+### Portfolio S3, rung 2d — rank-3 discipline test (Currier B) (2026-07-19)
+
+[AUTOMATED — written by tools/overnight.py; run committed to branch overnight/2026-07-19; awaiting human review before promotion to any evidence tier.]
+
+Configuration (pre-registered in the script docstring): script defaults. Runtime 0.03 h at PYTHONHASHSEED=0. Holdout: whole folios (VMS) / 24-line pseudo-folio blocks (controls).
+
+**SUGGESTIVE — awaiting human review (quarantined; never merged automatically):**
+
+**Pre-registered outcomes** (script docstring): rank-3 SVD reconstruction, N6 machinery/bars cross-checked, one re-fitted knob (LAMBDA=1.5). Rank-3 variance share: 98.4%.
+
+| entrant | D_line (bar 7.489) | D_unfitted (bar 4.092) |
+|---|---|---|
+| G1 full table (N6) | 6.645 | 1.98 |
+| G1b rank-1 (N6b) | 9.529 | 2.0 |
+| G1c rank-2 (N6c) | 8.12 | 2.421 |
+| G1d rank-3 | 6.882 | 2.115 |
+
+Axis 3 (pre-final zone, low → high): y -0.340, s -0.306, sh -0.285, l -0.217, d -0.169, # +0.061, q +0.068, k +0.073, o +0.079, ch +0.158, t +0.215, a +0.230, p +0.436.
+Profile 3: p1 -0.092, p2 -0.248, m1 -0.169, m2 -0.147, m3 +0.618, pL-1 +0.334, pL -0.295.
+Observational correlations: axis2_vs_n5_mean_ranks +0.800, axis3_vs_n5_mean_ranks +0.309, axis1_vs_log_class_freq +0.648, axis2_vs_log_class_freq -0.220, axis3_vs_log_class_freq -0.088, axis1_vs_gallows_initial -0.593, axis2_vs_gallows_initial -0.577, axis3_vs_gallows_initial +0.033.
+
+**VERDICT: THREE AXES SUFFICIENT — Currier B's line discipline compresses to three interpretable axes plus one knob (~55 numbers vs the 91-cell table): the edge/paragraph axis, the interior early-late gradient (= the N5 residue, ρ +0.80), and a previously unnamed PRE-FINAL-ZONE axis (peaks m3/pL-1, not pL; uncorrelated with the declared predictors). SUGGESTIVE, quarantined; a compression of statistics, not a decode. Deriving each axis from independent principles is the registered blind-generation rung.**
