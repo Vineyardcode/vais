@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>line_discipline_tournament — VAIS - Voynich Analysis Interactive Suite</title><style>
+:root { --bg:#ffffff; --fg:#1a1a1a; --muted:#666; --line:#ddd;
+        --code:#f5f5f5; --accent:#7a4a1e; --warn:#a33; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#141414; --fg:#ddd; --muted:#999; --line:#333;
+          --code:#1e1e1e; --accent:#d9a05b; --warn:#e77; } }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--fg);
+       font:16px/1.55 Georgia, 'Times New Roman', serif; }
+nav { border-bottom:1px solid var(--line); padding:.7em 1.2em;
+      font-family: system-ui, sans-serif; font-size:.9em; }
+nav a { color:var(--accent); text-decoration:none; margin-right:1.2em; }
+main { max-width: 62em; margin: 0 auto; padding: 1.5em 1.2em 4em; }
+h1,h2,h3 { font-family: system-ui, sans-serif; line-height:1.25; }
+h1 { font-size:1.7em; } h2 { font-size:1.3em; margin-top:2em; }
+a { color: var(--accent); }
+code, pre { font-family: ui-monospace, Consolas, monospace;
+            font-size:.86em; background:var(--code); }
+code { padding:.1em .3em; border-radius:3px; }
+pre { padding: .9em; overflow-x:auto; border:1px solid var(--line);
+      border-radius:4px; line-height:1.4; }
+table { border-collapse: collapse; margin: 1em 0; font-size:.92em;
+        display:block; overflow-x:auto; }
+th, td { border:1px solid var(--line); padding:.35em .6em;
+         text-align:left; vertical-align:top; }
+th { font-family: system-ui, sans-serif; background:var(--code); }
+blockquote { border-left:3px solid var(--accent); margin:1em 0;
+             padding:.2em 1em; color:var(--muted); }
+.muted { color:var(--muted); font-size:.9em; }
+.tag { font-family: system-ui, sans-serif; font-size:.75em;
+       border:1px solid var(--line); border-radius:3px;
+       padding:.05em .45em; margin-left:.5em; }
+.tag.sug { border-color:var(--warn); color:var(--warn); }
+details summary { cursor:pointer; font-family: system-ui, sans-serif; }
+input.param { font-family: ui-monospace, Consolas, monospace;
+              font-size:.85em; width:24em; max-width:100%;
+              background:var(--code); color:var(--fg);
+              border:1px solid var(--line); border-radius:3px;
+              padding:.25em .4em; }
+button { font-family: system-ui, sans-serif; font-size:.95em;
+         padding:.35em 1em; border:1px solid var(--accent);
+         border-radius:4px; background:var(--code); color:var(--fg);
+         cursor:pointer; }
+button:disabled { opacity:.5; cursor:default; }
+#run-out { min-height:2em; }
+footer { border-top:1px solid var(--line); margin-top:3em;
+         padding-top:1em; font-size:.85em; color:var(--muted); }
+</style></head><body>
+<nav><a href="../index.html">VAIS - Voynich Analysis Interactive Suite</a><a href="../catalog.html">Catalog</a>
+<a href="../research.html">Research</a><a href="../reports.html">Reports</a>
+<a href="../credits.html">Credits</a><a href="https://github.com/Vineyardcode/vais">GitHub</a></nav>
+<main><h1>line_discipline_tournament</h1>
+<p class="muted">scripts/line_discipline_tournament.py</p>
+<pre>Line-Discipline Tournament (portfolio S3, rung 2) — is Currier B&#x27;s line
+texture REDUCIBLE to (lexicon, class-position table, one knob)? (N6)
+
+PROVENANCE: phase 109 established that no calibrated generator forges
+the manuscript, with the line-boundary effects as the universal moat;
+the S7 ladder then characterized a robust intra-line ordinal residue in
+Currier B (glyph-class-carried, front-loaded); N4 showed B&#x27;s ordering
+profile is language-like plus that residue. This rung asks the
+charter&#x27;s designated promotion question: can a LANGUAGE-LIKE SUBSTRATE
+plus a minimal LINE-DISCIPLINE layer reproduce the full line texture
+without breaking the features it was not fitted to?
+
+HONEST LABEL (F1/F2 discipline, stated first): this is a DIAGNOSTIC
+REDUCTION TEST, not a blind generator — exactly as phase 109 labeled
+the word-shuffle &quot;diagnostic, not generator&quot;. The discipline layer&#x27;s
+parameters are MEASURED from the target:
+  - class-position preference table P(position-bin | first-EVA-glyph
+    class), estimated from Currier B (~13 classes x 7 bins of plug-in
+    information, Laplace-smoothed), and
+  - ONE placement-strength knob LAMBDA, fitted on ONE fitted feature
+    (interior ordinal gain) over the declared grid LAMBDA_GRID, then
+    frozen.
+The registered claim under test is a COMPRESSION claim: &quot;B&#x27;s line
+texture = its lexicon + ~91 measured numbers + one knob&quot;. Deriving the
+table from an independent mechanism (blind generation) is a future
+rung; nothing here is one.
+
+ENTRANTS (all placement-only reassemblies; each line keeps its own
+words, so lexicon/length features are held fixed by construction and
+every ORDER-SENSITIVE feature remains informative):
+  G0  ablation: LAMBDA=0 (uniform within-line shuffle) — the
+      N1-word-shuffle analogue. INSTRUMENT GATE: G0 must FAIL the line
+      features (else this feature set cannot see the moat).
+  G1  the diagnostic: placement weight ~ P(bin|class)^LAMBDA, sampled
+      without replacement position-by-position.
+  G2  reference true-generator: the latin_verbose control corpus
+      re-placed with B&#x27;s table and G1&#x27;s LAMBDA (classes missing from
+      the table get uniform preference) — reported observationally.
+
+FEATURES (computed identically for B and every entrant; means over
+N_GEN_SEEDS generation seeds):
+  LINE GROUP (fitted/targeted): line_init_jsd, line_final_jsd
+    (first/last-char JSD of edge words vs others, S9 definitions),
+    interior ordinal gain (S7 rung-3 instrument, 4 features, split
+    seeds fixed at rung-3 values; B&#x27;s value must reproduce the rung-3
+    record or the run aborts), r_pos, r_bi (N4 definitions).
+  UNFITTED GROUP (order-sensitive, F5): h2_ratio, adjacent-duplicate
+    rate, adjacent-near rate (Levenshtein exactly 1). Also reported
+    (held fixed by construction for G0/G1, informative for G2):
+    ttr_5000, zipf_alpha, mean_wlen.
+Feature noise scale s_f = std over N_REPL folio-drop replicates of B
+(floored at S_FLOOR). Distance D_group(X) = mean over the group of
+|f(X) - f(B)| / s_f.
+
+FORGEABILITY BAR (phase-109 convention): BAR_group = the same distance
+between B&#x27;s contiguous halves (first-half folios vs second-half). An
+entrant &quot;closes&quot; a group iff D_group &lt;= BAR_group.
+
+PRE-REGISTERED OUTCOMES:
+  gate_failed             — G0 closes the line group (or B&#x27;s interior
+                            gain fails to reproduce the rung-3 record):
+                            instrument cannot discriminate; no reading.
+  discipline_insufficient — G1 does not close the line group: the moat
+                            is NOT reducible to lexicon + table + knob;
+                            the corpse ships with coordinates (which
+                            features stayed open).
+  partial_forgery_bind    — G1 closes the line group but breaks the
+                            unfitted group: buying the moat costs
+                            order-texture elsewhere — a new bind
+                            theorem, logged like the Timm bind.
+  line_texture_reducible  — G1 closes BOTH groups: Currier B&#x27;s line
+                            texture is statistically forgeable from its
+                            lexicon plus one measured table and one
+                            knob. SUGGESTIVE, quarantined — a major
+                            structural claim, and still NOT a decode:
+                            it names a mechanism family, not a meaning.
+Vocabulary discipline: outcomes speak of reducibility and forgeability
+of STATISTICS, never of what the manuscript says.</pre>
+<h2>Parameters</h2><p class="muted">Edit a value to override it for an in-browser run (the script itself is never modified).</p><table><tr><th>name</th><th>type</th><th>value</th></tr>
+<tr><td><code>SEED</code></td><td>int</td><td><input class="param" data-param="SEED" value="120"></td></tr>
+<tr><td><code>S7_SEED</code></td><td>int</td><td><input class="param" data-param="S7_SEED" value="115"></td></tr>
+<tr><td><code>N4_SEED</code></td><td>int</td><td><input class="param" data-param="N4_SEED" value="118"></td></tr>
+<tr><td><code>N_GEN_SEEDS</code></td><td>int</td><td><input class="param" data-param="N_GEN_SEEDS" value="5"></td></tr>
+<tr><td><code>N_REPL</code></td><td>int</td><td><input class="param" data-param="N_REPL" value="8"></td></tr>
+<tr><td><code>S_FLOOR</code></td><td>float</td><td><input class="param" data-param="S_FLOOR" value="0.0001"></td></tr>
+<tr><td><code>CLASS_K</code></td><td>int</td><td><input class="param" data-param="CLASS_K" value="12"></td></tr>
+<tr><td><code>MIN_LINE_WORDS</code></td><td>int</td><td><input class="param" data-param="MIN_LINE_WORDS" value="5"></td></tr>
+<tr><td><code>HOLDOUT_FRAC</code></td><td>float</td><td><input class="param" data-param="HOLDOUT_FRAC" value="0.2"></td></tr>
+<tr><td><code>PSEUDO_FOLIO_LINES</code></td><td>int</td><td><input class="param" data-param="PSEUDO_FOLIO_LINES" value="24"></td></tr>
+<tr><td><code>ALPHA</code></td><td>float</td><td><input class="param" data-param="ALPHA" value="0.5"></td></tr>
+<tr><td><code>S7_FEATURES</code></td><td>json</td><td><input class="param" data-param="S7_FEATURES" value="[&#x27;len&#x27;, &#x27;first&#x27;, &#x27;last&#x27;, &#x27;gallows&#x27;]"></td></tr>
+<tr><td><code>INTERIOR</code></td><td>json</td><td><input class="param" data-param="INTERIOR" value="[&#x27;m1&#x27;, &#x27;m2&#x27;, &#x27;m3&#x27;]"></td></tr>
+<tr><td><code>LINE_GROUP</code></td><td>json</td><td><input class="param" data-param="LINE_GROUP" value="[&#x27;line_init_jsd&#x27;, &#x27;line_final_jsd&#x27;, &#x27;interior_gain&#x27;, &#x27;r_pos&#x27;, &#x27;r_bi&#x27;]"></td></tr>
+<tr><td><code>UNFIT_GROUP</code></td><td>json</td><td><input class="param" data-param="UNFIT_GROUP" value="[&#x27;h2_ratio&#x27;, &#x27;adj_dup&#x27;, &#x27;adj_near&#x27;]"></td></tr>
+<tr><td><code>REPORT_ONLY</code></td><td>json</td><td><input class="param" data-param="REPORT_ONLY" value="[&#x27;ttr_5000&#x27;, &#x27;zipf_alpha&#x27;, &#x27;mean_wlen&#x27;]"></td></tr>
+<tr><td><code>RUNG3_JSON</code></td><td>str</td><td><input class="param" data-param="RUNG3_JSON" value="line_as_record_ordinal.json"></td></tr>
+</table>
+<h2>Run it in your browser</h2><p class="muted">Python + numpy on WebAssembly, entirely on your machine — nothing is uploaded. First run downloads the runtime (~15 MB) and the repository data pack (~9 MB); both are cached afterwards. Expect it to be slower than a native run.</p><p><button id="run-btn">&#9654; Run</button> <button id="stop-btn">Stop</button> <span id="run-status" class="muted"></span></p><pre id="run-out"></pre>
+<script>window.VAIS_TEST = {"stem": "line_discipline_tournament", "specs": {"SEED": {"type": "int", "container": null}, "S7_SEED": {"type": "int", "container": null}, "N4_SEED": {"type": "int", "container": null}, "N_GEN_SEEDS": {"type": "int", "container": null}, "N_REPL": {"type": "int", "container": null}, "S_FLOOR": {"type": "float", "container": null}, "CLASS_K": {"type": "int", "container": null}, "MIN_LINE_WORDS": {"type": "int", "container": null}, "HOLDOUT_FRAC": {"type": "float", "container": null}, "PSEUDO_FOLIO_LINES": {"type": "int", "container": null}, "ALPHA": {"type": "float", "container": null}, "S7_FEATURES": {"type": "json", "container": "tuple"}, "INTERIOR": {"type": "json", "container": "set"}, "LINE_GROUP": {"type": "json", "container": "tuple"}, "UNFIT_GROUP": {"type": "json", "container": "tuple"}, "REPORT_ONLY": {"type": "json", "container": "tuple"}, "RUNG3_JSON": {"type": "str", "container": null}}, "base": "../", "baselineSeconds": 0};</script><script src="../runner.js"></script>
+<h2>Run it locally (full speed, byte-exact)</h2>
+<pre>git clone https://github.com/Vineyardcode/vais
+cd vais
+pip install numpy flask
+python scripts/line_discipline_tournament.py        # this test; output also lands in results/
+python webui/server.py          # or the full interactive UI at localhost:5000</pre>
+<h2>Golden output (PYTHONHASHSEED=0)</h2><details><summary>show</summary><pre id="golden-pre">============================================================================
+LINE-DISCIPLINE TOURNAMENT (S3 rung 2) — reduction test (N6)
+============================================================================
+seed=120 gen_seeds=5 repl=8 lambda_grid=0.25..4.0 bar=contiguous-halves (phase-109 convention)
+  B features reproduce the rung-3 record (interior_gain +0.0513)  VERIFIED
+  bar (contiguous halves): line 7.489  unfitted 4.092
+  LAMBDA fitted on interior gain only: 1.25 (|err| 0.0066) — FROZEN
+  G0_ablation    D_line   21.56  D_unfitted   1.854
+  G1_discipline  D_line   6.645  D_unfitted    1.98
+  G2_verbose_ref (observational) D_line 8.714  D_unfitted 31.411
+
+  ADJUDICATION (pre-registered):
+    gate: G0 D_line 21.56 must exceed bar 7.489 -&gt; PASS
+    LINE TEXTURE REDUCIBLE: G1 closes BOTH groups — Currier B&#x27;s line texture is statistically forgeable from its lexicon plus one measured class-position table and one strength knob. SUGGESTIVE, quarantined; a mechanism-family claim, NOT a decode.
+
+  -&gt; results/line_discipline_tournament.json
+</pre></details><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>4ed83f4</code>. 
+To run any test with your own parameters, clone
+<a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
+(<code>python webui/server.py</code>). All numbers reproduce at
+PYTHONHASHSEED=0.</footer></main></body></html>

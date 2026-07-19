@@ -709,7 +709,31 @@ footer { border-top:1px solid var(--line); margin-top:3em;
 <li>VMS_full: best gap -0.880 (latin/abbrev4) — within the noise floor: nothing beyond free-mapping noise at this rung (a clean negative for the strict 1:1 verbose-cipher family under these 6 LMs).</li>
 <li>VMS_currier_A: best gap -0.842 (latin/plain) — within the noise floor: nothing beyond free-mapping noise at this rung (a clean negative for the strict 1:1 verbose-cipher family under these 6 LMs).</li>
 <li>VMS_currier_B: best gap -0.895 (latin/abbrev4) — within the noise floor: nothing beyond free-mapping noise at this rung (a clean negative for the strict 1:1 verbose-cipher family under these 6 LMs).</li>
-</ul><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>49d1616</code>. 
+</ul>
+<hr>
+<h3>Portfolio S3, rung 2 — line-discipline reduction tournament (Currier B) (2026-07-19)</h3>
+<p>[AUTOMATED — written by tools/overnight.py; run committed to branch overnight/2026-07-19; awaiting human review before promotion to any evidence tier.]</p>
+<p>Configuration (pre-registered in the script docstring): script defaults. Runtime 0.06 h at PYTHONHASHSEED=0. Holdout: whole folios (VMS) / 24-line pseudo-folio blocks (controls).</p>
+<p><strong>SUGGESTIVE — awaiting human review (quarantined; never merged automatically):</strong></p>
+<p><strong>Pre-registered outcomes</strong> (script docstring; a DIAGNOSTIC REDUCTION TEST, not a blind generator — the class-position table is measured from B, plus ONE strength knob fitted on one feature, frozen at LAMBDA=1.25). Bars are the phase-109 contiguous-halves convention.</p>
+<table>
+<tr><th>entrant</th><th>D_line (bar 7.489)</th><th>D_unfitted (bar 4.092)</th></tr>
+<tr><td>G0_ablation</td><td>21.56</td><td>1.854</td></tr>
+<tr><td>G1_discipline</td><td>6.645</td><td>1.98</td></tr>
+<tr><td>G2_verbose_ref</td><td>8.714</td><td>31.411</td></tr>
+</table>
+<table>
+<tr><th>feature</th><th>B</th><th>G0</th><th>G1</th></tr>
+<tr><td>line_init_jsd</td><td>0.2128</td><td>0.0017</td><td>0.2008</td></tr>
+<tr><td>line_final_jsd</td><td>0.1063</td><td>0.0015</td><td>0.0017</td></tr>
+<tr><td>interior_gain</td><td>0.0513</td><td>-0.006</td><td>0.0425</td></tr>
+<tr><td>r_pos</td><td>0.0406</td><td>-0.0007</td><td>0.0387</td></tr>
+<tr><td>r_bi</td><td>0.0496</td><td>0.0016</td><td>0.0323</td></tr>
+<tr><td>h2_ratio</td><td>0.5141</td><td>0.5141</td><td>0.5141</td></tr>
+<tr><td>adj_dup</td><td>0.009</td><td>0.0092</td><td>0.0096</td></tr>
+<tr><td>adj_near</td><td>0.0341</td><td>0.0309</td><td>0.032</td></tr>
+</table>
+<p><strong>VERDICT: LINE TEXTURE REDUCIBLE — Currier B&#x27;s full line texture (edge effects AND interior ordinal residue) is statistically forgeable from its lexicon plus one measured class-position table and one strength knob, without breaking the unfitted order-sensitive features. SUGGESTIVE, quarantined. Scope: a mechanism-family claim about statistics — the phase-109 moat is reduced, not decoded; blind generation of the table is the registered future rung.</strong></p><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>4ed83f4</code>. 
 To run any test with your own parameters, clone
 <a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
 (<code>python webui/server.py</code>). All numbers reproduce at
