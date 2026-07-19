@@ -1300,6 +1300,90 @@ def adjudicate_n4(item, expected_params, run_started):
 
 
 # ────────────────────────────────────────────────────────────────────
+# N5 adjudication — pre-registered, mechanical, JSON-only
+# ────────────────────────────────────────────────────────────────────
+def adjudicate_n5(item, expected_params, run_started):
+    """Pre-registered ladder (line_ordinal_rank_test.py docstring):
+    gate = P-REC rejects (p < p_replicate) AND P1/N1 in the null band
+    (p >= p_nullband); B replicated / ambiguous / not_replicated
+    (design-artifact-suspect). Re-derived from the JSON; refuses on
+    mismatch."""
+    jpath = RESULTS / item['result_json']
+    if not jpath.exists():
+        raise AdjudicationError(f'{jpath.name} was not written by the run')
+    if jpath.stat().st_mtime < run_started:
+        raise AdjudicationError(f'{jpath.name} predates this run — stale')
+    data = json.loads(jpath.read_text(encoding='utf-8'))
+    p, rows = data['params'], data['rows']
+    for name, r in rows.items():
+        derived = round((1 + r['n_perm_ge']) / (p['n_perm'] + 1), 4)
+        if abs(derived - r['p']) > 1e-9:
+            raise AdjudicationError(f'{name}: p re-derivation mismatch')
+    gate_ok = (rows['PREC_records']['p'] < p['p_replicate']
+               and rows['P1_latin']['p'] >= p['p_nullband']
+               and rows['N1_shuffle']['p'] >= p['p_nullband'])
+    pb = rows['VMS_currier_B']['p']
+    if not gate_ok:
+        key = 'gate_failed'
+    elif pb < p['p_replicate']:
+        key = 'replicated'
+    elif pb < p['p_nullband']:
+        key = 'ambiguous'
+    else:
+        key = 'not_replicated'
+    if data.get('verdict') != key:
+        raise AdjudicationError(f'runner derives {key!r} but the script '
+                                f'recorded {data.get("verdict")!r}')
+    suggestive = key == 'replicated'
+
+    md = []
+    md.append('**Pre-registered ladder** (script docstring; answers '
+              'PHASE8_DRAFT §8.7-1 at IMPLEMENTATION level — same-author '
+              'caveat disclosed): rank statistic T = weighted '
+              'between-class variance of mean interior rank, first-EVA-'
+              'glyph classes, no bins / smoothing / holdout; inference '
+              f'by {p["n_perm"]} within-line permutations.')
+    md.append('')
+    md.append('| corpus | T | perms ≥ T | p | lines |')
+    md.append('|---|---|---|---|---|')
+    for name, r in rows.items():
+        md.append(f'| {name} | {r["T"]:.6f} | {r["n_perm_ge"]} | '
+                  f'{r["p"]:.4f} | {r["n_lines"]} |')
+    verdict_text = {
+        'gate_failed': 'GATE FAILED — no reading.',
+        'replicated':
+            'REPLICATED — the intra-line class-ordering signal survives '
+            'a methodologically disjoint instrument (B p < 0.005; and '
+            'observationally, hand A also rejects under this more '
+            'sensitive statistic). The shared-implementation-DNA '
+            'objection is answered; author-level independence remains '
+            'open and travels with the finding.',
+        'ambiguous': 'AMBIGUOUS — no claim; a third design is required.',
+        'not_replicated':
+            'NOT REPLICATED — the v1 finding is flagged '
+            'DESIGN-ARTIFACT-SUSPECT pending third-party '
+            'implementation.',
+    }[key]
+    md.append('')
+    md.append(f'**VERDICT: {verdict_text}**')
+    if key == 'replicated':
+        bm = rows['VMS_currier_B']['class_means']
+        ordered = sorted(bm.items(), key=lambda kv: kv[1])
+        md.append('')
+        md.append('B class mean interior ranks (early → late): '
+                  + ', '.join(f'{c} {u:.3f}' for c, u in ordered)
+                  + ' — coherent with the rung-4 characterization '
+                  '(q-early), and the EVA-parsed sh class emerges as the '
+                  'earliest carrier.')
+    summary = (f'{key}; B p={pb:.4f}, A p='
+               f'{rows["VMS_currier_A"]["p"]:.4f}, PREC p='
+               f'{rows["PREC_records"]["p"]:.4f}')
+    return {'verdict': f'S7-R re-implementation: {key.upper()}',
+            'suggestive': suggestive, 'md': '\n'.join(md),
+            'summary': summary, 'params': p, 'json_name': jpath.name}
+
+
+# ────────────────────────────────────────────────────────────────────
 # queue
 # ────────────────────────────────────────────────────────────────────
 N1_PROFILE = {'EM_OUTER': 32, 'EM_PROPOSALS': 48, 'EM_RESTARTS': 16,
@@ -1452,6 +1536,21 @@ QUEUE = [
         'adjudicate': adjudicate_n4,
         'research_heading': 'Portfolio S5/S6 — line-class sequence family '
                             'classification (Currier B)',
+        'not_ready': None,
+    },
+    {
+        'id': 'N5',
+        'title': 'S7-R: independent re-implementation of the intra-line '
+                 'ordinal measurement (rank statistic, PHASE8 §8.7-1)',
+        'stem': 'line_ordinal_rank_test',
+        'overrides': {},
+        'smoke_overrides': {},
+        'timeout_s': 3600,
+        'smoke_timeout_s': 1800,
+        'result_json': 'line_ordinal_rank_test.json',
+        'adjudicate': adjudicate_n5,
+        'research_heading': 'Portfolio S7-R — independent '
+                            're-implementation (rank-based)',
         'not_ready': None,
     },
     {

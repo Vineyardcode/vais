@@ -1265,5 +1265,14 @@
   "results_files_touched": [
    "line_class_family_test.json"
   ]
+ },
+ "line_ordinal_rank_test": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 52.74,
+  "stdout_bytes": 1388,
+  "results_files_touched": [
+   "line_ordinal_rank_test.json"
+  ]
  }
 }
