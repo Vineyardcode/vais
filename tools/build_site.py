@@ -183,13 +183,17 @@ def md_to_html(text):
     return "\n".join(out)
 
 
+FULL_NAME = "VAIS - Voynich Analysis Interactive Suite"
+
+
 def page(title, body, depth=0, stamp=""):
     p = "../" * depth
+    full = FULL_NAME if title == "VAIS" else f"{title} — {FULL_NAME}"
     return f"""<!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{esc(title) if title == 'VAIS' else esc(title) + ' — VAIS'}</title><style>{CSS}</style></head><body>
-<nav><a href="{p}index.html">VAIS</a><a href="{p}catalog.html">Catalog</a>
+<title>{esc(full)}</title><style>{CSS}</style></head><body>
+<nav><a href="{p}index.html">{esc(FULL_NAME)}</a><a href="{p}catalog.html">Catalog</a>
 <a href="{p}research.html">Research</a><a href="{p}reports.html">Reports</a>
 <a href="{REPO_URL}">GitHub</a></nav>
 <main>{body}<footer>Static mirror — read-only. {stamp}
