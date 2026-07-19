@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>transliteration_significance — VAIS</title><style>
+:root { --bg:#ffffff; --fg:#1a1a1a; --muted:#666; --line:#ddd;
+        --code:#f5f5f5; --accent:#7a4a1e; --warn:#a33; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#141414; --fg:#ddd; --muted:#999; --line:#333;
+          --code:#1e1e1e; --accent:#d9a05b; --warn:#e77; } }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--fg);
+       font:16px/1.55 Georgia, 'Times New Roman', serif; }
+nav { border-bottom:1px solid var(--line); padding:.7em 1.2em;
+      font-family: system-ui, sans-serif; font-size:.9em; }
+nav a { color:var(--accent); text-decoration:none; margin-right:1.2em; }
+main { max-width: 62em; margin: 0 auto; padding: 1.5em 1.2em 4em; }
+h1,h2,h3 { font-family: system-ui, sans-serif; line-height:1.25; }
+h1 { font-size:1.7em; } h2 { font-size:1.3em; margin-top:2em; }
+a { color: var(--accent); }
+code, pre { font-family: ui-monospace, Consolas, monospace;
+            font-size:.86em; background:var(--code); }
+code { padding:.1em .3em; border-radius:3px; }
+pre { padding: .9em; overflow-x:auto; border:1px solid var(--line);
+      border-radius:4px; line-height:1.4; }
+table { border-collapse: collapse; margin: 1em 0; font-size:.92em;
+        display:block; overflow-x:auto; }
+th, td { border:1px solid var(--line); padding:.35em .6em;
+         text-align:left; vertical-align:top; }
+th { font-family: system-ui, sans-serif; background:var(--code); }
+blockquote { border-left:3px solid var(--accent); margin:1em 0;
+             padding:.2em 1em; color:var(--muted); }
+.muted { color:var(--muted); font-size:.9em; }
+.tag { font-family: system-ui, sans-serif; font-size:.75em;
+       border:1px solid var(--line); border-radius:3px;
+       padding:.05em .45em; margin-left:.5em; }
+.tag.sug { border-color:var(--warn); color:var(--warn); }
+details summary { cursor:pointer; font-family: system-ui, sans-serif; }
+footer { border-top:1px solid var(--line); margin-top:3em;
+         padding-top:1em; font-size:.85em; color:var(--muted); }
+</style></head><body>
+<nav><a href="../index.html">VAIS</a><a href="../catalog.html">Catalog</a>
+<a href="../research.html">Research</a><a href="../reports.html">Reports</a>
+<a href="https://github.com/Vineyardcode/vais">GitHub</a></nav>
+<main><h1>transliteration_significance</h1>
+<p class="muted">scripts/transliteration_significance.py · depends on cross_transliteration_invariance</p>
+<pre>S9 follow-up 2 (N2c) — significance-only cross-reading battery for the
+S7-B ordinal signal: 200 nulls, no effect floor
+
+PROVENANCE AND AUTHORIZATION (disclosed in full): N2 returned PARTIAL —
+every usable reading beat ALL 20 of its nulls (empirical p ~ 0.048,
+5/5), but GC and CD missed the fixed 0.05 bits/token effect floor. N2b
+refuted the floor-scaling explanation (GC/CD are MORE sensitive to
+planted order, rho ~ 1.12) and its symmetric re-adjudication arm
+self-invalidated (reference_flip: FG&#x27;s raised floor flipped it). The
+conclusion recorded there: all five margins sit within ±0.01 of a floor
+calibrated in a different feature regime, so the floor cannot decide
+the cross-reading question at these margins. THIS registration drops
+the effect floor entirely and decides on significance alone, with a
+battery large enough to be discriminating. Criteria change explicitly
+approved by the human operator on 2026-07-18 (&quot;register the larger
+null battery and run it&quot;).
+
+KNOWN-OUTCOME DISCLOSURE: N2&#x27;s data already shows every reading beating
+its 20 nulls, so a 20-null version of this test would be vacuous. The
+battery here is 10x larger: the maximum of 200 null medians is almost
+surely larger than the maximum of 20, so no reading&#x27;s pass is
+predetermined by anything already observed.
+
+DESIGN (all inherited from N2 for exact comparability):
+  Same corpora (ZL canonical + CD/GC/FG/IT from data/translit/), same
+  B-hand subsets, same alphabet-agnostic features (len/first/last),
+  same 10-split medians with the SAME split seeds (real median gains
+  are cross-checked against results/cross_transliteration_invariance
+  .json and the run ABORTS on any divergence), and the null seed
+  stream is a STRICT SUPERSET of N2&#x27;s: shuffles k=0..199 with N2&#x27;s
+  exact formula, so nulls 0..19 are byte-identical to N2&#x27;s battery
+  (max of the first 20 is cross-checked too).
+
+PRE-REGISTERED CRITERION (per reading): PASS iff the real median gain
+exceeds ALL N_NULLS=200 null medians — empirical p = 1/201 &lt; 0.005.
+No effect floor. Margins over the null median are reported as
+observational effect sizes only.
+
+PRE-REGISTERED OUTCOMES:
+  reference_not_significant — ZL fails: the reduced-feature signal does
+      not survive a tight significance bar even in the canonical
+      reading; no claim about alternates; the cross-reading support
+      argument for the rung-3 finding collapses (the rung-3 finding
+      itself, full-feature ZL, is untouched by this instrument).
+  robust_significance   — ZL passes and EVERY usable alternative
+      passes: the S7-B ordinal signal is significant at p &lt; 0.005 in
+      five independent readings; the cross-reading objection to the
+      quarantined rung-3 finding is resolved in favor of robustness.
+      (Still SUGGESTIVE, still quarantined, still not a decode.)
+  partial_significance  — ZL passes, some alternatives fail (named):
+      the PARTIAL verdict stands at significance level.
+  artifact_suspect_significance — ZL passes, ALL usable alternatives
+      fail: the finding is demoted to artifact-suspect (a property of
+      the ZL reading until shown otherwise).
+Vocabulary discipline: &#x27;robust_significance&#x27; removes one named
+objection to a quarantined SUGGESTIVE finding; it names no field,
+reads no record, upgrades nothing else.</pre>
+<h2>Parameters</h2><table><tr><th>name</th><th>default</th><th>type</th></tr>
+<tr><td><code>SEED</code></td><td><code>116</code></td><td>int</td></tr>
+<tr><td><code>R_SPLITS</code></td><td><code>10</code></td><td>int</td></tr>
+<tr><td><code>N_NULLS</code></td><td><code>200</code></td><td>int</td></tr>
+<tr><td><code>MIN_B_LINES</code></td><td><code>500</code></td><td>int</td></tr>
+<tr><td><code>MIN_LINE_WORDS</code></td><td><code>5</code></td><td>int</td></tr>
+<tr><td><code>HOLDOUT_FRAC</code></td><td><code>0.2</code></td><td>float</td></tr>
+<tr><td><code>ALPHA</code></td><td><code>0.5</code></td><td>float</td></tr>
+<tr><td><code>FILES</code></td><td><code>{&#x27;CD&#x27;: &#x27;CD2a-n.txt&#x27;, &#x27;GC&#x27;: &#x27;GC2a-n.txt&#x27;, &#x27;FG&#x27;: &#x27;FG2a-n.txt&#x27;, &#x27;IT&#x27;: &#x27;IT2a-n.txt&#x27;}</code></td><td>json</td></tr>
+<tr><td><code>FEATURE_NAMES</code></td><td><code>[&#x27;len&#x27;, &#x27;first&#x27;, &#x27;last&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>INTERIOR</code></td><td><code>[&#x27;m1&#x27;, &#x27;m2&#x27;, &#x27;m3&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>N2_JSON</code></td><td><code>&#x27;cross_transliteration_invariance.json&#x27;</code></td><td>str</td></tr>
+</table>
+<h2>Golden output (PYTHONHASHSEED=0)</h2><details><summary>show</summary><pre>============================================================================
+S9 FOLLOW-UP 2 (N2c) — significance-only battery, 200 nulls
+============================================================================
+seed=116 (inherited from N2; superset null stream) splits=10 nulls=200 criterion=beat-all (p=0.0050); NO effect floor (human-approved criteria change 2026-07-18)
+  ZL: real +0.0442  null max -0.0020  nulls&gt;=real 0  p=0.0050 -&gt; PASS   [2522 B-lines]
+  CD: real +0.0094  null max -0.0084  nulls&gt;=real 0  p=0.0050 -&gt; PASS   [991 B-lines]
+  GC: real +0.0372  null max -0.0068  nulls&gt;=real 0  p=0.0050 -&gt; PASS   [2365 B-lines]
+  FG: real +0.0475  null max -0.0020  nulls&gt;=real 0  p=0.0050 -&gt; PASS   [2259 B-lines]
+  IT: real +0.0475  null max -0.0012  nulls&gt;=real 0  p=0.0050 -&gt; PASS   [2329 B-lines]
+
+  ADJUDICATION (pre-registered):
+    ROBUST AT SIGNIFICANCE: all usable readings pass at p &lt; 0.005 ([&#x27;ZL&#x27;, &#x27;CD&#x27;, &#x27;FG&#x27;, &#x27;GC&#x27;, &#x27;IT&#x27;]). The cross-reading objection to the quarantined rung-3 finding is resolved in favor of robustness. Still SUGGESTIVE, still quarantined, not a decode.
+
+  -&gt; results/transliteration_significance.json
+</pre></details><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>bc53723</code>. 
+To run any test with your own parameters, clone
+<a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
+(<code>python webui/server.py</code>). All numbers reproduce at
+PYTHONHASHSEED=0.</footer></main></body></html>

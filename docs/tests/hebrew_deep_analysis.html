@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>hebrew_deep_analysis — VAIS</title><style>
+:root { --bg:#ffffff; --fg:#1a1a1a; --muted:#666; --line:#ddd;
+        --code:#f5f5f5; --accent:#7a4a1e; --warn:#a33; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#141414; --fg:#ddd; --muted:#999; --line:#333;
+          --code:#1e1e1e; --accent:#d9a05b; --warn:#e77; } }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--fg);
+       font:16px/1.55 Georgia, 'Times New Roman', serif; }
+nav { border-bottom:1px solid var(--line); padding:.7em 1.2em;
+      font-family: system-ui, sans-serif; font-size:.9em; }
+nav a { color:var(--accent); text-decoration:none; margin-right:1.2em; }
+main { max-width: 62em; margin: 0 auto; padding: 1.5em 1.2em 4em; }
+h1,h2,h3 { font-family: system-ui, sans-serif; line-height:1.25; }
+h1 { font-size:1.7em; } h2 { font-size:1.3em; margin-top:2em; }
+a { color: var(--accent); }
+code, pre { font-family: ui-monospace, Consolas, monospace;
+            font-size:.86em; background:var(--code); }
+code { padding:.1em .3em; border-radius:3px; }
+pre { padding: .9em; overflow-x:auto; border:1px solid var(--line);
+      border-radius:4px; line-height:1.4; }
+table { border-collapse: collapse; margin: 1em 0; font-size:.92em;
+        display:block; overflow-x:auto; }
+th, td { border:1px solid var(--line); padding:.35em .6em;
+         text-align:left; vertical-align:top; }
+th { font-family: system-ui, sans-serif; background:var(--code); }
+blockquote { border-left:3px solid var(--accent); margin:1em 0;
+             padding:.2em 1em; color:var(--muted); }
+.muted { color:var(--muted); font-size:.9em; }
+.tag { font-family: system-ui, sans-serif; font-size:.75em;
+       border:1px solid var(--line); border-radius:3px;
+       padding:.05em .45em; margin-left:.5em; }
+.tag.sug { border-color:var(--warn); color:var(--warn); }
+details summary { cursor:pointer; font-family: system-ui, sans-serif; }
+footer { border-top:1px solid var(--line); margin-top:3em;
+         padding-top:1em; font-size:.85em; color:var(--muted); }
+</style></head><body>
+<nav><a href="../index.html">VAIS</a><a href="../catalog.html">Catalog</a>
+<a href="../research.html">Research</a><a href="../reports.html">Reports</a>
+<a href="https://github.com/Vineyardcode/vais">GitHub</a></nav>
+<main><h1>hebrew_deep_analysis</h1>
+<p class="muted">scripts/hebrew_deep_analysis.py · baseline 58s</p>
+<pre>HEBREW DEEP ANALYSIS
+==========================================
+Second stage of the Hebrew hypothesis investigation (follows hebrew_comparison).
+
+Tests:
+  1. SHUFFLE CONTROL — Is paradigm structure real or decorative?
+  2. CONSONANTAL SKELETON — Does Voynich use Hebrew-like triconsonantal roots + vowel templates?
+  3. SUFFIX AGREEMENT — Do adjacent words show inflectional agreement?
+  4. BOTANICAL LABEL → HEBREW PLANT NAME — Do label suffixes match Hebrew noun patterns?
+  5. GEMATRIA LAYER — Do Voynich words encode Kabbalistic number values?</pre>
+<h2>Parameters</h2><table><tr><th>name</th><th>default</th><th>type</th></tr>
+<tr><td><code>PREFIXES</code></td><td><code>[&#x27;qol&#x27;, &#x27;qor&#x27;, &#x27;sol&#x27;, &#x27;sor&#x27;, &#x27;dol&#x27;, &#x27;dor&#x27;, &#x27;dyl&#x27;, &#x27;dyr&#x27;, &#x27;qo&#x27;, &#x27;so&#x27;, &#x27;do&#x27;, &#x27;dy&#x27;, &#x27;ol&#x27;, &#x27;or…</code></td><td>json</td></tr>
+<tr><td><code>ROOT_ONSETS</code></td><td><code>[&#x27;ckh&#x27;, &#x27;cth&#x27;, &#x27;cph&#x27;, &#x27;cfh&#x27;, &#x27;tch&#x27;, &#x27;kch&#x27;, &#x27;pch&#x27;, &#x27;fch&#x27;, &#x27;tsh&#x27;, &#x27;ksh&#x27;, &#x27;psh&#x27;, &#x27;fsh&#x27;, &#x27;sh&#x27;,…</code></td><td>json</td></tr>
+<tr><td><code>ROOT_BODIES</code></td><td><code>[&#x27;eeed&#x27;, &#x27;eees&#x27;, &#x27;eeea&#x27;, &#x27;eeeo&#x27;, &#x27;eed&#x27;, &#x27;ees&#x27;, &#x27;eea&#x27;, &#x27;eeo&#x27;, &#x27;ed&#x27;, &#x27;es&#x27;, &#x27;ea&#x27;, &#x27;eo&#x27;, &#x27;eee&#x27;…</code></td><td>json</td></tr>
+<tr><td><code>SUFFIXES</code></td><td><code>[&#x27;iiiny&#x27;, &#x27;iiny&#x27;, &#x27;iiir&#x27;, &#x27;iiil&#x27;, &#x27;iiin&#x27;, &#x27;iir&#x27;, &#x27;iil&#x27;, &#x27;iin&#x27;, &#x27;iim&#x27;, &#x27;iid&#x27;, &#x27;iry&#x27;, &#x27;ily&#x27;,…</code></td><td>json</td></tr>
+<tr><td><code>CONSONANT_CHARS</code></td><td><code>[&#x27;c&#x27;, &#x27;d&#x27;, &#x27;f&#x27;, &#x27;h&#x27;, &#x27;k&#x27;, &#x27;p&#x27;, &#x27;s&#x27;, &#x27;t&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>VOWEL_CHARS</code></td><td><code>[&#x27;a&#x27;, &#x27;e&#x27;, &#x27;i&#x27;, &#x27;o&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>ONSET_CONSONANTS</code></td><td><code>{&#x27;k&#x27;: &#x27;K&#x27;, &#x27;t&#x27;: &#x27;T&#x27;, &#x27;p&#x27;: &#x27;P&#x27;, &#x27;f&#x27;: &#x27;F&#x27;, &#x27;ch&#x27;: &#x27;CH&#x27;, &#x27;sh&#x27;: &#x27;SH&#x27;, &#x27;ckh&#x27;: &#x27;CKH&#x27;, &#x27;cth&#x27;: &#x27;CTH…</code></td><td>json</td></tr>
+<tr><td><code>BODY_TEMPLATES</code></td><td><code>{&#x27;a&#x27;: &#x27;a&#x27;, &#x27;o&#x27;: &#x27;o&#x27;, &#x27;e&#x27;: &#x27;CaCaC&#x27;, &#x27;ed&#x27;: &#x27;CaCaC-d&#x27;, &#x27;ee&#x27;: &#x27;CaCaC-CaCaC&#x27;, &#x27;eed&#x27;: &#x27;CaCaC-CaC…</code></td><td>json</td></tr>
+<tr><td><code>HEBREW_PLANT_SUFFIXES</code></td><td><code>{&#x27;feminine_sg&#x27;: [&#x27;-ah&#x27;, &#x27;-et&#x27;, &#x27;-it&#x27;], &#x27;masc_sg&#x27;: [&#x27;-∅&#x27;, &#x27;-on&#x27;, &#x27;-an&#x27;], &#x27;fem_plural&#x27;: [&#x27;-o…</code></td><td>json</td></tr>
+<tr><td><code>VOYNICH_TO_HEBREW_SUFFIX</code></td><td><code>{&#x27;y&#x27;: &#x27;adj/-i&#x27;, &#x27;ly&#x27;: &#x27;adj/-li?&#x27;, &#x27;ry&#x27;: &#x27;adj/-ri?&#x27;, &#x27;dy&#x27;: &#x27;?-di&#x27;, &#x27;m&#x27;: &#x27;-im/-am (plural?)&#x27;…</code></td><td>json</td></tr>
+<tr><td><code>HEBREW_GEMATRIA</code></td><td><code>{&#x27;alef&#x27;: 1, &#x27;bet&#x27;: 2, &#x27;gimel&#x27;: 3, &#x27;dalet&#x27;: 4, &#x27;he&#x27;: 5, &#x27;vav&#x27;: 6, &#x27;zayin&#x27;: 7, &#x27;chet&#x27;: 8, &#x27;t…</code></td><td>json</td></tr>
+<tr><td><code>KABBALISTIC_NUMBERS</code></td><td><code>{26: &#x27;YHWH (יהוה)&#x27;, 72: &#x27;Shem HaMephorash (72 names of God)&#x27;, 10: &#x27;Sefirot&#x27;, 22: &#x27;Hebrew l…</code></td><td>json</td></tr>
+</table>
+<h2>Golden output (PYTHONHASHSEED=0)</h2><details><summary>show</summary><pre>══════════════════════════════════════════════════════════════════════════════════════════
+VOYNICH MANUSCRIPT — HEBREW DEEP ANALYSIS
+══════════════════════════════════════════════════════════════════════════════════════════
+
+  Loading and parsing corpus...
+  Corpus: 38,902 paragraph tokens, 531 label tokens
+  7,905 unique types, 2818 fully parsed (35.6%)
+  4,945 text lines preserved
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+TEST 1: SHUFFLE CONTROL — Is paradigm structure real or random?
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  If paradigm regularity is higher than 99% of random reshuffles,
+  we reject the &#x27;meaningless verbose code&#x27; hypothesis.
+
+    Running 1000 shuffle iterations...
+      ...200/1000
+      ...400/1000
+      ...600/1000
+      ...800/1000
+      ...1000/1000
+  Metric                                REAL    Shuffled µ    Percentile
+  ──────────────────────────────  ──────────  ────────────  ────────────
+  Avg grid fill rate                  0.4284        0.3566       100.0%
+  Avg # prefixes per root               10.1           6.0       100.0%
+  Avg # suffixes per root                8.3           7.7        99.9%
+  # roots with freq≥100                   55          55.0       100.0%
+
+  ✗ ANTI-SIGNAL: Fill rate is HIGHER than shuffled
+    → Paradigm tables are MORE filled than expected → possible verbose code
+  ✓ ROOT CONCENTRATION: More distinct roots than shuffled
+    → Morphemes are not randomly assigned to roots
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+TEST 2: CONSONANTAL SKELETON EXTRACTION
+        (Hebrew-style: strip vowels, keep only consonantal root)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  Found 18 consonantal skeletons from 241 full roots
+  Hebrew has ~1,500 productive roots; a medical/herbal text uses ~300-500
+
+  Skeleton      Freq   # Roots   # Templates  Roots (with vowel templates)
+  ──────────  ──────  ────────  ────────────  ──────────────────────────────────────────────────
+  K             6681        21            21  ka(2597), kee(731), keed(649), ked(545), ko(497), keo(441)
+  CH            4726        23            23  cho(1071), ched(819), cheo(595), che(544), ch(527), cha(300)
+  T             3570        20            20  ta(1387), to(440), ted(355), t(309), tee(265), teed(252)
+  SH            2813        20            20  shed(614), sho(572), she(397), sheo(343), sh(234), shee(220)
+  KCH            857        12            12  kch(315), kcho(194), kched(126), kche(106), kcheo(40), kcha(31)
+  TCH            827        17            17  tch(269), tcho(194), tched(130), tche(101), tcheo(41), tcha(38)
+  PCH            550        17            17  pched(153), pch(105), pcho(72), pche(67), pcheo(44), pchda(25)
+  CTH            536        14            14  ctho(177), cth(152), cthe(70), ctha(49), ctheo(37), cthed(19)
+  CKH            289        13            13  ckh(84), ckhe(61), ckho(61), ckheo(20), ckha(17), ckhed(17)
+  P              243         7             7  pa(124), po(68), p(30), pda(17), pd(2), pdo(1)
+  KSH            197        12            12  ksh(60), kshe(38), kshed(36), ksho(28), ksheo(18), kshee(5)
+  TSH            151        14            14  tsh(35), tsho(31), tshed(31), tshe(25), tsheo(7), tsha(5)
+  FCH            138        13            13  fched(35), fch(28), fcho(21), fcheo(13), fche(13), fcha(7)
+  CPH            112        12            12  cpho(27), cph(21), cphe(16), cpha(15), cpheo(13), cphed(11)
+  F               71         4             4  fa(37), fo(25), f(8), feeo(1)
+  PSH             49        10            10  pshed(13), psho(12), psh(6), psheo(6), pshda(5), pshes(2)
+  CFH             33         7             7  cfh(11), cfho(6), cfha(5), cfheo(5), cfhe(4), cfhee(1)
+  FSH             10         5             5  fsho(3), fsh(3), fshed(2), fsheee(1), fshe(1)
+
+  Skeletons with ≥3 vowel templates: 18 (100%)
+  Skeletons with 2 vowel templates:  0 (0%)
+  Skeletons with 1 vowel template:   0 (0%)
+
+  ✓ STRONG MISHKAL PATTERN: 18/18 skeletons show multiple vowel templates
+    → Consistent with Hebrew consonantal root + vowel template system
+
+  Detailed vowel template analysis for top skeletons:
+
+  ┌─ K: 21 templates, total freq 6681
+  │  a                2597 (38.9%) ███████████
+  │  CaCaC-CaCaC       731 (10.9%) ███
+  │  CaCaC-CaCaC-d     649 ( 9.7%) ██
+  │  CaCaC-d           545 ( 8.2%) ██
+  │  o                 497 ( 7.4%) ██
+  │  CaCaC-o           441 ( 6.6%) █
+  │                    427 ( 6.4%) █
+  │  eeo               260 ( 3.9%) █
+  │  CaCaC             232 ( 3.5%) █
+  │  CaCaC³             99 ( 1.5%) 
+  │  CaCaC-a            55 ( 0.8%) 
+  │  ees                41 ( 0.6%) 
+  │  eea                34 ( 0.5%) 
+  │  CaCaC³-d           33 ( 0.5%) 
+  │  eeeo               15 ( 0.2%) 
+  │  es                 10 ( 0.1%) 
+  │  eees                9 ( 0.1%) 
+  │  eeea                2 ( 0.0%) 
+  │  d-a                 2 ( 0.0%) 
+  │  s-a                 1 ( 0.0%) 
+  │  s-o                 1 ( 0.0%) 
+  └────────────────────────────────────────────────────────────
+
+  ┌─ CH: 23 templates, total freq 4726
+  │  o                1071 (22.7%) ██████
+  │  CaCaC-d           819 (17.3%) █████
+  │  CaCaC-o           595 (12.6%) ███
+  │  CaCaC             544 (11.5%) ███
+  │                    527 (11.2%) ███
+  │  a                 300 ( 6.3%) █
+  │  CaCaC-CaCaC       271 ( 5.7%) █
+  │  CaCaC-a           127 ( 2.7%) 
+  │  d-a               106 ( 2.2%) 
+  │  CaCaC-CaCaC-d      92 ( 1.9%) 
+  │  eeo                86 ( 1.8%) 
+  │  es                 57 ( 1.2%) 
+  │  ees                47 ( 1.0%) 
+  │  s                  32 ( 0.7%) 
+  │  d-o                18 ( 0.4%) 
+  │  CaCaC³             13 ( 0.3%) 
+  │  eea                 9 ( 0.2%) 
+  │  s-o                 5 ( 0.1%) 
+  │  eees                2 ( 0.0%) 
+  │  s-a                 2 ( 0.0%) 
+  │  d                   1 ( 0.0%) 
+  │  eeea                1 ( 0.0%) 
+  │  eeeo                1 ( 0.0%) 
+  └────────────────────────────────────────────────────────────
+
+  ┌─ T: 20 templates, total freq 3570
+  │  a                1387 (38.9%) ███████████
+  │  o                 440 (12.3%) ███
+  │  CaCaC-d           355 ( 9.9%) ██
+  │                    309 ( 8.7%) ██
+  │  CaCaC-CaCaC       265 ( 7.4%) ██
+  │  CaCaC-CaCaC-d     252 ( 7.1%) ██
+  │  CaCaC-o           225 ( 6.3%) █
+  │  CaCaC             123 ( 3.4%) █
+  │  eeo                89 ( 2.5%) 
+  │  CaCaC-a            27 ( 0.8%) 
+  │  ees                24 ( 0.7%) 
+  │  CaCaC³             17 ( 0.5%) 
+  │  CaCaC³-d           14 ( 0.4%) 
+  │  d-a                11 ( 0.3%) 
+  │  eea                10 ( 0.3%) 
+  │  eeeo                8 ( 0.2%) 
+  │  eees                6 ( 0.2%) 
+  │  es                  6 ( 0.2%) 
+  │  eeea                1 ( 0.0%) 
+  │  d-o                 1 ( 0.0%) 
+  └────────────────────────────────────────────────────────────
+
+  ┌─ SH: 20 templates, total freq 2813
+  │  CaCaC-d           614 (21.8%) ██████
+  │  o                 572 (20.3%) ██████
+  │  CaCaC             397 (14.1%) ████
+  │  CaCaC-o           343 (12.2%) ███
+  │                    234 ( 8.3%) ██
+  │  CaCaC-CaCaC       220 ( 7.8%) ██
+  │  CaCaC-CaCaC-d     122 ( 4.3%) █
+  │  a                 111 ( 3.9%) █
+  │  CaCaC-a            62 ( 2.2%) 
+  │  eeo                44 ( 1.6%) 
+  │  d-a                34 ( 1.2%) 
+  │  es                 19 ( 0.7%) 
+  │  ees                14 ( 0.5%) 
+  │  CaCaC³              7 ( 0.2%) 
+  │  s                   7 ( 0.2%) 
+  │  eea                 5 ( 0.2%) 
+  │  d-o                 4 ( 0.1%) 
+  │  eees                2 ( 0.1%) 
+  │  d                   1 ( 0.0%) 
+  │  s-o                 1 ( 0.0%) 
+  └────────────────────────────────────────────────────────────
+
+  ┌─ KCH: 12 templates, total freq 857
+  │                    315 (36.8%) ███████████
+  │  o                 194 (22.6%) ██████
+  │  CaCaC-d           126 (14.7%) ████
+  │  CaCaC             106 (12.4%) ███
+  │  CaCaC-o            40 ( 4.7%) █
+  │  a                  31 ( 3.6%) █
+  │  d-a                15 ( 1.8%) 
+  │  CaCaC-CaCaC        14 ( 1.6%) 
+  │  s                   7 ( 0.8%) 
+  │  CaCaC-CaCaC-d       4 ( 0.5%) 
+  │  eeo                 3 ( 0.4%) 
+  │  es                  2 ( 0.2%) 
+  └────────────────────────────────────────────────────────────
+
+  ┌─ TCH: 17 templates, total freq 827
+  │                    269 (32.5%) █████████
+  │  o                 194 (23.5%) ███████
+  │  CaCaC-d           130 (15.7%) ████
+  │  CaCaC             101 (12.2%) ███
+  │  CaCaC-o            41 ( 5.0%) █
+  │  a                  38 ( 4.6%) █
+  │  CaCaC-CaCaC        14 ( 1.7%) 
+  │  d-a                13 ( 1.6%) 
+  │  s                   7 ( 0.8%) 
+  │  CaCaC-CaCaC-d       5 ( 0.6%) 
+  │  CaCaC-a             4 ( 0.5%) 
+  │  es                  3 ( 0.4%) 
+  │  ees                 2 ( 0.2%) 
+  │  eea                 2 ( 0.2%) 
+  │  d-o                 2 ( 0.2%) 
+  │  eeo                 1 ( 0.1%) 
+  │  d                   1 ( 0.1%) 
+  └────────────────────────────────────────────────────────────
+
+  ┌─ PCH: 17 templates, total freq 550
+  │  CaCaC-d           153 (27.8%) ████████
+  │                    105 (19.1%) █████
+  │  o                  72 (13.1%) ███
+  │  CaCaC              67 (12.2%) ███
+  │  CaCaC-o            44 ( 8.0%) ██
+  │  d-a                25 ( 4.5%) █
+  │  a                  23 ( 4.2%) █
+  │  CaCaC-CaCaC        17 ( 3.1%) 
+  │  CaCaC-CaCaC-d      11 ( 2.0%) 
+  │  es                  8 ( 1.5%) 
+  │  CaCaC-a             8 ( 1.5%) 
+  │  eeo                 6 ( 1.1%) 
+  │  s                   4 ( 0.7%) 
+  │  d-o                 3 ( 0.5%) 
+  │  ees                 2 ( 0.4%) 
+  │  eea                 1 ( 0.2%) 
+  │  CaCaC³              1 ( 0.2%) 
+  └────────────────────────────────────────────────────────────
+
+  ┌─ CTH: 14 templates, total freq 536
+  │  o                 177 (33.0%) █████████
+  │                    152 (28.4%) ████████
+  │  CaCaC              70 (13.1%) ███
+  │  a                  49 ( 9.1%) ██
+  │  CaCaC-o            37 ( 6.9%) ██
+  │  CaCaC-d            19 ( 3.5%) █
+  │  CaCaC-CaCaC        18 ( 3.4%) █
+  │  CaCaC-a             4 ( 0.7%) 
+  │  es                  3 ( 0.6%) 
+  │  s                   3 ( 0.6%) 
+  │  d-a                 1 ( 0.2%) 
+  │  eees                1 ( 0.2%) 
+  │  ees                 1 ( 0.2%) 
+  │  CaCaC-CaCaC-d       1 ( 0.2%) 
+  └────────────────────────────────────────────────────────────
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+TEST 3: SUFFIX AGREEMENT — Do adjacent words show inflectional agreement?
+        (Hebrew: noun-adjective pairs share gender/number suffixes)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  Adjacent word pairs analyzed: 25,311
+
+  Match type                     Real    Shuffled µ     Z-score
+  ─────────────────────────  ────────  ────────────  ──────────
+  Exact suffix match           23.1%        18.6%       20.24
+  Suffix class match           27.9%        23.9%       16.59
+
+  ✓ STRONG AGREEMENT: Z=20.2 — adjacent words share suffixes
+    far more than chance. Consistent with noun-adjective agreement!
+
+  Suffix distribution by position within line (Hebrew: verb-first → specific suffix):
+      first (n= 4123): y(1198,29.1%)  r(721,17.5%)  l(642,15.6%)  iin(573,13.9%)  ∅(362,8.8%)
+     middle (n=21061): y(7249,34.4%)  l(3732,17.7%)  r(3084,14.6%)  iin(2390,11.3%)  ∅(1247,5.9%)
+       last (n= 4123): y(1089,26.4%)  iin(538,13.0%)  l(534,13.0%)  m(457,11.1%)  r(449,10.9%)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+TEST 4: BOTANICAL LABELS — Do plant names match Hebrew noun patterns?
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  Labels parsed: 251, Paragraph parsed: 30186
+
+  ∅-prefix rate: Labels=27.1% vs Para=50.4%
+  Unique prefix types: Labels=18 vs Para=23
+
+  ✗ Labels have FEWER unprefixed forms (unexpected for noun-labels)
+
+  Suffix profile comparison (Labels vs Paragraph text):
+  Suffix        Label%     Para%     Ratio  Hebrew equivalent
+  ──────────  ────────  ────────  ────────  ─────────────────────────
+  y             15.1%    32.3%      0.5×  adj/-i
+  l             17.1%    16.7%      1.0×  -el/-al
+  r             18.7%    14.5%      1.3×  -er/-ar
+  iin            3.6%    11.9%      0.3×  -iin (intensive?)
+  ∅              4.0%     6.1%      0.7×  ?
+  dy             8.4%     5.7%      1.5×  ?-di
+  in             3.2%     4.7%      0.7×  -in
+  m              6.4%     2.3%      2.8×  -im/-am (plural?)
+  ir             2.0%     1.5%      1.4×  -ir
+  ly             7.6%     1.3%      5.9×  adj/-li?
+  d              0.8%     0.8%      1.0×  ?
+  ry             9.2%     0.6%     15.3×  adj/-ri?
+  iiin           0.0%     0.5%      0.0×  ?
+  iir            0.4%     0.4%      0.9×  ?
+  n              2.0%     0.3%      6.5×  -on/-an
+
+  Vowel template (mishkal) comparison:
+  Body          Label%     Para%  Template
+  ──────────  ────────  ────────  ────────────────────
+  a             28.7%    23.3%  a
+  o             23.1%    17.5%  o
+  ed             4.4%     9.6%  CaCaC-d
+  da             8.4%     9.0%  d-a
+  ∅             10.0%     8.8%  ∅
+  eo             7.2%     6.1%  CaCaC-o
+  e              0.8%     6.0%  CaCaC
+  ee             1.2%     5.4%  CaCaC-CaCaC
+  eed            0.8%     3.9%  CaCaC-CaCaC-d
+  eeo            0.4%     1.8%  eeo
+
+  Label prefix distribution:
+    o         112 (44.6%) █████████████████
+    ∅          68 (27.1%) ██████████
+    ol         16 ( 6.4%) ██
+    y          15 ( 6.0%) ██
+    or          7 ( 2.8%) █
+    dol         5 ( 2.0%) 
+    qo          5 ( 2.0%) 
+    so          4 ( 1.6%) 
+    d           4 ( 1.6%) 
+    do          3 ( 1.2%) 
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+TEST 5: GEMATRIA LAYER — Do word values cluster around Kabbalistic numbers?
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  Character → value mapping (by frequency rank):
+    i=1  a=2  o=3  d=4  e=5  y=6  n=7  h=8  c=9  l=10  k=11  r=12  q=13  s=14  t=15  m=16  p=17  f=18  g=19  b=20  x=21  u=22  z=23  j=24  v=25
+    Value range: (6, 131)
+    Mean word value: 35.4
+
+  Morpheme-level value mapping:
+    Top prefixes:  qo=100, o=200, l=300, y=400, q=500, ol=600, r=700, d=800, or=900, qol=1000
+    Top onsets:    ch=10, k=20, sh=30, t=40, cth=50, kch=60, tch=70, pch=80, ckh=90, p=100
+    Top bodies:    a=1, da=2, o=3, ed=4, e=5, ee=6, eed=7, eo=8, d=9, sa=10
+    Top suffixes:  y=1, iin=2, l=3, r=4, in=5, dy=6, m=7, ir=8, ly=9, iiin=10
+
+  Character-level: Kabbalistic number proximity (observed vs expected):
+    Number  Name                                   Observed    Expected     Ratio
+  ────────  ───────────────────────────────────  ──────────  ──────────  ────────
+        10  Sefirot                                    1372      1543.7      0.9×
+        22  Hebrew letters                             2126      1543.7      1.4×
+        26  YHWH (יהוה)                                4500      1543.7      2.9×
+        32  Paths of Wisdom (10 sefirot + 22 letters)        5851      1543.7      3.8×
+        42  42-letter Name of God                      4900      1543.7      3.2×
+        45  Adam (אדם) in full gematria                4085      1543.7      2.6×
+        52  YHWH in milui                              2259      1543.7      1.5×
+        72  Shem HaMephorash (72 names of God)          237      1543.7      0.2×
+        86  Elohim (אלהים)                               35      1543.7      0.0×
+        91  YHWH + Adonai combined                       15      1543.7      0.0×
+       137  Kabbalah (קבלה)                               0      1543.7      0.0×
+       314  Shaddai (שדי)                                 0      1543.7      0.0×
+       358  Mashiach (משיח) = Nachash (נחש)               0      1543.7      0.0×
+
+  ⚡ Character-level clustering detected near: 26, 32, 42, 45
+
+  Morpheme-level: Kabbalistic number proximity:
+    Number  Name                                   Observed    Expected     Ratio
+  ────────  ───────────────────────────────────  ──────────  ──────────  ────────
+        10  Sefirot                                    1396        68.6     20.3×
+        22  Hebrew letters                              702        68.6     10.2×
+        26  YHWH (יהוה)                                 853        68.6     12.4×
+        32  Paths of Wisdom (10 sefirot + 22 letters)         451        68.6      6.6×
+        42  42-letter Name of God                       401        68.6      5.8×
+        45  Adam (אדם) in full gematria                 514        68.6      7.5×
+        52  YHWH in milui                               220        68.6      3.2×
+        72  Shem HaMephorash (72 names of God)           69        68.6      1.0×
+        86  Elohim (אלהים)                              115        68.6      1.7×
+        91  YHWH + Adonai combined                       81        68.6      1.2×
+       137  Kabbalah (קבלה)                             161        68.6      2.3×
+       314  Shaddai (שדי)                               280        68.6      4.1×
+       358  Mashiach (משיח) = Nachash (נחש)               8        68.6      0.1×
+
+  ⚡ Morpheme-level clustering detected near: 26, 10, 22, 32, 42, 45, 52, 137, 314
+
+  LINE-SUM ANALYSIS:
+    Lines analyzed: 4590
+    Mean line sum: 272.7
+    Real std dev: 132.0
+    Shuffled std dev: 138.3
+    Variance ratio (real/shuffled): 0.955
+
+    ~ Line sums have normal variance (no clear constraint)
+
+  MODULAR ANALYSIS (do line sums cluster modulo significant numbers?):
+   Modulus        χ²    df  Significance  Top residues
+  ────────  ────────  ────  ────────────  ──────────────────────────────
+        10       5.9     9  none          7(478), 2(477), 4(475)
+        22      29.9    21  none          5(237), 15(227), 4(225)
+        26      20.0    25  none          19(206), 14(194), 2(192)
+        42      31.2    41  none          38(134), 40(126), 13(123)
+        72      73.7    71  none          43(81), 52(79), 44(78)
+
+══════════════════════════════════════════════════════════════════════════════════════════
+GRAND SUMMARY — HEBREW DEEP ANALYSIS
+══════════════════════════════════════════════════════════════════════════════════════════
+
+  1. SHUFFLE CONTROL:           REAL STRUCTURE  (fill at 100% percentile)
+  2. CONSONANTAL ROOTS:   18 multi-template (100%)  (Hebrew predicts &gt;30%)
+  3. SUFFIX AGREEMENT:                  STRONG  (Z=20.2)
+  4. BOTANICAL LABELS:               VERB-LIKE  (∅-pfx diff: -23.3%)
+  5. GEMATRIA LAYER:            CLUSTERS FOUND
+  6. LINE SUM PATTERN:                  NORMAL  (variance ratio: 0.955)
+
+  Results saved to results/hebrew_deep_results.json
+
+══════════════════════════════════════════════════════════════════════════════════════════
+DEEP ANALYSIS COMPLETE
+══════════════════════════════════════════════════════════════════════════════════════════
+</pre></details><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>bc53723</code>. 
+To run any test with your own parameters, clone
+<a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
+(<code>python webui/server.py</code>). All numbers reproduce at
+PYTHONHASHSEED=0.</footer></main></body></html>

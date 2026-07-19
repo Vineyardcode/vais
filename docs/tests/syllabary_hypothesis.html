@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>syllabary_hypothesis — VAIS</title><style>
+:root { --bg:#ffffff; --fg:#1a1a1a; --muted:#666; --line:#ddd;
+        --code:#f5f5f5; --accent:#7a4a1e; --warn:#a33; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#141414; --fg:#ddd; --muted:#999; --line:#333;
+          --code:#1e1e1e; --accent:#d9a05b; --warn:#e77; } }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--fg);
+       font:16px/1.55 Georgia, 'Times New Roman', serif; }
+nav { border-bottom:1px solid var(--line); padding:.7em 1.2em;
+      font-family: system-ui, sans-serif; font-size:.9em; }
+nav a { color:var(--accent); text-decoration:none; margin-right:1.2em; }
+main { max-width: 62em; margin: 0 auto; padding: 1.5em 1.2em 4em; }
+h1,h2,h3 { font-family: system-ui, sans-serif; line-height:1.25; }
+h1 { font-size:1.7em; } h2 { font-size:1.3em; margin-top:2em; }
+a { color: var(--accent); }
+code, pre { font-family: ui-monospace, Consolas, monospace;
+            font-size:.86em; background:var(--code); }
+code { padding:.1em .3em; border-radius:3px; }
+pre { padding: .9em; overflow-x:auto; border:1px solid var(--line);
+      border-radius:4px; line-height:1.4; }
+table { border-collapse: collapse; margin: 1em 0; font-size:.92em;
+        display:block; overflow-x:auto; }
+th, td { border:1px solid var(--line); padding:.35em .6em;
+         text-align:left; vertical-align:top; }
+th { font-family: system-ui, sans-serif; background:var(--code); }
+blockquote { border-left:3px solid var(--accent); margin:1em 0;
+             padding:.2em 1em; color:var(--muted); }
+.muted { color:var(--muted); font-size:.9em; }
+.tag { font-family: system-ui, sans-serif; font-size:.75em;
+       border:1px solid var(--line); border-radius:3px;
+       padding:.05em .45em; margin-left:.5em; }
+.tag.sug { border-color:var(--warn); color:var(--warn); }
+details summary { cursor:pointer; font-family: system-ui, sans-serif; }
+footer { border-top:1px solid var(--line); margin-top:3em;
+         padding-top:1em; font-size:.85em; color:var(--muted); }
+</style></head><body>
+<nav><a href="../index.html">VAIS</a><a href="../catalog.html">Catalog</a>
+<a href="../research.html">Research</a><a href="../reports.html">Reports</a>
+<a href="https://github.com/Vineyardcode/vais">GitHub</a></nav>
+<main><h1>syllabary_hypothesis</h1>
+<p class="muted">scripts/syllabary_hypothesis.py</p>
+<pre>TESTING THE SYLLABARY INTERPRETATION (SKEPTICALLY)
+=============================================================
+
+vowel_consonant_separation found degenerate V/C separation (91.4% &quot;vowels&quot;, z=−3.3).
+We interpreted this as EXCLUDING alphabetic encoding and SUPPORTING
+a syllabary. But wait —
+
+SKEPTICAL QUESTION: Does the degenerate Sukhotin result actually
+tell us anything? Or is it trivially explained by the VMS character
+frequency distribution?
+
+This test ATTACKS the syllabary interpretation before accepting it.
+
+  A) NULL MODEL TEST
+       Generate random text from VMS bigram/unigram models.
+       Run Sukhotin&#x27;s on it. If random text ALSO produces degenerate
+       V/C, then vowel_consonant_separation told us NOTHING new.
+
+  B) SVD OF TRANSITION MATRIX
+       A true CV syllabary has a transition matrix with rank-2
+       structure (factorizable into C and V components).
+       Test: how many significant singular values does the VMS
+       transition matrix have? Compare to random and to a
+       simulated syllabary.
+
+  C) CHARACTER DISTRIBUTIONAL CLUSTERING
+       In a syllabary, characters sharing a consonant (ka, ki, ku)
+       have similar distributional profiles. Cluster VMS characters
+       by their bigram contexts and see if the clusters show
+       internal structure (pairs, triads, etc.)
+
+  D) KNOWN SYLLABARY CALIBRATION
+       Simulate a known CV syllabary (5C × 4V = 20 symbols, close
+       to VMS&#x27;s 22) with realistic text. Run ALL our tests on it
+       to verify our methods can detect syllabary structure when
+       it exists. Then compare VMS results.
+
+  E) ENTROPY REDUCTION UNDER GROUPING
+       If characters share hidden components, grouping by component
+       should reduce transition entropy more than random groupings.
+       Test: group chars into k groups (k=3..6), measure transition
+       entropy. Compare best grouping to random groupings.</pre>
+<h2>Parameters</h2><table><tr><th>name</th><th>default</th><th>type</th></tr>
+<tr><td><code>ALL_GALLOWS</code></td><td><code>[&#x27;cth&#x27;, &#x27;ckh&#x27;, &#x27;cph&#x27;, &#x27;cfh&#x27;, &#x27;tch&#x27;, &#x27;kch&#x27;, &#x27;pch&#x27;, &#x27;fch&#x27;, &#x27;tsh&#x27;, &#x27;ksh&#x27;, &#x27;psh&#x27;, &#x27;fsh&#x27;, &#x27;t&#x27;, …</code></td><td>json</td></tr>
+</table>
+<h2>Golden output (PYTHONHASHSEED=0)</h2><details><summary>show</summary><pre>Loading corpus...
+  35708 tokens, 3318 types, 22 chars, 143330 total chars
+
+=================================================================
+A: NULL MODEL TEST — Is degenerate Sukhotin trivially expected?
+=================================================================
+  Bigram trial 1/10...
+  Bigram trial 2/10...
+  Bigram trial 3/10...
+  Bigram trial 4/10...
+  Bigram trial 5/10...
+  Bigram trial 6/10...
+  Bigram trial 7/10...
+  Bigram trial 8/10...
+  Bigram trial 9/10...
+  Bigram trial 10/10...
+
+  BIGRAM NULL MODEL (N=10):
+  VMS: 13/22 vowels, 91.4% V tokens, alt=0.116
+  Null: 12.7±0.5/22 vowels, 93.7±0.1% V tokens, alt=0.100±0.001
+  Unigram trial 1/5...
+  Unigram trial 2/5...
+  Unigram trial 3/5...
+  Unigram trial 4/5...
+  Unigram trial 5/5...
+
+  UNIGRAM NULL MODEL (N=10):
+  Null: 13.6±0.5/22 vowels, 99.5±0.3% V tokens, alt=0.010±0.006
+
+  VMS vs BIGRAM NULL:
+  z(n_vowels) = 0.7
+  z(alternation) = 15.9
+
+  Number of vowels explained by bigrams, but alternation differs.
+
+=================================================================
+B: SVD OF TRANSITION MATRIX — Low-rank (CV grid) structure?
+=================================================================
+  Common characters (freq&gt;50): 15
+  Singular values (top 10):
+    σ_1 = 1.4197  cumulative = 21.4%
+    σ_2 = 1.2677  cumulative = 40.6%
+    σ_3 = 0.8378  cumulative = 53.2%
+    σ_4 = 0.7786  cumulative = 64.9%
+    σ_5 = 0.6397  cumulative = 74.6%
+    σ_6 = 0.4430  cumulative = 81.3%
+    σ_7 = 0.4216  cumulative = 87.7%
+    σ_8 = 0.3258  cumulative = 92.6%
+    σ_9 = 0.2079  cumulative = 95.7%
+    σ_10 = 0.1271  cumulative = 97.6%
+
+  Effective rank (90%): 8
+  Effective rank (95%): 9
+  Effective rank (99%): 11
+
+  Interpretation:
+  A CV syllabary (C×V symbols) has transition rank ≈ C+V
+  A 5C×4V syllabary → rank ≈ 9, out of 20 symbols
+  VMS: rank(90%) = 8 out of 15 ← NOT low-rank (each character acts independently)
+
+  Null model rank(90%): 8.0 ± 0.0
+  z(rank): 0.0
+  → VMS transition rank is NORMAL for its bigram statistics
+
+=================================================================
+C: CHARACTER DISTRIBUTIONAL CLUSTERING
+=================================================================
+  Most similar character pairs (by JSD of combined context):
+    m-r: JSD = 0.1969
+    l-r: JSD = 0.2194
+    c-s: JSD = 0.2399
+    l-m: JSD = 0.3426
+    d-g: JSD = 0.5365
+    o-y: JSD = 0.5870
+    g-r: JSD = 0.6005
+    g-y: JSD = 0.6591
+    d-y: JSD = 0.6760
+    g-s: JSD = 0.7302
+    e-l: JSD = 0.7500
+    l-y: JSD = 0.7594
+    d-e: JSD = 0.7955
+    g-l: JSD = 0.8038
+    g-o: JSD = 0.8064
+
+  Most DISSIMILAR pairs:
+    c-h: JSD = 1.9087
+    c-i: JSD = 1.9165
+    i-q: JSD = 1.9174
+    h-i: JSD = 1.9615
+    c-n: JSD = 1.9639
+
+  Agglomerative clustering (merge order):
+    Step 1: merge at JSD=0.1969 → [m+r]
+    Step 2: merge at JSD=0.2399 → [c+s]
+    Step 3: merge at JSD=0.2810 → [l+m+r]
+    Step 4: merge at JSD=0.5365 → [d+g]
+    Step 5: merge at JSD=0.5870 → [o+y]
+    Step 6: merge at JSD=0.7431 → [d+g+o+y]
+    Step 7: merge at JSD=0.8309 → [e+l+m+r]
+    Step 8: merge at JSD=0.8989 → [d+g+o+y+e+l+m+r]
+
+  INTERPRETATION:
+  In a real syllabary, early clusters would group characters
+  sharing a consonant (e.g., ka+ki+ku) or a vowel (ka+sa+na).
+  Check: do the character pairs above share positional profiles?
+
+  Positional profiles of most similar pairs:
+    m: start=1.4%, end=96.8%  |  r: start=7.2%, end=81.3%
+    l: start=14.9%, end=58.5%  |  r: start=7.2%, end=81.3%
+    c: start=77.7%, end=0.1%  |  s: start=70.1%, end=19.9%
+    l: start=14.9%, end=58.5%  |  m: start=1.4%, end=96.8%
+    d: start=28.7%, end=4.5%  |  g: start=12.1%, end=92.9%
+
+=================================================================
+D: SIMULATED SYLLABARY CALIBRATION
+=================================================================
+  Simulated CV syllabary: 5C × 4V = 20 symbols
+  35708 words generated
+  Sukhotin vowels: 19/20  (95.6% of tokens)
+  Alternation rate: 0.0872
+
+  SVD of syllabary transition matrix:
+    σ_1 = 1.0358  cumulative = 32.6%
+    σ_2 = 0.7055  cumulative = 54.8%
+    σ_3 = 0.5443  cumulative = 71.9%
+    σ_4 = 0.3388  cumulative = 82.6%
+    σ_5 = 0.0881  cumulative = 85.3%
+    σ_6 = 0.0669  cumulative = 87.4%
+    σ_7 = 0.0652  cumulative = 89.5%
+    σ_8 = 0.0534  cumulative = 91.2%
+  Effective rank (90%): 8
+
+  COMPARISON TABLE:
+                          Metric         VMS   Syllabary    Match?
+      Sukhotin vowels (fraction)  13/   22     19/   20     NO
+                       V token %        91.4       95.6%  YES
+                Alternation rate       0.116      0.0872  YES
+                   SVD rank(90%)           8           8  YES
+
+  --- ALPHABETIC REFERENCE ---
+  Sukhotin vowels: 5/17
+  V token %: 43.7%
+  Alternation rate: 1.0000
+  Sukhotin correctly identified vowels: {&#x27;u&#x27;, &#x27;i&#x27;, &#x27;a&#x27;, &#x27;o&#x27;, &#x27;e&#x27;}
+  Sukhotin incorrectly labelled as V: set()
+
+=================================================================
+E: ENTROPY REDUCTION UNDER CHARACTER GROUPING
+=================================================================
+  Baseline transition entropy (char-level): 1.8136 bits
+
+  k=3 groups:
+    Group 0: c s
+    Group 1: a d e g h i l m n o r y
+    Group 2: q
+    SVD grouping H: 0.2052
+    Random grouping H: 1.3377 ± 0.1379
+    z = -8.2
+    Reduction vs random: +84.7%
+
+  k=4 groups:
+    Group 0: c s
+    Group 1: a i
+    Group 2: d e g h l m n o r y
+    Group 3: q
+    SVD grouping H: 0.8260
+    Random grouping H: 1.5484 ± 0.1882
+    z = -3.8
+    Reduction vs random: +46.7%
+
+  k=5 groups:
+    Group 0: c s
+    Group 1: q
+    Group 2: h l o y
+    Group 3: d e g m n r
+    Group 4: a i
+    SVD grouping H: 1.3665
+    Random grouping H: 1.7043 ± 0.1627
+    z = -2.1
+    Reduction vs random: +19.8%
+
+  k=6 groups:
+    Group 0: d e
+    Group 1: i
+    Group 2: h y
+    Group 3: a g l m n o r
+    Group 4: q
+    Group 5: c s
+    SVD grouping H: 1.4209
+    Random grouping H: 1.7647 ± 0.1892
+    z = -1.8
+    Reduction vs random: +19.5%
+
+=================================================================
+syllabary_hypothesis SYNTHESIS
+=================================================================
+
+CRITICAL SELF-CHECK ON vowel_consonant_separation:
+
+56a NULL MODEL RESULT:
+  VMS bigram null produces 12.7/22 Sukhotin vowels
+  vs VMS&#x27;s 13/22.
+  z(n_vowels) = 0.7, z(alternation) = 15.9
+  → vowel_consonant_separation result is LARGELY EXPLAINED by bigram structure alone!
+
+56b SVD RESULT:
+  VMS rank(90%) = 8, null = 8.0±0.0
+  z = 0.0
+  → No evidence of low-rank (CV grid) structure.
+
+56d CALIBRATION RESULT:
+  Simulated syllabary: 19/20 vowels, alt=0.087
+  Simulated alphabetic: 5/17 vowels, alt=1.000
+  VMS:                  13/22 vowels, alt=0.116
+
+OVERALL ASSESSMENT:
+
+  The degenerate Sukhotin result (vowel_consonant_separation) is LIKELY an ARTIFACT
+  of the VMS character frequency distribution. Random text from the
+  VMS bigram model produces the same degenerate split.
+
+  This means vowel_consonant_separation&#x27;s conclusion that &#x27;alphabetic encoding is
+  excluded&#x27; was PREMATURE. The Sukhotin failure tells us about
+  character bigram statistics, not about script type.
+
+  However, the CHARACTER STATISTICS THEMSELVES are unusual:
+  - Most characters freely combine with each other
+  - No clear V/C alternation in any model
+  - This is still inconsistent with European alphabetic text
+
+  REVISED ASSESSMENT:
+  - Syllabary hypothesis: DOWNGRADE from 85% to ~70%
+  - Alphabetic exclusion: DOWNGRADE from 90% to ~75%
+  - The unusual character distribution remains unexplained
+
+syllabary_hypothesis complete.
+</pre></details><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>bc53723</code>. 
+To run any test with your own parameters, clone
+<a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
+(<code>python webui/server.py</code>). All numbers reproduce at
+PYTHONHASHSEED=0.</footer></main></body></html>

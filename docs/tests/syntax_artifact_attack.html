@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>syntax_artifact_attack — VAIS</title><style>
+:root { --bg:#ffffff; --fg:#1a1a1a; --muted:#666; --line:#ddd;
+        --code:#f5f5f5; --accent:#7a4a1e; --warn:#a33; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#141414; --fg:#ddd; --muted:#999; --line:#333;
+          --code:#1e1e1e; --accent:#d9a05b; --warn:#e77; } }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--fg);
+       font:16px/1.55 Georgia, 'Times New Roman', serif; }
+nav { border-bottom:1px solid var(--line); padding:.7em 1.2em;
+      font-family: system-ui, sans-serif; font-size:.9em; }
+nav a { color:var(--accent); text-decoration:none; margin-right:1.2em; }
+main { max-width: 62em; margin: 0 auto; padding: 1.5em 1.2em 4em; }
+h1,h2,h3 { font-family: system-ui, sans-serif; line-height:1.25; }
+h1 { font-size:1.7em; } h2 { font-size:1.3em; margin-top:2em; }
+a { color: var(--accent); }
+code, pre { font-family: ui-monospace, Consolas, monospace;
+            font-size:.86em; background:var(--code); }
+code { padding:.1em .3em; border-radius:3px; }
+pre { padding: .9em; overflow-x:auto; border:1px solid var(--line);
+      border-radius:4px; line-height:1.4; }
+table { border-collapse: collapse; margin: 1em 0; font-size:.92em;
+        display:block; overflow-x:auto; }
+th, td { border:1px solid var(--line); padding:.35em .6em;
+         text-align:left; vertical-align:top; }
+th { font-family: system-ui, sans-serif; background:var(--code); }
+blockquote { border-left:3px solid var(--accent); margin:1em 0;
+             padding:.2em 1em; color:var(--muted); }
+.muted { color:var(--muted); font-size:.9em; }
+.tag { font-family: system-ui, sans-serif; font-size:.75em;
+       border:1px solid var(--line); border-radius:3px;
+       padding:.05em .45em; margin-left:.5em; }
+.tag.sug { border-color:var(--warn); color:var(--warn); }
+details summary { cursor:pointer; font-family: system-ui, sans-serif; }
+footer { border-top:1px solid var(--line); margin-top:3em;
+         padding-top:1em; font-size:.85em; color:var(--muted); }
+</style></head><body>
+<nav><a href="../index.html">VAIS</a><a href="../catalog.html">Catalog</a>
+<a href="../research.html">Research</a><a href="../reports.html">Reports</a>
+<a href="https://github.com/Vineyardcode/vais">GitHub</a></nav>
+<main><h1>syntax_artifact_attack</h1>
+<p class="muted">scripts/syntax_artifact_attack.py</p>
+<pre>ATTACKING word_order_syntax_test: IS &quot;SYNTAX&quot; AN ARTIFACT?
+=========================================================
+
+word_order_syntax_test found inter-word ordering effects (z=28-39) and local decay
+(gap 3 cutoff). Before accepting &quot;genuine syntax,&quot; we must test every
+alternative explanation.
+
+THREATS TO THE SYNTAX CLAIM:
+
+1. CROSS-BOUNDARY CHARACTER BIGRAMS
+   Probe found y→q at 1.77x, r→a at 2.49x. Words ending in -y are
+   followed by qo-words; words ending in -r are followed by a-words.
+   If this boundary effect drives the prefix/suffix MI, &quot;syntax&quot; is
+   just character-level phonotactics across word gaps.
+
+2. SUFFIX RUNS
+   13% of words are in suffix run-2, 3% in run-3. The suffix agreement
+   (z=29.3) could be an artifact of repetitive blocks rather than
+   grammatical agreement.
+
+3. COARSE POSITION BINS
+   word_order_syntax_test used 5 position bins. Fine-grained position effects within
+   bins could explain the residual MI.
+
+4. LINE-BOUNDARY EFFECTS
+   We treated each line as a sequence, but position=0 and position=1
+   (line-initial and line-final) are special. If we exclude those,
+   does the signal survive?
+
+Sub-analyses:
+  A) BOUNDARY CHARACTER CONTROL
+       Compute MI(pfx_i, pfx_{i+1}) after controlling for boundary
+       characters (last char of word i, first char of word i+1).
+       If syntax MI → 0 after control → it&#x27;s phonotactic.
+
+  B) FINE-GRAINED POSITION CONTROL
+       Use 10 and 20 position bins. Does syntax survive?
+
+  C) SUFFIX RUNS vs AGREEMENT
+       Exclude same-suffix pairs. Does cross-suffix prediction exist?
+       This separates &quot;runs&quot; from &quot;agreement.&quot;
+
+  D) LINE-EDGE EXCLUSION
+       Exclude first and last word of each line. Does syntax survive
+       for line-interior words only?
+
+  E) SECTION-SPECIFIC SYNTAX
+       Compute syntax MI per section. If concentrated in one section,
+       it may be content-specific, not structural.</pre>
+<h2>Parameters</h2><table><tr><th>name</th><th>default</th><th>type</th></tr>
+<tr><td><code>ALL_GALLOWS</code></td><td><code>[&#x27;cth&#x27;, &#x27;ckh&#x27;, &#x27;cph&#x27;, &#x27;cfh&#x27;, &#x27;tch&#x27;, &#x27;kch&#x27;, &#x27;pch&#x27;, &#x27;fch&#x27;, &#x27;tsh&#x27;, &#x27;ksh&#x27;, &#x27;psh&#x27;, &#x27;fsh&#x27;, &#x27;t&#x27;, …</code></td><td>json</td></tr>
+<tr><td><code>SUFFIXES</code></td><td><code>[&#x27;aiin&#x27;, &#x27;ain&#x27;, &#x27;iin&#x27;, &#x27;in&#x27;, &#x27;ar&#x27;, &#x27;or&#x27;, &#x27;al&#x27;, &#x27;ol&#x27;, &#x27;dy&#x27;, &#x27;y&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>N_PERM</code></td><td><code>200</code></td><td>int</td></tr>
+</table>
+<h2>Golden output (PYTHONHASHSEED=0)</h2><details><summary>show</summary><pre>Loading lines...
+  4508 lines, 35747 word tokens
+
+======================================================================
+A: BOUNDARY CHARACTER CONTROL
+    Is &#x27;syntax&#x27; just character phonotactics across word gaps?
+======================================================================
+
+  Measure                                     Pfx→Pfx    Sfx→Sfx
+  ------------------------------------------------------------
+  MI (unconditioned, word_order_syntax_test)     0.0472     0.0665
+  MI | last char of word_i                     0.0700     0.0265
+  MI | first char of word_{i+1}                0.0039     0.0706
+  MI | boundary pair (last,first)              0.0124     0.0453
+
+  Boundary characters explain:
+    73.8% of prefix→prefix MI
+    31.8% of suffix→suffix MI
+  → CAUTION: Boundary chars explain &gt;50% — partial artifact
+
+  Permutation test: shuffle within boundary-pair bins...
+
+  MI | boundary chars, vs within-line shuffle:
+  Feature                     Observed            Null        z
+  ----------------------------------------------------------
+  MI(pfx→pfx|boundary)          0.0124   0.0122±0.0007      0.2
+  MI(sfx→sfx|boundary)          0.0453   0.0351±0.0012      8.3
+  → Syntax signal SURVIVES boundary-character control
+
+======================================================================
+B: FINE-GRAINED POSITION CONTROL
+    Does syntax survive with 10 and 20 position bins?
+======================================================================
+   5 bins: MI|pos_pair×sec = 0.1700, null = 0.2345±0.0025, z = -26.0
+  10 bins: MI|pos_pair×sec = 0.2665, null = 0.5003±0.0037, z = -63.0
+  20 bins: MI|pos_pair×sec = 0.4018, null = 0.7931±0.0050, z = -77.6
+
+======================================================================
+C: SUFFIX RUNS vs CROSS-SUFFIX AGREEMENT
+    Does prefix→prefix MI survive when we EXCLUDE same-suffix pairs?
+======================================================================
+
+  Same-suffix adjacent pairs: 6856
+  Different-suffix pairs:     24383
+
+  MI(pfx→pfx) within same-suffix pairs:  0.0937
+  MI(pfx→pfx) within diff-suffix pairs:   0.0435
+  MI(sfx→sfx) within diff-suffix pairs:   0.2633
+
+  MI(pfx→pfx | diff suffix) vs random shuffle:
+    Observed: 0.0435, Null: 0.0043±0.0005, z = 81.9
+  → Prefix ordering survives even between DIFFERENT suffix pairs
+    This is NOT just suffix runs
+
+  MI(sfx→sfx | diff suffix) vs random shuffle:
+    Observed: 0.2633, Null: 0.0030±0.0004, z = 599.1
+    (Tests whether suffix sequencing is structured beyond same-suffix runs)
+
+======================================================================
+D: LINE-EDGE EXCLUSION
+    Does syntax survive for interior words only?
+======================================================================
+
+  All pairs: 31239, MI(pfx→pfx) = 0.0472
+  Interior only: 22451, MI(pfx→pfx) = 0.0505
+  Interior only: MI(sfx→sfx) = 0.0748
+
+  Interior-only vs within-line shuffle:
+  Feature                     Observed            Null        z
+  ----------------------------------------------------------
+  MI(pfx→pfx) interior          0.0505   0.0176±0.0012     27.1
+  MI(sfx→sfx) interior          0.0748   0.0222±0.0015     34.8
+  → Syntax survives for interior-only words
+
+======================================================================
+E: SECTION-SPECIFIC SYNTAX
+    Is syntax uniform across sections?
+======================================================================
+
+  Section       Lines   Pairs    MI(pfx)    MI(sfx)   z(pfx)   z(sfx)
+  ---------------------------------------------------------------
+  text           1970   16441     0.0536     0.0686     26.0     35.7
+  herbal-A       1495    7534     0.0318     0.0645      7.1     12.7
+  bio             699    4926     0.0849     0.0762     17.0     16.5
+  pharma          169    1162     0.1244     0.1281      5.3      3.9
+  cosmo           124     595     0.1421     0.2299      2.1      6.3
+  unknown          51     581     0.1206     0.1557      0.7      1.5
+
+======================================================================
+syntax_artifact_attack SYNTHESIS: What survives the attack?
+======================================================================
+
+  40a: BOUNDARY CHARACTER CONTROL
+    Boundary chars explain 73.8% of pfx MI, 31.8% of sfx MI
+    After boundary control: z(pfx)=0.2, z(sfx)=8.3
+    → Syntax SURVIVES boundary control
+
+  40b: FINE-GRAINED POSITION CONTROL
+    (See table above — if z stays high with 20 bins, position is controlled)
+
+  40c: SUFFIX RUNS
+    MI(pfx→pfx) excluding same-suffix pairs: z=81.9
+    MI(sfx→sfx) excluding same-suffix pairs: z=599.1
+    → NOT just suffix runs
+
+  40d: LINE-EDGE EXCLUSION
+    Interior-only: z(pfx)=27.1, z(sfx)=34.8
+    → Syntax survives in line interior
+
+  40e: SECTION-SPECIFIC
+    (See table above — uniform = structural, concentrated = content-specific)
+
+  OVERALL: If ALL tests pass, word_order_syntax_test syntax claim SURVIVES.
+  If ANY test demolishes the signal, we must RETRACT accordingly.
+
+[syntax_artifact_attack Complete]
+</pre></details><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>bc53723</code>. 
+To run any test with your own parameters, clone
+<a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
+(<code>python webui/server.py</code>). All numbers reproduce at
+PYTHONHASHSEED=0.</footer></main></body></html>

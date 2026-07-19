@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>rtl_direction_test — VAIS</title><style>
+:root { --bg:#ffffff; --fg:#1a1a1a; --muted:#666; --line:#ddd;
+        --code:#f5f5f5; --accent:#7a4a1e; --warn:#a33; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#141414; --fg:#ddd; --muted:#999; --line:#333;
+          --code:#1e1e1e; --accent:#d9a05b; --warn:#e77; } }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--fg);
+       font:16px/1.55 Georgia, 'Times New Roman', serif; }
+nav { border-bottom:1px solid var(--line); padding:.7em 1.2em;
+      font-family: system-ui, sans-serif; font-size:.9em; }
+nav a { color:var(--accent); text-decoration:none; margin-right:1.2em; }
+main { max-width: 62em; margin: 0 auto; padding: 1.5em 1.2em 4em; }
+h1,h2,h3 { font-family: system-ui, sans-serif; line-height:1.25; }
+h1 { font-size:1.7em; } h2 { font-size:1.3em; margin-top:2em; }
+a { color: var(--accent); }
+code, pre { font-family: ui-monospace, Consolas, monospace;
+            font-size:.86em; background:var(--code); }
+code { padding:.1em .3em; border-radius:3px; }
+pre { padding: .9em; overflow-x:auto; border:1px solid var(--line);
+      border-radius:4px; line-height:1.4; }
+table { border-collapse: collapse; margin: 1em 0; font-size:.92em;
+        display:block; overflow-x:auto; }
+th, td { border:1px solid var(--line); padding:.35em .6em;
+         text-align:left; vertical-align:top; }
+th { font-family: system-ui, sans-serif; background:var(--code); }
+blockquote { border-left:3px solid var(--accent); margin:1em 0;
+             padding:.2em 1em; color:var(--muted); }
+.muted { color:var(--muted); font-size:.9em; }
+.tag { font-family: system-ui, sans-serif; font-size:.75em;
+       border:1px solid var(--line); border-radius:3px;
+       padding:.05em .45em; margin-left:.5em; }
+.tag.sug { border-color:var(--warn); color:var(--warn); }
+details summary { cursor:pointer; font-family: system-ui, sans-serif; }
+footer { border-top:1px solid var(--line); margin-top:3em;
+         padding-top:1em; font-size:.85em; color:var(--muted); }
+</style></head><body>
+<nav><a href="../index.html">VAIS</a><a href="../catalog.html">Catalog</a>
+<a href="../research.html">Research</a><a href="../reports.html">Reports</a>
+<a href="https://github.com/Vineyardcode/vais">GitHub</a></nav>
+<main><h1>rtl_direction_test</h1>
+<p class="muted">scripts/rtl_direction_test.py · baseline 1s</p>
+<pre>RTL Reading Direction Hypothesis Test
+
+Tests whether Voynichese text reads RIGHT-TO-LEFT (like Hebrew/Arabic)
+rather than the assumed left-to-right. If the script is RTL:
+
+  1. What we call &quot;prefixes&quot; (o-, qo-, d-, s-) are actually suffixes
+  2. What we call &quot;suffixes&quot; (-y, -iin, -ar) are actually prefixes
+  3. Sentence-initial words are actually sentence-final
+  4. Bigram transitions would be inverted
+  5. Character-reversed words might parse better or comparably
+
+Also tests boustrophedon (alternating direction) and checks if
+paragraph markers (&lt;%&gt;, &lt;$&gt;) align with either direction hypothesis.
+
+Connected to: the Hebrew-like constructed morphology findings,
+gallows-as-determinative, and the observation that
+medieval alchemists drew on Egyptian/Hermetic traditions (which include
+RTL Semitic scripts).</pre>
+<h2>Parameters</h2><table><tr><th>name</th><th>default</th><th>type</th></tr>
+<tr><td><code>PREFIXES_LTR</code></td><td><code>[&#x27;qo&#x27;, &#x27;q&#x27;, &#x27;do&#x27;, &#x27;dy&#x27;, &#x27;so&#x27;, &#x27;sy&#x27;, &#x27;ol&#x27;, &#x27;or&#x27;, &#x27;o&#x27;, &#x27;y&#x27;, &#x27;d&#x27;, &#x27;s&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>ROOT_ONSETS_LTR</code></td><td><code>[&#x27;ckh&#x27;, &#x27;cth&#x27;, &#x27;cph&#x27;, &#x27;cfh&#x27;, &#x27;sch&#x27;, &#x27;sh&#x27;, &#x27;ch&#x27;, &#x27;f&#x27;, &#x27;p&#x27;, &#x27;k&#x27;, &#x27;t&#x27;, &#x27;eee&#x27;, &#x27;ee&#x27;, &#x27;e&#x27;, &#x27;da&#x27;…</code></td><td>json</td></tr>
+<tr><td><code>ROOT_BODIES</code></td><td><code>[&#x27;eee&#x27;, &#x27;ee&#x27;, &#x27;e&#x27;, &#x27;da&#x27;, &#x27;sa&#x27;, &#x27;do&#x27;, &#x27;so&#x27;, &#x27;a&#x27;, &#x27;o&#x27;, &#x27;d&#x27;, &#x27;s&#x27;, &#x27;l&#x27;, &#x27;r&#x27;, &#x27;n&#x27;, &#x27;m&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>SUFFIXES_LTR</code></td><td><code>[&#x27;aiin&#x27;, &#x27;aiir&#x27;, &#x27;ain&#x27;, &#x27;air&#x27;, &#x27;am&#x27;, &#x27;an&#x27;, &#x27;ar&#x27;, &#x27;al&#x27;, &#x27;as&#x27;, &#x27;iin&#x27;, &#x27;iir&#x27;, &#x27;in&#x27;, &#x27;ir&#x27;, &#x27;dy…</code></td><td>json</td></tr>
+</table>
+<h2>Golden output (PYTHONHASHSEED=0)</h2><details><summary>show</summary><pre>Extracting sentences from all folios...
+
+Total sentences/lines: 5427
+Total words: 39433
+
+========================================================================
+TEST 1: PARSE RATE COMPARISON — LTR vs REVERSED vs ROLE-SWAP
+========================================================================
+
+  Unique words tested: 7905
+
+  Parse rates:
+    LTR (original):               3283/7905 (41.5%)
+    Character-reversed (LTR parse):250/7905 (3.2%)
+    Role-swapped parser:           1150/7905 (14.5%)
+    Reversed + role-swapped:       1707/7905 (21.6%)
+
+  Mean parse quality (LTR):     2.11 / 3.0
+  Mean parse quality (reversed): 1.94 / 3.0
+
+  Words that parse ONLY as LTR:     3101
+  Words that parse ONLY as reversed: 68
+  Words that parse BOTH ways:        296
+
+  Examples of reverse-only parses (word → reversed → parse):
+    aky → yka → prefix=&#x27;y&#x27; root=&#x27;ka&#x27; suffix=&#x27;&#x27;
+    alet → tela → prefix=&#x27;&#x27; root=&#x27;tela&#x27; suffix=&#x27;&#x27;
+    alfo → ofla → prefix=&#x27;o&#x27; root=&#x27;fla&#x27; suffix=&#x27;&#x27;
+    alky → ykla → prefix=&#x27;y&#x27; root=&#x27;kla&#x27; suffix=&#x27;&#x27;
+    aloky → ykola → prefix=&#x27;y&#x27; root=&#x27;kola&#x27; suffix=&#x27;&#x27;
+    apo → opa → prefix=&#x27;o&#x27; root=&#x27;pa&#x27; suffix=&#x27;&#x27;
+    aroky → ykora → prefix=&#x27;y&#x27; root=&#x27;kora&#x27; suffix=&#x27;&#x27;
+    aty → yta → prefix=&#x27;y&#x27; root=&#x27;ta&#x27; suffix=&#x27;&#x27;
+    daky → ykad → prefix=&#x27;y&#x27; root=&#x27;kad&#x27; suffix=&#x27;&#x27;
+    dalky → yklad → prefix=&#x27;y&#x27; root=&#x27;klad&#x27; suffix=&#x27;&#x27;
+    daloky → ykolad → prefix=&#x27;y&#x27; root=&#x27;kolad&#x27; suffix=&#x27;&#x27;
+    daseky → ykesad → prefix=&#x27;y&#x27; root=&#x27;kesad&#x27; suffix=&#x27;&#x27;
+    deeety → yteeed → prefix=&#x27;y&#x27; root=&#x27;teeed&#x27; suffix=&#x27;&#x27;
+    defo → ofed → prefix=&#x27;o&#x27; root=&#x27;fed&#x27; suffix=&#x27;&#x27;
+    dlod → dold → prefix=&#x27;d&#x27; root=&#x27;old&#x27; suffix=&#x27;&#x27;
+
+========================================================================
+TEST 2: CHARACTER DISTRIBUTION ASYMMETRY (INITIAL vs FINAL)
+========================================================================
+
+  Initial character entropy: 3.154 bits
+  Final character entropy:   2.472 bits
+  Difference (init - final): 0.683 bits
+  → Final MORE constrained — typical of RTL suffix system (or LTR with rich suffixes)
+
+  Top 10 initial characters:
+    &#x27;o&#x27;: 9035 (22.9%)
+    &#x27;c&#x27;: 7314 (18.5%)
+    &#x27;q&#x27;: 5721 (14.5%)
+    &#x27;s&#x27;: 4469 (11.3%)
+    &#x27;d&#x27;: 3802 (9.6%)
+    &#x27;a&#x27;: 2302 (5.8%)
+    &#x27;y&#x27;: 1848 (4.7%)
+    &#x27;k&#x27;: 1314 (3.3%)
+    &#x27;l&#x27;: 1312 (3.3%)
+    &#x27;t&#x27;: 1086 (2.8%)
+
+  Top 10 final characters:
+    &#x27;y&#x27;: 16103 (40.8%)
+    &#x27;n&#x27;: 6503 (16.5%)
+    &#x27;r&#x27;: 6116 (15.5%)
+    &#x27;l&#x27;: 6055 (15.4%)
+    &#x27;o&#x27;: 1182 (3.0%)
+    &#x27;s&#x27;: 1138 (2.9%)
+    &#x27;m&#x27;: 1093 (2.8%)
+    &#x27;d&#x27;: 609 (1.5%)
+    &#x27;g&#x27;: 132 (0.3%)
+    &#x27;e&#x27;: 93 (0.2%)
+
+  Initial bigram entropy: 4.766 bits
+  Final bigram entropy:   4.065 bits
+
+========================================================================
+TEST 3: WORD-ORDER BIGRAM PATTERNS (LTR vs RTL)
+========================================================================
+
+  Unique word bigrams (LTR): 26828
+  Bigrams occurring &gt;1 (LTR): 4156
+  Bigrams occurring &gt;1 (RTL): 4156
+
+  Top 15 word bigrams (LTR = assumed reading direction):
+    or → aiin: 70
+    chol → daiin: 35
+    ar → aiin: 35
+    ol → shedy: 25
+    chol → chol: 24
+    ol → aiin: 23
+    shedy → qokedy: 22
+    ol → chedy: 22
+    chedy → qokeey: 19
+    chedy → qokain: 18
+    qokeedy → qokeedy: 18
+    shedy → qokaiin: 18
+    ar → al: 18
+    shey → qokain: 17
+    aiin → ol: 15
+
+  Top 15 word bigrams (RTL = reversed reading direction):
+    aiin → or: 70
+    daiin → chol: 35
+    aiin → ar: 35
+    shedy → ol: 25
+    chol → chol: 24
+    aiin → ol: 23
+    qokedy → shedy: 22
+    chedy → ol: 22
+    qokeey → chedy: 19
+    qokain → chedy: 18
+    qokeedy → qokeedy: 18
+    qokaiin → shedy: 18
+    al → ar: 18
+    qokain → shey: 17
+    ol → aiin: 15
+
+  Word bigram entropy (LTR): 14.490 bits
+  Word bigram entropy (RTL): 14.490 bits
+  Note: these should be identical by symmetry — checking...
+
+  Opener concentration (top-5 cover what % of lines?):
+    LTR openers: 7.9%  ([(&#x27;daiin&#x27;, 173), (&#x27;saiin&#x27;, 58), (&#x27;dain&#x27;, 51)])
+    RTL openers: 9.5%  ([(&#x27;daiin&#x27;, 145), (&#x27;dy&#x27;, 105), (&#x27;am&#x27;, 77)])
+
+  Closer concentration (top-5 cover what %):
+    LTR closers: 9.5%  ([(&#x27;daiin&#x27;, 145), (&#x27;dy&#x27;, 105), (&#x27;am&#x27;, 77)])
+    RTL closers: 7.9%  ([(&#x27;daiin&#x27;, 173), (&#x27;saiin&#x27;, 58), (&#x27;dain&#x27;, 51)])
+
+  Opener entropy:  LTR=9.862  RTL=9.757
+  Closer entropy:  LTR=9.757  RTL=9.862
+
+  Lower entropy = more structured = more likely real openers/closers
+  → RTL openers more constrained — supports RTL reading
+
+========================================================================
+TEST 4: PREFIX/SUFFIX POSITION FIDELITY
+========================================================================
+
+  Testing claimed prefixes — are they really word-initial?
+  Prefix      At start      At end   In middle     Start %
+  qo               731           3          21       96.8%
+  q                829           0          29       96.6%
+  do                97          13          22       73.5%
+  dy                45        1066          37        3.9%
+  so               130           6          13       87.2%
+  sy                 8          68           5        9.9%
+  ol               280         433         552       22.1%
+  or                86         379         173       13.5%
+  o               1750         309        3260       32.9%
+  y                579        3054         236       15.0%
+  d                595         325        2049       20.0%
+  s                848         493         881       38.2%
+
+  Testing claimed suffixes — are they really word-final?
+  Suffix        At end    At start   In middle       End %
+  aiin             462           8           0       98.3%
+  aiir              39           7           0       84.8%
+  ain              270           5           0       98.2%
+  air              105          13           0       89.0%
+  am               243           9           0       96.4%
+  an                55           1           0       98.2%
+  ar               505          65           0       88.6%
+  al               393         104           0       79.1%
+  as                38           5           0       88.4%
+  iin              581           0           0      100.0%
+  iir               55           2           0       96.5%
+  in               866           0           0      100.0%
+  ir               167           0           0      100.0%
+  dy              1066          45           0       95.9%
+  ey               655           1           0       99.8%
+
+========================================================================
+TEST 5: PALINDROMES AND WORD SYMMETRY
+========================================================================
+
+  True palindromes (word == reversed): 33
+    lol (freq=40)
+    yty (freq=25)
+    rar (freq=16)
+    ror (freq=15)
+    yky (freq=14)
+    oto (freq=10)
+    ydy (freq=9)
+    lal (freq=7)
+    lkl (freq=7)
+    oro (freq=6)
+    oko (freq=5)
+    sos (freq=5)
+    olo (freq=4)
+    shs (freq=4)
+    oeeo (freq=3)
+    dod (freq=2)
+    oraro (freq=2)
+    yetey (freq=1)
+    seees (freq=1)
+    soeos (freq=1)
+
+  Reverse-pair words (w and w[::-1] both exist): 68
+    oty (123) ↔ yto (5)
+    lod (2) ↔ dol (112)
+    yko (3) ↔ oky (107)
+    sol (70) ↔ los (6)
+    rod (1) ↔ dor (68)
+    lor (39) ↔ rol (20)
+    ldy (25) ↔ ydl (1)
+    ral (18) ↔ lar (8)
+    ytol (16) ↔ loty (4)
+    ykl (1) ↔ lky (19)
+    yteol (7) ↔ loety (1)
+    dyky (5) ↔ ykyd (1)
+    oeky (1) ↔ ykeo (4)
+    lom (4) ↔ mol (1)
+    odl (3) ↔ ldo (2)
+
+========================================================================
+TEST 6: PARAGRAPH MARKER ANALYSIS
+========================================================================
+
+  Total transcribed lines: 5766
+  Lines with paragraph markers: 1560
+  Marker at LEFT (transcription start): 764
+  Marker at RIGHT (transcription end):  780
+
+  Paragraph markers show mixed or right-aligned pattern.
+
+  Paragraph-initial words (top 10):
+    daiin: 33
+    dain: 17
+    sain: 16
+    tchedy: 14
+    saiin: 13
+    pol: 13
+    dair: 13
+    tol: 11
+    sor: 11
+    dar: 10
+
+  Non-paragraph line-initial words (top 10):
+    daiin: 140
+    saiin: 46
+    dar: 36
+    or: 34
+    dain: 34
+    sol: 31
+    dshedy: 30
+    qokaiin: 30
+    qokeey: 27
+    sho: 25
+
+  Top-20 para-initial ∩ top-20 line-final: 4 words
+    {&#x27;daiin&#x27;, &#x27;dar&#x27;, &#x27;dain&#x27;, &#x27;ol&#x27;}
+  (High overlap would suggest para markers are at line END = possible RTL)
+
+========================================================================
+TEST 7: CHARACTER-LEVEL BIGRAM ENTROPY
+========================================================================
+
+  LTR character bigram entropy: 5.712 bits
+  RTL character bigram entropy: 5.712 bits
+
+  Cross-word boundary bigram entropy:
+    LTR (last_char → first_char of next): 5.313 bits
+    RTL (last_char of next → first_char):  5.582 bits
+    → LTR cross-boundary MORE structured — supports LTR
+
+  Top 10 cross-word bigrams (LTR: end_of_word → start_of_next):
+    &#x27;y&#x27; → &#x27;q&#x27;: 3685
+    &#x27;y&#x27; → &#x27;o&#x27;: 2823
+    &#x27;y&#x27; → &#x27;c&#x27;: 2139
+    &#x27;n&#x27; → &#x27;o&#x27;: 1726
+    &#x27;n&#x27; → &#x27;c&#x27;: 1624
+    &#x27;r&#x27; → &#x27;o&#x27;: 1484
+    &#x27;y&#x27; → &#x27;d&#x27;: 1407
+    &#x27;l&#x27; → &#x27;c&#x27;: 1307
+    &#x27;r&#x27; → &#x27;c&#x27;: 1273
+    &#x27;y&#x27; → &#x27;s&#x27;: 1161
+
+  Top 10 cross-word bigrams (RTL: end_of_next → start_of_word):
+    &#x27;y&#x27; → &#x27;o&#x27;: 3038
+    &#x27;y&#x27; → &#x27;q&#x27;: 2524
+    &#x27;y&#x27; → &#x27;c&#x27;: 2485
+    &#x27;y&#x27; → &#x27;s&#x27;: 1804
+    &#x27;n&#x27; → &#x27;o&#x27;: 1290
+    &#x27;y&#x27; → &#x27;d&#x27;: 1249
+    &#x27;n&#x27; → &#x27;c&#x27;: 1172
+    &#x27;r&#x27; → &#x27;o&#x27;: 1170
+    &#x27;l&#x27; → &#x27;o&#x27;: 1106
+    &#x27;l&#x27; → &#x27;c&#x27;: 1068
+
+========================================================================
+TEST 8: RTL SYNTHESIS
+========================================================================
+
+  The RTL hypothesis predicts:
+    1. Reversed words should parse ≥ as well as LTR words
+    2. &#x27;Suffixes&#x27; should be more position-constrained than &#x27;prefixes&#x27;
+    3. Word-final characters should be more diverse than word-initial
+    4. Paragraph markers should align with RTL conventions
+    5. Line-final words should function as openers
+
+  Evidence assessment printed above — check each test result.
+
+========================================================================
+RTL test complete.
+========================================================================
+</pre></details><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>bc53723</code>. 
+To run any test with your own parameters, clone
+<a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
+(<code>python webui/server.py</code>). All numbers reproduce at
+PYTHONHASHSEED=0.</footer></main></body></html>

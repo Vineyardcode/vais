@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>run_conditioned_transitions — VAIS</title><style>
+:root { --bg:#ffffff; --fg:#1a1a1a; --muted:#666; --line:#ddd;
+        --code:#f5f5f5; --accent:#7a4a1e; --warn:#a33; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#141414; --fg:#ddd; --muted:#999; --line:#333;
+          --code:#1e1e1e; --accent:#d9a05b; --warn:#e77; } }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--fg);
+       font:16px/1.55 Georgia, 'Times New Roman', serif; }
+nav { border-bottom:1px solid var(--line); padding:.7em 1.2em;
+      font-family: system-ui, sans-serif; font-size:.9em; }
+nav a { color:var(--accent); text-decoration:none; margin-right:1.2em; }
+main { max-width: 62em; margin: 0 auto; padding: 1.5em 1.2em 4em; }
+h1,h2,h3 { font-family: system-ui, sans-serif; line-height:1.25; }
+h1 { font-size:1.7em; } h2 { font-size:1.3em; margin-top:2em; }
+a { color: var(--accent); }
+code, pre { font-family: ui-monospace, Consolas, monospace;
+            font-size:.86em; background:var(--code); }
+code { padding:.1em .3em; border-radius:3px; }
+pre { padding: .9em; overflow-x:auto; border:1px solid var(--line);
+      border-radius:4px; line-height:1.4; }
+table { border-collapse: collapse; margin: 1em 0; font-size:.92em;
+        display:block; overflow-x:auto; }
+th, td { border:1px solid var(--line); padding:.35em .6em;
+         text-align:left; vertical-align:top; }
+th { font-family: system-ui, sans-serif; background:var(--code); }
+blockquote { border-left:3px solid var(--accent); margin:1em 0;
+             padding:.2em 1em; color:var(--muted); }
+.muted { color:var(--muted); font-size:.9em; }
+.tag { font-family: system-ui, sans-serif; font-size:.75em;
+       border:1px solid var(--line); border-radius:3px;
+       padding:.05em .45em; margin-left:.5em; }
+.tag.sug { border-color:var(--warn); color:var(--warn); }
+details summary { cursor:pointer; font-family: system-ui, sans-serif; }
+footer { border-top:1px solid var(--line); margin-top:3em;
+         padding-top:1em; font-size:.85em; color:var(--muted); }
+</style></head><body>
+<nav><a href="../index.html">VAIS</a><a href="../catalog.html">Catalog</a>
+<a href="../research.html">Research</a><a href="../reports.html">Reports</a>
+<a href="https://github.com/Vineyardcode/vais">GitHub</a></nav>
+<main><h1>run_conditioned_transitions</h1>
+<p class="muted">scripts/run_conditioned_transitions.py</p>
+<pre>Run-Length-Conditioned Transition Matrices:
+              Verifying &amp; Extending the Currier A Breakpoint Table
+═════════════════════════════════════════════════════════════════
+
+PREMISE:
+An external Currier A transition probability table (attached image)
+shows that run-length CHANGES successor probabilities dramatically:
+  - i→n = 56.1%, but ii→n = 94.8%, iii→n = 90.9%
+  - e→o = 51.9%, but ee→y = 51.8%, eee→y = 43.0%
+The table also annotates word-boundary breakpoints (strong/weak).
+
+run_conditioned_transitions independently computes these transition matrices on our
+corpus, separated by Currier A vs B, and tests:
+
+METHOD:
+  A. RUN-CONDITIONED SUCCESSOR MATRICES — for each glyph, compute
+     P(next | glyph×N) for run lengths N=1,2,3. Verify the external
+     table&#x27;s values AND extend to Currier B.
+  B. A vs B TRANSITION DIVERGENCE — for every glyph, measure JSD
+     between Currier A and B successor distributions. Which glyphs
+     behave DIFFERENTLY across the two languages?
+  C. WORD-BOUNDARY PREDICTION — using our I-M-F slot grammar from
+     run_length_morphology, predict where word boundaries should fall in the
+     transition matrix. Compare to the external breakpoint annotations.
+  D. FUNCTIONAL GLYPH TAXONOMY — cluster glyphs by their run-length
+     transition signatures into functional classes. Do the classes
+     match I/M/F? Do they differ in A vs B?
+  E. INFORMATION CONTENT — compute the bits of information carried
+     by run-length choice. If ii→n=94.8% while i→n=56.1%, the
+     choice of single vs double carries information about what follows.
+
+SKEPTICAL NOTES:
+  - Our corpus may differ slightly from the external source
+    (different transcription, different folio coverage)
+  - Currier A/B assignment is approximate; boundary folios are debated
+  - Small counts for iii→X may produce unreliable probabilities</pre>
+<h2>Golden output (PYTHONHASHSEED=0)</h2><details><summary>show</summary><pre>╔════════════════════════════════════════════════════════════════════╗
+║  run_conditioned_transitions: Run-Conditioned Transitions (A vs B)                ║
+╚════════════════════════════════════════════════════════════════════╝
+
+Loading VMS by Currier language...
+  Currier A: 18068 words
+  Currier B: 18191 words
+  Total:     36259 words
+
+══════════════════════════════════════════════════════════════════════
+TEST A: RUN-CONDITIONED SUCCESSOR PROBABILITIES
+══════════════════════════════════════════════════════════════════════
+
+  ── CURRIER A (18068 words) ──
+
+           i →  n (67.5%)  r (25.6%)  [n=1287]  (ext: n=56.1%, r=26.2%)
+          ii →  n (94.6%)  r (3.9%)  [n=2327]  (ext: n=94.8%, r=2.8%)
+         iii →  n (92.9%)  l (3.6%)  [n=84]  (ext: n=90.9%)
+
+           e →  d (34.8%)  o (26.6%)  [n=4135]  (ext: o=51.9%, y=28.6%)
+          ee →  y (41.1%)  d (31.5%)  [n=2152]  (ext: y=51.8%, o=28.2%)
+         eee →  y (47.1%)  d (19.8%)  [n=227]  (ext: y=43.0%, s=26.7%)
+
+           q →  o (98.3%)  e (1.0%)  [n=2576]  (ext: o=97.1%, k=1.4%)
+        ch×1 →  e (42.7%)  o (27.1%)  [n=5655]  (ext: o=45.7%, e=25.1%)
+        ch×2 →  y (50.0%)  o (33.3%)  [n=6]
+
+        sh×1 →  e (51.3%)  o (27.7%)  [n=1995]  (ext: o=46.6%, e=32.5%)
+           d →  y (52.1%)  a (36.8%)  [n=5260]  (ext: a=50.4%, y=26.7%)
+          dd →  y (57.1%)  l (21.4%)  [n=14]
+
+           a →  i (50.3%)  r (21.5%)  [n=7031]  (ext: i=52.0%, l=19.4%)
+
+           k →  e (38.9%)  a (31.4%)  [n=4605]  (ext: e=30.4%, ch=19.6%)
+           o →  k (25.8%)  l (20.1%)  [n=10591]  (ext: l=25.0%, k=16.5%)
+          oo →  r (37.5%)  l (25.0%)  [n=32]
+
+           y →  k (31.4%)  t (27.7%)  [n=948]
+           l →  k (29.5%)  ch (16.0%)  [n=1893]
+          ll →  o (33.3%)  d (20.0%)  [n=15]
+
+           n →  o (35.3%)  a (23.5%)  [n=34]
+           r →  a (45.9%)  o (23.2%)  [n=682]
+           t →  a (29.4%)  e (27.4%)  [n=2763]
+           p →  ch (64.7%)  a (17.6%)  [n=547]
+           s →  a (47.5%)  o (26.5%)  [n=453]
+       ckh×1 →  y (50.7%)  e (27.0%)  [n=367]
+       cth×1 →  y (41.8%)  o (30.6%)  [n=464]
+       cph×1 →  o (29.2%)  y (27.4%)  [n=106]
+       cfh×1 →  y (36.1%)  o (27.8%)  [n=36]
+           f →  ch (56.8%)  o (16.4%)  [n=146]
+           m →  d (23.5%)  a (23.5%)  [n=17]
+
+  ── CURRIER B (18191 words) ──
+
+           i →  n (73.5%)  r (21.2%)  [n=1045]
+          ii →  n (96.5%)  r (2.7%)  [n=1908]
+         iii →  n (96.7%)  l (2.2%)  [n=91]
+
+           e →  d (37.7%)  o (25.4%)  [n=5400]
+          ee →  y (40.7%)  d (32.1%)  [n=2038]
+         eee →  y (46.8%)  d (23.4%)  [n=158]
+
+           q →  o (97.9%)  e (1.0%)  [n=2886]
+        ch×1 →  e (54.3%)  o (18.6%)  [n=4399]
+        ch×2 →  y (40.0%)  e (20.0%)  [n=5]
+
+        sh×1 →  e (67.9%)  o (14.8%)  [n=2280]
+
+           d →  y (61.2%)  a (30.1%)  [n=6227]
+
+           a →  i (44.1%)  r (26.3%)  [n=6611]
+           k →  e (41.8%)  a (33.3%)  [n=4759]
+           o →  k (26.9%)  l (26.5%)  [n=11431]
+          oo →  r (42.9%)  l (39.3%)  [n=28]
+
+           y →  k (36.7%)  t (31.5%)  [n=1015]
+           l →  k (22.1%)  ch (16.7%)  [n=2163]
+          ll →  ch (40.0%)  s (20.0%)  [n=5]
+
+           n →  o (22.2%)  y (19.4%)  [n=36]
+           r →  a (42.6%)  o (20.4%)  [n=705]
+           t →  e (36.9%)  a (29.2%)  [n=2739]
+           p →  ch (56.9%)  a (15.9%)  [n=483]
+           s →  a (47.3%)  o (30.1%)  [n=655]
+       ckh×1 →  y (52.9%)  e (30.4%)  [n=461]
+       cth×1 →  y (42.2%)  e (32.5%)  [n=360]
+       cph×1 →  e (55.7%)  o (15.2%)  [n=79]
+       cfh×1 →  y (38.2%)  e (32.4%)  [n=34]
+           f →  ch (48.6%)  a (24.3%)  [n=185]
+           m →  o (35.7%)  ch (14.3%)  [n=14]
+
+  ── ALL VMS (36259 words) ──
+
+           i →  n (70.2%)  r (23.6%)  [n=2332]
+          ii →  n (95.5%)  r (3.4%)  [n=4235]
+         iii →  n (94.9%)  l (2.9%)  [n=175]
+
+           e →  d (36.4%)  o (25.9%)  [n=9535]
+          ee →  y (40.9%)  d (31.8%)  [n=4190]
+         eee →  y (47.0%)  d (21.3%)  [n=385]
+        eeee →  s (50.0%)  y (37.5%)  [n=8]
+
+           q →  o (98.1%)  e (1.0%)  [n=5462]
+        ch×1 →  e (47.8%)  o (23.4%)  [n=10054]
+        ch×2 →  y (45.5%)  e (18.2%)  [n=11]
+
+        sh×1 →  e (60.2%)  o (20.8%)  [n=4275]
+
+           d →  y (57.1%)  a (33.1%)  [n=11487]
+          dd →  y (61.1%)  l (16.7%)  [n=18]
+
+           a →  i (47.3%)  r (23.9%)  [n=13642]
+
+           k →  e (40.4%)  a (32.4%)  [n=9364]
+           o →  k (26.4%)  l (23.4%)  [n=22022]
+          oo →  r (40.0%)  l (31.7%)  [n=60]
+
+           y →  k (34.1%)  t (29.7%)  [n=1963]
+           l →  k (25.5%)  ch (16.3%)  [n=4056]
+          ll →  o (25.0%)  d (20.0%)  [n=20]
+
+           n →  o (28.6%)  y (15.7%)  [n=70]
+           r →  a (44.2%)  o (21.8%)  [n=1387]
+           t →  e (32.1%)  a (29.3%)  [n=5502]
+           p →  ch (61.1%)  a (16.8%)  [n=1030]
+           s →  a (47.4%)  o (28.6%)  [n=1108]
+       ckh×1 →  y (51.9%)  e (28.9%)  [n=828]
+       cth×1 →  y (42.0%)  o (24.6%)  [n=824]
+       cph×1 →  e (38.9%)  o (23.2%)  [n=185]
+       cfh×1 →  y (37.1%)  e (22.9%)  [n=70]
+           f →  ch (52.3%)  a (20.5%)  [n=331]
+           m →  o (25.8%)  d (19.4%)  [n=31]
+           g →  o (42.9%)  a (28.6%)  [n=7]
+
+══════════════════════════════════════════════════════════════════════
+TEST B: CURRIER A vs B — TRANSITION DIVERGENCE
+══════════════════════════════════════════════════════════════════════
+
+  Glyph-level successor divergence (A vs B):
+     Glyph      JSD     n_A     n_B           Top A           Top B      Shift
+  ---------------------------------------------------------------------------
+         n   0.2332      34      36          o(35%)          o(22%)       SAME
+       cfh   0.1958      36      34          y(36%)          y(38%)       SAME
+       cph   0.1294     106      79          o(29%)          e(56%)  ◄ DIFFERS
+       cth   0.0559     464     360          y(42%)          y(42%)       SAME
+        sh   0.0354    1995    2286          e(51%)          e(68%)       SAME
+        ch   0.0280    5667    4409          e(43%)          e(54%)       SAME
+         f   0.0250     146     185         ch(57%)         ch(49%)       SAME
+       ckh   0.0211     367     461          y(51%)          y(53%)       SAME
+         r   0.0190     684     705          a(46%)          a(43%)       SAME
+         t   0.0184    2763    2739          a(29%)          e(37%)  ◄ DIFFERS
+         y   0.0157     948    1015          k(31%)          k(37%)       SAME
+         l   0.0144    1924    2175          k(29%)          k(22%)       SAME
+         s   0.0133     454     655          a(47%)          a(47%)       SAME
+         p   0.0121     547     483         ch(65%)         ch(57%)       SAME
+         k   0.0093    4605    4759          e(39%)          e(42%)       SAME
+         d   0.0086    5290    6235          y(52%)          y(61%)       SAME
+         o   0.0076   10656   11487          k(26%)          k(27%)       SAME
+         e   0.0068    9151    9982          e(29%)          d(27%)  ◄ DIFFERS
+         a   0.0064    7037    6611          i(50%)          i(44%)       SAME
+         q   0.0025    2576    2886          o(98%)          o(98%)       SAME
+         i   0.0024    6196    5139          n(51%)          n(53%)       SAME
+
+  Mean JSD across all glyphs: 0.0410
+  Glyphs with same top successor in A vs B: 18/21
+
+  Run-conditioned divergence (A vs B):
+       Run      JSD     n_A     n_B           Top A           Top B      Shift
+  ---------------------------------------------------------------------------
+         n   0.2332      34      36          o(35%)          o(22%)       SAME
+         m   0.1960      17      14          d(24%)          o(36%)  ◄ DIFFERS
+     cfh×1   0.1958      36      34          y(36%)          y(38%)       SAME
+        oo   0.1626      32      28          r(38%)          r(43%)       SAME
+     cph×1   0.1294     106      79          o(29%)          e(56%)  ◄ DIFFERS
+     cth×1   0.0559     464     360          y(42%)          y(42%)       SAME
+       eee   0.0506     227     158          y(47%)          y(47%)       SAME
+      sh×1   0.0348    1995    2280          e(51%)          e(68%)       SAME
+      ch×1   0.0280    5655    4399          e(43%)          e(54%)       SAME
+         f   0.0250     146     185         ch(57%)         ch(49%)       SAME
+     ckh×1   0.0211     367     461          y(51%)          y(53%)       SAME
+         t   0.0184    2763    2739          a(29%)          e(37%)  ◄ DIFFERS
+         r   0.0175     682     705          a(46%)          a(43%)       SAME
+         y   0.0157     948    1015          k(31%)          k(37%)       SAME
+         l   0.0135    1893    2163          k(29%)          k(22%)       SAME
+       iii   0.0134      84      91          n(93%)          n(97%)       SAME
+         s   0.0122     453     655          a(47%)          a(47%)       SAME
+         p   0.0121     547     483         ch(65%)         ch(57%)       SAME
+         i   0.0115    1287    1045          n(68%)          n(73%)       SAME
+         k   0.0093    4605    4759          e(39%)          e(42%)       SAME
+         e   0.0084    4135    5400          d(35%)          d(38%)       SAME
+         d   0.0079    5260    6227          y(52%)          y(61%)       SAME
+         o   0.0076   10591   11431          k(26%)          k(27%)       SAME
+        ee   0.0065    2152    2038          y(41%)          y(41%)       SAME
+         a   0.0062    7031    6611          i(50%)          i(44%)       SAME
+
+══════════════════════════════════════════════════════════════════════
+TEST C: WORD-BOUNDARY PREDICTION FROM SLOT GRAMMAR
+══════════════════════════════════════════════════════════════════════
+
+  Transition boundary probabilities:
+  P(boundary | seeing glyph A followed by glyph B)
+
+  HIGH BOUNDARY PROBABILITY (likely word breaks):
+           A→B  P(break)  Boundary   Within    Pos A    Pos B    Grammar
+  ---------------------------------------------------------------------------
+         n→cth    100.0%        96        0        F        I      F→I ✓
+           n→q    100.0%       514        0        F        I      F→I ✓
+         r→cth    100.0%        79        0        F        I      F→I ✓
+           r→q    100.0%       336        0        F        I      F→I ✓
+         r→ckh    100.0%        28        0        F        M      F→M ✓
+           y→y    100.0%       590        0        F        F      F→F ✓
+           m→t    100.0%        53        0        F        M      F→M ✓
+         n→cph    100.0%        24        0        F        I      F→I ✓
+           s→q    100.0%        64        0        F        I      F→I ✓
+           m→q    100.0%        92        0        F        I      F→I ✓
+           d→q    100.0%       111        0        M        I      M→I ?
+           m→s    100.0%        88        0        F        F      F→F ✓
+           r→s    100.0%        99        0        F        F      F→F ✓
+         n→ckh    100.0%        42        0        F        M      F→M ✓
+          n→ch     99.8%      1316        2        F        I      F→I ✓
+           y→q     99.7%      3698       12        F        I      F→I ✓
+           l→q     99.6%       478        2        F        I      F→I ✓
+          n→sh     99.6%       704        3        F        I      F→I ✓
+           n→s     99.3%       136        1        F        F      F→F ✓
+           n→o     98.9%      1741       20        F        M      F→M ✓
+           y→o     98.8%      2873       36        F        M      F→M ✓
+           n→d     98.3%       462        8        F        M      F→M ✓
+           n→t     98.1%        51        1        F        M      F→M ✓
+           n→k     97.7%        42        1        F        M      F→M ✓
+         y→cph     97.6%        40        1        F        I      F→I ✓
+
+  LOW BOUNDARY PROBABILITY (within-word transitions):
+           A→B  P(break)  Boundary   Within    Pos A    Pos B    Grammar
+  ---------------------------------------------------------------------------
+           i→r      0.0%         0      696        M        F      M→F ✓
+        ch→cph      0.0%         0       26        I        I      I→I ?
+         cth→e      0.0%         0      187        I        M      I→M ✓
+          ch→p      0.0%         0       33        I        M      I→M ✓
+         ckh→e      0.0%         0      239        M        M      M→M ✓
+         cth→a      0.0%         0       55        I        M      I→M ✓
+         ckh→y      0.0%         0      430        M        F      M→F ✓
+         cph→e      0.0%         0       72        I        M      I→M ✓
+           a→m      0.0%         0      745        M        F      M→F ✓
+         cth→d      0.0%         0       28        I        M      I→M ✓
+           t→e      0.0%         0     1767        M        M      M→M ✓
+           q→e      0.0%         0       55        I        M      I→M ✓
+           e→p      0.0%         0       77        M        M      M→M ✓
+         ckh→d      0.0%         0       30        M        M      M→M ✓
+         ckh→a      0.0%         0       30        M        M      M→M ✓
+           e→g      0.0%         0       22        M        F      M→F ✓
+        ch→ckh      0.0%         0      228        I        M      I→M ✓
+           a→n      0.0%         0      102        M        F      M→F ✓
+        sh→ckh      0.0%         0       89        I        M      I→M ✓
+           i→i      0.0%         0     4592        M        M      M→M ✓
+           q→o      0.0%         0     5356        I        M      I→M ✓
+           i→m      0.0%         0       50        M        F      M→F ✓
+         ckh→o      0.0%         0       93        M        M      M→M ✓
+         cph→y      0.0%         0       40        I        F      I→F ✓
+          ch→t      0.0%         0       73        I        M      I→M ✓
+
+  Slot grammar boundary prediction accuracy: 189/207 (91.3%)
+
+══════════════════════════════════════════════════════════════════════
+TEST D: FUNCTIONAL GLYPH TAXONOMY
+══════════════════════════════════════════════════════════════════════
+
+     Glyph   Init%    Med%    Fin%     →I     →M     →F   Self%  MeanRun    Class
+  --------------------------------------------------------------------------------
+         o   34.6%   61.0%    5.2%   1.7%  60.5%  37.7%    0.3%     1.00 MEDIAL→M
+         e    0.6%   98.9%    0.5%   1.5%  75.2%  23.2%   26.2%     1.35   REPEAT
+         y   11.3%    2.5%   88.1%  16.8%  79.5%   3.6%    0.0%     1.00    FINAL
+         a   15.6%   84.0%    0.4%   0.1%  47.9%  51.9%    0.0%     1.00 MEDIAL→F
+         d   27.9%   68.1%    4.5%   3.8%  38.3%  57.9%    0.2%     1.00 MEDIAL→F
+         i    0.1%   99.9%    0.1%   0.1%  41.0%  58.9%   40.5%     1.68   REPEAT
+        ch   57.3%   42.5%    0.2%   1.7%  88.0%  10.3%    0.1%     1.00  INITIAL
+         l   14.6%   29.1%   58.2%  23.3%  61.8%  14.8%    0.6%     1.00    FINAL
+         k   12.4%   86.9%    0.9%  12.4%  80.2%   7.5%    0.0%     1.00 MEDIAL→M
+         r    7.1%   15.1%   80.2%  12.9%  71.3%  15.6%    0.1%     1.00    FINAL
+         n    0.1%    1.1%   98.8%   7.1%  71.4%  21.4%    0.0%     1.00    FINAL
+         t   15.5%   83.5%    1.3%  18.1%  73.2%   8.7%    0.0%     1.00 MEDIAL→M
+         q   99.5%    0.5%    0.0%   0.2%  99.7%   0.2%    0.0%     1.00  INITIAL
+        sh   73.9%   25.9%    0.8%   1.5%  91.9%   6.5%    0.1%     1.00  INITIAL
+         s   50.3%   10.4%   52.9%   7.7%  84.6%   7.8%    0.1%     1.00  INITIAL
+         p   20.6%   76.8%    3.3%  65.0%  29.3%   5.6%    0.0%     1.00   MEDIAL
+         m    1.4%    3.0%   96.8%  19.4%  64.5%  16.1%    0.0%     1.00    FINAL
+       ckh   20.5%   79.4%    0.1%   0.1%  47.3%  52.5%    0.0%     1.00 MEDIAL→F
+       cth   52.2%   47.5%    0.5%   0.0%  57.5%  42.5%    0.0%     1.00  INITIAL
+         f   25.6%   69.2%    8.1%  56.2%  35.6%   8.2%    0.0%     1.00   MEDIAL
+       cph   60.5%   39.5%    0.0%   0.5%  77.3%  21.6%    0.0%     1.00  INITIAL
+         g   11.5%    5.8%   93.3%   0.0%  71.4%  28.6%    0.0%     1.00    FINAL
+       cfh   47.1%   52.9%    0.0%   0.0%  60.0%  38.6%    0.0%     1.00   MEDIAL
+
+  Glyph class summary:
+    FINAL: y, l, r, n, m, g
+    INITIAL: ch, q, sh, s, cth, cph
+    MEDIAL→M: o, k, t
+    MEDIAL→F: a, d, ckh
+    MEDIAL: p, f, cfh
+    REPEAT: e, i
+
+══════════════════════════════════════════════════════════════════════
+TEST E: INFORMATION CONTENT OF RUN-LENGTH CHOICE
+══════════════════════════════════════════════════════════════════════
+
+     Glyph  H(next)  H(next|len)       ΔH   Runs  MaxLen  Info gain
+  -----------------------------------------------------------------
+         o    2.933        2.931    0.002  22082       2        low
+         e    2.398        2.340    0.058  14118       4        low
+         a    1.891        1.891    0.000  13645       2        low
+         d    1.562        1.561    0.001  11505       2        low
+        ch    2.321        2.320    0.001  10065       2        low
+         i    0.760        0.667    0.093   6743       4        low
+        sh    1.893        1.891    0.002   4278       2        low
+         l    3.161        3.155    0.006   4076       2        low
+
+  Highest information gain: i (ΔH = 0.093 bits)
+  → Knowing the run length of i gives 0.093 additional
+    bits of information about what glyph comes next.
+
+══════════════════════════════════════════════════════════════════════
+ADJUDICATION
+══════════════════════════════════════════════════════════════════════
+
+  1. EXTERNAL TABLE VERIFICATION:
+     Our independently computed transition probabilities should
+     match the external Currier A table. Differences indicate
+     transcription or corpus coverage variations.
+
+  2. A vs B DIVERGENCE:
+     Mean glyph JSD: 0.0410
+     Same top successor: 18/21
+     → A and B use nearly IDENTICAL transition rules
+       This supports &quot;same language, different scribes&quot; hypothesis
+
+     Run-conditioned mean JSD: 0.0481
+     → Run-length transitions show similar A/B divergence
+
+  3. WORD-BOUNDARY PREDICTION:
+     Slot grammar predicts boundaries with 91.3% accuracy
+     → STRONG: I-M-F grammar captures word structure
+
+  4. RUN-LENGTH INFORMATION CONTENT:
+     i: knowing run length gives 0.093 bits about next glyph
+        H(next|i) = 0.760, H(next|i,runlen) = 0.667
+     e: knowing run length gives 0.058 bits about next glyph
+        H(next|e) = 2.398, H(next|e,runlen) = 2.340
+
+
+  REVISED CONFIDENCES (run_conditioned_transitions):
+    - NL in unknown script: 80% (unchanged)
+    - Script has positional slot grammar (I-M-F): 95% (unchanged)
+    - i-run length is informationally loaded: NEW
+    - Currier A and B share transition structure: to be scored
+    - Simple substitution cipher: &lt;5% (unchanged)
+    - Hoax/random: &lt;3% (unchanged)
+
+Saved to C:\projects\vais\results\run_conditioned_transitions_output.txt
+Saved to C:\projects\vais\results\run_conditioned_transitions_output.json
+</pre></details><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>bc53723</code>. 
+To run any test with your own parameters, clone
+<a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
+(<code>python webui/server.py</code>). All numbers reproduce at
+PYTHONHASHSEED=0.</footer></main></body></html>

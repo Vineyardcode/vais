@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>inner_ring_inventory — VAIS</title><style>
+:root { --bg:#ffffff; --fg:#1a1a1a; --muted:#666; --line:#ddd;
+        --code:#f5f5f5; --accent:#7a4a1e; --warn:#a33; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#141414; --fg:#ddd; --muted:#999; --line:#333;
+          --code:#1e1e1e; --accent:#d9a05b; --warn:#e77; } }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--fg);
+       font:16px/1.55 Georgia, 'Times New Roman', serif; }
+nav { border-bottom:1px solid var(--line); padding:.7em 1.2em;
+      font-family: system-ui, sans-serif; font-size:.9em; }
+nav a { color:var(--accent); text-decoration:none; margin-right:1.2em; }
+main { max-width: 62em; margin: 0 auto; padding: 1.5em 1.2em 4em; }
+h1,h2,h3 { font-family: system-ui, sans-serif; line-height:1.25; }
+h1 { font-size:1.7em; } h2 { font-size:1.3em; margin-top:2em; }
+a { color: var(--accent); }
+code, pre { font-family: ui-monospace, Consolas, monospace;
+            font-size:.86em; background:var(--code); }
+code { padding:.1em .3em; border-radius:3px; }
+pre { padding: .9em; overflow-x:auto; border:1px solid var(--line);
+      border-radius:4px; line-height:1.4; }
+table { border-collapse: collapse; margin: 1em 0; font-size:.92em;
+        display:block; overflow-x:auto; }
+th, td { border:1px solid var(--line); padding:.35em .6em;
+         text-align:left; vertical-align:top; }
+th { font-family: system-ui, sans-serif; background:var(--code); }
+blockquote { border-left:3px solid var(--accent); margin:1em 0;
+             padding:.2em 1em; color:var(--muted); }
+.muted { color:var(--muted); font-size:.9em; }
+.tag { font-family: system-ui, sans-serif; font-size:.75em;
+       border:1px solid var(--line); border-radius:3px;
+       padding:.05em .45em; margin-left:.5em; }
+.tag.sug { border-color:var(--warn); color:var(--warn); }
+details summary { cursor:pointer; font-family: system-ui, sans-serif; }
+footer { border-top:1px solid var(--line); margin-top:3em;
+         padding-top:1em; font-size:.85em; color:var(--muted); }
+</style></head><body>
+<nav><a href="../index.html">VAIS</a><a href="../catalog.html">Catalog</a>
+<a href="../research.html">Research</a><a href="../reports.html">Reports</a>
+<a href="https://github.com/Vineyardcode/vais">GitHub</a></nav>
+<main><h1>inner_ring_inventory</h1>
+<p class="muted">scripts/inner_ring_inventory.py · depends on ring_grammar_extraction, ring_text_analysis</p>
+<pre>Innermost Ring Deep-Dive
+
+The innermost rings (ring_idx &gt;= 2) are the shortest ring texts (7-26 words),
+closest to the zodiac sign center. Previous analysis found they have:
+  - 44% -iin suffix rate (vs 9% outer)
+  - 67% o-prefix rate (vs 28% outer)
+  - The most formulaic structure
+
+This script performs word-by-word analysis of all 12 inner/innermost rings.
+
+Steps:
+  1. Complete inventory — every word cataloged with morphology
+  2. Cross-ring comparison — what words/roots repeat across inner rings?
+  3. Structural template extraction — what&#x27;s the sentence skeleton?
+  4. Sign-specific vocabulary — what&#x27;s unique to each sign&#x27;s inner ring?
+  5. The &quot;oteos aiin&quot; formula in inner rings
+  6. Inner ring vocabulary vs outer ring vocabulary (same folio)
+  7. Inner ring vocabulary vs nymph labels (same folio)
+  8. Candidate semantic assignments based on all evidence</pre>
+<h2>Parameters</h2><table><tr><th>name</th><th>default</th><th>type</th></tr>
+<tr><td><code>ZODIAC_FILES</code></td><td><code>[&#x27;folios/f70v_part.txt&#x27;, &#x27;folios/f71r.txt&#x27;, &#x27;folios/f71v_72r.txt&#x27;, &#x27;folios/f72v_part.txt&#x27;,…</code></td><td>json</td></tr>
+<tr><td><code>FOLIO_SIGN</code></td><td><code>{&#x27;f70v1&#x27;: &#x27;Aries&#x27;, &#x27;f70v2&#x27;: &#x27;Pisces&#x27;, &#x27;f71r&#x27;: &#x27;Aries&#x27;, &#x27;f71v&#x27;: &#x27;Taurus&#x27;, &#x27;f72r1&#x27;: &#x27;Taurus&#x27;…</code></td><td>json</td></tr>
+</table>
+<h2>Golden output (PYTHONHASHSEED=0)</h2><details><summary>show</summary><pre>Loaded 12 inner ring sentences, 24 outer ring sentences
+
+========================================================================
+COMPLETE INNER RING INVENTORY
+========================================================================
+
+  Total inner ring words: 159
+  Unique words: 120
+  Sentences: 12
+  Mean length: 13.2 words
+
+  All inner ring words by frequency:
+    ar                   6×  in Can/Gem/Leo/Pis/Vir
+    oteey                6×  in Ari/Can/Lib/Pis/Sco/Tau
+    otaiin               5×  in Pis/Tau/Vir
+    aiin                 5×  in Can/Lib/Pis/Tau
+    al                   4×  in Pis/Vir
+    o                    3×  in Pis/Sag/Tau
+    oteos                3×  in Can/Pis/Tau
+    okaiin               3×  in Gem/Tau
+    olaiin               3×  in Can/Gem
+    am                   3×  in Can/Lib
+    otal                 2×  in Ari/Pis
+    oteeos               2×  in Lib/Pis
+    chs                  2×  in Ari/Gem
+    char                 2×  in Ari/Sag
+    okeeody              2×  in Ari/Can
+    dar                  2×  in Gem/Tau
+    y                    2×  in Gem/Sag
+    chedy                2×  in Can
+    daly                 1×  in Pis
+    oteoal               1×  in Pis
+    dal                  1×  in Pis
+    aildy                1×  in Pis
+    shal                 1×  in Pis
+    qoteeal              1×  in Pis
+    teodaiin             1×  in Pis
+    oteeo                1×  in Pis
+    cthey                1×  in Pis
+    daim                 1×  in Pis
+    oteeol               1×  in Ari
+    cheky                1×  in Ari
+    chotshy              1×  in Ari
+    chekea               1×  in Ari
+    okeol                1×  in Ari
+    okeey                1×  in Tau
+    okeosar              1×  in Tau
+    chkeeal              1×  in Tau
+    okal                 1×  in Tau
+    cheekaiin            1×  in Tau
+    okchor               1×  in Tau
+    kal                  1×  in Tau
+    okeeols              1×  in Tau
+    aroly                1×  in Tau
+    okees                1×  in Tau
+    alaiin               1×  in Tau
+    okeor                1×  in Tau
+    chol                 1×  in Tau
+    chal                 1×  in Tau
+    atchor               1×  in Tau
+    chckhy               1×  in Tau
+    otoar                1×  in Gem
+    air                  1×  in Gem
+    aloy                 1×  in Gem
+    otees                1×  in Gem
+    chchs                1×  in Gem
+    aly                  1×  in Gem
+    taly                 1×  in Gem
+    otchey               1×  in Gem
+    arary                1×  in Can
+    eeer                 1×  in Can
+    cheshees             1×  in Can
+    opcholalaiin         1×  in Can
+    oteeor               1×  in Can
+    sheal                1×  in Can
+    okaipchy             1×  in Can
+    oteees               1×  in Can
+    otedar               1×  in Can
+    olol                 1×  in Can
+    choty                1×  in Can
+    oteol                1×  in Can
+    sheshdy              1×  in Can
+    dy                   1×  in Can
+    shes                 1×  in Can
+    eedy                 1×  in Can
+    sheol                1×  in Can
+    shy                  1×  in Can
+    ckhol                1×  in Can
+    okeos                1×  in Can
+    oraiin               1×  in Can
+    octheolarl           1×  in Can
+    koly                 1×  in Can
+    otalal               1×  in Lib
+    dalal                1×  in Lib
+    ykeols               1×  in Lib
+    oteo                 1×  in Lib
+    r                    1×  in Lib
+    yotoam               1×  in Lib
+    saiin                1×  in Lib
+    otshedy              1×  in Vir
+    chokeedy             1×  in Vir
+    otes                 1×  in Vir
+    chetolain            1×  in Vir
+    sheodaly             1×  in Vir
+    sheokey              1×  in Vir
+    okealy               1×  in Vir
+    rary                 1×  in Vir
+    okesees              1×  in Leo
+    chkeeol              1×  in Leo
+    okeolaiin            1×  in Leo
+    chalal               1×  in Leo
+    ykeeodarar           1×  in Leo
+    oleeody              1×  in Leo
+    shedy                1×  in Leo
+    solar                1×  in Leo
+    aldy                 1×  in Leo
+    oteor                1×  in Leo
+    cheor                1×  in Leo
+    osaiin               1×  in Sco
+    chedain              1×  in Sco
+    chedaly              1×  in Sco
+    okechs               1×  in Sco
+    chepcheesaly         1×  in Sco
+    oteodal              1×  in Sco
+    otedchor             1×  in Sag
+    alar                 1×  in Sag
+    olkcho               1×  in Sag
+    otolam               1×  in Sag
+    kees                 1×  in Sag
+    ytaly                1×  in Sag
+    alaly                1×  in Sag
+    otaram               1×  in Sag
+
+  All -iin/-aiin bearing words (24 tokens):
+    otaiin              Pisces        ring2
+    otaiin              Pisces        ring2
+    teodaiin            Pisces        ring2
+    aiin                Pisces        ring2
+    otaiin              Taurus        ring2
+    okaiin              Taurus        ring2
+    alaiin              Taurus        ring2
+    aiin                Taurus        ring2
+    otaiin              Taurus        ring2
+    air                 Gemini        ring2
+    okaiin              Gemini        ring2
+    okaiin              Gemini        ring2
+    olaiin              Gemini        ring2
+    olaiin              Cancer        ring2
+    aiin                Cancer        ring3
+    olaiin              Cancer        ring3
+    oraiin              Cancer        ring3
+    aiin                Cancer        ring3
+    aiin                Libra         ring2
+    saiin               Libra         ring2
+    otaiin              Virgo         ring2
+    okeolaiin           Leo           ring2
+    osaiin              Scorpio       ring2
+    chedain             Scorpio       ring2
+
+  All o-prefixed content words (58 tokens):
+    otal                Pisces        ring2
+    oteoal              Pisces        ring2
+    otaiin              Pisces        ring2
+    oteey               Pisces        ring2
+    otaiin              Pisces        ring2
+    oteeo               Pisces        ring2
+    oteeos              Pisces        ring2
+    oteos               Pisces        ring2
+    oteeol              Aries         ring2
+    otal                Aries         ring2
+    okeeody             Aries         ring2
+    oteey               Aries         ring2
+    okeol               Aries         ring2
+    okeey               Taurus        ring2
+    okeosar             Taurus        ring2
+    otaiin              Taurus        ring2
+    okal                Taurus        ring2
+    okaiin              Taurus        ring2
+    oteey               Taurus        ring2
+    okeeols             Taurus        ring2
+    okees               Taurus        ring2
+    okeor               Taurus        ring2
+    oteos               Taurus        ring2
+    otaiin              Taurus        ring2
+    otoar               Gemini        ring2
+    okaiin              Gemini        ring2
+    otees               Gemini        ring2
+    okaiin              Gemini        ring2
+    olaiin              Gemini        ring2
+    oteey               Cancer        ring2
+    oteeor              Cancer        ring2
+    oteees              Cancer        ring2
+    olaiin              Cancer        ring2
+    otedar              Cancer        ring2
+    olol                Cancer        ring2
+    oteol               Cancer        ring2
+    okeos               Cancer        ring3
+    olaiin              Cancer        ring3
+    oraiin              Cancer        ring3
+    octheolarl          Cancer        ring3
+    okeeody             Cancer        ring3
+    oteos               Cancer        ring3
+    otalal              Libra         ring2
+    oteo                Libra         ring2
+    oteey               Libra         ring2
+    oteeos              Libra         ring2
+    otaiin              Virgo         ring2
+    otes                Virgo         ring2
+    okealy              Virgo         ring2
+    okesees             Leo           ring2
+    okeolaiin           Leo           ring2
+    oleeody             Leo           ring2
+    oteor               Leo           ring2
+    osaiin              Scorpio       ring2
+    oteey               Scorpio       ring2
+    oteodal             Scorpio       ring2
+    otolam              Sagittarius   ring2
+    otaram              Sagittarius   ring2
+
+========================================================================
+CROSS-RING VOCABULARY COMPARISON
+========================================================================
+
+  Pairwise Jaccard similarity (inner rings only):
+                Ari    Can    Gem    Leo    Lib    Pis    Sag    Sco    Tau    Vir
+  Aries       1.000  0.051  0.043  0.000  0.050  0.074  0.050  0.062  0.031  0.000
+  Cancer      0.051  1.000  0.047  0.024  0.077  0.087  0.000  0.027  0.059  0.024
+  Gemini      0.043  0.047  1.000  0.040  0.000  0.031  0.042  0.000  0.057  0.042
+  Leo         0.000  0.024  0.040  1.000  0.000  0.033  0.000  0.000  0.000  0.045
+  Libra       0.050  0.077  0.000  0.000  1.000  0.111  0.000  0.059  0.062  0.000
+  Pisces      0.074  0.087  0.031  0.033  0.111  1.000  0.034  0.040  0.135  0.111
+  Sagittariu  0.050  0.000  0.042  0.000  0.000  0.034  1.000  0.000  0.030  0.000
+  Scorpio     0.062  0.027  0.000  0.000  0.059  0.040  0.000  1.000  0.034  0.000
+  Taurus      0.031  0.059  0.057  0.000  0.062  0.135  0.030  0.034  1.000  0.030
+  Virgo       0.000  0.024  0.042  0.045  0.000  0.111  0.000  0.000  0.030  1.000
+
+  Words in 3+ signs&#x27; inner rings:
+    oteey               in 6 signs: [&#x27;Ari&#x27;, &#x27;Can&#x27;, &#x27;Lib&#x27;, &#x27;Pis&#x27;, &#x27;Sco&#x27;, &#x27;Tau&#x27;]
+    ar                  in 5 signs: [&#x27;Can&#x27;, &#x27;Gem&#x27;, &#x27;Leo&#x27;, &#x27;Pis&#x27;, &#x27;Vir&#x27;]
+    aiin                in 4 signs: [&#x27;Can&#x27;, &#x27;Lib&#x27;, &#x27;Pis&#x27;, &#x27;Tau&#x27;]
+    otaiin              in 3 signs: [&#x27;Pis&#x27;, &#x27;Tau&#x27;, &#x27;Vir&#x27;]
+    o                   in 3 signs: [&#x27;Pis&#x27;, &#x27;Sag&#x27;, &#x27;Tau&#x27;]
+    oteos               in 3 signs: [&#x27;Can&#x27;, &#x27;Pis&#x27;, &#x27;Tau&#x27;]
+
+  Sign-unique inner ring words:
+    Aries       : 5 unique — oteeol, cheky, chotshy, chekea, okeol
+    Cancer      : 24 unique — arary, eeer, cheshees, opcholalaiin, oteeor, sheal, okaipchy, oteees
+    Gemini      : 8 unique — otoar, air, aloy, otees, chchs, aly, taly, otchey
+    Leo         : 11 unique — okesees, chkeeol, okeolaiin, chalal, ykeeodarar, oleeody, shedy, solar
+    Libra       : 7 unique — otalal, dalal, ykeols, oteo, r, yotoam, saiin
+    Pisces      : 10 unique — daly, oteoal, dal, aildy, shal, qoteeal, teodaiin, oteeo
+    Sagittarius : 8 unique — otedchor, alar, olkcho, otolam, kees, ytaly, alaly, otaram
+    Scorpio     : 6 unique — osaiin, chedain, chedaly, okechs, chepcheesaly, oteodal
+    Taurus      : 16 unique — okeey, okeosar, chkeeal, okal, cheekaiin, okchor, kal, okeeols
+    Virgo       : 8 unique — otshedy, chokeedy, otes, chetolain, sheodaly, sheokey, okealy, rary
+
+========================================================================
+STRUCTURAL TEMPLATES
+========================================================================
+
+  Sentence class sequences (inner rings only):
+    Pisr2 (22w): O P O F B O F O F F Q F F O F B O B O O F B
+    Arir2 (10w): O O B B B B O O B O
+    Taur2 (11w): O O O B O B O B F O B
+    Taur2 (13w): O B O B O B F O F B O B B
+    Gemr2 (15w): O F B O O B B F B B F B O O F
+    Canr2 (26w): O B B B B O F B B O F F O O O B O B B B F B B B B B
+    Canr3 ( 9w): O F O O O O O F B
+    Libr2 (11w): O P P O F F B O P O F
+    Virr2 (12w): O B B O F F F B B B O B
+    Leor2 (12w): O F B O B P O B P B O B
+    Scor2 ( 7w): O B O B B B O
+    Sagr2 (11w): B B B O F B B F P B O
+
+  Opening 3-word class patterns:
+    O B O  ×2
+    O F B  ×2
+    O B B  ×2
+    O P O  ×1
+    O O B  ×1
+    O O O  ×1
+    O F O  ×1
+    O P P  ×1
+    B B B  ×1
+
+  Closing 3-word class patterns:
+    O F B  ×2
+    B O B  ×2
+    O B O  ×1
+    F O B  ×1
+    O B B  ×1
+    O O F  ×1
+    B B B  ×1
+    P O F  ×1
+    B B O  ×1
+    P B O  ×1
+
+  Function word positions per sentence:
+    Pisr2 (22w): positions [3, 6, 8, 9, 11, 12, 14, 20] = normalized [0.14, 0.29, 0.38, 0.43, 0.52, 0.57, 0.67, 0.95]
+    Arir2 (10w): NO function words
+    Taur2 (11w): positions [8] = normalized [0.80]
+    Taur2 (13w): positions [6, 8] = normalized [0.50, 0.67]
+    Gemr2 (15w): positions [1, 7, 10, 14] = normalized [0.07, 0.50, 0.71, 1.00]
+    Canr2 (26w): positions [6, 10, 11, 20] = normalized [0.24, 0.40, 0.44, 0.80]
+    Canr3 ( 9w): positions [1, 7] = normalized [0.12, 0.88]
+    Libr2 (11w): positions [4, 5, 10] = normalized [0.40, 0.50, 1.00]
+    Virr2 (12w): positions [4, 5, 6] = normalized [0.36, 0.45, 0.55]
+    Leor2 (12w): positions [1] = normalized [0.09]
+    Scor2 ( 7w): NO function words
+    Sagr2 (11w): positions [4, 7] = normalized [0.40, 0.70]
+
+========================================================================
+INNER vs OUTER RING VOCABULARY (SAME FOLIO)
+========================================================================
+
+  f70v2 (Pisces):
+    Inner vocab: 19,  Outer vocab: 69
+    Shared: 4 — [&#x27;aiin&#x27;, &#x27;al&#x27;, &#x27;ar&#x27;, &#x27;oteey&#x27;]
+    Inner-only: 15 — [&#x27;aildy&#x27;, &#x27;cthey&#x27;, &#x27;daim&#x27;, &#x27;dal&#x27;, &#x27;daly&#x27;, &#x27;o&#x27;, &#x27;otaiin&#x27;, &#x27;otal&#x27;, &#x27;oteeo&#x27;, &#x27;oteeos&#x27;]
+
+  f71r (Aries):
+    Inner vocab: 10,  Outer vocab: 52
+    Shared: 1 — [&#x27;oteey&#x27;]
+    Inner-only: 9 — [&#x27;char&#x27;, &#x27;chekea&#x27;, &#x27;cheky&#x27;, &#x27;chotshy&#x27;, &#x27;chs&#x27;, &#x27;okeeody&#x27;, &#x27;okeol&#x27;, &#x27;otal&#x27;, &#x27;oteeol&#x27;]
+
+  f71v (Taurus):
+    Inner vocab: 11,  Outer vocab: 59
+    Shared: 2 — [&#x27;dar&#x27;, &#x27;oteey&#x27;]
+    Inner-only: 9 — [&#x27;cheekaiin&#x27;, &#x27;chkeeal&#x27;, &#x27;kal&#x27;, &#x27;okaiin&#x27;, &#x27;okal&#x27;, &#x27;okchor&#x27;, &#x27;okeey&#x27;, &#x27;okeosar&#x27;, &#x27;otaiin&#x27;]
+
+  f72r1 (Taurus):
+    Inner vocab: 13,  Outer vocab: 57
+    Shared: 4 — [&#x27;aiin&#x27;, &#x27;chol&#x27;, &#x27;o&#x27;, &#x27;otaiin&#x27;]
+    Inner-only: 9 — [&#x27;alaiin&#x27;, &#x27;aroly&#x27;, &#x27;atchor&#x27;, &#x27;chal&#x27;, &#x27;chckhy&#x27;, &#x27;okeeols&#x27;, &#x27;okees&#x27;, &#x27;okeor&#x27;, &#x27;oteos&#x27;]
+
+  f72r2 (Gemini):
+    Inner vocab: 14,  Outer vocab: 56
+    Shared: 3 — [&#x27;otchey&#x27;, &#x27;otees&#x27;, &#x27;y&#x27;]
+    Inner-only: 11 — [&#x27;air&#x27;, &#x27;aloy&#x27;, &#x27;aly&#x27;, &#x27;ar&#x27;, &#x27;chchs&#x27;, &#x27;chs&#x27;, &#x27;dar&#x27;, &#x27;okaiin&#x27;, &#x27;olaiin&#x27;, &#x27;otoar&#x27;]
+
+  f72r3 (Cancer):
+    Inner vocab: 31,  Outer vocab: 79
+    Shared: 7 — [&#x27;aiin&#x27;, &#x27;ar&#x27;, &#x27;okeos&#x27;, &#x27;oteey&#x27;, &#x27;oteol&#x27;, &#x27;oteos&#x27;, &#x27;sheol&#x27;]
+    Inner-only: 24 — [&#x27;am&#x27;, &#x27;arary&#x27;, &#x27;chedy&#x27;, &#x27;cheshees&#x27;, &#x27;choty&#x27;, &#x27;ckhol&#x27;, &#x27;dy&#x27;, &#x27;eedy&#x27;, &#x27;eeer&#x27;, &#x27;koly&#x27;]
+
+  f72v1 (Libra):
+    Inner vocab: 11,  Outer vocab: 57
+    Shared: 1 — [&#x27;aiin&#x27;]
+    Inner-only: 10 — [&#x27;am&#x27;, &#x27;dalal&#x27;, &#x27;otalal&#x27;, &#x27;oteeos&#x27;, &#x27;oteey&#x27;, &#x27;oteo&#x27;, &#x27;r&#x27;, &#x27;saiin&#x27;, &#x27;ykeols&#x27;, &#x27;yotoam&#x27;]
+
+  f72v2 (Virgo):
+    Inner vocab: 11,  Outer vocab: 61
+    Shared: 1 — [&#x27;ar&#x27;]
+    Inner-only: 10 — [&#x27;al&#x27;, &#x27;chetolain&#x27;, &#x27;chokeedy&#x27;, &#x27;okealy&#x27;, &#x27;otaiin&#x27;, &#x27;otes&#x27;, &#x27;otshedy&#x27;, &#x27;rary&#x27;, &#x27;sheodaly&#x27;, &#x27;sheokey&#x27;]
+
+  f72v3 (Leo):
+    Inner vocab: 12,  Outer vocab: 65
+    Shared: 3 — [&#x27;cheor&#x27;, &#x27;oteor&#x27;, &#x27;shedy&#x27;]
+    Inner-only: 9 — [&#x27;aldy&#x27;, &#x27;ar&#x27;, &#x27;chalal&#x27;, &#x27;chkeeol&#x27;, &#x27;okeolaiin&#x27;, &#x27;okesees&#x27;, &#x27;oleeody&#x27;, &#x27;solar&#x27;, &#x27;ykeeodarar&#x27;]
+
+  f73r (Scorpio):
+    Inner vocab: 7,  Outer vocab: 52
+    Shared: 1 — [&#x27;oteey&#x27;]
+    Inner-only: 6 — [&#x27;chedain&#x27;, &#x27;chedaly&#x27;, &#x27;chepcheesaly&#x27;, &#x27;okechs&#x27;, &#x27;osaiin&#x27;, &#x27;oteodal&#x27;]
+
+  f73v (Sagittarius):
+    Inner vocab: 11,  Outer vocab: 53
+    Shared: 1 — [&#x27;y&#x27;]
+    Inner-only: 10 — [&#x27;alaly&#x27;, &#x27;alar&#x27;, &#x27;char&#x27;, &#x27;kees&#x27;, &#x27;o&#x27;, &#x27;olkcho&#x27;, &#x27;otaram&#x27;, &#x27;otedchor&#x27;, &#x27;otolam&#x27;, &#x27;ytaly&#x27;]
+
+========================================================================
+INNER RING vs NYMPH LABELS (SAME SIGN)
+========================================================================
+
+  Aries:
+    Inner ring words: 10
+    Nymph labels: 41
+    Shared: 2 — [&#x27;otal&#x27;, &#x27;oteeol&#x27;]
+    Inner-only: [&#x27;char&#x27;, &#x27;chekea&#x27;, &#x27;cheky&#x27;, &#x27;chotshy&#x27;, &#x27;chs&#x27;, &#x27;okeeody&#x27;, &#x27;okeol&#x27;, &#x27;oteey&#x27;]
+
+  Cancer:
+    Inner ring words: 31
+    Nymph labels: 40
+    Shared: 2 — [&#x27;olaiin&#x27;, &#x27;oteey&#x27;]
+    Inner-only: [&#x27;aiin&#x27;, &#x27;am&#x27;, &#x27;ar&#x27;, &#x27;arary&#x27;, &#x27;chedy&#x27;, &#x27;cheshees&#x27;, &#x27;choty&#x27;, &#x27;ckhol&#x27;]
+
+  Gemini:
+    Inner ring words: 14
+    Nymph labels: 29
+    Shared: 0 — NONE
+    Inner-only: [&#x27;air&#x27;, &#x27;aloy&#x27;, &#x27;aly&#x27;, &#x27;ar&#x27;, &#x27;chchs&#x27;, &#x27;chs&#x27;, &#x27;dar&#x27;, &#x27;okaiin&#x27;]
+
+  Leo:
+    Inner ring words: 12
+    Nymph labels: 31
+    Shared: 0 — NONE
+    Inner-only: [&#x27;aldy&#x27;, &#x27;ar&#x27;, &#x27;chalal&#x27;, &#x27;cheor&#x27;, &#x27;chkeeol&#x27;, &#x27;okeolaiin&#x27;, &#x27;okesees&#x27;, &#x27;oleeody&#x27;]
+
+  Libra:
+    Inner ring words: 11
+    Nymph labels: 29
+    Shared: 0 — NONE
+    Inner-only: [&#x27;aiin&#x27;, &#x27;am&#x27;, &#x27;dalal&#x27;, &#x27;otalal&#x27;, &#x27;oteeos&#x27;, &#x27;oteey&#x27;, &#x27;oteo&#x27;, &#x27;r&#x27;]
+
+  Pisces:
+    Inner ring words: 19
+    Nymph labels: 32
+    Shared: 3 — [&#x27;al&#x27;, &#x27;ar&#x27;, &#x27;otal&#x27;]
+    Inner-only: [&#x27;aiin&#x27;, &#x27;aildy&#x27;, &#x27;cthey&#x27;, &#x27;daim&#x27;, &#x27;dal&#x27;, &#x27;daly&#x27;, &#x27;o&#x27;, &#x27;otaiin&#x27;]
+
+  Sagittarius:
+    Inner ring words: 11
+    Nymph labels: 28
+    Shared: 0 — NONE
+    Inner-only: [&#x27;alaly&#x27;, &#x27;alar&#x27;, &#x27;char&#x27;, &#x27;kees&#x27;, &#x27;o&#x27;, &#x27;olkcho&#x27;, &#x27;otaram&#x27;, &#x27;otedchor&#x27;]
+
+  Scorpio:
+    Inner ring words: 7
+    Nymph labels: 29
+    Shared: 0 — NONE
+    Inner-only: [&#x27;chedain&#x27;, &#x27;chedaly&#x27;, &#x27;chepcheesaly&#x27;, &#x27;okechs&#x27;, &#x27;osaiin&#x27;, &#x27;oteey&#x27;, &#x27;oteodal&#x27;]
+
+  Taurus:
+    Inner ring words: 23
+    Nymph labels: 39
+    Shared: 2 — [&#x27;okeey&#x27;, &#x27;otaiin&#x27;]
+    Inner-only: [&#x27;aiin&#x27;, &#x27;alaiin&#x27;, &#x27;aroly&#x27;, &#x27;atchor&#x27;, &#x27;chal&#x27;, &#x27;chckhy&#x27;, &#x27;cheekaiin&#x27;, &#x27;chkeeal&#x27;]
+
+  Virgo:
+    Inner ring words: 11
+    Nymph labels: 29
+    Shared: 0 — NONE
+    Inner-only: [&#x27;al&#x27;, &#x27;ar&#x27;, &#x27;chetolain&#x27;, &#x27;chokeedy&#x27;, &#x27;okealy&#x27;, &#x27;otaiin&#x27;, &#x27;otes&#x27;, &#x27;otshedy&#x27;]
+
+========================================================================
+&#x27;oteos aiin&#x27; AND OTHER FORMULAE IN INNER RINGS
+========================================================================
+    Pisces       ring2: ...cthey oteeos [oteos aiin] daim...
+    Taurus       ring2: ...chol o [oteos aiin] chal otaiin atchor...
+    Cancer       ring3: ...octheolarl okeeody [oteos aiin] koly...
+
+  All bigrams in inner rings (count &gt;= 2):
+    &#x27;oteos aiin&#x27;  ×3
+
+  All repeated words (appearing in 2+ inner ring sentences):
+    ar                  6× in {&#x27;Pisces&#x27;: 2, &#x27;Gemini&#x27;: 1, &#x27;Cancer&#x27;: 1, &#x27;Virgo&#x27;: 1, &#x27;Leo&#x27;: 1}
+    oteey               6× in {&#x27;Pisces&#x27;: 1, &#x27;Aries&#x27;: 1, &#x27;Taurus&#x27;: 1, &#x27;Cancer&#x27;: 1, &#x27;Libra&#x27;: 1, &#x27;Scorpio&#x27;: 1}
+    otaiin              5× in {&#x27;Pisces&#x27;: 2, &#x27;Taurus&#x27;: 2, &#x27;Virgo&#x27;: 1}
+    aiin                5× in {&#x27;Pisces&#x27;: 1, &#x27;Taurus&#x27;: 1, &#x27;Cancer&#x27;: 2, &#x27;Libra&#x27;: 1}
+    al                  4× in {&#x27;Pisces&#x27;: 2, &#x27;Virgo&#x27;: 2}
+    o                   3× in {&#x27;Pisces&#x27;: 1, &#x27;Taurus&#x27;: 1, &#x27;Sagittarius&#x27;: 1}
+    oteos               3× in {&#x27;Pisces&#x27;: 1, &#x27;Taurus&#x27;: 1, &#x27;Cancer&#x27;: 1}
+    okaiin              3× in {&#x27;Taurus&#x27;: 1, &#x27;Gemini&#x27;: 2}
+    olaiin              3× in {&#x27;Gemini&#x27;: 1, &#x27;Cancer&#x27;: 2}
+    am                  3× in {&#x27;Cancer&#x27;: 2, &#x27;Libra&#x27;: 1}
+    otal                2× in {&#x27;Pisces&#x27;: 1, &#x27;Aries&#x27;: 1}
+    oteeos              2× in {&#x27;Pisces&#x27;: 1, &#x27;Libra&#x27;: 1}
+    chs                 2× in {&#x27;Aries&#x27;: 1, &#x27;Gemini&#x27;: 1}
+    char                2× in {&#x27;Aries&#x27;: 1, &#x27;Sagittarius&#x27;: 1}
+    okeeody             2× in {&#x27;Aries&#x27;: 1, &#x27;Cancer&#x27;: 1}
+    dar                 2× in {&#x27;Taurus&#x27;: 1, &#x27;Gemini&#x27;: 1}
+    y                   2× in {&#x27;Gemini&#x27;: 1, &#x27;Sagittarius&#x27;: 1}
+    chedy               2× in {&#x27;Cancer&#x27;: 2}
+
+========================================================================
+MORPHEME PATTERN ANALYSIS
+========================================================================
+
+  Roots appearing with multiple forms in inner rings:
+    root=a         forms: aiin(Pis), aiin(Tau), air(Gem), olaiin(Gem), olaiin(Can), aiin(Can), olaiin(Can), oraiin(Can), aiin(Can), aiin(Lib), saiin(Lib)
+        prefixes={&#x27;&#x27;, &#x27;or&#x27;, &#x27;s&#x27;, &#x27;ol&#x27;}  suffixes={&#x27;iin&#x27;, &#x27;ir&#x27;}
+    root=tee       forms: oteey(Pis), oteey(Ari), oteey(Tau), oteey(Can), oteey(Lib), oteey(Sco)
+        prefixes={&#x27;o&#x27;}  suffixes={&#x27;y&#x27;}
+    root=ta        forms: otaiin(Pis), otaiin(Pis), otaiin(Tau), otaiin(Tau), otaiin(Vir)
+        prefixes={&#x27;o&#x27;}  suffixes={&#x27;iin&#x27;}
+    root=tal       forms: otal(Pis), otal(Ari), taly(Gem), ytaly(Sag)
+        prefixes={&#x27;&#x27;, &#x27;y&#x27;, &#x27;o&#x27;}  suffixes={&#x27;&#x27;, &#x27;y&#x27;}
+    root=al        forms: daly(Pis), dal(Pis), aly(Gem)
+        prefixes={&#x27;d&#x27;, &#x27;&#x27;}  suffixes={&#x27;&#x27;, &#x27;y&#x27;}
+    root=teos      forms: oteos(Pis), oteos(Tau), oteos(Can)
+        prefixes={&#x27;o&#x27;}  suffixes={&#x27;&#x27;}
+    root=ka        forms: okaiin(Tau), okaiin(Gem), okaiin(Gem)
+        prefixes={&#x27;o&#x27;}  suffixes={&#x27;iin&#x27;}
+    root=teeos     forms: oteeos(Pis), oteeos(Lib)
+        prefixes={&#x27;o&#x27;}  suffixes={&#x27;&#x27;}
+    root=keeod     forms: okeeody(Ari), okeeody(Can)
+        prefixes={&#x27;o&#x27;}  suffixes={&#x27;y&#x27;}
+    root=ar        forms: dar(Tau), dar(Gem)
+        prefixes={&#x27;d&#x27;}  suffixes={&#x27;&#x27;}
+    root=ched      forms: chedy(Can), chedy(Can)
+        prefixes={&#x27;&#x27;}  suffixes={&#x27;y&#x27;}
+    root=alal      forms: dalal(Lib), alaly(Sag)
+        prefixes={&#x27;d&#x27;, &#x27;&#x27;}  suffixes={&#x27;&#x27;, &#x27;y&#x27;}
+
+  Words beginning with &#x27;ot&#x27; in inner rings:
+    oteey               6× in Counter({&#x27;Pis&#x27;: 1, &#x27;Ari&#x27;: 1, &#x27;Tau&#x27;: 1, &#x27;Can&#x27;: 1, &#x27;Lib&#x27;: 1, &#x27;Sco&#x27;: 1})
+    otaiin              5× in Counter({&#x27;Pis&#x27;: 2, &#x27;Tau&#x27;: 2, &#x27;Vir&#x27;: 1})
+    oteos               3× in Counter({&#x27;Pis&#x27;: 1, &#x27;Tau&#x27;: 1, &#x27;Can&#x27;: 1})
+    otal                2× in Counter({&#x27;Pis&#x27;: 1, &#x27;Ari&#x27;: 1})
+    oteeos              2× in Counter({&#x27;Pis&#x27;: 1, &#x27;Lib&#x27;: 1})
+    oteoal              1× in Counter({&#x27;Pis&#x27;: 1})
+    oteeo               1× in Counter({&#x27;Pis&#x27;: 1})
+    oteeol              1× in Counter({&#x27;Ari&#x27;: 1})
+    otoar               1× in Counter({&#x27;Gem&#x27;: 1})
+    otees               1× in Counter({&#x27;Gem&#x27;: 1})
+    otchey              1× in Counter({&#x27;Gem&#x27;: 1})
+    oteeor              1× in Counter({&#x27;Can&#x27;: 1})
+    oteees              1× in Counter({&#x27;Can&#x27;: 1})
+    otedar              1× in Counter({&#x27;Can&#x27;: 1})
+    oteol               1× in Counter({&#x27;Can&#x27;: 1})
+    otalal              1× in Counter({&#x27;Lib&#x27;: 1})
+    oteo                1× in Counter({&#x27;Lib&#x27;: 1})
+    otshedy             1× in Counter({&#x27;Vir&#x27;: 1})
+    otes                1× in Counter({&#x27;Vir&#x27;: 1})
+    oteor               1× in Counter({&#x27;Leo&#x27;: 1})
+    oteodal             1× in Counter({&#x27;Sco&#x27;: 1})
+    otedchor            1× in Counter({&#x27;Sag&#x27;: 1})
+    otolam              1× in Counter({&#x27;Sag&#x27;: 1})
+    otaram              1× in Counter({&#x27;Sag&#x27;: 1})
+
+  Words beginning with &#x27;ok&#x27; in inner rings:
+    okaiin              3× in Counter({&#x27;Gem&#x27;: 2, &#x27;Tau&#x27;: 1})
+    okeeody             2× in Counter({&#x27;Ari&#x27;: 1, &#x27;Can&#x27;: 1})
+    okeol               1× in Counter({&#x27;Ari&#x27;: 1})
+    okeey               1× in Counter({&#x27;Tau&#x27;: 1})
+    okeosar             1× in Counter({&#x27;Tau&#x27;: 1})
+    okal                1× in Counter({&#x27;Tau&#x27;: 1})
+    okchor              1× in Counter({&#x27;Tau&#x27;: 1})
+    okeeols             1× in Counter({&#x27;Tau&#x27;: 1})
+    okees               1× in Counter({&#x27;Tau&#x27;: 1})
+    okeor               1× in Counter({&#x27;Tau&#x27;: 1})
+    okaipchy            1× in Counter({&#x27;Can&#x27;: 1})
+    okeos               1× in Counter({&#x27;Can&#x27;: 1})
+    okealy              1× in Counter({&#x27;Vir&#x27;: 1})
+    okesees             1× in Counter({&#x27;Leo&#x27;: 1})
+    okeolaiin           1× in Counter({&#x27;Leo&#x27;: 1})
+    okechs              1× in Counter({&#x27;Sco&#x27;: 1})
+
+  Words beginning with &#x27;ch&#x27; in inner rings:
+    chs                 2× in Counter({&#x27;Ari&#x27;: 1, &#x27;Gem&#x27;: 1})
+    char                2× in Counter({&#x27;Ari&#x27;: 1, &#x27;Sag&#x27;: 1})
+    chedy               2× in Counter({&#x27;Can&#x27;: 2})
+    cheky               1× in Counter({&#x27;Ari&#x27;: 1})
+    chotshy             1× in Counter({&#x27;Ari&#x27;: 1})
+    chekea              1× in Counter({&#x27;Ari&#x27;: 1})
+    chkeeal             1× in Counter({&#x27;Tau&#x27;: 1})
+    cheekaiin           1× in Counter({&#x27;Tau&#x27;: 1})
+    chol                1× in Counter({&#x27;Tau&#x27;: 1})
+    chal                1× in Counter({&#x27;Tau&#x27;: 1})
+    chckhy              1× in Counter({&#x27;Tau&#x27;: 1})
+    chchs               1× in Counter({&#x27;Gem&#x27;: 1})
+    cheshees            1× in Counter({&#x27;Can&#x27;: 1})
+    choty               1× in Counter({&#x27;Can&#x27;: 1})
+    chokeedy            1× in Counter({&#x27;Vir&#x27;: 1})
+    chetolain           1× in Counter({&#x27;Vir&#x27;: 1})
+    chkeeol             1× in Counter({&#x27;Leo&#x27;: 1})
+    chalal              1× in Counter({&#x27;Leo&#x27;: 1})
+    cheor               1× in Counter({&#x27;Leo&#x27;: 1})
+    chedain             1× in Counter({&#x27;Sco&#x27;: 1})
+    chedaly             1× in Counter({&#x27;Sco&#x27;: 1})
+    chepcheesaly        1× in Counter({&#x27;Sco&#x27;: 1})
+
+========================================================================
+SYNTHESIS — CANDIDATE SEMANTIC MODEL
+========================================================================
+
+  Inner ring total: 159 words
+  Function words: 29 (18.2%)
+  -iin/-aiin tokens: 22 (13.8%)
+  o-prefixed content: 58 (36.5%)
+
+  CANCER INNERMOST RING (ring3, 9 words):
+    okeos aiin olaiin oraiin octheolarl okeeody oteos aiin koly
+    Structure: O F O O O O O F B
+    This is the MOST formulaic ring. Structure:
+    okeos aiin | olaiin oraiin | octheolarl okeeody | oteos aiin | koly
+    = [B F] [O O] [B B] [B F] [B]
+    Two &#x27;X aiin&#x27; frames bookending o-prefixed -iin words
+
+  ALL INNER RINGS — COMPARATIVE TABLE:
+  Sign         Ring Len  Func%  o-%   -iin%  First word       Last word       
+  Pisces        r2   22   36.4  36.4  18.2  otal             daim            
+  Aries         r2   10    0.0  50.0   0.0  oteeol           okeol           
+  Taurus        r2   11    9.1  54.5  18.2  okeey            kal             
+  Taurus        r2   13   15.4  38.5  23.1  okeeols          chckhy          
+  Gemini        r2   15   26.7  33.3  20.0  otoar            y               
+  Cancer        r2   26   15.4  26.9   3.8  oteey            ckhol           
+  Cancer        r3    9   22.2  66.7  44.4  okeos            koly            
+  Libra         r2   11   27.3  36.4  18.2  otalal           am              
+  Virgo         r2   12   25.0  25.0   8.3  otaiin           rary            
+  Leo           r2   12    8.3  33.3   8.3  okesees          cheor           
+  Scorpio       r2    7    0.0  42.9  14.3  osaiin           oteodal         
+  Sagittarius   r2   11   18.2  18.2   0.0  otedchor         otaram          
+
+
+Done.
+</pre></details><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>bc53723</code>. 
+To run any test with your own parameters, clone
+<a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
+(<code>python webui/server.py</code>). All numbers reproduce at
+PYTHONHASHSEED=0.</footer></main></body></html>

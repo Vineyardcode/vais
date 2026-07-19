@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>zodiac_galenic_axis — VAIS</title><style>
+:root { --bg:#ffffff; --fg:#1a1a1a; --muted:#666; --line:#ddd;
+        --code:#f5f5f5; --accent:#7a4a1e; --warn:#a33; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#141414; --fg:#ddd; --muted:#999; --line:#333;
+          --code:#1e1e1e; --accent:#d9a05b; --warn:#e77; } }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--fg);
+       font:16px/1.55 Georgia, 'Times New Roman', serif; }
+nav { border-bottom:1px solid var(--line); padding:.7em 1.2em;
+      font-family: system-ui, sans-serif; font-size:.9em; }
+nav a { color:var(--accent); text-decoration:none; margin-right:1.2em; }
+main { max-width: 62em; margin: 0 auto; padding: 1.5em 1.2em 4em; }
+h1,h2,h3 { font-family: system-ui, sans-serif; line-height:1.25; }
+h1 { font-size:1.7em; } h2 { font-size:1.3em; margin-top:2em; }
+a { color: var(--accent); }
+code, pre { font-family: ui-monospace, Consolas, monospace;
+            font-size:.86em; background:var(--code); }
+code { padding:.1em .3em; border-radius:3px; }
+pre { padding: .9em; overflow-x:auto; border:1px solid var(--line);
+      border-radius:4px; line-height:1.4; }
+table { border-collapse: collapse; margin: 1em 0; font-size:.92em;
+        display:block; overflow-x:auto; }
+th, td { border:1px solid var(--line); padding:.35em .6em;
+         text-align:left; vertical-align:top; }
+th { font-family: system-ui, sans-serif; background:var(--code); }
+blockquote { border-left:3px solid var(--accent); margin:1em 0;
+             padding:.2em 1em; color:var(--muted); }
+.muted { color:var(--muted); font-size:.9em; }
+.tag { font-family: system-ui, sans-serif; font-size:.75em;
+       border:1px solid var(--line); border-radius:3px;
+       padding:.05em .45em; margin-left:.5em; }
+.tag.sug { border-color:var(--warn); color:var(--warn); }
+details summary { cursor:pointer; font-family: system-ui, sans-serif; }
+footer { border-top:1px solid var(--line); margin-top:3em;
+         padding-top:1em; font-size:.85em; color:var(--muted); }
+</style></head><body>
+<nav><a href="../index.html">VAIS</a><a href="../catalog.html">Catalog</a>
+<a href="../research.html">Research</a><a href="../reports.html">Reports</a>
+<a href="https://github.com/Vineyardcode/vais">GitHub</a></nav>
+<main><h1>zodiac_galenic_axis</h1>
+<p class="muted">scripts/zodiac_galenic_axis.py</p>
+<pre>Zodiac Galenic Axis Test
+
+═══════════════════════════════════════════════════════════════════════
+
+QUESTION:
+  Do the frequencies of EVA &#x27;a&#x27; and &#x27;e&#x27; in zodiac nymph labels show
+  an inverse seasonal pattern across the 12 zodiac signs, as claimed
+  by a Voynich Ninja poster (thread 4536, April 2026)?
+
+CLAIM UNDER TEST:
+  User &quot;008348dc...&quot; proposes that nymph labels encode Galenic medical
+  treatment schedules. Specifically:
+  - &#x27;e&#x27; tracks thermal (Cold) treatment demand → peaks in summer
+  - &#x27;a&#x27; tracks moisture (Dry) treatment demand → peaks in winter
+  - The two form an INVERSE correlation across the zodiac year
+  - dain/daiin/daiiin represent degree-modified tokens along these axes
+
+  This follows the principle of &quot;Contraria contrariis curantur&quot;
+  (contraries are cured by contraries) from Galenic medicine.
+
+WHY THIS MATTERS:
+  If confirmed, this would be the first assignment of semantic meaning
+  to specific VMS glyphs. It would also recontextualize our entropy
+  findings: lower chunk entropy (cross_word_chunk_dependencies: H(Y) = 6.08 bits vs NL
+  7+ bits) is expected if VMS encodes constrained medical/numerical
+  data rather than free-form language.
+
+APPROACH:
+  1. Parse all zodiac folios, extracting ONLY nymph labels (not
+     circular running text). Labels are identified by @Lz or &amp;Lz
+     locus markers in the ZL transcription.
+  2. For each zodiac sign, compute:
+     a. Total &#x27;a&#x27; count and proportion in labels
+     b. Total &#x27;e&#x27; count and proportion in labels
+     c. &#x27;i&#x27;-run distribution (testing dain/daiin/daiiin claim)
+  3. Order signs by zodiac season (Aries=spring → Pisces=winter)
+  4. Test for inverse correlation between &#x27;a&#x27; and &#x27;e&#x27; proportions
+  5. Compare to NON-zodiac VMS text (same metrics)
+  6. Null model: permute sign assignments to get baseline correlation
+
+CRITICAL SKEPTICISM NOTES:
+  1. CHERRY-PICKING RISK: The claim was proposed by someone looking at
+     the data. Any pattern found may be overfitting. The null model
+     is essential.
+  2. SAMPLE SIZE: Only 10 signs × ~30 labels = ~300 labels total.
+     With ~5 glyphs per label, that&#x27;s ~1500 glyphs. Very small.
+  3. &#x27;a&#x27; AND &#x27;e&#x27; ARE THE MOST COMMON GLYPHS: EVA &#x27;a&#x27; and &#x27;e&#x27; dominate
+     the VMS alphabet. Any subsample will have high counts. The
+     question is whether the VARIATION across signs is meaningful.
+  4. ZODIAC ORDER MAY NOT REFLECT SEASON: The folio ordering may not
+     match the intended zodiac sequence (missing folios, rebound).
+  5. CONFOUND — POSITIONAL ENCODING: In LOOP grammar, &#x27;a&#x27; and &#x27;e&#x27;
+     are both SLOT2 (front vowel). Their frequencies may covary with
+     chunk composition rather than semantic content.
+  6. TWO-SIGN RESOLUTION: We have &quot;light&quot; and &quot;dark&quot; halves for some
+     signs (Aries, Taurus). We should test at both resolutions.</pre>
+<h2>Golden output (PYTHONHASHSEED=0)</h2><details><summary>show</summary><pre>============================================================================
+zodiac_galenic_axis — ZODIAC GALENIC AXIS TEST
+============================================================================
+
+  CLAIM: EVA &#x27;a&#x27; and &#x27;e&#x27; in zodiac nymph labels encode Galenic
+  treatment axes (moisture/thermal) that show inverse seasonal
+  variation across the zodiac year.
+
+  SKEPTICISM: This is a POST-HOC claim found by looking at data.
+  Any pattern may be overfitting. Sample size is tiny (~300 labels).
+  Null model essential.
+
+────────────────────────────────────────────────────────────────────────────
+STEP 1: PARSE ZODIAC NYMPH LABELS
+────────────────────────────────────────────────────────────────────────────
+
+  Aries-dark        :  15 labels, e.g. [&#x27;otalchytaramdy&#x27;, &#x27;opcheysal&#x27;, &#x27;otakaizan&#x27;]
+  Aries-light       :  15 labels, e.g. [&#x27;oteosarar&#x27;, &#x27;okldam&#x27;, &#x27;oteoaldy&#x27;]
+  Taurus-light      :  15 labels, e.g. [&#x27;chararom&#x27;, &#x27;chfaly&#x27;, &#x27;okolar&#x27;]
+  Taurus-dark       :  15 labels, e.g. [&#x27;oshodady&#x27;, &#x27;chdaiirdainy&#x27;, &#x27;oaiinarary&#x27;]
+  Gemini            :  29 labels, e.g. [&#x27;ofchdamy&#x27;, &#x27;oklairdy&#x27;, &#x27;okaram&#x27;]
+  Cancer            :  30 labels, e.g. [&#x27;olkalaiin&#x27;, &#x27;olalsy&#x27;, &#x27;oraiinam&#x27;]
+  Leo               :  30 labels, e.g. [&#x27;ocham&#x27;, &#x27;orchey&#x27;, &#x27;okam&#x27;]
+  Virgo             :  30 labels, e.g. [&#x27;oeedey&#x27;, &#x27;oeeodaiin&#x27;, &#x27;okeoram&#x27;]
+  Libra             :  30 labels, e.g. [&#x27;oeeoty&#x27;, &#x27;octhy&#x27;, &#x27;oteoly&#x27;]
+  Scorpio           :  30 labels, e.g. [&#x27;otaly&#x27;, &#x27;chockhy&#x27;, &#x27;otedy&#x27;]
+  Sagittarius       :  30 labels, e.g. [&#x27;okol&#x27;, &#x27;oteody&#x27;, &#x27;oteedy&#x27;]
+  Pisces            :  30 labels, e.g. [&#x27;otalalg&#x27;, &#x27;ykary&#x27;, &#x27;otar&#x27;]
+
+  TOTAL: 299 labels across 12 sign-halves
+
+────────────────────────────────────────────────────────────────────────────
+STEP 2: GLYPH FREQUENCIES PER ZODIAC SIGN
+────────────────────────────────────────────────────────────────────────────
+
+  Sign                Labels  Glyphs   a-ct      a%   e-ct      e%  a/e ratio   i-ct   o-ct
+  ──────────────────  ──────  ──────  ─────  ──────  ─────  ──────  ─────────  ─────  ─────
+  Aries-dark              15     142     27   19.0%      8    5.6%       3.38      3     22
+  Aries-light             15     112     17   15.2%     10    8.9%       1.70      0     24
+  Taurus-light            15     111     23   20.7%      0    0.0%        inf      6     18
+  Taurus-dark             15     132     26   19.7%      3    2.3%       8.67     11     16
+  Gemini                  29     172     36   20.9%      6    3.5%       6.00      5     28
+  Cancer                  30     247     42   17.0%     19    7.7%       2.21     29     38
+  Leo                     30     183     19   10.4%     25   13.7%       0.76      7     31
+  Virgo                   30     196     15    7.7%     33   16.8%       0.45     10     37
+  Libra                   30     157      7    4.5%     31   19.7%       0.23      6     38
+  Scorpio                 30     164     10    6.1%     31   18.9%       0.32      2     27
+  Sagittarius             30     158      8    5.1%     33   20.9%       0.24      7     29
+  Pisces                  30     172     34   19.8%      4    2.3%       8.50      2     34
+
+────────────────────────────────────────────────────────────────────────────
+STEP 3: MERGED SIGNS (combine light/dark halves)
+────────────────────────────────────────────────────────────────────────────
+
+  Sign            Ord  Labels  Glyphs      a%      e%    a/e  Season      
+  ──────────────  ───  ──────  ──────  ──────  ──────  ─────  ────────────
+  Aries             1      30     254   17.3%    7.1%   2.44  Spring      
+  Taurus            2      30     243   20.2%    1.2%  16.33  Spring      
+  Gemini            3      29     172   20.9%    3.5%   6.00  Spring/Sum  
+  Cancer            4      30     247   17.0%    7.7%   2.21  Summer      
+  Leo               5      30     183   10.4%   13.7%   0.76  Summer      
+  Virgo             6      30     196    7.7%   16.8%   0.45  Sum/Autumn  
+  Libra             7      30     157    4.5%   19.7%   0.23  Autumn      
+  Scorpio           8      30     164    6.1%   18.9%   0.32  Autumn      
+  Sagittarius       9      30     158    5.1%   20.9%   0.24  Aut/Winter  
+  Pisces           12      30     172   19.8%    2.3%   8.50  Winter      
+
+────────────────────────────────────────────────────────────────────────────
+STEP 4: CORRELATION TEST — a% vs e% ACROSS SIGNS
+────────────────────────────────────────────────────────────────────────────
+
+  Pearson r(a%, e%) = -0.9904
+  (Approximate) p-value = 0.0000
+
+  → NEGATIVE correlation: a% and e% move in opposite directions.
+    This is CONSISTENT with the Galenic inverse claim.
+
+  Seasonal trends:
+    r(ordinal, a%) = -0.4113  (p ≈ 0.2050)
+    r(ordinal, e%) = +0.3737  (p ≈ 0.2519)
+    → a% decreases toward winter, e% increases: OPPOSITE of claim
+
+────────────────────────────────────────────────────────────────────────────
+STEP 5: PERMUTATION NULL MODEL (10,000 shuffles)
+────────────────────────────────────────────────────────────────────────────
+
+  Shuffle zodiac sign assignments randomly.
+  If a% and e% are inversely correlated by CHANCE,
+  the null distribution will contain r values as extreme as observed.
+
+  Observed r(a%, e%) = -0.9904
+  Null distribution: mean = +0.0007, std = 0.3352
+  Null 5th percentile: -0.5523
+  Null 95th percentile: +0.5585
+  Permutation p-value (one-tailed): 0.0000
+  Permutation p-value (two-tailed): 0.0000
+
+  → SIGNIFICANT: a%/e% correlation unlikely by chance (p &lt; 0.05).
+
+────────────────────────────────────────────────────────────────────────────
+STEP 6: NON-ZODIAC VMS TEXT BASELINE
+────────────────────────────────────────────────────────────────────────────
+
+  Non-zodiac VMS: 37686 words, 195669 glyphs
+    a% = 7.7%
+    e% = 10.4%
+    i% = 6.4%
+    o% = 13.1%
+
+  Zodiac labels: 299 labels, 1946 glyphs
+    a% = 13.6%
+    e% = 10.4%
+    i% = 4.5%
+    o% = 17.6%
+
+  COMPARISON: zodiac labels vs non-zodiac text
+    a%: zodiac 13.6% vs non-zodiac 7.7% (Δ = +5.9pp)
+    e%: zodiac 10.4% vs non-zodiac 10.4% (Δ = -0.0pp)
+    i%: zodiac 4.5% vs non-zodiac 6.4% (Δ = -1.8pp)
+    o%: zodiac 17.6% vs non-zodiac 13.1% (Δ = +4.5pp)
+
+────────────────────────────────────────────────────────────────────────────
+STEP 7: LABELS vs CIRCULAR RING TEXT (same folios)
+────────────────────────────────────────────────────────────────────────────
+
+  Sign                Label a%   Ring a%  Label e%   Ring e%     Δa     Δe
+  ──────────────────  ────────  ────────  ────────  ────────  ─────  ─────
+  Aries-dark             19.0%      7.7%      5.6%     15.7%  +11.3  -10.1
+  Aries-light            15.2%      6.5%      8.9%     18.5%   +8.7   -9.5
+  Taurus-light           20.7%     10.9%      0.0%     15.2%   +9.8  -15.2
+  Taurus-dark            19.7%     11.5%      2.3%     12.0%   +8.2   -9.7
+  Gemini                 20.9%     12.0%      3.5%     12.0%   +9.0   -8.5
+  Cancer                 17.0%      6.8%      7.7%     17.8%  +10.3  -10.2
+  Leo                    10.4%      4.8%     13.7%     20.0%   +5.6   -6.4
+  Virgo                   7.7%      8.5%     16.8%     15.9%   -0.8   +0.9
+  Libra                   4.5%     13.7%     19.7%      9.3%   -9.3  +10.4
+  Scorpio                 6.1%     10.7%     18.9%     19.0%   -4.6   -0.1
+  Sagittarius             5.1%      8.3%     20.9%     12.3%   -3.2   +8.6
+  Pisces                 19.8%     11.6%      2.3%     15.3%   +8.1  -12.9
+
+────────────────────────────────────────────────────────────────────────────
+STEP 8: I-RUN LENGTH DISTRIBUTION BY SIGN
+────────────────────────────────────────────────────────────────────────────
+
+  Tests the dain/daiin/daiiin hypothesis: if &#x27;i&#x27;-runs encode
+  degree modification, their distribution should vary by sign.
+
+  Sign                  i×1    i×2    i×3   i×4+  mean len
+  ──────────────────  ─────  ─────  ─────  ─────  ────────
+  Aries                   1      1      0      0      1.50
+  Taurus                  5      6      0      0      1.55
+  Gemini                  5      0      0      0      1.00
+  Cancer                  4     11      1      0      1.81
+  Leo                     1      3      0      0      1.75
+  Virgo                   2      4      0      0      1.67
+  Libra                   2      2      0      0      1.50
+  Scorpio                 0      1      0      0      2.00
+  Sagittarius             1      3      0      0      1.75
+  Pisces                  0      1      0      0      2.00
+
+────────────────────────────────────────────────────────────────────────────
+STEP 9: SLOT2 COMPETITION ARTIFACT CHECK
+────────────────────────────────────────────────────────────────────────────
+
+  CRITICAL: In LOOP grammar, both &#x27;a&#x27; and &#x27;e&#x27; fill SLOT2 (front vowel).
+  They are ALTERNATIVES in the same structural position. If labels
+  have roughly fixed chunk composition, more &#x27;a&#x27; mechanically means
+  fewer &#x27;e&#x27;. The extreme r = -0.99 may be a compositional tautology,
+  not semantic encoding.
+
+  TEST: Compute ALL pairwise glyph% correlations across signs.
+  If a/e is unique in its extreme anti-correlation, it&#x27;s meaningful.
+  If many glyph pairs show similar extremes, it&#x27;s structural.
+
+  TOP 10 MOST NEGATIVE pairwise glyph correlations:
+    Pair             r
+    ────────  ────────
+    a/e        -0.9904 ← TARGET
+    a/y        -0.9030
+    e/r        -0.8895
+    r/y        -0.8865
+    d/l        -0.7752
+    a/d        -0.7736
+    e/l        -0.7677
+    e/m        -0.7604
+    f/t        -0.7191
+    d/r        -0.6852
+
+  TOP 10 MOST POSITIVE pairwise glyph correlations:
+    Pair             r
+    ────────  ────────
+    m/r        +0.7428
+    a/m        +0.7488
+    d/y        +0.7783
+    a/l        +0.7884
+    f/i        +0.8268
+    f/n        +0.8556
+    e/y        +0.8927
+    a/r        +0.9196
+    c/h        +0.9344
+    i/n        +0.9462
+
+  Pairs with r &lt; -0.9: 2 / 190
+  Pairs with r &gt; +0.9: 3 / 190
+
+  a/e rank among 190 pairs: #1 most negative
+
+  ✓ a/e is the MOST extreme negative correlation among all pairs.
+    This argues against a pure compositional artifact.
+
+  CONTROL: Does ring text show the same a/e anti-correlation?
+
+  Ring text r(a%, e%): -0.7271
+  Labels r(a%, e%):    -0.9904
+
+  ✓ Ring text does NOT show the same extreme a/e pattern.
+    The pattern appears SPECIFIC to nymph labels.
+
+────────────────────────────────────────────────────────────────────────────
+STEP 10: COMPREHENSIVE SKEPTICAL AUDIT
+────────────────────────────────────────────────────────────────────────────
+
+  1. POST-HOC CLAIM
+     The Galenic axis hypothesis was proposed AFTER looking at the data.
+     The poster examined the zodiac labels and found the a/e pattern.
+     True confirmation requires a prediction testable on UNSEEN data.
+
+  2. SAMPLE SIZE
+     299 labels, 1946 glyphs total.
+     With 10 signs (8 df), any moderate correlation can appear.
+
+  3. MISSING SIGNS
+     Capricorn and Aquarius are missing from VMS, creating a gap
+     at ordinals 10-11 in the zodiac year.
+
+  4. SEASONAL DIRECTION
+     Claim predicts: a peaks in WINTER, e peaks in SUMMER.
+     Data shows:     a peaks in SPRING, e peaks in AUTUMN.
+     The seasonal phase is SHIFTED by ~1 season from the claim.
+     r(ordinal, a%) = -0.4113 (negative = peaks in spring)
+     r(ordinal, e%) = +0.3737 (positive = peaks in autumn)
+     But: with Pisces at ordinal 12 (wrapping around), linear
+     correlation with ordinal is a poor model for cyclic data.
+
+  5. SLOT2 COMPETITION
+     a/e anti-correlation rank: #1 of 190 pairs
+     Pairs with r &lt; -0.9: 2
+     → a/e uniquely extreme. Less likely an artifact.
+
+  6. RING TEXT COMPARISON
+     Ring text r(a%, e%) = -0.7271
+     → Ring text differs. Pattern IS label-specific.
+
+  7. ALTERNATIVE: VOCABULARY STRATIFICATION
+     The zodiac signs may simply use DIFFERENT WORD TYPES.
+     &#x27;ot-&#x27; prefixed words (a-rich) dominate spring signs.
+     &#x27;oe-&#x27; prefixed words (e-rich) dominate autumn signs.
+     This could be vocabulary selection, not Galenic encoding.
+
+────────────────────────────────────────────────────────────────────────────
+STEP 11: SYNTHESIS &amp; VERDICT
+────────────────────────────────────────────────────────────────────────────
+
+  CORE FINDING:
+    r(a%, e%) = -0.9904 — EXTREMELY strong inverse correlation
+    Permutation p &lt; 0.001 — NOT due to random sign assignment
+
+  COMPLICATING FACTORS:
+    1. Seasonal direction is SHIFTED from claim prediction
+    2. Slot2 artifact check: 2 pairs with r &lt; -0.9
+    3. Ring text correlation: -0.7271
+
+  ★ VERDICT: a/e INVERSE PATTERN CONFIRMED — GALENIC INTERPRETATION UNCONFIRMED
+
+    The a/e inverse correlation is real, statistically significant,
+    and not a compositional artifact. However:
+    - Seasonal phase is SHIFTED from Galenic prediction
+    - The link to Galenic medicine specifically (rather than any
+      other semantic axis) cannot be established from frequency data alone.
+    - Vocabulary stratification (different word types per sign)
+      is an equally valid explanation.
+
+  REVISED CONFIDENCES (zodiac_galenic_axis):
+  - Natural language: 89% (unchanged — pattern may be linguistic)
+  - Systematic a/e axis in zodiac: NEW — 80% (pattern is real)
+  - Galenic medical encoding: NEW — 10% (unconfirmed interpretation)
+  - Section-specific vocabulary: plausible alternative
+
+  Results saved to C:\projects\vais\results\zodiac_galenic_axis_zodiac_galenic.txt
+  JSON saved to C:\projects\vais\results\zodiac_galenic_axis_zodiac_galenic.json
+</pre></details><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>bc53723</code>. 
+To run any test with your own parameters, clone
+<a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
+(<code>python webui/server.py</code>). All numbers reproduce at
+PYTHONHASHSEED=0.</footer></main></body></html>

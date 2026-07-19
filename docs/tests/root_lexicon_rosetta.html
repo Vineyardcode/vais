@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>root_lexicon_rosetta — VAIS</title><style>
+:root { --bg:#ffffff; --fg:#1a1a1a; --muted:#666; --line:#ddd;
+        --code:#f5f5f5; --accent:#7a4a1e; --warn:#a33; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#141414; --fg:#ddd; --muted:#999; --line:#333;
+          --code:#1e1e1e; --accent:#d9a05b; --warn:#e77; } }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--fg);
+       font:16px/1.55 Georgia, 'Times New Roman', serif; }
+nav { border-bottom:1px solid var(--line); padding:.7em 1.2em;
+      font-family: system-ui, sans-serif; font-size:.9em; }
+nav a { color:var(--accent); text-decoration:none; margin-right:1.2em; }
+main { max-width: 62em; margin: 0 auto; padding: 1.5em 1.2em 4em; }
+h1,h2,h3 { font-family: system-ui, sans-serif; line-height:1.25; }
+h1 { font-size:1.7em; } h2 { font-size:1.3em; margin-top:2em; }
+a { color: var(--accent); }
+code, pre { font-family: ui-monospace, Consolas, monospace;
+            font-size:.86em; background:var(--code); }
+code { padding:.1em .3em; border-radius:3px; }
+pre { padding: .9em; overflow-x:auto; border:1px solid var(--line);
+      border-radius:4px; line-height:1.4; }
+table { border-collapse: collapse; margin: 1em 0; font-size:.92em;
+        display:block; overflow-x:auto; }
+th, td { border:1px solid var(--line); padding:.35em .6em;
+         text-align:left; vertical-align:top; }
+th { font-family: system-ui, sans-serif; background:var(--code); }
+blockquote { border-left:3px solid var(--accent); margin:1em 0;
+             padding:.2em 1em; color:var(--muted); }
+.muted { color:var(--muted); font-size:.9em; }
+.tag { font-family: system-ui, sans-serif; font-size:.75em;
+       border:1px solid var(--line); border-radius:3px;
+       padding:.05em .45em; margin-left:.5em; }
+.tag.sug { border-color:var(--warn); color:var(--warn); }
+details summary { cursor:pointer; font-family: system-ui, sans-serif; }
+footer { border-top:1px solid var(--line); margin-top:3em;
+         padding-top:1em; font-size:.85em; color:var(--muted); }
+</style></head><body>
+<nav><a href="../index.html">VAIS</a><a href="../catalog.html">Catalog</a>
+<a href="../research.html">Research</a><a href="../reports.html">Reports</a>
+<a href="https://github.com/Vineyardcode/vais">GitHub</a></nav>
+<main><h1>root_lexicon_rosetta</h1>
+<p class="muted">scripts/root_lexicon_rosetta.py · baseline 1s</p>
+<pre>Root Lexicon &amp; Zodiac Rosetta Stone
+
+Now that we&#x27;ve decoded the STRUCTURE of the writing system (the preceding structural analyses):
+  - Gallows = determinatives (t=celestial, k=generic, f=botanical, p=process)
+  - Prefixes = phonetic complements (qo+k, d+p, s+f)
+  - E-chains = non-structural vowel filler
+  - Suffixes = grammatical morphemes
+  - Core roots = ~3,000-3,500 consonantal skeletons
+
+This test attempts to decode CONTENT by:
+  1. Building the complete consonantal root lexicon
+  2. Decomposing zodiac nymph labels using the full framework
+  3. Cross-referencing against zodiac terminology in:
+     - Latin (medieval astronomical terms)
+     - Hebrew (טלה, שור, תאומים...)
+     - Arabic (حمل, ثور, جوزاء...)
+     - Greek (Κριός, Ταῦρος, Δίδυμοι...)
+     - COPTIC EGYPTIAN (the form of Egyptian ~1400s scholars could access)
+     - Medieval pharmaceutical/botanical terminology
+  4. Testing suffix semantics by section distribution
+  5. Probing herbal labels for botanical term matches
+
+The Champollion moment: zodiac signs are our cartouches — known referents
+with known names in multiple languages. If roots match ANY medieval language,
+we crack sound values.</pre>
+<h2>Parameters</h2><table><tr><th>name</th><th>default</th><th>type</th></tr>
+<tr><td><code>SIMPLE_GALLOWS</code></td><td><code>[&#x27;t&#x27;, &#x27;k&#x27;, &#x27;f&#x27;, &#x27;p&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>BENCH_GALLOWS</code></td><td><code>[&#x27;cth&#x27;, &#x27;ckh&#x27;, &#x27;cph&#x27;, &#x27;cfh&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>COMPOUND_GCH</code></td><td><code>[&#x27;tch&#x27;, &#x27;kch&#x27;, &#x27;pch&#x27;, &#x27;fch&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>COMPOUND_GSH</code></td><td><code>[&#x27;tsh&#x27;, &#x27;ksh&#x27;, &#x27;psh&#x27;, &#x27;fsh&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>PREFIXES</code></td><td><code>[&#x27;qo&#x27;, &#x27;q&#x27;, &#x27;so&#x27;, &#x27;do&#x27;, &#x27;o&#x27;, &#x27;d&#x27;, &#x27;s&#x27;, &#x27;y&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>SUFFIXES</code></td><td><code>[&#x27;aiin&#x27;, &#x27;ain&#x27;, &#x27;iin&#x27;, &#x27;in&#x27;, &#x27;ar&#x27;, &#x27;or&#x27;, &#x27;al&#x27;, &#x27;ol&#x27;, &#x27;edy&#x27;, &#x27;ody&#x27;, &#x27;eedy&#x27;, &#x27;dy&#x27;, &#x27;sy&#x27;, &#x27;ey…</code></td><td>json</td></tr>
+</table>
+<h2>Golden output (PYTHONHASHSEED=0)</h2><details><summary>show</summary><pre>Loaded 39531 tokens from 200 folios
+
+Extracted 294 zodiac nymph labels
+
+========================================================================
+ANALYSIS 1: CONSONANTAL ROOT LEXICON
+========================================================================
+
+  Total consonantal roots: 1713
+  Roots with freq ≥ 5: 272
+  Roots with freq ≥ 20: 99
+  Roots with freq ≥ 100: 38
+
+  ── Top 50 Consonantal Roots ──
+  Root          Freq  Prefixes  Suffixes     Det   Top section
+  ------------------------------------------------------------
+  e             5447         8        10       k          text
+  a             4022         8        13       ∅          text
+  ch            3792         8        13       ∅      herbal-A
+  ar            2101         7        11       ∅          text
+  h             2031         5        12       ∅           bio
+  ol            1849         7        12       ∅      herbal-A
+  al            1792         7        12       ∅          text
+  l             1375         6        13       k          text
+  d             1241         7        11       ∅      herbal-A
+  o             1225         7        13       k      herbal-A
+  or            1108         8         7       ∅      herbal-A
+  che            732         5         8       ∅          text
+  cho            600         6        12       k      herbal-A
+  y              501         6        10       t      herbal-A
+  air            449         8         8       ∅          text
+  lch            433         6        11       ∅           bio
+  he             417         2         7       ∅      herbal-A
+  am             413         7         2       ∅      herbal-A
+  r              370         6        12       ∅          text
+  ed             355         8        10       k          text
+  eo             301         6        11       k          text
+  ho             273         1        12       ∅      herbal-A
+  cheo           267         5        10       ∅          text
+  sh             222         6        10       ∅      herbal-A
+  ched           195         5         7       ∅          text
+  lsh            180         5         8       ∅           bio
+  eod            174         5         7       k        zodiac
+  es             171         6         7       ∅      herbal-A
+  od             152         6         7       k      herbal-A
+  i              132         6         6       ∅      herbal-A
+  eos            131         5         5       t        zodiac
+  ai             120         5         4       ∅          text
+  heo            117         1         9       ∅          text
+  chd            113         2        10       ∅          text
+  chod           110         5         8       ∅      herbal-A
+  ech            110         5         7       k          text
+  qo             105         3         5       ∅      herbal-A
+  os             103         6         1       ∅      herbal-A
+  ches            97         5         1       ∅          text
+  chol            96         2        11       ∅      herbal-A
+  aiir            96         5         4       ∅      herbal-A
+  hed             90         1         8       ∅          text
+  s               85         6         8       ∅      herbal-A
+  oo              82         4         0       k      herbal-A
+  lo              76         3        10       ∅          text
+  alch            71         4         8       ∅           bio
+  ld              69         5         7       ∅      herbal-A
+  le              68         1         7       k          text
+  cheos           63         4         2       ∅          text
+  rch             62         4        10       ∅           bio
+
+  ── Root Length Distribution ──
+  Length 1: 12 roots
+  Length 2: 60 roots
+  Length 3: 88 roots
+  Length 4: 67 roots
+  Length 5: 37 roots
+  Length 6: 6 roots
+  Length 7: 2 roots
+
+  ── Section-Exclusive Roots (&gt;80% in one section, freq ≥ 20) ──
+
+========================================================================
+ANALYSIS 2: ZODIAC LABEL DECOMPOSITION (Rosetta Stone)
+========================================================================
+
+  Total zodiac labels: 294
+  Signs represented: 10
+
+  ── Aries (30 labels) ──
+    otalchy              → det=t  pf=o    root=alch     sf=y
+    tar                  → det=t  pf=∅    root=ar       sf=∅
+    am                   → det=∅  pf=∅    root=am       sf=∅
+    dy                   → det=∅  pf=∅    root=d        sf=y
+    opchey               → det=p  pf=o    root=e        sf=y
+    sal                  → det=∅  pf=s    root=al       sf=∅
+    otakaizan            → det=t  pf=o    root=aaizan   sf=∅
+    okalal               → det=k  pf=o    root=al       sf=al
+    otaly                → det=t  pf=o    root=al       sf=y
+    oalcheg              → det=∅  pf=o    root=alcheg   sf=∅
+    otchodals            → det=t  pf=o    root=odals    sf=∅
+    okolshy              → det=k  pf=o    root=olsh     sf=y
+    --- Roots: [(&#x27;al&#x27;, 7), (&#x27;ar&#x27;, 3), (&#x27;e&#x27;, 3), (&#x27;eo&#x27;, 3), (&#x27;eoal&#x27;, 2)]
+    --- Det:   {&#x27;t&#x27;: 24, &#x27;∅&#x27;: 10, &#x27;k&#x27;: 6, &#x27;p&#x27;: 2}
+
+  ── Taurus (30 labels) ──
+    char                 → det=∅  pf=∅    root=ch       sf=ar
+    arom                 → det=∅  pf=∅    root=arom     sf=∅
+    chfaly               → det=f  pf=∅    root=chal     sf=y
+    okolar               → det=k  pf=o    root=ol       sf=ar
+    otchody              → det=t  pf=o    root=o        sf=dy
+    alcphy               → det=p  pf=∅    root=al       sf=y
+    otaiin               → det=t  pf=o    root=a        sf=iin
+    okaraiin             → det=k  pf=o    root=ar       sf=aiin
+    otar                 → det=t  pf=o    root=ar       sf=∅
+    --- Roots: [(&#x27;al&#x27;, 5), (&#x27;ar&#x27;, 5), (&#x27;a&#x27;, 3), (&#x27;ch&#x27;, 2), (&#x27;aral&#x27;, 2)]
+    --- Det:   {&#x27;t&#x27;: 13, &#x27;∅&#x27;: 12, &#x27;f&#x27;: 4, &#x27;k&#x27;: 4}
+
+  ── Gemini (29 labels) ──
+    ofchdamy             → det=f  pf=o    root=dam      sf=y
+    oklairdy             → det=k  pf=o    root=lair     sf=dy
+    okaram               → det=k  pf=o    root=aram     sf=∅
+    okairy               → det=k  pf=o    root=air      sf=y
+    okealar              → det=k  pf=o    root=eal      sf=ar
+    otaraldy             → det=t  pf=o    root=aral     sf=dy
+    okalar               → det=k  pf=o    root=al       sf=ar
+    okal                 → det=k  pf=o    root=al       sf=∅
+    --- Roots: [(&#x27;al&#x27;, 7), (&#x27;e&#x27;, 2), (&#x27;am&#x27;, 2), (&#x27;dam&#x27;, 1), (&#x27;lair&#x27;, 1)]
+    --- Det:   {&#x27;k&#x27;: 16, &#x27;t&#x27;: 7, &#x27;∅&#x27;: 5, &#x27;f&#x27;: 1}
+
+  ── Cancer (29 labels) ──
+    olkalaiin            → det=k  pf=o    root=lal      sf=aiin
+    olalsy               → det=∅  pf=o    root=lal      sf=sy
+    oraiinam             → det=∅  pf=o    root=raiinam  sf=∅
+    osarsheeeo           → det=∅  pf=o    root=sarsheo  sf=∅
+    otoaiin              → det=t  pf=o    root=o        sf=aiin
+    opoiiinoin           → det=p  pf=o    root=oiiino   sf=in
+    ypaiin               → det=p  pf=y    root=a        sf=iin
+    alaly                → det=∅  pf=∅    root=alal     sf=y
+    --- Roots: [(&#x27;o&#x27;, 3), (&#x27;ar&#x27;, 3), (&#x27;lal&#x27;, 2), (&#x27;a&#x27;, 2), (&#x27;air&#x27;, 2)]
+    --- Det:   {&#x27;∅&#x27;: 13, &#x27;k&#x27;: 7, &#x27;t&#x27;: 5, &#x27;p&#x27;: 4}
+
+  ── Leo (30 labels) ──
+    ocham                → det=∅  pf=o    root=cham     sf=∅
+    orchey               → det=∅  pf=o    root=rch      sf=ey
+    okam                 → det=k  pf=o    root=am       sf=∅
+    okey                 → det=k  pf=o    root=e        sf=y
+    otcheody             → det=t  pf=o    root=e        sf=ody
+    okyeeshy             → det=k  pf=o    root=yesh     sf=y
+    okaly                → det=k  pf=o    root=al       sf=y
+    --- Roots: [(&#x27;e&#x27;, 6), (&#x27;al&#x27;, 5), (&#x27;cham&#x27;, 1), (&#x27;rch&#x27;, 1), (&#x27;am&#x27;, 1)]
+    --- Det:   {&#x27;k&#x27;: 10, &#x27;∅&#x27;: 9, &#x27;t&#x27;: 6, &#x27;f&#x27;: 2}
+
+  ── Virgo (30 labels) ──
+    oeedey               → det=∅  pf=o    root=ed       sf=ey
+    oeeodaiin            → det=∅  pf=o    root=eod      sf=aiin
+    okeoram              → det=k  pf=o    root=eoram    sf=∅
+    oshesy               → det=∅  pf=o    root=she      sf=sy
+    okeary               → det=k  pf=o    root=ear      sf=y
+    cheoetey             → det=t  pf=∅    root=cheo     sf=ey
+    cheoldy              → det=∅  pf=∅    root=cheol    sf=dy
+    --- Roots: [(&#x27;e&#x27;, 5), (&#x27;eod&#x27;, 2), (&#x27;cheo&#x27;, 2), (&#x27;cheol&#x27;, 2), (&#x27;ed&#x27;, 1)]
+    --- Det:   {&#x27;k&#x27;: 10, &#x27;∅&#x27;: 9, &#x27;t&#x27;: 5, &#x27;f&#x27;: 2}
+
+  ── Libra (28 labels) ──
+    oeeoty               → det=t  pf=o    root=eo       sf=y
+    octhy                → det=t  pf=∅    root=o        sf=y
+    oteoly               → det=t  pf=o    root=eol      sf=y
+    okeoly               → det=k  pf=o    root=eol      sf=y
+    oeees                → det=∅  pf=o    root=es       sf=∅
+    oees                 → det=∅  pf=o    root=es       sf=∅
+    okeeoly              → det=k  pf=o    root=eol      sf=y
+    --- Roots: [(&#x27;e&#x27;, 6), (&#x27;eol&#x27;, 4), (&#x27;eo&#x27;, 2), (&#x27;es&#x27;, 2), (&#x27;eod&#x27;, 2)]
+    --- Det:   {&#x27;k&#x27;: 9, &#x27;∅&#x27;: 9, &#x27;t&#x27;: 7, &#x27;p&#x27;: 2}
+
+  ── Scorpio (30 labels) ──
+    otaly                → det=t  pf=o    root=al       sf=y
+    chockhy              → det=k  pf=∅    root=cho      sf=y
+    otedy                → det=t  pf=o    root=e        sf=dy
+    yteeody              → det=t  pf=y    root=e        sf=ody
+    otaly                → det=t  pf=o    root=al       sf=y
+    okeody               → det=k  pf=o    root=e        sf=ody
+    oteedyl              → det=t  pf=o    root=edyl     sf=∅
+    ykeedy               → det=k  pf=y    root=e        sf=dy
+    --- Roots: [(&#x27;e&#x27;, 8), (&#x27;al&#x27;, 3), (&#x27;ar&#x27;, 3), (&#x27;ch&#x27;, 2), (&#x27;eos&#x27;, 2)]
+    --- Det:   {&#x27;k&#x27;: 15, &#x27;t&#x27;: 10, &#x27;∅&#x27;: 3, &#x27;p&#x27;: 1}
+
+  ── Sagittarius (29 labels) ──
+    okol                 → det=k  pf=o    root=ol       sf=∅
+    oteody               → det=t  pf=o    root=e        sf=ody
+    oteedy               → det=t  pf=o    root=e        sf=dy
+    eeeody               → det=∅  pf=∅    root=e        sf=ody
+    okeody               → det=k  pf=o    root=e        sf=ody
+    sheol                → det=∅  pf=s    root=he       sf=ol
+    odees                → det=∅  pf=o    root=des      sf=∅
+    eery                 → det=∅  pf=∅    root=er       sf=y
+    --- Roots: [(&#x27;e&#x27;, 13), (&#x27;al&#x27;, 2), (&#x27;ol&#x27;, 1), (&#x27;he&#x27;, 1), (&#x27;des&#x27;, 1)]
+    --- Det:   {&#x27;k&#x27;: 14, &#x27;∅&#x27;: 6, &#x27;t&#x27;: 4, &#x27;f&#x27;: 2}
+
+  ── Pisces (29 labels) ──
+    otalalg              → det=t  pf=o    root=alalg    sf=∅
+    ykary                → det=k  pf=y    root=ar       sf=y
+    oty                  → det=t  pf=∅    root=o        sf=y
+    oky                  → det=k  pf=∅    root=o        sf=y
+    ody                  → det=∅  pf=o    root=d        sf=y
+    oty                  → det=t  pf=∅    root=o        sf=y
+    ar                   → det=∅  pf=∅    root=ar       sf=∅
+    okala                → det=k  pf=o    root=ala      sf=∅
+    otody                → det=t  pf=o    root=o        sf=dy
+    otald                → det=t  pf=o    root=ald      sf=∅
+    --- Roots: [(&#x27;o&#x27;, 5), (&#x27;ar&#x27;, 4), (&#x27;al&#x27;, 4), (&#x27;ald&#x27;, 3), (&#x27;ol&#x27;, 2)]
+    --- Det:   {&#x27;t&#x27;: 14, &#x27;k&#x27;: 11, &#x27;∅&#x27;: 6, &#x27;p&#x27;: 1}
+
+  ── Cross-Sign Root Analysis ──
+  (Roots unique to one sign might encode the sign name)
+
+  Aries          unique roots: [&#x27;aaizan&#x27;, &#x27;alch&#x27;, &#x27;alcheg&#x27;, &#x27;aray&#x27;, &#x27;chear&#x27;, &#x27;eoal&#x27;, &#x27;ldam&#x27;, &#x27;odals&#x27;, &#x27;olch&#x27;, &#x27;olchd&#x27;, &#x27;oloaram&#x27;, &#x27;olsh&#x27;, &#x27;sh&#x27;]
+  Taurus         unique roots: [&#x27;ain&#x27;, &#x27;ainam&#x27;, &#x27;aiom&#x27;, &#x27;ali&#x27;, &#x27;an&#x27;, &#x27;arom&#x27;, &#x27;chal&#x27;, &#x27;chdaiirdain&#x27;, &#x27;holsh&#x27;, &#x27;osh&#x27;, &#x27;shoda&#x27;]
+  Gemini         unique roots: [&#x27;ainal&#x27;, &#x27;aircham&#x27;, &#x27;archam&#x27;, &#x27;arcr&#x27;, &#x27;chos&#x27;, &#x27;dam&#x27;, &#x27;lair&#x27;, &#x27;olam&#x27;, &#x27;ral&#x27;, &#x27;yd&#x27;]
+  Cancer         unique roots: [&#x27;laih&#x27;, &#x27;le&#x27;, &#x27;leor&#x27;, &#x27;oiiino&#x27;, &#x27;olair&#x27;, &#x27;oo&#x27;, &#x27;r&#x27;, &#x27;raiinam&#x27;, &#x27;raiir&#x27;, &#x27;ralam&#x27;, &#x27;rara&#x27;, &#x27;sarsheo&#x27;]
+  Leo            unique roots: [&#x27;cham&#x27;, &#x27;cheal&#x27;, &#x27;chol&#x27;, &#x27;dairan&#x27;, &#x27;eolyd&#x27;, &#x27;esed&#x27;, &#x27;heos&#x27;, &#x27;rch&#x27;, &#x27;yesh&#x27;]
+  Virgo          unique roots: [&#x27;aiinam&#x27;, &#x27;alg&#x27;, &#x27;cheol&#x27;, &#x27;dysd&#x27;, &#x27;ea&#x27;, &#x27;edal&#x27;, &#x27;eom&#x27;, &#x27;eoram&#x27;, &#x27;eoyd&#x27;, &#x27;heo&#x27;, &#x27;n&#x27;, &#x27;she&#x27;]
+  Libra          unique roots: [&#x27;aiinod&#x27;, &#x27;aim&#x27;, &#x27;alair&#x27;, &#x27;iin&#x27;]
+  Scorpio        unique roots: [&#x27;che&#x27;, &#x27;cho&#x27;, &#x27;edy&#x27;, &#x27;edyl&#x27;]
+  Sagittarius    unique roots: [&#x27;des&#x27;, &#x27;er&#x27;, &#x27;raiin&#x27;, &#x27;ye&#x27;]
+  Pisces         unique roots: [&#x27;ala&#x27;, &#x27;alalg&#x27;, &#x27;alols&#x27;, &#x27;laram&#x27;, &#x27;ysam&#x27;]
+
+  Universal roots (in ALL signs): []
+  → These are likely generic astronomical terms, not sign names
+
+========================================================================
+ANALYSIS 3: CROSS-LINGUISTIC ZODIAC NAME MATCHING
+========================================================================
+
+  ── Zodiac Sign Root Comparison ──
+  For each sign: Voynich roots vs known names in 7+ languages
+
+  ┌─ Aries ─────────────────────────────────────────
+  │ Voynich roots: [&#x27;al&#x27;, &#x27;ar&#x27;, &#x27;e&#x27;, &#x27;eo&#x27;, &#x27;eoal&#x27;, &#x27;alch&#x27;, &#x27;am&#x27;, &#x27;d&#x27;, &#x27;aaizan&#x27;, &#x27;alcheg&#x27;]
+  │
+  │ 0.80  CONTAINS   astro        ram             ↔ oloaram
+  │ 0.67  CONSONANT  coptic       klom            ↔ oloaram
+  │ 0.67  CONSONANT  coptic       klom            ↔ ldam
+  │ 0.67  CONSONANT  hebrew       tlh             ↔ olsh
+  │ 0.67  CONSONANT  hebrew       tlh             ↔ alch
+  │ 0.67  CONSONANT  hebrew       tlh             ↔ olch
+  └────────────────────────────────────────────────
+  ┌─ Taurus ─────────────────────────────────────────
+  │ Voynich roots: [&#x27;al&#x27;, &#x27;ar&#x27;, &#x27;a&#x27;, &#x27;ch&#x27;, &#x27;aral&#x27;, &#x27;arom&#x27;, &#x27;chal&#x27;, &#x27;ol&#x27;, &#x27;o&#x27;, &#x27;am&#x27;]
+  │
+  │ 0.67  CONSONANT  hebrew       shor            ↔ osh
+  │ 0.67  CONSONANT  hebrew       shor            ↔ shoda
+  │ 0.67  CONSONANT  hebrew       shor            ↔ alsh
+  └────────────────────────────────────────────────
+  ┌─ Gemini ─────────────────────────────────────────
+  │ Voynich roots: [&#x27;al&#x27;, &#x27;e&#x27;, &#x27;am&#x27;, &#x27;dam&#x27;, &#x27;lair&#x27;, &#x27;aram&#x27;, &#x27;air&#x27;, &#x27;eal&#x27;, &#x27;aral&#x27;, &#x27;ar&#x27;]
+  │
+  │ 0.67  CONSONANT  greek        didimoi         ↔ dam
+  │ 0.60  CONSONANT  medieval_lat mercurius       ↔ arcr
+  └────────────────────────────────────────────────
+  ┌─ Cancer ─────────────────────────────────────────
+  │ Voynich roots: [&#x27;o&#x27;, &#x27;ar&#x27;, &#x27;lal&#x27;, &#x27;a&#x27;, &#x27;air&#x27;, &#x27;al&#x27;, &#x27;raiinam&#x27;, &#x27;sarsheo&#x27;, &#x27;oiiino&#x27;, &#x27;alal&#x27;]
+  │
+  │ (no matches above threshold)
+  └────────────────────────────────────────────────
+  ┌─ Leo ─────────────────────────────────────────
+  │ Voynich roots: [&#x27;e&#x27;, &#x27;al&#x27;, &#x27;cham&#x27;, &#x27;rch&#x27;, &#x27;am&#x27;, &#x27;yesh&#x27;, &#x27;ol&#x27;, &#x27;alals&#x27;, &#x27;heos&#x27;, &#x27;h&#x27;]
+  │
+  │ 1.00  CONSONANT  arabic       asad            ↔ esed
+  │ 0.67  CONSONANT  hebrew       arh             ↔ rch
+  └────────────────────────────────────────────────
+  ┌─ Virgo ─────────────────────────────────────────
+  │ Voynich roots: [&#x27;e&#x27;, &#x27;eod&#x27;, &#x27;cheo&#x27;, &#x27;cheol&#x27;, &#x27;ed&#x27;, &#x27;eoram&#x27;, &#x27;she&#x27;, &#x27;ear&#x27;, &#x27;heo&#x27;, &#x27;dysd&#x27;]
+  │
+  │ (no matches above threshold)
+  └────────────────────────────────────────────────
+  ┌─ Libra ─────────────────────────────────────────
+  │ Voynich roots: [&#x27;e&#x27;, &#x27;eol&#x27;, &#x27;eo&#x27;, &#x27;es&#x27;, &#x27;eod&#x27;, &#x27;al&#x27;, &#x27;o&#x27;, &#x27;d&#x27;, &#x27;aiinod&#x27;, &#x27;eos&#x27;]
+  │
+  │ 0.67  CONSONANT  latin        libra           ↔ alair
+  └────────────────────────────────────────────────
+  ┌─ Scorpio ─────────────────────────────────────────
+  │ Voynich roots: [&#x27;e&#x27;, &#x27;al&#x27;, &#x27;ar&#x27;, &#x27;ch&#x27;, &#x27;eos&#x27;, &#x27;cho&#x27;, &#x27;edyl&#x27;, &#x27;eor&#x27;, &#x27;eo&#x27;, &#x27;he&#x27;]
+  │
+  │ 0.67  CONSONANT  coptic       djale           ↔ edyl
+  └────────────────────────────────────────────────
+  ┌─ Sagittarius ─────────────────────────────────────────
+  │ Voynich roots: [&#x27;e&#x27;, &#x27;al&#x27;, &#x27;ol&#x27;, &#x27;he&#x27;, &#x27;des&#x27;, &#x27;er&#x27;, &#x27;als&#x27;, &#x27;a&#x27;, &#x27;raiin&#x27;, &#x27;eos&#x27;]
+  │
+  │ (no matches above threshold)
+  └────────────────────────────────────────────────
+  ┌─ Pisces ─────────────────────────────────────────
+  │ Voynich roots: [&#x27;o&#x27;, &#x27;ar&#x27;, &#x27;al&#x27;, &#x27;ald&#x27;, &#x27;ol&#x27;, &#x27;alalg&#x27;, &#x27;d&#x27;, &#x27;ala&#x27;, &#x27;ysam&#x27;, &#x27;chh&#x27;]
+  │
+  │ 0.60  CONSONANT  greek        ichthues        ↔ chh
+  └────────────────────────────────────────────────
+
+========================================================================
+ANALYSIS 4: SUFFIX SEMANTICS BY SECTION AND LOCUS
+========================================================================
+
+  ── Suffix Section Enrichment (observed/expected) ──
+  Suffix    Total  herbal  herbal  pharma     bio   cosmo    text  zodiac
+  -----------------------------------------------------------------------
+  ∅         12020  1.17   1.08   1.05   0.78   1.08   0.86   1.17 
+  y          6677  1.19   1.03   1.01   0.88   0.89   0.84   1.24 
+  dy         3208  0.65↓  0.76   0.35↓  1.81↑  1.04   1.18   0.57↓
+  iin        3092  1.16   0.79   0.98   0.67↓  1.43↑  1.06   0.53↓
+  ey         2728  0.69↓  0.60↓  0.98   1.43↑  0.80   1.12   1.20 
+  edy        2159  0.33↓  0.39↓  0.05↓  2.56↑  0.86   1.32↑  0.25↓
+  ol         1946  1.18   1.27   2.36↑  0.78   0.44↓  0.74   0.87 
+  aiin       1415  1.02   1.51↑  0.98   0.33↓  1.41↑  1.21   0.93 
+  or         1263  1.43↑  1.27   2.03↑  0.54↓  0.83   0.68↓  0.63↓
+  in         1256  0.59↓  0.84   0.57↓  1.86↑  0.67↓  1.36↑  0.20↓
+  ar         1230  0.76   1.11   0.65↓  0.49↓  1.57↑  1.31↑  1.54↑
+  ody        1003  0.94   1.89↑  1.94↑  0.02↓  1.36↑  0.94   1.81↑
+  al          858  0.70↓  1.08   0.72   0.80   0.48↓  1.39↑  2.10↑
+  ain         594  0.60↓  1.38↑  0.65↓  0.97   0.44↓  1.87↑  0.34↓
+  sy           82  0.92   0.00↓  2.50↑  0.57↓  1.32↑  0.55↓  2.46↑
+
+  ── Suffix × Determinative Interaction ──
+  (Which suffixes prefer which gallows?)
+
+  Suffix    Total       t       k       f       p       ∅
+  -------------------------------------------------------
+  ∅         12020   20.0%   23.5%    1.3%    3.9%   51.4%
+  y          6677   27.9%   41.4%    1.8%    5.8%   23.0%
+  dy         3208   28.6%   43.6%    1.4%    7.0%   19.4%
+  iin        3092   13.6%   23.6%    0.4%    2.1%   60.3%
+  ey         2728   11.4%   29.0%    1.0%    3.0%   55.7%
+  edy        2159    4.6%   16.2%    0.8%    2.4%   75.9%
+  ol         1946   10.5%   19.5%    1.0%    2.6%   66.4%
+  aiin       1415   11.8%   21.2%    1.5%    6.2%   59.3%
+  or         1263    9.1%   16.6%    1.0%    3.9%   69.4%
+  in         1256   16.9%   40.9%    0.2%    1.0%   41.1%
+  ar         1230   15.9%   24.4%    1.6%    6.3%   51.8%
+  ody        1003   19.7%   29.3%    1.2%    4.0%   45.8%
+  al          858   15.3%   24.9%    1.6%    4.5%   53.6%
+  ain         594   13.0%   35.4%    0.7%    3.0%   48.0%
+  sy           82   14.6%   20.7%    1.2%   11.0%   52.4%
+
+  ── Suffix by Locus Type ──
+  Suffix    Total   paragraph        ring       label       nymph
+  ---------------------------------------------------------------
+  ∅         12020       93.8%        5.2%        0.1%        0.9%
+  y          6677       93.5%        4.7%        0.1%        1.4%
+  dy         3208       95.7%        3.1%        0.0%        1.0%
+  iin        3092       96.8%        2.8%        0.0%        0.3%
+  ey         2728       94.6%        4.8%        0.0%        0.5%
+  edy        2159       97.2%        2.6%        0.0%        0.0%
+  ol         1946       95.5%        3.7%        0.2%        0.3%
+  aiin       1415       92.9%        5.9%        0.1%        1.0%
+  or         1263       95.8%        3.6%        0.1%        0.2%
+  in         1256       98.6%        1.0%        0.2%        0.2%
+  ar         1230       89.1%        8.2%        0.0%        2.0%
+  ody        1003       90.3%        8.0%        0.0%        1.4%
+  al          858       89.5%        7.6%        0.6%        2.2%
+  ain         594       98.8%        1.2%        0.0%        0.0%
+  sy           82       84.1%        9.8%        0.0%        6.1%
+
+========================================================================
+ANALYSIS 5: COPTIC EGYPTIAN PHONETIC PROBE
+========================================================================
+
+  Coptic vocabulary loaded: 68 terms
+  Voynich roots to test: 200
+
+  ── Voynich Root ↔ Coptic Matches ──
+  Matching by: exact, substring, consonantal skeleton similarity
+
+   Score Type         Voynich      Coptic          Meaning                Freq Section   
+  -------------------------------------------------------------------------------------
+    1.00 EXACT        she          she             wood/tree                35 text      
+    1.00 EXACT        ro           ro              mouth                    30 text      
+    0.95 NEAR-EXACT   hoo          houo            more than                10 herbal-A  
+    0.80 CONTAINS     lshe         she             wood/tree                21 bio       
+    0.80 CONTAINS     sheo         she             wood/tree                18 text      
+    0.80 CONTAINS     lshed        she             wood/tree                10 bio       
+    0.70 WITHIN       cho          choeis          lord                    600 herbal-A  
+    0.70 WITHIN       choe         choeis          lord                     24 herbal-A  
+    0.70 WITHIN       sho          shope           be/become                19 herbal-A  
+    0.70 WITHIN       chr          chrisma         anointing                 9 text      
+    0.70 WITHIN       lor          olor            cluster (grapes)          8 bio       
+    0.60 SKELETON     sh           she             wood/tree               222 herbal-A  
+    0.60 SKELETON     ches         choeis          lord                     97 text      
+    0.60 SKELETON     cheos        choeis          lord                     63 text      
+    0.60 SKELETON     chos         choeis          lord                     59 herbal-A  
+    0.60 SKELETON     esh          she             wood/tree                34 text      
+    0.60 SKELETON     hes          hise            suffering                30 zodiac    
+    0.60 SKELETON     chs          choeis          lord                     29 text      
+    0.60 SKELETON     ll           loole           grape                    20 text      
+    0.60 SKELETON     lol          loole           grape                    20 bio       
+    0.60 SKELETON     heos         hise            suffering                20 text      
+    0.60 SKELETON     lr           olor            cluster (grapes)         18 text      
+    0.60 SKELETON     lal          loole           grape                    18 herbal-A  
+    0.60 SKELETON     lair         olor            cluster (grapes)         17 text      
+    0.60 SKELETON     hos          hise            suffering                16 herbal-A  
+    0.60 SKELETON     rar          rro             grow/sprout              16 text      
+    0.60 SKELETON     rair         rro             grow/sprout              11 text      
+    0.60 SKELETON     ror          rro             grow/sprout              10 text      
+    0.60 SKELETON     lar          olor            cluster (grapes)          8 bio       
+
+  ── Domain Correlation Test ──
+  Do Coptic botanical terms match f-gallows words? Medical → k? Astro → t?
+
+  BOTANICAL matches (17):
+    she          [text] ↔ she (wood/tree)
+    lshe         [bio] ↔ she (wood/tree)
+    sheo         [text] ↔ she (wood/tree)
+    lshed        [bio] ↔ she (wood/tree)
+    lor          [bio] ↔ olor (cluster (grapes))
+
+  MEDICAL matches (3):
+    ro           [text] ↔ ro (mouth)
+    hoo          [herbal-A] ↔ houo (more than)
+    sho          [herbal-A] ↔ shope (be/become)
+
+  ASTRONOMICAL matches (2):
+    hoo          [herbal-A] ↔ hoou (day)
+    chr          [text] ↔ chrisma (anointing)
+
+  ELEMENT matches (14):
+    cho          [herbal-A] ↔ choeis (lord)
+    choe         [herbal-A] ↔ choeis (lord)
+    sho          [herbal-A] ↔ shoue (dry)
+    sh           [herbal-A] ↔ shoue (dry)
+    ches         [text] ↔ choeis (lord)
+
+========================================================================
+ANALYSIS 6: HERBAL LABEL DECOMPOSITION
+========================================================================
+
+  Herbal labels: 0
+  Unique roots in herbal labels: 0
+
+  ── Sample Herbal Label Decompositions (first 15 folios) ──
+
+  ── Top Herbal Label Roots (potential plant names) ──
+
+  ── Herbal Labels vs Coptic Plant Terms ──
+
+========================================================================
+SYNTHESIS: TOWARD DECIPHERMENT
+========================================================================
+
+  ┌──────────────────────────────────────────────────────────────────────┐
+  │  THE VOYNICH WRITING SYSTEM — COMPLETE STRUCTURAL MODEL             │
+  ├──────────────────────────────────────────────────────────────────────┤
+  │                                                                      │
+  │  WORD = [Gallows] + [Prefix] + Root + [e-chain] + [Suffix]          │
+  │           │            │         │        │           │              │
+  │      Determinative  Phonetic  Content  Vowel     Grammatical        │
+  │      (category)     Complement (meaning) Filler   Morpheme          │
+  │      (unpronounced) (redundant)          (non-     (case/number/    │
+  │                                          structural) agreement?)    │
+  │                                                                      │
+  │  Example: qokedy                                                     │
+  │    → gallows: k (generic determinative)                              │
+  │    → prefix:  qo (generic complement — agrees with k)               │
+  │    → root:    ed (consonantal skeleton)                              │
+  │    → suffix:  y (grammatical ending)                                 │
+  │                                                                      │
+  │  Same root, different domain:                                        │
+  │    dokedy → p-gallows + do-prefix → PROCESS domain                   │
+  │    sokedy → f-gallows + so-prefix → BOTANICAL domain                 │
+  │                                                                      │
+  └──────────────────────────────────────────────────────────────────────┘
+
+  ── Key Results ──
+
+  Zodiac name matching: 26 potential matches across 10 signs
+  Coptic vocabulary matches: 36 candidates
+    Botanical: 17, Medical: 3, Astro: 2, Element: 14
+
+  ── Assessment ──
+  The writing system structure is now fully decoded.
+  Content decipherment requires either:
+    1. A definitive zodiac name match (Rosetta Stone approach)
+    2. A Coptic/Hebrew/Arabic vocabulary correlation
+    3. External evidence (a bilingual text or key)
+
+Results saved to C:\projects\vais\results\root_lexicon_results.json
+</pre></details><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>bc53723</code>. 
+To run any test with your own parameters, clone
+<a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
+(<code>python webui/server.py</code>). All numbers reproduce at
+PYTHONHASHSEED=0.</footer></main></body></html>

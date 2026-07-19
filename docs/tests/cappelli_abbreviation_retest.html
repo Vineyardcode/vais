@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cappelli_abbreviation_retest — VAIS</title><style>
+:root { --bg:#ffffff; --fg:#1a1a1a; --muted:#666; --line:#ddd;
+        --code:#f5f5f5; --accent:#7a4a1e; --warn:#a33; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#141414; --fg:#ddd; --muted:#999; --line:#333;
+          --code:#1e1e1e; --accent:#d9a05b; --warn:#e77; } }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--fg);
+       font:16px/1.55 Georgia, 'Times New Roman', serif; }
+nav { border-bottom:1px solid var(--line); padding:.7em 1.2em;
+      font-family: system-ui, sans-serif; font-size:.9em; }
+nav a { color:var(--accent); text-decoration:none; margin-right:1.2em; }
+main { max-width: 62em; margin: 0 auto; padding: 1.5em 1.2em 4em; }
+h1,h2,h3 { font-family: system-ui, sans-serif; line-height:1.25; }
+h1 { font-size:1.7em; } h2 { font-size:1.3em; margin-top:2em; }
+a { color: var(--accent); }
+code, pre { font-family: ui-monospace, Consolas, monospace;
+            font-size:.86em; background:var(--code); }
+code { padding:.1em .3em; border-radius:3px; }
+pre { padding: .9em; overflow-x:auto; border:1px solid var(--line);
+      border-radius:4px; line-height:1.4; }
+table { border-collapse: collapse; margin: 1em 0; font-size:.92em;
+        display:block; overflow-x:auto; }
+th, td { border:1px solid var(--line); padding:.35em .6em;
+         text-align:left; vertical-align:top; }
+th { font-family: system-ui, sans-serif; background:var(--code); }
+blockquote { border-left:3px solid var(--accent); margin:1em 0;
+             padding:.2em 1em; color:var(--muted); }
+.muted { color:var(--muted); font-size:.9em; }
+.tag { font-family: system-ui, sans-serif; font-size:.75em;
+       border:1px solid var(--line); border-radius:3px;
+       padding:.05em .45em; margin-left:.5em; }
+.tag.sug { border-color:var(--warn); color:var(--warn); }
+details summary { cursor:pointer; font-family: system-ui, sans-serif; }
+footer { border-top:1px solid var(--line); margin-top:3em;
+         padding-top:1em; font-size:.85em; color:var(--muted); }
+</style></head><body>
+<nav><a href="../index.html">VAIS</a><a href="../catalog.html">Catalog</a>
+<a href="../research.html">Research</a><a href="../reports.html">Reports</a>
+<a href="https://github.com/Vineyardcode/vais">GitHub</a></nav>
+<main><h1>cappelli_abbreviation_retest</h1>
+<p class="muted">scripts/cappelli_abbreviation_retest.py</p>
+<pre>Re-testing Cappelli Abbreviation Marks vs VMS Suffixes
+
+═══════════════════════════════════════════════════════════════════════
+
+MOTIVATION:
+  abbreviation_shorthand_model tested whether abbreviated Latin matches VMS&#x27;s global
+  fingerprint (h_char, Zipf, Heaps, etc.) and found it CANNOT explain
+  h_char = 0.64.  That result stands.
+
+  But latin_inflection_ending_test discovered that VMS endings have three extreme anomalies
+  vs all 12 NL languages:
+    1. Low ending entropy (H=2.66 at last-1; z = -4.4 vs Latin)
+    2. High paradigm fill (3.05 endings/stem; z = +14 vs Latin)
+    3. Low stem-ending NMI (0.62; z = -14 vs Latin)
+
+  abbreviation_shorthand_model NEVER tested these metrics.  This is a critical gap because
+  Cappelli&#x27;s abbreviation system is a MANY-TO-ONE mapping:
+    - Sign ˊ (apostrophe/9) replaces -us, -os, -is, -s
+    - Sign 2 replaces -ur, -tur
+    - Sign 4 replaces -rum, -ram, -rius
+    - Sign 7 replaces -et, -que
+    - Sign 3 replaces -m, -em, -est
+    - Tilde ~ replaces m/n before consonants
+
+  This many-to-one compression should:
+    ↓ REDUCE ending entropy (fewer distinct marks)
+    ↑ INCREASE paradigm fill (stems that took -us AND -um now both → mark 1)
+    ↓ REDUCE stem-ending NMI (marks are less stem-specific than endings)
+
+  KEY QUESTION: Does abbreviated Latin move TOWARD VMS on the latin_inflection_ending_test
+  metrics that seemed to rule out Latin?
+
+APPROACH:
+  1. Build a comprehensive Cappelli abbreviation rule set from the
+     actual Lexicon Abbreviaturarum introduction (pp. XIX-XXVI)
+  2. Apply at densities 0.0-1.0 to all 6 Latin corpora
+  3. Measure latin_inflection_ending_test metrics on the ABBREVIATED text:
+     - H(last-1), H(last-2) of abbreviated words
+     - Paradigm fill (endings per stem)
+     - NMI(stem; ending)
+     - Ending transition MI and self-agreement
+  4. Also re-measure h_char (abbreviation_shorthand_model&#x27;s decisive metric)
+  5. Compare: raw Latin → abbreviated Latin → VMS on each metric
+
+SKEPTICISM NOTES:
+  - Even if abbreviation moves Latin toward VMS on ending metrics,
+    the h_char gap (abbreviation_shorthand_model) remains unexplained.
+  - Abbreviation alone cannot be the full story — at best, it could
+    be ONE component of a multi-layer encoding.
+  - The many-to-one collapse MIGHT trivially produce low NMI regardless
+    of source language.  We test this by also abbreviating Italian,
+    German, and Czech to check whether the effect is Latin-specific.
+  - The abbreviation density is a free parameter.  High density (0.9)
+    gives the best match by construction.  We must check whether
+    any density produces a joint match on multiple metrics simultaneously.</pre>
+<h2>Parameters</h2><table><tr><th>name</th><th>default</th><th>type</th></tr>
+<tr><td><code>SUFFIX_MARK_RULES</code></td><td><code>[(&#x27;ibus&#x27;, &#x27;1&#x27;, 2), (&#x27;ius&#x27;, &#x27;1&#x27;, 2), (&#x27;us&#x27;, &#x27;1&#x27;, 2), (&#x27;os&#x27;, &#x27;1&#x27;, 2), (&#x27;is&#x27;, &#x27;1&#x27;, 2), (&#x27;atur…</code></td><td>json</td></tr>
+<tr><td><code>WORD_ABBREVIATIONS</code></td><td><code>{&#x27;et&#x27;: &#x27;4&#x27;, &#x27;est&#x27;: &#x27;e8&#x27;, &#x27;sunt&#x27;: &#x27;s8&#x27;, &#x27;non&#x27;: &#x27;n8&#x27;, &#x27;sed&#x27;: &#x27;s4&#x27;, &#x27;enim&#x27;: &#x27;en&#x27;, &#x27;autem&#x27;: &#x27;a…</code></td><td>json</td></tr>
+<tr><td><code>PREFIX_RULES</code></td><td><code>[(&#x27;contra&#x27;, &#x27;c9a&#x27;), (&#x27;contr&#x27;, &#x27;c9&#x27;), (&#x27;cons&#x27;, &#x27;c9s&#x27;), (&#x27;con&#x27;, &#x27;c9&#x27;), (&#x27;com&#x27;, &#x27;c9&#x27;), (&#x27;per&#x27;…</code></td><td>json</td></tr>
+<tr><td><code>SECTION_MAP</code></td><td><code>{&#x27;bio&#x27;: &#x27;bio&#x27;, &#x27;cosmo&#x27;: &#x27;cosmo&#x27;, &#x27;herbal&#x27;: &#x27;herbal&#x27;, &#x27;pharma&#x27;: &#x27;pharma&#x27;, &#x27;text&#x27;: &#x27;text&#x27;, &#x27;…</code></td><td>json</td></tr>
+</table>
+<h2>Golden output (PYTHONHASHSEED=0)</h2><details><summary>show</summary><pre>================================================================================
+cappelli_abbreviation_retest — Re-testing Cappelli Abbreviation Marks vs VMS Suffixes
+================================================================================
+
+Critical revalidation of abbreviation_shorthand_model&#x27;s methodology:
+  abbreviation_shorthand_model tested h_char (valid failure) but NEVER tested ending metrics.
+  latin_inflection_ending_test found VMS endings are 14-20σ from Latin on paradigm fill &amp; NMI.
+  Cappelli marks are many-to-one → should REDUCE NMI and INCREASE fill.
+  This test asks: does abbreviation explain the latin_inflection_ending_test anomalies?
+
+Loading VMS...
+  VMS: 40300 words
+  h_char = 0.5671
+  H(last-1) = 2.660, fill = 3.05, NMI = 0.6216
+  H(last-2) = 4.055, fill = 7.26, NMI = 0.4746
+
+Loading reference corpora...
+  Latin-Caesar: 38893 words
+  Latin-Apicius: 21912 words
+  Latin-Galen: 39020 words
+  Latin-Pliny: 50178 words
+  Latin-Vulgate: 21217 words
+  Latin-Erasmus: 4434 words
+  Italian: 17574 words
+  German: 28111 words
+  Czech: 465340 words
+
+================================================================================
+SECTION 1 — RAW LATIN BASELINE
+================================================================================
+
+     Apicius: h_char=0.8039  H1=3.240  fill1=1.83  NMI1=0.8995  H2=5.552  fill2=2.82  NMI2=0.8182
+      Caesar: h_char=0.8043  H1=3.091  fill1=1.58  NMI1=0.8705  H2=5.440  fill2=2.60  NMI2=0.8193
+     Erasmus: h_char=0.8090  H1=3.213  fill1=1.85  NMI1=0.8700  H2=5.679  fill2=3.10  NMI2=0.7752
+       Galen: h_char=0.8272  H1=3.531  fill1=1.70  NMI1=0.8887  H2=6.186  fill2=2.94  NMI2=0.8196
+       Pliny: h_char=0.8298  H1=3.205  fill1=1.79  NMI1=0.8544  H2=5.862  fill2=3.32  NMI2=0.8043
+     Vulgate: h_char=0.8084  H1=3.350  fill1=1.74  NMI1=0.8477  H2=5.786  fill2=2.74  NMI2=0.7942
+
+================================================================================
+SECTION 2 — ABBREVIATED LATIN (Cappelli rules)
+================================================================================
+
+--- Density = 0.0 ---
+     Apicius: mark_rate=0.0%  h_char=0.8039  H1=3.240  fill1=1.83  NMI1=0.8995  H2=5.552  fill2=2.82  NMI2=0.8182
+      Caesar: mark_rate=0.0%  h_char=0.8043  H1=3.091  fill1=1.58  NMI1=0.8705  H2=5.440  fill2=2.60  NMI2=0.8193
+     Erasmus: mark_rate=0.0%  h_char=0.8090  H1=3.213  fill1=1.85  NMI1=0.8700  H2=5.679  fill2=3.10  NMI2=0.7752
+       Galen: mark_rate=0.0%  h_char=0.8272  H1=3.531  fill1=1.70  NMI1=0.8887  H2=6.186  fill2=2.94  NMI2=0.8196
+       Pliny: mark_rate=0.0%  h_char=0.8298  H1=3.205  fill1=1.79  NMI1=0.8544  H2=5.862  fill2=3.32  NMI2=0.8043
+     Vulgate: mark_rate=0.0%  h_char=0.8084  H1=3.350  fill1=1.74  NMI1=0.8477  H2=5.786  fill2=2.74  NMI2=0.7942
+
+--- Density = 0.2 ---
+     Apicius: mark_rate=7.3%  h_char=0.8072  H1=3.567  fill1=2.25  NMI1=0.8647  H2=6.000  fill2=3.38  NMI2=0.8017
+      Caesar: mark_rate=9.0%  h_char=0.8083  H1=3.485  fill1=2.13  NMI1=0.8171  H2=5.961  fill2=3.31  NMI2=0.7895
+     Erasmus: mark_rate=8.2%  h_char=0.8113  H1=3.588  fill1=2.32  NMI1=0.8279  H2=6.141  fill2=3.85  NMI2=0.7546
+       Galen: mark_rate=6.9%  h_char=0.8295  H1=3.845  fill1=2.06  NMI1=0.8567  H2=6.585  fill2=3.51  NMI2=0.7970
+       Pliny: mark_rate=6.8%  h_char=0.8320  H1=3.509  fill1=2.27  NMI1=0.8155  H2=6.263  fill2=4.07  NMI2=0.7800
+     Vulgate: mark_rate=8.9%  h_char=0.8117  H1=3.738  fill1=2.10  NMI1=0.8130  H2=6.286  fill2=3.29  NMI2=0.7693
+
+--- Density = 0.4 ---
+     Apicius: mark_rate=14.2%  h_char=0.8079  H1=3.730  fill1=2.35  NMI1=0.8485  H2=6.276  fill2=3.48  NMI2=0.7962
+      Caesar: mark_rate=18.1%  h_char=0.8089  H1=3.681  fill1=2.40  NMI1=0.7842  H2=6.281  fill2=3.62  NMI2=0.7747
+     Erasmus: mark_rate=17.6%  h_char=0.8109  H1=3.797  fill1=2.70  NMI1=0.7871  H2=6.481  fill2=4.65  NMI2=0.7321
+       Galen: mark_rate=13.5%  h_char=0.8299  H1=4.006  fill1=2.24  NMI1=0.8330  H2=6.849  fill2=3.79  NMI2=0.7841
+       Pliny: mark_rate=13.6%  h_char=0.8321  H1=3.666  fill1=2.50  NMI1=0.7879  H2=6.530  fill2=4.43  NMI2=0.7651
+     Vulgate: mark_rate=18.0%  h_char=0.8120  H1=3.939  fill1=2.31  NMI1=0.7881  H2=6.636  fill2=3.69  NMI2=0.7545
+
+--- Density = 0.6 ---
+     Apicius: mark_rate=21.6%  h_char=0.8078  H1=3.832  fill1=2.50  NMI1=0.8332  H2=6.503  fill2=3.62  NMI2=0.7912
+      Caesar: mark_rate=26.5%  h_char=0.8081  H1=3.789  fill1=2.60  NMI1=0.7612  H2=6.500  fill2=3.90  NMI2=0.7651
+     Erasmus: mark_rate=25.3%  h_char=0.8094  H1=3.884  fill1=2.73  NMI1=0.7671  H2=6.717  fill2=4.78  NMI2=0.7480
+       Galen: mark_rate=19.9%  h_char=0.8288  H1=4.102  fill1=2.38  NMI1=0.8165  H2=7.041  fill2=3.97  NMI2=0.7756
+       Pliny: mark_rate=20.1%  h_char=0.8312  H1=3.756  fill1=2.67  NMI1=0.7673  H2=6.715  fill2=4.71  NMI2=0.7548
+     Vulgate: mark_rate=26.7%  h_char=0.8104  H1=4.033  fill1=2.42  NMI1=0.7692  H2=6.881  fill2=3.97  NMI2=0.7474
+
+--- Density = 0.8 ---
+     Apicius: mark_rate=28.8%  h_char=0.8059  H1=3.876  fill1=2.55  NMI1=0.8208  H2=6.658  fill2=3.66  NMI2=0.7892
+      Caesar: mark_rate=35.6%  h_char=0.8049  H1=3.829  fill1=2.75  NMI1=0.7380  H2=6.638  fill2=4.01  NMI2=0.7596
+     Erasmus: mark_rate=34.9%  h_char=0.8060  H1=3.940  fill1=2.91  NMI1=0.7420  H2=6.893  fill2=4.97  NMI2=0.7409
+       Galen: mark_rate=26.4%  h_char=0.8263  H1=4.148  fill1=2.46  NMI1=0.8021  H2=7.186  fill2=4.13  NMI2=0.7705
+       Pliny: mark_rate=26.8%  h_char=0.8285  H1=3.789  fill1=2.80  NMI1=0.7496  H2=6.840  fill2=4.86  NMI2=0.7472
+     Vulgate: mark_rate=34.8%  h_char=0.8074  H1=4.065  fill1=2.51  NMI1=0.7573  H2=7.040  fill2=4.16  NMI2=0.7446
+
+--- Density = 1.0 ---
+     Apicius: mark_rate=36.0%  h_char=0.8019  H1=3.859  fill1=2.68  NMI1=0.8098  H2=6.737  fill2=3.78  NMI2=0.7916
+      Caesar: mark_rate=44.1%  h_char=0.8000  H1=3.801  fill1=2.89  NMI1=0.7212  H2=6.675  fill2=4.08  NMI2=0.7588
+     Erasmus: mark_rate=42.3%  h_char=0.8012  H1=3.911  fill1=2.98  NMI1=0.7422  H2=6.962  fill2=5.16  NMI2=0.7543
+       Galen: mark_rate=32.6%  h_char=0.8225  H1=4.150  fill1=2.54  NMI1=0.7940  H2=7.255  fill2=4.06  NMI2=0.7748
+       Pliny: mark_rate=33.1%  h_char=0.8245  H1=3.771  fill1=2.90  NMI1=0.7394  H2=6.892  fill2=4.99  NMI2=0.7479
+     Vulgate: mark_rate=42.9%  h_char=0.8020  H1=4.035  fill1=2.61  NMI1=0.7499  H2=7.105  fill2=4.29  NMI2=0.7486
+
+================================================================================
+SECTION 3 — COMPARISON: VMS vs Raw Latin vs Abbreviated Latin
+================================================================================
+
+================================================================================
+  COMPARISON TABLE — Last 1 character(s)
+================================================================================
+
+              Metric       VMS    RawLat     d=0.0     d=0.4     d=0.8     d=1.0
+  ──────────────────  ────────  ────────  ────────  ────────  ────────  ────────
+           H(ending)     2.660     3.271     3.271     3.803     3.941     3.921
+             # types        26        24        24        31        32        32
+       Paradigm fill      3.05      1.75      1.75      2.42      2.66      2.77
+             # stems       472       466       466       447       442       434
+       NMI(stem;end)    0.6216    0.8718    0.8718    0.8048    0.7683    0.7594
+        MI(stem;end)    1.6649    2.8965    2.8965    3.0984    3.0317    2.9629
+         Agree ratio      1.19      1.29      1.29      1.34      1.41      1.47
+           Bigram MI    0.0961    0.0797    0.0797    0.0980    0.1073    0.1146
+              h_char    0.5671    0.8138    0.8138    0.8170    0.8132    0.8087
+
+================================================================================
+  COMPARISON TABLE — Last 2 character(s)
+================================================================================
+
+              Metric       VMS    RawLat     d=0.0     d=0.4     d=0.8     d=1.0
+  ──────────────────  ────────  ────────  ────────  ────────  ────────  ────────
+           H(ending)     4.055     5.751     5.751     6.509     6.876     6.938
+             # types       216       194       194       296       306       307
+       Paradigm fill      7.26      2.92      2.92      3.94      4.30      4.39
+             # stems       348       446       446       431       415       407
+       NMI(stem;end)    0.4746    0.8051    0.8051    0.7678    0.7587    0.7627
+        MI(stem;end)    1.8985    4.6130    4.6130    4.9950    5.1655    5.2131
+         Agree ratio      1.51      1.73      1.73      1.83      1.90      1.93
+           Bigram MI    0.1871    0.7146    0.7146    1.1258    1.3594    1.4435
+              h_char    0.5671    0.8138    0.8138    0.8170    0.8132    0.8087
+
+================================================================================
+SECTION 4 — DIRECTION ANALYSIS: Does abbreviation move Latin toward VMS?
+================================================================================
+
+--- Last 1 character(s) ---
+
+              Metric       VMS    RawLat       Gap       d=0.4     d=0.8     d=1.0   % gap closed
+  ──────────────────  ────────  ────────  ────────    ────────  ────────  ────────  ─────────────
+                   H    2.6604    3.2714   -0.6111      3.8031    3.9413    3.9213        -106.3%
+                fill    3.0466    1.7487   +1.2979      2.4152    2.6642    2.7654         +78.3%
+                 NMI    0.6216    0.8718   -0.2502      0.8048    0.7683    0.7594         +44.9%
+               agree    1.1885    1.2883   -0.0998      1.3366    1.4118    1.4684        -180.5%
+               bi_MI    0.0961    0.0797   +0.0164      0.0980    0.1073    0.1146        +212.7%
+              h_char    0.5671    0.8138   -0.2467      0.8170    0.8132    0.8087          +2.1%
+
+--- Last 2 character(s) ---
+
+              Metric       VMS    RawLat       Gap       d=0.4     d=0.8     d=1.0   % gap closed
+  ──────────────────  ────────  ────────  ────────    ────────  ────────  ────────  ─────────────
+                   H    4.0551    5.7507   -1.6957      6.5088    6.8758    6.9377         -70.0%
+                fill    7.2557    2.9212   +4.3346      3.9444    4.2982    4.3927         +33.9%
+                 NMI    0.4746    0.8051   -0.3305      0.7678    0.7587    0.7627         +12.9%
+               agree    1.5087    1.7313   -0.2227      1.8261    1.9033    1.9287         -88.6%
+               bi_MI    0.1871    0.7146   -0.5274      1.1258    1.3594    1.4435        -138.2%
+              h_char    0.5671    0.8138   -0.2467      0.8170    0.8132    0.8087          +2.1%
+
+================================================================================
+SECTION 5 — CONTROL: Abbreviation applied to non-Latin languages
+================================================================================
+
+Does abbreviation trivially produce VMS-like metrics from ANY language?
+If yes → abbreviation effect is not Latin-specific → weaker evidence.
+
+       Czech (mark_rate at d=1.0: 1.8%):
+    last-1: H 4.374→4.436  fill 2.13→2.20  NMI 0.8653→0.8590
+    last-2: H 7.248→7.362  fill 3.52→3.83  NMI 0.7956→0.7851
+    h_char: 0.7893→0.7879
+
+      German (mark_rate at d=1.0: 6.8%):
+    last-1: H 3.303→3.503  fill 1.80→1.93  NMI 0.8389→0.8382
+    last-2: H 5.597→5.983  fill 3.27→3.89  NMI 0.7515→0.7343
+    h_char: 0.7682→0.7653
+
+     Italian (mark_rate at d=1.0: 1.4%):
+    last-1: H 2.671→2.714  fill 2.18→2.17  NMI 0.7776→0.7832
+    last-2: H 5.796→5.812  fill 3.37→3.36  NMI 0.7848→0.7848
+    h_char: 0.7793→0.7756
+
+================================================================================
+SECTION 6 — TOP ENDINGS: VMS vs Abbreviated Latin at d=1.0
+================================================================================
+
+VMS top endings (last-1):
+  -y: 39.4%
+  -n: 16.0%
+  -r: 15.2%
+  -l: 14.9%
+  -o: 3.1%
+
+VMS top endings (last-2):
+  -dy: 18.5%
+  -in: 17.3%
+  -ey: 11.6%
+  -ol: 8.3%
+  -ar: 7.1%
+
+Abbreviated Latin (all corpora, d=1.0) top endings (last-1):
+  -e: 12.2%
+  -1: 11.6%
+  -5: 10.3%
+  -s: 9.4%
+  -8: 8.4%
+
+Abbreviated Latin (all corpora, d=1.0) top endings (last-2):
+  -es: 3.9%
+  -re: 2.6%
+  -t1: 2.5%
+  -ae: 2.5%
+  -t5: 2.1%
+
+================================================================================
+SECTION 7 — MARK INVENTORY: Cappelli marks vs VMS suffix types
+================================================================================
+
+Cappelli mark distribution (all Latin, d=1.0):
+          M1 (-us/-os/-is/-ibus):  20266 ( 31.0%)
+          M5 (-um/-em/-am/-onem):  17941 ( 27.5%)
+        M8 (-er/-nt/-it/general):  14671 ( 22.5%)
+                  M6 (-bus/-que):   3931 (  6.0%)
+            M3 (-rum/-orum/-ram):   3847 (  5.9%)
+                   M2 (-ur/-tur):   2611 (  4.0%)
+                        M9 (cum):   1511 (  2.3%)
+                  M4 (et/7-sign):    532 (  0.8%)
+          Total mark-ended words:  65310 ( 37.2% of all words)
+             Distinct mark types:      8
+
+VMS parser suffix distribution (latin_inflection_ending_test):
+  (Using last-1 character distribution as proxy)
+        -y:  15867 ( 39.4%)
+        -n:   6465 ( 16.0%)
+        -r:   6135 ( 15.2%)
+        -l:   5986 ( 14.9%)
+        -o:   1246 (  3.1%)
+        -s:   1163 (  2.9%)
+        -m:   1128 (  2.8%)
+        -d:    638 (  1.6%)
+        -a:    282 (  0.7%)
+        -h:    237 (  0.6%)
+  Distinct last-1 types: 26
+
+  Cappelli: 8 mark types, H=2.372 bits
+  VMS last-1: 26 types, H=2.660 bits
+
+================================================================================
+SECTION 8 — CRITICAL ASSESSMENT
+================================================================================
+
+WHAT ABBREVIATION EXPLAINS:
+  - See direction analysis above for % gap closed on each metric.
+  - Focus on: H(ending), paradigm fill, NMI, h_char
+
+WHAT ABBREVIATION DOES NOT EXPLAIN:
+  - abbreviation_shorthand_model showed h_char remains ~0.85 (VMS needs 0.64).
+  - This test measures whether abbreviation even moves h_char.
+
+CONTROLS:
+  - Vernacular languages show whether the effect is Latin-specific.
+  - Density sweep shows whether the effect saturates or scales.
+
+
+Results saved to C:\projects\vais\results\cappelli_abbreviation_retest.txt
+</pre></details><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>bc53723</code>. 
+To run any test with your own parameters, clone
+<a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
+(<code>python webui/server.py</code>). All numbers reproduce at
+PYTHONHASHSEED=0.</footer></main></body></html>

@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>zodiac_degree_semantics — VAIS</title><style>
+:root { --bg:#ffffff; --fg:#1a1a1a; --muted:#666; --line:#ddd;
+        --code:#f5f5f5; --accent:#7a4a1e; --warn:#a33; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#141414; --fg:#ddd; --muted:#999; --line:#333;
+          --code:#1e1e1e; --accent:#d9a05b; --warn:#e77; } }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--fg);
+       font:16px/1.55 Georgia, 'Times New Roman', serif; }
+nav { border-bottom:1px solid var(--line); padding:.7em 1.2em;
+      font-family: system-ui, sans-serif; font-size:.9em; }
+nav a { color:var(--accent); text-decoration:none; margin-right:1.2em; }
+main { max-width: 62em; margin: 0 auto; padding: 1.5em 1.2em 4em; }
+h1,h2,h3 { font-family: system-ui, sans-serif; line-height:1.25; }
+h1 { font-size:1.7em; } h2 { font-size:1.3em; margin-top:2em; }
+a { color: var(--accent); }
+code, pre { font-family: ui-monospace, Consolas, monospace;
+            font-size:.86em; background:var(--code); }
+code { padding:.1em .3em; border-radius:3px; }
+pre { padding: .9em; overflow-x:auto; border:1px solid var(--line);
+      border-radius:4px; line-height:1.4; }
+table { border-collapse: collapse; margin: 1em 0; font-size:.92em;
+        display:block; overflow-x:auto; }
+th, td { border:1px solid var(--line); padding:.35em .6em;
+         text-align:left; vertical-align:top; }
+th { font-family: system-ui, sans-serif; background:var(--code); }
+blockquote { border-left:3px solid var(--accent); margin:1em 0;
+             padding:.2em 1em; color:var(--muted); }
+.muted { color:var(--muted); font-size:.9em; }
+.tag { font-family: system-ui, sans-serif; font-size:.75em;
+       border:1px solid var(--line); border-radius:3px;
+       padding:.05em .45em; margin-left:.5em; }
+.tag.sug { border-color:var(--warn); color:var(--warn); }
+details summary { cursor:pointer; font-family: system-ui, sans-serif; }
+footer { border-top:1px solid var(--line); margin-top:3em;
+         padding-top:1em; font-size:.85em; color:var(--muted); }
+</style></head><body>
+<nav><a href="../index.html">VAIS</a><a href="../catalog.html">Catalog</a>
+<a href="../research.html">Research</a><a href="../reports.html">Reports</a>
+<a href="https://github.com/Vineyardcode/vais">GitHub</a></nav>
+<main><h1>zodiac_degree_semantics</h1>
+<p class="muted">scripts/zodiac_degree_semantics.py · depends on ring_decan_mapping</p>
+<pre>Medieval Degree-Meaning Cross-Reference
+
+Tests whether Voynich zodiac labels correlate with classical per-degree 
+classification systems that would have been known to a 15th-century author:
+
+  1. Egyptian Terms/Bounds — each degree ruled by one of 5 planets
+  2. Bright/Dark/Smoky/Empty degrees — from Firmicus/Lilly
+  3. Masculine/Feminine degrees — from Ptolemy/Lilly
+  4. Lunar Mansions — 28 Arabic manzils overlaid on zodiac degrees
+
+Sources:
+  - Ptolemy, Tetrabiblos (2nd c.)
+  - Firmicus Maternus, Mathesis (4th c.)
+  - William Lilly, Christian Astrology (1647) - preserving classical data
+  - Abu Ma&#x27;shar/Albumasar, Great Introduction (9th c.)</pre>
+<h2>Parameters</h2><table><tr><th>name</th><th>default</th><th>type</th></tr>
+<tr><td><code>PREFIXES</code></td><td><code>[&#x27;qo&#x27;, &#x27;q&#x27;, &#x27;do&#x27;, &#x27;dy&#x27;, &#x27;so&#x27;, &#x27;sy&#x27;, &#x27;ol&#x27;, &#x27;or&#x27;, &#x27;o&#x27;, &#x27;y&#x27;, &#x27;d&#x27;, &#x27;s&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>ROOT_ONSETS</code></td><td><code>[&#x27;ckh&#x27;, &#x27;cth&#x27;, &#x27;cph&#x27;, &#x27;cfh&#x27;, &#x27;sch&#x27;, &#x27;sh&#x27;, &#x27;ch&#x27;, &#x27;f&#x27;, &#x27;p&#x27;, &#x27;k&#x27;, &#x27;t&#x27;, &#x27;eee&#x27;, &#x27;ee&#x27;, &#x27;e&#x27;, &#x27;da&#x27;…</code></td><td>json</td></tr>
+<tr><td><code>ROOT_BODIES</code></td><td><code>[&#x27;eee&#x27;, &#x27;ee&#x27;, &#x27;e&#x27;, &#x27;da&#x27;, &#x27;sa&#x27;, &#x27;do&#x27;, &#x27;so&#x27;, &#x27;a&#x27;, &#x27;o&#x27;, &#x27;d&#x27;, &#x27;s&#x27;, &#x27;l&#x27;, &#x27;r&#x27;, &#x27;n&#x27;, &#x27;m&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>SUFFIXES_LIST</code></td><td><code>[&#x27;aiin&#x27;, &#x27;aiir&#x27;, &#x27;ain&#x27;, &#x27;air&#x27;, &#x27;am&#x27;, &#x27;an&#x27;, &#x27;ar&#x27;, &#x27;al&#x27;, &#x27;as&#x27;, &#x27;iin&#x27;, &#x27;iir&#x27;, &#x27;in&#x27;, &#x27;ir&#x27;, &#x27;dy…</code></td><td>json</td></tr>
+<tr><td><code>BRIGHT_DEGREES</code></td><td><code>{&#x27;Aries&#x27;: [9, 15, 20, 25, 30], &#x27;Taurus&#x27;: [3, 15, 27], &#x27;Gemini&#x27;: [11, 17, 25], &#x27;Cancer&#x27;: [1…</code></td><td>json</td></tr>
+<tr><td><code>DARK_DEGREES</code></td><td><code>{&#x27;Aries&#x27;: [2, 12, 17, 21, 23, 26, 29], &#x27;Taurus&#x27;: [5, 7, 8, 13, 18, 21, 24, 25, 26], &#x27;Gemin…</code></td><td>json</td></tr>
+<tr><td><code>SMOKY_DEGREES</code></td><td><code>{&#x27;Aries&#x27;: [5, 10, 19, 24, 28], &#x27;Taurus&#x27;: [1, 9, 11, 19, 22, 28], &#x27;Gemini&#x27;: [1, 7, 15, 19, …</code></td><td>json</td></tr>
+<tr><td><code>GENDER_DEGREES</code></td><td><code>{&#x27;Aries&#x27;: [(7, &#x27;M&#x27;), (14, &#x27;F&#x27;), (21, &#x27;M&#x27;), (28, &#x27;F&#x27;), (30, &#x27;M&#x27;)], &#x27;Taurus&#x27;: [(8, &#x27;F&#x27;), (15…</code></td><td>json</td></tr>
+<tr><td><code>LUNAR_MANSIONS</code></td><td><code>[(&#x27;Sharaṭān&#x27;, &#x27;Aries&#x27;, 1), (&#x27;Buṭayn&#x27;, &#x27;Aries&#x27;, 13), (&#x27;Thurayyā&#x27;, &#x27;Aries&#x27;, 26), (&#x27;Dabarān&#x27;,…</code></td><td>json</td></tr>
+<tr><td><code>SIGN_ORDER</code></td><td><code>[&#x27;Aries&#x27;, &#x27;Taurus&#x27;, &#x27;Gemini&#x27;, &#x27;Cancer&#x27;, &#x27;Leo&#x27;, &#x27;Virgo&#x27;, &#x27;Libra&#x27;, &#x27;Scorpio&#x27;, &#x27;Sagittarius&#x27;,…</code></td><td>json</td></tr>
+<tr><td><code>DECAN_RULERS</code></td><td><code>{&#x27;Aries&#x27;: [&#x27;Mars&#x27;, &#x27;Sun&#x27;, &#x27;Venus&#x27;], &#x27;Taurus&#x27;: [&#x27;Mercury&#x27;, &#x27;Moon&#x27;, &#x27;Saturn&#x27;], &#x27;Gemini&#x27;: [&#x27;J…</code></td><td>json</td></tr>
+</table>
+<h2>Golden output (PYTHONHASHSEED=0)</h2><details><summary>show</summary><pre>Voynich Manuscript — Medieval Degree-Meaning Cross-Reference
+======================================================================
+======================================================================
+Egyptian Terms/Bounds — do term rulers shape label morphology?
+======================================================================
+
+  Labels per terms ruler:
+  Ruler        Count    o−%    −y%  −iin%   −am%   −ar% Top root        2nd root
+  ------------ ----- ------ ------ ------ ------ ------ --------------- ---------------
+  Jupiter         65    60%    43%     3%     0%     0% tal(4)          kal(4)
+  Venus           68    53%    35%    10%     0%     0% t(2)            kala(2)
+  Mercury         62    63%    32%     8%     0%     0% keol(2)         teod(2)
+  Mars            57    60%    32%     7%     0%     0% tal(5)          pal(3)
+  Saturn          47    49%    21%     9%     0%     0% kald(2)         kal(2)
+
+  Root sharing between terms rulers:
+    Jupiter↔Venus: 13 shared (J=0.129) — char, cheold, k, kal, kar
+    Jupiter↔Mercury: 7 shared (J=0.065) — a, ch, che, eed, k
+    Jupiter↔Mars: 7 shared (J=0.073) — kam, kar, ke, kee, keod
+    Jupiter↔Saturn: 6 shared (J=0.064) — a, k, kal, kar, ke
+    Venus↔Mercury: 8 shared (J=0.073) — eeoda, k, kara, okydy, pa
+    Venus↔Mars: 8 shared (J=0.081) — kala, kar, kee, keod, pa
+    Venus↔Saturn: 7 shared (J=0.072) — k, kal, kar, ta, tal
+    Mercury↔Mars: 5 shared (J=0.049) — karam, keol, pa, tar, ted
+    Mercury↔Saturn: 4 shared (J=0.040) — a, k, keeol, keol
+    Mars↔Saturn: 5 shared (J=0.057) — ar, kar, ke, keol, tal
+
+  Chi-square-like test: suffix distribution by terms ruler
+
+    Suffix &#x27;y&#x27; (overall: 33.4%):
+      Jupiter   : 43.1% (Δ=+9.6%) ◄ HIGH
+      Venus     : 35.3% (Δ=+1.8%)
+      Mercury   : 32.3% (Δ=-1.2%)
+      Mars      : 31.6% (Δ=-1.9%)
+      Saturn    : 21.3% (Δ=-12.2%) ◄ LOW
+
+    Suffix &#x27;iin&#x27; (overall: 7.4%):
+      Jupiter   : 3.1% (Δ=-4.3%)
+      Venus     : 10.3% (Δ=+2.9%)
+      Mercury   : 8.1% (Δ=+0.7%)
+      Mars      : 7.0% (Δ=-0.3%)
+      Saturn    : 8.5% (Δ=+1.2%)
+
+    Suffix &#x27;am&#x27; (overall: 0.0%):
+      Jupiter   : 0.0% (Δ=+0.0%)
+      Venus     : 0.0% (Δ=+0.0%)
+      Mercury   : 0.0% (Δ=+0.0%)
+      Mars      : 0.0% (Δ=+0.0%)
+      Saturn    : 0.0% (Δ=+0.0%)
+
+    Suffix &#x27;ar&#x27; (overall: 0.0%):
+      Jupiter   : 0.0% (Δ=+0.0%)
+      Venus     : 0.0% (Δ=+0.0%)
+      Mercury   : 0.0% (Δ=+0.0%)
+      Mars      : 0.0% (Δ=+0.0%)
+      Saturn    : 0.0% (Δ=+0.0%)
+
+    Suffix &#x27;al&#x27; (overall: 0.0%):
+      Jupiter   : 0.0% (Δ=+0.0%)
+      Venus     : 0.0% (Δ=+0.0%)
+      Mercury   : 0.0% (Δ=+0.0%)
+      Mars      : 0.0% (Δ=+0.0%)
+      Saturn    : 0.0% (Δ=+0.0%)
+
+    Suffix &#x27;dy&#x27; (overall: 0.0%):
+      Jupiter   : 0.0% (Δ=+0.0%)
+      Venus     : 0.0% (Δ=+0.0%)
+      Mercury   : 0.0% (Δ=+0.0%)
+      Mars      : 0.0% (Δ=+0.0%)
+      Saturn    : 0.0% (Δ=+0.0%)
+
+  Terms boundary effect:
+  Do labels at term boundaries (first/last degree of a term) differ?
+    Boundary degrees (n=99): −y=33.3%, −iin=10.1%
+    Interior degrees (n=200): −y=33.5%, −iin=6.0%
+
+======================================================================
+Bright/Dark/Smoky/Void — do degree qualities shape labels?
+======================================================================
+
+  Labels per degree quality:
+  Quality    Count    o−%    −y%  −iin% Unique roots Avg root len
+  ---------- ----- ------ ------ ------ ------------ ------------
+  bright        38    66%    42%     5%           37          4.8
+  dark          78    60%    36%     9%           68          4.6
+  smoky         63    54%    27%     2%           59          4.8
+  void         120    54%    32%    10%          101          4.5
+
+  -iin suffix rate by quality (overall: 7.4%):
+    bright    : 5.3% (Δ=-2.1%)
+    dark      : 9.0% (Δ=+1.6%)
+    smoky     : 1.6% (Δ=-5.8%) ◄◄
+    void      : 10.0% (Δ=+2.6%)
+
+  Shared label rate by quality (overall: 21.1%):
+    bright    : 28.9% (n=38)
+    dark      : 25.6% (n=78)
+    smoky     : 14.3% (n=63)
+    void      : 19.2% (n=120)
+
+  Labels at BRIGHT degrees (traditionally important/prominent):
+  Sign           Deg° Label                        Root         Suffix   Shared?
+  -------------- ---- ---------------------------- ------------ -------- --------
+  Aries             9° otshshdy                     otshshdy              
+  Aries            15° otear.araydy                 tear                  
+  Aries            20° okeoaly                      keoal        y        
+  Aries            25° otalaly                      talal        y        
+  Aries            30° otaldar                      taldar                YES
+  Taurus            3° okolar                       kolar                 
+  Taurus           15° sholshdy                     sholshdy              
+  Taurus           27° otchoshy                     otchoshy              
+  Gemini           11° okeey.ary                    kee          y        YES
+  Gemini           17° okaly                        kal          y        YES
+  Gemini           25° okaldy                       kald         y        YES
+  Cancer            1° olkalaiin                    kala         iin      
+  Cancer           13° oralkam                      oralkam               
+  Cancer           17° ochey.fydy                   che          y        
+  Cancer           26° oraiiral                     oraiiral              
+  Leo               5° otcheody                     otcheody              
+  Leo              15° okeeol                       keeol                 
+  Leo              25° okary                        kar          y        YES
+  Leo              30° otaly.yty                    tal          y        
+  Virgo             5° oshesy                       shes         y        
+  Virgo            25° oeedaly                      eedal        y        
+  Virgo            30° okeorar                      keorar                
+  Libra             3° oteoly                       teol         y        
+  Libra             7° oees                         ees                   
+  Libra            20° ykeedy                       keed         y        YES
+  Scorpio           3° otedy                        ted          y        YES
+  Scorpio           5° otaly                        tal          y        YES
+  Scorpio          15° okedal                       kedal                 
+  Scorpio          24° oky                          k            y        YES
+  Sagittarius       7° odees                        odees                 
+  Sagittarius      12° oteody                       teod         y        YES
+  Sagittarius      15° ofcheesy                     ofcheesy              
+  Sagittarius      24° oia?                         oia?                  
+  Sagittarius      30° ypal                         pal                   
+  Pisces            3° otar?                        otar?                 
+  Pisces           23° otalam                       talam                 
+  Pisces           25° okaram                       karam                 YES
+  Pisces           29° ykolaiin                     kola         iin      
+
+======================================================================
+Masculine/Feminine Degrees — does gender predict suffix?
+======================================================================
+
+  Masculine degrees: 150
+  Feminine degrees:  149
+
+  Metric              Masculine   Feminine      Delta
+  ------------------ ---------- ---------- ----------
+  o− prefix               56.7%      57.7%      -1.1%
+  −y suffix               35.3%      31.5%      +3.8%
+  −iin suffix              3.3%      11.4%      -8.1%
+  −am suffix               0.0%       0.0%      +0.0%
+  −ar suffix               0.0%       0.0%      +0.0%
+
+  → -iin IS more common in FEMININE degrees ◄
+
+  Per-sign: −iin rate at masculine vs feminine degrees:
+  Sign            M(−iin)  F(−iin)  M(n)  F(n)
+  -------------- -------- -------- ----- -----
+  Aries                0%       7%    16    14
+  Taurus              13%      20%    15    15
+  Gemini               0%       0%    15    14
+  Cancer              14%      31%    14    16
+  Leo                  6%      14%    16    14
+  Virgo                0%      12%    14    16
+  Libra                0%       0%    16    14
+  Scorpio              0%       6%    14    16
+  Sagittarius          0%      14%    16    14
+  Pisces               0%       6%    14    16
+
+======================================================================
+Lunar Mansions — do mansion boundaries shape labels?
+======================================================================
+
+  Labels per lunar mansion (mansions 1-21 in our zodiac range):
+  Mansion Name             Count    o−%    −y%  −iin% Top root
+  ------- ---------------- ----- ------ ------ ------ ---------------
+        1 Sharaṭān            13    46%    15%     8% tal
+        2 Buṭayn              13    69%    38%     0% teoee
+        3 Thurayyā            13    62%     0%    15% toloaram
+        4 Dabarān             13    69%    23%    15% palor
+        5 Haqʿah              13    46%     8%     8% ta
+        6 Hanʿah              13    92%    46%     0% kal
+        7 Dhirāʿ              11    45%     9%     0% okyd
+        8 Nathrah             13    46%    23%    31% kala
+        9 Ṭarf                13    46%    23%    23% ytairal
+       10 Jabʿhah             13    62%    31%     8% toar
+       11 Zubrah              13    46%    46%     8% falals
+       12 Ṣarfah              13    85%    46%    15% tal
+       13 ʿAwwāʾ              13    31%    46%     0% cheold
+       14 Simāk               12    58%    33%     8% okaiin[:y]
+       15 Ghafr               13    62%    38%     0% teod
+       16 Zubānā              13    46%    46%     0% ok?ody
+       17 Iklīl               13    62%    62%     0% tal
+       18 Qalb                13    62%    54%     8% keed
+       19 Shawlah             13    54%    38%     0% oyteedy
+       20 Naʿāʾam             13    31%    31%    15% sheol
+       21 Baldah              12    42%    42%     0% ke
+       26 Mansion 26           5    60%    60%     0% talal
+       27 Mansion 27          13    77%    54%     0% tald
+       28 Mansion 28          12    75%     0%     8% tar
+
+  Mansion boundary effect:
+  (Testing if labels change when crossing a lunar mansion boundary)
+    At mansion boundaries (20 transitions):
+      Root changes:   20/20 = 100.0%
+      Suffix changes: 10/20 = 50.0%
+    At non-boundaries (269 consecutive pairs):
+      Root changes:   263/269 = 97.8%
+      Suffix changes: 149/269 = 55.4%
+
+======================================================================
+Multi-System Correlation — which system best predicts labels?
+======================================================================
+
+  Suffix −iin prediction accuracy by classification system:
+  (Higher variance ratio = system explains more of the suffix distribution)
+
+  System               Categories  Var ratio             Best cat →iin  Best rate
+  -------------------- ---------- ---------- ------------------------- ----------
+  Terms ruler                   5     0.0092 Venus                         10.3%
+  Degree quality                4     0.0162 void                          10.0%
+  Gender (M/F)                  2     0.0239 F                             11.4%
+  Lunar mansion                24     0.1024 8                             30.8%
+  Decan ruler                   7     0.0219 Mercury                       12.5%
+  Decan position                3     0.0041 2                              9.0%
+  Ring position                 4     0.0101 1                              9.8%
+  Sign element                  4     0.0244 Earth                         11.7%
+
+  Prefix o− prediction by classification system:
+  System                Var ratio             Lowest o− cat  Lowest rate
+  -------------------- ---------- ------------------------- ------------
+  Terms ruler              0.0100 Saturn                          48.9%
+  Degree quality           0.0072 smoky                           54.0%
+  Gender (M/F)             0.0001 M                               56.7%
+  Lunar mansion            0.0983 13                              30.8%
+  Decan ruler              0.0171 Venus                           45.0%
+  Decan position           0.0048 3                               54.5%
+  Ring position            0.0105 3                               50.0%
+  Sign element             0.0016 Earth                           55.0%
+
+======================================================================
+COMPREHENSIVE SYNTHESIS
+======================================================================
+
+  ┌─────────────────────────────────────────────────────────────────────┐
+  │  MEDIEVAL DEGREE-MEANING CROSS-REFERENCE: RESULTS                  │
+  │                                                                     │
+  │  SYSTEMS TESTED:                                                    │
+  │    1. Egyptian Terms/Bounds (planet ruling each degree range)        │
+  │    2. Bright/Dark/Smoky/Void degrees (Firmicus/Lilly)              │
+  │    3. Masculine/Feminine degrees (Ptolemy/Lilly)                    │
+  │    4. Lunar Mansions (28 Arabic manzils)                            │
+  │    5. Decan rulers (Chaldean order) [from prior analysis]           │
+  │                                                                     │
+  │  KEY FINDINGS:                                                      │
+  │                                                                     │
+  │  • TERMS RULERS show WEAK suffix correlations:                      │
+  │    Mercury terms: −iin at 8%                              │
+  │    Mars terms: −iin at 7%                                    │
+  │                                                                     │
+  │  • BRIGHT DEGREES: shared label rate 29% vs baseline        │
+  │                                                                     │
+  │  • MASCULINE/FEMININE:                                              │
+  │    Masculine degrees: −iin at 3%                             │
+  │    Feminine degrees: −iin at 11%                               │
+  │                                                                     │
+  │  • LUNAR MANSIONS: tested for boundary effects                      │
+  │                                                                     │
+  │  OVERALL ASSESSMENT:                                                │
+  │  The classification system that best explains suffix variation is    │
+  │  whichever shows highest variance ratio in Part 5 (above).           │
+  │                                                                     │
+  │  If NO medieval system significantly predicts label morphology:      │
+  │  → The notation may be encoding DIFFERENT properties                │
+  │  → The labels may be names, not qualitative descriptions            │
+  │  → The author&#x27;s system may not follow standard medieval practice    │
+  │                                                                     │
+  │  This is itself a finding: it narrows the hypothesis space.         │
+  └─────────────────────────────────────────────────────────────────────┘
+
+  Analysis complete.
+</pre></details><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>bc53723</code>. 
+To run any test with your own parameters, clone
+<a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
+(<code>python webui/server.py</code>). All numbers reproduce at
+PYTHONHASHSEED=0.</footer></main></body></html>

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>word_class_robustness — VAIS</title><style>
+:root { --bg:#ffffff; --fg:#1a1a1a; --muted:#666; --line:#ddd;
+        --code:#f5f5f5; --accent:#7a4a1e; --warn:#a33; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#141414; --fg:#ddd; --muted:#999; --line:#333;
+          --code:#1e1e1e; --accent:#d9a05b; --warn:#e77; } }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--fg);
+       font:16px/1.55 Georgia, 'Times New Roman', serif; }
+nav { border-bottom:1px solid var(--line); padding:.7em 1.2em;
+      font-family: system-ui, sans-serif; font-size:.9em; }
+nav a { color:var(--accent); text-decoration:none; margin-right:1.2em; }
+main { max-width: 62em; margin: 0 auto; padding: 1.5em 1.2em 4em; }
+h1,h2,h3 { font-family: system-ui, sans-serif; line-height:1.25; }
+h1 { font-size:1.7em; } h2 { font-size:1.3em; margin-top:2em; }
+a { color: var(--accent); }
+code, pre { font-family: ui-monospace, Consolas, monospace;
+            font-size:.86em; background:var(--code); }
+code { padding:.1em .3em; border-radius:3px; }
+pre { padding: .9em; overflow-x:auto; border:1px solid var(--line);
+      border-radius:4px; line-height:1.4; }
+table { border-collapse: collapse; margin: 1em 0; font-size:.92em;
+        display:block; overflow-x:auto; }
+th, td { border:1px solid var(--line); padding:.35em .6em;
+         text-align:left; vertical-align:top; }
+th { font-family: system-ui, sans-serif; background:var(--code); }
+blockquote { border-left:3px solid var(--accent); margin:1em 0;
+             padding:.2em 1em; color:var(--muted); }
+.muted { color:var(--muted); font-size:.9em; }
+.tag { font-family: system-ui, sans-serif; font-size:.75em;
+       border:1px solid var(--line); border-radius:3px;
+       padding:.05em .45em; margin-left:.5em; }
+.tag.sug { border-color:var(--warn); color:var(--warn); }
+details summary { cursor:pointer; font-family: system-ui, sans-serif; }
+footer { border-top:1px solid var(--line); margin-top:3em;
+         padding-top:1em; font-size:.85em; color:var(--muted); }
+</style></head><body>
+<nav><a href="../index.html">VAIS</a><a href="../catalog.html">Catalog</a>
+<a href="../research.html">Research</a><a href="../reports.html">Reports</a>
+<a href="https://github.com/Vineyardcode/vais">GitHub</a></nav>
+<main><h1>word_class_robustness</h1>
+<p class="muted">scripts/word_class_robustness.py</p>
+<pre>ATTACKING THE CLASS SYSTEM
+======================================
+
+two_class_section_grammar found:
+  - Three-class suffix system captures 80.1% of sfx→pfx MI
+  - Section-specific grammar (z=49-92)
+  - Genuine synergy in class bigrams
+  - Left→right prediction better (−0.089 bits)
+  - Line-final most constrained
+
+ALL of these must be attacked:
+
+  A) SECTION GRAMMAR: MARGINALS OR RULES?
+       two_class_section_grammar&#x27;s part-b null shuffled random subsets, preserving GLOBAL marginals.
+       If a section has different prefix/suffix frequencies (vocabulary), its
+       transition matrix will differ even without different conditional rules.
+       TEST: Generate null by independently permuting prefix and suffix
+       arrays WITHIN each section (preserves section marginals, destroys
+       conditionals). If section LR is still large → marginals explain it.
+       If LR drops → genuine conditional rules.
+
+  B) PREDICTIVE ASYMMETRY: PERMUTATION TEST
+       0.089 bits of L→R advantage is untested. Two controls:
+       1) Reverse all lines: if asymmetry flips sign → genuine direction.
+       2) Shuffle word order within lines: asymmetry should → ~0.
+
+  C) OPTIMAL CLASS COUNT
+       Binary captures 35.7%, three captures 80.1%. Is three the elbow?
+       Hierarchical clustering of suffix profiles into k=2,3,4,5,6,7,8
+       classes. Plot MI captured vs k.
+
+  D) SYNERGY BOOTSTRAP
+       &quot;chdy qoain&quot; has synergy=2.63 but only 38 examples. Bootstrap
+       1000 resamples of word pairs, compute synergy CI for each bigram.
+       Is the CI above 1.0?
+
+  E) TOP SECTION DISCRIMINATORS
+       For the transitions that contribute most to section LR, show the
+       actual conditional probabilities per section. Are they different
+       conditionals (rules) or just different marginals?</pre>
+<h2>Parameters</h2><table><tr><th>name</th><th>default</th><th>type</th></tr>
+<tr><td><code>ALL_GALLOWS</code></td><td><code>[&#x27;cth&#x27;, &#x27;ckh&#x27;, &#x27;cph&#x27;, &#x27;cfh&#x27;, &#x27;tch&#x27;, &#x27;kch&#x27;, &#x27;pch&#x27;, &#x27;fch&#x27;, &#x27;tsh&#x27;, &#x27;ksh&#x27;, &#x27;psh&#x27;, &#x27;fsh&#x27;, &#x27;t&#x27;, …</code></td><td>json</td></tr>
+<tr><td><code>SUFFIXES</code></td><td><code>[&#x27;aiin&#x27;, &#x27;ain&#x27;, &#x27;iin&#x27;, &#x27;in&#x27;, &#x27;ar&#x27;, &#x27;or&#x27;, &#x27;al&#x27;, &#x27;ol&#x27;, &#x27;dy&#x27;, &#x27;y&#x27;]</code></td><td>json</td></tr>
+</table>
+<h2>Golden output (PYTHONHASHSEED=0)</h2><details><summary>show</summary><pre>Loading lines...
+  4508 lines, 35747 word tokens
+  31239 adjacent pairs
+
+======================================================================
+A: SECTION GRAMMAR — MARGINALS vs RULES
+    two_class_section_grammar part b found z=49-92, but the null preserved GLOBAL marginals.
+    Now: shuffle within section → preserves section marginals,
+    destroys conditionals. If LR drops to near null → marginals did it.
+======================================================================
+
+  text (16441 pairs):
+    Observed LR (local - global): 221.6
+    Null 1 (random subset, global marginals): mean=25.5±3.9
+      z(global null) = 49.9
+    Null 2 (shuffled within section, section marginals): mean=1756.4±57.9
+      z(marginal null) = -26.5
+    If z(marginal) &gt;&gt; 0: genuine RULES beyond marginal frequencies
+    If z(marginal) ≈ 0 but z(global) &gt;&gt; 0: just marginal frequency shifts
+
+  herbal-A (7534 pairs):
+    Observed LR (local - global): 517.8
+    Null 1 (random subset, global marginals): mean=37.5±5.4
+      z(global null) = 88.6
+    Null 2 (shuffled within section, section marginals): mean=907.0±30.3
+      z(marginal null) = -12.8
+    If z(marginal) &gt;&gt; 0: genuine RULES beyond marginal frequencies
+    If z(marginal) ≈ 0 but z(global) &gt;&gt; 0: just marginal frequency shifts
+
+  bio (4926 pairs):
+    Observed LR (local - global): 330.6
+    Null 1 (random subset, global marginals): mean=39.0±6.0
+      z(global null) = 48.3
+    Null 2 (shuffled within section, section marginals): mean=728.0±34.7
+      z(marginal null) = -11.4
+    If z(marginal) &gt;&gt; 0: genuine RULES beyond marginal frequencies
+    If z(marginal) ≈ 0 but z(global) &gt;&gt; 0: just marginal frequency shifts
+
+  pharma (1162 pairs):
+    Observed LR (local - global): 71.6
+    Null 1 (random subset, global marginals): mean=33.5±6.6
+      z(global null) = 5.8
+    Null 2 (shuffled within section, section marginals): mean=146.2±15.1
+      z(marginal null) = -4.9
+    If z(marginal) &gt;&gt; 0: genuine RULES beyond marginal frequencies
+    If z(marginal) ≈ 0 but z(global) &gt;&gt; 0: just marginal frequency shifts
+
+======================================================================
+B: PREDICTIVE ASYMMETRY PERMUTATION TEST
+    forward H(class_j|class_i)=5.230 &lt; backward 5.319
+    Asymmetry = −0.089. Is this real?
+    Test 1: Reverse lines → asymmetry should flip sign
+    Test 2: Shuffle within lines → asymmetry should → 0
+======================================================================
+
+  Observed: H(fwd)=5.2301, H(bwd)=5.3189, asym=-0.0888
+
+  Reversed: H(fwd)=5.3189, H(bwd)=5.2301, asym=0.0888
+    Flip check: original sign=-, reversed sign=+
+    → Sign FLIPPED — genuine directional structure
+
+  Shuffled null: mean asym=0.0001±0.0042
+    z(asymmetry) = -21.3
+    Observed = -0.0888, null range = [-0.0104, 0.0107]
+
+  sfx→pfx channel specifically:
+    Observed asym=-0.0898, reversed=-0.0093
+    Shuffled null: -0.0210±0.0028, z=-25.0
+
+======================================================================
+C: OPTIMAL CLASS COUNT
+    Binary A/B captures 35.7%, three A/M/B captures 80.1%.
+    What about 4, 5, 6, 7, 8 classes?
+    Hierarchical clustering of suffix → following-prefix profiles.
+======================================================================
+
+  Full MI(sfx→pfx) = 0.1211 (11 suffix values)
+  k=11 classes: MI=0.1211 (100.0%)
+  k=10 classes: MI=0.1208 (99.7%)  [merged: [&#x27;al&#x27;] + [&#x27;ol&#x27;] → JSD=0.0033]
+  k= 8 classes: MI=0.1188 (98.1%)  [merged: [&#x27;ain&#x27;] + [&#x27;aiin&#x27;, &#x27;iin&#x27;] → JSD=0.0115]
+  k= 7 classes: MI=0.1186 (97.9%)  [merged: [&#x27;ar&#x27;] + [&#x27;in&#x27;] → JSD=0.0126]
+  k= 6 classes: MI=0.1166 (96.3%)  [merged: [&#x27;or&#x27;] + [&#x27;aiin&#x27;, &#x27;ain&#x27;, &#x27;iin&#x27;] → JSD=0.0137]
+  k= 5 classes: MI=0.1099 (90.7%)  [merged: [&#x27;dy&#x27;] + [&#x27;y&#x27;] → JSD=0.0175]
+  k= 4 classes: MI=0.1031 (85.1%)  [merged: [&#x27;al&#x27;, &#x27;ol&#x27;] + [&#x27;aiin&#x27;, &#x27;ain&#x27;, &#x27;iin&#x27;, &#x27;or&#x27;] → JSD=0.0222]
+  k= 3 classes: MI=0.0978 (80.7%)  [merged: [&#x27;X&#x27;] + [&#x27;ar&#x27;, &#x27;in&#x27;] → JSD=0.0267]
+  k= 2 classes: MI=0.0737 (60.8%)  [merged: [&#x27;aiin&#x27;, &#x27;ain&#x27;, &#x27;al&#x27;, &#x27;iin&#x27;, &#x27;ol&#x27;, &#x27;or&#x27;] + [&#x27;X&#x27;, &#x27;ar&#x27;, &#x27;in&#x27;] → JSD=0.0394]
+
+  k= 2 classes: MI=0.0737 (60.8%)
+
+  Elbow analysis (MI % captured):
+    k= 2:  60.8% ##############################
+    k= 3:  80.7% ########################################
+    k= 4:  85.1% ##########################################
+    k= 5:  90.7% #############################################
+    k= 6:  96.3% ################################################
+    k= 7:  97.9% ################################################
+    k= 8:  98.1% #################################################
+    k= 9:  99.2% #################################################
+    k=10:  99.7% #################################################
+    k=11: 100.0% ##################################################
+
+  Biggest MI drops (merging from k to k-1):
+    k=7 → k=8: ΔMI=0.0002 (+0.2%)
+    k=10 → k=11: ΔMI=0.0004 (+0.3%)
+    k=9 → k=10: ΔMI=0.0006 (+0.5%)
+    k=8 → k=9: ΔMI=0.0014 (+1.1%)
+    k=6 → k=7: ΔMI=0.0019 (+1.6%)
+
+======================================================================
+D: SYNERGY BOOTSTRAP
+    Bootstrap CIs for synergy values.
+    Is &#x27;chdy qoain&#x27; (synergy=2.63, N=38) robust?
+======================================================================
+
+  &#x27;chol daiin&#x27;: N=41, synergy=2.05, 95% CI=[1.56, 2.69]  *** sig &gt; 1.0
+  &#x27;shdy qody&#x27;: N=112, synergy=1.22, 95% CI=[1.02, 1.44]  *** sig &gt; 1.0
+  &#x27;shy qoain&#x27;: N=46, synergy=1.57, 95% CI=[1.24, 1.96]  *** sig &gt; 1.0
+  &#x27;oX Xiin&#x27;: missing index mapping
+  &#x27;shdy qoaiin&#x27;: N=39, synergy=1.90, 95% CI=[1.42, 2.49]  *** sig &gt; 1.0
+  &#x27;chol chol&#x27;: N=44, synergy=1.62, 95% CI=[1.27, 2.00]  *** sig &gt; 1.0
+  &#x27;qody qody&#x27;: N=163, synergy=1.65, 95% CI=[1.44, 1.86]  *** sig &gt; 1.0
+  &#x27;ody qody&#x27;: N=130, synergy=2.10, 95% CI=[1.80, 2.39]  *** sig &gt; 1.0
+  &#x27;chdy qoain&#x27;: N=38, synergy=2.63, 95% CI=[1.88, 3.32]  *** sig &gt; 1.0
+  &#x27;daiin chol&#x27;: N=14, synergy=1.00, 95% CI=[0.54, 1.59]
+
+======================================================================
+E: TOP SECTION DISCRIMINATORS
+    Which sfx→pfx transitions contribute most to section differences?
+    Show conditionals P(pfx_j|sfx_i) per section for top transitions.
+======================================================================
+
+  Top 20 section-discriminating transitions:
+  Section      sfx→pfx      P(sec)   P(global)         Δ N(sfx)  
+  ------------------------------------------------------------
+  pharma       al→ch     0.361    0.204      +0.157  36      
+  herbal-A     dy→qo     0.184    0.339      -0.155  843     
+  herbal-A     in→qo     0.200    0.057      +0.143  20      
+  herbal-A     in→o      0.200    0.343      -0.143  20      
+  pharma       al→o      0.111    0.252      -0.141  36      
+  bio          or→o      0.397    0.259      +0.138  116     
+  bio          ar→X      0.089    0.220      -0.131  225     
+  bio          y→qo     0.351    0.223      +0.128  1081    
+  bio          in→sh     0.242    0.120      +0.122  33      
+  bio          in→X      0.061    0.183      -0.122  33      
+  herbal-A     in→ch     0.350    0.234      +0.116  20      
+  bio          ar→sh     0.231    0.122      +0.109  225     
+  bio          aiin→sh     0.223    0.117      +0.106  287     
+  bio          dy→qo     0.443    0.339      +0.104  1490    
+  pharma       aiin→d      0.172    0.069      +0.103  93      
+  herbal-A     y→qo     0.134    0.223      -0.089  1664    
+  herbal-A     ar→X      0.133    0.220      -0.087  375     
+  pharma       aiin→sh     0.032    0.117      -0.085  93      
+  bio          iin→sh     0.179    0.095      +0.085  78      
+  herbal-A     ain→d      0.135    0.052      +0.083  148     
+
+  Marginal frequency comparison (top discriminating suffix values):
+    bio          suffix &#x27;aiin&#x27;: 0.058 (section) vs 0.087 (global)  ratio=0.67x
+    bio          suffix &#x27;ar&#x27;: 0.046 (section) vs 0.061 (global)  ratio=0.74x
+    bio          suffix &#x27;dy&#x27;: 0.302 (section) vs 0.176 (global)  ratio=1.72x
+    bio          suffix &#x27;iin&#x27;: 0.016 (section) vs 0.030 (global)  ratio=0.53x
+    bio          suffix &#x27;in&#x27;: 0.007 (section) vs 0.006 (global)  ratio=1.20x
+    bio          suffix &#x27;or&#x27;: 0.024 (section) vs 0.044 (global)  ratio=0.54x
+    bio          suffix &#x27;y&#x27;: 0.219 (section) vs 0.214 (global)  ratio=1.03x
+    herbal-A     suffix &#x27;ain&#x27;: 0.020 (section) vs 0.040 (global)  ratio=0.49x
+    herbal-A     suffix &#x27;ar&#x27;: 0.050 (section) vs 0.061 (global)  ratio=0.81x
+    herbal-A     suffix &#x27;dy&#x27;: 0.112 (section) vs 0.176 (global)  ratio=0.63x
+    herbal-A     suffix &#x27;in&#x27;: 0.003 (section) vs 0.006 (global)  ratio=0.47x
+    herbal-A     suffix &#x27;y&#x27;: 0.221 (section) vs 0.214 (global)  ratio=1.03x
+    pharma       suffix &#x27;aiin&#x27;: 0.080 (section) vs 0.087 (global)  ratio=0.91x
+    pharma       suffix &#x27;al&#x27;: 0.031 (section) vs 0.044 (global)  ratio=0.70x
+
+  Decomposition: Is the deviation from conditionals or marginals?
+  For each top transition, expected = P(pfx_j,sec) / P(pfx_j,global)
+  If actual_dev &gt;&gt; expected_dev → genuine conditional difference
+
+  herbal-A:
+    dy→qo: actual_Δ=-0.155, marginal_Δ=-0.123, conditional_Δ=-0.031
+    in→qo: actual_Δ=+0.143, marginal_Δ=-0.021, conditional_Δ=+0.164
+    in→o: actual_Δ=-0.143, marginal_Δ=-0.030, conditional_Δ=-0.112
+    in→ch: actual_Δ=+0.116, marginal_Δ=+0.053, conditional_Δ=+0.063
+    y→qo: actual_Δ=-0.089, marginal_Δ=-0.081, conditional_Δ=-0.008
+
+  bio:
+    or→o: actual_Δ=+0.138, marginal_Δ=-0.021, conditional_Δ=+0.158
+    ar→X: actual_Δ=-0.131, marginal_Δ=-0.063, conditional_Δ=-0.068
+    y→qo: actual_Δ=+0.128, marginal_Δ=+0.137, conditional_Δ=-0.010
+    in→sh: actual_Δ=+0.122, marginal_Δ=+0.040, conditional_Δ=+0.082
+    in→X: actual_Δ=-0.122, marginal_Δ=-0.052, conditional_Δ=-0.070
+
+  pharma:
+    al→ch: actual_Δ=+0.157, marginal_Δ=+0.034, conditional_Δ=+0.123
+    al→o: actual_Δ=-0.141, marginal_Δ=+0.001, conditional_Δ=-0.142
+    aiin→d: actual_Δ=+0.103, marginal_Δ=+0.025, conditional_Δ=+0.078
+    aiin→sh: actual_Δ=-0.085, marginal_Δ=-0.000, conditional_Δ=-0.084
+
+======================================================================
+word_class_robustness SYNTHESIS
+======================================================================
+
+  43a: SECTION GRAMMAR — MARGINALS vs RULES
+    (See section results above. If z(marginal) &gt;&gt; 0 → real rules)
+
+  43b: PREDICTIVE ASYMMETRY
+    (See reversal and shuffle tests above)
+
+  43c: OPTIMAL CLASS COUNT
+    (See elbow analysis above)
+
+  43d: SYNERGY BOOTSTRAP
+    (See CIs above)
+
+  43e: SECTION DISCRIMINATORS
+    (See conditional decomposition above)
+
+[word_class_robustness Complete]
+
+</pre></details><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>bc53723</code>. 
+To run any test with your own parameters, clone
+<a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
+(<code>python webui/server.py</code>). All numbers reproduce at
+PYTHONHASHSEED=0.</footer></main></body></html>

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>historical_pharma_comparison — VAIS</title><style>
+:root { --bg:#ffffff; --fg:#1a1a1a; --muted:#666; --line:#ddd;
+        --code:#f5f5f5; --accent:#7a4a1e; --warn:#a33; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#141414; --fg:#ddd; --muted:#999; --line:#333;
+          --code:#1e1e1e; --accent:#d9a05b; --warn:#e77; } }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--fg);
+       font:16px/1.55 Georgia, 'Times New Roman', serif; }
+nav { border-bottom:1px solid var(--line); padding:.7em 1.2em;
+      font-family: system-ui, sans-serif; font-size:.9em; }
+nav a { color:var(--accent); text-decoration:none; margin-right:1.2em; }
+main { max-width: 62em; margin: 0 auto; padding: 1.5em 1.2em 4em; }
+h1,h2,h3 { font-family: system-ui, sans-serif; line-height:1.25; }
+h1 { font-size:1.7em; } h2 { font-size:1.3em; margin-top:2em; }
+a { color: var(--accent); }
+code, pre { font-family: ui-monospace, Consolas, monospace;
+            font-size:.86em; background:var(--code); }
+code { padding:.1em .3em; border-radius:3px; }
+pre { padding: .9em; overflow-x:auto; border:1px solid var(--line);
+      border-radius:4px; line-height:1.4; }
+table { border-collapse: collapse; margin: 1em 0; font-size:.92em;
+        display:block; overflow-x:auto; }
+th, td { border:1px solid var(--line); padding:.35em .6em;
+         text-align:left; vertical-align:top; }
+th { font-family: system-ui, sans-serif; background:var(--code); }
+blockquote { border-left:3px solid var(--accent); margin:1em 0;
+             padding:.2em 1em; color:var(--muted); }
+.muted { color:var(--muted); font-size:.9em; }
+.tag { font-family: system-ui, sans-serif; font-size:.75em;
+       border:1px solid var(--line); border-radius:3px;
+       padding:.05em .45em; margin-left:.5em; }
+.tag.sug { border-color:var(--warn); color:var(--warn); }
+details summary { cursor:pointer; font-family: system-ui, sans-serif; }
+footer { border-top:1px solid var(--line); margin-top:3em;
+         padding-top:1em; font-size:.85em; color:var(--muted); }
+</style></head><body>
+<nav><a href="../index.html">VAIS</a><a href="../catalog.html">Catalog</a>
+<a href="../research.html">Research</a><a href="../reports.html">Reports</a>
+<a href="https://github.com/Vineyardcode/vais">GitHub</a></nav>
+<main><h1>historical_pharma_comparison</h1>
+<p class="muted">scripts/historical_pharma_comparison.py</p>
+<pre>HISTORICAL PHARMACEUTICAL COMPARISON
+===================================================================
+We&#x27;ve established:
+  - Two root types: A (substance/poly-suffix) and B (process/mono-y)
+  - B-roots appear in sequential runs (procedural sequences)
+  - Language A = inventory register (76% substance), Language B = recipe register (38% process)
+  - cho-family roots are A-exclusive (ingredient catalog)
+  - ched/keed/shed/ked are B-exclusive (process vocabulary)
+  - ka enriched AFTER B-runs (result/product word?)
+
+Now: compare these patterns against structural features of ACTUAL 15th-century
+pharmaceutical manuscripts to test whether Voynichese functions as a pharmaceutical
+notation system.
+
+Tests:
+  1. RECIPE GRAMMAR — Do process words (B) precede substance words (A) like &quot;Take X, Mix Y&quot;?
+  2. LINE-INITIAL MARKERS — Do lines start with a restricted vocabulary (recipe imperatives)?
+  3. INGREDIENT REUSE — Do substance roots recur across folios like a pharmacopoeia?
+  4. RECIPE LENGTH &amp; STRUCTURE — Folio-level statistics vs medieval recipe norms
+  5. COMPOUND vs SIMPLE — Does suffix complexity correlate with multi-ingredient recipes?
+  6. CROSS-REFERENCE PATTERNS — Do folios share ingredient sets like recipe collections?</pre>
+<h2>Parameters</h2><table><tr><th>name</th><th>default</th><th>type</th></tr>
+<tr><td><code>PREFIXES</code></td><td><code>[&#x27;qol&#x27;, &#x27;qor&#x27;, &#x27;sol&#x27;, &#x27;sor&#x27;, &#x27;dol&#x27;, &#x27;dor&#x27;, &#x27;dyl&#x27;, &#x27;dyr&#x27;, &#x27;qo&#x27;, &#x27;so&#x27;, &#x27;do&#x27;, &#x27;dy&#x27;, &#x27;ol&#x27;, &#x27;or…</code></td><td>json</td></tr>
+<tr><td><code>ROOT_ONSETS</code></td><td><code>[&#x27;ckh&#x27;, &#x27;cth&#x27;, &#x27;cph&#x27;, &#x27;cfh&#x27;, &#x27;tch&#x27;, &#x27;kch&#x27;, &#x27;pch&#x27;, &#x27;fch&#x27;, &#x27;tsh&#x27;, &#x27;ksh&#x27;, &#x27;psh&#x27;, &#x27;fsh&#x27;, &#x27;sh&#x27;,…</code></td><td>json</td></tr>
+<tr><td><code>ROOT_BODIES</code></td><td><code>[&#x27;eeed&#x27;, &#x27;eees&#x27;, &#x27;eeea&#x27;, &#x27;eeeo&#x27;, &#x27;eed&#x27;, &#x27;ees&#x27;, &#x27;eea&#x27;, &#x27;eeo&#x27;, &#x27;ed&#x27;, &#x27;es&#x27;, &#x27;ea&#x27;, &#x27;eo&#x27;, &#x27;eee&#x27;…</code></td><td>json</td></tr>
+<tr><td><code>SUFFIXES</code></td><td><code>[&#x27;iiiny&#x27;, &#x27;iiny&#x27;, &#x27;iiir&#x27;, &#x27;iiil&#x27;, &#x27;iiin&#x27;, &#x27;iir&#x27;, &#x27;iil&#x27;, &#x27;iin&#x27;, &#x27;iim&#x27;, &#x27;iid&#x27;, &#x27;iry&#x27;, &#x27;ily&#x27;,…</code></td><td>json</td></tr>
+</table>
+<h2>Golden output (PYTHONHASHSEED=0)</h2><details><summary>show</summary><pre>  Loading corpus...
+  Total parsed tokens: 30437
+  Body text tokens: 30186
+  Folios with lines: 198
+
+==========================================================================================
+TEST 1: RECIPE GRAMMAR — Process→Substance ordering
+==========================================================================================
+
+  In pharmaceutical recipes, the pattern is: VERB + NOUN (&#x27;Take saffron, mix with...&#x27;)
+  If Voynichese is recipe notation, B-roots should be followed by A-roots.
+
+  BIGRAM TYPE TRANSITIONS (A=substance, B=process):
+                → Substance  → Process
+  Substance      10758 (47.5%)    4314 (19.0%)
+  Process         4331 (19.1%)    3246 (14.3%)
+
+  KEY TRANSITION RATIOS (observed / expected under independence):
+    B→A (process then substance): 4331/5048 = 0.858×
+    B→B (process then process):   3246/2529 = 1.283×
+    A→B (substance then process): 4314/5031 = 0.858×
+
+  → Process words CLUSTER (B→B enriched) but DON&#x27;T preferentially precede substances
+    NOT classic &#x27;Take X&#x27; recipe grammar; more like procedural BLOCKS
+
+  WHAT FOLLOWS B-RUNS (≥2 consecutive process roots)?
+  Total B-runs: 1950
+    → Substance   :  1408 ( 72.2%)
+    → Process     :     0 (  0.0%)
+    → Mixed       :   126 (  6.5%)
+    → Unknown     :     9 (  0.5%)
+    → Line-end    :   407 ( 20.9%)
+
+  TOP 10 ROOTS AFTER B-RUNS:
+    ka          292  type=A
+    da          191  type=A
+    o           173  type=A
+    ta          166  type=A
+    a           127  type=A
+    ch           44  type=M
+    sa           43  type=A
+    keo          31  type=A
+    cheo         30  type=A
+    ko           28  type=A
+
+==========================================================================================
+TEST 2: LINE-INITIAL VOCABULARY — Recipe imperatives?
+==========================================================================================
+
+  Medieval recipes start lines with restricted vocabulary:
+  &#x27;Recipe&#x27; (Take), &#x27;Misce&#x27; (Mix), &#x27;Adde&#x27; (Add), &#x27;Fiat&#x27; (Let it be made)
+  If Voynichese has recipe structure, line-initial words should be:
+  1. A restricted set (low entropy)
+  2. Enriched in process roots or specific function words
+
+  Total lines (≥2 words): 4397
+  Unique line-initial words: 1139
+  Unique line-initial roots: 190
+
+  Root entropy (line-initial): 5.97 bits
+  Root entropy (non-initial):  5.73 bits
+  Ratio: 1.042  (&lt; 1.0 means initial is more restricted)
+
+  TOP 15 LINE-INITIAL WORDS:
+  Word             Count       %  Root      Type
+  ──────────────  ──────  ──────  ────────  ────
+  daiin              195    4.4%  da        A   
+  saiin               61    1.4%  sa        A   
+  dain                54    1.2%  da        A   
+  ol                  50    1.1%  o         A   
+  or                  50    1.1%  o         A   
+  qokaiin             45    1.0%  ka        A   
+  dar                 44    1.0%  da        A   
+  qokeey              41    0.9%  kee       B   
+  sain                40    0.9%  sa        A   
+  sol                 40    0.9%  so        A   
+  qokeedy             40    0.9%  keed      B   
+  sho                 40    0.9%  sho       A   
+  dair                38    0.9%  da        A   
+  ar                  37    0.8%  a         A   
+  chol                36    0.8%  cho       A   
+
+  ROOT TYPE AT LINE START vs REST:
+    Substance     Start:  68.7%  Rest:  62.9%  Ratio: 1.09×
+    Process       Start:  26.1%  Rest:  31.2%  Ratio: 0.84×
+    Mixed         Start:   4.3%  Rest:   5.5%  Ratio: 0.78×
+
+==========================================================================================
+TEST 3: INGREDIENT REUSE — Cross-folio root sharing
+==========================================================================================
+
+  A pharmacopoeia reuses the same ingredients across many recipes.
+  Each folio = one recipe/entry. How many folios share each root?
+
+  TOP 20 MOST WIDESPREAD ROOTS:
+  Root       Folios   Coverage  Type
+  ────────  ───────  ─────────  ────
+  da            198    100.0%  A
+  o             175     88.4%  A
+  cho           172     86.9%  A
+  a             166     83.8%  A
+  sho           164     82.8%  A
+  d             159     80.3%  B
+  ka            157     79.3%  A
+  ta            153     77.3%  A
+  to            150     75.8%  A
+  ko            146     73.7%  A
+  k             143     72.2%  B
+  cheo          132     66.7%  A
+  che           130     65.7%  B
+  sa            126     63.6%  A
+  t             125     63.1%  B
+  kee           124     62.6%  B
+  do            124     62.6%  A
+  she           118     59.6%  B
+  cha           115     58.1%  A
+  keo           111     56.1%  A
+
+  Mean folio coverage:
+    Substance roots: 42.7 folios (21.6%)
+    Process roots:   46.0 folios (23.2%)
+
+  → Similar coverage
+
+  Unique roots per folio: mean=41.1, min=14, max=144
+
+==========================================================================================
+TEST 4: RECIPE LENGTH — Folio statistics by section
+==========================================================================================
+
+  Medieval recipes are 3-15 lines. Herbal entries are shorter (1-5 lines per plant).
+  If folios = recipes, line count should match these norms.
+
+  Section     Folios   Avg lines   Avg words   Subst %   Proc %
+  ──────────  ──────  ──────────  ──────────  ────────  ───────
+  herbal         125        13.2        71.1     70.0%    20.4%
+  pharma           9        23.9       198.4     78.3%    19.4%
+  astro           40        48.9       335.7     64.0%    31.1%
+  bio             19        40.1       274.2     49.1%    47.6%
+  text             2        39.5       330.0     52.6%    41.2%
+  other            3        21.0        73.3     70.5%    26.8%
+
+  BY LANGUAGE WITHIN SECTION:
+  Section     Lang  Folios   Avg lines   Avg words   Subst %   Proc %
+  ──────────  ────  ──────  ──────────  ──────────  ────────  ───────
+  herbal      A         94        13.3        65.9     74.4%    16.2%
+  herbal      B         30        13.2        88.7     60.0%    30.1%
+  pharma      A          9        23.9       198.4     78.3%    19.4%
+  astro       A          3        35.7       213.7     83.2%    13.6%
+  astro       B         27        54.1       413.7     61.6%    33.5%
+  bio         B         18        40.6       279.1     49.0%    47.7%
+
+==========================================================================================
+TEST 5: SUFFIX COMPLEXITY — Do compound recipes use more suffix variety?
+==========================================================================================
+
+  In pharmaceutical notation, compounds (multi-ingredient preparations)
+  need more grammatical marking than simples (single herbs).
+  Prediction: folios with MORE unique roots should have MORE suffix types.
+
+  Pearson r(unique_roots, unique_suffixes) = 0.758
+  Pearson r(unique_roots, unique_prefixes) = 0.755
+
+  → STRONG correlation: more ingredients → more suffix types
+    Consistent with grammatical marking scaling with recipe complexity
+
+  COMPLEXITY BY SECTION:
+  Section     Folios   Avg roots   Avg suf   Avg pfx   Ratio S/R
+  ──────────  ──────  ──────────  ────────  ────────  ──────────
+  herbal         125        30.1      10.0       7.0       0.333
+  pharma           9        51.8      12.2      10.6       0.236
+  astro           40        67.1      14.4      11.2       0.215
+  bio             19        52.5      12.2      13.8       0.232
+  text             2        65.0      12.5      11.5       0.192
+
+==========================================================================================
+TEST 6: FOLIO SIMILARITY — Ingredient sharing network
+==========================================================================================
+
+  A pharmacopoeia has recipes that share ingredients.
+  Measure Jaccard similarity of root sets between folio pairs.
+
+  Overall mean Jaccard (root set overlap): 0.300
+  Pairs sampled: 8477
+
+  MEAN JACCARD BY SECTION PAIR:
+  Section pair                Mean Jaccard   Pairs
+  ─────────────────────────  ─────────────  ──────
+  bio × bio                          0.511     171
+  bio × text                         0.475      38
+  pharma × pharma                    0.459      16
+  astro × astro                      0.422     396
+  astro × text                       0.376      32
+  astro × bio                        0.357     304
+  other × text                       0.347       5
+  pharma × text                      0.347       7
+  bio × pharma                       0.346      76
+  astro × pharma                     0.337     172
+  other × pharma                     0.334      12
+  bio × other                        0.327      57
+  astro × other                      0.306      38
+  herbal × herbal                    0.298    4163
+  herbal × text                      0.283     107
+  bio × herbal                       0.281     780
+  herbal × pharma                    0.277     209
+  herbal × other                     0.250     126
+  astro × herbal                     0.248    1764
+
+  Within-section mean Jaccard:  0.422
+  Between-section mean Jaccard: 0.326
+  Ratio: 1.30×
+
+  → Root sharing is similar within and between sections
+
+══════════════════════════════════════════════════════════════════════════════════════════
+SYNTHESIS — PHARMACEUTICAL COMPARISON
+══════════════════════════════════════════════════════════════════════════════════════════
+
+  1. RECIPE GRAMMAR:
+     B→A ratio: 0.858× (does not support) verb→noun ordering
+     B→B ratio: 1.283× — process words cluster in blocks
+
+  2. LINE-INITIAL RESTRICTION:
+     Entropy ratio: 1.042
+     Start: 69% substance / 26% process
+
+  3. INGREDIENT REUSE:
+     Substance coverage: 42.7 folios, Process: 0.3 folios
+
+  4. FOLIO STRUCTURE:
+     herbal    : 13 lines, 71 words/folio
+     pharma    : 24 lines, 198 words/folio
+     astro     : 49 lines, 336 words/folio
+     bio       : 40 lines, 274 words/folio
+
+  5. COMPLEXITY CORRELATION: r=0.758
+
+  6. ROOT SHARING: mean Jaccard=0.300
+
+  PHARMACEUTICAL SCORECARD: 4 FOR / 2 AGAINST
+
+══════════════════════════════════════════════════════════════════════════════════════════
+PHARMACEUTICAL COMPARISON COMPLETE
+══════════════════════════════════════════════════════════════════════════════════════════
+</pre></details><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>bc53723</code>. 
+To run any test with your own parameters, clone
+<a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
+(<code>python webui/server.py</code>). All numbers reproduce at
+PYTHONHASHSEED=0.</footer></main></body></html>

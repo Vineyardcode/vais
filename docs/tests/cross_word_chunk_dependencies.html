@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cross_word_chunk_dependencies — VAIS</title><style>
+:root { --bg:#ffffff; --fg:#1a1a1a; --muted:#666; --line:#ddd;
+        --code:#f5f5f5; --accent:#7a4a1e; --warn:#a33; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#141414; --fg:#ddd; --muted:#999; --line:#333;
+          --code:#1e1e1e; --accent:#d9a05b; --warn:#e77; } }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--fg);
+       font:16px/1.55 Georgia, 'Times New Roman', serif; }
+nav { border-bottom:1px solid var(--line); padding:.7em 1.2em;
+      font-family: system-ui, sans-serif; font-size:.9em; }
+nav a { color:var(--accent); text-decoration:none; margin-right:1.2em; }
+main { max-width: 62em; margin: 0 auto; padding: 1.5em 1.2em 4em; }
+h1,h2,h3 { font-family: system-ui, sans-serif; line-height:1.25; }
+h1 { font-size:1.7em; } h2 { font-size:1.3em; margin-top:2em; }
+a { color: var(--accent); }
+code, pre { font-family: ui-monospace, Consolas, monospace;
+            font-size:.86em; background:var(--code); }
+code { padding:.1em .3em; border-radius:3px; }
+pre { padding: .9em; overflow-x:auto; border:1px solid var(--line);
+      border-radius:4px; line-height:1.4; }
+table { border-collapse: collapse; margin: 1em 0; font-size:.92em;
+        display:block; overflow-x:auto; }
+th, td { border:1px solid var(--line); padding:.35em .6em;
+         text-align:left; vertical-align:top; }
+th { font-family: system-ui, sans-serif; background:var(--code); }
+blockquote { border-left:3px solid var(--accent); margin:1em 0;
+             padding:.2em 1em; color:var(--muted); }
+.muted { color:var(--muted); font-size:.9em; }
+.tag { font-family: system-ui, sans-serif; font-size:.75em;
+       border:1px solid var(--line); border-radius:3px;
+       padding:.05em .45em; margin-left:.5em; }
+.tag.sug { border-color:var(--warn); color:var(--warn); }
+details summary { cursor:pointer; font-family: system-ui, sans-serif; }
+footer { border-top:1px solid var(--line); margin-top:3em;
+         padding-top:1em; font-size:.85em; color:var(--muted); }
+</style></head><body>
+<nav><a href="../index.html">VAIS</a><a href="../catalog.html">Catalog</a>
+<a href="../research.html">Research</a><a href="../reports.html">Reports</a>
+<a href="https://github.com/Vineyardcode/vais">GitHub</a></nav>
+<main><h1>cross_word_chunk_dependencies</h1>
+<p class="muted">scripts/cross_word_chunk_dependencies.py</p>
+<pre>Cross-Word Chunk Dependencies
+
+═══════════════════════════════════════════════════════════════════════
+
+QUESTION:
+  Does the anomalously strong cross-word dependency found at the
+  glyph level (word_functional_anatomy: NMI(last→next_init) = 0.080, z=313, 1.8×
+  Italian) persist, strengthen, or vanish at the chunk level?
+
+MOTIVATION:
+  The chunk-structure tests thoroughly characterized WITHIN-word chunk structure.
+  We now know:
+  - Chunks behave like NL syllables (entropy, positional concentration)
+  - Shared chunks are NOT homographs (cross_position_context_divergence)
+  - Positional cipher confidence is 50/50
+
+  The TMA paradox (mi_distance_curve) remains unresolved: VMS has 1.9× NL mean
+  word-order MI but 0.64 vs NL 0.83 character entropy. This paradox
+  implicates CROSS-WORD structure — the strongest untested dimension
+  at chunk level.
+
+  NL vs cipher/hoax predictions DIVERGE:
+  - In NL, syntax operates at word level. Last syllable of word N
+    should carry near-zero info about first syllable of word N+1.
+    (Morpho-phonological sandhi exists but is weak in written text.)
+  - In a positional cipher or generative hoax, sub-word rules may
+    not respect word boundaries, creating anomalous cross-boundary MI.
+
+APPROACH:
+  1. Parse VMS preserving LINE ORDER (word N, word N+1 must be on
+     the same line to be adjacent — line breaks are NOT continuations).
+  2. For each consecutive word pair (same line):
+     a. Extract F-chunk of word N and I-chunk of word N+1
+     b. Also extract within-word consecutive chunk bigrams
+  3. Compute:
+     a. MI(F_n, I_{n+1}) — cross-boundary chunk MI
+     b. MI(consecutive within-word chunks) — within-word chunk MI
+     c. RATIO = cross / within — boundary attenuation factor
+     d. H(I_{n+1}) and H(I_{n+1} | F_n) — conditional reduction
+  4. Same metrics for NL characters AND syllables
+  5. Z-score VMS vs NL baselines
+  6. Permutation null: shuffle word order within each line
+  7. Line-break control: does MI vanish when word pair spans a line?
+
+CRITICAL CONFOUNDS:
+  1. INVENTORY CONFOUND: F-chunks and I-chunks draw from different
+     type inventories (position_identity_decomposition: J(I,F)=0.241). This means marginal
+     distributions H(F) and H(I) are computed over DIFFERENT type
+     sets. MI &gt; 0 could reflect correlation between position-marker
+     features rather than genuine inter-word dependency.
+     CONTROL: NL syllables also have position-specific inventories
+     (position_identity_decomposition: J(I,F)_syls ≈ 0.07). They are the primary baseline.
+
+  2. LINE STRUCTURE: VMS lines are meaningful units (word_functional_anatomy: line
+     position has z=158-249 MI). Words at line boundaries may not be
+     adjacent syntactically. We restrict to same-line pairs.
+
+  3. FREQUENCY CONFOUND: A few very common F-chunk × I-chunk pairs
+     (e.g., &quot;e.d.y → q.o.k&quot;) might dominate MI. Must check whether
+     MI is driven by a handful of bigrams or distributed broadly.
+
+  4. ALPHABET SIZE: VMS has ~125 I-types and ~117 F-types (position_identity_decomposition).
+     NL chars have ~26. More types → higher H → potentially higher
+     raw MI from random co-occurrence. NMI (= MI / min(H_X, H_Y))
+     normalizes for this, but only partially.
+
+SKEPTICISM NOTES:
+  - The glyph-level result (NMI=0.080) used single characters.
+    Chunks are multi-glyph units with fewer types → MI may drop
+    simply from coarser grain.
+  - Must distinguish GENUINE DEPENDENCY from CONFOUND-COMPATIBLE.
+  - If VMS cross-word MI ≈ NL syllable cross-word MI, the anomaly
+    vanishes — it was a unit-of-analysis issue, not a real signal.
+  - If VMS cross-word MI &gt;&gt; NL syllable cross-word MI, the anomaly
+    persists and demands explanation.</pre>
+<h2>Parameters</h2><table><tr><th>name</th><th>default</th><th>type</th></tr>
+<tr><td><code>GALLOWS_TRI</code></td><td><code>[&#x27;cth&#x27;, &#x27;ckh&#x27;, &#x27;cph&#x27;, &#x27;cfh&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>GALLOWS_BI</code></td><td><code>[&#x27;ch&#x27;, &#x27;sh&#x27;, &#x27;th&#x27;, &#x27;kh&#x27;, &#x27;ph&#x27;, &#x27;fh&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>SLOT1</code></td><td><code>[&#x27;ch&#x27;, &#x27;sh&#x27;, &#x27;y&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>SLOT2_RUNS</code></td><td><code>[&#x27;e&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>SLOT2_SINGLE</code></td><td><code>[&#x27;a&#x27;, &#x27;q&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>SLOT3</code></td><td><code>[&#x27;o&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>SLOT4_RUNS</code></td><td><code>[&#x27;i&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>SLOT4_SINGLE</code></td><td><code>[&#x27;d&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>SLOT5</code></td><td><code>[&#x27;cfh&#x27;, &#x27;ckh&#x27;, &#x27;cph&#x27;, &#x27;cth&#x27;, &#x27;f&#x27;, &#x27;k&#x27;, &#x27;l&#x27;, &#x27;m&#x27;, &#x27;n&#x27;, &#x27;p&#x27;, &#x27;r&#x27;, &#x27;s&#x27;, &#x27;t&#x27;, &#x27;y&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>MAX_CHUNKS</code></td><td><code>6</code></td><td>int</td></tr>
+<tr><td><code>SECTION_MAP</code></td><td><code>{&#x27;bio&#x27;: &#x27;bio&#x27;, &#x27;cosmo&#x27;: &#x27;cosmo&#x27;, &#x27;herbal&#x27;: &#x27;herbal&#x27;, &#x27;pharma&#x27;: &#x27;pharma&#x27;, &#x27;text&#x27;: &#x27;text&#x27;, &#x27;…</code></td><td>json</td></tr>
+</table>
+<h2>Golden output (PYTHONHASHSEED=0)</h2><details><summary>show</summary><pre>============================================================================
+cross_word_chunk_dependencies — CROSS-WORD CHUNK DEPENDENCIES
+============================================================================
+
+  Does the glyph-level cross-word MI anomaly (word_functional_anatomy: NMI=0.080,
+  z=313, 1.8× Italian) persist at the chunk level?
+
+  KEY CONFOUND: F-chunks and I-chunks draw from different inventories.
+  MI &gt; 0 could reflect inventory correlation, not syntax.
+  NL syllable baseline is the PRIMARY control.
+
+────────────────────────────────────────────────────────────────────────────
+STEP 1: PARSE VMS (LINE-AWARE)
+────────────────────────────────────────────────────────────────────────────
+
+  VMS: 5691 lines, 40272 words, 80046 chunk tokens
+  Word lengths: 1-chunk: 10030 (24.9%) 2-chunk: 22790 (56.6%) 3-chunk: 5866 (14.6%) 4-chunk: 1217 (3.0%) 5-chunk: 244 (0.6%) 6-chunk: 125 (0.3%) 
+  1-chunk words (F=I, ambiguous): 10030 (24.9%)
+
+────────────────────────────────────────────────────────────────────────────
+STEP 2: EXTRACT CROSS-WORD AND WITHIN-WORD PAIRS
+────────────────────────────────────────────────────────────────────────────
+
+  Cross-word pairs (≥2-chunk words only): 25508
+  Cross-word pairs (1-chunk words):       9073
+  Cross-word pairs (ALL):                 34581
+  Within-word consecutive pairs:          39774
+
+────────────────────────────────────────────────────────────────────────────
+STEP 3: VMS CHUNK-LEVEL MI
+────────────────────────────────────────────────────────────────────────────
+
+  CROSS-WORD (≥2-chunk words, F→I):
+    MI     = 0.7820 bits
+    NMI    = 0.1473
+    H(X)   = 5.3103 bits  (283 types)
+    H(Y)   = 6.0799 bits  (410 types)
+    H(Y|X) = 5.2979 bits
+    H(Y) reduction: 12.86%
+    N pairs: 25508
+
+  CROSS-WORD (ALL words, F/whole→I):
+    MI     = 0.9075 bits
+    NMI    = 0.1573
+    H(X)   = 5.7705 bits  (367 types)
+    H(Y)   = 6.1033 bits  (433 types)
+    H(Y|X) = 5.1958 bits
+    H(Y) reduction: 14.87%
+    N pairs: 34581
+
+  WITHIN-WORD (consecutive chunks):
+    MI     = 1.1659 bits
+    NMI    = 0.2027
+    H(X)   = 5.7524 bits  (449 types)
+    H(Y)   = 5.8129 bits  (442 types)
+    H(Y|X) = 4.6470 bits
+    H(Y) reduction: 20.06%
+    N pairs: 39774
+
+  BOUNDARY ATTENUATION:
+    MI  ratio (cross/within): 0.6707
+    NMI ratio (cross/within): 0.7265
+    → Moderate boundary
+
+  TOP-20 CROSS-WORD CHUNK BIGRAMS (F→I):
+    F-chunk             I-chunk              Count      PMI  MI-contrib    p(x,y)
+    ──────────────────  ──────────────────  ──────  ───────  ──────────  ────────
+    a.i.i.n             o.t                    293   +0.421    0.004836   0.01149
+    y                   d                      286   +0.678    0.007606   0.01121
+    a.i.i.n             o.k                    239   +0.240    0.002245   0.00937
+    e.e.d.y             q.o.k                  219   +1.543    0.013244   0.00859
+    y                   q.o.k                  209   +0.129    0.001060   0.00819
+    a.i.i.n             d                      202   -0.254   -0.002008   0.00792
+    a.i.i.n             o.l                    196   +0.453    0.003483   0.00768
+    e.e.y               q.o.k                  180   +0.850    0.006000   0.00706
+    y                   o.t                    173   +0.091    0.000618   0.00678
+    a.r                 o.t                    171   +0.165    0.001106   0.00670
+    e.d.y               q.o.k                  171   +1.051    0.007045   0.00670
+    y                   o.k                    169   +0.170    0.001126   0.00663
+    a.r                 o.l                    168   +0.752    0.004951   0.00659
+    ch.e.d.y            q.o.k                  167   +1.488    0.009742   0.00655
+    a.l                 d                      163   +0.477    0.003050   0.00639
+    a.r                 o.k                    141   -0.001   -0.000005   0.00553
+    a.r                 a.r                    127   +1.782    0.008871   0.00498
+    o.l                 d                      125   +0.676    0.003315   0.00490
+    a.i.i.n             q.o.k                  123   -1.066   -0.005139   0.00482
+    e.e.y               l                      123   +1.472    0.007100   0.00482
+
+  MI from top-20 bigrams: 0.0782 / 0.7820 = 10.0% of total
+
+────────────────────────────────────────────────────────────────────────────
+STEP 4: NL CHARACTER + SYLLABLE BASELINES
+────────────────────────────────────────────────────────────────────────────
+
+  VMS mean words/line: 7.1
+  NL pseudo-line length: 7 words
+
+  NL CHARACTER baselines:
+    System                    Cross MI  Cross NMI  Within MI   Ratio  H(Y) red%
+    ────────────────────────  ────────  ─────────  ─────────  ──────  ─────────
+    VMS chunks                  0.7820     0.1473     1.1659  0.6707     12.86%
+    English-Cury-char           0.1465     0.0392     0.8647  0.1694      3.41%
+    French-Viandier-char        0.1440     0.0471     0.9162  0.1571      3.66%
+    German-BvgS-char            0.1822     0.0528     0.9854  0.1849      4.43%
+    German-Faust-char           0.0695     0.0201     1.0014  0.0694      1.67%
+    Italian-Cucina-char         0.1133     0.0396     0.8127  0.1394      2.79%
+    Latin-Apicius-char          0.0952     0.0270     0.7858  0.1212      2.39%
+    Latin-Caesar-char           0.0406     0.0124     0.7343  0.0553      0.99%
+    Latin-Vulgate-char          0.0580     0.0171     0.7524  0.0771      1.41%
+
+  NL SYLLABLE baselines:
+    System                    Cross MI  Cross NMI  Within MI   Ratio  H(Y) red%
+    ────────────────────────  ────────  ─────────  ─────────  ──────  ─────────
+    VMS chunks                  0.7820     0.1473     1.1659  0.6707     12.86%
+    English-Cury-syl            3.5970     0.4848     5.2602  0.6838     48.48%
+    French-Viandier-syl         2.9917     0.4538     5.3540  0.5588     45.38%
+    German-BvgS-syl             4.0734     0.5939     5.4128  0.7525     59.39%
+    German-Faust-syl            4.1899     0.5367     5.5796  0.7509     53.67%
+    Italian-Cucina-syl          2.0341     0.3003     3.8669  0.5260     30.03%
+    Latin-Apicius-syl           2.9538     0.4143     4.9903  0.5919     41.43%
+    Latin-Caesar-syl            2.2625     0.3017     4.2804  0.5286     30.17%
+    Latin-Vulgate-syl           3.3890     0.4496     4.7189  0.7182     44.96%
+
+────────────────────────────────────────────────────────────────────────────
+STEP 5: Z-SCORE COMPARISON — VMS vs NL BASELINES
+────────────────────────────────────────────────────────────────────────────
+
+  METRIC              VMS     NL-char μ±σ     z(char)    NL-syl μ±σ      z(syl)
+  ─────────────────  ──────  ──────────────  ────────  ──────────────  ────────
+  Cross MI            0.7820  0.1062±0.0461     +14.67  3.1864±0.7312      -3.29
+  Cross NMI           0.1473  0.0319±0.0139      +8.31  0.4419±0.0966      -3.05
+  Within MI           1.1659  0.8566±0.0961      +3.22  4.9329±0.5639      -6.68
+  Ratio (c/w)         0.6707  0.1217±0.0461     +11.91  0.6388±0.0917      +0.35
+  H(Y) red. %         12.8617  2.5948±1.1205      +9.16  44.1899±9.6572     -3.24
+
+────────────────────────────────────────────────────────────────────────────
+STEP 6: PERMUTATION NULL MODEL (100 trials)
+────────────────────────────────────────────────────────────────────────────
+
+  Shuffle word order within each VMS line.
+  Preserves within-word chunk structure and line composition.
+  Destroys word-order dependencies.
+
+  Cross MI:  observed = 0.7820,  null = 0.5659 ± 0.0048,  z = +44.66
+  Cross NMI: observed = 0.1473,  null = 0.1063 ± 0.0009,  z = +45.81
+
+  → Cross-word MI is SIGNIFICANTLY above word-order shuffle.
+    Genuine inter-word chunk dependency confirmed.
+
+  NL syllable null model (Latin-Caesar only, for reference):
+    Cross MI:  observed = 2.2625,  null = 2.0473 ± 0.0080,  z = +27.04
+
+────────────────────────────────────────────────────────────────────────────
+STEP 7: ROBUSTNESS CHECKS
+────────────────────────────────────────────────────────────────────────────
+
+  7a. EXCLUDING 1-CHUNK WORDS (already the default for cross_vms)
+      Cross pairs: 25508 (excludes 1-chunk words at boundary)
+      vs ALL pairs: 34581
+      MI from 1-chunk boundaries only: 1.7365 (NMI: 0.2871)
+
+  7b. PSEUDO-LINE LENGTH SENSITIVITY (NL)
+      Testing whether NL results depend on pseudo-line length choice.
+      Line len= 5: Cross MI=2.3037, NMI=0.3070, N=24017
+      Line len= 8: Cross MI=2.2577, NMI=0.3010, N=26276
+      Line len=15: Cross MI=2.2089, NMI=0.2944, N=28034
+      Line len=50: Cross MI=2.1772, NMI=0.2901, N=29424
+
+  7c. VMS CROSS-WORD MI BY SECTION
+    Section         N pairs       MI      NMI  H(Y)red%
+    ──────────────  ───────  ───────  ───────  ────────
+    bio                3855   0.9235   0.2038    17.64%
+    cosmo               575   2.5322   0.5043    46.42%
+    herbal-A           6408   1.1859   0.2227    19.53%
+    pharma              921   2.0002   0.4070    34.98%
+    text              12994   0.8937   0.1723    14.92%
+    unknown             755   2.6273   0.5085    50.85%
+
+────────────────────────────────────────────────────────────────────────────
+STEP 8: SKEPTICAL AUDIT
+────────────────────────────────────────────────────────────────────────────
+
+  1. INVENTORY CONFOUND
+     F-chunks and I-chunks draw from largely disjoint types
+     (position_identity_decomposition: J(I,F)=0.241). Even random pairing of words
+     produces MI &gt; 0 if the marginal F/I distributions are
+     non-uniform. The null model (word shuffle) controls this:
+     null MI = 0.5659, observed MI = 0.7820.
+     GENUINE excess above marginal frequency effect confirmed.
+
+  2. GRAIN SIZE EFFECT
+     Chunks are coarser than glyphs (523 types vs ~26 glyph types).
+     Coarser grain → lower MI (information is averaged over slots).
+     NMI partially controls for this, but the comparison is still
+     approximate. The primary question is RELATIVE: VMS vs NL at
+     the same grain, not VMS chunks vs VMS glyphs.
+
+  3. PSEUDO-LINE CONFOUND (NL only)
+     NL texts lack line boundaries. We use fixed-length pseudo-lines.
+     This means every NL pair is &#x27;same sentence&#x27; (approximately),
+     while VMS pairs respect actual line breaks. This gives NL a
+     slight advantage (fewer random boundary pairs). The pseudo-line
+     length sensitivity check shows whether this matters.
+
+  4. 1-CHUNK WORD AMBIGUITY
+     10030 VMS words (24.9%) are single-chunk.
+     Their F-chunk = I-chunk = the only chunk. When a 1-chunk word
+     is at position N, the &#x27;cross-word&#x27; pair is (whole→I_{n+1}).
+     We exclude these from the primary analysis (cross_vms) but
+     include them in cross_all_vms for comparison.
+
+  5. MULTIPLE TESTING
+     5 metrics × 2 comparisons = 10 tests.
+     Bonferroni threshold: |z| &gt; 2.81 for α=0.05.
+
+  6. FREQUENCY CONCENTRATION
+     Top-20 bigrams contribute 10.0% of total MI.
+     MI is broadly distributed — consistent with general dependency.
+
+────────────────────────────────────────────────────────────────────────────
+STEP 9: SYNTHESIS &amp; VERDICT
+────────────────────────────────────────────────────────────────────────────
+
+  SUMMARY TABLE — CROSS-WORD CHUNK MI
+
+    Metric                   VMS   NL-char μ   z(char)    NL-syl μ    z(syl)
+    ──────────────────  ────────  ──────────  ────────  ──────────  ────────
+    Cross MI              0.7820      0.1062    +14.67      3.1864     -3.29
+    Cross NMI             0.1473      0.0319     +8.31      0.4419     -3.05
+    Within MI             1.1659      0.8566     +3.22      4.9329     -6.68
+    Ratio (c/w)           0.6707      0.1217    +11.91      0.6388     +0.35
+    H(Y) red. %          12.8617      2.5948     +9.16     44.1899     -3.24
+
+  DIRECTIONAL EVIDENCE (Bonferroni |z| &gt; 2.81):
+    vs NL chars:  5 ANOMALOUS-HIGH, 0 LOW, 0 ambiguous
+    vs NL syls:   0 ANOMALOUS-HIGH, 4 LOW, 1 ambiguous
+
+  NULL MODEL SUMMARY:
+    VMS word-order shuffle: z(MI) = +44.66
+    → GENUINE cross-word dependency (exceeds shuffled baseline)
+
+  ══════════════════════════════════════════════════════════
+  VERDICT
+  ══════════════════════════════════════════════════════════
+
+  Mean z-score vs NL characters: +9.45
+  Mean z-score vs NL syllables:  -3.18
+
+  ★ Cross-word chunk MI is genuine but BELOW NL syllable baselines.
+    → VMS word boundaries attenuate dependencies MORE than NL.
+    → Strong word-boundary effect — consistent with NL-like syntax.
+
+  REVISED CONFIDENCES (cross_word_chunk_dependencies):
+  - Natural language: 87% → 89% (UP — strong word-boundary effect)
+  - Positional verbose cipher: 50% → 45% (DOWN)
+  - All others unchanged
+
+  Results saved to C:\projects\vais\results\cross_word_chunk_dependencies.txt
+  JSON saved to C:\projects\vais\results\cross_word_chunk_dependencies.json
+</pre></details><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>bc53723</code>. 
+To run any test with your own parameters, clone
+<a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
+(<code>python webui/server.py</code>). All numbers reproduce at
+PYTHONHASHSEED=0.</footer></main></body></html>

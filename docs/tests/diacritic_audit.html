@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>diacritic_audit — VAIS</title><style>
+:root { --bg:#ffffff; --fg:#1a1a1a; --muted:#666; --line:#ddd;
+        --code:#f5f5f5; --accent:#7a4a1e; --warn:#a33; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#141414; --fg:#ddd; --muted:#999; --line:#333;
+          --code:#1e1e1e; --accent:#d9a05b; --warn:#e77; } }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--fg);
+       font:16px/1.55 Georgia, 'Times New Roman', serif; }
+nav { border-bottom:1px solid var(--line); padding:.7em 1.2em;
+      font-family: system-ui, sans-serif; font-size:.9em; }
+nav a { color:var(--accent); text-decoration:none; margin-right:1.2em; }
+main { max-width: 62em; margin: 0 auto; padding: 1.5em 1.2em 4em; }
+h1,h2,h3 { font-family: system-ui, sans-serif; line-height:1.25; }
+h1 { font-size:1.7em; } h2 { font-size:1.3em; margin-top:2em; }
+a { color: var(--accent); }
+code, pre { font-family: ui-monospace, Consolas, monospace;
+            font-size:.86em; background:var(--code); }
+code { padding:.1em .3em; border-radius:3px; }
+pre { padding: .9em; overflow-x:auto; border:1px solid var(--line);
+      border-radius:4px; line-height:1.4; }
+table { border-collapse: collapse; margin: 1em 0; font-size:.92em;
+        display:block; overflow-x:auto; }
+th, td { border:1px solid var(--line); padding:.35em .6em;
+         text-align:left; vertical-align:top; }
+th { font-family: system-ui, sans-serif; background:var(--code); }
+blockquote { border-left:3px solid var(--accent); margin:1em 0;
+             padding:.2em 1em; color:var(--muted); }
+.muted { color:var(--muted); font-size:.9em; }
+.tag { font-family: system-ui, sans-serif; font-size:.75em;
+       border:1px solid var(--line); border-radius:3px;
+       padding:.05em .45em; margin-left:.5em; }
+.tag.sug { border-color:var(--warn); color:var(--warn); }
+details summary { cursor:pointer; font-family: system-ui, sans-serif; }
+footer { border-top:1px solid var(--line); margin-top:3em;
+         padding-top:1em; font-size:.85em; color:var(--muted); }
+</style></head><body>
+<nav><a href="../index.html">VAIS</a><a href="../catalog.html">Catalog</a>
+<a href="../research.html">Research</a><a href="../reports.html">Reports</a>
+<a href="https://github.com/Vineyardcode/vais">GitHub</a></nav>
+<main><h1>diacritic_audit</h1>
+<p class="muted">scripts/diacritic_audit.py · baseline 0s</p>
+<pre>Diacritical Mark Audit
+
+The IVTFF transcription encodes three types of extra-alphabetic marks:
+
+  1. @NNN; codes — Extended glyphs (diacritics, variant forms) outside EVA
+  2. {xyz} codes — Composite/uncertain glyphs that don&#x27;t map to single EVA chars
+  3. &#x27; (apostrophe) — Plume/flourish marks on glyphs
+
+Tests whether these marks:
+  - Are systematic or random scribal variation
+  - Correlate with specific sections/Currier languages
+  - Modify specific word types (gallows? function words? content words?)
+  - Appear at specific word positions (onset? coda?)
+  - Form patterns that suggest grammatical or semantic function
+
+Connected to: an observation of small marks above letters in f78r,
+the earlier gallows-as-determinative finding, Hebrew niqqud analogy.</pre>
+<h2>Golden output (PYTHONHASHSEED=0)</h2><details><summary>show</summary><pre>Extracting all diacritical marks from corpus...
+
+========================================================================
+ANALYSIS 1: @NNN; EXTENDED GLYPH CODES
+========================================================================
+
+  Total @-code occurrences: 185
+  Unique codes: 84
+
+  Top 20 codes by frequency:
+    @132;      12×  examples: {c@132;h}da,@168;oto, {c@132;h}dee{c@133;h}y, {c@132;h}ol
+    @133;      12×  examples: {c@132;h}dee{c@133;h}y, @183;ol{c@133;h}eol, d{c@133;h}ody
+    @175;       9×  examples: l,kai@175;, ainai@175;, a@175;
+    @172;       6×  examples: @172;, @172;, @172;
+    @196;       5×  examples: r,choly,{c@196;h}y, ctha{ih}{c@196;h}y, @167;oeeod{c@196;h}y
+    @169;       5×  examples: @169;v, @169;v, @169;v
+    @170;       5×  examples: @170;, @170;, @170;
+    @171;       5×  examples: @171;, @171;, @171;
+    @138;       4×  examples: keeol@138;,rch, keeol@138;,rch, @138;chor
+    @246;       4×  examples: {@246;kh}ey, {c@139;h}{@246;k}ey, {@246;thh}ey
+    @206;       4×  examples: @206;ar, ar,y,@206;,ais, @206;aiin
+    @162;       4×  examples: {y@162;h}y, {c&#x27;@162;@136;}, {c@162;h}y
+    @140;       4×  examples: shy@140;, @140;, @140;
+    @192;       4×  examples: @192;chy, @192;, @192;
+    @191;       4×  examples: {ck@191;h}y, {ck@191;h}ey, sho{@246;k@191;@191;h}y
+    @185;       3×  examples: @185;arally, o@185;y, o@185;y
+    @152;       3×  examples: [@152;:d]ar, @152;aiin, dytar,y,l@152;l
+    @243;       3×  examples: @243;, @243;, @243;
+    @176;       3×  examples: {c@176;h}dy, s,@176;am, @176;orain
+    @167;       3×  examples: o@167;chal, @167;oeeod{c@196;h}y, o@167;olch{c@133;h}y
+
+  Section distribution:
+  Section        @ marks   Lines      Rate
+  herbal-A            99    1766     0.056
+  herbal-B             8     233     0.034
+  pharma              15     573     0.026
+  bio                 13     937     0.014
+  cosmo               14     388     0.036
+  text                15    1109     0.014
+  zodiac              21     760     0.028
+
+  Top 15 folios by @-mark count:
+    f57v         (herbal-A  ): 19
+    f68r         (zodiac    ): 9
+    f49v         (herbal-A  ): 7
+    f85r_part_86v_part (cosmo     ): 7
+    f86v_part    (cosmo     ): 6
+    f100v_101r   (pharma    ): 5
+    f69v_70r     (zodiac    ): 4
+    f101v_part_102r (pharma    ): 3
+    f104v        (text      ): 3
+    f19r         (herbal-A  ): 3
+    f1r          (herbal-A  ): 3
+    f22r         (herbal-A  ): 3
+    f42r         (herbal-A  ): 3
+    f47r         (herbal-A  ): 3
+    f58v         (herbal-A  ): 3
+
+  @-codes in gallows compounds: 64
+  @-codes standalone/other:     121
+
+========================================================================
+ANALYSIS 2: {xyz} COMPOSITE GLYPHS
+========================================================================
+
+  Total {} glyph occurrences: 466
+  Unique glyph types: 107
+
+  Gallows-related {} glyphs: 51 (282 occurrences)
+  Non-gallows {} glyphs:     30 (128 occurrences)
+  @-code-containing {}: 26 (56 occurrences)
+
+  Top 15 gallows-related variants:
+    {ikh:8s}   37×  in: a{ikh}eky, oro{ikh}ey
+    {ckhh:8s}   29×  in: cho{ckhh}or, qo{ckhh}ey
+    {cthh:8s}   28×  in: qo{cthh}y, ch{cthh}y
+    {ith:8s}   25×  in: a{ith}y, o{ith}y
+    {ck:8s}   24×  in: qo{ck}y, sho{ck}y
+    {ct:8s}   18×  in: ch{ct}chy, s,pcho{ct}y
+    {cphh:8s}   12×  in: ch{cphh}dy, q{cphh}edy
+    {cto:8s}   10×  in: {cto}dy, dai[{cto}:@194;]y
+    {ykh:8s}   10×  in: {ykh}ey, {ykh}ody
+    {cty:8s}    8×  in: ch{cty}, o{cty}
+    {kh:8s}    7×  in: q{kh}ody, o,{kh}ar
+    {iph:8s}    7×  in: cheda{iph}y, tar,a{iph}y
+    {ifh:8s}    5×  in: oka{ifh}y, o{ifh}edy
+    {cfhh:8s}    5×  in: ch{cfhh}y, ch{cfhh}y
+    {cp:8s}    5×  in: {cp}y, {cp}ar
+
+  Top 15 non-gallows variants:
+    {ch&#x27;:8s}   33×  in: {ch&#x27;}eey, ok{ch&#x27;}eey
+    {oh:8s}   13×  in: yt{oh}edy, qok[{oh}:ch]ey
+    {c&#x27;y:8s}    9×  in: {c&#x27;y}keeo, {c&#x27;y}
+    {i&#x27;h:8s}    8×  in: kaii{i&#x27;h}dy, toda{i&#x27;h}x
+    {co:8s}    8×  in: {co}y, qot{co}tor
+    {chh:8s}    7×  in: {chh}ty, t[che:{chh}]dy
+    {cy:8s}    5×  in: opchyt{cy}, qok{cy}
+    {cr:8s}    5×  in: cholol{cr}, yk[en:{cr}]
+    {c&#x27;hh:8s}    4×  in: {c&#x27;hh}ey,kaiin, f{c&#x27;hh}dar
+    {c&#x27;o:8s}    4×  in: o{c&#x27;o}, {c&#x27;o}aiidy
+    {c&#x27;:8s}    4×  in: [{c&#x27;}:s], kar[{c&#x27;}:s]
+    {ih:8s}    4×  in: ctha{ih}{c@196;h}y, [{ih}:ch]ar
+    {ca:8s}    3×  in: qoke{ca}r, d{ca}r
+    {cs:8s}    3×  in: {cs}, qok[{ch&#x27;}:{cs}]y
+    {e&#x27;e:8s}    2×  in: ok{e&#x27;e}chedy, ol,or,sh{e&#x27;e}es
+
+  {} glyph distribution by section:
+  Section          Marks     Words    ‰ rate
+  herbal-A           189     10898      17.3
+  herbal-B            25      1486      16.8
+  pharma              59      3024      19.5
+  bio                 39      6479       6.0
+  cosmo               34      3464       9.8
+  text                74     10095       7.3
+  zodiac              46      2864      16.1
+
+  Gallows-variant {} glyphs per section:
+    herbal-A       111  (10.2‰)
+    herbal-B        17  (11.4‰)
+    pharma          41  (13.6‰)
+    bio             23  (3.5‰)
+    cosmo           14  (4.0‰)
+    text            51  (5.1‰)
+    zodiac          25  (8.7‰)
+
+========================================================================
+ANALYSIS 3: PLUME/FLOURISH MARKS (&#x27;)
+========================================================================
+
+  Total plume occurrences: 107
+
+  Plume distribution by section:
+  Section         Plumes     Words    ‰ rate
+  herbal-A            46     10898       4.2
+  herbal-B             3      1486       2.0
+  pharma               5      3024       1.7
+  bio                 15      6479       2.3
+  cosmo               10      3464       2.9
+  text                17     10095       1.7
+  zodiac              11      2864       3.8
+
+  Character preceding plume (what carries the mark):
+    &#x27;h&#x27;: 39 (36.4%)
+    &#x27;c&#x27;: 29 (27.1%)
+    &#x27;e&#x27;: 12 (11.2%)
+    &#x27;i&#x27;: 8 (7.5%)
+    &#x27;o&#x27;: 6 (5.6%)
+    &#x27;q&#x27;: 6 (5.6%)
+    &#x27;a&#x27;: 5 (4.7%)
+    &#x27;y&#x27;: 2 (1.9%)
+
+  Character following plume:
+    &#x27;}&#x27;: 38 (35.5%)
+    &#x27;h&#x27;: 20 (18.7%)
+    &#x27;y&#x27;: 11 (10.3%)
+    &#x27;o&#x27;: 10 (9.3%)
+    &#x27;e&#x27;: 5 (4.7%)
+    &#x27;]&#x27;: 3 (2.8%)
+    &#x27;d&#x27;: 3 (2.8%)
+    &#x27;l&#x27;: 3 (2.8%)
+    &#x27;a&#x27;: 2 (1.9%)
+    &#x27;k&#x27;: 2 (1.9%)
+
+  Plume position in word:
+    Early (0-33%):  26 (24.3%)
+    Middle (33-66%): 46 (43.0%)
+    Late (66-100%): 35 (32.7%)
+
+  Top 20 plume-bearing words:
+    {c&#x27;y}: 3
+    q&#x27;o: 3
+    {ch&#x27;}eey: 2
+    qo&#x27;d: 2
+    {ch&#x27;}eol: 2
+    y{ch&#x27;}eey: 2
+    yp{ch&#x27;}eor: 2
+    ytee{ch&#x27;}eey: 2
+    {c&#x27;y}keeeochy: 2
+    tshd{ch&#x27;}ey: 2
+    y,{ch&#x27;}eo: 2
+    ch{cthh&#x27;}o: 1
+    {c&#x27;y}keeo: 1
+    ee&#x27;ey: 1
+    ok{ch&#x27;}eey: 1
+    qod[en:a&#x27;]: 1
+    kaii{i&#x27;h}dy: 1
+    ok{e&#x27;e}chedy: 1
+    kol{ch&#x27;}es: 1
+    {ch&#x27;}al: 1
+
+========================================================================
+ANALYSIS 4: f78r DEEP DIVE
+========================================================================
+
+  f78r @-codes: 3
+    @176; in word &#x27;s,@176;am&#x27; at f78r.7,+P0
+    @176; in word &#x27;@176;orain&#x27; at f78r.28,+P0
+    @206; in word &#x27;d,@206;ol&#x27; at f78r.40,+P0
+
+  f78r {} glyphs: 1
+    {ifh} in word &#x27;dar,alo{ifh}y&#x27; at f78r.44,@Lt
+
+  f78r plumes: 3
+    in word &#x27;pche&#x27;y&#x27; at f78r.17,+P0
+    in word &#x27;shee&#x27;&#x27; at f78r.37,+P0
+    in word &#x27;otarodla&#x27;y&#x27; at f78r.46,@Lt
+
+  f78r lines with ANY special marks:
+    &lt;f78r.1,@Lt&gt;      &lt;!16&gt;okchdldlo
+    &lt;f78r.2,@Lt&gt;      &lt;!17&gt;okchdy
+    &lt;f78r.3,@P0&gt;      &lt;%&gt;tshedor.shedy.qopchedy.qokedy.dy,qokol.oky
+    &lt;f78r.7,+P0&gt;      qokal.otedy.qokedy.qokedy.dal.qokedy.qokedy.s,@176;am
+    &lt;f78r.17,+P0&gt;     soiin.kar.kedy.pche&#x27;y.tchdoltdy
+    &lt;f78r.28,+P0&gt;     &lt;%&gt;@176;orain.ol.qokeedy.kchol.tchal,olkee.yfchey.ofchedy.taly
+    &lt;f78r.37,+P0&gt;     osal.ol.s.aiin.shee&#x27;.aiin.oly
+    &lt;f78r.40,+P0&gt;     shedy.qol.shedy.qokaiin.d,@206;ol
+    &lt;f78r.44,@Lt&gt;     &lt;!18&gt;dar,alo{ifh}y
+    &lt;f78r.45,@Lt&gt;     &lt;!19&gt;dchedaly
+    &lt;f78r.46,@Lt&gt;     &lt;!20&gt;otarodla&#x27;y&lt;-&gt;&lt;!21&gt;orory
+    &lt;f78r.47,@Lt&gt;     &lt;!22&gt;okaral
+
+========================================================================
+ANALYSIS 5: SYSTEMATICITY TESTS
+========================================================================
+
+  Test 1: Mark concentration
+    Folios with any marks: 180
+    Total marks: 758
+    Gini coefficient: 0.447 (0=uniform, 1=concentrated)
+    Top 5 folios: [(&#x27;f85r_part_86v_part&#x27;, 29), (&#x27;f86v_part&#x27;, 24), (&#x27;f57v&#x27;, 21), (&#x27;f68r&#x27;, 17), (&#x27;f69v_70r&#x27;, 16)]
+    Folios with zero marks: 21/201
+
+  Test 2: Mark distribution by locus type
+    paragraph      : 610
+    other          : 91
+    ring_text      : 44
+    nymph_label    : 11
+    label          : 2
+
+  Test 3: Gallows co-occurrence
+    Marks in gallows context: 428/651 (65.7%)
+    Marks NOT in gallows context: 223/651 (34.3%)
+    (Corpus gallows rate is ~52% — compare)
+
+  Test 4: Gallows variant analysis
+  Are {} gallows just visually modified versions of standard gallows?
+    non-gallows    : 184
+    k-type         : 59
+    pre-t          : 42
+    bench-k        : 35
+    pre-k          : 35
+    bench-t        : 32
+    t-type         : 29
+    p-type         : 15
+    bench-p        : 12
+    f-type         : 7
+    bench-f        : 6
+    pre-p          : 6
+    pre-f          : 4
+
+    Gallows-related: 282/466 (61%)
+
+========================================================================
+SYNTHESIS: DIACRITICAL MARKS IN THE VOYNICH MANUSCRIPT
+========================================================================
+
+  Total corpus: ~38310 words
+  Total extra-alphabetic marks: 758
+  Mark rate: 19.8 per thousand words
+
+  Mark types:
+    @NNN; extended codes: 185 (24%)
+    {xyz} composite glyphs: 466 (61%)
+    &#x27; plume marks: 107 (14%)
+
+  ── Key Findings ──
+  1. Marks are RARE: 19.8‰ overall
+  2. Most {} glyphs (466 total) are gallows variants —
+     visual modifications of the four basic gallows shapes
+  3. This connects to if gallows are determinatives,
+     then {} variants = SUB-CATEGORIES within the gallows system
+  4. @NNN; codes are the true &#x27;diacritics&#x27; — marks that modify
+     individual letters but can&#x27;t be expressed in standard EVA
+  5. Plume marks (&#x27;) primarily attach to specific characters,
+     suggesting they modify the glyph&#x27;s reading
+
+Diacritic audit complete.
+</pre></details><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>bc53723</code>. 
+To run any test with your own parameters, clone
+<a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
+(<code>python webui/server.py</code>). All numbers reproduce at
+PYTHONHASHSEED=0.</footer></main></body></html>

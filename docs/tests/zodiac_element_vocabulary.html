@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>zodiac_element_vocabulary — VAIS</title><style>
+:root { --bg:#ffffff; --fg:#1a1a1a; --muted:#666; --line:#ddd;
+        --code:#f5f5f5; --accent:#7a4a1e; --warn:#a33; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#141414; --fg:#ddd; --muted:#999; --line:#333;
+          --code:#1e1e1e; --accent:#d9a05b; --warn:#e77; } }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--fg);
+       font:16px/1.55 Georgia, 'Times New Roman', serif; }
+nav { border-bottom:1px solid var(--line); padding:.7em 1.2em;
+      font-family: system-ui, sans-serif; font-size:.9em; }
+nav a { color:var(--accent); text-decoration:none; margin-right:1.2em; }
+main { max-width: 62em; margin: 0 auto; padding: 1.5em 1.2em 4em; }
+h1,h2,h3 { font-family: system-ui, sans-serif; line-height:1.25; }
+h1 { font-size:1.7em; } h2 { font-size:1.3em; margin-top:2em; }
+a { color: var(--accent); }
+code, pre { font-family: ui-monospace, Consolas, monospace;
+            font-size:.86em; background:var(--code); }
+code { padding:.1em .3em; border-radius:3px; }
+pre { padding: .9em; overflow-x:auto; border:1px solid var(--line);
+      border-radius:4px; line-height:1.4; }
+table { border-collapse: collapse; margin: 1em 0; font-size:.92em;
+        display:block; overflow-x:auto; }
+th, td { border:1px solid var(--line); padding:.35em .6em;
+         text-align:left; vertical-align:top; }
+th { font-family: system-ui, sans-serif; background:var(--code); }
+blockquote { border-left:3px solid var(--accent); margin:1em 0;
+             padding:.2em 1em; color:var(--muted); }
+.muted { color:var(--muted); font-size:.9em; }
+.tag { font-family: system-ui, sans-serif; font-size:.75em;
+       border:1px solid var(--line); border-radius:3px;
+       padding:.05em .45em; margin-left:.5em; }
+.tag.sug { border-color:var(--warn); color:var(--warn); }
+details summary { cursor:pointer; font-family: system-ui, sans-serif; }
+footer { border-top:1px solid var(--line); margin-top:3em;
+         padding-top:1em; font-size:.85em; color:var(--muted); }
+</style></head><body>
+<nav><a href="../index.html">VAIS</a><a href="../catalog.html">Catalog</a>
+<a href="../research.html">Research</a><a href="../reports.html">Reports</a>
+<a href="https://github.com/Vineyardcode/vais">GitHub</a></nav>
+<main><h1>zodiac_element_vocabulary</h1>
+<p class="muted">scripts/zodiac_element_vocabulary.py</p>
+<pre>Highest-Leverage Attacks
+====================================
+
+Three integrated analyses:
+
+  A) WATER-SIGN VOCABULARY CRACK — The 37 Water-exclusive residual roots
+       matched against expanded Coptic/Arabic aquatic, lunar, body-part,
+       and cold-wet terminology. Also test Fire-exclusive roots against
+       hot-dry vocabulary.
+
+  B) VERB CONJUGATION PARADIGM — Map -ey vs -edy vs -ody vs -ol on
+       s-prefix verbs. Do they encode tense/aspect/person? Test by
+       section, position, and collocational frame.
+
+  C) BIO-SECTION TRANSLATION — Apply the full grammar model
+       (p-opener, s-verb, qokeedy relative, gallows determinatives,
+       confirmed vocabulary) to translate a bio-section paragraph
+       where qokeedy is enriched 2×.</pre>
+<h2>Parameters</h2><table><tr><th>name</th><th>default</th><th>type</th></tr>
+<tr><td><code>SIMPLE_GALLOWS</code></td><td><code>[&#x27;t&#x27;, &#x27;k&#x27;, &#x27;f&#x27;, &#x27;p&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>BENCH_GALLOWS</code></td><td><code>[&#x27;cth&#x27;, &#x27;ckh&#x27;, &#x27;cph&#x27;, &#x27;cfh&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>COMPOUND_GCH</code></td><td><code>[&#x27;tch&#x27;, &#x27;kch&#x27;, &#x27;pch&#x27;, &#x27;fch&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>COMPOUND_GSH</code></td><td><code>[&#x27;tsh&#x27;, &#x27;ksh&#x27;, &#x27;psh&#x27;, &#x27;fsh&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>PREFIXES</code></td><td><code>[&#x27;qo&#x27;, &#x27;q&#x27;, &#x27;so&#x27;, &#x27;do&#x27;, &#x27;o&#x27;, &#x27;d&#x27;, &#x27;s&#x27;, &#x27;y&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>SUFFIXES</code></td><td><code>[&#x27;aiin&#x27;, &#x27;ain&#x27;, &#x27;iin&#x27;, &#x27;in&#x27;, &#x27;ar&#x27;, &#x27;or&#x27;, &#x27;al&#x27;, &#x27;ol&#x27;, &#x27;edy&#x27;, &#x27;ody&#x27;, &#x27;eedy&#x27;, &#x27;dy&#x27;, &#x27;sy&#x27;, &#x27;ey…</code></td><td>json</td></tr>
+<tr><td><code>ZODIAC_MAP</code></td><td><code>{&#x27;f70v1&#x27;: &#x27;Aries-dark&#x27;, &#x27;f71r&#x27;: &#x27;Aries-light&#x27;, &#x27;f71v&#x27;: &#x27;Taurus-light&#x27;, &#x27;f72r1&#x27;: &#x27;Taurus-da…</code></td><td>json</td></tr>
+</table>
+<h2>Golden output (PYTHONHASHSEED=0)</h2><details><summary>show</summary><pre>============================================================================
+zodiac_element_vocabulary: HIGHEST-LEVERAGE ATTACKS
+============================================================================
+
+Loading data...
+  12 zodiac signs, 39564 corpus tokens
+
+============================================================================
+ELEMENT-EXCLUSIVE VOCABULARY CRACK
+============================================================================
+
+────────────────────────────────────────────────────────────────────────────
+  WATER SIGNS: Pisces, Cancer, Scorpio
+────────────────────────────────────────────────────────────────────────────
+  Total residual roots: 64, Exclusive: 37, Shared with other elements: 27
+
+  --- Matching 37 exclusive roots against expanded glossaries ---
+
+    Root           × Ref          Meaning              Match            Scr Semantic? Signs
+    eosd           1 asad         lion/Leo             SKEL-Arabic     0.50       --- Scorpio
+    cheos          2 choeis       lord                 SKEL-Coptic     0.42       --- Cancer,Scorpio
+    choes          1 choeis       lord                 SKEL-Coptic     0.42       --- Cancer
+    arch           1 arche        begin                SKEL-Coptic     0.40       --- Scorpio
+    alos           1 les          tongue               SKEL-Coptic     0.38       --- Pisces
+    ares           1 ras          head                 SKEL-Arabic     0.38       --- Scorpio
+    choo           1 chi          take                 SKEL-Coptic     0.38       --- Scorpio
+    echs           1 choeis       lord                 SKEL-Coptic     0.33       --- Scorpio
+    chalal         1 cham         hot                  PREFIX-Coptic   0.30       --- Pisces
+    cheoe          1 chi          take                 SKEL-Coptic     0.30       --- Cancer
+    choo           1 choeis       lord                 PREFIX-Coptic   0.30       --- Scorpio
+
+  --- Confirmed vocab in Water ring residual ---
+
+────────────────────────────────────────────────────────────────────────────
+  FIRE SIGNS: Aries-dark, Aries-light, Leo, Sagittarius
+────────────────────────────────────────────────────────────────────────────
+  Total residual roots: 68, Exclusive: 42, Shared with other elements: 26
+
+  --- Matching 42 exclusive roots against expanded glossaries ---
+
+    Root           × Ref          Meaning              Match            Scr Semantic? Signs
+    yed            1 yad          hand                 E→A-Arabic      0.90       --- Leo
+    chai           1 chi          take                 SKEL-Coptic     0.38       --- Sagittarius
+    esal           1 sol          counsel              SKEL-Coptic     0.38       --- Sagittarius
+    olam           1 ilm          knowledge            SKEL-Arabic     0.38       --- Sagittarius
+    chai           1 cham         hot                  PREFIX-Coptic   0.30     ✓ YES Sagittarius
+    choar          1 choeis       lord                 PREFIX-Coptic   0.30       --- Leo
+    chod           1 choeis       lord                 PREFIX-Coptic   0.30       --- Sagittarius
+    choedam        1 choeis       lord                 PREFIX-Coptic   0.30       --- Sagittarius
+    cholain        1 choeis       lord                 PREFIX-Coptic   0.30       --- Leo
+    echeo          1 chi          take                 SKEL-Coptic     0.30       --- Aries-dark
+    cheoeo         3 chi          take                 SKEL-Coptic     0.25       --- Aries-dark,Aries-light
+    hs             1 hise         womb                 SKEL-Coptic     0.25       --- Aries-light
+
+  --- Confirmed vocab in Fire ring residual ---
+
+────────────────────────────────────────────────────────────────────────────
+  EARTH SIGNS: Taurus-light, Taurus-dark, Virgo
+────────────────────────────────────────────────────────────────────────────
+  Total residual roots: 45, Exclusive: 19, Shared with other elements: 26
+
+  --- Matching 19 exclusive roots against expanded glossaries ---
+
+    Root           × Ref          Meaning              Match            Scr Semantic? Signs
+    ols            1 les          tongue               SKEL-Coptic     0.50       --- Virgo
+    choam          1 cham         hot                  SKEL-Coptic     0.40       --- Taurus-dark
+    sheo           1 shuoe        dry                  SKEL-Coptic     0.40     ✓ YES Taurus-light
+    heal           1 hol          fly                  SKEL-Coptic     0.38       --- Taurus-light
+    sheo           1 she          cut/measure          SKEL-Coptic     0.38       --- Taurus-light
+    sheo           1 sho          hundred              SKEL-Coptic     0.38       --- Taurus-light
+    sheo           1 osh          cut/amputate         SKEL-Coptic     0.38       --- Taurus-light
+    chos           1 choeis       lord                 SKEL-Coptic     0.33       --- Taurus-light
+    hl             1 hol          fly                  SKEL-Coptic     0.33       --- Taurus-light
+    choam          1 choeis       lord                 PREFIX-Coptic   0.30       --- Taurus-dark
+    sheo           1 shedj        arm                  PREFIX-Coptic   0.30       --- Taurus-light
+    sheo           1 shel         vessel/vein          PREFIX-Coptic   0.30       --- Taurus-light
+    sheo           1 shem         walk                 PREFIX-Coptic   0.30       --- Taurus-light
+    sheo           1 shep         receive              PREFIX-Coptic   0.30       --- Taurus-light
+    sheo           1 shenoufe     heal                 PREFIX-Coptic   0.30       --- Taurus-light
+
+  --- Confirmed vocab in Earth ring residual ---
+    sheo         x  1 = dry(variant) (Coptic, 80%)
+    choam        x  1 = hot (Coptic, 75%)
+
+────────────────────────────────────────────────────────────────────────────
+  AIR SIGNS: Gemini, Libra
+────────────────────────────────────────────────────────────────────────────
+  Total residual roots: 30, Exclusive: 11, Shared with other elements: 19
+
+  --- Matching 11 exclusive roots against expanded glossaries ---
+
+    Root           × Ref          Meaning              Match            Scr Semantic? Signs
+    als            1 les          tongue               SKEL-Coptic     0.50       --- Libra
+    choshy         1 choeis       lord                 PREFIX-Coptic   0.30       --- Libra
+
+  --- Confirmed vocab in Air ring residual ---
+
+============================================================================
+VERB CONJUGATION PARADIGM — -ey/-edy/-ody/-ol
+============================================================================
+
+  --- Conjugation table: top s-roots × suffix ---
+  s-ROOT             -ey    -edy    -ody     -ol   -eedy     -dy      -y       ∅   TOTAL
+  ──────────────────────────────────────────────────────────────────────────────────────────
+  s-h               662     569      62     197       0      54     227       0    1771
+  s-he                0       0      66     140       0       0       0      67     273
+  s-ho               29       5       1      10       0       0      51     138     234
+  s-a                 0       0       0       0       0       0       1       0       1
+  s-ar                0       0       0       4       0       1      12      88     105
+  s-heo              15       4       0       0       0       0      22      63     104
+  s-hed               2       1       0       1       0       0       0      24      28
+  s-al                1       1       0       1       0       4       5      57      69
+
+  --- Position analysis: does suffix correlate with sentence position? ---
+  Suffix     initial    medial     final  init%   fin%
+  -ey            192       478        85   25.4%  11.3%
+  -edy           153       391        78   24.6%  12.5%
+  -ody            37        83        19   26.6%  13.7%
+  -ol            126       221        40   32.6%  10.3%
+  -dy             16        75        19   14.5%  17.3%
+  -y             107       249        96   23.7%  21.2%
+
+  --- Section distribution: do verb suffixes vary by manuscript section? ---
+  Suffix    herbal-A    zodiac       bio     cosmo    pharma  herbal-B      text
+  -ey          17.1%      7.4%     31.9%      6.8%      8.5%      2.5%     25.8%  (n=761)
+  -edy          9.3%      1.4%     54.1%      7.7%      0.3%      1.3%     25.9%  (n=625)
+  -ody         33.8%      6.5%      1.4%     15.8%     10.1%     12.9%     19.4%  (n=139)
+  -ol          39.4%      4.6%     15.3%      5.6%     13.5%      6.9%     14.8%  (n=393)
+
+  --- Right context: what follows each verb form? ---
+    After s-*-ey   (n=730): roots=[e(196), a(107), ol(45), ar(32), ch(30)]  det=[k(322), ∅(222), t(145), p(31)]
+    After s-*-edy  (n=597): roots=[e(192), a(58), h(35), ol(34), al(33)]  det=[k(264), ∅(171), t(128), p(29)]
+    After s-*-ody  (n=127): roots=[e(21), o(9), a(9), ch(7), ol(7)]  det=[k(45), ∅(34), t(27), p(15)]
+    After s-*-ol   (n=380): roots=[e(71), a(42), ch(30), ol(28), h(26)]  det=[∅(161), k(129), t(74), p(12)]
+
+  --- Root × suffix × section: does &#x27;sh-ey&#x27; differ from &#x27;sh-edy&#x27;? ---
+    s-h-ey  : n= 662  bio(219), text(184), herbal-A(107), pharma(51)
+    s-h-edy : n= 569  bio(305), text(147), herbal-A(53), cosmo(46)
+    s-h-ol  : n= 197  herbal-A(118), text(22), bio(19), pharma(10)
+    s-he-ol  : n= 140  pharma(32), bio(31), text(29), herbal-A(20)
+    s-ho-ey  : n=  29  pharma(7), herbal-A(7), text(6), zodiac(5)
+    s-ho-edy : n=   5  cosmo(2), text(1), zodiac(1), bio(1)
+    s-ho-ol  : n=  10  herbal-A(4), herbal-B(3), pharma(2), text(1)
+
+============================================================================
+BIO-SECTION PARAGRAPH TRANSLATION ATTEMPT
+============================================================================
+
+  Extracted 111 bio-section paragraphs
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  PARAGRAPH #1: f79r from f79r.35,+P0
+  Translation density: 2.31 (score=67, n=29)
+  Features: {&#x27;qok&#x27;: 1, &#x27;conf&#x27;: 11, &#x27;s_verb&#x27;: 9, &#x27;p_open&#x27;: 1, &#x27;det&#x27;: 11, &#x27;n&#x27;: 29}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  Raw: polchedy shedy qoteedy qotain ody chckhes otal sol sheeol ol cheey os sheky sheol or shear oly lcheol ol ol sheey olsheey sholkeey okchey dain pol olkeeey sheol qokeey
+
+  Word                   Pfx  Det  Root       Sfx    Translation
+  ────────────────────────────────────────────────────────────────────────────────
+  polchedy               o    p    lch        edy    ART: [DISC] [lch] -CONJ
+  shedy                  s         h          edy    VERB: [h] -CONJ
+  qoteedy                qo   t    e          dy     DEMO: [celestial] [e] -ADJ
+  qotain                 qo   t    a          in     DEMO: [celestial] [a] -PL
+  ody                    o         d          y      ART: [d] -ADJ
+  chckhes                     k    ches              [substance] [ches]
+  otal                   o    t    al                ART: [celestial] &#x27;stone&#x27;
+  sol                    s         ol                VERB: &#x27;carry/lift&#x27;
+  sheeol                 s         he         ol     VERB: &#x27;fall/occur&#x27; -NOM
+  ol                               ol                &#x27;carry/lift&#x27;
+  cheey                            ch         ey     [ch] -CONJ
+  os                               os                [os]
+  sheky                  s    k    h          ey     VERB: [substance] [h] -CONJ
+  sheol                  s         he         ol     VERB: &#x27;fall/occur&#x27; -NOM
+  or                               or                &#x27;king/great(var)&#x27;
+  shear                  s         he         ar     VERB: &#x27;fall/occur&#x27; -AGT
+  oly                    o         l          y      ART: [l] -ADJ
+  lcheol                           lche       ol     [lche] -NOM
+  ol                               ol                &#x27;carry/lift&#x27;
+  ol                               ol                &#x27;carry/lift&#x27;
+  sheey                  s         h          ey     VERB: [h] -CONJ
+  olsheey                o         lsh        ey     ART: [lsh] -CONJ
+  sholkeey               s    k    hol        ey     VERB: [substance] ~&#x27;fly&#x27; -CONJ
+  okchey                 o    k    e          y      ART: [substance] [e] -ADJ
+  dain                   d         a          in     of- [a] -PL
+  pol                         p    ol                [DISC] &#x27;carry/lift&#x27;
+  olkeeey                o    k    l          ey     ART: [substance] [l] -CONJ
+  sheol                  s         he         ol     VERB: &#x27;fall/occur&#x27; -NOM
+  qokeey                 qo   k    e          y      REL.PRON &#x27;that-which&#x27;
+
+  ── Gloss attempt ──
+  ART: [DISC] [lch] -CONJ | VERB: [h] -CONJ | DEMO: [celestial] [e] -ADJ | DEMO: [celestial] [a] -PL | ART: [d] -ADJ | [substance] [ches] | ART: [celestial] &#x27;stone&#x27; | VERB: &#x27;carry/lift&#x27; | VERB: &#x27;fall/occur&#x27; -NOM | &#x27;carry/lift&#x27; | [ch] -CONJ | [os] | VERB: [substance] [h] -CONJ | VERB: &#x27;fall/occur&#x27; -NOM | &#x27;king/great(var)&#x27; | VERB: &#x27;fall/occur&#x27; -AGT | ART: [l] -ADJ | [lche] -NOM | &#x27;carry/lift&#x27; | &#x27;carry/lift&#x27; | VERB: [h] -CONJ | ART: [lsh] -CONJ | VERB: [substance] ~&#x27;fly&#x27; -CONJ | ART: [substance] [e] -ADJ | of- [a] -PL | [DISC] &#x27;carry/lift&#x27; | ART: [substance] [l] -CONJ | VERB: &#x27;fall/occur&#x27; -NOM | REL.PRON &#x27;that-which&#x27;
+
+  Translated: 11/29 (38%) confirmed, 12/29 (41%) with tentative
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  PARAGRAPH #2: f75v from f75v.18,@Ln
+  Translation density: 2.24 (score=47, n=21)
+  Features: {&#x27;qok&#x27;: 0, &#x27;conf&#x27;: 11, &#x27;s_verb&#x27;: 2, &#x27;p_open&#x27;: 0, &#x27;det&#x27;: 10, &#x27;n&#x27;: 21}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  Raw: okshy saral dokal darol daldy dal shd dalkar qokal dly ory oty lchy dary dal daldy qoted rkal ykedy olkchy otoly
+
+  Word                   Pfx  Det  Root       Sfx    Translation
+  ────────────────────────────────────────────────────────────────────────────────
+  okshy                       k    o          y      [substance] [o] -ADJ
+  saral                  s         ar         al     VERB: &#x27;king/great&#x27; -LOC
+  dokal                  do   k    al                [substance] &#x27;stone&#x27;
+  darol                  d         ar         ol     of- &#x27;king/great&#x27; -NOM
+  daldy                  d         al         dy     of- &#x27;stone&#x27; -ADJ
+  dal                    d         al                of- &#x27;stone&#x27;
+  shd                    s         hd                VERB: [hd]
+  dalkar                 d    k    al         ar     of- [substance] &#x27;stone&#x27; -AGT
+  qokal                  qo   k    al                DEMO: [substance] &#x27;stone&#x27;
+  dly                    d         l          y      of- [l] -ADJ
+  ory                    o         r          y      ART: [r] -ADJ
+  oty                         t    o          y      [celestial] [o] -ADJ
+  lchy                             lch        y      [lch] -ADJ
+  dary                   d         ar         y      of- &#x27;king/great&#x27; -ADJ
+  dal                    d         al                of- &#x27;stone&#x27;
+  daldy                  d         al         dy     of- &#x27;stone&#x27; -ADJ
+  qoted                  qo   t    ed                DEMO: [celestial] [ed]
+  rkal                        k    r          al     [substance] [r] -LOC
+  ykedy                  y    k    e          dy     CONJ: [substance] [e] -ADJ
+  olkchy                 o    k    l          y      ART: [substance] [l] -ADJ
+  otoly                  o    t    ol         y      ART: [celestial] &#x27;carry/lift&#x27; -ADJ
+
+  ── Gloss attempt ──
+  [substance] [o] -ADJ | VERB: &#x27;king/great&#x27; -LOC | [substance] &#x27;stone&#x27; | of- &#x27;king/great&#x27; -NOM | of- &#x27;stone&#x27; -ADJ | of- &#x27;stone&#x27; | VERB: [hd] | of- [substance] &#x27;stone&#x27; -AGT | DEMO: [substance] &#x27;stone&#x27; | of- [l] -ADJ | ART: [r] -ADJ | [celestial] [o] -ADJ | [lch] -ADJ | of- &#x27;king/great&#x27; -ADJ | of- &#x27;stone&#x27; | of- &#x27;stone&#x27; -ADJ | DEMO: [celestial] [ed] | [substance] [r] -LOC | CONJ: [substance] [e] -ADJ | ART: [substance] [l] -ADJ | ART: [celestial] &#x27;carry/lift&#x27; -ADJ
+
+  Translated: 11/21 (52%) confirmed, 11/21 (52%) with tentative
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  PARAGRAPH #3: f82r from f82r.34,@Ln
+  Translation density: 2.17 (score=26, n=12)
+  Features: {&#x27;qok&#x27;: 0, &#x27;conf&#x27;: 5, &#x27;s_verb&#x27;: 2, &#x27;p_open&#x27;: 0, &#x27;det&#x27;: 7, &#x27;n&#x27;: 12}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  Raw: okor darol okal okaldy darary okairady sororl olkoky sokoly dolol olaiin okeear
+
+  Word                   Pfx  Det  Root       Sfx    Translation
+  ────────────────────────────────────────────────────────────────────────────────
+  okor                   o    k    or                ART: [substance] &#x27;king/great(var)&#x27;
+  darol                  d         ar         ol     of- &#x27;king/great&#x27; -NOM
+  okal                   o    k    al                ART: [substance] &#x27;stone&#x27;
+  okaldy                 o    k    al         dy     ART: [substance] &#x27;stone&#x27; -ADJ
+  darary                 d         arar       y      of- [arar] -ADJ
+  okairady               o    k    aira       dy     ART: [substance] [aira] -ADJ
+  sororl                 so        rorl              VERB: [rorl]
+  olkoky                 o    k    lo         y      ART: [substance] [lo] -ADJ
+  sokoly                 so   k    ol         y      VERB: [substance] &#x27;carry/lift&#x27; -ADJ
+  dolol                  do        l          ol     [l] -NOM
+  olaiin                 o         l          aiin   ART: [l] -PL?
+  okeear                 o    k    e          ar     ART: [substance] [e] -AGT
+
+  ── Gloss attempt ──
+  ART: [substance] &#x27;king/great(var)&#x27; | of- &#x27;king/great&#x27; -NOM | ART: [substance] &#x27;stone&#x27; | ART: [substance] &#x27;stone&#x27; -ADJ | of- [arar] -ADJ | ART: [substance] [aira] -ADJ | VERB: [rorl] | ART: [substance] [lo] -ADJ | VERB: [substance] &#x27;carry/lift&#x27; -ADJ | [l] -NOM | ART: [l] -PL? | ART: [substance] [e] -AGT
+
+  Translated: 5/12 (42%) confirmed, 5/12 (42%) with tentative
+
+============================================================================
+FIXED-CROSS REFERENCE TEST
+============================================================================
+
+  The Fixed Cross in astrology: Taurus ↔ Scorpio ↔ Leo ↔ Aquarius.
+  template_subtraction found &#x27;eosd&#x27; (≈ asad = lion) in SCORPIO, not Leo.
+  Hypothesis: signs reference their Fixed-cross counterpart.
+
+  Testing: Do other signs contain roots that name OTHER signs?
+
+  Root found      In Sign            Matches              Relationship                  
+  ─────────────────────────────────────────────────────────────────────────────────────
+  eosd            Scorpio            ~asad    =Leo(lion)       SAME MODALITY (Fixed)
+
+  Results saved to results/zodiac_element_vocabulary_results.json
+</pre></details><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>bc53723</code>. 
+To run any test with your own parameters, clone
+<a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
+(<code>python webui/server.py</code>). All numbers reproduce at
+PYTHONHASHSEED=0.</footer></main></body></html>

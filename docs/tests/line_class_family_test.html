@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>line_class_family_test — VAIS</title><style>
+:root { --bg:#ffffff; --fg:#1a1a1a; --muted:#666; --line:#ddd;
+        --code:#f5f5f5; --accent:#7a4a1e; --warn:#a33; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#141414; --fg:#ddd; --muted:#999; --line:#333;
+          --code:#1e1e1e; --accent:#d9a05b; --warn:#e77; } }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--fg);
+       font:16px/1.55 Georgia, 'Times New Roman', serif; }
+nav { border-bottom:1px solid var(--line); padding:.7em 1.2em;
+      font-family: system-ui, sans-serif; font-size:.9em; }
+nav a { color:var(--accent); text-decoration:none; margin-right:1.2em; }
+main { max-width: 62em; margin: 0 auto; padding: 1.5em 1.2em 4em; }
+h1,h2,h3 { font-family: system-ui, sans-serif; line-height:1.25; }
+h1 { font-size:1.7em; } h2 { font-size:1.3em; margin-top:2em; }
+a { color: var(--accent); }
+code, pre { font-family: ui-monospace, Consolas, monospace;
+            font-size:.86em; background:var(--code); }
+code { padding:.1em .3em; border-radius:3px; }
+pre { padding: .9em; overflow-x:auto; border:1px solid var(--line);
+      border-radius:4px; line-height:1.4; }
+table { border-collapse: collapse; margin: 1em 0; font-size:.92em;
+        display:block; overflow-x:auto; }
+th, td { border:1px solid var(--line); padding:.35em .6em;
+         text-align:left; vertical-align:top; }
+th { font-family: system-ui, sans-serif; background:var(--code); }
+blockquote { border-left:3px solid var(--accent); margin:1em 0;
+             padding:.2em 1em; color:var(--muted); }
+.muted { color:var(--muted); font-size:.9em; }
+.tag { font-family: system-ui, sans-serif; font-size:.75em;
+       border:1px solid var(--line); border-radius:3px;
+       padding:.05em .45em; margin-left:.5em; }
+.tag.sug { border-color:var(--warn); color:var(--warn); }
+details summary { cursor:pointer; font-family: system-ui, sans-serif; }
+footer { border-top:1px solid var(--line); margin-top:3em;
+         padding-top:1em; font-size:.85em; color:var(--muted); }
+</style></head><body>
+<nav><a href="../index.html">VAIS</a><a href="../catalog.html">Catalog</a>
+<a href="../research.html">Research</a><a href="../reports.html">Reports</a>
+<a href="https://github.com/Vineyardcode/vais">GitHub</a></nav>
+<main><h1>line_class_family_test</h1>
+<p class="muted">scripts/line_class_family_test.py</p>
+<pre>Line-Class Family Test (portfolio S5/S6 bridge) — what KIND of process
+orders Currier B&#x27;s lines? (N4)
+
+PROVENANCE: the S7 ladder established (quarantined SUGGESTIVE, robust
+across five transliterations, all sections, paragraph-controlled) that
+Currier B&#x27;s lines order their words by word-INITIAL glyph class,
+front-loaded in the early interior. This instrument asks the next
+registered question: which calibrated GENERATIVE FAMILY does that
+ordering profile most resemble — natural language (S-portfolio:
+language family), typed records (S5 codebook/nomenclator family),
+positional notation (S6 numeral family), or copy-hoax (Timm family)?
+
+REPRESENTATION (fixed, no fitting to the manuscript): each line -&gt; the
+sequence of its words&#x27; FIRST GLYPHS, binned to the corpus&#x27;s top
+CLASS_K first-glyphs + OTHER. Two holdout structure signatures, both
+normalized by the unigram class entropy so different alphabets are
+comparable:
+  r_pos = (unigram loss - positional-model loss) / unigram loss,
+          positional model = P(class | S7 position bin)
+  r_bi  = (unigram loss - bigram loss) / unigram loss,
+          bigram model = P(class | previous class), START at line start
+Both with the standard folio-holdout (10 splits, medians; pseudo-folio
+blocks for controls). Note the families are NOT distinguished by either
+number alone (a strict positional system is also neighbor-predictable);
+they are distinguished by the PROFILE (r_pos, r_bi).
+
+FAMILY CENTROIDS (controls first, per charter):
+  P1    latin_plain pseudo-lines      — natural language
+  PREC  synthetic records (rung-2/3 generator: first-letter field
+        pools) — typed records; its class IS the field marker
+  PNUM  synthetic positional notation (NEW S6 positive control, seeded:
+        place-from-end determines a first-letter place-pool; most-
+        significant first; places skipped with p=0.15 like omitted
+        zeros; 5-9 places) — numeral family
+  N4    self_citation control         — copy-hoax family
+  N1    vms_word_shuffle              — no-structure reference row
+        (reported, not a centroid)
+
+PRE-REGISTERED DECISION RULE (F4-compliant):
+  GATE: the four family centroids must separate — min pairwise centroid
+    distance &gt; 2 x the maximum within-corpus split RMS (spread), else
+    gate_failed: no reading.
+  CLASSIFICATION: B is assigned to the family of its nearest centroid
+    (Euclidean in (r_pos, r_bi)) ONLY if d_nearest &lt; 0.5 x d_second;
+    otherwise NONE_OF_THE_ABOVE (explicit arm; the graveyard&#x27;s F4).
+  Currier A is reported observationally (no assignment).
+OUTCOMES: gate_failed | family_language | family_records |
+  family_positional | family_hoax | none_of_the_above.
+Vocabulary discipline: &#x27;family_records&#x27; means &quot;B&#x27;s line-class ordering
+profile is nearest the synthetic-records reference and clearly so&quot; —
+it does NOT mean B is records, and nothing here reads a record.</pre>
+<h2>Parameters</h2><table><tr><th>name</th><th>default</th><th>type</th></tr>
+<tr><td><code>SEED</code></td><td><code>118</code></td><td>int</td></tr>
+<tr><td><code>R_SPLITS</code></td><td><code>10</code></td><td>int</td></tr>
+<tr><td><code>CLASS_K</code></td><td><code>12</code></td><td>int</td></tr>
+<tr><td><code>MARGIN_RATIO</code></td><td><code>0.5</code></td><td>float</td></tr>
+<tr><td><code>GATE_SEP</code></td><td><code>2.0</code></td><td>float</td></tr>
+<tr><td><code>PNUM_LINES</code></td><td><code>4600</code></td><td>int</td></tr>
+<tr><td><code>PNUM_SKIP</code></td><td><code>0.15</code></td><td>float</td></tr>
+<tr><td><code>MIN_LINE_WORDS</code></td><td><code>5</code></td><td>int</td></tr>
+<tr><td><code>HOLDOUT_FRAC</code></td><td><code>0.2</code></td><td>float</td></tr>
+<tr><td><code>PSEUDO_FOLIO_LINES</code></td><td><code>24</code></td><td>int</td></tr>
+<tr><td><code>ALPHA</code></td><td><code>0.5</code></td><td>float</td></tr>
+<tr><td><code>INTERIOR_BINS</code></td><td><code>[&#x27;p1&#x27;, &#x27;p2&#x27;, &#x27;m1&#x27;, &#x27;m2&#x27;, &#x27;m3&#x27;, &#x27;pL-1&#x27;, &#x27;pL&#x27;]</code></td><td>json</td></tr>
+</table>
+<h2>Golden output (PYTHONHASHSEED=0)</h2><details><summary>show</summary><pre>============================================================================
+LINE-CLASS FAMILY TEST (S5/S6) — which process orders B? (N4)
+============================================================================
+seed=118 splits=10 class_k=12 margin=0.5 gate_sep=2.0
+  P1_language      r_pos -0.0005  r_bi +0.0013  (rms 0.0005, 4755 lines, 13 classes)
+  PREC_records     r_pos +0.3388  r_bi +0.3217  (rms 0.0030, 4600 lines, 13 classes)
+  PNUM_positional  r_pos +0.3168  r_bi +0.4636  (rms 0.0057, 4600 lines, 13 classes)
+  N4_hoax          r_pos +0.0427  r_bi +0.2180  (rms 0.0050, 2572 lines, 13 classes)
+  N1_shuffle_ref   r_pos -0.0005  r_bi -0.0010  (rms 0.0005, 3956 lines, 13 classes)
+  VMS_currier_B    r_pos +0.0354  r_bi +0.0407  (rms 0.0048, 2522 lines, 13 classes)
+  VMS_currier_A    r_pos +0.0253  r_bi +0.0256  (rms 0.0044, 1310 lines, 13 classes)
+
+  ADJUDICATION (pre-registered):
+    gate: min centroid separation 0.1436 vs 2.0 x max spread 0.0114 -&gt; PASS
+    B distances: family_language 0.0533, family_hoax 0.1775, family_records 0.4135, family_positional 0.5080
+    ASSIGNED FAMILY_LANGUAGE (d 0.0533 &lt; 0.5 x 0.1775 to family_hoax): B&#x27;s line-class ordering profile is nearest this calibrated family — a family-level reading only; nothing is decoded.
+    A (observational): nearest family_language d 0.0354, second family_hoax d 0.1932
+
+  -&gt; results/line_class_family_test.json
+</pre></details><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>bc53723</code>. 
+To run any test with your own parameters, clone
+<a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
+(<code>python webui/server.py</code>). All numbers reproduce at
+PYTHONHASHSEED=0.</footer></main></body></html>

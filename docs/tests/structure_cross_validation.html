@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>structure_cross_validation — VAIS</title><style>
+:root { --bg:#ffffff; --fg:#1a1a1a; --muted:#666; --line:#ddd;
+        --code:#f5f5f5; --accent:#7a4a1e; --warn:#a33; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#141414; --fg:#ddd; --muted:#999; --line:#333;
+          --code:#1e1e1e; --accent:#d9a05b; --warn:#e77; } }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--fg);
+       font:16px/1.55 Georgia, 'Times New Roman', serif; }
+nav { border-bottom:1px solid var(--line); padding:.7em 1.2em;
+      font-family: system-ui, sans-serif; font-size:.9em; }
+nav a { color:var(--accent); text-decoration:none; margin-right:1.2em; }
+main { max-width: 62em; margin: 0 auto; padding: 1.5em 1.2em 4em; }
+h1,h2,h3 { font-family: system-ui, sans-serif; line-height:1.25; }
+h1 { font-size:1.7em; } h2 { font-size:1.3em; margin-top:2em; }
+a { color: var(--accent); }
+code, pre { font-family: ui-monospace, Consolas, monospace;
+            font-size:.86em; background:var(--code); }
+code { padding:.1em .3em; border-radius:3px; }
+pre { padding: .9em; overflow-x:auto; border:1px solid var(--line);
+      border-radius:4px; line-height:1.4; }
+table { border-collapse: collapse; margin: 1em 0; font-size:.92em;
+        display:block; overflow-x:auto; }
+th, td { border:1px solid var(--line); padding:.35em .6em;
+         text-align:left; vertical-align:top; }
+th { font-family: system-ui, sans-serif; background:var(--code); }
+blockquote { border-left:3px solid var(--accent); margin:1em 0;
+             padding:.2em 1em; color:var(--muted); }
+.muted { color:var(--muted); font-size:.9em; }
+.tag { font-family: system-ui, sans-serif; font-size:.75em;
+       border:1px solid var(--line); border-radius:3px;
+       padding:.05em .45em; margin-left:.5em; }
+.tag.sug { border-color:var(--warn); color:var(--warn); }
+details summary { cursor:pointer; font-family: system-ui, sans-serif; }
+footer { border-top:1px solid var(--line); margin-top:3em;
+         padding-top:1em; font-size:.85em; color:var(--muted); }
+</style></head><body>
+<nav><a href="../index.html">VAIS</a><a href="../catalog.html">Catalog</a>
+<a href="../research.html">Research</a><a href="../reports.html">Reports</a>
+<a href="https://github.com/Vineyardcode/vais">GitHub</a></nav>
+<main><h1>structure_cross_validation</h1>
+<p class="muted">scripts/structure_cross_validation.py</p>
+<pre>CROSS-VALIDATION AND STRUCTURAL TESTS
+==================================================
+
+word_transition_network revealed a two-level grammar: feature-level (suffix→prefix,
+asymmetric, 20% of info) and word-level (symmetric, word-specific, 80%).
+This test stress-tests these findings.
+
+Sub-analyses:
+  A) SUFFIX→PREFIX TRANSITION MATRIX — Full 11×8 matrix. How
+       concentrated is the morphological syntax?
+
+  B) CROSS-VALIDATION — Train on even lines, test on odd. Does the
+       word MI generalize or is it overfitting?
+
+  C) FIRST-CHAR / LAST-CHAR MI — Raw character-level test at word
+       boundaries. No parsing needed.
+
+  D) REMOVING THE -dy→qo PIPELINE — How much syntax remains if we
+       exclude -dy→qo transitions?
+
+  E) WORD MI WITHIN SUFFIX STRATA — Among word pairs sharing the
+       same suffix transition, is there still word-specific MI?</pre>
+<h2>Parameters</h2><table><tr><th>name</th><th>default</th><th>type</th></tr>
+<tr><td><code>ALL_GALLOWS</code></td><td><code>[&#x27;cth&#x27;, &#x27;ckh&#x27;, &#x27;cph&#x27;, &#x27;cfh&#x27;, &#x27;tch&#x27;, &#x27;kch&#x27;, &#x27;pch&#x27;, &#x27;fch&#x27;, &#x27;tsh&#x27;, &#x27;ksh&#x27;, &#x27;psh&#x27;, &#x27;fsh&#x27;, &#x27;t&#x27;, …</code></td><td>json</td></tr>
+<tr><td><code>SUFFIXES</code></td><td><code>[&#x27;aiin&#x27;, &#x27;ain&#x27;, &#x27;iin&#x27;, &#x27;in&#x27;, &#x27;ar&#x27;, &#x27;or&#x27;, &#x27;al&#x27;, &#x27;ol&#x27;, &#x27;dy&#x27;, &#x27;y&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>GRAM_PREFIXES</code></td><td><code>[&#x27;qo&#x27;, &#x27;so&#x27;, &#x27;do&#x27;, &#x27;q&#x27;, &#x27;o&#x27;, &#x27;d&#x27;, &#x27;y&#x27;]</code></td><td>json</td></tr>
+</table>
+<h2>Golden output (PYTHONHASHSEED=0)</h2><details><summary>show</summary><pre>Loading lines...
+  4508 lines, 35747 tokens, 3319 types
+
+======================================================================
+A: SUFFIX→GRAM PREFIX TRANSITION MATRIX
+    Full morphological syntax map
+======================================================================
+
+  P(next_gpfx | prev_sfx) — rows=suffix, cols=gram_prefix
+     sfx      X     qo     so     do      q      o      d      y       N
+  ----------------------------------------------------------------------
+       X  63.7%   5.4%   0.2%   0.5%   0.3%  21.0%   6.0%   3.0%    6960
+    aiin  46.9%   8.7%   0.1%   0.8%   0.3%  31.1%   6.6%   5.4%    2733
+     ain  55.4%   7.3%   0.3%   0.3%   0.2%  28.9%   5.0%   2.6%    1250
+     iin  45.7%   5.3%   0.0%   0.5%   0.4%  36.6%   6.3%   5.2%     927
+      in  57.1%   5.1%   0.0%   0.0%   0.6%  32.6%   2.9%   1.7%     175
+      ar  54.1%   7.0%   0.3%   0.2%   0.1%  31.0%   4.2%   3.2%    1921
+      or  57.8%   6.1%   0.4%   0.5%   0.4%  25.1%   6.2%   3.5%    1360
+      al  51.6%   8.4%   0.3%   1.2%   0.1%  24.4%  11.7%   2.2%    1382
+      ol  53.3%   9.9%   0.2%   1.6%   0.5%  21.5%  10.9%   2.2%    2346
+      dy  33.1%  33.5%   0.5%   0.8%   0.8%  21.8%   7.0%   2.5%    5508
+       y  40.7%  21.9%   0.5%   0.9%   0.8%  21.7%  10.7%   2.8%    6677
+    MARG  48.9%  14.9%   0.3%   0.7%   0.5%  24.0%   7.7%   3.0%
+
+  MI(sfx_i → gpfx_{i+1}) = 0.0833 bits
+
+  MI contributions by suffix:
+      dy: 0.0300 bits (36.0%)
+       X: 0.0210 bits (25.2%)
+       y: 0.0091 bits (11.0%)
+      ar: 0.0048 bits (5.8%)
+    aiin: 0.0043 bits (5.2%)
+     iin: 0.0035 bits (4.2%)
+      or: 0.0028 bits (3.3%)
+      ol: 0.0027 bits (3.2%)
+     ain: 0.0024 bits (2.8%)
+      al: 0.0020 bits (2.4%)
+      in: 0.0008 bits (0.9%)
+
+  Top 15 over-represented transitions (O/E ratio):
+    Suffix    →Gpfx    Count      O/E
+        dy       qo     1847    2.26x
+        ol       do       38    2.20x
+      aiin        y      147    1.76x
+       iin        y       48    1.70x
+         y        q       55    1.69x
+        al       do       17    1.67x
+        dy        q       44    1.64x
+        dy       so       28    1.53x
+        al        d      162    1.52x
+       iin        o      339    1.52x
+         y       so       33    1.48x
+         y       qo     1464    1.48x
+        ol        d      256    1.42x
+         y        d      713    1.39x
+        in        o       57    1.36x
+
+======================================================================
+B: CROSS-VALIDATION OF WORD BIGRAM MI
+    Train on even lines, test on odd. Does MI generalize?
+======================================================================
+  Even: N=17906, types=2178, H=8.378, H(w2|w1)=4.830, MI=3.548, MI/H=0.423
+  Odd: N=17841, types=2292, H=8.420, H(w2|w1)=4.811, MI=3.610, MI/H=0.429
+
+  Cross-validation perplexity:
+                 Model      Train→Test         PP    Unseen%
+               Unigram        Even→Odd      398.7
+               Unigram        Odd→Even      392.6
+                Bigram        Even→Odd     1741.0      51.1%
+                Bigram        Odd→Even     1742.7      51.2%
+
+  Bigram PP reduction (cross-validated):
+    Even→Odd: -336.6%
+    Odd→Even: -343.9%
+    Mean:     -340.3%
+    Within-sample: -148.6%
+    Overfitting: 191.6pp
+
+======================================================================
+C: FIRST-CHAR / LAST-CHAR MI
+    Raw character-level syntax at word boundaries
+======================================================================
+
+  H(last_char) = 2.426
+  H(first_char) = 3.126
+  MI(last_char, first_char) = 0.1960 bits
+  MI/H ratio = 0.0808
+  Shuffled MI: -0.0812 ± 0.0035
+  Excess: 0.2772
+  z-score: 80.3
+
+  Top 15 over-represented last→first char transitions:
+    Last  First    Count      O/E
+       a      r       10   14.80x
+       o      r      101    6.08x
+       s      a      333    4.80x
+       o      l      196    4.17x
+       o      f       11    4.04x
+       e      k       12    3.82x
+       o      k      120    3.08x
+       r      a      971    2.98x
+       s      e       10    2.59x
+       o      p       13    2.31x
+       p      c       13    2.26x
+       d      y       34    2.14x
+       l      k      352    1.98x
+       o      t       41    1.89x
+       d      l       34    1.87x
+
+  Top 10 AVOIDED transitions (lowest O/E, count≥10):
+    Last  First    Count      O/E
+       n      k       27    0.15x
+       y      a      147    0.18x
+       n      r       16    0.21x
+       n      l       49    0.22x
+       s      q       40    0.24x
+       r      r       19    0.25x
+       r      l       54    0.25x
+       r      t       28    0.28x
+       n      t       29    0.29x
+       s      d       26    0.29x
+
+======================================================================
+D: REMOVING THE -dy→qo PIPELINE
+    How much syntax remains without the dominant pattern?
+======================================================================
+
+  -dy→qo: 1847 / 31239 = 5.9% of all bigrams
+  -dy→anything: 5508 (17.6%)
+  anything→qo: 4642 (14.9%)
+  P(qo | -dy) = 0.335
+  P(qo | not -dy) = 0.109
+  Ratio: 3.09x
+
+  MI(sfx→gpfx) full: 0.0833 bits
+  MI(sfx→gpfx) excluding -dy and qo-: 0.0267 bits
+  Retained: 32.1%
+  Shuffled MI (excl): 0.0037 ± 0.0006
+  z-score (excl): 40.6
+  MI(sfx→gpfx) excluding -dy only: 0.0543 (65.2%)
+  MI(sfx→gpfx) excluding qo only: 0.0265 (31.7%)
+
+======================================================================
+E: WORD MI WITHIN SUFFIX STRATA
+    Within same suffix transition, is there word-specific MI?
+======================================================================
+
+        Sfx1→Sfx2      N  Types(bg)   H(w1)  H(w2|w1)      MI    MI/H
+              X→X   2367       1407   6.405     3.395   3.010   0.470
+              y→y   1768        864   5.429     3.497   1.932   0.356
+            dy→dy   1664        642   4.669     3.272   1.397   0.299
+              y→X   1339        856   6.432     3.987   2.445   0.380
+              X→y   1295        782   5.359     2.852   2.508   0.468
+             dy→y   1134        557   5.110     3.424   1.686   0.330
+             y→dy   1030        543   5.188     3.276   1.912   0.369
+             X→dy    842        506   5.040     2.575   2.465   0.489
+             dy→X    811        618   7.140     3.931   3.209   0.449
+           aiin→X    658        394   5.993     3.786   2.207   0.368
+           y→aiin    636        302   3.815     2.482   1.333   0.349
+           aiin→y    617        321   4.844     3.164   1.680   0.347
+             ar→X    560        330   5.404     3.157   2.247   0.416
+            X→iin    508        140   1.358     0.782   0.576   0.424
+             ol→y    496        291   5.126     3.257   1.869   0.365
+             y→ol    477        265   4.493     2.763   1.730   0.385
+             ol→X    469        301   5.669     3.521   2.149   0.379
+           X→aiin    467        292   4.451     1.981   2.470   0.555
+          dy→aiin    450        234   3.996     2.294   1.703   0.426
+             X→ol    429        268   4.472     2.161   2.312   0.517
+          aiin→dy    422        222   4.784     3.153   1.630   0.341
+            ol→dy    393        226   4.579     2.791   1.788   0.391
+            dy→ar    381        209   3.995     2.271   1.724   0.431
+             ar→y    376        225   4.945     2.804   2.141   0.433
+             or→X    366        253   5.444     2.973   2.471   0.454
+             y→ar    363        219   4.521     2.402   2.119   0.469
+             y→al    360        214   4.225     2.005   2.220   0.526
+            ain→y    349        182   4.095     2.678   1.416   0.346
+            ar→dy    347        195   4.533     2.583   1.951   0.430
+            y→ain    337        175   3.891     2.375   1.516   0.390
+            dy→ol    330        215   4.215     2.280   1.935   0.459
+            ol→ol    329        174   3.908     2.495   1.414   0.362
+             X→ar    322        235   4.920     1.888   3.032   0.616
+             al→X    318        236   6.147     3.252   2.895   0.471
+            dy→al    303        171   3.848     2.174   1.675   0.435
+            al→dy    303        162   4.365     2.644   1.720   0.394
+             or→y    297        205   4.813     2.591   2.222   0.462
+            ain→X    278        180   5.198     3.099   2.099   0.404
+        aiin→aiin    260        151   4.338     2.353   1.985   0.458
+             X→or    252        182   4.680     1.955   2.725   0.582
+           dy→ain    247        119   3.131     1.771   1.360   0.434
+             al→y    246        175   4.802     2.800   2.002   0.417
+             y→or    242        176   4.900     2.375   2.525   0.515
+            iin→X    236        133   5.685     4.532   1.153   0.203
+          ol→aiin    234        120   3.638     2.057   1.580   0.434
+            iin→y    232        102   4.304     3.294   1.011   0.235
+           ain→dy    214        112   3.827     2.415   1.412   0.369
+             X→al    200        166   4.825     1.638   3.187   0.661
+          aiin→ar    198        114   4.463     2.556   1.907   0.427
+            X→ain    189        142   4.396     1.507   2.889   0.657
+          aiin→al    176        105   4.149     2.239   1.910   0.460
+          aiin→ol    161         90   3.828     2.458   1.370   0.358
+            ar→ar    149         87   4.044     2.007   2.038   0.504
+            dy→or    140        115   4.539     1.855   2.683   0.591
+            or→dy    132        104   4.691     2.041   2.650   0.565
+           iin→dy    128         58   4.215     3.322   0.893   0.212
+            or→ol    126         83   3.339     1.802   1.537   0.460
+            or→or    122         80   3.620     1.879   1.741   0.481
+            ol→or    118         86   4.091     2.128   1.963   0.480
+            ol→ar    116         80   4.346     2.168   2.178   0.501
+          ar→aiin    114         82   4.305     1.734   2.571   0.597
+          al→aiin    113         87   3.952     1.673   2.279   0.577
+          or→aiin    109         77   3.538     1.491   2.047   0.579
+         aiin→ain    108         66   3.587     1.630   1.957   0.546
+          aiin→or    106         72   4.042     2.015   2.027   0.502
+            al→al    103         71   3.794     1.824   1.970   0.519
+            y→iin    101         68   3.280     1.107   2.173   0.663
+            al→ar     98         65   3.761     1.601   2.160   0.574
+         iin→aiin     93         44   3.577     2.612   0.965   0.270
+             X→in     89         33   0.485     0.238   0.247   0.509
+            al→ol     86         63   3.719     1.922   1.797   0.483
+           ar→iin     86         38   1.371     0.579   0.792   0.578
+          ain→ain     85         60   3.155     1.353   1.802   0.571
+            ar→al     80         57   3.704     1.302   2.402   0.649
+           ain→al     79         52   3.501     1.846   1.656   0.473
+           ain→ar     79         49   3.455     1.610   1.845   0.534
+            ar→ol     75         66   3.972     1.466   2.507   0.631
+            ol→al     73         58   3.716     1.457   2.259   0.608
+            or→ar     72         62   4.678     1.667   3.011   0.644
+         ain→aiin     71         45   3.648     1.556   2.092   0.573
+           or→iin     67         34   1.492     0.492   1.000   0.670
+           iin→ar     60         23   3.126     2.255   0.871   0.279
+             in→X     56         29   4.284     3.717   0.567   0.132
+            ar→or     55         46   4.324     1.626   2.698   0.624
+           ol→iin     53         37   2.383     1.110   1.273   0.534
+           ar→ain     53         43   3.692     1.420   2.272   0.615
+           ol→ain     51         39   3.032     1.394   1.638   0.540
+           ain→ol     50         39   3.755     2.116   1.639   0.436
+           iin→al     50         25   3.615     3.241   0.375   0.104
+
+  Weighted average within-stratum MI: 2.0552
+  Weighted average within-stratum MI/H: 0.4237
+
+
+  Permutation test (shuffle within strata, 100 trials):
+  Actual within-stratum MI:  2.0552
+  Shuffled within-stratum:   1.8599 ± 0.0045
+  z-score:                   43.6
+
+======================================================================
+structure_cross_validation COMPLETE
+======================================================================
+</pre></details><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>bc53723</code>. 
+To run any test with your own parameters, clone
+<a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
+(<code>python webui/server.py</code>). All numbers reproduce at
+PYTHONHASHSEED=0.</footer></main></body></html>

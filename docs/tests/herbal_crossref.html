@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>herbal_crossref — VAIS</title><style>
+:root { --bg:#ffffff; --fg:#1a1a1a; --muted:#666; --line:#ddd;
+        --code:#f5f5f5; --accent:#7a4a1e; --warn:#a33; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#141414; --fg:#ddd; --muted:#999; --line:#333;
+          --code:#1e1e1e; --accent:#d9a05b; --warn:#e77; } }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--fg);
+       font:16px/1.55 Georgia, 'Times New Roman', serif; }
+nav { border-bottom:1px solid var(--line); padding:.7em 1.2em;
+      font-family: system-ui, sans-serif; font-size:.9em; }
+nav a { color:var(--accent); text-decoration:none; margin-right:1.2em; }
+main { max-width: 62em; margin: 0 auto; padding: 1.5em 1.2em 4em; }
+h1,h2,h3 { font-family: system-ui, sans-serif; line-height:1.25; }
+h1 { font-size:1.7em; } h2 { font-size:1.3em; margin-top:2em; }
+a { color: var(--accent); }
+code, pre { font-family: ui-monospace, Consolas, monospace;
+            font-size:.86em; background:var(--code); }
+code { padding:.1em .3em; border-radius:3px; }
+pre { padding: .9em; overflow-x:auto; border:1px solid var(--line);
+      border-radius:4px; line-height:1.4; }
+table { border-collapse: collapse; margin: 1em 0; font-size:.92em;
+        display:block; overflow-x:auto; }
+th, td { border:1px solid var(--line); padding:.35em .6em;
+         text-align:left; vertical-align:top; }
+th { font-family: system-ui, sans-serif; background:var(--code); }
+blockquote { border-left:3px solid var(--accent); margin:1em 0;
+             padding:.2em 1em; color:var(--muted); }
+.muted { color:var(--muted); font-size:.9em; }
+.tag { font-family: system-ui, sans-serif; font-size:.75em;
+       border:1px solid var(--line); border-radius:3px;
+       padding:.05em .45em; margin-left:.5em; }
+.tag.sug { border-color:var(--warn); color:var(--warn); }
+details summary { cursor:pointer; font-family: system-ui, sans-serif; }
+footer { border-top:1px solid var(--line); margin-top:3em;
+         padding-top:1em; font-size:.85em; color:var(--muted); }
+</style></head><body>
+<nav><a href="../index.html">VAIS</a><a href="../catalog.html">Catalog</a>
+<a href="../research.html">Research</a><a href="../reports.html">Reports</a>
+<a href="https://github.com/Vineyardcode/vais">GitHub</a></nav>
+<main><h1>herbal_crossref</h1>
+<p class="muted">scripts/herbal_crossref.py · baseline 1s · depends on ring_grammar_extraction</p>
+<pre>Herbal Cross-Reference Analysis
+
+The ring text grammar extraction revealed that ch-/sh- root families are
+3× enriched in zodiac ring texts vs labels, and that tal-/kal- families
+are nearly absent from ring texts. This script:
+
+  1. Parses ALL herbal section folios (A and B) to extract word-level data
+  2. Computes root family distributions across herbal-A, herbal-B, pharma
+  3. Cross-references ring text vocabulary against herbal vocabulary
+  4. Tests whether ring text ch-/sh- enrichment matches herbal-A distribution
+  5. Identifies &quot;bridge vocabulary&quot; — words shared between zodiac rings &amp; herbal
+  6. Tests whether ring text function words appear in herbal prose
+  7. Compares morphological profiles (prefix/suffix distributions)
+  8. Maps specific ring text roots to their herbal page contexts</pre>
+<h2>Parameters</h2><table><tr><th>name</th><th>default</th><th>type</th></tr>
+<tr><td><code>SECTION_MAP</code></td><td><code>{}</code></td><td>json</td></tr>
+<tr><td><code>PREFIXES</code></td><td><code>[&#x27;qol&#x27;, &#x27;qor&#x27;, &#x27;sol&#x27;, &#x27;sor&#x27;, &#x27;dol&#x27;, &#x27;dor&#x27;, &#x27;dyl&#x27;, &#x27;dyr&#x27;, &#x27;qo&#x27;, &#x27;so&#x27;, &#x27;do&#x27;, &#x27;dy&#x27;, &#x27;ol&#x27;, &#x27;or…</code></td><td>json</td></tr>
+<tr><td><code>ROOT_ONSETS</code></td><td><code>[&#x27;ckh&#x27;, &#x27;cth&#x27;, &#x27;cph&#x27;, &#x27;cfh&#x27;, &#x27;tch&#x27;, &#x27;kch&#x27;, &#x27;pch&#x27;, &#x27;fch&#x27;, &#x27;tsh&#x27;, &#x27;ksh&#x27;, &#x27;psh&#x27;, &#x27;fsh&#x27;, &#x27;sh&#x27;,…</code></td><td>json</td></tr>
+<tr><td><code>ROOT_BODIES</code></td><td><code>[&#x27;eeed&#x27;, &#x27;eees&#x27;, &#x27;eeea&#x27;, &#x27;eeeo&#x27;, &#x27;eed&#x27;, &#x27;ees&#x27;, &#x27;eea&#x27;, &#x27;eeo&#x27;, &#x27;ed&#x27;, &#x27;es&#x27;, &#x27;ea&#x27;, &#x27;eo&#x27;, &#x27;eee&#x27;…</code></td><td>json</td></tr>
+<tr><td><code>SUFFIXES</code></td><td><code>[&#x27;iiiny&#x27;, &#x27;iiny&#x27;, &#x27;iiir&#x27;, &#x27;iiil&#x27;, &#x27;iiin&#x27;, &#x27;iir&#x27;, &#x27;iil&#x27;, &#x27;iin&#x27;, &#x27;iim&#x27;, &#x27;iid&#x27;, &#x27;iry&#x27;, &#x27;ily&#x27;,…</code></td><td>json</td></tr>
+</table>
+<h2>Golden output (PYTHONHASHSEED=0)</h2><details><summary>show</summary><pre>Extracting all folios...
+
+Loading ring text data...
+
+========================================================================
+SECTION PROFILES
+========================================================================
+
+  herbal-A:
+    Folios: 117
+    Total parsed tokens: 8395
+    Unique words: 1480
+    Top 10: {&#x27;daiin&#x27;: 458, &#x27;chol&#x27;: 230, &#x27;chor&#x27;: 155, &#x27;dy&#x27;: 148, &#x27;or&#x27;: 121, &#x27;aiin&#x27;: 118, &#x27;chy&#x27;: 116, &#x27;dar&#x27;: 116, &#x27;shol&#x27;: 116, &#x27;ar&#x27;: 107}
+
+  herbal-B:
+    Folios: 12
+    Total parsed tokens: 1055
+    Unique words: 448
+    Top 10: {&#x27;daiin&#x27;: 28, &#x27;ol&#x27;: 25, &#x27;or&#x27;: 20, &#x27;chdy&#x27;: 19, &#x27;dar&#x27;: 15, &#x27;chol&#x27;: 13, &#x27;shody&#x27;: 11, &#x27;chody&#x27;: 11, &#x27;aiin&#x27;: 11, &#x27;saiin&#x27;: 10}
+
+  pharma:
+    Folios: 11
+    Total parsed tokens: 2193
+    Unique words: 554
+    Top 10: {&#x27;daiin&#x27;: 123, &#x27;ol&#x27;: 52, &#x27;chol&#x27;: 50, &#x27;cheol&#x27;: 44, &#x27;aiin&#x27;: 44, &#x27;or&#x27;: 44, &#x27;okeol&#x27;: 33, &#x27;dar&#x27;: 32, &#x27;chor&#x27;: 31, &#x27;dal&#x27;: 30}
+
+  zodiac:
+    Folios: 12
+    Total parsed tokens: 870
+    Unique words: 398
+    Top 10: {&#x27;ar&#x27;: 30, &#x27;daiin&#x27;: 20, &#x27;al&#x27;: 18, &#x27;okeey&#x27;: 17, &#x27;dy&#x27;: 17, &#x27;dal&#x27;: 16, &#x27;dar&#x27;: 15, &#x27;dair&#x27;: 12, &#x27;shey&#x27;: 11, &#x27;aiin&#x27;: 11}
+
+  bio:
+    Folios: 20
+    Total parsed tokens: 5663
+    Unique words: 848
+    Top 10: {&#x27;shedy&#x27;: 247, &#x27;ol&#x27;: 230, &#x27;chedy&#x27;: 207, &#x27;qokedy&#x27;: 166, &#x27;qokain&#x27;: 163, &#x27;qokeedy&#x27;: 154, &#x27;qokal&#x27;: 108, &#x27;qol&#x27;: 108, &#x27;shey&#x27;: 96, &#x27;chey&#x27;: 88}
+
+  cosmo:
+    Folios: 3
+    Total parsed tokens: 2744
+    Unique words: 494
+    Top 10: {&#x27;aiin&#x27;: 100, &#x27;or&#x27;: 94, &#x27;ol&#x27;: 72, &#x27;ar&#x27;: 68, &#x27;dar&#x27;: 48, &#x27;daiin&#x27;: 46, &#x27;qokar&#x27;: 42, &#x27;chedy&#x27;: 36, &#x27;qokaiin&#x27;: 34, &#x27;ykaiin&#x27;: 32}
+
+  text:
+    Folios: 23
+    Total parsed tokens: 8124
+    Unique words: 1358
+    Top 10: {&#x27;aiin&#x27;: 207, &#x27;chedy&#x27;: 198, &#x27;qokeey&#x27;: 159, &#x27;ar&#x27;: 146, &#x27;al&#x27;: 137, &#x27;qokeedy&#x27;: 136, &#x27;chey&#x27;: 125, &#x27;daiin&#x27;: 120, &#x27;qokaiin&#x27;: 120, &#x27;shedy&#x27;: 116}
+
+========================================================================
+ROOT FAMILY DISTRIBUTION COMPARISON
+========================================================================
+
+  Family        herbal-A      herbal-B        pharma           bio          text     ring-text
+  --------------------------------------------------------------------------------------------
+  cfh-             0.2%         0.3%         0.3%         0.0%         0.0%         0.0%
+  ch-             17.7%        14.3%        17.8%        14.4%        16.3%        13.1%
+  ckh-             1.5%         2.1%         3.5%         0.3%         0.4%         0.3%
+  cph-             0.7%         0.6%         0.5%         0.1%         0.2%         0.0%
+  cth-             4.0%         3.3%         3.1%         0.4%         0.4%         0.5%
+  f-               0.8%         1.3%         0.8%         0.5%         0.6%         0.0%
+  k-              20.4%        25.2%        24.4%        30.8%        29.9%        15.6%
+  p-               2.3%         1.4%         1.4%         2.0%         3.7%         1.0%
+  sh-              9.7%         9.1%         7.9%        12.7%         8.0%         7.0%
+  t-              14.2%        16.2%         5.6%        12.1%        16.1%        27.5%
+  ∅               28.5%        26.2%        34.7%        26.8%        24.4%        35.0%
+  TOTAL           8395         1055         2193         5663         8124          597 
+
+  Ring-text / Herbal-A enrichment ratios:
+    ch-       herbalA= 17.7%  ring= 13.1%  ratio=0.74×
+    ckh-      herbalA=  1.5%  ring=  0.3%  ratio=0.23× ** depleted
+    cph-      herbalA=  0.7%  ring=  0.0%  ratio=0.00× ** depleted
+    cth-      herbalA=  4.0%  ring=  0.5%  ratio=0.12× ** depleted
+    f-        herbalA=  0.8%  ring=  0.0%  ratio=0.00× ** depleted
+    k-        herbalA= 20.4%  ring= 15.6%  ratio=0.76×
+    p-        herbalA=  2.3%  ring=  1.0%  ratio=0.45× ** depleted
+    sh-       herbalA=  9.7%  ring=  7.0%  ratio=0.73×
+    t-        herbalA= 14.2%  ring= 27.5%  ratio=1.94× *** ENRICHED
+    ∅         herbalA= 28.5%  ring= 35.0%  ratio=1.23×
+
+========================================================================
+VOCABULARY OVERLAP (RING TEXT vs SECTIONS)
+========================================================================
+
+  Ring text unique words: 563
+
+  Ring vs herbal-A:
+    herbal-A unique words: 1480
+    Shared: 179
+    Jaccard: 0.0960
+    Ring coverage: 31.8% of ring words found in herbal-A
+    Top shared (by ring freq): aiin(25) ar(23) al(23) oteey(19) oteody(13) otey(11) otaiin(11) daiin(10) otar(9) air(8) dal(7) okeey(7) 
+    Top ring-only (not in herbal-A): oteos(12) s(10) o(9) y(9) oteeos(5) r(4) oteodal(3) choteey(3) alar(3) oteotey(3) 
+
+  Ring vs herbal-B:
+    herbal-B unique words: 448
+    Shared: 108
+    Jaccard: 0.1196
+    Ring coverage: 19.2% of ring words found in herbal-B
+    Top shared (by ring freq): aiin(25) ar(23) al(23) oteey(19) oteody(13) otaiin(11) daiin(10) otar(9) air(8) dal(7) okeey(7) dar(7) 
+    Top ring-only (not in herbal-B): oteos(12) otey(11) s(10) o(9) y(9) oteo(6) oteeos(5) okeo(5) r(4) otees(4) 
+
+  Ring vs pharma:
+    pharma unique words: 554
+    Shared: 124
+    Jaccard: 0.1249
+    Ring coverage: 22.0% of ring words found in pharma
+    Top shared (by ring freq): aiin(25) ar(23) al(23) oteey(19) oteody(13) otey(11) otaiin(11) daiin(10) otar(9) air(8) dal(7) okeey(7) 
+    Top ring-only (not in pharma): oteos(12) s(10) o(9) y(9) oteeos(5) oteedy(5) r(4) teey(4) aly(3) oteodal(3) 
+
+  Ring vs bio:
+    bio unique words: 848
+    Shared: 129
+    Jaccard: 0.1006
+    Ring coverage: 22.9% of ring words found in bio
+    Top shared (by ring freq): aiin(25) ar(23) al(23) oteey(19) otey(11) otaiin(11) daiin(10) otar(9) air(8) dal(7) okeey(7) dar(7) 
+    Top ring-only (not in bio): oteody(13) oteos(12) s(10) o(9) y(9) oteo(6) oteeos(5) okeo(5) r(4) otees(4) 
+
+  Ring vs text:
+    text unique words: 1358
+    Shared: 173
+    Jaccard: 0.0990
+    Ring coverage: 30.7% of ring words found in text
+    Top shared (by ring freq): aiin(25) ar(23) al(23) oteey(19) oteody(13) otey(11) otaiin(11) daiin(10) otar(9) air(8) dal(7) okeey(7) 
+    Top ring-only (not in text): oteos(12) s(10) o(9) y(9) oteeos(5) okeo(5) r(4) oteodal(3) choteey(3) alar(3) 
+
+  Ring words NOT found in any herbal/pharma text: 377 (67.0%)
+    Top examples: oteos(12) s(10) o(9) y(9) oteeos(5) r(4) oteodal(3) choteey(3) alar(3) oteotey(3) okeos(3) oteodar(3) chas(2) chedaiin(2) cheky(2) 
+
+========================================================================
+FUNCTION WORDS IN HERBAL CONTEXT
+========================================================================
+
+  Word          Ring     HerbA     HerbB    Pharma     Bio    Text
+  -----------------------------------------------------------------
+  aiin            25       118        11        44        40       207
+  ar              23       107         7         7        22       146
+  al              23        29         7         9        22       137
+  s               10         0         0         0         0         0
+  daiin           10       458        28       123        82       120
+  dal              7        78         6        30        65        25
+  am               6        18         6         3         4        28
+  dar              7       116        15        32        65        43
+  y                9         0         0         0         0         0
+  or               3       121        20        44        72        71
+  ol               2        84        25        52       230       113
+  dy               5       148         3        17        53        11
+  r                4         0         0         0         0         0
+  air              8        18         1         4         3        34
+  shey             7        43         6        22        96        84
+  chey             6        82         5        29        88       125
+  chy              6       116         4         7         9        12
+
+  Function word rate (% of total tokens):
+    ring-text       161 /    964  (16.7%)
+    herbal-A       1536 /   8395  (18.3%)
+    herbal-B        144 /   1055  (13.6%)
+    pharma          423 /   2193  (19.3%)
+    bio             851 /   5663  (15.0%)
+    text           1156 /   8124  (14.2%)
+
+========================================================================
+MORPHOLOGICAL PROFILE COMPARISON
+========================================================================
+
+  PREFIX DISTRIBUTION:
+  Prefix      ring-text     herbal-A     herbal-B       pharma          bio         text
+  d/s-            1.8%        3.7%        3.5%        2.3%        2.8%        1.3%
+  o-             38.0%       16.2%       22.0%       18.3%       17.4%       22.8%
+  other           0.5%        1.1%        1.5%        1.2%        7.1%        9.1%
+  q-              1.8%       11.1%       14.1%       14.9%       27.9%       20.8%
+  y-              3.0%        6.7%        6.1%        4.9%        1.8%        2.9%
+  ∅              54.8%       61.2%       52.8%       58.4%       43.1%       43.1%
+
+  SUFFIX DISTRIBUTION:
+  Suffix      ring-text     herbal-A     herbal-B       pharma          bio         text
+  -C             32.2%       39.0%       40.3%       46.4%       29.5%       28.4%
+  -Cr             2.0%        4.2%        5.8%        3.2%        8.5%        9.2%
+  -iin           11.9%       14.4%       11.4%       13.4%        7.0%       13.5%
+  -y             38.4%       34.3%       35.4%       29.6%       51.9%       41.9%
+  other           0.2%        0.5%        0.3%        0.7%        0.4%        0.7%
+  ∅              15.4%        7.6%        6.9%        6.7%        2.8%        6.4%
+
+========================================================================
+BRIDGE VOCABULARY (RING ↔ HERBAL-A)
+========================================================================
+
+  Total bridge words: 179
+  Content bridge (excl function words): 160
+
+  Top 30 bridge words (by geometric mean of relative freq):
+  Word               Ring   HerbA     Score
+  chol                  5     230   0.01192  [ch- cho]
+  shol                  5     116   0.00847  [sh- sho]
+  otaiin               11      34   0.00680  [t- ta]
+  okaiin                5      56   0.00588  [k- ka]
+  shedy                 6      42   0.00558  [sh- shed]
+  chedy                 4      62   0.00554  [ch- ched]
+  oty                   5      46   0.00533  [t- t]
+  otar                  9      25   0.00527  [t- ta]
+  cheor                 6      33   0.00495  [ch- cheo]
+  sho                   2      95   0.00485  [sh- sho]
+  otol                  5      30   0.00431  [t- to]
+  okal                  3      49   0.00426  [k- ka]
+  oteey                19       7   0.00405  [t- tee]
+  cheey                 6      21   0.00395  [ch- chee]
+  otey                 11      11   0.00387  [t- te]
+  cheol                 4      30   0.00385  [ch- cheo]
+  okeey                 7      17   0.00383  [k- kee]
+  cho                   2      55   0.00369  [ch- cho]
+  chdy                  2      47   0.00341  [ch- ch]
+  otal                  3      30   0.00333  [t- ta]
+  saiin                 3      29   0.00328  [∅ sa]
+  char                  2      38   0.00306  [ch- cha]
+  shy                   1      66   0.00286  [sh- sh]
+  cheody                3      21   0.00279  [ch- cheo]
+  okedy                 2      27   0.00258  [k- ked]
+  oteody               13       4   0.00253  [t- teo]
+  oky                   1      51   0.00251  [k- k]
+  cthey                 2      23   0.00238  [cth- cthe]
+  sheo                  3      15   0.00236  [sh- sheo]
+  daly                  3      15   0.00236  [∅ da]
+
+  Top bridge words — herbal folio distribution:
+    chol              in 80 folios: {&#x27;f47r&#x27;: 9, &#x27;f56v&#x27;: 9, &#x27;f8v&#x27;: 8, &#x27;f17v&#x27;: 7, &#x27;f1r&#x27;: 7, &#x27;f27r&#x27;: 6, &#x27;f3r&#x27;: 6, &#x27;f42r&#x27;: 6}
+    shol              in 56 folios: {&#x27;f42r&#x27;: 13, &#x27;f44v&#x27;: 5, &#x27;f8v&#x27;: 5, &#x27;f46r&#x27;: 4, &#x27;f47r&#x27;: 4, &#x27;f4r&#x27;: 4, &#x27;f8r&#x27;: 4, &#x27;f1r&#x27;: 3}
+    otaiin            in 27 folios: {&#x27;f36v&#x27;: 3, &#x27;f38r&#x27;: 3, &#x27;f21r&#x27;: 2, &#x27;f22v&#x27;: 2, &#x27;f51v&#x27;: 2, &#x27;f15r&#x27;: 1, &#x27;f17v&#x27;: 1, &#x27;f19v&#x27;: 1}
+    okaiin            in 36 folios: {&#x27;f40r&#x27;: 4, &#x27;f50v&#x27;: 4, &#x27;f29v&#x27;: 3, &#x27;f33r&#x27;: 3, &#x27;f39v&#x27;: 3, &#x27;f40v&#x27;: 3, &#x27;f16v&#x27;: 2, &#x27;f23v&#x27;: 2}
+    shedy             in 18 folios: {&#x27;f66r&#x27;: 8, &#x27;f46v&#x27;: 5, &#x27;f39r&#x27;: 4, &#x27;f34v&#x27;: 3, &#x27;f43v&#x27;: 3, &#x27;f26r&#x27;: 2, &#x27;f26v&#x27;: 2, &#x27;f34r&#x27;: 2}
+    chedy             in 25 folios: {&#x27;f43v&#x27;: 6, &#x27;f34v&#x27;: 5, &#x27;f43r&#x27;: 5, &#x27;f40v&#x27;: 4, &#x27;f46v&#x27;: 4, &#x27;f66r&#x27;: 4, &#x27;f26v&#x27;: 3, &#x27;f31r&#x27;: 3}
+    oty               in 31 folios: {&#x27;f36v&#x27;: 3, &#x27;f43r&#x27;: 3, &#x27;f46v&#x27;: 3, &#x27;f52r&#x27;: 3, &#x27;f53r&#x27;: 3, &#x27;f9v&#x27;: 3, &#x27;f14v&#x27;: 2, &#x27;f22r&#x27;: 2}
+    otar              in 17 folios: {&#x27;f48v&#x27;: 4, &#x27;f58r&#x27;: 4, &#x27;f50v&#x27;: 2, &#x27;f55v&#x27;: 2, &#x27;f10r&#x27;: 1, &#x27;f31v&#x27;: 1, &#x27;f33r&#x27;: 1, &#x27;f34v&#x27;: 1}
+    cheor             in 23 folios: {&#x27;f30r&#x27;: 3, &#x27;f17v&#x27;: 2, &#x27;f21r&#x27;: 2, &#x27;f24r&#x27;: 2, &#x27;f28v&#x27;: 2, &#x27;f39v&#x27;: 2, &#x27;f47v&#x27;: 2, &#x27;f58r&#x27;: 2}
+    sho               in 53 folios: {&#x27;f4v&#x27;: 5, &#x27;f20v&#x27;: 4, &#x27;f24v&#x27;: 4, &#x27;f42v&#x27;: 4, &#x27;f1r&#x27;: 3, &#x27;f21v&#x27;: 3, &#x27;f30v&#x27;: 3, &#x27;f42r&#x27;: 3}
+    otol              in 25 folios: {&#x27;f23v&#x27;: 2, &#x27;f28r&#x27;: 2, &#x27;f44v&#x27;: 2, &#x27;f53r&#x27;: 2, &#x27;f5v&#x27;: 2, &#x27;f10r&#x27;: 1, &#x27;f11r&#x27;: 1, &#x27;f13v&#x27;: 1}
+    okal              in 27 folios: {&#x27;f58v&#x27;: 12, &#x27;f54v&#x27;: 3, &#x27;f58r&#x27;: 3, &#x27;f17v&#x27;: 2, &#x27;f18r&#x27;: 2, &#x27;f33r&#x27;: 2, &#x27;f40v&#x27;: 2, &#x27;f50v&#x27;: 2}
+    oteey             in 7 folios: {&#x27;f1r&#x27;: 1, &#x27;f31v&#x27;: 1, &#x27;f35r&#x27;: 1, &#x27;f41r&#x27;: 1, &#x27;f47v&#x27;: 1, &#x27;f66r&#x27;: 1, &#x27;f8v&#x27;: 1}
+    cheey             in 15 folios: {&#x27;f20r&#x27;: 3, &#x27;f49r&#x27;: 3, &#x27;f52r&#x27;: 2, &#x27;f7v&#x27;: 2, &#x27;f24r&#x27;: 1, &#x27;f30r&#x27;: 1, &#x27;f31r&#x27;: 1, &#x27;f35r&#x27;: 1}
+    otey              in 9 folios: {&#x27;f58r&#x27;: 3, &#x27;f16r&#x27;: 1, &#x27;f29v&#x27;: 1, &#x27;f34r&#x27;: 1, &#x27;f43r&#x27;: 1, &#x27;f43v&#x27;: 1, &#x27;f53r&#x27;: 1, &#x27;f57v&#x27;: 1}
+
+========================================================================
+RING TEXT ROOT → HERBAL CONTEXT MAPPING
+========================================================================
+
+  Top 20 ring text roots → herbal-A distribution:
+    a          [a-   ]  ring=103  herbA= 418  in  86 folios  top: {&#x27;f58v&#x27;: 38, &#x27;f58r&#x27;: 33, &#x27;f39r&#x27;: 20, &#x27;f39v&#x27;: 19, &#x27;f55v&#x27;: 16}
+    da         [da-  ]  ring= 33  herbA=1036  in 117 folios  top: {&#x27;f1r&#x27;: 25, &#x27;f66r&#x27;: 24, &#x27;f58v&#x27;: 23, &#x27;f23r&#x27;: 22, &#x27;f22r&#x27;: 19}
+    ta         [ta-  ]  ring= 33  herbA= 240  in  82 folios  top: {&#x27;f58r&#x27;: 24, &#x27;f58v&#x27;: 24, &#x27;f48v&#x27;: 11, &#x27;f43r&#x27;: 8, &#x27;f33r&#x27;: 6}
+    teo        [te-  ]  ring= 26  herbA=  39  in  24 folios  top: {&#x27;f48r&#x27;: 4, &#x27;f3r&#x27;: 3, &#x27;f41v&#x27;: 3, &#x27;f43v&#x27;: 3, &#x27;f58r&#x27;: 3}
+    tee        [te-  ]  ring= 26  herbA=  26  in  23 folios  top: {&#x27;f20r&#x27;: 3, &#x27;f56v&#x27;: 2, &#x27;f11v&#x27;: 1, &#x27;f19v&#x27;: 1, &#x27;f1r&#x27;: 1}
+    o          [o-   ]  ring= 19  herbA= 352  in  99 folios  top: {&#x27;f54r&#x27;: 12, &#x27;f17v&#x27;: 11, &#x27;f40r&#x27;: 11, &#x27;f55v&#x27;: 11, &#x27;f23v&#x27;: 10}
+    ka         [ka-  ]  ring= 18  herbA= 480  in  82 folios  top: {&#x27;f58v&#x27;: 70, &#x27;f55r&#x27;: 22, &#x27;f58r&#x27;: 22, &#x27;f39v&#x27;: 20, &#x27;f55v&#x27;: 20}
+    cheo       [ch-  ]  ring= 17  herbA= 121  in  60 folios  top: {&#x27;f58r&#x27;: 7, &#x27;f3r&#x27;: 6, &#x27;f17v&#x27;: 5, &#x27;f30r&#x27;: 5, &#x27;f49v&#x27;: 5}
+    keo        [ke-  ]  ring= 17  herbA=  95  in  48 folios  top: {&#x27;f66r&#x27;: 10, &#x27;f58v&#x27;: 8, &#x27;f17v&#x27;: 6, &#x27;f31v&#x27;: 5, &#x27;f41v&#x27;: 5}
+               [∅    ]  ring= 15  herbA=  12  in  10 folios  top: {&#x27;f34r&#x27;: 2, &#x27;f8v&#x27;: 2, &#x27;f19r&#x27;: 1, &#x27;f27r&#x27;: 1, &#x27;f30r&#x27;: 1}
+    te         [te-  ]  ring= 14  herbA=  26  in  18 folios  top: {&#x27;f58r&#x27;: 5, &#x27;f34r&#x27;: 3, &#x27;f43r&#x27;: 2, &#x27;f66r&#x27;: 2, &#x27;f10v&#x27;: 1}
+    to         [to-  ]  ring= 13  herbA= 179  in  82 folios  top: {&#x27;f37v&#x27;: 11, &#x27;f19v&#x27;: 7, &#x27;f10r&#x27;: 6, &#x27;f44v&#x27;: 6, &#x27;f37r&#x27;: 5}
+    s          [s-   ]  ring= 13  herbA=  51  in  44 folios  top: {&#x27;f1r&#x27;: 4, &#x27;f17v&#x27;: 2, &#x27;f29v&#x27;: 2, &#x27;f55v&#x27;: 2, &#x27;f58r&#x27;: 2}
+    kee        [ke-  ]  ring= 13  herbA=  81  in  48 folios  top: {&#x27;f58v&#x27;: 9, &#x27;f31r&#x27;: 5, &#x27;f38v&#x27;: 4, &#x27;f17v&#x27;: 3, &#x27;f1r&#x27;: 3}
+    keeo       [ke-  ]  ring= 12  herbA=  40  in  24 folios  top: {&#x27;f31v&#x27;: 4, &#x27;f41v&#x27;: 4, &#x27;f66r&#x27;: 4, &#x27;f17v&#x27;: 3, &#x27;f58v&#x27;: 3}
+    ch         [ch-  ]  ring= 10  herbA= 227  in  88 folios  top: {&#x27;f27r&#x27;: 8, &#x27;f47v&#x27;: 7, &#x27;f15r&#x27;: 6, &#x27;f27v&#x27;: 6, &#x27;f34v&#x27;: 6}
+    teeo       [te-  ]  ring= 10  herbA=  10  in   9 folios  top: {&#x27;f57r&#x27;: 2, &#x27;f20r&#x27;: 1, &#x27;f21r&#x27;: 1, &#x27;f38v&#x27;: 1, &#x27;f3v&#x27;: 1}
+    cho        [ch-  ]  ring= 10  herbA= 634  in 103 folios  top: {&#x27;f49v&#x27;: 18, &#x27;f3r&#x27;: 17, &#x27;f8v&#x27;: 17, &#x27;f8r&#x27;: 14, &#x27;f15v&#x27;: 13}
+    che        [ch-  ]  ring=  9  herbA= 120  in  62 folios  top: {&#x27;f30r&#x27;: 8, &#x27;f27r&#x27;: 6, &#x27;f56r&#x27;: 6, &#x27;f49r&#x27;: 5, &#x27;f8r&#x27;: 5}
+    sheo       [sh-  ]  ring=  8  herbA=  73  in  39 folios  top: {&#x27;f66r&#x27;: 11, &#x27;f66v&#x27;: 5, &#x27;f31r&#x27;: 4, &#x27;f46r&#x27;: 3, &#x27;f49r&#x27;: 3}
+
+  Top 15 herbal-A roots absent from ring texts:
+    kch        [kc-  ]  herbA= 153  in  74 folios
+    do         [do-  ]  herbA= 144  in  72 folios
+    ctho       [ct-  ]  herbA= 134  in  62 folios
+    cth        [ct-  ]  herbA= 107  in  54 folios
+    ckh        [ck-  ]  herbA=  46  in  38 folios
+    ctha       [ct-  ]  herbA=  42  in  22 folios
+    chea       [ch-  ]  herbA=  42  in  24 folios
+    pch        [pc-  ]  herbA=  34  in  24 folios
+    kche       [kc-  ]  herbA=  34  in  28 folios
+    pcho       [pc-  ]  herbA=  31  in  27 folios
+
+========================================================================
+CROSS-REFERENCE SYNTHESIS
+========================================================================
+
+  Ring text vocabulary: 563 types, 964 tokens
+  Herbal-A vocabulary: 1480 types
+  Shared types: 179 (31.8% of ring)
+  Shared reach: 501 of 964 ring tokens (52.0%) come from herbal-shared words
+
+  Root family alignment test:
+    If ring texts and herbal-A share the same register, their root
+    family distributions should be SIMILAR (ratio ≈ 1.0×).
+    If ring texts have a DIFFERENT register, ratios will diverge.
+    Jensen-Shannon divergence (ring vs herbal-A families): 0.0489
+    → Similar with minor differences
+    JSD (ring vs herbal-B): 0.0493
+    JSD (ring vs bio): 0.0550
+    JSD (ring vs text): 0.0460
+
+
+Results saved to results/herbal_crossref_results.json
+</pre></details><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>bc53723</code>. 
+To run any test with your own parameters, clone
+<a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
+(<code>python webui/server.py</code>). All numbers reproduce at
+PYTHONHASHSEED=0.</footer></main></body></html>

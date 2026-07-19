@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>sh_prefix_disentangle — VAIS</title><style>
+:root { --bg:#ffffff; --fg:#1a1a1a; --muted:#666; --line:#ddd;
+        --code:#f5f5f5; --accent:#7a4a1e; --warn:#a33; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#141414; --fg:#ddd; --muted:#999; --line:#333;
+          --code:#1e1e1e; --accent:#d9a05b; --warn:#e77; } }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--fg);
+       font:16px/1.55 Georgia, 'Times New Roman', serif; }
+nav { border-bottom:1px solid var(--line); padding:.7em 1.2em;
+      font-family: system-ui, sans-serif; font-size:.9em; }
+nav a { color:var(--accent); text-decoration:none; margin-right:1.2em; }
+main { max-width: 62em; margin: 0 auto; padding: 1.5em 1.2em 4em; }
+h1,h2,h3 { font-family: system-ui, sans-serif; line-height:1.25; }
+h1 { font-size:1.7em; } h2 { font-size:1.3em; margin-top:2em; }
+a { color: var(--accent); }
+code, pre { font-family: ui-monospace, Consolas, monospace;
+            font-size:.86em; background:var(--code); }
+code { padding:.1em .3em; border-radius:3px; }
+pre { padding: .9em; overflow-x:auto; border:1px solid var(--line);
+      border-radius:4px; line-height:1.4; }
+table { border-collapse: collapse; margin: 1em 0; font-size:.92em;
+        display:block; overflow-x:auto; }
+th, td { border:1px solid var(--line); padding:.35em .6em;
+         text-align:left; vertical-align:top; }
+th { font-family: system-ui, sans-serif; background:var(--code); }
+blockquote { border-left:3px solid var(--accent); margin:1em 0;
+             padding:.2em 1em; color:var(--muted); }
+.muted { color:var(--muted); font-size:.9em; }
+.tag { font-family: system-ui, sans-serif; font-size:.75em;
+       border:1px solid var(--line); border-radius:3px;
+       padding:.05em .45em; margin-left:.5em; }
+.tag.sug { border-color:var(--warn); color:var(--warn); }
+details summary { cursor:pointer; font-family: system-ui, sans-serif; }
+footer { border-top:1px solid var(--line); margin-top:3em;
+         padding-top:1em; font-size:.85em; color:var(--muted); }
+</style></head><body>
+<nav><a href="../index.html">VAIS</a><a href="../catalog.html">Catalog</a>
+<a href="../research.html">Research</a><a href="../reports.html">Reports</a>
+<a href="https://github.com/Vineyardcode/vais">GitHub</a></nav>
+<main><h1>sh_prefix_disentangle</h1>
+<p class="muted">scripts/sh_prefix_disentangle.py</p>
+<pre>DISENTANGLE h- FROM sh-: IS &#x27;s&#x27; A REAL GRAM PREFIX?
+================================================================
+
+morphology_model_audit discovered that gram prefix &#x27;s&#x27; completely shadows deriv prefix &#x27;sh&#x27;:
+  - ZERO tokens have gpfx=&#x27;&#x27; AND deriv=&#x27;sh&#x27;
+  - 97.6% of deriv=&#x27;h&#x27; tokens have gpfx=&#x27;s&#x27; (2700/2766)
+  - The &#x27;s&#x27; parser steals the first char of &#x27;sh&#x27; before deriv can see it
+
+This test determines definitively whether &#x27;s&#x27; is a real morpheme or a parser artifact.
+
+Tests:
+  A) REPARSE WITHOUT &#x27;s&#x27; AS GRAM PREFIX
+       Remove &#x27;s&#x27; from gram prefix list, reparse entire corpus.
+       How many tokens now have deriv=&#x27;sh&#x27;? How many genuine h-only?
+
+  B) RESIDUAL &#x27;s&#x27; TOKENS — WHAT HAPPENS?
+       The 1,444 s+non-h tokens: are these real &#x27;s&#x27;-prefix words, or do
+       they also reparse meaningfully without &#x27;s&#x27;?
+
+  C) h-VERBAL PREFIX TEST ON CORRECTED COUNTS
+       With the s→sh correction, rerun the permutation test.
+       Only ~66 tokens may have pure h-prefix. Is that enough evidence?
+
+  D) sh- AS UNIFIED MORPHEME
+       With full sh-token set (~3000), test: line position, section dist,
+       suffix preferences. Compare to the 258 tokens suffix_bug_cascade_audit identified.
+
+  E) MUTUAL INFORMATION: ARE GRAM AND DERIV ONE SLOT?
+       Compute MI(gram_prefix, deriv_prefix). If MI is very high, the
+       two-slot model is wrong — they&#x27;re one combined prefix slot.</pre>
+<h2>Parameters</h2><table><tr><th>name</th><th>default</th><th>type</th></tr>
+<tr><td><code>SIMPLE_GALLOWS</code></td><td><code>[&#x27;t&#x27;, &#x27;k&#x27;, &#x27;f&#x27;, &#x27;p&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>BENCH_GALLOWS</code></td><td><code>[&#x27;cth&#x27;, &#x27;ckh&#x27;, &#x27;cph&#x27;, &#x27;cfh&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>COMPOUND_GCH</code></td><td><code>[&#x27;tch&#x27;, &#x27;kch&#x27;, &#x27;pch&#x27;, &#x27;fch&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>COMPOUND_GSH</code></td><td><code>[&#x27;tsh&#x27;, &#x27;ksh&#x27;, &#x27;psh&#x27;, &#x27;fsh&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>PREFIXES_ORIG</code></td><td><code>[&#x27;qo&#x27;, &#x27;q&#x27;, &#x27;so&#x27;, &#x27;do&#x27;, &#x27;o&#x27;, &#x27;d&#x27;, &#x27;s&#x27;, &#x27;y&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>PREFIXES_NO_S</code></td><td><code>[&#x27;qo&#x27;, &#x27;q&#x27;, &#x27;so&#x27;, &#x27;do&#x27;, &#x27;o&#x27;, &#x27;d&#x27;, &#x27;y&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>SUFFIXES_SHORT</code></td><td><code>[&#x27;aiin&#x27;, &#x27;ain&#x27;, &#x27;iin&#x27;, &#x27;in&#x27;, &#x27;ar&#x27;, &#x27;or&#x27;, &#x27;al&#x27;, &#x27;ol&#x27;, &#x27;dy&#x27;, &#x27;y&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>DERIV_PREFIXES_ORDER</code></td><td><code>[&#x27;lch&#x27;, &#x27;lsh&#x27;, &#x27;ch&#x27;, &#x27;sh&#x27;, &#x27;l&#x27;, &#x27;h&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>CORE_STEMS</code></td><td><code>[&#x27;a&#x27;, &#x27;al&#x27;, &#x27;am&#x27;, &#x27;ar&#x27;, &#x27;d&#x27;, &#x27;e&#x27;, &#x27;ed&#x27;, &#x27;eo&#x27;, &#x27;eod&#x27;, &#x27;eos&#x27;, &#x27;es&#x27;, &#x27;l&#x27;, &#x27;o&#x27;, &#x27;od&#x27;, &#x27;ol&#x27;, &#x27;o…</code></td><td>json</td></tr>
+</table>
+<h2>Golden output (PYTHONHASHSEED=0)</h2><details><summary>show</summary><pre>Loading tokens...
+  36259 tokens loaded
+
+Parsing under ORIGINAL model (with &#x27;s&#x27;)...
+Parsing under NO-S model (without &#x27;s&#x27;)...
+Done.
+
+======================================================================
+A: REPARSE WITHOUT &#x27;s&#x27; AS GRAM PREFIX
+======================================================================
+
+Tokens that change parse: 3831 / 36259 (10.6%)
+
+Deriv prefix counts — ORIGINAL vs NO-S model:
+  Deriv        ORIG     NO-S   Change
+  ∅           27019    27075      +56
+  h            2538        2    -2536
+  ch           4715     4680      -35
+  sh            226     2741    +2515
+  l            1122     1122       +0
+  lch           447      447       +0
+  lsh           192      192       +0
+
+Gram prefix counts — ORIGINAL vs NO-S model:
+  GPfx         ORIG     NO-S   Change
+  ∅           15685    19516    +3831
+  qo           4584     4584       +0
+  q             757      757       +0
+  so            170      170       +0
+  do            112      112       +0
+  o            6737     6737       +0
+  d            2936     2936       +0
+  s            3831        0    -3831
+  y            1447     1447       +0
+
+Old s+h tokens (2536) — new parse:
+  now deriv=&#x27;sh&#x27;:   2536 (100.0%)
+
+Old s+non-h tokens (1295) — new parse:
+  now deriv=&#x27;∅&#x27;:   1295 (100.0%)
+
+Genuine h-only under NO-S model: 2
+  Top h-only words: [(&#x27;cphhofy&#x27;, 1), (&#x27;has&#x27;, 1)]
+  Gram prefixes: {&#x27;&#x27;: 2}
+
+sh- under NO-S model: 2741
+  Gram prefixes: {&#x27;&#x27;: 2536, &#x27;d&#x27;: 105, &#x27;y&#x27;: 74, &#x27;o&#x27;: 21, &#x27;qo&#x27;: 4, &#x27;so&#x27;: 1}
+
+======================================================================
+B: RESIDUAL &#x27;s&#x27; ANALYSIS — ARE THE s+non-h TOKENS GENUINE?
+======================================================================
+
+Old s+non-h tokens (1295):
+  Parse changes:
+    Distinct stems: 80
+    Top stems: [(&#x27;sh&#x27;, 628), (&#x27;s&#x27;, 424), (&#x27;sair&#x27;, 36), (&#x27;sche&#x27;, 19), (&#x27;sar&#x27;, 19), (&#x27;sch&#x27;, 16), (&#x27;sshe&#x27;, 15), (&#x27;sam&#x27;, 12), (&#x27;sal&#x27;, 11), (&#x27;se&#x27;, 9)]
+    Stems starting with &#x27;s&#x27;: 1295 (100.0%)
+    → &#x27;s&#x27; was stripped but is now part of the stem
+
+Comparison: d-prefix tokens (2936)
+  Deriv distribution: {&#x27;&#x27;: 2664, &#x27;ch&#x27;: 158, &#x27;sh&#x27;: 105, &#x27;l&#x27;: 6, &#x27;lch&#x27;: 2, &#x27;lsh&#x27;: 1}
+
+  Line position (old s+non-h): mean=0.381, init=38.1%
+  Line position (d-prefix):    mean=0.500, init=27.7%
+
+  Section distributions:
+  Section       s+non-h    d-pfx    y-pfx
+  bio             19.3%    14.0%     6.6%
+  cosmo            1.9%     2.2%     5.3%
+  herbal-A        31.4%    36.1%    31.0%
+  pharma           3.9%     5.5%     4.4%
+  text            42.1%    40.6%    50.7%
+  unknown          1.5%     1.5%     2.1%
+
+  Cosine(s+non-h, d-pfx): 0.991
+  Cosine(s+non-h, y-pfx): 0.966
+  Cosine(d-pfx, y-pfx):   0.974
+
+======================================================================
+C: h-VERBAL PREFIX TEST ON CORRECTED DATA
+======================================================================
+
+Under NO-S model:
+  Stems with h-prefix:  2 ({&#x27;as&#x27;, &#x27;o&#x27;})
+  Stems with sh-prefix: 151 (too many)
+  Stems bare:           822
+
+  h-stems that also appear bare: 2/2
+    {&#x27;as&#x27;, &#x27;o&#x27;}
+  sh-stems that also appear bare: 93/151
+
+  h-stems in CORE_STEMS: {&#x27;o&#x27;}
+  sh-stems in CORE_STEMS: {&#x27;am&#x27;, &#x27;r&#x27;, &#x27;ar&#x27;, &#x27;a&#x27;, &#x27;o&#x27;, &#x27;os&#x27;, &#x27;eos&#x27;, &#x27;d&#x27;, &#x27;or&#x27;, &#x27;eo&#x27;, &#x27;eod&#x27;, &#x27;al&#x27;, &#x27;es&#x27;, &#x27;ed&#x27;, &#x27;s&#x27;, &#x27;od&#x27;, &#x27;e&#x27;, &#x27;l&#x27;, &#x27;ol&#x27;}
+
+  Token counts: h-prefix = 2, sh-prefix = 2741
+  sh-prefix line position (NO-S model): mean=0.406, init=30.4%, final=11.7%
+  bare line position:                    mean=0.519, init=19.4%
+  ch-prefix line position:               mean=0.486, init=20.9%
+  l-prefix line position:                mean=0.560, final=29.8%
+
+  Too few h-prefix tokens (2) for permutation test
+
+  Permutation test (sh-stems also bare):
+    Actual: 93/151 = 61.6%
+    Null:   121.2 ± 4.5
+    z = -6.23, p = 1.0000
+
+======================================================================
+D: sh- AS UNIFIED MORPHEME (NO-S MODEL)
+======================================================================
+
+Total sh-prefix tokens: 2741
+
+  Section distribution:
+  Section         sh-     %sh  Corpus%  Ratio
+  bio             586   21.4%    15.7%  1.36x
+  cosmo            46    1.7%     2.0%  0.83x
+  herbal-A        620   22.6%    25.1%  0.90x
+  pharma          110    4.0%     3.8%  1.05x
+  text           1343   49.0%    51.6%  0.95x
+  unknown          36    1.3%     1.8%  0.74x
+
+  Suffix distribution:
+    y       :   877 (32.0%)
+    dy      :   790 (28.8%)
+    ∅       :   519 (18.9%)
+    ol      :   179 (6.5%)
+    aiin    :   100 (3.6%)
+    ar      :    83 (3.0%)
+    or      :    75 (2.7%)
+    al      :    70 (2.6%)
+    ain     :    33 (1.2%)
+    iin     :    15 (0.5%)
+
+  Top stems under sh-:
+    e       :  1653 (60.3%)
+    o       :   293 (10.7%)
+    eo      :   176 (6.4%)
+    ed      :    85 (3.1%)
+    od      :    49 (1.8%)
+    oe      :    36 (1.3%)
+    d       :    34 (1.2%)
+    es      :    31 (1.1%)
+    eod     :    30 (1.1%)
+    ol      :    25 (0.9%)
+    eos     :    23 (0.8%)
+    eoe     :    20 (0.7%)
+    os      :    17 (0.6%)
+    eol     :    11 (0.4%)
+    ey      :     8 (0.3%)
+
+  Gram prefix distribution:
+    ∅       :  2536 (92.5%)
+    d       :   105 (3.8%)
+    y       :    74 (2.7%)
+    o       :    21 (0.8%)
+    qo      :     4 (0.1%)
+    so      :     1 (0.0%)
+
+  Comparison:
+    Old parser sh- tokens: 226
+    New parser sh- tokens: 2741
+    Net gain:              2515
+
+======================================================================
+E: MUTUAL INFORMATION — GRAM × DERIV PREFIX
+======================================================================
+
+ORIGINAL parser:
+  H(gram_prefix) = 2.352 bits
+  H(deriv_prefix) = 1.287 bits
+  MI(gram, deriv) = 0.413 bits
+  Normalized MI = 0.321
+  → 32.1% of prefix diversity is shared (redundant)
+
+NO-S parser:
+  H(gram_prefix) = 1.967 bits
+  H(deriv_prefix) = 1.252 bits
+  MI(gram, deriv) = 0.167 bits
+  Normalized MI = 0.133
+  → 13.3% of prefix diversity is shared (redundant)
+
+  Joint distribution (NO-S model) — top cells:
+  Gram+Deriv        Count      %
+  ∅+∅            11774  32.5%
+  o+∅             5978  16.5%
+  qo+∅             4491  12.4%
+  ∅+ch            4279  11.8%
+  d+∅             2664   7.3%
+  ∅+sh            2536   7.0%
+  y+∅             1202   3.3%
+  q+∅              756   2.1%
+  ∅+l              555   1.5%
+  o+l              489   1.3%
+  ∅+lch            267   0.7%
+  y+ch             169   0.5%
+  d+ch             158   0.4%
+  so+∅              128   0.4%
+  o+lch            128   0.4%
+  d+sh             105   0.3%
+  ∅+lsh            103   0.3%
+  do+∅               82   0.2%
+  y+sh              74   0.2%
+  o+lsh             66   0.2%
+
+  Chi2(gram, deriv | NO-S) = 6578.9, df=28
+  → If chi2 &gt;&gt; df, gram and deriv are NOT independent
+
+======================================================================
+F: COMBINED PREFIX MODEL — SINGLE SLOT ALTERNATIVE
+======================================================================
+
+Combined prefix inventory (40 distinct):
+  Prefix         Count      %
+  ∅              11774  32.5%
+  o               5978  16.5%
+  qo              4491  12.4%
+  ch              4279  11.8%
+  d               2664   7.3%
+  sh              2536   7.0%
+  y               1202   3.3%
+  q                756   2.1%
+  l                555   1.5%
+  ol               489   1.3%
+  lch              267   0.7%
+  ych              169   0.5%
+  dch              158   0.4%
+  so               128   0.4%
+  olch             128   0.4%
+  dsh              105   0.3%
+  lsh              103   0.3%
+  do                82   0.2%
+  ysh               74   0.2%
+  olsh              66   0.2%
+  och               55   0.2%
+  qol               32   0.1%
+  qolch             31   0.1%
+  sol               22   0.1%
+  osh               21   0.1%
+
+  Both gram+deriv:   1442 (4.0%)
+  Only gram:        15301 (42.2%)
+  Only deriv:        7742 (21.4%)
+  Neither:          11774 (32.5%)
+
+  qo + deriv (should be rare):
+    qo+∅: 4491
+    qo+l: 32
+    qo+lch: 31
+    qo+ch: 18
+    qo+lsh: 8
+    qo+sh: 4
+
+  o + deriv:
+    o+∅: 5978
+    o+l: 489
+    o+lch: 128
+    o+lsh: 66
+    o+ch: 55
+    o+sh: 21
+
+======================================================================
+G: sh_prefix_disentangle SUMMARY
+======================================================================
+
+KEY FINDINGS:
+  1. Removing &#x27;s&#x27; from gram prefixes reclassifies 3831 tokens (10.6%)
+  2. Old s+h tokens (2536) now parse as: {&#x27;sh&#x27;: 2536}
+  3. Genuine h-only tokens under corrected model: 2
+  4. sh- tokens under corrected model: 2741
+  5. MI(gram, deriv) drops from 0.321 to 0.133 when &#x27;s&#x27; removed
+  6. Tokens with BOTH gram+deriv: 1442 (4.0%)
+
+VERDICT on &#x27;s&#x27; as gram prefix:
+  If genuine h-only tokens under NO-S (2) are very few (&lt;100),
+  then &#x27;s&#x27; was NEVER a real gram prefix — it was always the first char of &#x27;sh&#x27;.
+  
+  If MI drops significantly when &#x27;s&#x27; is removed, the original model had
+  a spurious dependency between gram and deriv that the NO-S model eliminates.
+
+
+[sh_prefix_disentangle Complete]
+</pre></details><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>bc53723</code>. 
+To run any test with your own parameters, clone
+<a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
+(<code>python webui/server.py</code>). All numbers reproduce at
+PYTHONHASHSEED=0.</footer></main></body></html>

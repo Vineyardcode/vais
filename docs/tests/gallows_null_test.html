@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>gallows_null_test — VAIS</title><style>
+:root { --bg:#ffffff; --fg:#1a1a1a; --muted:#666; --line:#ddd;
+        --code:#f5f5f5; --accent:#7a4a1e; --warn:#a33; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#141414; --fg:#ddd; --muted:#999; --line:#333;
+          --code:#1e1e1e; --accent:#d9a05b; --warn:#e77; } }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--fg);
+       font:16px/1.55 Georgia, 'Times New Roman', serif; }
+nav { border-bottom:1px solid var(--line); padding:.7em 1.2em;
+      font-family: system-ui, sans-serif; font-size:.9em; }
+nav a { color:var(--accent); text-decoration:none; margin-right:1.2em; }
+main { max-width: 62em; margin: 0 auto; padding: 1.5em 1.2em 4em; }
+h1,h2,h3 { font-family: system-ui, sans-serif; line-height:1.25; }
+h1 { font-size:1.7em; } h2 { font-size:1.3em; margin-top:2em; }
+a { color: var(--accent); }
+code, pre { font-family: ui-monospace, Consolas, monospace;
+            font-size:.86em; background:var(--code); }
+code { padding:.1em .3em; border-radius:3px; }
+pre { padding: .9em; overflow-x:auto; border:1px solid var(--line);
+      border-radius:4px; line-height:1.4; }
+table { border-collapse: collapse; margin: 1em 0; font-size:.92em;
+        display:block; overflow-x:auto; }
+th, td { border:1px solid var(--line); padding:.35em .6em;
+         text-align:left; vertical-align:top; }
+th { font-family: system-ui, sans-serif; background:var(--code); }
+blockquote { border-left:3px solid var(--accent); margin:1em 0;
+             padding:.2em 1em; color:var(--muted); }
+.muted { color:var(--muted); font-size:.9em; }
+.tag { font-family: system-ui, sans-serif; font-size:.75em;
+       border:1px solid var(--line); border-radius:3px;
+       padding:.05em .45em; margin-left:.5em; }
+.tag.sug { border-color:var(--warn); color:var(--warn); }
+details summary { cursor:pointer; font-family: system-ui, sans-serif; }
+footer { border-top:1px solid var(--line); margin-top:3em;
+         padding-top:1em; font-size:.85em; color:var(--muted); }
+</style></head><body>
+<nav><a href="../index.html">VAIS</a><a href="../catalog.html">Catalog</a>
+<a href="../research.html">Research</a><a href="../reports.html">Reports</a>
+<a href="https://github.com/Vineyardcode/vais">GitHub</a></nav>
+<main><h1>gallows_null_test</h1>
+<p class="muted">scripts/gallows_null_test.py</p>
+<pre>GALLOWS-AS-NULLS TEST
+
+═══════════════════════════════════════════════════════════════════════
+
+HYPOTHESIS: Gallows characters (t, k, p, f, cth, ckh, cph, cfh) are
+null insertions — meaningless padding added to disguise the real text.
+Additional sub-hypothesis: &quot;o&quot; is also a null character.
+
+IF GALLOWS = NULLS, WE PREDICT:
+  1. Stripping gallows should IMPROVE h_char (move toward NL range 0.82-0.90)
+     because nulls disrupt character predictability.
+  2. Vocabulary should COLLAPSE disproportionately (many word-types merge,
+     because gallows were the only thing differentiating them).
+  3. Word-length distribution should become MORE natural-language-like.
+  4. Zipf slope should remain stable (null insertion doesn&#x27;t change
+     rank-frequency shape much).
+  5. Heaps exponent should DROP (fewer new types as vocabulary consolidates).
+
+IF GALLOWS ≠ NULLS (they carry meaning), WE PREDICT:
+  1. h_char should get WORSE (removing real characters destroys bigram
+     structure), OR stay roughly the same if they&#x27;re somewhat redundant.
+  2. Vocabulary merge should be PROPORTIONAL to frequency — random removal
+     doesn&#x27;t cause disproportionate merging.
+  3. Some words become empty (impossible if they carry real content).
+
+DIAGNOSTICS BEYOND FINGERPRINT:
+  A. Merge analysis: How many word-types collapse? Is it disproportionate?
+  B. Empty words: Do any words reduce to nothing?
+  C. Positional bias: Where do gallows appear in word structure?
+     (Nulls should be uniform; real chars should have positional function.)
+  D. Section variation: Do gallows rates vary between Currier A and B?
+     (Nulls should be constant; functional chars track content changes.)
+  E. Line-position effects: Are gallows paragraph-initial as Pelling claims?
+
+SKEPTICISM PROTOCOL:
+  Even if stripping improves the fingerprint, this does NOT prove gallows
+  are nulls. Removing ANY frequent glyph class would mechanically alter
+  the fingerprint. We must compare against CONTROL strippings — remove
+  other glyph classes of similar frequency and see if the improvement
+  is SPECIFIC to gallows or generic to any removal.
+
+═══════════════════════════════════════════════════════════════════════</pre>
+<h2>Parameters</h2><table><tr><th>name</th><th>default</th><th>type</th></tr>
+<tr><td><code>GALLOWS_TRI</code></td><td><code>[&#x27;cth&#x27;, &#x27;ckh&#x27;, &#x27;cph&#x27;, &#x27;cfh&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>GALLOWS_BI</code></td><td><code>[&#x27;ch&#x27;, &#x27;sh&#x27;, &#x27;th&#x27;, &#x27;kh&#x27;, &#x27;ph&#x27;, &#x27;fh&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>GALLOWS_SET</code></td><td><code>[&#x27;cfh&#x27;, &#x27;ckh&#x27;, &#x27;cph&#x27;, &#x27;cth&#x27;, &#x27;f&#x27;, &#x27;k&#x27;, &#x27;p&#x27;, &#x27;t&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>VMS_TARGET</code></td><td><code>{&#x27;h_char_ratio&#x27;: 0.641, &#x27;heaps_beta&#x27;: 0.753, &#x27;hapax_ratio_mid&#x27;: 0.656, &#x27;mean_word_len&#x27;: 4.…</code></td><td>json</td></tr>
+</table>
+<h2>Golden output (PYTHONHASHSEED=0)</h2><details><summary>show</summary><pre>========================================================================
+  gallows_null_test — GALLOWS-AS-NULLS HYPOTHESIS TEST
+========================================================================
+
+▸ Parsing VMS corpus...
+  Total tokens: 40,351
+  Total types:  8,212
+  Total glyphs: 183,224
+  Gallows frequency: 21,089 (11.5%)
+  &#x27;o&#x27; frequency:     26,942 (14.7%)
+  Combined:          48,031 (26.2%)
+
+  Individual gallows frequencies:
+    k    : 10,555 (5.76%)
+    t    :  6,421 (3.50%)
+    p    :  1,538 (0.84%)
+    cth  :    945 (0.52%)
+    ckh  :    904 (0.49%)
+    f    :    439 (0.24%)
+    cph  :    211 (0.12%)
+    cfh  :     76 (0.04%)
+
+────────────────────────────────────────────────────────────────────────
+▸ BASELINE VMS FINGERPRINT (live recompute)
+  h_char=0.6530  Heaps=0.7506  hapax=0.7188  wlen=5.05  Zipf=0.9237  TTR=0.3770
+  Types=8,212  Alphabet=31  IC=0.0816
+  Distance to VMS_TARGET: 0.1446
+
+========================================================================
+  STRIPPING EXPERIMENTS
+========================================================================
+
+────────────────────────────────────────────────────────────────────────
+▸ GALLOWS_STRIPPED: removing [&#x27;cfh&#x27;, &#x27;ckh&#x27;, &#x27;cph&#x27;, &#x27;cth&#x27;, &#x27;f&#x27;, &#x27;k&#x27;, &#x27;p&#x27;, &#x27;t&#x27;]
+  Glyphs removed: 21,089 / 183,224 (11.5%)
+  Empty words (entirely removed): 51 (0.13%)
+  Words: 40,351 → 40,300
+
+  FINGERPRINT:
+  h_char=0.6830  Heaps=0.7117  hapax=0.6829  wlen=4.43  Zipf=1.0773  TTR=0.2652
+  Types=5,427  Alphabet=23  IC=0.0982
+  Distance to VMS_TARGET: 0.3011
+
+  DELTAS from baseline:
+    h_char_ratio      : +0.0300 (+4.6%) ↑ ← TOWARD NL range (supports null hyp)
+    heaps_beta        : -0.0389 (-5.2%) ↓
+    hapax_ratio_mid   : -0.0360 (-5.0%) ↓
+    mean_word_len     : -0.6229 (-12.3%) ↓
+    zipf_alpha        : +0.1536 (+16.6%) ↑
+    ttr_5000          : -0.1118 (-29.7%) ↓
+  Distance delta: +0.1565 (FARTHER from VMS target)
+
+────────────────────────────────────────────────────────────────────────
+▸ O_STRIPPED: removing [&#x27;o&#x27;]
+  Glyphs removed: 26,942 / 183,224 (14.7%)
+  Empty words (entirely removed): 202 (0.50%)
+  Words: 40,351 → 40,149
+
+  FINGERPRINT:
+  h_char=0.6911  Heaps=0.7238  hapax=0.6982  wlen=4.41  Zipf=0.9926  TTR=0.3144
+  Types=6,466  Alphabet=30  IC=0.0824
+  Distance to VMS_TARGET: 0.1810
+
+  DELTAS from baseline:
+    h_char_ratio      : +0.0381 (+5.8%) ↑ ← TOWARD NL range (supports null hyp)
+    heaps_beta        : -0.0268 (-3.6%) ↓
+    hapax_ratio_mid   : -0.0206 (-2.9%) ↓
+    mean_word_len     : -0.6456 (-12.8%) ↓
+    zipf_alpha        : +0.0689 (+7.5%) ↑
+    ttr_5000          : -0.0626 (-16.6%) ↓
+  Distance delta: +0.0365 (FARTHER from VMS target)
+
+────────────────────────────────────────────────────────────────────────
+▸ GALLOWS+O_STRIPPED: removing [&#x27;cfh&#x27;, &#x27;ckh&#x27;, &#x27;cph&#x27;, &#x27;cth&#x27;, &#x27;f&#x27;, &#x27;k&#x27;, &#x27;o&#x27;, &#x27;p&#x27;, &#x27;t&#x27;]
+  Glyphs removed: 48,031 / 183,224 (26.2%)
+  Empty words (entirely removed): 326 (0.81%)
+  Words: 40,351 → 40,025
+
+  FINGERPRINT:
+  h_char=0.7136  Heaps=0.6785  hapax=0.6583  wlen=3.79  Zipf=1.2338  TTR=0.1986
+  Types=3,793  Alphabet=22  IC=0.1015
+  Distance to VMS_TARGET: 0.5906
+
+  DELTAS from baseline:
+    h_char_ratio      : +0.0606 (+9.3%) ↑ ← TOWARD NL range (supports null hyp)
+    heaps_beta        : -0.0721 (-9.6%) ↓
+    hapax_ratio_mid   : -0.0605 (-8.4%) ↓
+    mean_word_len     : -1.2656 (-25.0%) ↓
+    zipf_alpha        : +0.3100 (+33.6%) ↑
+    ttr_5000          : -0.1784 (-47.3%) ↓
+  Distance delta: +0.4460 (FARTHER from VMS target)
+
+────────────────────────────────────────────────────────────────────────
+▸ CTRL_VOWEL_LIKE: removing [&#x27;a&#x27;, &#x27;e&#x27;, &#x27;i&#x27;]
+  Glyphs removed: 49,954 / 183,224 (27.3%)
+  Empty words (entirely removed): 27 (0.07%)
+  Words: 40,351 → 40,324
+
+  FINGERPRINT:
+  h_char=0.8053  Heaps=0.6882  hapax=0.6751  wlen=3.82  Zipf=1.0566  TTR=0.2888
+  Types=5,231  Alphabet=28  IC=0.1051
+  Distance to VMS_TARGET: 0.4057
+
+  DELTAS from baseline:
+    h_char_ratio      : +0.1524 (+23.3%) ↑ ← TOWARD NL range (supports null hyp)
+    heaps_beta        : -0.0623 (-8.3%) ↓
+    hapax_ratio_mid   : -0.0437 (-6.1%) ↓
+    mean_word_len     : -1.2354 (-24.4%) ↓
+    zipf_alpha        : +0.1329 (+14.4%) ↑
+    ttr_5000          : -0.0882 (-23.4%) ↓
+  Distance delta: +0.2611 (FARTHER from VMS target)
+
+────────────────────────────────────────────────────────────────────────
+▸ CTRL_MEDIAL: removing [&#x27;d&#x27;, &#x27;l&#x27;, &#x27;r&#x27;]
+  Glyphs removed: 33,186 / 183,224 (18.1%)
+  Empty words (entirely removed): 468 (1.16%)
+  Words: 40,351 → 39,883
+
+  FINGERPRINT:
+  h_char=0.7091  Heaps=0.6892  hapax=0.6825  wlen=4.28  Zipf=1.0652  TTR=0.2792
+  Types=5,178  Alphabet=28  IC=0.1046
+  Distance to VMS_TARGET: 0.2979
+
+  DELTAS from baseline:
+    h_char_ratio      : +0.0561 (+8.6%) ↑ ← TOWARD NL range (supports null hyp)
+    heaps_beta        : -0.0613 (-8.2%) ↓
+    hapax_ratio_mid   : -0.0363 (-5.1%) ↓
+    mean_word_len     : -0.7728 (-15.3%) ↓
+    zipf_alpha        : +0.1415 (+15.3%) ↑
+    ttr_5000          : -0.0978 (-25.9%) ↓
+  Distance delta: +0.1533 (FARTHER from VMS target)
+
+========================================================================
+  VOCABULARY MERGE ANALYSIS
+========================================================================
+
+  GALLOWS_STRIPPED MERGE ANALYSIS:
+    Original types: 8207
+    Stripped types:  5427
+    Types that merged: 3979 → 1199 groups
+    Net type reduction: 2780 (33.9%)
+    Top merge groups:
+      &#x27;cheey&#x27; ← [&#x27;cheey&#x27;, &#x27;cheeky&#x27;, &#x27;chkeey&#x27;, &#x27;checkhey&#x27;, &#x27;tcheey&#x27;]
+      &#x27;chey&#x27; ← [&#x27;chey&#x27;, &#x27;cheky&#x27;, &#x27;checkhy&#x27;, &#x27;chckhey&#x27;, &#x27;checthy&#x27;]
+      &#x27;oy&#x27; ← [&#x27;oty&#x27;, &#x27;oky&#x27;, &#x27;oy&#x27;, &#x27;ockhy&#x27;, &#x27;octhy&#x27;]
+      &#x27;choy&#x27; ← [&#x27;choky&#x27;, &#x27;choty&#x27;, &#x27;chockhy&#x27;, &#x27;chocthy&#x27;, &#x27;choy&#x27;]
+      &#x27;shey&#x27; ← [&#x27;shey&#x27;, &#x27;sheky&#x27;, &#x27;sheckhy&#x27;, &#x27;shecthy&#x27;, &#x27;shckhey&#x27;]
+      &#x27;chy&#x27; ← [&#x27;chy&#x27;, &#x27;chckhy&#x27;, &#x27;chcthy&#x27;, &#x27;kchy&#x27;, &#x27;tchy&#x27;]
+      &#x27;chedy&#x27; ← [&#x27;chedy&#x27;, &#x27;tchedy&#x27;, &#x27;pchedy&#x27;, &#x27;kchedy&#x27;, &#x27;chckhedy&#x27;]
+      &#x27;oaiin&#x27; ← [&#x27;okaiin&#x27;, &#x27;otaiin&#x27;, &#x27;oaiin&#x27;, &#x27;opaiin&#x27;, &#x27;ofaiin&#x27;]
+      &#x27;cho&#x27; ← [&#x27;cho&#x27;, &#x27;kcho&#x27;, &#x27;tcho&#x27;, &#x27;chok&#x27;, &#x27;pcho&#x27;]
+      &#x27;sheey&#x27; ← [&#x27;sheey&#x27;, &#x27;sheeky&#x27;, &#x27;sheety&#x27;, &#x27;shekey&#x27;, &#x27;sheckhey&#x27;]
+
+  O_STRIPPED MERGE ANALYSIS:
+    Original types: 8210
+    Stripped types:  6466
+    Types that merged: 2980 → 1236 groups
+    Net type reduction: 1744 (21.2%)
+    Top merge groups:
+      &#x27;dl&#x27; ← [&#x27;dol&#x27;, &#x27;dl&#x27;, &#x27;odl&#x27;, &#x27;odol&#x27;, &#x27;dloo&#x27;]
+      &#x27;tar&#x27; ← [&#x27;otar&#x27;, &#x27;tar&#x27;, &#x27;otoar&#x27;, &#x27;toar&#x27;, &#x27;taor&#x27;]
+      &#x27;cheey&#x27; ← [&#x27;cheey&#x27;, &#x27;ocheey&#x27;, &#x27;cheoey&#x27;, &#x27;cheeoy&#x27;, &#x27;ocheoey&#x27;]
+      &#x27;cheky&#x27; ← [&#x27;cheky&#x27;, &#x27;cheoky&#x27;, &#x27;choeky&#x27;, &#x27;chekoy&#x27;, &#x27;ocheky&#x27;]
+      &#x27;pchedy&#x27; ← [&#x27;opchedy&#x27;, &#x27;pchedy&#x27;, &#x27;pcheody&#x27;, &#x27;opcheody&#x27;, &#x27;pochedy&#x27;]
+      &#x27;tchedy&#x27; ← [&#x27;otchedy&#x27;, &#x27;tchedy&#x27;, &#x27;tcheody&#x27;, &#x27;otcheody&#x27;, &#x27;otochedy&#x27;]
+      &#x27;tees&#x27; ← [&#x27;otees&#x27;, &#x27;oteeos&#x27;, &#x27;teeos&#x27;, &#x27;toees&#x27;, &#x27;tees&#x27;]
+      &#x27;r&#x27; ← [&#x27;or&#x27;, &#x27;r&#x27;, &#x27;ro&#x27;, &#x27;oro&#x27;, &#x27;oor&#x27;]
+      &#x27;daiin&#x27; ← [&#x27;daiin&#x27;, &#x27;odaiin&#x27;, &#x27;daoiin&#x27;, &#x27;doaiin&#x27;, &#x27;daiino&#x27;]
+      &#x27;dar&#x27; ← [&#x27;dar&#x27;, &#x27;odar&#x27;, &#x27;daro&#x27;, &#x27;doaro&#x27;, &#x27;daor&#x27;]
+
+  GALLOWS+O_STRIPPED MERGE ANALYSIS:
+    Original types: 8191
+    Stripped types:  3793
+    Types that merged: 5541 → 1143 groups
+    Net type reduction: 4398 (53.7%)
+    Top merge groups:
+      &#x27;chey&#x27; ← [&#x27;chey&#x27;, &#x27;cheky&#x27;, &#x27;checkhy&#x27;, &#x27;otchey&#x27;, &#x27;opchey&#x27;]
+      &#x27;chy&#x27; ← [&#x27;chy&#x27;, &#x27;chckhy&#x27;, &#x27;chcthy&#x27;, &#x27;otchy&#x27;, &#x27;choky&#x27;]
+      &#x27;chedy&#x27; ← [&#x27;chedy&#x27;, &#x27;cheody&#x27;, &#x27;opchedy&#x27;, &#x27;otchedy&#x27;, &#x27;tchedy&#x27;]
+      &#x27;cheey&#x27; ← [&#x27;cheey&#x27;, &#x27;cheeky&#x27;, &#x27;chkeey&#x27;, &#x27;checkhey&#x27;, &#x27;chokeey&#x27;]
+      &#x27;y&#x27; ← [&#x27;y&#x27;, &#x27;oty&#x27;, &#x27;cthy&#x27;, &#x27;oky&#x27;, &#x27;ckhy&#x27;]
+      &#x27;shey&#x27; ← [&#x27;shey&#x27;, &#x27;sheky&#x27;, &#x27;sheckhy&#x27;, &#x27;shecthy&#x27;, &#x27;otshey&#x27;]
+      &#x27;l&#x27; ← [&#x27;ol&#x27;, &#x27;l&#x27;, &#x27;otol&#x27;, &#x27;okol&#x27;, &#x27;cthol&#x27;]
+      &#x27;chdy&#x27; ← [&#x27;chdy&#x27;, &#x27;chody&#x27;, &#x27;otchdy&#x27;, &#x27;okchdy&#x27;, &#x27;opchdy&#x27;]
+      &#x27;eey&#x27; ← [&#x27;okeey&#x27;, &#x27;oteey&#x27;, &#x27;keey&#x27;, &#x27;teey&#x27;, &#x27;ctheey&#x27;]
+      &#x27;ey&#x27; ← [&#x27;okey&#x27;, &#x27;otey&#x27;, &#x27;cthey&#x27;, &#x27;ckhey&#x27;, &#x27;ey&#x27;]
+
+========================================================================
+  POSITIONAL ANALYSIS
+========================================================================
+
+  POSITIONAL DISTRIBUTION OF GALLOWS:
+    Position     Total glyphs    Gallows      Pct
+    ────────── ────────────── ────────── ────────
+    initial            38,893      3,948    10.2%
+    medial            103,980     16,886    16.2%
+    final              38,893        204     0.5%
+    sole                1,458         51     3.5%
+
+    Individual gallows by position:
+    Glyph     initial     medial      final      TOTAL
+    cfh            35         41          0         76
+    ckh           186        717          1        904
+    cph           127         84          0        211
+    cth           484        454          5        943
+    f             120        288         21        429
+    k           1,322      9,133         82     10,537
+    p             581        920         30      1,531
+    t           1,093      5,249         65      6,407
+
+    Chi-square (uniform distribution test): χ²=6161.2, df=2
+    If χ² &gt; 5.99 → gallows are NOT uniformly distributed (p&lt;0.05)
+    Verdict: POSITIONALLY BIASED (nulls unlikely)
+
+========================================================================
+  SECTION VARIATION ANALYSIS
+========================================================================
+
+  CURRIER A vs B — GALLOWS &amp; &#x27;o&#x27; RATES:
+    Section         Words   Glyphs  Gallows   Gal%        o     o%
+    ──────────── ──────── ──────── ──────── ────── ──────── ──────
+    Currier_A       9,853   41,779    4,985  11.9%    6,662  15.9%
+    Currier_B      26,171  121,466   13,683  11.3%   17,057  14.0%
+
+    Gallows rate difference: z = 3.70
+    If |z| &gt; 1.96 → sections differ significantly (p&lt;0.05)
+    Verdict: RATES DIFFER (nulls should be constant)
+    &#x27;o&#x27; rate difference: z = 9.52
+    Verdict: RATES DIFFER
+
+========================================================================
+  LINE-POSITION EFFECTS
+========================================================================
+
+  LINE-INITIAL vs OTHER POSITIONS — GALLOWS:
+    First-word glyphs: 27,413 total, 3,138 gallows (11.4%)
+    Other-word glyphs: 155,811 total, 17,951 gallows (11.5%)
+    Rate difference z = -0.35
+    Verdict: No significant line-initial bias
+
+========================================================================
+  COMPARATIVE FINGERPRINT TABLE
+========================================================================
+
+  Variant                    h_char    Heaps    hapax     wlen     Zipf      TTR     Dist    Types
+  ──────────────────────── ──────── ──────── ──────── ──────── ──────── ──────── ──────── ────────
+  VMS_TARGET                 0.6410   0.7530   0.6560   4.9400   0.9420   0.3420        ─            ─
+  NL_range (approx)        0.82-0.90 0.60-0.80 0.50-0.70  4.0-6.0 0.90-1.10 0.30-0.50
+  VMS_baseline               0.6530   0.7506   0.7188   5.0530   0.9237   0.3770   0.1446    8,212
+  GALLOWS_STRIPPED           0.6830   0.7117   0.6829   4.4301   1.0773   0.2652   0.3011    5,427
+  O_STRIPPED                 0.6911   0.7238   0.6982   4.4074   0.9926   0.3144   0.1810    6,466
+  GALLOWS+O_STRIPPED         0.7136   0.6785   0.6583   3.7874   1.2338   0.1986   0.5906    3,793
+  CTRL_VOWEL_LIKE            0.8053   0.6882   0.6751   3.8176   1.0566   0.2888   0.4057    5,231
+  CTRL_MEDIAL                0.7091   0.6892   0.6825   4.2802   1.0652   0.2792   0.2979    5,178
+
+========================================================================
+  CRITICAL VERDICT
+========================================================================
+
+  EVIDENCE SUPPORTING &#x27;gallows = nulls&#x27;:
+    ✓ h_char increases by 0.0300 (0.6830), moving toward NL range
+    ✓ Gallows removal reduces distance MORE than control (ctrl_vowel_like): 0.3011 vs 0.4057
+    ✓ Type reduction (33.9%) is disproportionate to glyph removal (11.5%) — ratio 2.9x — gallows inflated vocabulary artificially
+
+  EVIDENCE AGAINST &#x27;gallows = nulls&#x27;:
+    ✗ Gallows removal effect similar to control (ctrl_medial): 0.3011 vs 0.2979 — not specific to gallows
+    ✗ 51 words are ENTIRELY gallows — these can&#x27;t be null padding if the word has no other content
+
+  SCORE: 3 for, 2 against
+  VERDICT: INCONCLUSIVE — mixed evidence, cannot confirm or deny
+
+  CAVEAT: Even a SUPPORTED verdict only means &#x27;consistent with&#x27;, not 
+  &#x27;proven&#x27;. Gallows could be: (a) true nulls, (b) positional markers 
+  that serve a formatting role, (c) weak ciphertext symbols that are 
+  partially redundant, or (d) something else entirely.
+
+  Results saved to C:\projects\vais\results\gallows_null_test.txt
+</pre></details><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>bc53723</code>. 
+To run any test with your own parameters, clone
+<a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
+(<code>python webui/server.py</code>). All numbers reproduce at
+PYTHONHASHSEED=0.</footer></main></body></html>

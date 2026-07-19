@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VAIS</title><style>
+:root { --bg:#ffffff; --fg:#1a1a1a; --muted:#666; --line:#ddd;
+        --code:#f5f5f5; --accent:#7a4a1e; --warn:#a33; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#141414; --fg:#ddd; --muted:#999; --line:#333;
+          --code:#1e1e1e; --accent:#d9a05b; --warn:#e77; } }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--fg);
+       font:16px/1.55 Georgia, 'Times New Roman', serif; }
+nav { border-bottom:1px solid var(--line); padding:.7em 1.2em;
+      font-family: system-ui, sans-serif; font-size:.9em; }
+nav a { color:var(--accent); text-decoration:none; margin-right:1.2em; }
+main { max-width: 62em; margin: 0 auto; padding: 1.5em 1.2em 4em; }
+h1,h2,h3 { font-family: system-ui, sans-serif; line-height:1.25; }
+h1 { font-size:1.7em; } h2 { font-size:1.3em; margin-top:2em; }
+a { color: var(--accent); }
+code, pre { font-family: ui-monospace, Consolas, monospace;
+            font-size:.86em; background:var(--code); }
+code { padding:.1em .3em; border-radius:3px; }
+pre { padding: .9em; overflow-x:auto; border:1px solid var(--line);
+      border-radius:4px; line-height:1.4; }
+table { border-collapse: collapse; margin: 1em 0; font-size:.92em;
+        display:block; overflow-x:auto; }
+th, td { border:1px solid var(--line); padding:.35em .6em;
+         text-align:left; vertical-align:top; }
+th { font-family: system-ui, sans-serif; background:var(--code); }
+blockquote { border-left:3px solid var(--accent); margin:1em 0;
+             padding:.2em 1em; color:var(--muted); }
+.muted { color:var(--muted); font-size:.9em; }
+.tag { font-family: system-ui, sans-serif; font-size:.75em;
+       border:1px solid var(--line); border-radius:3px;
+       padding:.05em .45em; margin-left:.5em; }
+.tag.sug { border-color:var(--warn); color:var(--warn); }
+details summary { cursor:pointer; font-family: system-ui, sans-serif; }
+footer { border-top:1px solid var(--line); margin-top:3em;
+         padding-top:1em; font-size:.85em; color:var(--muted); }
+</style></head><body>
+<nav><a href="index.html">VAIS</a><a href="catalog.html">Catalog</a>
+<a href="research.html">Research</a><a href="reports.html">Reports</a>
+<a href="https://github.com/Vineyardcode/vais">GitHub</a></nav>
+<main><h1>VAIS — Voynich Analysis Interactive Suite</h1>
+<p>A reproducible laboratory for statistical analysis of the Voynich manuscript (Beinecke MS 408): 144 runnable tests with pre-registered kill criteria, calibrated control corpora, golden reference outputs, and an adjudicated research program. Nothing here claims a decode; the methodology is the point.</p>
+<p><a href="catalog.html">Test catalog</a> · <a href="research.html">Research program &amp; findings</a> · <a href="reports.html">Overnight reports</a> · <a href="https://github.com/Vineyardcode/vais">Source on GitHub</a></p>
+<h2>Adjudicated verdict ledger</h2>
+<table><tr><th>item</th><th>verdict</th><th>date</th></tr>
+<tr><td>N1</td><td>INSTRUMENT KILLED (pre-registered)</td><td>2026-07-17</td></tr>
+<tr><td>N1b</td><td>INSTRUMENT PASSED</td><td>2026-07-17</td></tr>
+<tr><td>N1c</td><td>INSTRUMENT PASSED</td><td>2026-07-19</td></tr>
+<tr><td>N2</td><td>S9: PARTIAL</td><td>2026-07-18</td></tr>
+<tr><td>N2b</td><td>S9 follow-up: REFERENCE_FLIP</td><td>2026-07-18</td></tr>
+<tr><td>N2c</td><td>S9 significance: ROBUST_SIGNIFICANCE <span class="tag sug">SUGGESTIVE — quarantined</span></td><td>2026-07-18</td></tr>
+<tr><td>N3</td><td>INSTRUMENT KILLED (S7 v1)</td><td>2026-07-18</td></tr>
+<tr><td>N3b</td><td>S7 rung 2: B_ONLY <span class="tag sug">SUGGESTIVE — quarantined</span></td><td>2026-07-18</td></tr>
+<tr><td>N3c</td><td>S7 rung 3: ORDINAL_GLYPH_STRUCTURE <span class="tag sug">SUGGESTIVE — quarantined</span></td><td>2026-07-18</td></tr>
+<tr><td>N3d</td><td>S7 rung 4: CHARACTERIZED <span class="tag sug">SUGGESTIVE — quarantined</span></td><td>2026-07-19</td></tr>
+<tr><td>N3e</td><td>S7 rung 5: SECTION_GENERAL <span class="tag sug">SUGGESTIVE — quarantined</span></td><td>2026-07-19</td></tr>
+<tr><td>N4</td><td>S5/S6 family test: FAMILY_LANGUAGE <span class="tag sug">SUGGESTIVE — quarantined</span></td><td>2026-07-19</td></tr>
+<tr><td>N5</td><td>S7-R re-implementation: REPLICATED <span class="tag sug">SUGGESTIVE — quarantined</span></td><td>2026-07-19</td></tr>
+</table>
+<p class="muted">SUGGESTIVE entries are quarantined findings awaiting further scrutiny — reported as “consistent with”, never as decodes. Full criteria, registration history, and known weaknesses: <a href="research.html">Research</a> (Phase 8).</p><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>bc53723</code>. 
+To run any test with your own parameters, clone
+<a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
+(<code>python webui/server.py</code>). All numbers reproduce at
+PYTHONHASHSEED=0.</footer></main></body></html>

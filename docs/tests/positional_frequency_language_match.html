@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>positional_frequency_language_match — VAIS</title><style>
+:root { --bg:#ffffff; --fg:#1a1a1a; --muted:#666; --line:#ddd;
+        --code:#f5f5f5; --accent:#7a4a1e; --warn:#a33; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#141414; --fg:#ddd; --muted:#999; --line:#333;
+          --code:#1e1e1e; --accent:#d9a05b; --warn:#e77; } }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--fg);
+       font:16px/1.55 Georgia, 'Times New Roman', serif; }
+nav { border-bottom:1px solid var(--line); padding:.7em 1.2em;
+      font-family: system-ui, sans-serif; font-size:.9em; }
+nav a { color:var(--accent); text-decoration:none; margin-right:1.2em; }
+main { max-width: 62em; margin: 0 auto; padding: 1.5em 1.2em 4em; }
+h1,h2,h3 { font-family: system-ui, sans-serif; line-height:1.25; }
+h1 { font-size:1.7em; } h2 { font-size:1.3em; margin-top:2em; }
+a { color: var(--accent); }
+code, pre { font-family: ui-monospace, Consolas, monospace;
+            font-size:.86em; background:var(--code); }
+code { padding:.1em .3em; border-radius:3px; }
+pre { padding: .9em; overflow-x:auto; border:1px solid var(--line);
+      border-radius:4px; line-height:1.4; }
+table { border-collapse: collapse; margin: 1em 0; font-size:.92em;
+        display:block; overflow-x:auto; }
+th, td { border:1px solid var(--line); padding:.35em .6em;
+         text-align:left; vertical-align:top; }
+th { font-family: system-ui, sans-serif; background:var(--code); }
+blockquote { border-left:3px solid var(--accent); margin:1em 0;
+             padding:.2em 1em; color:var(--muted); }
+.muted { color:var(--muted); font-size:.9em; }
+.tag { font-family: system-ui, sans-serif; font-size:.75em;
+       border:1px solid var(--line); border-radius:3px;
+       padding:.05em .45em; margin-left:.5em; }
+.tag.sug { border-color:var(--warn); color:var(--warn); }
+details summary { cursor:pointer; font-family: system-ui, sans-serif; }
+footer { border-top:1px solid var(--line); margin-top:3em;
+         padding-top:1em; font-size:.85em; color:var(--muted); }
+</style></head><body>
+<nav><a href="../index.html">VAIS</a><a href="../catalog.html">Catalog</a>
+<a href="../research.html">Research</a><a href="../reports.html">Reports</a>
+<a href="https://github.com/Vineyardcode/vais">GitHub</a></nav>
+<main><h1>positional_frequency_language_match</h1>
+<p class="muted">scripts/positional_frequency_language_match.py</p>
+<pre>Positional Frequency Matching Across Languages
+
+Instead of assuming Latin VALUES for abbreviation marks, this test asks:
+&quot;For each candidate language, what character BEST MATCHES the positional
+frequency profile of each EVA glyph?&quot;
+
+Method:
+  1. Compute VMS positional profiles: for each EVA glyph, measure
+     P(initial), P(final), P(medial), overall frequency
+  2. Compute the same profiles for each candidate language corpus
+  3. Find the optimal frequency-rank mapping: match EVA glyphs to
+     target language characters by their positional frequency ranks
+  4. Apply mapping to f1r and see which language produces the most
+     recognizable output
+
+This is NOT a decipherment — it&#x27;s a statistical compatibility test.
+The mapping is constrained only by positional frequency, not by
+any assumed sound values.</pre>
+<h2>Parameters</h2><table><tr><th>name</th><th>default</th><th>type</th></tr>
+<tr><td><code>KNOWN_GLYPHS_ORDER</code></td><td><code>[&#x27;cth&#x27;, &#x27;cfh&#x27;, &#x27;cph&#x27;, &#x27;ckh&#x27;, &#x27;ch&#x27;, &#x27;sh&#x27;, &#x27;qo&#x27;, &#x27;ai&#x27;, &#x27;ee&#x27;, &#x27;oi&#x27;, &#x27;a&#x27;, &#x27;c&#x27;, &#x27;d&#x27;, &#x27;e&#x27;, &#x27;f&#x27;, …</code></td><td>json</td></tr>
+</table>
+<h2>Golden output (PYTHONHASHSEED=0)</h2><details><summary>show</summary><pre>Loading VMS corpus...
+Processing Latin (Pliny)...
+Processing Latin (Vulgate)...
+Processing Latin (Galen)...
+Processing Italian (Cucina)...
+Processing German (Ortolf)...
+Processing German (Faust)...
+Processing French (Viandier)...
+Processing English (Cury)...
+Processing Czech...
+ cphesaiin ols cphey ytain shoshy cphodal es
+      DEC: [y]ta[n] [cph]lmau[n] bem [cph]l[y] [y]ca[n] [sh]b[sh][y] [cph]btie lm
+
+    f1r.12
+      EVA: oksho kshoy otairin oteol okan shodain sckhey daiin
+      DEC: b[k][sh]b [k][sh]b[y] bcanu[n] bclbe b[k]i[n] [sh]bta[n] m[ckh]l[y] tau[n]
+
+    f1r.13
+      EVA: shoy ckhey kodaiin cphy cphodaiils cthey sho oldain d
+      DEC: [sh]b[y] [ckh]l[y] [k]btau[n] [cph][y] [cph]btauem wl[y] [sh]b beta[n] t
+
+    f1r.14
+      EVA: dain oiin chol odaiin chodain chdy okain dn cthy kod
+      DEC: ta[n] [oi]u[n] fbe btau[n] fbta[n] ft[y] b[k]a[n] t[n] w[y] [k]bt
+
+    f1r.15
+      EVA: daiin shckhey ckeo r char shey kol chol chol kor chal
+      DEC: tau[n] [sh][ckh]l[y] j[k]lb n fin [sh]l[y] [k]be fbe fbe [k]bn fie
+
+  Matched real German (Ortolf) words:
+    cthar                → win
+    cthar                → win
+    sair                 → man
+    ols                  → bem
+    char                 → fin
+    dar                  → tin
+    dar                  → tin
+    cthal                → wie
+    dar                  → tin
+    dar                  → tin
+    cthar                → win
+
+────────────────────────────────────────────────────────────────────────────────
+ASSESSMENT
+────────────────────────────────────────────────────────────────────────────────
+
+This test matches VMS glyphs to language characters purely
+by POSITIONAL FREQUENCY — the most common word-final VMS glyph
+maps to the most common word-final character in each language,
+etc. No assumed sound values. No abbreviation meanings.
+
+If the VMS uses a simple positional substitution of a known
+language, this should produce recognizable text for the correct
+language, even without knowing the specific key.
+
+CRITICAL CAVEAT: This assumes 1-to-1 glyph-to-character mapping.
+If the encoding is verbose (1 glyph → multiple chars) or
+compressed (multiple glyphs → 1 char), this method cannot work.
+It also treats EVA digraphs (ch, sh) as single units, which
+may or may not be correct.
+
+Saved to C:\projects\vais\results\positional_frequency_language_match_positional_frequency_match.txt
+</pre></details><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>bc53723</code>. 
+To run any test with your own parameters, clone
+<a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
+(<code>python webui/server.py</code>). All numbers reproduce at
+PYTHONHASHSEED=0.</footer></main></body></html>

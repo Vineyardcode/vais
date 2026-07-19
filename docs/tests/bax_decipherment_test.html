@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>bax_decipherment_test — VAIS</title><style>
+:root { --bg:#ffffff; --fg:#1a1a1a; --muted:#666; --line:#ddd;
+        --code:#f5f5f5; --accent:#7a4a1e; --warn:#a33; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#141414; --fg:#ddd; --muted:#999; --line:#333;
+          --code:#1e1e1e; --accent:#d9a05b; --warn:#e77; } }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--fg);
+       font:16px/1.55 Georgia, 'Times New Roman', serif; }
+nav { border-bottom:1px solid var(--line); padding:.7em 1.2em;
+      font-family: system-ui, sans-serif; font-size:.9em; }
+nav a { color:var(--accent); text-decoration:none; margin-right:1.2em; }
+main { max-width: 62em; margin: 0 auto; padding: 1.5em 1.2em 4em; }
+h1,h2,h3 { font-family: system-ui, sans-serif; line-height:1.25; }
+h1 { font-size:1.7em; } h2 { font-size:1.3em; margin-top:2em; }
+a { color: var(--accent); }
+code, pre { font-family: ui-monospace, Consolas, monospace;
+            font-size:.86em; background:var(--code); }
+code { padding:.1em .3em; border-radius:3px; }
+pre { padding: .9em; overflow-x:auto; border:1px solid var(--line);
+      border-radius:4px; line-height:1.4; }
+table { border-collapse: collapse; margin: 1em 0; font-size:.92em;
+        display:block; overflow-x:auto; }
+th, td { border:1px solid var(--line); padding:.35em .6em;
+         text-align:left; vertical-align:top; }
+th { font-family: system-ui, sans-serif; background:var(--code); }
+blockquote { border-left:3px solid var(--accent); margin:1em 0;
+             padding:.2em 1em; color:var(--muted); }
+.muted { color:var(--muted); font-size:.9em; }
+.tag { font-family: system-ui, sans-serif; font-size:.75em;
+       border:1px solid var(--line); border-radius:3px;
+       padding:.05em .45em; margin-left:.5em; }
+.tag.sug { border-color:var(--warn); color:var(--warn); }
+details summary { cursor:pointer; font-family: system-ui, sans-serif; }
+footer { border-top:1px solid var(--line); margin-top:3em;
+         padding-top:1em; font-size:.85em; color:var(--muted); }
+</style></head><body>
+<nav><a href="../index.html">VAIS</a><a href="../catalog.html">Catalog</a>
+<a href="../research.html">Research</a><a href="../reports.html">Reports</a>
+<a href="https://github.com/Vineyardcode/vais">GitHub</a></nav>
+<main><h1>bax_decipherment_test</h1>
+<p class="muted">scripts/bax_decipherment_test.py</p>
+<pre>TESTING THE BAX/VOGT DECIPHERMENT PROPOSAL
+======================================================
+
+Stephen Bax (2014) proposed a partial phonetic decoding of the Voynich
+script, identifying ~14 character-sound correspondences and ~10 words,
+anchored by plant and star name identifications.
+
+Derek Vogt (2014-2016) extended this to a near-complete phonetic system
+covering all major EVA characters, validated against ~22 plant cognates
+and ~50 star labels on f68r.
+
+KEY TEST TARGET: f2r, identified as centaurea (Edith Sherwood) from
+the botanical drawing. Labels &quot;ytoail&quot; and &quot;ios.an.on&quot;.
+
+Tests:
+  A) APPLY MAPPING TO f2r — convert all words to Vogt phonetics,
+       compute edit distance to centaurea cognates in multiple languages
+  B) V/C CONSISTENCY — do Vogt&#x27;s vowels/consonants match the
+       positional profiles established across the morphology and hypothesis-testing analyses?
+  C) ALTERNATION PLAUSIBILITY — does applying the mapping and
+       removing non-phonetic markers improve V/C alternation?
+  D) DEGREES OF FREEDOM — with 20 chars → ~12 sounds, how many
+       random mappings produce equally good plant-name &quot;matches&quot;?
+  E) CORPUS-WIDE COHERENCE — apply mapping to full corpus, check
+       phonotactic self-consistency
+
+Sources:
+  - Bax (2014): &quot;A proposed partial decoding of the Voynich script&quot;
+  - Vogt (2015-2016): stephenbax.net/?p=1550 (phonetics page)
+  - Vogt find-and-replace procedure (Sept 2016): complete mapping table</pre>
+<h2>Parameters</h2><table><tr><th>name</th><th>default</th><th>type</th></tr>
+<tr><td><code>VOGT_MAP</code></td><td><code>{&#x27;cph&#x27;: &#x27;v&#x27;, &#x27;cfh&#x27;: &#x27;f&#x27;, &#x27;cth&#x27;: &#x27;J&#x27;, &#x27;ckh&#x27;: &#x27;C&#x27;, &#x27;sh&#x27;: &#x27;x&#x27;, &#x27;ch&#x27;: &#x27;h&#x27;, &#x27;p&#x27;: &#x27;b&#x27;, &#x27;f&#x27;: &#x27;p&#x27;,…</code></td><td>json</td></tr>
+<tr><td><code>VOGT_VOWELS</code></td><td><code>[&#x27;a&#x27;, &#x27;o&#x27;, &#x27;w&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>VOGT_CONSONANTS</code></td><td><code>[&#x27;C&#x27;, &#x27;J&#x27;, &#x27;R&#x27;, &#x27;S&#x27;, &#x27;b&#x27;, &#x27;f&#x27;, &#x27;g&#x27;, &#x27;h&#x27;, &#x27;k&#x27;, &#x27;n&#x27;, &#x27;p&#x27;, &#x27;r&#x27;, &#x27;s&#x27;, &#x27;t&#x27;, &#x27;v&#x27;, &#x27;x&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>VOGT_NONPHONETIC</code></td><td><code>[&#x27;.&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>EVA_VOGT_VOWELS</code></td><td><code>[&#x27;a&#x27;, &#x27;e&#x27;, &#x27;o&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>EVA_VOGT_CONSONANTS</code></td><td><code>[&#x27;d&#x27;, &#x27;f&#x27;, &#x27;k&#x27;, &#x27;l&#x27;, &#x27;m&#x27;, &#x27;p&#x27;, &#x27;r&#x27;, &#x27;s&#x27;, &#x27;t&#x27;, &#x27;y&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>EVA_VOGT_NONPHONETIC</code></td><td><code>[&#x27;i&#x27;, &#x27;n&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>EVA_VOGT_UNKNOWN</code></td><td><code>[&#x27;b&#x27;, &#x27;g&#x27;, &#x27;j&#x27;, &#x27;q&#x27;, &#x27;u&#x27;, &#x27;v&#x27;, &#x27;x&#x27;, &#x27;z&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>CENTAUREA_COGNATES</code></td><td><code>[&#x27;centaurea&#x27;, &#x27;centauree&#x27;, &#x27;centaure&#x27;, &#x27;kentauria&#x27;, &#x27;kentaurion&#x27;, &#x27;kentaurea&#x27;, &#x27;centaurium…</code></td><td>json</td></tr>
+<tr><td><code>ALL_GALLOWS</code></td><td><code>[&#x27;cth&#x27;, &#x27;ckh&#x27;, &#x27;cph&#x27;, &#x27;cfh&#x27;, &#x27;tch&#x27;, &#x27;kch&#x27;, &#x27;pch&#x27;, &#x27;fch&#x27;, &#x27;tsh&#x27;, &#x27;ksh&#x27;, &#x27;psh&#x27;, &#x27;fsh&#x27;, &#x27;t&#x27;, …</code></td><td>json</td></tr>
+<tr><td><code>N_RANDOM</code></td><td><code>1000</code></td><td>int</td></tr>
+</table>
+<h2>Golden output (PYTHONHASHSEED=0)</h2><details><summary>show</summary><pre>========================================================================
+bax_decipherment_test — TESTING THE BAX/VOGT DECIPHERMENT PROPOSAL
+========================================================================
+
+────────────────────────────────────────────────────────────────────────
+A) APPLYING VOGT MAPPING TO f2r
+────────────────────────────────────────────────────────────────────────
+
+f2r contains 83 words (EVA)
+Words: kydainy ypchol daiin otchalypchaiin ckholsy dorchorychkar sshor cthy qotaiincthey ychor chy ydychaiin aiidychtod dycphy dalschokaiin d otochor alshodaiinchol danytchaiin dan...
+
+--- Label analysis ---
+  EVA &#x27;ytoail&#x27; → full: &#x27;ngaw.s&#x27; → phonetic: &#x27;ngaws&#x27;
+    Closest centaurea cognate: &#x27;centaure&#x27; (normalized edit dist: 0.750)
+  EVA &#x27;iosanon&#x27; → full: &#x27;.aSw.a.&#x27; → phonetic: &#x27;aSwa&#x27;
+    Closest centaurea cognate: &#x27;centaura&#x27; (normalized edit dist: 0.750)
+
+--- All f2r words mapped ---
+
+  Top 10 closest f2r words to any centaurea cognate:
+    EVA &#x27;kydainy&#x27; → &#x27;kntwn&#x27; ↔ &#x27;kentaurion&#x27; (dist: 0.600)
+    EVA &#x27;ychor&#x27; → &#x27;nhar&#x27; ↔ &#x27;centaure&#x27; (dist: 0.625)
+    EVA &#x27;yor&#x27; → &#x27;nar&#x27; ↔ &#x27;centaure&#x27; (dist: 0.625)
+    EVA &#x27;kydain&#x27; → &#x27;kntw&#x27; ↔ &#x27;kentauria&#x27; (dist: 0.667)
+    EVA &#x27;ykody&#x27; → &#x27;nkatn&#x27; ↔ &#x27;qantariun&#x27; (dist: 0.667)
+    EVA &#x27;sorytoldydchol&#x27; → &#x27;Sarngastnthas&#x27; ↔ &#x27;santariya&#x27; (dist: 0.692)
+    EVA &#x27;qotaiincthey&#x27; → &#x27;?qagwJon&#x27; ↔ &#x27;kentaurion&#x27; (dist: 0.700)
+    EVA &#x27;olsheey&#x27; → &#x27;asxoon&#x27; ↔ &#x27;kentaurion&#x27; (dist: 0.700)
+    EVA &#x27;qokey&#x27; → &#x27;?qakon&#x27; ↔ &#x27;kentaurion&#x27; (dist: 0.700)
+    EVA &#x27;daiincthey&#x27; → &#x27;twJon&#x27; ↔ &#x27;kentaurion&#x27; (dist: 0.700)
+
+  BEST match: EVA &#x27;kydainy&#x27; → &#x27;kntwn&#x27; ↔ &#x27;kentaurion&#x27; (dist: 0.600)
+
+  Interpretation: normalized edit distance ranges 0.0 (identical) to 1.0 (total mismatch)
+  Values &lt; 0.3 might indicate genuine cognates; &gt; 0.5 is likely coincidence
+
+────────────────────────────────────────────────────────────────────────
+B) V/C CONSISTENCY — DO VOGT&#x27;S ASSIGNMENTS MATCH POSITIONAL PROFILES?
+────────────────────────────────────────────────────────────────────────
+
+Corpus: 39422 words
+
+  Positional profiles (start%/mid%/end%) for Vogt&#x27;s vowels vs consonants:
+  Char   Vogt  Count  Start%    Mid%    End%
+  ──── ────── ────── ─────── ─────── ───────
+     o      V  26230    33.9    61.8     4.4
+     e      V  20920     0.8    98.8     0.4
+     y      C  18511    11.0     5.0    84.0
+     h      -  18127     0.0    99.6     0.4
+     a      V  15313    14.7    84.9     0.4
+     d      C  13618    27.0    68.9     4.1
+     c      -  13398    52.1    47.9     0.0
+     i      ·  12461     0.1    99.9     0.1
+     k      C  11200    11.6    87.7     0.7
+     l      C  10939    13.6    32.6    53.8
+     r      C   7861     6.6    18.1    75.3
+     s      C   7531    61.5    24.4    14.0
+     t      C   7191    15.1    84.0     0.9
+     n      ·   6518     0.0     2.7    97.3
+     q      ?   5673    99.0     1.0     0.0
+     p      C   1710    33.6    64.7     1.7
+     m      C   1110     1.1     5.0    93.9
+     f      C    500    25.4    70.6     4.0
+     g      ?    126     9.5     7.1    83.3
+
+  Vogt vowels   (o,a,e):  mean start% = 16.5, mean end% = 1.7
+  Vogt consonants:        mean start% = 20.7, mean end% = 33.2
+
+  In natural languages, consonants tend to start words more, vowels less.
+  Difference: consonants start +4.2% more often
+
+  Our SVD groups (z=−8.2): {q}, {c,s}, {a,i}, {h,l,o,y}, {d,e,n,r}
+  Vogt vowels {o,a,e} span TWO SVD groups: {h,l,o,y} and {d,e,n,r}
+  Vogt consonants span THREE SVD groups — suggesting Vogt&#x27;s V/C split
+  does NOT align cleanly with the manuscript&#x27;s internal character classes.
+
+────────────────────────────────────────────────────────────────────────
+C) ALTERNATION — DOES MAPPING IMPROVE V/C ALTERNATION?
+────────────────────────────────────────────────────────────────────────
+
+  Mean V/C alternation rates (higher = more CVCV-like):
+    Sukhotin V/C on raw EVA:          0.6457 (n=35480)
+    Vogt V/C on raw EVA:              0.7408 (n=32668)
+    Vogt V/C on mapped (no markers):  0.7128 (n=31858)
+
+  Natural languages typically show alternation = 0.55-0.75
+  A perfect CV syllabary shows alternation ≈ 1.0
+
+────────────────────────────────────────────────────────────────────────
+D) DEGREES OF FREEDOM — HOW SPECIAL IS THE VOGT MAPPING?
+────────────────────────────────────────────────────────────────────────
+
+  EVA chars in f2r: a c d e f h i k l n o p q r s t y (17 chars)
+  Sound inventory: 17 phoneme values
+
+  Vogt mapping best edit distance to centaurea: 0.600
+
+  1000 random mappings tested:
+    Mean best distance:   0.689
+    Std:                  0.069
+    Min achieved:         0.444
+    Max achieved:         0.889
+    Vogt distance:        0.600
+    Random ≤ Vogt:        99/1000 = p=0.0990
+    → Vogt&#x27;s mapping is NOT significantly better than random
+      (9.9% of random mappings match centaurea equally well or better)
+
+  Combinatorial degrees of freedom:
+    17 distinct EVA chars × 17 possible sounds = 8.27e+20 possible mappings
+    This massive space means coincidental matches are EXPECTED
+
+────────────────────────────────────────────────────────────────────────
+E) CORPUS-WIDE COHERENCE — INTERNAL CONSISTENCY OF VOGT MAPPING
+────────────────────────────────────────────────────────────────────────
+
+  Mapped corpus: 37236 words, 163544 characters
+  Unique mapped characters: 25
+
+  Frequency distribution (mapped phonemes):
+     a (V):  25975 ( 15.9%) ███████████████████████████████
+     o (V):  20912 ( 12.8%) █████████████████████████
+     n (C):  18173 ( 11.1%) ██████████████████████
+     w (V):  14568 (  8.9%) █████████████████
+     t (C):  13557 (  8.3%) ████████████████
+     h (C):  11293 (  6.9%) █████████████
+     s (C):  10751 (  6.6%) █████████████
+     k (C):  10294 (  6.3%) ████████████
+     r (C):   7696 (  4.7%) █████████
+     g (C):   6381 (  3.9%) ███████
+     ? (?):   5896 (  3.6%) ███████
+     q (?):   5673 (  3.5%) ██████
+     x (C):   4744 (  2.9%) █████
+     S (C):   2469 (  1.5%) ███
+     b (C):   1512 (  0.9%) █
+     R (C):   1098 (  0.7%) █
+     J (C):    921 (  0.6%) █
+     C (C):    888 (  0.5%) █
+     p (C):    416 (  0.3%) 
+     v (C):    219 (  0.1%) 
+     f (C):     74 (  0.0%) 
+     c (?):     10 (  0.0%) 
+     j (?):      9 (  0.0%) 
+     u (?):      8 (  0.0%) 
+     z (?):      7 (  0.0%) 
+
+  V/C ratio: 61455/90486 = 0.68
+  Vowel %: 40.4%
+  Natural languages typically have 40-55% vowels in running text
+
+  Bigram V/C patterns (mapped text):
+    CV:  35146 ( 27.8%)
+    VC:  44128 ( 34.9%)
+    CC:  24845 ( 19.7%)
+    VV:  10378 (  8.2%)
+  Natural language: CV≈30%, VC≈25%, CC≈25%, VV≈20% (varies widely)
+
+  Conditional entropy of mapped text:
+    H(char|prev) mapped:   2.200 bits
+    H(char|prev) EVA:      1.922 bits (from root_significance_tests)
+    English:               ~3.3 bits
+    If mapping reveals real phonetics, entropy should increase
+    toward natural language levels (more combinatorial freedom)
+
+========================================================================
+bax_decipherment_test — SYNTHESIS
+========================================================================
+
+RESULTS SUMMARY:
+
+A) CENTAUREA MATCH ON f2r:
+    The Vogt mapping applied to f2r words does NOT produce a clear
+    phonetic match with any centaurea cognate. The labels &quot;ytoail&quot;
+    and &quot;iosanon&quot; map to phonetic strings that are distant from all
+    tested centaurea forms in multiple languages.
+
+B) V/C CONSISTENCY:
+    Vogt&#x27;s vowel assignments {o,a,e} and consonant assignments
+    span multiple SVD character groups, suggesting the mapping does
+    NOT respect the manuscript&#x27;s own internal character classes.
+    The positional profiles show some V/C differentiation but less
+    clean separation than expected for a natural phonetic system.
+
+C) ALTERNATION:
+    The V/C alternation rate under Vogt&#x27;s mapping can be compared
+    to the raw EVA rate and to natural language expectations.
+
+D) DEGREES OF FREEDOM:
+    The massive mapping space (10^N possible assignments) means
+    that finding plant-name &quot;matches&quot; by adjusting character-sound
+    pairs is almost guaranteed. The key question is whether the
+    Vogt mapping is statistically distinguished from random — and
+    if not, the entire approach falls to the multiple comparisons
+    problem.
+
+E) CORPUS-WIDE:
+    Applying the mapping corpus-wide produces a phoneme distribution
+    and bigram structure that can be compared to natural languages.
+
+KEY SKEPTICAL INSIGHT:
+    The Bax/Vogt approach is unfalsifiable as presented: with ~20
+    free parameters (character→sound assignments), ~14 plant IDs to
+    match against hundreds of possible cognates in dozens of languages,
+    the degrees of freedom are enormously high. Our random mapping
+    test quantifies exactly how easy it is to find spurious matches.
+
+QUANTITATIVE VERDICT:
+  Vogt mapping: best centaurea edit distance = 0.600
+  Random mappings beating Vogt: 9.9%
+  → The mapping&#x27;s centaurea match is NOT better than chance.
+  → This does NOT prove Bax/Vogt wrong (the mapping wasn&#x27;t
+    optimized for f2r alone), but it means the f2r evidence
+    alone cannot support the phonetic hypothesis.
+</pre></details><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>bc53723</code>. 
+To run any test with your own parameters, clone
+<a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
+(<code>python webui/server.py</code>). All numbers reproduce at
+PYTHONHASHSEED=0.</footer></main></body></html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>language_vs_cipher — VAIS</title><style>
+:root { --bg:#ffffff; --fg:#1a1a1a; --muted:#666; --line:#ddd;
+        --code:#f5f5f5; --accent:#7a4a1e; --warn:#a33; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#141414; --fg:#ddd; --muted:#999; --line:#333;
+          --code:#1e1e1e; --accent:#d9a05b; --warn:#e77; } }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--fg);
+       font:16px/1.55 Georgia, 'Times New Roman', serif; }
+nav { border-bottom:1px solid var(--line); padding:.7em 1.2em;
+      font-family: system-ui, sans-serif; font-size:.9em; }
+nav a { color:var(--accent); text-decoration:none; margin-right:1.2em; }
+main { max-width: 62em; margin: 0 auto; padding: 1.5em 1.2em 4em; }
+h1,h2,h3 { font-family: system-ui, sans-serif; line-height:1.25; }
+h1 { font-size:1.7em; } h2 { font-size:1.3em; margin-top:2em; }
+a { color: var(--accent); }
+code, pre { font-family: ui-monospace, Consolas, monospace;
+            font-size:.86em; background:var(--code); }
+code { padding:.1em .3em; border-radius:3px; }
+pre { padding: .9em; overflow-x:auto; border:1px solid var(--line);
+      border-radius:4px; line-height:1.4; }
+table { border-collapse: collapse; margin: 1em 0; font-size:.92em;
+        display:block; overflow-x:auto; }
+th, td { border:1px solid var(--line); padding:.35em .6em;
+         text-align:left; vertical-align:top; }
+th { font-family: system-ui, sans-serif; background:var(--code); }
+blockquote { border-left:3px solid var(--accent); margin:1em 0;
+             padding:.2em 1em; color:var(--muted); }
+.muted { color:var(--muted); font-size:.9em; }
+.tag { font-family: system-ui, sans-serif; font-size:.75em;
+       border:1px solid var(--line); border-radius:3px;
+       padding:.05em .45em; margin-left:.5em; }
+.tag.sug { border-color:var(--warn); color:var(--warn); }
+details summary { cursor:pointer; font-family: system-ui, sans-serif; }
+footer { border-top:1px solid var(--line); margin-top:3em;
+         padding-top:1em; font-size:.85em; color:var(--muted); }
+</style></head><body>
+<nav><a href="../index.html">VAIS</a><a href="../catalog.html">Catalog</a>
+<a href="../research.html">Research</a><a href="../reports.html">Reports</a>
+<a href="https://github.com/Vineyardcode/vais">GitHub</a></nav>
+<main><h1>language_vs_cipher</h1>
+<p class="muted">scripts/language_vs_cipher.py</p>
+<pre>NATURAL LANGUAGE vs. SYLLABLE CIPHER
+==================================================
+
+cipher_identification_tests narrowed to two hypotheses:
+  A) Natural language with non-European phonotactics
+  B) Syllable cipher (each VMS word = one plaintext syllable)
+
+Key insight: in natural language, within-word and between-word character
+transitions come from the SAME phonological system. In a cipher, they
+come from DIFFERENT processes (encoding rules vs. plaintext transitions).
+
+  A) WITHIN-WORD vs BETWEEN-WORD TRANSITION MATRICES
+       Compare the full C×C character transition matrices for transitions
+       occurring WITHIN words vs BETWEEN words (last char → first char).
+       High correlation → same process → natural language.
+       Low correlation → different processes → cipher.
+
+  B) CROSS-PREDICTION TEST
+       Train char bigram on within-word transitions only, evaluate on
+       between-word transitions (and vice versa). If same process,
+       cross-prediction should be nearly as good as self-prediction.
+
+  C) WORD LENGTH AUTOCORRELATION
+       In natural language, short function words alternate with long
+       content words → length correlation &gt; 0. In syllable cipher,
+       word length is encoding artifact → correlation ≈ 0.
+
+  D) HAPAX CLUSTERING
+       Natural language hapaxes are topic-specific → concentrated in
+       certain sections. Cipher hapaxes are encoding accidents →
+       uniformly distributed.
+
+  E) CONDITIONAL WORD-LENGTH ENTROPY
+       H(length_i+1 | length_i). In natural language, word length
+       carries grammatical information → conditional H should be lower
+       than marginal H. In cipher, length is about encoding → no gain.</pre>
+<h2>Parameters</h2><table><tr><th>name</th><th>default</th><th>type</th></tr>
+<tr><td><code>ALL_GALLOWS</code></td><td><code>[&#x27;cth&#x27;, &#x27;ckh&#x27;, &#x27;cph&#x27;, &#x27;cfh&#x27;, &#x27;tch&#x27;, &#x27;kch&#x27;, &#x27;pch&#x27;, &#x27;fch&#x27;, &#x27;tsh&#x27;, &#x27;ksh&#x27;, &#x27;psh&#x27;, &#x27;fsh&#x27;, &#x27;t&#x27;, …</code></td><td>json</td></tr>
+</table>
+<h2>Golden output (PYTHONHASHSEED=0)</h2><details><summary>show</summary><pre>Loading corpus...
+  35747 tokens, 3319 types, 4508 lines
+
+=================================================================
+A: WITHIN-WORD vs BETWEEN-WORD TRANSITION MATRICES
+=================================================================
+  Correlation(within-word, between-word) = 0.3343
+  Using 8 characters with &gt;=50 obs in both contexts
+  Active cells: 135 (of 176)
+
+  Per-character correlation (successor distribution within vs between):
+   Char   Within_N   Between_N     Corr        Note
+      r       1271        5060    0.768     SIMILAR
+      l       3986        5040    0.663     SIMILAR
+      o      21606        1193    0.634     SIMILAR
+      n         63        5146    0.487    MODERATE
+      e      13734         139    0.445    MODERATE
+      y       1885       12651    0.219    MODERATE
+      d      11330         427    0.216    MODERATE
+      s       4931        1075   -0.021   DIFFERENT
+
+  Mean per-character correlation: 0.426
+  Interpretation:
+    &gt; 0.5: Same process (natural language)
+    0.2-0.5: Partially overlapping (ambiguous)
+    &lt; 0.2: Different processes (cipher)
+
+  Jensen-Shannon Divergence per character:
+  Mean JSD = 0.2926
+  Most similar: r (JSD=0.1189)
+  Most different: s (JSD=0.6191)
+
+=================================================================
+B: CROSS-PREDICTION TEST
+=================================================================
+  Test within-word pairs: 54419
+  Test between-word pairs: 15685
+
+            Model   On Within   On Between   Unseen_W   Unseen_B
+      Within-word       1.838        4.393      0.1%      5.3%
+     Between-word       5.250        2.851     30.6%      0.3%
+         Combined       1.871        3.008      0.0%      0.2%
+
+  Cross-prediction analysis:
+  Within→Within:  1.838 bits/char (self)
+  Within→Between: 4.393 bits/char (cross)
+  Cross penalty:  +2.555 bits
+  Between→Between: 2.851 bits/char (self)
+  Between→Within:  5.250 bits/char (cross)
+  Cross penalty:   +2.399 bits
+
+  Average cross-prediction penalty: +2.477 bits
+  Interpretation:
+    Small penalty (&lt;0.5): Similar processes (natural language)
+    Large penalty (&gt;1.0): Different processes (cipher)
+
+=================================================================
+C: WORD LENGTH AUTOCORRELATION
+=================================================================
+  Adjacent word length pairs: 31239
+  Correlation(len_i, len_{i+1}) = 0.1197
+  Permutation null: -0.0003 ± 0.0054
+  z-score = 22.3
+  Direction: POSITIVE (adjacent lengths correlate)
+
+  Length correlation at different gaps:
+    Gap 1: r = 0.1197 (31239 pairs)
+    Gap 2: r = 0.0803 (26731 pairs)
+    Gap 3: r = 0.0776 (22451 pairs)
+    Gap 4: r = 0.0554 (18455 pairs)
+    Gap 5: r = 0.0660 (14830 pairs)
+
+  MI(prev_word_length, next_word):
+  H(next_word) = 8.481
+  H(next_word | prev_length) = 7.928
+  MI = 0.5530 bits (6.52% of H)
+
+=================================================================
+D: HAPAX CLUSTERING
+=================================================================
+  Total hapaxes: 1918 (57.8% of types)
+
+  Hapax distribution by section:
+     Section   Tokens   Types   Hapaxes   Hapax/Type   Hapax/Token
+       astro     1728     608       176       28.9%      10.185%
+         bio     6410     808       263       32.5%       4.103%
+       cosmo     1911     618       198       32.0%      10.361%
+      herbal     8259    1226       464       37.8%       5.618%
+      pharma     3960     730       166       22.7%       4.192%
+        text    10089    1525       651       42.7%       6.453%
+
+  Chi-square (hapax concentration) = 216.1 (df=5)
+  CONCENTRATED (non-uniform)
+
+  Hapax spatial distribution:
+  Mean inter-hapax gap: 2.4 lines
+  Burstiness B = 0.591
+  CLUSTERED (topic-specific)
+
+=================================================================
+E: CONDITIONAL WORD-LENGTH ENTROPY
+=================================================================
+  H(word_length) = 2.6249 bits
+  H(word_length | prev_length) = 2.5920 bits
+  MI(length_i, length_i+1) = 0.0329 bits
+  MI/H = 0.0125
+  Permutation null MI: 0.0103 ± 0.0023
+  z-score = 9.9
+  SIGNIFICANT: lengths carry order info
+
+  Most skewed length transitions (observed/expected ratio):
+     L1→L2     Obs      Exp   Ratio
+    1→1       189     63.6    2.97
+    4→0         1      9.8    0.10
+    0→3         1      7.2    0.14
+    6→9        16      9.2    1.73
+    9→6        15      9.1    1.66
+    7→7        51     31.0    1.65
+    1→8        10     20.5    0.49
+    5→0         4      7.9    0.51
+    7→8        20     14.0    1.42
+    4→9        18     31.1    0.58
+
+=================================================================
+language_vs_cipher SYNTHESIS
+=================================================================
+
+Natural Language vs. Syllable Cipher discrimination:
+
+54a: Are within-word and between-word char transitions from same process?
+54b: Can within-word model predict between-word transitions (and vice versa)?
+54c: Are adjacent word lengths correlated (natural language feature)?
+54d: Are hapaxes topic-clustered (natural language) or uniform (cipher)?
+54e: Does word length carry sequential information?
+
+language_vs_cipher complete.
+</pre></details><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>bc53723</code>. 
+To run any test with your own parameters, clone
+<a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
+(<code>python webui/server.py</code>). All numbers reproduce at
+PYTHONHASHSEED=0.</footer></main></body></html>

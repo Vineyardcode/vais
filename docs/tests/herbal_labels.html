@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>herbal_labels — VAIS</title><style>
+:root { --bg:#ffffff; --fg:#1a1a1a; --muted:#666; --line:#ddd;
+        --code:#f5f5f5; --accent:#7a4a1e; --warn:#a33; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#141414; --fg:#ddd; --muted:#999; --line:#333;
+          --code:#1e1e1e; --accent:#d9a05b; --warn:#e77; } }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--fg);
+       font:16px/1.55 Georgia, 'Times New Roman', serif; }
+nav { border-bottom:1px solid var(--line); padding:.7em 1.2em;
+      font-family: system-ui, sans-serif; font-size:.9em; }
+nav a { color:var(--accent); text-decoration:none; margin-right:1.2em; }
+main { max-width: 62em; margin: 0 auto; padding: 1.5em 1.2em 4em; }
+h1,h2,h3 { font-family: system-ui, sans-serif; line-height:1.25; }
+h1 { font-size:1.7em; } h2 { font-size:1.3em; margin-top:2em; }
+a { color: var(--accent); }
+code, pre { font-family: ui-monospace, Consolas, monospace;
+            font-size:.86em; background:var(--code); }
+code { padding:.1em .3em; border-radius:3px; }
+pre { padding: .9em; overflow-x:auto; border:1px solid var(--line);
+      border-radius:4px; line-height:1.4; }
+table { border-collapse: collapse; margin: 1em 0; font-size:.92em;
+        display:block; overflow-x:auto; }
+th, td { border:1px solid var(--line); padding:.35em .6em;
+         text-align:left; vertical-align:top; }
+th { font-family: system-ui, sans-serif; background:var(--code); }
+blockquote { border-left:3px solid var(--accent); margin:1em 0;
+             padding:.2em 1em; color:var(--muted); }
+.muted { color:var(--muted); font-size:.9em; }
+.tag { font-family: system-ui, sans-serif; font-size:.75em;
+       border:1px solid var(--line); border-radius:3px;
+       padding:.05em .45em; margin-left:.5em; }
+.tag.sug { border-color:var(--warn); color:var(--warn); }
+details summary { cursor:pointer; font-family: system-ui, sans-serif; }
+footer { border-top:1px solid var(--line); margin-top:3em;
+         padding-top:1em; font-size:.85em; color:var(--muted); }
+</style></head><body>
+<nav><a href="../index.html">VAIS</a><a href="../catalog.html">Catalog</a>
+<a href="../research.html">Research</a><a href="../reports.html">Reports</a>
+<a href="https://github.com/Vineyardcode/vais">GitHub</a></nav>
+<main><h1>herbal_labels</h1>
+<p class="muted">scripts/herbal_labels.py · baseline 0s</p>
+<pre>Herbal &amp; Pharma Label Extraction
+
+root_lexicon_rosetta&#x27;s herbal label probe returned 0 results because it searched only
+for @Lz (zodiac nymph) format. The actual label locus codes are:
+
+  @Lf = 229 labels (pharma container labels, f99-f102)
+  @Ls =  59 labels (star labels, cosmo pages)
+  @Lc =  41 labels (circle/container labels)
+  @Ln =  30 labels (nymph labels, non-zodiac)
+  @Lt =  27 labels (text labels)
+  @L0 =  21 labels (miscellaneous/unlabeled)
+  @La =   6 labels (annotation labels)
+  @Lp =   3 labels (plant labels — herbal pages)
+  @Lx =   3 labels (extra/marginal labels)
+
+This script:
+  1. Extracts ALL non-zodiac labels across all folios
+  2. Decomposes each using the full pipeline
+  3. Categorizes by section and label type
+  4. Cross-references roots against Coptic vocabulary (using expanded dict)
+  5. Analyzes pharma @Lf labels separately (largest set — 229 labels)
+  6. Compares label roots to paragraph roots (are labels a distinct vocabulary?)
+  7. Tests whether label determinatives match expected section domains</pre>
+<h2>Parameters</h2><table><tr><th>name</th><th>default</th><th>type</th></tr>
+<tr><td><code>SIMPLE_GALLOWS</code></td><td><code>[&#x27;t&#x27;, &#x27;k&#x27;, &#x27;f&#x27;, &#x27;p&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>BENCH_GALLOWS</code></td><td><code>[&#x27;cth&#x27;, &#x27;ckh&#x27;, &#x27;cph&#x27;, &#x27;cfh&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>COMPOUND_GCH</code></td><td><code>[&#x27;tch&#x27;, &#x27;kch&#x27;, &#x27;pch&#x27;, &#x27;fch&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>COMPOUND_GSH</code></td><td><code>[&#x27;tsh&#x27;, &#x27;ksh&#x27;, &#x27;psh&#x27;, &#x27;fsh&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>PREFIXES</code></td><td><code>[&#x27;qo&#x27;, &#x27;q&#x27;, &#x27;so&#x27;, &#x27;do&#x27;, &#x27;o&#x27;, &#x27;d&#x27;, &#x27;s&#x27;, &#x27;y&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>SUFFIXES</code></td><td><code>[&#x27;aiin&#x27;, &#x27;ain&#x27;, &#x27;iin&#x27;, &#x27;in&#x27;, &#x27;ar&#x27;, &#x27;or&#x27;, &#x27;al&#x27;, &#x27;ol&#x27;, &#x27;edy&#x27;, &#x27;ody&#x27;, &#x27;eedy&#x27;, &#x27;dy&#x27;, &#x27;sy&#x27;, &#x27;ey…</code></td><td>json</td></tr>
+</table>
+<h2>Golden output (PYTHONHASHSEED=0)</h2><details><summary>show</summary><pre>========================================================================
+ANALYSIS 1: LABEL INVENTORY &amp; EXTRACTION
+========================================================================
+
+  Total label words extracted: 402
+
+  Label type distribution:
+    @Lf (pharma container    ):  198 words
+    @Ls (star                ):   61 words
+    @Lc (circle/container    ):   33 words
+    @Lt (text annotation     ):   32 words
+    @Ln (nymph (non-zodiac)  ):   30 words
+    @L0 (miscellaneous       ):   27 words
+    @Lx (marginal/extra      ):    9 words
+    @La (annotation          ):    7 words
+    @Lp (plant               ):    5 words
+
+  Section distribution:
+    pharma         :  231 words
+    zodiac         :   84 words
+    bio            :   62 words
+    herbal-A       :   23 words
+    text           :    2 words
+
+========================================================================
+ANALYSIS 2: LABEL DECOMPOSITION
+========================================================================
+
+  Unique roots in labels: 187
+
+  ── Top 30 Label Roots ──
+  Root          Freq   Det Types               
+  --------------------------------------------------
+  e               20     k @Lf,@Ls,@Ln         
+  ar              20     ∅ @Lf,@Lt,@Ln         
+  ol              20     t @Lf,@Lt,@Ls         
+  o               20     k @Lf,@Ls,@Ln         
+  al              18     t @Lf,@Ln,@Lt         
+  l               15     ∅ @Lf,@Ln,@Lt         
+  or              13     k @Lf,@Ls,@Ln         
+  d               12     ∅ @Lf,@Ls,@Ln         
+  ch              11     ∅ @Lf,@Ls,@Lx         
+  a               11     k @Lt,@Lf,@Lx         
+  r                7     ∅ @Lf,@Lx,@Ln         
+  y                7     ∅ @L0,@Lf,@Ls         
+  am               6     ∅ @Lf,@Lp,@La         
+  s                5     ∅ @L0,@Lf             
+  os               4     k @Lf,@La,@Ls         
+  ed               4     t @Lt,@L0,@Lf         
+  chor             3     f @Lf,@Ls,@Lt         
+  eos              3     k @Lf,@L0             
+  h                3     ∅ @Lx,@Ls,@Lf         
+  air              3     ∅ @L0,@Lf             
+  alam             3     ∅ @Lp,@La,@Lf         
+  aram             3     ∅ @L0,@Lf,@Lc         
+  cho              3     f @Ls,@L0,@Lf         
+  eod              3     k @Ls,@Lf             
+  aro              3     ∅ @Lf,@Ls             
+  ols              2     k @Lf                 
+  och              2     k @Lf,@Ls             
+  ral              2     ∅ @Lf                 
+  che              2     ∅ @Lf                 
+  oro              2     k @Lf                 
+
+  ── Determinative Distribution in Labels ──
+    ∅    :  157 ( 39.1%)
+    k    :  111 ( 27.6%)
+    t    :  100 ( 24.9%)
+    p    :   24 (  6.0%)
+    f    :   10 (  2.5%)
+
+  ── Suffix Distribution in Labels ──
+    ∅       :  143 ( 35.6%)
+    y       :   96 ( 23.9%)
+    dy      :   26 (  6.5%)
+    ol      :   25 (  6.2%)
+    ar      :   19 (  4.7%)
+    or      :   19 (  4.7%)
+    al      :   19 (  4.7%)
+    ody     :   12 (  3.0%)
+    ey      :    9 (  2.2%)
+    iin     :    7 (  1.7%)
+
+========================================================================
+ANALYSIS 3: PHARMA CONTAINER LABELS (@Lf) DEEP-DIVE
+========================================================================
+
+  Total @Lf labels: 198
+  Unique roots: 111
+
+  By folio:
+    f100r: 17 labels
+    f100v: 14 labels
+    f101v: 18 labels
+    f102r1: 1 labels
+    f102r2: 2 labels
+    f102v1: 8 labels
+    f102v2: 17 labels
+    f88r: 13 labels
+    f88v: 10 labels
+    f89r1: 12 labels
+    f89r2: 17 labels
+    f89v1: 7 labels
+    f89v2: 12 labels
+    f99r: 30 labels
+    f99v: 20 labels
+
+  ── Top 25 Pharma Label Roots ──
+  Root          Freq   Det    Pf       Sf Sample                        
+  ----------------------------------------------------------------------
+  ar              15     ∅     o        ∅ sar, ctharal, otarar          
+  ol              13     t     o        ∅ ytchol, otol, otoly           
+  e                9     k     o       or otear, oteol, okcheor         
+  o                8     k     o        y okody, opchy, okockhy         
+  or               7     t     o        ∅ opchor, dokor, otory          
+  l                7     ∅     o       sy solsy, olkor, doly            
+  al               7     t     o       sy dalsy, otaldy, ytal           
+  ch               6     ∅     ∅       or dchdy, chor, chol             
+  r                5     ∅     o       ol orol, orar, oror              
+  am               4     ∅    so        ∅ sofam, am, okam               
+  d                4     ∅     y        y ykchdy, odor, dy              
+  a                3     k     o      iin okaiin, okaiin, ofakal        
+  eos              2     k     o        ∅ okeeos, okeos                 
+  ols              2     k     o        ∅ okols, otolsar                
+  y                2     k     d       al dykchal, y                    
+  ral              2     ∅    so        y soraly, ralol                 
+  che              2     ∅     ∅       or cheor, cheody                 
+  oro              2     k     o       ey okoroeey, opchoroiin          
+  s                2     ∅     o      ain osain, osal                   
+  os               2     ∅     ∅        ∅ os, okos                      
+  cheo             2     t     ∅        y cheocthy, cheotchy            
+  ldam             2     ∅     o        ∅ oldam, doldam                 
+  aro              2     ∅     ∅        ∅ aro, oaro                     
+  chosarosh        1     ∅     ∅       ol chosaroshol                   
+  chor             1     f    so        y sochorcfhy                    
+
+  ── Pharma Determinatives ──
+    ∅    :   82 ( 41.4%)
+    k    :   49 ( 24.7%)
+    t    :   47 ( 23.7%)
+    p    :   16 (  8.1%)
+    f    :    4 (  2.0%)
+
+========================================================================
+ANALYSIS 4: LABEL vs PARAGRAPH VOCABULARY
+========================================================================
+
+  Paragraph unique roots: 1511
+  Label unique roots: 187
+
+  Overlap (in both): 95
+  Label-exclusive roots: 92
+  Paragraph-exclusive (freq≥3): 304
+
+  Label overlap ratio: 50.8% of label roots also in paragraphs
+
+  ── Label-Exclusive Roots (potential names/terms) ──
+    oro             freq=  2  f102v2@Lf, f89r2@Lf
+    dor             freq=  2  f88v@Lf, f89r2@Lc
+    yda             freq=  1  f88r@Lf
+    asold           freq=  1  f83r@Lt
+    old             freq=  1  f99v@Lc
+    osh             freq=  1  f68r2@Ls
+    lcheom          freq=  1  f100r@Lf
+    oral            freq=  1  f89v1@Lc
+    arolal          freq=  1  f99v@Lc
+    ydar            freq=  1  f88v@Lf
+    eon             freq=  1  f17r@Lx
+    ldarod          freq=  1  f102r2@Lf
+    ora             freq=  1  f88v@Lf
+    ao              freq=  1  f100r@Lf
+    aarod           freq=  1  f102r1@Lc
+    cheye           freq=  1  f99r@Lf
+    arairdl         freq=  1  f57v@L0
+    aloiinshe       freq=  1  f89r2@Lf
+    olal            freq=  1  f102r1@Lc
+    loral           freq=  1  f102v1@Lf
+    choar           freq=  1  f100r@Lf
+    odarag          freq=  1  f57v@L0
+    laran           freq=  1  f101v@Lf
+    aiisal          freq=  1  f102v1@Lf
+    ararchod        freq=  1  f89r1@Lf
+    arem            freq=  1  f89r2@Lf
+    choia           freq=  1  f99r@Lf
+    olar            freq=  1  f89r2@Lf
+    ydarar          freq=  1  f89r1@Lf
+    rald            freq=  1  f88r@Lf
+
+========================================================================
+ANALYSIS 5: COPTIC VOCABULARY vs LABEL ROOTS
+========================================================================
+
+  Label roots with Coptic matches: 80 / 187
+
+  ── Top Coptic Matches for Label Roots ──
+  Score Type         VRoot        Coptic       Meaning              Domain        Freq
+  --------------------------------------------------------------------------------
+   1.00 EXACT        al           al           stone/rock           material        18
+   1.00 EXACT        he           he           fall/occur           action           2
+   0.90 SKELETON-EXACT ar           ro           mouth                medical         20
+   0.90 SKELETON-EXACT ol           al           stone/rock           material        20
+   0.90 SKELETON-EXACT l            al           stone/rock           material        15
+   0.90 SKELETON-EXACT or           ro           mouth                medical         13
+   0.90 SKELETON-EXACT ch           ouche        night                astronomical    11
+   0.90 SKELETON-EXACT r            ro           mouth                medical          7
+   0.90 SKELETON-EXACT am           moou         water                element          6
+   0.90 SKELETON-EXACT s            souo         wheat                botanical        5
+   0.90 SKELETON-EXACT os           souo         wheat                botanical        4
+   0.90 SKELETON-EXACT eos          souo         wheat                botanical        3
+   0.90 SKELETON-EXACT h            houo         more/excess          medical          3
+   0.90 SKELETON-EXACT air          ro           mouth                medical          3
+   0.90 SKELETON-EXACT cho          ouche        night                astronomical     3
+   0.90 SKELETON-EXACT aro          ro           mouth                medical          3
+   0.90 SKELETON-EXACT ols          las          tongue               medical          2
+   0.90 SKELETON-EXACT och          ouche        night                astronomical     2
+   0.90 SKELETON-EXACT che          ouche        night                astronomical     2
+   0.90 SKELETON-EXACT oro          ro           mouth                medical          2
+   0.90 SKELETON-EXACT eor          ro           mouth                medical          2
+   0.90 SKELETON-EXACT an           ouoein       light                astronomical     2
+   0.90 SKELETON-EXACT arar         rro          grow/sprout          botanical        2
+   0.90 SKELETON-EXACT alo          al           stone/rock           material         2
+   0.90 SKELETON-EXACT ech          ouche        night                astronomical     2
+   0.90 SKELETON-EXACT aiino        ouoein       light                astronomical     2
+   0.90 SKELETON-EXACT sh           she          wood/tree            botanical        2
+   0.90 SKELETON-EXACT cheo         ouche        night                astronomical     2
+   0.90 SKELETON-EXACT eol          al           stone/rock           material         2
+   0.90 SKELETON-EXACT raro         rro          grow/sprout          botanical        1
+
+  ── Pharma Label × Coptic (score ≥ 0.75) ──
+    1.00  al           ↔ al           (stone/rock) [material]
+    1.00  he           ↔ he           (fall/occur) [action]
+    0.90  ar           ↔ ro           (mouth) [medical]
+    0.90  raro         ↔ rro          (grow/sprout) [botanical]
+    0.90  sam          ↔ sim          (herb/grass) [botanical]
+    0.90  am           ↔ moou         (water) [element]
+    0.90  eos          ↔ souo         (wheat) [botanical]
+    0.90  ho           ↔ houo         (more/excess) [medical]
+    0.90  r            ↔ ro           (mouth) [medical]
+    0.90  ols          ↔ las          (tongue) [medical]
+    0.90  or           ↔ ro           (mouth) [medical]
+    0.90  l            ↔ al           (stone/rock) [material]
+    0.90  och          ↔ ouche        (night) [astronomical]
+    0.90  ch           ↔ ouche        (night) [astronomical]
+    0.90  ol           ↔ al           (stone/rock) [material]
+    0.90  chos         ↔ choeis       (lord) [social]
+    0.90  rae          ↔ ro           (mouth) [medical]
+    0.90  lar          ↔ olor         (grape cluster) [botanical]
+    0.90  ach          ↔ ouche        (night) [astronomical]
+    0.90  che          ↔ ouche        (night) [astronomical]
+
+========================================================================
+ANALYSIS 6: DETERMINATIVE DOMAIN CONSISTENCY IN LABELS
+========================================================================
+
+  ── Determinative × Label Type ──
+  Type               t       k       f       p       ∅   Total
+  -------------------------------------------------------
+  @L0 misc       18.5%    7.4%    3.7%    7.4%   63.0%      27
+  @La annot      28.6%   14.3%    0.0%    0.0%   57.1%       7
+  @Lc circle     18.2%   48.5%    3.0%    9.1%   21.2%      33
+  @Lf pharma     23.7%   24.7%    2.0%    8.1%   41.4%     198
+  @Ln nymph      20.0%   50.0%    0.0%    0.0%   30.0%      30
+  @Lp plant      40.0%   20.0%    0.0%    0.0%   40.0%       5
+  @Ls star       32.8%   24.6%    4.9%    3.3%   34.4%      61
+  @Lt text       28.1%   34.4%    3.1%    3.1%   31.2%      32
+  @Lx margin     33.3%   11.1%    0.0%    0.0%   55.6%       9
+
+========================================================================
+ANALYSIS 7: SAMPLE FULL DECOMPOSITIONS
+========================================================================
+
+  ── @L0 (misc) — 27 words, sample: ──
+    ios                  → det=∅  pf=∅     root=ios           sf=∅
+    an                   → det=∅  pf=∅     root=an            sf=∅
+    on                   → det=∅  pf=∅     root=on            sf=∅
+    f                    → det=f  pf=∅     root=              sf=∅
+    dairal               → det=∅  pf=d     root=air           sf=al
+    otodarag             → det=t  pf=o     root=odarag        sf=∅
+    oparairdly           → det=p  pf=o     root=arairdl       sf=y
+    olkeedal             → det=k  pf=o     root=led           sf=al
+
+  ── @La (annot) — 7 words, sample: ──
+    otchdy               → det=t  pf=o     root=d             sf=y
+    otararain            → det=t  pf=o     root=arar          sf=ain
+    soaiin               → det=∅  pf=so    root=a             sf=iin
+    dalam                → det=∅  pf=d     root=alam          sf=∅
+    okchos               → det=k  pf=o     root=os            sf=∅
+    am                   → det=∅  pf=∅     root=am            sf=∅
+    oalcheol             → det=∅  pf=o     root=alche         sf=ol
+
+  ── @Lc (circle) — 33 words, sample: ──
+    daarod               → det=∅  pf=d     root=aarod         sf=∅
+    okolaly              → det=k  pf=o     root=olal          sf=y
+    ddardsh              → det=∅  pf=d     root=dardsh        sf=∅
+    kodaiig              → det=k  pf=o     root=daiig         sf=∅
+    loeekadag            → det=k  pf=∅     root=loeadag       sf=∅
+    keoraiiin            → det=k  pf=∅     root=eorai         sf=iin
+    porshols             → det=p  pf=o     root=rshols        sf=∅
+    okolky               → det=k  pf=o     root=ol            sf=y
+
+  ── @Lf (pharma) — 198 words, sample: ──
+    chosaroshol          → det=∅  pf=∅     root=chosarosh     sf=ol
+    sochorcfhy           → det=f  pf=so    root=chor          sf=y
+    otear                → det=t  pf=o     root=e             sf=ar
+    chofary              → det=f  pf=∅     root=choar         sf=y
+    sar                  → det=∅  pf=s     root=ar            sf=∅
+    oraro                → det=∅  pf=o     root=raro          sf=∅
+    chalsain             → det=∅  pf=∅     root=chals         sf=ain
+    soity                → det=t  pf=so    root=i             sf=y
+
+  ── @Ln (nymph) — 30 words, sample: ──
+    okshy                → det=k  pf=∅     root=o             sf=y
+    dokal                → det=k  pf=do    root=al            sf=∅
+    daldy                → det=∅  pf=d     root=al            sf=dy
+    dalkar               → det=k  pf=d     root=al            sf=ar
+    dly                  → det=∅  pf=d     root=l             sf=y
+    oty                  → det=t  pf=∅     root=o             sf=y
+    dary                 → det=∅  pf=d     root=ar            sf=y
+    daldy                → det=∅  pf=d     root=al            sf=dy
+
+  ── @Lp (plant) — 5 words, sample: ──
+    ytoail               → det=t  pf=y     root=oail          sf=∅
+    keeredal             → det=k  pf=∅     root=ered          sf=al
+    otaim                → det=t  pf=o     root=aim           sf=∅
+    dam                  → det=∅  pf=d     root=am            sf=∅
+    alam                 → det=∅  pf=∅     root=alam          sf=∅
+
+  ── @Ls (star) — 61 words, sample: ──
+    qotoear              → det=t  pf=qo    root=oe            sf=ar
+    okodaly              → det=k  pf=o     root=odal          sf=y
+    odchecthy            → det=t  pf=o     root=dch           sf=ey
+    otcheody             → det=t  pf=o     root=e             sf=ody
+    okoaly               → det=k  pf=o     root=oal           sf=y
+    chocfhy              → det=f  pf=∅     root=cho           sf=y
+    octhey               → det=t  pf=o     root=e             sf=y
+    otshey               → det=t  pf=o     root=e             sf=y
+
+  ── @Lt (text) — 32 words, sample: ──
+    otal                 → det=t  pf=o     root=al            sf=∅
+    opal                 → det=p  pf=o     root=al            sf=∅
+    otolaiin             → det=t  pf=o     root=ol            sf=aiin
+    o                    → det=∅  pf=∅     root=o             sf=∅
+    okain                → det=k  pf=o     root=a             sf=in
+    y                    → det=∅  pf=∅     root=y             sf=∅
+    kal                  → det=k  pf=∅     root=al            sf=∅
+    otolor               → det=t  pf=o     root=ol            sf=or
+
+  ── @Lx (margin) — 9 words, sample: ──
+    oror                 → det=∅  pf=o     root=r             sf=or
+    sheey                → det=∅  pf=s     root=h             sf=ey
+    oteeeon              → det=t  pf=o     root=eon           sf=∅
+    oiil                 → det=∅  pf=o     root=iil           sf=∅
+    otcheo               → det=t  pf=o     root=eo            sf=∅
+    daiin                → det=∅  pf=d     root=a             sf=iin
+    chty                 → det=t  pf=∅     root=ch            sf=y
+    ykees                → det=k  pf=y     root=es            sf=∅
+
+========================================================================
+SYNTHESIS
+========================================================================
+
+  ┌──────────────────────────────────────────────────────────────────────┐
+  │  LABEL ANALYSIS SUMMARY                                             │
+  ├──────────────────────────────────────────────────────────────────────┤
+  │                                                                      │
+  │  Total label words:  402                                         │
+  │  Unique label roots:  187                                        │
+  │  Label-exclusive roots:   92 (not in paragraph text)           │
+  │  Coptic matches:   80 /  187 roots                              │
+  │  Pharma Coptic matches:   53 (score ≥ 0.75)                    │
+  │  Overlap with paragraphs: 51%                                 │
+  │                                                                      │
+  │  KEY QUESTIONS ANSWERED:                                             │
+  │  1. Labels use SAME morphological system as paragraph text           │
+  │  2. Pharma labels are the largest label corpus (229 @Lf)             │
+  │  3. Label-exclusive roots may encode proper names / identifiers      │
+  │                                                                      │
+  └──────────────────────────────────────────────────────────────────────┘
+
+Results saved to results/herbal_label_results.json
+</pre></details><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>bc53723</code>. 
+To run any test with your own parameters, clone
+<a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
+(<code>python webui/server.py</code>). All numbers reproduce at
+PYTHONHASHSEED=0.</footer></main></body></html>

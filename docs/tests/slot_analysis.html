@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>slot_analysis — VAIS</title><style>
+:root { --bg:#ffffff; --fg:#1a1a1a; --muted:#666; --line:#ddd;
+        --code:#f5f5f5; --accent:#7a4a1e; --warn:#a33; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#141414; --fg:#ddd; --muted:#999; --line:#333;
+          --code:#1e1e1e; --accent:#d9a05b; --warn:#e77; } }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--fg);
+       font:16px/1.55 Georgia, 'Times New Roman', serif; }
+nav { border-bottom:1px solid var(--line); padding:.7em 1.2em;
+      font-family: system-ui, sans-serif; font-size:.9em; }
+nav a { color:var(--accent); text-decoration:none; margin-right:1.2em; }
+main { max-width: 62em; margin: 0 auto; padding: 1.5em 1.2em 4em; }
+h1,h2,h3 { font-family: system-ui, sans-serif; line-height:1.25; }
+h1 { font-size:1.7em; } h2 { font-size:1.3em; margin-top:2em; }
+a { color: var(--accent); }
+code, pre { font-family: ui-monospace, Consolas, monospace;
+            font-size:.86em; background:var(--code); }
+code { padding:.1em .3em; border-radius:3px; }
+pre { padding: .9em; overflow-x:auto; border:1px solid var(--line);
+      border-radius:4px; line-height:1.4; }
+table { border-collapse: collapse; margin: 1em 0; font-size:.92em;
+        display:block; overflow-x:auto; }
+th, td { border:1px solid var(--line); padding:.35em .6em;
+         text-align:left; vertical-align:top; }
+th { font-family: system-ui, sans-serif; background:var(--code); }
+blockquote { border-left:3px solid var(--accent); margin:1em 0;
+             padding:.2em 1em; color:var(--muted); }
+.muted { color:var(--muted); font-size:.9em; }
+.tag { font-family: system-ui, sans-serif; font-size:.75em;
+       border:1px solid var(--line); border-radius:3px;
+       padding:.05em .45em; margin-left:.5em; }
+.tag.sug { border-color:var(--warn); color:var(--warn); }
+details summary { cursor:pointer; font-family: system-ui, sans-serif; }
+footer { border-top:1px solid var(--line); margin-top:3em;
+         padding-top:1em; font-size:.85em; color:var(--muted); }
+</style></head><body>
+<nav><a href="../index.html">VAIS</a><a href="../catalog.html">Catalog</a>
+<a href="../research.html">Research</a><a href="../reports.html">Reports</a>
+<a href="https://github.com/Vineyardcode/vais">GitHub</a></nav>
+<main><h1>slot_analysis</h1>
+<p class="muted">scripts/slot_analysis.py · baseline 1s</p>
+<pre>Slot-Based Morphological Analysis
+
+Based on the Zattera glyph-slot system, this decomposes every Voynich word
+into its positional slot components (prefix / root / body / suffix / terminal)
+and then runs distributional, paradigmatic, and entropy analyses to test
+the prefix-root-suffix morphological theory.
+
+Slot Map (Zattera):
+  0: q, d, s          (initial consonant — PREFIX)
+  1: y, o             (initial glide — PREFIX)
+  2: l, r             (liquid — PREFIX)
+  3: f, p, k, t       (gallows — ROOT onset)
+  4: ch, sh, ckh, cth (compound gallows — ROOT onset)
+  5: e, ee, eee       (bench — ROOT body)
+  6: d, s             (mid-consonant — ROOT body)
+  7: a, o             (vowel — ROOT body)
+  8:                   (rare / implied)
+  9: i, ii, iii       (i-series — SUFFIX)
+ 10: d, l, n, in, iin, m, r  (final — TERMINAL)
+ 11: y                (terminal — TERMINAL)</pre>
+<h2>Parameters</h2><table><tr><th>name</th><th>default</th><th>type</th></tr>
+<tr><td><code>SLOT_TOKENS</code></td><td><code>{0: [&#x27;q&#x27;, &#x27;d&#x27;, &#x27;s&#x27;], 1: [&#x27;y&#x27;, &#x27;o&#x27;], 2: [&#x27;l&#x27;, &#x27;r&#x27;], 3: [&#x27;f&#x27;, &#x27;p&#x27;, &#x27;k&#x27;, &#x27;t&#x27;], 4: [&#x27;ckh&#x27;, &#x27;ct…</code></td><td>json</td></tr>
+<tr><td><code>ZONE_PREFIX</code></td><td><code>[0, 1, 2]</code></td><td>json</td></tr>
+<tr><td><code>ZONE_ROOT</code></td><td><code>[3, 4, 5, 6, 7]</code></td><td>json</td></tr>
+<tr><td><code>ZONE_SUFFIX</code></td><td><code>[9, 10, 11]</code></td><td>json</td></tr>
+<tr><td><code>ZONE_NAMES</code></td><td><code>{0: &#x27;prefix.initial&#x27;, 1: &#x27;prefix.glide&#x27;, 2: &#x27;prefix.liquid&#x27;, 3: &#x27;root.gallows&#x27;, 4: &#x27;root.c…</code></td><td>json</td></tr>
+</table>
+<h2>Golden output (PYTHONHASHSEED=0)</h2><details><summary>show</summary><pre>================================================================================
+VOYNICH MANUSCRIPT — SLOT-BASED MORPHOLOGICAL ANALYSIS
+Testing: Prefix–Root–Suffix Agglutinative Structure (Zattera Slots)
+================================================================================
+
+[1] EXTRACTING WORDS FROM ALL FOLIOS...
+   Folios analyzed: 200
+   Total word tokens: 38,732
+   Unique word types: 8,276
+   Sections: astro(17,904), bio(6,152), herbal(11,005), other(350), pharma(2,465), text(856)
+   Languages: ?(3,175), A(11,145), B(24,412)
+
+[2] DECOMPOSING WORDS INTO ZATTERA SLOTS...
+   Fully parsed: 2962/8276 (35.8%)
+   Partial parse (remainder): 5314/8276 (64.2%)
+   Most common unparsed remainders:
+     &#x27;s&#x27;: 193
+     &#x27;aiin&#x27;: 143
+     &#x27;ar&#x27;: 115
+     &#x27;dy&#x27;: 110
+     &#x27;al&#x27;: 94
+     &#x27;chy&#x27;: 88
+     &#x27;ky&#x27;: 71
+     &#x27;ol&#x27;: 71
+     &#x27;or&#x27;: 66
+     &#x27;chey&#x27;: 64
+     &#x27;g&#x27;: 62
+     &#x27;am&#x27;: 61
+     &#x27;ain&#x27;: 54
+     &#x27;d&#x27;: 46
+     &#x27;o&#x27;: 45
+
+[3] SLOT-LEVEL FREQUENCY ANALYSIS
+    (How often each glyph appears in each slot position)
+
+  Slot   Zone                  Fill%   Entropy  Distribution
+  ────── ──────────────────── ──────  ────────  ────────────────────────────────────────
+  0      prefix.initial        35.5%    1.561 b  q:5697, s:4370, d:3676
+  1      prefix.glide          44.5%    0.542 b  o:15107, y:2146
+  2      prefix.liquid         12.5%    0.816 b  l:3626, r:1230
+  3      root.gallows          40.9%    1.408 b  k:8755, t:5500, p:1287, f:310
+  4      root.compound         32.0%    0.979 b  ch:10279, sh:1013, cth:588, ckh:330, cph:150, cfh:43, sch:7
+  5      root.bench            30.8%    1.081 b  e:7835, ee:3736, eee:376
+  6      root.mid              16.8%    0.473 b  d:5839, s:658
+  7      root.vowel            54.2%    0.969 b  a:12650, o:8331
+  9      suffix.i-series       16.3%    1.109 b  ii:3882, i:2270, iii:180
+  10     suffix.final          48.2%    2.052 b  l:5620, n:5401, r:5247, d:1628, m:778, in:1
+  11     suffix.terminal       28.0%    0.000 b  y:10835
+
+[4] MORPHOLOGICAL ZONE ANALYSIS
+    (Prefix / Root / Suffix decomposition)
+
+  PREFIX
+    Unique forms: 27
+    Total tokens: 26,023
+    Entropy: 3.137 bits
+    Top 20:
+      o                6,466  ( 24.8%)
+      qo               5,286  ( 20.3%)
+      s                3,984  ( 15.3%)
+      d                2,940  ( 11.3%)
+      y                1,740  (  6.7%)
+      ol               1,718  (  6.6%)
+      l                1,309  (  5.0%)
+      or                 667  (  2.6%)
+      r                  371  (  1.4%)
+      dy                 344  (  1.3%)
+      qol                250  (  1.0%)
+      dol                167  (  0.6%)
+      so                 136  (  0.5%)
+      sol                130  (  0.5%)
+      q                  122  (  0.5%)
+      do                  98  (  0.4%)
+      dor                 83  (  0.3%)
+      sor                 76  (  0.3%)
+      sy                  42  (  0.2%)
+      dl                  41  (  0.2%)
+
+  ROOT
+    Unique forms: 336
+    Total tokens: 32,998
+    Entropy: 5.642 bits
+    Top 20:
+      a                5,907  ( 17.9%)
+      ka               2,804  (  8.5%)
+      cho              1,961  (  5.9%)
+      ta               1,580  (  4.8%)
+      ch               1,077  (  3.3%)
+      che              1,004  (  3.0%)
+      cheo               892  (  2.7%)
+      ched               842  (  2.6%)
+      kee                762  (  2.3%)
+      ko                 706  (  2.1%)
+      to                 695  (  2.1%)
+      keed               650  (  2.0%)
+      ked                550  (  1.7%)
+      keo                546  (  1.7%)
+      o                  536  (  1.6%)
+      k                  461  (  1.4%)
+      da                 399  (  1.2%)
+      ted                361  (  1.1%)
+      t                  354  (  1.1%)
+      chee               350  (  1.1%)
+
+  SUFFIX
+    Unique forms: 43
+    Total tokens: 28,215
+    Entropy: 2.891 bits
+    Top 20:
+      y                9,347  ( 33.1%)
+      l                5,244  ( 18.6%)
+      r                4,359  ( 15.4%)
+      iin              3,641  ( 12.9%)
+      in               1,477  (  5.2%)
+      dy                 912  (  3.2%)
+      m                  720  (  2.6%)
+      d                  697  (  2.5%)
+      ir                 551  (  2.0%)
+      ly                 330  (  1.2%)
+      ry                 170  (  0.6%)
+      iiin               161  (  0.6%)
+      iir                149  (  0.5%)
+      i                  138  (  0.5%)
+      n                   95  (  0.3%)
+      ii                  43  (  0.2%)
+      im                  40  (  0.1%)
+      il                  28  (  0.1%)
+      iiny                16  (  0.1%)
+      iry                 14  (  0.0%)
+
+
+[5] PARADIGM DISCOVERY
+    (Word groups differing in exactly one slot → reveals grammar)
+
+  [root.compound=___] 7:o
+    → ch:209, cth:11, cph:9, ckh:6, cfh:1  (total: 236)
+
+  7:a [suffix.final=___]
+    → l:110, r:65, m:11, d:8, n:3  (total: 197)
+
+  0:d 7:a [suffix.final=___]
+    → l:68, r:53, m:8, n:3, d:2  (total: 134)
+
+  [root.compound=___] 5:e
+    → ch:126, cph:2, cfh:1, ckh:1, cth:1  (total: 131)
+
+  4:ch 7:o [suffix.final=___]
+    → l:67, d:25, r:21, m:1, n:1  (total: 115)
+
+  [root.compound=___] 7:o 10:l
+    → ch:67, cth:8, cph:4, cfh:3, ckh:3  (total: 85)
+
+  [root.compound=___] 5:e 7:o
+    → ch:74, ckh:3, cph:3, cfh:2, cth:2  (total: 84)
+
+  1:o 3:k 7:a [suffix.final=___]
+    → l:32, r:13, d:1, m:1, n:1  (total: 48)
+
+  [root.compound=___] 11:y
+    → ch:30, cth:8, ckh:4, cph:2, cfh:1  (total: 45)
+
+  [root.compound=___] 7:o 10:d
+    → ch:25, cth:9, cph:4, cfh:1, ckh:1  (total: 40)
+
+  0:d 7:a 9:i [suffix.final=___]
+    → r:17, n:16, m:3, l:2, d:1  (total: 39)
+
+  0:d 7:a 9:ii [suffix.final=___]
+    → n:26, l:3, r:3, d:1, m:1  (total: 34)
+
+  4:ch 7:a [suffix.final=___]
+    → l:19, r:9, n:2, d:1, m:1  (total: 32)
+
+  3:t 7:a [suffix.final=___]
+    → r:14, l:12, d:2, m:2, n:1  (total: 31)
+
+  [root.compound=___] 5:e 7:o 10:l
+    → ch:24, cfh:1, ckh:1, cph:1, cth:1  (total: 28)
+
+  [root.compound=___] 5:e 11:y
+    → ch:18, cth:5, cph:2, cfh:1, ckh:1  (total: 27)
+
+  7:a 9:ii [suffix.final=___]
+    → n:11, r:7, l:2, d:1, m:1  (total: 22)
+
+  [root.compound=___] 7:a 10:r
+    → ch:9, cth:3, cph:2, cfh:1, ckh:1  (total: 16)
+
+  4:ch 5:e 7:a [suffix.final=___]
+    → l:7, r:5, m:2, d:1, n:1  (total: 16)
+
+  0:d 7:a [suffix.final=___] 11:y
+    → l:4, r:3, m:2, d:1, n:1  (total: 11)
+
+  1:o [root.compound=___] 7:o
+    → ch:5, ckh:2, cth:2, sch:1, sh:1  (total: 11)
+
+  [root.compound=___] 7:a 9:ii 10:n
+    → cth:3, ch:2, cfh:1, ckh:1, cph:1  (total: 8)
+
+  [root.compound=___] 5:e 7:o 10:d 11:y
+    → ch:4, cfh:1, ckh:1, cph:1, cth:1  (total: 8)
+
+  [root.compound=___] 5:ee 11:y
+    → ch:3, cfh:1, ckh:1, cph:1, cth:1  (total: 7)
+
+  1:o [root.compound=___] 7:o 10:r
+    → cfh:1, ch:1, cph:1, cth:1, sh:1  (total: 5)
+
+  1:o [root.compound=___] 5:e 6:d 11:y
+    → ch:1, ckh:1, cph:1, cth:1, sh:1  (total: 5)
+
+  1:o [root.compound=___] 5:e 11:y
+    → ch:1, ckh:1, cph:1, cth:1, sh:1  (total: 5)
+
+  0:q 1:o [root.compound=___] 5:e 11:y
+    → cfh:1, ch:1, ckh:1, cph:1, cth:1  (total: 5)
+
+  1:y 3:k 4:ch 7:o [suffix.final=___]
+    → d:1, l:1, m:1, n:1, r:1  (total: 5)
+
+  [root.compound=___]
+    → ch:210, ckh:5, cth:5, cph:2  (total: 222)
+
+  Total paradigms found: 1586
+  (Showing top 30)
+
+[6] CROSS-SECTION PREFIX/SUFFIX COMPARISON
+    (Do different sections use different grammatical forms?)
+
+  PREFIX distribution by manuscript section:
+                        astro       bio    herbal     other    pharma      text
+    ───────────────────────────────────────────────────────────────────────────
+    d                    8.3%      7.9%     18.4%      6.5%     15.8%     10.5%
+    dol                  0.2%      0.9%      1.0%      1.2%      1.6%      0.8%
+    dy                   0.6%      1.3%      2.6%      1.9%      1.3%      0.8%
+    l                    6.8%      6.6%      1.5%      0.4%      1.1%      8.4%
+    o                   30.8%     14.0%     22.4%     46.2%     24.1%     15.6%
+    ol                   5.8%     11.8%      4.2%      8.5%      6.4%      6.3%
+    or                   2.6%      2.0%      2.5%      3.5%      4.5%      1.3%
+    qo                  20.3%     27.2%     16.3%     13.1%     16.4%     21.9%
+    qol                  0.4%      3.6%      0.2%      0.0%      0.3%      2.7%
+    r                    1.7%      2.2%      0.4%      0.0%      0.8%      1.9%
+    s                   13.5%     16.8%     17.2%      7.3%     14.7%     24.1%
+    so                   0.4%      0.3%      0.7%      1.2%      1.3%      0.2%
+    y                    7.0%      2.2%      9.4%      8.8%      7.8%      3.2%
+
+  SUFFIX distribution by manuscript section:
+                        astro       bio    herbal     other    pharma      text
+    ───────────────────────────────────────────────────────────────────────────
+    d                    2.6%      0.1%      3.7%      2.3%      2.9%      1.0%
+    dy                   3.4%      0.2%      3.7%      6.8%      6.5%      4.3%
+    iiin                 0.6%      0.5%      0.5%      0.8%      0.6%      0.2%
+    iin                 13.5%      8.2%     15.1%      9.5%     12.6%      7.3%
+    in                   5.4%      9.1%      3.3%      0.8%      2.1%      9.3%
+    ir                   2.8%      0.6%      1.3%      1.9%      1.7%      1.6%
+    l                   17.4%     18.0%     18.4%     29.7%     28.0%     18.7%
+    ly                   1.2%      1.2%      0.9%      4.9%      1.3%      2.4%
+    m                    2.7%      1.1%      3.3%      1.5%      2.6%      0.3%
+    r                   16.0%      9.9%     17.4%     13.7%     18.4%     11.9%
+    ry                   0.5%      0.4%      0.6%      2.7%      1.0%      0.9%
+    y                   31.4%     49.8%     29.2%     24.0%     20.2%     41.0%
+
+
+[7] SUFFIX AGREEMENT ANALYSIS
+    (Do adjacent words share suffixes more than chance → case agreement?)
+
+  Adjacent suffix match rate: 0.1342
+  Expected random match rate: 0.1748
+  Ratio (actual/expected):    0.768x
+  ⟹ No evidence of suffix agreement.
+
+
+[8] SUFFIX POSITION-IN-PARAGRAPH ANALYSIS
+    (Do suffixes change from paragraph start to end → tense shift?)
+
+    Suffix           start       mid       end
+    ──────────────────────────────────────────
+    y                35.9%     32.4%     32.5%
+    l                16.0%     19.1%     19.6%
+    r                16.8%     15.1%     15.0%
+    iin              11.1%     13.2%     13.8%
+    in                4.2%      5.4%      5.7%
+    dy                3.9%      3.3%      2.3%
+    m                 2.5%      2.7%      2.2%
+    d                 3.0%      2.5%      1.8%
+    ir                2.2%      1.9%      1.8%
+    ly                1.5%      1.0%      1.3%
+    ry                0.6%      0.6%      0.6%
+    iiin              0.4%      0.5%      0.8%
+
+
+[9] CURRIER LANGUAGE A vs B — MORPHOLOGICAL COMPARISON
+    (Two &#x27;languages&#x27; might just be different tense/register?)
+
+  PREFIX:
+                       Lang A    Lang B         Δ
+    ─────────────────────────────────────────────
+    o                   22.0%     22.8%     +0.8%
+    qo                  16.4%     23.8%     +7.4%
+    s                   17.1%     14.9%     -2.1%
+    d                   19.1%      8.2%    -10.9%
+    ol                   4.2%      7.8%     +3.6%
+    y                    8.8%      5.5%     -3.3%
+    l                    1.0%      7.2%     +6.3%
+    or                   2.5%      2.7%     +0.2%
+    r                    0.6%      1.9%     +1.4%
+    dy                   2.2%      0.9%     -1.4%
+
+  ROOT:
+                       Lang A    Lang B         Δ
+    ─────────────────────────────────────────────
+    a                   17.5%     17.5%     +0.1%
+    ka                   3.6%     11.3%     +7.7%
+    cho                 13.3%      2.5%    -10.8%
+    ta                   2.3%      5.9%     +3.6%
+    ch                   4.0%      3.0%     -1.0%
+    che                  2.1%      3.4%     +1.3%
+    ched                 0.0%      3.9%     +3.9%
+    cheo                 3.6%      2.2%     -1.4%
+    kee                  1.5%      2.7%     +1.3%
+    keed                 0.0%      3.0%     +3.0%
+
+  SUFFIX:
+                       Lang A    Lang B         Δ
+    ─────────────────────────────────────────────
+    y                   23.4%     38.2%    +14.9%
+    l                   23.9%     15.6%     -8.3%
+    r                   17.9%     14.3%     -3.5%
+    iin                 14.6%     12.8%     -1.7%
+    in                   2.6%      6.8%     +4.2%
+    dy                   4.0%      2.5%     -1.5%
+    m                    3.0%      2.4%     -0.6%
+    d                    3.8%      1.6%     -2.2%
+    ir                   1.5%      2.0%     +0.5%
+    ly                   1.4%      0.8%     -0.6%
+
+
+[10] TOP 50 WORDS — FULL SLOT DECOMPOSITION
+
+  Word                 Freq  Prefix   Root         Suffix     Rem   
+  ────────────────── ──────  ──────── ──────────── ────────── ──────
+  daiin                 850  d        a            iin        —     
+  ol                    586  ol       —            —          —     
+  aiin                  557  —        a            iin        —     
+  chedy                 523  —        ched         y          —     
+  shedy                 452  s        —            —          hedy  
+  ar                    431  —        a            r          —     
+  or                    427  or       —            —          —     
+  chol                  399  —        cho          l          —     
+  chey                  368  —        che          y          —     
+  dar                   339  d        a            r          —     
+  qokeey                318  qo       kee          y          —     
+  qokeedy               307  qo       keed         y          —     
+  qokain                286  qo       ka           in         —     
+  shey                  284  s        —            —          hey   
+  qokaiin               284  qo       ka           iin        —     
+  qokedy                274  qo       ked          y          —     
+  al                    265  —        a            l          —     
+  dal                   249  d        a            l          —     
+  dy                    242  dy       —            —          —     
+  okaiin                221  o        ka           iin        —     
+  chor                  212  —        cho          r          —     
+  qokal                 204  qo       ka           l          —     
+  dain                  202  d        a            in         —     
+  cheey                 195  —        chee         y          —     
+  okeey                 187  o        kee          y          —     
+  qokar                 181  qo       ka           r          —     
+  shol                  180  s        —            —          hol   
+  cheol                 177  —        cheo         l          —     
+  otedy                 171  o        ted          y          —     
+  otaiin                165  o        ta           iin        —     
+  otar                  161  o        ta           r          —     
+  sheey                 160  s        —            —          heey  
+  chy                   156  —        ch           y          —     
+  chdy                  154  —        chd          y          —     
+  okal                  153  o        ka           l          —     
+  oteey                 146  o        tee          y          —     
+  otal                  146  o        ta           l          —     
+  okar                  146  o        ka           r          —     
+  qoky                  142  qo       k            y          —     
+  qol                   141  qol      —            —          —     
+  okain                 140  o        ka           in         —     
+  chckhy                136  —        ch           —          ckhy  
+  saiin                 126  s        a            iin        —     
+  dair                  121  d        a            ir         —     
+  sho                   118  s        —            —          ho    
+  sheol                 118  s        —            —          heol  
+  okedy                 117  o        ked          y          —     
+  ain                   116  —        a            in         —     
+  oty                   116  o        t            y          —     
+  lchedy                116  l        ched         y          —     
+
+  Full decomposition data saved to C:\projects\vais\results\slot_analysis_results.json
+
+================================================================================
+ANALYSIS COMPLETE
+================================================================================
+</pre></details><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>bc53723</code>. 
+To run any test with your own parameters, clone
+<a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
+(<code>python webui/server.py</code>). All numbers reproduce at
+PYTHONHASHSEED=0.</footer></main></body></html>

@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>suffix_bug_cascade_audit — VAIS</title><style>
+:root { --bg:#ffffff; --fg:#1a1a1a; --muted:#666; --line:#ddd;
+        --code:#f5f5f5; --accent:#7a4a1e; --warn:#a33; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#141414; --fg:#ddd; --muted:#999; --line:#333;
+          --code:#1e1e1e; --accent:#d9a05b; --warn:#e77; } }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--fg);
+       font:16px/1.55 Georgia, 'Times New Roman', serif; }
+nav { border-bottom:1px solid var(--line); padding:.7em 1.2em;
+      font-family: system-ui, sans-serif; font-size:.9em; }
+nav a { color:var(--accent); text-decoration:none; margin-right:1.2em; }
+main { max-width: 62em; margin: 0 auto; padding: 1.5em 1.2em 4em; }
+h1,h2,h3 { font-family: system-ui, sans-serif; line-height:1.25; }
+h1 { font-size:1.7em; } h2 { font-size:1.3em; margin-top:2em; }
+a { color: var(--accent); }
+code, pre { font-family: ui-monospace, Consolas, monospace;
+            font-size:.86em; background:var(--code); }
+code { padding:.1em .3em; border-radius:3px; }
+pre { padding: .9em; overflow-x:auto; border:1px solid var(--line);
+      border-radius:4px; line-height:1.4; }
+table { border-collapse: collapse; margin: 1em 0; font-size:.92em;
+        display:block; overflow-x:auto; }
+th, td { border:1px solid var(--line); padding:.35em .6em;
+         text-align:left; vertical-align:top; }
+th { font-family: system-ui, sans-serif; background:var(--code); }
+blockquote { border-left:3px solid var(--accent); margin:1em 0;
+             padding:.2em 1em; color:var(--muted); }
+.muted { color:var(--muted); font-size:.9em; }
+.tag { font-family: system-ui, sans-serif; font-size:.75em;
+       border:1px solid var(--line); border-radius:3px;
+       padding:.05em .45em; margin-left:.5em; }
+.tag.sug { border-color:var(--warn); color:var(--warn); }
+details summary { cursor:pointer; font-family: system-ui, sans-serif; }
+footer { border-top:1px solid var(--line); margin-top:3em;
+         padding-top:1em; font-size:.85em; color:var(--muted); }
+</style></head><body>
+<nav><a href="../index.html">VAIS</a><a href="../catalog.html">Catalog</a>
+<a href="../research.html">Research</a><a href="../reports.html">Reports</a>
+<a href="https://github.com/Vineyardcode/vais">GitHub</a></nav>
+<main><h1>suffix_bug_cascade_audit</h1>
+<p class="muted">scripts/suffix_bug_cascade_audit.py</p>
+<pre>CASCADE AUDIT: How Much Did the Suffix Bug Corrupt?
+================================================================
+
+suffix_split_artifact_test proved the suffix parser&#x27;s greedy longest-match creates artifacts.
+But the suffix list feeds into EVERYTHING downstream:
+  suffix parsing → root → deriv prefix identification → paradigm tables
+                        → co-occurrence analysis → function word counts
+
+This test audits the ENTIRE cascade under the corrected (SHORT) suffix
+list to determine which prior findings survive and which were corrupted.
+
+Tests:
+  A) RECLASSIFICATION COUNT — How many tokens change deriv prefix?
+       Were &quot;bare prefix function words&quot; (ch=3628) actually deriv prefixes?
+  B) PARADIGM TABLES — Rebuild under corrected parser. Still 6.2/7 fill?
+  C) SAME-STEM CO-OCCURRENCE — Re-test inflection signal
+  D) -ODY RESOLUTION — Is -ody real or stem vowel + dy?
+  E) STEM &#x27;O&#x27; INVESTIGATION — Why does it show real derivational effects?
+  F) VALIDATED GRAMMAR SKETCH — Using only surviving findings</pre>
+<h2>Parameters</h2><table><tr><th>name</th><th>default</th><th>type</th></tr>
+<tr><td><code>SIMPLE_GALLOWS</code></td><td><code>[&#x27;t&#x27;, &#x27;k&#x27;, &#x27;f&#x27;, &#x27;p&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>BENCH_GALLOWS</code></td><td><code>[&#x27;cth&#x27;, &#x27;ckh&#x27;, &#x27;cph&#x27;, &#x27;cfh&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>COMPOUND_GCH</code></td><td><code>[&#x27;tch&#x27;, &#x27;kch&#x27;, &#x27;pch&#x27;, &#x27;fch&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>COMPOUND_GSH</code></td><td><code>[&#x27;tsh&#x27;, &#x27;ksh&#x27;, &#x27;psh&#x27;, &#x27;fsh&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>PREFIXES</code></td><td><code>[&#x27;qo&#x27;, &#x27;q&#x27;, &#x27;so&#x27;, &#x27;do&#x27;, &#x27;o&#x27;, &#x27;d&#x27;, &#x27;s&#x27;, &#x27;y&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>SUFFIXES_LONG</code></td><td><code>[&#x27;aiin&#x27;, &#x27;ain&#x27;, &#x27;iin&#x27;, &#x27;in&#x27;, &#x27;ar&#x27;, &#x27;or&#x27;, &#x27;al&#x27;, &#x27;ol&#x27;, &#x27;eedy&#x27;, &#x27;edy&#x27;, &#x27;ody&#x27;, &#x27;dy&#x27;, &#x27;ey&#x27;, &#x27;y&#x27;…</code></td><td>json</td></tr>
+<tr><td><code>SUFFIXES_SHORT</code></td><td><code>[&#x27;aiin&#x27;, &#x27;ain&#x27;, &#x27;iin&#x27;, &#x27;in&#x27;, &#x27;ar&#x27;, &#x27;or&#x27;, &#x27;al&#x27;, &#x27;ol&#x27;, &#x27;dy&#x27;, &#x27;y&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>DERIV_PREFIXES_ORDER</code></td><td><code>[&#x27;lch&#x27;, &#x27;lsh&#x27;, &#x27;ch&#x27;, &#x27;sh&#x27;, &#x27;l&#x27;, &#x27;h&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>CORE_STEMS</code></td><td><code>[&#x27;a&#x27;, &#x27;al&#x27;, &#x27;am&#x27;, &#x27;ar&#x27;, &#x27;d&#x27;, &#x27;e&#x27;, &#x27;ed&#x27;, &#x27;eo&#x27;, &#x27;eod&#x27;, &#x27;eos&#x27;, &#x27;es&#x27;, &#x27;l&#x27;, &#x27;o&#x27;, &#x27;od&#x27;, &#x27;ol&#x27;, &#x27;o…</code></td><td>json</td></tr>
+</table>
+<h2>Golden output (PYTHONHASHSEED=0)</h2><details><summary>show</summary><pre>suffix_bug_cascade_audit: CASCADE AUDIT — FULL SYSTEM RE-VALIDATION
+============================================================================
+Loaded 40300 word tokens
+
+============================================================================
+RECLASSIFICATION — HOW MANY TOKENS CHANGE?
+============================================================================
+
+  Total tokens: 40300
+  Tokens changed: 5951 (14.8%)
+
+  DERIV PREFIX COUNTS:
+    Prefix      LONG   SHORT   Change
+    ∅          33518   29767    -3751 ←←←
+    ch          3377    5250    +1873 ←←←
+    h           1468    2766    +1298 ←←←
+    l           1588    1558      -30
+    lch          160     493     +333
+    sh           124     258     +134
+    lsh           65     208     +143
+
+  DERIV PREFIX TRANSITIONS (top 10):
+    ∅     → ch   : 1873
+    ∅     → h    : 1298
+    ∅     → l    : 446
+    l     → lch  : 333
+    l     → lsh  : 143
+    ∅     → sh   : 134
+
+  STEM TRANSITIONS (top 15):
+    ch       → e       : 2084
+    h        → e       : 1233
+    e        → eo      : 631
+    l        → e       : 439
+    sh       → e       : 273
+    o        → oe      : 156
+    ch       → o       : 122
+    eo       → eoe     : 87
+    h        → o       : 65
+    ech      → eche    : 41
+    rch      → rche    : 38
+    y        → ye      : 36
+    alch     → alche   : 32
+    d        → de      : 24
+    ed       → ede     : 23
+
+  ═══ CRITICAL: &#x27;FUNCTION WORD&#x27; RECLASSIFICATION ═══
+  derivational_prefix_paradox identified ch(3628), h(2003), sh(209), l(1351) as &#x27;function words&#x27;
+  because they appeared as bare roots with no deriv prefix.
+  How many of these were actually deriv-prefix + stem under SHORT list?
+    Words rescued from &#x27;function word&#x27; → deriv+stem:
+      stem=&#x27;ch&#x27;: 1873 rescued of 4068 (46%)
+      stem=&#x27;h&#x27;: 1298 rescued of 2042 (64%)
+      stem=&#x27;l&#x27;: 446 rescued of 1418 (31%)
+      stem=&#x27;sh&#x27;: 134 rescued of 394 (34%)
+
+============================================================================
+PARADIGM TABLES — CORRECTED PARSER
+============================================================================
+
+  PARADIGM FILL RATES (corrected parser):
+  Stem × (Deriv × Suffix) — counting slots with N≥3
+
+    Stem          N  DerivSlots SfxSlots  Derivs present
+    e          9951           7/7         9/11 ∅, h, ch, sh, l, lch, lsh
+    a          4080           4/7        10/11 ∅, h, ch, l
+    o          2148           7/7        10/11 ∅, h, ch, sh, l, lch, lsh
+    ar         2023           3/7        10/11 ∅, ch, l
+    ol         1875           4/7         8/11 ∅, h, ch, l
+    ch         1857           4/7         9/11 ∅, h, ch, l
+    al         1740           4/7         9/11 ∅, h, ch, l
+    d          1395           5/7         8/11 ∅, h, ch, l, lch, lsh
+    eo         1265           7/7         9/11 ∅, h, ch, sh, l, lch, lsh
+    or         1090           3/7         7/11 ∅, h, ch, l
+    l           972           4/7         9/11 ∅, h, ch, l, lch, lsh
+    h           741           3/7         9/11 ∅, h, ch
+    ed          659           7/7         8/11 ∅, h, ch, sh, l, lch, lsh
+    y           521           2/7         8/11 ∅, h, ch, l
+    am          468           4/7         2/11 ∅, h, ch, l, lch
+
+    Avg deriv fill: 4.5/7
+    Avg suffix fill: 8.3/11
+
+  COMPARISON: LONG vs SHORT paradigm fill
+    LONG avg deriv fill: 4.5/7
+    SHORT avg deriv fill: 4.5/7
+    → Corrected parser IMPROVES paradigm fill by 0.1 slots
+
+============================================================================
+SAME-STEM CO-OCCURRENCE — CORRECTED PARSER
+============================================================================
+
+  Total lines (≥3 words): 4679
+  Lines with same-stem co-occurrence: 3204 (68.5%)
+  derivational_prefix_paradox reported: 36.9% — DIFFERENT
+
+  Permutation test (1000 shuffles):
+    Observed: 3204
+    Null mean: 3565.3 ± 11.0
+    z = -32.70, p = 1.0000
+    → CO-OCCURRENCE NOT SIGNIFICANT (p≥0.05)
+
+  Examples:
+    f100r.12,@P0: stem=&#x27;e&#x27; → ∅+e+ol, ∅+e+y, h+e+y
+    f100r.13,+P0: stem=&#x27;e&#x27; → sh+e+or, ∅+e+y, ∅+e+y, ∅+e+y
+    f100r.14,+P0: stem=&#x27;e&#x27; → ch+e+y, ∅+e+y, ∅+e+ol
+    f100r.15,+P0: stem=&#x27;e&#x27; → ch+e+or, ∅+e+ol
+    f100r.22,@P0: stem=&#x27;e&#x27; → ch+e+ol, h+e+y
+
+============================================================================
+IS -ODY A REAL SUFFIX?
+============================================================================
+
+suffix_split_artifact_test showed -ody has 69% vowel-initial roots (mostly &#x27;e&#x27;).
+If -ody is just stem-vowel-o + dy, then words like &#x27;cheody&#x27;
+are really ch + e + o + dy (stem &#x27;eo&#x27; + suffix &#x27;dy&#x27;).
+If -ody is real, it should appear after non-&#x27;o&#x27; stems too.
+
+  Words ending in &#x27;ody&#x27;: 1470
+  Character before &#x27;ody&#x27;: {&#x27;e&#x27;: 671, &#x27;(empty)&#x27;: 215, &#x27;h&#x27;: 208, &#x27;q&#x27;: 145, &#x27;o&#x27;: 99, &#x27;r&#x27;: 40, &#x27;l&#x27;: 37, &#x27;y&#x27;: 24, &#x27;d&#x27;: 13, &#x27;s&#x27;: 8}
+
+  PARSE COMPARISON:
+  If we use -ody as suffix vs treating &#x27;o&#x27; as part of stem:
+
+  Under SUFFIXES_ODY, stems taking -ody: {&#x27;e&#x27;: 631, &#x27;ch&#x27;: 122, &#x27;h&#x27;: 65, &#x27;ar&#x27;: 19, &#x27;al&#x27;: 18, &#x27;air&#x27;: 9, &#x27;oe&#x27;: 8, &#x27;l&#x27;: 7, &#x27;o&#x27;: 7, &#x27;ol&#x27;: 6}
+  Under SUFFIXES_NO_ODY, same words:     {&#x27;eo&#x27;: 631, &#x27;o&#x27;: 198, &#x27;aro&#x27;: 19, &#x27;alo&#x27;: 18, &#x27;airo&#x27;: 9, &#x27;oeo&#x27;: 8, &#x27;oo&#x27;: 7, &#x27;olo&#x27;: 6, &#x27;echo&#x27;: 5, &#x27;olsheo&#x27;: 3}
+
+  Without -ody suffix:
+    Roots ending in &#x27;o&#x27;: 999 (100%)
+    Roots NOT ending in &#x27;o&#x27;: 0 (0%)
+
+  → -ody is likely just stem-vowel-&#x27;o&#x27; + suffix &#x27;-dy&#x27; (ARTIFACT)
+     The &#x27;o&#x27; belongs to stems like &#x27;eo&#x27;, &#x27;o&#x27;, &#x27;eod-o&#x27; etc.
+
+============================================================================
+WHY IS STEM &#x27;O&#x27; SPECIAL?
+============================================================================
+
+Under corrected parser, stem &#x27;o&#x27; shows a 42pp derivational effect
+(∅+o → -y at 75% vs ch+o → -y at 33%). This is real. Why?
+
+  Stem &#x27;o&#x27; by deriv prefix:
+
+    ∅+o (N=1157):
+      Suffixes: {&#x27;y&#x27;: 868, &#x27;∅&#x27;: 112, &#x27;dy&#x27;: 103, &#x27;iin&#x27;: 32, &#x27;aiin&#x27;: 12, &#x27;ar&#x27;: 12}
+      Sections: {&#x27;herbal-A&#x27;: 495, &#x27;text&#x27;: 425, &#x27;bio&#x27;: 138, &#x27;pharma&#x27;: 48, &#x27;unknown&#x27;: 29}
+      Gram pfx: {&#x27;q&#x27;: 440, &#x27;o&#x27;: 101, &#x27;qo&#x27;: 54, &#x27;y&#x27;: 50, &#x27;d&#x27;: 6}
+      Gallows:  {&#x27;k&#x27;: 516, &#x27;t&#x27;: 511, &#x27;p&#x27;: 82, &#x27;f&#x27;: 20}
+
+    h+o (N=293):
+      Suffixes: {&#x27;∅&#x27;: 132, &#x27;dy&#x27;: 65, &#x27;y&#x27;: 50, &#x27;aiin&#x27;: 11, &#x27;ol&#x27;: 8, &#x27;ar&#x27;: 7}
+      Sections: {&#x27;herbal-A&#x27;: 159, &#x27;text&#x27;: 108, &#x27;pharma&#x27;: 11, &#x27;bio&#x27;: 7, &#x27;unknown&#x27;: 4}
+      Gram pfx: {&#x27;s&#x27;: 282, &#x27;y&#x27;: 3, &#x27;q&#x27;: 1}
+      Gallows:  {&#x27;k&#x27;: 51, &#x27;t&#x27;: 32, &#x27;p&#x27;: 5, &#x27;f&#x27;: 5}
+
+    ch+o (N=579):
+      Suffixes: {&#x27;y&#x27;: 191, &#x27;dy&#x27;: 119, &#x27;∅&#x27;: 109, &#x27;aiin&#x27;: 41, &#x27;ar&#x27;: 29, &#x27;ol&#x27;: 27}
+      Sections: {&#x27;herbal-A&#x27;: 294, &#x27;text&#x27;: 229, &#x27;pharma&#x27;: 30, &#x27;cosmo&#x27;: 11, &#x27;unknown&#x27;: 10}
+      Gram pfx: {&#x27;d&#x27;: 14, &#x27;o&#x27;: 11, &#x27;y&#x27;: 11, &#x27;qo&#x27;: 3, &#x27;s&#x27;: 1}
+      Gallows:  {&#x27;k&#x27;: 165, &#x27;t&#x27;: 143, &#x27;p&#x27;: 17, &#x27;f&#x27;: 14}
+
+    sh+o (N=23):
+      Suffixes: {&#x27;∅&#x27;: 16, &#x27;dy&#x27;: 3, &#x27;y&#x27;: 2, &#x27;iin&#x27;: 1, &#x27;ar&#x27;: 1}
+      Sections: {&#x27;herbal-A&#x27;: 19, &#x27;text&#x27;: 3, &#x27;pharma&#x27;: 1}
+      Gram pfx: {&#x27;d&#x27;: 11, &#x27;y&#x27;: 6, &#x27;o&#x27;: 3, &#x27;s&#x27;: 1, &#x27;so&#x27;: 1}
+      Gallows:  {&#x27;t&#x27;: 2, &#x27;p&#x27;: 2, &#x27;k&#x27;: 1}
+
+    l+o (N=73):
+      Suffixes: {&#x27;∅&#x27;: 33, &#x27;y&#x27;: 10, &#x27;dy&#x27;: 7, &#x27;ar&#x27;: 6, &#x27;iin&#x27;: 6, &#x27;aiin&#x27;: 3}
+      Sections: {&#x27;text&#x27;: 38, &#x27;herbal-A&#x27;: 21, &#x27;bio&#x27;: 13, &#x27;unknown&#x27;: 1}
+      Gram pfx: {&#x27;o&#x27;: 21, &#x27;qo&#x27;: 4, &#x27;do&#x27;: 3, &#x27;d&#x27;: 1, &#x27;so&#x27;: 1}
+      Gallows:  {&#x27;t&#x27;: 15, &#x27;k&#x27;: 11}
+
+  SECTION DISTRIBUTION COMPARISON:
+    Section         ∅+o   ch+o    h+o
+    herbal-A        43%    51%    54%
+    herbal-B         0%     0%     0%
+    pharma           4%     5%     4%
+    bio             12%     1%     2%
+    text            37%    40%    37%
+    cosmo            2%     2%     1%
+    zodiac           0%     0%     0%
+
+    Cosine similarity:
+      ∅+o vs ch+o: 0.980
+      ∅+o vs h+o:  0.979
+      ch+o vs h+o: 0.997
+    (compound_model_validation null=0.775, real compounds=0.936)
+
+  SUFFIX BY GRAM PREFIX (stem &#x27;o&#x27;):
+    ∅  +o with gpfx=∅   (N= 500): y=78%, ∅=22%
+    ∅  +o with gpfx=qo  (N=  54): dy=54%, iin=20%, y=9%, aiin=6%
+    ∅  +o with gpfx=o   (N= 101): dy=54%, y=17%, iin=13%, ar=6%
+    ch +o with gpfx=∅   (N= 539): y=33%, dy=21%, ∅=17%, aiin=7%
+
+============================================================================
+VALIDATED GRAMMAR SKETCH
+============================================================================
+
+Using ONLY findings that survived suffix_split_artifact_test revalidation.
+
+  1. WORD ORDER
+  ----------------------------------------
+    Element      N     Mean   Median  Init&lt;.2  Final&gt;.8
+    deriv:∅      28272    0.504    0.500    21.3%     22.3%
+    deriv:h       2697    0.439    0.400    25.7%     13.3%
+    deriv:ch      5048    0.501    0.500    20.4%     19.5%
+    deriv:sh       245    0.117    0.000    80.8%      5.3%
+    deriv:l       1499    0.616    0.700    16.9%     39.9%
+    gal:t         6927    0.519    0.545    20.4%     23.5%
+    gal:k        10715    0.491    0.500    19.1%     18.9%
+
+  2. SUFFIX INVENTORY (corrected)
+  ----------------------------------------
+    ∅       :  13061 ( 32.4%)
+    y       :   9252 ( 23.0%)
+    dy      :   6301 ( 15.6%)
+    iin     :   2998 (  7.4%)
+    ol      :   1972 (  4.9%)
+    aiin    :   1464 (  3.6%)
+    or      :   1282 (  3.2%)
+    ar      :   1277 (  3.2%)
+    in      :   1219 (  3.0%)
+    al      :    865 (  2.1%)
+    ain     :    609 (  1.5%)
+
+  3. GALLOWS ↔ DERIV COMPLEMENTARITY
+  ----------------------------------------
+    Mutual information (det, deriv): 0.0642 bits
+    (0=independent, higher=dependent)
+    Cramér&#x27;s V (det × deriv): 0.145
+    (0=independent, 1=perfect association)
+
+  4. MORPHEME HIERARCHY (validated)
+  ----------------------------------------
+    Slot           Fill%
+    gram_prefix     :  57.2%
+    gallows         :  52.8%
+    deriv_prefix    :  26.1%
+    stem            : 100.0%
+    suffix          :  67.6%
+
+  5. SLOT CO-OCCURRENCE CONSTRAINTS
+  ----------------------------------------
+    gpfx  + sfx  :  16513
+    gal   + sfx  :  14942
+    gpfx  + gal  :  13972
+    deriv + sfx  :   8261
+    gpfx  + deriv:   4541
+    gal   + deriv:   3298
+
+    Words with gallows: 21267
+    Words with deriv prefix: 10533
+    Words with BOTH: 3298
+    Expected if independent: 5558
+    Observed/Expected: 0.59x
+    → MODERATE REPULSION
+
+  ═══════════════════════════════════════
+  GRAMMAR SKETCH BASED ON VALIDATED DATA
+  ═══════════════════════════════════════
+
+  WORD STRUCTURE: (gram-pfx) + (gallows | deriv-pfx) + STEM + (suffix)
+    - gallows and deriv prefixes are ~mutually exclusive (O/E=0.59x)
+    - ~15-20 core stems combine via agglutination
+
+  WORD ORDER:
+    - sh-prefixed words are LINE-INITIAL (&gt;80%)
+    - h-prefixed words skew EARLY (mean ~0.44)
+    - l-prefixed words skew LATE (mean ~0.62)
+    - Suggests: sh_X ... h_X ... X ... l_X pattern
+
+  DERIVATIONAL SYSTEM:
+    - h- marks verbal forms (confirmed compound_model_validation, p=0.0000)
+    - ch- function unclear (does NOT change section distribution)
+    - sh- possibly sentential/clausal marker (rare, line-initial)
+    - l- possibly clause-final marker
+
+  INFLECTIONAL SYSTEM:
+    - Suffixes: -dy, -y, -ol, -or, -ar, -al, -aiin, -ain, -iin, -in
+    - Gram prefixes: qo, q, so, do, o, d, s, y
+    - Same-stem co-occurrence suggests paradigmatic inflection
+
+  OPEN QUESTIONS:
+    - What do ch- and l- actually do?
+    - Why does stem &#x27;o&#x27; behave differently from stem &#x27;e&#x27;?
+    - Are suffixes functionally grouped (e.g., case vs tense)?
+    - What role do gallows play beyond section-marking?
+
+  Results saved to results/suffix_bug_cascade_audit_results.json
+
+</pre></details><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>bc53723</code>. 
+To run any test with your own parameters, clone
+<a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
+(<code>python webui/server.py</code>). All numbers reproduce at
+PYTHONHASHSEED=0.</footer></main></body></html>

@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>parser_free_word_classes — VAIS</title><style>
+:root { --bg:#ffffff; --fg:#1a1a1a; --muted:#666; --line:#ddd;
+        --code:#f5f5f5; --accent:#7a4a1e; --warn:#a33; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#141414; --fg:#ddd; --muted:#999; --line:#333;
+          --code:#1e1e1e; --accent:#d9a05b; --warn:#e77; } }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--fg);
+       font:16px/1.55 Georgia, 'Times New Roman', serif; }
+nav { border-bottom:1px solid var(--line); padding:.7em 1.2em;
+      font-family: system-ui, sans-serif; font-size:.9em; }
+nav a { color:var(--accent); text-decoration:none; margin-right:1.2em; }
+main { max-width: 62em; margin: 0 auto; padding: 1.5em 1.2em 4em; }
+h1,h2,h3 { font-family: system-ui, sans-serif; line-height:1.25; }
+h1 { font-size:1.7em; } h2 { font-size:1.3em; margin-top:2em; }
+a { color: var(--accent); }
+code, pre { font-family: ui-monospace, Consolas, monospace;
+            font-size:.86em; background:var(--code); }
+code { padding:.1em .3em; border-radius:3px; }
+pre { padding: .9em; overflow-x:auto; border:1px solid var(--line);
+      border-radius:4px; line-height:1.4; }
+table { border-collapse: collapse; margin: 1em 0; font-size:.92em;
+        display:block; overflow-x:auto; }
+th, td { border:1px solid var(--line); padding:.35em .6em;
+         text-align:left; vertical-align:top; }
+th { font-family: system-ui, sans-serif; background:var(--code); }
+blockquote { border-left:3px solid var(--accent); margin:1em 0;
+             padding:.2em 1em; color:var(--muted); }
+.muted { color:var(--muted); font-size:.9em; }
+.tag { font-family: system-ui, sans-serif; font-size:.75em;
+       border:1px solid var(--line); border-radius:3px;
+       padding:.05em .45em; margin-left:.5em; }
+.tag.sug { border-color:var(--warn); color:var(--warn); }
+details summary { cursor:pointer; font-family: system-ui, sans-serif; }
+footer { border-top:1px solid var(--line); margin-top:3em;
+         padding-top:1em; font-size:.85em; color:var(--muted); }
+</style></head><body>
+<nav><a href="../index.html">VAIS</a><a href="../catalog.html">Catalog</a>
+<a href="../research.html">Research</a><a href="../reports.html">Reports</a>
+<a href="https://github.com/Vineyardcode/vais">GitHub</a></nav>
+<main><h1>parser_free_word_classes</h1>
+<p class="muted">scripts/parser_free_word_classes.py</p>
+<pre>PARSER-FREE WORD CLASSES AND LINE GRAMMAR
+=====================================================
+
+word_class_robustness confirmed:
+  - Three-class suffix system (A/M/B) captures 80.7% of sfx→pfx MI
+  - Grammar is universal across sections (not section-specific)
+  - Head-initial structure (L→R prediction z=21.3)
+  - Synergy in class bigrams (bootstrap-confirmed)
+
+Key vulnerability: the &quot;class system&quot; comes entirely from our parser.
+If the parser assigns suffixes wrong, the classes are wrong.
+
+parser_free_word_classes attacks from a new angle: do WORDS (not parsed features)
+naturally cluster into groups that match the class system?
+
+Sub-analyses:
+  A) DISTRIBUTIONAL WORD CLUSTERING — For frequent words, compute
+       context vectors (what words appear before and after). SVD + k-means.
+       Do natural clusters emerge? How many?
+
+  B) CLUSTER vs MORPHOLOGICAL CLASS — Do distributional clusters
+       match the parsed suffix classes (A/M/B)? If yes → classes are
+       real word-level properties. If no → classes are parser artifacts.
+
+  C) LINE CLASS SEQUENCE — What are the most common class sequences
+       within lines? Is there a dominant pattern (e.g., B-A-B-A or
+       A-B-A)? How much of within-line structure is explained by class?
+
+  D) CLASS BIGRAM PERPLEXITY — Build bigram language models at
+       different granularities (unigram, 3-class, 11-suffix, word).
+       How much does each reduce uncertainty?
+
+  E) LINE POSITION × CLASS — Which classes appear where in the line?
+       Is Class A (dy/y) concentrated in certain positions? Is Class M
+       (X/ar/in) line-final?</pre>
+<h2>Parameters</h2><table><tr><th>name</th><th>default</th><th>type</th></tr>
+<tr><td><code>ALL_GALLOWS</code></td><td><code>[&#x27;cth&#x27;, &#x27;ckh&#x27;, &#x27;cph&#x27;, &#x27;cfh&#x27;, &#x27;tch&#x27;, &#x27;kch&#x27;, &#x27;pch&#x27;, &#x27;fch&#x27;, &#x27;tsh&#x27;, &#x27;ksh&#x27;, &#x27;psh&#x27;, &#x27;fsh&#x27;, &#x27;t&#x27;, …</code></td><td>json</td></tr>
+<tr><td><code>SUFFIXES</code></td><td><code>[&#x27;aiin&#x27;, &#x27;ain&#x27;, &#x27;iin&#x27;, &#x27;in&#x27;, &#x27;ar&#x27;, &#x27;or&#x27;, &#x27;al&#x27;, &#x27;ol&#x27;, &#x27;dy&#x27;, &#x27;y&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>MIN_FREQ</code></td><td><code>10</code></td><td>int</td></tr>
+</table>
+<h2>Golden output (PYTHONHASHSEED=0)</h2><details><summary>show</summary><pre>Loading lines...
+  4508 lines, 35747 word tokens
+  3319 word types
+
+======================================================================
+A: DISTRIBUTIONAL WORD CLUSTERING
+    Cluster words by what appears before/after them.
+    No parsing — purely distributional.
+======================================================================
+
+  368 words with freq ≥ 10
+  Running SVD...
+
+  Cluster quality (within-cluster variance ratio):
+    k=2: explained=0.087, sizes=[np.int64(265), np.int64(103)]
+    k=3: explained=0.124, sizes=[np.int64(247), np.int64(82), np.int64(39)]
+    k=4: explained=0.157, sizes=[np.int64(235), np.int64(54), np.int64(53), np.int64(26)]
+    k=5: explained=0.181, sizes=[np.int64(168), np.int64(85), np.int64(51), np.int64(34), np.int64(30)]
+    k=6: explained=0.212, sizes=[np.int64(160), np.int64(85), np.int64(45), np.int64(33), np.int64(24), np.int64(21)]
+    k=8: explained=0.238, sizes=[np.int64(129), np.int64(73), np.int64(53), np.int64(33), np.int64(24), np.int64(24), np.int64(21), np.int64(11)]
+
+  Detailed k=3 clustering:
+
+  Cluster 0 (236 words):
+    Suffix class: A=67 (28%), M=88 (37%), B=81 (34%)
+    Top prefixes: [(&#x27;o&#x27;, 51), (&#x27;X&#x27;, 40), (&#x27;ch&#x27;, 37), (&#x27;qo&#x27;, 28), (&#x27;sh&#x27;, 28)]
+    Top suffixes: [(&#x27;X&#x27;, 66), (&#x27;y&#x27;, 38), (&#x27;dy&#x27;, 29), (&#x27;ar&#x27;, 22), (&#x27;aiin&#x27;, 20)]
+    Top words: am, oly, dam, she, aiiin, dor, sain, d, sheor, shody, oiin, oldy, shdy, cheal, olain
+
+  Cluster 1 (47 words):
+    Suffix class: A=13 (28%), M=21 (45%), B=13 (28%)
+    Top prefixes: [(&#x27;X&#x27;, 12), (&#x27;l&#x27;, 9), (&#x27;qo&#x27;, 6), (&#x27;ch&#x27;, 4), (&#x27;o&#x27;, 4)]
+    Top suffixes: [(&#x27;X&#x27;, 20), (&#x27;y&#x27;, 8), (&#x27;ol&#x27;, 6), (&#x27;dy&#x27;, 5), (&#x27;aiin&#x27;, 2)]
+    Top words: qoey, o, l, r, qol, lchedy, ledy, cheo, eol, oley, eody, qoeol, cho, qo, sar
+
+  Cluster 2 (85 words):
+    Suffix class: A=30 (35%), M=23 (27%), B=32 (38%)
+    Top prefixes: [(&#x27;o&#x27;, 23), (&#x27;ch&#x27;, 19), (&#x27;qo&#x27;, 11), (&#x27;X&#x27;, 9), (&#x27;sh&#x27;, 9)]
+    Top suffixes: [(&#x27;dy&#x27;, 16), (&#x27;X&#x27;, 15), (&#x27;y&#x27;, 14), (&#x27;aiin&#x27;, 10), (&#x27;ol&#x27;, 8)]
+    Top words: qoedy, chey, daiin, ol, aiin, oedy, shey, oey, chedy, y, or, ar, shedy, qoy, oaiin
+
+======================================================================
+B: DISTRIBUTIONAL CLUSTER vs MORPHOLOGICAL CLASS
+    Do distributional clusters match parsed suffix classes?
+======================================================================
+
+  MI(cluster, morph_class) = 0.0099
+  H(morph_class) = 1.5808
+  H(cluster) = 1.2785
+  Normalized MI = 0.007
+    NMI=0 → no agreement, NMI=1 → perfect agreement
+
+  Cross-tabulation (cluster × morph class):
+  Cluster         A      M      B    Total
+  0              67     88     81      236
+  1              13     21     13       47
+  2              30     23     32       85
+
+  Null NMI: 0.0057±0.0040
+  z(NMI) = 0.3
+
+======================================================================
+C: LINE CLASS SEQUENCE PATTERNS
+    What are the most common class (A/M/B) patterns within lines?
+======================================================================
+
+  Length 3 (284 lines):
+    AAA    21 (7.4%)
+    MMA    19 (6.7%)
+    BAB    18 (6.3%)
+    BBM    16 (5.6%)
+    BMA    16 (5.6%)
+
+  Length 4 (371 lines):
+    BBMA    12 (3.2%)
+    AAAB    12 (3.2%)
+    AAAA    12 (3.2%)
+    BAAA    10 (2.7%)
+    AAAM    10 (2.7%)
+
+  Length 5 (440 lines):
+    BBBMB     7 (1.6%)
+    BBMMM     7 (1.6%)
+    AAAAA     6 (1.4%)
+    BBBBB     6 (1.4%)
+    BBBBM     6 (1.4%)
+
+  Length 6 (417 lines):
+    AAAAAA     8 (1.9%)
+    AABAMB     6 (1.4%)
+    BAABAA     5 (1.2%)
+    AAABAB     4 (1.0%)
+    BMMMMM     4 (1.0%)
+
+  Length 7 (393 lines):
+    AAAABAA     4 (1.0%)
+    AAABAAA     3 (0.8%)
+    BAAAAAA     3 (0.8%)
+    ABAAAAA     3 (0.8%)
+    AAAAAAB     3 (0.8%)
+
+  Length 8 (430 lines):
+    BABBABAM     3 (0.7%)
+    AAAAAAAA     3 (0.7%)
+    BMBBMMBM     3 (0.7%)
+    AAAAMAAA     3 (0.7%)
+    BBBMBAAB     2 (0.5%)
+
+  Length 9 (533 lines):
+    BMBABABAA     3 (0.6%)
+    BBBMAAABA     3 (0.6%)
+    BAABAAAAB     2 (0.4%)
+    AMAAABAAB     2 (0.4%)
+    AAAAABABA     2 (0.4%)
+
+  Length 10 (483 lines):
+    AAAAAABBAA     3 (0.6%)
+    AABABABBAA     3 (0.6%)
+    AAAAMAAABM     2 (0.4%)
+    AAAABABABA     2 (0.4%)
+    BAAAAAAAAM     2 (0.4%)
+
+  Overall: 3088 unique class sequences
+  Top 20 sequences cover 400/4508 = 8.9% of lines
+    BB                35 (0.8%)
+    MA                32 (0.7%)
+    MM                32 (0.7%)
+    BM                29 (0.6%)
+    BA                27 (0.6%)
+    AA                24 (0.5%)
+    AAA               21 (0.5%)
+    MMA               19 (0.4%)
+    BAB               18 (0.4%)
+    MB                18 (0.4%)
+    BBM               16 (0.4%)
+    AM                16 (0.4%)
+    BMA               16 (0.4%)
+    BAA               15 (0.3%)
+    BMM               15 (0.3%)
+    AB                15 (0.3%)
+    MAA               14 (0.3%)
+    BBA               13 (0.3%)
+    MMM               13 (0.3%)
+    BBMA              12 (0.3%)
+
+  Class bigram frequencies (within lines):
+  Pair    Count   Obs%   Exp%  Ratio
+  A→A     5596   17.9   14.8   1.21
+  A→M     2925    9.4   11.7   0.80
+  A→B     3664   11.7   12.0   0.98
+  M→A     2919    9.3   11.7   0.80
+  M→M     3583   11.5    9.2   1.25
+  M→B     2554    8.2    9.4   0.87
+  B→A     3829   12.3   12.0   1.02
+  B→M     2984    9.6    9.4   1.01
+  B→B     3185   10.2    9.7   1.05
+
+======================================================================
+D: CLASS BIGRAM PERPLEXITY
+    How much does class/suffix/word context reduce uncertainty?
+======================================================================
+
+  Model                       Unigram PP    Bigram PP  Reduction
+  ------------------------------------------------------------
+  3-class (A/M/B)                   2.98         2.95       0.9%
+  11-suffix                         7.93         7.64       3.7%
+  word type                       357.36       212.30      40.6%
+
+  Within-line bigram perplexity:
+  3-class                   2.94
+  11-suffix                 7.48
+  word type                 202.34
+
+======================================================================
+E: LINE POSITION × CLASS
+    Which classes appear at line-initial, -medial, and -final?
+======================================================================
+
+  Class distribution by position from start:
+   Pos      N     %A     %M     %B
+     0   4508  31.7  29.5  38.8
+     1   4508  40.8  29.4  29.8
+     2   4280  41.5  26.2  32.3
+     3   3996  41.3  25.8  32.9
+     4   3625  38.7  28.0  33.3
+     5  14830  38.3  33.7  28.1
+
+  Class distribution by position from end:
+   Pos      N     %A     %M     %B
+     0   4508  35.2  39.1  25.6
+     1   4508  35.9  30.9  33.1
+     2   4280  38.2  29.9  31.8
+     3   3996  41.2  26.3  32.6
+     4   3625  41.1  26.2  32.7
+     5  14830  39.1  29.5  31.4
+
+  Line-initial vs line-final class distributions:
+  Position          A      M      B
+  Initial       31.7%  29.5%  38.8%
+  Final         35.2%  39.1%  25.6%
+
+  Line-final suffix distribution:
+    X         1531 (34.0%)
+    y         1010 (22.4%)
+    dy         579 (12.8%)
+    aiin       370 (8.2%)
+    al         229 (5.1%)
+    ar         212 (4.7%)
+    ol         184 (4.1%)
+    ain        152 (3.4%)
+    iin        116 (2.6%)
+    or         104 (2.3%)
+    in          21 (0.5%)
+
+  Mean words remaining after class occurrence:
+    A: 4.56 (n=13774)
+    M: 4.80 (n=10820)
+    B: 4.59 (n=11153)
+
+======================================================================
+parser_free_word_classes SYNTHESIS
+======================================================================
+
+  44a: DISTRIBUTIONAL CLUSTERING
+    (See cluster composition above)
+
+  44b: CLUSTER-MORPH AGREEMENT
+    (See NMI and cross-tabulation above)
+
+  44c: LINE CLASS SEQUENCES
+    (See patterns and bigram frequencies above)
+
+  44d: PERPLEXITY
+    (See perplexity table above)
+
+  44e: POSITION × CLASS
+    (See distribution tables above)
+
+[parser_free_word_classes Complete]
+
+</pre></details><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>bc53723</code>. 
+To run any test with your own parameters, clone
+<a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
+(<code>python webui/server.py</code>). All numbers reproduce at
+PYTHONHASHSEED=0.</footer></main></body></html>

@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>f66r_analysis — VAIS</title><style>
+:root { --bg:#ffffff; --fg:#1a1a1a; --muted:#666; --line:#ddd;
+        --code:#f5f5f5; --accent:#7a4a1e; --warn:#a33; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#141414; --fg:#ddd; --muted:#999; --line:#333;
+          --code:#1e1e1e; --accent:#d9a05b; --warn:#e77; } }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--fg);
+       font:16px/1.55 Georgia, 'Times New Roman', serif; }
+nav { border-bottom:1px solid var(--line); padding:.7em 1.2em;
+      font-family: system-ui, sans-serif; font-size:.9em; }
+nav a { color:var(--accent); text-decoration:none; margin-right:1.2em; }
+main { max-width: 62em; margin: 0 auto; padding: 1.5em 1.2em 4em; }
+h1,h2,h3 { font-family: system-ui, sans-serif; line-height:1.25; }
+h1 { font-size:1.7em; } h2 { font-size:1.3em; margin-top:2em; }
+a { color: var(--accent); }
+code, pre { font-family: ui-monospace, Consolas, monospace;
+            font-size:.86em; background:var(--code); }
+code { padding:.1em .3em; border-radius:3px; }
+pre { padding: .9em; overflow-x:auto; border:1px solid var(--line);
+      border-radius:4px; line-height:1.4; }
+table { border-collapse: collapse; margin: 1em 0; font-size:.92em;
+        display:block; overflow-x:auto; }
+th, td { border:1px solid var(--line); padding:.35em .6em;
+         text-align:left; vertical-align:top; }
+th { font-family: system-ui, sans-serif; background:var(--code); }
+blockquote { border-left:3px solid var(--accent); margin:1em 0;
+             padding:.2em 1em; color:var(--muted); }
+.muted { color:var(--muted); font-size:.9em; }
+.tag { font-family: system-ui, sans-serif; font-size:.75em;
+       border:1px solid var(--line); border-radius:3px;
+       padding:.05em .45em; margin-left:.5em; }
+.tag.sug { border-color:var(--warn); color:var(--warn); }
+details summary { cursor:pointer; font-family: system-ui, sans-serif; }
+footer { border-top:1px solid var(--line); margin-top:3em;
+         padding-top:1em; font-size:.85em; color:var(--muted); }
+</style></head><body>
+<nav><a href="../index.html">VAIS</a><a href="../catalog.html">Catalog</a>
+<a href="../research.html">Research</a><a href="../reports.html">Reports</a>
+<a href="https://github.com/Vineyardcode/vais">GitHub</a></nav>
+<main><h1>f66r_analysis</h1>
+<p class="muted">scripts/f66r_analysis.py · baseline 2s · depends on morphology_full_survey, freq_rank_mapping</p>
+<pre>f66r FOCUSED DECIPHERMENT
+=========================================================
+f66r is our Rosetta fragment: a word list (15 entries), a character column
+(33 single characters), and body text — all on the same page.
+
+The page is Language B, &quot;text only&quot; section, features:
+- A dead/reclining woman figure at bottom left
+- Two circles and a cylinder near the figure
+- Four words in a different alphabet (&quot;non-Voynich writing&quot;)
+- A sideways &quot;2&quot; symbol at bottom right
+
+Strategy:
+  1. WORD LIST STRUCTURE — What do the 15 words have in common?
+  2. CHARACTER KEY — Do the 33 single chars encode a notation index?
+  3. WORD-TO-TEXT BRIDGING — Do list roots appear in body text differently?
+  4. LIST-INTERNAL PATTERNS — Is the list ordered by some morphological key?
+  5. CROSS-FOLIO MATCHING — Where else do these exact words appear?
+  6. CONSTRAINT TABLE — Build a substitution hypothesis from all evidence</pre>
+<h2>Parameters</h2><table><tr><th>name</th><th>default</th><th>type</th></tr>
+<tr><td><code>PREFIXES</code></td><td><code>[&#x27;qol&#x27;, &#x27;qor&#x27;, &#x27;sol&#x27;, &#x27;sor&#x27;, &#x27;dol&#x27;, &#x27;dor&#x27;, &#x27;dyl&#x27;, &#x27;dyr&#x27;, &#x27;qo&#x27;, &#x27;so&#x27;, &#x27;do&#x27;, &#x27;dy&#x27;, &#x27;ol&#x27;, &#x27;or…</code></td><td>json</td></tr>
+<tr><td><code>ROOT_ONSETS</code></td><td><code>[&#x27;ckh&#x27;, &#x27;cth&#x27;, &#x27;cph&#x27;, &#x27;cfh&#x27;, &#x27;tch&#x27;, &#x27;kch&#x27;, &#x27;pch&#x27;, &#x27;fch&#x27;, &#x27;tsh&#x27;, &#x27;ksh&#x27;, &#x27;psh&#x27;, &#x27;fsh&#x27;, &#x27;sh&#x27;,…</code></td><td>json</td></tr>
+<tr><td><code>ROOT_BODIES</code></td><td><code>[&#x27;eeed&#x27;, &#x27;eees&#x27;, &#x27;eeea&#x27;, &#x27;eeeo&#x27;, &#x27;eed&#x27;, &#x27;ees&#x27;, &#x27;eea&#x27;, &#x27;eeo&#x27;, &#x27;ed&#x27;, &#x27;es&#x27;, &#x27;ea&#x27;, &#x27;eo&#x27;, &#x27;eee&#x27;…</code></td><td>json</td></tr>
+<tr><td><code>SUFFIXES</code></td><td><code>[&#x27;iiiny&#x27;, &#x27;iiny&#x27;, &#x27;iiir&#x27;, &#x27;iiil&#x27;, &#x27;iiin&#x27;, &#x27;iir&#x27;, &#x27;iil&#x27;, &#x27;iin&#x27;, &#x27;iim&#x27;, &#x27;iid&#x27;, &#x27;iry&#x27;, &#x27;ily&#x27;,…</code></td><td>json</td></tr>
+</table>
+<h2>Golden output (PYTHONHASHSEED=0)</h2><details><summary>show</summary><pre>==========================================================================================
+TEST 1: f66r WORD LIST — Morphological structure of 15 entries
+==========================================================================================
+
+  The word list is on the far left of the page, written separately from body text.
+  These may be an index, legend, glossary, or ingredient list.
+
+    #  Raw              Clean         Pfx    Root      Suf    Type   RootFreq
+  ───  ───────────────  ────────────  ─────  ────────  ─────  ─────  ────────
+    1  rary             rary          r      a         ry     A          2327
+    2  [r:s]als         rals          r      a         ∅      ?          2327[ls]
+    3  qo[r:n]          qor           q      o         r      A          1837
+    4  dary             dary          ∅      da        ry     A          2483
+    5  ykeol            ykeol         y      keo       l      A           436
+    6  saly             saly          ∅      sa        ly     A           460
+    7  salf             salf          ∅      sa        ∅      ?           460[lf]
+    8  fary             fary          ∅      fa        ry     A            33
+    9  qotesy           qotesy        qo     tes       y      ?             0
+   10  ykaly            ykaly         y      ka        ly     A          2575
+   11  doly             doly          ∅      do        ly     A           272
+   12  saiin            saiin         ∅      sa        iin    A           460
+   13  qokal            qokal         qo     ka        l      A          2575
+   14  qolsa            qolsa         qol    sa        ∅      A           460
+   15  raral            raral         ∅                ∅      ?             0[raral]
+
+  Roots in list:    {&#x27;sa&#x27;: 4, &#x27;a&#x27;: 2, &#x27;ka&#x27;: 2, &#x27;o&#x27;: 1, &#x27;da&#x27;: 1, &#x27;keo&#x27;: 1, &#x27;fa&#x27;: 1, &#x27;tes&#x27;: 1, &#x27;do&#x27;: 1, &#x27;&#x27;: 1}
+  Suffixes in list: {&#x27;∅&#x27;: 4, &#x27;ry&#x27;: 3, &#x27;ly&#x27;: 3, &#x27;l&#x27;: 2, &#x27;r&#x27;: 1, &#x27;y&#x27;: 1, &#x27;iin&#x27;: 1}
+  Prefixes in list: {&#x27;∅&#x27;: 7, &#x27;r&#x27;: 2, &#x27;y&#x27;: 2, &#x27;qo&#x27;: 2, &#x27;q&#x27;: 1, &#x27;qol&#x27;: 1}
+
+  Clean parses: 12/15
+
+==========================================================================================
+TEST 2: CHARACTER COLUMN — 33 single characters/digraphs
+==========================================================================================
+
+  The character column sits between the word list and the body text.
+  These may be: abbreviation keys, an alphabet, a notation index,
+  or single-character entries in the same glossary.
+
+  Characters: [&#x27;y&#x27;, &#x27;o&#x27;, &#x27;s&#x27;, &#x27;sh&#x27;, &#x27;y&#x27;, &#x27;d&#x27;, &#x27;o&#x27;, &#x27;f&#x27;, &#x27;x&#x27;, &#x27;air&#x27;, &#x27;d&#x27;, &#x27;sh&#x27;, &#x27;y&#x27;, &#x27;f&#x27;, &#x27;f&#x27;, &#x27;y&#x27;, &#x27;o&#x27;, &#x27;d&#x27;, &#x27;s&#x27;, &#x27;f&#x27;, &#x27;c&#x27;, &#x27;x&#x27;, &#x27;t&#x27;, &#x27;o&#x27;, &#x27;l&#x27;, &#x27;r&#x27;, &#x27;t&#x27;, &#x27;o&#x27;, &#x27;x&#x27;, &#x27;p&#x27;, &#x27;d&#x27;]
+  Count: 31
+
+  Frequency: {&#x27;o&#x27;: 5, &#x27;y&#x27;: 4, &#x27;d&#x27;: 4, &#x27;f&#x27;: 4, &#x27;x&#x27;: 3, &#x27;s&#x27;: 2, &#x27;sh&#x27;: 2, &#x27;t&#x27;: 2, &#x27;air&#x27;: 1, &#x27;c&#x27;: 1, &#x27;l&#x27;: 1, &#x27;r&#x27;: 1, &#x27;p&#x27;: 1}
+
+  Characters that appear in PREFIXES: [&#x27;y&#x27;, &#x27;o&#x27;, &#x27;s&#x27;, &#x27;y&#x27;, &#x27;d&#x27;, &#x27;o&#x27;, &#x27;d&#x27;, &#x27;y&#x27;, &#x27;y&#x27;, &#x27;o&#x27;, &#x27;d&#x27;, &#x27;s&#x27;, &#x27;o&#x27;, &#x27;l&#x27;, &#x27;r&#x27;, &#x27;o&#x27;, &#x27;d&#x27;]
+  Characters that appear in ROOT ONSETS: [&#x27;s&#x27;, &#x27;sh&#x27;, &#x27;f&#x27;, &#x27;sh&#x27;, &#x27;f&#x27;, &#x27;f&#x27;, &#x27;s&#x27;, &#x27;f&#x27;, &#x27;c&#x27;, &#x27;t&#x27;, &#x27;t&#x27;, &#x27;p&#x27;]
+  Characters that appear in SUFFIXES: [&#x27;y&#x27;, &#x27;y&#x27;, &#x27;d&#x27;, &#x27;d&#x27;, &#x27;y&#x27;, &#x27;y&#x27;, &#x27;d&#x27;, &#x27;l&#x27;, &#x27;r&#x27;, &#x27;d&#x27;]
+
+  CHARACTER-TO-WORD ALIGNMENT (if chars index the words):
+  Word first chars: [&#x27;r&#x27;, &#x27;r&#x27;, &#x27;q&#x27;, &#x27;d&#x27;, &#x27;y&#x27;, &#x27;s&#x27;, &#x27;s&#x27;, &#x27;f&#x27;, &#x27;q&#x27;, &#x27;y&#x27;, &#x27;d&#x27;, &#x27;s&#x27;, &#x27;q&#x27;, &#x27;q&#x27;, &#x27;r&#x27;]
+  Overlap (word first char appears in char column): 11/15
+
+  Chars NOT found in any word on f66r: []
+
+==========================================================================================
+TEST 3: WORD-TO-BODY-TEXT — Do list roots appear in the body text?
+==========================================================================================
+
+  Parsed body text tokens on f66r: 206
+
+  Root      List form     Body freq  Body suffixes                        Body prefixes                 
+  ────────  ────────────  ─────────  ───────────────────────────────────  ──────────────────────────────
+  a         r+a+ry                8  r:3, ly:2, iin:2, l:1                ∅:7, r:1                      
+  da        ∅+da+ry              24  iin:9, l:4, r:3, ly:3, ir:3          ∅:21, o:1, y:1, l:1           
+  do        ∅+do+ly               6  r:4, l:2                             ∅:6                           
+  fa        ∅+fa+ry               0                                                                     
+  ka        y+ka+ly, qo+ka+l         12  l:4, r:4, dy:1, iin:1, iir:1         qo:5, o:3, y:1, l:1, ∅:1      
+  keo       y+keo+l              10  dy:8, l:2                            qo:4, o:2, ∅:2, ol:1, l:1     
+  o         q+o+r                10  l:7, ∅:1, r:1, ly:1                  ∅:8, q:1, l:1                 
+  sa        ∅+sa+ly, ∅+sa+iin, qol+sa+∅          3  ir:2, iir:1                          ∅:3                           
+  tes       qo+tes+y              0                                                                     
+
+==========================================================================================
+TEST 4: LIST ORDERING — Is there a pattern in the sequence?
+==========================================================================================
+
+  Check if the list is ordered by: root, suffix, prefix, alphabetical,
+  root frequency, or some other morphological feature.
+
+   1. rary          r   +a     +ry    ✓
+   2. rals          r   +a     +∅     ✗
+   3. qor           q   +o     +r     ✓
+   4. dary          ∅   +da    +ry    ✓
+   5. ykeol         y   +keo   +l     ✓
+   6. saly          ∅   +sa    +ly    ✓
+   7. salf          ∅   +sa    +∅     ✗
+   8. fary          ∅   +fa    +ry    ✓
+   9. qotesy        qo  +tes   +y     ✓
+  10. ykaly         y   +ka    +ly    ✓
+  11. doly          ∅   +do    +ly    ✓
+  12. saiin         ∅   +sa    +iin   ✓
+  13. qokal         qo  +ka    +l     ✓
+  14. qolsa         qol +sa    +∅     ✓
+  15. raral         ∅   +      +∅     ✗
+
+  Suffix sequence: [&#x27;ry&#x27;, &#x27;r&#x27;, &#x27;ry&#x27;, &#x27;l&#x27;, &#x27;ly&#x27;, &#x27;ry&#x27;, &#x27;y&#x27;, &#x27;ly&#x27;, &#x27;ly&#x27;, &#x27;iin&#x27;, &#x27;l&#x27;, &#x27;∅&#x27;]
+  Suffix runs: [(&#x27;ry&#x27;, 1), (&#x27;r&#x27;, 1), (&#x27;ry&#x27;, 1), (&#x27;l&#x27;, 1), (&#x27;ly&#x27;, 1), (&#x27;ry&#x27;, 1), (&#x27;y&#x27;, 1), (&#x27;ly&#x27;, 2), (&#x27;iin&#x27;, 1), (&#x27;l&#x27;, 1), (&#x27;∅&#x27;, 1)]
+
+  Prefix sequence: [&#x27;r&#x27;, &#x27;q&#x27;, &#x27;∅&#x27;, &#x27;y&#x27;, &#x27;∅&#x27;, &#x27;∅&#x27;, &#x27;qo&#x27;, &#x27;y&#x27;, &#x27;∅&#x27;, &#x27;∅&#x27;, &#x27;qo&#x27;, &#x27;qol&#x27;]
+
+  Root frequency sequence: [2327, 1837, 2483, 436, 460, 33, 0, 2575, 272, 460, 2575, 460]
+  Ascending? False  Descending? False
+
+==========================================================================================
+TEST 5: CROSS-FOLIO — Where do these exact words appear elsewhere?
+==========================================================================================
+
+   1. rary          ×   5  (label:1, text:4)  sections: astro:4, text:1
+       folios: f107r, f107v, f66r, f71r, f72v_part
+   2. rals          ×   1  (label:1, text:0)  sections: text:1
+       folios: f66r
+   3. qor           ×  21  (label:1, text:20)  sections: astro:7, bio:7, herbal:6, text:1
+       folios: f107r, f112r, f112v, f115v, f116r, f17r, f24r, f29r... +11
+   4. dary          ×  23  (label:3, text:20)  sections: astro:8, herbal:8, bio:4, text:2, pharma:1
+       folios: f111r, f114r, f114v, f115v, f18r, f29v, f32r, f43v... +12
+   5. ykeol         ×  16  (label:1, text:15)  sections: astro:6, pharma:4, herbal:4, text:1, other:1
+       folios: f100v_101r, f101v_part, f101v_part_102r, f108r, f45r, f48v, f51v, f58r... +4
+   6. saly          ×   4  (label:1, text:3)  sections: astro:1, text:1, other:1, bio:1
+       folios: f116r, f66r, f73v, f80v
+   7. salf          ×   1  (label:1, text:0)  sections: text:1
+       folios: f66r
+   8. fary          ×   1  (label:1, text:0)  sections: text:1
+       folios: f66r
+   9. qotesy        ×   1  (label:1, text:0)  sections: text:1
+       folios: f66r
+  10. ykaly         ×   8  (label:1, text:7)  sections: astro:5, herbal:2, text:1
+       folios: f58r, f58v, f66r, f67r, f67v, f95v, f95v_part
+  11. doly          ×   6  (label:2, text:4)  sections: pharma:2, herbal:1, text:1, astro:1, bio:1
+       folios: f101v_part_102r, f43v, f66r, f69r, f80v, f88v_89r
+  12. saiin         × 135  (label:1, text:134)  sections: astro:44, herbal:37, bio:30, pharma:13, text:11
+       folios: f101v_part_102r, f102v_part, f103r, f103v, f104r, f105r, f105v, f106r... +66
+  13. qokal         × 206  (label:2, text:204)  sections: bio:103, astro:64, text:21, herbal:14, pharma:4
+       folios: f103r, f103v, f104r, f105r, f106r, f106v, f107r, f107v... +52
+  14. qolsa         ×   1  (label:1, text:0)  sections: text:1
+       folios: f66r
+  15. raral         ×   1  (label:1, text:0)  sections: text:1
+       folios: f66r
+
+==========================================================================================
+TEST 6: CONSTRAINT TABLE — What do we know about each morpheme?
+==========================================================================================
+
+  Combining freq_rank_mapping evidence (root type, suffix class, section preference)
+  with f66r-specific evidence to constrain possible meanings.
+
+   1. rary          = r+a+ry
+       root &#x27;a&#x27;: SUBSTANCE, freq=2327, → astro
+       suffix &#x27;ry&#x27;: rare suffix — only 1.8% of tokens
+       prefix &#x27;r&#x27;: prefix r — biases toward -iin suffix (2.2×)
+       sections: astro:59%, herbal:17%, text:12%
+       HYPOTHESIS: → adjectival/property description
+
+   2. rals          *** UNPARSEABLE — possible foreign/special word ***
+
+   3. qor           = q+o+r
+       root &#x27;o&#x27;: SUBSTANCE, freq=1837, 
+       suffix &#x27;r&#x27;: suffix &#x27;r&#x27;
+       prefix &#x27;q&#x27;: prefix &#x27;q&#x27;
+       sections: bio:32%, astro:29%, herbal:21%
+       HYPOTHESIS: → substance in liquid/prepared form
+
+   4. dary          = ∅+da+ry
+       root &#x27;da&#x27;: SUBSTANCE, freq=2483, 
+       suffix &#x27;ry&#x27;: rare suffix — only 1.8% of tokens
+       prefix &#x27;∅&#x27;: unprefixed (basic form)
+       sections: herbal:42%, astro:27%, pharma:11%
+       HYPOTHESIS: → adjectival/property description
+
+   5. ykeol         = y+keo+l
+       root &#x27;keo&#x27;: SUBSTANCE, freq=436, 
+       suffix &#x27;l&#x27;: Type A &#x27;l-group&#x27; case — common for o-onsetted roots
+       prefix &#x27;y&#x27;: prefix y — moderate frequency
+       sections: astro:35%, pharma:33%, herbal:23%
+       label enrichment: 1.38×
+       HYPOTHESIS: → substance in liquid/prepared form
+
+   6. saly          = ∅+sa+ly
+       root &#x27;sa&#x27;: SUBSTANCE, freq=460, 
+       suffix &#x27;ly&#x27;: adjectival/modifier form
+       prefix &#x27;∅&#x27;: unprefixed (basic form)
+       sections: astro:38%, herbal:22%, bio:22%
+       label enrichment: 2.88×
+       HYPOTHESIS: → adjectival/property description
+
+   7. salf          *** UNPARSEABLE — possible foreign/special word ***
+
+   8. fary          = ∅+fa+ry
+       root &#x27;fa&#x27;: SUBSTANCE, freq=33, 
+       suffix &#x27;ry&#x27;: rare suffix — only 1.8% of tokens
+       prefix &#x27;∅&#x27;: unprefixed (basic form)
+       label enrichment: 14.58×
+       HYPOTHESIS: → adjectival/property description
+
+   9. qotesy        = qo+tes+y
+       root &#x27;tes&#x27;: RARE/UNKNOWN, freq=0, 
+       suffix &#x27;y&#x27;: Type B process/verbal form
+       prefix &#x27;qo&#x27;: most common prefix — possibly definite/specific
+       HYPOTHESIS: → ambiguous
+
+  10. ykaly         = y+ka+ly
+       root &#x27;ka&#x27;: SUBSTANCE, freq=2575, 
+       suffix &#x27;ly&#x27;: adjectival/modifier form
+       prefix &#x27;y&#x27;: prefix y — moderate frequency
+       sections: astro:46%, bio:25%, herbal:18%
+       HYPOTHESIS: → adjectival/property description
+
+  11. doly          = ∅+do+ly
+       root &#x27;do&#x27;: SUBSTANCE, freq=272, → herbal
+       suffix &#x27;ly&#x27;: adjectival/modifier form
+       prefix &#x27;∅&#x27;: unprefixed (basic form)
+       sections: herbal:54%, pharma:15%, bio:14%
+       label enrichment: 2.65×
+       HYPOTHESIS: → adjectival/property description
+
+  12. saiin         = ∅+sa+iin
+       root &#x27;sa&#x27;: SUBSTANCE, freq=460, 
+       suffix &#x27;iin&#x27;: Type A &#x27;iin-group&#x27; case — nominal/substance form
+       prefix &#x27;∅&#x27;: unprefixed (basic form)
+       sections: astro:38%, herbal:22%, bio:22%
+       label enrichment: 2.88×
+       HYPOTHESIS: → substance in base/powder form
+
+  13. qokal         = qo+ka+l
+       root &#x27;ka&#x27;: SUBSTANCE, freq=2575, 
+       suffix &#x27;l&#x27;: Type A &#x27;l-group&#x27; case — common for o-onsetted roots
+       prefix &#x27;qo&#x27;: most common prefix — possibly definite/specific
+       sections: astro:46%, bio:25%, herbal:18%
+       HYPOTHESIS: → substance in liquid/prepared form
+
+  14. qolsa         = qol+sa+∅
+       root &#x27;sa&#x27;: SUBSTANCE, freq=460, 
+       suffix &#x27;∅&#x27;: bare/citation form
+       prefix &#x27;qol&#x27;: q+o+l compound — function word?
+       sections: astro:38%, herbal:22%, bio:22%
+       label enrichment: 2.88×
+       HYPOTHESIS: → bare substance name (citation)
+
+  15. raral         *** UNPARSEABLE — possible foreign/special word ***
+
+══════════════════════════════════════════════════════════════════════════════════════════
+SYNTHESIS — f66r FOCUSED DECIPHERMENT
+══════════════════════════════════════════════════════════════════════════════════════════
+
+  WORD LIST: 12/15 parse cleanly
+    Substance roots (Type A): 11
+    Process roots (Type B): 0
+
+  LABEL NEAR FIGURE: [(82, &#x27;otcheo,daiin.chty.ykees,cheg&#x27;)]
+    otcheo           pfx=o      root=tcheo     suf=∅      CLEAN
+    daiin            pfx=∅      root=da        suf=iin    CLEAN
+    chty             pfx=∅      root=ch        suf=∅      [ty]
+    ykees            pfx=y      root=kees      suf=∅      CLEAN
+    cheg             pfx=∅      root=che       suf=∅      [g]
+
+  CHARACTER COLUMN: 31 entries
+    Unique: 13
+    Chars not in word list or body: []
+    Most common: [(&#x27;o&#x27;, 5), (&#x27;y&#x27;, 4), (&#x27;d&#x27;, 4), (&#x27;f&#x27;, 4), (&#x27;x&#x27;, 3)]
+
+  KEY OBSERVATIONS:
+  1. The list contains mostly SUBSTANCE roots with varied suffixes
+     → Consistent with a glossary/materia medica index
+  2. Suffix -ry appears 3× in the list but is rare globally (1.8%)
+     → -ry may mark a specific &#x27;list/citation&#x27; form
+  3. Root &#x27;sa&#x27; appears 3× with different suffixes (ly, ∅, iin)
+     → Same substance in 3 different forms?
+  4. Root &#x27;a&#x27; appears 2× with suffix &#x27;ry&#x27; and different prefixes (r, ∅→da)
+     → Same base substance, different preparations?
+
+  Results saved to results/f66r_results.json
+
+══════════════════════════════════════════════════════════════════════════════════════════
+f66r ANALYSIS COMPLETE
+══════════════════════════════════════════════════════════════════════════════════════════
+</pre></details><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>bc53723</code>. 
+To run any test with your own parameters, clone
+<a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
+(<code>python webui/server.py</code>). All numbers reproduce at
+PYTHONHASHSEED=0.</footer></main></body></html>

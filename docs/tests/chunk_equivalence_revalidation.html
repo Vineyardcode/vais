@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>chunk_equivalence_revalidation — VAIS</title><style>
+:root { --bg:#ffffff; --fg:#1a1a1a; --muted:#666; --line:#ddd;
+        --code:#f5f5f5; --accent:#7a4a1e; --warn:#a33; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#141414; --fg:#ddd; --muted:#999; --line:#333;
+          --code:#1e1e1e; --accent:#d9a05b; --warn:#e77; } }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--fg);
+       font:16px/1.55 Georgia, 'Times New Roman', serif; }
+nav { border-bottom:1px solid var(--line); padding:.7em 1.2em;
+      font-family: system-ui, sans-serif; font-size:.9em; }
+nav a { color:var(--accent); text-decoration:none; margin-right:1.2em; }
+main { max-width: 62em; margin: 0 auto; padding: 1.5em 1.2em 4em; }
+h1,h2,h3 { font-family: system-ui, sans-serif; line-height:1.25; }
+h1 { font-size:1.7em; } h2 { font-size:1.3em; margin-top:2em; }
+a { color: var(--accent); }
+code, pre { font-family: ui-monospace, Consolas, monospace;
+            font-size:.86em; background:var(--code); }
+code { padding:.1em .3em; border-radius:3px; }
+pre { padding: .9em; overflow-x:auto; border:1px solid var(--line);
+      border-radius:4px; line-height:1.4; }
+table { border-collapse: collapse; margin: 1em 0; font-size:.92em;
+        display:block; overflow-x:auto; }
+th, td { border:1px solid var(--line); padding:.35em .6em;
+         text-align:left; vertical-align:top; }
+th { font-family: system-ui, sans-serif; background:var(--code); }
+blockquote { border-left:3px solid var(--accent); margin:1em 0;
+             padding:.2em 1em; color:var(--muted); }
+.muted { color:var(--muted); font-size:.9em; }
+.tag { font-family: system-ui, sans-serif; font-size:.75em;
+       border:1px solid var(--line); border-radius:3px;
+       padding:.05em .45em; margin-left:.5em; }
+.tag.sug { border-color:var(--warn); color:var(--warn); }
+details summary { cursor:pointer; font-family: system-ui, sans-serif; }
+footer { border-top:1px solid var(--line); margin-top:3em;
+         padding-top:1em; font-size:.85em; color:var(--muted); }
+</style></head><body>
+<nav><a href="../index.html">VAIS</a><a href="../catalog.html">Catalog</a>
+<a href="../research.html">Research</a><a href="../reports.html">Reports</a>
+<a href="https://github.com/Vineyardcode/vais">GitHub</a></nav>
+<main><h1>chunk_equivalence_revalidation</h1>
+<p class="muted">scripts/chunk_equivalence_revalidation.py · depends on chunk_equivalence_classes</p>
+<pre>CRITICAL REVALIDATION of Chunk Equivalence Classes
+
+═══════════════════════════════════════════════════════════════════════
+
+chunk_equivalence_classes found:  k=25 gives h_ratio=0.8486, matching NL chars (0.849).
+                 26 types, 0 hapax — looks like a perfect alphabet.
+
+BUT SEVERAL RED FLAGS:
+  1. h_ratio barely changes across k=10..200 (0.833 to 0.856).
+     The &quot;optimal k&quot; may be illusory — ANY collapse gives NL-char h_ratio.
+  2. Cluster coherence is POOR (skeleton entropy 2.22).
+     The clusters mix wildly different slot patterns.
+  3. NL cross-check failed (wrong file paths).
+  4. No frequency-based merging null model was tested.
+  5. MATHEMATICAL CONCERN: when you collapse a high-entropy alphabet
+     (523 types → k types), h_ratio may converge to a predictable
+     value regardless of HOW you merge. If so, the match to NL is
+     a mathematical artifact, not a linguistic finding.
+
+THIS REVALIDATION TESTS:
+  R1. h_ratio stability: plot h_ratio vs k for ALL methods of merging
+  R2. Frequency-ranked merging: merge by frequency rank (non-random)
+  R3. NL syllable cross-check (with correct file paths)
+  R4. Within-cluster distributional consistency (KL divergence)
+  R5. Mathematical lower bound: what h_ratio does pure entropy math predict?
+  R6. Pairwise confusion test: can we distinguish cluster members?</pre>
+<h2>Parameters</h2><table><tr><th>name</th><th>default</th><th>type</th></tr>
+<tr><td><code>GALLOWS_TRI</code></td><td><code>[&#x27;cth&#x27;, &#x27;ckh&#x27;, &#x27;cph&#x27;, &#x27;cfh&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>GALLOWS_BI</code></td><td><code>[&#x27;ch&#x27;, &#x27;sh&#x27;, &#x27;th&#x27;, &#x27;kh&#x27;, &#x27;ph&#x27;, &#x27;fh&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>SLOT1</code></td><td><code>[&#x27;ch&#x27;, &#x27;sh&#x27;, &#x27;y&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>SLOT2_RUNS</code></td><td><code>[&#x27;e&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>SLOT2_SINGLE</code></td><td><code>[&#x27;a&#x27;, &#x27;q&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>SLOT3</code></td><td><code>[&#x27;o&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>SLOT4_RUNS</code></td><td><code>[&#x27;i&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>SLOT4_SINGLE</code></td><td><code>[&#x27;d&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>SLOT5</code></td><td><code>[&#x27;cfh&#x27;, &#x27;ckh&#x27;, &#x27;cph&#x27;, &#x27;cth&#x27;, &#x27;f&#x27;, &#x27;k&#x27;, &#x27;l&#x27;, &#x27;m&#x27;, &#x27;n&#x27;, &#x27;p&#x27;, &#x27;r&#x27;, &#x27;s&#x27;, &#x27;t&#x27;, &#x27;y&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>MAX_CHUNKS</code></td><td><code>6</code></td><td>int</td></tr>
+</table>
+<h2>Golden output (PYTHONHASHSEED=0)</h2><details><summary>show</summary><pre>============================================================================
+chunk_equivalence_revalidation — CRITICAL REVALIDATION OF CHUNK EQUIVALENCE CLASSES
+============================================================================
+
+  VMS: 40351 words, 78526 chunks, 523 types
+
+  Baseline chunk h_ratio: 0.8176  [H=6.287, H|p=5.141]
+
+────────────────────────────────────────────────────────────────────────────
+R1: h_ratio STABILITY — IS THE NL-CHAR MATCH A MATHEMATICAL ARTIFACT?
+────────────────────────────────────────────────────────────────────────────
+
+  If h_ratio converges to ~0.85 for ANY merge method at any k,
+  then the match to NL characters is NOT a discovery — it&#x27;s a
+  mathematical property of entropy under alphabet collapse.
+
+      k    Random  FreqRank  Skeleton  RandTypes  FreqTypes  SkelTypes
+  ─────  ────────  ────────  ────────  ─────────  ─────────  ─────────
+      5    0.9965    0.9977    0.9286        5.0          5         31
+      8    0.9925    0.9878    0.9286        8.0          8         31
+     10    0.9902    0.9833    0.9286       10.0         10         31
+     15    0.9827    0.9843    0.9286       15.0         15         31
+     20    0.9759    0.9650    0.9286       20.0         20         31
+     25    0.9693    0.9566    0.9286       25.0         25         31
+     30    0.9647    0.9524    0.9286       30.0         30         31
+     40    0.9541    0.9383    0.9286       40.0         40         31
+     50    0.9439    0.9191    0.9286       50.0         50         31
+     75    0.9247    0.8998    0.9286       74.9         75         31
+    100    0.9104    0.8798    0.9286       99.6        100         31
+    150    0.8899    0.8554    0.9286      145.6        150         31
+    200    0.8771    0.8403    0.9286      185.8        200         31
+    300    0.8624    0.8262    0.9286      247.6        300         31
+    500    0.8474    0.8183    0.9286      324.6        500         31
+
+  NL character h_ratio reference: 0.849 ± 0.018
+
+  h_ratio range across ALL methods and k values: 0.1794
+  h_ratio mean across ALL: 0.9295
+
+  AT k=25:
+    Distributional clustering: h_ratio = 0.8486
+    Frequency-rank merge:      h_ratio = 0.9566
+    Random merge:              h_ratio = 0.9693
+    Skeleton merge:            h_ratio = 0.9286
+
+  ✓ Distributional clustering is meaningfully closer to NL chars.
+
+────────────────────────────────────────────────────────────────────────────
+R2: MATHEMATICAL PREDICTION — ENTROPY UNDER ALPHABET COLLAPSE
+────────────────────────────────────────────────────────────────────────────
+
+  When collapsing alphabet of size N to size k, information theory
+  predicts h_ratio changes. If the real data matches the theoretical
+  prediction, the NL-char match is an ARTIFACT, not a finding.
+
+  Original: N=523, h_ratio=0.8176
+
+  Theoretical prediction (approximate):
+  h_ratio(k) ≈ 1 - (1-h_orig) * log2(k)/log2(N)
+
+      k   Predicted    Random  FreqRank   Residual(R)
+  ─────  ──────────  ────────  ────────  ────────────
+      5      0.9531    0.9965    0.9977        0.0434
+      8      0.9394    0.9925    0.9878        0.0531
+     10      0.9329    0.9902    0.9833        0.0573
+     15      0.9211    0.9827    0.9843        0.0616
+     20      0.9127    0.9759    0.9650        0.0632
+     25      0.9062    0.9693    0.9566        0.0631
+     30      0.9009    0.9647    0.9524        0.0638
+     40      0.8925    0.9541    0.9383        0.0616
+     50      0.8860    0.9439    0.9191        0.0579
+     75      0.8742    0.9247    0.8998        0.0505
+    100      0.8658    0.9104    0.8798        0.0446
+    150      0.8540    0.8899    0.8554        0.0359
+    200      0.8456    0.8771    0.8403        0.0315
+    300      0.8338    0.8624    0.8262        0.0285
+    500      0.8189    0.8474    0.8183        0.0284
+
+────────────────────────────────────────────────────────────────────────────
+R3: NL SYLLABLE CROSS-CHECK — DO NL SYLLABLES ALSO COLLAPSE TO ~30?
+────────────────────────────────────────────────────────────────────────────
+
+  Latin-Caesar: 44864 words, 101887 syllables, 2369 types, base h_ratio=0.5694
+    Random merge to k=25: h_ratio=0.9812±0.0012
+    Freq-rank merge to k=25: h_ratio=0.9791, types=25
+    Random merge to k=30: h_ratio=0.9755±0.0015
+    Freq-rank merge to k=30: h_ratio=0.9721, types=30
+
+  Italian-Cucina: 24367 words, 47348 syllables, 1532 types, base h_ratio=0.5959
+    Random merge to k=25: h_ratio=0.9716±0.0016
+    Freq-rank merge to k=25: h_ratio=0.9714, types=25
+    Random merge to k=30: h_ratio=0.9635±0.0020
+    Freq-rank merge to k=30: h_ratio=0.9581, types=30
+
+  English-Cury: 43936 words, 70278 syllables, 4339 types, base h_ratio=0.4792
+    Random merge to k=25: h_ratio=0.9679±0.0022
+    Freq-rank merge to k=25: h_ratio=0.9652, types=25
+    Random merge to k=30: h_ratio=0.9607±0.0027
+    Freq-rank merge to k=30: h_ratio=0.9550, types=30
+
+  French-Viandier: 13873 words, 23025 syllables, 1378 types, base h_ratio=0.4374
+    Random merge to k=25: h_ratio=0.9459±0.0035
+    Freq-rank merge to k=25: h_ratio=0.9424, types=25
+    Random merge to k=30: h_ratio=0.9327±0.0033
+    Freq-rank merge to k=30: h_ratio=0.9304, types=30
+
+  KEY QUESTION: when NL syllables are collapsed to k=30,
+  what h_ratio do they produce? If it&#x27;s ≈ 0.85, then ANY
+  hierarchical system (syllables→letters) gives this result,
+  and the VMS finding is NOT specific.
+
+────────────────────────────────────────────────────────────────────────────
+R4: WITHIN-CLUSTER DISTRIBUTIONAL CONSISTENCY
+────────────────────────────────────────────────────────────────────────────
+
+  For valid equivalence classes, members should be interchangeable
+  in context. Measure: compute mean pairwise JSD of successor
+  distributions WITHIN each cluster vs BETWEEN clusters.
+
+  Clusters with ≥2 high-frequency members: 14
+  Within-cluster  JSD: 0.1611 ± 0.1403 (1433 pairs)
+  Between-cluster JSD: 0.5598 ± 0.3020 (436 pairs)
+  Ratio (within/between): 0.288
+
+  ✓ GOOD: within-cluster pairs much more similar than between
+
+────────────────────────────────────────────────────────────────────────────
+R5: INTERPRETATION — WHAT DOES h_ratio ≈ 0.85 AT k≈25 MEAN?
+────────────────────────────────────────────────────────────────────────────
+
+  The h_ratio of a collapsed alphabet depends on TWO factors:
+  (a) the original h_ratio (before collapse)
+  (b) the degree to which merged symbols were contextually distinct
+
+  Original chunk h_ratio = 0.818
+  If merged chunks were perfectly interchangeable (same contexts),
+    h_ratio after collapse stays ≈ 0.818
+  If merged chunks were contextually distinct,
+    h_ratio after collapse INCREASES toward 1.0
+
+  At k=25:
+    Distributional: h_ratio = 0.8486 (increase of +0.0310)
+    Freq-rank:      h_ratio = 0.9566 (increase of +0.1389)
+    Random:         h_ratio = 0.9693 (increase of +0.1517)
+
+  The distributional increase (+0.0310) is much smaller
+  than random (+0.1517), confirming that distributional
+  clustering merges contextually-similar chunks (as intended).
+
+  BUT: the increase is also larger than zero, meaning SOME information
+  is lost even with distributional merging → clusters aren&#x27;t perfect
+  equivalence classes.
+
+────────────────────────────────────────────────────────────────────────────
+R6: ROBUSTNESS — SINGLE-LINKAGE vs AVERAGE-LINKAGE
+────────────────────────────────────────────────────────────────────────────
+
+  chunk_equivalence_classes used average-linkage. Test if results change with
+  single-linkage (tends to produce long chains) to check robustness.
+
+  single-linkage k=20: h_ratio=0.9936, types=21
+  single-linkage k=25: h_ratio=0.9829, types=26
+  single-linkage k=30: h_ratio=0.9830, types=31
+
+============================================================================
+CORRECTED VERDICT — chunk_equivalence_classes
+============================================================================
+
+  FINDINGS:
+
+  1. h_ratio AT k=25, ALL METHODS:
+                   random: 0.9693
+                freq_rank: 0.9566
+           distributional: 0.8486
+
+  2. DISTANCE TO NL-CHAR h_ratio (0.849):
+     distributional: |0.8486 - 0.849| = 0.0004
+     freq-rank:      |0.9566 - 0.849| = 0.1076
+     random:         |0.9693 - 0.849| = 0.1203
+
+  → Distributional IS closest, but by how much matters.
+  → SUBSTANTIAL advantage over freq-rank
+
+  3. KEY INSIGHT: h_ratio is largely DETERMINED by the value of k,
+     NOT by HOW chunks are merged. This means:
+     - The match to NL h_ratio ≈ 0.849 at k≈25 is partly a
+       MATHEMATICAL PROPERTY of entropy under alphabet collapse.
+     - Distributional clustering does preserve h_ratio better than
+       random (lower value), confirming it groups similar chunks.
+     - But the specific value 0.849 is not uniquely diagnostic.
+
+  4. CLUSTER QUALITY:
+     Within/between JSD ratio: 0.288
+     → Clusters ARE distributional equivalence classes
+
+  REVISED VERDICT:
+
+  a) The &#x27;true alphabet size ≈ 25&#x27; finding is PARTIALLY SUPPORTED:
+     - Distributional clustering DOES find coherent groups
+     - But h_ratio match to NL is largely a mathematical artifact
+     - The more relevant test is cluster quality (within/between JSD)
+
+  b) Method advantage: SUBSTANTIAL
+     Cluster quality: GOOD
+
+  ★ OVERALL: SUPPORTED
+    Distributional clusters are genuine equivalence classes
+    and produce demonstrably better NL-character matches.
+
+  Saved to results/chunk_equivalence_revalidation.txt/.json
+</pre></details><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>bc53723</code>. 
+To run any test with your own parameters, clone
+<a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
+(<code>python webui/server.py</code>). All numbers reproduce at
+PYTHONHASHSEED=0.</footer></main></body></html>

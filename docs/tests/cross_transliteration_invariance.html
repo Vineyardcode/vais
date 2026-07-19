@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cross_transliteration_invariance — VAIS</title><style>
+:root { --bg:#ffffff; --fg:#1a1a1a; --muted:#666; --line:#ddd;
+        --code:#f5f5f5; --accent:#7a4a1e; --warn:#a33; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#141414; --fg:#ddd; --muted:#999; --line:#333;
+          --code:#1e1e1e; --accent:#d9a05b; --warn:#e77; } }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--fg);
+       font:16px/1.55 Georgia, 'Times New Roman', serif; }
+nav { border-bottom:1px solid var(--line); padding:.7em 1.2em;
+      font-family: system-ui, sans-serif; font-size:.9em; }
+nav a { color:var(--accent); text-decoration:none; margin-right:1.2em; }
+main { max-width: 62em; margin: 0 auto; padding: 1.5em 1.2em 4em; }
+h1,h2,h3 { font-family: system-ui, sans-serif; line-height:1.25; }
+h1 { font-size:1.7em; } h2 { font-size:1.3em; margin-top:2em; }
+a { color: var(--accent); }
+code, pre { font-family: ui-monospace, Consolas, monospace;
+            font-size:.86em; background:var(--code); }
+code { padding:.1em .3em; border-radius:3px; }
+pre { padding: .9em; overflow-x:auto; border:1px solid var(--line);
+      border-radius:4px; line-height:1.4; }
+table { border-collapse: collapse; margin: 1em 0; font-size:.92em;
+        display:block; overflow-x:auto; }
+th, td { border:1px solid var(--line); padding:.35em .6em;
+         text-align:left; vertical-align:top; }
+th { font-family: system-ui, sans-serif; background:var(--code); }
+blockquote { border-left:3px solid var(--accent); margin:1em 0;
+             padding:.2em 1em; color:var(--muted); }
+.muted { color:var(--muted); font-size:.9em; }
+.tag { font-family: system-ui, sans-serif; font-size:.75em;
+       border:1px solid var(--line); border-radius:3px;
+       padding:.05em .45em; margin-left:.5em; }
+.tag.sug { border-color:var(--warn); color:var(--warn); }
+details summary { cursor:pointer; font-family: system-ui, sans-serif; }
+footer { border-top:1px solid var(--line); margin-top:3em;
+         padding-top:1em; font-size:.85em; color:var(--muted); }
+</style></head><body>
+<nav><a href="../index.html">VAIS</a><a href="../catalog.html">Catalog</a>
+<a href="../research.html">Research</a><a href="../reports.html">Reports</a>
+<a href="https://github.com/Vineyardcode/vais">GitHub</a></nav>
+<main><h1>cross_transliteration_invariance</h1>
+<p class="muted">scripts/cross_transliteration_invariance.py</p>
+<pre>Cross-Transliteration Invariance Audit (portfolio S9) — is the evidence
+about the manuscript, or about one team&#x27;s reading of it?
+
+Assumption A1 (the transliteration IS the text) is inherited by 100% of
+this suite&#x27;s results (RESEARCH.md Phase 1). This audit recomputes (a) a
+compact headline fingerprint and (b) the live S7 Currier-B ordinal
+finding on four independent transliterations alongside the suite&#x27;s
+canonical ZL corpus:
+
+  CD  Currier / D&#x27;Imperio        data/translit/CD2a-n.txt (IVTFF 2.0)
+  GC  Glen Claston v101          data/translit/GC2a-n.txt (IVTFF 2.0)
+  FG  FSG (Friedman Study Group) data/translit/FG2a-n.txt (IVTFF 2.0)
+  IT  Takeshi Takahashi          data/translit/IT2a-n.txt (IVTFF 2.0)
+  (source: voynich.nu/data, fetched 2026-07-18, courtesy R. Zandbergen)
+
+Each file is parsed in ITS OWN alphabet (case-sensitive; @nnn; extended
+glyphs mapped to unique private-use characters; words containing
+illegibility marks ?%*{} dropped whole, per the T1 policy). Per-page
+$L=A/B metadata is read from each file&#x27;s own headers.
+
+PART 1 — headline fingerprint spread (report-out; S9 cannot be killed,
+only starved): six alphabet-computable features per transliteration —
+h2_ratio, ttr@5k, zipf_alpha, mean word length, line_init_jsd,
+line_final_jsd (compact local definitions; the full 17-feature
+fingerprint contains EVA-specific features). A feature is flagged
+TRANSLITERATION-SENSITIVE if any alternative deviates from ZL by more
+than REL_DEV_FLAG (relative). Flagged features are demoted to
+&quot;conditional on the reading&quot; in any future claim.
+
+PART 2 — S7-B ordinal invariance (the live question; pre-registered):
+the rung-3 decisive battery (10-split median interior positional gain
+vs N_NULLS within-line shuffles, beat ALL nulls AND margin &gt;=
+EFFECT_FLOOR) is run on the Currier-B lines of every transliteration,
+with the ALPHABET-AGNOSTIC feature set (len bucket, first char, last
+char — &#x27;gallows&#x27; is EVA-specific and dropped).
+  GATE: ZL itself must PASS with the reduced feature set (else the
+    audit is inconclusive: the dropped feature was load-bearing).
+  USABILITY: a transliteration is usable if it yields &gt;= MIN_B_LINES
+    Currier-B lines of &gt;= MIN_LINE_WORDS words.
+  OUTCOMES (pre-registered 2026-07-18, before first execution):
+    gate_failed      — reduced-feature ZL battery fails; no conclusion.
+    robust           — every usable alternative PASSES: the S7-B
+                       ordinal finding is transliteration-robust
+                       (supports the quarantined rung-3 entry).
+    partial          — some usable alternatives pass, some fail: the
+                       finding is sensitive to reading choices; flagged,
+                       listed, and the failing readings named. No
+                       demotion, mandatory investigation.
+    artifact_suspect — ZL passes but EVERY usable alternative fails:
+                       the rung-3 finding is DEMOTED to
+                       artifact-suspect (a property of the ZL reading
+                       until shown otherwise).
+Currier-A rows are reported observationally (no nulls, no adjudication).
+Vocabulary discipline: &#x27;robust&#x27; upgrades nothing by itself — it removes
+one named objection to a still-quarantined SUGGESTIVE finding.</pre>
+<h2>Parameters</h2><table><tr><th>name</th><th>default</th><th>type</th></tr>
+<tr><td><code>SEED</code></td><td><code>116</code></td><td>int</td></tr>
+<tr><td><code>R_SPLITS</code></td><td><code>10</code></td><td>int</td></tr>
+<tr><td><code>N_NULLS</code></td><td><code>20</code></td><td>int</td></tr>
+<tr><td><code>EFFECT_FLOOR</code></td><td><code>0.05</code></td><td>float</td></tr>
+<tr><td><code>REL_DEV_FLAG</code></td><td><code>0.2</code></td><td>float</td></tr>
+<tr><td><code>MIN_B_LINES</code></td><td><code>500</code></td><td>int</td></tr>
+<tr><td><code>MIN_LINE_WORDS</code></td><td><code>5</code></td><td>int</td></tr>
+<tr><td><code>HOLDOUT_FRAC</code></td><td><code>0.2</code></td><td>float</td></tr>
+<tr><td><code>ALPHA</code></td><td><code>0.5</code></td><td>float</td></tr>
+<tr><td><code>FILES</code></td><td><code>{&#x27;CD&#x27;: &#x27;CD2a-n.txt&#x27;, &#x27;GC&#x27;: &#x27;GC2a-n.txt&#x27;, &#x27;FG&#x27;: &#x27;FG2a-n.txt&#x27;, &#x27;IT&#x27;: &#x27;IT2a-n.txt&#x27;}</code></td><td>json</td></tr>
+<tr><td><code>FEATURE_NAMES</code></td><td><code>[&#x27;len&#x27;, &#x27;first&#x27;, &#x27;last&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>INTERIOR</code></td><td><code>[&#x27;m1&#x27;, &#x27;m2&#x27;, &#x27;m3&#x27;]</code></td><td>json</td></tr>
+</table>
+<h2>Golden output (PYTHONHASHSEED=0)</h2><details><summary>show</summary><pre>============================================================================
+CROSS-TRANSLITERATION INVARIANCE (S9) — A1 audit
+============================================================================
+seed=116 splits=10 nulls=20 floor=0.05 rel_dev_flag=0.2 min_B_lines=500 features=(&#x27;len&#x27;, &#x27;first&#x27;, &#x27;last&#x27;)
+  ZL: 3956 lines, 37520 tokens, alphabet 25  h2r 0.543  init_jsd 0.169  final_jsd 0.092
+  CD: 1845 lines, 14971 tokens, alphabet 35  h2r 0.609  init_jsd 0.141  final_jsd 0.069
+  GC: 3770 lines, 37408 tokens, alphabet 162  h2r 0.629  init_jsd 0.215  final_jsd 0.089
+  FG: 3501 lines, 31450 tokens, alphabet 23  h2r 0.603  init_jsd 0.176  final_jsd 0.089
+  IT: 3718 lines, 34870 tokens, alphabet 22  h2r 0.548  init_jsd 0.173  final_jsd 0.090
+
+  PART 1: 3/6 headline features flagged transliteration-sensitive (&gt;20% vs ZL):
+    mean_wlen: flagged in [&#x27;GC&#x27;] (devs {&#x27;CD&#x27;: 0.1722, &#x27;GC&#x27;: 0.2191, &#x27;FG&#x27;: 0.1347, &#x27;IT&#x27;: 0.0181})
+    line_init_jsd: flagged in [&#x27;GC&#x27;] (devs {&#x27;CD&#x27;: 0.1612, &#x27;GC&#x27;: 0.2762, &#x27;FG&#x27;: 0.0451, &#x27;IT&#x27;: 0.0285})
+    line_final_jsd: flagged in [&#x27;CD&#x27;] (devs {&#x27;CD&#x27;: 0.2522, &#x27;GC&#x27;: 0.0262, &#x27;FG&#x27;: 0.024, &#x27;IT&#x27;: 0.0207})
+
+  PART 2: S7-B ordinal battery (reduced features), per transliteration:
+    ZL: B +0.0442 (null max -0.0031, margin +0.0501) -&gt; PASS   [2522 B-lines]
+    CD: B +0.0094 (null max -0.0115, margin +0.0326) -&gt; fail   [991 B-lines]
+    GC: B +0.0372 (null max -0.0088, margin +0.0487) -&gt; fail   [2365 B-lines]
+    FG: B +0.0475 (null max -0.0027, margin +0.0534) -&gt; PASS   [2259 B-lines]
+    IT: B +0.0475 (null max -0.0032, margin +0.0529) -&gt; PASS   [2329 B-lines]
+
+  ADJUDICATION (pre-registered):
+    PARTIAL: passes in [&#x27;FG&#x27;, &#x27;IT&#x27;], fails in [&#x27;CD&#x27;, &#x27;GC&#x27;] — the finding is sensitive to reading choices; investigation required before any promotion.
+
+  -&gt; results/cross_transliteration_invariance.json
+</pre></details><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>bc53723</code>. 
+To run any test with your own parameters, clone
+<a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
+(<code>python webui/server.py</code>). All numbers reproduce at
+PYTHONHASHSEED=0.</footer></main></body></html>

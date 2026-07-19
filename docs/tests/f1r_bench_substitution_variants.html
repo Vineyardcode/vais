@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>f1r_bench_substitution_variants — VAIS</title><style>
+:root { --bg:#ffffff; --fg:#1a1a1a; --muted:#666; --line:#ddd;
+        --code:#f5f5f5; --accent:#7a4a1e; --warn:#a33; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#141414; --fg:#ddd; --muted:#999; --line:#333;
+          --code:#1e1e1e; --accent:#d9a05b; --warn:#e77; } }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--fg);
+       font:16px/1.55 Georgia, 'Times New Roman', serif; }
+nav { border-bottom:1px solid var(--line); padding:.7em 1.2em;
+      font-family: system-ui, sans-serif; font-size:.9em; }
+nav a { color:var(--accent); text-decoration:none; margin-right:1.2em; }
+main { max-width: 62em; margin: 0 auto; padding: 1.5em 1.2em 4em; }
+h1,h2,h3 { font-family: system-ui, sans-serif; line-height:1.25; }
+h1 { font-size:1.7em; } h2 { font-size:1.3em; margin-top:2em; }
+a { color: var(--accent); }
+code, pre { font-family: ui-monospace, Consolas, monospace;
+            font-size:.86em; background:var(--code); }
+code { padding:.1em .3em; border-radius:3px; }
+pre { padding: .9em; overflow-x:auto; border:1px solid var(--line);
+      border-radius:4px; line-height:1.4; }
+table { border-collapse: collapse; margin: 1em 0; font-size:.92em;
+        display:block; overflow-x:auto; }
+th, td { border:1px solid var(--line); padding:.35em .6em;
+         text-align:left; vertical-align:top; }
+th { font-family: system-ui, sans-serif; background:var(--code); }
+blockquote { border-left:3px solid var(--accent); margin:1em 0;
+             padding:.2em 1em; color:var(--muted); }
+.muted { color:var(--muted); font-size:.9em; }
+.tag { font-family: system-ui, sans-serif; font-size:.75em;
+       border:1px solid var(--line); border-radius:3px;
+       padding:.05em .45em; margin-left:.5em; }
+.tag.sug { border-color:var(--warn); color:var(--warn); }
+details summary { cursor:pointer; font-family: system-ui, sans-serif; }
+footer { border-top:1px solid var(--line); margin-top:3em;
+         padding-top:1em; font-size:.85em; color:var(--muted); }
+</style></head><body>
+<nav><a href="../index.html">VAIS</a><a href="../catalog.html">Catalog</a>
+<a href="../research.html">Research</a><a href="../reports.html">Reports</a>
+<a href="https://github.com/Vineyardcode/vais">GitHub</a></nav>
+<main><h1>f1r_bench_substitution_variants</h1>
+<p class="muted">scripts/f1r_bench_substitution_variants.py</p>
+<pre>Aggressive bench substitution variants on f1r
+
+Try substituting ch/sh benches with JKP&#x27;s ligature candidates
+to see if any combination produces recognizable text.</pre>
+<h2>Parameters</h2><table><tr><th>name</th><th>default</th><th>type</th></tr>
+<tr><td><code>CH_OPTIONS</code></td><td><code>[&#x27;cr&#x27;, &#x27;ct&#x27;, &#x27;er&#x27;, &#x27;ee&#x27;, &#x27;cc&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>SH_OPTIONS</code></td><td><code>[&#x27;se&#x27;, &#x27;sr&#x27;, &#x27;sc&#x27;, &#x27;ce&#x27;, &#x27;ss&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>LATIN_PHARMA</code></td><td><code>[&#x27;accipe&#x27;, &#x27;acer&#x27;, &#x27;acus&#x27;, &#x27;adde&#x27;, &#x27;alis&#x27;, &#x27;ana&#x27;, &#x27;aqua&#x27;, &#x27;aris&#x27;, &#x27;ars&#x27;, &#x27;arum&#x27;, &#x27;atus&#x27;, &#x27;…</code></td><td>json</td></tr>
+</table>
+<h2>Golden output (PYTHONHASHSEED=0)</h2><details><summary>show</summary><pre>================================================================================
+f1r_bench_substitution_variants — BENCH SUBSTITUTION VARIANT SCAN
+================================================================================
+Total f1r tokens: 215
+ch variants: [&#x27;cr&#x27;, &#x27;ct&#x27;, &#x27;er&#x27;, &#x27;ee&#x27;, &#x27;cc&#x27;]
+sh variants: [&#x27;se&#x27;, &#x27;sr&#x27;, &#x27;sc&#x27;, &#x27;ce&#x27;, &#x27;ss&#x27;]
+Total combinations: 25
+
+────────────────────────────────────────────────────────────────────────────────
+RANKING BY LATIN PHARMACEUTICAL WORD HITS (≥3 chars)
+────────────────────────────────────────────────────────────────────────────────
+
+  ch→er, sh→ss: 39 hits
+    fachys               → faraeryer                 (matched: far)
+    ar                   → arum                      (matched: arum)
+    shol                 → ssol                      (matched: sol)
+    kor                  → Iorum                     (matched: orum)
+    sholdy               → ssoldus                   (matched: sol)
+    ckhar                → ckarum                    (matched: arum)
+    or                   → orum                      (matched: orum)
+    shar                 → ssarum                    (matched: arum)
+    ... and 31 more
+
+  ch→ee, sh→ss: 38 hits
+    fachys               → faraeeyer                 (matched: far)
+    ar                   → arum                      (matched: arum)
+    shol                 → ssol                      (matched: sol)
+    cthres               → ctereer                   (matched: ter)
+    kor                  → Iorum                     (matched: orum)
+    sholdy               → ssoldus                   (matched: sol)
+    ckhar                → ckarum                    (matched: arum)
+    or                   → orum                      (matched: orum)
+    ... and 30 more
+
+  ch→cr, sh→ss: 37 hits
+    fachys               → faracryer                 (matched: far)
+    ar                   → arum                      (matched: arum)
+    shol                 → ssol                      (matched: sol)
+    kor                  → Iorum                     (matched: orum)
+    sholdy               → ssoldus                   (matched: sol)
+    ckhar                → ckarum                    (matched: arum)
+    or                   → orum                      (matched: orum)
+    shar                 → ssarum                    (matched: arum)
+    ... and 29 more
+
+  ch→ct, sh→ss: 37 hits
+    fachys               → faractyer                 (matched: far)
+    ar                   → arum                      (matched: arum)
+    shol                 → ssol                      (matched: sol)
+    kor                  → Iorum                     (matched: orum)
+    sholdy               → ssoldus                   (matched: sol)
+    ckhar                → ckarum                    (matched: arum)
+    or                   → orum                      (matched: orum)
+    shar                 → ssarum                    (matched: arum)
+    ... and 29 more
+
+  ch→cc, sh→ss: 37 hits
+    fachys               → faraccyer                 (matched: far)
+    ar                   → arum                      (matched: arum)
+    shol                 → ssol                      (matched: sol)
+    kor                  → Iorum                     (matched: orum)
+    sholdy               → ssoldus                   (matched: sol)
+    ckhar                → ckarum                    (matched: arum)
+    or                   → orum                      (matched: orum)
+    shar                 → ssarum                    (matched: arum)
+    ... and 29 more
+
+  ch→er, sh→sc: 36 hits
+    fachys               → faraeryer                 (matched: far)
+    ar                   → arum                      (matched: arum)
+    shory                → scorus                    (matched: cor)
+    kor                  → Iorum                     (matched: orum)
+    ckhar                → ckarum                    (matched: arum)
+    or                   → orum                      (matched: orum)
+    shar                 → scarum                    (matched: arum)
+    cthar                → ctrarum                   (matched: arum)
+    ... and 28 more
+
+  ch→er, sh→se: 35 hits
+    fachys               → faraeryer                 (matched: far)
+    ar                   → arum                      (matched: arum)
+    kor                  → Iorum                     (matched: orum)
+    ckhar                → ckarum                    (matched: arum)
+    or                   → orum                      (matched: orum)
+    shar                 → searum                    (matched: arum)
+    cthar                → ctrarum                   (matched: arum)
+    cthar                → ctrarum                   (matched: arum)
+    ... and 27 more
+
+  ch→er, sh→sr: 35 hits
+    fachys               → faraeryer                 (matched: far)
+    ar                   → arum                      (matched: arum)
+    kor                  → Iorum                     (matched: orum)
+    ckhar                → ckarum                    (matched: arum)
+    or                   → orum                      (matched: orum)
+    shar                 → srarum                    (matched: arum)
+    cthar                → ctrarum                   (matched: arum)
+    cthar                → ctrarum                   (matched: arum)
+    ... and 27 more
+
+  ch→er, sh→ce: 35 hits
+    fachys               → faraeryer                 (matched: far)
+    ar                   → arum                      (matched: arum)
+    kor                  → Iorum                     (matched: orum)
+    ckhar                → ckarum                    (matched: arum)
+    or                   → orum                      (matched: orum)
+    shar                 → cearum                    (matched: arum)
+    cthar                → ctrarum                   (matched: arum)
+    cthar                → ctrarum                   (matched: arum)
+    ... and 27 more
+
+  ch→ee, sh→sc: 35 hits
+    fachys               → faraeeyer                 (matched: far)
+    ar                   → arum                      (matched: arum)
+    shory                → scorus                    (matched: cor)
+    cthres               → ctereer                   (matched: ter)
+    kor                  → Iorum                     (matched: orum)
+    ckhar                → ckarum                    (matched: arum)
+    or                   → orum                      (matched: orum)
+    shar                 → scarum                    (matched: arum)
+    ... and 27 more
+
+────────────────────────────────────────────────────────────────────────────────
+BEST COMBINATION: ch→er, sh→ss (39 hits)
+FULL DECODE OF f1r:
+────────────────────────────────────────────────────────────────────────────────
+
+  f1r.1
+    EVA: fachys ykal ar ataiin shol shory cthres y kor sholdy
+    DEC: faraeryer conkal arum ataium ssol ssorus ctrreer y Iorum ssoldus
+
+  f1r.2
+    EVA: sory ckhar or y kair chtaiin shar ase cthar cthar dan
+    DEC: sorus ckarum orum y Iairum ertaium ssarum ase ctrarum ctrarum dan
+
+  f1r.3
+    EVA: syaiir sheky or ykaiin shod cthoary cthes daraiin sy
+    DEC: syaiirum ssekus orum conkaium ssod ctroarus ctreer daraium sus
+
+  f1r.4
+    EVA: soiin oteey oteos roloty cthiar daiin okaiin or okan
+    DEC: soium oteeus oteoer rolotus ctriarum daium okaium orum okan
+
+  f1r.5
+    EVA: sair y chear cthaiin cphar cfhaiin
+    DEC: sairum y erearum ctraium cparum cfaium
+
+  f1r.6
+    EVA: ydaraishy
+    DEC: condaraissus
+
+  f1r.7
+    EVA: odar c&#x27;y shol cphoy oydar sh s cfhoaiin shodary
+    DEC: odarum c&#x27;us ssol cpous oydarum ser s cfoaium ssodarus
+
+  f1r.8
+    EVA: yshey shody okchoy otchol chocthy os chy dain chor kos
+    DEC: consseus ssodus okerous oterol eroctrus oer erus dain erorum Ioer
+
+  f1r.9
+    EVA: daiin shos cfhol shody
+    DEC: daium ssoer cfol ssodus
+
+  f1r.10
+    EVA: dain os teody
+    DEC: dain oer teodus
+
+  f1r.11
+    EVA: ydain cphesaiin ols cphey ytain shoshy cphodal es
+    DEC: condain cpesaium oler cpeus contain ssossus cpodal eer
+
+  f1r.12
+    EVA: oksho kshoy otairin oteol okan shodain sckhey daiin
+    DEC: oksso Issous otairin oteol okan ssodain sckheus daium
+
+  f1r.13
+    EVA: shoy ckhey kodaiin cphy cphodaiils cthey sho oldain d
+    DEC: ssous ckeus Iodaium cpus cpodaiiler ctreus sso oldain d
+
+  f1r.14
+    EVA: dain oiin chol odaiin chodain chdy okain dn cthy kod
+    DEC: dain oium erol odaium erodain erdus okain dn ctrus Iod
+
+  f1r.15
+    EVA: daiin shckhey ckeo r char shey kol chol chol kor chal
+    DEC: daium ssckheus ckeo r erarum sseus Iol erol erol Iorum eral
+
+  f1r.16
+    EVA: sho chol shodan kshy kchy d or chodaiin sho koeam
+    DEC: sso erol ssodan Issus Ierus d orum erodaium sso Ioearis
+
+  f1r.17
+    EVA: ycho tchey chekain sheo pshol dydyd cthy daictoy
+    DEC: conero tereus erekain sseo perssol dydyd ctrus daictous
+
+  f1r.18
+    EVA: yto shol she kodshey cphealy dar ain dain ckhyds
+    DEC: conto ssol sse Iodsseus cpealus darum ain dain ckyder
+
+  f1r.19
+    EVA: dchar shcthaiin okaiir chey chy tol cthols dlocto
+    DEC: derarum ssctraium okaiirum ereus erus tol ctroler dlocto
+
+  f1r.20
+    EVA: shok chor chey dain ckhey
+    DEC: ssok erorum ereus dain ckeus
+
+  f1r.21
+    EVA: otol daiiin
+    DEC: otol daiium
+
+  f1r.22
+    EVA: cpho shaiin shokcheey chol tshodeesy shey pydeey cha ro dar
+    DEC: cpo ssaium ssokereeus erol tssodeesus sseus perydeeus era ro darum
+
+  f1r.23
+    EVA: ydoin chol dain cthal dar shear kaiin dar shey cthar
+    DEC: condoin erol dain ctral darum ssearum Iaium darum sseus ctrarum
+
+  f1r.24
+    EVA: cho o kaiin shoaiin okol daiin far cthol daiin ctholdar
+    DEC: ero o Iaium ssoaium okol daium fararum ctrol daium ctroldarum
+
+  f1r.25
+    EVA: ycheey okeey oky daiin okchey kokaiin ochol kdchy dal
+    DEC: conereeus okeeus okus daium okereus Iokaium oerol Iderus dal
+
+  f1r.26
+    EVA: dcheo shody koshey cthy ok chey keey keey dal chtor
+    DEC: dereo ssodus Iosseus ctrus ok ereus Ieeus Ieeus dal ertorum
+
+  f1r.27
+    EVA: eo chol chok choty chotey
+    DEC: eo erol erok erotus eroteus
+
+  f1r.28
+    EVA: dchaiin
+    DEC: deraium
+
+────────────────────────────────────────────────────────────────────────────────
+MOST FREQUENT DECODED TOKENS (ch→er, sh→ss)
+────────────────────────────────────────────────────────────────────────────────
+
+  daium                      ×7
+  erol                       ×7
+  dain                       ×6
+  orum                       ×4
+  darum                      ×4
+  ssol                       ×3
+  y                          ×3
+  ctrarum                    ×3
+  ssodus                     ×3
+  sso                        ×3
+  ctrus                      ×3
+  sseus                      ×3
+  ereus                      ×3
+  Iorum                      ×2
+  okan                       ×2
+  oer                        ×2
+  erus                       ×2
+  erorum                     ×2
+  ckeus                      ×2
+  d                          ×2
+  Iaium                      ×2
+  dal                        ×2
+  Ieeus                      ×2
+  faraeryer                  ×1
+  conkal                     ×1
+  arum                       ×1
+  ataium                     ×1
+  ssorus                     ×1
+  ctrreer                    ×1
+  ssoldus                    ×1
+  sorus                      ×1
+  ckarum                     ×1
+  Iairum                     ×1
+  ertaium                    ×1
+  ssarum                     ×1
+  ase                        ×1
+  dan                        ×1
+  syaiirum                   ×1
+  ssekus                     ×1
+  conkaium                   ×1
+
+────────────────────────────────────────────────────────────────────────────────
+FIRST LINE WORD-BY-WORD — ALL 25 BENCH VARIANTS
+────────────────────────────────────────────────────────────────────────────────
+
+  EVA: fachys
+       → faraccyer
+       → faracryer
+       → faractyer
+       → faraeeyer
+       → faraeryer
+
+  EVA: ykal
+       → conkal
+
+  EVA: ar
+       → arum
+
+  EVA: ataiin
+       → ataium
+
+  EVA: shol
+       → ceol
+       → scol
+       → seol
+       → srol
+       → ssol
+
+  EVA: shory
+       → ceorus
+       → scorus
+       → seorus
+       → srorus
+       → ssorus
+
+  EVA: cthres
+       → ctcreer
+       → ctereer
+       → ctrreer
+       → cttreer
+
+  EVA: y
+       → y
+
+  EVA: kor
+       → Iorum
+
+  EVA: sholdy
+       → ceoldus
+       → scoldus
+       → seoldus
+       → sroldus
+       → ssoldus
+
+────────────────────────────────────────────────────────────────────────────────
+ASSESSMENT
+────────────────────────────────────────────────────────────────────────────────
+
+The abbreviation substitution produces NO recognizable continuous
+text in any variant. Specific problems:
+
+1. BENCH OPACITY: ch and sh appear in ~40% of tokens but have
+   no single definitive substitution. They could represent 5+
+   different Latin ligatures each, and the &#x27;correct&#x27; mapping may
+   vary by position and context.
+
+2. GALLOWS MYSTERY: k, t, p, f (especially benched variants cth,
+   cph, cfh) are composite constructions. Our simple k→I mapping
+   is almost certainly wrong for most contexts.
+
+3. THE &#x27;o&#x27; PROBLEM: EVA-o appears in 55 bigrams on f1r alone.
+   Whether it&#x27;s a vowel, null, separator, or something else
+   fundamentally changes the decoded output.
+
+4. ADDITIONAL CIPHER LAYER: If abbreviation is only ONE component
+   of a multi-layer encoding (as cappelli_abbreviation_retest suggested at ~30%),
+   then abbreviation substitution alone cannot produce readable
+   text — there&#x27;s still an alphabet substitution or verbose
+   cipher layer underneath/on top.
+
+5. WRONG UNIT SIZE: JKP argues some EVA characters are 2-4
+   components. If EVA character boundaries are wrong, ALL our
+   substitutions are operating on incorrect units.
+
+CONCLUSION: We do NOT have enough information to translate the
+manuscript. The abbreviation mappings explain the STRUCTURAL
+properties (paradigm fill, suffix distribution) but do not
+constitute a decipherment key. A successful decoding would need:
+  - Correct character segmentation (not necessarily EVA)
+  - Resolution of bench ambiguity (ch, sh → which ligature?)
+  - Resolution of gallows composites
+  - Identification of any additional cipher layer
+  - Knowledge of the source language
+
+Saved to C:\projects\vais\results\f1r_bench_substitution_variants.txt
+</pre></details><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>bc53723</code>. 
+To run any test with your own parameters, clone
+<a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
+(<code>python webui/server.py</code>). All numbers reproduce at
+PYTHONHASHSEED=0.</footer></main></body></html>

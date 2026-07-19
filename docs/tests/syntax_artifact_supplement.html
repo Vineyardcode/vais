@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>syntax_artifact_supplement — VAIS</title><style>
+:root { --bg:#ffffff; --fg:#1a1a1a; --muted:#666; --line:#ddd;
+        --code:#f5f5f5; --accent:#7a4a1e; --warn:#a33; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#141414; --fg:#ddd; --muted:#999; --line:#333;
+          --code:#1e1e1e; --accent:#d9a05b; --warn:#e77; } }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--fg);
+       font:16px/1.55 Georgia, 'Times New Roman', serif; }
+nav { border-bottom:1px solid var(--line); padding:.7em 1.2em;
+      font-family: system-ui, sans-serif; font-size:.9em; }
+nav a { color:var(--accent); text-decoration:none; margin-right:1.2em; }
+main { max-width: 62em; margin: 0 auto; padding: 1.5em 1.2em 4em; }
+h1,h2,h3 { font-family: system-ui, sans-serif; line-height:1.25; }
+h1 { font-size:1.7em; } h2 { font-size:1.3em; margin-top:2em; }
+a { color: var(--accent); }
+code, pre { font-family: ui-monospace, Consolas, monospace;
+            font-size:.86em; background:var(--code); }
+code { padding:.1em .3em; border-radius:3px; }
+pre { padding: .9em; overflow-x:auto; border:1px solid var(--line);
+      border-radius:4px; line-height:1.4; }
+table { border-collapse: collapse; margin: 1em 0; font-size:.92em;
+        display:block; overflow-x:auto; }
+th, td { border:1px solid var(--line); padding:.35em .6em;
+         text-align:left; vertical-align:top; }
+th { font-family: system-ui, sans-serif; background:var(--code); }
+blockquote { border-left:3px solid var(--accent); margin:1em 0;
+             padding:.2em 1em; color:var(--muted); }
+.muted { color:var(--muted); font-size:.9em; }
+.tag { font-family: system-ui, sans-serif; font-size:.75em;
+       border:1px solid var(--line); border-radius:3px;
+       padding:.05em .45em; margin-left:.5em; }
+.tag.sug { border-color:var(--warn); color:var(--warn); }
+details summary { cursor:pointer; font-family: system-ui, sans-serif; }
+footer { border-top:1px solid var(--line); margin-top:3em;
+         padding-top:1em; font-size:.85em; color:var(--muted); }
+</style></head><body>
+<nav><a href="../index.html">VAIS</a><a href="../catalog.html">Catalog</a>
+<a href="../research.html">Research</a><a href="../reports.html">Reports</a>
+<a href="https://github.com/Vineyardcode/vais">GitHub</a></nav>
+<main><h1>syntax_artifact_supplement</h1>
+<p class="muted">scripts/syntax_artifact_supplement.py</p>
+<pre>Supplement — fixes two methodological flaws in syntax_artifact_attack.
+
+FIX 1: POSITION CONTROL
+  The original position-control test assigned shuffled words their ORIGINAL positions,
+  creating sparse cells and inflated null MI. 
+  
+  Correct approach: stratify pairs by (pos_pair × section), then
+  independently shuffle prefix_i within its (pos_i, sec) stratum
+  and prefix_j within its (pos_j, sec) stratum. This preserves
+  positional distributions while destroying pair-level correlations.
+
+FIX 2: BOUNDARY CHARACTER OVER-CONTROL
+  The original boundary-character test conditioned on (last_char_i, first_char_j).
+  But first_char_j nearly determines pfx_j — conditioning on it
+  is conditioning on a proxy for the OUTCOME. That&#x27;s like testing
+  whether education predicts income after controlling for salary.
+
+  Correct test: condition ONLY on last_char_i (which captures the
+  boundary phonotactic from the PRECEDING word, without touching
+  the outcome variable).
+
+  Additional test: condition on last_char_i but test suffix→suffix
+  MI conditioned on first_char_j (since first char doesn&#x27;t determine
+  suffix). This tests cross-feature effects.</pre>
+<h2>Parameters</h2><table><tr><th>name</th><th>default</th><th>type</th></tr>
+<tr><td><code>ALL_GALLOWS</code></td><td><code>[&#x27;cth&#x27;, &#x27;ckh&#x27;, &#x27;cph&#x27;, &#x27;cfh&#x27;, &#x27;tch&#x27;, &#x27;kch&#x27;, &#x27;pch&#x27;, &#x27;fch&#x27;, &#x27;tsh&#x27;, &#x27;ksh&#x27;, &#x27;psh&#x27;, &#x27;fsh&#x27;, &#x27;t&#x27;, …</code></td><td>json</td></tr>
+<tr><td><code>SUFFIXES</code></td><td><code>[&#x27;aiin&#x27;, &#x27;ain&#x27;, &#x27;iin&#x27;, &#x27;in&#x27;, &#x27;ar&#x27;, &#x27;or&#x27;, &#x27;al&#x27;, &#x27;ol&#x27;, &#x27;dy&#x27;, &#x27;y&#x27;]</code></td><td>json</td></tr>
+</table>
+<h2>Golden output (PYTHONHASHSEED=0)</h2><details><summary>show</summary><pre>Loading lines...
+  4508 lines, 35747 tokens
+
+======================================================================
+40b-FIX: PROPER POSITION-STRATIFIED PERMUTATION TEST
+  For each pair, independently resample prefixes from the pool
+  at the same (pos_bin, section). This preserves positional and
+  section distributions while destroying pair-level correlations.
+======================================================================
+
+  5 bins:
+    MI(pfx→pfx): obs=0.0472, null=0.0051±0.0005, z=80.0, pos×sec explains 10.8%
+    MI(sfx→sfx): obs=0.0665, null=0.0042±0.0005, z=128.0, pos×sec explains 6.3%
+
+  10 bins:
+    MI(pfx→pfx): obs=0.0472, null=0.0053±0.0006, z=68.8, pos×sec explains 11.3%
+    MI(sfx→sfx): obs=0.0665, null=0.0042±0.0005, z=117.1, pos×sec explains 6.3%
+
+  20 bins:
+    MI(pfx→pfx): obs=0.0472, null=0.0053±0.0005, z=79.0, pos×sec explains 11.2%
+    MI(sfx→sfx): obs=0.0665, null=0.0041±0.0005, z=118.0, pos×sec explains 6.2%
+
+======================================================================
+40a-FIX: CORRECTED BOUNDARY CHARACTER CONTROL
+  Problem: conditioning on first_char_j nearly determines pfx_j,
+  so MI(pfx_i; pfx_j | first_char_j) ≈ 0 by construction.
+  Fix: condition ONLY on last_char_i (captures boundary effect
+  from preceding word without touching outcome variable).
+======================================================================
+
+  Measure                                               Value
+  ----------------------------------------------------------
+  MI(pfx_i; pfx_j) unconditional                       0.0472
+  MI(pfx_i; pfx_j | last_char_i)                       0.0700
+  MI(pfx_i; pfx_j | last_char_i × sec × pos5)          0.2655
+  MI(sfx_i; sfx_j) unconditional                       0.0665
+  MI(sfx_i; sfx_j | first_char_j)                      0.0706
+
+  last_char_i explains -48.4% of pfx→pfx MI
+  first_char_j explains -6.2% of sfx→sfx MI
+
+  Permutation tests (200 within-line shuffles):
+
+  Measure                                                Obs         Null       z
+  ----------------------------------------------------------------------------
+  MI(pfx→pfx | last_char_i)                           0.0700 0.0436±0.0015    18.0
+  MI(pfx→pfx | last_char_i × sec × pos5)              0.2655 0.2617±0.0028     1.3
+  MI(sfx→sfx | first_char_j)                          0.0706 0.0436±0.0015    18.3
+
+======================================================================
+BOUNDARY DECOMPOSITION: Which boundary transitions drive the signal?
+======================================================================
+
+  Boundary       Count      %    MI(pfx)    MI(sfx)
+  --------------------------------------------------
+  y→q            3446  11.0%     0.0024     0.0314
+  y→o            2789   8.9%     0.0000     0.0330
+  n→o            1666   5.3%     0.0000     0.0324
+  y→c            1623   5.2%     0.0056     0.0353
+  r→o            1416   4.5%     0.0000     0.0356
+  y→d            1272   4.1%     0.0137     0.0382
+  n→c            1259   4.0%     0.0000     0.0283
+  l→o            1128   3.6%     0.0000     0.0443
+  l→c            1122   3.6%     0.0000     0.0396
+  y→s            1100   3.5%     0.0306     0.0309
+  r→a            1031   3.3%     0.0000     0.0373
+  r→c             986   3.2%     0.0025     0.0597
+  y→l             778   2.5%     0.0251     0.0393
+  l→s             730   2.3%     0.0476     0.0543
+  n→s             701   2.2%     0.0256     0.0660
+
+======================================================================
+syntax_artifact_supplement SUPPLEMENT SYNTHESIS
+======================================================================
+
+  40b-FIX (Position Control):
+    The original 40b had a bug that inflated null MI with sparse cells.
+    The corrected stratified permutation test properly controls for
+    position and section while testing for pair-level ordering effects.
+    Check z-scores above across 5/10/20 bins.
+
+  40a-FIX (Boundary Characters):
+    Original conditioning on (last_char, first_char) was over-controlling
+    because first_char nearly determines prefix (collider issue).
+
+    Corrected: MI(pfx→pfx | last_char_i) only — z = 18.0
+    With combined control: MI(pfx→pfx | last_char_i × sec × pos) — z = 1.3
+    MI(sfx→sfx | first_char_j) — z = 18.3
+
+    Prefix syntax SURVIVES corrected boundary control
+    Suffix syntax SURVIVES boundary control
+
+  KEY INSIGHT: In Voynich, boundary characters ARE the morphological
+  features (prefix = first chars, suffix = last chars). So &quot;boundary
+  phonotactics&quot; vs &quot;morphological agreement&quot; is a false dichotomy.
+  The real question is: does word-level ordering exist beyond position
+  and section effects? That&#x27;s what the stratified permutation tests answer.
+
+[syntax_artifact_supplement Supplement Complete]
+</pre></details><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>bc53723</code>. 
+To run any test with your own parameters, clone
+<a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
+(<code>python webui/server.py</code>). All numbers reproduce at
+PYTHONHASHSEED=0.</footer></main></body></html>

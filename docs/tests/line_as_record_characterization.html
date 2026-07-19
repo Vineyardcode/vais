@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>line_as_record_characterization — VAIS</title><style>
+:root { --bg:#ffffff; --fg:#1a1a1a; --muted:#666; --line:#ddd;
+        --code:#f5f5f5; --accent:#7a4a1e; --warn:#a33; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#141414; --fg:#ddd; --muted:#999; --line:#333;
+          --code:#1e1e1e; --accent:#d9a05b; --warn:#e77; } }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--fg);
+       font:16px/1.55 Georgia, 'Times New Roman', serif; }
+nav { border-bottom:1px solid var(--line); padding:.7em 1.2em;
+      font-family: system-ui, sans-serif; font-size:.9em; }
+nav a { color:var(--accent); text-decoration:none; margin-right:1.2em; }
+main { max-width: 62em; margin: 0 auto; padding: 1.5em 1.2em 4em; }
+h1,h2,h3 { font-family: system-ui, sans-serif; line-height:1.25; }
+h1 { font-size:1.7em; } h2 { font-size:1.3em; margin-top:2em; }
+a { color: var(--accent); }
+code, pre { font-family: ui-monospace, Consolas, monospace;
+            font-size:.86em; background:var(--code); }
+code { padding:.1em .3em; border-radius:3px; }
+pre { padding: .9em; overflow-x:auto; border:1px solid var(--line);
+      border-radius:4px; line-height:1.4; }
+table { border-collapse: collapse; margin: 1em 0; font-size:.92em;
+        display:block; overflow-x:auto; }
+th, td { border:1px solid var(--line); padding:.35em .6em;
+         text-align:left; vertical-align:top; }
+th { font-family: system-ui, sans-serif; background:var(--code); }
+blockquote { border-left:3px solid var(--accent); margin:1em 0;
+             padding:.2em 1em; color:var(--muted); }
+.muted { color:var(--muted); font-size:.9em; }
+.tag { font-family: system-ui, sans-serif; font-size:.75em;
+       border:1px solid var(--line); border-radius:3px;
+       padding:.05em .45em; margin-left:.5em; }
+.tag.sug { border-color:var(--warn); color:var(--warn); }
+details summary { cursor:pointer; font-family: system-ui, sans-serif; }
+footer { border-top:1px solid var(--line); margin-top:3em;
+         padding-top:1em; font-size:.85em; color:var(--muted); }
+</style></head><body>
+<nav><a href="../index.html">VAIS</a><a href="../catalog.html">Catalog</a>
+<a href="../research.html">Research</a><a href="../reports.html">Reports</a>
+<a href="https://github.com/Vineyardcode/vais">GitHub</a></nav>
+<main><h1>line_as_record_characterization</h1>
+<p class="muted">scripts/line_as_record_characterization.py · depends on line_as_record_ordinal</p>
+<pre>Line-as-Record, rung 4 (portfolio S7) — characterization of the
+Currier-B ordinal signal (N3d)
+
+PROVENANCE: the B intra-line ordinal signal survived rung 2 (per-hand
+nulls), rung 3 (composition/layout separation: glyph-dominated,
++0.0513 total with glyph +0.0524 / len +0.0018), and the S9 arc
+(significant at p &lt; 0.005 in five independent transliterations). Two
+registered items remain: the PARAGRAPH-INITIAL threat (community prior
+art: paragraph-opening lines obey different rules — Zandbergen, LAAFU
+threads) and the CHARACTERIZATION question (which glyphs, which
+interior positions carry the ordering).
+
+STRUCTURE (registered before first execution):
+  GATE (comparability): the rung-3 headline (full 4-feature 10-split
+    median interior gain for B) is recomputed with rung-3&#x27;s exact seeds
+    and cross-checked against results/line_as_record_ordinal.json —
+    abort on divergence.
+  T-PARA (adjudicated): paragraph-initial lines (locus marker ,@ or ,*
+    — 182 of B&#x27;s lines) are EXCLUDED and the battery re-run on the
+    remaining corpus: 10-split median total interior gain vs
+    N_NULLS_PARA=200 within-line-shuffle nulls of the same reduced
+    corpus. PASS iff the real median beats ALL nulls (empirical
+    p = 1/201 &lt; 0.005; significance-only criterion per the
+    human-approved 2026-07-18 standard; effect sizes observational).
+  DECOMPOSITION (descriptive ONLY — adjudicates nothing, claims
+    nothing new; fixed methodology, no tunable selection after seeing
+    results):
+      D1 per-bin: interior gain split by m1/m2/m3 (median over splits).
+      D2 per-feature: len / first / last / gallows separately.
+      D3 per-category: for &#x27;first&#x27; and &#x27;last&#x27;, the per-value
+         contribution to that feature&#x27;s gain (median over splits;
+         contributions sum to the feature gain), for every value with
+         full-corpus interior support &gt;= MIN_SUPPORT; the top TOP_N by
+         |contribution| are reported with their bin-occupancy skew
+         (full-corpus obs/exp ratio per m-bin — deterministic).
+
+PRE-REGISTERED OUTCOMES:
+  paragraph_confound — T-PARA fails: the ordinal signal does not
+      survive removing paragraph-initial lines; the rung-3 finding is
+      DEMOTED (carried by the known-different paragraph-initial
+      regime); the decomposition is dumped for the record but NOT
+      interpreted.
+  characterized      — T-PARA passes: the last registered structural
+      threat is dismissed and the decomposition tables become the
+      program&#x27;s description of the signal. SUGGESTIVE (supporting
+      detail for the quarantined finding), NOT a decode; no table row
+      is a &quot;translation&quot; of anything.
+Vocabulary discipline: D3 names GLYPH VALUES and their positional
+skews; it never names meanings.</pre>
+<h2>Parameters</h2><table><tr><th>name</th><th>default</th><th>type</th></tr>
+<tr><td><code>SEED</code></td><td><code>115</code></td><td>int</td></tr>
+<tr><td><code>R_SPLITS</code></td><td><code>10</code></td><td>int</td></tr>
+<tr><td><code>N_NULLS_PARA</code></td><td><code>200</code></td><td>int</td></tr>
+<tr><td><code>MIN_SUPPORT</code></td><td><code>200</code></td><td>int</td></tr>
+<tr><td><code>TOP_N</code></td><td><code>8</code></td><td>int</td></tr>
+<tr><td><code>MIN_LINE_WORDS</code></td><td><code>5</code></td><td>int</td></tr>
+<tr><td><code>HOLDOUT_FRAC</code></td><td><code>0.2</code></td><td>float</td></tr>
+<tr><td><code>ALPHA</code></td><td><code>0.5</code></td><td>float</td></tr>
+<tr><td><code>FEATURE_NAMES</code></td><td><code>[&#x27;len&#x27;, &#x27;first&#x27;, &#x27;last&#x27;, &#x27;gallows&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>INTERIOR</code></td><td><code>[&#x27;m1&#x27;, &#x27;m2&#x27;, &#x27;m3&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>RUNG3_JSON</code></td><td><code>&#x27;line_as_record_ordinal.json&#x27;</code></td><td>str</td></tr>
+</table>
+<h2>Golden output (PYTHONHASHSEED=0)</h2><details><summary>show</summary><pre>============================================================================
+LINE-AS-RECORD, RUNG 4 (S7) — characterization (N3d)
+============================================================================
+seed=115 (inherited from rung 3) splits=10 para-nulls=200 (beat-all, p=0.0050) min_support=200 top_n=8
+  B corpus: 2522 lines, 131 paragraph-initial
+  gate: headline +0.0513 == rung-3 record  VERIFIED
+  T-PARA: para-initial excluded -&gt; 2391 lines; real +0.0519  null max -0.0017  nulls&gt;=real 0  p=0.0050 -&gt; PASS
+  D1 per-bin: m1 +0.0816  m2 +0.0381  m3 +0.0299
+  D2 per-feature: len +0.0018  first +0.0296  last +0.0174  gallows +0.0024
+  D3 first: q(+0.0352)  c(+0.0281)  o(+0.0200)  d(-0.0151)  y(-0.0101)  t(-0.0095)  s(-0.0075)  a(-0.0067)
+  D3 last: y(+0.0191)  r(+0.0086)  l(+0.0082)  n(-0.0039)  o(-0.0032)  s(-0.0005)  d(-0.0000)
+
+  ADJUDICATION (pre-registered):
+    CHARACTERIZED: the signal survives excluding paragraph-initial lines (p &lt; 0.005) — the last registered structural threat is dismissed; the decomposition above is the program&#x27;s description of the Currier-B ordinal signal. SUGGESTIVE (supporting detail for the quarantined finding); NOT a decode; no value is a translation.
+
+  -&gt; results/line_as_record_characterization.json
+</pre></details><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>bc53723</code>. 
+To run any test with your own parameters, clone
+<a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
+(<code>python webui/server.py</code>). All numbers reproduce at
+PYTHONHASHSEED=0.</footer></main></body></html>

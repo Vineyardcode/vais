@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>line_as_record_per_hand — VAIS</title><style>
+:root { --bg:#ffffff; --fg:#1a1a1a; --muted:#666; --line:#ddd;
+        --code:#f5f5f5; --accent:#7a4a1e; --warn:#a33; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#141414; --fg:#ddd; --muted:#999; --line:#333;
+          --code:#1e1e1e; --accent:#d9a05b; --warn:#e77; } }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--fg);
+       font:16px/1.55 Georgia, 'Times New Roman', serif; }
+nav { border-bottom:1px solid var(--line); padding:.7em 1.2em;
+      font-family: system-ui, sans-serif; font-size:.9em; }
+nav a { color:var(--accent); text-decoration:none; margin-right:1.2em; }
+main { max-width: 62em; margin: 0 auto; padding: 1.5em 1.2em 4em; }
+h1,h2,h3 { font-family: system-ui, sans-serif; line-height:1.25; }
+h1 { font-size:1.7em; } h2 { font-size:1.3em; margin-top:2em; }
+a { color: var(--accent); }
+code, pre { font-family: ui-monospace, Consolas, monospace;
+            font-size:.86em; background:var(--code); }
+code { padding:.1em .3em; border-radius:3px; }
+pre { padding: .9em; overflow-x:auto; border:1px solid var(--line);
+      border-radius:4px; line-height:1.4; }
+table { border-collapse: collapse; margin: 1em 0; font-size:.92em;
+        display:block; overflow-x:auto; }
+th, td { border:1px solid var(--line); padding:.35em .6em;
+         text-align:left; vertical-align:top; }
+th { font-family: system-ui, sans-serif; background:var(--code); }
+blockquote { border-left:3px solid var(--accent); margin:1em 0;
+             padding:.2em 1em; color:var(--muted); }
+.muted { color:var(--muted); font-size:.9em; }
+.tag { font-family: system-ui, sans-serif; font-size:.75em;
+       border:1px solid var(--line); border-radius:3px;
+       padding:.05em .45em; margin-left:.5em; }
+.tag.sug { border-color:var(--warn); color:var(--warn); }
+details summary { cursor:pointer; font-family: system-ui, sans-serif; }
+footer { border-top:1px solid var(--line); margin-top:3em;
+         padding-top:1em; font-size:.85em; color:var(--muted); }
+</style></head><body>
+<nav><a href="../index.html">VAIS</a><a href="../catalog.html">Catalog</a>
+<a href="../research.html">Research</a><a href="../reports.html">Reports</a>
+<a href="https://github.com/Vineyardcode/vais">GitHub</a></nav>
+<main><h1>line_as_record_per_hand</h1>
+<p class="muted">scripts/line_as_record_per_hand.py</p>
+<pre>Line-as-Record, rung 2 (portfolio S7) — per-hand adjudication
+
+MOTIVATION AND PROVENANCE (disclosed in full, per charter): S7 rung 1
+(line_as_record_structures, 2026-07-17) adjudicated on VMS_full and was
+KILLED (interior margin +0.033 &lt; 0.05 over the pooled N1 shuffle). Its
+log recorded, post hoc, that Currier B alone cleared the margin (+0.077)
+while A showed nothing (-0.006). That observation is the reason this
+rung exists — which is exactly why this rung may NOT simply re-run the
+same test per hand: re-testing the same data with a criterion chosen
+because B passed it is the forked-path move the graveyard is full of.
+
+WHY THIS IS A STRICTLY HARDER TEST than the motivating observation:
+  (a) PER-HAND NULLS. Rung 1 compared each hand against the POOLED
+      word-shuffle — a mismatched baseline (different lexicon and line
+      lengths). Here each hand is compared against N_NULLS=20 shuffles
+      of ITSELF (word order destroyed corpus-wide within the hand, line
+      lengths and folio assignment preserved).
+  (b) MULTI-SPLIT STABILITY. Rung 1 used a single folio-holdout split;
+      a one-split margin can be split luck. Every statistic here is the
+      MEDIAN over R_SPLITS=10 independent folio-holdout splits, and the
+      nulls get the identical treatment.
+  (c) EMPIRICAL SIGNIFICANCE + EFFECT FLOOR. A hand PASSES only if its
+      median gain exceeds ALL 20 of its null medians (empirical
+      p ~ 1/21 = 0.048) AND beats the null MEDIAN by &gt;= EFFECT_FLOOR
+      = 0.05 bits/token (the rung-1 margin, kept as an effect-size
+      floor, not the only bar).
+All thresholds fixed before this script&#x27;s first execution.
+
+INSTRUMENT (unchanged from rung 1, local copies): 4 surface features
+(length bucket, first glyph, last glyph, gallows), position bins with
+INTERIOR thirds as the headline, Laplace ALPHA, folio-level holdout
+(whole folios for VMS hands; PSEUDO_FOLIO_LINES-line blocks for
+controls). Gate re-checked per run under the same multi-split scheme:
+P-REC median &gt;= GATE_PREC_MIN and P1 median &lt;= GATE_P1_MAX.
+
+PRE-REGISTERED OUTCOMES (tools/overnight.py re-derives mechanically):
+  gate_failed        — instrument gate failed; no interpretation.
+  killed_split_luck  — NEITHER hand passes: the rung-1 B observation
+                       was split luck / baseline mismatch; corpse
+                       logged, per-hand S7 dies at this instrument.
+  B_only             — B passes, A fails: consistent with line-level
+                       field structure in Currier B only (SUGGESTIVE,
+                       quarantined; matches the motivating pattern but
+                       is only now, for the first time, a registered
+                       test of it).
+  A_only             — A passes, B fails: contrary to the motivating
+                       pattern; reported SUGGESTIVE with an explicit
+                       extra-suspicion flag (the motivating observation
+                       failed to replicate while its complement fired).
+  both               — both hands pass: consistent with per-hand field
+                       structure (SUGGESTIVE, quarantined).
+Vocabulary discipline: no outcome names a field or reads a record.</pre>
+<h2>Parameters</h2><table><tr><th>name</th><th>default</th><th>type</th></tr>
+<tr><td><code>SEED</code></td><td><code>114</code></td><td>int</td></tr>
+<tr><td><code>R_SPLITS</code></td><td><code>10</code></td><td>int</td></tr>
+<tr><td><code>N_NULLS</code></td><td><code>20</code></td><td>int</td></tr>
+<tr><td><code>EFFECT_FLOOR</code></td><td><code>0.05</code></td><td>float</td></tr>
+<tr><td><code>GATE_PREC_MIN</code></td><td><code>0.3</code></td><td>float</td></tr>
+<tr><td><code>GATE_P1_MAX</code></td><td><code>0.05</code></td><td>float</td></tr>
+<tr><td><code>MIN_LINE_WORDS</code></td><td><code>5</code></td><td>int</td></tr>
+<tr><td><code>HOLDOUT_FRAC</code></td><td><code>0.2</code></td><td>float</td></tr>
+<tr><td><code>PSEUDO_FOLIO_LINES</code></td><td><code>24</code></td><td>int</td></tr>
+<tr><td><code>ALPHA</code></td><td><code>0.5</code></td><td>float</td></tr>
+<tr><td><code>PREC_LINES</code></td><td><code>4600</code></td><td>int</td></tr>
+<tr><td><code>INTERIOR</code></td><td><code>[&#x27;m1&#x27;, &#x27;m2&#x27;, &#x27;m3&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>FEATURE_NAMES</code></td><td><code>[&#x27;len&#x27;, &#x27;first&#x27;, &#x27;last&#x27;, &#x27;gallows&#x27;]</code></td><td>json</td></tr>
+</table>
+<h2>Golden output (PYTHONHASHSEED=0)</h2><details><summary>show</summary><pre>============================================================================
+LINE-AS-RECORD, RUNG 2 (S7) — per-hand adjudication
+============================================================================
+seed=114 splits=10 nulls/hand=20 effect_floor=0.05 gates: P-REC&gt;=0.3, P1&lt;=0.05 (all statistics = median over splits)
+  PREC_records     median interior +0.7471 bits/token (4600 lines)
+  P1_latin_plain   median interior -0.0039 bits/token (4755 lines)
+  gate: PASS
+  Currier A: median +0.0113  null max -0.0132  null median -0.0187  margin +0.0301 -&gt; fail
+  Currier B: median +0.0513  null max -0.0043  null median -0.0067  margin +0.0580 -&gt; PASS
+
+  ADJUDICATION (pre-registered):
+    B ONLY: consistent with line-level field structure in Currier B (SUGGESTIVE, quarantined; first registered test of the rung-1 observation). NOT a decode.
+
+  -&gt; results/line_as_record_per_hand.json
+</pre></details><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>bc53723</code>. 
+To run any test with your own parameters, clone
+<a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
+(<code>python webui/server.py</code>). All numbers reproduce at
+PYTHONHASHSEED=0.</footer></main></body></html>

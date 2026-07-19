@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>forward_process_models — VAIS</title><style>
+:root { --bg:#ffffff; --fg:#1a1a1a; --muted:#666; --line:#ddd;
+        --code:#f5f5f5; --accent:#7a4a1e; --warn:#a33; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#141414; --fg:#ddd; --muted:#999; --line:#333;
+          --code:#1e1e1e; --accent:#d9a05b; --warn:#e77; } }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--fg);
+       font:16px/1.55 Georgia, 'Times New Roman', serif; }
+nav { border-bottom:1px solid var(--line); padding:.7em 1.2em;
+      font-family: system-ui, sans-serif; font-size:.9em; }
+nav a { color:var(--accent); text-decoration:none; margin-right:1.2em; }
+main { max-width: 62em; margin: 0 auto; padding: 1.5em 1.2em 4em; }
+h1,h2,h3 { font-family: system-ui, sans-serif; line-height:1.25; }
+h1 { font-size:1.7em; } h2 { font-size:1.3em; margin-top:2em; }
+a { color: var(--accent); }
+code, pre { font-family: ui-monospace, Consolas, monospace;
+            font-size:.86em; background:var(--code); }
+code { padding:.1em .3em; border-radius:3px; }
+pre { padding: .9em; overflow-x:auto; border:1px solid var(--line);
+      border-radius:4px; line-height:1.4; }
+table { border-collapse: collapse; margin: 1em 0; font-size:.92em;
+        display:block; overflow-x:auto; }
+th, td { border:1px solid var(--line); padding:.35em .6em;
+         text-align:left; vertical-align:top; }
+th { font-family: system-ui, sans-serif; background:var(--code); }
+blockquote { border-left:3px solid var(--accent); margin:1em 0;
+             padding:.2em 1em; color:var(--muted); }
+.muted { color:var(--muted); font-size:.9em; }
+.tag { font-family: system-ui, sans-serif; font-size:.75em;
+       border:1px solid var(--line); border-radius:3px;
+       padding:.05em .45em; margin-left:.5em; }
+.tag.sug { border-color:var(--warn); color:var(--warn); }
+details summary { cursor:pointer; font-family: system-ui, sans-serif; }
+footer { border-top:1px solid var(--line); margin-top:3em;
+         padding-top:1em; font-size:.85em; color:var(--muted); }
+</style></head><body>
+<nav><a href="../index.html">VAIS</a><a href="../catalog.html">Catalog</a>
+<a href="../research.html">Research</a><a href="../reports.html">Reports</a>
+<a href="https://github.com/Vineyardcode/vais">GitHub</a></nav>
+<main><h1>forward_process_models</h1>
+<p class="muted">scripts/forward_process_models.py · depends on cross_script_fingerprint</p>
+<pre>FORWARD MODELING: WHAT PROCESS REPRODUCES THE VMS FINGERPRINT?
+===========================================================================
+
+cross_script_fingerprint established that VMS has:
+  - NORMAL word-level statistics (TTR, hapax, word length: all z&lt;1.1)
+  - EXTREME character-level anomalies (H(c|prev) z=−19.9, H-ratio z=−12.6)
+
+This is a constructive test: take a real natural-language text (Italian,
+historically plausible), apply different encoding transformations, and
+measure which scheme(s) reproduce the VMS fingerprint.
+
+TARGET (VMS):
+  alpha_size  = 32      H(char)    = 3.86    H(char|prev) = 2.47
+  H_ratio     = 0.64    IC         = 0.082   mean_wlen    = 4.94
+  TTR         = 0.27    hapax_ratio= 0.66    V_frac       = 0.28
+  VC_alt      = 0.73
+
+Encoding schemes tested:
+  1) SYLLABIC ENCODING — syllabify Italian, map each syllable → fixed
+     2-3 char sequence from ~25-char alphabet. Preserves word boundaries.
+  2) ONSET-RIME ENCODING — decompose syllable into onset + rime,
+     encode each component separately with a small alphabet per slot.
+  3) VERBOSE POSITIONAL — each source letter → 1 or 2 cipher chars;
+     vowels → 2 chars (from small set), consonants → 1 char.
+  4) SELF-CITING ABBREVIATION — common words get fixed short codes,
+     uncommon words spelled out with a character mapping. This produces
+     stereotyped token patterns (like VMS&#x27;s repeated word structures).
+  5) BENCHMARK: simple substitution (should NOT match VMS — confirms
+     cross_script_fingerprint finding).
+
+Source text: Italian (Dante, Inferno — Gutenberg #1012).</pre>
+<h2>Parameters</h2><table><tr><th>name</th><th>default</th><th>type</th></tr>
+<tr><td><code>FEATURE_KEYS</code></td><td><code>[&#x27;alpha_size&#x27;, &#x27;H_char&#x27;, &#x27;H_cond&#x27;, &#x27;H_ratio&#x27;, &#x27;IC&#x27;, &#x27;mean_wlen&#x27;, &#x27;TTR&#x27;, &#x27;hapax_ratio&#x27;, &#x27;V_…</code></td><td>json</td></tr>
+</table>
+<h2>Golden output (PYTHONHASHSEED=0)</h2><details><summary>show</summary><pre>======================================================================
+forward_process_models: FORWARD MODELING — WHAT REPRODUCES THE VMS FINGERPRINT?
+======================================================================
+
+Loading VMS corpus...
+  VMS: 36259 words, 160710 chars
+  H(c)=3.857, H(c|p)=2.471, H-ratio=0.641, IC=0.0817
+
+Loading cross_script_fingerprint reference data...
+  Loaded 7 NL references for normalization
+
+Fetching Italian source text (Dante, Inferno)...
+  Italian: 50000 words, 8196 types
+  H(c)=4.121, H(c|p)=3.459, IC=0.0693, MWL=3.93
+
+======================================================================
+A) ENCODING SCHEME RESULTS
+======================================================================
+
+  Encoding: 1: Syllabic (α=25)
+    α= 25  H(c)=4.600  H(c|p)=4.207  H-rat=0.915  IC=0.0424  MWL=3.41
+    TTR=0.2754  Hapax=0.666  V-fr=0.520  V/C-alt=0.587
+    Distance from VMS: raw=7.420, z-normalized=44.115
+
+  Encoding: 2: Onset-rime (10+12)
+    α= 22  H(c)=4.290  H(c|p)=3.401  H-rat=0.793  IC=0.0579  MWL=3.54
+    TTR=0.2584  Hapax=0.654  V-fr=0.500  V/C-alt=0.784
+    Distance from VMS: raw=10.152, z-normalized=24.812
+
+  Encoding: 3a: Verbose positional
+    α= 13  H(c)=3.557  H(c|p)=2.453  H-rat=0.690  IC=0.0914  MWL=5.74
+    TTR=0.2699  Hapax=0.659  V-fr=0.385  V/C-alt=0.698
+    Distance from VMS: raw=19.020, z-normalized=8.309
+
+  Encoding: 3b: Verbose context-vary
+    α= 13  H(c)=3.641  H(c|p)=3.220  H-rat=0.884  IC=0.0823  MWL=5.74
+    TTR=0.2699  Hapax=0.659  V-fr=0.538  V/C-alt=0.672
+    Distance from VMS: raw=19.036, z-normalized=22.504
+
+  Encoding: 4: Abbreviation (top200)
+    α= 22  H(c)=4.296  H(c|p)=3.955  H-rat=0.921  IC=0.0555  MWL=4.00
+    TTR=0.2745  Hapax=0.664  V-fr=0.455  V/C-alt=0.635
+    Distance from VMS: raw=10.168, z-normalized=37.041
+
+  Encoding: 5: Simple substitution
+    α= 35  H(c)=4.121  H(c|p)=3.459  H-rat=0.839  IC=0.0693  MWL=3.93
+    TTR=0.2754  Hapax=0.666  V-fr=0.371  V/C-alt=0.736
+    Distance from VMS: raw=3.332, z-normalized=24.145
+
+  Encoding: 6a: Syllabic tuned (α=30)
+    α= 30  H(c)=4.840  H(c|p)=4.326  H-rat=0.894  IC=0.0364  MWL=3.37
+    TTR=0.2754  Hapax=0.666  V-fr=0.433  V/C-alt=0.594
+    Distance from VMS: raw=3.312, z-normalized=47.254
+
+  Encoding: 6b: Syllabic tuned (α=26, 50% short)
+    α= 26  H(c)=4.640  H(c|p)=4.234  H-rat=0.912  IC=0.0417  MWL=3.39
+    TTR=0.2754  Hapax=0.666  V-fr=0.423  V/C-alt=0.589
+    Distance from VMS: raw=6.497, z-normalized=44.545
+
+  Encoding: 6c: Syllabic (α=20, longer codes)
+    α= 20  H(c)=4.303  H(c|p)=3.940  H-rat=0.916  IC=0.0513  MWL=5.06
+    TTR=0.2754  Hapax=0.666  V-fr=0.450  V/C-alt=0.567
+    Distance from VMS: raw=12.104, z-normalized=37.600
+
+======================================================================
+B) DISTANCE RANKING (z-score normalized)
+======================================================================
+
+Rank  Scheme                                 Dist  H(c|p)   H-rat      IC     MWL    α
+--------------------------------------------------------------------------------------
+1     3a: Verbose positional                8.309   2.453   0.690  0.0914    5.74   13
+2     3b: Verbose context-vary             22.504   3.220   0.884  0.0823    5.74   13
+3     5: Simple substitution               24.145   3.459   0.839  0.0693    3.93   35
+4     Italian (source)                     24.145   3.459   0.839  0.0693    3.93   35
+5     2: Onset-rime (10+12)                24.812   3.401   0.793  0.0579    3.54   22
+6     4: Abbreviation (top200)             37.041   3.955   0.921  0.0555    4.00   22
+7     6c: Syllabic (α=20, longer codes)    37.600   3.940   0.916  0.0513    5.06   20
+8     1: Syllabic (α=25)                   44.115   4.207   0.915  0.0424    3.41   25
+9     6b: Syllabic tuned (α=26, 50% short)  44.545   4.234   0.912  0.0417    3.39   26
+10    6a: Syllabic tuned (α=30)            47.254   4.326   0.894  0.0364    3.37   30
+
+      VMS (TARGET)                          0.000   2.471   0.641  0.0817    4.94   32
+
+======================================================================
+C) FEATURE-BY-FEATURE: BEST ENCODING vs VMS
+======================================================================
+
+Best match: 3a: Verbose positional (distance 8.309)
+
+Feature               VMS     Best    Delta  NL mean    VMS z   Best z
+--------------------------------------------------------------------
+  alpha_size       32.000   13.000  -19.000   30.714    +0.28    -3.86
+  H_char            3.857    3.557   -0.300    4.133    -3.47    -7.22
+  H_cond            2.471    2.453   -0.018    3.482   -19.87   -20.22
+  H_ratio           0.641    0.690   +0.049    0.843   -12.63    -9.57
+  IC                0.082    0.091   +0.010    0.069    +5.90   +10.57
+  mean_wlen         4.935    5.737   +0.802    4.636    +0.35    +1.28
+  TTR               0.269    0.270   +0.001    0.282    -0.14    -0.13
+  hapax_ratio       0.658    0.659   +0.001    0.641    +0.26    +0.28
+  V_frac            0.281    0.385   +0.103    0.332    -1.06    +1.11
+  VC_alt            0.732    0.698   -0.034    0.708    +0.65    -0.28
+
+======================================================================
+D) CRITICAL ASSESSMENT
+======================================================================
+
+Closest to VMS:  3a: Verbose positional (d=8.309)
+Farthest:        6a: Syllabic tuned (α=30) (d=47.254)
+
+Features the best encoding MATCHES (Δz &lt; 2):
+  TTR: Δz = 0.02
+  hapax_ratio: Δz = 0.02
+  H_cond: Δz = 0.36
+  mean_wlen: Δz = 0.94
+  VC_alt: Δz = 0.94
+
+Features the best encoding MISSES (Δz ≥ 2):
+  IC: Δz = 4.67 (VMS z=5.9, best z=10.6, too high)
+  alpha_size: Δz = 4.14 (VMS z=0.3, best z=-3.9, too low)
+  H_char: Δz = 3.76 (VMS z=-3.5, best z=-7.2, too low)
+  H_ratio: Δz = 3.06 (VMS z=-12.6, best z=-9.6, too high)
+  V_frac: Δz = 2.17 (VMS z=-1.1, best z=1.1, too high)
+
+======================================================================
+E) SYNTHESIS
+======================================================================
+
+Schemes closer to VMS than nearest NL (Spanish, d=2.30):
+  NONE — no encoding scheme gets closer to VMS than Spanish does
+
+The critical metric — H(char|prev):
+  VMS target:     2.471
+  3a: Verbose positional              2.453
+  3b: Verbose context-vary            3.220
+  5: Simple substitution              3.459
+  Italian (source)                    3.459
+  2: Onset-rime (10+12)               3.401
+  NL mean:        3.482
+
+INTERPRETATION:
+
+  NO encoding scheme closely matches VMS. Either the
+  encoding process is more exotic than tested, or EVA
+  transcription artifacts dominate the fingerprint.
+
+Results saved to results\forward_process_models_output.json
+</pre></details><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>bc53723</code>. 
+To run any test with your own parameters, clone
+<a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
+(<code>python webui/server.py</code>). All numbers reproduce at
+PYTHONHASHSEED=0.</footer></main></body></html>

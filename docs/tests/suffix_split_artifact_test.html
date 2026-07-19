@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>suffix_split_artifact_test — VAIS</title><style>
+:root { --bg:#ffffff; --fg:#1a1a1a; --muted:#666; --line:#ddd;
+        --code:#f5f5f5; --accent:#7a4a1e; --warn:#a33; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#141414; --fg:#ddd; --muted:#999; --line:#333;
+          --code:#1e1e1e; --accent:#d9a05b; --warn:#e77; } }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--fg);
+       font:16px/1.55 Georgia, 'Times New Roman', serif; }
+nav { border-bottom:1px solid var(--line); padding:.7em 1.2em;
+      font-family: system-ui, sans-serif; font-size:.9em; }
+nav a { color:var(--accent); text-decoration:none; margin-right:1.2em; }
+main { max-width: 62em; margin: 0 auto; padding: 1.5em 1.2em 4em; }
+h1,h2,h3 { font-family: system-ui, sans-serif; line-height:1.25; }
+h1 { font-size:1.7em; } h2 { font-size:1.3em; margin-top:2em; }
+a { color: var(--accent); }
+code, pre { font-family: ui-monospace, Consolas, monospace;
+            font-size:.86em; background:var(--code); }
+code { padding:.1em .3em; border-radius:3px; }
+pre { padding: .9em; overflow-x:auto; border:1px solid var(--line);
+      border-radius:4px; line-height:1.4; }
+table { border-collapse: collapse; margin: 1em 0; font-size:.92em;
+        display:block; overflow-x:auto; }
+th, td { border:1px solid var(--line); padding:.35em .6em;
+         text-align:left; vertical-align:top; }
+th { font-family: system-ui, sans-serif; background:var(--code); }
+blockquote { border-left:3px solid var(--accent); margin:1em 0;
+             padding:.2em 1em; color:var(--muted); }
+.muted { color:var(--muted); font-size:.9em; }
+.tag { font-family: system-ui, sans-serif; font-size:.75em;
+       border:1px solid var(--line); border-radius:3px;
+       padding:.05em .45em; margin-left:.5em; }
+.tag.sug { border-color:var(--warn); color:var(--warn); }
+details summary { cursor:pointer; font-family: system-ui, sans-serif; }
+footer { border-top:1px solid var(--line); margin-top:3em;
+         padding-top:1em; font-size:.85em; color:var(--muted); }
+</style></head><body>
+<nav><a href="../index.html">VAIS</a><a href="../catalog.html">Catalog</a>
+<a href="../research.html">Research</a><a href="../reports.html">Reports</a>
+<a href="https://github.com/Vineyardcode/vais">GitHub</a></nav>
+<main><h1>suffix_split_artifact_test</h1>
+<p class="muted">scripts/suffix_split_artifact_test.py</p>
+<pre>CRITICAL: Is the Binary Suffix Split a Parsing Artifact?
+=====================================================================
+
+derivational_prefix_paradox found that bare stems take -dy/-y while prefixed stems take
+-ol/-or/-ar/-aiin (150+ pp difference). BUT:
+
+  The word &#x27;chedy&#x27; is parsed as root=&#x27;ch&#x27; + suffix=&#x27;edy&#x27;
+  It COULD be root=&#x27;che&#x27; + suffix=&#x27;dy&#x27;
+
+The suffix parser greedily matches the LONGEST suffix. Suffixes
+-edy, -ey, -ody, -eedy all START with a vowel that could belong
+to the stem. When a consonantal derivational prefix (ch, sh, l)
+is present, the parser steals the stem vowel into the suffix.
+
+THIS COULD ENTIRELY EXPLAIN THE BINARY SPLIT.
+
+Tests:
+  A) ALTERNATIVE PARSE — Re-parse everything with shortened suffix
+       list (remove -edy, -ody, -eedy, -ey; keep only -dy, -y, -aiin,
+       etc.). Does the binary split disappear?
+
+  B) VOWEL-BOUNDARY TEST — Do suffixes -edy, -ody etc. ONLY appear
+       after consonant-final roots? If so, the &#x27;e&#x27; belongs to the root.
+
+  C) RAW WORD FORM ANALYSIS — Skip the parser entirely. Classify
+       raw words by surface patterns. Do ch-words and bare-words
+       actually have different endings AT THE STRING LEVEL?
+
+  D) WHICH SUFFIX LIST IS CORRECT? — Test both suffix lists against
+       the full corpus and compare coverage, ambiguity, and regularity.
+
+  E) IF THE SPLIT SURVIVES — re-test line position, gallows interaction,
+       and co-occurrence under the corrected parser to see what&#x27;s real.</pre>
+<h2>Parameters</h2><table><tr><th>name</th><th>default</th><th>type</th></tr>
+<tr><td><code>SIMPLE_GALLOWS</code></td><td><code>[&#x27;t&#x27;, &#x27;k&#x27;, &#x27;f&#x27;, &#x27;p&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>BENCH_GALLOWS</code></td><td><code>[&#x27;cth&#x27;, &#x27;ckh&#x27;, &#x27;cph&#x27;, &#x27;cfh&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>COMPOUND_GCH</code></td><td><code>[&#x27;tch&#x27;, &#x27;kch&#x27;, &#x27;pch&#x27;, &#x27;fch&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>COMPOUND_GSH</code></td><td><code>[&#x27;tsh&#x27;, &#x27;ksh&#x27;, &#x27;psh&#x27;, &#x27;fsh&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>PREFIXES</code></td><td><code>[&#x27;qo&#x27;, &#x27;q&#x27;, &#x27;so&#x27;, &#x27;do&#x27;, &#x27;o&#x27;, &#x27;d&#x27;, &#x27;s&#x27;, &#x27;y&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>SUFFIXES_LONG</code></td><td><code>[&#x27;aiin&#x27;, &#x27;ain&#x27;, &#x27;iin&#x27;, &#x27;in&#x27;, &#x27;ar&#x27;, &#x27;or&#x27;, &#x27;al&#x27;, &#x27;ol&#x27;, &#x27;eedy&#x27;, &#x27;edy&#x27;, &#x27;ody&#x27;, &#x27;dy&#x27;, &#x27;ey&#x27;, &#x27;y&#x27;…</code></td><td>json</td></tr>
+<tr><td><code>SUFFIXES_SHORT</code></td><td><code>[&#x27;aiin&#x27;, &#x27;ain&#x27;, &#x27;iin&#x27;, &#x27;in&#x27;, &#x27;ar&#x27;, &#x27;or&#x27;, &#x27;al&#x27;, &#x27;ol&#x27;, &#x27;dy&#x27;, &#x27;y&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>DERIV_PREFIXES_ORDER</code></td><td><code>[&#x27;lch&#x27;, &#x27;lsh&#x27;, &#x27;ch&#x27;, &#x27;sh&#x27;, &#x27;l&#x27;, &#x27;h&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>CORE_STEMS</code></td><td><code>[&#x27;a&#x27;, &#x27;al&#x27;, &#x27;am&#x27;, &#x27;ar&#x27;, &#x27;d&#x27;, &#x27;e&#x27;, &#x27;ed&#x27;, &#x27;eo&#x27;, &#x27;eod&#x27;, &#x27;eos&#x27;, &#x27;es&#x27;, &#x27;l&#x27;, &#x27;o&#x27;, &#x27;od&#x27;, &#x27;ol&#x27;, &#x27;o…</code></td><td>json</td></tr>
+</table>
+<h2>Golden output (PYTHONHASHSEED=0)</h2><details><summary>show</summary><pre>suffix_split_artifact_test: CRITICAL VALIDATION — IS THE SUFFIX SPLIT AN ARTIFACT?
+============================================================================
+Loaded 40300 word tokens
+
+============================================================================
+ALTERNATIVE PARSE — DOES THE SPLIT SURVIVE?
+============================================================================
+
+If we remove vowel-initial suffixes (-edy, -ody, -eedy, -ey)
+and keep only consonant-initial ones (-dy, -y, -ar, -or, etc.),
+does the binary suffix split disappear?
+
+  ═══ SUFFIX LIST: LONG (original) ═══
+    deriv      N     dy      y     ol    ody     or     ar     al      ∅
+    ∅       5279    41%    37%     7%     7%     3%     2%     1%     0%
+    h        410     0%     0%    35%    16%    14%     8%     7%    16%
+    ch       706     0%     0%    32%    19%    20%    12%     8%     4%
+    |∅ vs ch| diff: 149 pp
+    |∅ vs h| diff: 151 pp
+
+    Stem &#x27;o&#x27;: deriv      N      y      ∅     ey     dy   aiin    iin
+              ∅       1175    74%    10%     1%     9%     1%     3%
+              h        262    19%    50%    11%     0%     4%     3%
+              ch       558    34%    20%    13%     0%     7%     2%
+              |∅ vs ch| diff: 77 pp
+
+    Stem &#x27;ol&#x27;: deriv      N      ∅      y     dy   aiin     or     al
+              ∅       1756    95%     1%     1%     1%     0%     0%
+              h         31     0%    19%    29%     6%    13%     3%
+              ch        90     0%    31%    17%    13%     7%     8%
+              |∅ vs ch| diff: 167 pp
+
+    Stem &#x27;d&#x27;: deriv      N      y   aiin     ar     al      ∅    ain
+              ∅       1188    62%    16%     7%     4%     3%     4%
+              h         36     0%    14%    42%    14%    22%     0%
+              ch       112     0%    14%    29%    22%     8%     7%
+              |∅ vs ch| diff: 112 pp
+
+  ═══ SUFFIX LIST: SHORT (no vowel-eating) ═══
+    deriv      N      y     dy     ol     or     ar     al      ∅   aiin
+    ∅       4884    40%    44%     8%     4%     2%     1%     0%     1%
+    h       1578    42%    36%     9%     4%     2%     2%     4%     1%
+    ch      2329    44%    31%    10%     6%     4%     2%     1%     1%
+    |∅ vs ch| diff: 25 pp
+    |∅ vs h| diff: 16 pp
+
+    Stem &#x27;o&#x27;: deriv      N      y      ∅     dy   aiin    iin     ar
+              ∅       1157    75%    10%     9%     1%     3%     1%
+              h        293    17%    45%    22%     4%     2%     2%
+              ch       579    33%    19%    21%     7%     2%     5%
+              |∅ vs ch| diff: 73 pp
+
+    Stem &#x27;ol&#x27;: deriv      N      ∅      y     dy   aiin     or     al
+              ∅       1751    95%     1%     1%     1%     0%     0%
+              h         26     0%    23%    35%     8%    15%     4%
+              ch        77     0%    36%    19%    16%     8%     9%
+              |∅ vs ch| diff: 180 pp
+
+    Stem &#x27;d&#x27;: deriv      N      y   aiin     ar     al      ∅    ain
+              ∅       1170    63%    16%     7%     4%     3%     4%
+              h         36     0%    14%    42%    14%    22%     0%
+              ch       105     0%    15%    30%    24%     9%     8%
+              |∅ vs ch| diff: 117 pp
+
+
+============================================================================
+DO VOWEL-INITIAL SUFFIXES ONLY FOLLOW CONSONANTS?
+============================================================================
+
+If -edy/-ey/-ody are real suffixes, they should appear after BOTH
+vowel-final and consonant-final roots. If they ONLY appear after
+consonant-final roots, the vowel belongs to the stem.
+
+  Suffix    Total   V-final  C-final     V% Issue?
+  aiin       1464       189     1275    13% 
+           Root-final chars: {&#x27;d&#x27;: 631, &#x27;l&#x27;: 262, &#x27;r&#x27;: 185, &#x27;h&#x27;: 122, &#x27;o&#x27;: 104}
+  ain         609        94      515    15% 
+           Root-final chars: {&#x27;d&#x27;: 206, &#x27;l&#x27;: 142, &#x27;r&#x27;: 81, &#x27;h&#x27;: 55, &#x27;e&#x27;: 50}
+  iin        2998      2979       19    99% 
+           Root-final chars: {&#x27;a&#x27;: 2712, &#x27;i&#x27;: 178, &#x27;o&#x27;: 89, &#x27;r&#x27;: 12, &#x27;l&#x27;: 2}
+  in         1219      1205       14    99% 
+           Root-final chars: {&#x27;a&#x27;: 1104, &#x27;i&#x27;: 94, &#x27;r&#x27;: 11, &#x27;o&#x27;: 7, &#x27;n&#x27;: 2}
+  ar         1277       336      941    26% 
+           Root-final chars: {&#x27;d&#x27;: 434, &#x27;e&#x27;: 224, &#x27;h&#x27;: 179, &#x27;l&#x27;: 175, &#x27;o&#x27;: 103}
+  or         1282       504      778    39% 
+           Root-final chars: {&#x27;h&#x27;: 462, &#x27;e&#x27;: 430, &#x27;l&#x27;: 166, &#x27;d&#x27;: 61, &#x27;r&#x27;: 55}
+  al          865       213      652    25% 
+           Root-final chars: {&#x27;d&#x27;: 276, &#x27;e&#x27;: 147, &#x27;h&#x27;: 119, &#x27;r&#x27;: 111, &#x27;l&#x27;: 102}
+  ol         1972       955     1017    48% 
+           Root-final chars: {&#x27;e&#x27;: 876, &#x27;h&#x27;: 715, &#x27;l&#x27;: 123, &#x27;r&#x27;: 88, &#x27;o&#x27;: 63}
+  edy        2197        76     2121     3% ←SUSPECT
+           Root-final chars: {&#x27;h&#x27;: 1777, &#x27;l&#x27;: 284, &#x27;o&#x27;: 72, &#x27;y&#x27;: 39, &#x27;d&#x27;: 16}
+  ody         999       690      309    69% 
+           Root-final chars: {&#x27;e&#x27;: 671, &#x27;h&#x27;: 208, &#x27;r&#x27;: 40, &#x27;l&#x27;: 37, &#x27;o&#x27;: 14}
+  dy         3105      2287      818    74% 
+  ey         2755       235     2520     9% 
+           Root-final chars: {&#x27;h&#x27;: 2160, &#x27;l&#x27;: 223, &#x27;o&#x27;: 221, &#x27;y&#x27;: 51, &#x27;d&#x27;: 41}
+  y          6497      3325     3172    51% 
+
+============================================================================
+RAW WORD ENDINGS — PARSER-FREE ANALYSIS
+============================================================================
+
+Skip ALL parsing. Just look at how words END in the raw corpus.
+Do ch-beginning words and bare words have different endings?
+
+  Word groups: ch-initial=6989, sh-initial=308, h-initial=3457, bare=29546
+
+  === LAST 2 CHARACTERS ===
+  bare     (N=28553): in=5555(19%), dy=4816(16%), ey=2720(9%), ar=2529(8%), ol=2480(8%), al=1796(6%), or=1592(5%), oy=953(3%), am=708(2%), ir=615(2%)
+  ch-init  (N= 6989): dy=1320(18%), ey=1198(17%), ol=774(11%), hy=568(8%), in=548(7%), or=500(7%), ar=367(5%), al=262(3%), oy=252(3%), eo=154(2%)
+  h-init   (N= 3457): dy=821(23%), ey=730(21%), ol=368(10%), hy=298(8%), in=194(5%), or=177(5%), ho=136(3%), ar=126(3%), al=95(2%), oy=77(2%)
+
+  === LAST 3 CHARACTERS ===
+  bare     (N=16377): iin=4014(24%), edy=2900(17%), ain=1504(9%), ody=674(4%), eol=482(2%), air=474(2%), hey=367(2%), dar=298(1%), ldy=263(1%), aly=240(1%)
+  ch-init  (N= 6989): hey=1052(15%), edy=783(11%), chy=515(7%), hol=470(6%), iin=386(5%), hor=285(4%), ody=275(3%), eol=236(3%), hdy=206(2%), hoy=195(2%)
+  h-init   (N= 2990): hey=672(22%), edy=594(19%), hol=192(6%), iin=148(4%), eol=147(4%), ody=141(4%), hor=102(3%), heo=63(2%), hdy=59(1%), eor=58(1%)
+
+  === WORDS ENDING IN &#x27;dy&#x27; ===
+    bare: 4816 (16.3%)
+    ch:   1320 (18.9%)
+    h:    821 (23.7%)
+
+  === WORDS ENDING IN &#x27;edy&#x27; ===
+    bare: 2900 (9.8%)
+    ch:   783 (11.2%)
+    h:    594 (17.2%)
+
+  === WORDS ENDING IN &#x27;ol&#x27; ===
+    bare: 2480 (8.4%)
+    ch:   774 (11.1%)
+    h:    368 (10.6%)
+
+  === WORDS ENDING IN &#x27;or&#x27; ===
+    bare: 1592 (5.4%)
+    ch:   500 (7.2%)
+    h:    177 (5.1%)
+
+  === WORDS ENDING IN &#x27;aiin&#x27; ===
+    bare: 3672 (12.4%)
+    ch:   363 (5.2%)
+    h:    134 (3.9%)
+
+  ═══ CRITICAL COMPARISON ═══
+  Combined -dy and -edy endings:
+    bare: 7716 (26.1%)
+    ch:   2103 (30.1%)
+    h:    1415 (40.9%)
+
+  → SIMILAR -dy/-edy rates. The binary split is LIKELY AN ARTIFACT.
+
+============================================================================
+LONG vs SHORT SUFFIX LIST — FULL COMPARISON
+============================================================================
+
+  ═══ LONG (edy,ody,ey include) ═══
+    Total: 40300
+    Has suffix: 27239 (67.6%)
+    No suffix: 13061 (32.4%)
+    Unique roots: 2430
+    Suffix distribution: {&#x27;y&#x27;: 6497, &#x27;dy&#x27;: 3105, &#x27;iin&#x27;: 2998, &#x27;ey&#x27;: 2755, &#x27;edy&#x27;: 2197, &#x27;ol&#x27;: 1972, &#x27;aiin&#x27;: 1464, &#x27;or&#x27;: 1282, &#x27;ar&#x27;: 1277, &#x27;in&#x27;: 1219, &#x27;ody&#x27;: 999, &#x27;al&#x27;: 865, &#x27;ain&#x27;: 609}
+
+  ═══ SHORT (consonant-initial only) ═══
+    Total: 40300
+    Has suffix: 27239 (67.6%)
+    No suffix: 13061 (32.4%)
+    Unique roots: 2569
+    Suffix distribution: {&#x27;y&#x27;: 9252, &#x27;dy&#x27;: 6301, &#x27;iin&#x27;: 2998, &#x27;ol&#x27;: 1972, &#x27;aiin&#x27;: 1464, &#x27;or&#x27;: 1282, &#x27;ar&#x27;: 1277, &#x27;in&#x27;: 1219, &#x27;al&#x27;: 865, &#x27;ain&#x27;: 609}
+
+  ═══ WHAT HAPPENS TO ROOT &#x27;ch&#x27; UNDER SHORT LIST? ═══
+    Under LONG list, root=&#x27;ch&#x27; with suffixes: {&#x27;ey&#x27;: 1030, &#x27;edy&#x27;: 724, &#x27;y&#x27;: 480, &#x27;ol&#x27;: 463, &#x27;or&#x27;: 280, &#x27;dy&#x27;: 199, &#x27;ody&#x27;: 119, &#x27;ar&#x27;: 113, &#x27;aiin&#x27;: 84, &#x27;al&#x27;: 79}
+    Under SHORT list, same words have roots: {&#x27;ch&#x27;: 1755, &#x27;che&#x27;: 1754, &#x27;cho&#x27;: 119}
+
+  ═══ WHAT HAPPENS TO ROOT &#x27;sh&#x27; UNDER SHORT LIST? ═══
+    Under LONG list, root=&#x27;sh&#x27; with suffixes: {&#x27;ey&#x27;: 67, &#x27;edy&#x27;: 64, &#x27;&#x27;: 25, &#x27;or&#x27;: 18, &#x27;y&#x27;: 13, &#x27;ol&#x27;: 9, &#x27;dy&#x27;: 6, &#x27;ody&#x27;: 3, &#x27;aiin&#x27;: 2, &#x27;ar&#x27;: 1}
+    Under SHORT list, same words have roots: {&#x27;she&#x27;: 131, &#x27;sh&#x27;: 75, &#x27;sho&#x27;: 3}
+
+============================================================================
+RE-TEST KEY derivational_prefix_paradox FINDINGS UNDER SHORT SUFFIX LIST
+============================================================================
+
+  TOP 30 STEMS under SHORT suffix list:
+    e           : 9951
+    a           : 4080
+    o           : 2148
+    ar          : 2023
+    ol          : 1875
+    ch          : 1857
+    al          : 1740
+    d           : 1395
+    eo          : 1265
+    or          : 1090
+    l           : 972
+    h           : 741
+    ed          : 659
+    y           : 521
+    am          : 468
+    air         : 455
+    r           : 369
+    es          : 329
+    od          : 283
+    eod         : 260
+    eos         : 220
+    oe          : 194
+    os          : 178
+    i           : 170
+    s           : 161
+    ih          : 149
+    b           : 136
+    ai          : 125
+    qo          : 117
+    sh          : 116
+
+  Stems with N≥50: 40
+
+  SUFFIX PROFILES UNDER SHORT LIST:
+
+    Stem &#x27;e&#x27;:
+      ∅     (N= 4884): y=40%, dy=44%, ol=8%, or=4%, ar=2%, al=1%
+      h     (N= 1578): y=42%, dy=36%, ol=9%, or=4%, ar=2%, al=2%
+      ch    (N= 2329): y=44%, dy=31%, ol=10%, or=6%, ar=4%, al=2%
+
+    Stem &#x27;o&#x27;:
+      ∅     (N= 1157): y=75%, ∅=10%, dy=9%, aiin=1%, iin=3%, ar=1%
+      h     (N=  293): y=17%, ∅=45%, dy=22%, aiin=4%, iin=2%, ar=2%
+      ch    (N=  579): y=33%, ∅=19%, dy=21%, aiin=7%, iin=2%, ar=5%
+
+    Stem &#x27;ol&#x27;:
+      ∅     (N= 1751): ∅=95%, y=1%, dy=1%, aiin=1%, or=0%, al=0%
+      h     (N=   26): y=23%, dy=35%, aiin=8%, or=15%, al=4%
+      ch    (N=   77): y=36%, dy=19%, aiin=16%, or=8%, al=9%
+
+  LINE POSITION under SHORT suffix list:
+    Deriv       N    Mean  Init&lt;.2 Final&gt;.8
+    ∅       28745   0.504    21.5%    22.5%
+    h        2740   0.442    25.5%    13.7%
+    ch       5145   0.502    20.5%    19.7%
+    sh        253   0.115    81.0%     5.1%
+    l        1514   0.616    16.9%    39.9%
+
+  GALLOWS × DERIV under SHORT suffix list:
+                   ∅       h      ch      sh       l
+    ∅          0.84    1.60*   1.44    1.81*   0.97 
+    k          1.11    0.53    0.64    0.24*   1.47 
+    t          1.19    0.36*   0.56    0.23*   0.44*
+
+============================================================================
+suffix_split_artifact_test: VERDICT
+============================================================================
+
+  If raw word endings show same -dy/-edy rates for ch- and bare:
+    → BINARY SUFFIX SPLIT IS AN ARTIFACT. Retract derivational_prefix_paradox Finding 1.
+  If raw endings truly differ:
+    → Split is real but may be SMALLER than 150pp
+
+  Line position and gallows findings are INDEPENDENT of suffix parsing.
+  These survive regardless of suffix list choice.
+
+  Results saved to results/suffix_split_artifact_test_results.json
+
+</pre></details><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>bc53723</code>. 
+To run any test with your own parameters, clone
+<a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
+(<code>python webui/server.py</code>). All numbers reproduce at
+PYTHONHASHSEED=0.</footer></main></body></html>

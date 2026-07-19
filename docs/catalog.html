@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Catalog — VAIS</title><style>
+:root { --bg:#ffffff; --fg:#1a1a1a; --muted:#666; --line:#ddd;
+        --code:#f5f5f5; --accent:#7a4a1e; --warn:#a33; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#141414; --fg:#ddd; --muted:#999; --line:#333;
+          --code:#1e1e1e; --accent:#d9a05b; --warn:#e77; } }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--fg);
+       font:16px/1.55 Georgia, 'Times New Roman', serif; }
+nav { border-bottom:1px solid var(--line); padding:.7em 1.2em;
+      font-family: system-ui, sans-serif; font-size:.9em; }
+nav a { color:var(--accent); text-decoration:none; margin-right:1.2em; }
+main { max-width: 62em; margin: 0 auto; padding: 1.5em 1.2em 4em; }
+h1,h2,h3 { font-family: system-ui, sans-serif; line-height:1.25; }
+h1 { font-size:1.7em; } h2 { font-size:1.3em; margin-top:2em; }
+a { color: var(--accent); }
+code, pre { font-family: ui-monospace, Consolas, monospace;
+            font-size:.86em; background:var(--code); }
+code { padding:.1em .3em; border-radius:3px; }
+pre { padding: .9em; overflow-x:auto; border:1px solid var(--line);
+      border-radius:4px; line-height:1.4; }
+table { border-collapse: collapse; margin: 1em 0; font-size:.92em;
+        display:block; overflow-x:auto; }
+th, td { border:1px solid var(--line); padding:.35em .6em;
+         text-align:left; vertical-align:top; }
+th { font-family: system-ui, sans-serif; background:var(--code); }
+blockquote { border-left:3px solid var(--accent); margin:1em 0;
+             padding:.2em 1em; color:var(--muted); }
+.muted { color:var(--muted); font-size:.9em; }
+.tag { font-family: system-ui, sans-serif; font-size:.75em;
+       border:1px solid var(--line); border-radius:3px;
+       padding:.05em .45em; margin-left:.5em; }
+.tag.sug { border-color:var(--warn); color:var(--warn); }
+details summary { cursor:pointer; font-family: system-ui, sans-serif; }
+footer { border-top:1px solid var(--line); margin-top:3em;
+         padding-top:1em; font-size:.85em; color:var(--muted); }
+</style></head><body>
+<nav><a href="index.html">VAIS</a><a href="catalog.html">Catalog</a>
+<a href="research.html">Research</a><a href="reports.html">Reports</a>
+<a href="https://github.com/Vineyardcode/vais">GitHub</a></nav>
+<main><h1>Test catalog — 144 runnable tests</h1>
+<table><tr><th>test</th><th>description</th><th>params</th><th>baseline</th></tr>
+<tr><td><a href="tests/abbreviation_shorthand_model.html">abbreviation_shorthand_model</a></td><td>Medieval Abbreviation/Shorthand Model vs VMS Fingerprint</td><td>7</td><td>—</td></tr>
+<tr><td><a href="tests/abjad_hypothesis.html">abjad_hypothesis</a></td><td>Abjad/Consonantal Hypothesis: Vowel-Stripping Fingerprint Test</td><td>3</td><td>—</td></tr>
+<tr><td><a href="tests/ae_minimal_pairs.html">ae_minimal_pairs</a></td><td>a↔e Minimal Pair &amp; Substitution Analysis</td><td>12</td><td>—</td></tr>
+<tr><td><a href="tests/alphabet_space_search.html">alphabet_space_search</a></td><td>Alphabet-Space Search (strategy S1)</td><td>8</td><td>—</td></tr>
+<tr><td><a href="tests/astro_crossref.html">astro_crossref</a></td><td>Astronomical Cross-Reference Analysis</td><td>4</td><td>0s</td></tr>
+<tr><td><a href="tests/astro_label_pipeline.html">astro_label_pipeline</a></td><td>Astronomical Label-Illustration Extraction Pipeline</td><td>9</td><td>0s</td></tr>
+<tr><td><a href="tests/bax_decipherment_test.html">bax_decipherment_test</a></td><td>TESTING THE BAX/VOGT DECIPHERMENT PROPOSAL</td><td>11</td><td>—</td></tr>
+<tr><td><a href="tests/bigram_null_stress_test.html">bigram_null_stress_test</a></td><td>STRESS TEST: BIGRAM NULL MODEL &amp; INFORMATION DECOMPOSITION</td><td>9</td><td>—</td></tr>
+<tr><td><a href="tests/branching_entropy_segmentation.html">branching_entropy_segmentation</a></td><td>Sub-word Glyph-Group Segmentation via Branching Entropy</td><td>2</td><td>—</td></tr>
+<tr><td><a href="tests/cappelli_abbreviation_retest.html">cappelli_abbreviation_retest</a></td><td>Re-testing Cappelli Abbreviation Marks vs VMS Suffixes</td><td>4</td><td>—</td></tr>
+<tr><td><a href="tests/charm_incantation_fingerprint.html">charm_incantation_fingerprint</a></td><td>Medieval German Charm/Incantation Fingerprint Test</td><td>4</td><td>—</td></tr>
+<tr><td><a href="tests/chunk_alphabet_decipherment.html">chunk_alphabet_decipherment</a></td><td>Targeted Decipherment with the 25-Class Alphabet</td><td>10</td><td>—</td></tr>
+<tr><td><a href="tests/chunk_class_positions.html">chunk_class_positions</a></td><td>Positional Decomposition of the 25-Class Chunk Alphabet</td><td>11</td><td>—</td></tr>
+<tr><td><a href="tests/chunk_equivalence_classes.html">chunk_equivalence_classes</a></td><td>Chunk Equivalence Class Discovery</td><td>10</td><td>—</td></tr>
+<tr><td><a href="tests/chunk_equivalence_revalidation.html">chunk_equivalence_revalidation</a></td><td>CRITICAL REVALIDATION of Chunk Equivalence Classes</td><td>10</td><td>—</td></tr>
+<tr><td><a href="tests/chunk_fingerprint.html">chunk_fingerprint</a></td><td>Chunk-Level Statistical Fingerprint</td><td>10</td><td>—</td></tr>
+<tr><td><a href="tests/chunk_fingerprint_revalidation.html">chunk_fingerprint_revalidation</a></td><td>CRITICAL REVALIDATION of Chunk Fingerprint</td><td>9</td><td>—</td></tr>
+<tr><td><a href="tests/chunk_slot_mutual_information.html">chunk_slot_mutual_information</a></td><td>Intra-Chunk Slot Mutual Information Decomposition</td><td>12</td><td>—</td></tr>
+<tr><td><a href="tests/cipher_identification_tests.html">cipher_identification_tests</a></td><td>CIPHER IDENTIFICATION TESTS</td><td>1</td><td>—</td></tr>
+<tr><td><a href="tests/claims_correction_audit.html">claims_correction_audit</a></td><td>Corrected Four-Task Audit</td><td>6</td><td>—</td></tr>
+<tr><td><a href="tests/cluster_entropy_language_match.html">cluster_entropy_language_match</a></td><td>Cluster-Level h_char Test + Source Language Matching</td><td>6</td><td>—</td></tr>
+<tr><td><a href="tests/compound_decomposition.html">compound_decomposition</a></td><td>Compound Decomposition, h-Verbal Pattern &amp; BARE Class</td><td>6</td><td>—</td></tr>
+<tr><td><a href="tests/compound_model_validation.html">compound_model_validation</a></td><td>Skeptical Re-Validation &amp; Revised Model Test</td><td>7</td><td>—</td></tr>
+<tr><td><a href="tests/controls_foundry.html">controls_foundry</a></td><td>Controls Foundry — deterministic control corpora for the research charter (RESEARCH.md)</td><td>8</td><td>—</td></tr>
+<tr><td><a href="tests/coptic_dictionary_probe.html">coptic_dictionary_probe</a></td><td>Expanded Coptic Dictionary Probe</td><td>6</td><td>—</td></tr>
+<tr><td><a href="tests/cross_position_context_divergence.html">cross_position_context_divergence</a></td><td>Cross-Position Context Divergence</td><td>10</td><td>—</td></tr>
+<tr><td><a href="tests/cross_script_fingerprint.html">cross_script_fingerprint</a></td><td>CROSS-SCRIPT STATISTICAL FINGERPRINTING</td><td>1</td><td>—</td></tr>
+<tr><td><a href="tests/cross_transliteration_invariance.html">cross_transliteration_invariance</a></td><td>Cross-Transliteration Invariance Audit (portfolio S9) — is the evidence</td><td>12</td><td>—</td></tr>
+<tr><td><a href="tests/cross_word_chunk_dependencies.html">cross_word_chunk_dependencies</a></td><td>Cross-Word Chunk Dependencies</td><td>11</td><td>—</td></tr>
+<tr><td><a href="tests/currier_dichotomy_resolution.html">currier_dichotomy_resolution</a></td><td>Resolve the Currier A/B Dichotomy</td><td>10</td><td>—</td></tr>
+<tr><td><a href="tests/currier_register_comparison.html">currier_register_comparison</a></td><td>CURRIER A↔B REGISTER ANALYSIS</td><td>4</td><td>—</td></tr>
+<tr><td><a href="tests/currier_slot2_regime.html">currier_slot2_regime</a></td><td>Currier A/B as SLOT2 Regime</td><td>11</td><td>—</td></tr>
+<tr><td><a href="tests/currier_split_fingerprint.html">currier_split_fingerprint</a></td><td>CURRIER A/B INDEPENDENT FINGERPRINT ANALYSIS</td><td>4</td><td>—</td></tr>
+<tr><td><a href="tests/derivational_prefix_paradox.html">derivational_prefix_paradox</a></td><td>The Derivational Prefix Paradox</td><td>8</td><td>—</td></tr>
+<tr><td><a href="tests/diacritic_audit.html">diacritic_audit</a></td><td>Diacritical Mark Audit</td><td>0</td><td>0s</td></tr>
+<tr><td><a href="tests/e_extension_morphology.html">e_extension_morphology</a></td><td>SLOT2 e-Extension: Productive Morphology or Slot Independence?</td><td>10</td><td>—</td></tr>
+<tr><td><a href="tests/egyptian_connection.html">egyptian_connection</a></td><td>Egyptian Connection Deep-Dive</td><td>6</td><td>1s</td></tr>
+<tr><td><a href="tests/encoding_layer_sweep.html">encoding_layer_sweep</a></td><td>ENCODING LAYER PARAMETER SWEEP</td><td>3</td><td>—</td></tr>
+<tr><td><a href="tests/encoding_model_tournament.html">encoding_model_tournament</a></td><td>Encoding Model Tournament: Generative Discrimination</td><td>0</td><td>—</td></tr>
+<tr><td><a href="tests/evidence_synthesis.html">evidence_synthesis</a></td><td>GRAND SYNTHESIS: WHAT IS VOYNICHESE?</td><td>3</td><td>—</td></tr>
+<tr><td><a href="tests/f1r_abbreviation_decode.html">f1r_abbreviation_decode</a></td><td>Abbreviation Decode Attempt on f1r</td><td>6</td><td>—</td></tr>
+<tr><td><a href="tests/f1r_bench_substitution_variants.html">f1r_bench_substitution_variants</a></td><td>Aggressive bench substitution variants on f1r</td><td>3</td><td>—</td></tr>
+<tr><td><a href="tests/f66r_analysis.html">f66r_analysis</a></td><td>f66r FOCUSED DECIPHERMENT</td><td>4</td><td>2s</td></tr>
+<tr><td><a href="tests/forgery_tournament.html">forgery_tournament</a></td><td>Generative Forgery Tournament (strategy S3)</td><td>3</td><td>—</td></tr>
+<tr><td><a href="tests/forward_process_models.html">forward_process_models</a></td><td>FORWARD MODELING: WHAT PROCESS REPRODUCES THE VMS FINGERPRINT?</td><td>1</td><td>—</td></tr>
+<tr><td><a href="tests/freq_rank_mapping.html">freq_rank_mapping</a></td><td>FREQUENCY-RANK MAPPING</td><td>4</td><td>2s</td></tr>
+<tr><td><a href="tests/gallows_allograph_test.html">gallows_allograph_test</a></td><td>The Allograph Hypothesis: Are p≡t and f≡k?</td><td>5</td><td>—</td></tr>
+<tr><td><a href="tests/gallows_classifier_semantics.html">gallows_classifier_semantics</a></td><td>Classifier Semantics &amp; Compound Root Resolution</td><td>10</td><td>—</td></tr>
+<tr><td><a href="tests/gallows_collapse_vocabulary.html">gallows_collapse_vocabulary</a></td><td>Gallows Collapse: Revealing the True Vocabulary</td><td>4</td><td>—</td></tr>
+<tr><td><a href="tests/gallows_line_position_split.html">gallows_line_position_split</a></td><td>Line-Position Gallows: The {p,f} vs {t,k} Split</td><td>3</td><td>—</td></tr>
+<tr><td><a href="tests/gallows_null_test.html">gallows_null_test</a></td><td>GALLOWS-AS-NULLS TEST</td><td>4</td><td>—</td></tr>
+<tr><td><a href="tests/gallows_positional_ecology.html">gallows_positional_ecology</a></td><td>Gallows Positional Ecology: Do Paragraph-Initial Gallows</td><td>4</td><td>—</td></tr>
+<tr><td><a href="tests/gallows_semantics.html">gallows_semantics</a></td><td>Gallows-Stripped Semantic Clustering</td><td>4</td><td>1s</td></tr>
+<tr><td><a href="tests/gallows_test.html">gallows_test</a></td><td>Gallows Character Hypothesis Test</td><td>4</td><td>38s</td></tr>
+<tr><td><a href="tests/generative_chunk_model.html">generative_chunk_model</a></td><td>Generative Chunk Model</td><td>10</td><td>—</td></tr>
+<tr><td><a href="tests/german_genre_fingerprint.html">german_genre_fingerprint</a></td><td>Medieval German Genre-Matched Fingerprint Test</td><td>3</td><td>—</td></tr>
+<tr><td><a href="tests/glyph_resegmentation.html">glyph_resegmentation</a></td><td>Data-Driven Glyph Resegmentation:</td><td>0</td><td>—</td></tr>
+<tr><td><a href="tests/hebrew_comparison.html">hebrew_comparison</a></td><td>VOYNICH ↔ HEBREW MORPHOLOGICAL COMPARISON</td><td>4</td><td>0s</td></tr>
+<tr><td><a href="tests/hebrew_deep_analysis.html">hebrew_deep_analysis</a></td><td>HEBREW DEEP ANALYSIS</td><td>12</td><td>58s</td></tr>
+<tr><td><a href="tests/herbal_crossref.html">herbal_crossref</a></td><td>Herbal Cross-Reference Analysis</td><td>5</td><td>1s</td></tr>
+<tr><td><a href="tests/herbal_labels.html">herbal_labels</a></td><td>Herbal &amp; Pharma Label Extraction</td><td>6</td><td>0s</td></tr>
+<tr><td><a href="tests/high_frequency_root_profiles.html">high_frequency_root_profiles</a></td><td>Crack the High-Frequency Unknown Roots</td><td>8</td><td>—</td></tr>
+<tr><td><a href="tests/historical_pharma_comparison.html">historical_pharma_comparison</a></td><td>HISTORICAL PHARMACEUTICAL COMPARISON</td><td>4</td><td>—</td></tr>
+<tr><td><a href="tests/historical_validation.html">historical_validation</a></td><td>Historical Validation</td><td>10</td><td>—</td></tr>
+<tr><td><a href="tests/hypothesis_discriminators.html">hypothesis_discriminators</a></td><td>DISCRIMINATING HYPOTHESES</td><td>1</td><td>—</td></tr>
+<tr><td><a href="tests/inner_ring_inventory.html">inner_ring_inventory</a></td><td>Innermost Ring Deep-Dive</td><td>2</td><td>—</td></tr>
+<tr><td><a href="tests/language_vs_cipher.html">language_vs_cipher</a></td><td>NATURAL LANGUAGE vs. SYLLABLE CIPHER</td><td>1</td><td>—</td></tr>
+<tr><td><a href="tests/latin_inflection_ending_test.html">latin_inflection_ending_test</a></td><td>Do VMS Word-Final Chunks Encode Latin Inflectional Endings?</td><td>4</td><td>—</td></tr>
+<tr><td><a href="tests/latin_paragraph_initials.html">latin_paragraph_initials</a></td><td>Latin Paragraph-Initial Letter Mapping:</td><td>7</td><td>—</td></tr>
+<tr><td><a href="tests/leo_sign_analysis.html">leo_sign_analysis</a></td><td>Leo Zodiac Folio Deep-Dive</td><td>6</td><td>—</td></tr>
+<tr><td><a href="tests/line1_body_separation.html">line1_body_separation</a></td><td>Line-1 / Body Separation: Does the VMS Contain Two Encoding Subsystems?</td><td>3</td><td>—</td></tr>
+<tr><td><a href="tests/line_as_record_characterization.html">line_as_record_characterization</a></td><td>Line-as-Record, rung 4 (portfolio S7) — characterization of the</td><td>11</td><td>—</td></tr>
+<tr><td><a href="tests/line_as_record_ordinal.html">line_as_record_ordinal</a></td><td>Line-as-Record, rung 3 (portfolio S7) — composition vs ordinal structure</td><td>17</td><td>—</td></tr>
+<tr><td><a href="tests/line_as_record_per_hand.html">line_as_record_per_hand</a></td><td>Line-as-Record, rung 2 (portfolio S7) — per-hand adjudication</td><td>13</td><td>—</td></tr>
+<tr><td><a href="tests/line_as_record_section_split.html">line_as_record_section_split</a></td><td>Line-as-Record, rung 5 (portfolio S7) — within-section replication of</td><td>10</td><td>—</td></tr>
+<tr><td><a href="tests/line_as_record_structures.html">line_as_record_structures</a></td><td>Line-as-Record Structures (portfolio S7) — positional field information</td><td>11</td><td>—</td></tr>
+<tr><td><a href="tests/line_boundary_generalization.html">line_boundary_generalization</a></td><td>GENERALIZATION AND LINE BOUNDARY TESTS</td><td>3</td><td>—</td></tr>
+<tr><td><a href="tests/line_class_family_test.html">line_class_family_test</a></td><td>Line-Class Family Test (portfolio S5/S6 bridge) — what KIND of process</td><td>12</td><td>—</td></tr>
+<tr><td><a href="tests/line_ordinal_rank_test.html">line_ordinal_rank_test</a></td><td>S7-R (N5) — independent re-implementation of the Currier-B intra-line</td><td>7</td><td>—</td></tr>
+<tr><td><a href="tests/mi_distance_curve.html">mi_distance_curve</a></td><td>MI(d) Text-Meaning-Area Analysis</td><td>3</td><td>—</td></tr>
+<tr><td><a href="tests/misbinding_coherence_test.html">misbinding_coherence_test</a></td><td>Codicological Coherence: Testing the Misbinding Hypothesis</td><td>0</td><td>—</td></tr>
+<tr><td><a href="tests/morphology_artifact_test.html">morphology_artifact_test</a></td><td>IS THE MORPHOLOGICAL MODEL REAL OR A PARSING ARTIFACT?</td><td>9</td><td>—</td></tr>
+<tr><td><a href="tests/morphology_full_survey.html">morphology_full_survey</a></td><td>Full Morphological Attack Plan</td><td>4</td><td>—</td></tr>
+<tr><td><a href="tests/morphology_model_audit.html">morphology_model_audit</a></td><td>ARE THE REMAINING MODEL ASSUMPTIONS VALID?</td><td>7</td><td>—</td></tr>
+<tr><td><a href="tests/mutual_information_anatomy.html">mutual_information_anatomy</a></td><td>ANATOMY OF ANOMALOUS PREDICTABILITY</td><td>2</td><td>—</td></tr>
+<tr><td><a href="tests/naibbe_cipher_calibration.html">naibbe_cipher_calibration</a></td><td>Naibbe-Style Verbose Cipher Calibration Experiment</td><td>6</td><td>—</td></tr>
+<tr><td><a href="tests/narrative_reconstruction.html">narrative_reconstruction</a></td><td>Narrative Reconstruction &amp; Remaining Root Resolution</td><td>12</td><td>—</td></tr>
+<tr><td><a href="tests/paragraph_framing.html">paragraph_framing</a></td><td>Paragraph Framing Analysis: Do Paragraphs Have Consistent</td><td>3</td><td>—</td></tr>
+<tr><td><a href="tests/paragraph_initial_analysis.html">paragraph_initial_analysis</a></td><td>Paragraph-Initial Letter Analysis &amp; Star Marker Correlation</td><td>2</td><td>—</td></tr>
+<tr><td><a href="tests/parser_free_morphology.html">parser_free_morphology</a></td><td>PARSER-FREE MORPHOLOGICAL ANALYSIS</td><td>7</td><td>—</td></tr>
+<tr><td><a href="tests/parser_free_word_classes.html">parser_free_word_classes</a></td><td>PARSER-FREE WORD CLASSES AND LINE GRAMMAR</td><td>3</td><td>—</td></tr>
+<tr><td><a href="tests/pelling_two_layer_cipher.html">pelling_two_layer_cipher</a></td><td>PELLING-STYLE TWO-LAYER CIPHER: ABBREVIATION + VERBOSE BIGRAM MAP</td><td>2</td><td>—</td></tr>
+<tr><td><a href="tests/pharma_shorthand_hypothesis.html">pharma_shorthand_hypothesis</a></td><td>PHARMACEUTICAL SHORTHAND HYPOTHESIS</td><td>4</td><td>—</td></tr>
+<tr><td><a href="tests/position_identity_decomposition.html">position_identity_decomposition</a></td><td>Position × Identity Decomposition</td><td>10</td><td>—</td></tr>
+<tr><td><a href="tests/positional_frequency_language_match.html">positional_frequency_language_match</a></td><td>Positional Frequency Matching Across Languages</td><td>1</td><td>—</td></tr>
+<tr><td><a href="tests/positional_verbose_cipher.html">positional_verbose_cipher</a></td><td>POSITIONAL-VARIANT VERBOSE CIPHER: CLOSING THE ALPHABET GAP</td><td>1</td><td>—</td></tr>
+<tr><td><a href="tests/ring_decan_mapping.html">ring_decan_mapping</a></td><td>Ring-to-Decan Mapping &amp; Positional Analysis</td><td>7</td><td>0s</td></tr>
+<tr><td><a href="tests/ring_grammar_extraction.html">ring_grammar_extraction</a></td><td>Ring Text Grammar Extraction</td><td>9</td><td>—</td></tr>
+<tr><td><a href="tests/ring_text_analysis.html">ring_text_analysis</a></td><td>Ring Text (@Cc) Extraction &amp; Analysis</td><td>7</td><td>0s</td></tr>
+<tr><td><a href="tests/root_lexicon_expansion.html">root_lexicon_expansion</a></td><td>Vocabulary Expansion &amp; Cross-Section Validation</td><td>13</td><td>—</td></tr>
+<tr><td><a href="tests/root_lexicon_rosetta.html">root_lexicon_rosetta</a></td><td>Root Lexicon &amp; Zodiac Rosetta Stone</td><td>6</td><td>1s</td></tr>
+<tr><td><a href="tests/root_lexicon_self_audit.html">root_lexicon_self_audit</a></td><td>Rigorous Self-Audit &amp; Falsification</td><td>13</td><td>—</td></tr>
+<tr><td><a href="tests/root_lexicon_translation.html">root_lexicon_translation</a></td><td>Full-Passage Translation with 28 Confirmed Roots</td><td>10</td><td>—</td></tr>
+<tr><td><a href="tests/root_significance_tests.html">root_significance_tests</a></td><td>Statistical Significance, POS Fix, &amp; Long-Root Focus</td><td>6</td><td>—</td></tr>
+<tr><td><a href="tests/root_type_grammar.html">root_type_grammar</a></td><td>ROOT-TYPE GRAMMAR — the substance/process root split</td><td>4</td><td>—</td></tr>
+<tr><td><a href="tests/root_type_stress_test.html">root_type_stress_test</a></td><td>ROOT-TYPE STRESS TEST — positional behavior of the two root types</td><td>6</td><td>—</td></tr>
+<tr><td><a href="tests/rtl_direction_test.html">rtl_direction_test</a></td><td>RTL Reading Direction Hypothesis Test</td><td>4</td><td>1s</td></tr>
+<tr><td><a href="tests/run_conditioned_transitions.html">run_conditioned_transitions</a></td><td>Run-Length-Conditioned Transition Matrices:</td><td>0</td><td>—</td></tr>
+<tr><td><a href="tests/run_length_morphology.html">run_length_morphology</a></td><td>Run-Length Morphology &amp; Word Slot Grammar:</td><td>0</td><td>—</td></tr>
+<tr><td><a href="tests/script_reverse_engineering.html">script_reverse_engineering</a></td><td>Reverse-Engineering the Script: What Character-Merging</td><td>0</td><td>—</td></tr>
+<tr><td><a href="tests/script_typology_comparison.html">script_typology_comparison</a></td><td>Script Typology Comparison</td><td>12</td><td>—</td></tr>
+<tr><td><a href="tests/sentence_translation.html">sentence_translation</a></td><td>Sentence-Level Translation Attempt</td><td>9</td><td>0s</td></tr>
+<tr><td><a href="tests/sh_prefix_disentangle.html">sh_prefix_disentangle</a></td><td>DISENTANGLE h- FROM sh-: IS &#x27;s&#x27; A REAL GRAM PREFIX?</td><td>9</td><td>—</td></tr>
+<tr><td><a href="tests/slot_analysis.html">slot_analysis</a></td><td>Slot-Based Morphological Analysis</td><td>5</td><td>1s</td></tr>
+<tr><td><a href="tests/slot_grammar_entropy_model.html">slot_grammar_entropy_model</a></td><td>Slot Grammar as h_char Generative Model</td><td>10</td><td>—</td></tr>
+<tr><td><a href="tests/space_free_segmentation.html">space_free_segmentation</a></td><td>Segmentation-Agnostic Modeling (strategy S4)</td><td>4</td><td>—</td></tr>
+<tr><td><a href="tests/spectral_vc_revalidation.html">spectral_vc_revalidation</a></td><td>Critical Revalidation of Spectral V/C Analysis</td><td>9</td><td>—</td></tr>
+<tr><td><a href="tests/spectral_vowel_consonant.html">spectral_vowel_consonant</a></td><td>Vowel-Consonant Spectral Separation</td><td>10</td><td>—</td></tr>
+<tr><td><a href="tests/structure_cross_validation.html">structure_cross_validation</a></td><td>CROSS-VALIDATION AND STRUCTURAL TESTS</td><td>3</td><td>—</td></tr>
+<tr><td><a href="tests/suffix_bug_cascade_audit.html">suffix_bug_cascade_audit</a></td><td>CASCADE AUDIT: How Much Did the Suffix Bug Corrupt?</td><td>9</td><td>—</td></tr>
+<tr><td><a href="tests/suffix_split_artifact_test.html">suffix_split_artifact_test</a></td><td>CRITICAL: Is the Binary Suffix Split a Parsing Artifact?</td><td>9</td><td>—</td></tr>
+<tr><td><a href="tests/syllabary_hypothesis.html">syllabary_hypothesis</a></td><td>TESTING THE SYLLABARY INTERPRETATION (SKEPTICALLY)</td><td>1</td><td>—</td></tr>
+<tr><td><a href="tests/syntactic_grammar_map.html">syntactic_grammar_map</a></td><td>MAPPING THE SYNTACTIC GRAMMAR</td><td>2</td><td>—</td></tr>
+<tr><td><a href="tests/syntax_artifact_attack.html">syntax_artifact_attack</a></td><td>ATTACKING word_order_syntax_test: IS &quot;SYNTAX&quot; AN ARTIFACT?</td><td>3</td><td>—</td></tr>
+<tr><td><a href="tests/syntax_artifact_supplement.html">syntax_artifact_supplement</a></td><td>Supplement — fixes two methodological flaws in syntax_artifact_attack.</td><td>2</td><td>—</td></tr>
+<tr><td><a href="tests/synthesis_stress_test.html">synthesis_stress_test</a></td><td>ATTACKING THE SYNTHESIS</td><td>4</td><td>—</td></tr>
+<tr><td><a href="tests/template_subtraction.html">template_subtraction</a></td><td>Template Subtraction, Function Word Identification,</td><td>10</td><td>—</td></tr>
+<tr><td><a href="tests/transliteration_floor_calibration.html">transliteration_floor_calibration</a></td><td>S9 follow-up — sensitivity-normalized effect floors for the</td><td>12</td><td>—</td></tr>
+<tr><td><a href="tests/transliteration_significance.html">transliteration_significance</a></td><td>S9 follow-up 2 (N2c) — significance-only cross-reading battery for the</td><td>11</td><td>—</td></tr>
+<tr><td><a href="tests/two_class_section_grammar.html">two_class_section_grammar</a></td><td>THE TWO-CLASS SYSTEM AND SECTION GRAMMAR</td><td>4</td><td>—</td></tr>
+<tr><td><a href="tests/verbose_cipher_inversion.html">verbose_cipher_inversion</a></td><td>Verbose Cipher Inversion — prototype (strict model, calibrated on controls)</td><td>16</td><td>—</td></tr>
+<tr><td><a href="tests/vernacular_paragraph_initials.html">vernacular_paragraph_initials</a></td><td>Vernacular Paragraph-Initial Mapping:</td><td>5</td><td>—</td></tr>
+<tr><td><a href="tests/vowel_consonant_separation.html">vowel_consonant_separation</a></td><td>VOWEL-CONSONANT SEPARATION &amp; PHONOLOGICAL INFERENCE</td><td>2</td><td>—</td></tr>
+<tr><td><a href="tests/word_class_robustness.html">word_class_robustness</a></td><td>ATTACKING THE CLASS SYSTEM</td><td>2</td><td>—</td></tr>
+<tr><td><a href="tests/word_functional_anatomy.html">word_functional_anatomy</a></td><td>Functional Anatomy of the VMS Word</td><td>0</td><td>—</td></tr>
+<tr><td><a href="tests/word_order_syntax_test.html">word_order_syntax_test</a></td><td>INTER-WORD STRUCTURE: IS THERE SYNTAX?</td><td>4</td><td>—</td></tr>
+<tr><td><a href="tests/word_predictability_decomposition.html">word_predictability_decomposition</a></td><td>DECOMPOSING WORD-LEVEL PREDICTABILITY</td><td>2</td><td>—</td></tr>
+<tr><td><a href="tests/word_shape_validation.html">word_shape_validation</a></td><td>WORD-SHAPE VALIDATION: IS THE 10-FEATURE MATCH REAL OR SUPERFICIAL?</td><td>0</td><td>—</td></tr>
+<tr><td><a href="tests/word_transition_network.html">word_transition_network</a></td><td>WORD TRANSITION NETWORK</td><td>3</td><td>—</td></tr>
+<tr><td><a href="tests/zodiac_degree_semantics.html">zodiac_degree_semantics</a></td><td>Medieval Degree-Meaning Cross-Reference</td><td>11</td><td>—</td></tr>
+<tr><td><a href="tests/zodiac_element_vocabulary.html">zodiac_element_vocabulary</a></td><td>Highest-Leverage Attacks</td><td>7</td><td>—</td></tr>
+<tr><td><a href="tests/zodiac_galenic_axis.html">zodiac_galenic_axis</a></td><td>Zodiac Galenic Axis Test</td><td>0</td><td>—</td></tr>
+<tr><td><a href="tests/zodiac_label_network.html">zodiac_label_network</a></td><td>Cross-Sign Label Network Analysis</td><td>10</td><td>—</td></tr>
+<tr><td><a href="tests/zodiac_ring_alignment.html">zodiac_ring_alignment</a></td><td>Cross-Zodiac Comparative Reading,</td><td>8</td><td>—</td></tr>
+</table><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>bc53723</code>. 
+To run any test with your own parameters, clone
+<a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
+(<code>python webui/server.py</code>). All numbers reproduce at
+PYTHONHASHSEED=0.</footer></main></body></html>

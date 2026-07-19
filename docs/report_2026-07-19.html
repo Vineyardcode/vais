@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Report 2026-07-19 — VAIS</title><style>
+:root { --bg:#ffffff; --fg:#1a1a1a; --muted:#666; --line:#ddd;
+        --code:#f5f5f5; --accent:#7a4a1e; --warn:#a33; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#141414; --fg:#ddd; --muted:#999; --line:#333;
+          --code:#1e1e1e; --accent:#d9a05b; --warn:#e77; } }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--fg);
+       font:16px/1.55 Georgia, 'Times New Roman', serif; }
+nav { border-bottom:1px solid var(--line); padding:.7em 1.2em;
+      font-family: system-ui, sans-serif; font-size:.9em; }
+nav a { color:var(--accent); text-decoration:none; margin-right:1.2em; }
+main { max-width: 62em; margin: 0 auto; padding: 1.5em 1.2em 4em; }
+h1,h2,h3 { font-family: system-ui, sans-serif; line-height:1.25; }
+h1 { font-size:1.7em; } h2 { font-size:1.3em; margin-top:2em; }
+a { color: var(--accent); }
+code, pre { font-family: ui-monospace, Consolas, monospace;
+            font-size:.86em; background:var(--code); }
+code { padding:.1em .3em; border-radius:3px; }
+pre { padding: .9em; overflow-x:auto; border:1px solid var(--line);
+      border-radius:4px; line-height:1.4; }
+table { border-collapse: collapse; margin: 1em 0; font-size:.92em;
+        display:block; overflow-x:auto; }
+th, td { border:1px solid var(--line); padding:.35em .6em;
+         text-align:left; vertical-align:top; }
+th { font-family: system-ui, sans-serif; background:var(--code); }
+blockquote { border-left:3px solid var(--accent); margin:1em 0;
+             padding:.2em 1em; color:var(--muted); }
+.muted { color:var(--muted); font-size:.9em; }
+.tag { font-family: system-ui, sans-serif; font-size:.75em;
+       border:1px solid var(--line); border-radius:3px;
+       padding:.05em .45em; margin-left:.5em; }
+.tag.sug { border-color:var(--warn); color:var(--warn); }
+details summary { cursor:pointer; font-family: system-ui, sans-serif; }
+footer { border-top:1px solid var(--line); margin-top:3em;
+         padding-top:1em; font-size:.85em; color:var(--muted); }
+</style></head><body>
+<nav><a href="index.html">VAIS</a><a href="catalog.html">Catalog</a>
+<a href="research.html">Research</a><a href="reports.html">Reports</a>
+<a href="https://github.com/Vineyardcode/vais">GitHub</a></nav>
+<main><h1>Overnight report — 2026-07-19</h1>
+<p>&lt;!-- OVERNIGHT-SUGGESTIVE --&gt;</p>
+<blockquote><strong>SUGGESTIVE FINDING — AWAITING HUMAN REVIEW — DO NOT MERGE.</strong> A run below produced a decode-like/positive signal. It is quarantined: committed only to its overnight/ branch, claims nothing beyond &quot;consistent with&quot;, and is not a decode. See the flagged run section for the numbers and the pre-registered criteria they were judged against.</blockquote>
+<h2>Run 2026-07-19 00:17:09 — N3d</h2>
+<p><strong>Line-as-record rung 4 (portfolio S7): paragraph control + characterization of the Currier-B ordinal signal</strong></p>
+<ul>
+<li>script: <code>scripts/line_as_record_characterization.py</code></li>
+<li>profile: <code>{}</code></li>
+<li>log: <code>overnight_2026-07-19.log</code>; results JSON: <code>line_as_record_characterization.json</code>; branch: <code>overnight/2026-07-19</code></li>
+<li>runtime: 225s (0.06 h), exit code 0</li>
+</ul>
+<p><strong>Pre-registered structure</strong> (script docstring): gate = rung-3 headline reproduced (verified); T-PARA = paragraph-initial lines excluded, significance-only battery (200 nulls, p &lt; 0.0050); decomposition is descriptive only and adjudicates nothing.</p>
+<p>T-PARA: 131 paragraph-initial lines excluded → 2391 kept; real +0.0519 vs null max -0.0017 (nulls ≥ real: 0, p = 0.0050) → <strong>PASS</strong>.</p>
+<table>
+<tr><th>interior bin</th><th>gain (bits/token)</th></tr>
+<tr><td>m1</td><td>+0.0816</td></tr>
+<tr><td>m2</td><td>+0.0381</td></tr>
+<tr><td>m3</td><td>+0.0299</td></tr>
+</table>
+<table>
+<tr><th>feature</th><th>gain</th></tr>
+<tr><td>len</td><td>+0.0018</td></tr>
+<tr><td>first</td><td>+0.0296</td></tr>
+<tr><td>last</td><td>+0.0174</td></tr>
+<tr><td>gallows</td><td>+0.0024</td></tr>
+</table>
+<table>
+<tr><th>first glyph</th><th>support</th><th>contribution</th><th>skew m1/m2/m3</th></tr>
+<tr><td>q</td><td>2908</td><td>+0.0352</td><td>1.109/0.972/0.877</td></tr>
+<tr><td>c</td><td>2413</td><td>+0.0281</td><td>1.009/1.019/0.963</td></tr>
+<tr><td>o</td><td>3529</td><td>+0.0200</td><td>0.937/1.004/1.086</td></tr>
+<tr><td>d</td><td>764</td><td>-0.0151</td><td>0.918/1.001/1.117</td></tr>
+<tr><td>y</td><td>516</td><td>-0.0101</td><td>1.021/1.001/0.969</td></tr>
+<tr><td>t</td><td>258</td><td>-0.0095</td><td>0.873/0.972/1.216</td></tr>
+<tr><td>s</td><td>1545</td><td>-0.0075</td><td>1.096/1.056/0.793</td></tr>
+<tr><td>a</td><td>877</td><td>-0.0067</td><td>0.849/0.975/1.248</td></tr>
+</table>
+<table>
+<tr><th>last glyph</th><th>support</th><th>contribution</th><th>skew m1/m2/m3</th></tr>
+<tr><td>y</td><td>6615</td><td>+0.0191</td><td>1.039/1.005/0.936</td></tr>
+<tr><td>r</td><td>2195</td><td>+0.0086</td><td>0.885/0.968/1.205</td></tr>
+<tr><td>l</td><td>2100</td><td>+0.0082</td><td>0.986/1.025/0.99</td></tr>
+<tr><td>n</td><td>2469</td><td>-0.0039</td><td>1.008/0.998/0.992</td></tr>
+<tr><td>o</td><td>294</td><td>-0.0032</td><td>0.93/0.976/1.129</td></tr>
+<tr><td>s</td><td>354</td><td>-0.0005</td><td>1.016/0.879/1.123</td></tr>
+<tr><td>d</td><td>226</td><td>-0.0000</td><td>0.941/1.203/0.839</td></tr>
+</table>
+<p><strong>VERDICT: CHARACTERIZED — the signal survives the paragraph control (the last registered structural threat); the tables above are the program&#x27;s description of the Currier-B ordinal signal. SUGGESTIVE supporting detail for the quarantined finding; NOT a decode; no value is a translation.</strong></p>
+<h2>Run 2026-07-19 01:53:52 — N3e</h2>
+<p><strong>Line-as-record rung 5 (portfolio S7): within-section replication (bio / recipes / other_B)</strong></p>
+<ul>
+<li>script: <code>scripts/line_as_record_section_split.py</code></li>
+<li>profile: <code>{}</code></li>
+<li>log: <code>overnight_2026-07-19.log</code>; results JSON: <code>line_as_record_section_split.json</code>; branch: <code>overnight/2026-07-19</code></li>
+<li>runtime: 227s (0.06 h), exit code 0</li>
+</ul>
+<p><strong>Pre-registered outcomes</strong> (script docstring; human-directed section-confound test): per usable section PASS iff the real median beats ALL 200 within-line-shuffle nulls (p &lt; 0.0050); taxonomy: folio-number: bio f75-84, recipes f103-116, other_B rest. Pooled rung-3 headline reproduced (gate).</p>
+<table>
+<tr><th>section</th><th>lines / folios</th><th>real gain</th><th>null max</th><th>nulls ≥ real</th><th>p</th><th>verdict</th></tr>
+<tr><td>bio</td><td>739 / 20</td><td>+0.0106</td><td>-0.0052</td><td>0</td><td>0.0050</td><td><strong>PASS</strong></td></tr>
+<tr><td>recipes</td><td>1039 / 23</td><td>+0.0584</td><td>-0.0036</td><td>0</td><td>0.0050</td><td><strong>PASS</strong></td></tr>
+<tr><td>other_B</td><td>744 / 34</td><td>+0.0478</td><td>-0.0077</td><td>0</td><td>0.0050</td><td><strong>PASS</strong></td></tr>
+</table>
+<p><strong>VERDICT: SECTION-GENERAL — the ordinal signal replicates within every usable B section independently; the section-confound objection is dismissed. SUGGESTIVE supporting detail for the quarantined finding; not a decode.</strong></p>
+<h2>Run 2026-07-19 02:40:29 — N4</h2>
+<p><strong>S5/S6 line-class family test: which calibrated process orders Currier B&#x27;s lines?</strong></p>
+<ul>
+<li>script: <code>scripts/line_class_family_test.py</code></li>
+<li>profile: <code>{}</code></li>
+<li>log: <code>overnight_2026-07-19.log</code>; results JSON: <code>line_class_family_test.json</code>; branch: <code>overnight/2026-07-19</code></li>
+<li>runtime: 4s (0.00 h), exit code 0</li>
+</ul>
+<p><strong>Pre-registered rule</strong> (script docstring): nearest family centroid with margin (d1 &lt; 0.5 x d2) and an explicit none-of-the-above arm (F4); gate = centroids separate (&gt; 2.0 x max split RMS). Profiles = normalized position-driven vs neighbor-driven class-sequence information, folio holdout, 10-split medians.</p>
+<table>
+<tr><th>corpus</th><th>r_pos</th><th>r_bi</th><th>split RMS</th><th>lines</th></tr>
+<tr><td>P1_language</td><td>-0.0005</td><td>+0.0013</td><td>0.0005</td><td>4755</td></tr>
+<tr><td>PREC_records</td><td>+0.3388</td><td>+0.3217</td><td>0.0030</td><td>4600</td></tr>
+<tr><td>PNUM_positional</td><td>+0.3168</td><td>+0.4636</td><td>0.0057</td><td>4600</td></tr>
+<tr><td>N4_hoax</td><td>+0.0427</td><td>+0.2180</td><td>0.0050</td><td>2572</td></tr>
+<tr><td>N1_shuffle_ref</td><td>-0.0005</td><td>-0.0010</td><td>0.0005</td><td>3956</td></tr>
+<tr><td>VMS_currier_B</td><td>+0.0354</td><td>+0.0407</td><td>0.0048</td><td>2522</td></tr>
+<tr><td>VMS_currier_A</td><td>+0.0253</td><td>+0.0256</td><td>0.0044</td><td>1310</td></tr>
+</table>
+<p>Gate: min centroid separation 0.1436 vs required 0.0114 → PASS. B distances: family_language 0.0533, family_hoax 0.1775, family_records 0.4135, family_positional 0.5080.</p>
+<p><strong>VERDICT: FAMILY_LANGUAGE</strong> — B&#x27;s line-class ordering profile is nearest the language reference with clear margin. A family-level reading only: nothing is decoded, and the S7 positional finding stands as the residual that separates B from the pure family centroid (real prose shows r_pos ~ 0; B does not).</p>
+<h2>Run 2026-07-19 03:40:17 — N5</h2>
+<p><strong>S7-R: independent re-implementation of the intra-line ordinal measurement (rank statistic, PHASE8 §8.7-1)</strong></p>
+<ul>
+<li>script: <code>scripts/line_ordinal_rank_test.py</code></li>
+<li>profile: <code>{}</code></li>
+<li>log: <code>overnight_2026-07-19.log</code>; results JSON: <code>line_ordinal_rank_test.json</code>; branch: <code>overnight/2026-07-19</code></li>
+<li>runtime: 66s (0.02 h), exit code 0</li>
+</ul>
+<p><strong>Pre-registered ladder</strong> (script docstring; answers PHASE8_DRAFT §8.7-1 at IMPLEMENTATION level — same-author caveat disclosed): rank statistic T = weighted between-class variance of mean interior rank, first-EVA-glyph classes, no bins / smoothing / holdout; inference by 1000 within-line permutations.</p>
+<table>
+<tr><th>corpus</th><th>T</th><th>perms ≥ T</th><th>p</th><th>lines</th></tr>
+<tr><td>PREC_records</td><td>0.029613</td><td>0</td><td>0.0010</td><td>4600</td></tr>
+<tr><td>P1_latin</td><td>0.000106</td><td>132</td><td>0.1329</td><td>4755</td></tr>
+<tr><td>N1_shuffle</td><td>0.000042</td><td>643</td><td>0.6434</td><td>3956</td></tr>
+<tr><td>VMS_currier_B</td><td>0.000599</td><td>0</td><td>0.0010</td><td>2522</td></tr>
+<tr><td>VMS_currier_A</td><td>0.001013</td><td>0</td><td>0.0010</td><td>1310</td></tr>
+</table>
+<p><strong>VERDICT: REPLICATED — the intra-line class-ordering signal survives a methodologically disjoint instrument (B p &lt; 0.005; and observationally, hand A also rejects under this more sensitive statistic). The shared-implementation-DNA objection is answered; author-level independence remains open and travels with the finding.</strong></p>
+<p>B class mean interior ranks (early → late): sh 0.457, q 0.474, k 0.481, l 0.497, ch 0.498, y 0.500, o 0.518, d 0.522, t 0.530, s 0.531, a 0.536, r 0.561 — coherent with the rung-4 characterization (q-early), and the EVA-parsed sh class emerges as the earliest carrier.</p>
+<h2>Run 2026-07-19 13:37:02 — N1c</h2>
+<p><strong>Verbose cipher inversion, rung 3c: Occitan LM extension (max-strength budget, coverage-penalized objective)</strong></p>
+<ul>
+<li>script: <code>scripts/verbose_cipher_inversion.py</code></li>
+<li>profile: <code>{&#x27;EM_OUTER&#x27;: 32, &#x27;EM_PROPOSALS&#x27;: 48, &#x27;EM_RESTARTS&#x27;: 16, &#x27;RESTARTS&#x27;: 64, &#x27;TOP_LMS_RUNG2&#x27;: 3}</code></li>
+<li>log: <code>overnight_2026-07-19.log</code>; results JSON: <code>verbose_cipher_inversion.json</code>; branch: <code>overnight/2026-07-19</code></li>
+<li>runtime: 5650s (1.57 h), exit code 0</li>
+</ul>
+<p><strong>Pre-registered criteria</strong> (verbose_cipher_inversion.py docstring; RESEARCH.md Phase 4b): instrument passes only if BOTH hold — P4 planted-inventory recovery &gt;= 50% AND P4 best holdout gap beats the same-rung noise floor by &gt;= 0.1 bits/sym. VMS rows are interpreted only if the instrument passes, and only as &quot;consistent with&quot;, never &quot;decoded&quot;.</p>
+<table>
+<tr><th>pre-registered check</th><th>threshold</th><th>actual</th><th>verdict</th></tr>
+<tr><td>P4 inventory recovery (rung 2, latin/plain LM)</td><td>&gt;= 50%</td><td>65% (mapping accuracy 57%)</td><td>PASS</td></tr>
+<tr><td>P4 gap − noise floor (rung 2)</td><td>&gt;= +0.100 bits/sym</td><td>+0.350 (gap -0.512 via latin/plain, floor -0.862)</td><td>PASS</td></tr>
+</table>
+<p>Rung-2 holdout gaps (folio-level holdout, this budget):</p>
+<table>
+<tr><th>corpus</th><th>best LM</th><th>gap (bits/sym)</th><th>gap − floor</th><th>holdout words excluded</th></tr>
+<tr><td>P4_latin_verbose</td><td>latin/plain</td><td>-0.512</td><td>+0.350</td><td>12.9%</td></tr>
+<tr><td>P1_latin_plain</td><td>latin/abbrev4</td><td>-1.129</td><td>-0.266</td><td>74.4%</td></tr>
+<tr><td>N2_char_shuffle</td><td>latin/abjad</td><td>-0.994</td><td>-0.131</td><td>87.8%</td></tr>
+<tr><td>N3_grille</td><td>latin/abjad</td><td>-0.862</td><td>+0.000</td><td>70.3%</td></tr>
+<tr><td>N4_self_citation</td><td>latin/abjad</td><td>-0.922</td><td>-0.060</td><td>78.3%</td></tr>
+<tr><td>VMS_full</td><td>latin/abbrev4</td><td>-0.880</td><td>-0.018</td><td>43.8%</td></tr>
+<tr><td>VMS_currier_A</td><td>latin/plain</td><td>-0.842</td><td>+0.020</td><td>48.3%</td></tr>
+<tr><td>VMS_currier_B</td><td>latin/abbrev4</td><td>-0.895</td><td>-0.033</td><td>49.4%</td></tr>
+</table>
+<p>Rung 1 for the record: P4 segmenter inventory recovery 13%, best gap -0.773 vs rung-1 noise floor -0.660.</p>
+<p><strong>VERDICT: INSTRUMENT PASSED</strong> — the known cipher was inverted above the noise floor at this rung. VMS rows, read under the pre-registered vocabulary:</p>
+<ul>
+<li>VMS_full: best gap -0.880 (latin/abbrev4) — within the noise floor: nothing beyond free-mapping noise at this rung (a clean negative for the strict 1:1 verbose-cipher family under these 6 LMs).</li>
+<li>VMS_currier_A: best gap -0.842 (latin/plain) — within the noise floor: nothing beyond free-mapping noise at this rung (a clean negative for the strict 1:1 verbose-cipher family under these 6 LMs).</li>
+<li>VMS_currier_B: best gap -0.895 (latin/abbrev4) — within the noise floor: nothing beyond free-mapping noise at this rung (a clean negative for the strict 1:1 verbose-cipher family under these 6 LMs).</li>
+</ul><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>bc53723</code>. 
+To run any test with your own parameters, clone
+<a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
+(<code>python webui/server.py</code>). All numbers reproduce at
+PYTHONHASHSEED=0.</footer></main></body></html>

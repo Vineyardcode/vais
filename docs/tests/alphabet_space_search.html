@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>alphabet_space_search — VAIS</title><style>
+:root { --bg:#ffffff; --fg:#1a1a1a; --muted:#666; --line:#ddd;
+        --code:#f5f5f5; --accent:#7a4a1e; --warn:#a33; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#141414; --fg:#ddd; --muted:#999; --line:#333;
+          --code:#1e1e1e; --accent:#d9a05b; --warn:#e77; } }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--fg);
+       font:16px/1.55 Georgia, 'Times New Roman', serif; }
+nav { border-bottom:1px solid var(--line); padding:.7em 1.2em;
+      font-family: system-ui, sans-serif; font-size:.9em; }
+nav a { color:var(--accent); text-decoration:none; margin-right:1.2em; }
+main { max-width: 62em; margin: 0 auto; padding: 1.5em 1.2em 4em; }
+h1,h2,h3 { font-family: system-ui, sans-serif; line-height:1.25; }
+h1 { font-size:1.7em; } h2 { font-size:1.3em; margin-top:2em; }
+a { color: var(--accent); }
+code, pre { font-family: ui-monospace, Consolas, monospace;
+            font-size:.86em; background:var(--code); }
+code { padding:.1em .3em; border-radius:3px; }
+pre { padding: .9em; overflow-x:auto; border:1px solid var(--line);
+      border-radius:4px; line-height:1.4; }
+table { border-collapse: collapse; margin: 1em 0; font-size:.92em;
+        display:block; overflow-x:auto; }
+th, td { border:1px solid var(--line); padding:.35em .6em;
+         text-align:left; vertical-align:top; }
+th { font-family: system-ui, sans-serif; background:var(--code); }
+blockquote { border-left:3px solid var(--accent); margin:1em 0;
+             padding:.2em 1em; color:var(--muted); }
+.muted { color:var(--muted); font-size:.9em; }
+.tag { font-family: system-ui, sans-serif; font-size:.75em;
+       border:1px solid var(--line); border-radius:3px;
+       padding:.05em .45em; margin-left:.5em; }
+.tag.sug { border-color:var(--warn); color:var(--warn); }
+details summary { cursor:pointer; font-family: system-ui, sans-serif; }
+footer { border-top:1px solid var(--line); margin-top:3em;
+         padding-top:1em; font-size:.85em; color:var(--muted); }
+</style></head><body>
+<nav><a href="../index.html">VAIS</a><a href="../catalog.html">Catalog</a>
+<a href="../research.html">Research</a><a href="../reports.html">Reports</a>
+<a href="https://github.com/Vineyardcode/vais">GitHub</a></nav>
+<main><h1>alphabet_space_search</h1>
+<p class="muted">scripts/alphabet_space_search.py</p>
+<pre>Alphabet-Space Search (strategy S1)
+
+EVA is a transcription CONVENTION, not a discovery: it decides that &#x27;ch&#x27;
+is two letters and a gallows is one. Every character statistic the field
+cites (h2 ~ 2 bits, rigid word grammar) is a statement about EVA strings
+(assumption A1). This instrument searches the space of re-codings —
+merge frequent bigrams into single units, unify confusable glyphs, drop
+rare glyphs — asking: does ANY alphabet within reach make the corpus
+statistically ordinary, and does the machinery know the difference
+between decoding and destroying?
+
+Search: beam search, breadth BEAM_WIDTH, depth SEARCH_DEPTH. Op space per
+step (declared, fixed — DOF accounting):
+  - merge one of the TOP_BIGRAMS most frequent symbol bigrams
+  - one unification from UNIFY_PAIRS (paleographically confusable pairs)
+  - drop-rare: delete symbols rarer than DROP_RARE_PCT
+Alphabet size constrained to [ALPHABET_MIN, ALPHABET_MAX].
+
+Objective (OBJECTIVE, UI-exposed):
+  language_band = mean |z| distance of char-structural features
+  (h1_char, h2_ratio, pos_predict, mean_wlen) from the positive-control
+  language band (mean of P1 Latin &amp; P2 Italian; scales = std over the
+  9-control + VMS population). Lower = more language-like.
+
+Pre-registered protocol and kill criteria (RESEARCH.md S1):
+  1. POSITIVE CONTROL FIRST: run on P4 (latin_verbose). The search must
+     substantially close P4&#x27;s gap to the language band (it contains a
+     planted verbose-cipher grouping that merging genuinely undoes).
+  2. NEGATIVE CONTROL: run on N3 (grille). KILL: if the search closes
+     N3&#x27;s gap as fully as P4&#x27;s, the objective cannot distinguish
+     &quot;recovering a real underlying alphabet&quot; from &quot;cosmetically
+     normalizing table gibberish&quot; -&gt; the instrument dies, and no VMS
+     result below may be interpreted.
+  3. Only then: VMS (full, Currier A, Currier B separately — F8).
+DOF budget: explored configurations are counted and reported; the op
+space, beam, depth, objective, and controls order are fixed by this
+docstring before any VMS run.</pre>
+<h2>Parameters</h2><table><tr><th>name</th><th>default</th><th>type</th></tr>
+<tr><td><code>BEAM_WIDTH</code></td><td><code>6</code></td><td>int</td></tr>
+<tr><td><code>SEARCH_DEPTH</code></td><td><code>10</code></td><td>int</td></tr>
+<tr><td><code>TOP_BIGRAMS</code></td><td><code>15</code></td><td>int</td></tr>
+<tr><td><code>DROP_RARE_PCT</code></td><td><code>0.1</code></td><td>float</td></tr>
+<tr><td><code>ALPHABET_MIN</code></td><td><code>15</code></td><td>int</td></tr>
+<tr><td><code>ALPHABET_MAX</code></td><td><code>60</code></td><td>int</td></tr>
+<tr><td><code>OBJECTIVE</code></td><td><code>&#x27;language_band&#x27;</code></td><td>str</td></tr>
+<tr><td><code>UNIFY_PAIRS</code></td><td><code>[&#x27;tk&#x27;, &#x27;fp&#x27;, &#x27;ao&#x27;, &#x27;ei&#x27;]</code></td><td>json</td></tr>
+</table>
+<h2>Golden output (PYTHONHASHSEED=0)</h2><details><summary>show</summary><pre>============================================================================
+alphabet_space_search — ALPHABET-SPACE SEARCH
+============================================================================
+objective=language_band  beam=6 depth=10 top_bigrams=15  alphabet in [15,60]
+language band mu: h1_char=4.016  h2_ratio=0.804  pos_predict=0.902  mean_wlen=5.015
+
+  P4_latin_verbose: band-dist 1.804 -&gt; 0.754  (gain 1.049, 58% closed)  alphabet 21  explored 971
+    ops: merge:ai merge:ol merge:qo merge:he merge:c merge:i merge:s merge:n merge:t merge:dy
+
+  N3_grille: band-dist 1.102 -&gt; 0.539  (gain 0.563, 51% closed)  alphabet 21  explored 967
+    ops: merge:ol merge:ey merge:or merge:od unify:tk merge:ka merge:in merge:e merge:ee unify:ei
+
+  VMS_full: band-dist 0.937 -&gt; 0.460  (gain 0.477, 51% closed)  alphabet 23  explored 1,347
+    ops: merge:dy merge:ai merge:e merge:ar unify:fp drop:v drop:z drop:j drop:u drop:x
+
+  VMS_currier_A: band-dist 0.890 -&gt; 0.432  (gain 0.458, 51% closed)  alphabet 30  explored 1,289
+    ops: merge:ey merge:ai merge:ch merge:d merge:al merge:i merge:n merge:ar drop:v drop:z
+
+  VMS_currier_B: band-dist 1.102 -&gt; 0.505  (gain 0.597, 54% closed)  alphabet 24  explored 1,302
+    ops: merge:dy merge:ii merge:ey merge:a merge:ai drop:u drop:x drop:b drop:z drop:j
+
+  ADJUDICATION (pre-registered):
+    positive control P4: 58% of gap closed (PASS)
+    N3 closed only 51% (&lt; P4 58%): objective discriminates recovery from cosmetics. VMS result interpretable:
+    VMS closed 51% of its gap to the language band (A: 51%, B: 54%).
+
+  -&gt; results/alphabet_space_search.json
+</pre></details><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>bc53723</code>. 
+To run any test with your own parameters, clone
+<a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
+(<code>python webui/server.py</code>). All numbers reproduce at
+PYTHONHASHSEED=0.</footer></main></body></html>

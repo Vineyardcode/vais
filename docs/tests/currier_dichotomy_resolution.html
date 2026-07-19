@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>currier_dichotomy_resolution — VAIS</title><style>
+:root { --bg:#ffffff; --fg:#1a1a1a; --muted:#666; --line:#ddd;
+        --code:#f5f5f5; --accent:#7a4a1e; --warn:#a33; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#141414; --fg:#ddd; --muted:#999; --line:#333;
+          --code:#1e1e1e; --accent:#d9a05b; --warn:#e77; } }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--fg);
+       font:16px/1.55 Georgia, 'Times New Roman', serif; }
+nav { border-bottom:1px solid var(--line); padding:.7em 1.2em;
+      font-family: system-ui, sans-serif; font-size:.9em; }
+nav a { color:var(--accent); text-decoration:none; margin-right:1.2em; }
+main { max-width: 62em; margin: 0 auto; padding: 1.5em 1.2em 4em; }
+h1,h2,h3 { font-family: system-ui, sans-serif; line-height:1.25; }
+h1 { font-size:1.7em; } h2 { font-size:1.3em; margin-top:2em; }
+a { color: var(--accent); }
+code, pre { font-family: ui-monospace, Consolas, monospace;
+            font-size:.86em; background:var(--code); }
+code { padding:.1em .3em; border-radius:3px; }
+pre { padding: .9em; overflow-x:auto; border:1px solid var(--line);
+      border-radius:4px; line-height:1.4; }
+table { border-collapse: collapse; margin: 1em 0; font-size:.92em;
+        display:block; overflow-x:auto; }
+th, td { border:1px solid var(--line); padding:.35em .6em;
+         text-align:left; vertical-align:top; }
+th { font-family: system-ui, sans-serif; background:var(--code); }
+blockquote { border-left:3px solid var(--accent); margin:1em 0;
+             padding:.2em 1em; color:var(--muted); }
+.muted { color:var(--muted); font-size:.9em; }
+.tag { font-family: system-ui, sans-serif; font-size:.75em;
+       border:1px solid var(--line); border-radius:3px;
+       padding:.05em .45em; margin-left:.5em; }
+.tag.sug { border-color:var(--warn); color:var(--warn); }
+details summary { cursor:pointer; font-family: system-ui, sans-serif; }
+footer { border-top:1px solid var(--line); margin-top:3em;
+         padding-top:1em; font-size:.85em; color:var(--muted); }
+</style></head><body>
+<nav><a href="../index.html">VAIS</a><a href="../catalog.html">Catalog</a>
+<a href="../research.html">Research</a><a href="../reports.html">Reports</a>
+<a href="https://github.com/Vineyardcode/vais">GitHub</a></nav>
+<main><h1>currier_dichotomy_resolution</h1>
+<p class="muted">scripts/currier_dichotomy_resolution.py · depends on chunk_equivalence_classes</p>
+<pre>Resolve the Currier A/B Dichotomy
+
+═══════════════════════════════════════════════════════════════════════
+
+OBJECTIVE:
+  Determine whether Currier Language A and Language B represent:
+    (a) Two genuinely different encoding/language systems, or
+    (b) Registers/topics within one system, or
+    (c) Scribal variation (same content, different hand habits)
+
+  CRITICAL FIX: All prior analyses (generative_chunk_model, chunk_alphabet_decipherment, ...) used a hardcoded
+  get_currier_language() function with ~42% error rate.  This test
+  parses the authoritative $L= tag from the IVTFF folio headers.
+
+METHOD:
+  1. CORRECTED CORPUS SPLIT — parse $L=A / $L=B from folio headers.
+     Quantify how badly the old hardcoded function was wrong.
+  2. 25-CLASS DISTRIBUTIONS — unigram, bigram, positional (initial/
+     medial/final), word-length. JSD between A and B at each level.
+  3. VOCABULARY OVERLAP — chunk types, word types, class bigrams
+     shared vs unique to A or B.
+  4. MARKOV CROSS-PERPLEXITY — train chunk-bigram model on A, test
+     on B, and vice versa.  Compare to within-language perplexity
+     (train/test within A, within B).  If A→B perplexity ≈ A→A, the
+     underlying chunk grammar is shared.
+  5. INFORMATION-THEORETIC DIVERGENCE — Jensen-Shannon divergence
+     between A and B at class-unigram, class-bigram, and glyph levels.
+     Permutation test: shuffle folio labels 1000 times, recompute JSD
+     each time → p-value for the real A/B split.
+  6. CLASSIFIER — nearest-centroid classifier on folio-level class-bigram
+     features.  Leave-one-out cross-validated accuracy.  Compare to null
+     (shuffled labels, same LOO protocol).
+  7. DIFFERENTIAL FEATURES — which specific class bigrams and unigrams
+     most distinguish A from B?  Log-odds ratio ranking.
+  8. NL FIT BY LANGUAGE — run chunk_alphabet_decipherment-style distribution comparison
+     separately on A and B.  Does the same NL best match both?
+
+SKEPTICISM:
+  - The hardcoded A/B function was ~42% wrong.  ALL prior A/B results
+    (generative_chunk_model baselines, currier_register_comparison, misbinding_coherence_test, run_conditioned_transitions) may be biased.
+  - Even with correct tags, 17 folios have NO $L= tag.  We exclude
+    them from A/B analysis but include them in &#x27;all&#x27;.
+  - Currier&#x27;s own assignments are from the 1970s — they may contain
+    errors too.  We report but do not second-guess them.
+  - Statistical differences could be section effects (herbal vs pharma
+    vs astro) rather than genuine A/B effects.  We test this.
+
+═══════════════════════════════════════════════════════════════════════</pre>
+<h2>Parameters</h2><table><tr><th>name</th><th>default</th><th>type</th></tr>
+<tr><td><code>GALLOWS_TRI</code></td><td><code>[&#x27;cth&#x27;, &#x27;ckh&#x27;, &#x27;cph&#x27;, &#x27;cfh&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>GALLOWS_BI</code></td><td><code>[&#x27;ch&#x27;, &#x27;sh&#x27;, &#x27;th&#x27;, &#x27;kh&#x27;, &#x27;ph&#x27;, &#x27;fh&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>SLOT1</code></td><td><code>[&#x27;ch&#x27;, &#x27;sh&#x27;, &#x27;y&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>SLOT2_RUNS</code></td><td><code>[&#x27;e&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>SLOT2_SINGLE</code></td><td><code>[&#x27;a&#x27;, &#x27;q&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>SLOT3</code></td><td><code>[&#x27;o&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>SLOT4_RUNS</code></td><td><code>[&#x27;i&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>SLOT4_SINGLE</code></td><td><code>[&#x27;d&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>SLOT5</code></td><td><code>[&#x27;cfh&#x27;, &#x27;ckh&#x27;, &#x27;cph&#x27;, &#x27;cth&#x27;, &#x27;f&#x27;, &#x27;k&#x27;, &#x27;l&#x27;, &#x27;m&#x27;, &#x27;n&#x27;, &#x27;p&#x27;, &#x27;r&#x27;, &#x27;s&#x27;, &#x27;t&#x27;, &#x27;y&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>MAX_CHUNKS</code></td><td><code>6</code></td><td>int</td></tr>
+</table>
+<h2>Golden output (PYTHONHASHSEED=0)</h2><details><summary>show</summary><pre>========================================================================
+currier_dichotomy_resolution — RESOLVE THE CURRIER A/B DICHOTOMY
+========================================================================
+
+────────────────────────────────────────────────────────────────────────
+STEP 1: Corrected Currier A/B corpus split
+────────────────────────────────────────────────────────────────────────
+
+  Folios:  A=107  B=78  Untagged=16  Total=201
+  Words:   all=40351  A=11728  B=25504
+
+  Disagreements between hardcoded function and $L= tags: 79
+  Folio                 Hardcoded    $L= tag
+  f27r                          B          A
+  f27v                          B          A
+  f28r                          B          A
+  f28v                          B          A
+  f29r                          B          A
+  f29v                          B          A
+  f33r                          A          B
+  f33v                          A          B
+  f35r                          B          A
+  f35v                          B          A
+  f38r                          B          A
+  f38v                          B          A
+  f40r                          A          B
+  f40v                          A          B
+  f41r                          A          B
+  f41v                          A          B
+  f42r                          B          A
+  f42v                          B          A
+  f47r                          B          A
+  f47v                          B          A
+  f48r                          A          B
+  f48v                          A          B
+  f49r                          B          A
+  f49v                          B          A
+  f53r                          B          A
+  f53v                          B          A
+  f54r                          B          A
+  f54v                          B          A
+  f55r                          A          B
+  f55v                          A          B
+  ... and 49 more
+
+  IMPACT OF CORRECTION:
+    Old A: 25451 words   →  Correct A: 11728 words
+    Old B: 14900 words   →  Correct B: 25504 words
+    Net shift: 10604 words moved to B
+
+────────────────────────────────────────────────────────────────────────
+STEP 2: Build class sequences using chunk_equivalence_classes clusters
+────────────────────────────────────────────────────────────────────────
+
+  chunk_equivalence_classes clusters loaded: 206 chunk→class mappings
+  After rare-chunk extension: 523 mappings
+
+  all: 40309 words → 78526 class tokens
+  A: 11720 words → 22903 class tokens
+  B: 25472 words → 49126 class tokens
+
+────────────────────────────────────────────────────────────────────────
+STEP 3: 25-class distributions — A vs B
+────────────────────────────────────────────────────────────────────────
+
+  CLASS UNIGRAM FREQUENCIES:
+  Class      freq_A   freq_B     diff   log_OR
+  C23        0.0008   0.0002  +0.0007   +2.299 ***
+  C22        0.0030   0.0009  +0.0021   +1.691 ***
+  C24        0.0020   0.0009  +0.0011   +1.197 ***
+  C11        0.0032   0.0015  +0.0017   +1.101 ***
+  C16        0.0016   0.0008  +0.0009   +1.101 ***
+  C12        0.0030   0.0014  +0.0016   +1.080 ***
+  C14        0.0024   0.0012  +0.0013   +1.051 ***
+  C7         0.0081   0.0145  -0.0064   -0.837 ***
+  C4         0.1036   0.0613  +0.0423   +0.757 ***
+  C20        0.0009   0.0014  -0.0006   -0.681 ***
+  C2         0.0548   0.0867  -0.0320   -0.663 ***
+  C21        0.0028   0.0018  +0.0010   +0.638 ***
+  C17        0.0011   0.0007  +0.0004   +0.624 ***
+  C10        0.0392   0.0569  -0.0177   -0.538 ***
+  C6         0.0090   0.0128  -0.0037   -0.498   *
+  C15        0.0028   0.0020  +0.0008   +0.482   *
+  C5         0.1152   0.0833  +0.0319   +0.469   *
+  C8         0.0080   0.0058  +0.0022   +0.463   *
+  C3         0.1515   0.2033  -0.0518   -0.424   *
+  C9         0.0547   0.0710  -0.0164   -0.378   *
+  C19        0.0006   0.0004  +0.0001   +0.364   *
+  C0         0.2482   0.1946  +0.0536   +0.351   *
+  C13        0.0069   0.0058  +0.0011   +0.247    
+  C1         0.1729   0.1870  -0.0141   -0.113    
+  C18        0.0038   0.0037  +0.0001   +0.032    
+
+  Unigram JSD(A,B) = 0.018418
+  Bigram  JSD(A,B) = 0.098799
+  Initial JSD(A,B) = 0.023693
+  Final   JSD(A,B) = 0.031819
+  Medial  JSD(A,B) = 0.091184
+  WordLen JSD(A,B) = 0.003053
+
+  WORD LENGTH DISTRIBUTIONS (in class tokens):
+   Len   A freq   B freq     diff
+     1   0.2812   0.2670  +0.0143
+     2   0.5491   0.5703  -0.0212
+     3   0.1230   0.1358  -0.0128
+     4   0.0324   0.0222  +0.0102
+     5   0.0095   0.0036  +0.0059
+     6   0.0048   0.0011  +0.0036
+
+────────────────────────────────────────────────────────────────────────
+STEP 4: Vocabulary overlap — A vs B
+────────────────────────────────────────────────────────────────────────
+
+  WORD TYPES:  A=3533  B=4993  shared=1101  A-only=2432  B-only=3892
+  Jaccard(word types) = 0.1483
+
+  CHUNK TYPES: A=390  B=435  shared=323  A-only=67  B-only=112
+  Jaccard(chunk types) = 0.6434
+
+  CLASS BIGRAM TYPES: A=279  B=277  shared=230
+  Jaccard(class bigrams) = 0.7055
+
+  Top A-only words (not in B):  ctho(18), cthody(16), chom(14), choiin(13), qotchol(13), qotchor(12), okchol(10), doiin(10), ctheol(10), kcho(9), chotchy(9), qokchor(9), chory(9), ycheor(9), ksho(8)
+  Top B-only words (not in B):  qokeedy(307), otedy(166), okedy(112), okeedy(103), qotedy(91), qoteedy(77), keedy(63), qokchdy(57), opchedy(53), lkaiin(51), olkeedy(50), kedy(48), kain(46), shdy(45), tedy(42)
+
+────────────────────────────────────────────────────────────────────────
+STEP 5: Markov cross-perplexity — A vs B
+────────────────────────────────────────────────────────────────────────
+
+  Cross-perplexity matrix (class bigrams, Laplace-smoothed):
+  Train \ Test         Test A     Test B
+  Model A                4.33       4.37
+  Model B                4.71       3.96
+
+  Cross/within ratio: A→B = 1.011  B→A = 1.191
+  → SIMILAR grammar with moderate divergence
+
+────────────────────────────────────────────────────────────────────────
+STEP 6: Permutation test — is A/B split significant?
+────────────────────────────────────────────────────────────────────────
+
+  Running 1000 permutations (shuffling folio labels)...
+  Unigram JSD:  real=0.018418  null=0.001092±0.000537  z=+32.28  p=0.0000
+  Bigram  JSD:  real=0.098799  null=0.011373±0.001941  z=+45.05  p=0.0000
+
+  → A/B split is HIGHLY SIGNIFICANT at both unigram and bigram levels
+
+────────────────────────────────────────────────────────────────────────
+STEP 7: Folio-level classifier — can we distinguish A from B?
+────────────────────────────────────────────────────────────────────────
+
+  Nearest-centroid classifier (LOO-CV on class-bigram features):
+  Accuracy: 164/185 = 0.886
+
+  Majority baseline: 0.578 (A dominant)
+  Lift over majority: +0.308
+
+  Misclassified folios (21):
+    f38v                  actual=A  predicted=B
+    f46r                  actual=B  predicted=A
+    f54v                  actual=A  predicted=B
+    f58r                  actual=A  predicted=B
+    f58v                  actual=A  predicted=B
+    f66v                  actual=B  predicted=A
+    f85r_part             actual=B  predicted=A
+    f87r                  actual=A  predicted=B
+    f87v                  actual=A  predicted=B
+    f90r                  actual=A  predicted=B
+    f90v_part             actual=A  predicted=B
+    f96r                  actual=A  predicted=B
+    f96v                  actual=A  predicted=B
+    f99r                  actual=A  predicted=B
+    f99v                  actual=A  predicted=B
+    f100r                 actual=A  predicted=B
+    f100v_101r            actual=A  predicted=B
+    f101v_part            actual=A  predicted=B
+    f101v_part_102r       actual=A  predicted=B
+    f102v_part            actual=A  predicted=B
+    ... and 1 more
+
+  Classifier permutation test (500 shuffles):
+    Real LOO accuracy: 0.886
+    Null accuracy: 0.505 ± 0.054
+    z = +7.01, p = 0.0000
+
+────────────────────────────────────────────────────────────────────────
+STEP 8: Differential features — top distinguishing class bigrams
+────────────────────────────────────────────────────────────────────────
+
+  Top 15 A-enriched class bigrams:
+  Bigram            count_A  count_B   log_OR
+  (&#x27;C0&#x27;, &#x27;C2&#x27;)           13        2   +3.514
+  (&#x27;C11&#x27;, &#x27;C5&#x27;)          11        2   +3.282
+  (&#x27;C1&#x27;, &#x27;C24&#x27;)          12        3   +2.917
+  (&#x27;C21&#x27;, &#x27;C5&#x27;)           8        2   +2.846
+  (&#x27;C24&#x27;, &#x27;C5&#x27;)          10        3   +2.666
+  (&#x27;C1&#x27;, &#x27;C12&#x27;)          12        4   +2.555
+  (&#x27;C23&#x27;, &#x27;C5&#x27;)           9        3   +2.521
+  (&#x27;C4&#x27;, &#x27;C14&#x27;)          22        8   +2.485
+  (&#x27;C9&#x27;, &#x27;C12&#x27;)           7        3   +2.180
+  (&#x27;C1&#x27;, &#x27;C5&#x27;)          840      395   +2.168
+  (&#x27;C0&#x27;, &#x27;C11&#x27;)          15        7   +2.128
+  (&#x27;C10&#x27;, &#x27;C16&#x27;)          8        4   +1.998
+  (&#x27;C14&#x27;, &#x27;C4&#x27;)           8        4   +1.998
+  (&#x27;C13&#x27;, &#x27;C5&#x27;)          22       12   +1.929
+  (&#x27;C0&#x27;, &#x27;C4&#x27;)           75       42   +1.910
+
+  Top 15 B-enriched class bigrams:
+  Bigram            count_A  count_B   log_OR
+  (&#x27;C1&#x27;, &#x27;C3&#x27;)          640     3145   -1.215
+  (&#x27;C10&#x27;, &#x27;C0&#x27;)          99      500   -1.250
+  (&#x27;C10&#x27;, &#x27;C8&#x27;)           4       23   -1.304
+  (&#x27;C13&#x27;, &#x27;C7&#x27;)           4       24   -1.364
+  (&#x27;C9&#x27;, &#x27;C2&#x27;)          152      845   -1.390
+  (&#x27;C9&#x27;, &#x27;C7&#x27;)           31      180   -1.438
+  (&#x27;C2&#x27;, &#x27;C9&#x27;)            3       23   -1.667
+  (&#x27;C7&#x27;, &#x27;C0&#x27;)           21      158   -1.801
+  (&#x27;C9&#x27;, &#x27;C3&#x27;)          116      948   -1.945
+  (&#x27;C20&#x27;, &#x27;C0&#x27;)           2       21   -2.024
+  (&#x27;C5&#x27;, &#x27;C9&#x27;)           52      563   -2.343
+  (&#x27;C3&#x27;, &#x27;C9&#x27;)            6       94   -2.781
+  (&#x27;C9&#x27;, &#x27;C20&#x27;)           1       23   -2.889
+  (&#x27;C10&#x27;, &#x27;C9&#x27;)          22      531   -3.481
+  (&#x27;C7&#x27;, &#x27;C2&#x27;)            0       15   -3.873
+
+────────────────────────────────────────────────────────────────────────
+STEP 9: NL distribution fit — separately for A and B
+────────────────────────────────────────────────────────────────────────
+
+  Loaded 6 NL corpora: Latin, Czech, English, French, German, Italian
+
+  Rank-frequency JSD (top-25 classes vs top-25 letters):
+  NL Language      JSD vs A   JSD vs B       diff
+  Czech            0.199120   0.205298  -0.006178
+  English          0.136862   0.144649  -0.007787
+  French           0.124123   0.132013  -0.007890
+  German           0.124285   0.132768  -0.008483
+  Italian          0.099913   0.103355  -0.003442
+  Latin            0.115597   0.114640  +0.000957
+
+  Class-unigram entropy: A=3.1545 bits  B=3.1493 bits
+
+  Word-unigram entropy: A=9.9444 bits  B=9.8710 bits
+
+────────────────────────────────────────────────────────────────────────
+STEP 10: Section effect — is A/B a proxy for manuscript section?
+────────────────────────────────────────────────────────────────────────
+
+  Section vs Currier language distribution:
+  Section          A folios   B folios      % B    words
+  herbal                 86         26    23.2%     9853
+  astro                   2          2    50.0%     1210
+  cosmo                   0          0     0.0%        0
+  bio                     0         20   100.0%     6895
+  bio_fold                0          3   100.0%     3702
+  pharma                 19          4    17.4%     4683
+  stars_text              0         23   100.0%    10889
+
+  Within-section A/B JSD (sections with both A and B folios):
+    herbal          A= 6983 words  B= 2870 words  JSD=0.031998
+    astro           A=  753 words  B=  457 words  JSD=0.037032
+    pharma          A= 3992 words  B=  691 words  JSD=0.053353
+
+  Between-section JSD for SAME language (A only, herbal vs others):
+    herbal-A vs pharma-A  (6983 vs 3992 words)  JSD=0.033696
+
+────────────────────────────────────────────────────────────────────────
+STEP 11: Glyph-level A vs B comparison
+────────────────────────────────────────────────────────────────────────
+
+  Glyph-level JSD(A,B) = 0.017016
+
+  Glyph      freq_A   freq_B     diff   log_OR
+  o          0.1837   0.1285  +0.0552   +0.516 ***
+  e          0.0796   0.1295  -0.0499   -0.702 ***
+  y          0.0931   0.1069  -0.0138   -0.199    
+  a          0.0766   0.0883  -0.0117   -0.205    
+  d          0.0660   0.0822  -0.0162   -0.316   *
+  i          0.0753   0.0699  +0.0055   +0.109    
+  ch         0.0800   0.0567  +0.0233   +0.497   *
+  l          0.0630   0.0596  +0.0034   +0.080    
+  k          0.0492   0.0616  -0.0124   -0.324   *
+  r          0.0498   0.0417  +0.0081   +0.256   *
+  n          0.0378   0.0375  +0.0002   +0.009    
+  q          0.0238   0.0381  -0.0143   -0.680 ***
+  t          0.0328   0.0340  -0.0012   -0.051    
+  sh         0.0279   0.0266  +0.0014   +0.073    
+  s          0.0220   0.0120  +0.0100   +0.874 ***
+  p          0.0066   0.0094  -0.0028   -0.515 ***
+  m          0.0076   0.0056  +0.0019   +0.430   *
+  cth        0.0113   0.0029  +0.0084   +1.979 ***
+  ckh        0.0066   0.0046  +0.0021   +0.545 ***
+  f          0.0022   0.0025  -0.0003   -0.151    
+  cph        0.0022   0.0007  +0.0015   +1.651 ***
+  g          0.0015   0.0005  +0.0010   +1.586 ***
+  cfh        0.0008   0.0003  +0.0005   +1.530 ***
+  x          0.0000   0.0003  -0.0003   -4.810 ***
+  b          0.0003   0.0000  +0.0002   +3.160 ***
+
+────────────────────────────────────────────────────────────────────────
+STEP 12: Synthesis and conclusions
+────────────────────────────────────────────────────────────────────────
+
+  CRITICAL FINDING 1: PRIOR A/B ASSIGNMENTS WERE WRONG
+    The hardcoded get_currier_language() function in 8+ prior scripts
+    disagrees with the authoritative $L= folio tags on 79 folios.
+    This is a ~39% error rate.
+    ALL prior A/B results (currier_register_comparison, misbinding_coherence_test, run_conditioned_transitions, generative_chunk_model) are contaminated.
+
+  FINDING 2: DISTRIBUTIONAL DIVERGENCE
+    Class unigram JSD = 0.018418
+    Class bigram  JSD = 0.098799
+    Glyph-level   JSD = 0.017016
+    Permutation test: SIGNIFICANT (p=0.0000, z=+32.3)
+
+  FINDING 3: GRAMMAR SHARING
+    Cross-perplexity ratio A→B = 1.011, B→A = 1.191
+    → A and B have SIMILAR but distinguishable grammars
+
+  FINDING 4: VOCABULARY OVERLAP
+    Word Jaccard = 0.1483
+    Chunk Jaccard = 0.6434
+    Class bigram Jaccard = 0.7055
+
+  FINDING 5: CLASSIFIER
+    LOO-CV accuracy = 0.886 (majority baseline = 0.578)
+    z = +7.01, p = 0.0000
+
+  OVERALL ASSESSMENT:
+    A and B differ in VOCABULARY (class distribution) but share
+    the same GRAMMAR (transition structure). This is consistent with
+    REGISTER VARIATION within a single encoding system — different
+    topics or content sections using the same notational rules,
+    analogous to legal vs medical Latin.
+
+  Results saved to C:\projects\vais\results\currier_dichotomy_resolution.json
+  Log saved to C:\projects\vais\results\currier_dichotomy_resolution.txt
+</pre></details><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>bc53723</code>. 
+To run any test with your own parameters, clone
+<a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
+(<code>python webui/server.py</code>). All numbers reproduce at
+PYTHONHASHSEED=0.</footer></main></body></html>

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>evidence_synthesis — VAIS</title><style>
+:root { --bg:#ffffff; --fg:#1a1a1a; --muted:#666; --line:#ddd;
+        --code:#f5f5f5; --accent:#7a4a1e; --warn:#a33; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#141414; --fg:#ddd; --muted:#999; --line:#333;
+          --code:#1e1e1e; --accent:#d9a05b; --warn:#e77; } }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--fg);
+       font:16px/1.55 Georgia, 'Times New Roman', serif; }
+nav { border-bottom:1px solid var(--line); padding:.7em 1.2em;
+      font-family: system-ui, sans-serif; font-size:.9em; }
+nav a { color:var(--accent); text-decoration:none; margin-right:1.2em; }
+main { max-width: 62em; margin: 0 auto; padding: 1.5em 1.2em 4em; }
+h1,h2,h3 { font-family: system-ui, sans-serif; line-height:1.25; }
+h1 { font-size:1.7em; } h2 { font-size:1.3em; margin-top:2em; }
+a { color: var(--accent); }
+code, pre { font-family: ui-monospace, Consolas, monospace;
+            font-size:.86em; background:var(--code); }
+code { padding:.1em .3em; border-radius:3px; }
+pre { padding: .9em; overflow-x:auto; border:1px solid var(--line);
+      border-radius:4px; line-height:1.4; }
+table { border-collapse: collapse; margin: 1em 0; font-size:.92em;
+        display:block; overflow-x:auto; }
+th, td { border:1px solid var(--line); padding:.35em .6em;
+         text-align:left; vertical-align:top; }
+th { font-family: system-ui, sans-serif; background:var(--code); }
+blockquote { border-left:3px solid var(--accent); margin:1em 0;
+             padding:.2em 1em; color:var(--muted); }
+.muted { color:var(--muted); font-size:.9em; }
+.tag { font-family: system-ui, sans-serif; font-size:.75em;
+       border:1px solid var(--line); border-radius:3px;
+       padding:.05em .45em; margin-left:.5em; }
+.tag.sug { border-color:var(--warn); color:var(--warn); }
+details summary { cursor:pointer; font-family: system-ui, sans-serif; }
+footer { border-top:1px solid var(--line); margin-top:3em;
+         padding-top:1em; font-size:.85em; color:var(--muted); }
+</style></head><body>
+<nav><a href="../index.html">VAIS</a><a href="../catalog.html">Catalog</a>
+<a href="../research.html">Research</a><a href="../reports.html">Reports</a>
+<a href="https://github.com/Vineyardcode/vais">GitHub</a></nav>
+<main><h1>evidence_synthesis</h1>
+<p class="muted">scripts/evidence_synthesis.py</p>
+<pre>GRAND SYNTHESIS: WHAT IS VOYNICHESE?
+=================================================
+
+A full battery of statistical analyses behind us. Time to ask: what kind of system
+produces these exact statistical properties?
+
+This test:
+  A) GENERATIVE MODEL — Build the simplest model that reproduces
+       the observed statistics. How well does it match?
+
+  B) TYPOLOGICAL PROFILE — Measure properties that distinguish
+       language types (alphabetic, syllabary, logographic, constructed).
+
+  C) ENTROPY RATE — What is the true character-level entropy of VMS
+       and how does it compare to known scripts?
+
+  D) INFORMATION DENSITY — How many bits per word? Per line?
+       Does VMS carry information at natural-language rates?
+
+  E) THE VOYNICH FINGERPRINT — A compact statistical fingerprint
+       of the manuscript that can be compared against any hypothesis.</pre>
+<h2>Parameters</h2><table><tr><th>name</th><th>default</th><th>type</th></tr>
+<tr><td><code>ALL_GALLOWS</code></td><td><code>[&#x27;cth&#x27;, &#x27;ckh&#x27;, &#x27;cph&#x27;, &#x27;cfh&#x27;, &#x27;tch&#x27;, &#x27;kch&#x27;, &#x27;pch&#x27;, &#x27;fch&#x27;, &#x27;tsh&#x27;, &#x27;ksh&#x27;, &#x27;psh&#x27;, &#x27;fsh&#x27;, &#x27;t&#x27;, …</code></td><td>json</td></tr>
+<tr><td><code>SUFFIXES</code></td><td><code>[&#x27;aiin&#x27;, &#x27;ain&#x27;, &#x27;iin&#x27;, &#x27;in&#x27;, &#x27;ar&#x27;, &#x27;or&#x27;, &#x27;al&#x27;, &#x27;ol&#x27;, &#x27;dy&#x27;, &#x27;y&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>GRAM_PREFIXES</code></td><td><code>[&#x27;qo&#x27;, &#x27;so&#x27;, &#x27;do&#x27;, &#x27;q&#x27;, &#x27;o&#x27;, &#x27;d&#x27;, &#x27;y&#x27;]</code></td><td>json</td></tr>
+</table>
+<h2>Golden output (PYTHONHASHSEED=0)</h2><details><summary>show</summary><pre>Loading lines...
+  4508 lines, 35747 tokens, 3319 types
+
+======================================================================
+A: GENERATIVE MODEL
+    Build the simplest model that reproduces observed statistics
+======================================================================
+
+  Model 1: UNIGRAM
+  H = 8.481 bits/word
+  PP = 357
+
+  Model 2: INDEPENDENT FEATURES
+  H(suffix) = 2.987
+  H(prefix) = 2.054
+  H(stem|suffix) = 4.334
+  Total H = 9.374 bits/word
+  PP = 664
+  vs unigram: 0.893 bits overhead
+
+  Model 3: SUFFIX→PREFIX BIGRAM + stem|suffix
+  H(prefix|prev_suffix) = 1.879
+  MI(sfx→gpfx) = 0.174
+  Total H = 9.200 bits/word
+  PP = 588
+  vs unigram: 0.719 bits overhead
+  vs independent: -0.174 bits saved
+
+  Model 4: FULL WORD BIGRAM (in-sample, overfits)
+  H = 5.282 bits/word
+  PP = 39
+  Unigram reduction: 37.7%
+  NOTE: Does NOT generalize (structure_cross_validation)
+
+  --- GENERATING TEXT FROM MODEL 3 ---
+
+  Real vs Generated (Model 3, 1000 lines):
+                     Metric         Real    Generated
+                     Tokens        35747         8008
+                      Types         3319         1573
+           Type-token ratio       0.0928       0.1964
+                    H(word)        8.481        8.787
+                    Hapax %        57.8%        59.3%
+              Self-rep rate         2.0%         0.5%
+              Zipf exponent        0.987        0.824
+
+======================================================================
+B: TYPOLOGICAL PROFILE
+    Properties that distinguish language/script types
+======================================================================
+
+  CHARACTER INVENTORY:
+  Distinct characters: 26
+  Total characters: 176309
+  H(char): 3.860 bits
+  Most common: o(22887), e(19077), y(16239), h(16169), a(13420), c(11889), d(11860), i(11247), k(10148), l(9613)
+
+  WORD LENGTH DISTRIBUTION:
+  Mean: 4.01
+  Median: 4.0
+  Std: 1.52
+  Range: 0-11
+    len=1:  1617 (4.5%)
+    len=2:  4153 (11.6%)
+    len=3:  6955 (19.5%)
+    len=4: 10015 (28.0%)
+    len=5:  8076 (22.6%)
+    len=6:  3052 (8.5%)
+    len=7:  1151 (3.2%)
+    len=8:   522 (1.5%)
+    len=9:   124 (0.3%)
+
+  LINE LENGTH DISTRIBUTION:
+  Mean: 7.93 words/line
+  Median: 8.0
+  Std: 4.33
+
+  MORPHOLOGICAL REGULARITY (types):
+  Analyzable (has sfx or pfx): 2772/3319 = 83.5%
+  Has suffix: 2189/3319 = 66.0%
+  Has prefix: 1779/3319 = 53.6%
+
+  MORPHOLOGICAL REGULARITY (tokens):
+  Analyzable: 30930/35747 = 86.5%
+  Has suffix: 27256/35747 = 76.2%
+  Has prefix: 18978/35747 = 53.1%
+
+======================================================================
+C: ENTROPY RATE
+    True information rate of VMS vs known scripts
+======================================================================
+
+  Character-level entropy:
+  H(char) unigram:  3.616 bits/char
+  H(char|prev 1):   1.922 bits/char
+  H(char|prev 2):   1.745 bits/char
+  Mean word length:  4.01 chars
+
+  Implied bits/word (from char bigram): 7.71
+  Actual word entropy H(word):           8.48
+  Ratio (word/char-implied):             1.100
+
+  Information per line:
+  Mean words/line:   7.93
+  Mean chars/line:   31.8
+  Bits/line (word):  67.3
+
+  COMPARISON WITH KNOWN SYSTEMS:
+                System    Chars  H(char)   H(c|c)  Mean wlen  H(word)
+            Voynichese       26     3.62     1.92       4.01     8.48
+        English (typ.)       26     4.07     3.30        4.7      ~11
+          Latin (typ.)       23     4.01     3.20        5.5      ~12
+         Arabic (typ.)       28     4.17     3.10        4.3      ~11
+        Chinese (typ.)    &gt;3000      ~11       ~8        1.5      ~11
+           Constructed      var      var    close        var      var
+
+======================================================================
+D: INFORMATION DENSITY
+    How much information does VMS actually encode?
+======================================================================
+
+  Total corpus information content:
+  Word-level:  303166 bits = 37896 bytes
+  Char-level:  338937 bits = 42367 bytes
+
+  Morphological redundancy: 0.0%
+  H(word) after syntax removal: 8.307 bits
+  Total non-redundant info: 296933 bits = 37117 bytes
+
+  English equivalent (35K words × 5 bits/word): 175000 bits
+  VMS content: 296933 bits
+  Ratio VMS/English: 1.70
+
+  Information density by section:
+           bio: N= 5625, V=  753, H=7.167, TTR=0.134
+         cosmo: N=  719, V=  221, H=7.062, TTR=0.307
+      herbal-A: N= 9029, V= 1303, H=8.069, TTR=0.144
+        pharma: N= 1331, V=  373, H=7.434, TTR=0.280
+          text: N=18411, V= 2240, H=8.463, TTR=0.122
+       unknown: N=  632, V=  314, H=7.651, TTR=0.497
+
+======================================================================
+E: THE VOYNICH FINGERPRINT
+    A compact statistical profile of the manuscript
+======================================================================
+
+  ╔══════════════════════════════════════════════════════════════╗
+  ║              THE VOYNICH STATISTICAL FINGERPRINT            ║
+  ╠══════════════════════════════════════════════════════════════╣
+  ║ CORPUS SIZE                                                 ║
+  ║   Tokens:                   35747                              ║
+  ║   Types:                     3319                              ║
+  ║   Lines (2+ words):          4508                              ║
+  ║   Characters:              176309                              ║
+  ╠══════════════════════════════════════════════════════════════╣
+  ║ CHARACTER LEVEL                                             ║
+  ║   Alphabet size:               26                              ║
+  ║   H(char):                  3.616 bits                      ║
+  ║   H(char|prev):             1.922 bits                      ║
+  ║   H(char|prev2):            1.745 bits                      ║
+  ╠══════════════════════════════════════════════════════════════╣
+  ║ WORD LEVEL                                                  ║
+  ║   H(word):                  8.481 bits                      ║
+  ║   Mean word length:          4.01 chars                     ║
+  ║   Zipf exponent:            0.987                            ║
+  ║   Hapax ratio:              57.8%                            ║
+  ║   Type-token ratio:        0.0928                            ║
+  ╠══════════════════════════════════════════════════════════════╣
+  ║ MORPHOLOGICAL GRAMMAR                                       ║
+  ║   Suffixes:                    10 types                         ║
+  ║   Gram prefixes:                7 types                         ║
+  ║   MI(sfx→gpfx):            0.1744 bits (cross-val 94.7%)   ║
+  ║   Suffix entropy:           2.987 bits                      ║
+  ║   Prefix entropy:           2.054 bits                      ║
+  ║   Direction:                   L→R (suffix predicts next prefix) ║
+  ║   Asymmetry:                  Feature-level only, not word-level ║
+  ╠══════════════════════════════════════════════════════════════╣
+  ║ SYNTAX                                                      ║
+  ║   Syntactic unit:            LINE (grammar resets at boundaries) ║
+  ║   Words/line:                7.93                            ║
+  ║   Syntax range:                      Adjacent words only (gap 1) ║
+  ║   Dominant transition:       suffix -dy → prefix qo- (36% of MI) ║
+  ║   Line-initial:                           d-prefix enriched 2.5× ║
+  ║   Word bigrams:                   Do NOT generalize (too sparse) ║
+  ╠══════════════════════════════════════════════════════════════╣
+  ║ DISTRIBUTIONAL CLASSES                                      ║
+  ║   Discrete classes:                     NO — continuous gradient ║
+  ║   Suffix classes (k=3): A={{dy,y}}, M={{X,ar,in}}, B={{aiin,...}} ║
+  ║   Class MI contribution:            9.6% of info (minor overlay) ║
+  ╠══════════════════════════════════════════════════════════════╣
+  ║ WHAT THIS RULES OUT                                         ║
+  ║   Random/meaningless:         NO — z&gt;100 morphology, z&gt;80 syntax ║
+  ║   Simple cipher:               UNLIKELY — morphology too complex ║
+  ║   Constructed lang:               UNLIKELY — sparse word bigrams ║
+  ║   Logographic:                   NO — alphabet too small (18-23) ║
+  ╚══════════════════════════════════════════════════════════════╝
+
+  WHAT COMPUTATIONAL ANALYSIS CANNOT DETERMINE:
+  ─────────────────────────────────────────────
+  1. What the PHONETIC values of glyphs are
+  2. What LANGUAGE is being written (if any)
+  3. Whether the morphology encodes MEANING or is decorative
+  4. Whether the content is natural text, a cipher, or a code
+  5. Specific word translations
+
+  WHAT THE SUITE HAS ESTABLISHED:
+  ──────────────────────────────────
+  1. The writing system has genuine morphological structure (not random)
+  2. The structure is CONSISTENT with a natural agglutinative language
+  3. Grammar operates at the morpheme level (suffix→prefix), not word level
+  4. Lines are independent syntactic units (sentence-like)
+  5. The system is head-initial at morpheme level (like VSO/VOS languages)
+  6. Word-specific syntax exists but is too sparse for a 35K corpus to model
+  7. The statistical profile EXCLUDES random noise, simple ciphers,
+     and most constructed-language models
+  8. It is CONSISTENT WITH (but does not prove) a natural language
+     written in an agglutinative script with ~20 characters
+
+======================================================================
+evidence_synthesis COMPLETE — GRAND SYNTHESIS
+======================================================================
+</pre></details><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>bc53723</code>. 
+To run any test with your own parameters, clone
+<a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
+(<code>python webui/server.py</code>). All numbers reproduce at
+PYTHONHASHSEED=0.</footer></main></body></html>

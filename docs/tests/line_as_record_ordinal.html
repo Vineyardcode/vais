@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>line_as_record_ordinal — VAIS</title><style>
+:root { --bg:#ffffff; --fg:#1a1a1a; --muted:#666; --line:#ddd;
+        --code:#f5f5f5; --accent:#7a4a1e; --warn:#a33; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#141414; --fg:#ddd; --muted:#999; --line:#333;
+          --code:#1e1e1e; --accent:#d9a05b; --warn:#e77; } }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--fg);
+       font:16px/1.55 Georgia, 'Times New Roman', serif; }
+nav { border-bottom:1px solid var(--line); padding:.7em 1.2em;
+      font-family: system-ui, sans-serif; font-size:.9em; }
+nav a { color:var(--accent); text-decoration:none; margin-right:1.2em; }
+main { max-width: 62em; margin: 0 auto; padding: 1.5em 1.2em 4em; }
+h1,h2,h3 { font-family: system-ui, sans-serif; line-height:1.25; }
+h1 { font-size:1.7em; } h2 { font-size:1.3em; margin-top:2em; }
+a { color: var(--accent); }
+code, pre { font-family: ui-monospace, Consolas, monospace;
+            font-size:.86em; background:var(--code); }
+code { padding:.1em .3em; border-radius:3px; }
+pre { padding: .9em; overflow-x:auto; border:1px solid var(--line);
+      border-radius:4px; line-height:1.4; }
+table { border-collapse: collapse; margin: 1em 0; font-size:.92em;
+        display:block; overflow-x:auto; }
+th, td { border:1px solid var(--line); padding:.35em .6em;
+         text-align:left; vertical-align:top; }
+th { font-family: system-ui, sans-serif; background:var(--code); }
+blockquote { border-left:3px solid var(--accent); margin:1em 0;
+             padding:.2em 1em; color:var(--muted); }
+.muted { color:var(--muted); font-size:.9em; }
+.tag { font-family: system-ui, sans-serif; font-size:.75em;
+       border:1px solid var(--line); border-radius:3px;
+       padding:.05em .45em; margin-left:.5em; }
+.tag.sug { border-color:var(--warn); color:var(--warn); }
+details summary { cursor:pointer; font-family: system-ui, sans-serif; }
+footer { border-top:1px solid var(--line); margin-top:3em;
+         padding-top:1em; font-size:.85em; color:var(--muted); }
+</style></head><body>
+<nav><a href="../index.html">VAIS</a><a href="../catalog.html">Catalog</a>
+<a href="../research.html">Research</a><a href="../reports.html">Reports</a>
+<a href="https://github.com/Vineyardcode/vais">GitHub</a></nav>
+<main><h1>line_as_record_ordinal</h1>
+<p class="muted">scripts/line_as_record_ordinal.py</p>
+<pre>Line-as-Record, rung 3 (portfolio S7) — composition vs ordinal structure
+
+PROVENANCE (Phase 7 intake, RESEARCH.md): rung 2 (line_as_record_per_hand)
+returned B_only — Currier B&#x27;s interior positional gain (+0.0513) beat all
+20 per-hand nulls with margin +0.058. Two alternative explanations
+survive rung 2, both identified in the external-findings intake:
+  (i)  COMPOSITION: rung-2 nulls shuffle words corpus-wide within the
+       hand, destroying the correlation between line content and
+       position profile; B pools sections with different lexicons and
+       line-length habits (A7 confound).
+  (ii) SPACE MANAGEMENT (LAAFU prior art, voynich.ninja threads
+       4869/5021): scribal justification — fitting words to line width —
+       produces REAL ordinal structure (line-final words ~1 char
+       shorter, confirmed there), and it is length-driven.
+This rung separates compositional, length-ordinal, and glyph-ordinal
+readings of the B signal. All thresholds fixed before first execution.
+
+INSTRUMENT: identical features / bins / folio-holdout / ALPHA as rungs
+1-2; all statistics are component-wise MEDIANS over R_SPLITS=10
+independent holdout splits. New read-outs: per-feature decomposition
+(len vs glyph-identity = first+last+gallows) and PER-FOLIO interior
+gains (observational; for correlation against per-folio A/B &quot;switch
+intensity&quot; covariates per Phase 7.1a — not adjudicated here).
+
+NULL BATTERIES (N_NULLS=20 each, per hand):
+  FOLIO-nulls: word order shuffled WITHIN EACH FOLIO (folio lexicon and
+      line lengths preserved) — carries all cross-folio/sectional
+      composition; kills explanation (i) if beaten.
+  LINE-nulls: each line&#x27;s own words shuffled IN PLACE (line content,
+      length, folio all preserved) — the strictest compositional
+      control; only intra-line ORDER is destroyed.
+REFERENCE (not a gate): P-JUST — the P1 Latin word stream re-broken by
+a greedy width-fitting algorithm (target width ~ N(JUST_WIDTH_MEAN,
+JUST_WIDTH_SD) chars). Shows how much interior gain pure justification
+produces in THIS instrument, and its len-vs-glyph split. Not a gate
+because its width parameters are arbitrary; displayed beside every
+verdict.
+
+PRE-REGISTERED ADJUDICATION (Currier B only; A reported observationally
+because only B passed rung 2):
+  GATE (unchanged): P-REC total median &gt;= 0.30, P1 total median &lt;= 0.05.
+  T1 composition: B total median beats ALL 20 FOLIO-null total medians
+      AND margin over their median &gt;= 0.05.
+  T2 ordinal: same vs the 20 LINE-null total medians.
+  T3 glyph-ordinal: B GLYPH-component median beats ALL 20 LINE-null
+      glyph medians AND glyph margin &gt;= 0.025 (floor halved: the glyph
+      component spans 3 of 4 features; the empirical p ~ 1/21 is the
+      primary bar, the floor is an effect-size minimum).
+  OUTCOMES:
+    gate_failed              — no interpretation.
+    compositional_artifact   — T1 and T2 both fail: rung-2 signal was
+                               composition; corpse for field structure.
+    inconsistent_nulls       — T1 fails but T2 passes (logically the
+                               folio bar is easier; this outcome means
+                               the batteries disagree): no claim,
+                               instrument investigation required.
+    line_composition_not_order — T1 passes, T2 fails: word-to-line
+                               assignment is non-random beyond folio
+                               composition, but intra-line ORDER adds
+                               nothing. Read against P-JUST (coherent
+                               prose broken at widths shows line-topic
+                               composition too). SUGGESTIVE (weak),
+                               quarantined.
+    length_ordering_only     — T1, T2 pass, T3 fails: intra-line order
+                               is real but carried by word LENGTH —
+                               consistent with scribal space management
+                               (Stolfi), not field vocabulary. Valid
+                               kill of the field reading; logged as a
+                               corpse for &quot;records&quot;, a confirmation for
+                               LAAFU-as-layout.
+    ordinal_glyph_structure  — all three pass: intra-line ordinal
+                               structure in GLYPH IDENTITY beyond
+                               length-based space management —
+                               consistent with field-like vocabulary
+                               ordering in Currier B. SUGGESTIVE,
+                               quarantined, NOT a decode.
+Vocabulary discipline: no outcome names a field, reads a record, or
+uses the word &quot;decoded&quot;.</pre>
+<h2>Parameters</h2><table><tr><th>name</th><th>default</th><th>type</th></tr>
+<tr><td><code>SEED</code></td><td><code>115</code></td><td>int</td></tr>
+<tr><td><code>R_SPLITS</code></td><td><code>10</code></td><td>int</td></tr>
+<tr><td><code>N_NULLS</code></td><td><code>20</code></td><td>int</td></tr>
+<tr><td><code>EFFECT_FLOOR</code></td><td><code>0.05</code></td><td>float</td></tr>
+<tr><td><code>GLYPH_FLOOR</code></td><td><code>0.025</code></td><td>float</td></tr>
+<tr><td><code>GATE_PREC_MIN</code></td><td><code>0.3</code></td><td>float</td></tr>
+<tr><td><code>GATE_P1_MAX</code></td><td><code>0.05</code></td><td>float</td></tr>
+<tr><td><code>JUST_WIDTH_MEAN</code></td><td><code>45.0</code></td><td>float</td></tr>
+<tr><td><code>JUST_WIDTH_SD</code></td><td><code>5.0</code></td><td>float</td></tr>
+<tr><td><code>MIN_LINE_WORDS</code></td><td><code>5</code></td><td>int</td></tr>
+<tr><td><code>HOLDOUT_FRAC</code></td><td><code>0.2</code></td><td>float</td></tr>
+<tr><td><code>PSEUDO_FOLIO_LINES</code></td><td><code>24</code></td><td>int</td></tr>
+<tr><td><code>ALPHA</code></td><td><code>0.5</code></td><td>float</td></tr>
+<tr><td><code>PREC_LINES</code></td><td><code>4600</code></td><td>int</td></tr>
+<tr><td><code>FEATURE_NAMES</code></td><td><code>[&#x27;len&#x27;, &#x27;first&#x27;, &#x27;last&#x27;, &#x27;gallows&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>GLYPH_FEATURES</code></td><td><code>[&#x27;first&#x27;, &#x27;last&#x27;, &#x27;gallows&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>INTERIOR</code></td><td><code>[&#x27;m1&#x27;, &#x27;m2&#x27;, &#x27;m3&#x27;]</code></td><td>json</td></tr>
+</table>
+<h2>Golden output (PYTHONHASHSEED=0)</h2><details><summary>show</summary><pre>============================================================================
+LINE-AS-RECORD, RUNG 3 (S7) — composition vs ordinal structure
+============================================================================
+seed=115 splits=10 nulls/battery=20 floors: total=0.05 glyph=0.025
+P-JUST width ~ N(45.0, 5.0) chars (reference, not a gate)
+  PREC_records     total +0.7288  glyph +0.7215  len +0.0068  (4600 lines)
+  P1_latin_plain   total -0.0045  glyph -0.0043  len +0.0004  (4755 lines)
+  PJUST_justified  total +0.0133  glyph +0.0039  len +0.0099  (5699 lines)
+  gate: PASS
+  Currier A: total +0.0100 (glyph +0.0085, len -0.0016)
+    t1_composition  margin +0.0241 (null max -0.0082) -&gt; fail
+    t2_ordinal      margin +0.0249 (null max -0.0096) -&gt; fail
+    t3_glyph        margin +0.0209 (null max -0.0050) -&gt; fail
+  Currier B: total +0.0513 (glyph +0.0524, len +0.0018)
+    t1_composition  margin +0.0571 (null max -0.0041) -&gt; PASS
+    t2_ordinal      margin +0.0577 (null max -0.0032) -&gt; PASS
+    t3_glyph        margin +0.0571 (null max -0.0019) -&gt; PASS
+
+  ADJUDICATION (pre-registered, Currier B; A observational):
+    ORDINAL GLYPH STRUCTURE: B&#x27;s intra-line order carries glyph-identity signal beyond length-based space management — consistent with field-like vocabulary ordering in Currier B. SUGGESTIVE, quarantined, NOT a decode.
+
+  -&gt; results/line_as_record_ordinal.json
+</pre></details><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>bc53723</code>. 
+To run any test with your own parameters, clone
+<a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
+(<code>python webui/server.py</code>). All numbers reproduce at
+PYTHONHASHSEED=0.</footer></main></body></html>

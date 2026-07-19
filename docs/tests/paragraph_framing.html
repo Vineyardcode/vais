@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>paragraph_framing — VAIS</title><style>
+:root { --bg:#ffffff; --fg:#1a1a1a; --muted:#666; --line:#ddd;
+        --code:#f5f5f5; --accent:#7a4a1e; --warn:#a33; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#141414; --fg:#ddd; --muted:#999; --line:#333;
+          --code:#1e1e1e; --accent:#d9a05b; --warn:#e77; } }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--fg);
+       font:16px/1.55 Georgia, 'Times New Roman', serif; }
+nav { border-bottom:1px solid var(--line); padding:.7em 1.2em;
+      font-family: system-ui, sans-serif; font-size:.9em; }
+nav a { color:var(--accent); text-decoration:none; margin-right:1.2em; }
+main { max-width: 62em; margin: 0 auto; padding: 1.5em 1.2em 4em; }
+h1,h2,h3 { font-family: system-ui, sans-serif; line-height:1.25; }
+h1 { font-size:1.7em; } h2 { font-size:1.3em; margin-top:2em; }
+a { color: var(--accent); }
+code, pre { font-family: ui-monospace, Consolas, monospace;
+            font-size:.86em; background:var(--code); }
+code { padding:.1em .3em; border-radius:3px; }
+pre { padding: .9em; overflow-x:auto; border:1px solid var(--line);
+      border-radius:4px; line-height:1.4; }
+table { border-collapse: collapse; margin: 1em 0; font-size:.92em;
+        display:block; overflow-x:auto; }
+th, td { border:1px solid var(--line); padding:.35em .6em;
+         text-align:left; vertical-align:top; }
+th { font-family: system-ui, sans-serif; background:var(--code); }
+blockquote { border-left:3px solid var(--accent); margin:1em 0;
+             padding:.2em 1em; color:var(--muted); }
+.muted { color:var(--muted); font-size:.9em; }
+.tag { font-family: system-ui, sans-serif; font-size:.75em;
+       border:1px solid var(--line); border-radius:3px;
+       padding:.05em .45em; margin-left:.5em; }
+.tag.sug { border-color:var(--warn); color:var(--warn); }
+details summary { cursor:pointer; font-family: system-ui, sans-serif; }
+footer { border-top:1px solid var(--line); margin-top:3em;
+         padding-top:1em; font-size:.85em; color:var(--muted); }
+</style></head><body>
+<nav><a href="../index.html">VAIS</a><a href="../catalog.html">Catalog</a>
+<a href="../research.html">Research</a><a href="../reports.html">Reports</a>
+<a href="https://github.com/Vineyardcode/vais">GitHub</a></nav>
+<main><h1>paragraph_framing</h1>
+<p class="muted">scripts/paragraph_framing.py</p>
+<pre>Paragraph Framing Analysis: Do Paragraphs Have Consistent
+         Start/End Markers That Define &quot;Code Blocks&quot;?
+
+═══════════════════════════════════════════════════════════════════════
+
+OBSERVATION: many paragraphs from f103r onwards start with a single
+letter (gallows). Could they also END with specific letters, creating
+&quot;framed&quot; codeblocks that each need to be read differently?
+
+SKEPTICAL APPROACH:
+  1. Extract BOTH initial AND final glyphs/words for every paragraph
+  2. Compare final-glyph distribution vs BASELINE — are endings special?
+  3. Cross-tabulate initial × final to find &quot;frame types&quot;
+  4. Test: do different frame types have different internal statistics?
+     (word count, vocabulary richness, character entropy, word entropy)
+  5. Compare frame types across sections (herbal vs recipe vs balneo)
+  6. Recipe section (f103r+): correlate frames with star types
+  7. Sequential analysis: do frame types follow each other in patterns?
+  8. CRITICAL NULL HYPOTHESIS: Initial glyphs are gallows because gallows
+     are word-initial glyphs (I-M-F slot grammar). Final glyphs may just
+     be word-final glyphs (y, n, r, l, m). If so, the &quot;framing&quot; is an
+     ARTIFACT of the slot grammar, not a code-block structure.
+
+CONTROLS:
+  - Compare paragraph-final chars vs word-final chars in general
+  - Compare paragraph-final chars vs LINE-final chars
+  - If paragraph finals match general word finals, there&#x27;s NO special
+    paragraph-ending signal — it&#x27;s just the slot grammar at work.</pre>
+<h2>Parameters</h2><table><tr><th>name</th><th>default</th><th>type</th></tr>
+<tr><td><code>SEED</code></td><td><code>42</code></td><td>int</td></tr>
+<tr><td><code>GALLOWS_TRI</code></td><td><code>[&#x27;cth&#x27;, &#x27;ckh&#x27;, &#x27;cph&#x27;, &#x27;cfh&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>GALLOWS_BI</code></td><td><code>[&#x27;ch&#x27;, &#x27;sh&#x27;, &#x27;th&#x27;, &#x27;kh&#x27;, &#x27;ph&#x27;, &#x27;fh&#x27;]</code></td><td>json</td></tr>
+</table>
+<h2>Golden output (PYTHONHASHSEED=0)</h2><details><summary>show</summary><pre>===========================================================================
+paragraph_framing: PARAGRAPH FRAMING ANALYSIS
+Do paragraphs have consistent start/end markers defining code blocks?
+===========================================================================
+
+Loaded 201 folio files
+Total paragraphs: 784
+  with &lt;$&gt; end marker: 780
+  without end marker: 4
+Total words: 42252
+Total lines: 5758
+
+Section breakdown:
+  herbal      :  322 paragraphs
+  astro       :   26 paragraphs
+  balneo      :   93 paragraphs
+  recipe      :  285 paragraphs
+  cosmo       :   58 paragraphs
+
+===========================================================================
+1. BASELINE: CHARACTER &amp; GLYPH FREQUENCIES
+===========================================================================
+
+Total characters: 207638
+
+Word-FINAL character distribution (all words):
+  &#x27;y&#x27;:  16167 (38.3%)
+  &#x27;n&#x27;:   6462 (15.3%)
+  &#x27;r&#x27;:   6271 (14.8%)
+  &#x27;l&#x27;:   6179 (14.6%)
+  &#x27;s&#x27;:   1509 (3.6%)
+  &#x27;o&#x27;:   1424 (3.4%)
+  &#x27;m&#x27;:   1133 (2.7%)
+  &#x27;d&#x27;:    702 (1.7%)
+  &#x27;h&#x27;:    477 (1.1%)
+  &#x27;b&#x27;:    421 (1.0%)
+
+Word-FINAL glyph distribution (all words):
+  &#x27;y&#x27;:  16167 (38.3%)
+  &#x27;n&#x27;:   6462 (15.3%)
+  &#x27;r&#x27;:   6271 (14.8%)
+  &#x27;l&#x27;:   6179 (14.6%)
+  &#x27;s&#x27;:   1509 (3.6%)
+  &#x27;o&#x27;:   1424 (3.4%)
+  &#x27;m&#x27;:   1133 (2.7%)
+  &#x27;d&#x27;:    702 (1.7%)
+  &#x27;b&#x27;:    421 (1.0%)
+  &#x27;h&#x27;:    381 (0.9%)
+
+Word-INITIAL character distribution (all words):
+  &#x27;o&#x27;:   9071 (21.5%)
+  &#x27;c&#x27;:   7295 (17.3%)
+  &#x27;q&#x27;:   5951 (14.1%)
+  &#x27;s&#x27;:   4749 (11.2%)
+  &#x27;d&#x27;:   3757 (8.9%)
+  &#x27;a&#x27;:   2345 (5.6%)
+  &#x27;y&#x27;:   2056 (4.9%)
+  &#x27;l&#x27;:   1719 (4.1%)
+  &#x27;k&#x27;:   1338 (3.2%)
+  &#x27;t&#x27;:   1094 (2.6%)
+
+===========================================================================
+2. PARAGRAPH-INITIAL CHARACTERS &amp; GLYPHS
+===========================================================================
+
+Paragraph-initial character (n=784):
+  &#x27;p&#x27;:  352 (44.9%)  [word-initial baseline: 2.0%, ratio: 22.99x]
+  &#x27;t&#x27;:  174 (22.2%)  [word-initial baseline: 2.6%, ratio: 8.57x]
+  &#x27;k&#x27;:   81 (10.3%)  [word-initial baseline: 3.2%, ratio: 3.26x]
+  &#x27;o&#x27;:   40 (5.1%)  [word-initial baseline: 21.5%, ratio: 0.24x]
+  &#x27;f&#x27;:   31 (4.0%)  [word-initial baseline: 0.9%, ratio: 4.52x]
+  &#x27;q&#x27;:   27 (3.4%)  [word-initial baseline: 14.1%, ratio: 0.24x]
+  &#x27;s&#x27;:   20 (2.6%)  [word-initial baseline: 11.2%, ratio: 0.23x]
+  &#x27;d&#x27;:   16 (2.0%)  [word-initial baseline: 8.9%, ratio: 0.23x]
+  &#x27;y&#x27;:   14 (1.8%)  [word-initial baseline: 4.9%, ratio: 0.37x]
+  &#x27;c&#x27;:    9 (1.1%)  [word-initial baseline: 17.3%, ratio: 0.07x]
+  &#x27;e&#x27;:    6 (0.8%)  [word-initial baseline: 0.5%, ratio: 1.49x]
+  &#x27;n&#x27;:    4 (0.5%)  [word-initial baseline: 0.1%, ratio: 5.67x]
+  &#x27;w&#x27;:    4 (0.5%)  [word-initial baseline: 0.1%, ratio: 7.70x]
+  &#x27;l&#x27;:    2 (0.3%)  [word-initial baseline: 4.1%, ratio: 0.06x]
+  &#x27;h&#x27;:    2 (0.3%)  [word-initial baseline: 0.6%, ratio: 0.44x]
+
+  Chi-squared vs word-initial baseline: χ²=9258.7, df=16, p≈0.00e+00
+  Gallows-initial paragraphs: 651/784 (83.0%)
+
+===========================================================================
+3. PARAGRAPH-FINAL CHARACTERS &amp; GLYPHS
+===========================================================================
+
+Paragraph-final character (n=784):
+  &#x27;y&#x27;:  354 (45.2%)  [word-final baseline: 38.3%, ratio: 1.18x]
+  &#x27;n&#x27;:  164 (20.9%)  [word-final baseline: 15.3%, ratio: 1.37x]
+  &#x27;m&#x27;:   76 (9.7%)  [word-final baseline: 2.7%, ratio: 3.62x]
+  &#x27;r&#x27;:   74 (9.4%)  [word-final baseline: 14.8%, ratio: 0.64x]
+  &#x27;l&#x27;:   63 (8.0%)  [word-final baseline: 14.6%, ratio: 0.55x]
+  &#x27;s&#x27;:   22 (2.8%)  [word-final baseline: 3.6%, ratio: 0.79x]
+  &#x27;g&#x27;:    9 (1.1%)  [word-final baseline: 0.4%, ratio: 2.79x]
+  &#x27;d&#x27;:    7 (0.9%)  [word-final baseline: 1.7%, ratio: 0.54x]
+  &#x27;o&#x27;:    6 (0.8%)  [word-final baseline: 3.4%, ratio: 0.23x]
+  &#x27;t&#x27;:    2 (0.3%)  [word-final baseline: 0.3%, ratio: 0.86x]
+  &#x27;a&#x27;:    2 (0.3%)  [word-final baseline: 0.7%, ratio: 0.36x]
+  &#x27;u&#x27;:    1 (0.1%)  [word-final baseline: 0.0%, ratio: 4.49x]
+  &#x27;b&#x27;:    1 (0.1%)  [word-final baseline: 1.0%, ratio: 0.13x]
+  &#x27;e&#x27;:    1 (0.1%)  [word-final baseline: 0.4%, ratio: 0.34x]
+  &#x27;h&#x27;:    1 (0.1%)  [word-final baseline: 1.1%, ratio: 0.11x]
+
+  Chi-squared vs word-final baseline: χ²=265.6, df=18, p≈0.00e+00
+  &gt;&gt;&gt; SIGNIFICANT: paragraph-final chars differ from word-final baseline
+
+Paragraph-final glyph (n=784):
+  &#x27;y&#x27;:  354 (45.2%)  [word-final baseline: 38.3%, ratio: 1.18x]
+  &#x27;n&#x27;:  164 (20.9%)  [word-final baseline: 15.3%, ratio: 1.37x]
+  &#x27;m&#x27;:   76 (9.7%)  [word-final baseline: 2.7%, ratio: 3.62x]
+  &#x27;r&#x27;:   74 (9.4%)  [word-final baseline: 14.8%, ratio: 0.64x]
+  &#x27;l&#x27;:   63 (8.0%)  [word-final baseline: 14.6%, ratio: 0.55x]
+  &#x27;s&#x27;:   22 (2.8%)  [word-final baseline: 3.6%, ratio: 0.79x]
+  &#x27;g&#x27;:    9 (1.1%)  [word-final baseline: 0.4%, ratio: 2.79x]
+  &#x27;d&#x27;:    7 (0.9%)  [word-final baseline: 1.7%, ratio: 0.54x]
+  &#x27;o&#x27;:    6 (0.8%)  [word-final baseline: 3.4%, ratio: 0.23x]
+  &#x27;t&#x27;:    2 (0.3%)  [word-final baseline: 0.3%, ratio: 0.86x]
+  &#x27;a&#x27;:    2 (0.3%)  [word-final baseline: 0.7%, ratio: 0.36x]
+  &#x27;u&#x27;:    1 (0.1%)  [word-final baseline: 0.0%, ratio: 4.49x]
+  &#x27;b&#x27;:    1 (0.1%)  [word-final baseline: 1.0%, ratio: 0.13x]
+  &#x27;e&#x27;:    1 (0.1%)  [word-final baseline: 0.4%, ratio: 0.34x]
+  &#x27;h&#x27;:    1 (0.1%)  [word-final baseline: 0.9%, ratio: 0.14x]
+
+  Chi-squared vs word-final glyph baseline: χ²=263.8, df=18, p≈0.00e+00
+
+───────────────────────────────────────────────────────────────────────────
+3b. CONTROL: Line-final vs paragraph-final
+───────────────────────────────────────────────────────────────────────────
+
+Non-paragraph-ending lines: 4978
+
+  Char     Para%   Line%  WdEnd%  P/L ratio
+  &#x27;y&#x27;      45.2%   36.7%   38.3%      1.23x
+  &#x27;n&#x27;      20.9%   11.8%   15.3%      1.77x
+  &#x27;m&#x27;       9.7%   14.3%    2.7%      0.68x
+  &#x27;r&#x27;       9.4%    9.0%   14.8%      1.05x
+  &#x27;l&#x27;       8.0%   11.2%   14.6%      0.71x
+  &#x27;s&#x27;       2.8%    3.5%    3.6%      0.79x
+  &#x27;g&#x27;       1.1%    2.1%    0.4%      0.55x
+  &#x27;d&#x27;       0.9%    3.0%    1.7%      0.29x
+  &#x27;o&#x27;       0.8%    1.8%    3.4%      0.43x
+  &#x27;t&#x27;       0.3%    0.1%    0.3%      1.81x
+
+  Chi-squared (para-final vs non-para line-final): χ²=151.0, df=17, p≈0.00e+00
+  &gt;&gt;&gt; SIGNIFICANT: para-final chars differ from general line endings
+
+===========================================================================
+4. PARAGRAPH-FINAL WORDS
+===========================================================================
+
+Top 20 paragraph-final words:
+  &#x27;daiin&#x27;:   33 (4.2%)  [global: 2.01%, ratio: 2.1x]
+  &#x27;shedy&#x27;:   11 (1.4%)  [global: 1.07%, ratio: 1.3x]
+  &#x27;chedy&#x27;:   11 (1.4%)  [global: 1.24%, ratio: 1.1x]
+  &#x27;chey&#x27;:   11 (1.4%)  [global: 0.88%, ratio: 1.6x]
+  &#x27;dy&#x27;:    8 (1.0%)  [global: 0.58%, ratio: 1.8x]
+  &#x27;qokeey&#x27;:    7 (0.9%)  [global: 0.75%, ratio: 1.2x]
+  &#x27;cheody&#x27;:    7 (0.9%)  [global: 0.22%, ratio: 4.0x]
+  &#x27;olkam&#x27;:    6 (0.8%)  [global: 0.04%, ratio: 21.6x]
+  &#x27;aiin&#x27;:    5 (0.6%)  [global: 1.33%, ratio: 0.5x]
+  &#x27;olor&#x27;:    5 (0.6%)  [global: 0.07%, ratio: 9.0x]
+  &#x27;cheey&#x27;:    5 (0.6%)  [global: 0.47%, ratio: 1.4x]
+  &#x27;okain&#x27;:    5 (0.6%)  [global: 0.33%, ratio: 1.9x]
+  &#x27;okaiin&#x27;:    5 (0.6%)  [global: 0.52%, ratio: 1.2x]
+  &#x27;okedy&#x27;:    5 (0.6%)  [global: 0.27%, ratio: 2.3x]
+  &#x27;shol&#x27;:    4 (0.5%)  [global: 0.43%, ratio: 1.2x]
+  &#x27;dam&#x27;:    4 (0.5%)  [global: 0.21%, ratio: 2.4x]
+  &#x27;am&#x27;:    4 (0.5%)  [global: 0.23%, ratio: 2.2x]
+  &#x27;lchedy&#x27;:    4 (0.5%)  [global: 0.27%, ratio: 1.9x]
+  &#x27;otain&#x27;:    4 (0.5%)  [global: 0.25%, ratio: 2.1x]
+  &#x27;chdy&#x27;:    4 (0.5%)  [global: 0.36%, ratio: 1.4x]
+
+Words appearing ONLY as paragraph-final: 179
+  Examples: [&#x27;aeky&#x27;, &#x27;agairom&#x27;, &#x27;aiicthy&#x27;, &#x27;aiily&#x27;, &#x27;aiinchodar&#x27;, &#x27;aiioly&#x27;, &#x27;aiodam&#x27;, &#x27;airols&#x27;, &#x27;ajy&#x27;, &#x27;aldyotal&#x27;, &#x27;alkan&#x27;, &#x27;alkeody&#x27;, &#x27;aloin&#x27;, &#x27;alpchdy&#x27;, &#x27;alshees&#x27;, &#x27;arodly&#x27;, &#x27;arorochees&#x27;, &#x27;chaiiin&#x27;, &#x27;chalky&#x27;, &#x27;chalor&#x27;]
+
+===========================================================================
+5. CROSS-TABULATION: INITIAL × FINAL GLYPH (Frame Types)
+===========================================================================
+
+Frame type distribution (initial → final):
+      p → y    :  165 (21.0%)
+      t → y    :   80 (10.2%)
+      p → n    :   67 (8.5%)
+      t → n    :   46 (5.9%)
+      p → r    :   38 (4.8%)
+      k → y    :   32 (4.1%)
+      p → m    :   32 (4.1%)
+      p → l    :   30 (3.8%)
+      o → y    :   21 (2.7%)
+      k → n    :   20 (2.6%)
+      t → m    :   14 (1.8%)
+      f → y    :   13 (1.7%)
+      q → y    :   12 (1.5%)
+      k → m    :   12 (1.5%)
+      t → l    :   12 (1.5%)
+      t → r    :   10 (1.3%)
+      q → n    :   10 (1.3%)
+      f → n    :    8 (1.0%)
+      s → y    :    7 (0.9%)
+      k → l    :    7 (0.9%)
+      p → s    :    7 (0.9%)
+      d → y    :    6 (0.8%)
+      o → r    :    6 (0.8%)
+      t → s    :    6 (0.8%)
+      f → m    :    5 (0.6%)
+
+  INDEPENDENCE TEST: If init and final are independent,
+  P(init=X, final=Y) = P(init=X) × P(final=Y)
+
+  Chi-squared independence test: χ²=41.7, df=58, p≈9.48e-01
+  &gt;&gt;&gt; NOT significant — initial and final glyphs appear independent
+
+  Final glyph distribution GIVEN initial glyph:
+    init=&#x27;p&#x27; (n=352): y=47%, n=19%, r=11%, m=9%, l=9%
+    init=&#x27;t&#x27; (n=174): y=46%, n=26%, m=8%, l=7%, r=6%
+    init=&#x27;k&#x27; (n= 81): y=40%, n=25%, m=15%, l=9%, s=4%
+    init=&#x27;f&#x27; (n= 31): y=42%, n=26%, m=16%, l=13%, s=3%
+    init=&#x27;q&#x27; (n= 27): y=44%, n=37%, r=7%, l=4%, m=4%
+    init=&#x27;o&#x27; (n= 40): y=52%, r=15%, n=10%, m=10%, l=8%
+    init=&#x27;d&#x27; (n= 16): y=38%, r=25%, m=25%, n=6%, l=6%
+
+===========================================================================
+6. SECTION-BY-SECTION PARAGRAPH FRAMING
+===========================================================================
+
+  === HERBAL (322 paragraphs) ===
+    First glyph:  p=111(34%), t=90(28%), k=54(17%), f=17(5%), o=17(5%)
+    Last glyph:   y=134(42%), n=84(26%), m=34(11%), r=23(7%), l=22(7%)
+    Top frames:   p→y=46, t→y=37, p→n=28, t→n=26, k→y=22
+    Mean para len: 47.5 words (range 10-219)
+    Top final words: daiin=29, dy=6, chey=6, cthy=3, dal=3
+
+  === ASTRO (26 paragraphs) ===
+    First glyph:  t=8(31%), o=8(31%), y=5(19%), d=2(8%), ch=1(4%)
+    Last glyph:   y=8(31%), r=5(19%), l=4(15%), m=4(15%), g=2(8%)
+    Top frames:   t→y=4, o→y=3, o→m=2, o→l=1, y→r=1
+    Mean para len: 20.8 words (range 4-101)
+    Top final words: cthey=1, oldy=1, dal=1, ar=1, ydam=1
+
+  === BALNEO (93 paragraphs) ===
+    First glyph:  p=50(54%), t=14(15%), q=10(11%), o=7(8%), k=5(5%)
+    Last glyph:   y=58(62%), l=15(16%), r=8(9%), n=6(6%), s=3(3%)
+    Top frames:   p→y=31, p→l=10, t→y=8, q→y=7, p→r=5
+    Mean para len: 72.9 words (range 4-377)
+    Top final words: shedy=5, olor=3, chedy=3, lshedy=2, orol=2
+
+  === RECIPE (285 paragraphs) ===
+    First glyph:  p=155(54%), t=60(21%), k=20(7%), f=14(5%), d=8(3%)
+    Last glyph:   y=128(45%), n=66(23%), r=26(9%), m=25(9%), l=22(8%)
+    Top frames:   p→y=68, p→n=33, t→y=31, p→r=19, t→n=17
+    Mean para len: 38.2 words (range 13-365)
+    Top final words: chedy=7, cheody=5, aiin=4, qokeey=4, daiin=4
+
+===========================================================================
+7. RECIPE SECTION (f103r-f116v) DEEP DIVE
+===========================================================================
+
+  7a. STAR TYPE vs FRAME TYPE CORRELATION
+  ─────────────────────────────────────────────────────────────────
+
+    DARK stars (n=14):
+      Init:   p=36%, t=29%, q=21%
+      Final:  n=50%, y=36%, r=7%
+      Frames: p→y=3, q→n=3, t→y=2, d→n=1, t→r=1
+
+    DOTTED stars (n=129):
+      Init:   p=56%, t=20%, k=8%
+      Final:  y=40%, n=26%, l=9%
+      Frames: p→y=28, p→n=18, t→y=10, t→n=9, p→r=8
+
+    LIGHT stars (n=136):
+      Init:   p=56%, t=20%, k=7%
+      Final:  y=49%, n=19%, r=11%
+      Frames: p→y=35, t→y=17, p→n=14, p→r=11, t→n=7
+
+    NONE stars (n=5):
+      Init:   t=60%, p=20%, o=20%
+      Final:  y=80%, l=20%
+      Frames: t→y=2, t→l=1, p→y=1, o→y=1
+
+  7b. SEQUENTIAL FRAME PATTERNS (recipe section)
+  ─────────────────────────────────────────────────────────────────
+
+    Frame-to-frame transitions (top 15):
+      (p→y) then (p→y): 19
+      (p→n) then (p→y): 9
+      (p→y) then (t→y): 9
+      (t→y) then (p→n): 8
+      (t→y) then (p→y): 7
+      (p→y) then (t→n): 6
+      (t→n) then (p→y): 6
+      (p→y) then (p→r): 5
+      (p→r) then (p→r): 5
+      (p→y) then (p→n): 4
+      (p→r) then (p→n): 4
+      (o→y) then (p→y): 3
+      (p→y) then (o→y): 3
+      (t→n) then (t→y): 3
+      (p→l) then (p→l): 3
+
+    Initial glyph bigrams (paragraph N → paragraph N+1):
+      p → p: 83
+      p → t: 30
+      t → p: 30
+      p → k: 13
+      t → t: 12
+      p → f: 10
+      f → p: 9
+      k → p: 8
+      k → t: 8
+      t → k: 6
+
+    Same initial glyph in consecutive paragraphs:
+      Observed: 96/284 (33.8%)
+      Expected (if random): 99.1 (34.9%)
+
+  7c. RECIPE FINAL WORD/GLYPH DETAILED ANALYSIS
+  ─────────────────────────────────────────────────────────────────
+
+    Final glyph distribution (recipe, n=285):
+      &#x27;y&#x27;:  128 (44.9%)  [word-final baseline: 38.3%, ratio: 1.17x]
+      &#x27;n&#x27;:   66 (23.2%)  [word-final baseline: 15.3%, ratio: 1.51x]
+      &#x27;r&#x27;:   26 (9.1%)  [word-final baseline: 14.8%, ratio: 0.61x]
+      &#x27;m&#x27;:   25 (8.8%)  [word-final baseline: 2.7%, ratio: 3.27x]
+      &#x27;l&#x27;:   22 (7.7%)  [word-final baseline: 14.6%, ratio: 0.53x]
+      &#x27;s&#x27;:   10 (3.5%)  [word-final baseline: 3.6%, ratio: 0.98x]
+      &#x27;d&#x27;:    4 (1.4%)  [word-final baseline: 1.7%, ratio: 0.84x]
+      &#x27;o&#x27;:    2 (0.7%)  [word-final baseline: 3.4%, ratio: 0.21x]
+      &#x27;t&#x27;:    1 (0.4%)  [word-final baseline: 0.3%, ratio: 1.18x]
+      &#x27;a&#x27;:    1 (0.4%)  [word-final baseline: 0.7%, ratio: 0.49x]
+
+    Final word distribution (recipe, top 15):
+      &#x27;chedy&#x27;:   7 (2.5%)
+      &#x27;cheody&#x27;:   5 (1.8%)
+      &#x27;aiin&#x27;:   4 (1.4%)
+      &#x27;qokeey&#x27;:   4 (1.4%)
+      &#x27;daiin&#x27;:   4 (1.4%)
+      &#x27;shedy&#x27;:   3 (1.1%)
+      &#x27;dam&#x27;:   3 (1.1%)
+      &#x27;otaiin&#x27;:   3 (1.1%)
+      &#x27;alkam&#x27;:   3 (1.1%)
+      &#x27;cheey&#x27;:   3 (1.1%)
+      &#x27;lchedy&#x27;:   3 (1.1%)
+      &#x27;chey&#x27;:   3 (1.1%)
+      &#x27;otedy&#x27;:   2 (0.7%)
+      &#x27;olor&#x27;:   2 (0.7%)
+      &#x27;shol&#x27;:   2 (0.7%)
+
+===========================================================================
+8. INTERNAL STATISTICS BY FRAME TYPE
+   (Do different frames = different &#x27;code blocks&#x27;?)
+===========================================================================
+
+  Statistics by initial glyph (minimum 10 paragraphs):
+  Init      N  MeanLen  MeanWL    TTR  h_char  Top final glyphs
+  p       352     50.1    5.05  0.636  0.5904  y=47%, n=19%, r=11%
+  t       174     43.1    5.10  0.634  0.6061  y=46%, n=26%, m=8%
+  k        81     49.9    4.99  0.602  0.6095  y=40%, n=25%, m=15%
+  o        40     38.4    4.96  0.658  0.5985  y=52%, r=15%, n=10%
+  f        31     42.4    5.11  0.654  0.6098  y=42%, n=26%, m=16%
+  q        27     45.0    5.11  0.614  0.5508  y=44%, n=37%, r=7%
+  d        16     61.9    5.14  0.544  0.5946  y=38%, r=25%, m=25%
+  s        16     34.9    4.99  0.568  0.5890  y=44%, n=19%, l=12%
+  y        14     42.4    4.95  0.694  0.5910  y=29%, s=14%, r=14%
+
+  Pairwise comparison of major initial-glyph groups:
+    p vs t: h_char 0.5904 vs 0.6061 (Δ=-0.0157), TTR 0.636 vs 0.634, wlen 5.05 vs 5.10, vocab Jaccard=0.210
+    p vs k: h_char 0.5904 vs 0.6095 (Δ=-0.0191), TTR 0.636 vs 0.602, wlen 5.05 vs 4.99, vocab Jaccard=0.161
+    p vs f: h_char 0.5904 vs 0.6098 (Δ=-0.0194), TTR 0.636 vs 0.654, wlen 5.05 vs 5.11, vocab Jaccard=0.106
+    t vs k: h_char 0.6061 vs 0.6095 (Δ=-0.0034), TTR 0.634 vs 0.602, wlen 5.10 vs 4.99, vocab Jaccard=0.187
+    t vs f: h_char 0.6061 vs 0.6098 (Δ=-0.0037), TTR 0.634 vs 0.654, wlen 5.10 vs 5.11, vocab Jaccard=0.142
+    k vs f: h_char 0.6095 vs 0.6098 (Δ=-0.0003), TTR 0.602 vs 0.654, wlen 4.99 vs 5.11, vocab Jaccard=0.165
+
+===========================================================================
+9. RECIPE SECTION: FRAME TYPE INTERNAL STATISTICS
+===========================================================================
+
+  Init      N  MeanLen  MeanWL    TTR  h_char  Top final
+  p       155     37.0    5.19  0.542  0.5602  y=44%, n=21%, r=12%
+  t        60     32.4    5.36  0.672  0.5515  y=52%, n=28%, r=5%
+  k        20     49.6    5.06  0.642  0.5543  n=35%, y=30%, m=15%
+  f        14     44.6    5.15  0.632  0.5711  y=43%, m=21%, n=21%
+  d         8     75.6    5.26  0.614  0.5557  m=38%, y=25%, r=25%
+  q         8     25.1    5.37  0.701  0.5093  n=38%, y=25%, l=12%
+  o         6     32.2    5.17  0.767  0.5513  y=83%, n=17%
+  y         5     36.0    5.31  0.800  0.5195  y=60%, s=40%
+
+  Vocabulary overlap between recipe frame types:
+    p vs t: Jaccard=0.186, only-p=1508, only-t=451
+    p vs k: Jaccard=0.143, only-p=1648, only-k=206
+    p vs f: Jaccard=0.110, only-p=1725, only-f=157
+    t vs k: Jaccard=0.193, only-t=671, only-k=286
+    t vs f: Jaccard=0.168, only-t=715, only-f=204
+    k vs f: Jaccard=0.179, only-k=378, only-f=252
+
+===========================================================================
+10. THE &#x27;CODE BLOCK&#x27; HYPOTHESIS: ARE FRAMES MEANINGFUL?
+===========================================================================
+
+  HYPOTHESIS: Each paragraph is a &quot;code block&quot; where the initial (and
+  possibly final) glyph specifies how to read the content differently.
+
+  PREDICTIONS if this is true:
+    A) Initial glyphs should be highly concentrated (→ few &quot;block types&quot;)
+    B) Final glyphs should ALSO be concentrated (→ block-end markers)
+    C) Initial and final should be CORRELATED (→ frame defines block)
+    D) Different frame types should have DIFFERENT internal statistics
+       (different h_char, different vocabulary, different word distributions)
+    E) Frame types should NOT change with section — the &quot;reading rule&quot;
+       should be consistent across the manuscript
+
+  PREDICTIONS if this is just the I-M-F slot grammar:
+    A) Initial concentration = gallows are word-initial glyphs ✓
+    B) Final concentration = y/n/r/l/m are word-final glyphs ✓
+    C) NO special correlation beyond section effects
+    D) No meaningful difference in internal statistics
+    E) Section differences reflect content, not reading rules
+
+  Test A (initial concentration):
+    Top initial: &#x27;p&#x27; = 44.9%
+    Top 4 sum: 82.5%
+    Verdict: CONCENTRATED
+
+  Test B (final concentration):
+    Top final: &#x27;y&#x27; = 45.2%
+    Top 4 sum: 85.2%
+    Word-final baseline top-4: 83.0%
+    Verdict: CONCENTRATED
+    vs baseline: SIMILAR to baseline
+
+  Test C (initial-final correlation):
+    Chi-squared independence: χ²=41.7, p≈9.48e-01
+    Verdict: INDEPENDENT
+
+  Test D (different internal statistics by frame type):
+    h_char: p-initial=0.5904, t-initial=0.6061, Δ=0.0157
+    wlen: p=5.051, t=5.101
+    TTR: p=0.636, t=0.634
+    Vocab Jaccard: 0.210
+    Verdict: SIMILAR internal statistics (Δh_char=0.0157 ≤ 0.03)
+
+  Test E (cross-section consistency of frame distribution):
+    herbal      : init=[p=34%, t=28%, k=17%]  final=[y=42%, n=26%, m=11%]
+    balneo      : init=[p=54%, t=15%, q=11%]  final=[y=62%, l=16%, r=9%]
+    recipe      : init=[p=54%, t=21%, k=7%]  final=[y=45%, n=23%, r=9%]
+
+===========================================================================
+11. RECIPE PARAGRAPHS: FIRST 30 (folio, star, initial→final, length)
+===========================================================================
+
+    # Folio    Star                       Init Final   Nw First word       Last word       
+    1 f103r    Dark star, 7 points           p     y   50 pchedal          chedaraly       
+    2 f103r    Light star, 8 points          p     n   30 podar            shkaiin         
+    3 f103r    Dark star, 8 points           d     n   21 dshol            aiin            
+    4 f103r    Light star, 7 points          p     r   28 polchedy         olor            
+    5 f103r    Light star, 7 points          p     l   29 pcheam           shol            
+    6 f103r    Dark star, 7 points           t     r   31 tchoky           lotor           
+    7 f103r    Light star, 7 points          q     y   28 qokechy          chedy           
+    8 f103r    Light star, 8 points          p     n   28 pcholkchdy       oraiin          
+    9 f103r    Dark star, 7 points           q     n   14 qokeey           cheedalaiin     
+   10 f103r    Light star, 7 points          q     y   18 qoker            qokeey          
+   11 f103r    Darkish star, 7 points        p     y   24 pchedy           oteey           
+   12 f103r    Light star, 8 points          q     l   27 qokeey           chalal          
+   13 f103r    Light star, 7 points          t     y   16 tar              otshedy         
+   14 f103r    Dark star, 7 points           q     n   28 qokeedy          oloraiin        
+   15 f103r    Light star, 8 points          p     n   37 polarar          cheosaiin       
+   16 f103r    Light star, 8 points          p     y   35 pocharal         shedy           
+   17 f103r    Light star, 8 points, ta      p     y   25 pchedal          qoty            
+   18 f103r    Light star, 8 points          d     y   62 daroal           otedy           
+   19 f103v    Light star, dotted, 7 po      p     y   43 pol              ykeedy          
+   20 f103v    Light star, 7 points          s     y   24 sal              olshey          
+   21 f103v    Light star, dotted, 7 po      t     y   32 teeol            kedy            
+   22 f103v    Light star, 7 points          q     r   28 qokeedy          chealainor      
+   23 f103v    Light star, dotted, 7 po      p     n   70 pol              oteaiin         
+   24 f103v    Light star, dotted, 6 po      f     y   29 fcheody          qokeey          
+   25 f103v    Light star, 8 points          p     m   29 pchear           olkam           
+   26 f103v    Light star, dotted, 8 po      y     y   36 yshey            olshedy         
+   27 f103v    Light star, 8 points          o     y   17 olshey           keechy          
+   28 f103v    Light star, dotted, 7 po      p     y   39 polshor          chsaly          
+   29 f103v    Light star, 8 points          o     y   40 orain            chary           
+   30 f103v    Lightish star, 7 points       p     y   39 pcheor           okeey           
+
+===========================================================================
+12. PARAGRAPH-ENDING WORD PAIRS (last 2 words)
+===========================================================================
+
+  Top 15 paragraph-ending word pairs:
+    &#x27;chol daiin&#x27;: 4
+    &#x27;ol shedy&#x27;: 3
+    &#x27;y daiin&#x27;: 3
+    &#x27;cheod dydy&#x27;: 2
+    &#x27;deeor cheedy&#x27;: 2
+    &#x27;chol qkar&#x27;: 2
+    &#x27;or aiin&#x27;: 2
+    &#x27;daiin chkaiin&#x27;: 2
+    &#x27;cheod cheolkeedy&#x27;: 2
+    &#x27;y cheey&#x27;: 2
+    &#x27;dam lam&#x27;: 2
+    &#x27;ychedy okedy&#x27;: 2
+    &#x27;qokaiin ykchedy&#x27;: 2
+    &#x27;karar odeeeg&#x27;: 2
+    &#x27;otchdy otalom&#x27;: 2
+
+===========================================================================
+13. SKEPTICAL SELF-ASSESSMENT
+===========================================================================
+
+  WHAT WE FOUND:
+    1. Paragraph-initial glyphs are STRONGLY concentrated on gallows (p,t,k,f)
+       — confirmed from paragraph_initial_analysis.
+    2. Paragraph-final glyphs: [to be filled by results]
+    3. Initial × final correlation: [to be filled by results]
+    4. Internal statistics difference: [to be filled by results]
+
+  CRITICAL QUESTIONS:
+    a) Is the initial-glyph concentration real or a slot-grammar artifact?
+       → The I-M-F grammar means gallows CAN start words. But the
+         paragraph-initial rate (82%) far exceeds the word-initial rate
+         for gallows (~11%). So it&#x27;s NOT just slot grammar.
+    b) Is the final-glyph concentration (if any) beyond what word-final
+       frequencies predict?
+       → This is the KEY question. If paragraph-final matches word-final
+         baseline, there&#x27;s no special paragraph-end marker.
+    c) Could the &quot;framing&quot; be a transcription artifact?
+       → The &lt;%&gt; and &lt;$&gt; markers in the IVTFF format come from the
+         transcription, not the manuscript. But paragraph breaks are
+         visible in the manuscript as indentation/gaps.
+    d) Could different initial glyphs just be different WORDS that happen
+       to start with gallows, carrying different semantic content?
+       → paragraph_initial_analysis showed 451 words appear ONLY paragraph-initially.
+         These might be heading/title words.
+
+
+Results saved to C:\projects\vais\results\paragraph_framing.txt
+JSON data saved to C:\projects\vais\results\paragraph_framing.json
+</pre></details><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>bc53723</code>. 
+To run any test with your own parameters, clone
+<a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
+(<code>python webui/server.py</code>). All numbers reproduce at
+PYTHONHASHSEED=0.</footer></main></body></html>

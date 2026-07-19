@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>line_ordinal_rank_test — VAIS</title><style>
+:root { --bg:#ffffff; --fg:#1a1a1a; --muted:#666; --line:#ddd;
+        --code:#f5f5f5; --accent:#7a4a1e; --warn:#a33; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#141414; --fg:#ddd; --muted:#999; --line:#333;
+          --code:#1e1e1e; --accent:#d9a05b; --warn:#e77; } }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--fg);
+       font:16px/1.55 Georgia, 'Times New Roman', serif; }
+nav { border-bottom:1px solid var(--line); padding:.7em 1.2em;
+      font-family: system-ui, sans-serif; font-size:.9em; }
+nav a { color:var(--accent); text-decoration:none; margin-right:1.2em; }
+main { max-width: 62em; margin: 0 auto; padding: 1.5em 1.2em 4em; }
+h1,h2,h3 { font-family: system-ui, sans-serif; line-height:1.25; }
+h1 { font-size:1.7em; } h2 { font-size:1.3em; margin-top:2em; }
+a { color: var(--accent); }
+code, pre { font-family: ui-monospace, Consolas, monospace;
+            font-size:.86em; background:var(--code); }
+code { padding:.1em .3em; border-radius:3px; }
+pre { padding: .9em; overflow-x:auto; border:1px solid var(--line);
+      border-radius:4px; line-height:1.4; }
+table { border-collapse: collapse; margin: 1em 0; font-size:.92em;
+        display:block; overflow-x:auto; }
+th, td { border:1px solid var(--line); padding:.35em .6em;
+         text-align:left; vertical-align:top; }
+th { font-family: system-ui, sans-serif; background:var(--code); }
+blockquote { border-left:3px solid var(--accent); margin:1em 0;
+             padding:.2em 1em; color:var(--muted); }
+.muted { color:var(--muted); font-size:.9em; }
+.tag { font-family: system-ui, sans-serif; font-size:.75em;
+       border:1px solid var(--line); border-radius:3px;
+       padding:.05em .45em; margin-left:.5em; }
+.tag.sug { border-color:var(--warn); color:var(--warn); }
+details summary { cursor:pointer; font-family: system-ui, sans-serif; }
+footer { border-top:1px solid var(--line); margin-top:3em;
+         padding-top:1em; font-size:.85em; color:var(--muted); }
+</style></head><body>
+<nav><a href="../index.html">VAIS</a><a href="../catalog.html">Catalog</a>
+<a href="../research.html">Research</a><a href="../reports.html">Reports</a>
+<a href="https://github.com/Vineyardcode/vais">GitHub</a></nav>
+<main><h1>line_ordinal_rank_test</h1>
+<p class="muted">scripts/line_ordinal_rank_test.py</p>
+<pre>S7-R (N5) — independent re-implementation of the Currier-B intra-line
+ordinal measurement (PHASE8_DRAFT.md §8.7-1)
+
+PURPOSE: the top-ranked weakness of the B ordinal finding is shared
+instrument DNA — every S7 rung uses the same features, position bins,
+Laplace-smoothed log-loss estimator, and holdout scheme, and the null
+batteries randomize data, never design. This instrument re-asks the
+core existence question with a methodologically disjoint design.
+
+INDEPENDENCE SCOPE (full disclosure): this is an independent
+IMPLEMENTATION, not an independent AUTHOR — the same agent wrote both.
+It shares with v1 only what defines the phenomenon: the corpus
+(Currier-B lines, file-level $L, &gt;= MIN_LINE_WORDS words), the interior
+(positions 3rd..(L-2)th), and the null concept (within-line shuffle =
+order destroyed, content kept). Everything else differs:
+  v1: raw first character; 7 discrete position bins; Laplace-smoothed
+      P(f|bin) holdout log-loss; 10-split folio-holdout medians.
+  v2: word class = first EVA GLYPH via common.core.eva_to_glyphs
+      (hand-verified in sanity_checks; &#x27;ch&#x27;/&#x27;sh&#x27;/&#x27;cth&#x27; are classes of
+      their own, unlike v1); NO bins — continuous normalized interior
+      rank u = (j-2+0.5)/(L-4); NO smoothing, NO training, NO holdout —
+      the statistic fits nothing:
+        T = sum_c n_c (mean_u_c - mean_u)^2 / sum_c n_c
+      (weighted between-class variance of mean interior rank, over
+      classes with &gt;= MIN_SUPPORT interior tokens); inference by
+      permutation only (N_PERM within-line shuffles, fresh seed).
+SENSITIVITY SCOPE (declared): T detects MEAN-rank separation between
+classes — the aspect the rung-4 characterization reported (q-/c-/o-
+initial early-skew). Structure with identical class means would be
+invisible here; a non-replication therefore flags v1 as
+design-artifact-SUSPECT, it does not prove artifact.
+
+PRE-REGISTERED CRITERIA:
+  GATE: P-REC rejects (p &lt; 0.005) AND P1 latin does not (p &gt;= 0.05)
+    AND N1 word-shuffle does not (p &gt;= 0.05), else gate_failed.
+  B ADJUDICATION: p &lt; 0.005 -&gt; replicated (the §8.7-1 objection is
+    answered at implementation level; author-level independence remains
+    open and is stated wherever the finding is reported);
+    0.005 &lt;= p &lt; 0.05 -&gt; ambiguous (no claim either way);
+    p &gt;= 0.05 -&gt; not_replicated: the v1 finding is flagged
+    DESIGN-ARTIFACT-SUSPECT pending a third-party implementation —
+    a registered demotion with teeth.
+  A is reported observationally.
+Vocabulary discipline: unchanged — nothing here decodes anything.</pre>
+<h2>Parameters</h2><table><tr><th>name</th><th>default</th><th>type</th></tr>
+<tr><td><code>SEED</code></td><td><code>119</code></td><td>int</td></tr>
+<tr><td><code>N_PERM</code></td><td><code>1000</code></td><td>int</td></tr>
+<tr><td><code>MIN_SUPPORT</code></td><td><code>100</code></td><td>int</td></tr>
+<tr><td><code>MIN_LINE_WORDS</code></td><td><code>5</code></td><td>int</td></tr>
+<tr><td><code>P_REPLICATE</code></td><td><code>0.005</code></td><td>float</td></tr>
+<tr><td><code>P_NULLBAND</code></td><td><code>0.05</code></td><td>float</td></tr>
+<tr><td><code>PREC_LINES</code></td><td><code>4600</code></td><td>int</td></tr>
+</table>
+<h2>Golden output (PYTHONHASHSEED=0)</h2><details><summary>show</summary><pre>============================================================================
+S7-R (N5) — independent re-implementation: rank-based ordinal test
+============================================================================
+seed=119 perms=1000 min_support=100 replicate p&lt;0.005, null band p&gt;=0.05; no bins, no smoothing, no holdout — pure permutation
+  PREC_records   T 0.029613  perms&gt;=T    0  p=0.0010  (4600 lines, 13 classes)
+  P1_latin       T 0.000106  perms&gt;=T  132  p=0.1329  (4755 lines, 20 classes)
+  N1_shuffle     T 0.000042  perms&gt;=T  643  p=0.6434  (3956 lines, 15 classes)
+  VMS_currier_B  T 0.000599  perms&gt;=T    0  p=0.0010  (2522 lines, 12 classes)
+  VMS_currier_A  T 0.001013  perms&gt;=T    0  p=0.0010  (1310 lines, 11 classes)
+
+  ADJUDICATION (pre-registered):
+    gate: PREC p=0.0010 (&lt;0.005), P1 p=0.1329 (&gt;=0.05), N1 p=0.6434 (&gt;=0.05) -&gt; PASS
+    REPLICATED (B p=0.0010 &lt; 0.005): the intra-line class-ordering signal survives a bin-free, smoothing-free, holdout-free, EVA-glyph-classed rank statistic — the §8.7-1 objection is answered at the IMPLEMENTATION level (author-level independence remains open, as disclosed).
+    A (observational): p=0.0010
+    B class mean interior ranks (early -&gt; late): sh 0.457  q 0.474  k 0.481  l 0.497  ch 0.498  y 0.500  o 0.518  d 0.522  t 0.530  s 0.531  a 0.536  r 0.561
+
+  -&gt; results/line_ordinal_rank_test.json
+</pre></details><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>bc53723</code>. 
+To run any test with your own parameters, clone
+<a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
+(<code>python webui/server.py</code>). All numbers reproduce at
+PYTHONHASHSEED=0.</footer></main></body></html>

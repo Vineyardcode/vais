@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>transliteration_floor_calibration — VAIS</title><style>
+:root { --bg:#ffffff; --fg:#1a1a1a; --muted:#666; --line:#ddd;
+        --code:#f5f5f5; --accent:#7a4a1e; --warn:#a33; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#141414; --fg:#ddd; --muted:#999; --line:#333;
+          --code:#1e1e1e; --accent:#d9a05b; --warn:#e77; } }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--fg);
+       font:16px/1.55 Georgia, 'Times New Roman', serif; }
+nav { border-bottom:1px solid var(--line); padding:.7em 1.2em;
+      font-family: system-ui, sans-serif; font-size:.9em; }
+nav a { color:var(--accent); text-decoration:none; margin-right:1.2em; }
+main { max-width: 62em; margin: 0 auto; padding: 1.5em 1.2em 4em; }
+h1,h2,h3 { font-family: system-ui, sans-serif; line-height:1.25; }
+h1 { font-size:1.7em; } h2 { font-size:1.3em; margin-top:2em; }
+a { color: var(--accent); }
+code, pre { font-family: ui-monospace, Consolas, monospace;
+            font-size:.86em; background:var(--code); }
+code { padding:.1em .3em; border-radius:3px; }
+pre { padding: .9em; overflow-x:auto; border:1px solid var(--line);
+      border-radius:4px; line-height:1.4; }
+table { border-collapse: collapse; margin: 1em 0; font-size:.92em;
+        display:block; overflow-x:auto; }
+th, td { border:1px solid var(--line); padding:.35em .6em;
+         text-align:left; vertical-align:top; }
+th { font-family: system-ui, sans-serif; background:var(--code); }
+blockquote { border-left:3px solid var(--accent); margin:1em 0;
+             padding:.2em 1em; color:var(--muted); }
+.muted { color:var(--muted); font-size:.9em; }
+.tag { font-family: system-ui, sans-serif; font-size:.75em;
+       border:1px solid var(--line); border-radius:3px;
+       padding:.05em .45em; margin-left:.5em; }
+.tag.sug { border-color:var(--warn); color:var(--warn); }
+details summary { cursor:pointer; font-family: system-ui, sans-serif; }
+footer { border-top:1px solid var(--line); margin-top:3em;
+         padding-top:1em; font-size:.85em; color:var(--muted); }
+</style></head><body>
+<nav><a href="../index.html">VAIS</a><a href="../catalog.html">Catalog</a>
+<a href="../research.html">Research</a><a href="../reports.html">Reports</a>
+<a href="https://github.com/Vineyardcode/vais">GitHub</a></nav>
+<main><h1>transliteration_floor_calibration</h1>
+<p class="muted">scripts/transliteration_floor_calibration.py · depends on cross_transliteration_invariance</p>
+<pre>S9 follow-up — sensitivity-normalized effect floors for the
+cross-transliteration S7-B ordinal battery (N2b)
+
+REGISTERED QUESTION (carried in from N2&#x27;s PARTIAL verdict): does the
+fixed 0.05 bits/token effect floor mechanically penalize finer-grained
+transliterations? N2 found the S7-B ordinal signal beats ALL nulls in
+every usable reading (empirical-p 5/5) while GC (162-symbol alphabet)
+missed the fixed floor by 0.0013 and CD (991 B-lines) by more.
+
+FULL DISCLOSURE: this registration is written AFTER seeing N2&#x27;s
+outcome, so it is not blind. The protections against wishful scaling:
+  (a) the normalization is MEASURED, not chosen — each reading&#x27;s floor
+      scales by its own instrument sensitivity ρ, obtained from a
+      planted signal, with no free parameter that selects any
+      particular reading&#x27;s outcome;
+  (b) it is SYMMETRIC — floors rise for more-sensitive readings just as
+      they fall for less-sensitive ones; the previously-passing
+      readings (ZL, FG, IT) are exposed to flipping to FAIL;
+  (c) the anchor is ZL: rho_ZL = 1 by construction, so the original
+      registered floor is unchanged for the canonical corpus;
+  (d) battery values (median gains, null batteries) are NOT recomputed
+      with fresh randomness: N2&#x27;s exact seed streams are reused and the
+      values are cross-checked against results/
+      cross_transliteration_invariance.json — any mismatch aborts.
+
+SENSITIVITY MEASUREMENT: for each reading R, the IMPLANT corpus sorts
+every B-hand line&#x27;s own words by the deterministic key (first char,
+last char) in R&#x27;s own codepoint order — a maximal intra-line ordinal
+signal expressed in R&#x27;s own alphabet, with line content, lengths, and
+folio structure untouched. S_R = (median-over-splits interior gain of
+the implant corpus) − (R&#x27;s null median). rho_R = S_R / S_ZL.
+ASSUMPTION (declared): the attenuation RATIO between readings is
+approximately strength-independent (linear mixing), so the full-
+strength implant estimates the ratio relevant at the ~0.05 scale.
+
+SCALE-NORMALIZED FLOOR: floor_R = FLOOR_BASE × rho_R (FLOOR_BASE =
+0.05, the original registration). Re-adjudication per reading: PASS =
+beats ALL its nulls (unchanged from N2) AND margin &gt;= floor_R.
+
+PRE-REGISTERED OUTCOMES:
+  reference_flip        — ZL fails its (unchanged) floor, or a reading
+                          that passed N2 fails ONLY because
+                          normalization RAISED its floor: instrument
+                          inconsistency; no claim, investigate.
+  floor_artifact_robust — every usable reading passes under normalized
+                          floors: N2&#x27;s PARTIAL was a floor-scaling
+                          artifact; S9 verdict upgrades to ROBUST (same
+                          caveat language as N2: removes one named
+                          objection to the still-quarantined rung-3
+                          finding; upgrades nothing else).
+  partial_stands        — at least one usable reading still fails:
+                          sensitivity does not (fully) explain the
+                          misses; N2&#x27;s PARTIAL stands on content
+                          grounds. The rho table is still the product.
+Vocabulary discipline: no outcome touches the manuscript&#x27;s meaning;
+this is an instrument-calibration experiment.</pre>
+<h2>Parameters</h2><table><tr><th>name</th><th>default</th><th>type</th></tr>
+<tr><td><code>SEED</code></td><td><code>116</code></td><td>int</td></tr>
+<tr><td><code>R_SPLITS</code></td><td><code>10</code></td><td>int</td></tr>
+<tr><td><code>N_NULLS</code></td><td><code>20</code></td><td>int</td></tr>
+<tr><td><code>FLOOR_BASE</code></td><td><code>0.05</code></td><td>float</td></tr>
+<tr><td><code>MIN_B_LINES</code></td><td><code>500</code></td><td>int</td></tr>
+<tr><td><code>MIN_LINE_WORDS</code></td><td><code>5</code></td><td>int</td></tr>
+<tr><td><code>HOLDOUT_FRAC</code></td><td><code>0.2</code></td><td>float</td></tr>
+<tr><td><code>ALPHA</code></td><td><code>0.5</code></td><td>float</td></tr>
+<tr><td><code>FILES</code></td><td><code>{&#x27;CD&#x27;: &#x27;CD2a-n.txt&#x27;, &#x27;GC&#x27;: &#x27;GC2a-n.txt&#x27;, &#x27;FG&#x27;: &#x27;FG2a-n.txt&#x27;, &#x27;IT&#x27;: &#x27;IT2a-n.txt&#x27;}</code></td><td>json</td></tr>
+<tr><td><code>FEATURE_NAMES</code></td><td><code>[&#x27;len&#x27;, &#x27;first&#x27;, &#x27;last&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>INTERIOR</code></td><td><code>[&#x27;m1&#x27;, &#x27;m2&#x27;, &#x27;m3&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>N2_JSON</code></td><td><code>&#x27;cross_transliteration_invariance.json&#x27;</code></td><td>str</td></tr>
+</table>
+<h2>Golden output (PYTHONHASHSEED=0)</h2><details><summary>show</summary><pre>============================================================================
+S9 FOLLOW-UP (N2b) — sensitivity-normalized effect floors
+============================================================================
+seed=116 (inherited from N2; battery values cross-checked) floor_base=0.05 anchor=ZL
+  ZL: margin +0.0501  implant response +0.5806  [2522 B-lines]
+  CD: margin +0.0326  implant response +0.6490  [991 B-lines]
+  GC: margin +0.0487  implant response +0.6488  [2365 B-lines]
+  FG: margin +0.0534  implant response +0.6812  [2259 B-lines]
+  IT: margin +0.0529  implant response +0.5632  [2329 B-lines]
+  ZL: rho 1.0000 -&gt; floor 0.0500  margin +0.0501 -&gt; PASS (was PASS at fixed 0.05)
+  CD: rho 1.1178 -&gt; floor 0.0559  margin +0.0326 -&gt; fail (was fail at fixed 0.05)
+  GC: rho 1.1175 -&gt; floor 0.0559  margin +0.0487 -&gt; fail (was fail at fixed 0.05)
+  FG: rho 1.1733 -&gt; floor 0.0587  margin +0.0534 -&gt; fail (was PASS at fixed 0.05)
+  IT: rho 0.9700 -&gt; floor 0.0485  margin +0.0529 -&gt; PASS (was PASS at fixed 0.05)
+
+  ADJUDICATION (pre-registered):
+    REFERENCE FLIP (ZL ok=True, raised-floor flips: [&#x27;FG&#x27;]): instrument inconsistency; no claim.
+
+  -&gt; results/transliteration_floor_calibration.json
+</pre></details><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>bc53723</code>. 
+To run any test with your own parameters, clone
+<a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
+(<code>python webui/server.py</code>). All numbers reproduce at
+PYTHONHASHSEED=0.</footer></main></body></html>

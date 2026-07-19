@@ -7,6 +7,12 @@
       "runtimeArgs": ["webui/server.py"],
       "port": 5000,
       "autoPort": true
+    },
+    {
+      "name": "vais-static-mirror",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-m", "http.server", "8123", "-d", "docs"],
+      "port": 8123
     }
   ]
 }

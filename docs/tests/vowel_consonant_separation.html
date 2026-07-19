@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>vowel_consonant_separation — VAIS</title><style>
+:root { --bg:#ffffff; --fg:#1a1a1a; --muted:#666; --line:#ddd;
+        --code:#f5f5f5; --accent:#7a4a1e; --warn:#a33; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#141414; --fg:#ddd; --muted:#999; --line:#333;
+          --code:#1e1e1e; --accent:#d9a05b; --warn:#e77; } }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--fg);
+       font:16px/1.55 Georgia, 'Times New Roman', serif; }
+nav { border-bottom:1px solid var(--line); padding:.7em 1.2em;
+      font-family: system-ui, sans-serif; font-size:.9em; }
+nav a { color:var(--accent); text-decoration:none; margin-right:1.2em; }
+main { max-width: 62em; margin: 0 auto; padding: 1.5em 1.2em 4em; }
+h1,h2,h3 { font-family: system-ui, sans-serif; line-height:1.25; }
+h1 { font-size:1.7em; } h2 { font-size:1.3em; margin-top:2em; }
+a { color: var(--accent); }
+code, pre { font-family: ui-monospace, Consolas, monospace;
+            font-size:.86em; background:var(--code); }
+code { padding:.1em .3em; border-radius:3px; }
+pre { padding: .9em; overflow-x:auto; border:1px solid var(--line);
+      border-radius:4px; line-height:1.4; }
+table { border-collapse: collapse; margin: 1em 0; font-size:.92em;
+        display:block; overflow-x:auto; }
+th, td { border:1px solid var(--line); padding:.35em .6em;
+         text-align:left; vertical-align:top; }
+th { font-family: system-ui, sans-serif; background:var(--code); }
+blockquote { border-left:3px solid var(--accent); margin:1em 0;
+             padding:.2em 1em; color:var(--muted); }
+.muted { color:var(--muted); font-size:.9em; }
+.tag { font-family: system-ui, sans-serif; font-size:.75em;
+       border:1px solid var(--line); border-radius:3px;
+       padding:.05em .45em; margin-left:.5em; }
+.tag.sug { border-color:var(--warn); color:var(--warn); }
+details summary { cursor:pointer; font-family: system-ui, sans-serif; }
+footer { border-top:1px solid var(--line); margin-top:3em;
+         padding-top:1em; font-size:.85em; color:var(--muted); }
+</style></head><body>
+<nav><a href="../index.html">VAIS</a><a href="../catalog.html">Catalog</a>
+<a href="../research.html">Research</a><a href="../reports.html">Reports</a>
+<a href="https://github.com/Vineyardcode/vais">GitHub</a></nav>
+<main><h1>vowel_consonant_separation</h1>
+<p class="muted">scripts/vowel_consonant_separation.py</p>
+<pre>VOWEL-CONSONANT SEPARATION &amp; PHONOLOGICAL INFERENCE
+================================================================
+
+This is the first DECIPHERMENT-oriented test. Instead of profiling
+statistics, we EXPLOIT them.
+
+Approach:
+  A) SUKHOTIN&#x27;S ALGORITHM
+       The classic unsupervised V/C separator. Works by iterating:
+       most-contacted character = vowel, remove, repeat.
+       Also: spectral method (eigenvector of contact matrix).
+
+  B) CROSS-VALIDATION
+       Train V/C on half the data, test alternation prediction on other half.
+       If V/C is real, it should generalize. If not, it&#x27;s noise.
+
+  C) PHONOLOGICAL INFERENCE FROM BETWEEN-WORD TRANSITIONS
+       Using V/C labels: is the last→first char pattern:
+       - Sandhi (V→V avoided, C→C avoided)?
+       - Vowel harmony (V→V preferred)?
+       - Liaison (C→V preferred)?
+       Each makes different predictions about language family.
+
+  D) LANGUAGE FINGERPRINT MATCHING
+       Compute V/C ratio, mean syllable length (as V-runs / C-runs),
+       consonant cluster frequency, and compare to known language families.
+
+  E) SYLLABARY TEST
+       If each EVA character is already a syllable (CV or V), then:
+       - V/C separation should FAIL (no alternation pattern)
+       - OR produce a degenerate split (everything = &quot;vowel&quot;)
+       The quality of V/C separation itself tests the script type.
+
+CRITICAL CAVEAT: EVA compound glyphs (ch, sh, etc.) may be single
+original characters. We test both raw EVA and merged-glyph versions.</pre>
+<h2>Parameters</h2><table><tr><th>name</th><th>default</th><th>type</th></tr>
+<tr><td><code>ALL_GALLOWS</code></td><td><code>[&#x27;cth&#x27;, &#x27;ckh&#x27;, &#x27;cph&#x27;, &#x27;cfh&#x27;, &#x27;tch&#x27;, &#x27;kch&#x27;, &#x27;pch&#x27;, &#x27;fch&#x27;, &#x27;tsh&#x27;, &#x27;ksh&#x27;, &#x27;psh&#x27;, &#x27;fsh&#x27;, &#x27;t&#x27;, …</code></td><td>json</td></tr>
+<tr><td><code>GLYPH_MAP</code></td><td><code>{&#x27;ch&#x27;: &#x27;C&#x27;, &#x27;sh&#x27;: &#x27;S&#x27;, &#x27;ii&#x27;: &#x27;I&#x27;, &#x27;ee&#x27;: &#x27;E&#x27;, &#x27;ai&#x27;: &#x27;A&#x27;, &#x27;cth&#x27;: &#x27;Ŧ&#x27;, &#x27;ckh&#x27;: &#x27;K&#x27;, &#x27;cph&#x27;: &#x27;Φ&#x27;…</code></td><td>json</td></tr>
+</table>
+<h2>Golden output (PYTHONHASHSEED=0)</h2><details><summary>show</summary><pre>Loading corpus...
+  35747 tokens, 3319 types, 4508 lines
+
+=================================================================
+A: SUKHOTIN&#x27;S ALGORITHM — V/C SEPARATION
+=================================================================
+
+  === EVA CHARACTER LEVEL ===
+  Vowels (13):     a c d e g h i l o r s v y
+  Consonants (9): b j m n q u w x z
+  V frequency: 130972/143330 = 91.4%
+  C frequency: 12358/143330 = 8.6%
+  V/C ratio: 10.60
+
+   Char   Class    Freq       %   ContactDiv
+      o       V   22887   16.0%           20
+      y       V   16239   11.3%           18
+      e       V   13882    9.7%           19
+      a       V   13420    9.4%           19
+      d       V   11860    8.3%           16
+      h       V   11313    7.9%           13
+      i       V   11247    7.8%           16
+      l       V    9613    6.7%           16
+      c       V    7430    5.2%           13
+      r       V    6808    4.7%           15
+      s       V    6155    4.3%           16
+      n       C    5914    4.1%           11
+      q       C    5448    3.8%            8
+      m       C     934    0.7%           10
+      g       V      99    0.1%           13
+      x       C      24    0.0%            8
+      v       V      19    0.0%            4
+      b       C      17    0.0%            5
+      j       C       8    0.0%            4
+      u       C       7    0.0%            2
+      z       C       5    0.0%            4
+      w       C       1    0.0%            1
+
+  === MERGED GLYPH LEVEL ===
+  Vowels (15):     A C I S a d e g i l o r s v y
+  Consonants (11): b c h j m n q u w x z
+  V frequency: 112884/125256 = 90.1%
+  C frequency: 12372/125256 = 9.9%
+  V/C ratio: 9.12
+
+  === SPECTRAL CONFIRMATION (Eigenvector method) ===
+  Spectral vowels:     a b c d e g h i j l m n o q r s u v w x y z
+  Spectral consonants: 
+  Agreement with Sukhotin: 59%
+
+  Eigenvector values (sorted):
+      a  ev=-0.4952  Sukhotin=V
+      i  ev=-0.4218  Sukhotin=V
+      o  ev=-0.3054  Sukhotin=V
+      w  ev=-0.2377  Sukhotin=C
+      n  ev=-0.2366  Sukhotin=C
+      r  ev=-0.2298  Sukhotin=V
+      m  ev=-0.2290  Sukhotin=C
+      z  ev=-0.2174  Sukhotin=C
+      d  ev=-0.1709  Sukhotin=V
+      q  ev=-0.1705  Sukhotin=C
+      e  ev=-0.1697  Sukhotin=V
+      x  ev=-0.1667  Sukhotin=C
+      l  ev=-0.1410  Sukhotin=V
+      j  ev=-0.1243  Sukhotin=C
+      v  ev=-0.1226  Sukhotin=V
+      y  ev=-0.1177  Sukhotin=V
+      h  ev=-0.1053  Sukhotin=V
+      s  ev=-0.1007  Sukhotin=V
+      u  ev=-0.0962  Sukhotin=C
+      g  ev=-0.0774  Sukhotin=V
+      b  ev=-0.0453  Sukhotin=C
+      c  ev=-0.0309  Sukhotin=V
+
+=================================================================
+B: CROSS-VALIDATION OF V/C ALTERNATION
+=================================================================
+  Train alternation rate: 0.1752
+  Test alternation rate:  0.1811
+  Random baseline:        0.4903 ± 0.0924
+  z-score:                -3.3
+  Retention:              1.034 (103.4%)
+  V/C agreement (train vs full): 21/22 (95%)
+  Disagreements: {&#x27;s&#x27;}
+
+  IS THE ALTERNATION REAL?
+  Observed alternation: 0.1811
+  If V/C were meaningless: 0.4903
+  Excess alternation: -0.3091
+  z = -3.3
+  VERDICT: NO significant V/C alternation — SYLLABARY SIGNAL
+
+=================================================================
+C: BETWEEN-WORD V/C TRANSITION ANALYSIS
+=================================================================
+  Between-word V/C transitions (N=31164):
+    V→V:  21331 ( 68.4%)
+    V→C:   4383 ( 14.1%)
+    C→V:   5011 ( 16.1%)
+    C→C:    439 (  1.4%)
+
+  Within-word V/C transitions (N=107622):
+    V→V:  95150 ( 88.4%)
+    V→C:   6904 (  6.4%)
+    C→V:   5568 (  5.2%)
+    C→C:      0 (  0.0%)
+
+  Observed/Expected ratios:
+  Word-final V rate: 0.825
+  Word-initial V rate: 0.845
+    V→V: observed=0.684, expected=0.697, O/E=0.98
+    V→C: observed=0.141, expected=0.128, O/E=1.10
+    C→V: observed=0.161, expected=0.148, O/E=1.09
+    C→C: observed=0.014, expected=0.027, O/E=0.52
+
+  PHONOLOGICAL PATTERN IDENTIFICATION:
+  Alternation rate (between words): 0.301
+  Alternation rate (within words):  0.116
+  Ratio: 2.601
+  → MORE alternation between words: suggests HIATUS AVOIDANCE or liaison
+
+=================================================================
+D: LANGUAGE FINGERPRINT MATCHING
+=================================================================
+  Top 20 CV patterns:
+    VVVV           6459 (18.1%)  e.g. shey, shor, chey
+    VVV            5772 (16.1%)  e.g. oey, oal, aly
+    VVVVV          4289 (12.0%)  e.g. sheod, aseso, sheor
+    VV             3888 (10.9%)  e.g. oo, ey, so
+    VVVVC          2055 ( 5.7%)  e.g. daiin, raiin, soiin
+    CVVV           1879 ( 5.3%)  e.g. qoey, qoes, qool
+    VVVVVV         1628 ( 4.6%)  e.g. shodol, dsheor, dcheor
+    V              1595 ( 4.5%)  e.g. s, y, o
+    VVVC           1585 ( 4.4%)  e.g. yeam, sain, aiin
+    CVVVV          1330 ( 3.7%)  e.g. qoeol, qoody, qeody
+    CVV             697 ( 1.9%)  e.g. qol, qey, qoy
+    VVVVVC          671 ( 1.9%)  e.g. dairin, olaiin, oraiin
+    VVVVVVV         575 ( 1.6%)  e.g. olcheol, cholody, sholeol
+    VVC             477 ( 1.3%)  e.g. dam, ain, san
+    CVVVVC          463 ( 1.3%)  e.g. qooiin, qorain, qoaiin
+    VVVVVVC         392 ( 1.1%)  e.g. yeodain, yolaiin, odariin
+    CVVVC           375 ( 1.0%)  e.g. qoain, qodam, qoiin
+    VVVVVVVC        265 ( 0.7%)  e.g. chosaiin, chodaiin, cheolain
+    CVVVVV          258 ( 0.7%)  e.g. qoeody, qoeold, qooley
+    VC              171 ( 0.5%)  e.g. du, am, an
+
+  Syllable count distribution (V-nucleus count):
+    1 syllables: 35611 ( 99.6%)
+    2 syllables:   136 (  0.4%)
+  Mean syllables per word: 1.00
+
+  V-cluster length distribution:
+    Length 1:  1957 (5.5%)
+    Length 2:  5198 (14.5%)
+    Length 3:  9665 (27.0%)
+    Length 4: 10347 (28.9%)
+    Length 5:  5322 (14.9%)
+    Length 6:  2128 (5.9%)
+    Length 7:   889 (2.5%)
+    Length 8:   234 (0.7%)
+    Length 9:    62 (0.2%)
+    Length 10:    15 (0.0%)
+  C-cluster length distribution:
+    Length 1: 12358 (100.0%)
+
+  LANGUAGE COMPARISON:
+                   Property       VMS   English   Turkish  Japanese   Hawaiian    Arabic
+                  V/C ratio     10.60      0.62      0.83      1.05       1.38      0.48
+           Mean word length      4.01       4.7       6.2       4.1        4.7       4.5
+              Mean syl/word      1.00       1.5       2.9       3.0        2.5       1.7
+                         IC     0.090     0.067     0.059     0.055      0.120     0.077
+              Alphabet size        22        26        29       46+         13        28
+
+  Phonotactic similarity (rough qualitative assessment):
+  English:  LOW  — V/C ratio too low, IC too low, no strong alternation
+  Turkish:  LOW  — too many syllables per word, IC too low
+  Japanese: MODERATE — similar word length, but IC too low, writing system mismatch
+  Hawaiian: HIGH IC match — but alphabet too small (13 vs 22)
+  Arabic:   MODERATE — IC closer, abjad possibility, but V/C ratio differs
+
+=================================================================
+E: SYLLABARY HYPOTHESIS TEST
+=================================================================
+  Alternation rate (observed): 0.1159
+  Alternation rate (random):   0.4903
+  Excess:                      -0.3744
+  z-score:                     -3.3
+
+  NO V/C alternation → consistent with SYLLABARY
+  Each character might represent a syllable (CV or V)
+
+  Positional preference test:
+    Position      V%      C%   V_frac
+       start   26.9%   44.2%    0.866
+       early   18.0%    0.3%    0.998
+      middle   24.2%    0.5%    0.998
+        late   10.0%    0.2%    0.998
+         end   20.9%   54.8%    0.801
+
+  Chi-square (V/C × position independence): 12853.2 (df=4)
+  HIGHLY position-dependent → ALPHABETIC (V and C have different slot preferences)
+
+=================================================================
+vowel_consonant_separation SYNTHESIS
+=================================================================
+
+V/C separation results and implications:
+
+SUKHOTIN&#x27;S CLASSIFICATION:
+  Vowels: a c d e g h i l o r s v y
+  Consonants: b j m n q u w x z
+
+KEY METRICS:
+  V/C ratio: 10.60
+  Alternation z-score: -3.3
+  Cross-val retention: 1.034
+  Position chi-square: 12853.2
+
+SCRIPT TYPE INFERENCE:
+  Strong V/C alternation (z&gt;-3) + position-dependent V/C
+  → Characters represent phonemes (alphabetic/abjad), NOT syllables
+
+PHONOLOGICAL PROFILE:
+  V frequency: 91.4%
+  Between-word alternation: 0.301
+  Within-word alternation:  0.116
+
+vowel_consonant_separation complete.
+</pre></details><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>bc53723</code>. 
+To run any test with your own parameters, clone
+<a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
+(<code>python webui/server.py</code>). All numbers reproduce at
+PYTHONHASHSEED=0.</footer></main></body></html>

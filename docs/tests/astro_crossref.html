@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>astro_crossref — VAIS</title><style>
+:root { --bg:#ffffff; --fg:#1a1a1a; --muted:#666; --line:#ddd;
+        --code:#f5f5f5; --accent:#7a4a1e; --warn:#a33; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#141414; --fg:#ddd; --muted:#999; --line:#333;
+          --code:#1e1e1e; --accent:#d9a05b; --warn:#e77; } }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--fg);
+       font:16px/1.55 Georgia, 'Times New Roman', serif; }
+nav { border-bottom:1px solid var(--line); padding:.7em 1.2em;
+      font-family: system-ui, sans-serif; font-size:.9em; }
+nav a { color:var(--accent); text-decoration:none; margin-right:1.2em; }
+main { max-width: 62em; margin: 0 auto; padding: 1.5em 1.2em 4em; }
+h1,h2,h3 { font-family: system-ui, sans-serif; line-height:1.25; }
+h1 { font-size:1.7em; } h2 { font-size:1.3em; margin-top:2em; }
+a { color: var(--accent); }
+code, pre { font-family: ui-monospace, Consolas, monospace;
+            font-size:.86em; background:var(--code); }
+code { padding:.1em .3em; border-radius:3px; }
+pre { padding: .9em; overflow-x:auto; border:1px solid var(--line);
+      border-radius:4px; line-height:1.4; }
+table { border-collapse: collapse; margin: 1em 0; font-size:.92em;
+        display:block; overflow-x:auto; }
+th, td { border:1px solid var(--line); padding:.35em .6em;
+         text-align:left; vertical-align:top; }
+th { font-family: system-ui, sans-serif; background:var(--code); }
+blockquote { border-left:3px solid var(--accent); margin:1em 0;
+             padding:.2em 1em; color:var(--muted); }
+.muted { color:var(--muted); font-size:.9em; }
+.tag { font-family: system-ui, sans-serif; font-size:.75em;
+       border:1px solid var(--line); border-radius:3px;
+       padding:.05em .45em; margin-left:.5em; }
+.tag.sug { border-color:var(--warn); color:var(--warn); }
+details summary { cursor:pointer; font-family: system-ui, sans-serif; }
+footer { border-top:1px solid var(--line); margin-top:3em;
+         padding-top:1em; font-size:.85em; color:var(--muted); }
+</style></head><body>
+<nav><a href="../index.html">VAIS</a><a href="../catalog.html">Catalog</a>
+<a href="../research.html">Research</a><a href="../reports.html">Reports</a>
+<a href="https://github.com/Vineyardcode/vais">GitHub</a></nav>
+<main><h1>astro_crossref</h1>
+<p class="muted">scripts/astro_crossref.py · baseline 0s · depends on astro_label_pipeline</p>
+<pre>Astronomical Cross-Reference Analysis
+
+Cross-references our extracted zodiac nymph labels against:
+1. Ptolemy&#x27;s Almagest star catalog (star counts per zodiac constellation)
+2. Medieval decan system (3 decans × 10° per sign, planetary rulers)
+3. Traditional star names (Arabic/Latin names current in 15th century)
+4. Behenian fixed stars (15 most important medieval astrological stars)
+5. Structural hypotheses (nymphs = degrees vs stars vs days)
+
+Key discovery from pipeline: all signs have ~30 nymphs regardless of 
+Ptolemaic star count (which ranges 13-45). This rules out nymphs=stars
+and strongly supports nymphs=degrees.</pre>
+<h2>Parameters</h2><table><tr><th>name</th><th>default</th><th>type</th></tr>
+<tr><td><code>PTOLEMY_STARS</code></td><td><code>{&#x27;Aries&#x27;: {&#x27;in_figure&#x27;: 13, &#x27;unformed&#x27;: 5, &#x27;total&#x27;: 18}, &#x27;Taurus&#x27;: {&#x27;in_figure&#x27;: 32, &#x27;unfo…</code></td><td>json</td></tr>
+<tr><td><code>ZODIAC_MAP</code></td><td><code>{&#x27;f70v2&#x27;: &#x27;Pisces&#x27;, &#x27;f70v1&#x27;: &#x27;Aries&#x27;, &#x27;f71r&#x27;: &#x27;Aries&#x27;, &#x27;f71v&#x27;: &#x27;Taurus&#x27;, &#x27;f72r1&#x27;: &#x27;Taurus&#x27;…</code></td><td>json</td></tr>
+<tr><td><code>DECAN_RULERS</code></td><td><code>{&#x27;Aries&#x27;: [&#x27;Mars&#x27;, &#x27;Sun&#x27;, &#x27;Venus&#x27;], &#x27;Taurus&#x27;: [&#x27;Mercury&#x27;, &#x27;Moon&#x27;, &#x27;Saturn&#x27;], &#x27;Gemini&#x27;: [&#x27;J…</code></td><td>json</td></tr>
+<tr><td><code>PLANET_PROPERTIES</code></td><td><code>{&#x27;Mars&#x27;: {&#x27;element&#x27;: &#x27;Fire&#x27;, &#x27;gender&#x27;: &#x27;M&#x27;, &#x27;sect&#x27;: &#x27;nocturnal&#x27;}, &#x27;Sun&#x27;: {&#x27;element&#x27;: &#x27;Fire…</code></td><td>json</td></tr>
+</table>
+<h2>Golden output (PYTHONHASHSEED=0)</h2><details><summary>show</summary><pre>Voynich Manuscript — Astronomical Cross-Reference Analysis
+======================================================================
+======================================================================
+Structural hypothesis — what do the ~30 nymphs represent?
+======================================================================
+
+  Sign            Nymphs  Ptolemy Stars   Ratio
+  -------------- ------- -------------- -------
+  Aries               30             18    1.67
+  Taurus              30             43    0.70
+  Gemini              29             25    1.16
+  Cancer              30             13    2.31
+  Leo                 29             35    0.83
+  Virgo               29             32    0.91
+  Libra               27             17    1.59
+  Scorpio             30             24    1.25
+  Sagittarius         29             31    0.94
+  Pisces              29             38    0.76
+
+  Nymph count range: 27–30 (σ=0.9)
+  Ptolemy count range: 13–43 (σ=9.3)
+  Pearson r(nymphs, Ptolemy stars) = 0.108
+
+  VERDICT:
+  → NO correlation between nymph count and star count (r=0.108)
+  → Nymphs do NOT represent individual constellation stars
+  → The ~30 count is FIXED, suggesting DEGREES (30° per sign)
+     or DAYS (~30 per calendar month)
+
+======================================================================
+Decan ruler correlation — do planetary rulers shape labels?
+======================================================================
+
+  Suffix distribution by decan planetary ruler:
+  Planet      Total     −y   −iin    −y%   −iin%
+  ---------- ------ ------ ------ ------ -------
+  Mars           25     23      1  92.0%    4.0%
+  Sun            11      9      0  81.8%    0.0%
+  Venus          18     15      3  83.3%   16.7%
+  Mercury        23     14      9  60.9%   39.1%
+  Moon           19     11      7  57.9%   36.8%
+  Saturn         13     12      0  92.3%    0.0%
+  Jupiter        14     12      2  85.7%   14.3%
+
+  Root overlap between decan rulers:
+  Jupiter↔Mars: 2 shared roots (J=0.062) — kal, keed
+  Jupiter↔Mercury: 1 shared roots (J=0.029) — a
+  Jupiter↔Moon: 1 shared roots (J=0.029) — a
+  Jupiter↔Saturn: 1 shared roots (J=0.030) — kal
+  Jupiter↔Sun: 1 shared roots (J=0.030) — a
+  Jupiter↔Venus: 1 shared roots (J=0.030) — kar
+  Mars↔Moon: 2 shared roots (J=0.054) — kee, ta
+  Mars↔Saturn: 3 shared roots (J=0.086) — kal, tal, ted
+  Mars↔Sun: 1 shared roots (J=0.027) — tal
+  Mars↔Venus: 1 shared roots (J=0.027) — tal
+  Mercury↔Moon: 3 shared roots (J=0.081) — a, ar, pa
+  Mercury↔Sun: 1 shared roots (J=0.026) — a
+  Mercury↔Venus: 1 shared roots (J=0.026) — pa
+  Moon↔Saturn: 1 shared roots (J=0.026) — ke
+  Moon↔Sun: 2 shared roots (J=0.054) — a, tarald
+  Moon↔Venus: 1 shared roots (J=0.026) — pa
+  Saturn↔Sun: 2 shared roots (J=0.056) — pal, tal
+  Saturn↔Venus: 1 shared roots (J=0.027) — tal
+  Sun↔Venus: 1 shared roots (J=0.027) — tal
+
+  Same-ruler decan pairs (checking root overlap):
+    Mars: Gemini D2 ↔ Leo D3: shared={&#x27;kald&#x27;}
+    Sun: Aries D2 ↔ Scorpio D2: shared={&#x27;tal&#x27;}
+    Venus: Aries D3 ↔ Scorpio D3: shared={&#x27;tal&#x27;}
+    Saturn: Leo D1 ↔ Sagittarius D3: shared={&#x27;ke&#x27;}
+
+======================================================================
+Phonetic comparison — labels vs medieval star names
+======================================================================
+
+  Consonant skeleton matches (Voynich root → star name):
+  Root             Skeleton   Star Name          Star Skel  Sign            Mag
+  ---------------- ---------- ------------------ ---------- -------------- ----
+
+  Near-matches (edit distance 1 on consonant skeleton):
+    tal              (tl) ~ Atlas              (tls)  [Taurus]
+    tal              (tl) ~ Shaula             (Sl)  [Scorpio]
+    kal              (kl) ~ Shaula             (Sl)  [Scorpio]
+    keol             (kl) ~ Shaula             (Sl)  [Scorpio]
+    kala             (kl) ~ Shaula             (Sl)  [Scorpio]
+    pal              (pl) ~ Shaula             (Sl)  [Scorpio]
+    kol              (kl) ~ Shaula             (Sl)  [Scorpio]
+    tala             (tl) ~ Atlas              (tls)  [Taurus]
+    tala             (tl) ~ Shaula             (Sl)  [Scorpio]
+    aral             (rl) ~ Shaula             (Sl)  [Scorpio]
+    talal            (tll) ~ Atlas              (tls)  [Taurus]
+    tald             (tld) ~ Atlas              (tls)  [Taurus]
+    shar             (Sr) ~ Shaula             (Sl)  [Scorpio]
+    keeol            (kl) ~ Shaula             (Sl)  [Scorpio]
+    alals            (lls) ~ Atlas              (tls)  [Taurus]
+
+  Special root analysis:
+  &#x27;tal&#x27; (12×, most common) — skeleton &#x27;tl&#x27;
+    Possible matches: tl → Altl? Tail? No clear star name match.
+    However: if &#x27;o-&#x27; is a definite article, &#x27;otal-y&#x27; = &#x27;the tal&#x27;
+    &#x27;tal&#x27; could be a GENERIC TERM (star, light, degree) not a proper name
+
+  &#x27;kal&#x27; (8×, 3rd most common) — skeleton &#x27;kl&#x27;
+    Possible: kal↔Algol? (gl vs kl, near-match if g≈k)
+
+  &#x27;kar&#x27; (5×) — skeleton &#x27;kr&#x27;
+    Possible: kar↔Karkinos (Cancer)? kr matches
+
+======================================================================
+Behenian star positions — do they match nymph positions?
+======================================================================
+
+  Behenian stars falling in Voynich zodiac signs:
+  Star               Zodiac Position          Degree Expected Nymph #
+  ------------------ ------------------------ ------ ----------------
+  Algol              Taurus 26°                   26               26
+  Alcyone            Gemini 0°                     0                0
+  Aldebaran          Gemini 10°                   10               10
+  Capella            Gemini 22°                   22               22
+  Sirius             Cancer 14°                   14               14
+  Procyon            Cancer 26°                   26               26
+  Regulus            Leo 30°                      30               30
+  Algorab            Libra 13°                    13               13
+  Spica              Libra 24°                    24               24
+  Arcturus           Libra 24°                    24               24
+  Alphecca           Scorpio 12°                  12               12
+  Antares            Sagittarius 10°              10               10
+  Fomalhaut          Pisces 4°                     4                4
+
+  NOTE: Zodiac longitudes are for ~150 AD (Ptolemy&#x27;s epoch).
+  By 1400 AD, precession shifted these by ~17°.
+  Adjusted positions (epoch ~1400):
+    Algol              →  Taurus (→next) 13°
+    Alcyone            →  Gemini 17°
+    Aldebaran          →  Gemini 27°
+    Capella            →  Gemini (→next) 9°
+    Sirius             →  Cancer (→next) 1°
+    Procyon            →  Cancer (→next) 13°
+    Regulus            →  Leo (→next) 17°
+    Algorab            →  Libra (→next) 0°
+    Spica              →  Libra (→next) 11°
+    Arcturus           →  Libra (→next) 11°
+    Alphecca           →  Scorpio 29°
+    Antares            →  Sagittarius 27°
+    Fomalhaut          →  Pisces 21°
+
+======================================================================
+The o- prefix — article, classifier, or something else?
+======================================================================
+
+  Total labels: 340
+  Starting with o-: 229 (67.4%)
+
+  Prefix distribution:
+    o         164
+    y          25
+    d           5
+    ol          4
+    or          3
+    s           2
+    qo          1
+
+  Shared labels WITHOUT o-prefix (possible bare stems or different word class):
+    am               3× in Aries, Pisces, Taurus
+    ar               5× in Pisces, Scorpio, Taurus
+    dy               2× in Aries, Gemini
+    arar             2× in Aries, Pisces
+    al               2× in Cancer, Pisces
+    shar             2× in Cancer, Taurus
+    ary              3× in Gemini, Taurus
+
+  Shared labels WITH o-prefix:
+    otaly            6× in Aries, Leo, Pisces, Scorpio
+    otal             5× in Aries, Gemini, Pisces, Scorpio
+    oky              4× in Leo, Pisces, Sagittarius, Scorpio
+    okeey            4× in Gemini, Libra, Scorpio, Taurus
+    okal             4× in Gemini, Libra, Sagittarius
+    okeody           3× in Sagittarius, Scorpio, Virgo
+    otalaiin         2× in Aries, Taurus
+    okealar          2× in Aries, Gemini
+    otaldar          2× in Aries, Pisces
+    okeoly           2× in Libra, Pisces
+
+  Among 20 shared labels: 13 have o-prefix (65%)
+  vs overall 67.4% → similar or lower in shared labels
+
+  HYPOTHESIS: o- is a Greek-derived masculine article ο (ho)
+  This would explain:
+  - High prevalence in star labels (formal names use articles)
+  - Presence in both generic (&#x27;otaly&#x27; = &#x27;the star&#x27;) and specific labels
+  - Connection to Greek astronomical tradition (Almagest)
+  - Non-o labels (&#x27;ar&#x27;, &#x27;am&#x27;, &#x27;al&#x27;, &#x27;dy&#x27;) may be qualifiers/adjectives
+
+======================================================================
+Cancer anomaly — why does Cancer differ in suffix usage?
+======================================================================
+
+  Suffix ratio by sign (−y vs −iin):
+  Sign              −y  −iin  Other  −iin/−y Element  Modality  
+  -------------- ----- ----- ------ -------- -------- ----------
+  Aries              8     1      0     0.12 Fire     Cardinal  
+  Taurus             7     5      1     0.71 Earth    Fixed     
+  Gemini             8     0      1     0.00 Air      Mutable   
+  Cancer             8     9      0     1.12 Water    Cardinal  
+  Leo               14     2      0     0.14 Fire     Fixed     
+  Virgo             12     2      2     0.17 Earth    Mutable   
+  Libra             11     0      1     0.00 Air      Cardinal  
+  Scorpio           15     1      0     0.07 Water    Fixed     
+  Sagittarius       13     2      0     0.15 Fire     Mutable   
+  Pisces            10     1      1     0.10 Water    Mutable   
+
+  Average −iin/−y ratio:
+    Water signs:     0.431
+    Non-water signs: 0.186
+    Water signs use MORE -iin
+
+  Cancer-specific factors:
+    - Cancer has ALL feminine/watery decan rulers (Venus, Mercury, Moon)
+    - If -iin encodes something feminine/receptive, Cancer is the extreme case
+    - Taurus (Earth/Fixed, decan rulers: Mercury, Moon, Saturn) also has elevated -iin
+    - This could indicate -iin marks Moon-ruled or nocturnal decans
+
+======================================================================
+Degree marker test — morphological shifts at decan boundaries
+======================================================================
+
+  Aggregate suffix distribution by decan position (all signs combined):
+  Decan         −y  −iin  Other  Total    −y%   −iin%
+  ---------- ----- ----- ------ ------ ------ -------
+  Decan 1       41     6      2     49  83.7%   12.2%
+  Decan 2       28    10      3     41  68.3%   24.4%
+  Decan 3       37     7      1     45  82.2%   15.6%
+
+  Root uniqueness ratio by decan (unique_roots / total_labels):
+    Decan 1: 0.962 average (10 signs)
+    Decan 2: 0.971 average (10 signs)
+    Decan 3: 0.962 average (10 signs)
+
+======================================================================
+COMPREHENSIVE SYNTHESIS
+======================================================================
+
+  ┌─────────────────────────────────────────────────────────────────┐
+  │  CROSS-REFERENCE FINDINGS SUMMARY                              │
+  │                                                                 │
+  │  1. NYMPHS = DEGREES (not constellation stars)                  │
+  │     - All signs have ~30 nymphs regardless of star count        │
+  │     - Ptolemy&#x27;s Cancer has 13 stars but 30 Voynich nymphs       │
+  │     - Correlation between nymph count &amp; star count ≈ 0          │
+  │     - 3 equal groups per sign = 3 decans of 10° each           │
+  │                                                                 │
+  │  2. LABEL STRUCTURE = [article] + [root] + [grammatical suffix] │
+  │     - o- prefix = probable article/classifier (67.4%)           │
+  │     - Greek-derived ο (ho) fits the Ptolemaic context          │
+  │     - Roots are mostly unique per sign (87.7%) = proper names   │
+  │     - ~34 shared roots = generic astronomical vocabulary        │
+  │                                                                 │
+  │  3. SEMANTIC CANDIDATES for generic terms:                      │
+  │     - &#x27;tal&#x27; (most common root) = likely &#x27;star&#x27; or &#x27;degree&#x27;     │
+  │     - &#x27;kal&#x27; = possible &#x27;bright&#x27; or &#x27;first&#x27;                     │
+  │     - &#x27;ar&#x27;/&#x27;am&#x27; (no prefix) = qualifiers or positional markers │
+  │                                                                 │
+  │  4. SUFFIX -y vs -iin encodes TWO grammatical categories:       │
+  │     - -y dominates everywhere except Cancer                     │
+  │     - Cancer&#x27;s -iin anomaly may track Moon-ruled decans         │
+  │     - From prior work: -y = Type B (process), -iin = Type A    │
+  │     - In labels: -y may mark masculine stars, -iin feminine?    │
+  │                                                                 │
+  │  5. DECAN PLANETARY RULERS show WEAK but present signal:        │
+  │     - Same-ruler decans across signs share occasional roots     │
+  │     - Suffix distributions shift slightly by planetary ruler    │
+  │                                                                 │
+  │  6. NO clear phonetic matches to known star names               │
+  │     - The label system is NOT direct transliteration             │
+  │     - Labels encode DESCRIPTIONS, not borrowed star names       │
+  │     - Consistent with a CONSTRUCTED notation system             │
+  └─────────────────────────────────────────────────────────────────┘
+
+  WORKING HYPOTHESIS:
+  
+  Each zodiac page represents 30 degrees of one zodiac sign.
+  Each nymph represents one degree.
+  Three concentric rings represent the three decans (10° each).
+  
+  Label structure: o + [root] + [suffix]
+    - o- = definite article (the)  
+    - root = name/descriptor unique to that degree
+    - -y = default grammatical form
+    - -iin = alternative form (possibly feminine, nocturnal, or receptive)
+  
+  The ~34 shared labels (otaly, otal, oky, okeey, okal, etc.) are
+  FUNCTIONAL TERMS that recur at specific degree positions across signs,
+  possibly marking notable stars, planetary terms (domicile/exaltation),
+  or degree types (bright degree, dark degree, masculine, feminine).
+  
+  This system is consistent with a CONSTRUCTED ASTROLOGICAL NOTATION,
+  not a natural language description of stars. It parallels the Hebrew-like
+  morphological system found in the manuscript&#x27;s body text (prefix-root-suffix
+  agglutination with a small closed set of prefixes and grammatical suffixes).
+
+  NEXT STEPS for further decipherment:
+  1. Map the ~34 shared labels against medieval degree-meaning lists
+     (each zodiac degree had traditional associations in medieval astrology)
+  2. Check if Behenian star positions correspond to morphologically distinct labels
+  3. Compare the &#x27;o-&#x27; article hypothesis against paragraph-initial words
+     in body text to see if the same article appears in connected prose
+  4. Cross-reference label positions (clock positions) with known star
+     positions for epoch ~1400 to find specific anchors
+
+
+  Results saved to C:\projects\vais\results\astro_crossref_results.json
+</pre></details><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>bc53723</code>. 
+To run any test with your own parameters, clone
+<a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
+(<code>python webui/server.py</code>). All numbers reproduce at
+PYTHONHASHSEED=0.</footer></main></body></html>

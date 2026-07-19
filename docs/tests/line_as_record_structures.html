@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>line_as_record_structures — VAIS</title><style>
+:root { --bg:#ffffff; --fg:#1a1a1a; --muted:#666; --line:#ddd;
+        --code:#f5f5f5; --accent:#7a4a1e; --warn:#a33; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#141414; --fg:#ddd; --muted:#999; --line:#333;
+          --code:#1e1e1e; --accent:#d9a05b; --warn:#e77; } }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--fg);
+       font:16px/1.55 Georgia, 'Times New Roman', serif; }
+nav { border-bottom:1px solid var(--line); padding:.7em 1.2em;
+      font-family: system-ui, sans-serif; font-size:.9em; }
+nav a { color:var(--accent); text-decoration:none; margin-right:1.2em; }
+main { max-width: 62em; margin: 0 auto; padding: 1.5em 1.2em 4em; }
+h1,h2,h3 { font-family: system-ui, sans-serif; line-height:1.25; }
+h1 { font-size:1.7em; } h2 { font-size:1.3em; margin-top:2em; }
+a { color: var(--accent); }
+code, pre { font-family: ui-monospace, Consolas, monospace;
+            font-size:.86em; background:var(--code); }
+code { padding:.1em .3em; border-radius:3px; }
+pre { padding: .9em; overflow-x:auto; border:1px solid var(--line);
+      border-radius:4px; line-height:1.4; }
+table { border-collapse: collapse; margin: 1em 0; font-size:.92em;
+        display:block; overflow-x:auto; }
+th, td { border:1px solid var(--line); padding:.35em .6em;
+         text-align:left; vertical-align:top; }
+th { font-family: system-ui, sans-serif; background:var(--code); }
+blockquote { border-left:3px solid var(--accent); margin:1em 0;
+             padding:.2em 1em; color:var(--muted); }
+.muted { color:var(--muted); font-size:.9em; }
+.tag { font-family: system-ui, sans-serif; font-size:.75em;
+       border:1px solid var(--line); border-radius:3px;
+       padding:.05em .45em; margin-left:.5em; }
+.tag.sug { border-color:var(--warn); color:var(--warn); }
+details summary { cursor:pointer; font-family: system-ui, sans-serif; }
+footer { border-top:1px solid var(--line); margin-top:3em;
+         padding-top:1em; font-size:.85em; color:var(--muted); }
+</style></head><body>
+<nav><a href="../index.html">VAIS</a><a href="../catalog.html">Catalog</a>
+<a href="../research.html">Research</a><a href="../reports.html">Reports</a>
+<a href="https://github.com/Vineyardcode/vais">GitHub</a></nav>
+<main><h1>line_as_record_structures</h1>
+<p class="muted">scripts/line_as_record_structures.py</p>
+<pre>Line-as-Record Structures (portfolio S7) — positional field information
+
+HYPOTHESIS (SPECULATIVE tier, RESEARCH.md): the LINE, not the word, is
+the encoding unit — each line a RECORD with ordered fields drawing on
+field-specific vocabularies (inventory rows, tables, recipe headers).
+Motivation: the line-boundary effects are the moat (line_init_jsd 0.164
+/ line_final_jsd 0.084 vs ~0.001 for prose; no calibrated generator in
+the forgery tournament reproduces them). S7 is the only portfolio
+strategy that models the line directly, relaxing assumption A3.
+
+WHAT IS MEASURED (fixed feature set — the declared DOF budget):
+  Per token, 4 surface features requiring NO parser assumptions:
+    word-length bucket (1..6, 7+), first glyph, last glyph,
+    gallows presence (contains t/k/p/f).
+  Per line of &gt;= MIN_LINE_WORDS words, positions are binned:
+    p1, p2 (first two), pL-1, pL (last two), and the INTERIOR split
+    into fractional thirds m1/m2/m3.
+  On TRAIN folios, per-bin feature distributions P(f|bin) are estimated
+  with Laplace ALPHA; on HELD-OUT folios the mean log-loss reduction vs
+  the position-agnostic P(f) is measured in bits/token (&quot;positional
+  gain&quot;), per feature and summed. Holdout = whole folios (VMS) /
+  contiguous PSEUDO_FOLIO_LINES-line blocks (controls) — the rung-3
+  lesson from verbose_cipher_inversion.
+  HEADLINE = INTERIOR gain (m1+m2+m3 tokens only). The line EDGES are
+  the already-established anomaly; RECORDS require interior field
+  structure, which prose does not have. Edge gain is reported for the
+  record but adjudicates nothing.
+
+CORPORA (controls FIRST, per charter):
+  P-REC  synthetic record corpus (positive control, generated here,
+         deterministic SEED): P1&#x27;s Latin vocabulary partitioned into 4
+         disjoint field pools by a fixed surface hash; each line = field
+         sequence 1,[2],3+ with optional/repeatable fields (variable
+         length 3-10). The instrument MUST detect this or it is dead.
+  P1     latin_plain — genuine prose in pseudo-lines: must show ~zero
+         positional gain (its &quot;lines&quot; are arbitrary chunk boundaries).
+  N1     vms_word_shuffle — THE pre-registered kill comparator: the
+         manuscript&#x27;s own tokens and line lengths, order destroyed;
+         whatever &quot;structure&quot; it shows is line-length + lexicon
+         artifact, not records.
+  N3     grille_table — table-generated words, no line semantics.
+  VMS    full, Currier A, Currier B separately (constraint F8).
+
+PRE-REGISTERED ADJUDICATION (fixed 2026-07-17, before the first run;
+tools/overnight.py re-derives it mechanically from the JSON):
+  INSTRUMENT GATE: P-REC interior gain &gt;= 0.30 bits/token AND P1
+    interior gain &lt;= 0.05 bits/token. Fail -&gt; instrument too weak or
+    too loose; NO VMS interpretation.
+  KILL: VMS_full interior gain - N1 interior gain &lt; 0.05 bits/token -&gt;
+    VMS positional structure is a line-length artifact; the record
+    hypothesis loses this instrument (corpse logged with full numbers).
+  POSITIVE (quarantined SUGGESTIVE, never &quot;decoded&quot;): VMS_full beats N1
+    by &gt;= 0.05 AND Currier A and B EACH beat N1 by &gt;= 0.05 (F8
+    concordance). Discordant hands -&gt; &quot;no claim; discordance is data&quot;.
+Vocabulary discipline: a positive here means &quot;consistent with
+line-level field structure&quot; — it names no fields and reads no records.</pre>
+<h2>Parameters</h2><table><tr><th>name</th><th>default</th><th>type</th></tr>
+<tr><td><code>SEED</code></td><td><code>113</code></td><td>int</td></tr>
+<tr><td><code>MIN_LINE_WORDS</code></td><td><code>5</code></td><td>int</td></tr>
+<tr><td><code>HOLDOUT_FRAC</code></td><td><code>0.2</code></td><td>float</td></tr>
+<tr><td><code>PSEUDO_FOLIO_LINES</code></td><td><code>24</code></td><td>int</td></tr>
+<tr><td><code>ALPHA</code></td><td><code>0.5</code></td><td>float</td></tr>
+<tr><td><code>PREC_LINES</code></td><td><code>4600</code></td><td>int</td></tr>
+<tr><td><code>GATE_PREC_MIN</code></td><td><code>0.3</code></td><td>float</td></tr>
+<tr><td><code>GATE_P1_MAX</code></td><td><code>0.05</code></td><td>float</td></tr>
+<tr><td><code>KILL_MARGIN</code></td><td><code>0.05</code></td><td>float</td></tr>
+<tr><td><code>INTERIOR</code></td><td><code>[&#x27;m1&#x27;, &#x27;m2&#x27;, &#x27;m3&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>FEATURE_NAMES</code></td><td><code>[&#x27;len&#x27;, &#x27;first&#x27;, &#x27;last&#x27;, &#x27;gallows&#x27;]</code></td><td>json</td></tr>
+</table>
+<h2>Golden output (PYTHONHASHSEED=0)</h2><details><summary>show</summary><pre>============================================================================
+LINE-AS-RECORD STRUCTURES (S7) — positional field information
+============================================================================
+seed=113 min_line=5 holdout=0.2 (whole folios; controls: 24-line blocks) alpha=0.5
+gates: P-REC interior &gt;= 0.3, P1 interior &lt;= 0.05, kill margin (VMS - N1) &lt; 0.05
+  PREC_records     interior +0.7189 bits/token (  2350 tok)   edge +1.6007 (  3744 tok)
+  P1_latin_plain   interior -0.0033 bits/token (  3866 tok)   edge -0.0063 (  3840 tok)
+  N1_word_shuffle  interior -0.0083 bits/token (  4578 tok)   edge -0.0060 (  3168 tok)
+  N3_grille        interior -0.0042 bits/token (  3828 tok)   edge -0.0050 (  3840 tok)
+  VMS_full         interior +0.0246 bits/token (  4889 tok)   edge +0.3598 (  3244 tok)
+  VMS_currier_A    interior -0.0138 bits/token (  1070 tok)   edge +0.2869 (  1072 tok)
+  VMS_currier_B    interior +0.0685 bits/token (  3092 tok)   edge +0.4379 (  2084 tok)
+
+  ADJUDICATION (pre-registered):
+    gate: P-REC +0.7189 (need &gt;= 0.3) and P1 -0.0033 (need &lt;= 0.05) -&gt; PASS
+    N1 artifact baseline: -0.0083; VMS margins over N1: VMS_full +0.0329, VMS_currier_A -0.0055, VMS_currier_B +0.0768
+    KILL: VMS_full margin +0.0329 &lt; 0.05 — interior positional structure is a line-length artifact at this instrument.
+
+  -&gt; results/line_as_record_structures.json
+</pre></details><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>bc53723</code>. 
+To run any test with your own parameters, clone
+<a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
+(<code>python webui/server.py</code>). All numbers reproduce at
+PYTHONHASHSEED=0.</footer></main></body></html>

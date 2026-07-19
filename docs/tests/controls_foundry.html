@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>controls_foundry — VAIS</title><style>
+:root { --bg:#ffffff; --fg:#1a1a1a; --muted:#666; --line:#ddd;
+        --code:#f5f5f5; --accent:#7a4a1e; --warn:#a33; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#141414; --fg:#ddd; --muted:#999; --line:#333;
+          --code:#1e1e1e; --accent:#d9a05b; --warn:#e77; } }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--fg);
+       font:16px/1.55 Georgia, 'Times New Roman', serif; }
+nav { border-bottom:1px solid var(--line); padding:.7em 1.2em;
+      font-family: system-ui, sans-serif; font-size:.9em; }
+nav a { color:var(--accent); text-decoration:none; margin-right:1.2em; }
+main { max-width: 62em; margin: 0 auto; padding: 1.5em 1.2em 4em; }
+h1,h2,h3 { font-family: system-ui, sans-serif; line-height:1.25; }
+h1 { font-size:1.7em; } h2 { font-size:1.3em; margin-top:2em; }
+a { color: var(--accent); }
+code, pre { font-family: ui-monospace, Consolas, monospace;
+            font-size:.86em; background:var(--code); }
+code { padding:.1em .3em; border-radius:3px; }
+pre { padding: .9em; overflow-x:auto; border:1px solid var(--line);
+      border-radius:4px; line-height:1.4; }
+table { border-collapse: collapse; margin: 1em 0; font-size:.92em;
+        display:block; overflow-x:auto; }
+th, td { border:1px solid var(--line); padding:.35em .6em;
+         text-align:left; vertical-align:top; }
+th { font-family: system-ui, sans-serif; background:var(--code); }
+blockquote { border-left:3px solid var(--accent); margin:1em 0;
+             padding:.2em 1em; color:var(--muted); }
+.muted { color:var(--muted); font-size:.9em; }
+.tag { font-family: system-ui, sans-serif; font-size:.75em;
+       border:1px solid var(--line); border-radius:3px;
+       padding:.05em .45em; margin-left:.5em; }
+.tag.sug { border-color:var(--warn); color:var(--warn); }
+details summary { cursor:pointer; font-family: system-ui, sans-serif; }
+footer { border-top:1px solid var(--line); margin-top:3em;
+         padding-top:1em; font-size:.85em; color:var(--muted); }
+</style></head><body>
+<nav><a href="../index.html">VAIS</a><a href="../catalog.html">Catalog</a>
+<a href="../research.html">Research</a><a href="../reports.html">Reports</a>
+<a href="https://github.com/Vineyardcode/vais">GitHub</a></nav>
+<main><h1>controls_foundry</h1>
+<p class="muted">scripts/controls_foundry.py</p>
+<pre>Controls Foundry — deterministic control corpora for the research charter (RESEARCH.md)
+
+Builds the deterministic control battery into data/controls/ that every
+research-program method must run BEFORE the manuscript:
+
+POSITIVE (should look like language / be identified as its true class):
+  P1 latin_plain      genuine Latin prose (Caesar, local corpus)
+  P2 italian_plain    period vernacular (Dante, cached Gutenberg #1012)
+  P3 latin_subst      P1 under monoalphabetic substitution
+  P4 latin_verbose    P1 under a verbose cipher (letter -&gt; glyph group,
+                      Naibbe-style: deterministic seeded tables)
+  P5 latin_abjad      P1 with vowels stripped (consonantal skeleton)
+
+NEGATIVE (must NOT look like language / must be identified as generated):
+  N1 vms_word_shuffle Voynich tokens, order shuffled corpus-wide
+                      (line lengths preserved)
+  N2 vms_char_shuffle Voynich characters shuffled within each line,
+                      re-cut at the original word lengths
+  N3 grille_table     Rugg-style pseudo-text from prefix/mid/suffix tables
+                      fitted to VMS morphology, emitted by a sliding
+                      grille walk
+  N4 self_citation    Timm &amp; Schinner-style copy-and-modify generation
+                      seeded with genuine VMS lines
+
+Every file: one text line per corpus line, space-separated tokens,
+size-matched to ~TARGET_TOKENS. Seed pinned; output is byte-reproducible.</pre>
+<h2>Parameters</h2><table><tr><th>name</th><th>default</th><th>type</th></tr>
+<tr><td><code>SEED</code></td><td><code>108</code></td><td>int</td></tr>
+<tr><td><code>TARGET_TOKENS</code></td><td><code>38000</code></td><td>int</td></tr>
+<tr><td><code>LINE_LEN_MIN</code></td><td><code>6</code></td><td>int</td></tr>
+<tr><td><code>LINE_LEN_MAX</code></td><td><code>10</code></td><td>int</td></tr>
+<tr><td><code>SELF_CITATION_SEED_LINES</code></td><td><code>12</code></td><td>int</td></tr>
+<tr><td><code>SELF_CITATION_MODS</code></td><td><code>9</code></td><td>int</td></tr>
+<tr><td><code>GRILLE_JUMP_PROB</code></td><td><code>0.18</code></td><td>float</td></tr>
+<tr><td><code>VERBOSE_GROUPS</code></td><td><code>[&#x27;ol&#x27;, &#x27;or&#x27;, &#x27;ar&#x27;, &#x27;al&#x27;, &#x27;ain&#x27;, &#x27;aiin&#x27;, &#x27;dy&#x27;, &#x27;edy&#x27;, &#x27;ey&#x27;, &#x27;chol&#x27;, &#x27;chor&#x27;, &#x27;che&#x27;, &#x27;she&#x27;, &#x27;…</code></td><td>json</td></tr>
+</table>
+<h2>Golden output (PYTHONHASHSEED=0)</h2><details><summary>show</summary><pre>========================================================================
+controls_foundry — CONTROLS FOUNDRY (seed=108)
+========================================================================
+  latin_plain         38,003 tokens   8,932 types  4,755 lines
+  italian_plain       38,006 tokens   6,964 types  4,778 lines
+  latin_subst         38,003 tokens   8,932 types  4,755 lines
+  latin_verbose       38,003 tokens   8,932 types  4,755 lines
+  latin_abjad         37,540 tokens   6,042 types  4,755 lines
+  vms_word_shuffle    39,645 tokens   7,297 types  4,634 lines
+  vms_char_shuffle    39,645 tokens  33,352 types  4,634 lines
+  grille_table        38,004 tokens     903 types  4,734 lines
+  self_citation       38,002 tokens   9,065 types  2,648 lines
+
+  Written to data/controls/ + manifest to results/.
+  Deterministic: rerunning reproduces byte-identical corpora.
+</pre></details><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>bc53723</code>. 
+To run any test with your own parameters, clone
+<a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
+(<code>python webui/server.py</code>). All numbers reproduce at
+PYTHONHASHSEED=0.</footer></main></body></html>

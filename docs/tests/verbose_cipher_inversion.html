@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>verbose_cipher_inversion — VAIS</title><style>
+:root { --bg:#ffffff; --fg:#1a1a1a; --muted:#666; --line:#ddd;
+        --code:#f5f5f5; --accent:#7a4a1e; --warn:#a33; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#141414; --fg:#ddd; --muted:#999; --line:#333;
+          --code:#1e1e1e; --accent:#d9a05b; --warn:#e77; } }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--fg);
+       font:16px/1.55 Georgia, 'Times New Roman', serif; }
+nav { border-bottom:1px solid var(--line); padding:.7em 1.2em;
+      font-family: system-ui, sans-serif; font-size:.9em; }
+nav a { color:var(--accent); text-decoration:none; margin-right:1.2em; }
+main { max-width: 62em; margin: 0 auto; padding: 1.5em 1.2em 4em; }
+h1,h2,h3 { font-family: system-ui, sans-serif; line-height:1.25; }
+h1 { font-size:1.7em; } h2 { font-size:1.3em; margin-top:2em; }
+a { color: var(--accent); }
+code, pre { font-family: ui-monospace, Consolas, monospace;
+            font-size:.86em; background:var(--code); }
+code { padding:.1em .3em; border-radius:3px; }
+pre { padding: .9em; overflow-x:auto; border:1px solid var(--line);
+      border-radius:4px; line-height:1.4; }
+table { border-collapse: collapse; margin: 1em 0; font-size:.92em;
+        display:block; overflow-x:auto; }
+th, td { border:1px solid var(--line); padding:.35em .6em;
+         text-align:left; vertical-align:top; }
+th { font-family: system-ui, sans-serif; background:var(--code); }
+blockquote { border-left:3px solid var(--accent); margin:1em 0;
+             padding:.2em 1em; color:var(--muted); }
+.muted { color:var(--muted); font-size:.9em; }
+.tag { font-family: system-ui, sans-serif; font-size:.75em;
+       border:1px solid var(--line); border-radius:3px;
+       padding:.05em .45em; margin-left:.5em; }
+.tag.sug { border-color:var(--warn); color:var(--warn); }
+details summary { cursor:pointer; font-family: system-ui, sans-serif; }
+footer { border-top:1px solid var(--line); margin-top:3em;
+         padding-top:1em; font-size:.85em; color:var(--muted); }
+</style></head><body>
+<nav><a href="../index.html">VAIS</a><a href="../catalog.html">Catalog</a>
+<a href="../research.html">Research</a><a href="../reports.html">Reports</a>
+<a href="https://github.com/Vineyardcode/vais">GitHub</a></nav>
+<main><h1>verbose_cipher_inversion</h1>
+<p class="muted">scripts/verbose_cipher_inversion.py</p>
+<pre>Verbose Cipher Inversion — prototype (strict model, calibrated on controls)
+
+The research program&#x27;s three converging signals (forgery_tournament: the
+verbose control alone reproduces h2_ratio; space_free_segmentation: word
+boundaries 2.7x more recoverable than Latin; forward_process_models: only
+a ~13-char verbose scheme reproduces h_char) justify an actual inversion
+attempt: IF each Voynich word is a concatenation of glyph-GROUPS, each
+group encoding one plaintext letter, can we recover the groups and the
+mapping?
+
+ESCALATION LADDER (strict 1:1 mapping at every rung; homophones and
+positional variants remain excluded):
+  RUNG 1 — blind segmentation (below). OUTCOME (2026-07-16, logged):
+    KILLED by the positive control. The blind BPE segmenter recovered
+    only 13% of the planted P4 inventory and the known cipher decoded
+    worse than grille gibberish. Diagnosis: cross-boundary glyph pairs
+    are as frequent as within-group pairs, so frequency-only merging
+    cannot see group boundaries. This kill is the pre-registered
+    evidence that justifies rung 2.
+  RUNG 2 — EM with language-model feedback: alternate (a) Viterbi
+    re-segmentation of every word under the current inventory+mapping,
+    (b) mapping hill-climb on the new segmentation, (c) inventory
+    propose-and-test (swap low-usage groups for high-cohesion pool
+    candidates). The same P4/noise-floor adjudication applies.
+    OUTCOME (2026-07-16, logged): ALSO KILLED at prototype budget
+    (EM_OUTER=4, EM_PROPOSALS=6, EM_RESTARTS=4): P4 recovery 48% (kill
+    &lt; 50%), P4 gap +0.115 vs noise floor +0.082 (margin &lt; 0.1). The kill
+    missed by 2 points, so the pre-registered escalation is COMPUTE, not
+    model freedom. Red flag observed: Currier A scored +0.21 — &quot;better
+    than native Latin&quot; — impossible as a decode; the free mapping
+    memorized shared vocabulary between train and holdout LINES.
+  RUNG 3 — max strength: identical strict 1:1 model and rung-1/2
+    machinery, escalated on compute only, plus ONE structural fix:
+    FOLIO-LEVEL holdout replaces line-level at every rung. Justification
+    (logged 2026-07-17, before the run): same-corpus holdout lines share
+    vocabulary with training lines, which is exactly the leak behind the
+    rung-2 Currier A artifact; holding out whole folios (real folios for
+    the VMS; contiguous PSEUDO_FOLIO_LINES-line pseudo-folios for the
+    controls, which have no folio structure) closes it. The noise floor
+    is re-measured at this rung under the same holdout, per the rung-2
+    lesson that the floor rises with model power.
+    OVERNIGHT (max-strength) PROFILE — pre-registered 2026-07-17, run as
+    queue item N1 by tools/overnight.py, which splices these values over
+    the prototype defaults below (the defaults stay small so the web UI
+    and golden-reference path remain fast):
+      EM_OUTER=32, EM_PROPOSALS=48, EM_RESTARTS=16, RESTARTS=64,
+      TOP_LMS_RUNG2=3.
+    (Raised from an initial 16/24/8/32 registration BEFORE any run at
+    that budget: the default-budget run measures 93 s on an idle machine
+    — the 700 s in the old golden meta was a contended capture — so the
+    smaller profile would have finished in well under an hour, against
+    an approved overnight window of hours.)
+    INCIDENT LOG (2026-07-17, before the first completed rung-3 run):
+    the first max-strength launch crashed 24 min in, exposing a latent
+    rung-2 objective bug that only fires at high proposal counts: ll_of
+    scored an EMPTY count table 0.0 = &quot;perfect&quot;, so proposals that made
+    every training word unparseable were accepted as improvements until
+    the inventory collapsed (and an empty HOLDOUT would have faked
+    gap = +native ~ +3.3 — a catastrophic false positive). Fixed before
+    any completed rung-3 run: empty tables now score -1e9, total
+    collapse returns an explicit degenerate row (gap_bits = -999,
+    &#x27;degenerate&#x27;: true). Model, criteria, and budgets unchanged;
+    default-budget goldens verified byte-identical after the fix.
+    INCIDENT #2 (same day, second launch): crash at the same min() via a
+    different hole — the per-iteration usage snapshot goes stale as S
+    mutates across 48 accepted proposals, so the swap-candidate filter
+    can empty out while usage is non-empty. Fixed with an explicit
+    fallback to all of S (fires only where the old code crashed; goldens
+    again verified byte-identical). Numbers from the aborted second run
+    already confirm the ll_of fix works: P1 rung-2 scores +0.012
+    (~native, sane) and the rung-3 noise floor is visibly high (N2
+    char-shuffle +0.384) — the pre-registered margin criterion exists
+    for exactly this.
+    RUNG 3 OUTCOME (2026-07-17, completed run, 1.76 h): KILLED on BOTH
+    criteria — P4 recovery 39% (&lt; 50%) and P4 gap +0.856 vs noise floor
+    +1.007 (N3 grille), margin -0.150. Autopsy: the per-symbol objective
+    and metric are exploitable by coverage shrinkage — the best-scoring
+    rows excluded 65-99.6% of holdout words, so table gibberish outscored
+    the KNOWN cipher. An instrument kill, not a hypothesis kill.
+  RUNG 3b — coverage-penalized objective (registered 2026-07-17, after
+    rung 3&#x27;s kill and BEFORE any rung-3b run; approved direction: &quot;fix
+    the inverter&#x27;s objective and rerun it — tonight&#x27;s kill was an
+    instrument kill, not a hypothesis kill&quot;). Change, rung-2 machinery
+    only (rung 1 stays untouched as the historical reference rung):
+    every unparseable word is charged the LM floor for len(word)+1
+    transitions in BOTH the EM acceptance objective AND the reported
+    holdout bits/sym (pen_ll), so exclusion can never raise a score;
+    at full coverage the metric is identical to the old one. Kill
+    criteria and thresholds UNCHANGED: P4 recovery &gt;= 50% AND P4 gap
+    beats the same-rung noise floor by &gt;= 0.1 bits/sym, with the floor
+    measured under the same penalized metric. Overnight profile
+    unchanged (EM_OUTER=32, EM_PROPOSALS=48, EM_RESTARTS=16,
+    RESTARTS=64, TOP_LMS_RUNG2=3), run as queue item N1b by
+    tools/overnight.py. Prototype-budget rung-2 outputs change by
+    design; goldens re-captured at this registration (rung-1 output
+    verified unchanged).
+    Kill criteria unchanged: P4 planted-inventory recovery &gt;= 50% AND
+    P4&#x27;s holdout gap beats the same-rung noise floor (best of N2/N3/N4)
+    by &gt;= 0.1 bits/sym; otherwise no VMS row is interpreted. Homophones
+    and positional variants stay excluded unless P4 passes at strict
+    settings first and the justification is logged HERE before
+    escalating. Even then, a passing VMS row is only ever &quot;consistent
+    with a verbose cipher&quot;, never &quot;decoded&quot;.
+  RUNG 3c — LM-battery extension: OCCITAN added as a third candidate
+    plaintext language (registered 2026-07-19, before any rung-3c run).
+    MOTIVATION (F7 discipline — motivation only, never evidence):
+    Pelling 2026 reads the f17r marginalia as Occitan, converging with
+    the older Occitan zodiac-month-name argument; the ESTABLISHED
+    negative of ledger entry 11 is scoped to Latin/Italian, so Occitan
+    is the one historically motivated candidate the battery has never
+    tested. CORPUS: Mistral, Lou Pouèmo dóu Rose (Project Gutenberg
+    ebook 37854, cached in data/gutenberg_cache; the Provençal half is
+    extracted at runtime between the unambiguous markers
+    &#x27;_CANT PROUMIÉ_&#x27; and &#x27;CANT PROUMIÉ. --&#x27;; 28,634 words, 34-char
+    alphabet). DECLARED LIMITATION: 1897 Félibrige Provençal
+    orthography, not medieval Occitan; a medieval corpus (e.g.
+    Flamenca) is a future upgrade pending licensing. Machinery, model,
+    budgets, and kill criteria are UNCHANGED — 3 languages x 3 variants
+    = 9 LMs; the noise floor is re-measured over the extended battery
+    at the same rung. If the P4 gate passes, ledger entry 11&#x27;s scope
+    extends to the tested languages; nothing else changes.
+
+STRICT MODEL (rung 1 reference; rung 2 reuses 2-3):
+  1. SEGMENTATION (unsupervised, blind to any plaintext): BPE-style
+     merges learned on the corpus alone until the segment types covering
+     COVERAGE_TARGET of tokens number &lt;= TARGET_GROUPS. One segmentation
+     per corpus, reused against every language model — the segmenter
+     never sees plaintext feedback.
+  2. MAPPING: the top (alphabet-1) segment types map 1:1 to plaintext
+     letters (boundary maps to boundary). Words containing unmapped rare
+     types are excluded and the exclusion rate reported. Mapping found by
+     hill-climbing bigram log-likelihood under the candidate language
+     model, RESTARTS random restarts, greedy pair swaps to convergence.
+  3. SCORING: mapping optimized on TRAIN folios (1-HOLDOUT_FRAC of
+     lines, held out in whole-folio units — see holdout_split), scored
+     on HELD-OUT folios never seen by the optimizer. Metric = holdout
+     gap: decoded bits/symbol minus the language&#x27;s own native holdout
+     bits/symbol under the same LM. 0 = indistinguishable from real text.
+
+CANDIDATE PLAINTEXTS: Latin (Caesar) and Italian (Dante), each in three
+variants: plain, abjad (vowels stripped), abbrev4 (suspension-truncated
+to 4 chars) — 6 language models total.
+
+PRE-REGISTERED PROTOCOL AND KILL CRITERIA (before any VMS run):
+  A. POSITIVE CONTROL P4 (latin_verbose — we replay the exact planted
+     table from controls_foundry, verified by re-encoding P1 and
+     comparing to P4 byte-for-byte):
+     - INSTRUMENT KILL: if the segmenter recovers &lt; 50% of the planted
+       group inventory, or the P4 holdout gap (vs latin/plain LM) is not
+       clearly better than every negative control&#x27;s best gap, the
+       instrument cannot invert even a KNOWN verbose cipher at
+       manuscript-like statistics -&gt; no VMS row may be interpreted.
+     - Also graded (not kill): % of correctly-recovered groups that the
+       hill-climb maps to their TRUE letter.
+  B. NEGATIVE CONTROLS N2 (char-shuffle), N3 (grille), N4 (self-cite):
+     their best gaps across all 6 LMs define the NOISE FLOOR — what a
+     free 21-symbol mapping extracts from meaningless text.
+  C. VMS (full, Currier A, Currier B per constraint F8): reported as the
+     position of its best gap relative to the P4/P1 band vs the noise
+     floor. Vocabulary discipline: even a VMS gap beating all negatives
+     with margin is &quot;consistent with a verbose cipher&quot;, never &quot;decoded&quot;.
+DOF budget: TARGET_GROUPS, RESTARTS, and the 6 LMs are fixed here; the
+segmenter is unsupervised; mapping DOF = one 21-ish-symbol bijection per
+(corpus, LM) pair, identical for every corpus including the negatives.</pre>
+<h2>Parameters</h2><table><tr><th>name</th><th>default</th><th>type</th></tr>
+<tr><td><code>SEED</code></td><td><code>112</code></td><td>int</td></tr>
+<tr><td><code>TARGET_GROUPS</code></td><td><code>24</code></td><td>int</td></tr>
+<tr><td><code>COVERAGE_TARGET</code></td><td><code>0.95</code></td><td>float</td></tr>
+<tr><td><code>MAX_MERGES</code></td><td><code>400</code></td><td>int</td></tr>
+<tr><td><code>RESTARTS</code></td><td><code>12</code></td><td>int</td></tr>
+<tr><td><code>HOLDOUT_FRAC</code></td><td><code>0.2</code></td><td>float</td></tr>
+<tr><td><code>PSEUDO_FOLIO_LINES</code></td><td><code>24</code></td><td>int</td></tr>
+<tr><td><code>MIN_LINE_WORDS</code></td><td><code>2</code></td><td>int</td></tr>
+<tr><td><code>LANGS</code></td><td><code>[&#x27;latin&#x27;, &#x27;italian&#x27;, &#x27;occitan&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>VARIANTS</code></td><td><code>[&#x27;plain&#x27;, &#x27;abjad&#x27;, &#x27;abbrev4&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>EM_OUTER</code></td><td><code>4</code></td><td>int</td></tr>
+<tr><td><code>EM_PROPOSALS</code></td><td><code>6</code></td><td>int</td></tr>
+<tr><td><code>EM_RESTARTS</code></td><td><code>4</code></td><td>int</td></tr>
+<tr><td><code>POOL_MIN_FREQ</code></td><td><code>50</code></td><td>int</td></tr>
+<tr><td><code>POOL_MAX_LEN</code></td><td><code>4</code></td><td>int</td></tr>
+<tr><td><code>TOP_LMS_RUNG2</code></td><td><code>2</code></td><td>int</td></tr>
+</table>
+<h2>Golden output (PYTHONHASHSEED=0)</h2><details><summary>show</summary><pre>============================================================================
+VERBOSE CIPHER INVERSION — strict 1:1 ladder (folio-level holdout)
+============================================================================
+seed=112 target_groups=24 restarts=12 holdout=0.2 (whole folios; controls: pseudo-folios of 24 lines)
+EM budget: outer=4 proposals=6 em_restarts=4 top_lms_rung2=2 objective=coverage-penalized (rung 3b)
+  LM latin/plain    alphabet=24 native holdout=3.308 bits/sym
+  LM latin/abjad    alphabet=18 native holdout=3.111 bits/sym
+  LM latin/abbrev4  alphabet=24 native holdout=3.300 bits/sym
+  LM italian/plain    alphabet=26 native holdout=3.127 bits/sym
+  LM italian/abjad    alphabet=21 native holdout=2.880 bits/sym
+  LM italian/abbrev4  alphabet=26 native holdout=3.129 bits/sym
+  LM occitan/plain    alphabet=34 native holdout=3.157 bits/sym
+  LM occitan/abjad    alphabet=20 native holdout=2.937 bits/sym
+  LM occitan/abbrev4  alphabet=33 native holdout=3.105 bits/sym
+
+  planted P4 table replayed and VERIFIED (23 groups)
+
+  P4_latin_verbose: segmenter recovered 13% of the planted group inventory
+  P4_latin_verbose   best LM latin/abjad     holdout gap -0.773 bits/sym  (0 = native text; more negative = less language-like)
+  P1_latin_plain     best LM latin/plain     holdout gap +0.010 bits/sym  (0 = native text; more negative = less language-like)
+  N2_char_shuffle    best LM latin/abjad     holdout gap -1.407 bits/sym  (0 = native text; more negative = less language-like)
+  N3_grille          best LM latin/abjad     holdout gap -0.660 bits/sym  (0 = native text; more negative = less language-like)
+  N4_self_citation   best LM latin/abjad     holdout gap -0.781 bits/sym  (0 = native text; more negative = less language-like)
+  VMS_full           best LM latin/abbrev4   holdout gap -0.258 bits/sym  (0 = native text; more negative = less language-like)
+  VMS_currier_A      best LM latin/plain     holdout gap -0.150 bits/sym  (0 = native text; more negative = less language-like)
+  VMS_currier_B      best LM latin/plain     holdout gap -0.252 bits/sym  (0 = native text; more negative = less language-like)
+
+  ADJUDICATION (pre-registered):
+    P4 inventory recovery: 13% (kill &lt; 50%)
+    P4 mapping accuracy on latin/plain: 0%
+    P4 best gap -0.773 vs noise floor -0.660 (best negative)
+    RUNG 1 KILLED: blind segmentation cannot invert a known verbose cipher. Escalating to rung 2 (EM with LM feedback) per the pre-registered ladder.
+  RUNG2 P4_latin_verbose   best LM latin/plain     holdout gap -0.886  [recovery 52%, mapping 48% on latin/plain]
+  RUNG2 P1_latin_plain     best LM latin/plain     holdout gap -1.181
+  RUNG2 N2_char_shuffle    best LM latin/abjad     holdout gap -0.997
+  RUNG2 N3_grille          best LM latin/abjad     holdout gap -0.914
+  RUNG2 N4_self_citation   best LM latin/abjad     holdout gap -0.962
+  RUNG2 VMS_full           best LM latin/abbrev4   holdout gap -1.012
+  RUNG2 VMS_currier_A      best LM latin/abbrev4   holdout gap -0.933
+  RUNG2 VMS_currier_B      best LM latin/abbrev4   holdout gap -0.940
+
+  RUNG 2 ADJUDICATION (pre-registered):
+    P4 inventory recovery: 52% (kill &lt; 50%), mapping accuracy: 48%
+    P4 best gap -0.886 (latin/plain) vs noise floor -0.914
+    RUNG 2 KILLED at this budget (see EM budget line above): EM cannot invert the known cipher clearly better than noise. VMS rows NOT interpretable; the pre-registered escalation policy (docstring ladder) is compute first, never model freedom.
+
+  -&gt; results/verbose_cipher_inversion.json
+</pre></details><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>bc53723</code>. 
+To run any test with your own parameters, clone
+<a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
+(<code>python webui/server.py</code>). All numbers reproduce at
+PYTHONHASHSEED=0.</footer></main></body></html>

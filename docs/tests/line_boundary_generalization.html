@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>line_boundary_generalization — VAIS</title><style>
+:root { --bg:#ffffff; --fg:#1a1a1a; --muted:#666; --line:#ddd;
+        --code:#f5f5f5; --accent:#7a4a1e; --warn:#a33; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#141414; --fg:#ddd; --muted:#999; --line:#333;
+          --code:#1e1e1e; --accent:#d9a05b; --warn:#e77; } }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--fg);
+       font:16px/1.55 Georgia, 'Times New Roman', serif; }
+nav { border-bottom:1px solid var(--line); padding:.7em 1.2em;
+      font-family: system-ui, sans-serif; font-size:.9em; }
+nav a { color:var(--accent); text-decoration:none; margin-right:1.2em; }
+main { max-width: 62em; margin: 0 auto; padding: 1.5em 1.2em 4em; }
+h1,h2,h3 { font-family: system-ui, sans-serif; line-height:1.25; }
+h1 { font-size:1.7em; } h2 { font-size:1.3em; margin-top:2em; }
+a { color: var(--accent); }
+code, pre { font-family: ui-monospace, Consolas, monospace;
+            font-size:.86em; background:var(--code); }
+code { padding:.1em .3em; border-radius:3px; }
+pre { padding: .9em; overflow-x:auto; border:1px solid var(--line);
+      border-radius:4px; line-height:1.4; }
+table { border-collapse: collapse; margin: 1em 0; font-size:.92em;
+        display:block; overflow-x:auto; }
+th, td { border:1px solid var(--line); padding:.35em .6em;
+         text-align:left; vertical-align:top; }
+th { font-family: system-ui, sans-serif; background:var(--code); }
+blockquote { border-left:3px solid var(--accent); margin:1em 0;
+             padding:.2em 1em; color:var(--muted); }
+.muted { color:var(--muted); font-size:.9em; }
+.tag { font-family: system-ui, sans-serif; font-size:.75em;
+       border:1px solid var(--line); border-radius:3px;
+       padding:.05em .45em; margin-left:.5em; }
+.tag.sug { border-color:var(--warn); color:var(--warn); }
+details summary { cursor:pointer; font-family: system-ui, sans-serif; }
+footer { border-top:1px solid var(--line); margin-top:3em;
+         padding-top:1em; font-size:.85em; color:var(--muted); }
+</style></head><body>
+<nav><a href="../index.html">VAIS</a><a href="../catalog.html">Catalog</a>
+<a href="../research.html">Research</a><a href="../reports.html">Reports</a>
+<a href="https://github.com/Vineyardcode/vais">GitHub</a></nav>
+<main><h1>line_boundary_generalization</h1>
+<p class="muted">scripts/line_boundary_generalization.py</p>
+<pre>GENERALIZATION AND LINE BOUNDARY TESTS
+===================================================
+
+structure_cross_validation showed word-level bigrams don&#x27;t generalize. Does the
+morphological grammar generalize? Are lines syntactic units?
+
+Sub-analyses:
+  A) CROSS-VALIDATED MORPHOLOGICAL MI — Does suffix→prefix MI
+       survive on held-out data?
+
+  B) CROSS-VALIDATED CHARACTER MI — Does last_char→first_char MI
+       generalize?
+
+  C) LINE BOUNDARY TEST — Within-line vs cross-line transitions.
+
+  D) JACKKNIFE STABILITY — Do key z-scores survive leave-k-out?
+
+  E) THE qo-WORD NETWORK — Among -dy→qo transitions, is the
+       specific qo-word predicted by the predecessor?</pre>
+<h2>Parameters</h2><table><tr><th>name</th><th>default</th><th>type</th></tr>
+<tr><td><code>ALL_GALLOWS</code></td><td><code>[&#x27;cth&#x27;, &#x27;ckh&#x27;, &#x27;cph&#x27;, &#x27;cfh&#x27;, &#x27;tch&#x27;, &#x27;kch&#x27;, &#x27;pch&#x27;, &#x27;fch&#x27;, &#x27;tsh&#x27;, &#x27;ksh&#x27;, &#x27;psh&#x27;, &#x27;fsh&#x27;, &#x27;t&#x27;, …</code></td><td>json</td></tr>
+<tr><td><code>SUFFIXES</code></td><td><code>[&#x27;aiin&#x27;, &#x27;ain&#x27;, &#x27;iin&#x27;, &#x27;in&#x27;, &#x27;ar&#x27;, &#x27;or&#x27;, &#x27;al&#x27;, &#x27;ol&#x27;, &#x27;dy&#x27;, &#x27;y&#x27;]</code></td><td>json</td></tr>
+<tr><td><code>GRAM_PREFIXES</code></td><td><code>[&#x27;qo&#x27;, &#x27;so&#x27;, &#x27;do&#x27;, &#x27;q&#x27;, &#x27;o&#x27;, &#x27;d&#x27;, &#x27;y&#x27;]</code></td><td>json</td></tr>
+</table>
+<h2>Golden output (PYTHONHASHSEED=0)</h2><details><summary>show</summary><pre>Loading lines...
+  4508 lines, 35747 tokens, 3319 types
+
+======================================================================
+A: CROSS-VALIDATED MORPHOLOGICAL MI
+    Does suffix→prefix MI survive on held-out data?
+======================================================================
+
+  Within-sample MI(sfx→gpfx):
+  Full:  0.0833 bits
+  Even:  0.0851 bits
+  Odd:   0.0844 bits
+
+  Marginal H(gpfx) = 1.9627 bits
+
+  Cross-entropy H_cross(gpfx | sfx):
+  Full on Full: 1.8796 bits
+  Even on Odd:  1.8871 bits
+  Odd on Even:  1.8805 bits
+
+  Cross-validated MI:
+  Even→Odd: 0.0756 bits
+  Odd→Even: 0.0822 bits
+  Mean:     0.0789 bits
+  Within:   0.0833 bits
+  Retention: 94.7%
+
+  Shuffled cross-val MI: 0.0203 ± 0.0026
+  z-score: 22.1
+
+======================================================================
+B: CROSS-VALIDATED CHARACTER MI
+    Does last_char→first_char MI generalize?
+======================================================================
+
+  Within-sample MI(last_char, first_char):
+  Full: 0.1960
+  Even: 0.2086
+  Odd:  0.1953
+
+  Cross-validated character MI: 0.1675
+  Within-sample:                0.1960
+  Retention:                    85.5%
+
+======================================================================
+C: LINE BOUNDARY TEST
+    Within-line vs cross-line transitions
+======================================================================
+
+  Within-line MI(sfx→gpfx):  0.0833 bits (N=31239)
+  Cross-line MI(sfx→gpfx):   0.0106 bits (N=4507)
+  Cross/within ratio:        0.127
+
+  Shuffled cross-line MI: 0.0115 ± 0.0021
+  Cross-line z-score:    -0.5
+
+  Key transitions, within vs cross:
+         Sfx→Gpfx    Within%     Cross%      Ratio
+            dy→qo      33.5%      15.0%      0.45x
+             dy→X      33.1%      31.3%      0.94x
+             dy→o      21.8%      21.1%      0.97x
+             dy→d       7.0%      15.9%      2.29x
+             y→qo      21.9%      14.1%      0.64x
+              y→X      40.7%      33.6%      0.82x
+              y→o      21.7%      18.6%      0.86x
+              y→d      10.7%      15.3%      1.44x
+             X→qo       5.4%      11.0%      2.02x
+              X→X      63.7%      34.1%      0.54x
+              X→o      21.0%      21.0%      1.00x
+              X→d       6.0%      15.1%      2.52x
+          aiin→qo       8.7%      13.0%      1.48x
+           aiin→X      46.9%      33.2%      0.71x
+           aiin→o      31.1%      23.0%      0.74x
+           aiin→d       6.6%      14.1%      2.12x
+            ol→qo       9.9%      15.2%      1.54x
+             ol→X      53.3%      35.3%      0.66x
+             ol→o      21.5%      22.8%      1.06x
+             ol→d      10.9%      12.0%      1.10x
+
+  Character-level:
+  Within-line MI(last,first): 0.1960 (N=31239)
+  Cross-line MI(last,first):  0.0404 (N=4507)
+  Cross/within ratio:         0.206
+
+======================================================================
+D: JACKKNIFE STABILITY
+    Do key findings survive leave-10%-out?
+======================================================================
+
+  Jackknife results (leave 10% out, 20 trials):
+
+  Morph MI(sfx→gpfx):
+    Full: 0.0833
+    Jack: 0.0832 ± 0.0009
+    Min:  0.0822
+
+  Char MI(last,first):
+    Full: 0.1960
+    Jack: 0.1964 ± 0.0025
+    Min:  0.1899
+
+  L→R asymmetry (H(sfx|gpfx) - H(gpfx|sfx)):
+    Jack: 1.0464 ± 0.0031
+    All &gt; 0? True (L→R in all samples)
+
+======================================================================
+E: THE qo-WORD NETWORK
+    Among -dy→qo transitions, is qo-word predicted by predecessor?
+======================================================================
+
+  -dy → qo- transitions: 1847
+  Unique -dy words: 160
+  Unique qo- words: 134
+
+  H(-dy word) = 4.738
+  H(qo- word) = 4.394
+  MI(dy_word, qo_word) = 1.0961
+  MI/H(qo) = 0.2494
+
+  Shuffled MI: 0.9272 ± 0.0203
+  Excess: 0.1689
+  z-score: 8.3
+
+  Top -dy → qo- word pairs:
+          DY word         QO word    Count      O/E
+            qoedy           qoedy      116    1.40x
+            shedy           qoedy       71    1.07x
+             oedy           qoedy       56    1.11x
+            chedy           qoedy       46    0.80x
+            chedy            qoey       37    1.40x
+            qoedy            qoey       36    0.94x
+            shedy            qoey       33    1.08x
+            shedy          qoaiin       27    1.33x
+            chedy           qoain       26    1.72x
+              edy           qoedy       26    1.10x
+             oedy            qoey       21    0.90x
+            chedy          qoaiin       21    1.20x
+            qoedy           qoain       20    0.92x
+             oedy             qoy       19    1.62x
+            chedy            qoar       19    1.59x
+
+  H(qo_word | dy_word) for common -dy words:
+            qoedy N= 325, H=3.885, top: qoedy(116), qoey(36), qoain(20)
+            shedy N= 261, H=3.967, top: qoedy(71), qoey(33), qoaiin(27)
+            chedy N= 225, H=3.824, top: qoedy(46), qoey(37), qoain(26)
+             oedy N= 199, H=3.950, top: qoedy(56), qoey(21), qoy(19)
+              edy N=  93, H=3.435, top: qoedy(26), qoey(15), qody(10)
+              ody N=  41, H=3.700, top: qoedy(8), qody(5), qoy(5)
+             qody N=  39, H=3.204, top: qool(9), qoy(6), qody(5)
+           lchedy N=  39, H=3.880, top: qoey(7), qoedy(7), qoy(3)
+            oledy N=  35, H=2.796, top: qoedy(14), qoaiin(5), qoey(4)
+             chdy N=  30, H=3.298, top: qoedy(6), qoaiin(4), qoar(4)
+
+======================================================================
+line_boundary_generalization COMPLETE
+======================================================================
+</pre></details><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>bc53723</code>. 
+To run any test with your own parameters, clone
+<a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
+(<code>python webui/server.py</code>). All numbers reproduce at
+PYTHONHASHSEED=0.</footer></main></body></html>
