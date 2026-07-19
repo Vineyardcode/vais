@@ -296,3 +296,30 @@
 [20:56:20] report -> C:\projects\vais\results\overnight_2026-07-19_report.md
 [20:56:20] RESEARCH.md: section appended (working tree; committed only to the overnight branch)
 [20:56:20] committing results to branch overnight/2026-07-19 ...
+[20:56:20] committed d11b2bf79d41 on overnight/2026-07-19 (main untouched)
+[20:56:20] done, exit 0
+[21:16:48] ====================================================================
+[21:16:48] overnight runner start 2026-07-19 21:16:48  smoke=False PYTHONHASHSEED=0
+[21:16:48] code at d75c858 (dirty tree), python 3.13.3
+[21:16:48] queue item N6e: S3 rung 3: cross-hand blind test — does an A-measured table place B's lines?
+[21:16:48] profile: {}  timeout=3600s
+  | ============================================================================
+  | LINE-DISCIPLINE CROSS-HAND BLIND TEST (S3 rung 3) — A-table on B (N6e)
+  | ============================================================================
+  | seed=120 (inherited; cross-checked vs N6); table source: CURRIER A ONLY
+  |   corpora: B 2522 lines (placed), A 1310 lines (table source)
+  |   B features reproduce the N6 record  VERIFIED
+  |   bars reproduce N6 (line 7.489, unfitted 4.092)  VERIFIED
+  |   LAMBDA (A-table on B) fitted on interior gain: 1.75 (|err| 0.0001; B's own table needed 1.25) — FROZEN
+  |   G1e (A-table)  D_line 8.282  D_unfitted 1.194  (B-table full: 6.645)
+  |   per-axis transfer (Spearman, A-table vs B-table): axis1 +0.923  axis2 +0.830  axis3 -0.462
+  | 
+  |   ADJUDICATION (pre-registered):
+  |     NOT TRANSFERABLE: the A-measured table does not close B's line group at any knob setting — the discipline's shape is (at least partly) hand-specific. Corpse logged with the per-axis transfer profile above.
+  | 
+  |   -> results/line_discipline_transfer.json
+[21:18:31] experiment finished rc=0 in 103s (0.03h)
+[21:18:31] adjudication: not_transferable; G1e D_line 8.282 vs bar 7.489 (B-table 6.645); transfer axis1 +0.92 axis2 +0.83 axis3 -0.46; lambda 1.75 vs 1.25
+[21:18:31] report -> C:\projects\vais\results\overnight_2026-07-19_report.md
+[21:18:31] RESEARCH.md: section appended (working tree; committed only to the overnight branch)
+[21:18:31] committing results to branch overnight/2026-07-19 ...

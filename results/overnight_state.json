@@ -117,5 +117,12 @@
   "verdict": "S3 rung 2d: THREE_AXES_SUFFICIENT",
   "suggestive": true,
   "summary": "three_axes_sufficient; G1d D_line 6.882 vs bar 7.489 (ladder: rank-1 9.529, rank-2 8.12, full 6.645), var3 98.4%"
+ },
+ "N6e": {
+  "status": "completed",
+  "date": "2026-07-19",
+  "verdict": "S3 rung 3: NOT_TRANSFERABLE",
+  "suggestive": false,
+  "summary": "not_transferable; G1e D_line 8.282 vs bar 7.489 (B-table 6.645); transfer axis1 +0.92 axis2 +0.83 axis3 -0.46; lambda 1.75 vs 1.25"
  }
 }
