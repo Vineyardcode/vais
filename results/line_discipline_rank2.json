@@ -1,0 +1,153 @@
+{
+ "params": {
+  "seed": 120,
+  "s7_seed": 115,
+  "n4_seed": 118,
+  "n_gen_seeds": 5,
+  "n_repl": 8,
+  "lambda_grid": [
+   0.25,
+   0.5,
+   0.75,
+   1.0,
+   1.25,
+   1.5,
+   1.75,
+   2.0,
+   2.25,
+   2.5,
+   2.75,
+   3.0,
+   3.25,
+   3.5,
+   3.75,
+   4.0
+  ],
+  "class_k": 12,
+  "s_floor": 0.0001,
+  "min_line_words": 5,
+  "holdout_frac": 0.2,
+  "alpha": 0.5,
+  "line_group": [
+   "line_init_jsd",
+   "line_final_jsd",
+   "interior_gain",
+   "r_pos",
+   "r_bi"
+  ],
+  "unfitted_group": [
+   "h2_ratio",
+   "adj_dup",
+   "adj_near"
+  ],
+  "n6_json": "line_discipline_tournament.json",
+  "n6b_json": "line_discipline_compression.json",
+  "n5_json": "line_ordinal_rank_test.json"
+ },
+ "results": {
+  "B": {
+   "line_init_jsd": 0.2128,
+   "line_final_jsd": 0.1063,
+   "interior_gain": 0.0513,
+   "r_pos": 0.0406,
+   "r_bi": 0.0496,
+   "h2_ratio": 0.5141,
+   "adj_dup": 0.009,
+   "adj_near": 0.0341,
+   "ttr_5000": 0.355,
+   "zipf_alpha": 0.9843,
+   "mean_wlen": 5.0635
+  },
+  "bar": {
+   "line": 7.489,
+   "unfitted": 4.092
+  },
+  "var_share2": 0.9695,
+  "axes": {
+   "axis1": {
+    "#": 0.247,
+    "a": 0.9937,
+    "ch": 0.7826,
+    "d": -0.3868,
+    "k": 0.3324,
+    "l": 0.3847,
+    "o": 0.3392,
+    "p": -1.2848,
+    "q": 0.1412,
+    "s": -0.7601,
+    "sh": 0.416,
+    "t": -0.6719,
+    "y": -0.5332
+   },
+   "axis2": {
+    "#": 0.5845,
+    "a": 0.3661,
+    "ch": -0.2046,
+    "d": 0.4781,
+    "k": -0.2139,
+    "l": 0.2928,
+    "o": 0.0974,
+    "p": -0.183,
+    "q": -0.372,
+    "s": 0.2988,
+    "sh": -0.8675,
+    "t": -0.1446,
+    "y": -0.1321
+   },
+   "profile1": {
+    "p1": -2.1143,
+    "p2": 0.6271,
+    "m1": 0.3602,
+    "m2": 0.3316,
+    "m3": 0.1444,
+    "pL-1": 0.275,
+    "pL": 0.3761
+   },
+   "profile2": {
+    "p1": -0.0751,
+    "p2": -0.71,
+    "m1": -0.3698,
+    "m2": -0.1375,
+    "m3": 0.0245,
+    "pL-1": 0.1495,
+    "pL": 1.1184
+   }
+  },
+  "lambda": 1.75,
+  "G1c": {
+   "features": {
+    "line_init_jsd": 0.2861,
+    "line_final_jsd": 0.0018,
+    "interior_gain": 0.0538,
+    "r_pos": 0.0555,
+    "r_bi": 0.0461,
+    "h2_ratio": 0.5141,
+    "adj_dup": 0.0099,
+    "adj_near": 0.0321,
+    "ttr_5000": 0.3552,
+    "zipf_alpha": 0.9843,
+    "mean_wlen": 5.0635
+   },
+   "dist": {
+    "line": 8.12,
+    "unfitted": 2.421
+   }
+  },
+  "n6_g1_dist": {
+   "line": 6.645,
+   "unfitted": 1.98
+  },
+  "n6b_g1b_dist": {
+   "line": 9.529,
+   "unfitted": 2.0
+  },
+  "correlations": {
+   "axis2_vs_n5_mean_ranks": 0.8,
+   "axis1_vs_log_class_freq": 0.648,
+   "axis2_vs_log_class_freq": -0.22,
+   "axis1_vs_gallows_initial": -0.593,
+   "axis2_vs_gallows_initial": -0.577
+  }
+ },
+ "verdict": "still_not_compressible"
+}

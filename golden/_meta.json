@@ -1292,5 +1292,14 @@
   "results_files_touched": [
    "line_discipline_compression.json"
   ]
+ },
+ "line_discipline_rank2": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 66.81,
+  "stdout_bytes": 1390,
+  "results_files_touched": [
+   "line_discipline_rank2.json"
+  ]
  }
 }
