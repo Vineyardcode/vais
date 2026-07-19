@@ -113,3 +113,66 @@
 [03:41:23] report -> C:\projects\vais\results\overnight_2026-07-19_report.md
 [03:41:23] RESEARCH.md: section appended (working tree; committed only to the overnight branch)
 [03:41:23] committing results to branch overnight/2026-07-19 ...
+[03:41:23] committed eff7854bf26d on overnight/2026-07-19 (main untouched)
+[03:41:23] done, exit 0
+[13:37:02] ====================================================================
+[13:37:02] overnight runner start 2026-07-19 13:37:02  smoke=False PYTHONHASHSEED=0
+[13:37:02] code at 54a1774 (clean tree), python 3.13.3
+[13:37:02] queue item N1c: Verbose cipher inversion, rung 3c: Occitan LM extension (max-strength budget, coverage-penalized objective)
+[13:37:02] profile: {'EM_OUTER': 32, 'EM_PROPOSALS': 48, 'EM_RESTARTS': 16, 'RESTARTS': 64, 'TOP_LMS_RUNG2': 3}  timeout=43200s
+[13:37:02] spliced overrides {'EM_OUTER': 32, 'EM_PROPOSALS': 48, 'EM_RESTARTS': 16, 'RESTARTS': 64, 'TOP_LMS_RUNG2': 3} -> _overnight_verbose_cipher_inversion.py
+  | ============================================================================
+  | VERBOSE CIPHER INVERSION — strict 1:1 ladder (folio-level holdout)
+  | ============================================================================
+  | seed=112 target_groups=24 restarts=64 holdout=0.2 (whole folios; controls: pseudo-folios of 24 lines)
+  | EM budget: outer=32 proposals=48 em_restarts=16 top_lms_rung2=3 objective=coverage-penalized (rung 3b)
+  |   LM latin/plain    alphabet=24 native holdout=3.308 bits/sym
+  |   LM latin/abjad    alphabet=18 native holdout=3.111 bits/sym
+  |   LM latin/abbrev4  alphabet=24 native holdout=3.300 bits/sym
+  |   LM italian/plain    alphabet=26 native holdout=3.127 bits/sym
+  |   LM italian/abjad    alphabet=21 native holdout=2.880 bits/sym
+  |   LM italian/abbrev4  alphabet=26 native holdout=3.129 bits/sym
+  |   LM occitan/plain    alphabet=34 native holdout=3.157 bits/sym
+  |   LM occitan/abjad    alphabet=20 native holdout=2.937 bits/sym
+  |   LM occitan/abbrev4  alphabet=33 native holdout=3.105 bits/sym
+  | 
+  |   planted P4 table replayed and VERIFIED (23 groups)
+  | 
+  |   P4_latin_verbose: segmenter recovered 13% of the planted group inventory
+  |   P4_latin_verbose   best LM latin/abjad     holdout gap -0.773 bits/sym  (0 = native text; more negative = less language-like)
+  |   P1_latin_plain     best LM latin/plain     holdout gap +0.010 bits/sym  (0 = native text; more negative = less language-like)
+  |   N2_char_shuffle    best LM latin/abjad     holdout gap -1.407 bits/sym  (0 = native text; more negative = less language-like)
+  |   N3_grille          best LM latin/abjad     holdout gap -0.660 bits/sym  (0 = native text; more negative = less language-like)
+  |   N4_self_citation   best LM latin/abjad     holdout gap -0.772 bits/sym  (0 = native text; more negative = less language-like)
+  |   VMS_full           best LM latin/abbrev4   holdout gap -0.258 bits/sym  (0 = native text; more negative = less language-like)
+  |   VMS_currier_A      best LM latin/abbrev4   holdout gap -0.108 bits/sym  (0 = native text; more negative = less language-like)
+  |   VMS_currier_B      best LM latin/plain     holdout gap -0.183 bits/sym  (0 = native text; more negative = less language-like)
+  | 
+  |   ADJUDICATION (pre-registered):
+  |     P4 inventory recovery: 13% (kill < 50%)
+  |     P4 mapping accuracy on latin/plain: 0%
+  |     P4 best gap -0.773 vs noise floor -0.660 (best negative)
+  |     RUNG 1 KILLED: blind segmentation cannot invert a known verbose cipher. Escalating to rung 2 (EM with LM feedback) per the pre-registered ladder.
+  |   RUNG2 P4_latin_verbose   best LM latin/plain     holdout gap -0.512  [recovery 65%, mapping 57% on latin/plain]
+  |   RUNG2 P1_latin_plain     best LM latin/abbrev4   holdout gap -1.129
+  |   RUNG2 N2_char_shuffle    best LM latin/abjad     holdout gap -0.994
+  |   RUNG2 N3_grille          best LM latin/abjad     holdout gap -0.862
+  |   RUNG2 N4_self_citation   best LM latin/abjad     holdout gap -0.922
+  |   RUNG2 VMS_full           best LM latin/abbrev4   holdout gap -0.880
+  |   RUNG2 VMS_currier_A      best LM latin/plain     holdout gap -0.842
+  |   RUNG2 VMS_currier_B      best LM latin/abbrev4   holdout gap -0.895
+  | 
+  |   RUNG 2 ADJUDICATION (pre-registered):
+  |     P4 inventory recovery: 65% (kill < 50%), mapping accuracy: 57%
+  |     P4 best gap -0.512 (latin/plain) vs noise floor -0.862
+  |     rung 2 instrument OK.
+  |     VMS_full: best gap -0.880 (latin/abbrev4) — within the noise floor -> nothing beyond free-mapping noise at this rung
+  |     VMS_currier_A: best gap -0.842 (latin/plain) — within the noise floor -> nothing beyond free-mapping noise at this rung
+  |     VMS_currier_B: best gap -0.895 (latin/abbrev4) — within the noise floor -> nothing beyond free-mapping noise at this rung
+  | 
+  |   -> results/verbose_cipher_inversion.json
+[15:11:12] experiment finished rc=0 in 5650s (1.57h)
+[15:11:12] adjudication: INSTRUMENT PASSED; P4 recovery 65%, margin +0.350 (need >= +0.100)
+[15:11:12] report -> C:\projects\vais\results\overnight_2026-07-19_report.md
+[15:11:12] RESEARCH.md: section appended (working tree; committed only to the overnight branch)
+[15:11:12] committing results to branch overnight/2026-07-19 ...

@@ -115,3 +115,38 @@ Gate: min centroid separation 0.1436 vs required 0.0114 → PASS. B distances: f
 **VERDICT: REPLICATED — the intra-line class-ordering signal survives a methodologically disjoint instrument (B p < 0.005; and observationally, hand A also rejects under this more sensitive statistic). The shared-implementation-DNA objection is answered; author-level independence remains open and travels with the finding.**
 
 B class mean interior ranks (early → late): sh 0.457, q 0.474, k 0.481, l 0.497, ch 0.498, y 0.500, o 0.518, d 0.522, t 0.530, s 0.531, a 0.536, r 0.561 — coherent with the rung-4 characterization (q-early), and the EVA-parsed sh class emerges as the earliest carrier.
+
+## Run 2026-07-19 13:37:02 — N1c
+**Verbose cipher inversion, rung 3c: Occitan LM extension (max-strength budget, coverage-penalized objective)**
+- script: `scripts/verbose_cipher_inversion.py`
+- profile: `{'EM_OUTER': 32, 'EM_PROPOSALS': 48, 'EM_RESTARTS': 16, 'RESTARTS': 64, 'TOP_LMS_RUNG2': 3}`
+- log: `overnight_2026-07-19.log`; results JSON: `verbose_cipher_inversion.json`; branch: `overnight/2026-07-19`
+- runtime: 5650s (1.57 h), exit code 0
+
+**Pre-registered criteria** (verbose_cipher_inversion.py docstring; RESEARCH.md Phase 4b): instrument passes only if BOTH hold — P4 planted-inventory recovery >= 50% AND P4 best holdout gap beats the same-rung noise floor by >= 0.1 bits/sym. VMS rows are interpreted only if the instrument passes, and only as "consistent with", never "decoded".
+
+| pre-registered check | threshold | actual | verdict |
+|---|---|---|---|
+| P4 inventory recovery (rung 2, latin/plain LM) | >= 50% | 65% (mapping accuracy 57%) | PASS |
+| P4 gap − noise floor (rung 2) | >= +0.100 bits/sym | +0.350 (gap -0.512 via latin/plain, floor -0.862) | PASS |
+
+Rung-2 holdout gaps (folio-level holdout, this budget):
+
+| corpus | best LM | gap (bits/sym) | gap − floor | holdout words excluded |
+|---|---|---|---|---|
+| P4_latin_verbose | latin/plain | -0.512 | +0.350 | 12.9% |
+| P1_latin_plain | latin/abbrev4 | -1.129 | -0.266 | 74.4% |
+| N2_char_shuffle | latin/abjad | -0.994 | -0.131 | 87.8% |
+| N3_grille | latin/abjad | -0.862 | +0.000 | 70.3% |
+| N4_self_citation | latin/abjad | -0.922 | -0.060 | 78.3% |
+| VMS_full | latin/abbrev4 | -0.880 | -0.018 | 43.8% |
+| VMS_currier_A | latin/plain | -0.842 | +0.020 | 48.3% |
+| VMS_currier_B | latin/abbrev4 | -0.895 | -0.033 | 49.4% |
+
+Rung 1 for the record: P4 segmenter inventory recovery 13%, best gap -0.773 vs rung-1 noise floor -0.660.
+
+**VERDICT: INSTRUMENT PASSED** — the known cipher was inverted above the noise floor at this rung. VMS rows, read under the pre-registered vocabulary:
+
+- VMS_full: best gap -0.880 (latin/abbrev4) — within the noise floor: nothing beyond free-mapping noise at this rung (a clean negative for the strict 1:1 verbose-cipher family under these 6 LMs).
+- VMS_currier_A: best gap -0.842 (latin/plain) — within the noise floor: nothing beyond free-mapping noise at this rung (a clean negative for the strict 1:1 verbose-cipher family under these 6 LMs).
+- VMS_currier_B: best gap -0.895 (latin/abbrev4) — within the noise floor: nothing beyond free-mapping noise at this rung (a clean negative for the strict 1:1 verbose-cipher family under these 6 LMs).

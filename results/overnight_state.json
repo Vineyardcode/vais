@@ -82,5 +82,12 @@
   "verdict": "S7-R re-implementation: REPLICATED",
   "suggestive": true,
   "summary": "replicated; B p=0.0010, A p=0.0010, PREC p=0.0010"
+ },
+ "N1c": {
+  "status": "completed",
+  "date": "2026-07-19",
+  "verdict": "INSTRUMENT PASSED",
+  "suggestive": false,
+  "summary": "INSTRUMENT PASSED; P4 recovery 65%, margin +0.350 (need >= +0.100)"
  }
 }
