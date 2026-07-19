@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Credits — VAIS - Voynich Analysis Interactive Suite</title><style>
+:root { --bg:#ffffff; --fg:#1a1a1a; --muted:#666; --line:#ddd;
+        --code:#f5f5f5; --accent:#7a4a1e; --warn:#a33; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#141414; --fg:#ddd; --muted:#999; --line:#333;
+          --code:#1e1e1e; --accent:#d9a05b; --warn:#e77; } }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--fg);
+       font:16px/1.55 Georgia, 'Times New Roman', serif; }
+nav { border-bottom:1px solid var(--line); padding:.7em 1.2em;
+      font-family: system-ui, sans-serif; font-size:.9em; }
+nav a { color:var(--accent); text-decoration:none; margin-right:1.2em; }
+main { max-width: 62em; margin: 0 auto; padding: 1.5em 1.2em 4em; }
+h1,h2,h3 { font-family: system-ui, sans-serif; line-height:1.25; }
+h1 { font-size:1.7em; } h2 { font-size:1.3em; margin-top:2em; }
+a { color: var(--accent); }
+code, pre { font-family: ui-monospace, Consolas, monospace;
+            font-size:.86em; background:var(--code); }
+code { padding:.1em .3em; border-radius:3px; }
+pre { padding: .9em; overflow-x:auto; border:1px solid var(--line);
+      border-radius:4px; line-height:1.4; }
+table { border-collapse: collapse; margin: 1em 0; font-size:.92em;
+        display:block; overflow-x:auto; }
+th, td { border:1px solid var(--line); padding:.35em .6em;
+         text-align:left; vertical-align:top; }
+th { font-family: system-ui, sans-serif; background:var(--code); }
+blockquote { border-left:3px solid var(--accent); margin:1em 0;
+             padding:.2em 1em; color:var(--muted); }
+.muted { color:var(--muted); font-size:.9em; }
+.tag { font-family: system-ui, sans-serif; font-size:.75em;
+       border:1px solid var(--line); border-radius:3px;
+       padding:.05em .45em; margin-left:.5em; }
+.tag.sug { border-color:var(--warn); color:var(--warn); }
+details summary { cursor:pointer; font-family: system-ui, sans-serif; }
+input.param { font-family: ui-monospace, Consolas, monospace;
+              font-size:.85em; width:24em; max-width:100%;
+              background:var(--code); color:var(--fg);
+              border:1px solid var(--line); border-radius:3px;
+              padding:.25em .4em; }
+button { font-family: system-ui, sans-serif; font-size:.95em;
+         padding:.35em 1em; border:1px solid var(--accent);
+         border-radius:4px; background:var(--code); color:var(--fg);
+         cursor:pointer; }
+button:disabled { opacity:.5; cursor:default; }
+#run-out { min-height:2em; }
+footer { border-top:1px solid var(--line); margin-top:3em;
+         padding-top:1em; font-size:.85em; color:var(--muted); }
+</style></head><body>
+<nav><a href="index.html">VAIS - Voynich Analysis Interactive Suite</a><a href="catalog.html">Catalog</a>
+<a href="research.html">Research</a><a href="reports.html">Reports</a>
+<a href="credits.html">Credits</a><a href="https://github.com/Vineyardcode/vais">GitHub</a></nav>
+<main><h1>Credits and data provenance</h1>
+<p>VAIS analyzes public-domain source material assembled and transcribed by others. This project exists because of their work, and redistributes it here solely for research reproducibility, with attribution. If you are a rights holder or maintainer of any item below and want a correction, additional credit, or removal, please open an issue on <a href="https://github.com/Vineyardcode/vais">the repository</a> — it will be honored promptly.</p>
+<h2>Manuscript transliterations</h2>
+<p>All transliteration files are used and redistributed courtesy of <strong>René Zandbergen</strong> (<a href="https://www.voynich.nu">voynich.nu</a>), who maintains them in the IVTFF format, and of the transcribers who created them:</p>
+<table>
+<tr><th>file(s)</th><th>transliteration</th><th>transcriber(s)</th></tr>
+<tr><td><code>folios/*.txt</code></td><td>ZL (IVTFF)</td><td>René Zandbergen &amp; Gabriel Landini</td></tr>
+<tr><td><code>data/translit/CD2a-n.txt</code></td><td>C-D</td><td>Prescott Currier, Mary D&#x27;Imperio et al.</td></tr>
+<tr><td><code>data/translit/FG2a-n.txt</code></td><td>FSG</td><td>Friedman First Study Group (1940s)</td></tr>
+<tr><td><code>data/translit/GC2a-n.txt</code></td><td>v101</td><td>Glen Claston (Tim Rayhel)</td></tr>
+<tr><td><code>data/translit/IT2a-n.txt</code></td><td>IT</td><td>Takeshi Takahashi</td></tr>
+</table>
+<p>The underlying manuscript text (Beinecke MS 408, 15th century) is in the public domain.</p>
+<h2>Folio images</h2>
+<p><code>folios/*.png</code> derive from the digitization of Beinecke MS 408 by the <strong>Beinecke Rare Book &amp; Manuscript Library, Yale University</strong>, which makes images of its public-domain materials freely available. The images are not included in the website&#x27;s data pack.</p>
+<h2>Reference texts</h2>
+<p>Latin, Italian, Occitan, and Gascon reference corpora come from <strong>Project Gutenberg</strong> (public-domain texts; cached copies in <code>data/gutenberg_cache/</code> retain the Project Gutenberg headers and are redistributed free of charge in accordance with the Project Gutenberg License) and other public-domain sources. Notable items: Dante&#x27;s Commedia (PG 1012), Mistral&#x27;s <em>Lou Pouèmo dóu Rose</em> (PG 37854), Ader&#x27;s <em>Lou catounet gascoun</em> (PG 17544), Caesar&#x27;s <em>De Bello Gallico</em>.</p>
+<h2>Research context</h2>
+<p>The research program engages published work by (among others) Prescott Currier, Jorge Stolfi, Gordon Rugg, Torsten Timm &amp; Andreas Schinner, Stephen Bax, Nick Pelling, Massimiliano Zattera, Christophe Parisel, Lisa Fagin Davis, and the <a href="https://www.voynich.ninja">voynich.ninja</a> community. Citations and discussion are in [RESEARCH.md](RESEARCH.md); critiques there concern published claims and methods, in the ordinary course of scholarly discourse.</p>
+<h2>Software</h2>
+<p>The in-browser runner uses <strong>Pyodide</strong> (Mozilla Public License 2.0, loaded from its public CDN, not redistributed here), <strong>NumPy</strong>, and <strong>Flask</strong>. The code in this repository is MIT-licensed — see [LICENSE](LICENSE), including its scope note for the data listed above.</p><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>49d1616</code>. 
+To run any test with your own parameters, clone
+<a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
+(<code>python webui/server.py</code>). All numbers reproduce at
+PYTHONHASHSEED=0.</footer></main></body></html>
