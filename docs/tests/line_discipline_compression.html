@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>line_discipline_compression — VAIS - Voynich Analysis Interactive Suite</title><style>
+:root { --bg:#ffffff; --fg:#1a1a1a; --muted:#666; --line:#ddd;
+        --code:#f5f5f5; --accent:#7a4a1e; --warn:#a33; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#141414; --fg:#ddd; --muted:#999; --line:#333;
+          --code:#1e1e1e; --accent:#d9a05b; --warn:#e77; } }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--fg);
+       font:16px/1.55 Georgia, 'Times New Roman', serif; }
+nav { border-bottom:1px solid var(--line); padding:.7em 1.2em;
+      font-family: system-ui, sans-serif; font-size:.9em; }
+nav a { color:var(--accent); text-decoration:none; margin-right:1.2em; }
+main { max-width: 62em; margin: 0 auto; padding: 1.5em 1.2em 4em; }
+h1,h2,h3 { font-family: system-ui, sans-serif; line-height:1.25; }
+h1 { font-size:1.7em; } h2 { font-size:1.3em; margin-top:2em; }
+a { color: var(--accent); }
+code, pre { font-family: ui-monospace, Consolas, monospace;
+            font-size:.86em; background:var(--code); }
+code { padding:.1em .3em; border-radius:3px; }
+pre { padding: .9em; overflow-x:auto; border:1px solid var(--line);
+      border-radius:4px; line-height:1.4; }
+table { border-collapse: collapse; margin: 1em 0; font-size:.92em;
+        display:block; overflow-x:auto; }
+th, td { border:1px solid var(--line); padding:.35em .6em;
+         text-align:left; vertical-align:top; }
+th { font-family: system-ui, sans-serif; background:var(--code); }
+blockquote { border-left:3px solid var(--accent); margin:1em 0;
+             padding:.2em 1em; color:var(--muted); }
+.muted { color:var(--muted); font-size:.9em; }
+.tag { font-family: system-ui, sans-serif; font-size:.75em;
+       border:1px solid var(--line); border-radius:3px;
+       padding:.05em .45em; margin-left:.5em; }
+.tag.sug { border-color:var(--warn); color:var(--warn); }
+details summary { cursor:pointer; font-family: system-ui, sans-serif; }
+input.param { font-family: ui-monospace, Consolas, monospace;
+              font-size:.85em; width:24em; max-width:100%;
+              background:var(--code); color:var(--fg);
+              border:1px solid var(--line); border-radius:3px;
+              padding:.25em .4em; }
+button { font-family: system-ui, sans-serif; font-size:.95em;
+         padding:.35em 1em; border:1px solid var(--accent);
+         border-radius:4px; background:var(--code); color:var(--fg);
+         cursor:pointer; }
+button:disabled { opacity:.5; cursor:default; }
+#run-out { min-height:2em; }
+footer { border-top:1px solid var(--line); margin-top:3em;
+         padding-top:1em; font-size:.85em; color:var(--muted); }
+</style></head><body>
+<nav><a href="../index.html">VAIS - Voynich Analysis Interactive Suite</a><a href="../catalog.html">Catalog</a>
+<a href="../research.html">Research</a><a href="../reports.html">Reports</a>
+<a href="../credits.html">Credits</a><a href="https://github.com/Vineyardcode/vais">GitHub</a></nav>
+<main><h1>line_discipline_compression</h1>
+<p class="muted">scripts/line_discipline_compression.py</p>
+<pre>Line-Discipline Compression (portfolio S3, rung 2b) — does B&#x27;s
+placement discipline reduce to ONE latent axis? (N6b)
+
+PROVENANCE: N6 (line_discipline_tournament) showed Currier B&#x27;s full
+line texture is statistically forgeable from its lexicon + a MEASURED
+91-cell class-position table + one strength knob (verdict
+line_texture_reducible, quarantined). The honest caveat there: the
+table is 91 numbers of plug-in information. This rung asks the
+registered compression question: is the table itself STRUCTURED —
+specifically, RANK-1 in its class-position interaction — so that the
+whole discipline reduces to one latent score per class interacting
+with one position profile (~19 effective numbers + the knob)?
+
+MODEL M1 (&quot;one-axis discipline&quot;, fixed before fitting): the N6 table&#x27;s
+per-class log-probabilities are double-centered and approximated by
+their FIRST singular component (deterministic SVD — no iterative
+search, no tuning): L1[c,b] = grand + row[c] + col[b] + A[c]*V[b];
+the compressed table is the per-class softmax of L1. Placement-free
+parameters: A (one score per class, ~13) + V (one profile over 7
+position bins) minus gauge ~ 18, plus the SAME single strength knob
+LAMBDA re-fitted on interior gain over the N6 grid and frozen.
+Rank-1 variance share of the centered matrix is reported.
+
+TOURNAMENT: identical machinery, features, bars, and seed formulas as
+N6 (local copies; the run ABORTS unless B&#x27;s features, the bars, and the
+G0 ablation distances all reproduce N6&#x27;s committed JSON exactly).
+Entrant G1b = placement with the COMPRESSED table.
+
+PRE-REGISTERED OUTCOMES:
+  gate_failed          — any N6 cross-check fails to reproduce.
+  not_compressible     — G1b does not close the line group (bar =
+                         phase-109 contiguous halves, as in N6): the
+                         discipline needs more than one axis; corpse
+                         ships with the rank-1 residual per feature.
+  partial_bind         — line group closes, unfitted group breaks.
+  one_axis_sufficient  — G1b closes BOTH groups: the discipline
+                         compresses to one class score axis x one
+                         position profile + one knob. SUGGESTIVE,
+                         quarantined. The axis A and profile V are
+                         published (they ARE the &quot;few rules&quot;).
+OBSERVATIONAL (declared in advance, adjudicates nothing): Spearman
+correlations of the fitted axis A with three independent class
+properties — log class frequency in B, mean word length of the class,
+gallows-initial membership — plus consistency with the N5 mean-rank
+ordering. These indicate whether the axis might be DERIVABLE from
+independent principles (the true blind-generation rung, future).
+Vocabulary discipline: compression of statistics; nothing is decoded.</pre>
+<h2>Parameters</h2><p class="muted">Edit a value to override it for an in-browser run (the script itself is never modified).</p><table><tr><th>name</th><th>type</th><th>value</th></tr>
+<tr><td><code>SEED</code></td><td>int</td><td><input class="param" data-param="SEED" value="120"></td></tr>
+<tr><td><code>S7_SEED</code></td><td>int</td><td><input class="param" data-param="S7_SEED" value="115"></td></tr>
+<tr><td><code>N4_SEED</code></td><td>int</td><td><input class="param" data-param="N4_SEED" value="118"></td></tr>
+<tr><td><code>N_GEN_SEEDS</code></td><td>int</td><td><input class="param" data-param="N_GEN_SEEDS" value="5"></td></tr>
+<tr><td><code>N_REPL</code></td><td>int</td><td><input class="param" data-param="N_REPL" value="8"></td></tr>
+<tr><td><code>S_FLOOR</code></td><td>float</td><td><input class="param" data-param="S_FLOOR" value="0.0001"></td></tr>
+<tr><td><code>CLASS_K</code></td><td>int</td><td><input class="param" data-param="CLASS_K" value="12"></td></tr>
+<tr><td><code>MIN_LINE_WORDS</code></td><td>int</td><td><input class="param" data-param="MIN_LINE_WORDS" value="5"></td></tr>
+<tr><td><code>HOLDOUT_FRAC</code></td><td>float</td><td><input class="param" data-param="HOLDOUT_FRAC" value="0.2"></td></tr>
+<tr><td><code>ALPHA</code></td><td>float</td><td><input class="param" data-param="ALPHA" value="0.5"></td></tr>
+<tr><td><code>S7_FEATURES</code></td><td>json</td><td><input class="param" data-param="S7_FEATURES" value="[&#x27;len&#x27;, &#x27;first&#x27;, &#x27;last&#x27;, &#x27;gallows&#x27;]"></td></tr>
+<tr><td><code>INTERIOR</code></td><td>json</td><td><input class="param" data-param="INTERIOR" value="[&#x27;m1&#x27;, &#x27;m2&#x27;, &#x27;m3&#x27;]"></td></tr>
+<tr><td><code>BINS</code></td><td>json</td><td><input class="param" data-param="BINS" value="[&#x27;p1&#x27;, &#x27;p2&#x27;, &#x27;m1&#x27;, &#x27;m2&#x27;, &#x27;m3&#x27;, &#x27;pL-1&#x27;, &#x27;pL&#x27;]"></td></tr>
+<tr><td><code>LINE_GROUP</code></td><td>json</td><td><input class="param" data-param="LINE_GROUP" value="[&#x27;line_init_jsd&#x27;, &#x27;line_final_jsd&#x27;, &#x27;interior_gain&#x27;, &#x27;r_pos&#x27;, &#x27;r_bi&#x27;]"></td></tr>
+<tr><td><code>UNFIT_GROUP</code></td><td>json</td><td><input class="param" data-param="UNFIT_GROUP" value="[&#x27;h2_ratio&#x27;, &#x27;adj_dup&#x27;, &#x27;adj_near&#x27;]"></td></tr>
+<tr><td><code>N6_JSON</code></td><td>str</td><td><input class="param" data-param="N6_JSON" value="line_discipline_tournament.json"></td></tr>
+</table>
+<h2>Run it in your browser</h2><p class="muted">Python + numpy on WebAssembly, entirely on your machine — nothing is uploaded. First run downloads the runtime (~15 MB) and the repository data pack (~9 MB); both are cached afterwards. Expect it to be slower than a native run.</p><p><button id="run-btn">&#9654; Run</button> <button id="stop-btn">Stop</button> <span id="run-status" class="muted"></span></p><pre id="run-out"></pre>
+<script>window.VAIS_TEST = {"stem": "line_discipline_compression", "specs": {"SEED": {"type": "int", "container": null}, "S7_SEED": {"type": "int", "container": null}, "N4_SEED": {"type": "int", "container": null}, "N_GEN_SEEDS": {"type": "int", "container": null}, "N_REPL": {"type": "int", "container": null}, "S_FLOOR": {"type": "float", "container": null}, "CLASS_K": {"type": "int", "container": null}, "MIN_LINE_WORDS": {"type": "int", "container": null}, "HOLDOUT_FRAC": {"type": "float", "container": null}, "ALPHA": {"type": "float", "container": null}, "S7_FEATURES": {"type": "json", "container": "tuple"}, "INTERIOR": {"type": "json", "container": "set"}, "BINS": {"type": "json", "container": "tuple"}, "LINE_GROUP": {"type": "json", "container": "tuple"}, "UNFIT_GROUP": {"type": "json", "container": "tuple"}, "N6_JSON": {"type": "str", "container": null}}, "base": "../", "baselineSeconds": 0};</script><script src="../runner.js"></script>
+<h2>Run it locally (full speed, byte-exact)</h2>
+<pre>git clone https://github.com/Vineyardcode/vais
+cd vais
+pip install numpy flask
+python scripts/line_discipline_compression.py        # this test; output also lands in results/
+python webui/server.py          # or the full interactive UI at localhost:5000</pre>
+<h2>Golden output (PYTHONHASHSEED=0)</h2><details><summary>show</summary><pre id="golden-pre">============================================================================
+LINE-DISCIPLINE COMPRESSION (S3 rung 2b) — one-axis test (N6b)
+============================================================================
+seed=120 (inherited from N6; cross-checked) lambda_grid=0.25..4.0
+  B features reproduce the N6 record  VERIFIED
+  bars reproduce N6 (line 7.489, unfitted 4.092)  VERIFIED
+  rank-1 variance share of centered log-table: 85.7%
+  class axis A (low -&gt; high): a -0.994  ch -0.783  sh -0.416  l -0.385  o -0.339  k -0.332  # -0.247  q -0.141  d +0.387  y +0.533  t +0.672  s +0.760  p +1.285
+  position profile V: p1 +2.114  p2 -0.627  m1 -0.360  m2 -0.332  m3 -0.144  pL-1 -0.275  pL -0.376
+  LAMBDA (compressed table) fitted on interior gain: 2.0 (|err| 0.0002) — FROZEN
+  G1b (rank-1 table)  D_line 9.529  D_unfitted 2.0  (N6 full-table G1: 6.645 / 1.98)
+  observational axis correlations (Spearman): log_class_freq -0.648  mean_word_len +0.165  gallows_initial +0.593
+
+  ADJUDICATION (pre-registered):
+    NOT COMPRESSIBLE: the rank-1 table does not close the line group — the discipline needs more than one axis. Corpse logged with the per-feature residuals.
+
+  -&gt; results/line_discipline_compression.json
+</pre></details><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>257f0cd</code>. 
+To run any test with your own parameters, clone
+<a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
+(<code>python webui/server.py</code>). All numbers reproduce at
+PYTHONHASHSEED=0.</footer></main></body></html>

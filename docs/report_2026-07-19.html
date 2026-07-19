@@ -215,7 +215,23 @@ footer { border-top:1px solid var(--line); margin-top:3em;
 <tr><td>adj_dup</td><td>0.009</td><td>0.0092</td><td>0.0096</td></tr>
 <tr><td>adj_near</td><td>0.0341</td><td>0.0309</td><td>0.032</td></tr>
 </table>
-<p><strong>VERDICT: LINE TEXTURE REDUCIBLE — Currier B&#x27;s full line texture (edge effects AND interior ordinal residue) is statistically forgeable from its lexicon plus one measured class-position table and one strength knob, without breaking the unfitted order-sensitive features. SUGGESTIVE, quarantined. Scope: a mechanism-family claim about statistics — the phase-109 moat is reduced, not decoded; blind generation of the table is the registered future rung.</strong></p><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>4ed83f4</code>. 
+<p><strong>VERDICT: LINE TEXTURE REDUCIBLE — Currier B&#x27;s full line texture (edge effects AND interior ordinal residue) is statistically forgeable from its lexicon plus one measured class-position table and one strength knob, without breaking the unfitted order-sensitive features. SUGGESTIVE, quarantined. Scope: a mechanism-family claim about statistics — the phase-109 moat is reduced, not decoded; blind generation of the table is the registered future rung.</strong></p>
+<h2>Run 2026-07-19 17:50:39 — N6b</h2>
+<p><strong>S3 rung 2b: table-compression test — is the discipline one latent axis?</strong></p>
+<ul>
+<li>script: <code>scripts/line_discipline_compression.py</code></li>
+<li>profile: <code>{}</code></li>
+<li>log: <code>overnight_2026-07-19.log</code>; results JSON: <code>line_discipline_compression.json</code>; branch: <code>overnight/2026-07-19</code></li>
+<li>runtime: 56s (0.02 h), exit code 0</li>
+</ul>
+<p><strong>Pre-registered outcomes</strong> (script docstring): rank-1 SVD compression of the N6 discipline table (deterministic, no search), same bars and machinery as N6 (all cross-checked at runtime), one re-fitted knob (LAMBDA=2.0). Rank-1 variance share: 85.7%.</p>
+<table>
+<tr><th>entrant</th><th>D_line (bar 7.489)</th><th>D_unfitted (bar 4.092)</th></tr>
+<tr><td>G1 full table (N6)</td><td>6.645</td><td>1.98</td></tr>
+<tr><td>G1b rank-1 table</td><td>9.529</td><td>2.0</td></tr>
+</table>
+<p>Class axis A (low → high): a -0.994, ch -0.783, sh -0.416, l -0.385, o -0.339, k -0.332, # -0.247, q -0.141, d +0.387, y +0.533, t +0.672, s +0.760, p +1.285. Position profile V: p1 +2.114, p2 -0.627, m1 -0.360, m2 -0.332, m3 -0.144, pL-1 -0.275, pL -0.376. Observational axis correlations (declared predictors): log_class_freq -0.648, mean_word_len +0.165, gallows_initial +0.593.</p>
+<p><strong>VERDICT: NOT COMPRESSIBLE — one latent axis does not reproduce the line texture (the dominant axis is the EDGE/paragraph axis; the interior ordering is a second, independent dimension). The discipline is at least rank-2; corpse logged with coordinates.</strong></p><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>257f0cd</code>. 
 To run any test with your own parameters, clone
 <a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
 (<code>python webui/server.py</code>). All numbers reproduce at
