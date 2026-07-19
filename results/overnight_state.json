@@ -96,5 +96,12 @@
   "verdict": "S3 rung 2: LINE_TEXTURE_REDUCIBLE",
   "suggestive": true,
   "summary": "line_texture_reducible; G1 D_line 6.645 (bar 7.489), D_unfit 1.98 (bar 4.092), lambda 1.25"
+ },
+ "N6b": {
+  "status": "completed",
+  "date": "2026-07-19",
+  "verdict": "S3 rung 2b: NOT_COMPRESSIBLE",
+  "suggestive": false,
+  "summary": "not_compressible; G1b D_line 9.529 vs bar 7.489 (full table 6.645), var_share 85.7%"
  }
 }
