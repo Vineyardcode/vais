@@ -9,6 +9,9 @@ EM budget: outer=4 proposals=6 em_restarts=4 top_lms_rung2=2 objective=coverage-
   LM italian/plain    alphabet=26 native holdout=3.127 bits/sym
   LM italian/abjad    alphabet=21 native holdout=2.880 bits/sym
   LM italian/abbrev4  alphabet=26 native holdout=3.129 bits/sym
+  LM occitan/plain    alphabet=34 native holdout=3.157 bits/sym
+  LM occitan/abjad    alphabet=20 native holdout=2.937 bits/sym
+  LM occitan/abbrev4  alphabet=33 native holdout=3.105 bits/sym
 
   planted P4 table replayed and VERIFIED (23 groups)
 

@@ -1539,6 +1539,22 @@ QUEUE = [
         'not_ready': None,
     },
     {
+        'id': 'N1c',
+        'title': 'Verbose cipher inversion, rung 3c: Occitan LM extension '
+                 '(max-strength budget, coverage-penalized objective)',
+        'stem': 'verbose_cipher_inversion',
+        'overrides': N1_PROFILE,
+        'smoke_overrides': N1_SMOKE,
+        'timeout_s': 12 * 3600,
+        'smoke_timeout_s': 1800,
+        'result_json': 'verbose_cipher_inversion.json',
+        'adjudicate': adjudicate_n1,
+        'objective': 'coverage_penalized',
+        'research_heading': 'Phase 4e — Verbose cipher inversion, rung 3c: '
+                            'Occitan LM extension',
+        'not_ready': None,
+    },
+    {
         'id': 'N5',
         'title': 'S7-R: independent re-implementation of the intra-line '
                  'ordinal measurement (rank statistic, PHASE8 §8.7-1)',

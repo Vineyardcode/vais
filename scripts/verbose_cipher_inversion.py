@@ -103,6 +103,24 @@ positional variants remain excluded):
     settings first and the justification is logged HERE before
     escalating. Even then, a passing VMS row is only ever "consistent
     with a verbose cipher", never "decoded".
+  RUNG 3c — LM-battery extension: OCCITAN added as a third candidate
+    plaintext language (registered 2026-07-19, before any rung-3c run).
+    MOTIVATION (F7 discipline — motivation only, never evidence):
+    Pelling 2026 reads the f17r marginalia as Occitan, converging with
+    the older Occitan zodiac-month-name argument; the ESTABLISHED
+    negative of ledger entry 11 is scoped to Latin/Italian, so Occitan
+    is the one historically motivated candidate the battery has never
+    tested. CORPUS: Mistral, Lou Pouèmo dóu Rose (Project Gutenberg
+    ebook 37854, cached in data/gutenberg_cache; the Provençal half is
+    extracted at runtime between the unambiguous markers
+    '_CANT PROUMIÉ_' and 'CANT PROUMIÉ. --'; 28,634 words, 34-char
+    alphabet). DECLARED LIMITATION: 1897 Félibrige Provençal
+    orthography, not medieval Occitan; a medieval corpus (e.g.
+    Flamenca) is a future upgrade pending licensing. Machinery, model,
+    budgets, and kill criteria are UNCHANGED — 3 languages x 3 variants
+    = 9 LMs; the noise floor is re-measured over the extended battery
+    at the same rung. If the P4 gate passes, ledger entry 11's scope
+    extends to the tested languages; nothing else changes.
 
 STRICT MODEL (rung 1 reference; rung 2 reuses 2-3):
   1. SEGMENTATION (unsupervised, blind to any plaintext): BPE-style
@@ -170,7 +188,7 @@ HOLDOUT_FRAC = 0.2
 PSEUDO_FOLIO_LINES = 24   # control corpora lack folios; hold out blocks of
                           # this many contiguous lines (VMS mean: 23.2)
 MIN_LINE_WORDS = 2
-LANGS = ['latin', 'italian']
+LANGS = ['latin', 'italian', 'occitan']
 VARIANTS = ['plain', 'abjad', 'abbrev4']
 EM_OUTER = 4              # rung-2 EM iterations
 EM_PROPOSALS = 6          # inventory swap proposals per iteration
@@ -180,7 +198,8 @@ POOL_MAX_LEN = 4
 TOP_LMS_RUNG2 = 2         # non-P4 corpora: rung 2 runs on this many best LMs
 
 CONTROLS = DATA_DIR / 'controls'
-VOWELS = set('aeiou')
+VOWELS = set('aeiouàáâãäåæèéêëìíîïòóôõöùúûü')   # accented forms: rung 3c
+                                                # (no-op for latin/italian)
 
 
 # ────────────────────────────────────────────────────────────────────
@@ -247,9 +266,18 @@ def language_corpus(lang):
     if lang == 'latin':
         words = load_reference_text(DATA_DIR / 'latin_texts' / 'caesar.txt')
         words = [re.sub(r'[^a-z]', '', w.lower()) for w in words]
-    else:
+    elif lang == 'italian':
         raw = fetch_gutenberg(1012)
         words = re.findall(r'[a-z]+', raw.lower())
+    elif lang == 'occitan':
+        # rung 3c: Mistral's Provençal half of PG 37854 (see docstring)
+        raw = fetch_gutenberg(37854)
+        start = raw.index('_CANT PROUMIÉ_')
+        end = raw.index('CANT PROUMIÉ. --')
+        words = re.findall(r'[a-zàáâãäåæçèéêëìíîïòóôõöùúûü]+',
+                           raw[start:end].lower())
+    else:
+        raise ValueError(lang)
     return [w for w in words if w]
 
 
@@ -866,7 +894,8 @@ def main():
                               'holdout_frac': HOLDOUT_FRAC,
                               'holdout_unit': 'folio',
                               'pseudo_folio_lines': PSEUDO_FOLIO_LINES,
-                              'objective': 'coverage_penalized'},
+                              'objective': 'coverage_penalized',
+                              'langs': LANGS},
                    'rung1': {'noise_floor': neg_best, 'results': results},
                    'rung2': {'noise_floor': neg2, 'results': results2}},
                   fh, indent=1)

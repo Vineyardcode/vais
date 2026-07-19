@@ -1179,8 +1179,8 @@
  "verbose_cipher_inversion": {
   "status": "ok",
   "returncode": 0,
-  "duration_s": 130.18,
-  "stdout_bytes": 3391,
+  "duration_s": 220.79,
+  "stdout_bytes": 3586,
   "results_files_touched": [
    "verbose_cipher_inversion.json"
   ]
@@ -1249,9 +1249,9 @@
   ]
  },
  "line_as_record_section_split": {
-  "status": "timeout",
-  "returncode": null,
-  "duration_s": 5285.98,
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 414.2,
   "stdout_bytes": 936,
   "results_files_touched": [
    "line_as_record_section_split.json"
