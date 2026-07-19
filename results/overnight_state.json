@@ -75,5 +75,12 @@
   "verdict": "S5/S6 family test: FAMILY_LANGUAGE",
   "suggestive": true,
   "summary": "family_language; B (r_pos +0.0354, r_bi +0.0407), nearest family_language d=0.0533, second family_hoax d=0.1775"
+ },
+ "N5": {
+  "status": "completed",
+  "date": "2026-07-19",
+  "verdict": "S7-R re-implementation: REPLICATED",
+  "suggestive": true,
+  "summary": "replicated; B p=0.0010, A p=0.0010, PREC p=0.0010"
  }
 }

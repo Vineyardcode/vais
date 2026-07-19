@@ -94,3 +94,24 @@ T-PARA: 131 paragraph-initial lines excluded → 2391 kept; real +0.0519 vs null
 Gate: min centroid separation 0.1436 vs required 0.0114 → PASS. B distances: family_language 0.0533, family_hoax 0.1775, family_records 0.4135, family_positional 0.5080.
 
 **VERDICT: FAMILY_LANGUAGE** — B's line-class ordering profile is nearest the language reference with clear margin. A family-level reading only: nothing is decoded, and the S7 positional finding stands as the residual that separates B from the pure family centroid (real prose shows r_pos ~ 0; B does not).
+
+## Run 2026-07-19 03:40:17 — N5
+**S7-R: independent re-implementation of the intra-line ordinal measurement (rank statistic, PHASE8 §8.7-1)**
+- script: `scripts/line_ordinal_rank_test.py`
+- profile: `{}`
+- log: `overnight_2026-07-19.log`; results JSON: `line_ordinal_rank_test.json`; branch: `overnight/2026-07-19`
+- runtime: 66s (0.02 h), exit code 0
+
+**Pre-registered ladder** (script docstring; answers PHASE8_DRAFT §8.7-1 at IMPLEMENTATION level — same-author caveat disclosed): rank statistic T = weighted between-class variance of mean interior rank, first-EVA-glyph classes, no bins / smoothing / holdout; inference by 1000 within-line permutations.
+
+| corpus | T | perms ≥ T | p | lines |
+|---|---|---|---|---|
+| PREC_records | 0.029613 | 0 | 0.0010 | 4600 |
+| P1_latin | 0.000106 | 132 | 0.1329 | 4755 |
+| N1_shuffle | 0.000042 | 643 | 0.6434 | 3956 |
+| VMS_currier_B | 0.000599 | 0 | 0.0010 | 2522 |
+| VMS_currier_A | 0.001013 | 0 | 0.0010 | 1310 |
+
+**VERDICT: REPLICATED — the intra-line class-ordering signal survives a methodologically disjoint instrument (B p < 0.005; and observationally, hand A also rejects under this more sensitive statistic). The shared-implementation-DNA objection is answered; author-level independence remains open and travels with the finding.**
+
+B class mean interior ranks (early → late): sh 0.457, q 0.474, k 0.481, l 0.497, ch 0.498, y 0.500, o 0.518, d 0.522, t 0.530, s 0.531, a 0.536, r 0.561 — coherent with the rung-4 characterization (q-early), and the EVA-parsed sh class emerges as the earliest carrier.
