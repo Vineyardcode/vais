@@ -89,5 +89,12 @@
   "verdict": "INSTRUMENT PASSED",
   "suggestive": false,
   "summary": "INSTRUMENT PASSED; P4 recovery 65%, margin +0.350 (need >= +0.100)"
+ },
+ "N6": {
+  "status": "completed",
+  "date": "2026-07-19",
+  "verdict": "S3 rung 2: LINE_TEXTURE_REDUCIBLE",
+  "suggestive": true,
+  "summary": "line_texture_reducible; G1 D_line 6.645 (bar 7.489), D_unfit 1.98 (bar 4.092), lambda 1.25"
  }
 }

@@ -523,7 +523,10 @@ future work and the parameters are UI-exposed for exactly that.
 numbering continues across tiers. Full evidence chains: Phase 8.)*
 
 11. **The manuscript does not behave as a strict 1:1 verbose cipher
-    over Latin or Italian** (N1b, 2026-07-18): the inverter, validated
+    over Latin, Italian, or Occitan** (N1b, 2026-07-18; scope extended
+    to Occitan by N1c, 2026-07-19, per the rung-3c registration —
+    Provençal corpus, orthographic caveat in the script docstring; no
+    Occitan LM is any VMS row's best fit): the inverter, validated
     for the first time on the planted control (P4 recovery 65%, margin
     +0.350 over the noise floor under the coverage-penalized metric,
     folio holdout, six LMs), scores every VMS row within the
@@ -1336,3 +1339,34 @@ Rung 1 for the record: P4 segmenter inventory recovery 13%, best gap -0.773 vs r
 - VMS_full: best gap -0.880 (latin/abbrev4) — within the noise floor: nothing beyond free-mapping noise at this rung (a clean negative for the strict 1:1 verbose-cipher family under these 6 LMs).
 - VMS_currier_A: best gap -0.842 (latin/plain) — within the noise floor: nothing beyond free-mapping noise at this rung (a clean negative for the strict 1:1 verbose-cipher family under these 6 LMs).
 - VMS_currier_B: best gap -0.895 (latin/abbrev4) — within the noise floor: nothing beyond free-mapping noise at this rung (a clean negative for the strict 1:1 verbose-cipher family under these 6 LMs).
+
+---
+
+### Portfolio S3, rung 2 — line-discipline reduction tournament (Currier B) (2026-07-19)
+
+[AUTOMATED — written by tools/overnight.py; run committed to branch overnight/2026-07-19; awaiting human review before promotion to any evidence tier.]
+
+Configuration (pre-registered in the script docstring): script defaults. Runtime 0.06 h at PYTHONHASHSEED=0. Holdout: whole folios (VMS) / 24-line pseudo-folio blocks (controls).
+
+**SUGGESTIVE — awaiting human review (quarantined; never merged automatically):**
+
+**Pre-registered outcomes** (script docstring; a DIAGNOSTIC REDUCTION TEST, not a blind generator — the class-position table is measured from B, plus ONE strength knob fitted on one feature, frozen at LAMBDA=1.25). Bars are the phase-109 contiguous-halves convention.
+
+| entrant | D_line (bar 7.489) | D_unfitted (bar 4.092) |
+|---|---|---|
+| G0_ablation | 21.56 | 1.854 |
+| G1_discipline | 6.645 | 1.98 |
+| G2_verbose_ref | 8.714 | 31.411 |
+
+| feature | B | G0 | G1 |
+|---|---|---|---|
+| line_init_jsd | 0.2128 | 0.0017 | 0.2008 |
+| line_final_jsd | 0.1063 | 0.0015 | 0.0017 |
+| interior_gain | 0.0513 | -0.006 | 0.0425 |
+| r_pos | 0.0406 | -0.0007 | 0.0387 |
+| r_bi | 0.0496 | 0.0016 | 0.0323 |
+| h2_ratio | 0.5141 | 0.5141 | 0.5141 |
+| adj_dup | 0.009 | 0.0092 | 0.0096 |
+| adj_near | 0.0341 | 0.0309 | 0.032 |
+
+**VERDICT: LINE TEXTURE REDUCIBLE — Currier B's full line texture (edge effects AND interior ordinal residue) is statistically forgeable from its lexicon plus one measured class-position table and one strength knob, without breaking the unfitted order-sensitive features. SUGGESTIVE, quarantined. Scope: a mechanism-family claim about statistics — the phase-109 moat is reduced, not decoded; blind generation of the table is the registered future rung.**
