@@ -35,6 +35,17 @@ blockquote { border-left:3px solid var(--accent); margin:1em 0;
        padding:.05em .45em; margin-left:.5em; }
 .tag.sug { border-color:var(--warn); color:var(--warn); }
 details summary { cursor:pointer; font-family: system-ui, sans-serif; }
+input.param { font-family: ui-monospace, Consolas, monospace;
+              font-size:.85em; width:24em; max-width:100%;
+              background:var(--code); color:var(--fg);
+              border:1px solid var(--line); border-radius:3px;
+              padding:.25em .4em; }
+button { font-family: system-ui, sans-serif; font-size:.95em;
+         padding:.35em 1em; border:1px solid var(--accent);
+         border-radius:4px; background:var(--code); color:var(--fg);
+         cursor:pointer; }
+button:disabled { opacity:.5; cursor:default; }
+#run-out { min-height:2em; }
 footer { border-top:1px solid var(--line); margin-top:3em;
          padding-top:1em; font-size:.85em; color:var(--muted); }
 </style></head><body>
@@ -698,7 +709,7 @@ footer { border-top:1px solid var(--line); margin-top:3em;
 <li>VMS_full: best gap -0.880 (latin/abbrev4) — within the noise floor: nothing beyond free-mapping noise at this rung (a clean negative for the strict 1:1 verbose-cipher family under these 6 LMs).</li>
 <li>VMS_currier_A: best gap -0.842 (latin/plain) — within the noise floor: nothing beyond free-mapping noise at this rung (a clean negative for the strict 1:1 verbose-cipher family under these 6 LMs).</li>
 <li>VMS_currier_B: best gap -0.895 (latin/abbrev4) — within the noise floor: nothing beyond free-mapping noise at this rung (a clean negative for the strict 1:1 verbose-cipher family under these 6 LMs).</li>
-</ul><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>53c82d9</code>. 
+</ul><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>a936587</code>. 
 To run any test with your own parameters, clone
 <a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
 (<code>python webui/server.py</code>). All numbers reproduce at

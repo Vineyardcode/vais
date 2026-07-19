@@ -35,6 +35,17 @@ blockquote { border-left:3px solid var(--accent); margin:1em 0;
        padding:.05em .45em; margin-left:.5em; }
 .tag.sug { border-color:var(--warn); color:var(--warn); }
 details summary { cursor:pointer; font-family: system-ui, sans-serif; }
+input.param { font-family: ui-monospace, Consolas, monospace;
+              font-size:.85em; width:24em; max-width:100%;
+              background:var(--code); color:var(--fg);
+              border:1px solid var(--line); border-radius:3px;
+              padding:.25em .4em; }
+button { font-family: system-ui, sans-serif; font-size:.95em;
+         padding:.35em 1em; border:1px solid var(--accent);
+         border-radius:4px; background:var(--code); color:var(--fg);
+         cursor:pointer; }
+button:disabled { opacity:.5; cursor:default; }
+#run-out { min-height:2em; }
 footer { border-top:1px solid var(--line); margin-top:3em;
          padding-top:1em; font-size:.85em; color:var(--muted); }
 </style></head><body>
@@ -207,25 +218,33 @@ PRE-REGISTERED PROTOCOL AND KILL CRITERIA (before any VMS run):
 DOF budget: TARGET_GROUPS, RESTARTS, and the 6 LMs are fixed here; the
 segmenter is unsupervised; mapping DOF = one 21-ish-symbol bijection per
 (corpus, LM) pair, identical for every corpus including the negatives.</pre>
-<h2>Parameters</h2><table><tr><th>name</th><th>default</th><th>type</th></tr>
-<tr><td><code>SEED</code></td><td><code>112</code></td><td>int</td></tr>
-<tr><td><code>TARGET_GROUPS</code></td><td><code>24</code></td><td>int</td></tr>
-<tr><td><code>COVERAGE_TARGET</code></td><td><code>0.95</code></td><td>float</td></tr>
-<tr><td><code>MAX_MERGES</code></td><td><code>400</code></td><td>int</td></tr>
-<tr><td><code>RESTARTS</code></td><td><code>12</code></td><td>int</td></tr>
-<tr><td><code>HOLDOUT_FRAC</code></td><td><code>0.2</code></td><td>float</td></tr>
-<tr><td><code>PSEUDO_FOLIO_LINES</code></td><td><code>24</code></td><td>int</td></tr>
-<tr><td><code>MIN_LINE_WORDS</code></td><td><code>2</code></td><td>int</td></tr>
-<tr><td><code>LANGS</code></td><td><code>[&#x27;latin&#x27;, &#x27;italian&#x27;, &#x27;occitan&#x27;]</code></td><td>json</td></tr>
-<tr><td><code>VARIANTS</code></td><td><code>[&#x27;plain&#x27;, &#x27;abjad&#x27;, &#x27;abbrev4&#x27;]</code></td><td>json</td></tr>
-<tr><td><code>EM_OUTER</code></td><td><code>4</code></td><td>int</td></tr>
-<tr><td><code>EM_PROPOSALS</code></td><td><code>6</code></td><td>int</td></tr>
-<tr><td><code>EM_RESTARTS</code></td><td><code>4</code></td><td>int</td></tr>
-<tr><td><code>POOL_MIN_FREQ</code></td><td><code>50</code></td><td>int</td></tr>
-<tr><td><code>POOL_MAX_LEN</code></td><td><code>4</code></td><td>int</td></tr>
-<tr><td><code>TOP_LMS_RUNG2</code></td><td><code>2</code></td><td>int</td></tr>
+<h2>Parameters</h2><p class="muted">Edit a value to override it for an in-browser run (the script itself is never modified).</p><table><tr><th>name</th><th>type</th><th>value</th></tr>
+<tr><td><code>SEED</code></td><td>int</td><td><input class="param" data-param="SEED" value="112"></td></tr>
+<tr><td><code>TARGET_GROUPS</code></td><td>int</td><td><input class="param" data-param="TARGET_GROUPS" value="24"></td></tr>
+<tr><td><code>COVERAGE_TARGET</code></td><td>float</td><td><input class="param" data-param="COVERAGE_TARGET" value="0.95"></td></tr>
+<tr><td><code>MAX_MERGES</code></td><td>int</td><td><input class="param" data-param="MAX_MERGES" value="400"></td></tr>
+<tr><td><code>RESTARTS</code></td><td>int</td><td><input class="param" data-param="RESTARTS" value="12"></td></tr>
+<tr><td><code>HOLDOUT_FRAC</code></td><td>float</td><td><input class="param" data-param="HOLDOUT_FRAC" value="0.2"></td></tr>
+<tr><td><code>PSEUDO_FOLIO_LINES</code></td><td>int</td><td><input class="param" data-param="PSEUDO_FOLIO_LINES" value="24"></td></tr>
+<tr><td><code>MIN_LINE_WORDS</code></td><td>int</td><td><input class="param" data-param="MIN_LINE_WORDS" value="2"></td></tr>
+<tr><td><code>LANGS</code></td><td>json</td><td><input class="param" data-param="LANGS" value="[&#x27;latin&#x27;, &#x27;italian&#x27;, &#x27;occitan&#x27;]"></td></tr>
+<tr><td><code>VARIANTS</code></td><td>json</td><td><input class="param" data-param="VARIANTS" value="[&#x27;plain&#x27;, &#x27;abjad&#x27;, &#x27;abbrev4&#x27;]"></td></tr>
+<tr><td><code>EM_OUTER</code></td><td>int</td><td><input class="param" data-param="EM_OUTER" value="4"></td></tr>
+<tr><td><code>EM_PROPOSALS</code></td><td>int</td><td><input class="param" data-param="EM_PROPOSALS" value="6"></td></tr>
+<tr><td><code>EM_RESTARTS</code></td><td>int</td><td><input class="param" data-param="EM_RESTARTS" value="4"></td></tr>
+<tr><td><code>POOL_MIN_FREQ</code></td><td>int</td><td><input class="param" data-param="POOL_MIN_FREQ" value="50"></td></tr>
+<tr><td><code>POOL_MAX_LEN</code></td><td>int</td><td><input class="param" data-param="POOL_MAX_LEN" value="4"></td></tr>
+<tr><td><code>TOP_LMS_RUNG2</code></td><td>int</td><td><input class="param" data-param="TOP_LMS_RUNG2" value="2"></td></tr>
 </table>
-<h2>Golden output (PYTHONHASHSEED=0)</h2><details><summary>show</summary><pre>============================================================================
+<h2>Run it in your browser</h2><p class="muted">Python + numpy on WebAssembly, entirely on your machine — nothing is uploaded. First run downloads the runtime (~15 MB) and the repository data pack (~9 MB); both are cached afterwards. Expect it to be slower than a native run.</p><p><button id="run-btn">&#9654; Run</button> <button id="stop-btn">Stop</button> <span id="run-status" class="muted"></span></p><pre id="run-out"></pre>
+<script>window.VAIS_TEST = {"stem": "verbose_cipher_inversion", "specs": {"SEED": {"type": "int", "container": null}, "TARGET_GROUPS": {"type": "int", "container": null}, "COVERAGE_TARGET": {"type": "float", "container": null}, "MAX_MERGES": {"type": "int", "container": null}, "RESTARTS": {"type": "int", "container": null}, "HOLDOUT_FRAC": {"type": "float", "container": null}, "PSEUDO_FOLIO_LINES": {"type": "int", "container": null}, "MIN_LINE_WORDS": {"type": "int", "container": null}, "LANGS": {"type": "json", "container": null}, "VARIANTS": {"type": "json", "container": null}, "EM_OUTER": {"type": "int", "container": null}, "EM_PROPOSALS": {"type": "int", "container": null}, "EM_RESTARTS": {"type": "int", "container": null}, "POOL_MIN_FREQ": {"type": "int", "container": null}, "POOL_MAX_LEN": {"type": "int", "container": null}, "TOP_LMS_RUNG2": {"type": "int", "container": null}}, "base": "../", "baselineSeconds": 0};</script><script src="../runner.js"></script>
+<h2>Run it locally (full speed, byte-exact)</h2>
+<pre>git clone https://github.com/Vineyardcode/vais
+cd vais
+pip install numpy flask
+python scripts/verbose_cipher_inversion.py        # this test; output also lands in results/
+python webui/server.py          # or the full interactive UI at localhost:5000</pre>
+<h2>Golden output (PYTHONHASHSEED=0)</h2><details><summary>show</summary><pre id="golden-pre">============================================================================
 VERBOSE CIPHER INVERSION — strict 1:1 ladder (folio-level holdout)
 ============================================================================
 seed=112 target_groups=24 restarts=12 holdout=0.2 (whole folios; controls: pseudo-folios of 24 lines)
@@ -272,7 +291,7 @@ EM budget: outer=4 proposals=6 em_restarts=4 top_lms_rung2=2 objective=coverage-
     RUNG 2 KILLED at this budget (see EM budget line above): EM cannot invert the known cipher clearly better than noise. VMS rows NOT interpretable; the pre-registered escalation policy (docstring ladder) is compute first, never model freedom.
 
   -&gt; results/verbose_cipher_inversion.json
-</pre></details><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>53c82d9</code>. 
+</pre></details><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>a936587</code>. 
 To run any test with your own parameters, clone
 <a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
 (<code>python webui/server.py</code>). All numbers reproduce at

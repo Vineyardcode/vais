@@ -35,6 +35,17 @@ blockquote { border-left:3px solid var(--accent); margin:1em 0;
        padding:.05em .45em; margin-left:.5em; }
 .tag.sug { border-color:var(--warn); color:var(--warn); }
 details summary { cursor:pointer; font-family: system-ui, sans-serif; }
+input.param { font-family: ui-monospace, Consolas, monospace;
+              font-size:.85em; width:24em; max-width:100%;
+              background:var(--code); color:var(--fg);
+              border:1px solid var(--line); border-radius:3px;
+              padding:.25em .4em; }
+button { font-family: system-ui, sans-serif; font-size:.95em;
+         padding:.35em 1em; border:1px solid var(--accent);
+         border-radius:4px; background:var(--code); color:var(--fg);
+         cursor:pointer; }
+button:disabled { opacity:.5; cursor:default; }
+#run-out { min-height:2em; }
 footer { border-top:1px solid var(--line); margin-top:3em;
          padding-top:1em; font-size:.85em; color:var(--muted); }
 </style></head><body>
@@ -54,13 +65,21 @@ Tests:
   4. SUFFIX PARADIGM STRUCTURE — Are -iin, -r, -l, -in, -m truly &quot;cases&quot;?
   5. LINE-POSITION EFFECTS — Does -y appear more in certain positions?
   6. PROCESS-ROOT SEQUENCES — What happens around ched/kee/keed clusters?</pre>
-<h2>Parameters</h2><table><tr><th>name</th><th>default</th><th>type</th></tr>
-<tr><td><code>PREFIXES</code></td><td><code>[&#x27;qol&#x27;, &#x27;qor&#x27;, &#x27;sol&#x27;, &#x27;sor&#x27;, &#x27;dol&#x27;, &#x27;dor&#x27;, &#x27;dyl&#x27;, &#x27;dyr&#x27;, &#x27;qo&#x27;, &#x27;so&#x27;, &#x27;do&#x27;, &#x27;dy&#x27;, &#x27;ol&#x27;, &#x27;or…</code></td><td>json</td></tr>
-<tr><td><code>ROOT_ONSETS</code></td><td><code>[&#x27;ckh&#x27;, &#x27;cth&#x27;, &#x27;cph&#x27;, &#x27;cfh&#x27;, &#x27;tch&#x27;, &#x27;kch&#x27;, &#x27;pch&#x27;, &#x27;fch&#x27;, &#x27;tsh&#x27;, &#x27;ksh&#x27;, &#x27;psh&#x27;, &#x27;fsh&#x27;, &#x27;sh&#x27;,…</code></td><td>json</td></tr>
-<tr><td><code>ROOT_BODIES</code></td><td><code>[&#x27;eeed&#x27;, &#x27;eees&#x27;, &#x27;eeea&#x27;, &#x27;eeeo&#x27;, &#x27;eed&#x27;, &#x27;ees&#x27;, &#x27;eea&#x27;, &#x27;eeo&#x27;, &#x27;ed&#x27;, &#x27;es&#x27;, &#x27;ea&#x27;, &#x27;eo&#x27;, &#x27;eee&#x27;…</code></td><td>json</td></tr>
-<tr><td><code>SUFFIXES</code></td><td><code>[&#x27;iiiny&#x27;, &#x27;iiny&#x27;, &#x27;iiir&#x27;, &#x27;iiil&#x27;, &#x27;iiin&#x27;, &#x27;iir&#x27;, &#x27;iil&#x27;, &#x27;iin&#x27;, &#x27;iim&#x27;, &#x27;iid&#x27;, &#x27;iry&#x27;, &#x27;ily&#x27;,…</code></td><td>json</td></tr>
+<h2>Parameters</h2><p class="muted">Edit a value to override it for an in-browser run (the script itself is never modified).</p><table><tr><th>name</th><th>type</th><th>value</th></tr>
+<tr><td><code>PREFIXES</code></td><td>json</td><td><input class="param" data-param="PREFIXES" value="[&#x27;qol&#x27;, &#x27;qor&#x27;, &#x27;sol&#x27;, &#x27;sor&#x27;, &#x27;dol&#x27;, &#x27;dor&#x27;, &#x27;dyl&#x27;, &#x27;dyr&#x27;, &#x27;qo&#x27;, &#x27;so&#x27;, &#x27;do&#x27;, &#x27;dy&#x27;, &#x27;ol&#x27;, &#x27;or&#x27;, &#x27;yl&#x27;, &#x27;yr&#x27;, &#x27;q&#x27;, &#x27;d&#x27;, &#x27;s&#x27;, &#x27;o&#x27;, &#x27;y&#x27;, &#x27;l&#x27;, &#x27;r&#x27;]"></td></tr>
+<tr><td><code>ROOT_ONSETS</code></td><td>json</td><td><input class="param" data-param="ROOT_ONSETS" value="[&#x27;ckh&#x27;, &#x27;cth&#x27;, &#x27;cph&#x27;, &#x27;cfh&#x27;, &#x27;tch&#x27;, &#x27;kch&#x27;, &#x27;pch&#x27;, &#x27;fch&#x27;, &#x27;tsh&#x27;, &#x27;ksh&#x27;, &#x27;psh&#x27;, &#x27;fsh&#x27;, &#x27;sh&#x27;, &#x27;ch&#x27;, &#x27;f&#x27;, &#x27;p&#x27;, &#x27;k&#x27;, &#x27;t&#x27;]"></td></tr>
+<tr><td><code>ROOT_BODIES</code></td><td>json</td><td><input class="param" data-param="ROOT_BODIES" value="[&#x27;eeed&#x27;, &#x27;eees&#x27;, &#x27;eeea&#x27;, &#x27;eeeo&#x27;, &#x27;eed&#x27;, &#x27;ees&#x27;, &#x27;eea&#x27;, &#x27;eeo&#x27;, &#x27;ed&#x27;, &#x27;es&#x27;, &#x27;ea&#x27;, &#x27;eo&#x27;, &#x27;eee&#x27;, &#x27;ee&#x27;, &#x27;e&#x27;, &#x27;da&#x27;, &#x27;do&#x27;, &#x27;sa&#x27;, &#x27;so&#x27;, &#x27;d&#x27;, &#x27;s&#x27;, &#x27;a&#x27;, &#x27;o&#x27;]"></td></tr>
+<tr><td><code>SUFFIXES</code></td><td>json</td><td><input class="param" data-param="SUFFIXES" value="[&#x27;iiiny&#x27;, &#x27;iiny&#x27;, &#x27;iiir&#x27;, &#x27;iiil&#x27;, &#x27;iiin&#x27;, &#x27;iir&#x27;, &#x27;iil&#x27;, &#x27;iin&#x27;, &#x27;iim&#x27;, &#x27;iid&#x27;, &#x27;iry&#x27;, &#x27;ily&#x27;, &#x27;iny&#x27;, &#x27;ir&#x27;, &#x27;il&#x27;, &#x27;in&#x27;, &#x27;im&#x27;, &#x27;id&#x27;, &#x27;iii&#x27;, &#x27;ii&#x27;, &#x27;dy&#x27;, &#x27;ly&#x27;, &#x27;ry&#x27;, &#x27;ny&#x27;, &#x27;my&#x27;, &#x27;i&#x27;, &#x27;y&#x27;, &#x27;n&#x27;, &#x27;m&#x27;, &#x27;d&#x27;, &#x27;l&#x27;, &#x27;r&#x27;]"></td></tr>
 </table>
-<h2>Golden output (PYTHONHASHSEED=0)</h2><details><summary>show</summary><pre>  Loading 201 folios...
+<h2>Run it in your browser</h2><p class="muted">Python + numpy on WebAssembly, entirely on your machine — nothing is uploaded. First run downloads the runtime (~15 MB) and the repository data pack (~9 MB); both are cached afterwards. Expect it to be slower than a native run.</p><p><button id="run-btn">&#9654; Run</button> <button id="stop-btn">Stop</button> <span id="run-status" class="muted"></span></p><pre id="run-out"></pre>
+<script>window.VAIS_TEST = {"stem": "root_type_grammar", "specs": {"PREFIXES": {"type": "json", "container": null}, "ROOT_ONSETS": {"type": "json", "container": null}, "ROOT_BODIES": {"type": "json", "container": null}, "SUFFIXES": {"type": "json", "container": null}}, "base": "../", "baselineSeconds": 0};</script><script src="../runner.js"></script>
+<h2>Run it locally (full speed, byte-exact)</h2>
+<pre>git clone https://github.com/Vineyardcode/vais
+cd vais
+pip install numpy flask
+python scripts/root_type_grammar.py        # this test; output also lands in results/
+python webui/server.py          # or the full interactive UI at localhost:5000</pre>
+<h2>Golden output (PYTHONHASHSEED=0)</h2><details><summary>show</summary><pre id="golden-pre">  Loading 201 folios...
   Extracted 4728 parsed lines
 
 ==========================================================================================
@@ -361,7 +380,7 @@ SYNTHESIS — ROOT-TYPE GRAMMAR — the substance/process root split
 ══════════════════════════════════════════════════════════════════════════════════════════
 ANALYSIS COMPLETE
 ══════════════════════════════════════════════════════════════════════════════════════════
-</pre></details><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>53c82d9</code>. 
+</pre></details><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>a936587</code>. 
 To run any test with your own parameters, clone
 <a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
 (<code>python webui/server.py</code>). All numbers reproduce at

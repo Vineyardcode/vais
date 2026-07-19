@@ -35,6 +35,17 @@ blockquote { border-left:3px solid var(--accent); margin:1em 0;
        padding:.05em .45em; margin-left:.5em; }
 .tag.sug { border-color:var(--warn); color:var(--warn); }
 details summary { cursor:pointer; font-family: system-ui, sans-serif; }
+input.param { font-family: ui-monospace, Consolas, monospace;
+              font-size:.85em; width:24em; max-width:100%;
+              background:var(--code); color:var(--fg);
+              border:1px solid var(--line); border-radius:3px;
+              padding:.25em .4em; }
+button { font-family: system-ui, sans-serif; font-size:.95em;
+         padding:.35em 1em; border:1px solid var(--accent);
+         border-radius:4px; background:var(--code); color:var(--fg);
+         cursor:pointer; }
+button:disabled { opacity:.5; cursor:default; }
+#run-out { min-height:2em; }
 footer { border-top:1px solid var(--line); margin-top:3em;
          padding-top:1em; font-size:.85em; color:var(--muted); }
 </style></head><body>
@@ -85,19 +96,27 @@ SKEPTICISM:
   - If the optimal k is sensitive to linkage method, it&#x27;s not robust.
   - NL syllables should NOT cluster down to alphabet size — if they
     do, the method is flawed and proves nothing about VMS.</pre>
-<h2>Parameters</h2><table><tr><th>name</th><th>default</th><th>type</th></tr>
-<tr><td><code>GALLOWS_TRI</code></td><td><code>[&#x27;cth&#x27;, &#x27;ckh&#x27;, &#x27;cph&#x27;, &#x27;cfh&#x27;]</code></td><td>json</td></tr>
-<tr><td><code>GALLOWS_BI</code></td><td><code>[&#x27;ch&#x27;, &#x27;sh&#x27;, &#x27;th&#x27;, &#x27;kh&#x27;, &#x27;ph&#x27;, &#x27;fh&#x27;]</code></td><td>json</td></tr>
-<tr><td><code>SLOT1</code></td><td><code>[&#x27;ch&#x27;, &#x27;sh&#x27;, &#x27;y&#x27;]</code></td><td>json</td></tr>
-<tr><td><code>SLOT2_RUNS</code></td><td><code>[&#x27;e&#x27;]</code></td><td>json</td></tr>
-<tr><td><code>SLOT2_SINGLE</code></td><td><code>[&#x27;a&#x27;, &#x27;q&#x27;]</code></td><td>json</td></tr>
-<tr><td><code>SLOT3</code></td><td><code>[&#x27;o&#x27;]</code></td><td>json</td></tr>
-<tr><td><code>SLOT4_RUNS</code></td><td><code>[&#x27;i&#x27;]</code></td><td>json</td></tr>
-<tr><td><code>SLOT4_SINGLE</code></td><td><code>[&#x27;d&#x27;]</code></td><td>json</td></tr>
-<tr><td><code>SLOT5</code></td><td><code>[&#x27;cfh&#x27;, &#x27;ckh&#x27;, &#x27;cph&#x27;, &#x27;cth&#x27;, &#x27;f&#x27;, &#x27;k&#x27;, &#x27;l&#x27;, &#x27;m&#x27;, &#x27;n&#x27;, &#x27;p&#x27;, &#x27;r&#x27;, &#x27;s&#x27;, &#x27;t&#x27;, &#x27;y&#x27;]</code></td><td>json</td></tr>
-<tr><td><code>MAX_CHUNKS</code></td><td><code>6</code></td><td>int</td></tr>
+<h2>Parameters</h2><p class="muted">Edit a value to override it for an in-browser run (the script itself is never modified).</p><table><tr><th>name</th><th>type</th><th>value</th></tr>
+<tr><td><code>GALLOWS_TRI</code></td><td>json</td><td><input class="param" data-param="GALLOWS_TRI" value="[&#x27;cth&#x27;, &#x27;ckh&#x27;, &#x27;cph&#x27;, &#x27;cfh&#x27;]"></td></tr>
+<tr><td><code>GALLOWS_BI</code></td><td>json</td><td><input class="param" data-param="GALLOWS_BI" value="[&#x27;ch&#x27;, &#x27;sh&#x27;, &#x27;th&#x27;, &#x27;kh&#x27;, &#x27;ph&#x27;, &#x27;fh&#x27;]"></td></tr>
+<tr><td><code>SLOT1</code></td><td>json</td><td><input class="param" data-param="SLOT1" value="[&#x27;ch&#x27;, &#x27;sh&#x27;, &#x27;y&#x27;]"></td></tr>
+<tr><td><code>SLOT2_RUNS</code></td><td>json</td><td><input class="param" data-param="SLOT2_RUNS" value="[&#x27;e&#x27;]"></td></tr>
+<tr><td><code>SLOT2_SINGLE</code></td><td>json</td><td><input class="param" data-param="SLOT2_SINGLE" value="[&#x27;a&#x27;, &#x27;q&#x27;]"></td></tr>
+<tr><td><code>SLOT3</code></td><td>json</td><td><input class="param" data-param="SLOT3" value="[&#x27;o&#x27;]"></td></tr>
+<tr><td><code>SLOT4_RUNS</code></td><td>json</td><td><input class="param" data-param="SLOT4_RUNS" value="[&#x27;i&#x27;]"></td></tr>
+<tr><td><code>SLOT4_SINGLE</code></td><td>json</td><td><input class="param" data-param="SLOT4_SINGLE" value="[&#x27;d&#x27;]"></td></tr>
+<tr><td><code>SLOT5</code></td><td>json</td><td><input class="param" data-param="SLOT5" value="[&#x27;cfh&#x27;, &#x27;ckh&#x27;, &#x27;cph&#x27;, &#x27;cth&#x27;, &#x27;f&#x27;, &#x27;k&#x27;, &#x27;l&#x27;, &#x27;m&#x27;, &#x27;n&#x27;, &#x27;p&#x27;, &#x27;r&#x27;, &#x27;s&#x27;, &#x27;t&#x27;, &#x27;y&#x27;]"></td></tr>
+<tr><td><code>MAX_CHUNKS</code></td><td>int</td><td><input class="param" data-param="MAX_CHUNKS" value="6"></td></tr>
 </table>
-<h2>Golden output (PYTHONHASHSEED=0)</h2><details><summary>show</summary><pre>============================================================================
+<h2>Run it in your browser</h2><p class="muted">Python + numpy on WebAssembly, entirely on your machine — nothing is uploaded. First run downloads the runtime (~15 MB) and the repository data pack (~9 MB); both are cached afterwards. Expect it to be slower than a native run.</p><p><button id="run-btn">&#9654; Run</button> <button id="stop-btn">Stop</button> <span id="run-status" class="muted"></span></p><pre id="run-out"></pre>
+<script>window.VAIS_TEST = {"stem": "chunk_equivalence_classes", "specs": {"GALLOWS_TRI": {"type": "json", "container": null}, "GALLOWS_BI": {"type": "json", "container": null}, "SLOT1": {"type": "json", "container": "set"}, "SLOT2_RUNS": {"type": "json", "container": "set"}, "SLOT2_SINGLE": {"type": "json", "container": "set"}, "SLOT3": {"type": "json", "container": "set"}, "SLOT4_RUNS": {"type": "json", "container": "set"}, "SLOT4_SINGLE": {"type": "json", "container": "set"}, "SLOT5": {"type": "json", "container": "set"}, "MAX_CHUNKS": {"type": "int", "container": null}}, "base": "../", "baselineSeconds": 0};</script><script src="../runner.js"></script>
+<h2>Run it locally (full speed, byte-exact)</h2>
+<pre>git clone https://github.com/Vineyardcode/vais
+cd vais
+pip install numpy flask
+python scripts/chunk_equivalence_classes.py        # this test; output also lands in results/
+python webui/server.py          # or the full interactive UI at localhost:5000</pre>
+<h2>Golden output (PYTHONHASHSEED=0)</h2><details><summary>show</summary><pre id="golden-pre">============================================================================
 chunk_equivalence_classes — CHUNK EQUIVALENCE CLASS DISCOVERY
 ============================================================================
 
@@ -383,7 +402,7 @@ SYNTHESIS &amp; VERDICT
 
 
   Results saved to results/chunk_equivalence_classes.txt/.json
-</pre></details><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>53c82d9</code>. 
+</pre></details><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>a936587</code>. 
 To run any test with your own parameters, clone
 <a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
 (<code>python webui/server.py</code>). All numbers reproduce at

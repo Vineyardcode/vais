@@ -35,6 +35,17 @@ blockquote { border-left:3px solid var(--accent); margin:1em 0;
        padding:.05em .45em; margin-left:.5em; }
 .tag.sug { border-color:var(--warn); color:var(--warn); }
 details summary { cursor:pointer; font-family: system-ui, sans-serif; }
+input.param { font-family: ui-monospace, Consolas, monospace;
+              font-size:.85em; width:24em; max-width:100%;
+              background:var(--code); color:var(--fg);
+              border:1px solid var(--line); border-radius:3px;
+              padding:.25em .4em; }
+button { font-family: system-ui, sans-serif; font-size:.95em;
+         padding:.35em 1em; border:1px solid var(--accent);
+         border-radius:4px; background:var(--code); color:var(--fg);
+         cursor:pointer; }
+button:disabled { opacity:.5; cursor:default; }
+#run-out { min-height:2em; }
 footer { border-top:1px solid var(--line); margin-top:3em;
          padding-top:1em; font-size:.85em; color:var(--muted); }
 </style></head><body>
@@ -47,12 +58,20 @@ footer { border-top:1px solid var(--line); margin-top:3em;
 
 Try substituting ch/sh benches with JKP&#x27;s ligature candidates
 to see if any combination produces recognizable text.</pre>
-<h2>Parameters</h2><table><tr><th>name</th><th>default</th><th>type</th></tr>
-<tr><td><code>CH_OPTIONS</code></td><td><code>[&#x27;cr&#x27;, &#x27;ct&#x27;, &#x27;er&#x27;, &#x27;ee&#x27;, &#x27;cc&#x27;]</code></td><td>json</td></tr>
-<tr><td><code>SH_OPTIONS</code></td><td><code>[&#x27;se&#x27;, &#x27;sr&#x27;, &#x27;sc&#x27;, &#x27;ce&#x27;, &#x27;ss&#x27;]</code></td><td>json</td></tr>
-<tr><td><code>LATIN_PHARMA</code></td><td><code>[&#x27;accipe&#x27;, &#x27;acer&#x27;, &#x27;acus&#x27;, &#x27;adde&#x27;, &#x27;alis&#x27;, &#x27;ana&#x27;, &#x27;aqua&#x27;, &#x27;aris&#x27;, &#x27;ars&#x27;, &#x27;arum&#x27;, &#x27;atus&#x27;, &#x27;…</code></td><td>json</td></tr>
+<h2>Parameters</h2><p class="muted">Edit a value to override it for an in-browser run (the script itself is never modified).</p><table><tr><th>name</th><th>type</th><th>value</th></tr>
+<tr><td><code>CH_OPTIONS</code></td><td>json</td><td><input class="param" data-param="CH_OPTIONS" value="[&#x27;cr&#x27;, &#x27;ct&#x27;, &#x27;er&#x27;, &#x27;ee&#x27;, &#x27;cc&#x27;]"></td></tr>
+<tr><td><code>SH_OPTIONS</code></td><td>json</td><td><input class="param" data-param="SH_OPTIONS" value="[&#x27;se&#x27;, &#x27;sr&#x27;, &#x27;sc&#x27;, &#x27;ce&#x27;, &#x27;ss&#x27;]"></td></tr>
+<tr><td><code>LATIN_PHARMA</code></td><td>json</td><td><input class="param" data-param="LATIN_PHARMA" value="[&#x27;accipe&#x27;, &#x27;acer&#x27;, &#x27;acus&#x27;, &#x27;adde&#x27;, &#x27;alis&#x27;, &#x27;ana&#x27;, &#x27;aqua&#x27;, &#x27;aris&#x27;, &#x27;ars&#x27;, &#x27;arum&#x27;, &#x27;atus&#x27;, &#x27;aut&#x27;, &#x27;bis&#x27;, &#x27;calor&#x27;, &#x27;cera&#x27;, &#x27;color&#x27;, &#x27;contere&#x27;, &#x27;contra&#x27;, &#x27;cor&#x27;, &#x27;cortex&#x27;, &#x27;cum&#x27;, &#x27;das&#x27;, &#x27;datur&#x27;, &#x27;die&#x27;, &#x27;distilla&#x27;, &#x27;dolor&#x27;, &#x27;ensis&#x27;, &#x27;eris&#x27;, &#x27;est&#x27;, &#x27;extra&#x27;, &#x27;far&#x27;, &#x27;fiat&#x27;, &#x27;folia&#x27;, &#x27;herba&#x27;, &#x27;hoc&#x27;, &#x27;hora&#x27;, &#x27;humor&#x27;, &#x27;icus&#x27;, &#x27;infra&#x27;, &#x27;intra&#x27;, &#x27;inus&#x27;, &#x27;iris&#x27;, &#x27;item&#x27;, &#x27;itus&#x27;, &#x27;ius&#x27;, &#x27;mel&#x27;, &#x27;misce&#x27;, &#x27;nocte&#x27;, &#x27;non&#x27;, &#x27;odor&#x27;, &#x27;oleum&#x27;, &#x27;olus&#x27;, &#x27;oris&#x27;, &#x27;orum&#x27;, &#x27;per&#x27;, &#x27;pro&#x27;, &#x27;radix&#x27;, &#x27;recipe&#x27;, &#x27;res&#x27;, &#x27;rosa&#x27;, &#x27;ruta&#x27;, &#x27;sal&#x27;, &#x27;salvia&#x27;, &#x27;sed&#x27;, &#x27;semel&#x27;, &#x27;semen&#x27;, &#x27;sic&#x27;, &#x27;sol&#x27;, &#x27;solve&#x27;, &#x27;sumat&#x27;, &#x27;supra&#x27;, &#x27;ter&#x27;, &#x27;ulus&#x27;, &#x27;uris&#x27;, &#x27;utus&#x27;, &#x27;vel&#x27;]"></td></tr>
 </table>
-<h2>Golden output (PYTHONHASHSEED=0)</h2><details><summary>show</summary><pre>================================================================================
+<h2>Run it in your browser</h2><p class="muted">Python + numpy on WebAssembly, entirely on your machine — nothing is uploaded. First run downloads the runtime (~15 MB) and the repository data pack (~9 MB); both are cached afterwards. Expect it to be slower than a native run.</p><p><button id="run-btn">&#9654; Run</button> <button id="stop-btn">Stop</button> <span id="run-status" class="muted"></span></p><pre id="run-out"></pre>
+<script>window.VAIS_TEST = {"stem": "f1r_bench_substitution_variants", "specs": {"CH_OPTIONS": {"type": "json", "container": null}, "SH_OPTIONS": {"type": "json", "container": null}, "LATIN_PHARMA": {"type": "json", "container": "set"}}, "base": "../", "baselineSeconds": 0};</script><script src="../runner.js"></script>
+<h2>Run it locally (full speed, byte-exact)</h2>
+<pre>git clone https://github.com/Vineyardcode/vais
+cd vais
+pip install numpy flask
+python scripts/f1r_bench_substitution_variants.py        # this test; output also lands in results/
+python webui/server.py          # or the full interactive UI at localhost:5000</pre>
+<h2>Golden output (PYTHONHASHSEED=0)</h2><details><summary>show</summary><pre id="golden-pre">================================================================================
 f1r_bench_substitution_variants — BENCH SUBSTITUTION VARIANT SCAN
 ================================================================================
 Total f1r tokens: 215
@@ -430,7 +449,7 @@ constitute a decipherment key. A successful decoding would need:
   - Knowledge of the source language
 
 Saved to C:\projects\vais\results\f1r_bench_substitution_variants.txt
-</pre></details><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>53c82d9</code>. 
+</pre></details><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>a936587</code>. 
 To run any test with your own parameters, clone
 <a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
 (<code>python webui/server.py</code>). All numbers reproduce at

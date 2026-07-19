@@ -35,6 +35,17 @@ blockquote { border-left:3px solid var(--accent); margin:1em 0;
        padding:.05em .45em; margin-left:.5em; }
 .tag.sug { border-color:var(--warn); color:var(--warn); }
 details summary { cursor:pointer; font-family: system-ui, sans-serif; }
+input.param { font-family: ui-monospace, Consolas, monospace;
+              font-size:.85em; width:24em; max-width:100%;
+              background:var(--code); color:var(--fg);
+              border:1px solid var(--line); border-radius:3px;
+              padding:.25em .4em; }
+button { font-family: system-ui, sans-serif; font-size:.95em;
+         padding:.35em 1em; border:1px solid var(--accent);
+         border-radius:4px; background:var(--code); color:var(--fg);
+         cursor:pointer; }
+button:disabled { opacity:.5; cursor:default; }
+#run-out { min-height:2em; }
 footer { border-top:1px solid var(--line); margin-top:3em;
          padding-top:1em; font-size:.85em; color:var(--muted); }
 </style></head><body>
@@ -69,17 +80,25 @@ NEGATIVE (must NOT look like language / must be identified as generated):
 
 Every file: one text line per corpus line, space-separated tokens,
 size-matched to ~TARGET_TOKENS. Seed pinned; output is byte-reproducible.</pre>
-<h2>Parameters</h2><table><tr><th>name</th><th>default</th><th>type</th></tr>
-<tr><td><code>SEED</code></td><td><code>108</code></td><td>int</td></tr>
-<tr><td><code>TARGET_TOKENS</code></td><td><code>38000</code></td><td>int</td></tr>
-<tr><td><code>LINE_LEN_MIN</code></td><td><code>6</code></td><td>int</td></tr>
-<tr><td><code>LINE_LEN_MAX</code></td><td><code>10</code></td><td>int</td></tr>
-<tr><td><code>SELF_CITATION_SEED_LINES</code></td><td><code>12</code></td><td>int</td></tr>
-<tr><td><code>SELF_CITATION_MODS</code></td><td><code>9</code></td><td>int</td></tr>
-<tr><td><code>GRILLE_JUMP_PROB</code></td><td><code>0.18</code></td><td>float</td></tr>
-<tr><td><code>VERBOSE_GROUPS</code></td><td><code>[&#x27;ol&#x27;, &#x27;or&#x27;, &#x27;ar&#x27;, &#x27;al&#x27;, &#x27;ain&#x27;, &#x27;aiin&#x27;, &#x27;dy&#x27;, &#x27;edy&#x27;, &#x27;ey&#x27;, &#x27;chol&#x27;, &#x27;chor&#x27;, &#x27;che&#x27;, &#x27;she&#x27;, &#x27;…</code></td><td>json</td></tr>
+<h2>Parameters</h2><p class="muted">Edit a value to override it for an in-browser run (the script itself is never modified).</p><table><tr><th>name</th><th>type</th><th>value</th></tr>
+<tr><td><code>SEED</code></td><td>int</td><td><input class="param" data-param="SEED" value="108"></td></tr>
+<tr><td><code>TARGET_TOKENS</code></td><td>int</td><td><input class="param" data-param="TARGET_TOKENS" value="38000"></td></tr>
+<tr><td><code>LINE_LEN_MIN</code></td><td>int</td><td><input class="param" data-param="LINE_LEN_MIN" value="6"></td></tr>
+<tr><td><code>LINE_LEN_MAX</code></td><td>int</td><td><input class="param" data-param="LINE_LEN_MAX" value="10"></td></tr>
+<tr><td><code>SELF_CITATION_SEED_LINES</code></td><td>int</td><td><input class="param" data-param="SELF_CITATION_SEED_LINES" value="12"></td></tr>
+<tr><td><code>SELF_CITATION_MODS</code></td><td>int</td><td><input class="param" data-param="SELF_CITATION_MODS" value="9"></td></tr>
+<tr><td><code>GRILLE_JUMP_PROB</code></td><td>float</td><td><input class="param" data-param="GRILLE_JUMP_PROB" value="0.18"></td></tr>
+<tr><td><code>VERBOSE_GROUPS</code></td><td>json</td><td><input class="param" data-param="VERBOSE_GROUPS" value="[&#x27;ol&#x27;, &#x27;or&#x27;, &#x27;ar&#x27;, &#x27;al&#x27;, &#x27;ain&#x27;, &#x27;aiin&#x27;, &#x27;dy&#x27;, &#x27;edy&#x27;, &#x27;ey&#x27;, &#x27;chol&#x27;, &#x27;chor&#x27;, &#x27;che&#x27;, &#x27;she&#x27;, &#x27;qok&#x27;, &#x27;qot&#x27;, &#x27;ok&#x27;, &#x27;ot&#x27;, &#x27;da&#x27;, &#x27;sa&#x27;, &#x27;ke&#x27;, &#x27;te&#x27;, &#x27;so&#x27;, &#x27;do&#x27;, &#x27;y&#x27;, &#x27;o&#x27;, &#x27;d&#x27;, &#x27;s&#x27;]"></td></tr>
 </table>
-<h2>Golden output (PYTHONHASHSEED=0)</h2><details><summary>show</summary><pre>========================================================================
+<h2>Run it in your browser</h2><p class="muted">Python + numpy on WebAssembly, entirely on your machine — nothing is uploaded. First run downloads the runtime (~15 MB) and the repository data pack (~9 MB); both are cached afterwards. Expect it to be slower than a native run.</p><p><button id="run-btn">&#9654; Run</button> <button id="stop-btn">Stop</button> <span id="run-status" class="muted"></span></p><pre id="run-out"></pre>
+<script>window.VAIS_TEST = {"stem": "controls_foundry", "specs": {"SEED": {"type": "int", "container": null}, "TARGET_TOKENS": {"type": "int", "container": null}, "LINE_LEN_MIN": {"type": "int", "container": null}, "LINE_LEN_MAX": {"type": "int", "container": null}, "SELF_CITATION_SEED_LINES": {"type": "int", "container": null}, "SELF_CITATION_MODS": {"type": "int", "container": null}, "GRILLE_JUMP_PROB": {"type": "float", "container": null}, "VERBOSE_GROUPS": {"type": "json", "container": null}}, "base": "../", "baselineSeconds": 0};</script><script src="../runner.js"></script>
+<h2>Run it locally (full speed, byte-exact)</h2>
+<pre>git clone https://github.com/Vineyardcode/vais
+cd vais
+pip install numpy flask
+python scripts/controls_foundry.py        # this test; output also lands in results/
+python webui/server.py          # or the full interactive UI at localhost:5000</pre>
+<h2>Golden output (PYTHONHASHSEED=0)</h2><details><summary>show</summary><pre id="golden-pre">========================================================================
 controls_foundry — CONTROLS FOUNDRY (seed=108)
 ========================================================================
   latin_plain         38,003 tokens   8,932 types  4,755 lines
@@ -94,7 +113,7 @@ controls_foundry — CONTROLS FOUNDRY (seed=108)
 
   Written to data/controls/ + manifest to results/.
   Deterministic: rerunning reproduces byte-identical corpora.
-</pre></details><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>53c82d9</code>. 
+</pre></details><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>a936587</code>. 
 To run any test with your own parameters, clone
 <a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
 (<code>python webui/server.py</code>). All numbers reproduce at

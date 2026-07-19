@@ -35,6 +35,17 @@ blockquote { border-left:3px solid var(--accent); margin:1em 0;
        padding:.05em .45em; margin-left:.5em; }
 .tag.sug { border-color:var(--warn); color:var(--warn); }
 details summary { cursor:pointer; font-family: system-ui, sans-serif; }
+input.param { font-family: ui-monospace, Consolas, monospace;
+              font-size:.85em; width:24em; max-width:100%;
+              background:var(--code); color:var(--fg);
+              border:1px solid var(--line); border-radius:3px;
+              padding:.25em .4em; }
+button { font-family: system-ui, sans-serif; font-size:.95em;
+         padding:.35em 1em; border:1px solid var(--accent);
+         border-radius:4px; background:var(--code); color:var(--fg);
+         cursor:pointer; }
+button:disabled { opacity:.5; cursor:default; }
+#run-out { min-height:2em; }
 footer { border-top:1px solid var(--line); margin-top:3em;
          padding-top:1em; font-size:.85em; color:var(--muted); }
 </style></head><body>
@@ -61,16 +72,24 @@ Three integrated analyses:
        (p-opener, s-verb, qokeedy relative, gallows determinatives,
        confirmed vocabulary) to translate a bio-section paragraph
        where qokeedy is enriched 2×.</pre>
-<h2>Parameters</h2><table><tr><th>name</th><th>default</th><th>type</th></tr>
-<tr><td><code>SIMPLE_GALLOWS</code></td><td><code>[&#x27;t&#x27;, &#x27;k&#x27;, &#x27;f&#x27;, &#x27;p&#x27;]</code></td><td>json</td></tr>
-<tr><td><code>BENCH_GALLOWS</code></td><td><code>[&#x27;cth&#x27;, &#x27;ckh&#x27;, &#x27;cph&#x27;, &#x27;cfh&#x27;]</code></td><td>json</td></tr>
-<tr><td><code>COMPOUND_GCH</code></td><td><code>[&#x27;tch&#x27;, &#x27;kch&#x27;, &#x27;pch&#x27;, &#x27;fch&#x27;]</code></td><td>json</td></tr>
-<tr><td><code>COMPOUND_GSH</code></td><td><code>[&#x27;tsh&#x27;, &#x27;ksh&#x27;, &#x27;psh&#x27;, &#x27;fsh&#x27;]</code></td><td>json</td></tr>
-<tr><td><code>PREFIXES</code></td><td><code>[&#x27;qo&#x27;, &#x27;q&#x27;, &#x27;so&#x27;, &#x27;do&#x27;, &#x27;o&#x27;, &#x27;d&#x27;, &#x27;s&#x27;, &#x27;y&#x27;]</code></td><td>json</td></tr>
-<tr><td><code>SUFFIXES</code></td><td><code>[&#x27;aiin&#x27;, &#x27;ain&#x27;, &#x27;iin&#x27;, &#x27;in&#x27;, &#x27;ar&#x27;, &#x27;or&#x27;, &#x27;al&#x27;, &#x27;ol&#x27;, &#x27;edy&#x27;, &#x27;ody&#x27;, &#x27;eedy&#x27;, &#x27;dy&#x27;, &#x27;sy&#x27;, &#x27;ey…</code></td><td>json</td></tr>
-<tr><td><code>ZODIAC_MAP</code></td><td><code>{&#x27;f70v1&#x27;: &#x27;Aries-dark&#x27;, &#x27;f71r&#x27;: &#x27;Aries-light&#x27;, &#x27;f71v&#x27;: &#x27;Taurus-light&#x27;, &#x27;f72r1&#x27;: &#x27;Taurus-da…</code></td><td>json</td></tr>
+<h2>Parameters</h2><p class="muted">Edit a value to override it for an in-browser run (the script itself is never modified).</p><table><tr><th>name</th><th>type</th><th>value</th></tr>
+<tr><td><code>SIMPLE_GALLOWS</code></td><td>json</td><td><input class="param" data-param="SIMPLE_GALLOWS" value="[&#x27;t&#x27;, &#x27;k&#x27;, &#x27;f&#x27;, &#x27;p&#x27;]"></td></tr>
+<tr><td><code>BENCH_GALLOWS</code></td><td>json</td><td><input class="param" data-param="BENCH_GALLOWS" value="[&#x27;cth&#x27;, &#x27;ckh&#x27;, &#x27;cph&#x27;, &#x27;cfh&#x27;]"></td></tr>
+<tr><td><code>COMPOUND_GCH</code></td><td>json</td><td><input class="param" data-param="COMPOUND_GCH" value="[&#x27;tch&#x27;, &#x27;kch&#x27;, &#x27;pch&#x27;, &#x27;fch&#x27;]"></td></tr>
+<tr><td><code>COMPOUND_GSH</code></td><td>json</td><td><input class="param" data-param="COMPOUND_GSH" value="[&#x27;tsh&#x27;, &#x27;ksh&#x27;, &#x27;psh&#x27;, &#x27;fsh&#x27;]"></td></tr>
+<tr><td><code>PREFIXES</code></td><td>json</td><td><input class="param" data-param="PREFIXES" value="[&#x27;qo&#x27;, &#x27;q&#x27;, &#x27;so&#x27;, &#x27;do&#x27;, &#x27;o&#x27;, &#x27;d&#x27;, &#x27;s&#x27;, &#x27;y&#x27;]"></td></tr>
+<tr><td><code>SUFFIXES</code></td><td>json</td><td><input class="param" data-param="SUFFIXES" value="[&#x27;aiin&#x27;, &#x27;ain&#x27;, &#x27;iin&#x27;, &#x27;in&#x27;, &#x27;ar&#x27;, &#x27;or&#x27;, &#x27;al&#x27;, &#x27;ol&#x27;, &#x27;edy&#x27;, &#x27;ody&#x27;, &#x27;eedy&#x27;, &#x27;dy&#x27;, &#x27;sy&#x27;, &#x27;ey&#x27;, &#x27;y&#x27;]"></td></tr>
+<tr><td><code>ZODIAC_MAP</code></td><td>json</td><td><input class="param" data-param="ZODIAC_MAP" value="{&#x27;f70v1&#x27;: &#x27;Aries-dark&#x27;, &#x27;f71r&#x27;: &#x27;Aries-light&#x27;, &#x27;f71v&#x27;: &#x27;Taurus-light&#x27;, &#x27;f72r1&#x27;: &#x27;Taurus-dark&#x27;, &#x27;f72r2&#x27;: &#x27;Gemini&#x27;, &#x27;f72r3&#x27;: &#x27;Cancer&#x27;, &#x27;f72v3&#x27;: &#x27;Leo&#x27;, &#x27;f72v2&#x27;: &#x27;Virgo&#x27;, &#x27;f72v1&#x27;: &#x27;Libra&#x27;, &#x27;f73r&#x27;: &#x27;Scorpio&#x27;, &#x27;f73v&#x27;: &#x27;Sagittarius&#x27;, &#x27;f70v2&#x27;: &#x27;Pisces&#x27;}"></td></tr>
 </table>
-<h2>Golden output (PYTHONHASHSEED=0)</h2><details><summary>show</summary><pre>============================================================================
+<h2>Run it in your browser</h2><p class="muted">Python + numpy on WebAssembly, entirely on your machine — nothing is uploaded. First run downloads the runtime (~15 MB) and the repository data pack (~9 MB); both are cached afterwards. Expect it to be slower than a native run.</p><p><button id="run-btn">&#9654; Run</button> <button id="stop-btn">Stop</button> <span id="run-status" class="muted"></span></p><pre id="run-out"></pre>
+<script>window.VAIS_TEST = {"stem": "zodiac_element_vocabulary", "specs": {"SIMPLE_GALLOWS": {"type": "json", "container": null}, "BENCH_GALLOWS": {"type": "json", "container": null}, "COMPOUND_GCH": {"type": "json", "container": null}, "COMPOUND_GSH": {"type": "json", "container": null}, "PREFIXES": {"type": "json", "container": null}, "SUFFIXES": {"type": "json", "container": null}, "ZODIAC_MAP": {"type": "json", "container": null}}, "base": "../", "baselineSeconds": 0};</script><script src="../runner.js"></script>
+<h2>Run it locally (full speed, byte-exact)</h2>
+<pre>git clone https://github.com/Vineyardcode/vais
+cd vais
+pip install numpy flask
+python scripts/zodiac_element_vocabulary.py        # this test; output also lands in results/
+python webui/server.py          # or the full interactive UI at localhost:5000</pre>
+<h2>Golden output (PYTHONHASHSEED=0)</h2><details><summary>show</summary><pre id="golden-pre">============================================================================
 zodiac_element_vocabulary: HIGHEST-LEVERAGE ATTACKS
 ============================================================================
 
@@ -345,7 +364,7 @@ FIXED-CROSS REFERENCE TEST
   eosd            Scorpio            ~asad    =Leo(lion)       SAME MODALITY (Fixed)
 
   Results saved to results/zodiac_element_vocabulary_results.json
-</pre></details><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>53c82d9</code>. 
+</pre></details><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>a936587</code>. 
 To run any test with your own parameters, clone
 <a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
 (<code>python webui/server.py</code>). All numbers reproduce at

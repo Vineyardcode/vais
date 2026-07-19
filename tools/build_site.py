@@ -16,9 +16,11 @@ import ast
 import html
 import json
 import re
+import shutil
 import subprocess
 import sys
 import time
+import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -62,6 +64,17 @@ blockquote { border-left:3px solid var(--accent); margin:1em 0;
        padding:.05em .45em; margin-left:.5em; }
 .tag.sug { border-color:var(--warn); color:var(--warn); }
 details summary { cursor:pointer; font-family: system-ui, sans-serif; }
+input.param { font-family: ui-monospace, Consolas, monospace;
+              font-size:.85em; width:24em; max-width:100%;
+              background:var(--code); color:var(--fg);
+              border:1px solid var(--line); border-radius:3px;
+              padding:.25em .4em; }
+button { font-family: system-ui, sans-serif; font-size:.95em;
+         padding:.35em 1em; border:1px solid var(--accent);
+         border-radius:4px; background:var(--code); color:var(--fg);
+         cursor:pointer; }
+button:disabled { opacity:.5; cursor:default; }
+#run-out { min-height:2em; }
 footer { border-top:1px solid var(--line); margin-top:3em;
          padding-top:1em; font-size:.85em; color:var(--muted); }
 """
@@ -211,6 +224,37 @@ def golden_text(stem):
     return t.replace("\r\r\n", "\n").replace("\r\n", "\n")
 
 
+def build_data_pack():
+    """Everything the tests read, zipped for the in-browser runner's
+    virtual filesystem. Deterministic (sorted entries, fixed dates) so
+    rebuilds only change git when content changes."""
+    patterns = ("scripts/*.py", "scripts/common/*.py", "webui/runner.py",
+                "folios/*.txt", "data/controls/*", "data/latin_texts/*",
+                "data/gutenberg_cache/*", "data/translit/*",
+                "results/*.json")
+    zpath = OUT / "data_pack.zip"
+    with zipfile.ZipFile(zpath, "w", zipfile.ZIP_DEFLATED) as z:
+        for pat in patterns:
+            for f in sorted(ROOT.glob(pat)):
+                if not f.is_file() or f.name.startswith(
+                        ("_webui_", "_overnight_", "_web_")):
+                    continue
+                zi = zipfile.ZipInfo(
+                    f.relative_to(ROOT).as_posix(),
+                    date_time=(2020, 1, 1, 0, 0, 0))
+                zi.compress_type = zipfile.ZIP_DEFLATED
+                z.writestr(zi, f.read_bytes())
+    return zpath.stat().st_size
+
+
+LOCAL_RUN = """<h2>Run it locally (full speed, byte-exact)</h2>
+<pre>git clone {repo}
+cd vais
+pip install numpy flask
+python scripts/{stem}.py        # this test; output also lands in results/
+python webui/server.py          # or the full interactive UI at localhost:5000</pre>"""
+
+
 def main():
     commit = subprocess.run(["git", "rev-parse", "--short", "HEAD"],
                             cwd=ROOT, capture_output=True,
@@ -221,6 +265,9 @@ def main():
     OUT.mkdir(exist_ok=True)
     (OUT / "tests").mkdir(exist_ok=True)
     (OUT / ".nojekyll").write_text("")
+    for asset in (ROOT / "tools" / "site_assets").glob("*.js"):
+        shutil.copy(asset, OUT / asset.name)
+    pack_bytes = build_data_pack()
 
     # per-test pages
     for stem, t in reg.items():
@@ -237,21 +284,46 @@ def main():
         full_doc = ast.get_docstring(ast.parse(src)) or t["doc"]
         body.append(f"<pre>{esc(full_doc)}</pre>")
         if t["params"]:
-            body.append("<h2>Parameters</h2><table><tr><th>name</th>"
-                        "<th>default</th><th>type</th></tr>")
+            body.append("<h2>Parameters</h2><p class=\"muted\">Edit a "
+                        "value to override it for an in-browser run "
+                        "(the script itself is never modified).</p>"
+                        "<table><tr><th>name</th><th>type</th>"
+                        "<th>value</th></tr>")
             for name, spec in t["params"].items():
-                d = repr(spec["default"])
-                if len(d) > 90:
-                    d = d[:90] + "…"
+                v = (str(spec["default"]) if spec["type"] == "str"
+                     else repr(spec["default"]))
                 body.append(f"<tr><td><code>{esc(name)}</code></td>"
-                            f"<td><code>{esc(d)}</code></td>"
-                            f"<td>{esc(spec['type'])}</td></tr>")
+                            f"<td>{esc(spec['type'])}</td>"
+                            f'<td><input class="param" data-param='
+                            f'"{esc(name)}" value="{esc(v)}"></td></tr>')
             body.append("</table>")
+        secs = t.get("baseline_seconds") or 0
+        slow = (f" <strong>This test takes ~{secs/60:.0f} min natively "
+                "and several times longer in the browser — cloning is "
+                "the fast path.</strong>" if secs > 120 else "")
+        body.append(
+            "<h2>Run it in your browser</h2>"
+            "<p class=\"muted\">Python + numpy on WebAssembly, entirely "
+            "on your machine — nothing is uploaded. First run downloads "
+            "the runtime (~15 MB) and the repository data pack "
+            "(~9 MB); both are cached afterwards. Expect it to be "
+            f"slower than a native run.{slow}</p>"
+            '<p><button id="run-btn">&#9654; Run</button> '
+            '<button id="stop-btn">Stop</button> '
+            '<span id="run-status" class="muted"></span></p>'
+            '<pre id="run-out"></pre>')
+        specs = {n: {"type": s["type"], "container": s["container"]}
+                 for n, s in t["params"].items()}
+        cfg = {"stem": stem, "specs": specs, "base": "../",
+               "baselineSeconds": secs}
+        body.append(f"<script>window.VAIS_TEST = {json.dumps(cfg)};"
+                    '</script><script src="../runner.js"></script>')
+        body.append(LOCAL_RUN.format(repo=REPO_URL, stem=stem))
         g = golden_text(stem)
         if g:
             body.append("<h2>Golden output (PYTHONHASHSEED=0)</h2>"
                         "<details><summary>show</summary>"
-                        f"<pre>{esc(g)}</pre></details>")
+                        f'<pre id="golden-pre">{esc(g)}</pre></details>')
         (OUT / "tests" / f"{stem}.html").write_text(
             page(stem, "\n".join(body), depth=1, stamp=stamp),
             encoding="utf-8")
@@ -299,6 +371,11 @@ def main():
             "criteria, calibrated control corpora, golden reference "
             "outputs, and an adjudicated research program. Nothing here "
             "claims a decode; the methodology is the point.</p>",
+            "<p>Every test page has a <strong>&#9654; Run</strong> "
+            "button that executes the real instrument in your browser "
+            "(Python on WebAssembly — nothing uploaded, nothing "
+            "installed), plus copy-paste instructions for running it "
+            "locally at full speed.</p>",
             f'<p><a href="catalog.html">Test catalog</a> · '
             f'<a href="research.html">Research program &amp; findings'
             f"</a> · <a href=\"reports.html\">Overnight reports</a> · "
@@ -320,7 +397,8 @@ def main():
         page("VAIS", "\n".join(body), stamp=stamp), encoding="utf-8")
 
     n = len(list(OUT.rglob("*.html")))
-    print(f"Wrote {n} pages to docs/ (commit {commit})")
+    print(f"Wrote {n} pages to docs/ (commit {commit}); "
+          f"data pack {pack_bytes / 1e6:.1f} MB")
 
 
 if __name__ == "__main__":

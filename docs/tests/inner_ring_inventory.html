@@ -35,6 +35,17 @@ blockquote { border-left:3px solid var(--accent); margin:1em 0;
        padding:.05em .45em; margin-left:.5em; }
 .tag.sug { border-color:var(--warn); color:var(--warn); }
 details summary { cursor:pointer; font-family: system-ui, sans-serif; }
+input.param { font-family: ui-monospace, Consolas, monospace;
+              font-size:.85em; width:24em; max-width:100%;
+              background:var(--code); color:var(--fg);
+              border:1px solid var(--line); border-radius:3px;
+              padding:.25em .4em; }
+button { font-family: system-ui, sans-serif; font-size:.95em;
+         padding:.35em 1em; border:1px solid var(--accent);
+         border-radius:4px; background:var(--code); color:var(--fg);
+         cursor:pointer; }
+button:disabled { opacity:.5; cursor:default; }
+#run-out { min-height:2em; }
 footer { border-top:1px solid var(--line); margin-top:3em;
          padding-top:1em; font-size:.85em; color:var(--muted); }
 </style></head><body>
@@ -62,11 +73,19 @@ Steps:
   6. Inner ring vocabulary vs outer ring vocabulary (same folio)
   7. Inner ring vocabulary vs nymph labels (same folio)
   8. Candidate semantic assignments based on all evidence</pre>
-<h2>Parameters</h2><table><tr><th>name</th><th>default</th><th>type</th></tr>
-<tr><td><code>ZODIAC_FILES</code></td><td><code>[&#x27;folios/f70v_part.txt&#x27;, &#x27;folios/f71r.txt&#x27;, &#x27;folios/f71v_72r.txt&#x27;, &#x27;folios/f72v_part.txt&#x27;,…</code></td><td>json</td></tr>
-<tr><td><code>FOLIO_SIGN</code></td><td><code>{&#x27;f70v1&#x27;: &#x27;Aries&#x27;, &#x27;f70v2&#x27;: &#x27;Pisces&#x27;, &#x27;f71r&#x27;: &#x27;Aries&#x27;, &#x27;f71v&#x27;: &#x27;Taurus&#x27;, &#x27;f72r1&#x27;: &#x27;Taurus&#x27;…</code></td><td>json</td></tr>
+<h2>Parameters</h2><p class="muted">Edit a value to override it for an in-browser run (the script itself is never modified).</p><table><tr><th>name</th><th>type</th><th>value</th></tr>
+<tr><td><code>ZODIAC_FILES</code></td><td>json</td><td><input class="param" data-param="ZODIAC_FILES" value="[&#x27;folios/f70v_part.txt&#x27;, &#x27;folios/f71r.txt&#x27;, &#x27;folios/f71v_72r.txt&#x27;, &#x27;folios/f72v_part.txt&#x27;, &#x27;folios/f73r.txt&#x27;, &#x27;folios/f73v.txt&#x27;]"></td></tr>
+<tr><td><code>FOLIO_SIGN</code></td><td>json</td><td><input class="param" data-param="FOLIO_SIGN" value="{&#x27;f70v1&#x27;: &#x27;Aries&#x27;, &#x27;f70v2&#x27;: &#x27;Pisces&#x27;, &#x27;f71r&#x27;: &#x27;Aries&#x27;, &#x27;f71v&#x27;: &#x27;Taurus&#x27;, &#x27;f72r1&#x27;: &#x27;Taurus&#x27;, &#x27;f72r2&#x27;: &#x27;Gemini&#x27;, &#x27;f72r3&#x27;: &#x27;Cancer&#x27;, &#x27;f72v1&#x27;: &#x27;Libra&#x27;, &#x27;f72v2&#x27;: &#x27;Virgo&#x27;, &#x27;f72v3&#x27;: &#x27;Leo&#x27;, &#x27;f73r&#x27;: &#x27;Scorpio&#x27;, &#x27;f73v&#x27;: &#x27;Sagittarius&#x27;}"></td></tr>
 </table>
-<h2>Golden output (PYTHONHASHSEED=0)</h2><details><summary>show</summary><pre>Loaded 12 inner ring sentences, 24 outer ring sentences
+<h2>Run it in your browser</h2><p class="muted">Python + numpy on WebAssembly, entirely on your machine — nothing is uploaded. First run downloads the runtime (~15 MB) and the repository data pack (~9 MB); both are cached afterwards. Expect it to be slower than a native run.</p><p><button id="run-btn">&#9654; Run</button> <button id="stop-btn">Stop</button> <span id="run-status" class="muted"></span></p><pre id="run-out"></pre>
+<script>window.VAIS_TEST = {"stem": "inner_ring_inventory", "specs": {"ZODIAC_FILES": {"type": "json", "container": null}, "FOLIO_SIGN": {"type": "json", "container": null}}, "base": "../", "baselineSeconds": 0};</script><script src="../runner.js"></script>
+<h2>Run it locally (full speed, byte-exact)</h2>
+<pre>git clone https://github.com/Vineyardcode/vais
+cd vais
+pip install numpy flask
+python scripts/inner_ring_inventory.py        # this test; output also lands in results/
+python webui/server.py          # or the full interactive UI at localhost:5000</pre>
+<h2>Golden output (PYTHONHASHSEED=0)</h2><details><summary>show</summary><pre id="golden-pre">Loaded 12 inner ring sentences, 24 outer ring sentences
 
 ========================================================================
 COMPLETE INNER RING INVENTORY
@@ -662,7 +681,7 @@ SYNTHESIS — CANDIDATE SEMANTIC MODEL
 
 
 Done.
-</pre></details><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>53c82d9</code>. 
+</pre></details><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>a936587</code>. 
 To run any test with your own parameters, clone
 <a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
 (<code>python webui/server.py</code>). All numbers reproduce at

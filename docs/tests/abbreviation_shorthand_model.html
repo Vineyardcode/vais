@@ -35,6 +35,17 @@ blockquote { border-left:3px solid var(--accent); margin:1em 0;
        padding:.05em .45em; margin-left:.5em; }
 .tag.sug { border-color:var(--warn); color:var(--warn); }
 details summary { cursor:pointer; font-family: system-ui, sans-serif; }
+input.param { font-family: ui-monospace, Consolas, monospace;
+              font-size:.85em; width:24em; max-width:100%;
+              background:var(--code); color:var(--fg);
+              border:1px solid var(--line); border-radius:3px;
+              padding:.25em .4em; }
+button { font-family: system-ui, sans-serif; font-size:.95em;
+         padding:.35em 1em; border:1px solid var(--accent);
+         border-radius:4px; background:var(--code); color:var(--fg);
+         cursor:pointer; }
+button:disabled { opacity:.5; cursor:default; }
+#run-out { min-height:2em; }
 footer { border-top:1px solid var(--line); margin-top:3em;
          padding-top:1em; font-size:.85em; color:var(--muted); }
 </style></head><body>
@@ -109,16 +120,24 @@ VMS TARGET FINGERPRINT (from encoding_model_tournament):
   Mean wlen    = 4.9352
   TTR@5K       = 0.3420
   Zipf α       = 0.9415</pre>
-<h2>Parameters</h2><table><tr><th>name</th><th>default</th><th>type</th></tr>
-<tr><td><code>SEED</code></td><td><code>20250413</code></td><td>int</td></tr>
-<tr><td><code>TARGET_WORDS</code></td><td><code>36000</code></td><td>int</td></tr>
-<tr><td><code>VMS</code></td><td><code>{&#x27;heaps&#x27;: 0.7533, &#x27;hapax&#x27;: 0.6555, &#x27;h_char&#x27;: 0.6407, &#x27;h_word&#x27;: 0.4448, &#x27;wlen&#x27;: 4.9352, &#x27;tt…</code></td><td>json</td></tr>
-<tr><td><code>METRIC_KEYS</code></td><td><code>[&#x27;heaps&#x27;, &#x27;hapax&#x27;, &#x27;h_char&#x27;, &#x27;h_word&#x27;, &#x27;wlen&#x27;, &#x27;ttr&#x27;, &#x27;zipf&#x27;]</code></td><td>json</td></tr>
-<tr><td><code>WORD_ABBREVIATIONS</code></td><td><code>{&#x27;et&#x27;: &#x27;7&#x27;, &#x27;est&#x27;: &#x27;e3&#x27;, &#x27;sunt&#x27;: &#x27;s3&#x27;, &#x27;non&#x27;: &#x27;n4&#x27;, &#x27;sed&#x27;: &#x27;s9&#x27;, &#x27;enim&#x27;: &#x27;en&#x27;, &#x27;autem&#x27;: &#x27;a…</code></td><td>json</td></tr>
-<tr><td><code>SUFFIX_RULES</code></td><td><code>[(&#x27;ibus&#x27;, 2, &#x27;1&#x27;), (&#x27;orum&#x27;, 2, &#x27;2&#x27;), (&#x27;orum&#x27;, 2, &#x27;2&#x27;), (&#x27;ione&#x27;, 2, &#x27;3&#x27;), (&#x27;tur&#x27;, 2, &#x27;4&#x27;), …</code></td><td>json</td></tr>
-<tr><td><code>PREFIX_RULES</code></td><td><code>[(&#x27;contra&#x27;, &#x27;c4a&#x27;), (&#x27;contr&#x27;, &#x27;c4&#x27;), (&#x27;cons&#x27;, &#x27;c4s&#x27;), (&#x27;con&#x27;, &#x27;c4&#x27;), (&#x27;com&#x27;, &#x27;c4&#x27;), (&#x27;per&#x27;…</code></td><td>json</td></tr>
+<h2>Parameters</h2><p class="muted">Edit a value to override it for an in-browser run (the script itself is never modified).</p><table><tr><th>name</th><th>type</th><th>value</th></tr>
+<tr><td><code>SEED</code></td><td>int</td><td><input class="param" data-param="SEED" value="20250413"></td></tr>
+<tr><td><code>TARGET_WORDS</code></td><td>int</td><td><input class="param" data-param="TARGET_WORDS" value="36000"></td></tr>
+<tr><td><code>VMS</code></td><td>json</td><td><input class="param" data-param="VMS" value="{&#x27;heaps&#x27;: 0.7533, &#x27;hapax&#x27;: 0.6555, &#x27;h_char&#x27;: 0.6407, &#x27;h_word&#x27;: 0.4448, &#x27;wlen&#x27;: 4.9352, &#x27;ttr&#x27;: 0.342, &#x27;zipf&#x27;: 0.9415}"></td></tr>
+<tr><td><code>METRIC_KEYS</code></td><td>json</td><td><input class="param" data-param="METRIC_KEYS" value="[&#x27;heaps&#x27;, &#x27;hapax&#x27;, &#x27;h_char&#x27;, &#x27;h_word&#x27;, &#x27;wlen&#x27;, &#x27;ttr&#x27;, &#x27;zipf&#x27;]"></td></tr>
+<tr><td><code>WORD_ABBREVIATIONS</code></td><td>json</td><td><input class="param" data-param="WORD_ABBREVIATIONS" value="{&#x27;et&#x27;: &#x27;7&#x27;, &#x27;est&#x27;: &#x27;e3&#x27;, &#x27;sunt&#x27;: &#x27;s3&#x27;, &#x27;non&#x27;: &#x27;n4&#x27;, &#x27;sed&#x27;: &#x27;s9&#x27;, &#x27;enim&#x27;: &#x27;en&#x27;, &#x27;autem&#x27;: &#x27;at&#x27;, &#x27;tamen&#x27;: &#x27;tn&#x27;, &#x27;igitur&#x27;: &#x27;ig&#x27;, &#x27;quod&#x27;: &#x27;qd&#x27;, &#x27;quam&#x27;: &#x27;q8&#x27;, &#x27;quia&#x27;: &#x27;qa&#x27;, &#x27;quasi&#x27;: &#x27;qs&#x27;, &#x27;cum&#x27;: &#x27;9&#x27;, &#x27;aut&#x27;: &#x27;a3&#x27;, &#x27;vel&#x27;: &#x27;vl&#x27;, &#x27;sicut&#x27;: &#x27;sic3&#x27;, &#x27;ergo&#x27;: &#x27;eg&#x27;, &#x27;ideo&#x27;: &#x27;io&#x27;, &#x27;item&#x27;: &#x27;it&#x27;, &#x27;etiam&#x27;: &#x27;et8&#x27;, &#x27;vero&#x27;: &#x27;vo&#x27;, &#x27;ante&#x27;: &#x27;a5&#x27;, &#x27;post&#x27;: &#x27;p3&#x27;, &#x27;inter&#x27;: &#x27;i5&#x27;, &#x27;unde&#x27;: &#x27;u5&#x27;, &#x27;inde&#x27;: &#x27;i5e&#x27;, &#x27;eius&#x27;: &#x27;ei9&#x27;, &#x27;esse&#x27;: &#x27;ee&#x27;, &#x27;deus&#x27;: &#x27;ds&#x27;, &#x27;dominus&#x27;: &#x27;dns&#x27;, &#x27;christus&#x27;: &#x27;xps&#x27;, &#x27;jesus&#x27;: &#x27;ihs&#x27;, &#x27;spiritus&#x27;: &#x27;sps&#x27;, &#x27;sanctus&#x27;: &#x27;scs&#x27;, &#x27;ecclesia&#x27;: &#x27;eccla&#x27;, &#x27;noster&#x27;: &#x27;nr&#x27;, &#x27;vester&#x27;: &#x27;vr&#x27;}"></td></tr>
+<tr><td><code>SUFFIX_RULES</code></td><td>json</td><td><input class="param" data-param="SUFFIX_RULES" value="[(&#x27;ibus&#x27;, 2, &#x27;1&#x27;), (&#x27;orum&#x27;, 2, &#x27;2&#x27;), (&#x27;orum&#x27;, 2, &#x27;2&#x27;), (&#x27;ione&#x27;, 2, &#x27;3&#x27;), (&#x27;tur&#x27;, 2, &#x27;4&#x27;), (&#x27;bus&#x27;, 2, &#x27;1&#x27;), (&#x27;rum&#x27;, 2, &#x27;2&#x27;), (&#x27;tis&#x27;, 2, &#x27;5&#x27;), (&#x27;mus&#x27;, 2, &#x27;6&#x27;), (&#x27;unt&#x27;, 2, &#x27;3&#x27;), (&#x27;us&#x27;, 2, &#x27;1&#x27;), (&#x27;um&#x27;, 2, &#x27;2&#x27;), (&#x27;ur&#x27;, 2, &#x27;4&#x27;), (&#x27;er&#x27;, 2, &#x27;5&#x27;), (&#x27;em&#x27;, 2, &#x27;2&#x27;), (&#x27;is&#x27;, 2, &#x27;5&#x27;), (&#x27;it&#x27;, 2, &#x27;3&#x27;), (&#x27;am&#x27;, 2, &#x27;6&#x27;), (&#x27;os&#x27;, 2, &#x27;1&#x27;), (&#x27;as&#x27;, 2, &#x27;6&#x27;)]"></td></tr>
+<tr><td><code>PREFIX_RULES</code></td><td>json</td><td><input class="param" data-param="PREFIX_RULES" value="[(&#x27;contra&#x27;, &#x27;c4a&#x27;), (&#x27;contr&#x27;, &#x27;c4&#x27;), (&#x27;cons&#x27;, &#x27;c4s&#x27;), (&#x27;con&#x27;, &#x27;c4&#x27;), (&#x27;com&#x27;, &#x27;c4&#x27;), (&#x27;per&#x27;, &#x27;p8&#x27;), (&#x27;par&#x27;, &#x27;p8&#x27;), (&#x27;prae&#x27;, &#x27;p6&#x27;), (&#x27;pre&#x27;, &#x27;p6&#x27;), (&#x27;pro&#x27;, &#x27;p5&#x27;), (&#x27;trans&#x27;, &#x27;t5&#x27;), (&#x27;super&#x27;, &#x27;s6&#x27;), (&#x27;inter&#x27;, &#x27;i5&#x27;)]"></td></tr>
 </table>
-<h2>Golden output (PYTHONHASHSEED=0)</h2><details><summary>show</summary><pre>===========================================================================
+<h2>Run it in your browser</h2><p class="muted">Python + numpy on WebAssembly, entirely on your machine — nothing is uploaded. First run downloads the runtime (~15 MB) and the repository data pack (~9 MB); both are cached afterwards. Expect it to be slower than a native run.</p><p><button id="run-btn">&#9654; Run</button> <button id="stop-btn">Stop</button> <span id="run-status" class="muted"></span></p><pre id="run-out"></pre>
+<script>window.VAIS_TEST = {"stem": "abbreviation_shorthand_model", "specs": {"SEED": {"type": "int", "container": null}, "TARGET_WORDS": {"type": "int", "container": null}, "VMS": {"type": "json", "container": null}, "METRIC_KEYS": {"type": "json", "container": null}, "WORD_ABBREVIATIONS": {"type": "json", "container": null}, "SUFFIX_RULES": {"type": "json", "container": null}, "PREFIX_RULES": {"type": "json", "container": null}}, "base": "../", "baselineSeconds": 0};</script><script src="../runner.js"></script>
+<h2>Run it locally (full speed, byte-exact)</h2>
+<pre>git clone https://github.com/Vineyardcode/vais
+cd vais
+pip install numpy flask
+python scripts/abbreviation_shorthand_model.py        # this test; output also lands in results/
+python webui/server.py          # or the full interactive UI at localhost:5000</pre>
+<h2>Golden output (PYTHONHASHSEED=0)</h2><details><summary>show</summary><pre id="golden-pre">===========================================================================
 abbreviation_shorthand_model: MEDIEVAL ABBREVIATION/SHORTHAND MODEL vs VMS FINGERPRINT
 Can abbreviation systems reproduce the VMS statistical signature?
 ===========================================================================
@@ -396,7 +415,7 @@ Can abbreviation systems reproduce the VMS statistical signature?
 Total runtime: 353.9s
 
 Results saved to C:\projects\vais\results\abbreviation_shorthand_model.txt and C:\projects\vais\results\abbreviation_shorthand_model_abbreviation_raw.json
-</pre></details><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>53c82d9</code>. 
+</pre></details><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>a936587</code>. 
 To run any test with your own parameters, clone
 <a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
 (<code>python webui/server.py</code>). All numbers reproduce at

@@ -35,6 +35,17 @@ blockquote { border-left:3px solid var(--accent); margin:1em 0;
        padding:.05em .45em; margin-left:.5em; }
 .tag.sug { border-color:var(--warn); color:var(--warn); }
 details summary { cursor:pointer; font-family: system-ui, sans-serif; }
+input.param { font-family: ui-monospace, Consolas, monospace;
+              font-size:.85em; width:24em; max-width:100%;
+              background:var(--code); color:var(--fg);
+              border:1px solid var(--line); border-radius:3px;
+              padding:.25em .4em; }
+button { font-family: system-ui, sans-serif; font-size:.95em;
+         padding:.35em 1em; border:1px solid var(--accent);
+         border-radius:4px; background:var(--code); color:var(--fg);
+         cursor:pointer; }
+button:disabled { opacity:.5; cursor:default; }
+#run-out { min-height:2em; }
 footer { border-top:1px solid var(--line); margin-top:3em;
          padding-top:1em; font-size:.85em; color:var(--muted); }
 </style></head><body>
@@ -53,16 +64,24 @@ Prerequisite findings:
   - Each nymph = 1 degree (all signs have ~30 nymphs)
   - 3 decans of 10° per sign
   - Labels are constructed notation: o- article + root + grammatical suffix</pre>
-<h2>Parameters</h2><table><tr><th>name</th><th>default</th><th>type</th></tr>
-<tr><td><code>SIGN_FOLIOS</code></td><td><code>{&#x27;Pisces&#x27;: [(&#x27;f70v_part.txt&#x27;, &#x27;f70v2&#x27;)], &#x27;Aries&#x27;: [(&#x27;f70v_part.txt&#x27;, &#x27;f70v1&#x27;), (&#x27;f71r.txt&#x27;…</code></td><td>json</td></tr>
-<tr><td><code>DECAN_RULERS</code></td><td><code>{&#x27;Aries&#x27;: [&#x27;Mars&#x27;, &#x27;Sun&#x27;, &#x27;Venus&#x27;], &#x27;Taurus&#x27;: [&#x27;Mercury&#x27;, &#x27;Moon&#x27;, &#x27;Saturn&#x27;], &#x27;Gemini&#x27;: [&#x27;J…</code></td><td>json</td></tr>
-<tr><td><code>BEHENIAN_1400</code></td><td><code>[(&#x27;Algol&#x27;, &#x27;Taurus&#x27;, 13), (&#x27;Alcyone&#x27;, &#x27;Gemini&#x27;, 17), (&#x27;Aldebaran&#x27;, &#x27;Gemini&#x27;, 27), (&#x27;Capell…</code></td><td>json</td></tr>
-<tr><td><code>PREFIXES</code></td><td><code>[&#x27;qo&#x27;, &#x27;q&#x27;, &#x27;do&#x27;, &#x27;dy&#x27;, &#x27;so&#x27;, &#x27;sy&#x27;, &#x27;ol&#x27;, &#x27;or&#x27;, &#x27;o&#x27;, &#x27;y&#x27;, &#x27;d&#x27;, &#x27;s&#x27;]</code></td><td>json</td></tr>
-<tr><td><code>ROOT_ONSETS</code></td><td><code>[&#x27;ckh&#x27;, &#x27;cth&#x27;, &#x27;cph&#x27;, &#x27;cfh&#x27;, &#x27;sch&#x27;, &#x27;sh&#x27;, &#x27;ch&#x27;, &#x27;f&#x27;, &#x27;p&#x27;, &#x27;k&#x27;, &#x27;t&#x27;, &#x27;eee&#x27;, &#x27;ee&#x27;, &#x27;e&#x27;, &#x27;da&#x27;…</code></td><td>json</td></tr>
-<tr><td><code>ROOT_BODIES</code></td><td><code>[&#x27;eee&#x27;, &#x27;ee&#x27;, &#x27;e&#x27;, &#x27;da&#x27;, &#x27;sa&#x27;, &#x27;do&#x27;, &#x27;so&#x27;, &#x27;a&#x27;, &#x27;o&#x27;, &#x27;d&#x27;, &#x27;s&#x27;, &#x27;l&#x27;, &#x27;r&#x27;, &#x27;n&#x27;, &#x27;m&#x27;]</code></td><td>json</td></tr>
-<tr><td><code>SUFFIXES</code></td><td><code>[&#x27;aiin&#x27;, &#x27;aiir&#x27;, &#x27;ain&#x27;, &#x27;air&#x27;, &#x27;am&#x27;, &#x27;an&#x27;, &#x27;ar&#x27;, &#x27;al&#x27;, &#x27;as&#x27;, &#x27;iin&#x27;, &#x27;iir&#x27;, &#x27;in&#x27;, &#x27;ir&#x27;, &#x27;dy…</code></td><td>json</td></tr>
+<h2>Parameters</h2><p class="muted">Edit a value to override it for an in-browser run (the script itself is never modified).</p><table><tr><th>name</th><th>type</th><th>value</th></tr>
+<tr><td><code>SIGN_FOLIOS</code></td><td>json</td><td><input class="param" data-param="SIGN_FOLIOS" value="{&#x27;Pisces&#x27;: [(&#x27;f70v_part.txt&#x27;, &#x27;f70v2&#x27;)], &#x27;Aries&#x27;: [(&#x27;f70v_part.txt&#x27;, &#x27;f70v1&#x27;), (&#x27;f71r.txt&#x27;, &#x27;f71r&#x27;)], &#x27;Taurus&#x27;: [(&#x27;f71v_72r.txt&#x27;, &#x27;f71v&#x27;), (&#x27;f71v_72r.txt&#x27;, &#x27;f72r1&#x27;)], &#x27;Gemini&#x27;: [(&#x27;f71v_72r.txt&#x27;, &#x27;f72r2&#x27;)], &#x27;Cancer&#x27;: [(&#x27;f71v_72r.txt&#x27;, &#x27;f72r3&#x27;)], &#x27;Leo&#x27;: [(&#x27;f72v_part.txt&#x27;, &#x27;f72v3&#x27;)], &#x27;Virgo&#x27;: [(&#x27;f72v_part.txt&#x27;, &#x27;f72v2&#x27;)], &#x27;Libra&#x27;: [(&#x27;f72v_part.txt&#x27;, &#x27;f72v1&#x27;)], &#x27;Scorpio&#x27;: [(&#x27;f73r.txt&#x27;, &#x27;f73r&#x27;)], &#x27;Sagittarius&#x27;: [(&#x27;f73v.txt&#x27;, &#x27;f73v&#x27;)]}"></td></tr>
+<tr><td><code>DECAN_RULERS</code></td><td>json</td><td><input class="param" data-param="DECAN_RULERS" value="{&#x27;Aries&#x27;: [&#x27;Mars&#x27;, &#x27;Sun&#x27;, &#x27;Venus&#x27;], &#x27;Taurus&#x27;: [&#x27;Mercury&#x27;, &#x27;Moon&#x27;, &#x27;Saturn&#x27;], &#x27;Gemini&#x27;: [&#x27;Jupiter&#x27;, &#x27;Mars&#x27;, &#x27;Sun&#x27;], &#x27;Cancer&#x27;: [&#x27;Venus&#x27;, &#x27;Mercury&#x27;, &#x27;Moon&#x27;], &#x27;Leo&#x27;: [&#x27;Saturn&#x27;, &#x27;Jupiter&#x27;, &#x27;Mars&#x27;], &#x27;Virgo&#x27;: [&#x27;Sun&#x27;, &#x27;Venus&#x27;, &#x27;Mercury&#x27;], &#x27;Libra&#x27;: [&#x27;Moon&#x27;, &#x27;Saturn&#x27;, &#x27;Jupiter&#x27;], &#x27;Scorpio&#x27;: [&#x27;Mars&#x27;, &#x27;Sun&#x27;, &#x27;Venus&#x27;], &#x27;Sagittarius&#x27;: [&#x27;Mercury&#x27;, &#x27;Moon&#x27;, &#x27;Saturn&#x27;], &#x27;Pisces&#x27;: [&#x27;Saturn&#x27;, &#x27;Jupiter&#x27;, &#x27;Mars&#x27;]}"></td></tr>
+<tr><td><code>BEHENIAN_1400</code></td><td>json</td><td><input class="param" data-param="BEHENIAN_1400" value="[(&#x27;Algol&#x27;, &#x27;Taurus&#x27;, 13), (&#x27;Alcyone&#x27;, &#x27;Gemini&#x27;, 17), (&#x27;Aldebaran&#x27;, &#x27;Gemini&#x27;, 27), (&#x27;Capella&#x27;, &#x27;Cancer&#x27;, 9), (&#x27;Sirius&#x27;, &#x27;Cancer&#x27;, 1), (&#x27;Procyon&#x27;, &#x27;Cancer&#x27;, 13), (&#x27;Regulus&#x27;, &#x27;Leo&#x27;, 17), (&#x27;Algorab&#x27;, &#x27;Libra&#x27;, 0), (&#x27;Spica&#x27;, &#x27;Libra&#x27;, 11), (&#x27;Arcturus&#x27;, &#x27;Libra&#x27;, 11), (&#x27;Alphecca&#x27;, &#x27;Scorpio&#x27;, 29), (&#x27;Antares&#x27;, &#x27;Sagittarius&#x27;, 27), (&#x27;Vega&#x27;, &#x27;Sagittarius&#x27;, 2), (&#x27;Deneb Algedi&#x27;, &#x27;Pisces&#x27;, 21), (&#x27;Fomalhaut&#x27;, &#x27;Pisces&#x27;, 21)]"></td></tr>
+<tr><td><code>PREFIXES</code></td><td>json</td><td><input class="param" data-param="PREFIXES" value="[&#x27;qo&#x27;, &#x27;q&#x27;, &#x27;do&#x27;, &#x27;dy&#x27;, &#x27;so&#x27;, &#x27;sy&#x27;, &#x27;ol&#x27;, &#x27;or&#x27;, &#x27;o&#x27;, &#x27;y&#x27;, &#x27;d&#x27;, &#x27;s&#x27;]"></td></tr>
+<tr><td><code>ROOT_ONSETS</code></td><td>json</td><td><input class="param" data-param="ROOT_ONSETS" value="[&#x27;ckh&#x27;, &#x27;cth&#x27;, &#x27;cph&#x27;, &#x27;cfh&#x27;, &#x27;sch&#x27;, &#x27;sh&#x27;, &#x27;ch&#x27;, &#x27;f&#x27;, &#x27;p&#x27;, &#x27;k&#x27;, &#x27;t&#x27;, &#x27;eee&#x27;, &#x27;ee&#x27;, &#x27;e&#x27;, &#x27;da&#x27;, &#x27;sa&#x27;, &#x27;a&#x27;, &#x27;o&#x27;]"></td></tr>
+<tr><td><code>ROOT_BODIES</code></td><td>json</td><td><input class="param" data-param="ROOT_BODIES" value="[&#x27;eee&#x27;, &#x27;ee&#x27;, &#x27;e&#x27;, &#x27;da&#x27;, &#x27;sa&#x27;, &#x27;do&#x27;, &#x27;so&#x27;, &#x27;a&#x27;, &#x27;o&#x27;, &#x27;d&#x27;, &#x27;s&#x27;, &#x27;l&#x27;, &#x27;r&#x27;, &#x27;n&#x27;, &#x27;m&#x27;]"></td></tr>
+<tr><td><code>SUFFIXES</code></td><td>json</td><td><input class="param" data-param="SUFFIXES" value="[&#x27;aiin&#x27;, &#x27;aiir&#x27;, &#x27;ain&#x27;, &#x27;air&#x27;, &#x27;am&#x27;, &#x27;an&#x27;, &#x27;ar&#x27;, &#x27;al&#x27;, &#x27;as&#x27;, &#x27;iin&#x27;, &#x27;iir&#x27;, &#x27;in&#x27;, &#x27;ir&#x27;, &#x27;dy&#x27;, &#x27;ey&#x27;, &#x27;ly&#x27;, &#x27;ry&#x27;, &#x27;ny&#x27;, &#x27;my&#x27;, &#x27;or&#x27;, &#x27;ol&#x27;, &#x27;od&#x27;, &#x27;os&#x27;, &#x27;edy&#x27;, &#x27;eedy&#x27;, &#x27;y&#x27;, &#x27;d&#x27;, &#x27;l&#x27;, &#x27;r&#x27;, &#x27;s&#x27;, &#x27;g&#x27;]"></td></tr>
 </table>
-<h2>Golden output (PYTHONHASHSEED=0)</h2><details><summary>show</summary><pre>======================================================================
+<h2>Run it in your browser</h2><p class="muted">Python + numpy on WebAssembly, entirely on your machine — nothing is uploaded. First run downloads the runtime (~15 MB) and the repository data pack (~9 MB); both are cached afterwards. Expect it to be slower than a native run.</p><p><button id="run-btn">&#9654; Run</button> <button id="stop-btn">Stop</button> <span id="run-status" class="muted"></span></p><pre id="run-out"></pre>
+<script>window.VAIS_TEST = {"stem": "ring_decan_mapping", "specs": {"SIGN_FOLIOS": {"type": "json", "container": null}, "DECAN_RULERS": {"type": "json", "container": null}, "BEHENIAN_1400": {"type": "json", "container": null}, "PREFIXES": {"type": "json", "container": null}, "ROOT_ONSETS": {"type": "json", "container": null}, "ROOT_BODIES": {"type": "json", "container": null}, "SUFFIXES": {"type": "json", "container": null}}, "base": "../", "baselineSeconds": 0.1};</script><script src="../runner.js"></script>
+<h2>Run it locally (full speed, byte-exact)</h2>
+<pre>git clone https://github.com/Vineyardcode/vais
+cd vais
+pip install numpy flask
+python scripts/ring_decan_mapping.py        # this test; output also lands in results/
+python webui/server.py          # or the full interactive UI at localhost:5000</pre>
+<h2>Golden output (PYTHONHASHSEED=0)</h2><details><summary>show</summary><pre id="golden-pre">======================================================================
 Ring-to-Decan Mapping
 ======================================================================
 
@@ -455,7 +474,7 @@ SYNTHESIS — Ring-to-Decan Mapping Conclusions
   └─────────────────────────────────────────────────────────────────────┘
 
   Full data saved to results/ring_decan_results.json
-</pre></details><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>53c82d9</code>. 
+</pre></details><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>a936587</code>. 
 To run any test with your own parameters, clone
 <a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
 (<code>python webui/server.py</code>). All numbers reproduce at

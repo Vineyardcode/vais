@@ -35,6 +35,17 @@ blockquote { border-left:3px solid var(--accent); margin:1em 0;
        padding:.05em .45em; margin-left:.5em; }
 .tag.sug { border-color:var(--warn); color:var(--warn); }
 details summary { cursor:pointer; font-family: system-ui, sans-serif; }
+input.param { font-family: ui-monospace, Consolas, monospace;
+              font-size:.85em; width:24em; max-width:100%;
+              background:var(--code); color:var(--fg);
+              border:1px solid var(--line); border-radius:3px;
+              padding:.25em .4em; }
+button { font-family: system-ui, sans-serif; font-size:.95em;
+         padding:.35em 1em; border:1px solid var(--accent);
+         border-radius:4px; background:var(--code); color:var(--fg);
+         cursor:pointer; }
+button:disabled { opacity:.5; cursor:default; }
+#run-out { min-height:2em; }
 footer { border-top:1px solid var(--line); margin-top:3em;
          padding-top:1em; font-size:.85em; color:var(--muted); }
 </style></head><body>
@@ -92,20 +103,28 @@ PRE-REGISTERED OUTCOMES:
       is a &quot;translation&quot; of anything.
 Vocabulary discipline: D3 names GLYPH VALUES and their positional
 skews; it never names meanings.</pre>
-<h2>Parameters</h2><table><tr><th>name</th><th>default</th><th>type</th></tr>
-<tr><td><code>SEED</code></td><td><code>115</code></td><td>int</td></tr>
-<tr><td><code>R_SPLITS</code></td><td><code>10</code></td><td>int</td></tr>
-<tr><td><code>N_NULLS_PARA</code></td><td><code>200</code></td><td>int</td></tr>
-<tr><td><code>MIN_SUPPORT</code></td><td><code>200</code></td><td>int</td></tr>
-<tr><td><code>TOP_N</code></td><td><code>8</code></td><td>int</td></tr>
-<tr><td><code>MIN_LINE_WORDS</code></td><td><code>5</code></td><td>int</td></tr>
-<tr><td><code>HOLDOUT_FRAC</code></td><td><code>0.2</code></td><td>float</td></tr>
-<tr><td><code>ALPHA</code></td><td><code>0.5</code></td><td>float</td></tr>
-<tr><td><code>FEATURE_NAMES</code></td><td><code>[&#x27;len&#x27;, &#x27;first&#x27;, &#x27;last&#x27;, &#x27;gallows&#x27;]</code></td><td>json</td></tr>
-<tr><td><code>INTERIOR</code></td><td><code>[&#x27;m1&#x27;, &#x27;m2&#x27;, &#x27;m3&#x27;]</code></td><td>json</td></tr>
-<tr><td><code>RUNG3_JSON</code></td><td><code>&#x27;line_as_record_ordinal.json&#x27;</code></td><td>str</td></tr>
+<h2>Parameters</h2><p class="muted">Edit a value to override it for an in-browser run (the script itself is never modified).</p><table><tr><th>name</th><th>type</th><th>value</th></tr>
+<tr><td><code>SEED</code></td><td>int</td><td><input class="param" data-param="SEED" value="115"></td></tr>
+<tr><td><code>R_SPLITS</code></td><td>int</td><td><input class="param" data-param="R_SPLITS" value="10"></td></tr>
+<tr><td><code>N_NULLS_PARA</code></td><td>int</td><td><input class="param" data-param="N_NULLS_PARA" value="200"></td></tr>
+<tr><td><code>MIN_SUPPORT</code></td><td>int</td><td><input class="param" data-param="MIN_SUPPORT" value="200"></td></tr>
+<tr><td><code>TOP_N</code></td><td>int</td><td><input class="param" data-param="TOP_N" value="8"></td></tr>
+<tr><td><code>MIN_LINE_WORDS</code></td><td>int</td><td><input class="param" data-param="MIN_LINE_WORDS" value="5"></td></tr>
+<tr><td><code>HOLDOUT_FRAC</code></td><td>float</td><td><input class="param" data-param="HOLDOUT_FRAC" value="0.2"></td></tr>
+<tr><td><code>ALPHA</code></td><td>float</td><td><input class="param" data-param="ALPHA" value="0.5"></td></tr>
+<tr><td><code>FEATURE_NAMES</code></td><td>json</td><td><input class="param" data-param="FEATURE_NAMES" value="[&#x27;len&#x27;, &#x27;first&#x27;, &#x27;last&#x27;, &#x27;gallows&#x27;]"></td></tr>
+<tr><td><code>INTERIOR</code></td><td>json</td><td><input class="param" data-param="INTERIOR" value="[&#x27;m1&#x27;, &#x27;m2&#x27;, &#x27;m3&#x27;]"></td></tr>
+<tr><td><code>RUNG3_JSON</code></td><td>str</td><td><input class="param" data-param="RUNG3_JSON" value="line_as_record_ordinal.json"></td></tr>
 </table>
-<h2>Golden output (PYTHONHASHSEED=0)</h2><details><summary>show</summary><pre>============================================================================
+<h2>Run it in your browser</h2><p class="muted">Python + numpy on WebAssembly, entirely on your machine — nothing is uploaded. First run downloads the runtime (~15 MB) and the repository data pack (~9 MB); both are cached afterwards. Expect it to be slower than a native run.</p><p><button id="run-btn">&#9654; Run</button> <button id="stop-btn">Stop</button> <span id="run-status" class="muted"></span></p><pre id="run-out"></pre>
+<script>window.VAIS_TEST = {"stem": "line_as_record_characterization", "specs": {"SEED": {"type": "int", "container": null}, "R_SPLITS": {"type": "int", "container": null}, "N_NULLS_PARA": {"type": "int", "container": null}, "MIN_SUPPORT": {"type": "int", "container": null}, "TOP_N": {"type": "int", "container": null}, "MIN_LINE_WORDS": {"type": "int", "container": null}, "HOLDOUT_FRAC": {"type": "float", "container": null}, "ALPHA": {"type": "float", "container": null}, "FEATURE_NAMES": {"type": "json", "container": "tuple"}, "INTERIOR": {"type": "json", "container": "set"}, "RUNG3_JSON": {"type": "str", "container": null}}, "base": "../", "baselineSeconds": 0};</script><script src="../runner.js"></script>
+<h2>Run it locally (full speed, byte-exact)</h2>
+<pre>git clone https://github.com/Vineyardcode/vais
+cd vais
+pip install numpy flask
+python scripts/line_as_record_characterization.py        # this test; output also lands in results/
+python webui/server.py          # or the full interactive UI at localhost:5000</pre>
+<h2>Golden output (PYTHONHASHSEED=0)</h2><details><summary>show</summary><pre id="golden-pre">============================================================================
 LINE-AS-RECORD, RUNG 4 (S7) — characterization (N3d)
 ============================================================================
 seed=115 (inherited from rung 3) splits=10 para-nulls=200 (beat-all, p=0.0050) min_support=200 top_n=8
@@ -121,7 +140,7 @@ seed=115 (inherited from rung 3) splits=10 para-nulls=200 (beat-all, p=0.0050) m
     CHARACTERIZED: the signal survives excluding paragraph-initial lines (p &lt; 0.005) — the last registered structural threat is dismissed; the decomposition above is the program&#x27;s description of the Currier-B ordinal signal. SUGGESTIVE (supporting detail for the quarantined finding); NOT a decode; no value is a translation.
 
   -&gt; results/line_as_record_characterization.json
-</pre></details><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>53c82d9</code>. 
+</pre></details><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>a936587</code>. 
 To run any test with your own parameters, clone
 <a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
 (<code>python webui/server.py</code>). All numbers reproduce at

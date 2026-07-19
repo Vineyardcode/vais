@@ -35,6 +35,17 @@ blockquote { border-left:3px solid var(--accent); margin:1em 0;
        padding:.05em .45em; margin-left:.5em; }
 .tag.sug { border-color:var(--warn); color:var(--warn); }
 details summary { cursor:pointer; font-family: system-ui, sans-serif; }
+input.param { font-family: ui-monospace, Consolas, monospace;
+              font-size:.85em; width:24em; max-width:100%;
+              background:var(--code); color:var(--fg);
+              border:1px solid var(--line); border-radius:3px;
+              padding:.25em .4em; }
+button { font-family: system-ui, sans-serif; font-size:.95em;
+         padding:.35em 1em; border:1px solid var(--accent);
+         border-radius:4px; background:var(--code); color:var(--fg);
+         cursor:pointer; }
+button:disabled { opacity:.5; cursor:default; }
+#run-out { min-height:2em; }
 footer { border-top:1px solid var(--line); margin-top:3em;
          padding-top:1em; font-size:.85em; color:var(--muted); }
 </style></head><body>
@@ -64,19 +75,27 @@ Strategy:
 
   5. ELEMENT CORRELATION — Group signs by element (Fire, Water, Air, Earth).
      Test whether signs sharing an element also share exclusive vocabulary.</pre>
-<h2>Parameters</h2><table><tr><th>name</th><th>default</th><th>type</th></tr>
-<tr><td><code>SIMPLE_GALLOWS</code></td><td><code>[&#x27;t&#x27;, &#x27;k&#x27;, &#x27;f&#x27;, &#x27;p&#x27;]</code></td><td>json</td></tr>
-<tr><td><code>BENCH_GALLOWS</code></td><td><code>[&#x27;cth&#x27;, &#x27;ckh&#x27;, &#x27;cph&#x27;, &#x27;cfh&#x27;]</code></td><td>json</td></tr>
-<tr><td><code>COMPOUND_GCH</code></td><td><code>[&#x27;tch&#x27;, &#x27;kch&#x27;, &#x27;pch&#x27;, &#x27;fch&#x27;]</code></td><td>json</td></tr>
-<tr><td><code>COMPOUND_GSH</code></td><td><code>[&#x27;tsh&#x27;, &#x27;ksh&#x27;, &#x27;psh&#x27;, &#x27;fsh&#x27;]</code></td><td>json</td></tr>
-<tr><td><code>PREFIXES</code></td><td><code>[&#x27;qo&#x27;, &#x27;q&#x27;, &#x27;so&#x27;, &#x27;do&#x27;, &#x27;o&#x27;, &#x27;d&#x27;, &#x27;s&#x27;, &#x27;y&#x27;]</code></td><td>json</td></tr>
-<tr><td><code>SUFFIXES</code></td><td><code>[&#x27;aiin&#x27;, &#x27;ain&#x27;, &#x27;iin&#x27;, &#x27;in&#x27;, &#x27;ar&#x27;, &#x27;or&#x27;, &#x27;al&#x27;, &#x27;ol&#x27;, &#x27;edy&#x27;, &#x27;ody&#x27;, &#x27;eedy&#x27;, &#x27;dy&#x27;, &#x27;sy&#x27;, &#x27;ey…</code></td><td>json</td></tr>
-<tr><td><code>ZODIAC_MAP</code></td><td><code>{&#x27;f70v1&#x27;: &#x27;Aries-dark&#x27;, &#x27;f71r&#x27;: &#x27;Aries-light&#x27;, &#x27;f71v&#x27;: &#x27;Taurus-light&#x27;, &#x27;f72r1&#x27;: &#x27;Taurus-da…</code></td><td>json</td></tr>
-<tr><td><code>DECAN_RULERS</code></td><td><code>{&#x27;Aries&#x27;: [&#x27;Mars&#x27;, &#x27;Sun&#x27;, &#x27;Venus&#x27;], &#x27;Taurus&#x27;: [&#x27;Mercury&#x27;, &#x27;Moon&#x27;, &#x27;Saturn&#x27;], &#x27;Gemini&#x27;: [&#x27;J…</code></td><td>json</td></tr>
-<tr><td><code>COPTIC_ASTRO_GLOSSARY</code></td><td><code>{&#x27;sate&#x27;: &#x27;fire&#x27;, &#x27;moou&#x27;: &#x27;water&#x27;, &#x27;teu&#x27;: &#x27;wind/air&#x27;, &#x27;kah&#x27;: &#x27;earth&#x27;, &#x27;cham&#x27;: &#x27;hot&#x27;, &#x27;kebe&#x27;…</code></td><td>json</td></tr>
-<tr><td><code>ARABIC_ASTRO</code></td><td><code>{&#x27;shams&#x27;: &#x27;sun&#x27;, &#x27;qamar&#x27;: &#x27;moon&#x27;, &#x27;zuhal&#x27;: &#x27;saturn&#x27;, &#x27;mushtari&#x27;: &#x27;jupiter&#x27;, &#x27;mirrikh&#x27;: &#x27;ma…</code></td><td>json</td></tr>
+<h2>Parameters</h2><p class="muted">Edit a value to override it for an in-browser run (the script itself is never modified).</p><table><tr><th>name</th><th>type</th><th>value</th></tr>
+<tr><td><code>SIMPLE_GALLOWS</code></td><td>json</td><td><input class="param" data-param="SIMPLE_GALLOWS" value="[&#x27;t&#x27;, &#x27;k&#x27;, &#x27;f&#x27;, &#x27;p&#x27;]"></td></tr>
+<tr><td><code>BENCH_GALLOWS</code></td><td>json</td><td><input class="param" data-param="BENCH_GALLOWS" value="[&#x27;cth&#x27;, &#x27;ckh&#x27;, &#x27;cph&#x27;, &#x27;cfh&#x27;]"></td></tr>
+<tr><td><code>COMPOUND_GCH</code></td><td>json</td><td><input class="param" data-param="COMPOUND_GCH" value="[&#x27;tch&#x27;, &#x27;kch&#x27;, &#x27;pch&#x27;, &#x27;fch&#x27;]"></td></tr>
+<tr><td><code>COMPOUND_GSH</code></td><td>json</td><td><input class="param" data-param="COMPOUND_GSH" value="[&#x27;tsh&#x27;, &#x27;ksh&#x27;, &#x27;psh&#x27;, &#x27;fsh&#x27;]"></td></tr>
+<tr><td><code>PREFIXES</code></td><td>json</td><td><input class="param" data-param="PREFIXES" value="[&#x27;qo&#x27;, &#x27;q&#x27;, &#x27;so&#x27;, &#x27;do&#x27;, &#x27;o&#x27;, &#x27;d&#x27;, &#x27;s&#x27;, &#x27;y&#x27;]"></td></tr>
+<tr><td><code>SUFFIXES</code></td><td>json</td><td><input class="param" data-param="SUFFIXES" value="[&#x27;aiin&#x27;, &#x27;ain&#x27;, &#x27;iin&#x27;, &#x27;in&#x27;, &#x27;ar&#x27;, &#x27;or&#x27;, &#x27;al&#x27;, &#x27;ol&#x27;, &#x27;edy&#x27;, &#x27;ody&#x27;, &#x27;eedy&#x27;, &#x27;dy&#x27;, &#x27;sy&#x27;, &#x27;ey&#x27;, &#x27;y&#x27;]"></td></tr>
+<tr><td><code>ZODIAC_MAP</code></td><td>json</td><td><input class="param" data-param="ZODIAC_MAP" value="{&#x27;f70v1&#x27;: &#x27;Aries-dark&#x27;, &#x27;f71r&#x27;: &#x27;Aries-light&#x27;, &#x27;f71v&#x27;: &#x27;Taurus-light&#x27;, &#x27;f72r1&#x27;: &#x27;Taurus-dark&#x27;, &#x27;f72r2&#x27;: &#x27;Gemini&#x27;, &#x27;f72r3&#x27;: &#x27;Cancer&#x27;, &#x27;f72v3&#x27;: &#x27;Leo&#x27;, &#x27;f72v2&#x27;: &#x27;Virgo&#x27;, &#x27;f72v1&#x27;: &#x27;Libra&#x27;, &#x27;f73r&#x27;: &#x27;Scorpio&#x27;, &#x27;f73v&#x27;: &#x27;Sagittarius&#x27;, &#x27;f70v2&#x27;: &#x27;Pisces&#x27;}"></td></tr>
+<tr><td><code>DECAN_RULERS</code></td><td>json</td><td><input class="param" data-param="DECAN_RULERS" value="{&#x27;Aries&#x27;: [&#x27;Mars&#x27;, &#x27;Sun&#x27;, &#x27;Venus&#x27;], &#x27;Taurus&#x27;: [&#x27;Mercury&#x27;, &#x27;Moon&#x27;, &#x27;Saturn&#x27;], &#x27;Gemini&#x27;: [&#x27;Jupiter&#x27;, &#x27;Mars&#x27;, &#x27;Sun&#x27;], &#x27;Cancer&#x27;: [&#x27;Venus&#x27;, &#x27;Mercury&#x27;, &#x27;Moon&#x27;], &#x27;Leo&#x27;: [&#x27;Saturn&#x27;, &#x27;Jupiter&#x27;, &#x27;Mars&#x27;], &#x27;Virgo&#x27;: [&#x27;Sun&#x27;, &#x27;Venus&#x27;, &#x27;Mercury&#x27;], &#x27;Libra&#x27;: [&#x27;Moon&#x27;, &#x27;Saturn&#x27;, &#x27;Jupiter&#x27;], &#x27;Scorpio&#x27;: [&#x27;Mars&#x27;, &#x27;Sun&#x27;, &#x27;Venus&#x27;], &#x27;Sagittarius&#x27;: [&#x27;Mercury&#x27;, &#x27;Moon&#x27;, &#x27;Saturn&#x27;], &#x27;Pisces&#x27;: [&#x27;Jupiter&#x27;, &#x27;Mars&#x27;, &#x27;Sun&#x27;]}"></td></tr>
+<tr><td><code>COPTIC_ASTRO_GLOSSARY</code></td><td>json</td><td><input class="param" data-param="COPTIC_ASTRO_GLOSSARY" value="{&#x27;sate&#x27;: &#x27;fire&#x27;, &#x27;moou&#x27;: &#x27;water&#x27;, &#x27;teu&#x27;: &#x27;wind/air&#x27;, &#x27;kah&#x27;: &#x27;earth&#x27;, &#x27;cham&#x27;: &#x27;hot&#x27;, &#x27;kebe&#x27;: &#x27;cold&#x27;, &#x27;shuoe&#x27;: &#x27;dry&#x27;, &#x27;nesh&#x27;: &#x27;wet&#x27;, &#x27;re&#x27;: &#x27;sun&#x27;, &#x27;ioh&#x27;: &#x27;moon&#x27;, &#x27;souro&#x27;: &#x27;saturn&#x27;, &#x27;moui&#x27;: &#x27;jupiter&#x27;, &#x27;ertosi&#x27;: &#x27;mars&#x27;, &#x27;ourampe&#x27;: &#x27;venus&#x27;, &#x27;sobou&#x27;: &#x27;mercury&#x27;, &#x27;ape&#x27;: &#x27;head&#x27;, &#x27;mekh&#x27;: &#x27;neck&#x27;, &#x27;shedj&#x27;: &#x27;arm&#x27;, &#x27;esnau&#x27;: &#x27;shoulder&#x27;, &#x27;hat&#x27;: &#x27;heart&#x27;, &#x27;hete&#x27;: &#x27;belly&#x27;, &#x27;tbe&#x27;: &#x27;finger&#x27;, &#x27;ouoerdte&#x27;: &#x27;foot&#x27;, &#x27;kole&#x27;: &#x27;knee&#x27;, &#x27;meros&#x27;: &#x27;thigh&#x27;, &#x27;siou&#x27;: &#x27;star&#x27;, &#x27;noub&#x27;: &#x27;gold&#x27;, &#x27;kake&#x27;: &#x27;darkness&#x27;, &#x27;ouoein&#x27;: &#x27;light&#x27;, &#x27;choeis&#x27;: &#x27;lord&#x27;, &#x27;rro&#x27;: &#x27;king&#x27;}"></td></tr>
+<tr><td><code>ARABIC_ASTRO</code></td><td>json</td><td><input class="param" data-param="ARABIC_ASTRO" value="{&#x27;shams&#x27;: &#x27;sun&#x27;, &#x27;qamar&#x27;: &#x27;moon&#x27;, &#x27;zuhal&#x27;: &#x27;saturn&#x27;, &#x27;mushtari&#x27;: &#x27;jupiter&#x27;, &#x27;mirrikh&#x27;: &#x27;mars&#x27;, &#x27;zuhara&#x27;: &#x27;venus&#x27;, &#x27;utarid&#x27;: &#x27;mercury&#x27;, &#x27;nar&#x27;: &#x27;fire&#x27;, &#x27;maa&#x27;: &#x27;water&#x27;, &#x27;turab&#x27;: &#x27;earth&#x27;, &#x27;hawa&#x27;: &#x27;air&#x27;, &#x27;ras&#x27;: &#x27;head&#x27;, &#x27;qalb&#x27;: &#x27;heart&#x27;, &#x27;sadr&#x27;: &#x27;chest&#x27;, &#x27;asad&#x27;: &#x27;lion&#x27;, &#x27;thawr&#x27;: &#x27;bull&#x27;, &#x27;hamal&#x27;: &#x27;ram&#x27;, &#x27;jady&#x27;: &#x27;goat&#x27;, &#x27;hut&#x27;: &#x27;fish&#x27;, &#x27;aqrab&#x27;: &#x27;scorpion&#x27;, &#x27;qaws&#x27;: &#x27;bow/archer&#x27;, &#x27;dalw&#x27;: &#x27;bucket/aquarius&#x27;}"></td></tr>
 </table>
-<h2>Golden output (PYTHONHASHSEED=0)</h2><details><summary>show</summary><pre>============================================================================
+<h2>Run it in your browser</h2><p class="muted">Python + numpy on WebAssembly, entirely on your machine — nothing is uploaded. First run downloads the runtime (~15 MB) and the repository data pack (~9 MB); both are cached afterwards. Expect it to be slower than a native run.</p><p><button id="run-btn">&#9654; Run</button> <button id="stop-btn">Stop</button> <span id="run-status" class="muted"></span></p><pre id="run-out"></pre>
+<script>window.VAIS_TEST = {"stem": "template_subtraction", "specs": {"SIMPLE_GALLOWS": {"type": "json", "container": null}, "BENCH_GALLOWS": {"type": "json", "container": null}, "COMPOUND_GCH": {"type": "json", "container": null}, "COMPOUND_GSH": {"type": "json", "container": null}, "PREFIXES": {"type": "json", "container": null}, "SUFFIXES": {"type": "json", "container": null}, "ZODIAC_MAP": {"type": "json", "container": null}, "DECAN_RULERS": {"type": "json", "container": null}, "COPTIC_ASTRO_GLOSSARY": {"type": "json", "container": null}, "ARABIC_ASTRO": {"type": "json", "container": null}}, "base": "../", "baselineSeconds": 0};</script><script src="../runner.js"></script>
+<h2>Run it locally (full speed, byte-exact)</h2>
+<pre>git clone https://github.com/Vineyardcode/vais
+cd vais
+pip install numpy flask
+python scripts/template_subtraction.py        # this test; output also lands in results/
+python webui/server.py          # or the full interactive UI at localhost:5000</pre>
+<h2>Golden output (PYTHONHASHSEED=0)</h2><details><summary>show</summary><pre id="golden-pre">============================================================================
 template_subtraction: TEMPLATE SUBTRACTION + GRAMMAR INVESTIGATIONS
 ============================================================================
 
@@ -416,7 +435,7 @@ template_subtraction.5: NYMPH LABEL VOCABULARY — ASTROLOGICAL CONTENT TEST
     Virgo              n= 31  -y/-dy/-ey:   39%  -al/-ol:    0%  -ar/-or:   13%
 
   Results saved to results/template_subtraction_results.json
-</pre></details><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>53c82d9</code>. 
+</pre></details><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>a936587</code>. 
 To run any test with your own parameters, clone
 <a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
 (<code>python webui/server.py</code>). All numbers reproduce at

@@ -35,6 +35,17 @@ blockquote { border-left:3px solid var(--accent); margin:1em 0;
        padding:.05em .45em; margin-left:.5em; }
 .tag.sug { border-color:var(--warn); color:var(--warn); }
 details summary { cursor:pointer; font-family: system-ui, sans-serif; }
+input.param { font-family: ui-monospace, Consolas, monospace;
+              font-size:.85em; width:24em; max-width:100%;
+              background:var(--code); color:var(--fg);
+              border:1px solid var(--line); border-radius:3px;
+              padding:.25em .4em; }
+button { font-family: system-ui, sans-serif; font-size:.95em;
+         padding:.35em 1em; border:1px solid var(--accent);
+         border-radius:4px; background:var(--code); color:var(--fg);
+         cursor:pointer; }
+button:disabled { opacity:.5; cursor:default; }
+#run-out { min-height:2em; }
 footer { border-top:1px solid var(--line); margin-top:3em;
          padding-top:1em; font-size:.85em; color:var(--muted); }
 </style></head><body>
@@ -187,7 +198,7 @@ footer { border-top:1px solid var(--line); margin-top:3em;
 <tr><td><a href="tests/zodiac_galenic_axis.html">zodiac_galenic_axis</a></td><td>Zodiac Galenic Axis Test</td><td>0</td><td>—</td></tr>
 <tr><td><a href="tests/zodiac_label_network.html">zodiac_label_network</a></td><td>Cross-Sign Label Network Analysis</td><td>10</td><td>—</td></tr>
 <tr><td><a href="tests/zodiac_ring_alignment.html">zodiac_ring_alignment</a></td><td>Cross-Zodiac Comparative Reading,</td><td>8</td><td>—</td></tr>
-</table><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>53c82d9</code>. 
+</table><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>a936587</code>. 
 To run any test with your own parameters, clone
 <a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
 (<code>python webui/server.py</code>). All numbers reproduce at

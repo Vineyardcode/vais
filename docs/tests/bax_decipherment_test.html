@@ -35,6 +35,17 @@ blockquote { border-left:3px solid var(--accent); margin:1em 0;
        padding:.05em .45em; margin-left:.5em; }
 .tag.sug { border-color:var(--warn); color:var(--warn); }
 details summary { cursor:pointer; font-family: system-ui, sans-serif; }
+input.param { font-family: ui-monospace, Consolas, monospace;
+              font-size:.85em; width:24em; max-width:100%;
+              background:var(--code); color:var(--fg);
+              border:1px solid var(--line); border-radius:3px;
+              padding:.25em .4em; }
+button { font-family: system-ui, sans-serif; font-size:.95em;
+         padding:.35em 1em; border:1px solid var(--accent);
+         border-radius:4px; background:var(--code); color:var(--fg);
+         cursor:pointer; }
+button:disabled { opacity:.5; cursor:default; }
+#run-out { min-height:2em; }
 footer { border-top:1px solid var(--line); margin-top:3em;
          padding-top:1em; font-size:.85em; color:var(--muted); }
 </style></head><body>
@@ -73,20 +84,28 @@ Sources:
   - Bax (2014): &quot;A proposed partial decoding of the Voynich script&quot;
   - Vogt (2015-2016): stephenbax.net/?p=1550 (phonetics page)
   - Vogt find-and-replace procedure (Sept 2016): complete mapping table</pre>
-<h2>Parameters</h2><table><tr><th>name</th><th>default</th><th>type</th></tr>
-<tr><td><code>VOGT_MAP</code></td><td><code>{&#x27;cph&#x27;: &#x27;v&#x27;, &#x27;cfh&#x27;: &#x27;f&#x27;, &#x27;cth&#x27;: &#x27;J&#x27;, &#x27;ckh&#x27;: &#x27;C&#x27;, &#x27;sh&#x27;: &#x27;x&#x27;, &#x27;ch&#x27;: &#x27;h&#x27;, &#x27;p&#x27;: &#x27;b&#x27;, &#x27;f&#x27;: &#x27;p&#x27;,…</code></td><td>json</td></tr>
-<tr><td><code>VOGT_VOWELS</code></td><td><code>[&#x27;a&#x27;, &#x27;o&#x27;, &#x27;w&#x27;]</code></td><td>json</td></tr>
-<tr><td><code>VOGT_CONSONANTS</code></td><td><code>[&#x27;C&#x27;, &#x27;J&#x27;, &#x27;R&#x27;, &#x27;S&#x27;, &#x27;b&#x27;, &#x27;f&#x27;, &#x27;g&#x27;, &#x27;h&#x27;, &#x27;k&#x27;, &#x27;n&#x27;, &#x27;p&#x27;, &#x27;r&#x27;, &#x27;s&#x27;, &#x27;t&#x27;, &#x27;v&#x27;, &#x27;x&#x27;]</code></td><td>json</td></tr>
-<tr><td><code>VOGT_NONPHONETIC</code></td><td><code>[&#x27;.&#x27;]</code></td><td>json</td></tr>
-<tr><td><code>EVA_VOGT_VOWELS</code></td><td><code>[&#x27;a&#x27;, &#x27;e&#x27;, &#x27;o&#x27;]</code></td><td>json</td></tr>
-<tr><td><code>EVA_VOGT_CONSONANTS</code></td><td><code>[&#x27;d&#x27;, &#x27;f&#x27;, &#x27;k&#x27;, &#x27;l&#x27;, &#x27;m&#x27;, &#x27;p&#x27;, &#x27;r&#x27;, &#x27;s&#x27;, &#x27;t&#x27;, &#x27;y&#x27;]</code></td><td>json</td></tr>
-<tr><td><code>EVA_VOGT_NONPHONETIC</code></td><td><code>[&#x27;i&#x27;, &#x27;n&#x27;]</code></td><td>json</td></tr>
-<tr><td><code>EVA_VOGT_UNKNOWN</code></td><td><code>[&#x27;b&#x27;, &#x27;g&#x27;, &#x27;j&#x27;, &#x27;q&#x27;, &#x27;u&#x27;, &#x27;v&#x27;, &#x27;x&#x27;, &#x27;z&#x27;]</code></td><td>json</td></tr>
-<tr><td><code>CENTAUREA_COGNATES</code></td><td><code>[&#x27;centaurea&#x27;, &#x27;centauree&#x27;, &#x27;centaure&#x27;, &#x27;kentauria&#x27;, &#x27;kentaurion&#x27;, &#x27;kentaurea&#x27;, &#x27;centaurium…</code></td><td>json</td></tr>
-<tr><td><code>ALL_GALLOWS</code></td><td><code>[&#x27;cth&#x27;, &#x27;ckh&#x27;, &#x27;cph&#x27;, &#x27;cfh&#x27;, &#x27;tch&#x27;, &#x27;kch&#x27;, &#x27;pch&#x27;, &#x27;fch&#x27;, &#x27;tsh&#x27;, &#x27;ksh&#x27;, &#x27;psh&#x27;, &#x27;fsh&#x27;, &#x27;t&#x27;, …</code></td><td>json</td></tr>
-<tr><td><code>N_RANDOM</code></td><td><code>1000</code></td><td>int</td></tr>
+<h2>Parameters</h2><p class="muted">Edit a value to override it for an in-browser run (the script itself is never modified).</p><table><tr><th>name</th><th>type</th><th>value</th></tr>
+<tr><td><code>VOGT_MAP</code></td><td>json</td><td><input class="param" data-param="VOGT_MAP" value="{&#x27;cph&#x27;: &#x27;v&#x27;, &#x27;cfh&#x27;: &#x27;f&#x27;, &#x27;cth&#x27;: &#x27;J&#x27;, &#x27;ckh&#x27;: &#x27;C&#x27;, &#x27;sh&#x27;: &#x27;x&#x27;, &#x27;ch&#x27;: &#x27;h&#x27;, &#x27;p&#x27;: &#x27;b&#x27;, &#x27;f&#x27;: &#x27;p&#x27;, &#x27;t&#x27;: &#x27;g&#x27;, &#x27;d&#x27;: &#x27;t&#x27;, &#x27;k&#x27;: &#x27;k&#x27;, &#x27;r&#x27;: &#x27;r&#x27;, &#x27;s&#x27;: &#x27;S&#x27;, &#x27;l&#x27;: &#x27;s&#x27;, &#x27;y&#x27;: &#x27;n&#x27;, &#x27;m&#x27;: &#x27;R&#x27;, &#x27;o&#x27;: &#x27;a&#x27;, &#x27;a&#x27;: &#x27;w&#x27;, &#x27;e&#x27;: &#x27;o&#x27;, &#x27;i&#x27;: &#x27;.&#x27;, &#x27;n&#x27;: &#x27;.&#x27;}"></td></tr>
+<tr><td><code>VOGT_VOWELS</code></td><td>json</td><td><input class="param" data-param="VOGT_VOWELS" value="[&#x27;a&#x27;, &#x27;o&#x27;, &#x27;w&#x27;]"></td></tr>
+<tr><td><code>VOGT_CONSONANTS</code></td><td>json</td><td><input class="param" data-param="VOGT_CONSONANTS" value="[&#x27;C&#x27;, &#x27;J&#x27;, &#x27;R&#x27;, &#x27;S&#x27;, &#x27;b&#x27;, &#x27;f&#x27;, &#x27;g&#x27;, &#x27;h&#x27;, &#x27;k&#x27;, &#x27;n&#x27;, &#x27;p&#x27;, &#x27;r&#x27;, &#x27;s&#x27;, &#x27;t&#x27;, &#x27;v&#x27;, &#x27;x&#x27;]"></td></tr>
+<tr><td><code>VOGT_NONPHONETIC</code></td><td>json</td><td><input class="param" data-param="VOGT_NONPHONETIC" value="[&#x27;.&#x27;]"></td></tr>
+<tr><td><code>EVA_VOGT_VOWELS</code></td><td>json</td><td><input class="param" data-param="EVA_VOGT_VOWELS" value="[&#x27;a&#x27;, &#x27;e&#x27;, &#x27;o&#x27;]"></td></tr>
+<tr><td><code>EVA_VOGT_CONSONANTS</code></td><td>json</td><td><input class="param" data-param="EVA_VOGT_CONSONANTS" value="[&#x27;d&#x27;, &#x27;f&#x27;, &#x27;k&#x27;, &#x27;l&#x27;, &#x27;m&#x27;, &#x27;p&#x27;, &#x27;r&#x27;, &#x27;s&#x27;, &#x27;t&#x27;, &#x27;y&#x27;]"></td></tr>
+<tr><td><code>EVA_VOGT_NONPHONETIC</code></td><td>json</td><td><input class="param" data-param="EVA_VOGT_NONPHONETIC" value="[&#x27;i&#x27;, &#x27;n&#x27;]"></td></tr>
+<tr><td><code>EVA_VOGT_UNKNOWN</code></td><td>json</td><td><input class="param" data-param="EVA_VOGT_UNKNOWN" value="[&#x27;b&#x27;, &#x27;g&#x27;, &#x27;j&#x27;, &#x27;q&#x27;, &#x27;u&#x27;, &#x27;v&#x27;, &#x27;x&#x27;, &#x27;z&#x27;]"></td></tr>
+<tr><td><code>CENTAUREA_COGNATES</code></td><td>json</td><td><input class="param" data-param="CENTAUREA_COGNATES" value="[&#x27;centaurea&#x27;, &#x27;centauree&#x27;, &#x27;centaure&#x27;, &#x27;kentauria&#x27;, &#x27;kentaurion&#x27;, &#x27;kentaurea&#x27;, &#x27;centaurium&#x27;, &#x27;qantariyun&#x27;, &#x27;santariya&#x27;, &#x27;qantariun&#x27;, &#x27;kentavria&#x27;, &#x27;kornblume&#x27;, &#x27;centaureo&#x27;, &#x27;centaura&#x27;]"></td></tr>
+<tr><td><code>ALL_GALLOWS</code></td><td>json</td><td><input class="param" data-param="ALL_GALLOWS" value="[&#x27;cth&#x27;, &#x27;ckh&#x27;, &#x27;cph&#x27;, &#x27;cfh&#x27;, &#x27;tch&#x27;, &#x27;kch&#x27;, &#x27;pch&#x27;, &#x27;fch&#x27;, &#x27;tsh&#x27;, &#x27;ksh&#x27;, &#x27;psh&#x27;, &#x27;fsh&#x27;, &#x27;t&#x27;, &#x27;k&#x27;, &#x27;f&#x27;, &#x27;p&#x27;]"></td></tr>
+<tr><td><code>N_RANDOM</code></td><td>int</td><td><input class="param" data-param="N_RANDOM" value="1000"></td></tr>
 </table>
-<h2>Golden output (PYTHONHASHSEED=0)</h2><details><summary>show</summary><pre>========================================================================
+<h2>Run it in your browser</h2><p class="muted">Python + numpy on WebAssembly, entirely on your machine — nothing is uploaded. First run downloads the runtime (~15 MB) and the repository data pack (~9 MB); both are cached afterwards. Expect it to be slower than a native run.</p><p><button id="run-btn">&#9654; Run</button> <button id="stop-btn">Stop</button> <span id="run-status" class="muted"></span></p><pre id="run-out"></pre>
+<script>window.VAIS_TEST = {"stem": "bax_decipherment_test", "specs": {"VOGT_MAP": {"type": "json", "container": null}, "VOGT_VOWELS": {"type": "json", "container": "set"}, "VOGT_CONSONANTS": {"type": "json", "container": "set"}, "VOGT_NONPHONETIC": {"type": "json", "container": "set"}, "EVA_VOGT_VOWELS": {"type": "json", "container": "set"}, "EVA_VOGT_CONSONANTS": {"type": "json", "container": "set"}, "EVA_VOGT_NONPHONETIC": {"type": "json", "container": "set"}, "EVA_VOGT_UNKNOWN": {"type": "json", "container": "set"}, "CENTAUREA_COGNATES": {"type": "json", "container": null}, "ALL_GALLOWS": {"type": "json", "container": null}, "N_RANDOM": {"type": "int", "container": null}}, "base": "../", "baselineSeconds": 0};</script><script src="../runner.js"></script>
+<h2>Run it locally (full speed, byte-exact)</h2>
+<pre>git clone https://github.com/Vineyardcode/vais
+cd vais
+pip install numpy flask
+python scripts/bax_decipherment_test.py        # this test; output also lands in results/
+python webui/server.py          # or the full interactive UI at localhost:5000</pre>
+<h2>Golden output (PYTHONHASHSEED=0)</h2><details><summary>show</summary><pre id="golden-pre">========================================================================
 bax_decipherment_test — TESTING THE BAX/VOGT DECIPHERMENT PROPOSAL
 ========================================================================
 
@@ -298,7 +317,7 @@ QUANTITATIVE VERDICT:
   → This does NOT prove Bax/Vogt wrong (the mapping wasn&#x27;t
     optimized for f2r alone), but it means the f2r evidence
     alone cannot support the phonetic hypothesis.
-</pre></details><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>53c82d9</code>. 
+</pre></details><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>a936587</code>. 
 To run any test with your own parameters, clone
 <a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
 (<code>python webui/server.py</code>). All numbers reproduce at

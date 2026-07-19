@@ -35,6 +35,17 @@ blockquote { border-left:3px solid var(--accent); margin:1em 0;
        padding:.05em .45em; margin-left:.5em; }
 .tag.sug { border-color:var(--warn); color:var(--warn); }
 details summary { cursor:pointer; font-family: system-ui, sans-serif; }
+input.param { font-family: ui-monospace, Consolas, monospace;
+              font-size:.85em; width:24em; max-width:100%;
+              background:var(--code); color:var(--fg);
+              border:1px solid var(--line); border-radius:3px;
+              padding:.25em .4em; }
+button { font-family: system-ui, sans-serif; font-size:.95em;
+         padding:.35em 1em; border:1px solid var(--accent);
+         border-radius:4px; background:var(--code); color:var(--fg);
+         cursor:pointer; }
+button:disabled { opacity:.5; cursor:default; }
+#run-out { min-height:2em; }
 footer { border-top:1px solid var(--line); margin-top:3em;
          padding-top:1em; font-size:.85em; color:var(--muted); }
 </style></head><body>
@@ -62,21 +73,29 @@ This test:
        template, also translate f76r best passage
   E) FULL VOCABULARY TABLE — Compile all cracked roots, compounds,
        and grammatical morphemes into a single reference table</pre>
-<h2>Parameters</h2><table><tr><th>name</th><th>default</th><th>type</th></tr>
-<tr><td><code>SIMPLE_GALLOWS</code></td><td><code>[&#x27;t&#x27;, &#x27;k&#x27;, &#x27;f&#x27;, &#x27;p&#x27;]</code></td><td>json</td></tr>
-<tr><td><code>BENCH_GALLOWS</code></td><td><code>[&#x27;cth&#x27;, &#x27;ckh&#x27;, &#x27;cph&#x27;, &#x27;cfh&#x27;]</code></td><td>json</td></tr>
-<tr><td><code>COMPOUND_GCH</code></td><td><code>[&#x27;tch&#x27;, &#x27;kch&#x27;, &#x27;pch&#x27;, &#x27;fch&#x27;]</code></td><td>json</td></tr>
-<tr><td><code>COMPOUND_GSH</code></td><td><code>[&#x27;tsh&#x27;, &#x27;ksh&#x27;, &#x27;psh&#x27;, &#x27;fsh&#x27;]</code></td><td>json</td></tr>
-<tr><td><code>PREFIXES</code></td><td><code>[&#x27;qo&#x27;, &#x27;q&#x27;, &#x27;so&#x27;, &#x27;do&#x27;, &#x27;o&#x27;, &#x27;d&#x27;, &#x27;s&#x27;, &#x27;y&#x27;]</code></td><td>json</td></tr>
-<tr><td><code>SUFFIXES</code></td><td><code>[&#x27;aiin&#x27;, &#x27;ain&#x27;, &#x27;iin&#x27;, &#x27;in&#x27;, &#x27;ar&#x27;, &#x27;or&#x27;, &#x27;al&#x27;, &#x27;ol&#x27;, &#x27;eedy&#x27;, &#x27;edy&#x27;, &#x27;ody&#x27;, &#x27;dy&#x27;, &#x27;ey&#x27;, &#x27;y&#x27;…</code></td><td>json</td></tr>
-<tr><td><code>CONFIRMED_VOCAB</code></td><td><code>{&#x27;esed&#x27;: &#x27;lion&#x27;, &#x27;she&#x27;: &#x27;tree/plant&#x27;, &#x27;al&#x27;: &#x27;stone&#x27;, &#x27;he&#x27;: &#x27;fall/occur&#x27;, &#x27;ro&#x27;: &#x27;mouth&#x27;, &#x27;l…</code></td><td>json</td></tr>
-<tr><td><code>COMPOUND_VOCAB</code></td><td><code>{&#x27;lch&#x27;: &#x27;remedy-making&#x27;, &#x27;ed&#x27;: &#x27;this-matter&#x27;, &#x27;che&#x27;: &#x27;make-this&#x27;, &#x27;ched&#x27;: &#x27;prepare-this&#x27;, …</code></td><td>json</td></tr>
-<tr><td><code>ALL_ROOTS</code></td><td><code>{}</code></td><td>json</td></tr>
-<tr><td><code>DET_MEANING</code></td><td><code>{&#x27;k&#x27;: &#x27;substance/bodily&#x27;, &#x27;t&#x27;: &#x27;celestial/astral&#x27;, &#x27;f&#x27;: &#x27;botanical/plant&#x27;, &#x27;p&#x27;: &#x27;discourse…</code></td><td>json</td></tr>
-<tr><td><code>PREFIX_MEANING</code></td><td><code>{&#x27;qo&#x27;: &#x27;which/that-which&#x27;, &#x27;q&#x27;: &#x27;which&#x27;, &#x27;o&#x27;: &#x27;the&#x27;, &#x27;do&#x27;: &#x27;of-the&#x27;, &#x27;d&#x27;: &#x27;of&#x27;, &#x27;so&#x27;: &#x27;it-…</code></td><td>json</td></tr>
-<tr><td><code>SUFFIX_MEANING</code></td><td><code>{&#x27;aiin&#x27;: &#x27;ones(pl)&#x27;, &#x27;ain&#x27;: &#x27;ones(obl)&#x27;, &#x27;iin&#x27;: &#x27;(pl)&#x27;, &#x27;in&#x27;: &#x27;(pl)&#x27;, &#x27;ar&#x27;: &#x27;-er/doer&#x27;, &#x27;o…</code></td><td>json</td></tr>
+<h2>Parameters</h2><p class="muted">Edit a value to override it for an in-browser run (the script itself is never modified).</p><table><tr><th>name</th><th>type</th><th>value</th></tr>
+<tr><td><code>SIMPLE_GALLOWS</code></td><td>json</td><td><input class="param" data-param="SIMPLE_GALLOWS" value="[&#x27;t&#x27;, &#x27;k&#x27;, &#x27;f&#x27;, &#x27;p&#x27;]"></td></tr>
+<tr><td><code>BENCH_GALLOWS</code></td><td>json</td><td><input class="param" data-param="BENCH_GALLOWS" value="[&#x27;cth&#x27;, &#x27;ckh&#x27;, &#x27;cph&#x27;, &#x27;cfh&#x27;]"></td></tr>
+<tr><td><code>COMPOUND_GCH</code></td><td>json</td><td><input class="param" data-param="COMPOUND_GCH" value="[&#x27;tch&#x27;, &#x27;kch&#x27;, &#x27;pch&#x27;, &#x27;fch&#x27;]"></td></tr>
+<tr><td><code>COMPOUND_GSH</code></td><td>json</td><td><input class="param" data-param="COMPOUND_GSH" value="[&#x27;tsh&#x27;, &#x27;ksh&#x27;, &#x27;psh&#x27;, &#x27;fsh&#x27;]"></td></tr>
+<tr><td><code>PREFIXES</code></td><td>json</td><td><input class="param" data-param="PREFIXES" value="[&#x27;qo&#x27;, &#x27;q&#x27;, &#x27;so&#x27;, &#x27;do&#x27;, &#x27;o&#x27;, &#x27;d&#x27;, &#x27;s&#x27;, &#x27;y&#x27;]"></td></tr>
+<tr><td><code>SUFFIXES</code></td><td>json</td><td><input class="param" data-param="SUFFIXES" value="[&#x27;aiin&#x27;, &#x27;ain&#x27;, &#x27;iin&#x27;, &#x27;in&#x27;, &#x27;ar&#x27;, &#x27;or&#x27;, &#x27;al&#x27;, &#x27;ol&#x27;, &#x27;eedy&#x27;, &#x27;edy&#x27;, &#x27;ody&#x27;, &#x27;dy&#x27;, &#x27;ey&#x27;, &#x27;y&#x27;]"></td></tr>
+<tr><td><code>CONFIRMED_VOCAB</code></td><td>json</td><td><input class="param" data-param="CONFIRMED_VOCAB" value="{&#x27;esed&#x27;: &#x27;lion&#x27;, &#x27;she&#x27;: &#x27;tree/plant&#x27;, &#x27;al&#x27;: &#x27;stone&#x27;, &#x27;he&#x27;: &#x27;fall/occur&#x27;, &#x27;ro&#x27;: &#x27;mouth&#x27;, &#x27;les&#x27;: &#x27;tongue&#x27;, &#x27;ran&#x27;: &#x27;name&#x27;, &#x27;cham&#x27;: &#x27;hot/warm&#x27;, &#x27;res&#x27;: &#x27;south&#x27;, &#x27;ar&#x27;: &#x27;king/great&#x27;, &#x27;or&#x27;: &#x27;king/great&#x27;, &#x27;ol&#x27;: &#x27;carry/bear&#x27;, &#x27;am&#x27;: &#x27;water&#x27;, &#x27;chas&#x27;: &#x27;lord/master&#x27;, &#x27;eos&#x27;: &#x27;star&#x27;, &#x27;es&#x27;: &#x27;star&#x27;, &#x27;chol&#x27;: &#x27;celestial-body&#x27;, &#x27;cho&#x27;: &#x27;substance&#x27;, &#x27;eosh&#x27;: &#x27;dry&#x27;, &#x27;sheo&#x27;: &#x27;dry&#x27;, &#x27;choam&#x27;: &#x27;hot&#x27;, &#x27;rar&#x27;: &#x27;king&#x27;, &#x27;yed&#x27;: &#x27;hand&#x27;, &#x27;h&#x27;: &#x27;happen/occur&#x27;, &#x27;a&#x27;: &#x27;great-one&#x27;, &#x27;e&#x27;: &#x27;this/that&#x27;, &#x27;ch&#x27;: &#x27;do/make&#x27;, &#x27;l&#x27;: &#x27;remedy/thing&#x27;, &#x27;d&#x27;: &#x27;matter/thing&#x27;, &#x27;ho&#x27;: &#x27;face/front&#x27;}"></td></tr>
+<tr><td><code>COMPOUND_VOCAB</code></td><td>json</td><td><input class="param" data-param="COMPOUND_VOCAB" value="{&#x27;lch&#x27;: &#x27;remedy-making&#x27;, &#x27;ed&#x27;: &#x27;this-matter&#x27;, &#x27;che&#x27;: &#x27;make-this&#x27;, &#x27;ched&#x27;: &#x27;prepare-this&#x27;, &#x27;chod&#x27;: &#x27;substance-matter&#x27;, &#x27;alch&#x27;: &#x27;stone-working (alchemy)&#x27;, &#x27;sh&#x27;: &#x27;it-happens&#x27;}"></td></tr>
+<tr><td><code>ALL_ROOTS</code></td><td>json</td><td><input class="param" data-param="ALL_ROOTS" value="{}"></td></tr>
+<tr><td><code>DET_MEANING</code></td><td>json</td><td><input class="param" data-param="DET_MEANING" value="{&#x27;k&#x27;: &#x27;substance/bodily&#x27;, &#x27;t&#x27;: &#x27;celestial/astral&#x27;, &#x27;f&#x27;: &#x27;botanical/plant&#x27;, &#x27;p&#x27;: &#x27;discourse/topic&#x27;}"></td></tr>
+<tr><td><code>PREFIX_MEANING</code></td><td>json</td><td><input class="param" data-param="PREFIX_MEANING" value="{&#x27;qo&#x27;: &#x27;which/that-which&#x27;, &#x27;q&#x27;: &#x27;which&#x27;, &#x27;o&#x27;: &#x27;the&#x27;, &#x27;do&#x27;: &#x27;of-the&#x27;, &#x27;d&#x27;: &#x27;of&#x27;, &#x27;so&#x27;: &#x27;it-[verbs]&#x27;, &#x27;s&#x27;: &#x27;[verbal]&#x27;, &#x27;y&#x27;: &#x27;[adjectival]&#x27;}"></td></tr>
+<tr><td><code>SUFFIX_MEANING</code></td><td>json</td><td><input class="param" data-param="SUFFIX_MEANING" value="{&#x27;aiin&#x27;: &#x27;ones(pl)&#x27;, &#x27;ain&#x27;: &#x27;ones(obl)&#x27;, &#x27;iin&#x27;: &#x27;(pl)&#x27;, &#x27;in&#x27;: &#x27;(pl)&#x27;, &#x27;ar&#x27;: &#x27;-er/doer&#x27;, &#x27;or&#x27;: &#x27;-er&#x27;, &#x27;al&#x27;: &#x27;in/at(place)&#x27;, &#x27;ol&#x27;: &#x27;(nominalized)&#x27;, &#x27;eedy&#x27;: &#x27;(intensely-described)&#x27;, &#x27;edy&#x27;: &#x27;(described)&#x27;, &#x27;ody&#x27;: &#x27;(prescribed)&#x27;, &#x27;dy&#x27;: &#x27;(abr.)&#x27;, &#x27;ey&#x27;: &#x27;(gen/of)&#x27;, &#x27;y&#x27;: &#x27;(-state)&#x27;}"></td></tr>
 </table>
-<h2>Golden output (PYTHONHASHSEED=0)</h2><details><summary>show</summary><pre>narrative_reconstruction: NARRATIVE RECONSTRUCTION &amp; REMAINING ROOT RESOLUTION
+<h2>Run it in your browser</h2><p class="muted">Python + numpy on WebAssembly, entirely on your machine — nothing is uploaded. First run downloads the runtime (~15 MB) and the repository data pack (~9 MB); both are cached afterwards. Expect it to be slower than a native run.</p><p><button id="run-btn">&#9654; Run</button> <button id="stop-btn">Stop</button> <span id="run-status" class="muted"></span></p><pre id="run-out"></pre>
+<script>window.VAIS_TEST = {"stem": "narrative_reconstruction", "specs": {"SIMPLE_GALLOWS": {"type": "json", "container": null}, "BENCH_GALLOWS": {"type": "json", "container": null}, "COMPOUND_GCH": {"type": "json", "container": null}, "COMPOUND_GSH": {"type": "json", "container": null}, "PREFIXES": {"type": "json", "container": null}, "SUFFIXES": {"type": "json", "container": null}, "CONFIRMED_VOCAB": {"type": "json", "container": null}, "COMPOUND_VOCAB": {"type": "json", "container": null}, "ALL_ROOTS": {"type": "json", "container": null}, "DET_MEANING": {"type": "json", "container": null}, "PREFIX_MEANING": {"type": "json", "container": null}, "SUFFIX_MEANING": {"type": "json", "container": null}}, "base": "../", "baselineSeconds": 0};</script><script src="../runner.js"></script>
+<h2>Run it locally (full speed, byte-exact)</h2>
+<pre>git clone https://github.com/Vineyardcode/vais
+cd vais
+pip install numpy flask
+python scripts/narrative_reconstruction.py        # this test; output also lands in results/
+python webui/server.py          # or the full interactive UI at localhost:5000</pre>
+<h2>Golden output (PYTHONHASHSEED=0)</h2><details><summary>show</summary><pre id="golden-pre">narrative_reconstruction: NARRATIVE RECONSTRUCTION &amp; REMAINING ROOT RESOLUTION
 ============================================================================
 Loaded 39564 word tokens
 
@@ -1163,7 +1182,7 @@ COMPLETE VOCABULARY REFERENCE TABLE
   Known roots: 30 confirmed + 7 compounds = 37 total
 
   Results saved to results/narrative_reconstruction_results.json
-</pre></details><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>53c82d9</code>. 
+</pre></details><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>a936587</code>. 
 To run any test with your own parameters, clone
 <a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
 (<code>python webui/server.py</code>). All numbers reproduce at

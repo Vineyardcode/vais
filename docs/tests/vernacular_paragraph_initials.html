@@ -35,6 +35,17 @@ blockquote { border-left:3px solid var(--accent); margin:1em 0;
        padding:.05em .45em; margin-left:.5em; }
 .tag.sug { border-color:var(--warn); color:var(--warn); }
 details summary { cursor:pointer; font-family: system-ui, sans-serif; }
+input.param { font-family: ui-monospace, Consolas, monospace;
+              font-size:.85em; width:24em; max-width:100%;
+              background:var(--code); color:var(--fg);
+              border:1px solid var(--line); border-radius:3px;
+              padding:.25em .4em; }
+button { font-family: system-ui, sans-serif; font-size:.95em;
+         padding:.35em 1em; border:1px solid var(--accent);
+         border-radius:4px; background:var(--code); color:var(--fg);
+         cursor:pointer; }
+button:disabled { opacity:.5; cursor:default; }
+#run-out { min-height:2em; }
 footer { border-top:1px solid var(--line); margin-top:3em;
          padding-top:1em; font-size:.85em; color:var(--muted); }
 </style></head><body>
@@ -78,14 +89,22 @@ SKEPTICAL CHECKS:
     editorial formatting of originally continuous text?
   - NULL: Would ANY random text with many short paragraphs show high
     concentration simply due to formulaic genre conventions?</pre>
-<h2>Parameters</h2><table><tr><th>name</th><th>default</th><th>type</th></tr>
-<tr><td><code>SEED</code></td><td><code>42</code></td><td>int</td></tr>
-<tr><td><code>VMS_GALLOWS_RAW</code></td><td><code>{&#x27;p&#x27;: 352, &#x27;t&#x27;: 174, &#x27;k&#x27;: 81, &#x27;f&#x27;: 31}</code></td><td>json</td></tr>
-<tr><td><code>VMS_TOTAL_PARAS</code></td><td><code>784</code></td><td>int</td></tr>
-<tr><td><code>VMS_SECTION</code></td><td><code>{&#x27;overall&#x27;: {&#x27;dist&#x27;: {&#x27;p&#x27;: 352, &#x27;t&#x27;: 174, &#x27;k&#x27;: 81, &#x27;f&#x27;: 31}, &#x27;total&#x27;: 784, &#x27;gallows_covera…</code></td><td>json</td></tr>
-<tr><td><code>VERNACULAR_TEXTS</code></td><td><code>{&#x27;italian_cucina&#x27;: {&#x27;id&#x27;: 33954, &#x27;title&#x27;: &#x27;Il libro della cucina del sec. XIV&#x27;, &#x27;language&#x27;…</code></td><td>json</td></tr>
+<h2>Parameters</h2><p class="muted">Edit a value to override it for an in-browser run (the script itself is never modified).</p><table><tr><th>name</th><th>type</th><th>value</th></tr>
+<tr><td><code>SEED</code></td><td>int</td><td><input class="param" data-param="SEED" value="42"></td></tr>
+<tr><td><code>VMS_GALLOWS_RAW</code></td><td>json</td><td><input class="param" data-param="VMS_GALLOWS_RAW" value="{&#x27;p&#x27;: 352, &#x27;t&#x27;: 174, &#x27;k&#x27;: 81, &#x27;f&#x27;: 31}"></td></tr>
+<tr><td><code>VMS_TOTAL_PARAS</code></td><td>int</td><td><input class="param" data-param="VMS_TOTAL_PARAS" value="784"></td></tr>
+<tr><td><code>VMS_SECTION</code></td><td>json</td><td><input class="param" data-param="VMS_SECTION" value="{&#x27;overall&#x27;: {&#x27;dist&#x27;: {&#x27;p&#x27;: 352, &#x27;t&#x27;: 174, &#x27;k&#x27;: 81, &#x27;f&#x27;: 31}, &#x27;total&#x27;: 784, &#x27;gallows_coverage&#x27;: 0.814}, &#x27;recipe&#x27;: {&#x27;dist&#x27;: {&#x27;p&#x27;: 155, &#x27;t&#x27;: 60, &#x27;k&#x27;: 20, &#x27;f&#x27;: 14}, &#x27;total&#x27;: 285, &#x27;gallows_coverage&#x27;: 0.874}, &#x27;herbal&#x27;: {&#x27;dist&#x27;: {&#x27;p&#x27;: 111, &#x27;t&#x27;: 90, &#x27;k&#x27;: 54, &#x27;f&#x27;: 17}, &#x27;total&#x27;: 322, &#x27;gallows_coverage&#x27;: 0.845}}"></td></tr>
+<tr><td><code>VERNACULAR_TEXTS</code></td><td>json</td><td><input class="param" data-param="VERNACULAR_TEXTS" value="{&#x27;italian_cucina&#x27;: {&#x27;id&#x27;: 33954, &#x27;title&#x27;: &#x27;Il libro della cucina del sec. XIV&#x27;, &#x27;language&#x27;: &#x27;Italian (Tuscan)&#x27;, &#x27;genre&#x27;: &#x27;cookbook / recipe collection&#x27;, &#x27;era&#x27;: &#x27;14th century (trecento)&#x27;, &#x27;url&#x27;: &#x27;https://www.gutenberg.org/cache/epub/33954/pg33954.txt&#x27;}, &#x27;french_viandier&#x27;: {&#x27;id&#x27;: 26567, &#x27;title&#x27;: &#x27;Le viandier de Taillevent&#x27;, &#x27;language&#x27;: &#x27;French&#x27;, &#x27;genre&#x27;: &#x27;cookbook / recipe collection&#x27;, &#x27;era&#x27;: &#x27;c. 1380-1420 (Charles VI)&#x27;, &#x27;url&#x27;: &#x27;https://www.gutenberg.org/cache/epub/26567/pg26567.txt&#x27;}, &#x27;english_cury&#x27;: {&#x27;id&#x27;: 8102, &#x27;title&#x27;: &#x27;The Forme of Cury&#x27;, &#x27;language&#x27;: &#x27;Middle English&#x27;, &#x27;genre&#x27;: &#x27;cookbook / recipe collection&#x27;, &#x27;era&#x27;: &#x27;c. 1390 (Richard II)&#x27;, &#x27;url&#x27;: &#x27;https://www.gutenberg.org/cache/epub/8102/pg8102.txt&#x27;}}"></td></tr>
 </table>
-<h2>Golden output (PYTHONHASHSEED=0)</h2><details><summary>show</summary><pre>══════════════════════════════════════════════════════════════════════
+<h2>Run it in your browser</h2><p class="muted">Python + numpy on WebAssembly, entirely on your machine — nothing is uploaded. First run downloads the runtime (~15 MB) and the repository data pack (~9 MB); both are cached afterwards. Expect it to be slower than a native run.</p><p><button id="run-btn">&#9654; Run</button> <button id="stop-btn">Stop</button> <span id="run-status" class="muted"></span></p><pre id="run-out"></pre>
+<script>window.VAIS_TEST = {"stem": "vernacular_paragraph_initials", "specs": {"SEED": {"type": "int", "container": null}, "VMS_GALLOWS_RAW": {"type": "json", "container": null}, "VMS_TOTAL_PARAS": {"type": "int", "container": null}, "VMS_SECTION": {"type": "json", "container": null}, "VERNACULAR_TEXTS": {"type": "json", "container": null}}, "base": "../", "baselineSeconds": 0};</script><script src="../runner.js"></script>
+<h2>Run it locally (full speed, byte-exact)</h2>
+<pre>git clone https://github.com/Vineyardcode/vais
+cd vais
+pip install numpy flask
+python scripts/vernacular_paragraph_initials.py        # this test; output also lands in results/
+python webui/server.py          # or the full interactive UI at localhost:5000</pre>
+<h2>Golden output (PYTHONHASHSEED=0)</h2><details><summary>show</summary><pre id="golden-pre">══════════════════════════════════════════════════════════════════════
 vernacular_paragraph_initials: Vernacular Paragraph-Initial Mapping
 ══════════════════════════════════════════════════════════════════════
 
@@ -549,7 +568,7 @@ KEY FINDINGS:
 
 JSON results → C:\projects\vais\results\vernacular_paragraph_initials.json
 Full output → C:\projects\vais\results\vernacular_paragraph_initials.txt
-</pre></details><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>53c82d9</code>. 
+</pre></details><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>a936587</code>. 
 To run any test with your own parameters, clone
 <a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
 (<code>python webui/server.py</code>). All numbers reproduce at
