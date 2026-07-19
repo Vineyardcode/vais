@@ -68,5 +68,12 @@
   "verdict": "S7 rung 5: SECTION_GENERAL",
   "suggestive": true,
   "summary": "section_general; bio p=0.005 (margin +0.0306), recipes p=0.005 (margin +0.0702), other_B p=0.005 (margin +0.0663)"
+ },
+ "N4": {
+  "status": "completed",
+  "date": "2026-07-19",
+  "verdict": "S5/S6 family test: FAMILY_LANGUAGE",
+  "suggestive": true,
+  "summary": "family_language; B (r_pos +0.0354, r_bi +0.0407), nearest family_language d=0.0533, second family_hoax d=0.1775"
  }
 }

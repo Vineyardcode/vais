@@ -1,0 +1,108 @@
+{
+ "params": {
+  "seed": 118,
+  "r_splits": 10,
+  "class_k": 12,
+  "margin_ratio": 0.5,
+  "gate_sep": 2.0,
+  "pnum_lines": 4600,
+  "pnum_skip": 0.15,
+  "min_line_words": 5,
+  "holdout_frac": 0.2,
+  "pseudo_folio_lines": 24,
+  "alpha": 0.5
+ },
+ "profiles": {
+  "P1_language": {
+   "r_pos": -0.0005,
+   "r_bi": 0.0013,
+   "split_rms": 0.0005,
+   "n_lines": 4755,
+   "n_classes": 13
+  },
+  "PREC_records": {
+   "r_pos": 0.3388,
+   "r_bi": 0.3217,
+   "split_rms": 0.003,
+   "n_lines": 4600,
+   "n_classes": 13
+  },
+  "PNUM_positional": {
+   "r_pos": 0.3168,
+   "r_bi": 0.4636,
+   "split_rms": 0.0057,
+   "n_lines": 4600,
+   "n_classes": 13
+  },
+  "N4_hoax": {
+   "r_pos": 0.0427,
+   "r_bi": 0.218,
+   "split_rms": 0.005,
+   "n_lines": 2572,
+   "n_classes": 13
+  },
+  "N1_shuffle_ref": {
+   "r_pos": -0.0005,
+   "r_bi": -0.001,
+   "split_rms": 0.0005,
+   "n_lines": 3956,
+   "n_classes": 13
+  },
+  "VMS_currier_B": {
+   "r_pos": 0.0354,
+   "r_bi": 0.0407,
+   "split_rms": 0.0048,
+   "n_lines": 2522,
+   "n_classes": 13
+  },
+  "VMS_currier_A": {
+   "r_pos": 0.0253,
+   "r_bi": 0.0256,
+   "split_rms": 0.0044,
+   "n_lines": 1310,
+   "n_classes": 13
+  }
+ },
+ "gate": {
+  "min_separation": 0.1436,
+  "max_spread": 0.0057,
+  "pass": true
+ },
+ "b_distances": [
+  [
+   0.0533,
+   "family_language"
+  ],
+  [
+   0.1775,
+   "family_hoax"
+  ],
+  [
+   0.4135,
+   "family_records"
+  ],
+  [
+   0.508,
+   "family_positional"
+  ]
+ ],
+ "a_distances": [
+  [
+   0.0354,
+   "family_language"
+  ],
+  [
+   0.1932,
+   "family_hoax"
+  ],
+  [
+   0.4312,
+   "family_records"
+  ],
+  [
+   0.5261,
+   "family_positional"
+  ]
+ ],
+ "verdict": "family_language"
+}

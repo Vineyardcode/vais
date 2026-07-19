@@ -999,3 +999,29 @@ Configuration (pre-registered in the script docstring): script defaults. Runtime
 | other_B | 744 / 34 | +0.0478 | -0.0077 | 0 | 0.0050 | **PASS** |
 
 **VERDICT: SECTION-GENERAL — the ordinal signal replicates within every usable B section independently; the section-confound objection is dismissed. SUGGESTIVE supporting detail for the quarantined finding; not a decode.**
+
+---
+
+### Portfolio S5/S6 — line-class sequence family classification (Currier B) (2026-07-19)
+
+[AUTOMATED — written by tools/overnight.py; run committed to branch overnight/2026-07-19; awaiting human review before promotion to any evidence tier.]
+
+Configuration (pre-registered in the script docstring): script defaults. Runtime 0.00 h at PYTHONHASHSEED=0. Holdout: whole folios (VMS) / 24-line pseudo-folio blocks (controls).
+
+**SUGGESTIVE — awaiting human review (quarantined; never merged automatically):**
+
+**Pre-registered rule** (script docstring): nearest family centroid with margin (d1 < 0.5 x d2) and an explicit none-of-the-above arm (F4); gate = centroids separate (> 2.0 x max split RMS). Profiles = normalized position-driven vs neighbor-driven class-sequence information, folio holdout, 10-split medians.
+
+| corpus | r_pos | r_bi | split RMS | lines |
+|---|---|---|---|---|
+| P1_language | -0.0005 | +0.0013 | 0.0005 | 4755 |
+| PREC_records | +0.3388 | +0.3217 | 0.0030 | 4600 |
+| PNUM_positional | +0.3168 | +0.4636 | 0.0057 | 4600 |
+| N4_hoax | +0.0427 | +0.2180 | 0.0050 | 2572 |
+| N1_shuffle_ref | -0.0005 | -0.0010 | 0.0005 | 3956 |
+| VMS_currier_B | +0.0354 | +0.0407 | 0.0048 | 2522 |
+| VMS_currier_A | +0.0253 | +0.0256 | 0.0044 | 1310 |
+
+Gate: min centroid separation 0.1436 vs required 0.0114 → PASS. B distances: family_language 0.0533, family_hoax 0.1775, family_records 0.4135, family_positional 0.5080.
+
+**VERDICT: FAMILY_LANGUAGE** — B's line-class ordering profile is nearest the language reference with clear margin. A family-level reading only: nothing is decoded, and the S7 positional finding stands as the residual that separates B from the pure family centroid (real prose shows r_pos ~ 0; B does not).
