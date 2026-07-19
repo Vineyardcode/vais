@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>line_discipline_rank2 — VAIS - Voynich Analysis Interactive Suite</title><style>
+<title>line_discipline_rank3 — VAIS - Voynich Analysis Interactive Suite</title><style>
 :root { --bg:#ffffff; --fg:#1a1a1a; --muted:#666; --line:#ddd;
         --code:#f5f5f5; --accent:#7a4a1e; --warn:#a33; }
 @media (prefers-color-scheme: dark) {
@@ -52,44 +52,41 @@ footer { border-top:1px solid var(--line); margin-top:3em;
 <nav><a href="../index.html">VAIS - Voynich Analysis Interactive Suite</a><a href="../catalog.html">Catalog</a>
 <a href="../research.html">Research</a><a href="../reports.html">Reports</a>
 <a href="../credits.html">Credits</a><a href="https://github.com/Vineyardcode/vais">GitHub</a></nav>
-<main><h1>line_discipline_rank2</h1>
-<p class="muted">scripts/line_discipline_rank2.py</p>
-<pre>Line-Discipline Rank-2 Test (portfolio S3, rung 2c) — do TWO axes
-complete the discipline? (N6c)
+<main><h1>line_discipline_rank3</h1>
+<p class="muted">scripts/line_discipline_rank3.py</p>
+<pre>Line-Discipline Rank-3 Test (portfolio S3, rung 2d) — do THREE axes
+complete the discipline? (N6d)
 
-PROVENANCE: N6 showed B&#x27;s line texture is forgeable from its lexicon +
-a measured 91-cell class-position table + one knob. N6b showed the
-table is NOT rank-1 (verdict not_compressible): the dominant axis
-(85.7% variance) is the EDGE/paragraph axis (gallows-linked, Grove-word
-territory), and placement with it alone fails the line group — the
-interior ordering is a second, load-bearing dimension. This rung asks
-the completion question: is the discipline EXACTLY two-dimensional?
+PROVENANCE: the compression ladder so far — N6: the full measured
+91-cell table + one knob forges B&#x27;s line texture (D_line 6.65, bar
+7.49); N6b: rank-1 fails (9.53), dominant axis = edge/paragraph; N6c:
+rank-2 fails narrowly (8.12) with 96.9% variance captured and axis 2
+independently confirmed as the interior residue (rho +0.80 vs N5).
+This rung asks: does the THIRD component close the tournament?
 
-MODEL M2 (fixed before fitting): deterministic rank-2 SVD
-reconstruction of the double-centered log-table — two class axes
-(A1, A2), two position profiles (V1, V2), ~36 effective placement
-numbers + the single strength knob re-fitted on interior gain over the
-N6 grid and frozen. SIGN CONVENTION (declared, cosmetic only): each
-component is oriented so its position profile sums larger over the
-late bins (m3, pL-1, pL) than the early bins (p1, p2, m1).
+MODEL M3 (fixed before fitting): deterministic rank-3 SVD
+reconstruction of the double-centered log-table — three class axes and
+three position profiles (~54 effective placement numbers) + the single
+strength knob re-fitted on interior gain over the N6 grid and frozen.
+Same declared sign convention as N6c (late bins outweigh early).
 
-TOURNAMENT: identical machinery/bars/seeds as N6/N6b; the run ABORTS
-unless B&#x27;s features and the bars reproduce the committed N6 record.
-Entrant G1c = placement with the rank-2 table.
+TOURNAMENT: identical machinery/bars/seeds as N6/N6b/N6c; the run
+ABORTS unless B&#x27;s features and the bars reproduce the committed N6
+record. Entrant G1d = placement with the rank-3 table.
 
 PRE-REGISTERED OUTCOMES:
   gate_failed            — N6 cross-checks fail to reproduce.
-  still_not_compressible — G1c does not close the line group: the
-                           discipline is more than two-dimensional.
+  still_not_compressible — G1d does not close the line group: the
+                           discipline resists rank-3 compression.
   partial_bind           — line group closes, unfitted group breaks.
-  two_axes_sufficient    — G1c closes BOTH groups: B&#x27;s line discipline
-                           is exactly two interpretable axes (edge +
-                           interior) plus one knob. SUGGESTIVE,
-                           quarantined; the axes ARE the rules.
-OBSERVATIONAL (declared, adjudicates nothing): Spearman correlation of
-axis 2 with the N5 rank-test class mean-ranks (the interior residue
-should live on axis 2), and of both axes with the N6b predictor set
-(log class frequency, mean word length, gallows membership).
+  three_axes_sufficient  — G1d closes BOTH groups: B&#x27;s line discipline
+                           compresses to three axes + one knob (~55
+                           numbers vs the 91-cell table). SUGGESTIVE,
+                           quarantined; axis 3&#x27;s interpretation is
+                           reported for the record.
+OBSERVATIONAL (declared, adjudicates nothing): axis-3 profile and its
+Spearman correlations with the declared predictor set and the N5 mean
+ranks; axis-1/2 correlations repeated for continuity.
 Vocabulary discipline: compression of statistics; nothing is decoded.</pre>
 <h2>Parameters</h2><p class="muted">Edit a value to override it for an in-browser run (the script itself is never modified).</p><table><tr><th>name</th><th>type</th><th>value</th></tr>
 <tr><td><code>SEED</code></td><td>int</td><td><input class="param" data-param="SEED" value="120"></td></tr>
@@ -109,34 +106,36 @@ Vocabulary discipline: compression of statistics; nothing is decoded.</pre>
 <tr><td><code>UNFIT_GROUP</code></td><td>json</td><td><input class="param" data-param="UNFIT_GROUP" value="[&#x27;h2_ratio&#x27;, &#x27;adj_dup&#x27;, &#x27;adj_near&#x27;]"></td></tr>
 <tr><td><code>N6_JSON</code></td><td>str</td><td><input class="param" data-param="N6_JSON" value="line_discipline_tournament.json"></td></tr>
 <tr><td><code>N6B_JSON</code></td><td>str</td><td><input class="param" data-param="N6B_JSON" value="line_discipline_compression.json"></td></tr>
+<tr><td><code>N6C_JSON</code></td><td>str</td><td><input class="param" data-param="N6C_JSON" value="line_discipline_rank2.json"></td></tr>
 <tr><td><code>N5_JSON</code></td><td>str</td><td><input class="param" data-param="N5_JSON" value="line_ordinal_rank_test.json"></td></tr>
 </table>
 <h2>Run it in your browser</h2><p class="muted">Python + numpy on WebAssembly, entirely on your machine — nothing is uploaded. First run downloads the runtime (~15 MB) and the repository data pack (~9 MB); both are cached afterwards. Expect it to be slower than a native run.</p><p><button id="run-btn">&#9654; Run</button> <button id="stop-btn">Stop</button> <span id="run-status" class="muted"></span></p><pre id="run-out"></pre>
-<script>window.VAIS_TEST = {"stem": "line_discipline_rank2", "specs": {"SEED": {"type": "int", "container": null}, "S7_SEED": {"type": "int", "container": null}, "N4_SEED": {"type": "int", "container": null}, "N_GEN_SEEDS": {"type": "int", "container": null}, "N_REPL": {"type": "int", "container": null}, "S_FLOOR": {"type": "float", "container": null}, "CLASS_K": {"type": "int", "container": null}, "MIN_LINE_WORDS": {"type": "int", "container": null}, "HOLDOUT_FRAC": {"type": "float", "container": null}, "ALPHA": {"type": "float", "container": null}, "S7_FEATURES": {"type": "json", "container": "tuple"}, "INTERIOR": {"type": "json", "container": "set"}, "BINS": {"type": "json", "container": "tuple"}, "LINE_GROUP": {"type": "json", "container": "tuple"}, "UNFIT_GROUP": {"type": "json", "container": "tuple"}, "N6_JSON": {"type": "str", "container": null}, "N6B_JSON": {"type": "str", "container": null}, "N5_JSON": {"type": "str", "container": null}}, "base": "../", "baselineSeconds": 0};</script><script src="../runner.js"></script>
+<script>window.VAIS_TEST = {"stem": "line_discipline_rank3", "specs": {"SEED": {"type": "int", "container": null}, "S7_SEED": {"type": "int", "container": null}, "N4_SEED": {"type": "int", "container": null}, "N_GEN_SEEDS": {"type": "int", "container": null}, "N_REPL": {"type": "int", "container": null}, "S_FLOOR": {"type": "float", "container": null}, "CLASS_K": {"type": "int", "container": null}, "MIN_LINE_WORDS": {"type": "int", "container": null}, "HOLDOUT_FRAC": {"type": "float", "container": null}, "ALPHA": {"type": "float", "container": null}, "S7_FEATURES": {"type": "json", "container": "tuple"}, "INTERIOR": {"type": "json", "container": "set"}, "BINS": {"type": "json", "container": "tuple"}, "LINE_GROUP": {"type": "json", "container": "tuple"}, "UNFIT_GROUP": {"type": "json", "container": "tuple"}, "N6_JSON": {"type": "str", "container": null}, "N6B_JSON": {"type": "str", "container": null}, "N6C_JSON": {"type": "str", "container": null}, "N5_JSON": {"type": "str", "container": null}}, "base": "../", "baselineSeconds": 0};</script><script src="../runner.js"></script>
 <h2>Run it locally (full speed, byte-exact)</h2>
 <pre>git clone https://github.com/Vineyardcode/vais
 cd vais
 pip install numpy flask
-python scripts/line_discipline_rank2.py        # this test; output also lands in results/
+python scripts/line_discipline_rank3.py        # this test; output also lands in results/
 python webui/server.py          # or the full interactive UI at localhost:5000</pre>
 <h2>Golden output (PYTHONHASHSEED=0)</h2><details><summary>show</summary><pre id="golden-pre">============================================================================
-LINE-DISCIPLINE RANK-2 TEST (S3 rung 2c) — two-axis test (N6c)
+LINE-DISCIPLINE RANK-3 TEST (S3 rung 2d) — three-axis test (N6d)
 ============================================================================
-seed=120 (inherited; cross-checked vs N6/N6b)
+seed=120 (inherited; cross-checked vs N6/N6b/N6c)
   B features reproduce the N6 record  VERIFIED
   bars reproduce N6 (line 7.489, unfitted 4.092)  VERIFIED
-  rank-2 variance share of centered log-table: 96.9%
-  axis1 (edge, low -&gt; high): p -1.285  s -0.760  t -0.672  y -0.533  d -0.387  q +0.141  # +0.247  k +0.332  o +0.339  l +0.385  sh +0.416  ch +0.783  a +0.994
-  axis2 (interior, low -&gt; high): sh -0.868  q -0.372  k -0.214  ch -0.205  p -0.183  t -0.145  y -0.132  o +0.097  l +0.293  s +0.299  a +0.366  d +0.478  # +0.585
-  profile2: p1 -0.075  p2 -0.710  m1 -0.370  m2 -0.138  m3 +0.025  pL-1 +0.149  pL +1.118
-  LAMBDA (rank-2 table) fitted on interior gain: 1.75 (|err| 0.0056) — FROZEN
-  G1c (rank-2)  D_line 8.12  D_unfitted 2.421  (N6 full 6.645; N6b rank-1 9.529)
-  observational correlations: axis2_vs_n5_mean_ranks +0.800  axis1_vs_log_class_freq +0.648  axis2_vs_log_class_freq -0.220  axis1_vs_gallows_initial -0.593  axis2_vs_gallows_initial -0.577
+  rank-3 variance share of centered log-table: 98.4%
+  axis1 (low -&gt; high): p -1.285  s -0.760  t -0.672  y -0.533  d -0.387  q +0.141  # +0.247  k +0.332  o +0.339  l +0.385  sh +0.416  ch +0.783  a +0.994
+  axis2 (low -&gt; high): sh -0.868  q -0.372  k -0.214  ch -0.205  p -0.183  t -0.145  y -0.132  o +0.097  l +0.293  s +0.299  a +0.366  d +0.478  # +0.585
+  axis3 (low -&gt; high): y -0.340  s -0.306  sh -0.285  l -0.217  d -0.169  # +0.061  q +0.068  k +0.073  o +0.079  ch +0.158  t +0.215  a +0.230  p +0.436
+  profile3: p1 -0.092  p2 -0.248  m1 -0.169  m2 -0.147  m3 +0.618  pL-1 +0.334  pL -0.295
+  LAMBDA (rank-3 table) fitted on interior gain: 1.5 (|err| 0.0023) — FROZEN
+  G1d (rank-3)  D_line 6.882  D_unfitted 2.115  (full 6.645; rank-1 9.529; rank-2 8.12)
+  observational correlations: axis2_vs_n5_mean_ranks +0.800  axis3_vs_n5_mean_ranks +0.309  axis1_vs_log_class_freq +0.648  axis2_vs_log_class_freq -0.220  axis3_vs_log_class_freq -0.088  axis1_vs_gallows_initial -0.593  axis2_vs_gallows_initial -0.577  axis3_vs_gallows_initial +0.033
 
   ADJUDICATION (pre-registered):
-    STILL NOT COMPRESSIBLE: two axes do not close the line group — the discipline is more than two-dimensional.
+    THREE AXES SUFFICIENT: the rank-3 table closes BOTH groups — Currier B&#x27;s line discipline compresses to three axes plus one strength knob (~55 numbers vs the 91-cell table). SUGGESTIVE, quarantined; axis 3&#x27;s interpretation is reported above for the record.
 
-  -&gt; results/line_discipline_rank2.json
+  -&gt; results/line_discipline_rank3.json
 </pre></details><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>f64c75d</code>. 
 To run any test with your own parameters, clone
 <a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
