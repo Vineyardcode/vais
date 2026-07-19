@@ -523,7 +523,10 @@ future work and the parameters are UI-exposed for exactly that.
 numbering continues across tiers. Full evidence chains: Phase 8.)*
 
 11. **The manuscript does not behave as a strict 1:1 verbose cipher
-    over Latin or Italian** (N1b, 2026-07-18): the inverter, validated
+    over Latin, Italian, or Occitan** (N1b, 2026-07-18; scope extended
+    to Occitan by N1c, 2026-07-19, per the rung-3c registration —
+    Provençal corpus, orthographic caveat in the script docstring; no
+    Occitan LM is any VMS row's best fit): the inverter, validated
     for the first time on the planted control (P4 recovery 65%, margin
     +0.350 over the noise floor under the coverage-penalized metric,
     folio holdout, six LMs), scores every VMS row within the
@@ -1300,3 +1303,39 @@ Listed in the order I would attack them:
   runner `tools/overnight.py`; state `results/overnight_state.json`.
 - External data: `data/translit/{CD,GC,FG,IT}2a-n.txt` (voynich.nu,
   fetched 2026-07-18, committed for offline reproducibility).
+
+---
+
+### Phase 4e — Verbose cipher inversion, rung 3c: Occitan LM extension (2026-07-19)
+
+[AUTOMATED — written by tools/overnight.py; run committed to branch overnight/2026-07-19; awaiting human review before promotion to any evidence tier.]
+
+Configuration (pre-registered in the script docstring): {'EM_OUTER': 32, 'EM_PROPOSALS': 48, 'EM_RESTARTS': 16, 'RESTARTS': 64, 'TOP_LMS_RUNG2': 3}. Runtime 1.57 h at PYTHONHASHSEED=0. Holdout: whole folios (VMS) / 24-line pseudo-folio blocks (controls).
+
+**Pre-registered criteria** (verbose_cipher_inversion.py docstring; RESEARCH.md Phase 4b): instrument passes only if BOTH hold — P4 planted-inventory recovery >= 50% AND P4 best holdout gap beats the same-rung noise floor by >= 0.1 bits/sym. VMS rows are interpreted only if the instrument passes, and only as "consistent with", never "decoded".
+
+| pre-registered check | threshold | actual | verdict |
+|---|---|---|---|
+| P4 inventory recovery (rung 2, latin/plain LM) | >= 50% | 65% (mapping accuracy 57%) | PASS |
+| P4 gap − noise floor (rung 2) | >= +0.100 bits/sym | +0.350 (gap -0.512 via latin/plain, floor -0.862) | PASS |
+
+Rung-2 holdout gaps (folio-level holdout, this budget):
+
+| corpus | best LM | gap (bits/sym) | gap − floor | holdout words excluded |
+|---|---|---|---|---|
+| P4_latin_verbose | latin/plain | -0.512 | +0.350 | 12.9% |
+| P1_latin_plain | latin/abbrev4 | -1.129 | -0.266 | 74.4% |
+| N2_char_shuffle | latin/abjad | -0.994 | -0.131 | 87.8% |
+| N3_grille | latin/abjad | -0.862 | +0.000 | 70.3% |
+| N4_self_citation | latin/abjad | -0.922 | -0.060 | 78.3% |
+| VMS_full | latin/abbrev4 | -0.880 | -0.018 | 43.8% |
+| VMS_currier_A | latin/plain | -0.842 | +0.020 | 48.3% |
+| VMS_currier_B | latin/abbrev4 | -0.895 | -0.033 | 49.4% |
+
+Rung 1 for the record: P4 segmenter inventory recovery 13%, best gap -0.773 vs rung-1 noise floor -0.660.
+
+**VERDICT: INSTRUMENT PASSED** — the known cipher was inverted above the noise floor at this rung. VMS rows, read under the pre-registered vocabulary:
+
+- VMS_full: best gap -0.880 (latin/abbrev4) — within the noise floor: nothing beyond free-mapping noise at this rung (a clean negative for the strict 1:1 verbose-cipher family under these 6 LMs).
+- VMS_currier_A: best gap -0.842 (latin/plain) — within the noise floor: nothing beyond free-mapping noise at this rung (a clean negative for the strict 1:1 verbose-cipher family under these 6 LMs).
+- VMS_currier_B: best gap -0.895 (latin/abbrev4) — within the noise floor: nothing beyond free-mapping noise at this rung (a clean negative for the strict 1:1 verbose-cipher family under these 6 LMs).
