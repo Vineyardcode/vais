@@ -785,7 +785,19 @@ footer { border-top:1px solid var(--line); margin-top:3em;
 <tr><td>G1e A-table</td><td>8.282</td><td>1.194</td></tr>
 </table>
 <p>Per-axis transfer (Spearman, A-table vs B-table rank-3 axes): axis1 +0.923, axis2 +0.830, axis3 -0.462.</p>
-<p><strong>VERDICT: NOT TRANSFERABLE — the A-measured table does not close B&#x27;s line group at any knob setting. The per-axis profile localizes the failure: the edge axis (+0.92) and interior gradient (+0.83) ARE manuscript-wide (shared shape, strength-scaled — the switch picture holds for them); the pre-final-zone axis ANTI-transfers (−0.46) and is B-specific. The hand difference is intensity on two shared rules PLUS one qualitatively B-own rule. Corpse logged.</strong></p><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>d75c858</code>. 
+<p><strong>VERDICT: NOT TRANSFERABLE — the A-measured table does not close B&#x27;s line group at any knob setting. The per-axis profile localizes the failure: the edge axis (+0.92) and interior gradient (+0.83) ARE manuscript-wide (shared shape, strength-scaled — the switch picture holds for them); the pre-final-zone axis ANTI-transfers (−0.46) and is B-specific. The hand difference is intensity on two shared rules PLUS one qualitatively B-own rule. Corpse logged.</strong></p>
+<hr>
+<h3>Legacy-test audit — language_vs_cipher Part D under locus decontamination (2026-07-20)</h3>
+<p>[AUTOMATED — written by tools/overnight.py; run committed to branch overnight/2026-07-20; awaiting human review before promotion to any evidence tier.]</p>
+<p>Configuration (pre-registered in the script docstring): script defaults. Runtime 0.00 h at PYTHONHASHSEED=0. Holdout: whole folios (VMS) / 24-line pseudo-folio blocks (controls).</p>
+<p><strong>Pre-registered outcomes</strong> (script docstring): Part D of language_vs_cipher replicated faithfully (gate = golden reproduction) and re-adjudicated by its OWN original thresholds (chi2 &gt; 15.0; B classes) on a paragraph-only corpus. Same rules, cleaned data.</p>
+<table>
+<tr><th>policy</th><th>lines</th><th>tokens</th><th>hapaxes</th><th>chi2 (class)</th><th>B (class)</th></tr>
+<tr><td>all</td><td>4508</td><td>35747</td><td>1918</td><td>216.1 (CONCENTRATED)</td><td>+0.591 (CLUSTERED)</td></tr>
+<tr><td>P_only</td><td>4281</td><td>33309</td><td>1752</td><td>131.4 (CONCENTRATED)</td><td>+0.581 (CLUSTERED)</td></tr>
+<tr><td>nonP_only</td><td>227</td><td>2438</td><td>444</td><td>43.0 (CONCENTRATED)</td><td>+0.324 (CLUSTERED)</td></tr>
+</table>
+<p><strong>VERDICT: VERDICT SURVIVES — the hapax-clustering evidence is a property of the running text: decontamination removes ~39% of the chi2 statistic (the measured layout-artifact share) but every original classification holds. The contamination asterisk on Part D is removed by test.</strong></p><footer>Static mirror — read-only. Generated 2026-07-20 from commit <code>3a1c700</code>. 
 To run any test with your own parameters, clone
 <a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
 (<code>python webui/server.py</code>). All numbers reproduce at

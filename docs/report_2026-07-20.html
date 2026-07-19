@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Report 2026-07-20 — VAIS - Voynich Analysis Interactive Suite</title><style>
+:root { --bg:#ffffff; --fg:#1a1a1a; --muted:#666; --line:#ddd;
+        --code:#f5f5f5; --accent:#7a4a1e; --warn:#a33; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#141414; --fg:#ddd; --muted:#999; --line:#333;
+          --code:#1e1e1e; --accent:#d9a05b; --warn:#e77; } }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--fg);
+       font:16px/1.55 Georgia, 'Times New Roman', serif; }
+nav { border-bottom:1px solid var(--line); padding:.7em 1.2em;
+      font-family: system-ui, sans-serif; font-size:.9em; }
+nav a { color:var(--accent); text-decoration:none; margin-right:1.2em; }
+main { max-width: 62em; margin: 0 auto; padding: 1.5em 1.2em 4em; }
+h1,h2,h3 { font-family: system-ui, sans-serif; line-height:1.25; }
+h1 { font-size:1.7em; } h2 { font-size:1.3em; margin-top:2em; }
+a { color: var(--accent); }
+code, pre { font-family: ui-monospace, Consolas, monospace;
+            font-size:.86em; background:var(--code); }
+code { padding:.1em .3em; border-radius:3px; }
+pre { padding: .9em; overflow-x:auto; border:1px solid var(--line);
+      border-radius:4px; line-height:1.4; }
+table { border-collapse: collapse; margin: 1em 0; font-size:.92em;
+        display:block; overflow-x:auto; }
+th, td { border:1px solid var(--line); padding:.35em .6em;
+         text-align:left; vertical-align:top; }
+th { font-family: system-ui, sans-serif; background:var(--code); }
+blockquote { border-left:3px solid var(--accent); margin:1em 0;
+             padding:.2em 1em; color:var(--muted); }
+.muted { color:var(--muted); font-size:.9em; }
+.tag { font-family: system-ui, sans-serif; font-size:.75em;
+       border:1px solid var(--line); border-radius:3px;
+       padding:.05em .45em; margin-left:.5em; }
+.tag.sug { border-color:var(--warn); color:var(--warn); }
+details summary { cursor:pointer; font-family: system-ui, sans-serif; }
+input.param { font-family: ui-monospace, Consolas, monospace;
+              font-size:.85em; width:24em; max-width:100%;
+              background:var(--code); color:var(--fg);
+              border:1px solid var(--line); border-radius:3px;
+              padding:.25em .4em; }
+button { font-family: system-ui, sans-serif; font-size:.95em;
+         padding:.35em 1em; border:1px solid var(--accent);
+         border-radius:4px; background:var(--code); color:var(--fg);
+         cursor:pointer; }
+button:disabled { opacity:.5; cursor:default; }
+#run-out { min-height:2em; }
+footer { border-top:1px solid var(--line); margin-top:3em;
+         padding-top:1em; font-size:.85em; color:var(--muted); }
+</style></head><body>
+<nav><a href="index.html">VAIS - Voynich Analysis Interactive Suite</a><a href="catalog.html">Catalog</a>
+<a href="research.html">Research</a><a href="reports.html">Reports</a>
+<a href="credits.html">Credits</a><a href="https://github.com/Vineyardcode/vais">GitHub</a></nav>
+<main><h1>Overnight report — 2026-07-20</h1>
+<h2>Run 2026-07-20 01:46:02 — N7</h2>
+<p><strong>Part-D hapax re-adjudication: does language_vs_cipher&#x27;s hapax clustering survive a paragraph-only corpus?</strong></p>
+<ul>
+<li>script: <code>scripts/hapax_locus_readjudication.py</code></li>
+<li>profile: <code>{}</code></li>
+<li>log: <code>overnight_2026-07-20.log</code>; results JSON: <code>hapax_locus_readjudication.json</code>; branch: <code>overnight/2026-07-20</code></li>
+<li>runtime: 1s (0.00 h), exit code 0</li>
+</ul>
+<p><strong>Pre-registered outcomes</strong> (script docstring): Part D of language_vs_cipher replicated faithfully (gate = golden reproduction) and re-adjudicated by its OWN original thresholds (chi2 &gt; 15.0; B classes) on a paragraph-only corpus. Same rules, cleaned data.</p>
+<table>
+<tr><th>policy</th><th>lines</th><th>tokens</th><th>hapaxes</th><th>chi2 (class)</th><th>B (class)</th></tr>
+<tr><td>all</td><td>4508</td><td>35747</td><td>1918</td><td>216.1 (CONCENTRATED)</td><td>+0.591 (CLUSTERED)</td></tr>
+<tr><td>P_only</td><td>4281</td><td>33309</td><td>1752</td><td>131.4 (CONCENTRATED)</td><td>+0.581 (CLUSTERED)</td></tr>
+<tr><td>nonP_only</td><td>227</td><td>2438</td><td>444</td><td>43.0 (CONCENTRATED)</td><td>+0.324 (CLUSTERED)</td></tr>
+</table>
+<p><strong>VERDICT: VERDICT SURVIVES — the hapax-clustering evidence is a property of the running text: decontamination removes ~39% of the chi2 statistic (the measured layout-artifact share) but every original classification holds. The contamination asterisk on Part D is removed by test.</strong></p><footer>Static mirror — read-only. Generated 2026-07-20 from commit <code>3a1c700</code>. 
+To run any test with your own parameters, clone
+<a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
+(<code>python webui/server.py</code>). All numbers reproduce at
+PYTHONHASHSEED=0.</footer></main></body></html>

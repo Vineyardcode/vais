@@ -92,9 +92,10 @@ come from DIFFERENT processes (encoding rules vs. plaintext transitions).
        than marginal H. In cipher, length is about encoding → no gain.</pre>
 <h2>Parameters</h2><p class="muted">Edit a value to override it for an in-browser run (the script itself is never modified).</p><table><tr><th>name</th><th>type</th><th>value</th></tr>
 <tr><td><code>ALL_GALLOWS</code></td><td>json</td><td><input class="param" data-param="ALL_GALLOWS" value="[&#x27;cth&#x27;, &#x27;ckh&#x27;, &#x27;cph&#x27;, &#x27;cfh&#x27;, &#x27;tch&#x27;, &#x27;kch&#x27;, &#x27;pch&#x27;, &#x27;fch&#x27;, &#x27;tsh&#x27;, &#x27;ksh&#x27;, &#x27;psh&#x27;, &#x27;fsh&#x27;, &#x27;t&#x27;, &#x27;k&#x27;, &#x27;f&#x27;, &#x27;p&#x27;]"></td></tr>
+<tr><td><code>LOCUS_TYPES</code></td><td>json</td><td><input class="param" data-param="LOCUS_TYPES" value="[]"></td></tr>
 </table>
 <h2>Run it in your browser</h2><p class="muted">Python + numpy on WebAssembly, entirely on your machine — nothing is uploaded. First run downloads the runtime (~15 MB) and the repository data pack (~9 MB); both are cached afterwards. Expect it to be slower than a native run.</p><p><button id="run-btn">&#9654; Run</button> <button id="stop-btn">Stop</button> <span id="run-status" class="muted"></span></p><pre id="run-out"></pre>
-<script>window.VAIS_TEST = {"stem": "language_vs_cipher", "specs": {"ALL_GALLOWS": {"type": "json", "container": null}}, "base": "../", "baselineSeconds": 0};</script><script src="../runner.js"></script>
+<script>window.VAIS_TEST = {"stem": "language_vs_cipher", "specs": {"ALL_GALLOWS": {"type": "json", "container": null}, "LOCUS_TYPES": {"type": "json", "container": null}}, "base": "../", "baselineSeconds": 0};</script><script src="../runner.js"></script>
 <h2>Run it locally (full speed, byte-exact)</h2>
 <pre>git clone https://github.com/Vineyardcode/vais
 cd vais
@@ -237,7 +238,7 @@ Natural Language vs. Syllable Cipher discrimination:
 54e: Does word length carry sequential information?
 
 language_vs_cipher complete.
-</pre></details><footer>Static mirror — read-only. Generated 2026-07-19 from commit <code>d75c858</code>. 
+</pre></details><footer>Static mirror — read-only. Generated 2026-07-20 from commit <code>3a1c700</code>. 
 To run any test with your own parameters, clone
 <a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
 (<code>python webui/server.py</code>). All numbers reproduce at

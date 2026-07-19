@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>hapax_locus_readjudication — VAIS - Voynich Analysis Interactive Suite</title><style>
+:root { --bg:#ffffff; --fg:#1a1a1a; --muted:#666; --line:#ddd;
+        --code:#f5f5f5; --accent:#7a4a1e; --warn:#a33; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#141414; --fg:#ddd; --muted:#999; --line:#333;
+          --code:#1e1e1e; --accent:#d9a05b; --warn:#e77; } }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--fg);
+       font:16px/1.55 Georgia, 'Times New Roman', serif; }
+nav { border-bottom:1px solid var(--line); padding:.7em 1.2em;
+      font-family: system-ui, sans-serif; font-size:.9em; }
+nav a { color:var(--accent); text-decoration:none; margin-right:1.2em; }
+main { max-width: 62em; margin: 0 auto; padding: 1.5em 1.2em 4em; }
+h1,h2,h3 { font-family: system-ui, sans-serif; line-height:1.25; }
+h1 { font-size:1.7em; } h2 { font-size:1.3em; margin-top:2em; }
+a { color: var(--accent); }
+code, pre { font-family: ui-monospace, Consolas, monospace;
+            font-size:.86em; background:var(--code); }
+code { padding:.1em .3em; border-radius:3px; }
+pre { padding: .9em; overflow-x:auto; border:1px solid var(--line);
+      border-radius:4px; line-height:1.4; }
+table { border-collapse: collapse; margin: 1em 0; font-size:.92em;
+        display:block; overflow-x:auto; }
+th, td { border:1px solid var(--line); padding:.35em .6em;
+         text-align:left; vertical-align:top; }
+th { font-family: system-ui, sans-serif; background:var(--code); }
+blockquote { border-left:3px solid var(--accent); margin:1em 0;
+             padding:.2em 1em; color:var(--muted); }
+.muted { color:var(--muted); font-size:.9em; }
+.tag { font-family: system-ui, sans-serif; font-size:.75em;
+       border:1px solid var(--line); border-radius:3px;
+       padding:.05em .45em; margin-left:.5em; }
+.tag.sug { border-color:var(--warn); color:var(--warn); }
+details summary { cursor:pointer; font-family: system-ui, sans-serif; }
+input.param { font-family: ui-monospace, Consolas, monospace;
+              font-size:.85em; width:24em; max-width:100%;
+              background:var(--code); color:var(--fg);
+              border:1px solid var(--line); border-radius:3px;
+              padding:.25em .4em; }
+button { font-family: system-ui, sans-serif; font-size:.95em;
+         padding:.35em 1em; border:1px solid var(--accent);
+         border-radius:4px; background:var(--code); color:var(--fg);
+         cursor:pointer; }
+button:disabled { opacity:.5; cursor:default; }
+#run-out { min-height:2em; }
+footer { border-top:1px solid var(--line); margin-top:3em;
+         padding-top:1em; font-size:.85em; color:var(--muted); }
+</style></head><body>
+<nav><a href="../index.html">VAIS - Voynich Analysis Interactive Suite</a><a href="../catalog.html">Catalog</a>
+<a href="../research.html">Research</a><a href="../reports.html">Reports</a>
+<a href="../credits.html">Credits</a><a href="https://github.com/Vineyardcode/vais">GitHub</a></nav>
+<main><h1>hapax_locus_readjudication</h1>
+<p class="muted">scripts/hapax_locus_readjudication.py</p>
+<pre>Hapax Locus Re-adjudication (N7) — does language_vs_cipher Part D&#x27;s
+hapax-clustering verdict survive removing non-prose loci?
+
+PROVENANCE (operator-directed audit, 2026-07-19): language_vs_cipher is
+a pre-audit-era test whose local loader takes every &gt;= 2-word locus of
+any IVTFF type. Measurement showed its Part-D hapax corpus is
+contaminated by non-paragraph material that is BOTH hapax-enriched
+(rings 8.6%, radial 14.2%, labels 11.4% hapax-token rate vs paragraphs
+5.1%) AND layout-clustered by section (rings in zodiac/cosmo, labels in
+pharma/herbal) — a bias pointing specifically toward Part D&#x27;s
+&quot;CONCENTRATED -&gt; natural language&quot; reading. This instrument re-runs
+Part D&#x27;s EXACT statistics under a clean corpus policy and adjudicates
+by the ORIGINAL test&#x27;s own printed thresholds — same rules, cleaned
+data; no new criteria are invented.
+
+REPLICATION (faithful local copies of the legacy pipeline): the
+original &gt;= 2-word loader (T1-era defects and all — this is a
+re-adjudication of THAT test, not a re-design), gallows-stripped
+e-collapsed vocabulary (common.get_collapsed), the original folio-number
+section map, hapax = collapsed type with corpus count 1, and Part D&#x27;s
+two statistics with its printed thresholds:
+  chi2 over sections (observed hapax tokens vs token-proportional
+      expectation): CONCENTRATED iff chi2 &gt; 15 (original rule).
+  burstiness B = (std-mean)/(std+mean) of inter-hapax line gaps:
+      CLUSTERED iff B &gt; 0.1; UNIFORM iff B &lt; 0.05; else MILD (original
+      rule).
+GATE: the all-loci policy must reproduce the committed golden&#x27;s Part-D
+numbers (chi2 to 0.1, B to 0.001, parsed from
+golden/language_vs_cipher.stdout.txt) — abort otherwise.
+
+POLICIES: &#x27;all&#x27; (the original corpus), &#x27;P_only&#x27; (paragraph loci only —
+the adjudicated decontamination), &#x27;nonP_only&#x27; (the removed material,
+reported observationally).
+
+PRE-REGISTERED OUTCOMES:
+  gate_failed      — golden reproduction fails.
+  verdict_survives — P_only still passes every language-favoring
+                     classification the all-loci corpus passed
+                     (chi2 &gt; 15 if it was; B class not weaker than it
+                     was): Part D&#x27;s conclusion is robust to the
+                     contamination; the asterisk is removed.
+  verdict_softened — any classification weakens under P_only
+                     (CONCENTRATED -&gt; not, or CLUSTERED -&gt; MILD/
+                     UNIFORM): part of Part D&#x27;s language-favoring
+                     evidence was layout artifact; the legacy test&#x27;s
+                     Part-D verdict is demoted to &quot;conditional on
+                     corpus scope&quot; and the corpse is logged.
+Vocabulary discipline: this adjudicates one legacy sub-test&#x27;s
+robustness; it says nothing about language vs cipher itself.</pre>
+<h2>Parameters</h2><p class="muted">Edit a value to override it for an in-browser run (the script itself is never modified).</p><table><tr><th>name</th><th>type</th><th>value</th></tr>
+<tr><td><code>SEED</code></td><td>int</td><td><input class="param" data-param="SEED" value="121"></td></tr>
+<tr><td><code>CHI2_THRESHOLD</code></td><td>float</td><td><input class="param" data-param="CHI2_THRESHOLD" value="15.0"></td></tr>
+<tr><td><code>B_CLUSTERED</code></td><td>float</td><td><input class="param" data-param="B_CLUSTERED" value="0.1"></td></tr>
+<tr><td><code>B_UNIFORM</code></td><td>float</td><td><input class="param" data-param="B_UNIFORM" value="0.05"></td></tr>
+<tr><td><code>MIN_LINE_WORDS</code></td><td>int</td><td><input class="param" data-param="MIN_LINE_WORDS" value="2"></td></tr>
+</table>
+<h2>Run it in your browser</h2><p class="muted">Python + numpy on WebAssembly, entirely on your machine — nothing is uploaded. First run downloads the runtime (~15 MB) and the repository data pack (~9 MB); both are cached afterwards. Expect it to be slower than a native run.</p><p><button id="run-btn">&#9654; Run</button> <button id="stop-btn">Stop</button> <span id="run-status" class="muted"></span></p><pre id="run-out"></pre>
+<script>window.VAIS_TEST = {"stem": "hapax_locus_readjudication", "specs": {"SEED": {"type": "int", "container": null}, "CHI2_THRESHOLD": {"type": "float", "container": null}, "B_CLUSTERED": {"type": "float", "container": null}, "B_UNIFORM": {"type": "float", "container": null}, "MIN_LINE_WORDS": {"type": "int", "container": null}}, "base": "../", "baselineSeconds": 0};</script><script src="../runner.js"></script>
+<h2>Run it locally (full speed, byte-exact)</h2>
+<pre>git clone https://github.com/Vineyardcode/vais
+cd vais
+pip install numpy flask
+python scripts/hapax_locus_readjudication.py        # this test; output also lands in results/
+python webui/server.py          # or the full interactive UI at localhost:5000</pre>
+<h2>Golden output (PYTHONHASHSEED=0)</h2><details><summary>show</summary><pre id="golden-pre">============================================================================
+HAPAX LOCUS RE-ADJUDICATION (N7) — Part D, same rules, clean corpus
+============================================================================
+original thresholds: chi2 &gt; 15.0 = CONCENTRATED; B &gt; 0.1 = CLUSTERED, &lt; 0.05 = UNIFORM
+  all        4508 lines  35747 tok  1918 hapax | chi2  216.1 (CONCENTRATED) | B +0.591 (CLUSTERED)
+  P_only     4281 lines  33309 tok  1752 hapax | chi2  131.4 (CONCENTRATED) | B +0.581 (CLUSTERED)
+  nonP_only   227 lines   2438 tok   444 hapax | chi2   43.0 (CONCENTRATED) | B +0.324 (CLUSTERED)
+
+  gate: all-loci reproduces golden Part D (chi2 216.1, B 0.591) -&gt; PASS
+
+  ADJUDICATION (pre-registered):
+    VERDICT SURVIVES: on paragraph-only text, Part D still passes every language-favoring classification it passed on the contaminated corpus (chi2 216.1 -&gt; 131.4, B +0.591 -&gt; +0.581). The contamination asterisk is removed; the hapax-clustering evidence is a property of the running text.
+
+  -&gt; results/hapax_locus_readjudication.json
+</pre></details><footer>Static mirror — read-only. Generated 2026-07-20 from commit <code>3a1c700</code>. 
+To run any test with your own parameters, clone
+<a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
+(<code>python webui/server.py</code>). All numbers reproduce at
+PYTHONHASHSEED=0.</footer></main></body></html>
