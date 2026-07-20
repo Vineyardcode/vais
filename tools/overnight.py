@@ -2393,6 +2393,108 @@ def adjudicate_n6h(item, expected_params, run_started):
 
 
 # ────────────────────────────────────────────────────────────────────
+# N11 adjudication — pre-registered, mechanical, JSON-only
+# ────────────────────────────────────────────────────────────────────
+def adjudicate_n11(item, expected_params, run_started):
+    """Pre-registered outcomes (labelese_subsystem.py docstring): gate =
+    naming/generic controls separate (scale-free factor); then labels'
+    first-glyph distinctness and section-specificity vs a size-matched
+    running baseline -> labels_not_distinct / labelese_naming_system /
+    labelese_generic_register. Re-derived from the JSON; refuses on
+    mismatch."""
+    jpath = RESULTS / item['result_json']
+    if not jpath.exists():
+        raise AdjudicationError(f'{jpath.name} was not written by the run')
+    if jpath.stat().st_mtime < run_started:
+        raise AdjudicationError(f'{jpath.name} predates this run — stale')
+    data = json.loads(jpath.read_text(encoding='utf-8'))
+    p, r = data['params'], data['results']
+    gate = r['gate']
+    if not gate:
+        key = 'gate_failed'
+    elif not r['distinct']:
+        key = 'labels_not_distinct'
+    elif r['u_labels_beats_null'] and \
+            r['naming_margin'] >= p['naming_margin']:
+        key = 'labelese_naming_system'
+    else:
+        key = 'labelese_generic_register'
+    if data.get('verdict') != key:
+        raise AdjudicationError(f'runner derives {key!r} but the script '
+                                f'recorded {data.get("verdict")!r}')
+    suggestive = key == 'labelese_naming_system'
+
+    persec = r['labels_per_section']
+    md = []
+    md.append('**Pre-registered outcomes** (script docstring; prompted by '
+              'f66r\'s label-dense margin): are the IVTFF label loci a '
+              'distinct register, and a SECTION-SPECIFIC naming system '
+              'beyond dialect? Controls (synthetic naming vs generic) '
+              'validate the measure; the label result is compared to a '
+              'SIZE-MATCHED running-text baseline. F7-bound: no label is '
+              'read.')
+    md.append('')
+    md.append(f'Corpus: {r["n_labels"]} label tokens ({r["n_label_types"]} '
+              f'types) over sections '
+              + ', '.join(f'{s} {persec[s]}' for s in sorted(persec))
+              + f'. Controls gate: P-NAME {r["ctrl_name"]:+.3f} vs P-GEN '
+              f'{r["ctrl_gen"]:+.3f} → {"PASS" if gate else "FAIL"}.')
+    md.append('')
+    md.append('| test | value | baseline | reading |')
+    md.append('|---|---|---|---|')
+    md.append(f'| (D) first-glyph JSD | {r["distinctness_jsd"]} | '
+              f'subsample null {r["distinctness_null_max"]} | '
+              f'{"distinct register" if r["distinct"] else "not distinct"} |')
+    md.append(f'| (S) section U* | labels {r["u_labels"]:+.4f} | matched '
+              f'running {r["u_running_matched"]:+.4f} | naming margin '
+              f'{r["naming_margin"]:+.4f} |')
+    md.append('')
+    fg = r['label_first_glyph']
+    tot = sum(fg.values())
+    md.append('Label first-glyph profile: '
+              + ', '.join(f'{g} {c/tot:.0%}' for g, c in fg.items())
+              + ' — the o-/d- dominance, distinct from the gallows/q of '
+              'line-starts.')
+    verdict_text = {
+        'gate_failed': 'GATE FAILED — controls do not separate; no '
+                       'reading.',
+        'labels_not_distinct':
+            'LABELS NOT DISTINCT — within subsample noise of running '
+            'text at this power.',
+        'labelese_naming_system':
+            'LABELESE NAMING SYSTEM — labels are a distinct register '
+            f'(first-glyph JSD {r["distinctness_jsd"]} ≫ null) AND their '
+            'vocabulary is more section-specific than a size-matched '
+            f'running-text sample (U* {r["u_labels"]:+.3f} vs '
+            f'{r["u_running_matched"]:+.3f}, margin '
+            f'{r["naming_margin"]:+.3f}, beating its own shuffle null): a '
+            'section-bound naming-like register, beyond the dialect '
+            'variation running text already carries. SUGGESTIVE, '
+            'quarantined. POWER/CONFOUND CAVEATS travel with it: only '
+            f'{r["n_labels"]} label tokens, unevenly spread (pharma '
+            f'{persec.get("pharma", 0)} vs text '
+            f'{persec.get("text", 0)}), and label/running section '
+            'marginals differ — the effect could be inflated by the '
+            'pharma-label concentration. NOT a decode and F7-bound: '
+            '"naming-like" is a distributional statement, not a claim '
+            'that any label has been read. A section-marginal-matched '
+            're-test is the registered follow-up.',
+        'labelese_generic_register':
+            'LABELESE GENERIC REGISTER — labels are a distinct register '
+            'but not more section-specific than matched running text; a '
+            'register, not a naming system.',
+    }[key]
+    md.append('')
+    md.append(f'**VERDICT: {verdict_text}**')
+    summary = (f'{key}; JSD {r["distinctness_jsd"]} (null '
+               f'{r["distinctness_null_max"]}), naming margin '
+               f'{r["naming_margin"]:+.4f} (thr {p["naming_margin"]})')
+    return {'verdict': f'N11 labelese subsystem: {key.upper()}',
+            'suggestive': suggestive, 'md': '\n'.join(md),
+            'summary': summary, 'params': p, 'json_name': jpath.name}
+
+
+# ────────────────────────────────────────────────────────────────────
 # queue
 # ────────────────────────────────────────────────────────────────────
 N1_PROFILE = {'EM_OUTER': 32, 'EM_PROPOSALS': 48, 'EM_RESTARTS': 16,
@@ -2757,6 +2859,21 @@ QUEUE = [
         'research_heading': 'Portfolio S3, rung 5 — within-word '
                             'morphology derivation of the interior '
                             'gradient',
+        'not_ready': None,
+    },
+    {
+        'id': 'N11',
+        'title': 'Labelese subsystem test: are the marginal labels a '
+                 'distinct, section-specific naming register?',
+        'stem': 'labelese_subsystem',
+        'overrides': {},
+        'smoke_overrides': {},
+        'timeout_s': 1800,
+        'smoke_timeout_s': 900,
+        'result_json': 'labelese_subsystem.json',
+        'adjudicate': adjudicate_n11,
+        'research_heading': 'Subsystem study — Labelese (marginal '
+                            'labels) distinctness and section-naming',
         'not_ready': None,
     },
     {
