@@ -1,5 +1,13 @@
 # Overnight report — 2026-07-21
 
+<!-- OVERNIGHT-SUGGESTIVE -->
+> **SUGGESTIVE FINDING — AWAITING HUMAN REVIEW — DO NOT MERGE.**
+> A run below produced a decode-like/positive signal. It is
+> quarantined: committed only to its overnight/ branch, claims
+> nothing beyond "consistent with", and is not a decode. See the
+> flagged run section for the numbers and the pre-registered
+> criteria they were judged against.
+
 ## Run 2026-07-21 00:37:21 — N6g
 **S3 rung 4: principled derivation — do the two shared axes reduce to class properties?**
 - script: `scripts/line_discipline_derivation.py`
@@ -38,3 +46,23 @@ Within-word position by class (0=word-initial, 1=word-final): q 0.00, sh 0.13, c
 Enriched derived table: D_line 9.628 vs bar 7.489 (does not close; the residual persists).
 
 **VERDICT: MODEST IMPROVEMENT (hypothesis directionally confirmed, not dominant) — within-word position is the LARGEST predictor of the interior gradient (wwpos β +0.31, positive as hypothesized: word-initial-type glyphs early, word-final-type late) and raises interior R^2 by +0.131 (0.50 → 0.6294), clearing the gain bar but not the 0.7 strong-reduction target. So the interior gradient is PARTLY a morphological echo — the line reflects word structure — but a residual survives even frequency + gallows + length + within-word position. The line-discipline mystery is now this smaller, sharper residual.**
+
+## Run 2026-07-21 01:25:15 — N11
+**Labelese subsystem test: are the marginal labels a distinct, section-specific naming register?**
+- script: `scripts/labelese_subsystem.py`
+- profile: `{}`
+- log: `overnight_2026-07-21.log`; results JSON: `labelese_subsystem.json`; branch: `overnight/2026-07-21`
+- runtime: 1s (0.00 h), exit code 0
+
+**Pre-registered outcomes** (script docstring; prompted by f66r's label-dense margin): are the IVTFF label loci a distinct register, and a SECTION-SPECIFIC naming system beyond dialect? Controls (synthetic naming vs generic) validate the measure; the label result is compared to a SIZE-MATCHED running-text baseline. F7-bound: no label is read.
+
+Corpus: 628 label tokens (450 types) over sections bio 123, herbalA 87, pharma 279, text 2, zodiac 137. Controls gate: P-NAME +0.159 vs P-GEN +0.014 → PASS.
+
+| test | value | baseline | reading |
+|---|---|---|---|
+| (D) first-glyph JSD | 0.1507 | subsample null 0.0161 | distinct register |
+| (S) section U* | labels +0.0797 | matched running +0.0366 | naming margin +0.0432 |
+
+Label first-glyph profile: o 56%, d 14%, s 8%, ch 7%, y 7%, a 4%, sh 2%, k 2% — the o-/d- dominance, distinct from the gallows/q of line-starts.
+
+**VERDICT: LABELESE NAMING SYSTEM — labels are a distinct register (first-glyph JSD 0.1507 ≫ null) AND their vocabulary is more section-specific than a size-matched running-text sample (U* +0.080 vs +0.037, margin +0.043, beating its own shuffle null): a section-bound naming-like register, beyond the dialect variation running text already carries. SUGGESTIVE, quarantined. POWER/CONFOUND CAVEATS travel with it: only 628 label tokens, unevenly spread (pharma 279 vs text 2), and label/running section marginals differ — the effect could be inflated by the pharma-label concentration. NOT a decode and F7-bound: "naming-like" is a distributional statement, not a claim that any label has been read. A section-marginal-matched re-test is the registered follow-up.**

@@ -55,3 +55,32 @@
 [01:00:26] report -> C:\projects\vais\results\overnight_2026-07-21_report.md
 [01:00:26] RESEARCH.md: section appended (working tree; committed only to the overnight branch)
 [01:00:26] committing results to branch overnight/2026-07-21 ...
+[01:00:26] committed 8ae372ad20b7 on overnight/2026-07-21 (main untouched)
+[01:00:26] done, exit 0
+[01:25:15] ====================================================================
+[01:25:15] overnight runner start 2026-07-21 01:25:15  smoke=False PYTHONHASHSEED=0
+[01:25:15] code at b0ea792 (dirty tree), python 3.13.3
+[01:25:15] queue item N11: Labelese subsystem test: are the marginal labels a distinct, section-specific naming register?
+[01:25:15] profile: {}  timeout=1800s
+  | ============================================================================
+  | LABELESE SUBSYSTEM TEST (N11) — distinct register? naming system?
+  | ============================================================================
+  | seed=128 nulls=30 match=12 naming_margin=0.03
+  |   labels: 628 tokens, 450 types; running: 35280 tokens
+  |   labels per section: bio:123  herbalA:87  pharma:279  text:2  zodiac:137
+  |   [low-power sections (<20 labels): ['text']]
+  | 
+  |   (D) first-glyph JSD labels-vs-running 0.1507  subsample-null max 0.0161  -> DISTINCT
+  |   (S) U*(labels) +0.0797 (beats own null: True)   U*(running matched, n=628) +0.0366   naming margin +0.0432
+  |   controls: U*(P-NAME) +0.1587 vs U*(P-GEN) +0.0139 (gate: P-NAME >= 3.0x max(P-GEN, 0.005)) -> PASS
+  | 
+  |   ADJUDICATION (pre-registered):
+  |     LABELESE NAMING SYSTEM: labels are a distinct register AND section-bound beyond dialect (margin +0.0432 >= 0.03, U* beats its null) — label vocabulary is more section-specific than matched running text. The most crib-like outcome; SUGGESTIVE, quarantined, and still F7-bound (no label is read).
+  | 
+  |   -> results/labelese_subsystem.json
+[01:25:16] experiment finished rc=0 in 1s (0.00h)
+[01:25:16] adjudication: labelese_naming_system; JSD 0.1507 (null 0.0161), naming margin +0.0432 (thr 0.03)
+[01:25:16] SUGGESTIVE finding — quarantined, flagged at the top of the report, awaiting human review
+[01:25:16] report -> C:\projects\vais\results\overnight_2026-07-21_report.md
+[01:25:16] RESEARCH.md: section appended (working tree; committed only to the overnight branch)
+[01:25:16] committing results to branch overnight/2026-07-21 ...

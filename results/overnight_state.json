@@ -173,5 +173,12 @@
   "verdict": "S3 rung 5: MODEST_IMPROVEMENT",
   "suggestive": false,
   "summary": "modest_improvement; interior R^2 0.6294 (gain +0.131, wwpos \u03b2 +0.31), target 0.7"
+ },
+ "N11": {
+  "status": "completed",
+  "date": "2026-07-21",
+  "verdict": "N11 labelese subsystem: LABELESE_NAMING_SYSTEM",
+  "suggestive": true,
+  "summary": "labelese_naming_system; JSD 0.1507 (null 0.0161), naming margin +0.0432 (thr 0.03)"
  }
 }
