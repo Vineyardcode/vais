@@ -49,6 +49,18 @@ registration, negative controls, and a pre-declared kill criterion —
 none of which it has. Read its conclusions as "an Egyptian-structured
 reading can be TOLD about the manuscript", never as "the manuscript IS
 Egyptian-structured".
+
+UPDATE (2026-07-20, N10): the CORE claim of this test — that the
+gallows t/k/f/p are semantic determinatives (category markers) — has
+now been given a proper controlled trial in egyptian_determinative_test
+and KILLED on its central prediction. A real determinative predicts a
+word's section (meaning-domain) MORE than its phonetic root does; the
+gallows predict it ~22× LESS (pooled U* 0.006 vs the root's 0.130),
+exactly matching a synthetic DIALECT control and nothing like a
+synthetic DETERMINATIVE control. The gallows-vs-section association
+this test treated as determinatives is ordinary dialectal vocabulary
+variation. So the specific claim is no longer merely uncontrolled — it
+is controlled and refuted.
 ────────────────────────────────────────────────────────────────────────
 
 Historical context:

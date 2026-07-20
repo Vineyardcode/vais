@@ -324,7 +324,7 @@
  "egyptian_connection": {
   "status": "ok",
   "returncode": 0,
-  "duration_s": 1.81,
+  "duration_s": 1.04,
   "stdout_bytes": 26390,
   "results_files_touched": [
    "egyptian_connection_results.json"
@@ -1354,6 +1354,15 @@
   "stdout_bytes": 1276,
   "results_files_touched": [
    "hapax_clustering_calibration.json"
+  ]
+ },
+ "egyptian_determinative_test": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 5.62,
+  "stdout_bytes": 1389,
+  "results_files_touched": [
+   "egyptian_determinative_test.json"
   ]
  }
 }

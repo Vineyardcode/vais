@@ -2127,6 +2127,91 @@ def adjudicate_n9(item, expected_params, run_started):
 
 
 # ────────────────────────────────────────────────────────────────────
+# N10 adjudication — pre-registered, mechanical, JSON-only
+# ────────────────────────────────────────────────────────────────────
+def adjudicate_n10(item, expected_params, run_started):
+    """Pre-registered outcomes (egyptian_determinative_test.py
+    docstring): gate = the P-DET/P-DIA controls separate determinative
+    from dialect; then pooled VMS U*(gallows) vs U*(root) ->
+    determinative_supported / dialect_not_determinative / ambiguous.
+    Re-derived from the JSON; refuses on mismatch."""
+    jpath = RESULTS / item['result_json']
+    if not jpath.exists():
+        raise AdjudicationError(f'{jpath.name} was not written by the run')
+    if jpath.stat().st_mtime < run_started:
+        raise AdjudicationError(f'{jpath.name} predates this run — stale')
+    data = json.loads(jpath.read_text(encoding='utf-8'))
+    p, r = data['params'], data['results']
+    det, dia, v = r['P_DET'], r['P_DIA'], r['VMS_full']
+    gate = (det['u_gallows'] > det['u_root']
+            and dia['u_root'] > dia['u_gallows'])
+    if gate != data['gate_pass']:
+        raise AdjudicationError('gate re-derivation mismatch')
+    diff = v['u_gallows'] - v['u_root']
+    if not gate:
+        key = 'gate_failed'
+    elif diff >= p['margin']:
+        key = 'determinative_supported'
+    elif v['u_root'] >= v['u_gallows']:
+        key = 'dialect_not_determinative'
+    else:
+        key = 'ambiguous'
+    if data.get('verdict') != key:
+        raise AdjudicationError(f'runner derives {key!r} but the script '
+                                f'recorded {data.get("verdict")!r}')
+    suggestive = key == 'determinative_supported'
+
+    md = []
+    md.append('**Pre-registered outcomes** (script docstring): the '
+              'Egyptian core claim (gallows = semantic determinatives) '
+              'tested by its discriminating signature — a determinative '
+              'predicts SECTION more than the phonetic root does; '
+              'dialect predicts the reverse. U*(X) = section-'
+              'predictiveness above a cardinality-shuffle null.')
+    md.append('')
+    md.append('| corpus | U*(gallows) | U*(root) | reading |')
+    md.append('|---|---|---|---|')
+    labels = {'P_DET': 'P-DET control', 'P_DIA': 'P-DIA control',
+              'VMS_full': 'VMS pooled', 'VMS_A': 'VMS Currier A',
+              'VMS_B': 'VMS Currier B'}
+    for tag, lab in labels.items():
+        row = r[tag]
+        read = ('gallows-carried' if row['u_gallows'] > row['u_root']
+                else 'root-carried')
+        md.append(f'| {lab} | {row["u_gallows"]:+.5f} | '
+                  f'{row["u_root"]:+.5f} | {read} |')
+    md.append('')
+    md.append(f'Gate (controls separate the mechanisms): '
+              f'{"PASS" if gate else "**FAIL**"}.')
+    verdict_text = {
+        'gate_failed': 'GATE FAILED — controls do not separate; no '
+                       'reading.',
+        'determinative_supported':
+            'DETERMINATIVE SUPPORTED — gallows out-predict the root; the '
+            'Egyptian core claim revives as a controlled finding. '
+            'SUGGESTIVE, quarantined.',
+        'dialect_not_determinative':
+            'DIALECT, NOT DETERMINATIVE — the section information lives '
+            'in the ROOT vocabulary (pooled U* '
+            f'{v["u_root"]:.3f}), not the gallows '
+            f'({v["u_gallows"]:.3f}); a ~{v["u_root"]/max(v["u_gallows"],1e-9):.0f}× '
+            'gap matching the dialect control. The gallows-section '
+            'association the pre-charter test read as "determinatives" '
+            'is dialectal vocabulary variation. The Egyptian '
+            'determinative claim is KILLED on its core prediction — '
+            'now with controls, where the old test had none.',
+        'ambiguous': 'AMBIGUOUS — neither feature dominates; no claim.',
+    }[key]
+    md.append(f'**VERDICT: {verdict_text}**')
+    summary = (f'{key}; VMS U*(gallows) {v["u_gallows"]:+.4f} vs '
+               f'U*(root) {v["u_root"]:+.4f}; gate '
+               f'{"pass" if gate else "fail"}')
+    return {'verdict': f'N10 Egyptian determinative test: {key.upper()}',
+            'suggestive': suggestive, 'md': '\n'.join(md),
+            'summary': summary, 'params': p, 'json_name': jpath.name}
+
+
+# ────────────────────────────────────────────────────────────────────
 # queue
 # ────────────────────────────────────────────────────────────────────
 N1_PROFILE = {'EM_OUTER': 32, 'EM_PROPOSALS': 48, 'EM_RESTARTS': 16,
@@ -2445,6 +2530,21 @@ QUEUE = [
         'adjudicate': adjudicate_n9,
         'research_heading': 'Legacy-test audit — hapax-clustering '
                             'discriminator calibration',
+        'not_ready': None,
+    },
+    {
+        'id': 'N10',
+        'title': 'Egyptian determinative test: are the gallows semantic '
+                 'determinatives, or dialectal vocabulary?',
+        'stem': 'egyptian_determinative_test',
+        'overrides': {},
+        'smoke_overrides': {},
+        'timeout_s': 1800,
+        'smoke_timeout_s': 900,
+        'result_json': 'egyptian_determinative_test.json',
+        'adjudicate': adjudicate_n10,
+        'research_heading': 'Legacy-hypothesis trial — gallows as '
+                            'semantic determinatives (controlled)',
         'not_ready': None,
     },
     {
