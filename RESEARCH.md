@@ -557,6 +557,24 @@ numbering continues across tiers. Full evidence chains: Phase 8.)*
     non-language hoax control clusters strongly (self-citation +0.27),
     so hapax burstiness is not diagnostic of language
     (hapax_clustering_calibration).
+19. **The two shared discipline axes are ~half-reducible to
+    position-independent class properties, not fully derivable from
+    them** (S3 rung 4 / N6g, 2026-07-21): the manuscript-wide edge and
+    interior axes regressed on log-frequency + gallows-membership +
+    word-length (none carrying position information). Edge axis R^2
+    0.527 (excess +0.289 over a shuffle null — passes), with
+    interpretable coefficients that ARE Grove/LAAFU quantified
+    (frequent +0.47, gallows-initial +0.21, short -0.29 words → line
+    edges); interior gradient R^2 0.498 (excess +0.246, missing the
+    pre-registered 0.25 bar by 0.004 — held, not adjusted). Substituting
+    the ~50%-fidelity predicted loadings reopens the moat (derived
+    D_line 9.04 > bar 7.49; measured rank-3 achieved 6.88), so the
+    STRONG claim ("the shared axes ARE these properties") is killed and
+    the WEAK claim (they are ~half these properties plus real residual
+    structure) is documented. The interior gradient's residual — its
+    sh/q-early glyph-identity ordering, not captured by frequency or
+    gallows — is now the program's sharpest single open target
+    (line_discipline_derivation).
 18. **The gallows are not semantic determinatives — dialect, not a
     classifier system** (N10, 2026-07-20): the pre-charter
     egyptian_connection test's core claim (gallows t/k/f/p as Egyptian-
@@ -1641,3 +1659,23 @@ Configuration (pre-registered in the script docstring): script defaults. Runtime
 
 Gate (controls separate the mechanisms): PASS.
 **VERDICT: DIALECT, NOT DETERMINATIVE — the section information lives in the ROOT vocabulary (pooled U* 0.130), not the gallows (0.006); a ~23× gap matching the dialect control. The gallows-section association the pre-charter test read as "determinatives" is dialectal vocabulary variation. The Egyptian determinative claim is KILLED on its core prediction — now with controls, where the old test had none.**
+
+---
+
+### Portfolio S3, rung 4 — principled (reductive) derivation of the shared axes (2026-07-21)
+
+[AUTOMATED — written by tools/overnight.py; run committed to branch overnight/2026-07-21; awaiting human review before promotion to any evidence tier.]
+
+Configuration (pre-registered in the script docstring): script defaults. Runtime 0.01 h at PYTHONHASHSEED=0. Holdout: whole folios (VMS) / 24-line pseudo-folio blocks (controls).
+
+**Pre-registered outcomes** (script docstring): "derive" means REDUCE the shared axes to position-independent class properties (log-frequency + gallows-membership + word-length) — not external layout physics, which stays open. An axis is reduced if its OLS R^2 beats a shuffle null by >= 0.25 AND the derived table still closes the moat.
+
+| axis | R² | null R² | excess | freq β | gallows β | wlen β |
+|---|---|---|---|---|---|---|
+| 1 (edge, shared) | 0.5273 | 0.2379 | +0.289 | +0.47 | +0.21 | -0.29 |
+| 2 (interior, shared) | 0.4981 | 0.2517 | +0.246 | -0.12 | -0.22 | -0.21 |
+| 3 (pre-final, B-only) | 0.4154 | 0.2592 | +0.156 | +0.09 | +0.44 | +0.00 |
+
+Derived-axes table (Âx₁, Âx₂ + measured axis 3): D_line 9.039 vs bar 7.489 (measured rank-3 achieved 6.882).
+
+**VERDICT: NOT DERIVED (partial reduction, corpse logged) — the three principles explain a SUBSTANTIAL, above-chance share of each shared axis (edge R² 0.5273, interior 0.4981, both ~2× the shuffle null) with interpretable coefficients (frequent, gallows-initial, short words → line edges — Grove/LAAFU made quantitative), but substituting the ~50%-fidelity predictions reopens the moat (D_line 9.039 > bar 7.489). The strong claim ("the shared axes ARE these properties") is killed; the weak claim (they are ~half these properties, plus real residual structure the interior gradient carries on its own) is documented. Richer principle sets are the informed next candidate.**

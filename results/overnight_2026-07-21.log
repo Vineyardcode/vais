@@ -1,0 +1,29 @@
+[00:37:21] ====================================================================
+[00:37:21] overnight runner start 2026-07-21 00:37:21  smoke=False PYTHONHASHSEED=0
+[00:37:21] code at 5ff0521 (dirty tree), python 3.13.3
+[00:37:21] queue item N6g: S3 rung 4: principled derivation — do the two shared axes reduce to class properties?
+[00:37:21] profile: {}  timeout=1800s
+  | ============================================================================
+  | LINE-DISCIPLINE PRINCIPLED DERIVATION (S3 rung 4) — reduce the shared axes? (N6g)
+  | ============================================================================
+  | seed=126 perms=200 r2_excess>=0.25; principles = log-freq + gallows + word-length (position-free)
+  |   B features + bar reproduce N6 (bar_line 7.489)  VERIFIED
+  |   rank-3 decomposition reproduces the N6d axes  VERIFIED
+  |   axis1: R^2 0.527  null 0.238  excess +0.289   beta freq+0.47 gallows+0.21 wlen-0.29
+  |   axis2: R^2 0.498  null 0.252  excess +0.246   beta freq-0.12 gallows-0.22 wlen-0.21
+  |   axis3: R^2 0.415  null 0.259  excess +0.156   beta freq+0.09 gallows+0.44 wlen+0.00
+  |   derived-axes table (Ahat_1, Ahat_2 + measured axis3), lambda 2.5: D_line 9.039 (bar 7.489; measured rank-3 was 6.882)
+  | 
+  |   ADJUDICATION (pre-registered):
+  |     axis1 excess +0.289 (>= 0.25: True); axis2 excess +0.246 (False); derived table closes: False
+  |     (axis3 excess +0.156 — reported, expected low: B-specific)
+  |     NOT DERIVED: the shared axes are not captured by log-frequency + gallows + word-length at the closure bar — the discipline is not (yet) reducible to these principles. Corpse logged with per-axis R^2 for the next candidate set.
+  | 
+  |   -> results/line_discipline_derivation.json
+[00:38:01] experiment finished rc=0 in 40s (0.01h)
+[00:38:01] adjudication: not_derived; axis1 excess +0.289, axis2 +0.246 (thr 0.25), derived D_line 9.039 vs bar 7.489
+[00:38:01] report -> C:\projects\vais\results\overnight_2026-07-21_report.md
+[00:38:01] RESEARCH.md: section appended (working tree; committed only to the overnight branch)
+[00:38:01] committing results to branch overnight/2026-07-21 ...
+[00:38:01] committed c31bafad7e44 on overnight/2026-07-21 (main untouched)
+[00:38:01] done, exit 0

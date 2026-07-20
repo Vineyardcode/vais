@@ -159,5 +159,12 @@
   "verdict": "N10 Egyptian determinative test: DIALECT_NOT_DETERMINATIVE",
   "suggestive": false,
   "summary": "dialect_not_determinative; VMS U*(gallows) +0.0058 vs U*(root) +0.1303; gate pass"
+ },
+ "N6g": {
+  "status": "completed",
+  "date": "2026-07-21",
+  "verdict": "S3 rung 4: NOT_DERIVED",
+  "suggestive": false,
+  "summary": "not_derived; axis1 excess +0.289, axis2 +0.246 (thr 0.25), derived D_line 9.039 vs bar 7.489"
  }
 }
