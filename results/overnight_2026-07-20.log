@@ -22,3 +22,31 @@
 [01:46:03] report -> C:\projects\vais\results\overnight_2026-07-20_report.md
 [01:46:03] RESEARCH.md: section appended (working tree; committed only to the overnight branch)
 [01:46:03] committing results to branch overnight/2026-07-20 ...
+[01:46:03] committed ad242691014c on overnight/2026-07-20 (main untouched)
+[01:46:03] done, exit 0
+[12:22:19] ====================================================================
+[12:22:19] overnight runner start 2026-07-20 12:22:19  smoke=False PYTHONHASHSEED=0
+[12:22:19] code at 3852e7d (clean tree), python 3.13.3
+[12:22:19] queue item N6f: S3 rung 3b: axis-3 characterization in hand A — absent, inverted, or shared?
+[12:22:19] profile: {}  timeout=1800s
+  | ============================================================================
+  | AXIS-3 IN HAND A (S3 rung 3b) — absent, inverted, or shared? (N6f)
+  | ============================================================================
+  | seed=122 nulls=200 (beat-all, p<0.005) prefinal bins=('m3', 'pL-1')
+  |   corpora: B 2522 lines (reference), A 1310 lines (characterized); 13 classes
+  |   gate a: B self-projection betas [1.0, 1.0, 1.0] (each ~1.0) -> PASS
+  |   beta_1(A) = +0.753  null max |beta| 0.106  -> significant
+  |   beta_2(A) = +0.756  null max |beta| 0.191  -> significant
+  |   beta_3(A) = +0.324  null max |beta| 0.785  -> not significant
+  |   gate b (continuity: axes 1-2 positive + significant) -> PASS
+  |   bin-level pre-final skew, A vs B (Spearman, 12 classes): +0.559
+  | 
+  |   ADJUDICATION (pre-registered):
+  |     AXIS 3 ABSENT IN A: |beta_3| = 0.324 does not beat the null battery — hand A has no measurable pre-final-zone rule; B's axis 3 is an innovation of B. (This also resolves N6e's -0.46 as noise/component mixing, not inversion.)
+  | 
+  |   -> results/line_discipline_axis3_handA.json
+[12:22:26] experiment finished rc=0 in 6s (0.00h)
+[12:22:26] adjudication: axis3_absent_in_A; beta_3(A) +0.324 vs null max 0.785; bins rho +0.559; continuity beta_1/2 +0.75/+0.76
+[12:22:26] report -> C:\projects\vais\results\overnight_2026-07-20_report.md
+[12:22:26] RESEARCH.md: section appended (working tree; committed only to the overnight branch)
+[12:22:26] committing results to branch overnight/2026-07-20 ...

@@ -538,6 +538,18 @@ numbering continues across tiers. Full evidence chains: Phase 8.)*
     the N1 word-shuffle artifact baseline by only +0.033 (< the 0.05
     registered margin) with the instrument gate validated (P-REC
     +0.719). Interior structure emerges only per-hand — see entry 13.
+14. **The legacy hapax-clustering result survives locus
+    decontamination** (N7, 2026-07-20; audit prompted by a community
+    corpus-scoping question): language_vs_cipher Part D had ingested
+    non-prose loci that are hapax-enriched (labels/radial 11-14% vs
+    paragraphs 5.1%) and layout-clustered — inflating its chi-square by
+    ~39% (216.1 → 131.4 on paragraphs only). Under the test's own
+    original thresholds the classification nonetheless holds at every
+    scoping (paragraphs+rings 188.2; paragraphs only still ~9× the
+    bar; burstiness stable ~0.58-0.60). The rare-word sectional
+    clustering is a property of the running text, now with its
+    layout-artifact share measured. Reproduction-gated
+    (hapax_locus_readjudication).
 
 ### SUGGESTIVE (real signal, one instrument, or thin margins)
 
@@ -569,6 +581,31 @@ numbering continues across tiers. Full evidence chains: Phase 8.)*
     standing weaknesses of Phase 8 §8.7 — above all the same-author
     caveat — attach to this entry verbatim. Consistent-with only;
     nothing is decoded.
+
+15. **The line-discipline reduction** (S3 rungs 2-3: N6..N6e,
+    2026-07-19, accepted at review 2026-07-20): Currier B's full line
+    texture — the phase-109 moat (edge effects) AND the interior
+    ordinal residue of entry 13 — is statistically forgeable from its
+    lexicon plus a measured class-position table and ONE strength knob
+    (contiguous-halves forgeability bar; ablation-gated; unfitted
+    order-sensitive features held). The table is exactly THREE
+    interpretable axes (rank-1 and rank-2 reconstructions fail the
+    bar, rank-3 closes at 98.4% variance): (1) an edge/paragraph axis
+    (gallows-linked — Currier's line effects and Grove words,
+    quantified from raw counts); (2) an interior early-late gradient
+    (independently identical to the N5 rank ordering, ρ +0.80); (3) a
+    previously unnamed PRE-FINAL-ZONE axis (peaks at late-interior and
+    penultimate positions but not the final word). Cross-hand blind
+    test: axes 1-2 are manuscript-wide in shape (A→B transfer ρ +0.92
+    / +0.83) with the hand difference absorbed by the strength knob
+    (λ 1.75 vs 1.25 — the switch-intensity picture made mechanical);
+    axis 3 anti-transfers (−0.46) and is B's own. Caveats attached:
+    this is a DIAGNOSTIC reduction (the table is measured from the
+    target; deriving the axes from principles outside the manuscript
+    remains the open rung), same-author instrumentation (Phase 8
+    §8.7-1 status), corpus = ZL ≥5-word loci (98.5% paragraph text;
+    headline verified unchanged on paragraphs only). Consistent-with
+    only; nothing is decoded.
 
 ### SPECULATIVE (hypotheses worth compute, no claims)
 
@@ -1474,3 +1511,23 @@ Configuration (pre-registered in the script docstring): script defaults. Runtime
 | nonP_only | 227 | 2438 | 444 | 43.0 (CONCENTRATED) | +0.324 (CLUSTERED) |
 
 **VERDICT: VERDICT SURVIVES — the hapax-clustering evidence is a property of the running text: decontamination removes ~39% of the chi2 statistic (the measured layout-artifact share) but every original classification holds. The contamination asterisk on Part D is removed by test.**
+
+---
+
+### Portfolio S3, rung 3b — axis-3 characterization in hand A (2026-07-20)
+
+[AUTOMATED — written by tools/overnight.py; run committed to branch overnight/2026-07-20; awaiting human review before promotion to any evidence tier.]
+
+Configuration (pre-registered in the script docstring): script defaults. Runtime 0.00 h at PYTHONHASHSEED=0. Holdout: whole folios (VMS) / 24-line pseudo-folio blocks (controls).
+
+**Pre-registered outcomes** (script docstring): hand A's centered log-table projected onto B's FIXED N6d axes (no SVD on A — avoiding the component-mixing hazard behind N6e's −0.46), permutation null (200 within-line shuffles), model-free bin-level sign cross-check.
+
+| axis | beta(A) | null max |beta| | significant |
+|---|---|---|---|
+| 1 | +0.753 | 0.106 | yes |
+| 2 | +0.756 | 0.191 | yes |
+| 3 | +0.324 | 0.785 | no |
+
+Bin-level pre-final skew, A vs B: Spearman +0.559 (observational).
+
+**VERDICT: AXIS 3 ABSENT IN A — no measurable pre-final-zone rule at A's sample size (the axis-3 direction is intrinsically noisy: wide null band). The point observations lean weakly SAME-direction, so N6e's −0.46 is resolved as component-mixing artifact, not inversion. Axis 3 remains B's own as far as A's data can resolve; ledger entry 15's "anti-transfers" reading is refined to "undetectable in A".**
