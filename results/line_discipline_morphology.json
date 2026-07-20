@@ -1,0 +1,123 @@
+{
+ "params": {
+  "seed": 127,
+  "n_perm": 200,
+  "r2_target": 0.7,
+  "delta_min": 0.1,
+  "delta_modest": 0.05,
+  "principles": [
+   "log_freq",
+   "gallows",
+   "wlen",
+   "wwpos",
+   "finality"
+  ],
+  "lambda_grid": [
+   0.25,
+   0.5,
+   0.75,
+   1.0,
+   1.25,
+   1.5,
+   1.75,
+   2.0,
+   2.25,
+   2.5,
+   2.75,
+   3.0,
+   3.25,
+   3.5,
+   3.75,
+   4.0
+  ],
+  "n6_json": "line_discipline_tournament.json",
+  "n6d_json": "line_discipline_rank3.json",
+  "n6g_json": "line_discipline_derivation.json"
+ },
+ "results": {
+  "fit": {
+   "1": {
+    "r2_3principle": 0.5273,
+    "r2": 0.5806,
+    "gain": 0.0533,
+    "null_r2": 0.4097,
+    "excess": 0.1709,
+    "beta": {
+     "const": 0.0189,
+     "freq": 0.363,
+     "gallows": -0.0817,
+     "wlen": -0.2655,
+     "wwpos": 0.0047,
+     "finality": -0.1792
+    }
+   },
+   "2": {
+    "r2_3principle": 0.4981,
+    "r2": 0.6294,
+    "gain": 0.1313,
+    "null_r2": 0.4382,
+    "excess": 0.1912,
+    "beta": {
+     "const": 0.0628,
+     "freq": -0.0844,
+     "gallows": -0.2719,
+     "wlen": -0.0799,
+     "wwpos": 0.3081,
+     "finality": -0.2498
+    }
+   },
+   "3": {
+    "r2_3principle": 0.4154,
+    "r2": 0.6226,
+    "gain": 0.2071,
+    "null_r2": 0.4168,
+    "excess": 0.2058,
+    "beta": {
+     "const": -0.055,
+     "freq": 0.0236,
+     "gallows": 0.2383,
+     "wlen": 0.0415,
+     "wwpos": 0.0592,
+     "finality": -0.16
+    }
+   }
+  },
+  "base_gate": true,
+  "derived_lambda": 2.25,
+  "derived_d_line": 9.628,
+  "bar_line": 7.489,
+  "n6g_3principle_d_line": 9.039,
+  "measured_rank3_d_line": 6.882,
+  "wwpos_by_class": {
+   "#": 0.5,
+   "a": 0.4484,
+   "ch": 0.1996,
+   "d": 0.5761,
+   "k": 0.336,
+   "l": 0.6163,
+   "o": 0.2477,
+   "p": 0.2038,
+   "q": 0.002,
+   "s": 0.4838,
+   "sh": 0.1271,
+   "t": 0.2816,
+   "y": 0.9042
+  },
+  "classes": [
+   "#",
+   "a",
+   "ch",
+   "d",
+   "k",
+   "l",
+   "o",
+   "p",
+   "q",
+   "s",
+   "sh",
+   "t",
+   "y"
+  ]
+ },
+ "verdict": "modest_improvement"
+}

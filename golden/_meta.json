@@ -1373,5 +1373,14 @@
   "results_files_touched": [
    "line_discipline_derivation.json"
   ]
+ },
+ "line_discipline_morphology": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 39.33,
+  "stdout_bytes": 1448,
+  "results_files_touched": [
+   "line_discipline_morphology.json"
+  ]
  }
 }

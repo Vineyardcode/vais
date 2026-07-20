@@ -2301,6 +2301,98 @@ def adjudicate_n6g(item, expected_params, run_started):
 
 
 # ────────────────────────────────────────────────────────────────────
+# N6h adjudication — pre-registered, mechanical, JSON-only
+# ────────────────────────────────────────────────────────────────────
+def adjudicate_n6h(item, expected_params, run_started):
+    """Pre-registered outcomes (line_discipline_morphology.py
+    docstring): does within-word glyph morphology (wwpos + finality)
+    reduce the INTERIOR gradient? gate = 3-principle baseline
+    reproduces N6g; then interior R^2 >= r2_target AND gain >= delta_min
+    -> interior_morphology_reduced; gain >= delta_modest ->
+    modest_improvement; else no_improvement. Re-derived from the JSON;
+    refuses on mismatch."""
+    jpath = RESULTS / item['result_json']
+    if not jpath.exists():
+        raise AdjudicationError(f'{jpath.name} was not written by the run')
+    if jpath.stat().st_mtime < run_started:
+        raise AdjudicationError(f'{jpath.name} predates this run — stale')
+    data = json.loads(jpath.read_text(encoding='utf-8'))
+    p, r = data['params'], data['results']
+    a2 = r['fit']['2']
+    base_ok = r['base_gate']
+    if not base_ok:
+        key = 'gate_failed'
+    elif a2['r2'] >= p['r2_target'] and a2['gain'] >= p['delta_min']:
+        key = 'interior_morphology_reduced'
+    elif a2['gain'] >= p['delta_modest']:
+        key = 'modest_improvement'
+    else:
+        key = 'no_improvement'
+    if data.get('verdict') != key:
+        raise AdjudicationError(f'runner derives {key!r} but the script '
+                                f'recorded {data.get("verdict")!r}')
+    suggestive = key == 'interior_morphology_reduced'
+
+    md = []
+    md.append('**Pre-registered outcomes** (script docstring): the '
+              'HYPOTHESIS — the line orders words by the typical WITHIN-'
+              'WORD position of their first glyph (word-initial-type '
+              'early, word-final-type late) — tested by adding within-'
+              'word morphology (wwpos + finality) to the N6g principle '
+              f'set. Reduced iff interior R^2 >= {p["r2_target"]} AND '
+              f'gain over the 3-principle baseline >= {p["delta_min"]}.')
+    md.append('')
+    md.append('| axis | R² (3-principle → +morphology) | gain | wwpos β | '
+              'finality β |')
+    md.append('|---|---|---|---|---|')
+    for k, lab in (('1', 'edge'), ('2', 'interior'), ('3', 'pre-final')):
+        f = r['fit'][k]
+        md.append(f'| {k} ({lab}) | {f["r2_3principle"]} → {f["r2"]} | '
+                  f'{f["gain"]:+.3f} | {f["beta"]["wwpos"]:+.2f} | '
+                  f'{f["beta"]["finality"]:+.2f} |')
+    md.append('')
+    ww = r['wwpos_by_class']
+    order = sorted(ww, key=lambda c: ww[c])
+    md.append('Within-word position by class (0=word-initial, 1=word-'
+              'final): ' + ', '.join(f'{c} {ww[c]:.2f}' for c in order)
+              + '.')
+    md.append(f'Enriched derived table: D_line {r["derived_d_line"]} vs '
+              f'bar {r["bar_line"]} (does not close; the residual '
+              'persists).')
+    verdict_text = {
+        'gate_failed': 'GATE FAILED — baseline does not reproduce N6g.',
+        'interior_morphology_reduced':
+            'INTERIOR MORPHOLOGY REDUCED — the interior gradient is '
+            'substantially a within-word-morphology effect. SUGGESTIVE, '
+            'quarantined.',
+        'modest_improvement':
+            'MODEST IMPROVEMENT (hypothesis directionally confirmed, not '
+            'dominant) — within-word position is the LARGEST predictor '
+            f'of the interior gradient (wwpos β {a2["beta"]["wwpos"]:+.2f}, '
+            'positive as hypothesized: word-initial-type glyphs early, '
+            f'word-final-type late) and raises interior R^2 by '
+            f'{a2["gain"]:+.3f} (0.50 → {a2["r2"]}), clearing the gain '
+            f'bar but not the {p["r2_target"]} strong-reduction target. '
+            'So the interior gradient is PARTLY a morphological echo — '
+            'the line reflects word structure — but a residual survives '
+            'even frequency + gallows + length + within-word position. '
+            'The line-discipline mystery is now this smaller, sharper '
+            'residual.',
+        'no_improvement':
+            'NO IMPROVEMENT — within-word position does not explain the '
+            'interior gradient; the residual is deeper. Corpse logged.',
+    }[key]
+    md.append('')
+    md.append(f'**VERDICT: {verdict_text}**')
+    summary = (f'{key}; interior R^2 {a2["r2"]} (gain {a2["gain"]:+.3f}, '
+               f'wwpos β {a2["beta"]["wwpos"]:+.2f}), target '
+               f'{p["r2_target"]}')
+    return {'verdict': f'S3 rung 5: {key.upper()}',
+            'suggestive': suggestive, 'md': '\n'.join(md),
+            'summary': summary, 'params': p, 'json_name': jpath.name}
+
+
+# ────────────────────────────────────────────────────────────────────
 # queue
 # ────────────────────────────────────────────────────────────────────
 N1_PROFILE = {'EM_OUTER': 32, 'EM_PROPOSALS': 48, 'EM_RESTARTS': 16,
@@ -2649,6 +2741,22 @@ QUEUE = [
         'adjudicate': adjudicate_n6g,
         'research_heading': 'Portfolio S3, rung 4 — principled '
                             '(reductive) derivation of the shared axes',
+        'not_ready': None,
+    },
+    {
+        'id': 'N6h',
+        'title': 'S3 rung 5: morphology derivation — does within-word '
+                 'position reduce the interior gradient?',
+        'stem': 'line_discipline_morphology',
+        'overrides': {},
+        'smoke_overrides': {},
+        'timeout_s': 1800,
+        'smoke_timeout_s': 900,
+        'result_json': 'line_discipline_morphology.json',
+        'adjudicate': adjudicate_n6h,
+        'research_heading': 'Portfolio S3, rung 5 — within-word '
+                            'morphology derivation of the interior '
+                            'gradient',
         'not_ready': None,
     },
     {

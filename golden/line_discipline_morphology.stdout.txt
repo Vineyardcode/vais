@@ -1,0 +1,18 @@
+============================================================================
+LINE-DISCIPLINE MORPHOLOGY DERIVATION (S3 rung 5) — reduce the interior gradient? (N6h)
+============================================================================
+seed=127 perms=200 target R^2>=0.7, gain>=0.1; principles = freq+gallows+wlen (+ wwpos, finality = within-word morphology)
+  B features + bar reproduce N6 (bar_line 7.489)  VERIFIED
+  rank-3 decomposition reproduces the N6d axes  VERIFIED
+  within-word position by class (0=initial, 1=final): q 0.00  sh 0.13  ch 0.20  p 0.20  o 0.25  t 0.28  k 0.34  a 0.45  s 0.48  # 0.50  d 0.58  l 0.62  y 0.90
+  axis1: R^2 0.581 (3-principle 0.527, gain +0.053)  wwpos-beta +0.00  finality-beta -0.18
+  axis2: R^2 0.629 (3-principle 0.498, gain +0.131)  wwpos-beta +0.31  finality-beta -0.25
+  axis3: R^2 0.623 (3-principle 0.415, gain +0.207)  wwpos-beta +0.06  finality-beta -0.16
+  gate: 3-principle interior R^2 0.4981 ~ N6g 0.4981 -> PASS
+  enriched derived table, lambda 2.25: D_line 9.628 (bar 7.489; measured rank-3 was 6.882; N6g 3-principle was 9.039)
+
+  ADJUDICATION (pre-registered):
+    interior R^2 0.6294 (target 0.7), gain over 3-principle +0.131 (min 0.1); wwpos-beta +0.308; derived table closes: False
+    MODEST IMPROVEMENT: within-word position helps (gain +0.131) but the interior gradient is not dominated by it; residual remains.
+
+  -> results/line_discipline_morphology.json
