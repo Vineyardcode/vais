@@ -557,6 +557,20 @@ numbering continues across tiers. Full evidence chains: Phase 8.)*
     non-language hoax control clusters strongly (self-citation +0.27),
     so hapax burstiness is not diagnostic of language
     (hapax_clustering_calibration).
+17. **The hapax-clustering "→ language" inference is uncalibrated;
+    the Egyptian-connection test has no standing** (N9 + status audit,
+    2026-07-20): (a) N9 ran Part D's hapax-burstiness statistic on the
+    control battery — real-language corpora do NOT cluster (Latin B
+    +0.068, Italian +0.007, both below the test's own 0.1 bar) while a
+    non-language hoax control clusters most (self-citation +0.272), so
+    burstiness is not diagnostic of language; the pre-registered verdict
+    was inconclusive (single-topic controls cannot show topical
+    clustering), and a multi-topic re-test is the open rung. (b)
+    egyptian_connection is a pre-charter test that runs NO negative
+    control and self-reports 5/5 CONFIRMED; it is not evidence for the
+    Egyptian hypothesis and has no ledger standing (status errata in
+    the script; failure modes F3/F5/F7). Both are recorded as the
+    charter working on the suite's own legacy — nothing is promoted.
 16. **Raw-scan segmentation sees the text; shape clustering does not
     yet stabilize** (S2 rung 0 / N8, 2026-07-20): a numpy+Pillow
     pipeline over 30 seeded folio scans binarizes stably and its
@@ -1572,3 +1586,24 @@ Configuration (pre-registered in the script docstring): script defaults. Runtime
 G1 binarization: median ink 0.1904, CV 0.288 → PASS. G2 segmentation: Spearman(components, ZL chars) +0.842 over 30 folios (strong ≥ 0.8). G3: k* [10, 15] (FAIL ±30%), centroid ratio 0.395 (PASS < 0.5). 21214 glyph-scale components.
 
 **VERDICT: PARTIALLY FEASIBLE — the pipeline reliably SEES the writing (count correlation +0.84 with the transliteration through drawings and all), but glyph-shape cluster counts are unstable across folio halves (the F10 concern, at rung 0). S2 proceeds restricted: better shape descriptors / a real CV stack / text-only pages.**
+
+---
+
+### Legacy-test audit — hapax-clustering discriminator calibration (2026-07-20)
+
+[AUTOMATED — written by tools/overnight.py; run committed to branch overnight/2026-07-20; awaiting human review before promotion to any evidence tier.]
+
+Configuration (pre-registered in the script docstring): script defaults. Runtime 0.00 h at PYTHONHASHSEED=0. Holdout: whole folios (VMS) / 24-line pseudo-folio blocks (controls).
+
+**Pre-registered outcomes** (script docstring): Part D reads hapax burstiness B > 0.1 as "language". This calibration runs that exact statistic on the control battery. Hapax = strict count==1 on the collapsed vocabulary (Part D's definition, NOT relaxed to "rare words").
+
+| corpus | class | burstiness B | hapax rate | TTR |
+|---|---|---|---|---|
+| P1_latin | language+ | +0.068 | 0.129 | 0.226 |
+| P2_italian | language+ | +0.007 | 0.103 | 0.17 |
+| P4_verbose_cipher | cipher | +0.062 | 0.136 | 0.233 |
+| N3_grille | nonlang- | n/a (<10 hapax) | — | — |
+| N4_self_citation | nonlang- | +0.272 | 0.09 | 0.184 |
+| VMS_wordshuffle | reference | +0.051 | 0.058 | 0.097 |
+
+**VERDICT: INCONCLUSIVE by the pre-registered criteria — which required the language positives to cluster, and they do NOT (Latin +0.068, Italian +0.007, both below 0.1). The controls are single-work corpora with no manuscript-like sections, so they cannot exhibit *topical* hapax clustering; the battery as built cannot fully test the topical version of the claim. But two observations (reported, not re-adjudicated) independently undermine Part D's inference as stated: (a) high hapax burstiness is NOT an intrinsic property of language text — real Latin/Italian sit near zero; (b) a NON-language hoax control (N4 self-citation, B +0.272) clusters more strongly than anything else, so burstiness alone is not diagnostic of language. Net: Part D's "clustered → language" inference is uncalibrated and unsupported by these controls; a properly powered re-test needs multi-topic language and cipher corpora (a registered future rung). Ledger entry 14 — which claims only that the VMS clustering is real and locus-robust, never that it proves language — is unaffected and now carries a pointer to this result.**

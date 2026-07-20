@@ -145,5 +145,12 @@
   "verdict": "S2 rung 0: PARTIALLY_FEASIBLE",
   "suggestive": false,
   "summary": "partially_feasible; G2 rho +0.842, k* [10, 15], centroid ratio 0.395"
+ },
+ "N9": {
+  "status": "completed",
+  "date": "2026-07-20",
+  "verdict": "N9 hapax-discriminator calibration: INCONCLUSIVE",
+  "suggestive": false,
+  "summary": "inconclusive; P1 +0.068, P2 +0.007, N4 +0.272 (threshold 0.1)"
  }
 }
