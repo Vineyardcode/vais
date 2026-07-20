@@ -550,6 +550,17 @@ numbering continues across tiers. Full evidence chains: Phase 8.)*
     clustering is a property of the running text, now with its
     layout-artifact share measured. Reproduction-gated
     (hapax_locus_readjudication).
+16. **Raw-scan segmentation sees the text; shape clustering does not
+    yet stabilize** (S2 rung 0 / N8, 2026-07-20): a numpy+Pillow
+    pipeline over 30 seeded folio scans binarizes stably and its
+    glyph-scale component counts track the transliteration's character
+    counts at Spearman +0.84 — through drawings — so the
+    transliteration-free path (escaping A1) is physically viable with
+    in-repo data. But silhouette-best cluster counts differ 10 vs 15
+    across folio halves (breaching the registered ±30% rule): glyph
+    IDENTITY cannot yet be recovered at this tooling. S2 verdict:
+    partially feasible, proceed restricted (better descriptors / real
+    CV stack); see entry 10 (SPECULATIVE).
 
 ### SUGGESTIVE (real signal, one instrument, or thin margins)
 
@@ -619,7 +630,9 @@ numbering continues across tiers. Full evidence chains: Phase 8.)*
 8. Line-as-record structures (S7): the moat feature suggests the LINE,
    not the word, may be the encoding unit.
 9. Numeral/positional readings (S6) remain untested against the moat.
-10. Raw-scan glyph clustering (S2) is the only strategy that fully
+10. *(updated 2026-07-20: rung-0 feasibility ran — see ESTABLISHED
+    entry 16; segmentation proven viable, clustering blocked on
+    tooling)* Raw-scan glyph clustering (S2) is the only strategy that fully
     escapes A1; queued on data acquisition.
 
 ### Phase 4b — Verbose cipher inversion, rungs 1-2 (2026-07-16)
@@ -1538,3 +1551,17 @@ Configuration (pre-registered in the script docstring): script defaults. Runtime
 Bin-level pre-final skew, A vs B: Spearman +0.559 (observational).
 
 **VERDICT: AXIS 3 ABSENT IN A — no measurable pre-final-zone rule at A's sample size (the axis-3 direction is intrinsically noisy: wide null band). The point observations lean weakly SAME-direction, so N6e's −0.46 is resolved as component-mixing artifact, not inversion. Axis 3 remains B's own as far as A's data can resolve; ledger entry 15's "anti-transfers" reading is refined to "undetectable in A".**
+
+---
+
+### Portfolio S2, rung 0 — raw-scan glyph feasibility probe (2026-07-20)
+
+[AUTOMATED — written by tools/overnight.py; run committed to branch overnight/2026-07-20; awaiting human review before promotion to any evidence tier.]
+
+Configuration (pre-registered in the script docstring): script defaults. Runtime 0.01 h at PYTHONHASHSEED=0. Holdout: whole folios (VMS) / 24-line pseudo-folio blocks (controls).
+
+**Pre-registered verdicts** (script docstring): a rung-0 imaging probe of S2 with in-repo scans and numpy+Pillow only — the question is whether transliteration-free analysis can get off the ground, not anything about the manuscript's content.
+
+G1 binarization: median ink 0.1904, CV 0.288 → PASS. G2 segmentation: Spearman(components, ZL chars) +0.842 over 30 folios (strong ≥ 0.8). G3: k* [10, 15] (FAIL ±30%), centroid ratio 0.395 (PASS < 0.5). 21214 glyph-scale components.
+
+**VERDICT: PARTIALLY FEASIBLE — the pipeline reliably SEES the writing (count correlation +0.84 with the transliteration through drawings and all), but glyph-shape cluster counts are unstable across folio halves (the F10 concern, at rung 0). S2 proceeds restricted: better shape descriptors / a real CV stack / text-only pages.**

@@ -52,3 +52,61 @@
 [12:22:26] committing results to branch overnight/2026-07-20 ...
 [12:22:26] committed d82409a41fec on overnight/2026-07-20 (main untouched)
 [12:22:26] done, exit 0
+[15:46:29] ====================================================================
+[15:46:29] overnight runner start 2026-07-20 15:46:29  smoke=False PYTHONHASHSEED=0
+[15:46:29] code at 680312a (clean tree), python 3.13.3
+[15:46:29] queue item N8: S2 rung 0: raw-scan glyph feasibility probe (numpy+Pillow, no CV stack)
+[15:46:29] profile: {}  timeout=3600s
+  | ============================================================================
+  | RAW-SCAN GLYPH FEASIBILITY (S2 rung 0) — imaging probe (N8)
+  | ============================================================================
+  | seed=123 folios=30 crop=0.8 downscale=2 area=[8,800] k_sweep=[10, 15, 20, 25, 30, 35, 40]
+  |   f100r          ink 0.228  components   533  ZL chars    600
+  |   f100v_101r     ink 0.251  components   622  ZL chars   1498
+  |   f105r          ink 0.146  components  1516  ZL chars   1948  [text-only]
+  |   f107r          ink 0.161  components  1647  ZL chars   2482  [text-only]
+  |   f10r           ink 0.210  components   534  ZL chars    432
+  |   f112v          ink 0.149  components  1594  ZL chars   2213  [text-only]
+  |   f115r          ink 0.144  components  1602  ZL chars   2430  [text-only]
+  |   f13v           ink 0.150  components   415  ZL chars    286
+  |   f16v           ink 0.174  components   398  ZL chars    347
+  |   f17r           ink 0.121  components   401  ZL chars    375
+  |   f26v           ink 0.199  components   642  ZL chars    453
+  |   f29v           ink 0.150  components   483  ZL chars    415
+  |   f34v           ink 0.206  components   754  ZL chars    583
+  |   f37r           ink 0.175  components   533  ZL chars    369
+  |   f37v           ink 0.238  components   478  ZL chars    440
+  |   f38r           ink 0.193  components   288  ZL chars    197
+  |   f41v           ink 0.258  components   410  ZL chars    354
+  |   f42r           ink 0.162  components   749  ZL chars    651
+  |   f45v           ink 0.159  components   508  ZL chars    357
+  |   f49r           ink 0.178  components   323  ZL chars    534
+  |   f66r           ink 0.121  components  1302  ZL chars   1675
+  |   f69r           ink 0.077  components   563  ZL chars    707
+  |   f73v           ink 0.215  components  1018  ZL chars    506
+  |   f87r           ink 0.219  components   533  ZL chars    538
+  |   f93r           ink 0.369  components   634  ZL chars    741
+  |   f93v           ink 0.187  components   437  ZL chars    459
+  |   f96v           ink 0.225  components   395  ZL chars    298
+  |   f99v           ink 0.253  components   967  ZL chars    895
+  |   f9r            ink 0.273  components   447  ZL chars    387
+  |   f9v            ink 0.199  components   488  ZL chars    388
+  | 
+  |   G1 binarization: median ink 0.190 (band [0.01,0.3]), CV 0.29 (< 0.6) -> PASS
+  |   G2 segmentation: Spearman(components, ZL chars) all +0.842 (strong >= 0.8); text-only folios (n=4): n<5
+  |   G3 half 1: n=3469, silhouette-best k* = 10 (s=0.217)
+  |   G3 half 2: n=2531, silhouette-best k* = 15 (s=0.226)
+  |   G3a k* stability: 10 vs 15 -> FAIL (±30% rule)
+  |   G3b centroid match ratio at k=25: 0.395 (< 0.5) -> PASS
+  | 
+  |   ADJUDICATION (pre-registered):
+  |     PARTIALLY FEASIBLE: proceed restricted (text-only pages and/or better tooling). Blockers: k* unstable across halves.
+  | 
+  |   -> results/scan_glyph_feasibility.json
+[15:47:06] experiment finished rc=0 in 37s (0.01h)
+[15:47:06] adjudication: partially_feasible; G2 rho +0.842, k* [10, 15], centroid ratio 0.395
+[15:47:06] report -> C:\projects\vais\results\overnight_2026-07-20_report.md
+[15:47:06] RESEARCH.md: section appended (working tree; committed only to the overnight branch)
+[15:47:06] committing results to branch overnight/2026-07-20 ...
+[15:47:07] committed 2f92f1aedc77 on overnight/2026-07-20 (main untouched)
+[15:47:07] done, exit 0

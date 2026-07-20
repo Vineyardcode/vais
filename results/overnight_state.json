@@ -138,5 +138,12 @@
   "verdict": "S3 rung 3b: AXIS3_ABSENT_IN_A",
   "suggestive": false,
   "summary": "axis3_absent_in_A; beta_3(A) +0.324 vs null max 0.785; bins rho +0.559; continuity beta_1/2 +0.75/+0.76"
+ },
+ "N8": {
+  "status": "completed",
+  "date": "2026-07-20",
+  "verdict": "S2 rung 0: PARTIALLY_FEASIBLE",
+  "suggestive": false,
+  "summary": "partially_feasible; G2 rho +0.842, k* [10, 15], centroid ratio 0.395"
  }
 }
