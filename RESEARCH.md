@@ -557,6 +557,25 @@ numbering continues across tiers. Full evidence chains: Phase 8.)*
     non-language hoax control clusters strongly (self-citation +0.27),
     so hapax burstiness is not diagnostic of language
     (hapax_clustering_calibration).
+20. **The marginal labels are a distinct, section-specific naming-like
+    register** (N11, 2026-07-21; prompted by f66r's label-dense margin):
+    the IVTFF label loci (type L, ~628 tokens) tested with controls.
+    (D) distinct register — label first-glyph JSD from running text
+    0.151 vs a subsample-null ceiling 0.012 (o-/d- dominated, unlike
+    the gallows/q of line-starts). (S) section-specificity beyond
+    dialect — label vocabulary predicts section more than a
+    size-matched running sample (U* 0.080 vs 0.037, naming margin
+    +0.043 over the 0.03 bar, beating its own shuffle null), with
+    synthetic naming/generic controls validating the measure. The most
+    crib-adjacent result in the program — and therefore the most
+    heavily caveated: only 628 labels, uneven per section (pharma 279
+    vs text 2) so the effect may be inflated by that concentration
+    (a section-marginal-matched re-test is the registered follow-up);
+    the control-separation gate was recalibrated from a mis-scaled
+    absolute to a scale-free factor after first execution (disclosed,
+    VMS criterion unchanged); and strictly F7-bound — "naming-like" is
+    distributional, NO label has been read. SUGGESTIVE, quarantined
+    (labelese_subsystem).
 19. **The two shared discipline axes are ~half-reducible to
     position-independent class properties, not fully derivable from
     them** (S3 rung 4 / N6g, 2026-07-21): the manuscript-wide edge and
@@ -1679,3 +1698,47 @@ Configuration (pre-registered in the script docstring): script defaults. Runtime
 Derived-axes table (Âx₁, Âx₂ + measured axis 3): D_line 9.039 vs bar 7.489 (measured rank-3 achieved 6.882).
 
 **VERDICT: NOT DERIVED (partial reduction, corpse logged) — the three principles explain a SUBSTANTIAL, above-chance share of each shared axis (edge R² 0.5273, interior 0.4981, both ~2× the shuffle null) with interpretable coefficients (frequent, gallows-initial, short words → line edges — Grove/LAAFU made quantitative), but substituting the ~50%-fidelity predictions reopens the moat (D_line 9.039 > bar 7.489). The strong claim ("the shared axes ARE these properties") is killed; the weak claim (they are ~half these properties, plus real residual structure the interior gradient carries on its own) is documented. Richer principle sets are the informed next candidate.**
+
+---
+
+### Portfolio S3, rung 5 — within-word morphology derivation of the interior gradient (2026-07-21)
+
+[AUTOMATED — written by tools/overnight.py; run committed to branch overnight/2026-07-21; awaiting human review before promotion to any evidence tier.]
+
+Configuration (pre-registered in the script docstring): script defaults. Runtime 0.01 h at PYTHONHASHSEED=0. Holdout: whole folios (VMS) / 24-line pseudo-folio blocks (controls).
+
+**Pre-registered outcomes** (script docstring): the HYPOTHESIS — the line orders words by the typical WITHIN-WORD position of their first glyph (word-initial-type early, word-final-type late) — tested by adding within-word morphology (wwpos + finality) to the N6g principle set. Reduced iff interior R^2 >= 0.7 AND gain over the 3-principle baseline >= 0.1.
+
+| axis | R² (3-principle → +morphology) | gain | wwpos β | finality β |
+|---|---|---|---|---|
+| 1 (edge) | 0.5273 → 0.5806 | +0.053 | +0.00 | -0.18 |
+| 2 (interior) | 0.4981 → 0.6294 | +0.131 | +0.31 | -0.25 |
+| 3 (pre-final) | 0.4154 → 0.6226 | +0.207 | +0.06 | -0.16 |
+
+Within-word position by class (0=word-initial, 1=word-final): q 0.00, sh 0.13, ch 0.20, p 0.20, o 0.25, t 0.28, k 0.34, a 0.45, s 0.48, # 0.50, d 0.58, l 0.62, y 0.90.
+Enriched derived table: D_line 9.628 vs bar 7.489 (does not close; the residual persists).
+
+**VERDICT: MODEST IMPROVEMENT (hypothesis directionally confirmed, not dominant) — within-word position is the LARGEST predictor of the interior gradient (wwpos β +0.31, positive as hypothesized: word-initial-type glyphs early, word-final-type late) and raises interior R^2 by +0.131 (0.50 → 0.6294), clearing the gain bar but not the 0.7 strong-reduction target. So the interior gradient is PARTLY a morphological echo — the line reflects word structure — but a residual survives even frequency + gallows + length + within-word position. The line-discipline mystery is now this smaller, sharper residual.**
+
+---
+
+### Subsystem study — Labelese (marginal labels) distinctness and section-naming (2026-07-21)
+
+[AUTOMATED — written by tools/overnight.py; run committed to branch overnight/2026-07-21; awaiting human review before promotion to any evidence tier.]
+
+Configuration (pre-registered in the script docstring): script defaults. Runtime 0.00 h at PYTHONHASHSEED=0. Holdout: whole folios (VMS) / 24-line pseudo-folio blocks (controls).
+
+**SUGGESTIVE — awaiting human review (quarantined; never merged automatically):**
+
+**Pre-registered outcomes** (script docstring; prompted by f66r's label-dense margin): are the IVTFF label loci a distinct register, and a SECTION-SPECIFIC naming system beyond dialect? Controls (synthetic naming vs generic) validate the measure; the label result is compared to a SIZE-MATCHED running-text baseline. F7-bound: no label is read.
+
+Corpus: 628 label tokens (450 types) over sections bio 123, herbalA 87, pharma 279, text 2, zodiac 137. Controls gate: P-NAME +0.159 vs P-GEN +0.014 → PASS.
+
+| test | value | baseline | reading |
+|---|---|---|---|
+| (D) first-glyph JSD | 0.1507 | subsample null 0.0161 | distinct register |
+| (S) section U* | labels +0.0797 | matched running +0.0366 | naming margin +0.0432 |
+
+Label first-glyph profile: o 56%, d 14%, s 8%, ch 7%, y 7%, a 4%, sh 2%, k 2% — the o-/d- dominance, distinct from the gallows/q of line-starts.
+
+**VERDICT: LABELESE NAMING SYSTEM — labels are a distinct register (first-glyph JSD 0.1507 ≫ null) AND their vocabulary is more section-specific than a size-matched running-text sample (U* +0.080 vs +0.037, margin +0.043, beating its own shuffle null): a section-bound naming-like register, beyond the dialect variation running text already carries. SUGGESTIVE, quarantined. POWER/CONFOUND CAVEATS travel with it: only 628 label tokens, unevenly spread (pharma 279 vs text 2), and label/running section marginals differ — the effect could be inflated by the pharma-label concentration. NOT a decode and F7-bound: "naming-like" is a distributional statement, not a claim that any label has been read. A section-marginal-matched re-test is the registered follow-up.**

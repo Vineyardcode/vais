@@ -166,5 +166,19 @@
   "verdict": "S3 rung 4: NOT_DERIVED",
   "suggestive": false,
   "summary": "not_derived; axis1 excess +0.289, axis2 +0.246 (thr 0.25), derived D_line 9.039 vs bar 7.489"
+ },
+ "N6h": {
+  "status": "completed",
+  "date": "2026-07-21",
+  "verdict": "S3 rung 5: MODEST_IMPROVEMENT",
+  "suggestive": false,
+  "summary": "modest_improvement; interior R^2 0.6294 (gain +0.131, wwpos \u03b2 +0.31), target 0.7"
+ },
+ "N11": {
+  "status": "completed",
+  "date": "2026-07-21",
+  "verdict": "N11 labelese subsystem: LABELESE_NAMING_SYSTEM",
+  "suggestive": true,
+  "summary": "labelese_naming_system; JSD 0.1507 (null 0.0161), naming margin +0.0432 (thr 0.03)"
  }
 }
