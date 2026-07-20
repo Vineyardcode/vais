@@ -855,7 +855,20 @@ footer { border-top:1px solid var(--line); margin-top:3em;
 <tr><td>VMS Currier A</td><td>+0.01162</td><td>+0.12253</td><td>root-carried</td></tr>
 <tr><td>VMS Currier B</td><td>+0.00694</td><td>+0.10015</td><td>root-carried</td></tr>
 </table>
-<p>Gate (controls separate the mechanisms): PASS. **VERDICT: DIALECT, NOT DETERMINATIVE — the section information lives in the ROOT vocabulary (pooled U* 0.130), not the gallows (0.006); a ~23× gap matching the dialect control. The gallows-section association the pre-charter test read as &quot;determinatives&quot; is dialectal vocabulary variation. The Egyptian determinative claim is KILLED on its core prediction — now with controls, where the old test had none.**</p><footer>Static mirror — read-only. Generated 2026-07-20 from commit <code>bf8fc50</code>. 
+<p>Gate (controls separate the mechanisms): PASS. **VERDICT: DIALECT, NOT DETERMINATIVE — the section information lives in the ROOT vocabulary (pooled U* 0.130), not the gallows (0.006); a ~23× gap matching the dialect control. The gallows-section association the pre-charter test read as &quot;determinatives&quot; is dialectal vocabulary variation. The Egyptian determinative claim is KILLED on its core prediction — now with controls, where the old test had none.**</p>
+<hr>
+<h3>Portfolio S3, rung 4 — principled (reductive) derivation of the shared axes (2026-07-21)</h3>
+<p>[AUTOMATED — written by tools/overnight.py; run committed to branch overnight/2026-07-21; awaiting human review before promotion to any evidence tier.]</p>
+<p>Configuration (pre-registered in the script docstring): script defaults. Runtime 0.01 h at PYTHONHASHSEED=0. Holdout: whole folios (VMS) / 24-line pseudo-folio blocks (controls).</p>
+<p><strong>Pre-registered outcomes</strong> (script docstring): &quot;derive&quot; means REDUCE the shared axes to position-independent class properties (log-frequency + gallows-membership + word-length) — not external layout physics, which stays open. An axis is reduced if its OLS R^2 beats a shuffle null by &gt;= 0.25 AND the derived table still closes the moat.</p>
+<table>
+<tr><th>axis</th><th>R²</th><th>null R²</th><th>excess</th><th>freq β</th><th>gallows β</th><th>wlen β</th></tr>
+<tr><td>1 (edge, shared)</td><td>0.5273</td><td>0.2379</td><td>+0.289</td><td>+0.47</td><td>+0.21</td><td>-0.29</td></tr>
+<tr><td>2 (interior, shared)</td><td>0.4981</td><td>0.2517</td><td>+0.246</td><td>-0.12</td><td>-0.22</td><td>-0.21</td></tr>
+<tr><td>3 (pre-final, B-only)</td><td>0.4154</td><td>0.2592</td><td>+0.156</td><td>+0.09</td><td>+0.44</td><td>+0.00</td></tr>
+</table>
+<p>Derived-axes table (Âx₁, Âx₂ + measured axis 3): D_line 9.039 vs bar 7.489 (measured rank-3 achieved 6.882).</p>
+<p><strong>VERDICT: NOT DERIVED (partial reduction, corpse logged) — the three principles explain a SUBSTANTIAL, above-chance share of each shared axis (edge R² 0.5273, interior 0.4981, both ~2× the shuffle null) with interpretable coefficients (frequent, gallows-initial, short words → line edges — Grove/LAAFU made quantitative), but substituting the ~50%-fidelity predictions reopens the moat (D_line 9.039 &gt; bar 7.489). The strong claim (&quot;the shared axes ARE these properties&quot;) is killed; the weak claim (they are ~half these properties, plus real residual structure the interior gradient carries on its own) is documented. Richer principle sets are the informed next candidate.</strong></p><footer>Static mirror — read-only. Generated 2026-07-21 from commit <code>5ff0521</code>. 
 To run any test with your own parameters, clone
 <a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
 (<code>python webui/server.py</code>). All numbers reproduce at

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>line_discipline_derivation — VAIS - Voynich Analysis Interactive Suite</title><style>
+:root { --bg:#ffffff; --fg:#1a1a1a; --muted:#666; --line:#ddd;
+        --code:#f5f5f5; --accent:#7a4a1e; --warn:#a33; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#141414; --fg:#ddd; --muted:#999; --line:#333;
+          --code:#1e1e1e; --accent:#d9a05b; --warn:#e77; } }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--fg);
+       font:16px/1.55 Georgia, 'Times New Roman', serif; }
+nav { border-bottom:1px solid var(--line); padding:.7em 1.2em;
+      font-family: system-ui, sans-serif; font-size:.9em; }
+nav a { color:var(--accent); text-decoration:none; margin-right:1.2em; }
+main { max-width: 62em; margin: 0 auto; padding: 1.5em 1.2em 4em; }
+h1,h2,h3 { font-family: system-ui, sans-serif; line-height:1.25; }
+h1 { font-size:1.7em; } h2 { font-size:1.3em; margin-top:2em; }
+a { color: var(--accent); }
+code, pre { font-family: ui-monospace, Consolas, monospace;
+            font-size:.86em; background:var(--code); }
+code { padding:.1em .3em; border-radius:3px; }
+pre { padding: .9em; overflow-x:auto; border:1px solid var(--line);
+      border-radius:4px; line-height:1.4; }
+table { border-collapse: collapse; margin: 1em 0; font-size:.92em;
+        display:block; overflow-x:auto; }
+th, td { border:1px solid var(--line); padding:.35em .6em;
+         text-align:left; vertical-align:top; }
+th { font-family: system-ui, sans-serif; background:var(--code); }
+blockquote { border-left:3px solid var(--accent); margin:1em 0;
+             padding:.2em 1em; color:var(--muted); }
+.muted { color:var(--muted); font-size:.9em; }
+.tag { font-family: system-ui, sans-serif; font-size:.75em;
+       border:1px solid var(--line); border-radius:3px;
+       padding:.05em .45em; margin-left:.5em; }
+.tag.sug { border-color:var(--warn); color:var(--warn); }
+details summary { cursor:pointer; font-family: system-ui, sans-serif; }
+input.param { font-family: ui-monospace, Consolas, monospace;
+              font-size:.85em; width:24em; max-width:100%;
+              background:var(--code); color:var(--fg);
+              border:1px solid var(--line); border-radius:3px;
+              padding:.25em .4em; }
+button { font-family: system-ui, sans-serif; font-size:.95em;
+         padding:.35em 1em; border:1px solid var(--accent);
+         border-radius:4px; background:var(--code); color:var(--fg);
+         cursor:pointer; }
+button:disabled { opacity:.5; cursor:default; }
+#run-out { min-height:2em; }
+footer { border-top:1px solid var(--line); margin-top:3em;
+         padding-top:1em; font-size:.85em; color:var(--muted); }
+</style></head><body>
+<nav><a href="../index.html">VAIS - Voynich Analysis Interactive Suite</a><a href="../catalog.html">Catalog</a>
+<a href="../research.html">Research</a><a href="../reports.html">Reports</a>
+<a href="../glossary.html">Glossary</a><a href="../credits.html">Credits</a>
+<a href="../contributing.html">Contributing</a>
+<a href="https://github.com/Vineyardcode/vais">GitHub</a></nav>
+<main><h1>line_discipline_derivation</h1>
+<p class="muted">scripts/line_discipline_derivation.py</p>
+<pre>Line-Discipline Principled Derivation (portfolio S3, rung 4) — do the
+two manuscript-wide axes REDUCE to position-independent class
+properties? (N6g)
+
+PROVENANCE: the discipline ladder established that Currier B&#x27;s line
+texture is three placement rules (N6d), two of them manuscript-wide
+(N6e): axis 1 (edge/paragraph) and axis 2 (interior gradient). Every
+rung so far MEASURED the class-position table from the manuscript. This
+rung asks the standing &quot;derive from principles&quot; question at the level
+that is honestly buildable.
+
+SCOPE DISCLOSURE (stated first): &quot;principles&quot; here means POSITION-
+INDEPENDENT CLASS PROPERTIES measured from the token stream — glyph
+frequency, gallows-membership, word length — NONE of which carry any
+position information. Showing that a class&#x27;s line-PLACEMENT loading is a
+lawful function of these is a REDUCTIVE derivation: the discipline
+stops being an arbitrary ~13-number per-axis table and becomes a few
+coefficients on interpretable properties. It is NOT derivation from a
+mechanism outside the manuscript (scribal layout physics, paragraph
+mechanics) — that remains the open frontier and is not claimed here.
+
+DECLARED PRINCIPLES (fixed before running; all position-free, per
+class over the top-CLASS_K first-EVA-glyph classes + OTHER):
+  freq    = log token frequency of the class in Currier B
+  gallows = 1 if the class glyph is a gallows base (t/k/p/f) else 0
+  wlen    = mean word length of the class&#x27;s tokens
+(z-scored; a constant term is included.)
+
+METHOD: rebuild B&#x27;s rank-3 decomposition (cross-checked against the
+N6d axes); for each shared axis k in {1,2}, ordinary least squares
+A_k ~ 1 + freq + gallows + wlen over the classes, giving predicted
+loadings Ahat_k and R^2. Calibration: the same fit on N_PERM
+permutations of A_k gives a chance-R^2 null; excess = R^2 - mean null.
+Then the DERIVED table replaces axis-1 and axis-2 loadings with
+Ahat_1, Ahat_2 (profiles, row/col/grand, and the B-specific axis 3 kept
+as measured), refits the single strength knob on interior gain, places
+B&#x27;s own lines, and its line-group distance D_line is scored against the
+phase-109 contiguous-halves bar (bar, noise scale, and B&#x27;s feature
+vector are loaded from the committed N6 record; run ABORTS on any
+cross-check mismatch). Axis 3&#x27;s R^2 is reported observationally
+(expected LOW — it is B-specific and not claimed derivable).
+
+PRE-REGISTERED VERDICTS:
+  gate_failed          — N6/N6d cross-checks fail to reproduce.
+  shared_axes_derived  — BOTH shared axes have R^2 excess &gt;= R2_EXCESS
+                         over their shuffle null AND the derived-axes
+                         table closes the line group (D_line &lt;=
+                         bar_line): the two manuscript-wide rules reduce
+                         to frequency + gallows + length. SUGGESTIVE,
+                         quarantined — the discipline is explained, not
+                         just described, at the reductive level.
+  axis1_only           — only axis 1 (edge) qualifies (excess and, with
+                         axis 2 kept measured, closure holds): the
+                         edge rule reduces to the principles (Grove/
+                         LAAFU made quantitative), the interior gradient
+                         does not. SUGGESTIVE, quarantined.
+  not_derived          — neither shared axis reduces / the derived
+                         table fails to close: the discipline is not
+                         captured by these principles; corpse logged
+                         with the per-axis R^2 so the next candidate
+                         principle set is informed.
+Vocabulary discipline: a reduction of statistics to other statistics;
+nothing about the manuscript&#x27;s meaning is claimed or decoded.</pre>
+<h2>Parameters</h2><p class="muted">Edit a value to override it for an in-browser run (the script itself is never modified).</p><table><tr><th>name</th><th>type</th><th>value</th></tr>
+<tr><td><code>SEED</code></td><td>int</td><td><input class="param" data-param="SEED" value="126"></td></tr>
+<tr><td><code>S7_SEED</code></td><td>int</td><td><input class="param" data-param="S7_SEED" value="115"></td></tr>
+<tr><td><code>N4_SEED</code></td><td>int</td><td><input class="param" data-param="N4_SEED" value="118"></td></tr>
+<tr><td><code>N_GEN_SEEDS</code></td><td>int</td><td><input class="param" data-param="N_GEN_SEEDS" value="5"></td></tr>
+<tr><td><code>N_PERM</code></td><td>int</td><td><input class="param" data-param="N_PERM" value="200"></td></tr>
+<tr><td><code>R2_EXCESS</code></td><td>float</td><td><input class="param" data-param="R2_EXCESS" value="0.25"></td></tr>
+<tr><td><code>CLASS_K</code></td><td>int</td><td><input class="param" data-param="CLASS_K" value="12"></td></tr>
+<tr><td><code>MIN_LINE_WORDS</code></td><td>int</td><td><input class="param" data-param="MIN_LINE_WORDS" value="5"></td></tr>
+<tr><td><code>HOLDOUT_FRAC</code></td><td>float</td><td><input class="param" data-param="HOLDOUT_FRAC" value="0.2"></td></tr>
+<tr><td><code>ALPHA</code></td><td>float</td><td><input class="param" data-param="ALPHA" value="0.5"></td></tr>
+<tr><td><code>S7_FEATURES</code></td><td>json</td><td><input class="param" data-param="S7_FEATURES" value="[&#x27;len&#x27;, &#x27;first&#x27;, &#x27;last&#x27;, &#x27;gallows&#x27;]"></td></tr>
+<tr><td><code>INTERIOR</code></td><td>json</td><td><input class="param" data-param="INTERIOR" value="[&#x27;m1&#x27;, &#x27;m2&#x27;, &#x27;m3&#x27;]"></td></tr>
+<tr><td><code>BINS</code></td><td>json</td><td><input class="param" data-param="BINS" value="[&#x27;p1&#x27;, &#x27;p2&#x27;, &#x27;m1&#x27;, &#x27;m2&#x27;, &#x27;m3&#x27;, &#x27;pL-1&#x27;, &#x27;pL&#x27;]"></td></tr>
+<tr><td><code>LINE_GROUP</code></td><td>json</td><td><input class="param" data-param="LINE_GROUP" value="[&#x27;line_init_jsd&#x27;, &#x27;line_final_jsd&#x27;, &#x27;interior_gain&#x27;, &#x27;r_pos&#x27;, &#x27;r_bi&#x27;]"></td></tr>
+<tr><td><code>N6_JSON</code></td><td>str</td><td><input class="param" data-param="N6_JSON" value="line_discipline_tournament.json"></td></tr>
+<tr><td><code>N6D_JSON</code></td><td>str</td><td><input class="param" data-param="N6D_JSON" value="line_discipline_rank3.json"></td></tr>
+</table>
+<h2>Run it in your browser</h2><p class="muted">Python + numpy on WebAssembly, entirely on your machine — nothing is uploaded. First run downloads the runtime (~15 MB) and the repository data pack (~9 MB); both are cached afterwards. Expect it to be slower than a native run.</p><p><button id="run-btn">&#9654; Run</button> <button id="stop-btn">Stop</button> <span id="run-status" class="muted"></span></p><pre id="run-out"></pre>
+<script>window.VAIS_TEST = {"stem": "line_discipline_derivation", "specs": {"SEED": {"type": "int", "container": null}, "S7_SEED": {"type": "int", "container": null}, "N4_SEED": {"type": "int", "container": null}, "N_GEN_SEEDS": {"type": "int", "container": null}, "N_PERM": {"type": "int", "container": null}, "R2_EXCESS": {"type": "float", "container": null}, "CLASS_K": {"type": "int", "container": null}, "MIN_LINE_WORDS": {"type": "int", "container": null}, "HOLDOUT_FRAC": {"type": "float", "container": null}, "ALPHA": {"type": "float", "container": null}, "S7_FEATURES": {"type": "json", "container": "tuple"}, "INTERIOR": {"type": "json", "container": "set"}, "BINS": {"type": "json", "container": "tuple"}, "LINE_GROUP": {"type": "json", "container": "tuple"}, "N6_JSON": {"type": "str", "container": null}, "N6D_JSON": {"type": "str", "container": null}}, "base": "../", "baselineSeconds": 0};</script><script src="../runner.js"></script>
+<h2>Run it locally (full speed, byte-exact)</h2>
+<pre>git clone https://github.com/Vineyardcode/vais
+cd vais
+pip install numpy flask
+python scripts/line_discipline_derivation.py        # this test; output also lands in results/
+python webui/server.py          # or the full interactive UI at localhost:5000</pre>
+<h2>Golden output (PYTHONHASHSEED=0)</h2><details><summary>show</summary><pre id="golden-pre">============================================================================
+LINE-DISCIPLINE PRINCIPLED DERIVATION (S3 rung 4) — reduce the shared axes? (N6g)
+============================================================================
+seed=126 perms=200 r2_excess&gt;=0.25; principles = log-freq + gallows + word-length (position-free)
+  B features + bar reproduce N6 (bar_line 7.489)  VERIFIED
+  rank-3 decomposition reproduces the N6d axes  VERIFIED
+  axis1: R^2 0.527  null 0.238  excess +0.289   beta freq+0.47 gallows+0.21 wlen-0.29
+  axis2: R^2 0.498  null 0.252  excess +0.246   beta freq-0.12 gallows-0.22 wlen-0.21
+  axis3: R^2 0.415  null 0.259  excess +0.156   beta freq+0.09 gallows+0.44 wlen+0.00
+  derived-axes table (Ahat_1, Ahat_2 + measured axis3), lambda 2.5: D_line 9.039 (bar 7.489; measured rank-3 was 6.882)
+
+  ADJUDICATION (pre-registered):
+    axis1 excess +0.289 (&gt;= 0.25: True); axis2 excess +0.246 (False); derived table closes: False
+    (axis3 excess +0.156 — reported, expected low: B-specific)
+    NOT DERIVED: the shared axes are not captured by log-frequency + gallows + word-length at the closure bar — the discipline is not (yet) reducible to these principles. Corpse logged with per-axis R^2 for the next candidate set.
+
+  -&gt; results/line_discipline_derivation.json
+</pre></details><footer>Static mirror — read-only. Generated 2026-07-21 from commit <code>5ff0521</code>. 
+To run any test with your own parameters, clone
+<a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
+(<code>python webui/server.py</code>). All numbers reproduce at
+PYTHONHASHSEED=0.</footer></main></body></html>
