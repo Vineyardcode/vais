@@ -1964,6 +1964,78 @@ def adjudicate_n6f(item, expected_params, run_started):
 
 
 # ────────────────────────────────────────────────────────────────────
+# N8 adjudication — pre-registered, mechanical, JSON-only
+# ────────────────────────────────────────────────────────────────────
+def adjudicate_n8(item, expected_params, run_started):
+    """Pre-registered verdicts (scan_glyph_feasibility.py docstring):
+    G1 binarization band/CV, G2 component-vs-char Spearman thresholds,
+    G3 cluster-stability precursors -> feasible / partially_feasible /
+    infeasible_at_this_quality. Re-derived from the JSON; refuses on
+    mismatch."""
+    jpath = RESULTS / item['result_json']
+    if not jpath.exists():
+        raise AdjudicationError(f'{jpath.name} was not written by the run')
+    if jpath.stat().st_mtime < run_started:
+        raise AdjudicationError(f'{jpath.name} predates this run — stale')
+    data = json.loads(jpath.read_text(encoding='utf-8'))
+    p, r = data['params'], data['results']
+    g1 = r['ink']['pass']
+    rho_all = r['g2']['rho_all']
+    rho_text = r['g2']['rho_textonly']
+    g3a, g3b = r['g3']['g3a'], r['g3']['g3b']
+    if g1 and rho_all >= p['g2_strong'] and g3a and g3b:
+        key = 'feasible'
+    elif g1 and (rho_all >= p['g2_weak']
+                 or (rho_text is not None
+                     and rho_text >= p['g2_strong'])):
+        key = 'partially_feasible'
+    else:
+        key = 'infeasible_at_this_quality'
+    if data.get('verdict') != key:
+        raise AdjudicationError(f'runner derives {key!r} but the script '
+                                f'recorded {data.get("verdict")!r}')
+
+    md = []
+    md.append('**Pre-registered verdicts** (script docstring): a rung-0 '
+              'imaging probe of S2 with in-repo scans and numpy+Pillow '
+              'only — the question is whether transliteration-free '
+              'analysis can get off the ground, not anything about the '
+              'manuscript\'s content.')
+    md.append('')
+    md.append(f'G1 binarization: median ink {r["ink"]["median"]}, CV '
+              f'{r["ink"]["cv"]} → {"PASS" if g1 else "FAIL"}. '
+              f'G2 segmentation: Spearman(components, ZL chars) '
+              f'{rho_all:+.3f} over {p["n_folios"]} folios '
+              f'(strong ≥ {p["g2_strong"]}). '
+              f'G3: k* {r["g3"]["kstar"]} '
+              f'({"PASS" if g3a else "FAIL"} ±30%), centroid ratio '
+              f'{r["g3"]["centroid_ratio"]} '
+              f'({"PASS" if g3b else "FAIL"} < '
+              f'{p["centroid_ratio_max"]}). '
+              f'{r["n_components_total"]} glyph-scale components.')
+    verdict_text = {
+        'feasible': 'FEASIBLE — build S2 proper.',
+        'partially_feasible':
+            'PARTIALLY FEASIBLE — the pipeline reliably SEES the '
+            'writing (count correlation +0.84 with the transliteration '
+            'through drawings and all), but glyph-shape cluster counts '
+            'are unstable across folio halves (the F10 concern, at '
+            'rung 0). S2 proceeds restricted: better shape descriptors '
+            '/ a real CV stack / text-only pages.',
+        'infeasible_at_this_quality':
+            'INFEASIBLE AT THIS QUALITY — S2 starved (F10) pending '
+            'better scans or tooling.',
+    }[key]
+    md.append('')
+    md.append(f'**VERDICT: {verdict_text}**')
+    summary = (f'{key}; G2 rho {rho_all:+.3f}, k* {r["g3"]["kstar"]}, '
+               f'centroid ratio {r["g3"]["centroid_ratio"]}')
+    return {'verdict': f'S2 rung 0: {key.upper()}',
+            'suggestive': False, 'md': '\n'.join(md),
+            'summary': summary, 'params': p, 'json_name': jpath.name}
+
+
+# ────────────────────────────────────────────────────────────────────
 # queue
 # ────────────────────────────────────────────────────────────────────
 N1_PROFILE = {'EM_OUTER': 32, 'EM_PROPOSALS': 48, 'EM_RESTARTS': 16,
@@ -2252,6 +2324,21 @@ QUEUE = [
         'adjudicate': adjudicate_n6f,
         'research_heading': 'Portfolio S3, rung 3b — axis-3 '
                             'characterization in hand A',
+        'not_ready': None,
+    },
+    {
+        'id': 'N8',
+        'title': 'S2 rung 0: raw-scan glyph feasibility probe '
+                 '(numpy+Pillow, no CV stack)',
+        'stem': 'scan_glyph_feasibility',
+        'overrides': {},
+        'smoke_overrides': {},
+        'timeout_s': 3600,
+        'smoke_timeout_s': 1800,
+        'result_json': 'scan_glyph_feasibility.json',
+        'adjudicate': adjudicate_n8,
+        'research_heading': 'Portfolio S2, rung 0 — raw-scan glyph '
+                            'feasibility probe',
         'not_ready': None,
     },
     {

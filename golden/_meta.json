@@ -1337,5 +1337,14 @@
   "results_files_touched": [
    "line_discipline_axis3_handA.json"
   ]
+ },
+ "scan_glyph_feasibility": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 37.4,
+  "stdout_bytes": 2862,
+  "results_files_touched": [
+   "scan_glyph_feasibility.json"
+  ]
  }
 }
