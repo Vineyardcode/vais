@@ -1364,5 +1364,14 @@
   "results_files_touched": [
    "egyptian_determinative_test.json"
   ]
+ },
+ "line_discipline_derivation": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 65.02,
+  "stdout_bytes": 1317,
+  "results_files_touched": [
+   "line_discipline_derivation.json"
+  ]
  }
 }

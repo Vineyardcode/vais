@@ -1,0 +1,89 @@
+{
+ "params": {
+  "seed": 126,
+  "n_perm": 200,
+  "r2_excess": 0.25,
+  "principles": [
+   "log_freq",
+   "gallows",
+   "wlen"
+  ],
+  "lambda_grid": [
+   0.25,
+   0.5,
+   0.75,
+   1.0,
+   1.25,
+   1.5,
+   1.75,
+   2.0,
+   2.25,
+   2.5,
+   2.75,
+   3.0,
+   3.25,
+   3.5,
+   3.75,
+   4.0
+  ],
+  "n6_json": "line_discipline_tournament.json",
+  "n6d_json": "line_discipline_rank3.json"
+ },
+ "results": {
+  "fit": {
+   "1": {
+    "r2": 0.5273,
+    "null_r2": 0.2379,
+    "excess": 0.2894,
+    "beta": {
+     "const": -0.0491,
+     "freq": 0.4721,
+     "gallows": 0.2127,
+     "wlen": -0.2916
+    }
+   },
+   "2": {
+    "r2": 0.4981,
+    "null_r2": 0.2517,
+    "excess": 0.2464,
+    "beta": {
+     "const": 0.0509,
+     "freq": -0.119,
+     "gallows": -0.2207,
+     "wlen": -0.2119
+    }
+   },
+   "3": {
+    "r2": 0.4154,
+    "null_r2": 0.2592,
+    "excess": 0.1562,
+    "beta": {
+     "const": -0.1005,
+     "freq": 0.087,
+     "gallows": 0.4357,
+     "wlen": 0.0007
+    }
+   }
+  },
+  "derived_lambda": 2.5,
+  "derived_d_line": 9.039,
+  "bar_line": 7.489,
+  "measured_rank3_d_line": 6.882,
+  "classes": [
+   "#",
+   "a",
+   "ch",
+   "d",
+   "k",
+   "l",
+   "o",
+   "p",
+   "q",
+   "s",
+   "sh",
+   "t",
+   "y"
+  ]
+ },
+ "verdict": "not_derived"
+}

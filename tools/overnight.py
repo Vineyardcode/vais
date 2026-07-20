@@ -2212,6 +2212,95 @@ def adjudicate_n10(item, expected_params, run_started):
 
 
 # ────────────────────────────────────────────────────────────────────
+# N6g adjudication — pre-registered, mechanical, JSON-only
+# ────────────────────────────────────────────────────────────────────
+def adjudicate_n6g(item, expected_params, run_started):
+    """Pre-registered outcomes (line_discipline_derivation.py
+    docstring): do the two shared axes reduce to position-independent
+    class properties (log-freq + gallows + word-length)? Both axes'
+    R^2-excess >= threshold AND the derived-axes table closes the moat
+    -> shared_axes_derived; axis 1 only -> axis1_only; else
+    not_derived. Re-derived from the JSON; refuses on mismatch."""
+    jpath = RESULTS / item['result_json']
+    if not jpath.exists():
+        raise AdjudicationError(f'{jpath.name} was not written by the run')
+    if jpath.stat().st_mtime < run_started:
+        raise AdjudicationError(f'{jpath.name} predates this run — stale')
+    data = json.loads(jpath.read_text(encoding='utf-8'))
+    p, r = data['params'], data['results']
+    fit = r['fit']
+    thr = p['r2_excess']
+    a1 = fit['1']['excess'] >= thr
+    a2 = fit['2']['excess'] >= thr
+    closes = r['derived_d_line'] <= r['bar_line']
+    if a1 and a2 and closes:
+        key = 'shared_axes_derived'
+    elif a1 and closes:
+        key = 'axis1_only'
+    else:
+        key = 'not_derived'
+    if data.get('verdict') != key:
+        raise AdjudicationError(f'runner derives {key!r} but the script '
+                                f'recorded {data.get("verdict")!r}')
+    suggestive = key in ('shared_axes_derived', 'axis1_only')
+
+    md = []
+    md.append('**Pre-registered outcomes** (script docstring): "derive" '
+              'means REDUCE the shared axes to position-independent class '
+              'properties (log-frequency + gallows-membership + word-'
+              'length) — not external layout physics, which stays open. '
+              f'An axis is reduced if its OLS R^2 beats a shuffle null by '
+              f'>= {thr} AND the derived table still closes the moat.')
+    md.append('')
+    md.append('| axis | R² | null R² | excess | freq β | gallows β | '
+              'wlen β |')
+    md.append('|---|---|---|---|---|---|---|')
+    for k in ('1', '2', '3'):
+        f = fit[k]
+        tag = {'1': ' (edge, shared)', '2': ' (interior, shared)',
+               '3': ' (pre-final, B-only)'}[k]
+        md.append(f'| {k}{tag} | {f["r2"]} | {f["null_r2"]} | '
+                  f'{f["excess"]:+.3f} | {f["beta"]["freq"]:+.2f} | '
+                  f'{f["beta"]["gallows"]:+.2f} | {f["beta"]["wlen"]:+.2f} |')
+    md.append('')
+    md.append(f'Derived-axes table (Âx₁, Âx₂ + measured axis 3): D_line '
+              f'{r["derived_d_line"]} vs bar {r["bar_line"]} (measured '
+              f'rank-3 achieved {r["measured_rank3_d_line"]}).')
+    verdict_text = {
+        'shared_axes_derived':
+            'SHARED AXES DERIVED — both manuscript-wide rules reduce to '
+            'the principles and the derived table closes the moat. '
+            'SUGGESTIVE, quarantined.',
+        'axis1_only':
+            'AXIS 1 ONLY — the edge rule reduces (Grove/LAAFU '
+            'quantified) with closure; the interior gradient does not. '
+            'SUGGESTIVE, quarantined.',
+        'not_derived':
+            'NOT DERIVED (partial reduction, corpse logged) — the three '
+            'principles explain a SUBSTANTIAL, above-chance share of '
+            f'each shared axis (edge R² {fit["1"]["r2"]}, interior '
+            f'{fit["2"]["r2"]}, both ~2× the shuffle null) with '
+            'interpretable coefficients (frequent, gallows-initial, '
+            'short words → line edges — Grove/LAAFU made quantitative), '
+            'but substituting the ~50%-fidelity predictions reopens the '
+            f'moat (D_line {r["derived_d_line"]} > bar {r["bar_line"]}). '
+            'The strong claim ("the shared axes ARE these properties") '
+            'is killed; the weak claim (they are ~half these properties, '
+            'plus real residual structure the interior gradient carries '
+            'on its own) is documented. Richer principle sets are the '
+            'informed next candidate.',
+    }[key]
+    md.append('')
+    md.append(f'**VERDICT: {verdict_text}**')
+    summary = (f'{key}; axis1 excess {fit["1"]["excess"]:+.3f}, axis2 '
+               f'{fit["2"]["excess"]:+.3f} (thr {thr}), derived D_line '
+               f'{r["derived_d_line"]} vs bar {r["bar_line"]}')
+    return {'verdict': f'S3 rung 4: {key.upper()}',
+            'suggestive': suggestive, 'md': '\n'.join(md),
+            'summary': summary, 'params': p, 'json_name': jpath.name}
+
+
+# ────────────────────────────────────────────────────────────────────
 # queue
 # ────────────────────────────────────────────────────────────────────
 N1_PROFILE = {'EM_OUTER': 32, 'EM_PROPOSALS': 48, 'EM_RESTARTS': 16,
@@ -2545,6 +2634,21 @@ QUEUE = [
         'adjudicate': adjudicate_n10,
         'research_heading': 'Legacy-hypothesis trial — gallows as '
                             'semantic determinatives (controlled)',
+        'not_ready': None,
+    },
+    {
+        'id': 'N6g',
+        'title': 'S3 rung 4: principled derivation — do the two shared '
+                 'axes reduce to class properties?',
+        'stem': 'line_discipline_derivation',
+        'overrides': {},
+        'smoke_overrides': {},
+        'timeout_s': 1800,
+        'smoke_timeout_s': 900,
+        'result_json': 'line_discipline_derivation.json',
+        'adjudicate': adjudicate_n6g,
+        'research_heading': 'Portfolio S3, rung 4 — principled '
+                            '(reductive) derivation of the shared axes',
         'not_ready': None,
     },
     {

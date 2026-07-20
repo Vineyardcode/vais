@@ -46,6 +46,7 @@ CHARTER_ERA = frozenset({
     "transliteration_floor_calibration", "transliteration_significance",
     "scan_glyph_feasibility", "hapax_locus_readjudication",
     "hapax_clustering_calibration", "egyptian_determinative_test",
+    "line_discipline_derivation",
 })
 
 OUT = ROOT / "docs"
