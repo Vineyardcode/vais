@@ -22,6 +22,35 @@ Generated predictions from the Egyptian writing system model:
   P5: Prefix × gallows × suffix = systematic classification grid
   P6: Co-occurring words on same folio share determinatives > chance
 
+────────────────────────────────────────────────────────────────────────
+STATUS ERRATA (2026-07-20, added on review; code/outputs unchanged):
+This is a PRE-CHARTER, UNCONTROLLED test and it is NOT evidence for the
+Egyptian-hieroglyphic hypothesis. It has no standing in the adjudicated
+ledger (RESEARCH.md Phase 5) and nothing in the research program rests
+on it. Specifically:
+  - It runs NO negative control. Its "Prediction Scorecard" reports
+    5/5 CONFIRMED, but no prediction was ever checked against shuffled
+    text, plain Latin, or the grille/self-citation gibberish controls.
+    A method that confirms all of its own predictions with no chance of
+    disconfirmation has demonstrated nothing (charter failure mode F3,
+    control-free pipeline; F5, single-statistic advocacy).
+  - Its premise — "gallows CONFIRMED as semantic determinatives with
+    four mapped domains" — is asserted from an earlier test of the same
+    uncontrolled kind, not established. It is an anchor of unknown
+    strength (F7).
+  - The predictions are flexible enough (phonetic complements,
+    logograms, consonantal skeletons, a Hermetic quaternary) that some
+    would "confirm" on many structured token streams; their
+    discriminative power was never measured.
+Verdict: this file is retained (nothing is hard-deleted) as a museum
+piece of the pre-charter era and as a template for what the control
+battery exists to prevent. To become evidence it would need
+registration, negative controls, and a pre-declared kill criterion —
+none of which it has. Read its conclusions as "an Egyptian-structured
+reading can be TOLD about the manuscript", never as "the manuscript IS
+Egyptian-structured".
+────────────────────────────────────────────────────────────────────────
+
 Historical context:
   - Horapollo's Hieroglyphica rediscovered ~1419 (Voynich dating window)
   - Medieval alchemists believed Egyptian priests encoded wisdom in symbols

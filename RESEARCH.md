@@ -549,7 +549,14 @@ numbering continues across tiers. Full evidence chains: Phase 8.)*
     bar; burstiness stable ~0.58-0.60). The rare-word sectional
     clustering is a property of the running text, now with its
     layout-artifact share measured. Reproduction-gated
-    (hapax_locus_readjudication).
+    (hapax_locus_readjudication). SCOPE (N9, 2026-07-20): this entry
+    claims only that the clustering is REAL and locus-robust — NOT that
+    it indicates language. The source test's "clustered → language"
+    inference is uncalibrated: on the control battery, real-language
+    corpora do not cluster (Latin B +0.07, Italian +0.01) while a
+    non-language hoax control clusters strongly (self-citation +0.27),
+    so hapax burstiness is not diagnostic of language
+    (hapax_clustering_calibration).
 16. **Raw-scan segmentation sees the text; shape clustering does not
     yet stabilize** (S2 rung 0 / N8, 2026-07-20): a numpy+Pillow
     pipeline over 30 seeded folio scans binarizes stably and its

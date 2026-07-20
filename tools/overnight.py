@@ -2036,6 +2036,97 @@ def adjudicate_n8(item, expected_params, run_started):
 
 
 # ────────────────────────────────────────────────────────────────────
+# N9 adjudication — pre-registered, mechanical, JSON-only
+# ────────────────────────────────────────────────────────────────────
+def adjudicate_n9(item, expected_params, run_started):
+    """Pre-registered outcomes (hapax_clustering_calibration.py
+    docstring): does Part D's hapax-burstiness threshold separate
+    language from non-language on the control battery?
+    discriminator_valid / _broken / _weak / inconclusive. Re-derived
+    from the JSON; refuses on mismatch."""
+    jpath = RESULTS / item['result_json']
+    if not jpath.exists():
+        raise AdjudicationError(f'{jpath.name} was not written by the run')
+    if jpath.stat().st_mtime < run_started:
+        raise AdjudicationError(f'{jpath.name} predates this run — stale')
+    data = json.loads(jpath.read_text(encoding='utf-8'))
+    rows, p = data['rows'], data['params']
+    thr = p['b_clustered']
+    bP1, bP2 = rows['P1_latin']['B'], rows['P2_italian']['B']
+    negs = [rows[n]['B'] for n in ('N3_grille', 'N4_self_citation')
+            if rows[n]['B'] is not None]
+    pos_clustered = bP1 > thr and bP2 > thr
+    if not pos_clustered:
+        key = 'inconclusive'
+    elif negs and max(negs) >= min(bP1, bP2):
+        key = 'discriminator_broken'
+    elif not any(b > thr for b in negs):
+        key = 'discriminator_valid'
+    else:
+        key = 'discriminator_weak'
+    if data.get('verdict') != key:
+        raise AdjudicationError(f'runner derives {key!r} but the script '
+                                f'recorded {data.get("verdict")!r}')
+
+    md = []
+    md.append('**Pre-registered outcomes** (script docstring): Part D '
+              f'reads hapax burstiness B > {thr} as "language". This '
+              'calibration runs that exact statistic on the control '
+              'battery. Hapax = strict count==1 on the collapsed '
+              'vocabulary (Part D\'s definition, NOT relaxed to "rare '
+              'words").')
+    md.append('')
+    md.append('| corpus | class | burstiness B | hapax rate | TTR |')
+    md.append('|---|---|---|---|---|')
+    for name, r in rows.items():
+        b = 'n/a (<10 hapax)' if r['B'] is None else f'{r["B"]:+.3f}'
+        hr = r.get('hapax_rate', '—')
+        tt = r.get('ttr', '—')
+        md.append(f'| {name} | {r["class"]} | {b} | {hr} | {tt} |')
+    md.append('')
+    n4 = rows['N4_self_citation']['B']
+    verdict_text = {
+        'inconclusive':
+            'INCONCLUSIVE by the pre-registered criteria — which '
+            'required the language positives to cluster, and they do '
+            f'NOT (Latin {bP1:+.3f}, Italian {bP2:+.3f}, both below '
+            f'{thr}). The controls are single-work corpora with no '
+            'manuscript-like sections, so they cannot exhibit *topical* '
+            'hapax clustering; the battery as built cannot fully test '
+            'the topical version of the claim. But two observations '
+            '(reported, not re-adjudicated) independently undermine Part '
+            'D\'s inference as stated: (a) high hapax burstiness is NOT '
+            'an intrinsic property of language text — real Latin/Italian '
+            f'sit near zero; (b) a NON-language hoax control '
+            f'(N4 self-citation, B {n4:+.3f}) clusters more strongly '
+            'than anything else, so burstiness alone is not diagnostic '
+            'of language. Net: Part D\'s "clustered → language" '
+            'inference is uncalibrated and unsupported by these '
+            'controls; a properly powered re-test needs multi-topic '
+            'language and cipher corpora (a registered future rung). '
+            'Ledger entry 14 — which claims only that the VMS clustering '
+            'is real and locus-robust, never that it proves language — '
+            'is unaffected and now carries a pointer to this result.',
+        'discriminator_broken':
+            'DISCRIMINATOR BROKEN — a non-language control clusters at '
+            'or above the language positives; Part D\'s inference '
+            'abandoned.',
+        'discriminator_valid':
+            'DISCRIMINATOR VALID — positives cluster, negatives do not.',
+        'discriminator_weak':
+            'DISCRIMINATOR WEAK — negatives cluster but below the '
+            'positives; inference downgraded to suggestive-only.',
+    }[key]
+    md.append(f'**VERDICT: {verdict_text}**')
+    summary = (f'{key}; P1 {bP1:+.3f}, P2 {bP2:+.3f}, N4 {n4:+.3f} '
+               f'(threshold {thr})')
+    return {'verdict': f'N9 hapax-discriminator calibration: '
+                       f'{key.upper()}',
+            'suggestive': False, 'md': '\n'.join(md),
+            'summary': summary, 'params': p, 'json_name': jpath.name}
+
+
+# ────────────────────────────────────────────────────────────────────
 # queue
 # ────────────────────────────────────────────────────────────────────
 N1_PROFILE = {'EM_OUTER': 32, 'EM_PROPOSALS': 48, 'EM_RESTARTS': 16,
@@ -2339,6 +2430,21 @@ QUEUE = [
         'adjudicate': adjudicate_n8,
         'research_heading': 'Portfolio S2, rung 0 — raw-scan glyph '
                             'feasibility probe',
+        'not_ready': None,
+    },
+    {
+        'id': 'N9',
+        'title': 'Hapax-clustering discriminator calibration: does '
+                 '"clustered → language" separate the control classes?',
+        'stem': 'hapax_clustering_calibration',
+        'overrides': {},
+        'smoke_overrides': {},
+        'timeout_s': 1800,
+        'smoke_timeout_s': 900,
+        'result_json': 'hapax_clustering_calibration.json',
+        'adjudicate': adjudicate_n9,
+        'research_heading': 'Legacy-test audit — hapax-clustering '
+                            'discriminator calibration',
         'not_ready': None,
     },
     {

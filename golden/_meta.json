@@ -324,7 +324,7 @@
  "egyptian_connection": {
   "status": "ok",
   "returncode": 0,
-  "duration_s": 0.79,
+  "duration_s": 1.81,
   "stdout_bytes": 26390,
   "results_files_touched": [
    "egyptian_connection_results.json"
@@ -1345,6 +1345,15 @@
   "stdout_bytes": 2862,
   "results_files_touched": [
    "scan_glyph_feasibility.json"
+  ]
+ },
+ "hapax_clustering_calibration": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.95,
+  "stdout_bytes": 1276,
+  "results_files_touched": [
+   "hapax_clustering_calibration.json"
   ]
  }
 }

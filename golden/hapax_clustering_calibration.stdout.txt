@@ -1,0 +1,16 @@
+============================================================================
+HAPAX-CLUSTERING DISCRIMINATOR CALIBRATION (N9)
+============================================================================
+Part D threshold: B > 0.1 = CLUSTERED (= "language"). Question: does it separate language from non-language on the controls?
+  (hapax = strict count==1 on the collapsed vocabulary, as in Part D — NOT relaxed to "rare words")
+  P1_latin           [language+] B +0.068 (uniform)  hapax_rate 0.129  ttr 0.226  (4908 hapaxes / 38003 tok)
+  P2_italian         [language+] B +0.007 (uniform)  hapax_rate 0.103  ttr 0.170  (3932 hapaxes / 38006 tok)
+  P4_verbose_cipher  [cipher   ] B +0.062 (uniform)  hapax_rate 0.136  ttr 0.233  (5174 hapaxes / 38003 tok)
+  N3_grille          [nonlang- ] B    n/a  (<10 hapaxes)
+  N4_self_citation   [nonlang- ] B +0.272 (CLUSTERED)  hapax_rate 0.090  ttr 0.184  (3438 hapaxes / 38002 tok)
+  VMS_wordshuffle    [reference] B +0.051 (uniform)  hapax_rate 0.058  ttr 0.097  (2299 hapaxes / 39645 tok)
+
+  ADJUDICATION (pre-registered):
+    INCONCLUSIVE: language positives are not both clustered (P1 +0.068, P2 +0.007) — the statistic behaves unexpectedly on controls; no inference.
+
+  -> results/hapax_clustering_calibration.json
