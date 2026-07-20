@@ -1,36 +1,48 @@
-# CLAUDE.md – CzechLens Project
+# CLAUDE.md — VAIS (Voynich Analysis Interactive Suite)
 
-## Core Behavior
-- Do not rush. Verify all output. Run tests before declaring done.
-- Use plan mode aggressively – before writing code, output a plan in <thinking> tags.
-- After implementing a feature, provide a validation checklist and wait for my confirmation.
+Agent instructions for this repository. (Historical note: an earlier
+CLAUDE.md here belonged to an unrelated project and is preserved in
+attic/CLAUDE_czechlens_stale.md; it does not apply.)
 
-## Extended Thinking
-- You will be run with extended thinking enabled (set in API/UI). Use the available thinking budget to reason through complex steps.
+## Binding research rules
 
-## Parallel Workflow
-- You handle planning and high‑level instructions.
-- For long‑running tasks (crawling, batch AI), output a standalone Python/shell script. Do not attempt to run it in this conversation.
+- The anti-crackpot charter (RESEARCH.md, Phase 0) is binding law:
+  controls before manuscript, counted degrees of freedom, held-out
+  validation, pre-registered kill criteria, and vocabulary discipline —
+  nothing is ever called "decoded"; the ceiling is "consistent with".
+- New instruments register their criteria in the script docstring
+  BEFORE first execution. Results are adjudicated against those
+  criteria only. A kill is a valid result: log the corpse with the same
+  prominence as a positive.
+- Positive/decode-like findings are quarantined as SUGGESTIVE —
+  flagged, never promoted without operator review.
 
-## Watch the Harness
-- I (the human) will evaluate your output by running tests and checking results. You will not assume success until I confirm.
+## Operational rules (each learned the hard way)
 
-## Plan Mode Details
-- For any non‑trivial task, first output:
-  1. What you will build
-  2. How you will test it
-  3. What could go wrong
-- Only after that, write code.
+- `python sanity_checks/run_all.py` must print ALL SANITY CHECKS PASS
+  before any commit.
+- Load the manuscript ONLY via `common.core.load_folio_lines_ivtff` /
+  `ivtff_clean_words` (finding T1: legacy loaders leak markup tokens).
+  Use `locus_types={'P'}` when continuous text is required.
+- Determinism: outputs must reproduce at PYTHONHASHSEED=0. New or
+  output-changed tests get golden refs:
+  `python tools/run_baseline.py --outdir golden --hashseed 0 --only <stem>`
+  Never modify other tests' goldens.
+- Expose tunables as module-level UPPERCASE constants (the web UI, the
+  static site, and the in-browser runner discover them automatically).
+- Never hard-delete anything — superseded files go to attic/.
+- Long research runs go through `tools/overnight.py` (queued items,
+  pre-registered adjudication, results committed to overnight/<date>
+  branches — never to main by the runner).
+- After result-changing commits, regenerate the public mirror:
+  `python tools/build_site.py`, commit docs/.
+- Do not push to the remote without the operator's approval.
 
-## Code Quality
-- Include error handling for edge cases.
-- Use retries with exponential backoff for external APIs.
+## Orientation
 
-## Output Format
-- Use `<thinking>` tags for reasoning (these render fine in VS Code chat).
-- Use fenced code blocks (` ``` `) for all code samples.
-- **NEVER use `<validation_checklist>`, `<code>`, or any other custom XML wrapper tags.**
-  They collapse into unreadable raw text in VS Code chat.
-  Write validation steps as a plain Markdown bullet list instead, for example:
-  - [ ] V4.1 Load extension — confirm no errors in chrome://extensions
-  - [ ] V4.2 Press Space+T — overlay appears with subtitle text
+- RESEARCH.md — charter, assumption stack, strategy portfolio, the
+  adjudicated ledger, and the accepted Phase 8 synthesis.
+- CONTRIBUTING.md — the test format and contribution process.
+- CREDITS.md / LICENSE — data provenance and licensing scope.
+- INVENTORY.md — the test catalog (regenerate via tools/gen_inventory.py).
+- results/overnight_state.json — queue state and verdicts.
