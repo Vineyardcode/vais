@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>scan_glyph_feasibility — VAIS - Voynich Analysis Interactive Suite</title><style>
+:root { --bg:#ffffff; --fg:#1a1a1a; --muted:#666; --line:#ddd;
+        --code:#f5f5f5; --accent:#7a4a1e; --warn:#a33; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#141414; --fg:#ddd; --muted:#999; --line:#333;
+          --code:#1e1e1e; --accent:#d9a05b; --warn:#e77; } }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--fg);
+       font:16px/1.55 Georgia, 'Times New Roman', serif; }
+nav { border-bottom:1px solid var(--line); padding:.7em 1.2em;
+      font-family: system-ui, sans-serif; font-size:.9em; }
+nav a { color:var(--accent); text-decoration:none; margin-right:1.2em; }
+main { max-width: 62em; margin: 0 auto; padding: 1.5em 1.2em 4em; }
+h1,h2,h3 { font-family: system-ui, sans-serif; line-height:1.25; }
+h1 { font-size:1.7em; } h2 { font-size:1.3em; margin-top:2em; }
+a { color: var(--accent); }
+code, pre { font-family: ui-monospace, Consolas, monospace;
+            font-size:.86em; background:var(--code); }
+code { padding:.1em .3em; border-radius:3px; }
+pre { padding: .9em; overflow-x:auto; border:1px solid var(--line);
+      border-radius:4px; line-height:1.4; }
+table { border-collapse: collapse; margin: 1em 0; font-size:.92em;
+        display:block; overflow-x:auto; }
+th, td { border:1px solid var(--line); padding:.35em .6em;
+         text-align:left; vertical-align:top; }
+th { font-family: system-ui, sans-serif; background:var(--code); }
+blockquote { border-left:3px solid var(--accent); margin:1em 0;
+             padding:.2em 1em; color:var(--muted); }
+.muted { color:var(--muted); font-size:.9em; }
+.tag { font-family: system-ui, sans-serif; font-size:.75em;
+       border:1px solid var(--line); border-radius:3px;
+       padding:.05em .45em; margin-left:.5em; }
+.tag.sug { border-color:var(--warn); color:var(--warn); }
+details summary { cursor:pointer; font-family: system-ui, sans-serif; }
+input.param { font-family: ui-monospace, Consolas, monospace;
+              font-size:.85em; width:24em; max-width:100%;
+              background:var(--code); color:var(--fg);
+              border:1px solid var(--line); border-radius:3px;
+              padding:.25em .4em; }
+button { font-family: system-ui, sans-serif; font-size:.95em;
+         padding:.35em 1em; border:1px solid var(--accent);
+         border-radius:4px; background:var(--code); color:var(--fg);
+         cursor:pointer; }
+button:disabled { opacity:.5; cursor:default; }
+#run-out { min-height:2em; }
+footer { border-top:1px solid var(--line); margin-top:3em;
+         padding-top:1em; font-size:.85em; color:var(--muted); }
+</style></head><body>
+<nav><a href="../index.html">VAIS - Voynich Analysis Interactive Suite</a><a href="../catalog.html">Catalog</a>
+<a href="../research.html">Research</a><a href="../reports.html">Reports</a>
+<a href="../credits.html">Credits</a><a href="../contributing.html">Contributing</a>
+<a href="https://github.com/Vineyardcode/vais">GitHub</a></nav>
+<main><h1>scan_glyph_feasibility</h1>
+<p class="muted">scripts/scan_glyph_feasibility.py</p>
+<pre>Raw-Scan Glyph Feasibility (portfolio S2, rung 0) — can transliteration
+-free analysis get off the ground with in-repo scans and no CV stack?
+(N8)
+
+PURPOSE: S2 is the only portfolio strategy that fully escapes
+assumption A1 (the transliteration IS the text) — it would rebuild the
+token stream from folio images with no human alphabet. Its registered
+kill (F10 gate) is instability: &quot;if cluster count is unstable (±30%)
+across folios/scan qualities, transliteration-free analysis is
+unreliable at this scan quality.&quot; This rung 0 asks the cheaper prior
+question: with the repository&#x27;s own scans (201 PNGs, ~1400x2000 RGB)
+and this environment&#x27;s tooling (numpy + Pillow; no OpenCV/scipy/GPU),
+does a naive pipeline see anything at all worth clustering?
+
+PIPELINE (fixed before running): seeded sample of N_FOLIOS folios that
+have both .png and .txt; central CROP_FRAC crop (avoids scan borders);
+greyscale; block-mean downscale by DOWNSCALE; Otsu threshold (ink =
+dark side); connected components via row-run union-find; components
+kept in the glyph-scale area band [AREA_MIN, AREA_MAX] px.
+
+REGISTERED FEASIBILITY GATES:
+  G1 binarization stability — median ink fraction within
+     [INK_LO, INK_HI] and folio-to-folio coefficient of variation
+     &lt; INK_CV_MAX. (If thresholding is erratic, everything downstream
+     is noise.)
+  G2 segmentation sees the text — Spearman correlation between
+     per-folio glyph-scale component counts and the transliteration&#x27;s
+     per-folio character counts: &gt;= G2_STRONG strong; &gt;= G2_WEAK
+     partial; below, the pipeline is not seeing what the transcribers
+     saw (drawings, bleed-through, and lighting dominate). Reported
+     both for all sampled folios and for text-only folios (f103-116),
+     where drawings cannot confound.
+  G3 cluster-stability precursor — up to MAX_COMPONENTS glyph-scale
+     components, 8 shape descriptors (log-area, height, width, aspect,
+     fill, normalized central moments mu20/mu02/mu11), z-scored;
+     seeded numpy k-means over K_SWEEP on two disjoint folio halves:
+     G3a |k*_1 - k*_2| / mean(k*) &lt;= 0.30 with k* = silhouette-best k
+         (mirrors S2&#x27;s registered ±30% kill),
+     G3b at k=K_REF, greedy-matched centroid distance between halves
+         &lt; CENTROID_RATIO_MAX x the mean within-half centroid spacing.
+PRE-REGISTERED VERDICTS:
+  feasible                   — G1 and G2-strong (all-folio) and G3a
+                               and G3b: build S2 proper.
+  partially_feasible         — G1 and G2 &gt;= G2_WEAK on all folios OR
+                               &gt;= G2_STRONG on text-only folios:
+                               proceed restricted to text-only pages
+                               and/or with better tooling; blockers
+                               named.
+  infeasible_at_this_quality — G1 fails, or G2 &lt; G2_WEAK everywhere:
+                               S2 is starved at this scan quality and
+                               tooling (F10); revisit with better
+                               scans or a real CV stack.
+Vocabulary discipline: a feasibility probe of imaging, not a result
+about the manuscript&#x27;s content.</pre>
+<h2>Parameters</h2><p class="muted">Edit a value to override it for an in-browser run (the script itself is never modified).</p><table><tr><th>name</th><th>type</th><th>value</th></tr>
+<tr><td><code>SEED</code></td><td>int</td><td><input class="param" data-param="SEED" value="123"></td></tr>
+<tr><td><code>N_FOLIOS</code></td><td>int</td><td><input class="param" data-param="N_FOLIOS" value="30"></td></tr>
+<tr><td><code>CROP_FRAC</code></td><td>float</td><td><input class="param" data-param="CROP_FRAC" value="0.8"></td></tr>
+<tr><td><code>DOWNSCALE</code></td><td>int</td><td><input class="param" data-param="DOWNSCALE" value="2"></td></tr>
+<tr><td><code>AREA_MIN</code></td><td>int</td><td><input class="param" data-param="AREA_MIN" value="8"></td></tr>
+<tr><td><code>AREA_MAX</code></td><td>int</td><td><input class="param" data-param="AREA_MAX" value="800"></td></tr>
+<tr><td><code>INK_LO</code></td><td>float</td><td><input class="param" data-param="INK_LO" value="0.01"></td></tr>
+<tr><td><code>INK_HI</code></td><td>float</td><td><input class="param" data-param="INK_HI" value="0.3"></td></tr>
+<tr><td><code>INK_CV_MAX</code></td><td>float</td><td><input class="param" data-param="INK_CV_MAX" value="0.6"></td></tr>
+<tr><td><code>G2_STRONG</code></td><td>float</td><td><input class="param" data-param="G2_STRONG" value="0.8"></td></tr>
+<tr><td><code>G2_WEAK</code></td><td>float</td><td><input class="param" data-param="G2_WEAK" value="0.5"></td></tr>
+<tr><td><code>MAX_COMPONENTS</code></td><td>int</td><td><input class="param" data-param="MAX_COMPONENTS" value="6000"></td></tr>
+<tr><td><code>K_SWEEP</code></td><td>json</td><td><input class="param" data-param="K_SWEEP" value="[10, 15, 20, 25, 30, 35, 40]"></td></tr>
+<tr><td><code>K_REF</code></td><td>int</td><td><input class="param" data-param="K_REF" value="25"></td></tr>
+<tr><td><code>CENTROID_RATIO_MAX</code></td><td>float</td><td><input class="param" data-param="CENTROID_RATIO_MAX" value="0.5"></td></tr>
+<tr><td><code>SIL_SAMPLE</code></td><td>int</td><td><input class="param" data-param="SIL_SAMPLE" value="1500"></td></tr>
+</table>
+<h2>Run it in your browser</h2><p class="muted">Python + numpy on WebAssembly, entirely on your machine — nothing is uploaded. First run downloads the runtime (~15 MB) and the repository data pack (~9 MB); both are cached afterwards. Expect it to be slower than a native run.</p><p><button id="run-btn">&#9654; Run</button> <button id="stop-btn">Stop</button> <span id="run-status" class="muted"></span></p><pre id="run-out"></pre>
+<script>window.VAIS_TEST = {"stem": "scan_glyph_feasibility", "specs": {"SEED": {"type": "int", "container": null}, "N_FOLIOS": {"type": "int", "container": null}, "CROP_FRAC": {"type": "float", "container": null}, "DOWNSCALE": {"type": "int", "container": null}, "AREA_MIN": {"type": "int", "container": null}, "AREA_MAX": {"type": "int", "container": null}, "INK_LO": {"type": "float", "container": null}, "INK_HI": {"type": "float", "container": null}, "INK_CV_MAX": {"type": "float", "container": null}, "G2_STRONG": {"type": "float", "container": null}, "G2_WEAK": {"type": "float", "container": null}, "MAX_COMPONENTS": {"type": "int", "container": null}, "K_SWEEP": {"type": "json", "container": null}, "K_REF": {"type": "int", "container": null}, "CENTROID_RATIO_MAX": {"type": "float", "container": null}, "SIL_SAMPLE": {"type": "int", "container": null}}, "base": "../", "baselineSeconds": 0};</script><script src="../runner.js"></script>
+<h2>Run it locally (full speed, byte-exact)</h2>
+<pre>git clone https://github.com/Vineyardcode/vais
+cd vais
+pip install numpy flask
+python scripts/scan_glyph_feasibility.py        # this test; output also lands in results/
+python webui/server.py          # or the full interactive UI at localhost:5000</pre>
+<h2>Golden output (PYTHONHASHSEED=0)</h2><details><summary>show</summary><pre id="golden-pre">============================================================================
+RAW-SCAN GLYPH FEASIBILITY (S2 rung 0) — imaging probe (N8)
+============================================================================
+seed=123 folios=30 crop=0.8 downscale=2 area=[8,800] k_sweep=[10, 15, 20, 25, 30, 35, 40]
+  f100r          ink 0.228  components   533  ZL chars    600
+  f100v_101r     ink 0.251  components   622  ZL chars   1498
+  f105r          ink 0.146  components  1516  ZL chars   1948  [text-only]
+  f107r          ink 0.161  components  1647  ZL chars   2482  [text-only]
+  f10r           ink 0.210  components   534  ZL chars    432
+  f112v          ink 0.149  components  1594  ZL chars   2213  [text-only]
+  f115r          ink 0.144  components  1602  ZL chars   2430  [text-only]
+  f13v           ink 0.150  components   415  ZL chars    286
+  f16v           ink 0.174  components   398  ZL chars    347
+  f17r           ink 0.121  components   401  ZL chars    375
+  f26v           ink 0.199  components   642  ZL chars    453
+  f29v           ink 0.150  components   483  ZL chars    415
+  f34v           ink 0.206  components   754  ZL chars    583
+  f37r           ink 0.175  components   533  ZL chars    369
+  f37v           ink 0.238  components   478  ZL chars    440
+  f38r           ink 0.193  components   288  ZL chars    197
+  f41v           ink 0.258  components   410  ZL chars    354
+  f42r           ink 0.162  components   749  ZL chars    651
+  f45v           ink 0.159  components   508  ZL chars    357
+  f49r           ink 0.178  components   323  ZL chars    534
+  f66r           ink 0.121  components  1302  ZL chars   1675
+  f69r           ink 0.077  components   563  ZL chars    707
+  f73v           ink 0.215  components  1018  ZL chars    506
+  f87r           ink 0.219  components   533  ZL chars    538
+  f93r           ink 0.369  components   634  ZL chars    741
+  f93v           ink 0.187  components   437  ZL chars    459
+  f96v           ink 0.225  components   395  ZL chars    298
+  f99v           ink 0.253  components   967  ZL chars    895
+  f9r            ink 0.273  components   447  ZL chars    387
+  f9v            ink 0.199  components   488  ZL chars    388
+
+  G1 binarization: median ink 0.190 (band [0.01,0.3]), CV 0.29 (&lt; 0.6) -&gt; PASS
+  G2 segmentation: Spearman(components, ZL chars) all +0.842 (strong &gt;= 0.8); text-only folios (n=4): n&lt;5
+  G3 half 1: n=3469, silhouette-best k* = 10 (s=0.217)
+  G3 half 2: n=2531, silhouette-best k* = 15 (s=0.226)
+  G3a k* stability: 10 vs 15 -&gt; FAIL (±30% rule)
+  G3b centroid match ratio at k=25: 0.395 (&lt; 0.5) -&gt; PASS
+
+  ADJUDICATION (pre-registered):
+    PARTIALLY FEASIBLE: proceed restricted (text-only pages and/or better tooling). Blockers: k* unstable across halves.
+
+  -&gt; results/scan_glyph_feasibility.json
+</pre></details><footer>Static mirror — read-only. Generated 2026-07-20 from commit <code>680312a</code>. 
+To run any test with your own parameters, clone
+<a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
+(<code>python webui/server.py</code>). All numbers reproduce at
+PYTHONHASHSEED=0.</footer></main></body></html>
