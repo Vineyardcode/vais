@@ -35,3 +35,16 @@
 Bin-level pre-final skew, A vs B: Spearman +0.559 (observational).
 
 **VERDICT: AXIS 3 ABSENT IN A — no measurable pre-final-zone rule at A's sample size (the axis-3 direction is intrinsically noisy: wide null band). The point observations lean weakly SAME-direction, so N6e's −0.46 is resolved as component-mixing artifact, not inversion. Axis 3 remains B's own as far as A's data can resolve; ledger entry 15's "anti-transfers" reading is refined to "undetectable in A".**
+
+## Run 2026-07-20 15:46:29 — N8
+**S2 rung 0: raw-scan glyph feasibility probe (numpy+Pillow, no CV stack)**
+- script: `scripts/scan_glyph_feasibility.py`
+- profile: `{}`
+- log: `overnight_2026-07-20.log`; results JSON: `scan_glyph_feasibility.json`; branch: `overnight/2026-07-20`
+- runtime: 37s (0.01 h), exit code 0
+
+**Pre-registered verdicts** (script docstring): a rung-0 imaging probe of S2 with in-repo scans and numpy+Pillow only — the question is whether transliteration-free analysis can get off the ground, not anything about the manuscript's content.
+
+G1 binarization: median ink 0.1904, CV 0.288 → PASS. G2 segmentation: Spearman(components, ZL chars) +0.842 over 30 folios (strong ≥ 0.8). G3: k* [10, 15] (FAIL ±30%), centroid ratio 0.395 (PASS < 0.5). 21214 glyph-scale components.
+
+**VERDICT: PARTIALLY FEASIBLE — the pipeline reliably SEES the writing (count correlation +0.84 with the transliteration through drawings and all), but glyph-shape cluster counts are unstable across folio halves (the F10 concern, at rung 0). S2 proceeds restricted: better shape descriptors / a real CV stack / text-only pages.**

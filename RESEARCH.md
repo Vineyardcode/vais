@@ -599,7 +599,14 @@ numbering continues across tiers. Full evidence chains: Phase 8.)*
     test: axes 1-2 are manuscript-wide in shape (A→B transfer ρ +0.92
     / +0.83) with the hand difference absorbed by the strength knob
     (λ 1.75 vs 1.25 — the switch-intensity picture made mechanical);
-    axis 3 anti-transfers (−0.46) and is B's own. Caveats attached:
+    axis 3 is DETECTABLE ONLY IN B (refined 2026-07-20 by N6f: the
+    earlier "anti-transfers −0.46" reading was component-mixing
+    artifact; a fixed-direction projection with validated continuity
+    gates finds A's axis-3 content not significant — β +0.32 vs a
+    ±0.79 null band — with point observations leaning weakly
+    same-direction, so "B's innovation" vs "shared rule below A's
+    detection floor" is undecidable at A's sample size). Caveats
+    attached:
     this is a DIAGNOSTIC reduction (the table is measured from the
     target; deriving the axes from principles outside the manuscript
     remains the open rung), same-author instrumentation (Phase 8
@@ -1531,3 +1538,17 @@ Configuration (pre-registered in the script docstring): script defaults. Runtime
 Bin-level pre-final skew, A vs B: Spearman +0.559 (observational).
 
 **VERDICT: AXIS 3 ABSENT IN A — no measurable pre-final-zone rule at A's sample size (the axis-3 direction is intrinsically noisy: wide null band). The point observations lean weakly SAME-direction, so N6e's −0.46 is resolved as component-mixing artifact, not inversion. Axis 3 remains B's own as far as A's data can resolve; ledger entry 15's "anti-transfers" reading is refined to "undetectable in A".**
+
+---
+
+### Portfolio S2, rung 0 — raw-scan glyph feasibility probe (2026-07-20)
+
+[AUTOMATED — written by tools/overnight.py; run committed to branch overnight/2026-07-20; awaiting human review before promotion to any evidence tier.]
+
+Configuration (pre-registered in the script docstring): script defaults. Runtime 0.01 h at PYTHONHASHSEED=0. Holdout: whole folios (VMS) / 24-line pseudo-folio blocks (controls).
+
+**Pre-registered verdicts** (script docstring): a rung-0 imaging probe of S2 with in-repo scans and numpy+Pillow only — the question is whether transliteration-free analysis can get off the ground, not anything about the manuscript's content.
+
+G1 binarization: median ink 0.1904, CV 0.288 → PASS. G2 segmentation: Spearman(components, ZL chars) +0.842 over 30 folios (strong ≥ 0.8). G3: k* [10, 15] (FAIL ±30%), centroid ratio 0.395 (PASS < 0.5). 21214 glyph-scale components.
+
+**VERDICT: PARTIALLY FEASIBLE — the pipeline reliably SEES the writing (count correlation +0.84 with the transliteration through drawings and all), but glyph-shape cluster counts are unstable across folio halves (the F10 concern, at rung 0). S2 proceeds restricted: better shape descriptors / a real CV stack / text-only pages.**

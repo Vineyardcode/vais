@@ -1,0 +1,85 @@
+{
+ "params": {
+  "seed": 123,
+  "n_folios": 30,
+  "crop_frac": 0.8,
+  "downscale": 2,
+  "area_band": [
+   8,
+   800
+  ],
+  "ink_band": [
+   0.01,
+   0.3
+  ],
+  "ink_cv_max": 0.6,
+  "g2_strong": 0.8,
+  "g2_weak": 0.5,
+  "k_sweep": [
+   10,
+   15,
+   20,
+   25,
+   30,
+   35,
+   40
+  ],
+  "k_ref": 25,
+  "centroid_ratio_max": 0.5
+ },
+ "results": {
+  "sample": [
+   "f100r",
+   "f100v_101r",
+   "f105r",
+   "f107r",
+   "f10r",
+   "f112v",
+   "f115r",
+   "f13v",
+   "f16v",
+   "f17r",
+   "f26v",
+   "f29v",
+   "f34v",
+   "f37r",
+   "f37v",
+   "f38r",
+   "f41v",
+   "f42r",
+   "f45v",
+   "f49r",
+   "f66r",
+   "f69r",
+   "f73v",
+   "f87r",
+   "f93r",
+   "f93v",
+   "f96v",
+   "f99v",
+   "f9r",
+   "f9v"
+  ],
+  "ink": {
+   "median": 0.1904,
+   "cv": 0.288,
+   "pass": true
+  },
+  "g2": {
+   "rho_all": 0.842,
+   "rho_textonly": null,
+   "n_textonly": 4
+  },
+  "g3": {
+   "kstar": [
+    10,
+    15
+   ],
+   "g3a": false,
+   "centroid_ratio": 0.395,
+   "g3b": true
+  },
+  "n_components_total": 21214
+ },
+ "verdict": "partially_feasible"
+}
