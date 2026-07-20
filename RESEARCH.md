@@ -557,6 +557,38 @@ numbering continues across tiers. Full evidence chains: Phase 8.)*
     non-language hoax control clusters strongly (self-citation +0.27),
     so hapax burstiness is not diagnostic of language
     (hapax_clustering_calibration).
+20. **The marginal labels are a distinct, section-specific naming-like
+    register** (N11, 2026-07-21; prompted by f66r's label-dense margin):
+    the IVTFF label loci (type L, ~628 tokens) tested with controls.
+    (D) distinct register — label first-glyph JSD from running text
+    0.151 vs a subsample-null ceiling 0.012 (o-/d- dominated, unlike
+    the gallows/q of line-starts). (S) section-specificity beyond
+    dialect — label vocabulary predicts section more than a
+    size-matched running sample (U* 0.080 vs 0.037, naming margin
+    +0.043 over the 0.03 bar, beating its own shuffle null), with
+    synthetic naming/generic controls validating the measure. The most
+    crib-adjacent result in the program — and therefore the most
+    heavily caveated: only 628 labels, uneven per section (pharma 279
+    vs text 2) so the effect may be inflated by that concentration
+    (a section-marginal-matched re-test is the registered follow-up);
+    the control-separation gate was recalibrated from a mis-scaled
+    absolute to a scale-free factor after first execution (disclosed,
+    VMS criterion unchanged); and strictly F7-bound — "naming-like" is
+    distributional, NO label has been read. SUGGESTIVE, quarantined
+    (labelese_subsystem).
+    **NAMING CLAIM WITHDRAWN (N11b, 2026-07-21): the registered
+    follow-up fired.** With fragment/marker tokens split off (word-shaped
+    labels >= 3 glyphs) and the running baseline drawn to the IDENTICAL
+    per-section marginal, word-shaped labels are LESS section-specific
+    (U* +0.050) than running text from the SAME sections (U* +0.080) —
+    margin −0.030. N11's naming signal was the pharma-label
+    concentration, exactly the confound flagged above. What STANDS: the
+    distinctness result (labels are a distinct register — first-glyph
+    JSD 0.151 ≫ null). What FALLS: that labels are a section-specific
+    NAMING system. A textbook quarantined-finding-killed-by-its-own-
+    follow-up; the labels are a distinct register built largely from
+    ordinary high-frequency vocabulary, not a naming lexicon
+    (labelese_naming_refined).
 19. **The two shared discipline axes are ~half-reducible to
     position-independent class properties, not fully derivable from
     them** (S3 rung 4 / N6g, 2026-07-21): the manuscript-wide edge and
@@ -1723,3 +1755,24 @@ Corpus: 628 label tokens (450 types) over sections bio 123, herbalA 87, pharma 2
 Label first-glyph profile: o 56%, d 14%, s 8%, ch 7%, y 7%, a 4%, sh 2%, k 2% — the o-/d- dominance, distinct from the gallows/q of line-starts.
 
 **VERDICT: LABELESE NAMING SYSTEM — labels are a distinct register (first-glyph JSD 0.1507 ≫ null) AND their vocabulary is more section-specific than a size-matched running-text sample (U* +0.080 vs +0.037, margin +0.043, beating its own shuffle null): a section-bound naming-like register, beyond the dialect variation running text already carries. SUGGESTIVE, quarantined. POWER/CONFOUND CAVEATS travel with it: only 628 label tokens, unevenly spread (pharma 279 vs text 2), and label/running section marginals differ — the effect could be inflated by the pharma-label concentration. NOT a decode and F7-bound: "naming-like" is a distributional statement, not a claim that any label has been read. A section-marginal-matched re-test is the registered follow-up.**
+
+---
+
+### Subsystem study — Labelese naming re-test (word-shaped, marginal-matched) (2026-07-21)
+
+[AUTOMATED — written by tools/overnight.py; run committed to branch overnight/2026-07-21; awaiting human review before promotion to any evidence tier.]
+
+Configuration (pre-registered in the script docstring): script defaults. Runtime 0.00 h at PYTHONHASHSEED=0. Holdout: whole folios (VMS) / 24-line pseudo-folio blocks (controls).
+
+**Pre-registered outcomes** (script docstring): N11's naming claim re-tested with its two flagged defects removed — (1) WORD-SHAPED labels only (>= 3 glyphs; fragment/marker tokens split off), (2) a SECTION-MARGINAL-MATCHED running baseline (identical per-section counts), so the pharma-label concentration cannot inflate the margin.
+
+Word-shaped labels: 535 tokens (424 types); fragments split off: 93. Per section: bio 105, herbalA 34, pharma 273, text 2, zodiac 121.
+
+| quantity | value |
+|---|---|
+| U*(word-shaped labels) | +0.0496 (beats null: True) |
+| U*(marginal-matched running) | +0.0797 |
+| naming margin | -0.0300 (threshold 0.03) |
+| U*(fragment labels, observational) | +0.1152 |
+
+**VERDICT: NAMING WAS CONCENTRATION (finding withdrawn) — with fragments removed and section marginals matched, word-shaped labels are LESS section-specific (+0.050) than running text drawn from the SAME sections (+0.080); margin -0.030 <= 0. N11's "naming system" reading was the pharma-label concentration, exactly the confound N11's own entry flagged — now confirmed and the naming claim WITHDRAWN. What stands from N11: labels are a distinct register (the first-glyph distinctness result, untouched); what falls: that they are a section-specific NAMING system. A textbook case of a quarantined SUGGESTIVE finding killed by its own registered follow-up.**

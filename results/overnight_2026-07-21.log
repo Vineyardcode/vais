@@ -84,3 +84,29 @@
 [01:25:16] report -> C:\projects\vais\results\overnight_2026-07-21_report.md
 [01:25:16] RESEARCH.md: section appended (working tree; committed only to the overnight branch)
 [01:25:16] committing results to branch overnight/2026-07-21 ...
+[01:25:17] committed ff25661e844f on overnight/2026-07-21 (main untouched)
+[01:25:17] done, exit 0
+[01:38:33] ====================================================================
+[01:38:33] overnight runner start 2026-07-21 01:38:33  smoke=False PYTHONHASHSEED=0
+[01:38:33] code at 0cc1695 (dirty tree), python 3.13.3
+[01:38:33] queue item N11b: Labelese naming, refined: word-shaped labels + section-marginal-matched baseline
+[01:38:33] profile: {}  timeout=1800s
+  | ============================================================================
+  | LABELESE NAMING, REFINED (N11b) — word-shaped + marginal-matched
+  | ============================================================================
+  | seed=129 min_glyphs=3 nulls=30 match=12 naming_margin=0.03
+  |   word-shaped labels: 535 tokens (424 types); fragment labels: 93; running: 35280
+  |   word-shaped labels per section: bio:105  herbalA:34  pharma:273  text:2  zodiac:121
+  |   controls: P-NAME +0.1578 vs P-GEN +0.0169 -> PASS
+  |   word-shaped labels U* +0.0496 (beats null: True)  marginal-matched running U* +0.0797  margin -0.0300
+  |   [fragment labels U* +0.1152 (beats null: True) — observational]
+  | 
+  |   ADJUDICATION (pre-registered):
+  |     NAMING WAS CONCENTRATION: margin -0.0300 <= 0 with section marginals matched — N11's naming signal was the pharma-label concentration, not word-identity specificity. The naming reading is withdrawn. Corpse logged.
+  | 
+  |   -> results/labelese_naming_refined.json
+[01:38:34] experiment finished rc=0 in 1s (0.00h)
+[01:38:34] adjudication: naming_was_concentration; word-label U* +0.0496 vs marginal-matched running +0.0797, margin -0.0300
+[01:38:34] report -> C:\projects\vais\results\overnight_2026-07-21_report.md
+[01:38:34] RESEARCH.md: section appended (working tree; committed only to the overnight branch)
+[01:38:34] committing results to branch overnight/2026-07-21 ...

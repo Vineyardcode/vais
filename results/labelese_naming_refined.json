@@ -1,0 +1,31 @@
+{
+ "params": {
+  "seed": 129,
+  "min_glyphs": 3,
+  "n_null": 30,
+  "r_match": 12,
+  "naming_margin": 0.03,
+  "ctrl_factor": 3.0
+ },
+ "results": {
+  "n_word_labels": 535,
+  "n_word_types": 424,
+  "n_fragment_labels": 93,
+  "labels_per_section": {
+   "pharma": 273,
+   "text": 2,
+   "herbalA": 34,
+   "zodiac": 121,
+   "bio": 105
+  },
+  "u_word_labels": 0.0496,
+  "u_word_labels_beats_null": true,
+  "u_marginal_matched_running": 0.0797,
+  "naming_margin": -0.03,
+  "u_fragment_labels": 0.1152,
+  "ctrl_name": 0.1578,
+  "ctrl_gen": 0.0169,
+  "gate": true
+ },
+ "verdict": "naming_was_concentration"
+}
