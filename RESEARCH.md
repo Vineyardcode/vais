@@ -557,6 +557,19 @@ numbering continues across tiers. Full evidence chains: Phase 8.)*
     non-language hoax control clusters strongly (self-citation +0.27),
     so hapax burstiness is not diagnostic of language
     (hapax_clustering_calibration).
+18. **The gallows are not semantic determinatives — dialect, not a
+    classifier system** (N10, 2026-07-20): the pre-charter
+    egyptian_connection test's core claim (gallows t/k/f/p as Egyptian-
+    style semantic determinatives) given a controlled trial and killed
+    on its central prediction. A determinative predicts a word's
+    section more than its phonetic root does; the gallows predict it
+    ~22× LESS (pooled U*(root) 0.130 vs U*(gallows) 0.006), matching a
+    synthetic dialect control and unlike a synthetic determinative
+    control (instrument gate passed: P-DET U*(marker) 1.000 vs root
+    0.000; P-DIA U*(root) 0.938 vs marker 0.000). The gallows-section
+    association is ordinary dialectal vocabulary variation, not a
+    determinative grammar. Controlled and refuted, where the source
+    test had no controls (egyptian_determinative_test).
 17. **The hapax-clustering "→ language" inference is uncalibrated;
     the Egyptian-connection test has no standing** (N9 + status audit,
     2026-07-20): (a) N9 ran Part D's hapax-burstiness statistic on the
@@ -1607,3 +1620,24 @@ Configuration (pre-registered in the script docstring): script defaults. Runtime
 | VMS_wordshuffle | reference | +0.051 | 0.058 | 0.097 |
 
 **VERDICT: INCONCLUSIVE by the pre-registered criteria — which required the language positives to cluster, and they do NOT (Latin +0.068, Italian +0.007, both below 0.1). The controls are single-work corpora with no manuscript-like sections, so they cannot exhibit *topical* hapax clustering; the battery as built cannot fully test the topical version of the claim. But two observations (reported, not re-adjudicated) independently undermine Part D's inference as stated: (a) high hapax burstiness is NOT an intrinsic property of language text — real Latin/Italian sit near zero; (b) a NON-language hoax control (N4 self-citation, B +0.272) clusters more strongly than anything else, so burstiness alone is not diagnostic of language. Net: Part D's "clustered → language" inference is uncalibrated and unsupported by these controls; a properly powered re-test needs multi-topic language and cipher corpora (a registered future rung). Ledger entry 14 — which claims only that the VMS clustering is real and locus-robust, never that it proves language — is unaffected and now carries a pointer to this result.**
+
+---
+
+### Legacy-hypothesis trial — gallows as semantic determinatives (controlled) (2026-07-20)
+
+[AUTOMATED — written by tools/overnight.py; run committed to branch overnight/2026-07-20; awaiting human review before promotion to any evidence tier.]
+
+Configuration (pre-registered in the script docstring): script defaults. Runtime 0.00 h at PYTHONHASHSEED=0. Holdout: whole folios (VMS) / 24-line pseudo-folio blocks (controls).
+
+**Pre-registered outcomes** (script docstring): the Egyptian core claim (gallows = semantic determinatives) tested by its discriminating signature — a determinative predicts SECTION more than the phonetic root does; dialect predicts the reverse. U*(X) = section-predictiveness above a cardinality-shuffle null.
+
+| corpus | U*(gallows) | U*(root) | reading |
+|---|---|---|---|
+| P-DET control | +0.99980 | +0.00004 | gallows-carried |
+| P-DIA control | +0.00001 | +0.93755 | root-carried |
+| VMS pooled | +0.00576 | +0.13030 | root-carried |
+| VMS Currier A | +0.01162 | +0.12253 | root-carried |
+| VMS Currier B | +0.00694 | +0.10015 | root-carried |
+
+Gate (controls separate the mechanisms): PASS.
+**VERDICT: DIALECT, NOT DETERMINATIVE — the section information lives in the ROOT vocabulary (pooled U* 0.130), not the gallows (0.006); a ~23× gap matching the dialect control. The gallows-section association the pre-charter test read as "determinatives" is dialectal vocabulary variation. The Egyptian determinative claim is KILLED on its core prediction — now with controls, where the old test had none.**

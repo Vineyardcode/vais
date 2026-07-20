@@ -68,3 +68,23 @@ G1 binarization: median ink 0.1904, CV 0.288 → PASS. G2 segmentation: Spearman
 | VMS_wordshuffle | reference | +0.051 | 0.058 | 0.097 |
 
 **VERDICT: INCONCLUSIVE by the pre-registered criteria — which required the language positives to cluster, and they do NOT (Latin +0.068, Italian +0.007, both below 0.1). The controls are single-work corpora with no manuscript-like sections, so they cannot exhibit *topical* hapax clustering; the battery as built cannot fully test the topical version of the claim. But two observations (reported, not re-adjudicated) independently undermine Part D's inference as stated: (a) high hapax burstiness is NOT an intrinsic property of language text — real Latin/Italian sit near zero; (b) a NON-language hoax control (N4 self-citation, B +0.272) clusters more strongly than anything else, so burstiness alone is not diagnostic of language. Net: Part D's "clustered → language" inference is uncalibrated and unsupported by these controls; a properly powered re-test needs multi-topic language and cipher corpora (a registered future rung). Ledger entry 14 — which claims only that the VMS clustering is real and locus-robust, never that it proves language — is unaffected and now carries a pointer to this result.**
+
+## Run 2026-07-20 23:45:27 — N10
+**Egyptian determinative test: are the gallows semantic determinatives, or dialectal vocabulary?**
+- script: `scripts/egyptian_determinative_test.py`
+- profile: `{}`
+- log: `overnight_2026-07-20.log`; results JSON: `egyptian_determinative_test.json`; branch: `overnight/2026-07-20`
+- runtime: 6s (0.00 h), exit code 0
+
+**Pre-registered outcomes** (script docstring): the Egyptian core claim (gallows = semantic determinatives) tested by its discriminating signature — a determinative predicts SECTION more than the phonetic root does; dialect predicts the reverse. U*(X) = section-predictiveness above a cardinality-shuffle null.
+
+| corpus | U*(gallows) | U*(root) | reading |
+|---|---|---|---|
+| P-DET control | +0.99980 | +0.00004 | gallows-carried |
+| P-DIA control | +0.00001 | +0.93755 | root-carried |
+| VMS pooled | +0.00576 | +0.13030 | root-carried |
+| VMS Currier A | +0.01162 | +0.12253 | root-carried |
+| VMS Currier B | +0.00694 | +0.10015 | root-carried |
+
+Gate (controls separate the mechanisms): PASS.
+**VERDICT: DIALECT, NOT DETERMINATIVE — the section information lives in the ROOT vocabulary (pooled U* 0.130), not the gallows (0.006); a ~23× gap matching the dialect control. The gallows-section association the pre-charter test read as "determinatives" is dialectal vocabulary variation. The Egyptian determinative claim is KILLED on its core prediction — now with controls, where the old test had none.**
