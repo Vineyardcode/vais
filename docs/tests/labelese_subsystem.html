@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>labelese_subsystem — VAIS - Voynich Analysis Interactive Suite</title><style>
+:root { --bg:#ffffff; --fg:#1a1a1a; --muted:#666; --line:#ddd;
+        --code:#f5f5f5; --accent:#7a4a1e; --warn:#a33; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#141414; --fg:#ddd; --muted:#999; --line:#333;
+          --code:#1e1e1e; --accent:#d9a05b; --warn:#e77; } }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--fg);
+       font:16px/1.55 Georgia, 'Times New Roman', serif; }
+nav { border-bottom:1px solid var(--line); padding:.7em 1.2em;
+      font-family: system-ui, sans-serif; font-size:.9em; }
+nav a { color:var(--accent); text-decoration:none; margin-right:1.2em; }
+main { max-width: 62em; margin: 0 auto; padding: 1.5em 1.2em 4em; }
+h1,h2,h3 { font-family: system-ui, sans-serif; line-height:1.25; }
+h1 { font-size:1.7em; } h2 { font-size:1.3em; margin-top:2em; }
+a { color: var(--accent); }
+code, pre { font-family: ui-monospace, Consolas, monospace;
+            font-size:.86em; background:var(--code); }
+code { padding:.1em .3em; border-radius:3px; }
+pre { padding: .9em; overflow-x:auto; border:1px solid var(--line);
+      border-radius:4px; line-height:1.4; }
+table { border-collapse: collapse; margin: 1em 0; font-size:.92em;
+        display:block; overflow-x:auto; }
+th, td { border:1px solid var(--line); padding:.35em .6em;
+         text-align:left; vertical-align:top; }
+th { font-family: system-ui, sans-serif; background:var(--code); }
+blockquote { border-left:3px solid var(--accent); margin:1em 0;
+             padding:.2em 1em; color:var(--muted); }
+.muted { color:var(--muted); font-size:.9em; }
+.tag { font-family: system-ui, sans-serif; font-size:.75em;
+       border:1px solid var(--line); border-radius:3px;
+       padding:.05em .45em; margin-left:.5em; }
+.tag.sug { border-color:var(--warn); color:var(--warn); }
+details summary { cursor:pointer; font-family: system-ui, sans-serif; }
+input.param { font-family: ui-monospace, Consolas, monospace;
+              font-size:.85em; width:24em; max-width:100%;
+              background:var(--code); color:var(--fg);
+              border:1px solid var(--line); border-radius:3px;
+              padding:.25em .4em; }
+button { font-family: system-ui, sans-serif; font-size:.95em;
+         padding:.35em 1em; border:1px solid var(--accent);
+         border-radius:4px; background:var(--code); color:var(--fg);
+         cursor:pointer; }
+button:disabled { opacity:.5; cursor:default; }
+#run-out { min-height:2em; }
+footer { border-top:1px solid var(--line); margin-top:3em;
+         padding-top:1em; font-size:.85em; color:var(--muted); }
+</style></head><body>
+<nav><a href="../index.html">VAIS - Voynich Analysis Interactive Suite</a><a href="../catalog.html">Catalog</a>
+<a href="../research.html">Research</a><a href="../reports.html">Reports</a>
+<a href="../glossary.html">Glossary</a><a href="../credits.html">Credits</a>
+<a href="../contributing.html">Contributing</a>
+<a href="https://github.com/Vineyardcode/vais">GitHub</a></nav>
+<main><h1>labelese_subsystem</h1>
+<p class="muted">scripts/labelese_subsystem.py</p>
+<pre>Labelese Subsystem Test (N11) — are the marginal labels a distinct
+register, and are they a SECTION-SPECIFIC naming system? (N11)
+
+PROVENANCE (operator-directed, prompted by f66r&#x27;s label-dense margin):
+the IVTFF label loci (type L) are a small (~628-word), understudied
+subsystem excluded from the continuous-text corpus the discipline
+findings rest on. A reconnaissance showed labels are distributionally
+odd (first-glyph o- 50% vs the gallows/q-heavy line-starts). This
+instrument asks two registered questions with controls:
+  (D) DISTINCTNESS — are labels a different register from running text,
+      or just a small sample of it?
+  (S) SECTION-SPECIFICITY — the &quot;naming&quot; question: does a label&#x27;s
+      identity predict its section MORE than an ordinary word does?
+      A naming system (labels = names of depicted things) implies label
+      vocabulary is section-bound BEYOND the dialect variation running
+      text already carries (N10). If labels are no more section-specific
+      than a size-matched running sample, they are a distinct register
+      but not a naming system.
+This bears on whether labels could ever be a crib — while staying
+strictly clear of the F7 anchor-decay trap (labels-as-names is TESTED
+here, never assumed; no label is read as any word).
+
+POWER DISCLOSURE (stated first): ~628 labels over ~7 sections is a small
+sample. Every statistic is corrected against a shuffle null and every
+label comparison is against a SIZE-MATCHED running-text baseline (same
+n, same hapax structure), so overfitting is matched, not mistaken for
+signal. Per-section counts are reported; low-power sections are flagged.
+
+METRIC: U(section|X) = MI(X;section)/H(section), the fraction of
+section-uncertainty a word-identity feature explains; U*(X) = U minus
+the mean of N_NULL section-shuffles (the excess above what the feature&#x27;s
+cardinality buys). First-glyph distinctness = Jensen-Shannon divergence
+of the label first-glyph distribution from running text, vs a
+subsample-of-running null.
+
+CONTROLS (validate the section-specificity measure):
+  P-NAME (naming positive): synthetic labels, each section a DISJOINT
+    vocabulary -&gt; U*(word) high.
+  P-GEN (generic negative): synthetic labels from ONE shared pool -&gt;
+    U*(word) ~ 0.
+  GATE: U*(P-NAME) &gt;= CTRL_FACTOR x U*(P-GEN) (scale-free; the excess
+    metric is shuffle-corrected so absolute separations are small).
+  CALIBRATION NOTE (2026-07-21, disclosed): first execution used an
+    ABSOLUTE gap gate (0.3) mis-scaled to the raw metric; the controls
+    separated cleanly (P-NAME 0.159 vs P-GEN 0.014, 11x) but the
+    absolute gate spuriously failed. The gate was recalibrated to the
+    scale-free factor form above BEFORE committing — an instrument-
+    validity fix. The VMS verdict threshold (NAMING_MARGIN) is
+    UNCHANGED from the pre-run registration. Fixed-data caveat (Phase 8
+    §8.7-3): the VMS numbers were visible at recalibration; the gate
+    fix is orthogonal to the VMS criterion, but this is disclosed.
+
+PRE-REGISTERED VERDICTS:
+  gate_failed            — controls do not separate.
+  labels_not_distinct    — label first-glyph JSD does not beat the
+                           subsample null: labels are not a separable
+                           register at this power.
+  labelese_naming_system — distinct AND U*(labels) beats its own shuffle
+                           null AND (U*(labels) - U*(running_matched))
+                           &gt;= NAMING_MARGIN: labels are section-bound
+                           beyond dialect — a naming register.
+                           SUGGESTIVE, quarantined (the most crib-like
+                           outcome; still not a decode, still F7-bound).
+  labelese_generic_register — distinct but NOT more section-specific
+                           than matched running text: a distinct
+                           register, not a naming system.
+Vocabulary discipline: characterization of a subsystem&#x27;s statistics;
+no label is read, nothing is decoded.</pre>
+<h2>Parameters</h2><p class="muted">Edit a value to override it for an in-browser run (the script itself is never modified).</p><table><tr><th>name</th><th>type</th><th>value</th></tr>
+<tr><td><code>SEED</code></td><td>int</td><td><input class="param" data-param="SEED" value="128"></td></tr>
+<tr><td><code>N_NULL</code></td><td>int</td><td><input class="param" data-param="N_NULL" value="30"></td></tr>
+<tr><td><code>R_MATCH</code></td><td>int</td><td><input class="param" data-param="R_MATCH" value="12"></td></tr>
+<tr><td><code>N_SUB</code></td><td>int</td><td><input class="param" data-param="N_SUB" value="200"></td></tr>
+<tr><td><code>NAMING_MARGIN</code></td><td>float</td><td><input class="param" data-param="NAMING_MARGIN" value="0.03"></td></tr>
+<tr><td><code>CTRL_FACTOR</code></td><td>float</td><td><input class="param" data-param="CTRL_FACTOR" value="3.0"></td></tr>
+<tr><td><code>CTRL_FLOOR</code></td><td>float</td><td><input class="param" data-param="CTRL_FLOOR" value="0.005"></td></tr>
+<tr><td><code>SECTIONS</code></td><td>int</td><td><input class="param" data-param="SECTIONS" value="6"></td></tr>
+<tr><td><code>POOL_PER</code></td><td>int</td><td><input class="param" data-param="POOL_PER" value="200"></td></tr>
+<tr><td><code>MIN_LINE_WORDS</code></td><td>int</td><td><input class="param" data-param="MIN_LINE_WORDS" value="5"></td></tr>
+</table>
+<h2>Run it in your browser</h2><p class="muted">Python + numpy on WebAssembly, entirely on your machine — nothing is uploaded. First run downloads the runtime (~15 MB) and the repository data pack (~9 MB); both are cached afterwards. Expect it to be slower than a native run.</p><p><button id="run-btn">&#9654; Run</button> <button id="stop-btn">Stop</button> <span id="run-status" class="muted"></span></p><pre id="run-out"></pre>
+<script>window.VAIS_TEST = {"stem": "labelese_subsystem", "specs": {"SEED": {"type": "int", "container": null}, "N_NULL": {"type": "int", "container": null}, "R_MATCH": {"type": "int", "container": null}, "N_SUB": {"type": "int", "container": null}, "NAMING_MARGIN": {"type": "float", "container": null}, "CTRL_FACTOR": {"type": "float", "container": null}, "CTRL_FLOOR": {"type": "float", "container": null}, "SECTIONS": {"type": "int", "container": null}, "POOL_PER": {"type": "int", "container": null}, "MIN_LINE_WORDS": {"type": "int", "container": null}}, "base": "../", "baselineSeconds": 0};</script><script src="../runner.js"></script>
+<h2>Run it locally (full speed, byte-exact)</h2>
+<pre>git clone https://github.com/Vineyardcode/vais
+cd vais
+pip install numpy flask
+python scripts/labelese_subsystem.py        # this test; output also lands in results/
+python webui/server.py          # or the full interactive UI at localhost:5000</pre>
+<h2>Golden output (PYTHONHASHSEED=0)</h2><details><summary>show</summary><pre id="golden-pre">============================================================================
+LABELESE SUBSYSTEM TEST (N11) — distinct register? naming system?
+============================================================================
+seed=128 nulls=30 match=12 naming_margin=0.03
+  labels: 628 tokens, 450 types; running: 35280 tokens
+  labels per section: bio:123  herbalA:87  pharma:279  text:2  zodiac:137
+  [low-power sections (&lt;20 labels): [&#x27;text&#x27;]]
+
+  (D) first-glyph JSD labels-vs-running 0.1507  subsample-null max 0.0133  -&gt; DISTINCT
+  (S) U*(labels) +0.0797 (beats own null: True)   U*(running matched, n=628) +0.0366   naming margin +0.0432
+  controls: U*(P-NAME) +0.1587 vs U*(P-GEN) +0.0139 (gate: P-NAME &gt;= 3.0x max(P-GEN, 0.005)) -&gt; PASS
+
+  ADJUDICATION (pre-registered):
+    LABELESE NAMING SYSTEM: labels are a distinct register AND section-bound beyond dialect (margin +0.0432 &gt;= 0.03, U* beats its null) — label vocabulary is more section-specific than matched running text. The most crib-like outcome; SUGGESTIVE, quarantined, and still F7-bound (no label is read).
+
+  -&gt; results/labelese_subsystem.json
+</pre></details><footer>Static mirror — read-only. Generated 2026-07-21 from commit <code>b0ea792</code>. 
+To run any test with your own parameters, clone
+<a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
+(<code>python webui/server.py</code>). All numbers reproduce at
+PYTHONHASHSEED=0.</footer></main></body></html>

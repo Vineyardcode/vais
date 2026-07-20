@@ -55,6 +55,8 @@ footer { border-top:1px solid var(--line); margin-top:3em;
 <a href="contributing.html">Contributing</a>
 <a href="https://github.com/Vineyardcode/vais">GitHub</a></nav>
 <main><h1>Overnight report — 2026-07-21</h1>
+<p>&lt;!-- OVERNIGHT-SUGGESTIVE --&gt;</p>
+<blockquote><strong>SUGGESTIVE FINDING — AWAITING HUMAN REVIEW — DO NOT MERGE.</strong> A run below produced a decode-like/positive signal. It is quarantined: committed only to its overnight/ branch, claims nothing beyond &quot;consistent with&quot;, and is not a decode. See the flagged run section for the numbers and the pre-registered criteria they were judged against.</blockquote>
 <h2>Run 2026-07-21 00:37:21 — N6g</h2>
 <p><strong>S3 rung 4: principled derivation — do the two shared axes reduce to class properties?</strong></p>
 <ul>
@@ -88,7 +90,24 @@ footer { border-top:1px solid var(--line); margin-top:3em;
 <tr><td>3 (pre-final)</td><td>0.4154 → 0.6226</td><td>+0.207</td><td>+0.06</td><td>-0.16</td></tr>
 </table>
 <p>Within-word position by class (0=word-initial, 1=word-final): q 0.00, sh 0.13, ch 0.20, p 0.20, o 0.25, t 0.28, k 0.34, a 0.45, s 0.48, # 0.50, d 0.58, l 0.62, y 0.90. Enriched derived table: D_line 9.628 vs bar 7.489 (does not close; the residual persists).</p>
-<p><strong>VERDICT: MODEST IMPROVEMENT (hypothesis directionally confirmed, not dominant) — within-word position is the LARGEST predictor of the interior gradient (wwpos β +0.31, positive as hypothesized: word-initial-type glyphs early, word-final-type late) and raises interior R^2 by +0.131 (0.50 → 0.6294), clearing the gain bar but not the 0.7 strong-reduction target. So the interior gradient is PARTLY a morphological echo — the line reflects word structure — but a residual survives even frequency + gallows + length + within-word position. The line-discipline mystery is now this smaller, sharper residual.</strong></p><footer>Static mirror — read-only. Generated 2026-07-21 from commit <code>470e655</code>. 
+<p><strong>VERDICT: MODEST IMPROVEMENT (hypothesis directionally confirmed, not dominant) — within-word position is the LARGEST predictor of the interior gradient (wwpos β +0.31, positive as hypothesized: word-initial-type glyphs early, word-final-type late) and raises interior R^2 by +0.131 (0.50 → 0.6294), clearing the gain bar but not the 0.7 strong-reduction target. So the interior gradient is PARTLY a morphological echo — the line reflects word structure — but a residual survives even frequency + gallows + length + within-word position. The line-discipline mystery is now this smaller, sharper residual.</strong></p>
+<h2>Run 2026-07-21 01:25:15 — N11</h2>
+<p><strong>Labelese subsystem test: are the marginal labels a distinct, section-specific naming register?</strong></p>
+<ul>
+<li>script: <code>scripts/labelese_subsystem.py</code></li>
+<li>profile: <code>{}</code></li>
+<li>log: <code>overnight_2026-07-21.log</code>; results JSON: <code>labelese_subsystem.json</code>; branch: <code>overnight/2026-07-21</code></li>
+<li>runtime: 1s (0.00 h), exit code 0</li>
+</ul>
+<p><strong>Pre-registered outcomes</strong> (script docstring; prompted by f66r&#x27;s label-dense margin): are the IVTFF label loci a distinct register, and a SECTION-SPECIFIC naming system beyond dialect? Controls (synthetic naming vs generic) validate the measure; the label result is compared to a SIZE-MATCHED running-text baseline. F7-bound: no label is read.</p>
+<p>Corpus: 628 label tokens (450 types) over sections bio 123, herbalA 87, pharma 279, text 2, zodiac 137. Controls gate: P-NAME +0.159 vs P-GEN +0.014 → PASS.</p>
+<table>
+<tr><th>test</th><th>value</th><th>baseline</th><th>reading</th></tr>
+<tr><td>(D) first-glyph JSD</td><td>0.1507</td><td>subsample null 0.0161</td><td>distinct register</td></tr>
+<tr><td>(S) section U*</td><td>labels +0.0797</td><td>matched running +0.0366</td><td>naming margin +0.0432</td></tr>
+</table>
+<p>Label first-glyph profile: o 56%, d 14%, s 8%, ch 7%, y 7%, a 4%, sh 2%, k 2% — the o-/d- dominance, distinct from the gallows/q of line-starts.</p>
+<p>**VERDICT: LABELESE NAMING SYSTEM — labels are a distinct register (first-glyph JSD 0.1507 ≫ null) AND their vocabulary is more section-specific than a size-matched running-text sample (U* +0.080 vs +0.037, margin +0.043, beating its own shuffle null): a section-bound naming-like register, beyond the dialect variation running text already carries. SUGGESTIVE, quarantined. POWER/CONFOUND CAVEATS travel with it: only 628 label tokens, unevenly spread (pharma 279 vs text 2), and label/running section marginals differ — the effect could be inflated by the pharma-label concentration. NOT a decode and F7-bound: &quot;naming-like&quot; is a distributional statement, not a claim that any label has been read. A section-marginal-matched re-test is the registered follow-up.**</p><footer>Static mirror — read-only. Generated 2026-07-21 from commit <code>b0ea792</code>. 
 To run any test with your own parameters, clone
 <a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
 (<code>python webui/server.py</code>). All numbers reproduce at
