@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>egyptian_determinative_test — VAIS - Voynich Analysis Interactive Suite</title><style>
+:root { --bg:#ffffff; --fg:#1a1a1a; --muted:#666; --line:#ddd;
+        --code:#f5f5f5; --accent:#7a4a1e; --warn:#a33; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#141414; --fg:#ddd; --muted:#999; --line:#333;
+          --code:#1e1e1e; --accent:#d9a05b; --warn:#e77; } }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--fg);
+       font:16px/1.55 Georgia, 'Times New Roman', serif; }
+nav { border-bottom:1px solid var(--line); padding:.7em 1.2em;
+      font-family: system-ui, sans-serif; font-size:.9em; }
+nav a { color:var(--accent); text-decoration:none; margin-right:1.2em; }
+main { max-width: 62em; margin: 0 auto; padding: 1.5em 1.2em 4em; }
+h1,h2,h3 { font-family: system-ui, sans-serif; line-height:1.25; }
+h1 { font-size:1.7em; } h2 { font-size:1.3em; margin-top:2em; }
+a { color: var(--accent); }
+code, pre { font-family: ui-monospace, Consolas, monospace;
+            font-size:.86em; background:var(--code); }
+code { padding:.1em .3em; border-radius:3px; }
+pre { padding: .9em; overflow-x:auto; border:1px solid var(--line);
+      border-radius:4px; line-height:1.4; }
+table { border-collapse: collapse; margin: 1em 0; font-size:.92em;
+        display:block; overflow-x:auto; }
+th, td { border:1px solid var(--line); padding:.35em .6em;
+         text-align:left; vertical-align:top; }
+th { font-family: system-ui, sans-serif; background:var(--code); }
+blockquote { border-left:3px solid var(--accent); margin:1em 0;
+             padding:.2em 1em; color:var(--muted); }
+.muted { color:var(--muted); font-size:.9em; }
+.tag { font-family: system-ui, sans-serif; font-size:.75em;
+       border:1px solid var(--line); border-radius:3px;
+       padding:.05em .45em; margin-left:.5em; }
+.tag.sug { border-color:var(--warn); color:var(--warn); }
+details summary { cursor:pointer; font-family: system-ui, sans-serif; }
+input.param { font-family: ui-monospace, Consolas, monospace;
+              font-size:.85em; width:24em; max-width:100%;
+              background:var(--code); color:var(--fg);
+              border:1px solid var(--line); border-radius:3px;
+              padding:.25em .4em; }
+button { font-family: system-ui, sans-serif; font-size:.95em;
+         padding:.35em 1em; border:1px solid var(--accent);
+         border-radius:4px; background:var(--code); color:var(--fg);
+         cursor:pointer; }
+button:disabled { opacity:.5; cursor:default; }
+#run-out { min-height:2em; }
+footer { border-top:1px solid var(--line); margin-top:3em;
+         padding-top:1em; font-size:.85em; color:var(--muted); }
+</style></head><body>
+<nav><a href="../index.html">VAIS - Voynich Analysis Interactive Suite</a><a href="../catalog.html">Catalog</a>
+<a href="../research.html">Research</a><a href="../reports.html">Reports</a>
+<a href="../glossary.html">Glossary</a><a href="../credits.html">Credits</a>
+<a href="../contributing.html">Contributing</a>
+<a href="https://github.com/Vineyardcode/vais">GitHub</a></nav>
+<main><h1>egyptian_determinative_test</h1>
+<p class="muted">scripts/egyptian_determinative_test.py</p>
+<pre>Egyptian Determinative Test (N10) — are the gallows semantic
+determinatives, or just dialectal vocabulary?
+
+PROVENANCE: the pre-charter egyptian_connection test asserts (5/5
+CONFIRMED, no controls) that the gallows t/k/f/p are semantic
+determinatives mapping to content domains. That test has no ledger
+standing (its status errata). This instrument gives the CORE claim a
+controlled trial with a pre-registered kill, so it can be supported or
+killed honestly instead of self-confirmed.
+
+THE TESTABLE CLAIM AND ITS DISCRIMINATOR: a determinative (Egyptian
+sense) is a semantic classifier SEPARABLE from the phonetic root. Its
+signature is that it predicts a word&#x27;s SECTION (its meaning-domain)
+MORE than the root does — because the root is phonetic and shared
+across topics, while the determinative carries the semantic category.
+The mundane alternative is DIALECT: whole vocabularies differ by
+section, so the ROOT carries the section information and the gallows
+merely ride along (the well-known fact that gallows frequencies vary
+by section is exactly this, and is NOT a determinative system).
+  Determinative -&gt; U*(gallows) &gt; U*(root)
+  Dialect       -&gt; U*(root)    &gt;= U*(gallows)
+where U*(X) is the section-predictiveness of feature X (below).
+
+FEATURES per word: gallows = the primary gallows base present
+(t/k/p/f) or &#x27;none&#x27; (5 categories — the &quot;4 determinatives + unmarked&quot;
+of the hypothesis); root = gallows-stripped, e-collapsed form. SECTION
+= folio-number taxonomy (herbal-A/B, zodiac, bio, cosmo, pharma, text).
+
+METRIC (cardinality-fair): U(section|X) = MI(X;section)/H(section), the
+fraction of section-uncertainty X explains. High-cardinality features
+(roots) inflate this by chance, so we subtract a shuffle null:
+U*(X) = U(section|X) - mean over N_NULL of U(section|X_shuffled), where
+X_shuffled permutes X&#x27;s labels across tokens (preserving X&#x27;s marginal).
+U* is the section information in X ABOVE what its cardinality alone
+buys. Reported for gallows and root; the comparison is the verdict.
+
+CONTROLS (the instrument must separate the two hypotheses):
+  P-DET (determinative positive): synthetic sections; each token = a
+    root drawn from a pool SHARED across sections + a section-specific
+    determinative marker. Roots carry no section info; the marker
+    carries all of it. Must show U*(marker) &gt;&gt; U*(root).
+  P-DIA (dialect positive / determinative negative): synthetic
+    sections; each with its OWN disjoint root vocabulary, marker
+    assigned section-INDEPENDENTLY. Roots carry the section info; the
+    marker none. Must show U*(root) &gt;&gt; U*(marker).
+  GATE: P-DET shows marker&gt;root AND P-DIA shows root&gt;marker (the
+    instrument distinguishes the mechanisms), else gate_failed.
+
+PRE-REGISTERED VERDICTS (Currier A, B, and pooled reported; adjudicate
+on pooled VMS):
+  gate_failed             — controls do not separate.
+  determinative_supported — U*(gallows) &gt; U*(root) by &gt;= MARGIN and the
+    profile matches P-DET: gallows behave like semantic determinatives.
+    SUGGESTIVE, quarantined — this would revive the Egyptian core claim
+    as a real (not self-scored) finding.
+  dialect_not_determinative — U*(root) &gt;= U*(gallows): the
+    gallows-section association is dialectal vocabulary variation, not a
+    determinative system. The Egyptian determinative claim is killed on
+    its core prediction (logged with equal prominence).
+  ambiguous               — neither dominates by MARGIN.
+Vocabulary discipline: a test of one structural claim; nothing decoded.</pre>
+<h2>Parameters</h2><p class="muted">Edit a value to override it for an in-browser run (the script itself is never modified).</p><table><tr><th>name</th><th>type</th><th>value</th></tr>
+<tr><td><code>SEED</code></td><td>int</td><td><input class="param" data-param="SEED" value="125"></td></tr>
+<tr><td><code>N_NULL</code></td><td>int</td><td><input class="param" data-param="N_NULL" value="30"></td></tr>
+<tr><td><code>MARGIN</code></td><td>float</td><td><input class="param" data-param="MARGIN" value="0.005"></td></tr>
+<tr><td><code>SECTIONS</code></td><td>int</td><td><input class="param" data-param="SECTIONS" value="6"></td></tr>
+<tr><td><code>ROOTS_PER</code></td><td>int</td><td><input class="param" data-param="ROOTS_PER" value="250"></td></tr>
+<tr><td><code>TOKENS_PER_SECTION</code></td><td>int</td><td><input class="param" data-param="TOKENS_PER_SECTION" value="6000"></td></tr>
+<tr><td><code>MIN_LINE_WORDS</code></td><td>int</td><td><input class="param" data-param="MIN_LINE_WORDS" value="2"></td></tr>
+</table>
+<h2>Run it in your browser</h2><p class="muted">Python + numpy on WebAssembly, entirely on your machine — nothing is uploaded. First run downloads the runtime (~15 MB) and the repository data pack (~9 MB); both are cached afterwards. Expect it to be slower than a native run.</p><p><button id="run-btn">&#9654; Run</button> <button id="stop-btn">Stop</button> <span id="run-status" class="muted"></span></p><pre id="run-out"></pre>
+<script>window.VAIS_TEST = {"stem": "egyptian_determinative_test", "specs": {"SEED": {"type": "int", "container": null}, "N_NULL": {"type": "int", "container": null}, "MARGIN": {"type": "float", "container": null}, "SECTIONS": {"type": "int", "container": null}, "ROOTS_PER": {"type": "int", "container": null}, "TOKENS_PER_SECTION": {"type": "int", "container": null}, "MIN_LINE_WORDS": {"type": "int", "container": null}}, "base": "../", "baselineSeconds": 0};</script><script src="../runner.js"></script>
+<h2>Run it locally (full speed, byte-exact)</h2>
+<pre>git clone https://github.com/Vineyardcode/vais
+cd vais
+pip install numpy flask
+python scripts/egyptian_determinative_test.py        # this test; output also lands in results/
+python webui/server.py          # or the full interactive UI at localhost:5000</pre>
+<h2>Golden output (PYTHONHASHSEED=0)</h2><details><summary>show</summary><pre id="golden-pre">============================================================================
+EGYPTIAN DETERMINATIVE TEST (N10) — classifier or dialect?
+============================================================================
+seed=125 nulls=30 margin=0.005; U* = section-predictiveness above the cardinality-shuffle null
+  P-DET (determinative) U*(gallows) +0.99980 (raw 1.0000, 6 cats)   U*(root) +0.00004 (raw 0.0098, 250 cats)   n=36000
+  P-DIA (dialect)      U*(gallows) +0.00001 (raw 0.0002, 6 cats)   U*(root) +0.93755 (raw 1.0000, 1500 cats)   n=36000
+  VMS pooled           U*(gallows) +0.00576 (raw 0.0059, 5 cats)   U*(root) +0.13030 (raw 0.2569, 4098 cats)   n=40499
+  VMS Currier A        U*(gallows) +0.01162 (raw 0.0121, 5 cats)   U*(root) +0.12253 (raw 0.2908, 1833 cats)   n=11984
+  VMS Currier B        U*(gallows) +0.00694 (raw 0.0072, 5 cats)   U*(root) +0.10015 (raw 0.2211, 2582 cats)   n=25276
+
+  ADJUDICATION (pre-registered):
+    gate: P-DET marker&gt;root (0.9998 &gt; 0.0000) and P-DIA root&gt;marker (0.9375 &gt; 0.0000) -&gt; PASS
+    DIALECT, NOT DETERMINATIVE: U*(root) 0.13030 &gt;= U*(gallows) 0.00576 — the section information lives in the ROOT vocabulary, not the gallows. The gallows-section association is dialectal variation, not a determinative system. The Egyptian determinative claim is KILLED on its core prediction.
+
+  -&gt; results/egyptian_determinative_test.json
+</pre></details><footer>Static mirror — read-only. Generated 2026-07-20 from commit <code>a91a3be</code>. 
+To run any test with your own parameters, clone
+<a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
+(<code>python webui/server.py</code>). All numbers reproduce at
+PYTHONHASHSEED=0.</footer></main></body></html>
