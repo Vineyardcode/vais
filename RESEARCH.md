@@ -557,6 +557,24 @@ numbering continues across tiers. Full evidence chains: Phase 8.)*
     non-language hoax control clusters strongly (self-citation +0.27),
     so hapax burstiness is not diagnostic of language
     (hapax_clustering_calibration).
+19. **The two shared discipline axes are ~half-reducible to
+    position-independent class properties, not fully derivable from
+    them** (S3 rung 4 / N6g, 2026-07-21): the manuscript-wide edge and
+    interior axes regressed on log-frequency + gallows-membership +
+    word-length (none carrying position information). Edge axis R^2
+    0.527 (excess +0.289 over a shuffle null — passes), with
+    interpretable coefficients that ARE Grove/LAAFU quantified
+    (frequent +0.47, gallows-initial +0.21, short -0.29 words → line
+    edges); interior gradient R^2 0.498 (excess +0.246, missing the
+    pre-registered 0.25 bar by 0.004 — held, not adjusted). Substituting
+    the ~50%-fidelity predicted loadings reopens the moat (derived
+    D_line 9.04 > bar 7.49; measured rank-3 achieved 6.88), so the
+    STRONG claim ("the shared axes ARE these properties") is killed and
+    the WEAK claim (they are ~half these properties plus real residual
+    structure) is documented. The interior gradient's residual — its
+    sh/q-early glyph-identity ordering, not captured by frequency or
+    gallows — is now the program's sharpest single open target
+    (line_discipline_derivation).
 18. **The gallows are not semantic determinatives — dialect, not a
     classifier system** (N10, 2026-07-20): the pre-charter
     egyptian_connection test's core claim (gallows t/k/f/p as Egyptian-
@@ -1661,3 +1679,24 @@ Configuration (pre-registered in the script docstring): script defaults. Runtime
 Derived-axes table (Âx₁, Âx₂ + measured axis 3): D_line 9.039 vs bar 7.489 (measured rank-3 achieved 6.882).
 
 **VERDICT: NOT DERIVED (partial reduction, corpse logged) — the three principles explain a SUBSTANTIAL, above-chance share of each shared axis (edge R² 0.5273, interior 0.4981, both ~2× the shuffle null) with interpretable coefficients (frequent, gallows-initial, short words → line edges — Grove/LAAFU made quantitative), but substituting the ~50%-fidelity predictions reopens the moat (D_line 9.039 > bar 7.489). The strong claim ("the shared axes ARE these properties") is killed; the weak claim (they are ~half these properties, plus real residual structure the interior gradient carries on its own) is documented. Richer principle sets are the informed next candidate.**
+
+---
+
+### Portfolio S3, rung 5 — within-word morphology derivation of the interior gradient (2026-07-21)
+
+[AUTOMATED — written by tools/overnight.py; run committed to branch overnight/2026-07-21; awaiting human review before promotion to any evidence tier.]
+
+Configuration (pre-registered in the script docstring): script defaults. Runtime 0.01 h at PYTHONHASHSEED=0. Holdout: whole folios (VMS) / 24-line pseudo-folio blocks (controls).
+
+**Pre-registered outcomes** (script docstring): the HYPOTHESIS — the line orders words by the typical WITHIN-WORD position of their first glyph (word-initial-type early, word-final-type late) — tested by adding within-word morphology (wwpos + finality) to the N6g principle set. Reduced iff interior R^2 >= 0.7 AND gain over the 3-principle baseline >= 0.1.
+
+| axis | R² (3-principle → +morphology) | gain | wwpos β | finality β |
+|---|---|---|---|---|
+| 1 (edge) | 0.5273 → 0.5806 | +0.053 | +0.00 | -0.18 |
+| 2 (interior) | 0.4981 → 0.6294 | +0.131 | +0.31 | -0.25 |
+| 3 (pre-final) | 0.4154 → 0.6226 | +0.207 | +0.06 | -0.16 |
+
+Within-word position by class (0=word-initial, 1=word-final): q 0.00, sh 0.13, ch 0.20, p 0.20, o 0.25, t 0.28, k 0.34, a 0.45, s 0.48, # 0.50, d 0.58, l 0.62, y 0.90.
+Enriched derived table: D_line 9.628 vs bar 7.489 (does not close; the residual persists).
+
+**VERDICT: MODEST IMPROVEMENT (hypothesis directionally confirmed, not dominant) — within-word position is the LARGEST predictor of the interior gradient (wwpos β +0.31, positive as hypothesized: word-initial-type glyphs early, word-final-type late) and raises interior R^2 by +0.131 (0.50 → 0.6294), clearing the gain bar but not the 0.7 strong-reduction target. So the interior gradient is PARTLY a morphological echo — the line reflects word structure — but a residual survives even frequency + gallows + length + within-word position. The line-discipline mystery is now this smaller, sharper residual.**

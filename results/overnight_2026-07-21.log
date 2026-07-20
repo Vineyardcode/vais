@@ -25,3 +25,33 @@
 [00:38:01] report -> C:\projects\vais\results\overnight_2026-07-21_report.md
 [00:38:01] RESEARCH.md: section appended (working tree; committed only to the overnight branch)
 [00:38:01] committing results to branch overnight/2026-07-21 ...
+[00:38:01] committed c31bafad7e44 on overnight/2026-07-21 (main untouched)
+[00:38:01] done, exit 0
+[00:59:44] ====================================================================
+[00:59:44] overnight runner start 2026-07-21 00:59:44  smoke=False PYTHONHASHSEED=0
+[00:59:45] code at 470e655 (clean tree), python 3.13.3
+[00:59:45] queue item N6h: S3 rung 5: morphology derivation — does within-word position reduce the interior gradient?
+[00:59:45] profile: {}  timeout=1800s
+  | ============================================================================
+  | LINE-DISCIPLINE MORPHOLOGY DERIVATION (S3 rung 5) — reduce the interior gradient? (N6h)
+  | ============================================================================
+  | seed=127 perms=200 target R^2>=0.7, gain>=0.1; principles = freq+gallows+wlen (+ wwpos, finality = within-word morphology)
+  |   B features + bar reproduce N6 (bar_line 7.489)  VERIFIED
+  |   rank-3 decomposition reproduces the N6d axes  VERIFIED
+  |   within-word position by class (0=initial, 1=final): q 0.00  sh 0.13  ch 0.20  p 0.20  o 0.25  t 0.28  k 0.34  a 0.45  s 0.48  # 0.50  d 0.58  l 0.62  y 0.90
+  |   axis1: R^2 0.581 (3-principle 0.527, gain +0.053)  wwpos-beta +0.00  finality-beta -0.18
+  |   axis2: R^2 0.629 (3-principle 0.498, gain +0.131)  wwpos-beta +0.31  finality-beta -0.25
+  |   axis3: R^2 0.623 (3-principle 0.415, gain +0.207)  wwpos-beta +0.06  finality-beta -0.16
+  |   gate: 3-principle interior R^2 0.4981 ~ N6g 0.4981 -> PASS
+  |   enriched derived table, lambda 2.25: D_line 9.628 (bar 7.489; measured rank-3 was 6.882; N6g 3-principle was 9.039)
+  | 
+  |   ADJUDICATION (pre-registered):
+  |     interior R^2 0.6294 (target 0.7), gain over 3-principle +0.131 (min 0.1); wwpos-beta +0.308; derived table closes: False
+  |     MODEST IMPROVEMENT: within-word position helps (gain +0.131) but the interior gradient is not dominated by it; residual remains.
+  | 
+  |   -> results/line_discipline_morphology.json
+[01:00:26] experiment finished rc=0 in 41s (0.01h)
+[01:00:26] adjudication: modest_improvement; interior R^2 0.6294 (gain +0.131, wwpos β +0.31), target 0.7
+[01:00:26] report -> C:\projects\vais\results\overnight_2026-07-21_report.md
+[01:00:26] RESEARCH.md: section appended (working tree; committed only to the overnight branch)
+[01:00:26] committing results to branch overnight/2026-07-21 ...
