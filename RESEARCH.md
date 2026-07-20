@@ -599,7 +599,14 @@ numbering continues across tiers. Full evidence chains: Phase 8.)*
     test: axes 1-2 are manuscript-wide in shape (A→B transfer ρ +0.92
     / +0.83) with the hand difference absorbed by the strength knob
     (λ 1.75 vs 1.25 — the switch-intensity picture made mechanical);
-    axis 3 anti-transfers (−0.46) and is B's own. Caveats attached:
+    axis 3 is DETECTABLE ONLY IN B (refined 2026-07-20 by N6f: the
+    earlier "anti-transfers −0.46" reading was component-mixing
+    artifact; a fixed-direction projection with validated continuity
+    gates finds A's axis-3 content not significant — β +0.32 vs a
+    ±0.79 null band — with point observations leaning weakly
+    same-direction, so "B's innovation" vs "shared rule below A's
+    detection floor" is undecidable at A's sample size). Caveats
+    attached:
     this is a DIAGNOSTIC reduction (the table is measured from the
     target; deriving the axes from principles outside the manuscript
     remains the open rung), same-author instrumentation (Phase 8
@@ -1511,3 +1518,23 @@ Configuration (pre-registered in the script docstring): script defaults. Runtime
 | nonP_only | 227 | 2438 | 444 | 43.0 (CONCENTRATED) | +0.324 (CLUSTERED) |
 
 **VERDICT: VERDICT SURVIVES — the hapax-clustering evidence is a property of the running text: decontamination removes ~39% of the chi2 statistic (the measured layout-artifact share) but every original classification holds. The contamination asterisk on Part D is removed by test.**
+
+---
+
+### Portfolio S3, rung 3b — axis-3 characterization in hand A (2026-07-20)
+
+[AUTOMATED — written by tools/overnight.py; run committed to branch overnight/2026-07-20; awaiting human review before promotion to any evidence tier.]
+
+Configuration (pre-registered in the script docstring): script defaults. Runtime 0.00 h at PYTHONHASHSEED=0. Holdout: whole folios (VMS) / 24-line pseudo-folio blocks (controls).
+
+**Pre-registered outcomes** (script docstring): hand A's centered log-table projected onto B's FIXED N6d axes (no SVD on A — avoiding the component-mixing hazard behind N6e's −0.46), permutation null (200 within-line shuffles), model-free bin-level sign cross-check.
+
+| axis | beta(A) | null max |beta| | significant |
+|---|---|---|---|
+| 1 | +0.753 | 0.106 | yes |
+| 2 | +0.756 | 0.191 | yes |
+| 3 | +0.324 | 0.785 | no |
+
+Bin-level pre-final skew, A vs B: Spearman +0.559 (observational).
+
+**VERDICT: AXIS 3 ABSENT IN A — no measurable pre-final-zone rule at A's sample size (the axis-3 direction is intrinsically noisy: wide null band). The point observations lean weakly SAME-direction, so N6e's −0.46 is resolved as component-mixing artifact, not inversion. Axis 3 remains B's own as far as A's data can resolve; ledger entry 15's "anti-transfers" reading is refined to "undetectable in A".**

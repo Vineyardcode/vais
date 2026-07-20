@@ -131,5 +131,12 @@
   "verdict": "N7 Part-D re-adjudication: VERDICT_SURVIVES",
   "suggestive": false,
   "summary": "verdict_survives; chi2 216.1 -> 131.4 (threshold 15.0), B +0.591 -> +0.581"
+ },
+ "N6f": {
+  "status": "completed",
+  "date": "2026-07-20",
+  "verdict": "S3 rung 3b: AXIS3_ABSENT_IN_A",
+  "suggestive": false,
+  "summary": "axis3_absent_in_A; beta_3(A) +0.324 vs null max 0.785; bins rho +0.559; continuity beta_1/2 +0.75/+0.76"
  }
 }
