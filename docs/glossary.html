@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Glossary — VAIS - Voynich Analysis Interactive Suite</title><style>
+:root { --bg:#ffffff; --fg:#1a1a1a; --muted:#666; --line:#ddd;
+        --code:#f5f5f5; --accent:#7a4a1e; --warn:#a33; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#141414; --fg:#ddd; --muted:#999; --line:#333;
+          --code:#1e1e1e; --accent:#d9a05b; --warn:#e77; } }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--fg);
+       font:16px/1.55 Georgia, 'Times New Roman', serif; }
+nav { border-bottom:1px solid var(--line); padding:.7em 1.2em;
+      font-family: system-ui, sans-serif; font-size:.9em; }
+nav a { color:var(--accent); text-decoration:none; margin-right:1.2em; }
+main { max-width: 62em; margin: 0 auto; padding: 1.5em 1.2em 4em; }
+h1,h2,h3 { font-family: system-ui, sans-serif; line-height:1.25; }
+h1 { font-size:1.7em; } h2 { font-size:1.3em; margin-top:2em; }
+a { color: var(--accent); }
+code, pre { font-family: ui-monospace, Consolas, monospace;
+            font-size:.86em; background:var(--code); }
+code { padding:.1em .3em; border-radius:3px; }
+pre { padding: .9em; overflow-x:auto; border:1px solid var(--line);
+      border-radius:4px; line-height:1.4; }
+table { border-collapse: collapse; margin: 1em 0; font-size:.92em;
+        display:block; overflow-x:auto; }
+th, td { border:1px solid var(--line); padding:.35em .6em;
+         text-align:left; vertical-align:top; }
+th { font-family: system-ui, sans-serif; background:var(--code); }
+blockquote { border-left:3px solid var(--accent); margin:1em 0;
+             padding:.2em 1em; color:var(--muted); }
+.muted { color:var(--muted); font-size:.9em; }
+.tag { font-family: system-ui, sans-serif; font-size:.75em;
+       border:1px solid var(--line); border-radius:3px;
+       padding:.05em .45em; margin-left:.5em; }
+.tag.sug { border-color:var(--warn); color:var(--warn); }
+details summary { cursor:pointer; font-family: system-ui, sans-serif; }
+input.param { font-family: ui-monospace, Consolas, monospace;
+              font-size:.85em; width:24em; max-width:100%;
+              background:var(--code); color:var(--fg);
+              border:1px solid var(--line); border-radius:3px;
+              padding:.25em .4em; }
+button { font-family: system-ui, sans-serif; font-size:.95em;
+         padding:.35em 1em; border:1px solid var(--accent);
+         border-radius:4px; background:var(--code); color:var(--fg);
+         cursor:pointer; }
+button:disabled { opacity:.5; cursor:default; }
+#run-out { min-height:2em; }
+footer { border-top:1px solid var(--line); margin-top:3em;
+         padding-top:1em; font-size:.85em; color:var(--muted); }
+</style></head><body>
+<nav><a href="index.html">VAIS - Voynich Analysis Interactive Suite</a><a href="catalog.html">Catalog</a>
+<a href="research.html">Research</a><a href="reports.html">Reports</a>
+<a href="glossary.html">Glossary</a><a href="credits.html">Credits</a>
+<a href="contributing.html">Contributing</a>
+<a href="https://github.com/Vineyardcode/vais">GitHub</a></nav>
+<main><h1>Glossary — the terms VAIS uses</h1>
+<p>Definitions for reading the tests, the reports, and [RESEARCH.md](RESEARCH.md) without opening the code. Added 2026-07-20 after community feedback that the test pages assume too much context.</p>
+<h2>The manuscript and its text</h2>
+<ul>
+<li><strong>Beinecke MS 408 / the VMS</strong> — the Voynich manuscript: ~240 pages of unread text in an unknown script, radiocarbon-dated to the early 15th century, held at Yale&#x27;s Beinecke Library.</li>
+<li><strong>EVA</strong> — the European Voynich Alphabet: a <em>convention</em> for writing Voynich glyphs in Latin letters (e.g. <code>qokedy</code>). It is one team&#x27;s ontology of what counts as a letter, not ground truth — which is why the suite audits transliteration-dependence (assumption A1).</li>
+<li><strong>Transliteration</strong> — a team&#x27;s reading of the manuscript into machine-readable text. The suite&#x27;s canonical corpus is <strong>ZL</strong> (Zandbergen–Landini); cross-checks use <strong>C-D</strong> (Currier/D&#x27;Imperio), <strong>FSG</strong> (Friedman&#x27;s First Study Group), <strong>v101</strong> (Glen Claston) and <strong>IT</strong> (Takahashi).</li>
+<li><strong>IVTFF / locus / locus types</strong> — the transliteration file format. Each transcribed unit (a <em>locus</em>) is typed: <strong>P</strong> = running paragraph text, <strong>L</strong> = label, <strong>C</strong> = circular (ring) text, <strong>R</strong> = radial. &quot;Continuous text&quot; analyses restrict to P (see the <code>LOCUS_TYPES</code> loader parameter).</li>
+<li><strong>Folio</strong> — a manuscript leaf (page), e.g. <code>f75r</code>. The suite&#x27;s held-out validation splits by folio, never by line.</li>
+<li><strong>Currier A / B</strong> — the two statistical &quot;dialects&quot; (registers) of the text, identified by Prescott Currier in the 1970s. B dominates the biological and recipes sections. The suite treats the A/B label as a per-folio property from the transliteration metadata.</li>
+<li><strong>Hapax (legomenon)</strong> — a word form occurring exactly once in a corpus. In these tests &quot;hapax&quot; refers to the <em>form</em>: the interesting question is whether unique forms behave like rare content words (language) or like encoding accidents (cipher).</li>
+<li><strong>Gallows</strong> — the tall Voynich glyphs (EVA <code>t k p f</code> and compounds); prominent at paragraph and line starts (see <em>Grove words</em>).</li>
+<li><strong>Grove words / LAAFU</strong> — community terms: gallows-initial words at paragraph starts (Grove), and Currier&#x27;s &quot;line as a functional unit&quot; (LAAFU) — the long-observed fact that line starts/ends behave anomalously.</li>
+</ul>
+<h2>Statistics used across the tests</h2>
+<ul>
+<li><strong>Entropy (H)</strong> — average unpredictability in bits. <strong>h2 / conditional entropy</strong> — unpredictability of the next character given the previous one; the manuscript&#x27;s famously low h2 is its most-cited anomaly. <strong>h2_ratio</strong> — h2 divided by single-character entropy.</li>
+<li><strong>Bigram</strong> — an adjacent pair (of characters or words).</li>
+<li><strong>JSD (Jensen–Shannon divergence)</strong> — a 0-to-1 measure of how different two frequency distributions are. <code>line_init_jsd</code> compares line-initial words&#x27; first characters against everyone else&#x27;s.</li>
+<li><strong>Zipf alpha</strong> — the slope of the word frequency-vs-rank law; natural texts sit near 1.</li>
+<li><strong>TTR (type-token ratio)</strong> — vocabulary richness: distinct words divided by total words (at a fixed sample size, e.g. <code>ttr_5000</code>).</li>
+<li><strong>Burstiness (B)</strong> — whether events (e.g. hapaxes) arrive clumped (B → 1), regularly (B → −1), or randomly (B ≈ 0), from the spread of gaps between them.</li>
+<li><strong>Spearman correlation (ρ)</strong> — rank correlation: do two quantities order things the same way (+1), oppositely (−1), or unrelatedly (0)?</li>
+<li><strong>Levenshtein distance</strong> — minimum single-character edits between two words; used for adjacent-word similarity.</li>
+<li><strong>bits/token, bits/symbol</strong> — information measured per word or per character; the units of most gains and gaps in these tests.</li>
+</ul>
+<h2>The methodology (the anti-crackpot machinery)</h2>
+<ul>
+<li><strong>Control battery</strong> — corpora with known ground truth, built before any manuscript run: positives P1 (Latin), P2 (Italian), P3 (substitution cipher), P4 (verbose cipher), P5 (abjad); negatives N1 (word-shuffled VMS), N2 (character-shuffled), N3 (Rugg-style grille gibberish), N4 (Timm-style self-citation). A method fooled by a negative control is dead.</li>
+<li><strong>Pre-registration / kill criteria</strong> — every instrument writes its falsification thresholds into its docstring <em>before first execution</em>; results are judged only against those.</li>
+<li><strong>DOF budget</strong> — an explicit count of a method&#x27;s freedom to fit anything (mappings, parameters, choices). Unbounded freedom &quot;decodes&quot; noise; the graveyard (RESEARCH.md Phase 2) is full of it.</li>
+<li><strong>Holdout (folio-level)</strong> — models are fitted on one set of folios and scored on unseen folios, so memorization can&#x27;t masquerade as signal.</li>
+<li><strong>Permutation null / null battery</strong> — the same statistic recomputed on shuffled versions of the data (e.g. each line&#x27;s words reshuffled in place). A real effect must beat <em>all</em> of them (empirical p ≈ 1/(N+1)).</li>
+<li><strong>Noise floor</strong> — how well a method scores on <em>meaningless</em> input given the same freedom; a manuscript result must beat it by a registered margin.</li>
+<li><strong>Golden reference</strong> — the committed byte-exact output of every test at <code>PYTHONHASHSEED=0</code>; any re-run (including in your browser) is diffed against it.</li>
+<li><strong>Adjudication / verdict / the ledger</strong> — every registered run ends in a mechanical pass-or-kill verdict; the ledger (RESEARCH.md Phase 5) files results as <strong>ESTABLISHED</strong> (survived controls and criteria), <strong>SUGGESTIVE</strong> (real signal, quarantined pending scrutiny), or <strong>SPECULATIVE</strong> (worth compute, no claims).</li>
+<li><strong>Quarantine / &quot;consistent with&quot;</strong> — positive findings are flagged, never promoted without human review, and the strongest permitted claim is &quot;consistent with X&quot; — never &quot;decoded&quot;.</li>
+</ul>
+<h2>Hypothesis families the suite tests</h2>
+<ul>
+<li><strong>Verbose cipher (strict 1:1)</strong> — each plaintext letter becomes one fixed multi-glyph group (e.g. Naibbe-style). Tested and negative for Latin/Italian/Occitan (ledger entry 11).</li>
+<li><strong>Syllable cipher</strong> — words assembled from sub-word units mapped from plaintext units via a table, so word-internal structure reflects the table, not a phonology.</li>
+<li><strong>Codebook / nomenclator</strong> — words as arbitrary dictionary indices (records/labels reading).</li>
+<li><strong>Positional notation</strong> — lines as place-value number strings.</li>
+<li><strong>Self-citation</strong> — Timm &amp; Schinner&#x27;s copy-and-modify generation (a hoax family).</li>
+<li><strong>Grille</strong> — Rugg&#x27;s table-and-window word generator (a hoax family).</li>
+</ul>
+<h2>The line-discipline findings (ledger entries 13 and 15)</h2>
+<ul>
+<li><strong>Intra-line ordinal structure</strong> — within a line, <em>which</em> word goes <em>where</em> is partly predictable: word-initial glyph class carries positional information (bits/token) beyond every tested confound.</li>
+<li><strong>Class (first EVA glyph)</strong> — words grouped by their first glyph (<code>q</code>-words, <code>sh</code>-words, …); the carrier of the placement signal.</li>
+<li><strong>Position bins</strong> — line positions grouped as p1, p2 (first two), m1–m3 (interior thirds), pL-1, pL (last two).</li>
+<li><strong>Interior gain</strong> — the headline statistic: how much better position predicts word features in the line&#x27;s interior than a position-blind model, on held-out folios.</li>
+<li><strong>Placement discipline / the table / λ (lambda)</strong> — the mechanical model: a measured table P(position-bin | class) plus one strength knob λ; placing each line&#x27;s own words by this rule reproduces the manuscript&#x27;s line statistics (the &quot;moat&quot;) in Currier B.</li>
+<li><strong>The three axes</strong> — the table&#x27;s full content compresses to three interpretable rules: (1) the <strong>edge/paragraph axis</strong> (gallows-linked line-start preferences — Grove/LAAFU, quantified), (2) the <strong>interior gradient</strong> (sh/q-early → r-late drift), (3) the <strong>pre-final-zone axis</strong> (a distinct preference just <em>before</em> the line end — detectable only in B).</li>
+<li><strong>The moat</strong> — shorthand from the forgery tournament: the line-boundary statistics that no calibrated generator reproduced — until the placement-discipline reduction.</li>
+</ul>
+<h2>Infrastructure</h2>
+<ul>
+<li><strong>Overnight runner</strong> (<code>tools/overnight.py</code>) — the unattended executor: runs a queued instrument, adjudicates it against its registration, writes the report, and commits records to dated branches.</li>
+<li><strong>In-browser runner</strong> — every test page&#x27;s ▶ button: the actual Python instrument compiled to WebAssembly, running on your machine with your parameter overrides, diffed against the golden.</li>
+<li><strong>Data pack</strong> — the zip of scripts, corpora and caches the browser runner mounts; nothing is uploaded anywhere.</li>
+</ul><footer>Static mirror — read-only. Generated 2026-07-20 from commit <code>aeec9be</code>. 
+To run any test with your own parameters, clone
+<a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
+(<code>python webui/server.py</code>). All numbers reproduce at
+PYTHONHASHSEED=0.</footer></main></body></html>

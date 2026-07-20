@@ -51,7 +51,8 @@ footer { border-top:1px solid var(--line); margin-top:3em;
 </style></head><body>
 <nav><a href="index.html">VAIS - Voynich Analysis Interactive Suite</a><a href="catalog.html">Catalog</a>
 <a href="research.html">Research</a><a href="reports.html">Reports</a>
-<a href="credits.html">Credits</a><a href="contributing.html">Contributing</a>
+<a href="glossary.html">Glossary</a><a href="credits.html">Credits</a>
+<a href="contributing.html">Contributing</a>
 <a href="https://github.com/Vineyardcode/vais">GitHub</a></nav>
 <main><h1>Overnight report — 2026-07-20</h1>
 <h2>Run 2026-07-20 01:46:02 — N7</h2>
@@ -97,7 +98,7 @@ footer { border-top:1px solid var(--line); margin-top:3em;
 </ul>
 <p><strong>Pre-registered verdicts</strong> (script docstring): a rung-0 imaging probe of S2 with in-repo scans and numpy+Pillow only — the question is whether transliteration-free analysis can get off the ground, not anything about the manuscript&#x27;s content.</p>
 <p>G1 binarization: median ink 0.1904, CV 0.288 → PASS. G2 segmentation: Spearman(components, ZL chars) +0.842 over 30 folios (strong ≥ 0.8). G3: k* [10, 15] (FAIL ±30%), centroid ratio 0.395 (PASS &lt; 0.5). 21214 glyph-scale components.</p>
-<p><strong>VERDICT: PARTIALLY FEASIBLE — the pipeline reliably SEES the writing (count correlation +0.84 with the transliteration through drawings and all), but glyph-shape cluster counts are unstable across folio halves (the F10 concern, at rung 0). S2 proceeds restricted: better shape descriptors / a real CV stack / text-only pages.</strong></p><footer>Static mirror — read-only. Generated 2026-07-20 from commit <code>680312a</code>. 
+<p><strong>VERDICT: PARTIALLY FEASIBLE — the pipeline reliably SEES the writing (count correlation +0.84 with the transliteration through drawings and all), but glyph-shape cluster counts are unstable across folio halves (the F10 concern, at rung 0). S2 proceeds restricted: better shape descriptors / a real CV stack / text-only pages.</strong></p><footer>Static mirror — read-only. Generated 2026-07-20 from commit <code>aeec9be</code>. 
 To run any test with your own parameters, clone
 <a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
 (<code>python webui/server.py</code>). All numbers reproduce at

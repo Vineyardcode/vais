@@ -11,6 +11,53 @@ Key insight: in natural language, within-word and between-word character
 transitions come from the SAME phonological system. In a cipher, they
 come from DIFFERENT processes (encoding rules vs. plaintext transitions).
 
+────────────────────────────────────────────────────────────────────────
+FRAMING ERRATA (2026-07-20, added after community review; the code and
+its outputs are unchanged — this block corrects the PROSE above and
+defines terms the original left implicit):
+
+1. The "Key insight" above OVERCLAIMS and is wrong as stated. In
+   natural languages, within-word and between-word transitions are NOT
+   from "the same system" in any strong sense: boundary phonotactics
+   differ from word-internal ones (positional segment inventories,
+   final devoicing, etc.), and between-word character transitions are,
+   to first order, products of two nearly independent marginals
+   (word-final and word-initial distributions), because adjacent word
+   choice is lexical/syntactic. Cross-boundary phonological
+   conditioning (e.g. French liaison/elision) is language-specific and
+   marginal — it does not generalize. What test A actually measures is
+   the DEGREE of similarity between within-word and cross-boundary
+   successor distributions: a descriptive comparison, not a calibrated
+   discriminator.
+2. "SYLLABLE CIPHER" as used here means: each Voynichese word is
+   assembled from sub-word units mapped from plaintext units (the
+   simplest form being one word = one plaintext syllable, per the
+   hypothesis line above; more generally a table-driven one-to-one or
+   one-to-many unit mapping), so that word-internal transitions
+   reflect the ENCODING TABLE's structure rather than a phonology, and
+   cross-boundary transitions reflect plaintext unit adjacency
+   filtered through the table. The tests' power against this family
+   depends on the table's structure and was not calibrated.
+3. Test D (hapax clustering) discriminates the ORIGIN of once-only
+   word FORMS, which the original prose never states: if the text is
+   language, unique forms are rare CONTENT words and cluster where
+   their topic lives; if unique forms are ENCODING ACCIDENTS (a cipher
+   with spelling freedom producing unique forms of common words), they
+   fall spatially uniformly. "Topic-specific vs uniform" refers to
+   that discrimination, not to a claim that real hapaxes might fail to
+   be topic-specific.
+4. This test predates the control-battery era (controls_foundry and
+   the RESEARCH.md charter). Its printed verdict lines are DESCRIPTIVE
+   comparisons, never calibrated against positive/negative controls,
+   and no entry of the adjudicated ledger rests on tests A/B/C/E. Test
+   D's STATISTICS (not its framing) were re-adjudicated under locus
+   decontamination in hapax_locus_readjudication (N7): the clustering
+   survives with the layout-artifact share measured (~39% of chi2).
+   The LOCUS_TYPES constant below (added at that audit) restricts the
+   corpus to chosen IVTFF locus types; [] reproduces the original
+   whole-corpus behavior.
+────────────────────────────────────────────────────────────────────────
+
   A) WITHIN-WORD vs BETWEEN-WORD TRANSITION MATRICES
        Compare the full C×C character transition matrices for transitions
        occurring WITHIN words vs BETWEEN words (last char → first char).

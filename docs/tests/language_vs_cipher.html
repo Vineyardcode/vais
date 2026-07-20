@@ -51,7 +51,8 @@ footer { border-top:1px solid var(--line); margin-top:3em;
 </style></head><body>
 <nav><a href="../index.html">VAIS - Voynich Analysis Interactive Suite</a><a href="../catalog.html">Catalog</a>
 <a href="../research.html">Research</a><a href="../reports.html">Reports</a>
-<a href="../credits.html">Credits</a><a href="../contributing.html">Contributing</a>
+<a href="../glossary.html">Glossary</a><a href="../credits.html">Credits</a>
+<a href="../contributing.html">Contributing</a>
 <a href="https://github.com/Vineyardcode/vais">GitHub</a></nav>
 <main><h1>language_vs_cipher</h1>
 <p class="muted">scripts/language_vs_cipher.py</p>
@@ -65,6 +66,53 @@ cipher_identification_tests narrowed to two hypotheses:
 Key insight: in natural language, within-word and between-word character
 transitions come from the SAME phonological system. In a cipher, they
 come from DIFFERENT processes (encoding rules vs. plaintext transitions).
+
+────────────────────────────────────────────────────────────────────────
+FRAMING ERRATA (2026-07-20, added after community review; the code and
+its outputs are unchanged — this block corrects the PROSE above and
+defines terms the original left implicit):
+
+1. The &quot;Key insight&quot; above OVERCLAIMS and is wrong as stated. In
+   natural languages, within-word and between-word transitions are NOT
+   from &quot;the same system&quot; in any strong sense: boundary phonotactics
+   differ from word-internal ones (positional segment inventories,
+   final devoicing, etc.), and between-word character transitions are,
+   to first order, products of two nearly independent marginals
+   (word-final and word-initial distributions), because adjacent word
+   choice is lexical/syntactic. Cross-boundary phonological
+   conditioning (e.g. French liaison/elision) is language-specific and
+   marginal — it does not generalize. What test A actually measures is
+   the DEGREE of similarity between within-word and cross-boundary
+   successor distributions: a descriptive comparison, not a calibrated
+   discriminator.
+2. &quot;SYLLABLE CIPHER&quot; as used here means: each Voynichese word is
+   assembled from sub-word units mapped from plaintext units (the
+   simplest form being one word = one plaintext syllable, per the
+   hypothesis line above; more generally a table-driven one-to-one or
+   one-to-many unit mapping), so that word-internal transitions
+   reflect the ENCODING TABLE&#x27;s structure rather than a phonology, and
+   cross-boundary transitions reflect plaintext unit adjacency
+   filtered through the table. The tests&#x27; power against this family
+   depends on the table&#x27;s structure and was not calibrated.
+3. Test D (hapax clustering) discriminates the ORIGIN of once-only
+   word FORMS, which the original prose never states: if the text is
+   language, unique forms are rare CONTENT words and cluster where
+   their topic lives; if unique forms are ENCODING ACCIDENTS (a cipher
+   with spelling freedom producing unique forms of common words), they
+   fall spatially uniformly. &quot;Topic-specific vs uniform&quot; refers to
+   that discrimination, not to a claim that real hapaxes might fail to
+   be topic-specific.
+4. This test predates the control-battery era (controls_foundry and
+   the RESEARCH.md charter). Its printed verdict lines are DESCRIPTIVE
+   comparisons, never calibrated against positive/negative controls,
+   and no entry of the adjudicated ledger rests on tests A/B/C/E. Test
+   D&#x27;s STATISTICS (not its framing) were re-adjudicated under locus
+   decontamination in hapax_locus_readjudication (N7): the clustering
+   survives with the layout-artifact share measured (~39% of chi2).
+   The LOCUS_TYPES constant below (added at that audit) restricts the
+   corpus to chosen IVTFF locus types; [] reproduces the original
+   whole-corpus behavior.
+────────────────────────────────────────────────────────────────────────
 
   A) WITHIN-WORD vs BETWEEN-WORD TRANSITION MATRICES
        Compare the full C×C character transition matrices for transitions
@@ -239,7 +287,7 @@ Natural Language vs. Syllable Cipher discrimination:
 54e: Does word length carry sequential information?
 
 language_vs_cipher complete.
-</pre></details><footer>Static mirror — read-only. Generated 2026-07-20 from commit <code>680312a</code>. 
+</pre></details><footer>Static mirror — read-only. Generated 2026-07-20 from commit <code>aeec9be</code>. 
 To run any test with your own parameters, clone
 <a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
 (<code>python webui/server.py</code>). All numbers reproduce at

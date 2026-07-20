@@ -208,7 +208,8 @@ def page(title, body, depth=0, stamp=""):
 <title>{esc(full)}</title><style>{CSS}</style></head><body>
 <nav><a href="{p}index.html">{esc(FULL_NAME)}</a><a href="{p}catalog.html">Catalog</a>
 <a href="{p}research.html">Research</a><a href="{p}reports.html">Reports</a>
-<a href="{p}credits.html">Credits</a><a href="{p}contributing.html">Contributing</a>
+<a href="{p}glossary.html">Glossary</a><a href="{p}credits.html">Credits</a>
+<a href="{p}contributing.html">Contributing</a>
 <a href="{REPO_URL}">GitHub</a></nav>
 <main>{body}<footer>Static mirror — read-only. {stamp}
 To run any test with your own parameters, clone
@@ -355,6 +356,10 @@ def main():
     contrib = (ROOT / "CONTRIBUTING.md").read_text(encoding="utf-8")
     (OUT / "contributing.html").write_text(
         page("Contributing", md_to_html(contrib), stamp=stamp),
+        encoding="utf-8")
+    gloss = (ROOT / "GLOSSARY.md").read_text(encoding="utf-8")
+    (OUT / "glossary.html").write_text(
+        page("Glossary", md_to_html(gloss), stamp=stamp),
         encoding="utf-8")
     report_files = sorted(ROOT.glob("results/overnight_*_report.md"))
     report_files = [f for f in report_files if "smoke" not in f.name]
