@@ -1879,6 +1879,91 @@ def adjudicate_n7(item, expected_params, run_started):
 
 
 # ────────────────────────────────────────────────────────────────────
+# N6f adjudication — pre-registered, mechanical, JSON-only
+# ────────────────────────────────────────────────────────────────────
+def adjudicate_n6f(item, expected_params, run_started):
+    """Pre-registered outcomes (line_discipline_axis3_handA.py
+    docstring): gates = B self-projection ~1 and axes-1/2 continuity;
+    axis-3 verdict from the fixed-direction projection + null battery
+    + bin-level sign agreement: axis3_absent_in_A /
+    axis3_inverted_in_A / axis3_shared_weak / discordant_methods.
+    Re-derived from the JSON; refuses on mismatch."""
+    jpath = RESULTS / item['result_json']
+    if not jpath.exists():
+        raise AdjudicationError(f'{jpath.name} was not written by the run')
+    if jpath.stat().st_mtime < run_started:
+        raise AdjudicationError(f'{jpath.name} predates this run — stale')
+    data = json.loads(jpath.read_text(encoding='utf-8'))
+    r = data['results']
+    gate_a = all(abs(x - 1.0) < 0.05 for x in r['beta_b_self'])
+    sig = {int(k): v for k, v in r['significant'].items()}
+    ba = r['beta_a']
+    gate_b = sig[1] and sig[2] and ba[0] > 0 and ba[1] > 0
+    b3, rho = ba[2], r['rho_bins']
+    if not (gate_a and gate_b):
+        key = 'gate_failed'
+    elif not sig[3]:
+        key = 'axis3_absent_in_A'
+    elif b3 < 0 and rho < 0:
+        key = 'axis3_inverted_in_A'
+    elif b3 > 0 and rho > 0:
+        key = 'axis3_shared_weak'
+    else:
+        key = 'discordant_methods'
+    if data.get('verdict') != key:
+        raise AdjudicationError(f'runner derives {key!r} but the script '
+                                f'recorded {data.get("verdict")!r}')
+    suggestive = key in ('axis3_inverted_in_A', 'axis3_shared_weak')
+
+    md = []
+    md.append('**Pre-registered outcomes** (script docstring): hand A\'s '
+              'centered log-table projected onto B\'s FIXED N6d axes (no '
+              'SVD on A — avoiding the component-mixing hazard behind '
+              'N6e\'s −0.46), permutation null '
+              f'({data["params"]["n_nulls"]} within-line shuffles), '
+              'model-free bin-level sign cross-check.')
+    md.append('')
+    md.append('| axis | beta(A) | null max |beta| | significant |')
+    md.append('|---|---|---|---|')
+    for i in (1, 2, 3):
+        md.append(f'| {i} | {ba[i - 1]:+.3f} | '
+                  f'{r["null_max_abs"][str(i)]:.3f} | '
+                  f'{"yes" if sig[i] else "no"} |')
+    md.append('')
+    md.append(f'Bin-level pre-final skew, A vs B: Spearman {rho:+.3f} '
+              '(observational).')
+    verdict_text = {
+        'gate_failed': 'GATE FAILED — no reading.',
+        'axis3_absent_in_A':
+            'AXIS 3 ABSENT IN A — no measurable pre-final-zone rule at '
+            'A\'s sample size (the axis-3 direction is intrinsically '
+            'noisy: wide null band). The point observations lean weakly '
+            'SAME-direction, so N6e\'s −0.46 is resolved as component-'
+            'mixing artifact, not inversion. Axis 3 remains B\'s own as '
+            'far as A\'s data can resolve; ledger entry 15\'s "anti-'
+            'transfers" reading is refined to "undetectable in A".',
+        'axis3_inverted_in_A':
+            'AXIS 3 INVERTED IN A — a qualitative hand difference. '
+            'SUGGESTIVE, quarantined.',
+        'axis3_shared_weak':
+            'AXIS 3 SHARED (WEAK) — N6e\'s −0.46 was component mixing; '
+            'the rule is manuscript-wide after all. SUGGESTIVE, '
+            'quarantined.',
+        'discordant_methods':
+            'DISCORDANT METHODS — no claim; investigation required.',
+    }[key]
+    md.append('')
+    md.append(f'**VERDICT: {verdict_text}**')
+    summary = (f'{key}; beta_3(A) {b3:+.3f} vs null max '
+               f'{r["null_max_abs"]["3"]:.3f}; bins rho {rho:+.3f}; '
+               f'continuity beta_1/2 {ba[0]:+.2f}/{ba[1]:+.2f}')
+    return {'verdict': f'S3 rung 3b: {key.upper()}',
+            'suggestive': suggestive, 'md': '\n'.join(md),
+            'summary': summary, 'params': data['params'],
+            'json_name': jpath.name}
+
+
+# ────────────────────────────────────────────────────────────────────
 # queue
 # ────────────────────────────────────────────────────────────────────
 N1_PROFILE = {'EM_OUTER': 32, 'EM_PROPOSALS': 48, 'EM_RESTARTS': 16,
@@ -2152,6 +2237,21 @@ QUEUE = [
         'adjudicate': adjudicate_n7,
         'research_heading': 'Legacy-test audit — language_vs_cipher '
                             'Part D under locus decontamination',
+        'not_ready': None,
+    },
+    {
+        'id': 'N6f',
+        'title': 'S3 rung 3b: axis-3 characterization in hand A — '
+                 'absent, inverted, or shared?',
+        'stem': 'line_discipline_axis3_handA',
+        'overrides': {},
+        'smoke_overrides': {},
+        'timeout_s': 1800,
+        'smoke_timeout_s': 900,
+        'result_json': 'line_discipline_axis3_handA.json',
+        'adjudicate': adjudicate_n6f,
+        'research_heading': 'Portfolio S3, rung 3b — axis-3 '
+                            'characterization in hand A',
         'not_ready': None,
     },
     {

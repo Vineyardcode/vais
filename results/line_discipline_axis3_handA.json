@@ -1,0 +1,68 @@
+{
+ "params": {
+  "seed": 122,
+  "n_nulls": 200,
+  "min_line_words": 5,
+  "alpha": 0.5,
+  "class_k": 12,
+  "prefinal_bins": [
+   "m3",
+   "pL-1"
+  ],
+  "n6d_json": "line_discipline_rank3.json"
+ },
+ "results": {
+  "beta_b_self": [
+   1.0,
+   1.0,
+   1.0
+  ],
+  "beta_a": [
+   0.7533,
+   0.7561,
+   0.3239
+  ],
+  "null_max_abs": {
+   "1": 0.1062,
+   "2": 0.1905,
+   "3": 0.7848
+  },
+  "significant": {
+   "1": true,
+   "2": true,
+   "3": false
+  },
+  "rho_bins": 0.559,
+  "prefinal_skew_A": {
+   "#": 1.037,
+   "a": 1.192,
+   "ch": 1.083,
+   "d": 1.151,
+   "k": 0.886,
+   "o": 1.066,
+   "p": 0.348,
+   "q": 0.859,
+   "s": 1.098,
+   "sh": 0.777,
+   "t": 0.772,
+   "y": 0.828
+  },
+  "prefinal_skew_B": {
+   "#": 1.094,
+   "a": 1.249,
+   "ch": 1.076,
+   "d": 0.908,
+   "k": 1.061,
+   "o": 1.124,
+   "p": 0.472,
+   "q": 0.992,
+   "s": 0.646,
+   "sh": 0.787,
+   "t": 0.888,
+   "y": 0.729
+  },
+  "n_a_lines": 1310,
+  "n_b_lines": 2522
+ },
+ "verdict": "axis3_absent_in_A"
+}

@@ -1328,5 +1328,14 @@
   "results_files_touched": [
    "hapax_locus_readjudication.json"
   ]
+ },
+ "line_discipline_axis3_handA": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 6.38,
+  "stdout_bytes": 1076,
+  "results_files_touched": [
+   "line_discipline_axis3_handA.json"
+  ]
  }
 }
