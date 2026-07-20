@@ -136,3 +136,30 @@
 [23:21:32] report -> C:\projects\vais\results\overnight_2026-07-20_report.md
 [23:21:32] RESEARCH.md: section appended (working tree; committed only to the overnight branch)
 [23:21:32] committing results to branch overnight/2026-07-20 ...
+[23:21:33] committed 053a000e18f3 on overnight/2026-07-20 (main untouched)
+[23:21:33] done, exit 0
+[23:45:27] ====================================================================
+[23:45:27] overnight runner start 2026-07-20 23:45:27  smoke=False PYTHONHASHSEED=0
+[23:45:27] code at a91a3be (clean tree), python 3.13.3
+[23:45:27] queue item N10: Egyptian determinative test: are the gallows semantic determinatives, or dialectal vocabulary?
+[23:45:27] profile: {}  timeout=1800s
+  | ============================================================================
+  | EGYPTIAN DETERMINATIVE TEST (N10) — classifier or dialect?
+  | ============================================================================
+  | seed=125 nulls=30 margin=0.005; U* = section-predictiveness above the cardinality-shuffle null
+  |   P-DET (determinative) U*(gallows) +0.99980 (raw 1.0000, 6 cats)   U*(root) +0.00004 (raw 0.0098, 250 cats)   n=36000
+  |   P-DIA (dialect)      U*(gallows) +0.00001 (raw 0.0002, 6 cats)   U*(root) +0.93755 (raw 1.0000, 1500 cats)   n=36000
+  |   VMS pooled           U*(gallows) +0.00576 (raw 0.0059, 5 cats)   U*(root) +0.13030 (raw 0.2569, 4098 cats)   n=40499
+  |   VMS Currier A        U*(gallows) +0.01162 (raw 0.0121, 5 cats)   U*(root) +0.12253 (raw 0.2908, 1833 cats)   n=11984
+  |   VMS Currier B        U*(gallows) +0.00694 (raw 0.0072, 5 cats)   U*(root) +0.10015 (raw 0.2211, 2582 cats)   n=25276
+  | 
+  |   ADJUDICATION (pre-registered):
+  |     gate: P-DET marker>root (0.9998 > 0.0000) and P-DIA root>marker (0.9375 > 0.0000) -> PASS
+  |     DIALECT, NOT DETERMINATIVE: U*(root) 0.13030 >= U*(gallows) 0.00576 — the section information lives in the ROOT vocabulary, not the gallows. The gallows-section association is dialectal variation, not a determinative system. The Egyptian determinative claim is KILLED on its core prediction.
+  | 
+  |   -> results/egyptian_determinative_test.json
+[23:45:33] experiment finished rc=0 in 6s (0.00h)
+[23:45:33] adjudication: dialect_not_determinative; VMS U*(gallows) +0.0058 vs U*(root) +0.1303; gate pass
+[23:45:33] report -> C:\projects\vais\results\overnight_2026-07-20_report.md
+[23:45:33] RESEARCH.md: section appended (working tree; committed only to the overnight branch)
+[23:45:33] committing results to branch overnight/2026-07-20 ...

@@ -557,6 +557,20 @@ numbering continues across tiers. Full evidence chains: Phase 8.)*
     non-language hoax control clusters strongly (self-citation +0.27),
     so hapax burstiness is not diagnostic of language
     (hapax_clustering_calibration).
+17. **The hapax-clustering "→ language" inference is uncalibrated;
+    the Egyptian-connection test has no standing** (N9 + status audit,
+    2026-07-20): (a) N9 ran Part D's hapax-burstiness statistic on the
+    control battery — real-language corpora do NOT cluster (Latin B
+    +0.068, Italian +0.007, both below the test's own 0.1 bar) while a
+    non-language hoax control clusters most (self-citation +0.272), so
+    burstiness is not diagnostic of language; the pre-registered verdict
+    was inconclusive (single-topic controls cannot show topical
+    clustering), and a multi-topic re-test is the open rung. (b)
+    egyptian_connection is a pre-charter test that runs NO negative
+    control and self-reports 5/5 CONFIRMED; it is not evidence for the
+    Egyptian hypothesis and has no ledger standing (status errata in
+    the script; failure modes F3/F5/F7). Both are recorded as the
+    charter working on the suite's own legacy — nothing is promoted.
 16. **Raw-scan segmentation sees the text; shape clustering does not
     yet stabilize** (S2 rung 0 / N8, 2026-07-20): a numpy+Pillow
     pipeline over 30 seeded folio scans binarizes stably and its
@@ -1593,3 +1607,24 @@ Configuration (pre-registered in the script docstring): script defaults. Runtime
 | VMS_wordshuffle | reference | +0.051 | 0.058 | 0.097 |
 
 **VERDICT: INCONCLUSIVE by the pre-registered criteria — which required the language positives to cluster, and they do NOT (Latin +0.068, Italian +0.007, both below 0.1). The controls are single-work corpora with no manuscript-like sections, so they cannot exhibit *topical* hapax clustering; the battery as built cannot fully test the topical version of the claim. But two observations (reported, not re-adjudicated) independently undermine Part D's inference as stated: (a) high hapax burstiness is NOT an intrinsic property of language text — real Latin/Italian sit near zero; (b) a NON-language hoax control (N4 self-citation, B +0.272) clusters more strongly than anything else, so burstiness alone is not diagnostic of language. Net: Part D's "clustered → language" inference is uncalibrated and unsupported by these controls; a properly powered re-test needs multi-topic language and cipher corpora (a registered future rung). Ledger entry 14 — which claims only that the VMS clustering is real and locus-robust, never that it proves language — is unaffected and now carries a pointer to this result.**
+
+---
+
+### Legacy-hypothesis trial — gallows as semantic determinatives (controlled) (2026-07-20)
+
+[AUTOMATED — written by tools/overnight.py; run committed to branch overnight/2026-07-20; awaiting human review before promotion to any evidence tier.]
+
+Configuration (pre-registered in the script docstring): script defaults. Runtime 0.00 h at PYTHONHASHSEED=0. Holdout: whole folios (VMS) / 24-line pseudo-folio blocks (controls).
+
+**Pre-registered outcomes** (script docstring): the Egyptian core claim (gallows = semantic determinatives) tested by its discriminating signature — a determinative predicts SECTION more than the phonetic root does; dialect predicts the reverse. U*(X) = section-predictiveness above a cardinality-shuffle null.
+
+| corpus | U*(gallows) | U*(root) | reading |
+|---|---|---|---|
+| P-DET control | +0.99980 | +0.00004 | gallows-carried |
+| P-DIA control | +0.00001 | +0.93755 | root-carried |
+| VMS pooled | +0.00576 | +0.13030 | root-carried |
+| VMS Currier A | +0.01162 | +0.12253 | root-carried |
+| VMS Currier B | +0.00694 | +0.10015 | root-carried |
+
+Gate (controls separate the mechanisms): PASS.
+**VERDICT: DIALECT, NOT DETERMINATIVE — the section information lives in the ROOT vocabulary (pooled U* 0.130), not the gallows (0.006); a ~23× gap matching the dialect control. The gallows-section association the pre-charter test read as "determinatives" is dialectal vocabulary variation. The Egyptian determinative claim is KILLED on its core prediction — now with controls, where the old test had none.**

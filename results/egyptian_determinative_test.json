@@ -1,0 +1,59 @@
+{
+ "params": {
+  "seed": 125,
+  "n_null": 30,
+  "margin": 0.005,
+  "sections": 6,
+  "roots_per": 250,
+  "tokens_per_section": 6000
+ },
+ "results": {
+  "P_DET": {
+   "u_gallows": 0.9998,
+   "u_root": 4e-05,
+   "u_gallows_raw": 1.0,
+   "u_root_raw": 0.00979,
+   "n_gallows_cats": 6,
+   "n_root_cats": 250,
+   "n_tokens": 36000
+  },
+  "P_DIA": {
+   "u_gallows": 1e-05,
+   "u_root": 0.93755,
+   "u_gallows_raw": 0.0002,
+   "u_root_raw": 1.0,
+   "n_gallows_cats": 6,
+   "n_root_cats": 1500,
+   "n_tokens": 36000
+  },
+  "VMS_full": {
+   "u_gallows": 0.00576,
+   "u_root": 0.1303,
+   "u_gallows_raw": 0.00592,
+   "u_root_raw": 0.25692,
+   "n_gallows_cats": 5,
+   "n_root_cats": 4098,
+   "n_tokens": 40499
+  },
+  "VMS_A": {
+   "u_gallows": 0.01162,
+   "u_root": 0.12253,
+   "u_gallows_raw": 0.01206,
+   "u_root_raw": 0.29077,
+   "n_gallows_cats": 5,
+   "n_root_cats": 1833,
+   "n_tokens": 11984
+  },
+  "VMS_B": {
+   "u_gallows": 0.00694,
+   "u_root": 0.10015,
+   "u_gallows_raw": 0.00717,
+   "u_root_raw": 0.22107,
+   "n_gallows_cats": 5,
+   "n_root_cats": 2582,
+   "n_tokens": 25276
+  }
+ },
+ "gate_pass": true,
+ "verdict": "dialect_not_determinative"
+}
