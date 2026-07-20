@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>hapax_clustering_calibration — VAIS - Voynich Analysis Interactive Suite</title><style>
+:root { --bg:#ffffff; --fg:#1a1a1a; --muted:#666; --line:#ddd;
+        --code:#f5f5f5; --accent:#7a4a1e; --warn:#a33; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#141414; --fg:#ddd; --muted:#999; --line:#333;
+          --code:#1e1e1e; --accent:#d9a05b; --warn:#e77; } }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--fg);
+       font:16px/1.55 Georgia, 'Times New Roman', serif; }
+nav { border-bottom:1px solid var(--line); padding:.7em 1.2em;
+      font-family: system-ui, sans-serif; font-size:.9em; }
+nav a { color:var(--accent); text-decoration:none; margin-right:1.2em; }
+main { max-width: 62em; margin: 0 auto; padding: 1.5em 1.2em 4em; }
+h1,h2,h3 { font-family: system-ui, sans-serif; line-height:1.25; }
+h1 { font-size:1.7em; } h2 { font-size:1.3em; margin-top:2em; }
+a { color: var(--accent); }
+code, pre { font-family: ui-monospace, Consolas, monospace;
+            font-size:.86em; background:var(--code); }
+code { padding:.1em .3em; border-radius:3px; }
+pre { padding: .9em; overflow-x:auto; border:1px solid var(--line);
+      border-radius:4px; line-height:1.4; }
+table { border-collapse: collapse; margin: 1em 0; font-size:.92em;
+        display:block; overflow-x:auto; }
+th, td { border:1px solid var(--line); padding:.35em .6em;
+         text-align:left; vertical-align:top; }
+th { font-family: system-ui, sans-serif; background:var(--code); }
+blockquote { border-left:3px solid var(--accent); margin:1em 0;
+             padding:.2em 1em; color:var(--muted); }
+.muted { color:var(--muted); font-size:.9em; }
+.tag { font-family: system-ui, sans-serif; font-size:.75em;
+       border:1px solid var(--line); border-radius:3px;
+       padding:.05em .45em; margin-left:.5em; }
+.tag.sug { border-color:var(--warn); color:var(--warn); }
+details summary { cursor:pointer; font-family: system-ui, sans-serif; }
+input.param { font-family: ui-monospace, Consolas, monospace;
+              font-size:.85em; width:24em; max-width:100%;
+              background:var(--code); color:var(--fg);
+              border:1px solid var(--line); border-radius:3px;
+              padding:.25em .4em; }
+button { font-family: system-ui, sans-serif; font-size:.95em;
+         padding:.35em 1em; border:1px solid var(--accent);
+         border-radius:4px; background:var(--code); color:var(--fg);
+         cursor:pointer; }
+button:disabled { opacity:.5; cursor:default; }
+#run-out { min-height:2em; }
+footer { border-top:1px solid var(--line); margin-top:3em;
+         padding-top:1em; font-size:.85em; color:var(--muted); }
+</style></head><body>
+<nav><a href="../index.html">VAIS - Voynich Analysis Interactive Suite</a><a href="../catalog.html">Catalog</a>
+<a href="../research.html">Research</a><a href="../reports.html">Reports</a>
+<a href="../glossary.html">Glossary</a><a href="../credits.html">Credits</a>
+<a href="../contributing.html">Contributing</a>
+<a href="https://github.com/Vineyardcode/vais">GitHub</a></nav>
+<main><h1>hapax_clustering_calibration</h1>
+<p class="muted">scripts/hapax_clustering_calibration.py</p>
+<pre>Hapax-Clustering Discriminator Calibration (N9) — does &quot;hapaxes cluster
+→ language&quot; actually discriminate language from non-language?
+
+PROVENANCE (operator-directed, 2026-07-20): language_vs_cipher Part D
+reads high hapax spatial clustering (burstiness B) as evidence of
+natural language (&quot;topic-specific&quot;), low/uniform as cipher. N7 showed
+the VMS clustering is real and locus-robust; the errata on that test
+reframed what it discriminates. But the underlying INFERENCE — that
+clustering is DIAGNOSTIC of language — was never calibrated against the
+control battery, because Part D predates the charter. This instrument
+does exactly that calibration, and it can abandon the inference.
+
+Note on definition (addressing a review point): &quot;hapax&quot; here is the
+STRICT once-occurring form, count == 1 over the collapsed vocabulary,
+identical to Part D&#x27;s `{w for w,c in vocab.items() if c == 1}`. It has
+NOT been relaxed to &quot;rare words&quot;. The question under test is not the
+definition but whether the STATISTIC computed on strict hapaxes
+separates language from non-language.
+
+STATISTIC (Part D&#x27;s, faithfully): per corpus, collapse each word
+(gallows-strip + e-collapse, common.get_collapsed), hapax = collapsed
+type with corpus count 1, burstiness B = (std - mean)/(std + mean) of
+gaps between consecutive hapax LINE positions (Part D&#x27;s exact formula
+and its printed threshold: B &gt; 0.1 = CLUSTERED). Also report hapax rate
+(hapaxes / tokens) and TTR, since burstiness of a once-only set is
+partly an arithmetic function of density — that confound is the point.
+
+CORPORA (control battery, all size-matched, ~36-40k tokens):
+  LANGUAGE positives: P1 latin_plain, P2 italian_plain.
+  CIPHER positive:    P4 latin_verbose (language under a cipher — Part D
+                      would predict this NON-clustered if its logic held).
+  NON-LANGUAGE negatives: N3 grille_table (mechanical gibberish, no
+                      topics), N4 self_citation (copy-modify hoax).
+  Reference: VMS (vms_word_shuffle stands in for the manuscript&#x27;s own
+                      tokens; the live manuscript B was 0.591 in Part D).
+
+PRE-REGISTERED ADJUDICATION (Part D&#x27;s own threshold, B_CLUSTERED = 0.1):
+  discriminator_valid   — the language positives (P1 AND P2) are
+                          CLUSTERED (B &gt; 0.1) AND the non-language
+                          negatives (N3 AND N4) are NOT (B &lt;= 0.1):
+                          burstiness separates the classes; Part D&#x27;s
+                          inference is calibrated and stands.
+  discriminator_broken  — a non-language negative (N3 or N4) is
+                          CLUSTERED at or above the language positives&#x27;
+                          level (B_neg &gt;= min(B_P1, B_P2)): high hapax
+                          burstiness is NOT diagnostic of language;
+                          Part D&#x27;s &quot;clustered → language&quot; inference is
+                          ABANDONED (reframed to &quot;clustering is real but
+                          uninformative about language vs non-language&quot;;
+                          ledger entry 14, which claims only that the
+                          clustering is real and locus-robust — never
+                          that it proves language — is unaffected and is
+                          annotated with this result).
+  inconclusive          — anything else (e.g. positives not clustered):
+                          the statistic behaves unexpectedly on
+                          controls; no inference either way.
+Vocabulary discipline: this calibrates one legacy inference; it makes
+no claim about what the manuscript is.</pre>
+<h2>Parameters</h2><p class="muted">Edit a value to override it for an in-browser run (the script itself is never modified).</p><table><tr><th>name</th><th>type</th><th>value</th></tr>
+<tr><td><code>SEED</code></td><td>int</td><td><input class="param" data-param="SEED" value="124"></td></tr>
+<tr><td><code>B_CLUSTERED</code></td><td>float</td><td><input class="param" data-param="B_CLUSTERED" value="0.1"></td></tr>
+<tr><td><code>MIN_LINE_WORDS</code></td><td>int</td><td><input class="param" data-param="MIN_LINE_WORDS" value="2"></td></tr>
+<tr><td><code>CORPORA</code></td><td>json</td><td><input class="param" data-param="CORPORA" value="[(&#x27;P1_latin&#x27;, &#x27;latin_plain&#x27;, &#x27;language+&#x27;), (&#x27;P2_italian&#x27;, &#x27;italian_plain&#x27;, &#x27;language+&#x27;), (&#x27;P4_verbose_cipher&#x27;, &#x27;latin_verbose&#x27;, &#x27;cipher&#x27;), (&#x27;N3_grille&#x27;, &#x27;grille_table&#x27;, &#x27;nonlang-&#x27;), (&#x27;N4_self_citation&#x27;, &#x27;self_citation&#x27;, &#x27;nonlang-&#x27;), (&#x27;VMS_wordshuffle&#x27;, &#x27;vms_word_shuffle&#x27;, &#x27;reference&#x27;)]"></td></tr>
+</table>
+<h2>Run it in your browser</h2><p class="muted">Python + numpy on WebAssembly, entirely on your machine — nothing is uploaded. First run downloads the runtime (~15 MB) and the repository data pack (~9 MB); both are cached afterwards. Expect it to be slower than a native run.</p><p><button id="run-btn">&#9654; Run</button> <button id="stop-btn">Stop</button> <span id="run-status" class="muted"></span></p><pre id="run-out"></pre>
+<script>window.VAIS_TEST = {"stem": "hapax_clustering_calibration", "specs": {"SEED": {"type": "int", "container": null}, "B_CLUSTERED": {"type": "float", "container": null}, "MIN_LINE_WORDS": {"type": "int", "container": null}, "CORPORA": {"type": "json", "container": null}}, "base": "../", "baselineSeconds": 0};</script><script src="../runner.js"></script>
+<h2>Run it locally (full speed, byte-exact)</h2>
+<pre>git clone https://github.com/Vineyardcode/vais
+cd vais
+pip install numpy flask
+python scripts/hapax_clustering_calibration.py        # this test; output also lands in results/
+python webui/server.py          # or the full interactive UI at localhost:5000</pre>
+<h2>Golden output (PYTHONHASHSEED=0)</h2><details><summary>show</summary><pre id="golden-pre">============================================================================
+HAPAX-CLUSTERING DISCRIMINATOR CALIBRATION (N9)
+============================================================================
+Part D threshold: B &gt; 0.1 = CLUSTERED (= &quot;language&quot;). Question: does it separate language from non-language on the controls?
+  (hapax = strict count==1 on the collapsed vocabulary, as in Part D — NOT relaxed to &quot;rare words&quot;)
+  P1_latin           [language+] B +0.068 (uniform)  hapax_rate 0.129  ttr 0.226  (4908 hapaxes / 38003 tok)
+  P2_italian         [language+] B +0.007 (uniform)  hapax_rate 0.103  ttr 0.170  (3932 hapaxes / 38006 tok)
+  P4_verbose_cipher  [cipher   ] B +0.062 (uniform)  hapax_rate 0.136  ttr 0.233  (5174 hapaxes / 38003 tok)
+  N3_grille          [nonlang- ] B    n/a  (&lt;10 hapaxes)
+  N4_self_citation   [nonlang- ] B +0.272 (CLUSTERED)  hapax_rate 0.090  ttr 0.184  (3438 hapaxes / 38002 tok)
+  VMS_wordshuffle    [reference] B +0.051 (uniform)  hapax_rate 0.058  ttr 0.097  (2299 hapaxes / 39645 tok)
+
+  ADJUDICATION (pre-registered):
+    INCONCLUSIVE: language positives are not both clustered (P1 +0.068, P2 +0.007) — the statistic behaves unexpectedly on controls; no inference.
+
+  -&gt; results/hapax_clustering_calibration.json
+</pre></details><footer>Static mirror — read-only. Generated 2026-07-20 from commit <code>4708fc3</code>. 
+To run any test with your own parameters, clone
+<a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
+(<code>python webui/server.py</code>). All numbers reproduce at
+PYTHONHASHSEED=0.</footer></main></body></html>
