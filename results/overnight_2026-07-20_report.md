@@ -48,3 +48,23 @@ Bin-level pre-final skew, A vs B: Spearman +0.559 (observational).
 G1 binarization: median ink 0.1904, CV 0.288 → PASS. G2 segmentation: Spearman(components, ZL chars) +0.842 over 30 folios (strong ≥ 0.8). G3: k* [10, 15] (FAIL ±30%), centroid ratio 0.395 (PASS < 0.5). 21214 glyph-scale components.
 
 **VERDICT: PARTIALLY FEASIBLE — the pipeline reliably SEES the writing (count correlation +0.84 with the transliteration through drawings and all), but glyph-shape cluster counts are unstable across folio halves (the F10 concern, at rung 0). S2 proceeds restricted: better shape descriptors / a real CV stack / text-only pages.**
+
+## Run 2026-07-20 23:21:32 — N9
+**Hapax-clustering discriminator calibration: does "clustered → language" separate the control classes?**
+- script: `scripts/hapax_clustering_calibration.py`
+- profile: `{}`
+- log: `overnight_2026-07-20.log`; results JSON: `hapax_clustering_calibration.json`; branch: `overnight/2026-07-20`
+- runtime: 1s (0.00 h), exit code 0
+
+**Pre-registered outcomes** (script docstring): Part D reads hapax burstiness B > 0.1 as "language". This calibration runs that exact statistic on the control battery. Hapax = strict count==1 on the collapsed vocabulary (Part D's definition, NOT relaxed to "rare words").
+
+| corpus | class | burstiness B | hapax rate | TTR |
+|---|---|---|---|---|
+| P1_latin | language+ | +0.068 | 0.129 | 0.226 |
+| P2_italian | language+ | +0.007 | 0.103 | 0.17 |
+| P4_verbose_cipher | cipher | +0.062 | 0.136 | 0.233 |
+| N3_grille | nonlang- | n/a (<10 hapax) | — | — |
+| N4_self_citation | nonlang- | +0.272 | 0.09 | 0.184 |
+| VMS_wordshuffle | reference | +0.051 | 0.058 | 0.097 |
+
+**VERDICT: INCONCLUSIVE by the pre-registered criteria — which required the language positives to cluster, and they do NOT (Latin +0.068, Italian +0.007, both below 0.1). The controls are single-work corpora with no manuscript-like sections, so they cannot exhibit *topical* hapax clustering; the battery as built cannot fully test the topical version of the claim. But two observations (reported, not re-adjudicated) independently undermine Part D's inference as stated: (a) high hapax burstiness is NOT an intrinsic property of language text — real Latin/Italian sit near zero; (b) a NON-language hoax control (N4 self-citation, B +0.272) clusters more strongly than anything else, so burstiness alone is not diagnostic of language. Net: Part D's "clustered → language" inference is uncalibrated and unsupported by these controls; a properly powered re-test needs multi-topic language and cipher corpora (a registered future rung). Ledger entry 14 — which claims only that the VMS clustering is real and locus-robust, never that it proves language — is unaffected and now carries a pointer to this result.**

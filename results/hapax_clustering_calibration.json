@@ -1,0 +1,60 @@
+{
+ "params": {
+  "seed": 124,
+  "b_clustered": 0.1,
+  "min_line_words": 2
+ },
+ "rows": {
+  "P1_latin": {
+   "B": 0.068,
+   "n_hapax": 4908,
+   "n_types": 8583,
+   "n_tokens": 38003,
+   "hapax_rate": 0.129,
+   "ttr": 0.226,
+   "class": "language+"
+  },
+  "P2_italian": {
+   "B": 0.007,
+   "n_hapax": 3932,
+   "n_types": 6469,
+   "n_tokens": 38006,
+   "hapax_rate": 0.103,
+   "ttr": 0.17,
+   "class": "language+"
+  },
+  "P4_verbose_cipher": {
+   "B": 0.062,
+   "n_hapax": 5174,
+   "n_types": 8854,
+   "n_tokens": 38003,
+   "hapax_rate": 0.136,
+   "ttr": 0.233,
+   "class": "cipher"
+  },
+  "N3_grille": {
+   "class": "nonlang-",
+   "B": null,
+   "note": "<10 hapaxes \u2014 statistic undefined"
+  },
+  "N4_self_citation": {
+   "B": 0.272,
+   "n_hapax": 3438,
+   "n_types": 6983,
+   "n_tokens": 38002,
+   "hapax_rate": 0.09,
+   "ttr": 0.184,
+   "class": "nonlang-"
+  },
+  "VMS_wordshuffle": {
+   "B": 0.051,
+   "n_hapax": 2299,
+   "n_types": 3864,
+   "n_tokens": 39645,
+   "hapax_rate": 0.058,
+   "ttr": 0.097,
+   "class": "reference"
+  }
+ },
+ "verdict": "inconclusive"
+}

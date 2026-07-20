@@ -108,3 +108,31 @@
 [15:47:06] report -> C:\projects\vais\results\overnight_2026-07-20_report.md
 [15:47:06] RESEARCH.md: section appended (working tree; committed only to the overnight branch)
 [15:47:06] committing results to branch overnight/2026-07-20 ...
+[15:47:07] committed 2f92f1aedc77 on overnight/2026-07-20 (main untouched)
+[15:47:07] done, exit 0
+[23:21:32] ====================================================================
+[23:21:32] overnight runner start 2026-07-20 23:21:32  smoke=False PYTHONHASHSEED=0
+[23:21:32] code at 4708fc3 (clean tree), python 3.13.3
+[23:21:32] queue item N9: Hapax-clustering discriminator calibration: does "clustered → language" separate the control classes?
+[23:21:32] profile: {}  timeout=1800s
+  | ============================================================================
+  | HAPAX-CLUSTERING DISCRIMINATOR CALIBRATION (N9)
+  | ============================================================================
+  | Part D threshold: B > 0.1 = CLUSTERED (= "language"). Question: does it separate language from non-language on the controls?
+  |   (hapax = strict count==1 on the collapsed vocabulary, as in Part D — NOT relaxed to "rare words")
+  |   P1_latin           [language+] B +0.068 (uniform)  hapax_rate 0.129  ttr 0.226  (4908 hapaxes / 38003 tok)
+  |   P2_italian         [language+] B +0.007 (uniform)  hapax_rate 0.103  ttr 0.170  (3932 hapaxes / 38006 tok)
+  |   P4_verbose_cipher  [cipher   ] B +0.062 (uniform)  hapax_rate 0.136  ttr 0.233  (5174 hapaxes / 38003 tok)
+  |   N3_grille          [nonlang- ] B    n/a  (<10 hapaxes)
+  |   N4_self_citation   [nonlang- ] B +0.272 (CLUSTERED)  hapax_rate 0.090  ttr 0.184  (3438 hapaxes / 38002 tok)
+  |   VMS_wordshuffle    [reference] B +0.051 (uniform)  hapax_rate 0.058  ttr 0.097  (2299 hapaxes / 39645 tok)
+  | 
+  |   ADJUDICATION (pre-registered):
+  |     INCONCLUSIVE: language positives are not both clustered (P1 +0.068, P2 +0.007) — the statistic behaves unexpectedly on controls; no inference.
+  | 
+  |   -> results/hapax_clustering_calibration.json
+[23:21:32] experiment finished rc=0 in 1s (0.00h)
+[23:21:32] adjudication: inconclusive; P1 +0.068, P2 +0.007, N4 +0.272 (threshold 0.1)
+[23:21:32] report -> C:\projects\vais\results\overnight_2026-07-20_report.md
+[23:21:32] RESEARCH.md: section appended (working tree; committed only to the overnight branch)
+[23:21:32] committing results to branch overnight/2026-07-20 ...
