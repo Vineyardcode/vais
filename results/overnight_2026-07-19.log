@@ -178,3 +178,150 @@
 [15:11:12] committing results to branch overnight/2026-07-19 ...
 [15:11:13] committed 7f5c96815407 on overnight/2026-07-19 (main untouched)
 [15:11:13] done, exit 0
+[17:32:02] ====================================================================
+[17:32:02] overnight runner start 2026-07-19 17:32:02  smoke=False PYTHONHASHSEED=0
+[17:32:03] code at 4ed83f4 (dirty tree), python 3.13.3
+[17:32:03] queue item N6: S3 rung 2: line-discipline tournament — is B's line texture reducible to lexicon + table + one knob?
+[17:32:03] profile: {}  timeout=3600s
+  | ============================================================================
+  | LINE-DISCIPLINE TOURNAMENT (S3 rung 2) — reduction test (N6)
+  | ============================================================================
+  | seed=120 gen_seeds=5 repl=8 lambda_grid=0.25..4.0 bar=contiguous-halves (phase-109 convention)
+  |   B features reproduce the rung-3 record (interior_gain +0.0513)  VERIFIED
+  |   bar (contiguous halves): line 7.489  unfitted 4.092
+  |   LAMBDA fitted on interior gain only: 1.25 (|err| 0.0066) — FROZEN
+  |   G0_ablation    D_line   21.56  D_unfitted   1.854
+  |   G1_discipline  D_line   6.645  D_unfitted    1.98
+  |   G2_verbose_ref (observational) D_line 8.714  D_unfitted 31.411
+  | 
+  |   ADJUDICATION (pre-registered):
+  |     gate: G0 D_line 21.56 must exceed bar 7.489 -> PASS
+  |     LINE TEXTURE REDUCIBLE: G1 closes BOTH groups — Currier B's line texture is statistically forgeable from its lexicon plus one measured class-position table and one strength knob. SUGGESTIVE, quarantined; a mechanism-family claim, NOT a decode.
+  | 
+  |   -> results/line_discipline_tournament.json
+[17:35:27] experiment finished rc=0 in 204s (0.06h)
+[17:35:27] adjudication: line_texture_reducible; G1 D_line 6.645 (bar 7.489), D_unfit 1.98 (bar 4.092), lambda 1.25
+[17:35:27] SUGGESTIVE finding — quarantined, flagged at the top of the report, awaiting human review
+[17:35:27] report -> C:\projects\vais\results\overnight_2026-07-19_report.md
+[17:35:27] RESEARCH.md: section appended (working tree; committed only to the overnight branch)
+[17:35:27] committing results to branch overnight/2026-07-19 ...
+[17:35:27] committed 926ecdef9e61 on overnight/2026-07-19 (main untouched)
+[17:35:27] done, exit 0
+[17:50:39] ====================================================================
+[17:50:39] overnight runner start 2026-07-19 17:50:39  smoke=False PYTHONHASHSEED=0
+[17:50:39] code at 257f0cd (dirty tree), python 3.13.3
+[17:50:39] queue item N6b: S3 rung 2b: table-compression test — is the discipline one latent axis?
+[17:50:39] profile: {}  timeout=3600s
+  | ============================================================================
+  | LINE-DISCIPLINE COMPRESSION (S3 rung 2b) — one-axis test (N6b)
+  | ============================================================================
+  | seed=120 (inherited from N6; cross-checked) lambda_grid=0.25..4.0
+  |   B features reproduce the N6 record  VERIFIED
+  |   bars reproduce N6 (line 7.489, unfitted 4.092)  VERIFIED
+  |   rank-1 variance share of centered log-table: 85.7%
+  |   class axis A (low -> high): a -0.994  ch -0.783  sh -0.416  l -0.385  o -0.339  k -0.332  # -0.247  q -0.141  d +0.387  y +0.533  t +0.672  s +0.760  p +1.285
+  |   position profile V: p1 +2.114  p2 -0.627  m1 -0.360  m2 -0.332  m3 -0.144  pL-1 -0.275  pL -0.376
+  |   LAMBDA (compressed table) fitted on interior gain: 2.0 (|err| 0.0002) — FROZEN
+  |   G1b (rank-1 table)  D_line 9.529  D_unfitted 2.0  (N6 full-table G1: 6.645 / 1.98)
+  |   observational axis correlations (Spearman): log_class_freq -0.648  mean_word_len +0.165  gallows_initial +0.593
+  | 
+  |   ADJUDICATION (pre-registered):
+  |     NOT COMPRESSIBLE: the rank-1 table does not close the line group — the discipline needs more than one axis. Corpse logged with the per-feature residuals.
+  | 
+  |   -> results/line_discipline_compression.json
+[17:51:35] experiment finished rc=0 in 56s (0.02h)
+[17:51:35] adjudication: not_compressible; G1b D_line 9.529 vs bar 7.489 (full table 6.645), var_share 85.7%
+[17:51:35] report -> C:\projects\vais\results\overnight_2026-07-19_report.md
+[17:51:35] RESEARCH.md: section appended (working tree; committed only to the overnight branch)
+[17:51:35] committing results to branch overnight/2026-07-19 ...
+[17:51:35] committed 692be5f577d1 on overnight/2026-07-19 (main untouched)
+[17:51:35] done, exit 0
+[18:18:17] ====================================================================
+[18:18:17] overnight runner start 2026-07-19 18:18:17  smoke=False PYTHONHASHSEED=0
+[18:18:18] code at 12cea1a (dirty tree), python 3.13.3
+[18:18:18] queue item N6c: S3 rung 2c: rank-2 test — do two axes complete the discipline?
+[18:18:18] profile: {}  timeout=3600s
+  | ============================================================================
+  | LINE-DISCIPLINE RANK-2 TEST (S3 rung 2c) — two-axis test (N6c)
+  | ============================================================================
+  | seed=120 (inherited; cross-checked vs N6/N6b)
+  |   B features reproduce the N6 record  VERIFIED
+  |   bars reproduce N6 (line 7.489, unfitted 4.092)  VERIFIED
+  |   rank-2 variance share of centered log-table: 96.9%
+  |   axis1 (edge, low -> high): p -1.285  s -0.760  t -0.672  y -0.533  d -0.387  q +0.141  # +0.247  k +0.332  o +0.339  l +0.385  sh +0.416  ch +0.783  a +0.994
+  |   axis2 (interior, low -> high): sh -0.868  q -0.372  k -0.214  ch -0.205  p -0.183  t -0.145  y -0.132  o +0.097  l +0.293  s +0.299  a +0.366  d +0.478  # +0.585
+  |   profile2: p1 -0.075  p2 -0.710  m1 -0.370  m2 -0.138  m3 +0.025  pL-1 +0.149  pL +1.118
+  |   LAMBDA (rank-2 table) fitted on interior gain: 1.75 (|err| 0.0056) — FROZEN
+  |   G1c (rank-2)  D_line 8.12  D_unfitted 2.421  (N6 full 6.645; N6b rank-1 9.529)
+  |   observational correlations: axis2_vs_n5_mean_ranks +0.800  axis1_vs_log_class_freq +0.648  axis2_vs_log_class_freq -0.220  axis1_vs_gallows_initial -0.593  axis2_vs_gallows_initial -0.577
+  | 
+  |   ADJUDICATION (pre-registered):
+  |     STILL NOT COMPRESSIBLE: two axes do not close the line group — the discipline is more than two-dimensional.
+  | 
+  |   -> results/line_discipline_rank2.json
+[18:19:16] experiment finished rc=0 in 59s (0.02h)
+[18:19:16] adjudication: still_not_compressible; G1c D_line 8.12 vs bar 7.489 (rank-1 9.529, full 6.645), var2 97.0%, axis2~N5 ρ +0.80
+[18:19:16] report -> C:\projects\vais\results\overnight_2026-07-19_report.md
+[18:19:16] RESEARCH.md: section appended (working tree; committed only to the overnight branch)
+[18:19:16] committing results to branch overnight/2026-07-19 ...
+[18:19:16] committed 4ad610f5dea7 on overnight/2026-07-19 (main untouched)
+[18:19:16] done, exit 0
+[20:54:39] ====================================================================
+[20:54:39] overnight runner start 2026-07-19 20:54:39  smoke=False PYTHONHASHSEED=0
+[20:54:39] code at f64c75d (dirty tree), python 3.13.3
+[20:54:39] queue item N6d: S3 rung 2d: rank-3 test — do three axes complete the discipline?
+[20:54:39] profile: {}  timeout=3600s
+  | ============================================================================
+  | LINE-DISCIPLINE RANK-3 TEST (S3 rung 2d) — three-axis test (N6d)
+  | ============================================================================
+  | seed=120 (inherited; cross-checked vs N6/N6b/N6c)
+  |   B features reproduce the N6 record  VERIFIED
+  |   bars reproduce N6 (line 7.489, unfitted 4.092)  VERIFIED
+  |   rank-3 variance share of centered log-table: 98.4%
+  |   axis1 (low -> high): p -1.285  s -0.760  t -0.672  y -0.533  d -0.387  q +0.141  # +0.247  k +0.332  o +0.339  l +0.385  sh +0.416  ch +0.783  a +0.994
+  |   axis2 (low -> high): sh -0.868  q -0.372  k -0.214  ch -0.205  p -0.183  t -0.145  y -0.132  o +0.097  l +0.293  s +0.299  a +0.366  d +0.478  # +0.585
+  |   axis3 (low -> high): y -0.340  s -0.306  sh -0.285  l -0.217  d -0.169  # +0.061  q +0.068  k +0.073  o +0.079  ch +0.158  t +0.215  a +0.230  p +0.436
+  |   profile3: p1 -0.092  p2 -0.248  m1 -0.169  m2 -0.147  m3 +0.618  pL-1 +0.334  pL -0.295
+  |   LAMBDA (rank-3 table) fitted on interior gain: 1.5 (|err| 0.0023) — FROZEN
+  |   G1d (rank-3)  D_line 6.882  D_unfitted 2.115  (full 6.645; rank-1 9.529; rank-2 8.12)
+  |   observational correlations: axis2_vs_n5_mean_ranks +0.800  axis3_vs_n5_mean_ranks +0.309  axis1_vs_log_class_freq +0.648  axis2_vs_log_class_freq -0.220  axis3_vs_log_class_freq -0.088  axis1_vs_gallows_initial -0.593  axis2_vs_gallows_initial -0.577  axis3_vs_gallows_initial +0.033
+  | 
+  |   ADJUDICATION (pre-registered):
+  |     THREE AXES SUFFICIENT: the rank-3 table closes BOTH groups — Currier B's line discipline compresses to three axes plus one strength knob (~55 numbers vs the 91-cell table). SUGGESTIVE, quarantined; axis 3's interpretation is reported above for the record.
+  | 
+  |   -> results/line_discipline_rank3.json
+[20:56:20] experiment finished rc=0 in 101s (0.03h)
+[20:56:20] adjudication: three_axes_sufficient; G1d D_line 6.882 vs bar 7.489 (ladder: rank-1 9.529, rank-2 8.12, full 6.645), var3 98.4%
+[20:56:20] SUGGESTIVE finding — quarantined, flagged at the top of the report, awaiting human review
+[20:56:20] report -> C:\projects\vais\results\overnight_2026-07-19_report.md
+[20:56:20] RESEARCH.md: section appended (working tree; committed only to the overnight branch)
+[20:56:20] committing results to branch overnight/2026-07-19 ...
+[20:56:20] committed d11b2bf79d41 on overnight/2026-07-19 (main untouched)
+[20:56:20] done, exit 0
+[21:16:48] ====================================================================
+[21:16:48] overnight runner start 2026-07-19 21:16:48  smoke=False PYTHONHASHSEED=0
+[21:16:48] code at d75c858 (dirty tree), python 3.13.3
+[21:16:48] queue item N6e: S3 rung 3: cross-hand blind test — does an A-measured table place B's lines?
+[21:16:48] profile: {}  timeout=3600s
+  | ============================================================================
+  | LINE-DISCIPLINE CROSS-HAND BLIND TEST (S3 rung 3) — A-table on B (N6e)
+  | ============================================================================
+  | seed=120 (inherited; cross-checked vs N6); table source: CURRIER A ONLY
+  |   corpora: B 2522 lines (placed), A 1310 lines (table source)
+  |   B features reproduce the N6 record  VERIFIED
+  |   bars reproduce N6 (line 7.489, unfitted 4.092)  VERIFIED
+  |   LAMBDA (A-table on B) fitted on interior gain: 1.75 (|err| 0.0001; B's own table needed 1.25) — FROZEN
+  |   G1e (A-table)  D_line 8.282  D_unfitted 1.194  (B-table full: 6.645)
+  |   per-axis transfer (Spearman, A-table vs B-table): axis1 +0.923  axis2 +0.830  axis3 -0.462
+  | 
+  |   ADJUDICATION (pre-registered):
+  |     NOT TRANSFERABLE: the A-measured table does not close B's line group at any knob setting — the discipline's shape is (at least partly) hand-specific. Corpse logged with the per-axis transfer profile above.
+  | 
+  |   -> results/line_discipline_transfer.json
+[21:18:31] experiment finished rc=0 in 103s (0.03h)
+[21:18:31] adjudication: not_transferable; G1e D_line 8.282 vs bar 7.489 (B-table 6.645); transfer axis1 +0.92 axis2 +0.83 axis3 -0.46; lambda 1.75 vs 1.25
+[21:18:31] report -> C:\projects\vais\results\overnight_2026-07-19_report.md
+[21:18:31] RESEARCH.md: section appended (working tree; committed only to the overnight branch)
+[21:18:31] committing results to branch overnight/2026-07-19 ...
+[21:18:32] committed 489b3fc1635f on overnight/2026-07-19 (main untouched)
+[21:18:32] done, exit 0

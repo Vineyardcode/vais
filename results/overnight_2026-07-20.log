@@ -1,0 +1,26 @@
+[01:46:02] ====================================================================
+[01:46:02] overnight runner start 2026-07-20 01:46:02  smoke=False PYTHONHASHSEED=0
+[01:46:02] code at 3a1c700 (dirty tree), python 3.13.3
+[01:46:02] queue item N7: Part-D hapax re-adjudication: does language_vs_cipher's hapax clustering survive a paragraph-only corpus?
+[01:46:02] profile: {}  timeout=1800s
+  | ============================================================================
+  | HAPAX LOCUS RE-ADJUDICATION (N7) — Part D, same rules, clean corpus
+  | ============================================================================
+  | original thresholds: chi2 > 15.0 = CONCENTRATED; B > 0.1 = CLUSTERED, < 0.05 = UNIFORM
+  |   all        4508 lines  35747 tok  1918 hapax | chi2  216.1 (CONCENTRATED) | B +0.591 (CLUSTERED)
+  |   P_only     4281 lines  33309 tok  1752 hapax | chi2  131.4 (CONCENTRATED) | B +0.581 (CLUSTERED)
+  |   nonP_only   227 lines   2438 tok   444 hapax | chi2   43.0 (CONCENTRATED) | B +0.324 (CLUSTERED)
+  | 
+  |   gate: all-loci reproduces golden Part D (chi2 216.1, B 0.591) -> PASS
+  | 
+  |   ADJUDICATION (pre-registered):
+  |     VERDICT SURVIVES: on paragraph-only text, Part D still passes every language-favoring classification it passed on the contaminated corpus (chi2 216.1 -> 131.4, B +0.591 -> +0.581). The contamination asterisk is removed; the hapax-clustering evidence is a property of the running text.
+  | 
+  |   -> results/hapax_locus_readjudication.json
+[01:46:03] experiment finished rc=0 in 1s (0.00h)
+[01:46:03] adjudication: verdict_survives; chi2 216.1 -> 131.4 (threshold 15.0), B +0.591 -> +0.581
+[01:46:03] report -> C:\projects\vais\results\overnight_2026-07-20_report.md
+[01:46:03] RESEARCH.md: section appended (working tree; committed only to the overnight branch)
+[01:46:03] committing results to branch overnight/2026-07-20 ...
+[01:46:03] committed ad242691014c on overnight/2026-07-20 (main untouched)
+[01:46:03] done, exit 0

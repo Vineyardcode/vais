@@ -538,6 +538,18 @@ numbering continues across tiers. Full evidence chains: Phase 8.)*
     the N1 word-shuffle artifact baseline by only +0.033 (< the 0.05
     registered margin) with the instrument gate validated (P-REC
     +0.719). Interior structure emerges only per-hand — see entry 13.
+14. **The legacy hapax-clustering result survives locus
+    decontamination** (N7, 2026-07-20; audit prompted by a community
+    corpus-scoping question): language_vs_cipher Part D had ingested
+    non-prose loci that are hapax-enriched (labels/radial 11-14% vs
+    paragraphs 5.1%) and layout-clustered — inflating its chi-square by
+    ~39% (216.1 → 131.4 on paragraphs only). Under the test's own
+    original thresholds the classification nonetheless holds at every
+    scoping (paragraphs+rings 188.2; paragraphs only still ~9× the
+    bar; burstiness stable ~0.58-0.60). The rare-word sectional
+    clustering is a property of the running text, now with its
+    layout-artifact share measured. Reproduction-gated
+    (hapax_locus_readjudication).
 
 ### SUGGESTIVE (real signal, one instrument, or thin margins)
 
@@ -569,6 +581,31 @@ numbering continues across tiers. Full evidence chains: Phase 8.)*
     standing weaknesses of Phase 8 §8.7 — above all the same-author
     caveat — attach to this entry verbatim. Consistent-with only;
     nothing is decoded.
+
+15. **The line-discipline reduction** (S3 rungs 2-3: N6..N6e,
+    2026-07-19, accepted at review 2026-07-20): Currier B's full line
+    texture — the phase-109 moat (edge effects) AND the interior
+    ordinal residue of entry 13 — is statistically forgeable from its
+    lexicon plus a measured class-position table and ONE strength knob
+    (contiguous-halves forgeability bar; ablation-gated; unfitted
+    order-sensitive features held). The table is exactly THREE
+    interpretable axes (rank-1 and rank-2 reconstructions fail the
+    bar, rank-3 closes at 98.4% variance): (1) an edge/paragraph axis
+    (gallows-linked — Currier's line effects and Grove words,
+    quantified from raw counts); (2) an interior early-late gradient
+    (independently identical to the N5 rank ordering, ρ +0.80); (3) a
+    previously unnamed PRE-FINAL-ZONE axis (peaks at late-interior and
+    penultimate positions but not the final word). Cross-hand blind
+    test: axes 1-2 are manuscript-wide in shape (A→B transfer ρ +0.92
+    / +0.83) with the hand difference absorbed by the strength knob
+    (λ 1.75 vs 1.25 — the switch-intensity picture made mechanical);
+    axis 3 anti-transfers (−0.46) and is B's own. Caveats attached:
+    this is a DIAGNOSTIC reduction (the table is measured from the
+    target; deriving the axes from principles outside the manuscript
+    remains the open rung), same-author instrumentation (Phase 8
+    §8.7-1 status), corpus = ZL ≥5-word loci (98.5% paragraph text;
+    headline verified unchanged on paragraphs only). Consistent-with
+    only; nothing is decoded.
 
 ### SPECULATIVE (hypotheses worth compute, no claims)
 
@@ -1339,3 +1376,138 @@ Rung 1 for the record: P4 segmenter inventory recovery 13%, best gap -0.773 vs r
 - VMS_full: best gap -0.880 (latin/abbrev4) — within the noise floor: nothing beyond free-mapping noise at this rung (a clean negative for the strict 1:1 verbose-cipher family under these 6 LMs).
 - VMS_currier_A: best gap -0.842 (latin/plain) — within the noise floor: nothing beyond free-mapping noise at this rung (a clean negative for the strict 1:1 verbose-cipher family under these 6 LMs).
 - VMS_currier_B: best gap -0.895 (latin/abbrev4) — within the noise floor: nothing beyond free-mapping noise at this rung (a clean negative for the strict 1:1 verbose-cipher family under these 6 LMs).
+
+---
+
+### Portfolio S3, rung 2 — line-discipline reduction tournament (Currier B) (2026-07-19)
+
+[AUTOMATED — written by tools/overnight.py; run committed to branch overnight/2026-07-19; awaiting human review before promotion to any evidence tier.]
+
+Configuration (pre-registered in the script docstring): script defaults. Runtime 0.06 h at PYTHONHASHSEED=0. Holdout: whole folios (VMS) / 24-line pseudo-folio blocks (controls).
+
+**SUGGESTIVE — awaiting human review (quarantined; never merged automatically):**
+
+**Pre-registered outcomes** (script docstring; a DIAGNOSTIC REDUCTION TEST, not a blind generator — the class-position table is measured from B, plus ONE strength knob fitted on one feature, frozen at LAMBDA=1.25). Bars are the phase-109 contiguous-halves convention.
+
+| entrant | D_line (bar 7.489) | D_unfitted (bar 4.092) |
+|---|---|---|
+| G0_ablation | 21.56 | 1.854 |
+| G1_discipline | 6.645 | 1.98 |
+| G2_verbose_ref | 8.714 | 31.411 |
+
+| feature | B | G0 | G1 |
+|---|---|---|---|
+| line_init_jsd | 0.2128 | 0.0017 | 0.2008 |
+| line_final_jsd | 0.1063 | 0.0015 | 0.0017 |
+| interior_gain | 0.0513 | -0.006 | 0.0425 |
+| r_pos | 0.0406 | -0.0007 | 0.0387 |
+| r_bi | 0.0496 | 0.0016 | 0.0323 |
+| h2_ratio | 0.5141 | 0.5141 | 0.5141 |
+| adj_dup | 0.009 | 0.0092 | 0.0096 |
+| adj_near | 0.0341 | 0.0309 | 0.032 |
+
+**VERDICT: LINE TEXTURE REDUCIBLE — Currier B's full line texture (edge effects AND interior ordinal residue) is statistically forgeable from its lexicon plus one measured class-position table and one strength knob, without breaking the unfitted order-sensitive features. SUGGESTIVE, quarantined. Scope: a mechanism-family claim about statistics — the phase-109 moat is reduced, not decoded; blind generation of the table is the registered future rung.**
+
+---
+
+### Portfolio S3, rung 2b — discipline-table compression (Currier B) (2026-07-19)
+
+[AUTOMATED — written by tools/overnight.py; run committed to branch overnight/2026-07-19; awaiting human review before promotion to any evidence tier.]
+
+Configuration (pre-registered in the script docstring): script defaults. Runtime 0.02 h at PYTHONHASHSEED=0. Holdout: whole folios (VMS) / 24-line pseudo-folio blocks (controls).
+
+**Pre-registered outcomes** (script docstring): rank-1 SVD compression of the N6 discipline table (deterministic, no search), same bars and machinery as N6 (all cross-checked at runtime), one re-fitted knob (LAMBDA=2.0). Rank-1 variance share: 85.7%.
+
+| entrant | D_line (bar 7.489) | D_unfitted (bar 4.092) |
+|---|---|---|
+| G1 full table (N6) | 6.645 | 1.98 |
+| G1b rank-1 table | 9.529 | 2.0 |
+
+Class axis A (low → high): a -0.994, ch -0.783, sh -0.416, l -0.385, o -0.339, k -0.332, # -0.247, q -0.141, d +0.387, y +0.533, t +0.672, s +0.760, p +1.285.
+Position profile V: p1 +2.114, p2 -0.627, m1 -0.360, m2 -0.332, m3 -0.144, pL-1 -0.275, pL -0.376.
+Observational axis correlations (declared predictors): log_class_freq -0.648, mean_word_len +0.165, gallows_initial +0.593.
+
+**VERDICT: NOT COMPRESSIBLE — one latent axis does not reproduce the line texture (the dominant axis is the EDGE/paragraph axis; the interior ordering is a second, independent dimension). The discipline is at least rank-2; corpse logged with coordinates.**
+
+---
+
+### Portfolio S3, rung 2c — rank-2 discipline test (Currier B) (2026-07-19)
+
+[AUTOMATED — written by tools/overnight.py; run committed to branch overnight/2026-07-19; awaiting human review before promotion to any evidence tier.]
+
+Configuration (pre-registered in the script docstring): script defaults. Runtime 0.02 h at PYTHONHASHSEED=0. Holdout: whole folios (VMS) / 24-line pseudo-folio blocks (controls).
+
+**Pre-registered outcomes** (script docstring): rank-2 SVD reconstruction (deterministic; declared sign convention), N6 machinery/bars cross-checked, one re-fitted knob (LAMBDA=1.75). Rank-2 variance share: 97.0%.
+
+| entrant | D_line (bar 7.489) | D_unfitted (bar 4.092) |
+|---|---|---|
+| G1 full table (N6) | 6.645 | 1.98 |
+| G1b rank-1 (N6b) | 9.529 | 2.0 |
+| G1c rank-2 | 8.12 | 2.421 |
+
+Axis 2 (interior, low → high): sh -0.868, q -0.372, k -0.214, ch -0.205, p -0.183, t -0.145, y -0.132, o +0.097, l +0.293, s +0.299, a +0.366, d +0.478, # +0.585.
+Observational correlations: axis2_vs_n5_mean_ranks +0.800, axis1_vs_log_class_freq +0.648, axis2_vs_log_class_freq -0.220, axis1_vs_gallows_initial -0.593, axis2_vs_gallows_initial -0.577.
+
+**VERDICT: STILL NOT COMPRESSIBLE — two axes (96.9% of the table) do not close the line group at the tournament bar; the discipline carries tournament-relevant structure beyond rank 2. Note the convergence ladder (rank-1 → rank-2 → full) and that axis 2 independently reproduces the N5 interior ordering (ρ = +0.80).**
+
+---
+
+### Portfolio S3, rung 2d — rank-3 discipline test (Currier B) (2026-07-19)
+
+[AUTOMATED — written by tools/overnight.py; run committed to branch overnight/2026-07-19; awaiting human review before promotion to any evidence tier.]
+
+Configuration (pre-registered in the script docstring): script defaults. Runtime 0.03 h at PYTHONHASHSEED=0. Holdout: whole folios (VMS) / 24-line pseudo-folio blocks (controls).
+
+**SUGGESTIVE — awaiting human review (quarantined; never merged automatically):**
+
+**Pre-registered outcomes** (script docstring): rank-3 SVD reconstruction, N6 machinery/bars cross-checked, one re-fitted knob (LAMBDA=1.5). Rank-3 variance share: 98.4%.
+
+| entrant | D_line (bar 7.489) | D_unfitted (bar 4.092) |
+|---|---|---|
+| G1 full table (N6) | 6.645 | 1.98 |
+| G1b rank-1 (N6b) | 9.529 | 2.0 |
+| G1c rank-2 (N6c) | 8.12 | 2.421 |
+| G1d rank-3 | 6.882 | 2.115 |
+
+Axis 3 (pre-final zone, low → high): y -0.340, s -0.306, sh -0.285, l -0.217, d -0.169, # +0.061, q +0.068, k +0.073, o +0.079, ch +0.158, t +0.215, a +0.230, p +0.436.
+Profile 3: p1 -0.092, p2 -0.248, m1 -0.169, m2 -0.147, m3 +0.618, pL-1 +0.334, pL -0.295.
+Observational correlations: axis2_vs_n5_mean_ranks +0.800, axis3_vs_n5_mean_ranks +0.309, axis1_vs_log_class_freq +0.648, axis2_vs_log_class_freq -0.220, axis3_vs_log_class_freq -0.088, axis1_vs_gallows_initial -0.593, axis2_vs_gallows_initial -0.577, axis3_vs_gallows_initial +0.033.
+
+**VERDICT: THREE AXES SUFFICIENT — Currier B's line discipline compresses to three interpretable axes plus one knob (~55 numbers vs the 91-cell table): the edge/paragraph axis, the interior early-late gradient (= the N5 residue, ρ +0.80), and a previously unnamed PRE-FINAL-ZONE axis (peaks m3/pL-1, not pL; uncorrelated with the declared predictors). SUGGESTIVE, quarantined; a compression of statistics, not a decode. Deriving each axis from independent principles is the registered blind-generation rung.**
+
+---
+
+### Portfolio S3, rung 3 — cross-hand blind table test (A → B) (2026-07-19)
+
+[AUTOMATED — written by tools/overnight.py; run committed to branch overnight/2026-07-19; awaiting human review before promotion to any evidence tier.]
+
+Configuration (pre-registered in the script docstring): script defaults. Runtime 0.03 h at PYTHONHASHSEED=0. Holdout: whole folios (VMS) / 24-line pseudo-folio blocks (controls).
+
+**Pre-registered outcomes** (script docstring; blind WITH RESPECT TO B — the table is measured on Currier A only (1310 lines), B contributes its lexicon and the single knob, fitted LAMBDA=1.75 vs B's own 1.25).
+
+| entrant | D_line (bar 7.489) | D_unfitted (bar 4.092) |
+|---|---|---|
+| G1 B-table (N6) | 6.645 | 1.98 |
+| G1e A-table | 8.282 | 1.194 |
+
+Per-axis transfer (Spearman, A-table vs B-table rank-3 axes): axis1 +0.923, axis2 +0.830, axis3 -0.462.
+
+**VERDICT: NOT TRANSFERABLE — the A-measured table does not close B's line group at any knob setting. The per-axis profile localizes the failure: the edge axis (+0.92) and interior gradient (+0.83) ARE manuscript-wide (shared shape, strength-scaled — the switch picture holds for them); the pre-final-zone axis ANTI-transfers (−0.46) and is B-specific. The hand difference is intensity on two shared rules PLUS one qualitatively B-own rule. Corpse logged.**
+
+---
+
+### Legacy-test audit — language_vs_cipher Part D under locus decontamination (2026-07-20)
+
+[AUTOMATED — written by tools/overnight.py; run committed to branch overnight/2026-07-20; awaiting human review before promotion to any evidence tier.]
+
+Configuration (pre-registered in the script docstring): script defaults. Runtime 0.00 h at PYTHONHASHSEED=0. Holdout: whole folios (VMS) / 24-line pseudo-folio blocks (controls).
+
+**Pre-registered outcomes** (script docstring): Part D of language_vs_cipher replicated faithfully (gate = golden reproduction) and re-adjudicated by its OWN original thresholds (chi2 > 15.0; B classes) on a paragraph-only corpus. Same rules, cleaned data.
+
+| policy | lines | tokens | hapaxes | chi2 (class) | B (class) |
+|---|---|---|---|---|---|
+| all | 4508 | 35747 | 1918 | 216.1 (CONCENTRATED) | +0.591 (CLUSTERED) |
+| P_only | 4281 | 33309 | 1752 | 131.4 (CONCENTRATED) | +0.581 (CLUSTERED) |
+| nonP_only | 227 | 2438 | 444 | 43.0 (CONCENTRATED) | +0.324 (CLUSTERED) |
+
+**VERDICT: VERDICT SURVIVES — the hapax-clustering evidence is a property of the running text: decontamination removes ~39% of the chi2 statistic (the measured layout-artifact share) but every original classification holds. The contamination asterisk on Part D is removed by test.**

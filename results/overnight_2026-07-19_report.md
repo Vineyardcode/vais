@@ -150,3 +150,111 @@ Rung 1 for the record: P4 segmenter inventory recovery 13%, best gap -0.773 vs r
 - VMS_full: best gap -0.880 (latin/abbrev4) — within the noise floor: nothing beyond free-mapping noise at this rung (a clean negative for the strict 1:1 verbose-cipher family under these 6 LMs).
 - VMS_currier_A: best gap -0.842 (latin/plain) — within the noise floor: nothing beyond free-mapping noise at this rung (a clean negative for the strict 1:1 verbose-cipher family under these 6 LMs).
 - VMS_currier_B: best gap -0.895 (latin/abbrev4) — within the noise floor: nothing beyond free-mapping noise at this rung (a clean negative for the strict 1:1 verbose-cipher family under these 6 LMs).
+
+## Run 2026-07-19 17:32:02 — N6
+**S3 rung 2: line-discipline tournament — is B's line texture reducible to lexicon + table + one knob?**
+- script: `scripts/line_discipline_tournament.py`
+- profile: `{}`
+- log: `overnight_2026-07-19.log`; results JSON: `line_discipline_tournament.json`; branch: `overnight/2026-07-19`
+- runtime: 204s (0.06 h), exit code 0
+
+**Pre-registered outcomes** (script docstring; a DIAGNOSTIC REDUCTION TEST, not a blind generator — the class-position table is measured from B, plus ONE strength knob fitted on one feature, frozen at LAMBDA=1.25). Bars are the phase-109 contiguous-halves convention.
+
+| entrant | D_line (bar 7.489) | D_unfitted (bar 4.092) |
+|---|---|---|
+| G0_ablation | 21.56 | 1.854 |
+| G1_discipline | 6.645 | 1.98 |
+| G2_verbose_ref | 8.714 | 31.411 |
+
+| feature | B | G0 | G1 |
+|---|---|---|---|
+| line_init_jsd | 0.2128 | 0.0017 | 0.2008 |
+| line_final_jsd | 0.1063 | 0.0015 | 0.0017 |
+| interior_gain | 0.0513 | -0.006 | 0.0425 |
+| r_pos | 0.0406 | -0.0007 | 0.0387 |
+| r_bi | 0.0496 | 0.0016 | 0.0323 |
+| h2_ratio | 0.5141 | 0.5141 | 0.5141 |
+| adj_dup | 0.009 | 0.0092 | 0.0096 |
+| adj_near | 0.0341 | 0.0309 | 0.032 |
+
+**VERDICT: LINE TEXTURE REDUCIBLE — Currier B's full line texture (edge effects AND interior ordinal residue) is statistically forgeable from its lexicon plus one measured class-position table and one strength knob, without breaking the unfitted order-sensitive features. SUGGESTIVE, quarantined. Scope: a mechanism-family claim about statistics — the phase-109 moat is reduced, not decoded; blind generation of the table is the registered future rung.**
+
+## Run 2026-07-19 17:50:39 — N6b
+**S3 rung 2b: table-compression test — is the discipline one latent axis?**
+- script: `scripts/line_discipline_compression.py`
+- profile: `{}`
+- log: `overnight_2026-07-19.log`; results JSON: `line_discipline_compression.json`; branch: `overnight/2026-07-19`
+- runtime: 56s (0.02 h), exit code 0
+
+**Pre-registered outcomes** (script docstring): rank-1 SVD compression of the N6 discipline table (deterministic, no search), same bars and machinery as N6 (all cross-checked at runtime), one re-fitted knob (LAMBDA=2.0). Rank-1 variance share: 85.7%.
+
+| entrant | D_line (bar 7.489) | D_unfitted (bar 4.092) |
+|---|---|---|
+| G1 full table (N6) | 6.645 | 1.98 |
+| G1b rank-1 table | 9.529 | 2.0 |
+
+Class axis A (low → high): a -0.994, ch -0.783, sh -0.416, l -0.385, o -0.339, k -0.332, # -0.247, q -0.141, d +0.387, y +0.533, t +0.672, s +0.760, p +1.285.
+Position profile V: p1 +2.114, p2 -0.627, m1 -0.360, m2 -0.332, m3 -0.144, pL-1 -0.275, pL -0.376.
+Observational axis correlations (declared predictors): log_class_freq -0.648, mean_word_len +0.165, gallows_initial +0.593.
+
+**VERDICT: NOT COMPRESSIBLE — one latent axis does not reproduce the line texture (the dominant axis is the EDGE/paragraph axis; the interior ordering is a second, independent dimension). The discipline is at least rank-2; corpse logged with coordinates.**
+
+## Run 2026-07-19 18:18:17 — N6c
+**S3 rung 2c: rank-2 test — do two axes complete the discipline?**
+- script: `scripts/line_discipline_rank2.py`
+- profile: `{}`
+- log: `overnight_2026-07-19.log`; results JSON: `line_discipline_rank2.json`; branch: `overnight/2026-07-19`
+- runtime: 59s (0.02 h), exit code 0
+
+**Pre-registered outcomes** (script docstring): rank-2 SVD reconstruction (deterministic; declared sign convention), N6 machinery/bars cross-checked, one re-fitted knob (LAMBDA=1.75). Rank-2 variance share: 97.0%.
+
+| entrant | D_line (bar 7.489) | D_unfitted (bar 4.092) |
+|---|---|---|
+| G1 full table (N6) | 6.645 | 1.98 |
+| G1b rank-1 (N6b) | 9.529 | 2.0 |
+| G1c rank-2 | 8.12 | 2.421 |
+
+Axis 2 (interior, low → high): sh -0.868, q -0.372, k -0.214, ch -0.205, p -0.183, t -0.145, y -0.132, o +0.097, l +0.293, s +0.299, a +0.366, d +0.478, # +0.585.
+Observational correlations: axis2_vs_n5_mean_ranks +0.800, axis1_vs_log_class_freq +0.648, axis2_vs_log_class_freq -0.220, axis1_vs_gallows_initial -0.593, axis2_vs_gallows_initial -0.577.
+
+**VERDICT: STILL NOT COMPRESSIBLE — two axes (96.9% of the table) do not close the line group at the tournament bar; the discipline carries tournament-relevant structure beyond rank 2. Note the convergence ladder (rank-1 → rank-2 → full) and that axis 2 independently reproduces the N5 interior ordering (ρ = +0.80).**
+
+## Run 2026-07-19 20:54:39 — N6d
+**S3 rung 2d: rank-3 test — do three axes complete the discipline?**
+- script: `scripts/line_discipline_rank3.py`
+- profile: `{}`
+- log: `overnight_2026-07-19.log`; results JSON: `line_discipline_rank3.json`; branch: `overnight/2026-07-19`
+- runtime: 101s (0.03 h), exit code 0
+
+**Pre-registered outcomes** (script docstring): rank-3 SVD reconstruction, N6 machinery/bars cross-checked, one re-fitted knob (LAMBDA=1.5). Rank-3 variance share: 98.4%.
+
+| entrant | D_line (bar 7.489) | D_unfitted (bar 4.092) |
+|---|---|---|
+| G1 full table (N6) | 6.645 | 1.98 |
+| G1b rank-1 (N6b) | 9.529 | 2.0 |
+| G1c rank-2 (N6c) | 8.12 | 2.421 |
+| G1d rank-3 | 6.882 | 2.115 |
+
+Axis 3 (pre-final zone, low → high): y -0.340, s -0.306, sh -0.285, l -0.217, d -0.169, # +0.061, q +0.068, k +0.073, o +0.079, ch +0.158, t +0.215, a +0.230, p +0.436.
+Profile 3: p1 -0.092, p2 -0.248, m1 -0.169, m2 -0.147, m3 +0.618, pL-1 +0.334, pL -0.295.
+Observational correlations: axis2_vs_n5_mean_ranks +0.800, axis3_vs_n5_mean_ranks +0.309, axis1_vs_log_class_freq +0.648, axis2_vs_log_class_freq -0.220, axis3_vs_log_class_freq -0.088, axis1_vs_gallows_initial -0.593, axis2_vs_gallows_initial -0.577, axis3_vs_gallows_initial +0.033.
+
+**VERDICT: THREE AXES SUFFICIENT — Currier B's line discipline compresses to three interpretable axes plus one knob (~55 numbers vs the 91-cell table): the edge/paragraph axis, the interior early-late gradient (= the N5 residue, ρ +0.80), and a previously unnamed PRE-FINAL-ZONE axis (peaks m3/pL-1, not pL; uncorrelated with the declared predictors). SUGGESTIVE, quarantined; a compression of statistics, not a decode. Deriving each axis from independent principles is the registered blind-generation rung.**
+
+## Run 2026-07-19 21:16:48 — N6e
+**S3 rung 3: cross-hand blind test — does an A-measured table place B's lines?**
+- script: `scripts/line_discipline_transfer.py`
+- profile: `{}`
+- log: `overnight_2026-07-19.log`; results JSON: `line_discipline_transfer.json`; branch: `overnight/2026-07-19`
+- runtime: 103s (0.03 h), exit code 0
+
+**Pre-registered outcomes** (script docstring; blind WITH RESPECT TO B — the table is measured on Currier A only (1310 lines), B contributes its lexicon and the single knob, fitted LAMBDA=1.75 vs B's own 1.25).
+
+| entrant | D_line (bar 7.489) | D_unfitted (bar 4.092) |
+|---|---|---|
+| G1 B-table (N6) | 6.645 | 1.98 |
+| G1e A-table | 8.282 | 1.194 |
+
+Per-axis transfer (Spearman, A-table vs B-table rank-3 axes): axis1 +0.923, axis2 +0.830, axis3 -0.462.
+
+**VERDICT: NOT TRANSFERABLE — the A-measured table does not close B's line group at any knob setting. The per-axis profile localizes the failure: the edge axis (+0.92) and interior gradient (+0.83) ARE manuscript-wide (shared shape, strength-scaled — the switch picture holds for them); the pre-final-zone axis ANTI-transfers (−0.46) and is B-specific. The hand difference is intensity on two shared rules PLUS one qualitatively B-own rule. Corpse logged.**
