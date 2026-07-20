@@ -869,7 +869,20 @@ footer { border-top:1px solid var(--line); margin-top:3em;
 <tr><td>3 (pre-final, B-only)</td><td>0.4154</td><td>0.2592</td><td>+0.156</td><td>+0.09</td><td>+0.44</td><td>+0.00</td></tr>
 </table>
 <p>Derived-axes table (Âx₁, Âx₂ + measured axis 3): D_line 9.039 vs bar 7.489 (measured rank-3 achieved 6.882).</p>
-<p><strong>VERDICT: NOT DERIVED (partial reduction, corpse logged) — the three principles explain a SUBSTANTIAL, above-chance share of each shared axis (edge R² 0.5273, interior 0.4981, both ~2× the shuffle null) with interpretable coefficients (frequent, gallows-initial, short words → line edges — Grove/LAAFU made quantitative), but substituting the ~50%-fidelity predictions reopens the moat (D_line 9.039 &gt; bar 7.489). The strong claim (&quot;the shared axes ARE these properties&quot;) is killed; the weak claim (they are ~half these properties, plus real residual structure the interior gradient carries on its own) is documented. Richer principle sets are the informed next candidate.</strong></p><footer>Static mirror — read-only. Generated 2026-07-21 from commit <code>ab49f18</code>. 
+<p><strong>VERDICT: NOT DERIVED (partial reduction, corpse logged) — the three principles explain a SUBSTANTIAL, above-chance share of each shared axis (edge R² 0.5273, interior 0.4981, both ~2× the shuffle null) with interpretable coefficients (frequent, gallows-initial, short words → line edges — Grove/LAAFU made quantitative), but substituting the ~50%-fidelity predictions reopens the moat (D_line 9.039 &gt; bar 7.489). The strong claim (&quot;the shared axes ARE these properties&quot;) is killed; the weak claim (they are ~half these properties, plus real residual structure the interior gradient carries on its own) is documented. Richer principle sets are the informed next candidate.</strong></p>
+<hr>
+<h3>Portfolio S3, rung 5 — within-word morphology derivation of the interior gradient (2026-07-21)</h3>
+<p>[AUTOMATED — written by tools/overnight.py; run committed to branch overnight/2026-07-21; awaiting human review before promotion to any evidence tier.]</p>
+<p>Configuration (pre-registered in the script docstring): script defaults. Runtime 0.01 h at PYTHONHASHSEED=0. Holdout: whole folios (VMS) / 24-line pseudo-folio blocks (controls).</p>
+<p><strong>Pre-registered outcomes</strong> (script docstring): the HYPOTHESIS — the line orders words by the typical WITHIN-WORD position of their first glyph (word-initial-type early, word-final-type late) — tested by adding within-word morphology (wwpos + finality) to the N6g principle set. Reduced iff interior R^2 &gt;= 0.7 AND gain over the 3-principle baseline &gt;= 0.1.</p>
+<table>
+<tr><th>axis</th><th>R² (3-principle → +morphology)</th><th>gain</th><th>wwpos β</th><th>finality β</th></tr>
+<tr><td>1 (edge)</td><td>0.5273 → 0.5806</td><td>+0.053</td><td>+0.00</td><td>-0.18</td></tr>
+<tr><td>2 (interior)</td><td>0.4981 → 0.6294</td><td>+0.131</td><td>+0.31</td><td>-0.25</td></tr>
+<tr><td>3 (pre-final)</td><td>0.4154 → 0.6226</td><td>+0.207</td><td>+0.06</td><td>-0.16</td></tr>
+</table>
+<p>Within-word position by class (0=word-initial, 1=word-final): q 0.00, sh 0.13, ch 0.20, p 0.20, o 0.25, t 0.28, k 0.34, a 0.45, s 0.48, # 0.50, d 0.58, l 0.62, y 0.90. Enriched derived table: D_line 9.628 vs bar 7.489 (does not close; the residual persists).</p>
+<p><strong>VERDICT: MODEST IMPROVEMENT (hypothesis directionally confirmed, not dominant) — within-word position is the LARGEST predictor of the interior gradient (wwpos β +0.31, positive as hypothesized: word-initial-type glyphs early, word-final-type late) and raises interior R^2 by +0.131 (0.50 → 0.6294), clearing the gain bar but not the 0.7 strong-reduction target. So the interior gradient is PARTLY a morphological echo — the line reflects word structure — but a residual survives even frequency + gallows + length + within-word position. The line-discipline mystery is now this smaller, sharper residual.</strong></p><footer>Static mirror — read-only. Generated 2026-07-21 from commit <code>470e655</code>. 
 To run any test with your own parameters, clone
 <a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
 (<code>python webui/server.py</code>). All numbers reproduce at

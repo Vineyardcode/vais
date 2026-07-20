@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>line_discipline_derivation — VAIS - Voynich Analysis Interactive Suite</title><style>
+<title>line_discipline_morphology — VAIS - Voynich Analysis Interactive Suite</title><style>
 :root { --bg:#ffffff; --fg:#1a1a1a; --muted:#666; --line:#ddd;
         --code:#f5f5f5; --accent:#7a4a1e; --warn:#a33; }
 @media (prefers-color-scheme: dark) {
@@ -54,78 +54,70 @@ footer { border-top:1px solid var(--line); margin-top:3em;
 <a href="../glossary.html">Glossary</a><a href="../credits.html">Credits</a>
 <a href="../contributing.html">Contributing</a>
 <a href="https://github.com/Vineyardcode/vais">GitHub</a></nav>
-<main><h1>line_discipline_derivation</h1>
-<p class="muted">scripts/line_discipline_derivation.py</p>
-<pre>Line-Discipline Principled Derivation (portfolio S3, rung 4) — do the
-two manuscript-wide axes REDUCE to position-independent class
-properties? (N6g)
+<main><h1>line_discipline_morphology</h1>
+<p class="muted">scripts/line_discipline_morphology.py</p>
+<pre>Line-Discipline Morphology Derivation (portfolio S3, rung 5) — does the
+interior gradient reduce to WITHIN-WORD glyph morphology? (N6h)
 
-PROVENANCE: the discipline ladder established that Currier B&#x27;s line
-texture is three placement rules (N6d), two of them manuscript-wide
-(N6e): axis 1 (edge/paragraph) and axis 2 (interior gradient). Every
-rung so far MEASURED the class-position table from the manuscript. This
-rung asks the standing &quot;derive from principles&quot; question at the level
-that is honestly buildable.
+PROVENANCE: N6g (rung 4) reduced the two shared discipline axes ~half
+to position-independent class properties (log-freq + gallows + word-
+length): the EDGE axis passed (R^2 0.53, Grove/LAAFU quantified) but
+the INTERIOR gradient missed the bar (R^2 0.50) and the derived table
+did not close the moat. The interior gradient&#x27;s residual — its sh/q-
+early -&gt; r-late glyph-identity ordering — was named the program&#x27;s
+sharpest open target. This rung tests a specific structural hypothesis
+for that residual.
 
-SCOPE DISCLOSURE (stated first): &quot;principles&quot; here means POSITION-
-INDEPENDENT CLASS PROPERTIES measured from the token stream — glyph
-frequency, gallows-membership, word length — NONE of which carry any
-position information. Showing that a class&#x27;s line-PLACEMENT loading is a
-lawful function of these is a REDUCTIVE derivation: the discipline
-stops being an arbitrary ~13-number per-axis table and becomes a few
-coefficients on interpretable properties. It is NOT derivation from a
-mechanism outside the manuscript (scribal layout physics, paragraph
-mechanics) — that remains the open frontier and is not claimed here.
+HYPOTHESIS (fixed before running): the line&#x27;s interior word-ordering
+MIRRORS within-word glyph morphology. In Voynichese, q is almost purely
+word-INITIAL (the qo- onset), sh/ch are word-initial benches, while
+r/l/n occur later in words. If a word is placed in the line by the
+typical WITHIN-WORD position of its first glyph — word-initial-type
+glyphs early in the line, word-final-type glyphs late — then the
+interior gradient reduces to morphology. This is a position-free
+predictor of a position effect: within-WORD position predicting within-
+LINE position is a real structural claim, not circular (the two axes
+are distinct).
 
-DECLARED PRINCIPLES (fixed before running; all position-free, per
-class over the top-CLASS_K first-EVA-glyph classes + OTHER):
-  freq    = log token frequency of the class in Currier B
-  gallows = 1 if the class glyph is a gallows base (t/k/p/f) else 0
-  wlen    = mean word length of the class&#x27;s tokens
-(z-scored; a constant term is included.)
+NEW PRINCIPLES (added to N6g&#x27;s freq+gallows+wlen; all position-free):
+  wwpos    = mean normalized within-word position of the class glyph
+             over ALL its occurrences in B (0 = always word-initial,
+             1 = always word-final); OTHER-class set to the corpus mean.
+  finality = fraction of the class glyph&#x27;s occurrences that are word-
+             final.
+Method is N6g&#x27;s, with the 5-principle design matrix; a 3-principle
+baseline is refit in-script so the R^2 GAIN attributable to morphology
+is measured directly (and cross-checked against the N6g record).
 
-METHOD: rebuild B&#x27;s rank-3 decomposition (cross-checked against the
-N6d axes); for each shared axis k in {1,2}, ordinary least squares
-A_k ~ 1 + freq + gallows + wlen over the classes, giving predicted
-loadings Ahat_k and R^2. Calibration: the same fit on N_PERM
-permutations of A_k gives a chance-R^2 null; excess = R^2 - mean null.
-Then the DERIVED table replaces axis-1 and axis-2 loadings with
-Ahat_1, Ahat_2 (profiles, row/col/grand, and the B-specific axis 3 kept
-as measured), refits the single strength knob on interior gain, places
-B&#x27;s own lines, and its line-group distance D_line is scored against the
-phase-109 contiguous-halves bar (bar, noise scale, and B&#x27;s feature
-vector are loaded from the committed N6 record; run ABORTS on any
-cross-check mismatch). Axis 3&#x27;s R^2 is reported observationally
-(expected LOW — it is B-specific and not claimed derivable).
-
-PRE-REGISTERED VERDICTS:
-  gate_failed          — N6/N6d cross-checks fail to reproduce.
-  shared_axes_derived  — BOTH shared axes have R^2 excess &gt;= R2_EXCESS
-                         over their shuffle null AND the derived-axes
-                         table closes the line group (D_line &lt;=
-                         bar_line): the two manuscript-wide rules reduce
-                         to frequency + gallows + length. SUGGESTIVE,
-                         quarantined — the discipline is explained, not
-                         just described, at the reductive level.
-  axis1_only           — only axis 1 (edge) qualifies (excess and, with
-                         axis 2 kept measured, closure holds): the
-                         edge rule reduces to the principles (Grove/
-                         LAAFU made quantitative), the interior gradient
-                         does not. SUGGESTIVE, quarantined.
-  not_derived          — neither shared axis reduces / the derived
-                         table fails to close: the discipline is not
-                         captured by these principles; corpse logged
-                         with the per-axis R^2 so the next candidate
-                         principle set is informed.
+PRE-REGISTERED VERDICTS (focus: the interior gradient, axis 2):
+  gate_failed              — N6/N6d cross-checks or the 3-principle
+                             baseline (vs N6g) fail to reproduce.
+  interior_morphology_reduced — enriched interior R^2 &gt;= R2_TARGET AND
+                             the gain over the 3-principle baseline &gt;=
+                             DELTA_MIN: the interior gradient is
+                             substantially a within-word-morphology
+                             effect. If the enriched derived table also
+                             closes the moat that is noted as the
+                             stronger result. SUGGESTIVE, quarantined.
+  modest_improvement       — gain &gt;= DELTA_MODEST but interior R^2 below
+                             target: morphology helps but does not
+                             dominate the residual.
+  no_improvement           — gain &lt; DELTA_MODEST: within-word position
+                             does not explain the interior gradient;
+                             the residual is deeper still (corpse logged
+                             with the beta on wwpos so the sign/size is
+                             on record).
 Vocabulary discipline: a reduction of statistics to other statistics;
-nothing about the manuscript&#x27;s meaning is claimed or decoded.</pre>
+nothing decoded.</pre>
 <h2>Parameters</h2><p class="muted">Edit a value to override it for an in-browser run (the script itself is never modified).</p><table><tr><th>name</th><th>type</th><th>value</th></tr>
-<tr><td><code>SEED</code></td><td>int</td><td><input class="param" data-param="SEED" value="126"></td></tr>
+<tr><td><code>SEED</code></td><td>int</td><td><input class="param" data-param="SEED" value="127"></td></tr>
 <tr><td><code>S7_SEED</code></td><td>int</td><td><input class="param" data-param="S7_SEED" value="115"></td></tr>
 <tr><td><code>N4_SEED</code></td><td>int</td><td><input class="param" data-param="N4_SEED" value="118"></td></tr>
 <tr><td><code>N_GEN_SEEDS</code></td><td>int</td><td><input class="param" data-param="N_GEN_SEEDS" value="5"></td></tr>
 <tr><td><code>N_PERM</code></td><td>int</td><td><input class="param" data-param="N_PERM" value="200"></td></tr>
-<tr><td><code>R2_EXCESS</code></td><td>float</td><td><input class="param" data-param="R2_EXCESS" value="0.25"></td></tr>
+<tr><td><code>R2_TARGET</code></td><td>float</td><td><input class="param" data-param="R2_TARGET" value="0.7"></td></tr>
+<tr><td><code>DELTA_MIN</code></td><td>float</td><td><input class="param" data-param="DELTA_MIN" value="0.1"></td></tr>
+<tr><td><code>DELTA_MODEST</code></td><td>float</td><td><input class="param" data-param="DELTA_MODEST" value="0.05"></td></tr>
 <tr><td><code>CLASS_K</code></td><td>int</td><td><input class="param" data-param="CLASS_K" value="12"></td></tr>
 <tr><td><code>MIN_LINE_WORDS</code></td><td>int</td><td><input class="param" data-param="MIN_LINE_WORDS" value="5"></td></tr>
 <tr><td><code>HOLDOUT_FRAC</code></td><td>float</td><td><input class="param" data-param="HOLDOUT_FRAC" value="0.2"></td></tr>
@@ -136,32 +128,34 @@ nothing about the manuscript&#x27;s meaning is claimed or decoded.</pre>
 <tr><td><code>LINE_GROUP</code></td><td>json</td><td><input class="param" data-param="LINE_GROUP" value="[&#x27;line_init_jsd&#x27;, &#x27;line_final_jsd&#x27;, &#x27;interior_gain&#x27;, &#x27;r_pos&#x27;, &#x27;r_bi&#x27;]"></td></tr>
 <tr><td><code>N6_JSON</code></td><td>str</td><td><input class="param" data-param="N6_JSON" value="line_discipline_tournament.json"></td></tr>
 <tr><td><code>N6D_JSON</code></td><td>str</td><td><input class="param" data-param="N6D_JSON" value="line_discipline_rank3.json"></td></tr>
+<tr><td><code>N6G_JSON</code></td><td>str</td><td><input class="param" data-param="N6G_JSON" value="line_discipline_derivation.json"></td></tr>
 </table>
 <h2>Run it in your browser</h2><p class="muted">Python + numpy on WebAssembly, entirely on your machine — nothing is uploaded. First run downloads the runtime (~15 MB) and the repository data pack (~9 MB); both are cached afterwards. Expect it to be slower than a native run.</p><p><button id="run-btn">&#9654; Run</button> <button id="stop-btn">Stop</button> <span id="run-status" class="muted"></span></p><pre id="run-out"></pre>
-<script>window.VAIS_TEST = {"stem": "line_discipline_derivation", "specs": {"SEED": {"type": "int", "container": null}, "S7_SEED": {"type": "int", "container": null}, "N4_SEED": {"type": "int", "container": null}, "N_GEN_SEEDS": {"type": "int", "container": null}, "N_PERM": {"type": "int", "container": null}, "R2_EXCESS": {"type": "float", "container": null}, "CLASS_K": {"type": "int", "container": null}, "MIN_LINE_WORDS": {"type": "int", "container": null}, "HOLDOUT_FRAC": {"type": "float", "container": null}, "ALPHA": {"type": "float", "container": null}, "S7_FEATURES": {"type": "json", "container": "tuple"}, "INTERIOR": {"type": "json", "container": "set"}, "BINS": {"type": "json", "container": "tuple"}, "LINE_GROUP": {"type": "json", "container": "tuple"}, "N6_JSON": {"type": "str", "container": null}, "N6D_JSON": {"type": "str", "container": null}}, "base": "../", "baselineSeconds": 0};</script><script src="../runner.js"></script>
+<script>window.VAIS_TEST = {"stem": "line_discipline_morphology", "specs": {"SEED": {"type": "int", "container": null}, "S7_SEED": {"type": "int", "container": null}, "N4_SEED": {"type": "int", "container": null}, "N_GEN_SEEDS": {"type": "int", "container": null}, "N_PERM": {"type": "int", "container": null}, "R2_TARGET": {"type": "float", "container": null}, "DELTA_MIN": {"type": "float", "container": null}, "DELTA_MODEST": {"type": "float", "container": null}, "CLASS_K": {"type": "int", "container": null}, "MIN_LINE_WORDS": {"type": "int", "container": null}, "HOLDOUT_FRAC": {"type": "float", "container": null}, "ALPHA": {"type": "float", "container": null}, "S7_FEATURES": {"type": "json", "container": "tuple"}, "INTERIOR": {"type": "json", "container": "set"}, "BINS": {"type": "json", "container": "tuple"}, "LINE_GROUP": {"type": "json", "container": "tuple"}, "N6_JSON": {"type": "str", "container": null}, "N6D_JSON": {"type": "str", "container": null}, "N6G_JSON": {"type": "str", "container": null}}, "base": "../", "baselineSeconds": 0};</script><script src="../runner.js"></script>
 <h2>Run it locally (full speed, byte-exact)</h2>
 <pre>git clone https://github.com/Vineyardcode/vais
 cd vais
 pip install numpy flask
-python scripts/line_discipline_derivation.py        # this test; output also lands in results/
+python scripts/line_discipline_morphology.py        # this test; output also lands in results/
 python webui/server.py          # or the full interactive UI at localhost:5000</pre>
 <h2>Golden output (PYTHONHASHSEED=0)</h2><details><summary>show</summary><pre id="golden-pre">============================================================================
-LINE-DISCIPLINE PRINCIPLED DERIVATION (S3 rung 4) — reduce the shared axes? (N6g)
+LINE-DISCIPLINE MORPHOLOGY DERIVATION (S3 rung 5) — reduce the interior gradient? (N6h)
 ============================================================================
-seed=126 perms=200 r2_excess&gt;=0.25; principles = log-freq + gallows + word-length (position-free)
+seed=127 perms=200 target R^2&gt;=0.7, gain&gt;=0.1; principles = freq+gallows+wlen (+ wwpos, finality = within-word morphology)
   B features + bar reproduce N6 (bar_line 7.489)  VERIFIED
   rank-3 decomposition reproduces the N6d axes  VERIFIED
-  axis1: R^2 0.527  null 0.238  excess +0.289   beta freq+0.47 gallows+0.21 wlen-0.29
-  axis2: R^2 0.498  null 0.252  excess +0.246   beta freq-0.12 gallows-0.22 wlen-0.21
-  axis3: R^2 0.415  null 0.259  excess +0.156   beta freq+0.09 gallows+0.44 wlen+0.00
-  derived-axes table (Ahat_1, Ahat_2 + measured axis3), lambda 2.5: D_line 9.039 (bar 7.489; measured rank-3 was 6.882)
+  within-word position by class (0=initial, 1=final): q 0.00  sh 0.13  ch 0.20  p 0.20  o 0.25  t 0.28  k 0.34  a 0.45  s 0.48  # 0.50  d 0.58  l 0.62  y 0.90
+  axis1: R^2 0.581 (3-principle 0.527, gain +0.053)  wwpos-beta +0.00  finality-beta -0.18
+  axis2: R^2 0.629 (3-principle 0.498, gain +0.131)  wwpos-beta +0.31  finality-beta -0.25
+  axis3: R^2 0.623 (3-principle 0.415, gain +0.207)  wwpos-beta +0.06  finality-beta -0.16
+  gate: 3-principle interior R^2 0.4981 ~ N6g 0.4981 -&gt; PASS
+  enriched derived table, lambda 2.25: D_line 9.628 (bar 7.489; measured rank-3 was 6.882; N6g 3-principle was 9.039)
 
   ADJUDICATION (pre-registered):
-    axis1 excess +0.289 (&gt;= 0.25: True); axis2 excess +0.246 (False); derived table closes: False
-    (axis3 excess +0.156 — reported, expected low: B-specific)
-    NOT DERIVED: the shared axes are not captured by log-frequency + gallows + word-length at the closure bar — the discipline is not (yet) reducible to these principles. Corpse logged with per-axis R^2 for the next candidate set.
+    interior R^2 0.6294 (target 0.7), gain over 3-principle +0.131 (min 0.1); wwpos-beta +0.308; derived table closes: False
+    MODEST IMPROVEMENT: within-word position helps (gain +0.131) but the interior gradient is not dominated by it; residual remains.
 
-  -&gt; results/line_discipline_derivation.json
+  -&gt; results/line_discipline_morphology.json
 </pre></details><footer>Static mirror — read-only. Generated 2026-07-21 from commit <code>470e655</code>. 
 To run any test with your own parameters, clone
 <a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
