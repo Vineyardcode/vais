@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>labelese_naming_refined — VAIS - Voynich Analysis Interactive Suite</title><style>
+:root { --bg:#ffffff; --fg:#1a1a1a; --muted:#666; --line:#ddd;
+        --code:#f5f5f5; --accent:#7a4a1e; --warn:#a33; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#141414; --fg:#ddd; --muted:#999; --line:#333;
+          --code:#1e1e1e; --accent:#d9a05b; --warn:#e77; } }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--fg);
+       font:16px/1.55 Georgia, 'Times New Roman', serif; }
+nav { border-bottom:1px solid var(--line); padding:.7em 1.2em;
+      font-family: system-ui, sans-serif; font-size:.9em; }
+nav a { color:var(--accent); text-decoration:none; margin-right:1.2em; }
+main { max-width: 62em; margin: 0 auto; padding: 1.5em 1.2em 4em; }
+h1,h2,h3 { font-family: system-ui, sans-serif; line-height:1.25; }
+h1 { font-size:1.7em; } h2 { font-size:1.3em; margin-top:2em; }
+a { color: var(--accent); }
+code, pre { font-family: ui-monospace, Consolas, monospace;
+            font-size:.86em; background:var(--code); }
+code { padding:.1em .3em; border-radius:3px; }
+pre { padding: .9em; overflow-x:auto; border:1px solid var(--line);
+      border-radius:4px; line-height:1.4; }
+table { border-collapse: collapse; margin: 1em 0; font-size:.92em;
+        display:block; overflow-x:auto; }
+th, td { border:1px solid var(--line); padding:.35em .6em;
+         text-align:left; vertical-align:top; }
+th { font-family: system-ui, sans-serif; background:var(--code); }
+blockquote { border-left:3px solid var(--accent); margin:1em 0;
+             padding:.2em 1em; color:var(--muted); }
+.muted { color:var(--muted); font-size:.9em; }
+.tag { font-family: system-ui, sans-serif; font-size:.75em;
+       border:1px solid var(--line); border-radius:3px;
+       padding:.05em .45em; margin-left:.5em; }
+.tag.sug { border-color:var(--warn); color:var(--warn); }
+details summary { cursor:pointer; font-family: system-ui, sans-serif; }
+input.param { font-family: ui-monospace, Consolas, monospace;
+              font-size:.85em; width:24em; max-width:100%;
+              background:var(--code); color:var(--fg);
+              border:1px solid var(--line); border-radius:3px;
+              padding:.25em .4em; }
+button { font-family: system-ui, sans-serif; font-size:.95em;
+         padding:.35em 1em; border:1px solid var(--accent);
+         border-radius:4px; background:var(--code); color:var(--fg);
+         cursor:pointer; }
+button:disabled { opacity:.5; cursor:default; }
+#run-out { min-height:2em; }
+footer { border-top:1px solid var(--line); margin-top:3em;
+         padding-top:1em; font-size:.85em; color:var(--muted); }
+</style></head><body>
+<nav><a href="../index.html">VAIS - Voynich Analysis Interactive Suite</a><a href="../catalog.html">Catalog</a>
+<a href="../research.html">Research</a><a href="../reports.html">Reports</a>
+<a href="../glossary.html">Glossary</a><a href="../credits.html">Credits</a>
+<a href="../contributing.html">Contributing</a>
+<a href="https://github.com/Vineyardcode/vais">GitHub</a></nav>
+<main><h1>labelese_naming_refined</h1>
+<p class="muted">scripts/labelese_naming_refined.py</p>
+<pre>Labelese Naming, Refined (N11b) — does the section-naming signal survive
+splitting off fragment-labels AND matching the section marginal?
+
+PROVENANCE: N11 found the marginal labels are a distinct register and
+section-bound beyond dialect (naming margin +0.043), verdict
+labelese_naming_system — SUGGESTIVE, with two caveats flagged in its own
+entry: (1) it pooled real word-shaped labels with single-glyph marker
+tokens; (2) the naming margin was measured against a running baseline
+whose SECTION MARGINAL differed from the labels&#x27;, so the pharma-label
+concentration could inflate it. A reconnaissance confirmed both: the
+word-shaped labels are o+gallows+suffix forms concentrated in the
+illustrated sections (pharma/zodiac/bio), while the &quot;labels&quot; also
+included a tail of stray single glyphs (y, s, d, f). This rung re-tests
+the naming claim with both defects removed.
+
+TWO REFINEMENTS (declared before running):
+  (1) WORD-SHAPED only: labels parsed to &gt;= MIN_GLYPHS EVA glyphs;
+      shorter fragment/marker tokens are analysed separately
+      (observational).
+  (2) SECTION-MARGINAL-MATCHED baseline: the running-text comparison
+      sample is drawn to have the IDENTICAL per-section counts as the
+      word-shaped labels, so U*(word;section) reflects word-identity
+      specificity at fixed section composition — the concentration
+      confound is removed by construction, not just noted.
+Everything else (the U* metric, shuffle nulls, the naming/generic
+controls and their scale-free gate) is inherited unchanged from N11;
+NAMING_MARGIN is unchanged. Fixed-data caveat (Phase 8 §8.7-3): the N11
+result and the reconnaissance are already seen; these refinements are
+methodological improvements to the SAME criterion, disclosed as such.
+
+PRE-REGISTERED VERDICTS (on the word-shaped labels):
+  gate_failed        — naming/generic controls do not separate.
+  naming_survives    — U*(word-shaped labels) beats its shuffle null
+                       AND the margin over the section-marginal-matched
+                       running baseline &gt;= NAMING_MARGIN: the naming
+                       signal is real word-identity specificity, NOT the
+                       pharma concentration. SUGGESTIVE, quarantined.
+  naming_weakened    — 0 &lt; margin &lt; NAMING_MARGIN: real but partly a
+                       concentration effect; downgraded.
+  naming_was_concentration — margin &lt;= 0 with marginals matched: N11&#x27;s
+                       signal was the section concentration; the naming
+                       reading is withdrawn (corpse logged).
+Vocabulary discipline: no label is read; &quot;naming&quot; is distributional.</pre>
+<h2>Parameters</h2><p class="muted">Edit a value to override it for an in-browser run (the script itself is never modified).</p><table><tr><th>name</th><th>type</th><th>value</th></tr>
+<tr><td><code>SEED</code></td><td>int</td><td><input class="param" data-param="SEED" value="129"></td></tr>
+<tr><td><code>N_NULL</code></td><td>int</td><td><input class="param" data-param="N_NULL" value="30"></td></tr>
+<tr><td><code>R_MATCH</code></td><td>int</td><td><input class="param" data-param="R_MATCH" value="12"></td></tr>
+<tr><td><code>MIN_GLYPHS</code></td><td>int</td><td><input class="param" data-param="MIN_GLYPHS" value="3"></td></tr>
+<tr><td><code>NAMING_MARGIN</code></td><td>float</td><td><input class="param" data-param="NAMING_MARGIN" value="0.03"></td></tr>
+<tr><td><code>CTRL_FACTOR</code></td><td>float</td><td><input class="param" data-param="CTRL_FACTOR" value="3.0"></td></tr>
+<tr><td><code>CTRL_FLOOR</code></td><td>float</td><td><input class="param" data-param="CTRL_FLOOR" value="0.005"></td></tr>
+<tr><td><code>SECTIONS</code></td><td>int</td><td><input class="param" data-param="SECTIONS" value="6"></td></tr>
+<tr><td><code>POOL_PER</code></td><td>int</td><td><input class="param" data-param="POOL_PER" value="200"></td></tr>
+<tr><td><code>MIN_LINE_WORDS</code></td><td>int</td><td><input class="param" data-param="MIN_LINE_WORDS" value="5"></td></tr>
+</table>
+<h2>Run it in your browser</h2><p class="muted">Python + numpy on WebAssembly, entirely on your machine — nothing is uploaded. First run downloads the runtime (~15 MB) and the repository data pack (~9 MB); both are cached afterwards. Expect it to be slower than a native run.</p><p><button id="run-btn">&#9654; Run</button> <button id="stop-btn">Stop</button> <span id="run-status" class="muted"></span></p><pre id="run-out"></pre>
+<script>window.VAIS_TEST = {"stem": "labelese_naming_refined", "specs": {"SEED": {"type": "int", "container": null}, "N_NULL": {"type": "int", "container": null}, "R_MATCH": {"type": "int", "container": null}, "MIN_GLYPHS": {"type": "int", "container": null}, "NAMING_MARGIN": {"type": "float", "container": null}, "CTRL_FACTOR": {"type": "float", "container": null}, "CTRL_FLOOR": {"type": "float", "container": null}, "SECTIONS": {"type": "int", "container": null}, "POOL_PER": {"type": "int", "container": null}, "MIN_LINE_WORDS": {"type": "int", "container": null}}, "base": "../", "baselineSeconds": 0};</script><script src="../runner.js"></script>
+<h2>Run it locally (full speed, byte-exact)</h2>
+<pre>git clone https://github.com/Vineyardcode/vais
+cd vais
+pip install numpy flask
+python scripts/labelese_naming_refined.py        # this test; output also lands in results/
+python webui/server.py          # or the full interactive UI at localhost:5000</pre>
+<h2>Golden output (PYTHONHASHSEED=0)</h2><details><summary>show</summary><pre id="golden-pre">============================================================================
+LABELESE NAMING, REFINED (N11b) — word-shaped + marginal-matched
+============================================================================
+seed=129 min_glyphs=3 nulls=30 match=12 naming_margin=0.03
+  word-shaped labels: 535 tokens (424 types); fragment labels: 93; running: 35280
+  word-shaped labels per section: bio:105  herbalA:34  pharma:273  text:2  zodiac:121
+  controls: P-NAME +0.1578 vs P-GEN +0.0169 -&gt; PASS
+  word-shaped labels U* +0.0496 (beats null: True)  marginal-matched running U* +0.0797  margin -0.0300
+  [fragment labels U* +0.1152 (beats null: True) — observational]
+
+  ADJUDICATION (pre-registered):
+    NAMING WAS CONCENTRATION: margin -0.0300 &lt;= 0 with section marginals matched — N11&#x27;s naming signal was the pharma-label concentration, not word-identity specificity. The naming reading is withdrawn. Corpse logged.
+
+  -&gt; results/labelese_naming_refined.json
+</pre></details><footer>Static mirror — read-only. Generated 2026-07-21 from commit <code>0cc1695</code>. 
+To run any test with your own parameters, clone
+<a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
+(<code>python webui/server.py</code>). All numbers reproduce at
+PYTHONHASHSEED=0.</footer></main></body></html>
