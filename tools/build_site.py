@@ -27,6 +27,27 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "webui"))
 import registry as registry_mod  # noqa: E402
 
+# Charter-era instruments: built after the anti-crackpot charter
+# (RESEARCH.md Phase 0), each with a control battery, pre-registered kill
+# criteria in its docstring, and a ledger verdict. Everything else is a
+# pre-charter test — often useful, but uncontrolled and self-scored;
+# read those with their status/errata notes. Keeping this list explicit
+# (not heuristic) so the division is auditable.
+CHARTER_ERA = frozenset({
+    "controls_foundry", "forgery_tournament", "space_free_segmentation",
+    "alphabet_space_search", "verbose_cipher_inversion",
+    "line_as_record_structures", "line_as_record_per_hand",
+    "line_as_record_ordinal", "line_as_record_characterization",
+    "line_as_record_section_split", "line_class_family_test",
+    "line_ordinal_rank_test", "line_discipline_tournament",
+    "line_discipline_compression", "line_discipline_rank2",
+    "line_discipline_rank3", "line_discipline_axis3_handA",
+    "line_discipline_transfer", "cross_transliteration_invariance",
+    "transliteration_floor_calibration", "transliteration_significance",
+    "scan_glyph_feasibility", "hapax_locus_readjudication",
+    "hapax_clustering_calibration",
+})
+
 OUT = ROOT / "docs"
 REPO_URL = "https://github.com/Vineyardcode/vais"
 
@@ -330,17 +351,41 @@ def main():
             page(stem, "\n".join(body), depth=1, stamp=stamp),
             encoding="utf-8")
 
-    # catalog
-    body = [f"<h1>Test catalog — {len(reg)} runnable tests</h1>",
-            "<table><tr><th>test</th><th>description</th><th>params</th>"
-            "<th>baseline</th></tr>"]
-    for stem, t in reg.items():
-        secs = (f"{t['baseline_seconds']:.0f}s"
-                if t.get("baseline_seconds") else "—")
-        body.append(f'<tr><td><a href="tests/{stem}.html">{esc(stem)}</a>'
-                    f"</td><td>{esc(t['description'][:110])}</td>"
-                    f"<td>{len(t['params'])}</td><td>{secs}</td></tr>")
-    body.append("</table>")
+    # catalog — split charter-era from pre-charter
+    def catalog_table(items):
+        rows = ["<table><tr><th>test</th><th>description</th>"
+                "<th>params</th><th>baseline</th></tr>"]
+        for stem, t in items:
+            secs = (f"{t['baseline_seconds']:.0f}s"
+                    if t.get("baseline_seconds") else "—")
+            rows.append(
+                f'<tr><td><a href="tests/{stem}.html">{esc(stem)}</a>'
+                f"</td><td>{esc(t['description'][:110])}</td>"
+                f"<td>{len(t['params'])}</td><td>{secs}</td></tr>")
+        rows.append("</table>")
+        return "\n".join(rows)
+
+    charter = [(s, t) for s, t in reg.items() if s in CHARTER_ERA]
+    legacy = [(s, t) for s, t in reg.items() if s not in CHARTER_ERA]
+    body = [
+        f"<h1>Test catalog — {len(reg)} runnable tests</h1>",
+        f"<h2>Charter-era instruments ({len(charter)})</h2>",
+        "<p class=\"muted\">Built after the anti-crackpot charter: each "
+        "runs a control battery before the manuscript, states its "
+        "falsification thresholds in advance, and carries a verdict in "
+        "the <a href=\"research.html\">adjudicated ledger</a>. These are "
+        "the ones the research findings rest on.</p>",
+        catalog_table(charter),
+        f"<h2>Pre-charter tests ({len(legacy)})</h2>",
+        "<p class=\"muted\">Older exploratory tests, written before the "
+        "control-battery methodology. Many are useful, but they are "
+        "uncontrolled and self-scored — a test here reporting a "
+        "\"confirmation\" has not been checked against negative controls. "
+        "No ledger conclusion rests on them; read each with the status "
+        "or errata note on its page. They are kept (nothing is deleted) "
+        "for transparency and as re-adjudication targets.</p>",
+        catalog_table(legacy),
+    ]
     (OUT / "catalog.html").write_text(
         page("Catalog", "\n".join(body), stamp=stamp), encoding="utf-8")
 
