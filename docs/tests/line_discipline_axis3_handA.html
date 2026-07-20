@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>line_discipline_axis3_handA — VAIS - Voynich Analysis Interactive Suite</title><style>
+:root { --bg:#ffffff; --fg:#1a1a1a; --muted:#666; --line:#ddd;
+        --code:#f5f5f5; --accent:#7a4a1e; --warn:#a33; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#141414; --fg:#ddd; --muted:#999; --line:#333;
+          --code:#1e1e1e; --accent:#d9a05b; --warn:#e77; } }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--fg);
+       font:16px/1.55 Georgia, 'Times New Roman', serif; }
+nav { border-bottom:1px solid var(--line); padding:.7em 1.2em;
+      font-family: system-ui, sans-serif; font-size:.9em; }
+nav a { color:var(--accent); text-decoration:none; margin-right:1.2em; }
+main { max-width: 62em; margin: 0 auto; padding: 1.5em 1.2em 4em; }
+h1,h2,h3 { font-family: system-ui, sans-serif; line-height:1.25; }
+h1 { font-size:1.7em; } h2 { font-size:1.3em; margin-top:2em; }
+a { color: var(--accent); }
+code, pre { font-family: ui-monospace, Consolas, monospace;
+            font-size:.86em; background:var(--code); }
+code { padding:.1em .3em; border-radius:3px; }
+pre { padding: .9em; overflow-x:auto; border:1px solid var(--line);
+      border-radius:4px; line-height:1.4; }
+table { border-collapse: collapse; margin: 1em 0; font-size:.92em;
+        display:block; overflow-x:auto; }
+th, td { border:1px solid var(--line); padding:.35em .6em;
+         text-align:left; vertical-align:top; }
+th { font-family: system-ui, sans-serif; background:var(--code); }
+blockquote { border-left:3px solid var(--accent); margin:1em 0;
+             padding:.2em 1em; color:var(--muted); }
+.muted { color:var(--muted); font-size:.9em; }
+.tag { font-family: system-ui, sans-serif; font-size:.75em;
+       border:1px solid var(--line); border-radius:3px;
+       padding:.05em .45em; margin-left:.5em; }
+.tag.sug { border-color:var(--warn); color:var(--warn); }
+details summary { cursor:pointer; font-family: system-ui, sans-serif; }
+input.param { font-family: ui-monospace, Consolas, monospace;
+              font-size:.85em; width:24em; max-width:100%;
+              background:var(--code); color:var(--fg);
+              border:1px solid var(--line); border-radius:3px;
+              padding:.25em .4em; }
+button { font-family: system-ui, sans-serif; font-size:.95em;
+         padding:.35em 1em; border:1px solid var(--accent);
+         border-radius:4px; background:var(--code); color:var(--fg);
+         cursor:pointer; }
+button:disabled { opacity:.5; cursor:default; }
+#run-out { min-height:2em; }
+footer { border-top:1px solid var(--line); margin-top:3em;
+         padding-top:1em; font-size:.85em; color:var(--muted); }
+</style></head><body>
+<nav><a href="../index.html">VAIS - Voynich Analysis Interactive Suite</a><a href="../catalog.html">Catalog</a>
+<a href="../research.html">Research</a><a href="../reports.html">Reports</a>
+<a href="../credits.html">Credits</a><a href="../contributing.html">Contributing</a>
+<a href="https://github.com/Vineyardcode/vais">GitHub</a></nav>
+<main><h1>line_discipline_axis3_handA</h1>
+<p class="muted">scripts/line_discipline_axis3_handA.py</p>
+<pre>Axis-3 in Hand A (portfolio S3, rung 3b) — is the pre-final-zone rule
+absent, inverted, or secretly shared in Currier A? (N6f)
+
+PROVENANCE: N6d found Currier B&#x27;s placement discipline is exactly three
+axes; N6e found axes 1-2 transfer to hand A (rho +0.92/+0.83) while
+axis 3 — the pre-final-zone rule — showed a NEGATIVE cross-table
+correlation (-0.46). But that number compared two independently-run
+SVDs, and components with close singular values can mix identities:
+&quot;inverted&quot; could be an artifact of component bookkeeping. This rung
+characterizes A&#x27;s axis-3 content properly.
+
+METHOD (fixed before running): no SVD is run on A at all. B&#x27;s axes are
+loaded from the committed N6d record and held FIXED; hand A&#x27;s
+double-centered log-table is REGRESSED onto each fixed B component:
+  beta_k(A) = &lt;resid_A, outer(A_k, V_k)&gt; / ||outer(A_k, V_k)||^2
+so beta ~ +1 means A carries the same-shaped rule at B&#x27;s strength,
+0 = absent, negative = reversed. Significance for axis 3 by permutation:
+N_NULLS within-line shuffles of A -&gt; null tables -&gt; null |beta_3|
+distribution; significant iff |beta_3(A)| exceeds ALL nulls
+(p = 1/(N_NULLS+1) &lt; 0.005, the house standard).
+CROSS-CHECK (model-free, no SVD anywhere): per-class pre-final-zone
+occupancy skew (bins m3 + pL-1, the positive support of B&#x27;s profile 3)
+computed from raw counts in A and B; its A-vs-B Spearman must AGREE IN
+SIGN with beta_3 before any directional claim.
+
+GATES: (a) B&#x27;s table rebuilt here must reproduce the N6d axes
+(cross-checked); (b) CONTINUITY — beta_1(A) and beta_2(A) must be
+positive and each exceed all N_NULLS nulls (the method must recover the
+known axis-1/2 transfer, else it cannot be trusted on axis 3).
+
+PRE-REGISTERED OUTCOMES:
+  gate_failed        — any gate fails.
+  axis3_absent_in_A  — |beta_3(A)| does not beat the null battery:
+                       hand A has no measurable pre-final-zone rule;
+                       B&#x27;s axis 3 is an innovation of B.
+  axis3_inverted_in_A— beta_3(A) &lt; 0, beats all nulls, AND the
+                       bin-level Spearman is negative: the rule exists
+                       in A with REVERSED sign — a qualitative hand
+                       difference. SUGGESTIVE, quarantined.
+  axis3_shared_weak  — beta_3(A) &gt; 0, beats all nulls, AND the
+                       bin-level Spearman is positive: N6e&#x27;s -0.46 was
+                       component-mixing artifact; axis 3 is shared
+                       (weaker). SUGGESTIVE, quarantined (revises the
+                       N6e reading).
+  discordant_methods — beta significant but the bin-level cross-check
+                       disagrees in sign: no claim; instrument
+                       investigation required.
+Vocabulary discipline: characterization of statistics; nothing decoded.</pre>
+<h2>Parameters</h2><p class="muted">Edit a value to override it for an in-browser run (the script itself is never modified).</p><table><tr><th>name</th><th>type</th><th>value</th></tr>
+<tr><td><code>SEED</code></td><td>int</td><td><input class="param" data-param="SEED" value="122"></td></tr>
+<tr><td><code>N_NULLS</code></td><td>int</td><td><input class="param" data-param="N_NULLS" value="200"></td></tr>
+<tr><td><code>MIN_LINE_WORDS</code></td><td>int</td><td><input class="param" data-param="MIN_LINE_WORDS" value="5"></td></tr>
+<tr><td><code>ALPHA</code></td><td>float</td><td><input class="param" data-param="ALPHA" value="0.5"></td></tr>
+<tr><td><code>CLASS_K</code></td><td>int</td><td><input class="param" data-param="CLASS_K" value="12"></td></tr>
+<tr><td><code>BINS</code></td><td>json</td><td><input class="param" data-param="BINS" value="[&#x27;p1&#x27;, &#x27;p2&#x27;, &#x27;m1&#x27;, &#x27;m2&#x27;, &#x27;m3&#x27;, &#x27;pL-1&#x27;, &#x27;pL&#x27;]"></td></tr>
+<tr><td><code>PREFINAL</code></td><td>json</td><td><input class="param" data-param="PREFINAL" value="[&#x27;m3&#x27;, &#x27;pL-1&#x27;]"></td></tr>
+<tr><td><code>N6D_JSON</code></td><td>str</td><td><input class="param" data-param="N6D_JSON" value="line_discipline_rank3.json"></td></tr>
+</table>
+<h2>Run it in your browser</h2><p class="muted">Python + numpy on WebAssembly, entirely on your machine — nothing is uploaded. First run downloads the runtime (~15 MB) and the repository data pack (~9 MB); both are cached afterwards. Expect it to be slower than a native run.</p><p><button id="run-btn">&#9654; Run</button> <button id="stop-btn">Stop</button> <span id="run-status" class="muted"></span></p><pre id="run-out"></pre>
+<script>window.VAIS_TEST = {"stem": "line_discipline_axis3_handA", "specs": {"SEED": {"type": "int", "container": null}, "N_NULLS": {"type": "int", "container": null}, "MIN_LINE_WORDS": {"type": "int", "container": null}, "ALPHA": {"type": "float", "container": null}, "CLASS_K": {"type": "int", "container": null}, "BINS": {"type": "json", "container": "tuple"}, "PREFINAL": {"type": "json", "container": "tuple"}, "N6D_JSON": {"type": "str", "container": null}}, "base": "../", "baselineSeconds": 0};</script><script src="../runner.js"></script>
+<h2>Run it locally (full speed, byte-exact)</h2>
+<pre>git clone https://github.com/Vineyardcode/vais
+cd vais
+pip install numpy flask
+python scripts/line_discipline_axis3_handA.py        # this test; output also lands in results/
+python webui/server.py          # or the full interactive UI at localhost:5000</pre>
+<h2>Golden output (PYTHONHASHSEED=0)</h2><details><summary>show</summary><pre id="golden-pre">============================================================================
+AXIS-3 IN HAND A (S3 rung 3b) — absent, inverted, or shared? (N6f)
+============================================================================
+seed=122 nulls=200 (beat-all, p&lt;0.005) prefinal bins=(&#x27;m3&#x27;, &#x27;pL-1&#x27;)
+  corpora: B 2522 lines (reference), A 1310 lines (characterized); 13 classes
+  gate a: B self-projection betas [1.0, 1.0, 1.0] (each ~1.0) -&gt; PASS
+  beta_1(A) = +0.753  null max |beta| 0.106  -&gt; significant
+  beta_2(A) = +0.756  null max |beta| 0.191  -&gt; significant
+  beta_3(A) = +0.324  null max |beta| 0.785  -&gt; not significant
+  gate b (continuity: axes 1-2 positive + significant) -&gt; PASS
+  bin-level pre-final skew, A vs B (Spearman, 12 classes): +0.559
+
+  ADJUDICATION (pre-registered):
+    AXIS 3 ABSENT IN A: |beta_3| = 0.324 does not beat the null battery — hand A has no measurable pre-final-zone rule; B&#x27;s axis 3 is an innovation of B. (This also resolves N6e&#x27;s -0.46 as noise/component mixing, not inversion.)
+
+  -&gt; results/line_discipline_axis3_handA.json
+</pre></details><footer>Static mirror — read-only. Generated 2026-07-20 from commit <code>3852e7d</code>. 
+To run any test with your own parameters, clone
+<a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
+(<code>python webui/server.py</code>). All numbers reproduce at
+PYTHONHASHSEED=0.</footer></main></body></html>

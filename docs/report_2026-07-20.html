@@ -69,7 +69,24 @@ footer { border-top:1px solid var(--line); margin-top:3em;
 <tr><td>P_only</td><td>4281</td><td>33309</td><td>1752</td><td>131.4 (CONCENTRATED)</td><td>+0.581 (CLUSTERED)</td></tr>
 <tr><td>nonP_only</td><td>227</td><td>2438</td><td>444</td><td>43.0 (CONCENTRATED)</td><td>+0.324 (CLUSTERED)</td></tr>
 </table>
-<p><strong>VERDICT: VERDICT SURVIVES — the hapax-clustering evidence is a property of the running text: decontamination removes ~39% of the chi2 statistic (the measured layout-artifact share) but every original classification holds. The contamination asterisk on Part D is removed by test.</strong></p><footer>Static mirror — read-only. Generated 2026-07-20 from commit <code>7c6a1cb</code>. 
+<p><strong>VERDICT: VERDICT SURVIVES — the hapax-clustering evidence is a property of the running text: decontamination removes ~39% of the chi2 statistic (the measured layout-artifact share) but every original classification holds. The contamination asterisk on Part D is removed by test.</strong></p>
+<h2>Run 2026-07-20 12:22:19 — N6f</h2>
+<p><strong>S3 rung 3b: axis-3 characterization in hand A — absent, inverted, or shared?</strong></p>
+<ul>
+<li>script: <code>scripts/line_discipline_axis3_handA.py</code></li>
+<li>profile: <code>{}</code></li>
+<li>log: <code>overnight_2026-07-20.log</code>; results JSON: <code>line_discipline_axis3_handA.json</code>; branch: <code>overnight/2026-07-20</code></li>
+<li>runtime: 6s (0.00 h), exit code 0</li>
+</ul>
+<p><strong>Pre-registered outcomes</strong> (script docstring): hand A&#x27;s centered log-table projected onto B&#x27;s FIXED N6d axes (no SVD on A — avoiding the component-mixing hazard behind N6e&#x27;s −0.46), permutation null (200 within-line shuffles), model-free bin-level sign cross-check.</p>
+<table>
+<tr><th>axis</th><th>beta(A)</th><th>null max</th><th>beta</th><th></th><th>significant</th></tr>
+<tr><td>1</td><td>+0.753</td><td>0.106</td><td>yes</td></tr>
+<tr><td>2</td><td>+0.756</td><td>0.191</td><td>yes</td></tr>
+<tr><td>3</td><td>+0.324</td><td>0.785</td><td>no</td></tr>
+</table>
+<p>Bin-level pre-final skew, A vs B: Spearman +0.559 (observational).</p>
+<p><strong>VERDICT: AXIS 3 ABSENT IN A — no measurable pre-final-zone rule at A&#x27;s sample size (the axis-3 direction is intrinsically noisy: wide null band). The point observations lean weakly SAME-direction, so N6e&#x27;s −0.46 is resolved as component-mixing artifact, not inversion. Axis 3 remains B&#x27;s own as far as A&#x27;s data can resolve; ledger entry 15&#x27;s &quot;anti-transfers&quot; reading is refined to &quot;undetectable in A&quot;.</strong></p><footer>Static mirror — read-only. Generated 2026-07-20 from commit <code>3852e7d</code>. 
 To run any test with your own parameters, clone
 <a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
 (<code>python webui/server.py</code>). All numbers reproduce at
