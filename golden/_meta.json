@@ -1391,5 +1391,14 @@
   "results_files_touched": [
    "labelese_subsystem.json"
   ]
+ },
+ "labelese_naming_refined": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 0.99,
+  "stdout_bytes": 977,
+  "results_files_touched": [
+   "labelese_naming_refined.json"
+  ]
  }
 }

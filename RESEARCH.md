@@ -576,6 +576,19 @@ numbering continues across tiers. Full evidence chains: Phase 8.)*
     VMS criterion unchanged); and strictly F7-bound — "naming-like" is
     distributional, NO label has been read. SUGGESTIVE, quarantined
     (labelese_subsystem).
+    **NAMING CLAIM WITHDRAWN (N11b, 2026-07-21): the registered
+    follow-up fired.** With fragment/marker tokens split off (word-shaped
+    labels >= 3 glyphs) and the running baseline drawn to the IDENTICAL
+    per-section marginal, word-shaped labels are LESS section-specific
+    (U* +0.050) than running text from the SAME sections (U* +0.080) —
+    margin −0.030. N11's naming signal was the pharma-label
+    concentration, exactly the confound flagged above. What STANDS: the
+    distinctness result (labels are a distinct register — first-glyph
+    JSD 0.151 ≫ null). What FALLS: that labels are a section-specific
+    NAMING system. A textbook quarantined-finding-killed-by-its-own-
+    follow-up; the labels are a distinct register built largely from
+    ordinary high-frequency vocabulary, not a naming lexicon
+    (labelese_naming_refined).
 19. **The two shared discipline axes are ~half-reducible to
     position-independent class properties, not fully derivable from
     them** (S3 rung 4 / N6g, 2026-07-21): the manuscript-wide edge and

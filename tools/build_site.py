@@ -47,7 +47,7 @@ CHARTER_ERA = frozenset({
     "scan_glyph_feasibility", "hapax_locus_readjudication",
     "hapax_clustering_calibration", "egyptian_determinative_test",
     "line_discipline_derivation", "line_discipline_morphology",
-    "labelese_subsystem",
+    "labelese_subsystem", "labelese_naming_refined",
 })
 
 OUT = ROOT / "docs"

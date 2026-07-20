@@ -2495,6 +2495,98 @@ def adjudicate_n11(item, expected_params, run_started):
 
 
 # ────────────────────────────────────────────────────────────────────
+# N11b adjudication — pre-registered, mechanical, JSON-only
+# ────────────────────────────────────────────────────────────────────
+def adjudicate_n11b(item, expected_params, run_started):
+    """Pre-registered outcomes (labelese_naming_refined.py docstring):
+    on WORD-SHAPED labels against a SECTION-MARGINAL-MATCHED running
+    baseline — gate_failed / naming_survives / naming_weakened /
+    naming_was_concentration. Re-derived from the JSON; refuses on
+    mismatch."""
+    jpath = RESULTS / item['result_json']
+    if not jpath.exists():
+        raise AdjudicationError(f'{jpath.name} was not written by the run')
+    if jpath.stat().st_mtime < run_started:
+        raise AdjudicationError(f'{jpath.name} predates this run — stale')
+    data = json.loads(jpath.read_text(encoding='utf-8'))
+    p, r = data['params'], data['results']
+    gate = r['gate']
+    margin = r['naming_margin']
+    beats = r['u_word_labels_beats_null']
+    if not gate:
+        key = 'gate_failed'
+    elif beats and margin >= p['naming_margin']:
+        key = 'naming_survives'
+    elif margin > 0:
+        key = 'naming_weakened'
+    else:
+        key = 'naming_was_concentration'
+    if data.get('verdict') != key:
+        raise AdjudicationError(f'runner derives {key!r} but the script '
+                                f'recorded {data.get("verdict")!r}')
+
+    persec = r['labels_per_section']
+    md = []
+    md.append('**Pre-registered outcomes** (script docstring): N11\'s '
+              'naming claim re-tested with its two flagged defects '
+              'removed — (1) WORD-SHAPED labels only (>= '
+              f'{p["min_glyphs"]} glyphs; fragment/marker tokens split '
+              'off), (2) a SECTION-MARGINAL-MATCHED running baseline '
+              '(identical per-section counts), so the pharma-label '
+              'concentration cannot inflate the margin.')
+    md.append('')
+    md.append(f'Word-shaped labels: {r["n_word_labels"]} tokens '
+              f'({r["n_word_types"]} types); fragments split off: '
+              f'{r["n_fragment_labels"]}. Per section: '
+              + ', '.join(f'{s} {persec[s]}' for s in sorted(persec))
+              + '.')
+    md.append('')
+    md.append('| quantity | value |')
+    md.append('|---|---|')
+    md.append(f'| U*(word-shaped labels) | {r["u_word_labels"]:+.4f} '
+              f'(beats null: {beats}) |')
+    md.append(f'| U*(marginal-matched running) | '
+              f'{r["u_marginal_matched_running"]:+.4f} |')
+    md.append(f'| naming margin | {margin:+.4f} (threshold '
+              f'{p["naming_margin"]}) |')
+    if r.get('u_fragment_labels') is not None:
+        md.append(f'| U*(fragment labels, observational) | '
+                  f'{r["u_fragment_labels"]:+.4f} |')
+    verdict_text = {
+        'gate_failed': 'GATE FAILED — controls do not separate.',
+        'naming_survives':
+            'NAMING SURVIVES — word-shaped labels remain section-bound '
+            'beyond matched running text; the naming signal is real. '
+            'SUGGESTIVE, quarantined.',
+        'naming_weakened':
+            'NAMING WEAKENED — positive but below threshold once '
+            'marginals are matched; partly a concentration effect.',
+        'naming_was_concentration':
+            'NAMING WAS CONCENTRATION (finding withdrawn) — with '
+            'fragments removed and section marginals matched, word-'
+            f'shaped labels are LESS section-specific ({r["u_word_labels"]:+.3f}) '
+            'than running text drawn from the SAME sections '
+            f'({r["u_marginal_matched_running"]:+.3f}); margin '
+            f'{margin:+.3f} <= 0. N11\'s "naming system" reading was the '
+            'pharma-label concentration, exactly the confound N11\'s own '
+            'entry flagged — now confirmed and the naming claim '
+            'WITHDRAWN. What stands from N11: labels are a distinct '
+            'register (the first-glyph distinctness result, untouched); '
+            'what falls: that they are a section-specific NAMING system. '
+            'A textbook case of a quarantined SUGGESTIVE finding killed '
+            'by its own registered follow-up.',
+    }[key]
+    md.append('')
+    md.append(f'**VERDICT: {verdict_text}**')
+    summary = (f'{key}; word-label U* {r["u_word_labels"]:+.4f} vs '
+               f'marginal-matched running {r["u_marginal_matched_running"]:+.4f}, '
+               f'margin {margin:+.4f}')
+    return {'verdict': f'N11b labelese naming (refined): {key.upper()}',
+            'suggestive': False, 'md': '\n'.join(md),
+            'summary': summary, 'params': p, 'json_name': jpath.name}
+
+
+# ────────────────────────────────────────────────────────────────────
 # queue
 # ────────────────────────────────────────────────────────────────────
 N1_PROFILE = {'EM_OUTER': 32, 'EM_PROPOSALS': 48, 'EM_RESTARTS': 16,
@@ -2874,6 +2966,21 @@ QUEUE = [
         'adjudicate': adjudicate_n11,
         'research_heading': 'Subsystem study — Labelese (marginal '
                             'labels) distinctness and section-naming',
+        'not_ready': None,
+    },
+    {
+        'id': 'N11b',
+        'title': 'Labelese naming, refined: word-shaped labels + '
+                 'section-marginal-matched baseline',
+        'stem': 'labelese_naming_refined',
+        'overrides': {},
+        'smoke_overrides': {},
+        'timeout_s': 1800,
+        'smoke_timeout_s': 900,
+        'result_json': 'labelese_naming_refined.json',
+        'adjudicate': adjudicate_n11b,
+        'research_heading': 'Subsystem study — Labelese naming re-test '
+                            '(word-shaped, marginal-matched)',
         'not_ready': None,
     },
     {
