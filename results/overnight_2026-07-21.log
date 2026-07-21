@@ -164,3 +164,40 @@
 [11:59:25] report -> C:\projects\vais\results\overnight_2026-07-21_report.md
 [11:59:25] RESEARCH.md: section appended (working tree; committed only to the overnight branch)
 [11:59:25] committing results to branch overnight/2026-07-21 ...
+[11:59:25] committed 2282f75f1459 on overnight/2026-07-21 (main untouched)
+[11:59:25] done, exit 0
+[12:54:26] ====================================================================
+[12:54:26] overnight runner start 2026-07-21 12:54:26  smoke=False PYTHONHASHSEED=0
+[12:54:27] code at 2053b5c (clean tree), python 3.13.3
+[12:54:27] queue item N6k: S3 rung 7: word-level predictors of the interior-gradient residual (function/content, length)
+[12:54:27] profile: {}  timeout=1800s
+  | ============================================================================
+  | INTERIOR GRADIENT — WORD-LEVEL PREDICTORS (S3 rung 7) (N6k)
+  | ============================================================================
+  | seed=132 perms=2000 firm two-sided p<0.005; class-controlled partial correlations at token resolution
+  |   2522 B lines; 14484 interior tokens; 22 onset classes
+  |   per-class mean interior position (early -> late): sh 0.369  q 0.381  k 0.404  ch 0.409  y 0.411  l 0.413  f 0.422  o 0.432  e 0.433  cth 0.435  d 0.437  s 0.439  t 0.446  a 0.46  r 0.472  p 0.507
+  |   class-controlled partial r: word-frequency +0.0188   word-length -0.0370
+[12:56:55] ====================================================================
+[12:56:55] overnight runner start 2026-07-21 12:56:55  smoke=False PYTHONHASHSEED=0
+[12:56:55] code at 2053b5c (clean tree), python 3.13.3
+[12:56:55] queue item N6k: S3 rung 7: word-level predictors of the interior-gradient residual (function/content, length)
+[12:56:55] profile: {}  timeout=1800s
+  | ============================================================================
+  | INTERIOR GRADIENT — WORD-LEVEL PREDICTORS (S3 rung 7) (N6k)
+  | ============================================================================
+  | seed=132 perms=2000 firm two-sided p<0.005; class-controlled partial correlations at token resolution
+  |   2522 B lines; 14484 interior tokens; 22 onset classes
+  |   per-class mean interior position (early -> late): sh 0.369  q 0.381  k 0.404  ch 0.409  y 0.411  l 0.413  f 0.422  o 0.432  e 0.433  cth 0.435  d 0.437  s 0.439  t 0.446  a 0.46  r 0.472  p 0.507
+  |   class-controlled partial r: word-frequency +0.0188   word-length -0.0370
+  |   within-line null (two-sided): p(frequency) 0.0265  p(length) 0.0015
+  | 
+  |   ADJUDICATION (pre-registered):
+  |     RESIDUAL LENGTH ONLY: frequency not significant (p 0.0265) but within-class word length is (r -0.0370, p 0.0015) — fine length is the sub-class predictor. SUGGESTIVE, quarantined.
+  | 
+  |   -> results/line_discipline_wordlevel.json
+[12:57:00] experiment finished rc=0 in 154s (0.04h)
+[12:57:00] adjudication: residual_length_only; r_freq +0.0188 (p 0.0265), r_len -0.0370 (p 0.0015) — magnitudes negligible
+[12:57:00] report -> C:\projects\vais\results\overnight_2026-07-21_report.md
+[12:57:00] RESEARCH.md: section appended (working tree; committed only to the overnight branch)
+[12:57:00] committing results to branch overnight/2026-07-21 ...

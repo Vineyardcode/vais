@@ -1,0 +1,36 @@
+{
+ "params": {
+  "seed": 132,
+  "n_perm": 2000,
+  "p_firm": 0.005,
+  "p_weak": 0.05,
+  "min_line_words": 5
+ },
+ "results": {
+  "n_lines": 2522,
+  "n_interior_tokens": 14484,
+  "partial_r_frequency": 0.01876,
+  "partial_r_length": -0.03703,
+  "p_frequency": 0.0265,
+  "p_length": 0.0015,
+  "per_class_gradient": {
+   "y": 0.411,
+   "o": 0.432,
+   "q": 0.381,
+   "sh": 0.369,
+   "d": 0.437,
+   "p": 0.507,
+   "ch": 0.409,
+   "a": 0.46,
+   "s": 0.439,
+   "l": 0.413,
+   "e": 0.433,
+   "k": 0.404,
+   "r": 0.472,
+   "t": 0.446,
+   "f": 0.422,
+   "cth": 0.435
+  }
+ },
+ "verdict": "residual_length_only"
+}

@@ -201,5 +201,12 @@
   "verdict": "S3 rung 6b: PHONOTACTIC_IS_CLASS_CONFOUND",
   "suggestive": false,
   "summary": "phonotactic_is_class_confound; class-controlled partial r +0.0031 (p 0.7046); raw onset-se +0.0574"
+ },
+ "N6k": {
+  "status": "completed",
+  "date": "2026-07-21",
+  "verdict": "S3 rung 7: RESIDUAL_LENGTH_ONLY",
+  "suggestive": false,
+  "summary": "residual_length_only; r_freq +0.0188 (p 0.0265), r_len -0.0370 (p 0.0015) \u2014 magnitudes negligible"
  }
 }
