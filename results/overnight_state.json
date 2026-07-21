@@ -194,5 +194,12 @@
   "verdict": "S3 rung 6: RESIDUAL_PHONOTACTIC",
   "suggestive": true,
   "summary": "residual_phonotactic; phon R\u00b2 0.7599 vs null 0.3274 (excess +0.432, empirical p 0.0205)"
+ },
+ "N6j": {
+  "status": "completed",
+  "date": "2026-07-21",
+  "verdict": "S3 rung 6b: PHONOTACTIC_IS_CLASS_CONFOUND",
+  "suggestive": false,
+  "summary": "phonotactic_is_class_confound; class-controlled partial r +0.0031 (p 0.7046); raw onset-se +0.0574"
  }
 }

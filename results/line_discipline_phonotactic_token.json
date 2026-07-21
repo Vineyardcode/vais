@@ -1,0 +1,18 @@
+{
+ "params": {
+  "seed": 131,
+  "n_perm": 2000,
+  "p_firm": 0.005,
+  "p_weak": 0.05,
+  "min_line_words": 5
+ },
+ "results": {
+  "n_lines": 2522,
+  "n_interior_pair_tokens": 14096,
+  "raw_onset_se_r": 0.05742,
+  "class_controlled_partial_r": 0.00308,
+  "p_two_sided": 0.7046,
+  "null_max_abs_r": 0.03312
+ },
+ "verdict": "phonotactic_is_class_confound"
+}
