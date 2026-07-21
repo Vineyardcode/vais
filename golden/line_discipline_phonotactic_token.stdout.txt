@@ -1,0 +1,13 @@
+============================================================================
+PHONOTACTIC INTERIOR GRADIENT, CLASS-CONTROLLED (S3 rung 6b) (N6j)
+============================================================================
+seed=131 perms=2000 firm two-sided p<0.005; glyph-pair constraint, onset class controlled
+  2522 B lines; 14096 interior tokens with a glyph pair; 22 onset classes
+  RAW onset-se vs position +0.0574 (collinear with class — not the test)
+  class-controlled glyph-pair-se2 vs position (PARTIAL) +0.0031  <- the test
+  within-line null (two-sided): p 0.7046  (null max |r| 0.0331)
+
+  ADJUDICATION (pre-registered):
+    PHONOTACTIC IS CLASS CONFOUND: with onset class controlled, glyph-pair constraint does NOT predict position (partial r +0.0031, p 0.7046 >= 0.05). N6i's "phonotactic residual" was the onset-class effect re-expressed (raw onset-se +0.0574 just mirrors the class-position effect), not a phonotactic law. N6i downgraded — the interior gradient's residual is NOT demonstrably phonotactic once class is controlled. Corpse logged.
+
+  -> results/line_discipline_phonotactic_token.json

@@ -625,6 +625,20 @@ numbering continues across tiers. Full evidence chains: Phase 8.)*
     same-author caveats as the derivation arc); a glyph-pair-resolution
     re-test at p<0.005 is the registered follow-up. SUGGESTIVE,
     quarantined (line_discipline_phonotactic).
+    **PHONOTACTIC READING WITHDRAWN (N6j, 2026-07-21): the registered
+    follow-up fired.** Onset successor-entropy is a deterministic
+    function of the first glyph, so N6i could not separate a phonotactic
+    law from the S7 class-position effect. The correct test controls for
+    onset class (glyph-PAIR constraint within classes): with class
+    controlled, the partial correlation of interior position with
+    glyph-pair phonotactic constraint is +0.003 (two-sided p 0.70 on
+    14,096 tokens — un-inflated), while the raw onset-se correlation
+    (+0.057) merely re-expresses the class effect. N6i's soft p=0.02
+    was the class confound, NOT a phonotactic law. The interior-gradient
+    residual is NOT demonstrably phonotactic once class is controlled —
+    it remains genuinely unexplained. A quarantined SUGGESTIVE finding,
+    flagged as the weakest, downgraded by its own registered follow-up
+    (line_discipline_phonotactic_token).
 18. **The gallows are not semantic determinatives — dialect, not a
     classifier system** (N10, 2026-07-20): the pre-charter
     egyptian_connection test's core claim (gallows t/k/f/p as Egyptian-

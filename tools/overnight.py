@@ -2677,6 +2677,92 @@ def adjudicate_n6i(item, expected_params, run_started):
 
 
 # ────────────────────────────────────────────────────────────────────
+# N6j adjudication — pre-registered, mechanical, JSON-only
+# ────────────────────────────────────────────────────────────────────
+def adjudicate_n6j(item, expected_params, run_started):
+    """Pre-registered outcomes (line_discipline_phonotactic_token.py
+    docstring): class-controlled glyph-pair partial correlation of
+    interior position with phonotactic constraint, two-sided
+    within-line null. phonotactic_firmed / phonotactic_weak /
+    phonotactic_is_class_confound. Re-derived from the JSON; refuses on
+    mismatch."""
+    jpath = RESULTS / item['result_json']
+    if not jpath.exists():
+        raise AdjudicationError(f'{jpath.name} was not written by the run')
+    if jpath.stat().st_mtime < run_started:
+        raise AdjudicationError(f'{jpath.name} predates this run — stale')
+    data = json.loads(jpath.read_text(encoding='utf-8'))
+    p, r = data['params'], data['results']
+    pe = r['p_two_sided']
+    if pe < p['p_firm']:
+        key = 'phonotactic_firmed'
+    elif pe < p['p_weak']:
+        key = 'phonotactic_weak'
+    else:
+        key = 'phonotactic_is_class_confound'
+    if data.get('verdict') != key:
+        raise AdjudicationError(f'runner derives {key!r} but the script '
+                                f'recorded {data.get("verdict")!r}')
+    suggestive = key == 'phonotactic_firmed'
+
+    md = []
+    md.append('**Pre-registered outcomes** (script docstring): the '
+              'registered follow-up to N6i (its own entry flagged it as '
+              'the weakest SUGGESTIVE finding needing a p<0.005 re-test). '
+              'Onset successor-entropy is a deterministic function of the '
+              'first glyph, so it cannot separate a phonotactic law from '
+              'the S7 class-position effect; the correct test controls '
+              'for onset class and asks whether glyph-PAIR constraint '
+              'predicts position WITHIN classes.')
+    md.append('')
+    md.append('| quantity | value |')
+    md.append('|---|---|')
+    md.append(f'| raw onset-se vs position (collinear w/ class) | '
+              f'{r["raw_onset_se_r"]:+.4f} |')
+    md.append(f'| class-controlled glyph-pair partial r (THE TEST) | '
+              f'{r["class_controlled_partial_r"]:+.4f} |')
+    md.append(f'| two-sided within-line null p | {r["p_two_sided"]} '
+              f'(null max |r| {r["null_max_abs_r"]}) |')
+    md.append(f'| interior tokens (with glyph pair) | '
+              f'{r["n_interior_pair_tokens"]} |')
+    verdict_text = {
+        'phonotactic_firmed':
+            'PHONOTACTIC FIRMED — glyph-pair constraint predicts interior '
+            'position beyond onset class; N6i firmed past the house bar. '
+            'SUGGESTIVE, quarantined.',
+        'phonotactic_weak':
+            'PHONOTACTIC WEAK — a within-class effect exists but not past '
+            'the house bar.',
+        'phonotactic_is_class_confound':
+            'PHONOTACTIC IS CLASS CONFOUND (N6i downgraded) — with onset '
+            'class controlled, glyph-pair phonotactic constraint does '
+            f'NOT predict interior position (partial r '
+            f'{r["class_controlled_partial_r"]:+.4f}, p '
+            f'{r["p_two_sided"]} ≫ 0.05, on '
+            f'{r["n_interior_pair_tokens"]} tokens — un-inflated). N6i\'s '
+            'soft p=0.02 phonotactic signal was the onset-CLASS effect '
+            'that successor-entropy trivially re-expresses (raw onset-se '
+            f'{r["raw_onset_se_r"]:+.4f} just mirrors the S7 class-'
+            'position effect), NOT a phonotactic law. The interior-'
+            'gradient residual is not demonstrably phonotactic once '
+            'class is controlled — it remains genuinely unexplained. '
+            'Ledger entry 21 corrected. A quarantined SUGGESTIVE finding '
+            '(N6i, flagged as the weakest) downgraded by its own '
+            'registered follow-up — the process working exactly as the '
+            'flag intended.',
+    }[key]
+    md.append('')
+    md.append(f'**VERDICT: {verdict_text}**')
+    summary = (f'{key}; class-controlled partial r '
+               f'{r["class_controlled_partial_r"]:+.4f} (p '
+               f'{r["p_two_sided"]}); raw onset-se '
+               f'{r["raw_onset_se_r"]:+.4f}')
+    return {'verdict': f'S3 rung 6b: {key.upper()}',
+            'suggestive': suggestive, 'md': '\n'.join(md),
+            'summary': summary, 'params': p, 'json_name': jpath.name}
+
+
+# ────────────────────────────────────────────────────────────────────
 # queue
 # ────────────────────────────────────────────────────────────────────
 N1_PROFILE = {'EM_OUTER': 32, 'EM_PROPOSALS': 48, 'EM_RESTARTS': 16,
@@ -3086,6 +3172,21 @@ QUEUE = [
         'adjudicate': adjudicate_n6i,
         'research_heading': 'Portfolio S3, rung 6 — phonotactic residual '
                             'of the interior gradient',
+        'not_ready': None,
+    },
+    {
+        'id': 'N6j',
+        'title': 'S3 rung 6b: glyph-pair phonotactic re-test '
+                 '(class-controlled) — firm or dissolve N6i?',
+        'stem': 'line_discipline_phonotactic_token',
+        'overrides': {},
+        'smoke_overrides': {},
+        'timeout_s': 1800,
+        'smoke_timeout_s': 900,
+        'result_json': 'line_discipline_phonotactic_token.json',
+        'adjudicate': adjudicate_n6j,
+        'research_heading': 'Portfolio S3, rung 6b — class-controlled '
+                            'glyph-pair phonotactic re-test',
         'not_ready': None,
     },
     {
