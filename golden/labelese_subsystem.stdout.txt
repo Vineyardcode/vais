@@ -6,7 +6,7 @@ seed=128 nulls=30 match=12 naming_margin=0.03
   labels per section: bio:123  herbalA:87  pharma:279  text:2  zodiac:137
   [low-power sections (<20 labels): ['text']]
 
-  (D) first-glyph JSD labels-vs-running 0.1507  subsample-null max 0.0133  -> DISTINCT
+  (D) first-glyph JSD labels-vs-running 0.1507  subsample-null max 0.0139  -> DISTINCT
   (S) U*(labels) +0.0797 (beats own null: True)   U*(running matched, n=628) +0.0366   naming margin +0.0432
   controls: U*(P-NAME) +0.1587 vs U*(P-GEN) +0.0139 (gate: P-NAME >= 3.0x max(P-GEN, 0.005)) -> PASS
 

@@ -180,5 +180,12 @@
   "verdict": "N11 labelese subsystem: LABELESE_NAMING_SYSTEM",
   "suggestive": true,
   "summary": "labelese_naming_system; JSD 0.1507 (null 0.0161), naming margin +0.0432 (thr 0.03)"
+ },
+ "N11b": {
+  "status": "completed",
+  "date": "2026-07-21",
+  "verdict": "N11b labelese naming (refined): NAMING_WAS_CONCENTRATION",
+  "suggestive": false,
+  "summary": "naming_was_concentration; word-label U* +0.0496 vs marginal-matched running +0.0797, margin -0.0300"
  }
 }

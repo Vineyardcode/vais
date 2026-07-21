@@ -238,10 +238,11 @@ def main():
     lab_fg = Counter(first_glyph(w) for w in lab_w)
     run_fg = Counter(first_glyph(w) for w in run_w)
     real_jsd = jsd(lab_fg, run_fg)
+    jrng = random.Random(SEED + 50)   # seeded: PYTHONHASHSEED=0 repro
     nulls = []
     for _ in range(N_SUB):
         sub = Counter(first_glyph(w)
-                      for w in random.sample(run_w, len(lab_w)))
+                      for w in jrng.sample(run_w, len(lab_w)))
         nulls.append(jsd(sub, run_fg))
     distinct = real_jsd > max(nulls)
     print(f'\n  (D) first-glyph JSD labels-vs-running {real_jsd:.4f}  '

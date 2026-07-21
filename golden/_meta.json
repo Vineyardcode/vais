@@ -1386,7 +1386,7 @@
  "labelese_subsystem": {
   "status": "ok",
   "returncode": 0,
-  "duration_s": 1.2,
+  "duration_s": 1.64,
   "stdout_bytes": 1126,
   "results_files_touched": [
    "labelese_subsystem.json"

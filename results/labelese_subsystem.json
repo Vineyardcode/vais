@@ -20,7 +20,7 @@
    "bio": 123
   },
   "distinctness_jsd": 0.1507,
-  "distinctness_null_max": 0.0133,
+  "distinctness_null_max": 0.0139,
   "distinct": true,
   "u_labels": 0.0797,
   "u_labels_beats_null": true,
