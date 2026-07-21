@@ -201,3 +201,16 @@
 [12:57:00] report -> C:\projects\vais\results\overnight_2026-07-21_report.md
 [12:57:00] RESEARCH.md: section appended (working tree; committed only to the overnight branch)
 [12:57:00] committing results to branch overnight/2026-07-21 ...
+[12:57:01] committed d595d4fd45b9 on overnight/2026-07-21 (main untouched)
+[12:57:01] done, exit 0
+  |   within-line null (two-sided): p(frequency) 0.0265  p(length) 0.0015
+  | 
+  |   ADJUDICATION (pre-registered):
+  |     RESIDUAL LENGTH ONLY: frequency not significant (p 0.0265) but within-class word length is (r -0.0370, p 0.0015) — fine length is the sub-class predictor. SUGGESTIVE, quarantined.
+  | 
+  |   -> results/line_discipline_wordlevel.json
+[12:59:10] experiment finished rc=0 in 134s (0.04h)
+[12:59:10] adjudication: residual_length_only; r_freq +0.0188 (p 0.0265), r_len -0.0370 (p 0.0015) — magnitudes negligible
+[12:59:10] report -> C:\projects\vais\results\overnight_2026-07-21_report.md
+[12:59:10] RESEARCH.md: section appended (working tree; committed only to the overnight branch)
+[12:59:10] committing results to branch overnight/2026-07-21 ...

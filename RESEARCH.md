@@ -1870,3 +1870,22 @@ Configuration (pre-registered in the script docstring): script defaults. Runtime
 Descriptive per-class interior gradient (early → late): sh 0.369, q 0.381, k 0.404, ch 0.409, y 0.411, l 0.413, f 0.422, o 0.432, e 0.433, cth 0.435, d 0.437, s 0.439, t 0.446, a 0.46, r 0.472, p 0.507.
 
 **VERDICT: RESIDUAL "LENGTH ONLY" — but the honest headline is that ESSENTIALLY NOTHING substantial predicts the residual. The function/content-word hypothesis (frequency) FAILS the bar (p 0.0265 > 0.005). Word length clears it (p 0.0015) but the effect is NEGLIGIBLE: r -0.0370, ~0.1% of variance — statistically detectable on 14k tokens, practically nil (longer words sit very slightly earlier within their class). No word-level property meaningfully accounts for the interior-gradient residual; it is, for practical purposes, a floor. The interior gradient is a first-glyph-CLASS effect whose ordering, beyond freq + gallows + length + morphology, stays genuinely unexplained.**
+
+---
+
+### Portfolio S3, rung 7 — word-level predictors of the interior-gradient residual (2026-07-21)
+
+[AUTOMATED — written by tools/overnight.py; run committed to branch overnight/2026-07-21; awaiting human review before promotion to any evidence tier.]
+
+Configuration (pre-registered in the script docstring): script defaults. Runtime 0.04 h at PYTHONHASHSEED=0. Holdout: whole folios (VMS) / 24-line pseudo-folio blocks (controls).
+
+**Pre-registered outcomes** (script docstring): does any WORD-level property below the onset class predict interior position? Tested class-controlled at token resolution (N6j-validated), primary hypothesis = word frequency (function vs content word).
+
+| predictor | class-controlled partial r | two-sided p |
+|---|---|---|
+| word frequency (function/content) | +0.0188 | 0.0265 |
+| word length | -0.0370 | 0.0015 |
+
+Descriptive per-class interior gradient (early → late): sh 0.369, q 0.381, k 0.404, ch 0.409, y 0.411, l 0.413, f 0.422, o 0.432, e 0.433, cth 0.435, d 0.437, s 0.439, t 0.446, a 0.46, r 0.472, p 0.507.
+
+**VERDICT: RESIDUAL "LENGTH ONLY" — but the honest headline is that ESSENTIALLY NOTHING substantial predicts the residual. The function/content-word hypothesis (frequency) FAILS the bar (p 0.0265 > 0.005). Word length clears it (p 0.0015) but the effect is NEGLIGIBLE: r -0.0370, ~0.1% of variance — statistically detectable on 14k tokens, practically nil (longer words sit very slightly earlier within their class). No word-level property meaningfully accounts for the interior-gradient residual; it is, for practical purposes, a floor. The interior gradient is a first-glyph-CLASS effect whose ordering, beyond freq + gallows + length + morphology, stays genuinely unexplained.**
