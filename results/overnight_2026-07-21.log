@@ -110,3 +110,32 @@
 [01:38:34] report -> C:\projects\vais\results\overnight_2026-07-21_report.md
 [01:38:34] RESEARCH.md: section appended (working tree; committed only to the overnight branch)
 [01:38:34] committing results to branch overnight/2026-07-21 ...
+[01:38:34] committed 5f52615bf6a9 on overnight/2026-07-21 (main untouched)
+[01:38:34] done, exit 0
+[11:13:35] ====================================================================
+[11:13:35] overnight runner start 2026-07-21 11:13:35  smoke=False PYTHONHASHSEED=0
+[11:13:35] code at a859b0b (clean tree), python 3.13.3
+[11:13:35] queue item N6i: S3 rung 6: phonotactic attack on the interior-gradient residual (DOF-honest)
+[11:13:35] profile: {}  timeout=1800s
+  | ============================================================================
+  | LINE-DISCIPLINE PHONOTACTIC RESIDUAL (S3 rung 6) — reduce the residual? (N6i)
+  | ============================================================================
+  | seed=130 perms=2000 phon_target>=0.5 excess_min>=0.15; DOF-honest residual test
+  |   rank-3 axis 2 reproduces the N6d record  VERIFIED
+  |   N6h 5-principle interior R^2 0.629; residual variance 0.7187
+  |   succ_entropy  Spearman with residual +0.379
+  |   pred_entropy  Spearman with residual -0.049
+  |   e_follow      Spearman with residual -0.176
+  |   bench         Spearman with residual -0.258
+  |   phonotactic R^2 on residual 0.760  overfitting-null mean 0.327 (max 0.900)  excess +0.432  empirical p 0.0205
+  | 
+  |   ADJUDICATION (pre-registered):
+  |     RESIDUAL PHONOTACTIC: the interior-gradient residual is glyph-phonotactic structure above the overfitting null. SUGGESTIVE, quarantined.
+  | 
+  |   -> results/line_discipline_phonotactic.json
+[11:13:36] experiment finished rc=0 in 1s (0.00h)
+[11:13:36] adjudication: residual_phonotactic; phon R² 0.7599 vs null 0.3274 (excess +0.432, empirical p 0.0205)
+[11:13:36] SUGGESTIVE finding — quarantined, flagged at the top of the report, awaiting human review
+[11:13:36] report -> C:\projects\vais\results\overnight_2026-07-21_report.md
+[11:13:36] RESEARCH.md: section appended (working tree; committed only to the overnight branch)
+[11:13:36] committing results to branch overnight/2026-07-21 ...

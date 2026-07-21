@@ -1,0 +1,46 @@
+{
+ "params": {
+  "seed": 130,
+  "n_perm": 2000,
+  "phon_target": 0.5,
+  "excess_min": 0.15,
+  "excess_modest": 0.05,
+  "features": [
+   "succ_entropy",
+   "pred_entropy",
+   "e_follow",
+   "bench"
+  ],
+  "n6d_json": "line_discipline_rank3.json"
+ },
+ "results": {
+  "n6h_interior_r2": 0.6294,
+  "phon_r2_on_residual": 0.7599,
+  "overfitting_null": 0.3274,
+  "overfitting_null_max": 0.8997,
+  "excess": 0.4325,
+  "empirical_p": 0.0205,
+  "per_feature_spearman": {
+   "succ_entropy": 0.379,
+   "pred_entropy": -0.049,
+   "e_follow": -0.176,
+   "bench": -0.258
+  },
+  "classes": [
+   "#",
+   "a",
+   "ch",
+   "d",
+   "k",
+   "l",
+   "o",
+   "p",
+   "q",
+   "s",
+   "sh",
+   "t",
+   "y"
+  ]
+ },
+ "verdict": "residual_phonotactic"
+}

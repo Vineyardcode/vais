@@ -86,3 +86,24 @@ Word-shaped labels: 535 tokens (424 types); fragments split off: 93. Per section
 | U*(fragment labels, observational) | +0.1152 |
 
 **VERDICT: NAMING WAS CONCENTRATION (finding withdrawn) — with fragments removed and section marginals matched, word-shaped labels are LESS section-specific (+0.050) than running text drawn from the SAME sections (+0.080); margin -0.030 <= 0. N11's "naming system" reading was the pharma-label concentration, exactly the confound N11's own entry flagged — now confirmed and the naming claim WITHDRAWN. What stands from N11: labels are a distinct register (the first-glyph distinctness result, untouched); what falls: that they are a section-specific NAMING system. A textbook case of a quarantined SUGGESTIVE finding killed by its own registered follow-up.**
+
+## Run 2026-07-21 11:13:35 — N6i
+**S3 rung 6: phonotactic attack on the interior-gradient residual (DOF-honest)**
+- script: `scripts/line_discipline_phonotactic.py`
+- profile: `{}`
+- log: `overnight_2026-07-21.log`; results JSON: `line_discipline_phonotactic.json`; branch: `overnight/2026-07-21`
+- runtime: 1s (0.00 h), exit code 0
+
+**Pre-registered outcomes** (script docstring; DOF-honest RESIDUAL test — the interior axis lives over only ~13 classes, so a small declared phonotactic feature set is fit to the N6h residual and required to beat an OVERFITTING shuffle null that measures chance fit of 4 features to 13 points).
+
+| quantity | value |
+|---|---|
+| N6h 5-principle interior R² | 0.6294 |
+| phonotactic R² on residual | 0.7599 |
+| overfitting null (mean / max) | 0.3274 / 0.8997 |
+| excess over null mean | +0.432 (bar 0.15) |
+| empirical p (null ≥ real) | 0.0205 |
+
+Per-feature Spearman with the residual: succ_entropy +0.38, pred_entropy -0.05, e_follow -0.18, bench -0.26.
+
+**VERDICT: RESIDUAL PHONOTACTIC (pre-registered criterion met, but a SOFT and DOF-fragile finding — read the caveat) — the phonotactic set explains 76% of the interior-gradient residual, +0.43 above the null MEAN, led by successor-entropy (Spearman 0.379): tightly-constrained-onset words (q→o) sit earlier, loosely-constrained later. So across the full ladder the interior gradient reduces to frequency + gallows + length + within-word morphology + glyph-neighbour phonotactics. CAVEATS, prominent: the empirical p is 0.0205 — ABOVE the program's usual p<0.005 bar — because the overfitting null is fat-tailed (max 0.8997): 4 features on 13 class-points is near the DOF limit. This is the WEAKEST SUGGESTIVE finding in the ledger; it is a class-level reductive result (same reductive/same-author caveats as the derivation arc), and a higher-resolution (glyph-pair) re-test at p<0.005 is the registered follow-up. SUGGESTIVE, quarantined.**
