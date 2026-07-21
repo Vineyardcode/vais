@@ -152,7 +152,7 @@ seed=128 nulls=30 match=12 naming_margin=0.03
   labels per section: bio:123  herbalA:87  pharma:279  text:2  zodiac:137
   [low-power sections (&lt;20 labels): [&#x27;text&#x27;]]
 
-  (D) first-glyph JSD labels-vs-running 0.1507  subsample-null max 0.0133  -&gt; DISTINCT
+  (D) first-glyph JSD labels-vs-running 0.1507  subsample-null max 0.0139  -&gt; DISTINCT
   (S) U*(labels) +0.0797 (beats own null: True)   U*(running matched, n=628) +0.0366   naming margin +0.0432
   controls: U*(P-NAME) +0.1587 vs U*(P-GEN) +0.0139 (gate: P-NAME &gt;= 3.0x max(P-GEN, 0.005)) -&gt; PASS
 
@@ -160,7 +160,7 @@ seed=128 nulls=30 match=12 naming_margin=0.03
     LABELESE NAMING SYSTEM: labels are a distinct register AND section-bound beyond dialect (margin +0.0432 &gt;= 0.03, U* beats its null) — label vocabulary is more section-specific than matched running text. The most crib-like outcome; SUGGESTIVE, quarantined, and still F7-bound (no label is read).
 
   -&gt; results/labelese_subsystem.json
-</pre></details><footer>Static mirror — read-only. Generated 2026-07-21 from commit <code>0cc1695</code>. 
+</pre></details><footer>Static mirror — read-only. Generated 2026-07-21 from commit <code>8a897fb</code>. 
 To run any test with your own parameters, clone
 <a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
 (<code>python webui/server.py</code>). All numbers reproduce at
