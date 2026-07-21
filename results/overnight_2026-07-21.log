@@ -141,3 +141,28 @@
 [11:13:36] committing results to branch overnight/2026-07-21 ...
 [11:13:36] committed f43cbda66439 on overnight/2026-07-21 (main untouched)
 [11:13:36] done, exit 0
+[11:56:31] ====================================================================
+[11:56:31] overnight runner start 2026-07-21 11:56:31  smoke=False PYTHONHASHSEED=0
+[11:56:31] code at 1ebbed8 (clean tree), python 3.13.3
+[11:56:31] queue item N6j: S3 rung 6b: glyph-pair phonotactic re-test (class-controlled) — firm or dissolve N6i?
+[11:56:31] profile: {}  timeout=1800s
+  | ============================================================================
+  | PHONOTACTIC INTERIOR GRADIENT, CLASS-CONTROLLED (S3 rung 6b) (N6j)
+  | ============================================================================
+  | seed=131 perms=2000 firm two-sided p<0.005; glyph-pair constraint, onset class controlled
+  |   2522 B lines; 14096 interior tokens with a glyph pair; 22 onset classes
+  |   RAW onset-se vs position +0.0574 (collinear with class — not the test)
+  |   class-controlled glyph-pair-se2 vs position (PARTIAL) +0.0031  <- the test
+  |   within-line null (two-sided): p 0.7046  (null max |r| 0.0331)
+  | 
+  |   ADJUDICATION (pre-registered):
+  |     PHONOTACTIC IS CLASS CONFOUND: with onset class controlled, glyph-pair constraint does NOT predict position (partial r +0.0031, p 0.7046 >= 0.05). N6i's "phonotactic residual" was the onset-class effect re-expressed (raw onset-se +0.0574 just mirrors the class-position effect), not a phonotactic law. N6i downgraded — the interior gradient's residual is NOT demonstrably phonotactic once class is controlled. Corpse logged.
+  | 
+  |   -> results/line_discipline_phonotactic_token.json
+[11:59:25] experiment finished rc=0 in 174s (0.05h)
+[11:59:25] adjudication: phonotactic_is_class_confound; class-controlled partial r +0.0031 (p 0.7046); raw onset-se +0.0574
+[11:59:25] report -> C:\projects\vais\results\overnight_2026-07-21_report.md
+[11:59:25] RESEARCH.md: section appended (working tree; committed only to the overnight branch)
+[11:59:25] committing results to branch overnight/2026-07-21 ...
+[11:59:25] committed 2282f75f1459 on overnight/2026-07-21 (main untouched)
+[11:59:25] done, exit 0

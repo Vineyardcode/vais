@@ -1832,3 +1832,22 @@ Configuration (pre-registered in the script docstring): script defaults. Runtime
 Per-feature Spearman with the residual: succ_entropy +0.38, pred_entropy -0.05, e_follow -0.18, bench -0.26.
 
 **VERDICT: RESIDUAL PHONOTACTIC (pre-registered criterion met, but a SOFT and DOF-fragile finding — read the caveat) — the phonotactic set explains 76% of the interior-gradient residual, +0.43 above the null MEAN, led by successor-entropy (Spearman 0.379): tightly-constrained-onset words (q→o) sit earlier, loosely-constrained later. So across the full ladder the interior gradient reduces to frequency + gallows + length + within-word morphology + glyph-neighbour phonotactics. CAVEATS, prominent: the empirical p is 0.0205 — ABOVE the program's usual p<0.005 bar — because the overfitting null is fat-tailed (max 0.8997): 4 features on 13 class-points is near the DOF limit. This is the WEAKEST SUGGESTIVE finding in the ledger; it is a class-level reductive result (same reductive/same-author caveats as the derivation arc), and a higher-resolution (glyph-pair) re-test at p<0.005 is the registered follow-up. SUGGESTIVE, quarantined.**
+
+---
+
+### Portfolio S3, rung 6b — class-controlled glyph-pair phonotactic re-test (2026-07-21)
+
+[AUTOMATED — written by tools/overnight.py; run committed to branch overnight/2026-07-21; awaiting human review before promotion to any evidence tier.]
+
+Configuration (pre-registered in the script docstring): script defaults. Runtime 0.05 h at PYTHONHASHSEED=0. Holdout: whole folios (VMS) / 24-line pseudo-folio blocks (controls).
+
+**Pre-registered outcomes** (script docstring): the registered follow-up to N6i (its own entry flagged it as the weakest SUGGESTIVE finding needing a p<0.005 re-test). Onset successor-entropy is a deterministic function of the first glyph, so it cannot separate a phonotactic law from the S7 class-position effect; the correct test controls for onset class and asks whether glyph-PAIR constraint predicts position WITHIN classes.
+
+| quantity | value |
+|---|---|
+| raw onset-se vs position (collinear w/ class) | +0.0574 |
+| class-controlled glyph-pair partial r (THE TEST) | +0.0031 |
+| two-sided within-line null p | 0.7046 (null max |r| 0.03312) |
+| interior tokens (with glyph pair) | 14096 |
+
+**VERDICT: PHONOTACTIC IS CLASS CONFOUND (N6i downgraded) — with onset class controlled, glyph-pair phonotactic constraint does NOT predict interior position (partial r +0.0031, p 0.7046 ≫ 0.05, on 14096 tokens — un-inflated). N6i's soft p=0.02 phonotactic signal was the onset-CLASS effect that successor-entropy trivially re-expresses (raw onset-se +0.0574 just mirrors the S7 class-position effect), NOT a phonotactic law. The interior-gradient residual is not demonstrably phonotactic once class is controlled — it remains genuinely unexplained. Ledger entry 21 corrected. A quarantined SUGGESTIVE finding (N6i, flagged as the weakest) downgraded by its own registered follow-up — the process working exactly as the flag intended.**
