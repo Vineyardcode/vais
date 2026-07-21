@@ -177,7 +177,23 @@ footer { border-top:1px solid var(--line); margin-top:3em;
 <tr><td>word length</td><td>-0.0370</td><td>0.0015</td></tr>
 </table>
 <p>Descriptive per-class interior gradient (early → late): sh 0.369, q 0.381, k 0.404, ch 0.409, y 0.411, l 0.413, f 0.422, o 0.432, e 0.433, cth 0.435, d 0.437, s 0.439, t 0.446, a 0.46, r 0.472, p 0.507.</p>
-<p><strong>VERDICT: RESIDUAL &quot;LENGTH ONLY&quot; — but the honest headline is that ESSENTIALLY NOTHING substantial predicts the residual. The function/content-word hypothesis (frequency) FAILS the bar (p 0.0265 &gt; 0.005). Word length clears it (p 0.0015) but the effect is NEGLIGIBLE: r -0.0370, ~0.1% of variance — statistically detectable on 14k tokens, practically nil (longer words sit very slightly earlier within their class). No word-level property meaningfully accounts for the interior-gradient residual; it is, for practical purposes, a floor. The interior gradient is a first-glyph-CLASS effect whose ordering, beyond freq + gallows + length + morphology, stays genuinely unexplained.</strong></p><footer>Static mirror — read-only. Generated 2026-07-21 from commit <code>2053b5c</code>. 
+<p><strong>VERDICT: RESIDUAL &quot;LENGTH ONLY&quot; — but the honest headline is that ESSENTIALLY NOTHING substantial predicts the residual. The function/content-word hypothesis (frequency) FAILS the bar (p 0.0265 &gt; 0.005). Word length clears it (p 0.0015) but the effect is NEGLIGIBLE: r -0.0370, ~0.1% of variance — statistically detectable on 14k tokens, practically nil (longer words sit very slightly earlier within their class). No word-level property meaningfully accounts for the interior-gradient residual; it is, for practical purposes, a floor. The interior gradient is a first-glyph-CLASS effect whose ordering, beyond freq + gallows + length + morphology, stays genuinely unexplained.</strong></p>
+<h2>Run 2026-07-21 12:56:55 — N6k</h2>
+<p><strong>S3 rung 7: word-level predictors of the interior-gradient residual (function/content, length)</strong></p>
+<ul>
+<li>script: <code>scripts/line_discipline_wordlevel.py</code></li>
+<li>profile: <code>{}</code></li>
+<li>log: <code>overnight_2026-07-21.log</code>; results JSON: <code>line_discipline_wordlevel.json</code>; branch: <code>overnight/2026-07-21</code></li>
+<li>runtime: 134s (0.04 h), exit code 0</li>
+</ul>
+<p><strong>Pre-registered outcomes</strong> (script docstring): does any WORD-level property below the onset class predict interior position? Tested class-controlled at token resolution (N6j-validated), primary hypothesis = word frequency (function vs content word).</p>
+<table>
+<tr><th>predictor</th><th>class-controlled partial r</th><th>two-sided p</th></tr>
+<tr><td>word frequency (function/content)</td><td>+0.0188</td><td>0.0265</td></tr>
+<tr><td>word length</td><td>-0.0370</td><td>0.0015</td></tr>
+</table>
+<p>Descriptive per-class interior gradient (early → late): sh 0.369, q 0.381, k 0.404, ch 0.409, y 0.411, l 0.413, f 0.422, o 0.432, e 0.433, cth 0.435, d 0.437, s 0.439, t 0.446, a 0.46, r 0.472, p 0.507.</p>
+<p><strong>VERDICT: RESIDUAL &quot;LENGTH ONLY&quot; — but the honest headline is that ESSENTIALLY NOTHING substantial predicts the residual. The function/content-word hypothesis (frequency) FAILS the bar (p 0.0265 &gt; 0.005). Word length clears it (p 0.0015) but the effect is NEGLIGIBLE: r -0.0370, ~0.1% of variance — statistically detectable on 14k tokens, practically nil (longer words sit very slightly earlier within their class). No word-level property meaningfully accounts for the interior-gradient residual; it is, for practical purposes, a floor. The interior gradient is a first-glyph-CLASS effect whose ordering, beyond freq + gallows + length + morphology, stays genuinely unexplained.</strong></p><footer>Static mirror — read-only. Generated 2026-07-21 from commit <code>6f9c71d</code>. 
 To run any test with your own parameters, clone
 <a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
 (<code>python webui/server.py</code>). All numbers reproduce at
