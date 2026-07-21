@@ -589,6 +589,23 @@ numbering continues across tiers. Full evidence chains: Phase 8.)*
     follow-up; the labels are a distinct register built largely from
     ordinary high-frequency vocabulary, not a naming lexicon
     (labelese_naming_refined).
+22. **The interior-gradient residual is a floor — no word-level
+    property below the onset class explains it** (S3 rung 7 / N6k,
+    2026-07-21): after the residual was shown NOT phonotactic (N6j),
+    the two most motivated word-level candidates were tested class-
+    controlled at token resolution (~14k tokens, un-inflated). The
+    function/content-word hypothesis (word frequency) FAILS the house
+    bar (partial r +0.019, p 0.027); word length clears it (p 0.0015)
+    but the effect is NEGLIGIBLE (r −0.037, ~0.1% variance — longer
+    words very slightly earlier within class). So no word-level
+    property meaningfully accounts for the interior-gradient residual:
+    the interior gradient is a first-glyph-CLASS effect whose ordering,
+    beyond freq + gallows + length + within-word morphology, is a
+    genuinely unexplained floor. This BOUNDS the open question — the
+    residue is class-level, small, and specific (descriptive gradient:
+    sh/q earliest ~0.37, r/p latest ~0.47-0.51) — the sharpest
+    reproducible target the program leaves open
+    (line_discipline_wordlevel).
 19. **The two shared discipline axes are ~half-reducible to
     position-independent class properties, not fully derivable from
     them** (S3 rung 4 / N6g, 2026-07-21): the manuscript-wide edge and
@@ -1851,3 +1868,41 @@ Configuration (pre-registered in the script docstring): script defaults. Runtime
 | interior tokens (with glyph pair) | 14096 |
 
 **VERDICT: PHONOTACTIC IS CLASS CONFOUND (N6i downgraded) — with onset class controlled, glyph-pair phonotactic constraint does NOT predict interior position (partial r +0.0031, p 0.7046 ≫ 0.05, on 14096 tokens — un-inflated). N6i's soft p=0.02 phonotactic signal was the onset-CLASS effect that successor-entropy trivially re-expresses (raw onset-se +0.0574 just mirrors the S7 class-position effect), NOT a phonotactic law. The interior-gradient residual is not demonstrably phonotactic once class is controlled — it remains genuinely unexplained. Ledger entry 21 corrected. A quarantined SUGGESTIVE finding (N6i, flagged as the weakest) downgraded by its own registered follow-up — the process working exactly as the flag intended.**
+
+---
+
+### Portfolio S3, rung 7 — word-level predictors of the interior-gradient residual (2026-07-21)
+
+[AUTOMATED — written by tools/overnight.py; run committed to branch overnight/2026-07-21; awaiting human review before promotion to any evidence tier.]
+
+Configuration (pre-registered in the script docstring): script defaults. Runtime 0.04 h at PYTHONHASHSEED=0. Holdout: whole folios (VMS) / 24-line pseudo-folio blocks (controls).
+
+**Pre-registered outcomes** (script docstring): does any WORD-level property below the onset class predict interior position? Tested class-controlled at token resolution (N6j-validated), primary hypothesis = word frequency (function vs content word).
+
+| predictor | class-controlled partial r | two-sided p |
+|---|---|---|
+| word frequency (function/content) | +0.0188 | 0.0265 |
+| word length | -0.0370 | 0.0015 |
+
+Descriptive per-class interior gradient (early → late): sh 0.369, q 0.381, k 0.404, ch 0.409, y 0.411, l 0.413, f 0.422, o 0.432, e 0.433, cth 0.435, d 0.437, s 0.439, t 0.446, a 0.46, r 0.472, p 0.507.
+
+**VERDICT: RESIDUAL "LENGTH ONLY" — but the honest headline is that ESSENTIALLY NOTHING substantial predicts the residual. The function/content-word hypothesis (frequency) FAILS the bar (p 0.0265 > 0.005). Word length clears it (p 0.0015) but the effect is NEGLIGIBLE: r -0.0370, ~0.1% of variance — statistically detectable on 14k tokens, practically nil (longer words sit very slightly earlier within their class). No word-level property meaningfully accounts for the interior-gradient residual; it is, for practical purposes, a floor. The interior gradient is a first-glyph-CLASS effect whose ordering, beyond freq + gallows + length + morphology, stays genuinely unexplained.**
+
+---
+
+### Portfolio S3, rung 7 — word-level predictors of the interior-gradient residual (2026-07-21)
+
+[AUTOMATED — written by tools/overnight.py; run committed to branch overnight/2026-07-21; awaiting human review before promotion to any evidence tier.]
+
+Configuration (pre-registered in the script docstring): script defaults. Runtime 0.04 h at PYTHONHASHSEED=0. Holdout: whole folios (VMS) / 24-line pseudo-folio blocks (controls).
+
+**Pre-registered outcomes** (script docstring): does any WORD-level property below the onset class predict interior position? Tested class-controlled at token resolution (N6j-validated), primary hypothesis = word frequency (function vs content word).
+
+| predictor | class-controlled partial r | two-sided p |
+|---|---|---|
+| word frequency (function/content) | +0.0188 | 0.0265 |
+| word length | -0.0370 | 0.0015 |
+
+Descriptive per-class interior gradient (early → late): sh 0.369, q 0.381, k 0.404, ch 0.409, y 0.411, l 0.413, f 0.422, o 0.432, e 0.433, cth 0.435, d 0.437, s 0.439, t 0.446, a 0.46, r 0.472, p 0.507.
+
+**VERDICT: RESIDUAL "LENGTH ONLY" — but the honest headline is that ESSENTIALLY NOTHING substantial predicts the residual. The function/content-word hypothesis (frequency) FAILS the bar (p 0.0265 > 0.005). Word length clears it (p 0.0015) but the effect is NEGLIGIBLE: r -0.0370, ~0.1% of variance — statistically detectable on 14k tokens, practically nil (longer words sit very slightly earlier within their class). No word-level property meaningfully accounts for the interior-gradient residual; it is, for practical purposes, a floor. The interior gradient is a first-glyph-CLASS effect whose ordering, beyond freq + gallows + length + morphology, stays genuinely unexplained.**
