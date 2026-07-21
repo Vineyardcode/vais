@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>line_discipline_phonotactic — VAIS - Voynich Analysis Interactive Suite</title><style>
+:root { --bg:#ffffff; --fg:#1a1a1a; --muted:#666; --line:#ddd;
+        --code:#f5f5f5; --accent:#7a4a1e; --warn:#a33; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#141414; --fg:#ddd; --muted:#999; --line:#333;
+          --code:#1e1e1e; --accent:#d9a05b; --warn:#e77; } }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--fg);
+       font:16px/1.55 Georgia, 'Times New Roman', serif; }
+nav { border-bottom:1px solid var(--line); padding:.7em 1.2em;
+      font-family: system-ui, sans-serif; font-size:.9em; }
+nav a { color:var(--accent); text-decoration:none; margin-right:1.2em; }
+main { max-width: 62em; margin: 0 auto; padding: 1.5em 1.2em 4em; }
+h1,h2,h3 { font-family: system-ui, sans-serif; line-height:1.25; }
+h1 { font-size:1.7em; } h2 { font-size:1.3em; margin-top:2em; }
+a { color: var(--accent); }
+code, pre { font-family: ui-monospace, Consolas, monospace;
+            font-size:.86em; background:var(--code); }
+code { padding:.1em .3em; border-radius:3px; }
+pre { padding: .9em; overflow-x:auto; border:1px solid var(--line);
+      border-radius:4px; line-height:1.4; }
+table { border-collapse: collapse; margin: 1em 0; font-size:.92em;
+        display:block; overflow-x:auto; }
+th, td { border:1px solid var(--line); padding:.35em .6em;
+         text-align:left; vertical-align:top; }
+th { font-family: system-ui, sans-serif; background:var(--code); }
+blockquote { border-left:3px solid var(--accent); margin:1em 0;
+             padding:.2em 1em; color:var(--muted); }
+.muted { color:var(--muted); font-size:.9em; }
+.tag { font-family: system-ui, sans-serif; font-size:.75em;
+       border:1px solid var(--line); border-radius:3px;
+       padding:.05em .45em; margin-left:.5em; }
+.tag.sug { border-color:var(--warn); color:var(--warn); }
+details summary { cursor:pointer; font-family: system-ui, sans-serif; }
+input.param { font-family: ui-monospace, Consolas, monospace;
+              font-size:.85em; width:24em; max-width:100%;
+              background:var(--code); color:var(--fg);
+              border:1px solid var(--line); border-radius:3px;
+              padding:.25em .4em; }
+button { font-family: system-ui, sans-serif; font-size:.95em;
+         padding:.35em 1em; border:1px solid var(--accent);
+         border-radius:4px; background:var(--code); color:var(--fg);
+         cursor:pointer; }
+button:disabled { opacity:.5; cursor:default; }
+#run-out { min-height:2em; }
+footer { border-top:1px solid var(--line); margin-top:3em;
+         padding-top:1em; font-size:.85em; color:var(--muted); }
+</style></head><body>
+<nav><a href="../index.html">VAIS - Voynich Analysis Interactive Suite</a><a href="../catalog.html">Catalog</a>
+<a href="../research.html">Research</a><a href="../reports.html">Reports</a>
+<a href="../glossary.html">Glossary</a><a href="../credits.html">Credits</a>
+<a href="../contributing.html">Contributing</a>
+<a href="https://github.com/Vineyardcode/vais">GitHub</a></nav>
+<main><h1>line_discipline_phonotactic</h1>
+<p class="muted">scripts/line_discipline_phonotactic.py</p>
+<pre>Line-Discipline Phonotactic Residual (portfolio S3, rung 6) — is the
+interior-gradient residual phonotactic, or irreducible at class
+resolution? (N6i)
+
+PROVENANCE: the interior gradient (shared axis 2) has been progressively
+reduced — N6g (freq+gallows+wlen, R^2 0.498), N6h (+ within-word
+morphology wwpos+finality, R^2 0.629, the biggest single gain from
+wwpos). A residual (~0.37 of the axis) survives. This rung tests
+whether that RESIDUAL is glyph-phonotactic.
+
+DOF DISCIPLINE (stated first, because it governs the design): the axis
+is defined over only CLASS_K+1 (~13) first-glyph classes. Piling
+features onto 13 points inflates R^2 through overfitting, not insight.
+So this is NOT a feature dump. It is a RESIDUAL test with an
+overfitting-calibrated null: take r2 = axis2 - (N6h 5-principle
+prediction), fit a small DECLARED phonotactic feature set to r2, and
+require the fit to beat a shuffle-null (r2 permuted, same features
+refit) that measures exactly how much a 4-feature fit to 13 points buys
+by chance. If it does not beat that null, the residual is declared
+IRREDUCIBLE at class-level resolution — a real floor result, not a
+failure.
+
+DECLARED PHONOTACTIC FEATURES (position-free, per class glyph, from B&#x27;s
+glyph stream via common.core.eva_to_glyphs; fixed before running):
+  succ_entropy = entropy of the glyph immediately FOLLOWING the class
+                 glyph across its word occurrences (low = tightly
+                 constrained, e.g. q-&gt;o).
+  pred_entropy = entropy of the preceding glyph.
+  e_follow     = fraction of the class glyph&#x27;s occurrences followed by
+                 &#x27;e&#x27; (the e-platform).
+  bench        = 1 if the class glyph is a bench (ch/sh) else 0.
+(OTHER-class &#x27;#&#x27; set to corpus means / bench 0.)
+
+METHOD: rebuild B&#x27;s rank-3 decomposition (axis 2 cross-checked vs the
+N6d record); r2 = axis2 - Mhat5 (the N6h 5-principle OLS prediction);
+OLS r2 ~ phonotactic features (R2_phon); N_PERM permutations of r2
+refit -&gt; null R^2; excess = R2_phon - mean(null). Per-feature Spearman
+with r2 reported. (Closure/generation is NOT re-tested here — this is a
+loadings-residual analysis; if the residual is not even phonotactically
+structured, closure is moot.)
+
+PRE-REGISTERED VERDICTS:
+  gate_failed              — N6/N6d cross-checks fail.
+  residual_phonotactic     — R2_phon &gt;= PHON_TARGET AND excess &gt;=
+                             EXCESS_MIN: the residual is phonotactically
+                             structured; the interior gradient&#x27;s last
+                             piece is glyph-neighbour constraint.
+                             SUGGESTIVE, quarantined.
+  residual_partly_phonotactic — excess &gt;= EXCESS_MODEST but below
+                             target: phonotactics captures some residual.
+  residual_irreducible     — excess &lt; EXCESS_MODEST: phonotactic
+                             features do not beat the overfitting null;
+                             the residual is not reducible to class-level
+                             properties at this resolution. A floor —
+                             the interior gradient carries irreducible
+                             (or sub-class / glyph-pair) structure.
+                             Corpse logged with the per-feature Spearman.
+Vocabulary discipline: a reduction of statistics; nothing decoded.</pre>
+<h2>Parameters</h2><p class="muted">Edit a value to override it for an in-browser run (the script itself is never modified).</p><table><tr><th>name</th><th>type</th><th>value</th></tr>
+<tr><td><code>SEED</code></td><td>int</td><td><input class="param" data-param="SEED" value="130"></td></tr>
+<tr><td><code>N_PERM</code></td><td>int</td><td><input class="param" data-param="N_PERM" value="2000"></td></tr>
+<tr><td><code>PHON_TARGET</code></td><td>float</td><td><input class="param" data-param="PHON_TARGET" value="0.5"></td></tr>
+<tr><td><code>EXCESS_MIN</code></td><td>float</td><td><input class="param" data-param="EXCESS_MIN" value="0.15"></td></tr>
+<tr><td><code>EXCESS_MODEST</code></td><td>float</td><td><input class="param" data-param="EXCESS_MODEST" value="0.05"></td></tr>
+<tr><td><code>CLASS_K</code></td><td>int</td><td><input class="param" data-param="CLASS_K" value="12"></td></tr>
+<tr><td><code>MIN_LINE_WORDS</code></td><td>int</td><td><input class="param" data-param="MIN_LINE_WORDS" value="5"></td></tr>
+<tr><td><code>ALPHA</code></td><td>float</td><td><input class="param" data-param="ALPHA" value="0.5"></td></tr>
+<tr><td><code>BENCH</code></td><td>json</td><td><input class="param" data-param="BENCH" value="[&#x27;ch&#x27;, &#x27;sh&#x27;]"></td></tr>
+<tr><td><code>BINS</code></td><td>json</td><td><input class="param" data-param="BINS" value="[&#x27;p1&#x27;, &#x27;p2&#x27;, &#x27;m1&#x27;, &#x27;m2&#x27;, &#x27;m3&#x27;, &#x27;pL-1&#x27;, &#x27;pL&#x27;]"></td></tr>
+<tr><td><code>N6D_JSON</code></td><td>str</td><td><input class="param" data-param="N6D_JSON" value="line_discipline_rank3.json"></td></tr>
+</table>
+<h2>Run it in your browser</h2><p class="muted">Python + numpy on WebAssembly, entirely on your machine — nothing is uploaded. First run downloads the runtime (~15 MB) and the repository data pack (~9 MB); both are cached afterwards. Expect it to be slower than a native run.</p><p><button id="run-btn">&#9654; Run</button> <button id="stop-btn">Stop</button> <span id="run-status" class="muted"></span></p><pre id="run-out"></pre>
+<script>window.VAIS_TEST = {"stem": "line_discipline_phonotactic", "specs": {"SEED": {"type": "int", "container": null}, "N_PERM": {"type": "int", "container": null}, "PHON_TARGET": {"type": "float", "container": null}, "EXCESS_MIN": {"type": "float", "container": null}, "EXCESS_MODEST": {"type": "float", "container": null}, "CLASS_K": {"type": "int", "container": null}, "MIN_LINE_WORDS": {"type": "int", "container": null}, "ALPHA": {"type": "float", "container": null}, "BENCH": {"type": "json", "container": "set"}, "BINS": {"type": "json", "container": "tuple"}, "N6D_JSON": {"type": "str", "container": null}}, "base": "../", "baselineSeconds": 0};</script><script src="../runner.js"></script>
+<h2>Run it locally (full speed, byte-exact)</h2>
+<pre>git clone https://github.com/Vineyardcode/vais
+cd vais
+pip install numpy flask
+python scripts/line_discipline_phonotactic.py        # this test; output also lands in results/
+python webui/server.py          # or the full interactive UI at localhost:5000</pre>
+<h2>Golden output (PYTHONHASHSEED=0)</h2><details><summary>show</summary><pre id="golden-pre">============================================================================
+LINE-DISCIPLINE PHONOTACTIC RESIDUAL (S3 rung 6) — reduce the residual? (N6i)
+============================================================================
+seed=130 perms=2000 phon_target&gt;=0.5 excess_min&gt;=0.15; DOF-honest residual test
+  rank-3 axis 2 reproduces the N6d record  VERIFIED
+  N6h 5-principle interior R^2 0.629; residual variance 0.7187
+  succ_entropy  Spearman with residual +0.379
+  pred_entropy  Spearman with residual -0.049
+  e_follow      Spearman with residual -0.176
+  bench         Spearman with residual -0.258
+  phonotactic R^2 on residual 0.760  overfitting-null mean 0.327 (max 0.900)  excess +0.432  empirical p 0.0205
+
+  ADJUDICATION (pre-registered):
+    RESIDUAL PHONOTACTIC: the interior-gradient residual is glyph-phonotactic structure above the overfitting null. SUGGESTIVE, quarantined.
+
+  -&gt; results/line_discipline_phonotactic.json
+</pre></details><footer>Static mirror — read-only. Generated 2026-07-21 from commit <code>a859b0b</code>. 
+To run any test with your own parameters, clone
+<a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
+(<code>python webui/server.py</code>). All numbers reproduce at
+PYTHONHASHSEED=0.</footer></main></body></html>

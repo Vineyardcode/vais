@@ -125,7 +125,26 @@ footer { border-top:1px solid var(--line); margin-top:3em;
 <tr><td>naming margin</td><td>-0.0300 (threshold 0.03)</td></tr>
 <tr><td>U*(fragment labels, observational)</td><td>+0.1152</td></tr>
 </table>
-<p><strong>VERDICT: NAMING WAS CONCENTRATION (finding withdrawn) — with fragments removed and section marginals matched, word-shaped labels are LESS section-specific (+0.050) than running text drawn from the SAME sections (+0.080); margin -0.030 &lt;= 0. N11&#x27;s &quot;naming system&quot; reading was the pharma-label concentration, exactly the confound N11&#x27;s own entry flagged — now confirmed and the naming claim WITHDRAWN. What stands from N11: labels are a distinct register (the first-glyph distinctness result, untouched); what falls: that they are a section-specific NAMING system. A textbook case of a quarantined SUGGESTIVE finding killed by its own registered follow-up.</strong></p><footer>Static mirror — read-only. Generated 2026-07-21 from commit <code>8a897fb</code>. 
+<p><strong>VERDICT: NAMING WAS CONCENTRATION (finding withdrawn) — with fragments removed and section marginals matched, word-shaped labels are LESS section-specific (+0.050) than running text drawn from the SAME sections (+0.080); margin -0.030 &lt;= 0. N11&#x27;s &quot;naming system&quot; reading was the pharma-label concentration, exactly the confound N11&#x27;s own entry flagged — now confirmed and the naming claim WITHDRAWN. What stands from N11: labels are a distinct register (the first-glyph distinctness result, untouched); what falls: that they are a section-specific NAMING system. A textbook case of a quarantined SUGGESTIVE finding killed by its own registered follow-up.</strong></p>
+<h2>Run 2026-07-21 11:13:35 — N6i</h2>
+<p><strong>S3 rung 6: phonotactic attack on the interior-gradient residual (DOF-honest)</strong></p>
+<ul>
+<li>script: <code>scripts/line_discipline_phonotactic.py</code></li>
+<li>profile: <code>{}</code></li>
+<li>log: <code>overnight_2026-07-21.log</code>; results JSON: <code>line_discipline_phonotactic.json</code>; branch: <code>overnight/2026-07-21</code></li>
+<li>runtime: 1s (0.00 h), exit code 0</li>
+</ul>
+<p><strong>Pre-registered outcomes</strong> (script docstring; DOF-honest RESIDUAL test — the interior axis lives over only ~13 classes, so a small declared phonotactic feature set is fit to the N6h residual and required to beat an OVERFITTING shuffle null that measures chance fit of 4 features to 13 points).</p>
+<table>
+<tr><th>quantity</th><th>value</th></tr>
+<tr><td>N6h 5-principle interior R²</td><td>0.6294</td></tr>
+<tr><td>phonotactic R² on residual</td><td>0.7599</td></tr>
+<tr><td>overfitting null (mean / max)</td><td>0.3274 / 0.8997</td></tr>
+<tr><td>excess over null mean</td><td>+0.432 (bar 0.15)</td></tr>
+<tr><td>empirical p (null ≥ real)</td><td>0.0205</td></tr>
+</table>
+<p>Per-feature Spearman with the residual: succ_entropy +0.38, pred_entropy -0.05, e_follow -0.18, bench -0.26.</p>
+<p><strong>VERDICT: RESIDUAL PHONOTACTIC (pre-registered criterion met, but a SOFT and DOF-fragile finding — read the caveat) — the phonotactic set explains 76% of the interior-gradient residual, +0.43 above the null MEAN, led by successor-entropy (Spearman 0.379): tightly-constrained-onset words (q→o) sit earlier, loosely-constrained later. So across the full ladder the interior gradient reduces to frequency + gallows + length + within-word morphology + glyph-neighbour phonotactics. CAVEATS, prominent: the empirical p is 0.0205 — ABOVE the program&#x27;s usual p&lt;0.005 bar — because the overfitting null is fat-tailed (max 0.8997): 4 features on 13 class-points is near the DOF limit. This is the WEAKEST SUGGESTIVE finding in the ledger; it is a class-level reductive result (same reductive/same-author caveats as the derivation arc), and a higher-resolution (glyph-pair) re-test at p&lt;0.005 is the registered follow-up. SUGGESTIVE, quarantined.</strong></p><footer>Static mirror — read-only. Generated 2026-07-21 from commit <code>a859b0b</code>. 
 To run any test with your own parameters, clone
 <a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
 (<code>python webui/server.py</code>). All numbers reproduce at
