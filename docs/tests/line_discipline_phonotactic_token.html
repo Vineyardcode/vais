@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>line_discipline_phonotactic_token — VAIS - Voynich Analysis Interactive Suite</title><style>
+:root { --bg:#ffffff; --fg:#1a1a1a; --muted:#666; --line:#ddd;
+        --code:#f5f5f5; --accent:#7a4a1e; --warn:#a33; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#141414; --fg:#ddd; --muted:#999; --line:#333;
+          --code:#1e1e1e; --accent:#d9a05b; --warn:#e77; } }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--fg);
+       font:16px/1.55 Georgia, 'Times New Roman', serif; }
+nav { border-bottom:1px solid var(--line); padding:.7em 1.2em;
+      font-family: system-ui, sans-serif; font-size:.9em; }
+nav a { color:var(--accent); text-decoration:none; margin-right:1.2em; }
+main { max-width: 62em; margin: 0 auto; padding: 1.5em 1.2em 4em; }
+h1,h2,h3 { font-family: system-ui, sans-serif; line-height:1.25; }
+h1 { font-size:1.7em; } h2 { font-size:1.3em; margin-top:2em; }
+a { color: var(--accent); }
+code, pre { font-family: ui-monospace, Consolas, monospace;
+            font-size:.86em; background:var(--code); }
+code { padding:.1em .3em; border-radius:3px; }
+pre { padding: .9em; overflow-x:auto; border:1px solid var(--line);
+      border-radius:4px; line-height:1.4; }
+table { border-collapse: collapse; margin: 1em 0; font-size:.92em;
+        display:block; overflow-x:auto; }
+th, td { border:1px solid var(--line); padding:.35em .6em;
+         text-align:left; vertical-align:top; }
+th { font-family: system-ui, sans-serif; background:var(--code); }
+blockquote { border-left:3px solid var(--accent); margin:1em 0;
+             padding:.2em 1em; color:var(--muted); }
+.muted { color:var(--muted); font-size:.9em; }
+.tag { font-family: system-ui, sans-serif; font-size:.75em;
+       border:1px solid var(--line); border-radius:3px;
+       padding:.05em .45em; margin-left:.5em; }
+.tag.sug { border-color:var(--warn); color:var(--warn); }
+details summary { cursor:pointer; font-family: system-ui, sans-serif; }
+input.param { font-family: ui-monospace, Consolas, monospace;
+              font-size:.85em; width:24em; max-width:100%;
+              background:var(--code); color:var(--fg);
+              border:1px solid var(--line); border-radius:3px;
+              padding:.25em .4em; }
+button { font-family: system-ui, sans-serif; font-size:.95em;
+         padding:.35em 1em; border:1px solid var(--accent);
+         border-radius:4px; background:var(--code); color:var(--fg);
+         cursor:pointer; }
+button:disabled { opacity:.5; cursor:default; }
+#run-out { min-height:2em; }
+footer { border-top:1px solid var(--line); margin-top:3em;
+         padding-top:1em; font-size:.85em; color:var(--muted); }
+</style></head><body>
+<nav><a href="../index.html">VAIS - Voynich Analysis Interactive Suite</a><a href="../catalog.html">Catalog</a>
+<a href="../research.html">Research</a><a href="../reports.html">Reports</a>
+<a href="../glossary.html">Glossary</a><a href="../credits.html">Credits</a>
+<a href="../contributing.html">Contributing</a>
+<a href="https://github.com/Vineyardcode/vais">GitHub</a></nav>
+<main><h1>line_discipline_phonotactic_token</h1>
+<p class="muted">scripts/line_discipline_phonotactic_token.py</p>
+<pre>Phonotactic Interior Gradient, Class-Controlled (S3 rung 6b) — does
+glyph-pair phonotactic constraint predict interior position BEYOND the
+onset class? (N6j)
+
+PROVENANCE: N6i found the interior-gradient residual phonotactically
+structured but SOFT (empirical p 0.0205, DOF-fragile at ~13 class
+points). This rung re-tests at higher resolution — but the first design
+attempt exposed the real obstacle, which dictates the correct test:
+
+  onset successor-entropy is a DETERMINISTIC FUNCTION of the first
+  glyph, and the first glyph IS the class. So &quot;onset-se predicts
+  interior position&quot; is merely the S7 class-position effect
+  re-parametrized — it cannot separate a phonotactic LAW (&quot;constrained
+  onsets sit earlier&quot;) from &quot;the class q happens to sit early&quot;. A
+  first-execution check confirmed this: raw onset-se vs position is
+  collinear with class, and the glyph-pair variant even reverses sign.
+
+THE CORRECT TEST (fixed before the run that counts): control for onset
+class. Within each first-glyph class, second-glyph variation gives the
+glyph-PAIR successor-entropy se2 real within-class variance. If
+phonotactic constraint is a genuine positional law, se2 should predict
+interior position WITHIN classes (onset held fixed). Operationally:
+class-mean-center both u (normalized interior position) and se2 by the
+token&#x27;s onset class, then correlate the residuals — a partial
+correlation of position with glyph-pair constraint controlling for
+onset identity. NULL: N_PERM within-line shuffles (order destroyed,
+class means and centering recomputed each time). Interior tokens with a
+definable glyph pair (&gt;= 2 glyphs) only.
+
+PRE-REGISTERED VERDICTS:
+  phonotactic_firmed     — |partial r| significant at two-sided
+                           empirical p &lt; P_FIRM (0.005): glyph-pair
+                           phonotactic constraint predicts interior
+                           position beyond the onset class — a genuine
+                           phonotactic effect, N6i firmed past the house
+                           bar and free of the class confound.
+                           SUGGESTIVE, quarantined.
+  phonotactic_weak       — P_FIRM &lt;= p &lt; P_WEAK (0.05): a within-class
+                           effect exists but not past the house bar.
+  phonotactic_is_class_confound — p &gt;= P_WEAK: with onset class
+                           controlled, glyph-pair constraint does NOT
+                           predict position. N6i&#x27;s &quot;phonotactic residual&quot;
+                           was the onset-class effect re-expressed, not
+                           a phonotactic law; N6i downgraded. (Reported
+                           for the record: the RAW onset-se correlation,
+                           which by construction just mirrors the class
+                           effect.)
+Vocabulary discipline: a partial correlation of statistics; nothing
+decoded.</pre>
+<h2>Parameters</h2><p class="muted">Edit a value to override it for an in-browser run (the script itself is never modified).</p><table><tr><th>name</th><th>type</th><th>value</th></tr>
+<tr><td><code>SEED</code></td><td>int</td><td><input class="param" data-param="SEED" value="131"></td></tr>
+<tr><td><code>N_PERM</code></td><td>int</td><td><input class="param" data-param="N_PERM" value="2000"></td></tr>
+<tr><td><code>P_FIRM</code></td><td>float</td><td><input class="param" data-param="P_FIRM" value="0.005"></td></tr>
+<tr><td><code>P_WEAK</code></td><td>float</td><td><input class="param" data-param="P_WEAK" value="0.05"></td></tr>
+<tr><td><code>MIN_LINE_WORDS</code></td><td>int</td><td><input class="param" data-param="MIN_LINE_WORDS" value="5"></td></tr>
+</table>
+<h2>Run it in your browser</h2><p class="muted">Python + numpy on WebAssembly, entirely on your machine — nothing is uploaded. First run downloads the runtime (~15 MB) and the repository data pack (~9 MB); both are cached afterwards. Expect it to be slower than a native run.</p><p><button id="run-btn">&#9654; Run</button> <button id="stop-btn">Stop</button> <span id="run-status" class="muted"></span></p><pre id="run-out"></pre>
+<script>window.VAIS_TEST = {"stem": "line_discipline_phonotactic_token", "specs": {"SEED": {"type": "int", "container": null}, "N_PERM": {"type": "int", "container": null}, "P_FIRM": {"type": "float", "container": null}, "P_WEAK": {"type": "float", "container": null}, "MIN_LINE_WORDS": {"type": "int", "container": null}}, "base": "../", "baselineSeconds": 0};</script><script src="../runner.js"></script>
+<h2>Run it locally (full speed, byte-exact)</h2>
+<pre>git clone https://github.com/Vineyardcode/vais
+cd vais
+pip install numpy flask
+python scripts/line_discipline_phonotactic_token.py        # this test; output also lands in results/
+python webui/server.py          # or the full interactive UI at localhost:5000</pre>
+<h2>Golden output (PYTHONHASHSEED=0)</h2><details><summary>show</summary><pre id="golden-pre">============================================================================
+PHONOTACTIC INTERIOR GRADIENT, CLASS-CONTROLLED (S3 rung 6b) (N6j)
+============================================================================
+seed=131 perms=2000 firm two-sided p&lt;0.005; glyph-pair constraint, onset class controlled
+  2522 B lines; 14096 interior tokens with a glyph pair; 22 onset classes
+  RAW onset-se vs position +0.0574 (collinear with class — not the test)
+  class-controlled glyph-pair-se2 vs position (PARTIAL) +0.0031  &lt;- the test
+  within-line null (two-sided): p 0.7046  (null max |r| 0.0331)
+
+  ADJUDICATION (pre-registered):
+    PHONOTACTIC IS CLASS CONFOUND: with onset class controlled, glyph-pair constraint does NOT predict position (partial r +0.0031, p 0.7046 &gt;= 0.05). N6i&#x27;s &quot;phonotactic residual&quot; was the onset-class effect re-expressed (raw onset-se +0.0574 just mirrors the class-position effect), not a phonotactic law. N6i downgraded — the interior gradient&#x27;s residual is NOT demonstrably phonotactic once class is controlled. Corpse logged.
+
+  -&gt; results/line_discipline_phonotactic_token.json
+</pre></details><footer>Static mirror — read-only. Generated 2026-07-21 from commit <code>1ebbed8</code>. 
+To run any test with your own parameters, clone
+<a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
+(<code>python webui/server.py</code>). All numbers reproduce at
+PYTHONHASHSEED=0.</footer></main></body></html>

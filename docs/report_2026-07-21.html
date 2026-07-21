@@ -144,7 +144,24 @@ footer { border-top:1px solid var(--line); margin-top:3em;
 <tr><td>empirical p (null ≥ real)</td><td>0.0205</td></tr>
 </table>
 <p>Per-feature Spearman with the residual: succ_entropy +0.38, pred_entropy -0.05, e_follow -0.18, bench -0.26.</p>
-<p><strong>VERDICT: RESIDUAL PHONOTACTIC (pre-registered criterion met, but a SOFT and DOF-fragile finding — read the caveat) — the phonotactic set explains 76% of the interior-gradient residual, +0.43 above the null MEAN, led by successor-entropy (Spearman 0.379): tightly-constrained-onset words (q→o) sit earlier, loosely-constrained later. So across the full ladder the interior gradient reduces to frequency + gallows + length + within-word morphology + glyph-neighbour phonotactics. CAVEATS, prominent: the empirical p is 0.0205 — ABOVE the program&#x27;s usual p&lt;0.005 bar — because the overfitting null is fat-tailed (max 0.8997): 4 features on 13 class-points is near the DOF limit. This is the WEAKEST SUGGESTIVE finding in the ledger; it is a class-level reductive result (same reductive/same-author caveats as the derivation arc), and a higher-resolution (glyph-pair) re-test at p&lt;0.005 is the registered follow-up. SUGGESTIVE, quarantined.</strong></p><footer>Static mirror — read-only. Generated 2026-07-21 from commit <code>1905cba</code>. 
+<p><strong>VERDICT: RESIDUAL PHONOTACTIC (pre-registered criterion met, but a SOFT and DOF-fragile finding — read the caveat) — the phonotactic set explains 76% of the interior-gradient residual, +0.43 above the null MEAN, led by successor-entropy (Spearman 0.379): tightly-constrained-onset words (q→o) sit earlier, loosely-constrained later. So across the full ladder the interior gradient reduces to frequency + gallows + length + within-word morphology + glyph-neighbour phonotactics. CAVEATS, prominent: the empirical p is 0.0205 — ABOVE the program&#x27;s usual p&lt;0.005 bar — because the overfitting null is fat-tailed (max 0.8997): 4 features on 13 class-points is near the DOF limit. This is the WEAKEST SUGGESTIVE finding in the ledger; it is a class-level reductive result (same reductive/same-author caveats as the derivation arc), and a higher-resolution (glyph-pair) re-test at p&lt;0.005 is the registered follow-up. SUGGESTIVE, quarantined.</strong></p>
+<h2>Run 2026-07-21 11:56:31 — N6j</h2>
+<p><strong>S3 rung 6b: glyph-pair phonotactic re-test (class-controlled) — firm or dissolve N6i?</strong></p>
+<ul>
+<li>script: <code>scripts/line_discipline_phonotactic_token.py</code></li>
+<li>profile: <code>{}</code></li>
+<li>log: <code>overnight_2026-07-21.log</code>; results JSON: <code>line_discipline_phonotactic_token.json</code>; branch: <code>overnight/2026-07-21</code></li>
+<li>runtime: 174s (0.05 h), exit code 0</li>
+</ul>
+<p><strong>Pre-registered outcomes</strong> (script docstring): the registered follow-up to N6i (its own entry flagged it as the weakest SUGGESTIVE finding needing a p&lt;0.005 re-test). Onset successor-entropy is a deterministic function of the first glyph, so it cannot separate a phonotactic law from the S7 class-position effect; the correct test controls for onset class and asks whether glyph-PAIR constraint predicts position WITHIN classes.</p>
+<table>
+<tr><th>quantity</th><th>value</th></tr>
+<tr><td>raw onset-se vs position (collinear w/ class)</td><td>+0.0574</td></tr>
+<tr><td>class-controlled glyph-pair partial r (THE TEST)</td><td>+0.0031</td></tr>
+<tr><td>two-sided within-line null p</td><td>0.7046 (null max</td><td>r</td><td>0.03312)</td></tr>
+<tr><td>interior tokens (with glyph pair)</td><td>14096</td></tr>
+</table>
+<p><strong>VERDICT: PHONOTACTIC IS CLASS CONFOUND (N6i downgraded) — with onset class controlled, glyph-pair phonotactic constraint does NOT predict interior position (partial r +0.0031, p 0.7046 ≫ 0.05, on 14096 tokens — un-inflated). N6i&#x27;s soft p=0.02 phonotactic signal was the onset-CLASS effect that successor-entropy trivially re-expresses (raw onset-se +0.0574 just mirrors the S7 class-position effect), NOT a phonotactic law. The interior-gradient residual is not demonstrably phonotactic once class is controlled — it remains genuinely unexplained. Ledger entry 21 corrected. A quarantined SUGGESTIVE finding (N6i, flagged as the weakest) downgraded by its own registered follow-up — the process working exactly as the flag intended.</strong></p><footer>Static mirror — read-only. Generated 2026-07-21 from commit <code>1ebbed8</code>. 
 To run any test with your own parameters, clone
 <a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
 (<code>python webui/server.py</code>). All numbers reproduce at
