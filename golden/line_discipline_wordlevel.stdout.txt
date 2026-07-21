@@ -1,0 +1,13 @@
+============================================================================
+INTERIOR GRADIENT — WORD-LEVEL PREDICTORS (S3 rung 7) (N6k)
+============================================================================
+seed=132 perms=2000 firm two-sided p<0.005; class-controlled partial correlations at token resolution
+  2522 B lines; 14484 interior tokens; 22 onset classes
+  per-class mean interior position (early -> late): sh 0.369  q 0.381  k 0.404  ch 0.409  y 0.411  l 0.413  f 0.422  o 0.432  e 0.433  cth 0.435  d 0.437  s 0.439  t 0.446  a 0.46  r 0.472  p 0.507
+  class-controlled partial r: word-frequency +0.0188   word-length -0.0370
+  within-line null (two-sided): p(frequency) 0.0265  p(length) 0.0015
+
+  ADJUDICATION (pre-registered):
+    RESIDUAL LENGTH ONLY: frequency not significant (p 0.0265) but within-class word length is (r -0.0370, p 0.0015) — fine length is the sub-class predictor. SUGGESTIVE, quarantined.
+
+  -> results/line_discipline_wordlevel.json

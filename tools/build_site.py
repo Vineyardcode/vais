@@ -49,6 +49,7 @@ CHARTER_ERA = frozenset({
     "line_discipline_derivation", "line_discipline_morphology",
     "labelese_subsystem", "labelese_naming_refined",
     "line_discipline_phonotactic", "line_discipline_phonotactic_token",
+    "line_discipline_wordlevel",
 })
 
 OUT = ROOT / "docs"

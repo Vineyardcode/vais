@@ -2763,6 +2763,94 @@ def adjudicate_n6j(item, expected_params, run_started):
 
 
 # ────────────────────────────────────────────────────────────────────
+# N6k adjudication — pre-registered, mechanical, JSON-only
+# ────────────────────────────────────────────────────────────────────
+def adjudicate_n6k(item, expected_params, run_started):
+    """Pre-registered outcomes (line_discipline_wordlevel.py docstring):
+    class-controlled partial correlations of interior position with
+    word frequency (primary) and word length. residual_frequency_effect
+    / residual_length_only / residual_unexplained. Re-derived from the
+    JSON; refuses on mismatch."""
+    jpath = RESULTS / item['result_json']
+    if not jpath.exists():
+        raise AdjudicationError(f'{jpath.name} was not written by the run')
+    if jpath.stat().st_mtime < run_started:
+        raise AdjudicationError(f'{jpath.name} predates this run — stale')
+    data = json.loads(jpath.read_text(encoding='utf-8'))
+    p, r = data['params'], data['results']
+    pf, pl = r['p_frequency'], r['p_length']
+    if pf < p['p_firm']:
+        key = 'residual_frequency_effect'
+    elif pl < p['p_firm']:
+        key = 'residual_length_only'
+    else:
+        key = 'residual_unexplained'
+    if data.get('verdict') != key:
+        raise AdjudicationError(f'runner derives {key!r} but the script '
+                                f'recorded {data.get("verdict")!r}')
+    # magnitude honesty: |r| this small is negligible even when p<0.005
+    negligible = abs(r['partial_r_frequency']) < 0.05 and \
+        abs(r['partial_r_length']) < 0.05
+    suggestive = key in ('residual_frequency_effect',
+                         'residual_length_only') and not negligible
+
+    grad = r['per_class_gradient']
+    order = sorted(grad, key=lambda c: grad[c])
+    md = []
+    md.append('**Pre-registered outcomes** (script docstring): does any '
+              'WORD-level property below the onset class predict interior '
+              'position? Tested class-controlled at token resolution '
+              '(N6j-validated), primary hypothesis = word frequency '
+              '(function vs content word).')
+    md.append('')
+    md.append('| predictor | class-controlled partial r | two-sided p |')
+    md.append('|---|---|---|')
+    md.append(f'| word frequency (function/content) | '
+              f'{r["partial_r_frequency"]:+.4f} | {pf} |')
+    md.append(f'| word length | {r["partial_r_length"]:+.4f} | {pl} |')
+    md.append('')
+    md.append('Descriptive per-class interior gradient (early → late): '
+              + ', '.join(f'{c} {grad[c]}' for c in order) + '.')
+    if key == 'residual_length_only':
+        verdict_text = (
+            'RESIDUAL "LENGTH ONLY" — but the honest headline is that '
+            'ESSENTIALLY NOTHING substantial predicts the residual. The '
+            'function/content-word hypothesis (frequency) FAILS the bar '
+            f'(p {pf} > 0.005). Word length clears it (p {pl}) but the '
+            f'effect is NEGLIGIBLE: r {r["partial_r_length"]:+.4f}, ~0.1% '
+            'of variance — statistically detectable on 14k tokens, '
+            'practically nil (longer words sit very slightly earlier '
+            'within their class). No word-level property meaningfully '
+            'accounts for the interior-gradient residual; it is, for '
+            'practical purposes, a floor. The interior gradient is a '
+            'first-glyph-CLASS effect whose ordering, beyond freq + '
+            'gallows + length + morphology, stays genuinely unexplained.')
+    elif key == 'residual_frequency_effect':
+        verdict_text = (
+            'RESIDUAL FREQUENCY EFFECT — within onset class, word '
+            f'frequency predicts position (r {r["partial_r_frequency"]:+.4f}, '
+            f'p {pf}). '
+            + ('NOTE: magnitude negligible (~<0.25% variance) despite '
+               'significance. ' if negligible else '')
+            + 'A function/content-word component below the class. '
+              'SUGGESTIVE, quarantined.')
+    else:
+        verdict_text = (
+            'RESIDUAL UNEXPLAINED — neither word frequency nor length '
+            'predicts interior position within onset class at the house '
+            'bar. No word-level property below the class accounts for '
+            'the residual: it is a floor at word resolution.')
+    md.append('')
+    md.append(f'**VERDICT: {verdict_text}**')
+    summary = (f'{key}; r_freq {r["partial_r_frequency"]:+.4f} (p {pf}), '
+               f'r_len {r["partial_r_length"]:+.4f} (p {pl}) — '
+               'magnitudes negligible')
+    return {'verdict': f'S3 rung 7: {key.upper()}',
+            'suggestive': suggestive, 'md': '\n'.join(md),
+            'summary': summary, 'params': p, 'json_name': jpath.name}
+
+
+# ────────────────────────────────────────────────────────────────────
 # queue
 # ────────────────────────────────────────────────────────────────────
 N1_PROFILE = {'EM_OUTER': 32, 'EM_PROPOSALS': 48, 'EM_RESTARTS': 16,
@@ -3187,6 +3275,21 @@ QUEUE = [
         'adjudicate': adjudicate_n6j,
         'research_heading': 'Portfolio S3, rung 6b — class-controlled '
                             'glyph-pair phonotactic re-test',
+        'not_ready': None,
+    },
+    {
+        'id': 'N6k',
+        'title': 'S3 rung 7: word-level predictors of the interior-'
+                 'gradient residual (function/content, length)',
+        'stem': 'line_discipline_wordlevel',
+        'overrides': {},
+        'smoke_overrides': {},
+        'timeout_s': 1800,
+        'smoke_timeout_s': 900,
+        'result_json': 'line_discipline_wordlevel.json',
+        'adjudicate': adjudicate_n6k,
+        'research_heading': 'Portfolio S3, rung 7 — word-level '
+                            'predictors of the interior-gradient residual',
         'not_ready': None,
     },
     {

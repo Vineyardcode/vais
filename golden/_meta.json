@@ -1418,5 +1418,14 @@
   "results_files_touched": [
    "line_discipline_phonotactic_token.json"
   ]
+ },
+ "line_discipline_wordlevel": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 189.92,
+  "stdout_bytes": 991,
+  "results_files_touched": [
+   "line_discipline_wordlevel.json"
+  ]
  }
 }
