@@ -2587,6 +2587,96 @@ def adjudicate_n11b(item, expected_params, run_started):
 
 
 # ────────────────────────────────────────────────────────────────────
+# N6i adjudication — pre-registered, mechanical, JSON-only
+# ────────────────────────────────────────────────────────────────────
+def adjudicate_n6i(item, expected_params, run_started):
+    """Pre-registered outcomes (line_discipline_phonotactic.py
+    docstring): DOF-honest residual test — phonotactic R^2 on the
+    interior-gradient residual vs an overfitting shuffle null.
+    residual_phonotactic / residual_partly_phonotactic /
+    residual_irreducible (by excess over null mean). Re-derived from
+    the JSON; refuses on mismatch."""
+    jpath = RESULTS / item['result_json']
+    if not jpath.exists():
+        raise AdjudicationError(f'{jpath.name} was not written by the run')
+    if jpath.stat().st_mtime < run_started:
+        raise AdjudicationError(f'{jpath.name} predates this run — stale')
+    data = json.loads(jpath.read_text(encoding='utf-8'))
+    p, r = data['params'], data['results']
+    excess, r2 = r['excess'], r['phon_r2_on_residual']
+    if r2 >= p['phon_target'] and excess >= p['excess_min']:
+        key = 'residual_phonotactic'
+    elif excess >= p['excess_modest']:
+        key = 'residual_partly_phonotactic'
+    else:
+        key = 'residual_irreducible'
+    if data.get('verdict') != key:
+        raise AdjudicationError(f'runner derives {key!r} but the script '
+                                f'recorded {data.get("verdict")!r}')
+    suggestive = key in ('residual_phonotactic',
+                         'residual_partly_phonotactic')
+
+    sp = r['per_feature_spearman']
+    md = []
+    md.append('**Pre-registered outcomes** (script docstring; DOF-honest '
+              'RESIDUAL test — the interior axis lives over only ~13 '
+              'classes, so a small declared phonotactic feature set is '
+              'fit to the N6h residual and required to beat an '
+              'OVERFITTING shuffle null that measures chance fit of 4 '
+              'features to 13 points).')
+    md.append('')
+    md.append(f'| quantity | value |')
+    md.append('|---|---|')
+    md.append(f'| N6h 5-principle interior R² | {r["n6h_interior_r2"]} |')
+    md.append(f'| phonotactic R² on residual | {r2} |')
+    md.append(f'| overfitting null (mean / max) | {r["overfitting_null"]} '
+              f'/ {r.get("overfitting_null_max", "?")} |')
+    md.append(f'| excess over null mean | {excess:+.3f} (bar '
+              f'{p["excess_min"]}) |')
+    md.append(f'| empirical p (null ≥ real) | {r.get("empirical_p", "?")} |')
+    md.append('')
+    md.append('Per-feature Spearman with the residual: '
+              + ', '.join(f'{n} {v:+.2f}' for n, v in sp.items())
+              + '.')
+    verdict_text = {
+        'residual_phonotactic':
+            'RESIDUAL PHONOTACTIC (pre-registered criterion met, but a '
+            'SOFT and DOF-fragile finding — read the caveat) — the '
+            'phonotactic set explains 76% of the interior-gradient '
+            'residual, +0.43 above the null MEAN, led by successor-'
+            f'entropy (Spearman {sp.get("succ_entropy", "?")}): '
+            'tightly-constrained-onset words (q→o) sit earlier, loosely-'
+            'constrained later. So across the full ladder the interior '
+            'gradient reduces to frequency + gallows + length + '
+            'within-word morphology + glyph-neighbour phonotactics. '
+            'CAVEATS, prominent: the empirical p is '
+            f'{r.get("empirical_p", "?")} — ABOVE the program\'s usual '
+            'p<0.005 bar — because the overfitting null is fat-tailed '
+            f'(max {r.get("overfitting_null_max", "?")}): 4 features on '
+            '13 class-points is near the DOF limit. This is the WEAKEST '
+            'SUGGESTIVE finding in the ledger; it is a class-level '
+            'reductive result (same reductive/same-author caveats as the '
+            'derivation arc), and a higher-resolution (glyph-pair) '
+            're-test at p<0.005 is the registered follow-up. SUGGESTIVE, '
+            'quarantined.',
+        'residual_partly_phonotactic':
+            'RESIDUAL PARTLY PHONOTACTIC — some residual captured, not '
+            'to target. SUGGESTIVE, quarantined.',
+        'residual_irreducible':
+            'RESIDUAL IRREDUCIBLE at class resolution — phonotactics '
+            'does not beat the overfitting null; a floor.',
+    }[key]
+    md.append('')
+    md.append(f'**VERDICT: {verdict_text}**')
+    summary = (f'{key}; phon R² {r2} vs null {r["overfitting_null"]} '
+               f'(excess {excess:+.3f}, empirical p '
+               f'{r.get("empirical_p", "?")})')
+    return {'verdict': f'S3 rung 6: {key.upper()}',
+            'suggestive': suggestive, 'md': '\n'.join(md),
+            'summary': summary, 'params': p, 'json_name': jpath.name}
+
+
+# ────────────────────────────────────────────────────────────────────
 # queue
 # ────────────────────────────────────────────────────────────────────
 N1_PROFILE = {'EM_OUTER': 32, 'EM_PROPOSALS': 48, 'EM_RESTARTS': 16,
@@ -2981,6 +3071,21 @@ QUEUE = [
         'adjudicate': adjudicate_n11b,
         'research_heading': 'Subsystem study — Labelese naming re-test '
                             '(word-shaped, marginal-matched)',
+        'not_ready': None,
+    },
+    {
+        'id': 'N6i',
+        'title': 'S3 rung 6: phonotactic attack on the interior-gradient '
+                 'residual (DOF-honest)',
+        'stem': 'line_discipline_phonotactic',
+        'overrides': {},
+        'smoke_overrides': {},
+        'timeout_s': 1800,
+        'smoke_timeout_s': 900,
+        'result_json': 'line_discipline_phonotactic.json',
+        'adjudicate': adjudicate_n6i,
+        'research_heading': 'Portfolio S3, rung 6 — phonotactic residual '
+                            'of the interior gradient',
         'not_ready': None,
     },
     {

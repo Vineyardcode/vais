@@ -1400,5 +1400,14 @@
   "results_files_touched": [
    "labelese_naming_refined.json"
   ]
+ },
+ "line_discipline_phonotactic": {
+  "status": "ok",
+  "returncode": 0,
+  "duration_s": 1.02,
+  "stdout_bytes": 961,
+  "results_files_touched": [
+   "line_discipline_phonotactic.json"
+  ]
  }
 }
