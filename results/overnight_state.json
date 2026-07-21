@@ -187,5 +187,12 @@
   "verdict": "N11b labelese naming (refined): NAMING_WAS_CONCENTRATION",
   "suggestive": false,
   "summary": "naming_was_concentration; word-label U* +0.0496 vs marginal-matched running +0.0797, margin -0.0300"
+ },
+ "N6i": {
+  "status": "completed",
+  "date": "2026-07-21",
+  "verdict": "S3 rung 6: RESIDUAL_PHONOTACTIC",
+  "suggestive": true,
+  "summary": "residual_phonotactic; phon R\u00b2 0.7599 vs null 0.3274 (excess +0.432, empirical p 0.0205)"
  }
 }
