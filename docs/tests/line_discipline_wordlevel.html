@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>line_discipline_phonotactic_token — VAIS - Voynich Analysis Interactive Suite</title><style>
+<title>line_discipline_wordlevel — VAIS - Voynich Analysis Interactive Suite</title><style>
 :root { --bg:#ffffff; --fg:#1a1a1a; --muted:#666; --line:#ddd;
         --code:#f5f5f5; --accent:#7a4a1e; --warn:#a33; }
 @media (prefers-color-scheme: dark) {
@@ -54,85 +54,85 @@ footer { border-top:1px solid var(--line); margin-top:3em;
 <a href="../glossary.html">Glossary</a><a href="../credits.html">Credits</a>
 <a href="../contributing.html">Contributing</a>
 <a href="https://github.com/Vineyardcode/vais">GitHub</a></nav>
-<main><h1>line_discipline_phonotactic_token</h1>
-<p class="muted">scripts/line_discipline_phonotactic_token.py</p>
-<pre>Phonotactic Interior Gradient, Class-Controlled (S3 rung 6b) — does
-glyph-pair phonotactic constraint predict interior position BEYOND the
-onset class? (N6j)
+<main><h1>line_discipline_wordlevel</h1>
+<p class="muted">scripts/line_discipline_wordlevel.py</p>
+<pre>Interior Gradient — Word-Level Predictors (S3 rung 7) — does anything
+below the onset class predict the residual? (N6k)
 
-PROVENANCE: N6i found the interior-gradient residual phonotactically
-structured but SOFT (empirical p 0.0205, DOF-fragile at ~13 class
-points). This rung re-tests at higher resolution — but the first design
-attempt exposed the real obstacle, which dictates the correct test:
+PROVENANCE: the interior gradient reduces to onset-class properties
+(freq + gallows + length + within-word morphology); its residual is a
+floor — NOT phonotactic once onset class is controlled (N6j killed
+N6i). The open question: is there ANY word-level property, finer than
+the first-glyph class, that predicts a word&#x27;s interior position once
+the class is held fixed? This rung tests the two most motivated
+candidates with the N6j-validated method (class-controlled partial
+correlation at token resolution — thousands of points, no DOF ceiling).
 
-  onset successor-entropy is a DETERMINISTIC FUNCTION of the first
-  glyph, and the first glyph IS the class. So &quot;onset-se predicts
-  interior position&quot; is merely the S7 class-position effect
-  re-parametrized — it cannot separate a phonotactic LAW (&quot;constrained
-  onsets sit earlier&quot;) from &quot;the class q happens to sit early&quot;. A
-  first-execution check confirmed this: raw onset-se vs position is
-  collinear with class, and the glyph-pair variant even reverses sign.
+HYPOTHESES (fixed before running), both position-free WORD-level
+properties with real within-onset-class variation:
+  (A) FUNCTION vs CONTENT — individual word log-frequency. The oldest
+      structural distinction: function words (frequent) vs content
+      words (rare). If the line orders words partly by this, then
+      WITHIN an onset class, high-frequency words sit at systematically
+      different interior positions than low-frequency ones.
+  (B) FINE LENGTH — individual word length (class-level length is
+      already a principle; this asks whether length matters BELOW the
+      class).
 
-THE CORRECT TEST (fixed before the run that counts): control for onset
-class. Within each first-glyph class, second-glyph variation gives the
-glyph-PAIR successor-entropy se2 real within-class variance. If
-phonotactic constraint is a genuine positional law, se2 should predict
-interior position WITHIN classes (onset held fixed). Operationally:
-class-mean-center both u (normalized interior position) and se2 by the
-token&#x27;s onset class, then correlate the residuals — a partial
-correlation of position with glyph-pair constraint controlling for
-onset identity. NULL: N_PERM within-line shuffles (order destroyed,
-class means and centering recomputed each time). Interior tokens with a
-definable glyph pair (&gt;= 2 glyphs) only.
+METHOD (N6j): over every interior word token of Currier B, class-mean-
+center both the normalized interior position u and the candidate
+property by the token&#x27;s onset class, then correlate the residuals (a
+partial correlation controlling for onset class). NULL: N_PERM within-
+line shuffles (order destroyed, centering recomputed). Two-sided
+empirical p. DESCRIPTIVE (observational): per-onset-class mean interior
+position, to localize where the gradient/residual lives.
 
-PRE-REGISTERED VERDICTS:
-  phonotactic_firmed     — |partial r| significant at two-sided
-                           empirical p &lt; P_FIRM (0.005): glyph-pair
-                           phonotactic constraint predicts interior
-                           position beyond the onset class — a genuine
-                           phonotactic effect, N6i firmed past the house
-                           bar and free of the class confound.
-                           SUGGESTIVE, quarantined.
-  phonotactic_weak       — P_FIRM &lt;= p &lt; P_WEAK (0.05): a within-class
-                           effect exists but not past the house bar.
-  phonotactic_is_class_confound — p &gt;= P_WEAK: with onset class
-                           controlled, glyph-pair constraint does NOT
-                           predict position. N6i&#x27;s &quot;phonotactic residual&quot;
-                           was the onset-class effect re-expressed, not
-                           a phonotactic law; N6i downgraded. (Reported
-                           for the record: the RAW onset-se correlation,
-                           which by construction just mirrors the class
-                           effect.)
+PRE-REGISTERED VERDICTS (primary = the frequency hypothesis A):
+  gate_failed              — (reserved; no external gate here).
+  residual_frequency_effect — |partial r_freq| significant at two-sided
+      p &lt; P_FIRM (0.005): within onset class, word frequency predicts
+      interior position — the residual is partly a function/content-word
+      effect below the class. SUGGESTIVE, quarantined; direction
+      reported.
+  residual_length_only     — frequency not significant but within-class
+      LENGTH is (p_len &lt; P_FIRM): fine length, not frequency, is the
+      sub-class predictor.
+  residual_unexplained     — neither predicts position within class at
+      the house bar: no word-level property below the onset class
+      accounts for the residual. It is a floor at word resolution —
+      the interior gradient&#x27;s residue is, as far as the program can
+      measure, irreducible. Corpse logged with the descriptive
+      per-class gradient.
 Vocabulary discipline: a partial correlation of statistics; nothing
 decoded.</pre>
 <h2>Parameters</h2><p class="muted">Edit a value to override it for an in-browser run (the script itself is never modified).</p><table><tr><th>name</th><th>type</th><th>value</th></tr>
-<tr><td><code>SEED</code></td><td>int</td><td><input class="param" data-param="SEED" value="131"></td></tr>
+<tr><td><code>SEED</code></td><td>int</td><td><input class="param" data-param="SEED" value="132"></td></tr>
 <tr><td><code>N_PERM</code></td><td>int</td><td><input class="param" data-param="N_PERM" value="2000"></td></tr>
 <tr><td><code>P_FIRM</code></td><td>float</td><td><input class="param" data-param="P_FIRM" value="0.005"></td></tr>
 <tr><td><code>P_WEAK</code></td><td>float</td><td><input class="param" data-param="P_WEAK" value="0.05"></td></tr>
 <tr><td><code>MIN_LINE_WORDS</code></td><td>int</td><td><input class="param" data-param="MIN_LINE_WORDS" value="5"></td></tr>
 </table>
 <h2>Run it in your browser</h2><p class="muted">Python + numpy on WebAssembly, entirely on your machine — nothing is uploaded. First run downloads the runtime (~15 MB) and the repository data pack (~9 MB); both are cached afterwards. Expect it to be slower than a native run.</p><p><button id="run-btn">&#9654; Run</button> <button id="stop-btn">Stop</button> <span id="run-status" class="muted"></span></p><pre id="run-out"></pre>
-<script>window.VAIS_TEST = {"stem": "line_discipline_phonotactic_token", "specs": {"SEED": {"type": "int", "container": null}, "N_PERM": {"type": "int", "container": null}, "P_FIRM": {"type": "float", "container": null}, "P_WEAK": {"type": "float", "container": null}, "MIN_LINE_WORDS": {"type": "int", "container": null}}, "base": "../", "baselineSeconds": 0};</script><script src="../runner.js"></script>
+<script>window.VAIS_TEST = {"stem": "line_discipline_wordlevel", "specs": {"SEED": {"type": "int", "container": null}, "N_PERM": {"type": "int", "container": null}, "P_FIRM": {"type": "float", "container": null}, "P_WEAK": {"type": "float", "container": null}, "MIN_LINE_WORDS": {"type": "int", "container": null}}, "base": "../", "baselineSeconds": 0};</script><script src="../runner.js"></script>
 <h2>Run it locally (full speed, byte-exact)</h2>
 <pre>git clone https://github.com/Vineyardcode/vais
 cd vais
 pip install numpy flask
-python scripts/line_discipline_phonotactic_token.py        # this test; output also lands in results/
+python scripts/line_discipline_wordlevel.py        # this test; output also lands in results/
 python webui/server.py          # or the full interactive UI at localhost:5000</pre>
 <h2>Golden output (PYTHONHASHSEED=0)</h2><details><summary>show</summary><pre id="golden-pre">============================================================================
-PHONOTACTIC INTERIOR GRADIENT, CLASS-CONTROLLED (S3 rung 6b) (N6j)
+INTERIOR GRADIENT — WORD-LEVEL PREDICTORS (S3 rung 7) (N6k)
 ============================================================================
-seed=131 perms=2000 firm two-sided p&lt;0.005; glyph-pair constraint, onset class controlled
-  2522 B lines; 14096 interior tokens with a glyph pair; 22 onset classes
-  RAW onset-se vs position +0.0574 (collinear with class — not the test)
-  class-controlled glyph-pair-se2 vs position (PARTIAL) +0.0031  &lt;- the test
-  within-line null (two-sided): p 0.7046  (null max |r| 0.0331)
+seed=132 perms=2000 firm two-sided p&lt;0.005; class-controlled partial correlations at token resolution
+  2522 B lines; 14484 interior tokens; 22 onset classes
+  per-class mean interior position (early -&gt; late): sh 0.369  q 0.381  k 0.404  ch 0.409  y 0.411  l 0.413  f 0.422  o 0.432  e 0.433  cth 0.435  d 0.437  s 0.439  t 0.446  a 0.46  r 0.472  p 0.507
+  class-controlled partial r: word-frequency +0.0188   word-length -0.0370
+  within-line null (two-sided): p(frequency) 0.0265  p(length) 0.0015
 
   ADJUDICATION (pre-registered):
-    PHONOTACTIC IS CLASS CONFOUND: with onset class controlled, glyph-pair constraint does NOT predict position (partial r +0.0031, p 0.7046 &gt;= 0.05). N6i&#x27;s &quot;phonotactic residual&quot; was the onset-class effect re-expressed (raw onset-se +0.0574 just mirrors the class-position effect), not a phonotactic law. N6i downgraded — the interior gradient&#x27;s residual is NOT demonstrably phonotactic once class is controlled. Corpse logged.
+    RESIDUAL LENGTH ONLY: frequency not significant (p 0.0265) but within-class word length is (r -0.0370, p 0.0015) — fine length is the sub-class predictor. SUGGESTIVE, quarantined.
 
-  -&gt; results/line_discipline_phonotactic_token.json
+  -&gt; results/line_discipline_wordlevel.json
 </pre></details><footer>Static mirror — read-only. Generated 2026-07-21 from commit <code>2053b5c</code>. 
 To run any test with your own parameters, clone
 <a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI

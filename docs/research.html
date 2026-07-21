@@ -941,7 +941,19 @@ footer { border-top:1px solid var(--line); margin-top:3em;
 <tr><td>two-sided within-line null p</td><td>0.7046 (null max</td><td>r</td><td>0.03312)</td></tr>
 <tr><td>interior tokens (with glyph pair)</td><td>14096</td></tr>
 </table>
-<p><strong>VERDICT: PHONOTACTIC IS CLASS CONFOUND (N6i downgraded) — with onset class controlled, glyph-pair phonotactic constraint does NOT predict interior position (partial r +0.0031, p 0.7046 ≫ 0.05, on 14096 tokens — un-inflated). N6i&#x27;s soft p=0.02 phonotactic signal was the onset-CLASS effect that successor-entropy trivially re-expresses (raw onset-se +0.0574 just mirrors the S7 class-position effect), NOT a phonotactic law. The interior-gradient residual is not demonstrably phonotactic once class is controlled — it remains genuinely unexplained. Ledger entry 21 corrected. A quarantined SUGGESTIVE finding (N6i, flagged as the weakest) downgraded by its own registered follow-up — the process working exactly as the flag intended.</strong></p><footer>Static mirror — read-only. Generated 2026-07-21 from commit <code>1ebbed8</code>. 
+<p><strong>VERDICT: PHONOTACTIC IS CLASS CONFOUND (N6i downgraded) — with onset class controlled, glyph-pair phonotactic constraint does NOT predict interior position (partial r +0.0031, p 0.7046 ≫ 0.05, on 14096 tokens — un-inflated). N6i&#x27;s soft p=0.02 phonotactic signal was the onset-CLASS effect that successor-entropy trivially re-expresses (raw onset-se +0.0574 just mirrors the S7 class-position effect), NOT a phonotactic law. The interior-gradient residual is not demonstrably phonotactic once class is controlled — it remains genuinely unexplained. Ledger entry 21 corrected. A quarantined SUGGESTIVE finding (N6i, flagged as the weakest) downgraded by its own registered follow-up — the process working exactly as the flag intended.</strong></p>
+<hr>
+<h3>Portfolio S3, rung 7 — word-level predictors of the interior-gradient residual (2026-07-21)</h3>
+<p>[AUTOMATED — written by tools/overnight.py; run committed to branch overnight/2026-07-21; awaiting human review before promotion to any evidence tier.]</p>
+<p>Configuration (pre-registered in the script docstring): script defaults. Runtime 0.04 h at PYTHONHASHSEED=0. Holdout: whole folios (VMS) / 24-line pseudo-folio blocks (controls).</p>
+<p><strong>Pre-registered outcomes</strong> (script docstring): does any WORD-level property below the onset class predict interior position? Tested class-controlled at token resolution (N6j-validated), primary hypothesis = word frequency (function vs content word).</p>
+<table>
+<tr><th>predictor</th><th>class-controlled partial r</th><th>two-sided p</th></tr>
+<tr><td>word frequency (function/content)</td><td>+0.0188</td><td>0.0265</td></tr>
+<tr><td>word length</td><td>-0.0370</td><td>0.0015</td></tr>
+</table>
+<p>Descriptive per-class interior gradient (early → late): sh 0.369, q 0.381, k 0.404, ch 0.409, y 0.411, l 0.413, f 0.422, o 0.432, e 0.433, cth 0.435, d 0.437, s 0.439, t 0.446, a 0.46, r 0.472, p 0.507.</p>
+<p><strong>VERDICT: RESIDUAL &quot;LENGTH ONLY&quot; — but the honest headline is that ESSENTIALLY NOTHING substantial predicts the residual. The function/content-word hypothesis (frequency) FAILS the bar (p 0.0265 &gt; 0.005). Word length clears it (p 0.0015) but the effect is NEGLIGIBLE: r -0.0370, ~0.1% of variance — statistically detectable on 14k tokens, practically nil (longer words sit very slightly earlier within their class). No word-level property meaningfully accounts for the interior-gradient residual; it is, for practical purposes, a floor. The interior gradient is a first-glyph-CLASS effect whose ordering, beyond freq + gallows + length + morphology, stays genuinely unexplained.</strong></p><footer>Static mirror — read-only. Generated 2026-07-21 from commit <code>2053b5c</code>. 
 To run any test with your own parameters, clone
 <a href="https://github.com/Vineyardcode/vais">the repository</a> and start the local web UI
 (<code>python webui/server.py</code>). All numbers reproduce at
